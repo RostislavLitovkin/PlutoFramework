@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Nft.CollectionDetailPage"
+             Title="CollectionDetailPage"
+             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+             xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
+             xmlns:unique="clr-namespace:PlutoFramework.Components.Unique"
+             xmlns:koda="clr-namespace:PlutoFramework.Components.Koda"
+             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+             xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
+             xmlns:confirmtransaction="clr-namespace:PlutoFramework.Components.ConfirmTransaction"
+             xmlns:model="clr-namespace:PlutoFramework.Model;assembly=PlutoFramework.Model"
+             xmlns:date="clr-namespace:PlutoFramework.Components.Date"
+            BackgroundColor="Black">
+    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+
+        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+               Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground2.png}"
+               Opacity="{AppThemeBinding Light=0.96}"
+               Aspect="AspectFill"/>
+
+        <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+            <VerticalStackLayout Margin="0, 45, 0, 0"
+                                Spacing="15"
+                                Padding="20, 15, 20, 200">
+                <nft:NftImageView ImageSource="{Binding Image}" />
+
+                <Grid  IsVisible="{Binding IsOwned}"
+                        ColumnSpacing="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+
+                    </Grid.ColumnDefinitions>
+
+                    <buttons:ElevatedButton Text="Modify" Grid.Column="0"
+                                        Command="{Binding ModifyCommand}"
+                                        ButtonState="{Binding ModifyButtonState}"
+                                        />
+
+                    <buttons:ElevatedButton Text="Transfer" Grid.Column="1"
+                                        Command="{Binding TransferCommand}"
+                                        ButtonState="{Binding TransferButtonState}"
+                                        />
+                </Grid>
+
+                <date:DateView Title="Event start"
+                               UnixTimestampValue="{Binding EventStartTimestamp}"
+                               IsVisible="{Binding IsClaimable}" />
+
+                <date:DateView Title="Event end"
+                                UnixTimestampValue="{Binding EventEndTimestamp}"
+                                IsVisible="{Binding IsClaimable}" />
+
+                <buttons:ElevatedButton Text="Claim"
+                                        Command="{Binding ClaimCommand}"
+                                        ButtonState="{Binding ClaimButtonState}"
+                    />
+
+                <nft:NftTitleView 
+                          Endpoint="{Binding Endpoint}"
+                          KodadotUnlockableUrl="{Binding KodadotUnlockableUrl}"
+                          AzeroIdReservedUntil="{Binding AzeroIdReservedUntil}"/>
+
+                <nft:NftOwnerView />
+
+                <nft:NftTradingStats IsVisible="{Binding TradingStatsIsVisible}" />
+
+                <nft:NftDescriptionView Description="{Binding Description}" />
+
+                <nft:NftAttributesView IsVisible="{Binding AttributesIsVisible}" />
+
+                <unique:OpenUniqueButton IsVisible="{Binding UniqueIsVisible}">
+                    <unique:OpenUniqueButton.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnUniqueClicked"/>
+                    </unique:OpenUniqueButton.GestureRecognizers>
+                </unique:OpenUniqueButton>
+
+                <koda:OpenKodaButton IsVisible="{Binding KodaIsVisible}">
+                    <koda:OpenKodaButton.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnKodaClicked"/>
+                    </koda:OpenKodaButton.GestureRecognizers>
+                </koda:OpenKodaButton>
+
+                <VerticalStackLayout
+                    HorizontalOptions="Center"
+                    Spacing="15"
+                    BindableLayout.ItemsSource="{Binding Nfts}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="model:NftWrapper">
+                            <nft:NftLittleThumbnailView Endpoint="{Binding Endpoint}"
+                                  Favourite="{Binding Favourite}"
+                                  NftBase="{Binding NftBase}"
+                                    />
+
+                        </DataTemplate>
+
+                    </BindableLayout.ItemTemplate>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <navigationbar:TopNavigationBar Title="{Binding Name}" />
+
+        <nft:NftTransferView />
+
+        <nft:NftSellView />
+
+        <txanalyzer:TransactionAnalyzerConfirmationView />
+
+        <confirmtransaction:ConfirmTransactionView />
+    </AbsoluteLayout>
+</ContentPage>

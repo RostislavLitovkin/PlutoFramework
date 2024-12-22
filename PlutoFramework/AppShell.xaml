@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        x:Class="PlutoFramework.AppShell"
+        Title="AppShell"
+        xmlns:view="clr-namespace:PlutoFramework.View"
+        xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
+        Shell.FlyoutBehavior="Disabled"
+        xmlns:settings="clr-namespace:PlutoFramework.Components.Settings">
+
+    <ShellContent ContentTemplate="{DataTemplate view:MainPage}"
+                  Route="MainPage" >
+    </ShellContent>
+    <ShellContent ContentTemplate="{DataTemplate nft:NftMainPage}" 
+                  Route="NftMainPage">
+
+    </ShellContent>
+
+</Shell>
