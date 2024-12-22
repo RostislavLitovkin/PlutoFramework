@@ -41,9 +41,6 @@ public partial class TransferView : ContentView
             BigInteger amount;
             if (decimal.TryParse(viewModel.Amount, out tempAmount))
             {
-                // Double to int conversion
-                // Complete later
-
                 amount = (BigInteger)(tempAmount * (decimal)Math.Pow(10, assetSelectButtonViewModel.Decimals));
 
                 Console.WriteLine(assetSelectButtonViewModel.Decimals);
@@ -58,7 +55,8 @@ public partial class TransferView : ContentView
             {
                 (EndpointEnum endpointKey, AssetPallet.Native, _) => TransferModel.NativeTransfer(clientExt, viewModel.Address, amount),
                 (EndpointEnum endpointKey, AssetPallet.Assets, BigInteger assetId) => TransferModel.AssetsTransfer(clientExt, viewModel.Address, assetId, amount),
-                _ => throw new Exception("Not implemented")
+                (EndpointEnum endpointKey, AssetPallet.Tokens, BigInteger tokenId) => TransferModel.TokensTransfer(clientExt, viewModel.Address, tokenId, amount),
+                _ => throw new Exception("Not implemented for this pallet")
             };
 
 
