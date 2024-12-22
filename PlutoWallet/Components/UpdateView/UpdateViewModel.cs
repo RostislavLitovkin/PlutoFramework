@@ -14,11 +14,11 @@ namespace PlutoWallet.Components.UpdateView
 			isVisible = false;
 		}
 
-		public async Task CheckLatestVersionAsync()
+		public async Task CheckLatestVersionAsync(string url, CancellationToken token)
 		{
             int currentBuild = int.Parse(AppInfo.Current.BuildString);
 
-			var plutoWalletVersion = await VersionModel.GetPlutoWalletLatestVersionAsync();
+			var plutoWalletVersion = await VersionModel.GetLatestVersionInfoAsync(url, token);
 
 			if (plutoWalletVersion is null)
 			{

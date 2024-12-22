@@ -24,20 +24,12 @@
                         <RoundRectangle CornerRadius="20" />
 
                     </Border.StrokeShape>
-                    <Border.Shadow>
-                        <Shadow Brush="Black"
-                                Offset="0,2" 
-                                Radius="3"
-                                Opacity="0.1" />
-
-                    </Border.Shadow>
 
                     <AbsoluteLayout>
 
                         <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
                                x:Name="image" Aspect="AspectFill"
-                               HeightRequest="200"
-                               WidthRequest="200"/>
+                               Source="imageloading.png"/>
                     </AbsoluteLayout>
                 </Border>
 
@@ -45,7 +37,8 @@
                                 Grid.Column="1">
                     <StackLayout Orientation="Vertical"
                                   Padding="10"
-                                 AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                                 AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                                 >
                         <Label Margin="0, 0, 0, 5"
                                FontSize="16">
                             <Label.FormattedText>
@@ -61,7 +54,6 @@
 
                         <Label TextType="Html" x:Name="descriptionLabel" TextColor="{AppThemeBinding Light=Black, Dark=White}"
                                Padding="0, 0, 0, 50"
-                               MaximumHeightRequest="{Binding Source={x:Reference border}, Path=Height}"
                                >
                         </Label>
                     </StackLayout>

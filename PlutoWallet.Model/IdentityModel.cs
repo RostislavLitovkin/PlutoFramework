@@ -6,7 +6,7 @@ namespace PlutoWallet.Model
 {
 	public class IdentityModel
 	{
-		public static async Task<OnChainIdentity?> GetIdentityForAddressAsync(PolkadotPeople.NetApi.Generated.SubstrateClientExt client, string address)
+		public static async Task<OnChainIdentity?> GetIdentityForAddressAsync(PolkadotPeople.NetApi.Generated.SubstrateClientExt client, string address, CancellationToken token)
 		{
 			try
 			{
@@ -18,7 +18,7 @@ namespace PlutoWallet.Model
 				var account32 = new AccountId32();
 				account32.Create(Utils.GetPublicKeyFrom(address));
 
-				var identity = await client.IdentityStorage.IdentityOf(account32, null, CancellationToken.None);
+				var identity = await client.IdentityStorage.IdentityOf(account32, null, token);
 
 				if (identity == null)
 				{

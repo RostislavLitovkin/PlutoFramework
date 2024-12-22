@@ -9,23 +9,6 @@ namespace PlutoWallet.Components.CalamarView
 	{
 		[ObservableProperty]
 		private string webAddress;
-
-		public CalamarViewModel()
-		{
-
-		}
-
-		public void Reload(Endpoint endpoint)
-		{
-			string address = KeysModel.GetPublicKey();
-
-			if (endpoint.CalamarChainName == null)
-			{
-                // Not supported
-            }
-
-            WebAddress = "https://calamar.app/" + endpoint.CalamarChainName + "/account/" + address;
-        }
 	}
 }
 

@@ -1,6 +1,4 @@
-﻿using System;
-using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using PlutoWallet.Components.Balance;
 using PlutoWallet.Components.NavigationBar;
 using PlutoWallet.Components.NetworkSelect;
@@ -12,8 +10,6 @@ namespace PlutoWallet.ViewModel
 {
 	public partial class BasePageViewModel : ObservableObject
 	{
-        public MainView MainView = new MainView();
-
         private CancellationTokenSource nftsCancellationTokenSource;
 
         [ObservableProperty]
@@ -21,8 +17,6 @@ namespace PlutoWallet.ViewModel
 
 		public BasePageViewModel()
 		{
-			content = MainView;
-
             Console.WriteLine("Calling BasePageViewModel constructor.");
 
             var networkViewModel = DependencyService.Get<MultiNetworkSelectViewModel>();
@@ -48,7 +42,7 @@ namespace PlutoWallet.ViewModel
                 DependencyService.Get<NftLoadingViewModel>().IsVisible = false;
             }
             
-            Content = MainView;
+            //Content = MainView;
 
             Console.WriteLine("SetMainView() -> Calling MultiNetworkSelectViewModel.SetupDefault()");
 
@@ -67,7 +61,7 @@ namespace PlutoWallet.ViewModel
 
             Console.WriteLine("Changed to nfts");
 
-            Content = new NftView();
+            //Content = new NftView();
 
             if (nftsCancellationTokenSource != null)
             {
@@ -79,7 +73,7 @@ namespace PlutoWallet.ViewModel
          
             try
             {
-                await DependencyService.Get<NftViewModel>().GetNFTsAsync(KeysModel.GetSubstrateKey(), nftsCancellationTokenSource.Token);
+                //await DependencyService.Get<NftViewModel>().GetNFTsAsync(KeysModel.GetSubstrateKey(), nftsCancellationTokenSource.Token);
             }
             catch (OperationCanceledException)
             {

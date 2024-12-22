@@ -47,7 +47,7 @@
                                         Size="20" />
                     </Image.Source>
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnReloadClicked" />
+                        <TapGestureRecognizer Command="{Binding ReloadCommand}" />
 
                     </Image.GestureRecognizers>
                 </Image>

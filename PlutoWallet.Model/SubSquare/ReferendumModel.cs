@@ -8,6 +8,7 @@ using Polkadot.NetApi.Generated.Model.pallet_conviction_voting.vote;
 using Substrate.NetApi.Model.Types.Base;
 using PlutoWallet.Constants;
 using PlutoWallet.Model.AjunaExt;
+using ReferendumKey = (PlutoWallet.Constants.EndpointEnum, System.Numerics.BigInteger);
 
 namespace PlutoWallet.Model.SubSquare
 {
@@ -17,7 +18,7 @@ namespace PlutoWallet.Model.SubSquare
         /// <summary>
         /// Key: SubSquareLink
         /// </summary>
-        public static Dictionary<string, ReferendumInfo> Referenda = new Dictionary<string, ReferendumInfo>();
+        public static Dictionary<ReferendumKey, ReferendumInfo> Referenda = new Dictionary<ReferendumKey, ReferendumInfo>();
         public static async Task GetReferendaAsync(SubstrateClientExt clientExt, string substrateAddress, CancellationToken token)
         {
             if (clientExt.Endpoint.SubSquareChainName == null)
@@ -105,7 +106,13 @@ namespace PlutoWallet.Model.SubSquare
                         // Subsquare things
                         uint referendumId = ((U32)vote.Value[0]).Value;
 
-                        Root root = await GetReferendumInfo(clientExt.Endpoint, referendumId);
+                        Root? root = await GetReferendumInfoAsync(clientExt.Endpoint, referendumId);
+
+                        if (root is null)
+                        {
+                            Console.WriteLine("Referendum info was null (Should not happen)");
+                            continue;
+                        }
 
                         Console.WriteLine(root.OnchainData.Tally.Ayes);
 
@@ -117,9 +124,7 @@ namespace PlutoWallet.Model.SubSquare
 
                         BigInteger total = ayes.Value + nays.Value;
 
-                        string subsquareLink = "https://" + clientExt.Endpoint.SubSquareChainName + ".subsquare.io/referenda/" + root.ReferendumIndex;
-
-                        Referenda.Add(subsquareLink, new ReferendumInfo
+                        Referenda.Add((clientExt.Endpoint.Key, root.ReferendumIndex), new ReferendumInfo
                         {
                             Title = root.Title,
                             Ayes = ayes.Value,
@@ -131,7 +136,6 @@ namespace PlutoWallet.Model.SubSquare
                                 Decision = voteDecision,
                             },
                             ReferendumIndex = root.ReferendumIndex,
-                            SubSquareLink = subsquareLink,
                             Endpoint = clientExt.Endpoint,
                         });
                     }
@@ -140,7 +144,7 @@ namespace PlutoWallet.Model.SubSquare
         }
 
 
-        public static async Task<Root> GetReferendumInfo(Endpoint endpoint, uint id)
+        public static async Task<Root?> GetReferendumInfoAsync(Endpoint endpoint, uint id)
         {
             HttpClient client = new HttpClient();
 
@@ -168,10 +172,9 @@ namespace PlutoWallet.Model.SubSquare
         public double VoteAye { get; set; }
 
         public ReferendumVote Vote { get; set; }
+        public BigInteger ReferendumIndex { get; set; }
 
-        public int ReferendumIndex { get; set; }
-
-        public string SubSquareLink { get; set; }
+        public string SubSquareLink => $"https://{Endpoint.SubSquareChainName}.subsquare.io/referenda/{ReferendumIndex}";
 
         public Endpoint Endpoint { get; set; }
     }

@@ -1,8 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-ios;net8.0-maccatalyst;net8.0-android34.0</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+		 <!--<TargetFrameworks>net8.0-ios;net8.0-maccatalyst;net8.0-android34.0</TargetFrameworks>-->
+    <TargetFrameworks>net8.0-android34.0</TargetFrameworks>
+
+    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
@@ -23,8 +25,12 @@
 		<ApplicationDisplayVersion>1.17</ApplicationDisplayVersion>
     <PackageVersion>1.17</PackageVersion>
     <ApplicationVersion>18</ApplicationVersion>
+		
+		<!-- Increases performance, but disables hot-reload -->
+    <UseInterpreter>false</UseInterpreter>
+    <MauiStrictXamlCompilation>true</MauiStrictXamlCompilation>
 
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">29.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
@@ -62,7 +68,8 @@
 		<MauiImage Include="Resources\Images\*jpg" />
 		<MauiImage Include="Resources\Images\NetworkIcons\*svg" />
 		<MauiImage Include="Resources\Images\NetworkIcons\*png" />
-		<MauiImage Include="Resources\Images\PredefinedLayouts\*svg" />
+    <MauiImage Include="Resources\Images\NetworkIcons\*jpg" />
+    <MauiImage Include="Resources\Images\PredefinedLayouts\*svg" />
 		<MauiImage Include="Resources\Images\PredefinedLayouts\*png" />
 		<MauiImage Include="Resources\Images\GalaxyLogicGame\*svg" />
 		<MauiImage Include="Resources\Images\GalaxyLogicGame\*png" />
@@ -77,6 +84,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+		<PackageReference Include="Microsoft.VisualStudio.VsixColorCompiler" Version="17.0.31709.430" />
 		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="3.0.0-preview.7" />
 		<PackageReference Include="websocketsharp.core" Version="1.0.0" />
 		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.2" />
@@ -104,6 +112,8 @@
 	  <None Remove="CommunityToolkit.Maui" />
 	  <None Remove="Resources\Images\cloudblack.svg" />
 	  <None Remove="Resources\Images\cloudwhite.svg" />
+	  <None Remove="Resources\Images\collectionblack.svg" />
+	  <None Remove="Resources\Images\collectionwhite.svg" />
 	  <None Remove="Resources\Images\copyblack.svg" />
 	  <None Remove="Resources\Images\copywhite.svg" />
 	  <None Remove="Resources\Images\dappblack.svg" />
@@ -112,11 +122,18 @@
 	  <None Remove="Resources\Images\devicewhite.svg" />
 	  <None Remove="Resources\Images\expandblack.svg" />
 	  <None Remove="Resources\Images\expandwhite.svg" />
+	  <None Remove="Resources\Images\hotblack.svg" />
+	  <None Remove="Resources\Images\hotwhite.svg" />
+	  <None Remove="Resources\Images\imageloading.png" />
 	  <None Remove="Resources\Images\kodablack.svg" />
 	  <None Remove="Resources\Images\kodawhite.svg" />
 	  <None Remove="Resources\Images\NetworkIcons\hydration.svg" />
 	  <None Remove="Resources\Images\NetworkIcons\kusamaassethub.svg" />
+	  <None Remove="Resources\Images\NetworkIcons\mythos.png" />
 	  <None Remove="Resources\Images\NetworkIcons\polkadotassethub.svg" />
+	  <None Remove="Resources\Images\nftblack.svg" />
+	  <None Remove="Resources\Images\nftwhite.svg" />
+	  <None Remove="Resources\Images\noimage.png" />
 	  <None Remove="Resources\Images\plutowalletclearwhite.png" />
 	  <None Remove="Resources\Images\plutowalleticonwhite.png" />
 	  <None Remove="Resources\Images\subscan.png" />
@@ -166,7 +183,7 @@
 	  <None Remove="Resources\Images\NetworkIcons\alephzerotestnet.png" />
 	  <None Remove="Resources\Images\NetworkIcons\litmus.png" />
 	  <None Remove="Resources\Images\NetworkIcons\shibuya.png" />
-	  <None Remove="Resources\Images\menuwhite.svg" />
+    <None Remove="Resources\Images\menuwhite.svg" />
 	  <None Remove="Resources\Images\menublack.svg" />
 	  <None Remove="Resources\Images\NetworkIcons\kusamawhite.png" />
 	  <None Remove="Resources\Images\NetworkIcons\acala.png" />
@@ -303,7 +320,8 @@
 	  <BundleResource Include="Resources\Images\NetworkIcons\alephzerotestnet.png" />
 	  <BundleResource Include="Resources\Images\NetworkIcons\litmus.png" />
 	  <BundleResource Include="Resources\Images\NetworkIcons\shibuya.png" />
-	  <BundleResource Include="Resources\Images\menuwhite.svg" />
+    <BundleResource Include="Resources\Images\NetworkIcons\mythos.jpg" />
+    <BundleResource Include="Resources\Images\menuwhite.svg" />
 	  <BundleResource Include="Resources\Images\menublack.svg" />
 	  <BundleResource Include="Resources\Images\NetworkIcons\kusamawhite.png" />
 	  <BundleResource Include="Resources\Images\NetworkIcons\acala.png" />
@@ -391,7 +409,13 @@
 	  <BundleResource Include="Resources\Images\GalaxyLogicGame\galaxylogo.png" />
 	</ItemGroup>
 	<ItemGroup>
+	  <MauiXaml Update="AppShell.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\AddressView\AddressQrCodeView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\AddressView\SubstrateAddressView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Animations\LoadingView.xaml">
@@ -418,6 +442,21 @@
 	  <MauiXaml Update="Components\Card\ClickableCard.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\CustomLayouts\CategoryHeaderView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\CustomLayouts\ErrorItemView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\CustomLayouts\LoadingItemView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\CustomLayouts\TransparentItemView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Date\DateView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Events\EventItemView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -427,19 +466,40 @@
 	  <MauiXaml Update="Components\Events\EventsListView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Extrinsic\CallDetailPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Extrinsic\CallParameterView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Extrinsic\ExtrinsicDetailPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Extrinsic\CallParametersView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Koda\OpenKodaButton.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Nft\CollectionDetailPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Nft\CollectionListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Nft\CollectionThumbnailView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Nft\NftAttributeView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Nft\NftBuyView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Nft\NftDetailPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Nft\NftFavouriteGalleryView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Nft\NftIdView.xaml">
@@ -449,6 +509,21 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Nft\NftImageView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Nft\NftListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Nft\NftLittleThumbnailView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Nft\NftMainPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Nft\NftNestedNftsView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Nft\NftOwnedGalleryView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Nft\NftOwnerView.xaml">
@@ -464,9 +539,6 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Nft\NftTransferView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NoNftsView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Settings\DeveloperSettingsPage.xaml">
@@ -497,6 +569,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Unique\OpenUniqueButton.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\MainPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\MnemonicsPage.xaml">
@@ -583,7 +658,6 @@
 	  <Folder Include="Components\Switch\" />
 	  <Folder Include="Components\WebView\" />
 	  <Folder Include="Components\NavigationBar\" />
-	  <Folder Include="Components\CustomLayouts\" />
 	  <Folder Include="Resources\Images\PredefinedLayouts\" />
 	  <Folder Include="Components\AwesomeAjunaAvatars\" />
 	  <Folder Include="Components\Contract\" />
@@ -595,7 +669,6 @@
 	  <Folder Include="Components\Referenda\" />
 	  <Folder Include="Components\ChangeLayoutRequest\" />
 	  <Folder Include="Components\Mnemonics\" />
-	  <Folder Include="Model\" />
 	  <Folder Include="Components\Fee\" />
 	  <Folder Include="Components\VTokens\" />
 	  <Folder Include="Components\UpdateView\" />
@@ -614,6 +687,12 @@
 	  </Compile>
 	  <Compile Update="Components\AssetSelect\NativeAssetInputView.xaml.cs">
 	    <DependentUpon>NativeAssetInputView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Components\Extrinsic\CallParametersView.xaml.cs">
+	    <DependentUpon>CallParametersView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Components\Nft\NftGalleryView.xaml.cs">
+	    <DependentUpon>NftGalleryView.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Components\PredefinedLayouts\HydrationOmnipoolLayoutItem.xaml.cs">
 	    <DependentUpon>HydrationOmnipoolLayoutItem.xaml</DependentUpon>

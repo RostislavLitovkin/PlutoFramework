@@ -28,14 +28,16 @@ using PlutoWallet.Components.VTokens;
 using PlutoWallet.Components.UpdateView;
 using PlutoWallet.Components.Xcm;
 using PlutoWallet.Components.TransactionAnalyzer;
+using Bajun.NetApi.Generated.Model.sp_consensus_aura.sr25519.app_sr25519;
+using PlutoWallet.Model.SQLite;
 
 namespace PlutoWallet;
 
 public partial class App : Application
 {
-	public App()
-	{
-		InitializeComponent();
+    public App()
+    {
+        InitializeComponent();
 
         DependencyService.Register<MainViewModel>();
 
@@ -77,39 +79,23 @@ public partial class App : Application
 
         DependencyService.Register<MessageSignRequestViewModel>();
 
-        DependencyService.Register<NftViewModel>();
-
         DependencyService.Register<AzeroPrimaryNameViewModel>();
 
         DependencyService.Register<AssetSelectViewModel>();
 
         DependencyService.Register<AssetSelectButtonViewModel>();
 
-        DependencyService.Register<OmnipoolLiquidityViewModel>();
-
-        DependencyService.Register<DCAViewModel>();
-
-        DependencyService.Register<NftLoadingViewModel>();
-
-        DependencyService.Register<IdentityViewModel>();
-
         DependencyService.Register<VaultSignViewModel>();
-
-        DependencyService.Register<ReferendaViewModel>();
 
         DependencyService.Register<ChangeLayoutRequestViewModel>();
 
         DependencyService.Register<NetworkSelectPopupViewModel>();
-
-        DependencyService.Register<NftGaleryViewModel>();
 
         DependencyService.Register<NavigationBarViewModel>();
 
         DependencyService.Register<FeeAssetViewModel>();
 
         DependencyService.Register<VDotTokenViewModel>();
-
-        DependencyService.Register<UpdateViewModel>();
 
         DependencyService.Register<XcmTransferViewModel>();
 
@@ -127,9 +113,11 @@ public partial class App : Application
 
         DependencyService.Register<NftSellViewModel>();
 
+        DependencyService.Register<NftMainViewModel>();
+
         if (Preferences.ContainsKey("publicKey"))
         {
-            MainPage = new NavigationPage(new BasePage());
+            MainPage = new AppShell();
         }
         else
         {
@@ -138,7 +126,7 @@ public partial class App : Application
             SecureStorage.Default.Remove("mnemonics");
             SecureStorage.Default.Remove("password");
             Preferences.Remove("biometricsEnabled");
-            MainPage = new NavigationPage(new SetupPasswordPage());
+            MainPage = new SetupPasswordPage();
         }
-	}
+    }
 }

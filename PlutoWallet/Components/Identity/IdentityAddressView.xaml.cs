@@ -26,6 +26,8 @@ public partial class IdentityAddressView : ContentView
 
     private static async void AddressPropertyChangingAsync(object bindable, object oldValue, object newValue)
     {
+        CancellationToken token = CancellationToken.None;
+
         var control = (IdentityAddressView)bindable;
 
         control.addressEntry.Text = (string)newValue;
@@ -102,7 +104,7 @@ public partial class IdentityAddressView : ContentView
                 control.subscanIcon.IsVisible = true;
 
 
-                var client = await AjunaClientModel.GetOrAddSubstrateClientAsync(Constants.EndpointEnum.PolkadotPeople);
+                var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(Constants.EndpointEnum.PolkadotPeople, token);
 
                 if (!await client.IsConnectedAsync())
                 {
@@ -119,7 +121,7 @@ public partial class IdentityAddressView : ContentView
                     return;
                 }
 
-                var identity = await Model.IdentityModel.GetIdentityForAddressAsync((PolkadotPeople.NetApi.Generated.SubstrateClientExt)client.SubstrateClient, (string)newValue);
+                var identity = await Model.IdentityModel.GetIdentityForAddressAsync((PolkadotPeople.NetApi.Generated.SubstrateClientExt)client.SubstrateClient, (string)newValue, token);
 
                 if (identity == null)
                 {

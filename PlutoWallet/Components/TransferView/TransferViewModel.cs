@@ -51,7 +51,7 @@ namespace PlutoWallet.Components.TransferView
         {
             Fee = "Estimated fee: Loading";
 
-            var mainClient = await Model.AjunaClientModel.GetMainClientAsync();
+            var mainClient = await Model.SubstrateClientModel.GetMainSubstrateClientAsync(CancellationToken.None);
             if (mainClient is null || !await mainClient.IsConnectedAsync())
             {
                 Fee = "Estimated fee: Failed";

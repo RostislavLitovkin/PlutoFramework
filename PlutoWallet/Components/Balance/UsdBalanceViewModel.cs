@@ -1,11 +1,13 @@
 ﻿using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using PlutoWallet.Model;
 using PlutoWallet.Types;
 
 namespace PlutoWallet.Components.Balance
 {
     public partial class UsdBalanceViewModel : ObservableObject
-	{
+    {
         public bool DoNotReload { get; set; } = false;
 
         [ObservableProperty]
@@ -18,10 +20,33 @@ namespace PlutoWallet.Components.Balance
         private bool reloadIsVisible;
 
         public UsdBalanceViewModel()
-		{
+        {
             assets = new ObservableCollection<AssetInfo>();
             usdSum = "Loading";
             reloadIsVisible = false;
+        }
+
+        [RelayCommand]
+        private async Task ReloadAsync()
+        {
+            CancellationToken token = CancellationToken.None;
+            Console.WriteLine("Reload clicked");
+
+            UsdSum = "Loading";
+
+            ReloadIsVisible = false;
+
+            
+            foreach (var client in Model.SubstrateClientModel.Clients.Values)
+            {
+                Console.WriteLine("Reload ...");
+                await Model.AssetsModel.GetBalanceAsync(await client, KeysModel.GetSubstrateKey(), token, true);
+
+                UpdateBalances();
+            }
+
+            ReloadIsVisible = true;
+            Console.WriteLine("Reload Done");
         }
         public void UpdateBalances()
         {

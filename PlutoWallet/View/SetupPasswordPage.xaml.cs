@@ -16,8 +16,7 @@ public partial class SetupPasswordPage : ContentPage
 
         Console.WriteLine("Account created");
 
-        Navigation.InsertPageBefore(new BasePage(), Navigation.NavigationStack[0]);
-        await Navigation.PopToRootAsync();
+        Application.Current.MainPage = new AppShell();
     }
 
     private void OnEyeballClicked(object sender, TappedEventArgs e)

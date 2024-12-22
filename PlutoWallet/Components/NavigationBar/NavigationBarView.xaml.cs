@@ -1,30 +1,69 @@
-﻿using PlutoWallet.View;
-using PlutoWallet.ViewModel;
+﻿using PlutoWallet.ViewModel;
 using PlutoWallet.Components.TransferView;
+using PlutoWallet.Components.Nft;
 
 namespace PlutoWallet.Components.NavigationBar;
 
+public enum NavigationBarSelectedOption
+{
+    // Has to exist doe to binding
+    None,
+
+    Home,
+    Nfts
+}
+
 public partial class NavigationBarView : ContentView
 {
-	public NavigationBarView()
+    public static readonly BindableProperty SelectedOptionProperty = BindableProperty.Create(
+      nameof(SelectedOption), typeof(NavigationBarSelectedOption), typeof(NavigationBarView),
+      defaultBindingMode: BindingMode.TwoWay,
+      propertyChanging: (bindable, oldValue, newValue) =>
+      {
+          var control = (NavigationBarView)bindable;
+
+          if ((NavigationBarSelectedOption)newValue == NavigationBarSelectedOption.Home)
+          {
+              control.homeSpan.FontAttributes = FontAttributes.Bold;
+              control.nftsSpan.FontAttributes = FontAttributes.None;
+          }
+          else if ((NavigationBarSelectedOption)newValue == NavigationBarSelectedOption.Nfts)
+          {
+              control.homeSpan.FontAttributes = FontAttributes.None;
+              control.nftsSpan.FontAttributes = FontAttributes.Bold;
+          }
+      });
+    public NavigationBarView()
 	{
 		InitializeComponent();
 
         BindingContext = DependencyService.Get<NavigationBarViewModel>();
     }
 
-    void OnHomeClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
+    public NavigationBarSelectedOption SelectedOption
     {
-        var viewModel = DependencyService.Get<BasePageViewModel>();
-
-        viewModel.SetMainView();
+        get => (NavigationBarSelectedOption)GetValue(SelectedOptionProperty);
+        set => SetValue(SelectedOptionProperty, value);
     }
 
-    void OnNFTsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
+    async void OnHomeClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
-        var viewModel = DependencyService.Get<BasePageViewModel>();
+        if (SelectedOption != NavigationBarSelectedOption.Nfts)
+        {
+            return;
+        }
 
-        viewModel.SetNftView();
+        await Shell.Current.GoToAsync("//MainPage");
+    }
+
+    async void OnNFTsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
+    {
+        if (SelectedOption != NavigationBarSelectedOption.Home)
+        {
+            return;
+        }
+
+        await Shell.Current.GoToAsync("//NftMainPage");
     }
     
     async void OnTransferClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
@@ -33,6 +72,6 @@ public partial class NavigationBarView : ContentView
 
         viewModel.IsVisible = true;
 
-        viewModel.GetFeeAsync();
+        Task fee = viewModel.GetFeeAsync();
     }
 }

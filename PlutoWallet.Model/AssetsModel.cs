@@ -8,10 +8,7 @@ using PlutoWallet.Types;
 using PlutoWallet.Constants;
 using Bifrost.NetApi.Generated.Model.orml_tokens;
 using Substrate.NetApi.Model.Types.Primitive;
-using Bifrost.NetApi.Generated.Model.bifrost_asset_registry.pallet;
-
 using AssetKey = (PlutoWallet.Constants.EndpointEnum, PlutoWallet.Types.AssetPallet, System.Numerics.BigInteger);
-using AssetMetadata = PlutoWallet.Types.AssetMetadata;
 
 namespace PlutoWallet.Model
 {
@@ -21,7 +18,7 @@ namespace PlutoWallet.Model
 
         public static double UsdSum = 0.0;
 
-        public static Dictionary<AssetKey, Asset> AssetsDict = new System.Collections.Generic.Dictionary<AssetKey, Asset>();
+        public static Dictionary<AssetKey, Asset> AssetsDict = new Dictionary<AssetKey, Asset>();
 
         public static IEnumerable<Asset> GetAssetsWithSymbol(string symbol)
         {
@@ -29,18 +26,21 @@ namespace PlutoWallet.Model
                      .Where(asset => asset.Symbol.Equals(symbol, StringComparison.Ordinal));
         }
 
-
-        public static async Task GetBalanceAsync(SubstrateClientExt client, string substrateAddress, CancellationToken token = default)
+        public static async Task GetBalanceAsync(SubstrateClientExt client, string substrateAddress, CancellationToken token, bool forceReload = false)
         {
+            if (AssetsDict.ContainsKey((client.Endpoint.Key, AssetPallet.Native, 0)) && forceReload)
+            {
+                return;
+            }
+
             if (doNotReload)
             {
                 return;
             }
 
-            double usdSumValue = 0;
-
             var endpoint = client.Endpoint;
 
+            // Skip non-substrate chains, as they are not supported at the moment
             if (endpoint.ChainType != PlutoWallet.Constants.ChainType.Substrate)
             {
                 /*tempAssets.Add(new Asset
@@ -101,7 +101,7 @@ namespace PlutoWallet.Model
 
                     double assetBalance = asset.Item4 != null ? (double)asset.Item4.Balance.Value / Math.Pow(10, asset.Item3.Decimals.Value) : 0.0;
 
-                    AssetsDict[(endpoint.Key, AssetPallet.Native, asset.Item1)] = new Asset
+                    AssetsDict[(endpoint.Key, AssetPallet.Assets, asset.Item1)] = new Asset
                     {
                         Amount = assetBalance,
                         Symbol = symbol,
@@ -114,6 +114,7 @@ namespace PlutoWallet.Model
                         Decimals = asset.Item3.Decimals.Value,
                     };
                 }
+
             }
             catch (Exception ex)
             {
@@ -126,7 +127,13 @@ namespace PlutoWallet.Model
                 {
                     foreach (HydrationTokenData tokenData in await GetHydrationTokensBalance(client.SubstrateClient, substrateAddress, CancellationToken.None))
                     {
-                        var symbol = Model.ToStringModel.VecU8ToString(tokenData.AssetMetadata.Symbol.Value.Value);
+                        // Skip tokens without Symbol
+                        if (!tokenData.AssetMetadata.Symbol.OptionFlag)
+                        {
+                            continue;
+                        }
+
+                        var symbol = tokenData.AssetMetadata.Symbol.OptionFlag ? Model.ToStringModel.VecU8ToString(tokenData.AssetMetadata.Symbol.Value.Value) : "";
                         double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(symbol);
 
                         double assetBalance = (double)tokenData.AccountData.Free.Value / Math.Pow(10, tokenData.AssetMetadata.Decimals.Value);

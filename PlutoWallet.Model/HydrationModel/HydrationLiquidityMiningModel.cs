@@ -64,9 +64,8 @@ namespace PlutoWallet.Model.HydrationModel
                 );
 
                 if(Sdk.AssetsById.Count() == 0) { 
-                    await Sdk.GetAssets(substrateClient, token);
+                    await Sdk.GetAssetsAsync(substrateClient, token);
                 }
-
 
                 var assetInfo = Sdk.AssetsById[globalFarmData.RewardCurrency.Value];
 

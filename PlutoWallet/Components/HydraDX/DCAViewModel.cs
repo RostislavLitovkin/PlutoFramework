@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
-using Hydration.NetApi.Generated;
 using PlutoWallet.Model;
 
 namespace PlutoWallet.Components.HydraDX
@@ -17,44 +16,36 @@ namespace PlutoWallet.Components.HydraDX
 		public DCAViewModel()
 		{
 			loading = "Loading";
-		}
+        }
 
-		public async Task GetDCAPosition(SubstrateClientExt client)
+		public async Task GetDCAAsync(Hydration.NetApi.Generated.SubstrateClientExt client, CancellationToken token)
 		{
-            if (client is null || !client.IsConnected)
-            {
-                Loading = "Failed";
+            Loading = "Loading";
+            List<DCAOrderInfo> infos = new List<DCAOrderInfo>();
 
+            var positions = await Model.HydraDX.DCAModel.GetDCAPositionsAsync(client, KeysModel.GetSubstrateKey(), token);
+
+            if (positions.Count() == 0)
+            {
+                Loading = "None";
                 return;
             }
 
-            Loading = "Loading";
-
-			List<DCAOrderInfo> infos = new List<DCAOrderInfo>();
-
-			var positions = await Model.HydraDX.DCAModel.GetDCAPositions(client, KeysModel.GetSubstrateKey());
-
-			if (positions.Count() == 0)
-			{
-				Loading = "None";
-				return;
-			}
-
             foreach (var position in positions)
-			{
-				infos.Add(new DCAOrderInfo
-				{
-					Amount = String.Format("{0:0.00}", position.Amount),
-					FromSymbol = position.FromSymbol,
-					ToSymbol = position.ToSymbol,
-					Time = position.RemainingDays > 0 ? position.RemainingDays + " Days" : position.RemainingHours + " Hours",
-				});
-			}
+            {
+                infos.Add(new DCAOrderInfo
+                {
+                    Amount = String.Format("{0:0.00}", position.Amount),
+                    FromSymbol = position.FromSymbol,
+                    ToSymbol = position.ToSymbol,
+                    Time = position.RemainingDays > 0 ? position.RemainingDays + " Days" : position.RemainingHours + " Hours",
+                });
+            }
 
-			Orders = new ObservableCollection<DCAOrderInfo>(infos);
+            Orders = new ObservableCollection<DCAOrderInfo>(infos);
 
-			Loading = "";
-		}
+            Loading = "";
+        }
 	}
 
 	public class DCAOrderInfo

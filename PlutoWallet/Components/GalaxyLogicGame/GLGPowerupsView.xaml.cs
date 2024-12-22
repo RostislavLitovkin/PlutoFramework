@@ -8,10 +8,10 @@ public partial class GLGPowerupsView : ContentView
 	{
 		InitializeComponent();
 
-        this.SizeChanged += Load;
+        this.SizeChanged += OnSizeChanged;
     }
 
-	public void Load(object sender, EventArgs e)
+	public void OnSizeChanged(object sender, EventArgs e)
     {
         powerupsLayout.WidthRequest = absoluteLayout.Width;
         powerupsLayout.Margin = new Thickness(0, watchImage.Height - 90, 0, 10);

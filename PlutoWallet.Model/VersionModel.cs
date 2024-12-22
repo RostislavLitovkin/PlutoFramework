@@ -5,22 +5,22 @@ namespace PlutoWallet.Model
 {
 	public class VersionModel
 	{
-		public static async Task<PlutoWalletLatestVersion?> GetPlutoWalletLatestVersionAsync()
+		public static async Task<LatestVersionInfo?> GetLatestVersionInfoAsync(string apiUrl, CancellationToken token)
 		{
             HttpClient httpClient = new HttpClient();
 
-            var response = await httpClient.GetAsync("https://plutonication.com/plutowallet/latest-version");
+            var response = await httpClient.GetAsync(apiUrl, token).ConfigureAwait(false);
 
             if (!response.IsSuccessStatusCode)
             {
                 return null;
             }
 
-            return await response.Content.ReadAsAsync<PlutoWalletLatestVersion>();
+            return await response.Content.ReadAsAsync<LatestVersionInfo>().ConfigureAwait(false);
         }
     }
 
-    public class PlutoWalletLatestVersion
+    public class LatestVersionInfo
     {
         [JsonProperty("message")]
         public string Message { get; set; }
