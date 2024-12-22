@@ -31,6 +31,7 @@ namespace PlutoWalletTests
         }
 
         [Test]
+        [Ignore("Works only locally")]
         public async Task PolkadotAssetHub()
         {
             Endpoint endpoint = PlutoWallet.Constants.Endpoints.GetEndpointDictionary[EndpointEnum.Local8000];

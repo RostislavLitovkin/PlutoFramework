@@ -25,6 +25,7 @@ namespace PlutoWalletTests
         }
 
         [Test]
+        [Ignore("Works only locally")]
         public async Task NativeTransferAsync()
         {
             Endpoint endpoint = PlutoWallet.Constants.Endpoints.GetEndpointDictionary[EndpointEnum.Local8000];
