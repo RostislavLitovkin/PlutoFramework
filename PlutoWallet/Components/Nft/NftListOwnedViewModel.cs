@@ -19,7 +19,7 @@ namespace PlutoWallet.Components.Nft
         private List<Task<PlutoWalletSubstrateClient>> clientTasks;
         public NftListOwnedViewModel(CancellationToken token = default)
         {
-            clientTasks = AjunaClientModel.Clients.Values.Where(_client => true).Select(client => client.Task).ToList();
+            clientTasks = SubstrateClientModel.Clients.Values.ToList();
 
             Task load = LoadMoreNftsAsync(token);
         }
@@ -58,8 +58,7 @@ namespace PlutoWallet.Components.Nft
 
                     var uniqueryNftEnumerable = UniqueryPlus.Nfts.NftModel.GetNftsOwnedByAsync(
                         [(await completedClientTask.ConfigureAwait(false)).SubstrateClient],
-                        /*KeysModel.GetSubstrateKey()*/
-                        "5EU6EyEq6RhqYed1gCYyQRVttdy6FC9yAtUUGzPe3gfpFX8y",
+                        KeysModel.GetSubstrateKey(),
                         limit: limit
                     );
 

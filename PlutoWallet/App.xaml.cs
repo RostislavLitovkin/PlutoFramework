@@ -85,17 +85,7 @@ public partial class App : Application
 
         DependencyService.Register<AssetSelectButtonViewModel>();
 
-        DependencyService.Register<OmnipoolLiquidityViewModel>();
-
-        DependencyService.Register<DCAViewModel>();
-
-        DependencyService.Register<NftLoadingViewModel>();
-
-        DependencyService.Register<IdentityViewModel>();
-
         DependencyService.Register<VaultSignViewModel>();
-
-        DependencyService.Register<ReferendaViewModel>();
 
         DependencyService.Register<ChangeLayoutRequestViewModel>();
 
@@ -106,8 +96,6 @@ public partial class App : Application
         DependencyService.Register<FeeAssetViewModel>();
 
         DependencyService.Register<VDotTokenViewModel>();
-
-        DependencyService.Register<UpdateViewModel>();
 
         DependencyService.Register<XcmTransferViewModel>();
 
@@ -127,10 +115,9 @@ public partial class App : Application
 
         DependencyService.Register<NftMainViewModel>();
 
-
         if (Preferences.ContainsKey("publicKey"))
         {
-            MainPage = new NavigationPage(new BasePage());
+            MainPage = new AppShell();
         }
         else
         {
@@ -139,8 +126,7 @@ public partial class App : Application
             SecureStorage.Default.Remove("mnemonics");
             SecureStorage.Default.Remove("password");
             Preferences.Remove("biometricsEnabled");
-            MainPage = new NavigationPage(new SetupPasswordPage());
+            MainPage = new SetupPasswordPage();
         }
-
     }
 }

@@ -116,6 +116,7 @@ namespace PlutoWallet.Model
         }
         public static async Task ReceivePayload(UnCheckedExtrinsic unCheckedExtrinsic, Substrate.NetApi.Model.Rpc.RuntimeVersion runtime)
         {
+            CancellationToken token = CancellationToken.None;
             Substrate.NetApi.Model.Extrinsics.Payload payload = unCheckedExtrinsic.GetPayload(runtime);
 
             string genesisHash = Utils.Bytes2HexString(payload.SignedExtension.Genesis).ToLower();
@@ -126,7 +127,7 @@ namespace PlutoWallet.Model
             {
                 EndpointEnum key = Endpoints.HashToKey[genesisHash];
 
-                var client = await AjunaClientModel.GetOrAddSubstrateClientAsync(key);
+                var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(key, token);
 
                 var signedExtensions = payload.SignedExtension;
 

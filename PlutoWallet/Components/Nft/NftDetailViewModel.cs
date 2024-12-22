@@ -146,7 +146,8 @@ namespace PlutoWallet.Components.Nft
         [RelayCommand]
         public async Task BuyAsync()
         {
-            var clientExt = await Model.AjunaClientModel.GetOrAddSubstrateClientAsync(Endpoint.Key);
+            CancellationToken token = CancellationToken.None;
+            var clientExt = await Model.SubstrateClientModel.GetOrAddSubstrateClientAsync(Endpoint.Key, token);
 
             var client = clientExt.SubstrateClient;
 
@@ -213,7 +214,8 @@ namespace PlutoWallet.Components.Nft
         [RelayCommand]
         private async Task BurnAsync()
         {
-            var clientExt = await Model.AjunaClientModel.GetOrAddSubstrateClientAsync(Endpoint.Key);
+            CancellationToken token = CancellationToken.None;
+            var clientExt = await Model.SubstrateClientModel.GetOrAddSubstrateClientAsync(Endpoint.Key, token);
 
             var client = clientExt.SubstrateClient;
 
@@ -223,7 +225,7 @@ namespace PlutoWallet.Components.Nft
 
                 var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();
 
-                await transactionAnalyzerConfirmationViewModel.LoadAsync(clientExt, transfer, false);
+                await transactionAnalyzerConfirmationViewModel.LoadAsync(clientExt, transfer, false, token: token);
             }
             catch (Exception ex)
             {

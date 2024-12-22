@@ -68,6 +68,8 @@ namespace PlutoWallet.Components.TransactionAnalyzer
         }
         public async Task LoadAsync(SubstrateClientExt client, TempUnCheckedExtrinsic unCheckedExtrinsic, bool showDAppView, Func<Task>? onConfirm = null, RuntimeVersion? runtimeVersion = null)
         {
+            CancellationToken token = CancellationToken.None;
+
             OnConfirm = onConfirm is null ? OnConfirmClickedAsync : onConfirm;
             var analyzedOutcomeViewModel = DependencyService.Get<AnalyzedOutcomeViewModel>();
 
@@ -152,7 +154,7 @@ namespace PlutoWallet.Components.TransactionAnalyzer
 
                     Console.WriteLine("XCM result received :)");
 
-                    var destionationClient = await AjunaClientModel.GetOrAddSubstrateClientAsync((EndpointEnum)xcmDestinationEndpointKey);
+                    var destionationClient = await SubstrateClientModel.GetOrAddSubstrateClientAsync((EndpointEnum)xcmDestinationEndpointKey, token);
 
                     if (!(xcmResult is null))
                     {
@@ -194,7 +196,7 @@ namespace PlutoWallet.Components.TransactionAnalyzer
             {
                 var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();
 
-                var clientExt = await Model.AjunaClientModel.GetOrAddSubstrateClientAsync(transactionAnalyzerConfirmationViewModel.Endpoint.Key);
+                var clientExt = await Model.SubstrateClientModel.GetOrAddSubstrateClientAsync(transactionAnalyzerConfirmationViewModel.Endpoint.Key, CancellationToken.None);
 
                 try
                 {
@@ -290,14 +292,15 @@ namespace PlutoWallet.Components.TransactionAnalyzer
         [RelayCommand]
         public async Task ExpandExtrinsicInfoAsync()
         {
+            CancellationToken token = CancellationToken.None;
+
             Console.WriteLine("Clicked on expand extrinsic info");
-            var methodUnified = PalletCallModel.GetMethodUnified(await AjunaClientModel.GetOrAddSubstrateClientAsync(Endpoint.Key), Payload.Call);
+            var methodUnified = PalletCallModel.GetMethodUnified(await SubstrateClientModel.GetOrAddSubstrateClientAsync(Endpoint.Key, token), Payload.Call);
 
             var viewModel = new CallDetailViewModel {
                 PalletCallName = methodUnified.PalletName + "." + methodUnified.EventName,
                 CallParameters = new ObservableCollection<EventParameter>(methodUnified.Parameters),
                 Endpoint = Endpoint,
-
             };
 
             await Application.Current.MainPage.Navigation.PushAsync(new CallDetailPage(viewModel));

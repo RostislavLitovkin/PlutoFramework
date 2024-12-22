@@ -34,7 +34,7 @@ namespace PlutoWallet.Components.AssetSelect
 
 			foreach(var valuePair in Model.AssetsModel.AssetsDict)
 			{
-				if (!AjunaClientModel.Clients.ContainsKey(valuePair.Key.Item1))
+				if (!SubstrateClientModel.Clients.ContainsKey(valuePair.Key.Item1))
 				{
 					continue;
 				}

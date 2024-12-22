@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using System.Collections.ObjectModel;
 using PlutoWallet.Model;
 using Substrate.NET.Wallet.Derivation;
+using PlutoWallet.ViewModel;
 
 namespace PlutoWallet.Components.NetworkSelect
 {
@@ -59,7 +60,7 @@ namespace PlutoWallet.Components.NetworkSelect
             UpdateNetworkInfos();
 
             // Update other views
-            Task changeChain = Model.AjunaClientModel.ChangeChainGroupAsync(selectedEndpointKeys);
+            Task changeChain = Model.SubstrateClientModel.ChangeClientGroupAsync(selectedEndpointKeys, CancellationToken.None);
         }
 
         public EndpointEnum SelectFirst()
@@ -86,7 +87,7 @@ namespace PlutoWallet.Components.NetworkSelect
 
             UpdateNetworkInfos();
 
-            Task change = Model.AjunaClientModel.ChangeChainAsync(selectedEndpointKey);
+            Task change = Model.SubstrateClientModel.ChangeMainSubstrateClientAsync(selectedEndpointKey, CancellationToken.None);
         }
 
         public void UpdateNetworkInfos()

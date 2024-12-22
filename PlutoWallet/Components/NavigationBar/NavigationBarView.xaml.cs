@@ -53,13 +53,7 @@ public partial class NavigationBarView : ContentView
             return;
         }
 
-        CancellationToken token = CancellationToken.None;
-
-        await Navigation.PopAsync();
-
-        /*var viewModel = DependencyService.Get<BasePageViewModel>();
-
-        viewModel.SetMainView();*/
+        await Shell.Current.GoToAsync("//MainPage");
     }
 
     async void OnNFTsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
@@ -69,15 +63,7 @@ public partial class NavigationBarView : ContentView
             return;
         }
 
-        CancellationToken token = CancellationToken.None;
-
-        await Navigation.PushAsync(new NftMainPage());
-
-        //await viewModel.GetNFTsAsync(KeysModel.GetSubstrateKey(), token);
-
-        /*var viewModel = DependencyService.Get<BasePageViewModel>();
-
-        viewModel.SetNftView();*/
+        await Shell.Current.GoToAsync("//NftMainPage");
     }
     
     async void OnTransferClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)

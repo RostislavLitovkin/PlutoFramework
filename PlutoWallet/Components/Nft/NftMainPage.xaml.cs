@@ -26,7 +26,7 @@ public partial class NftMainPage : ContentPage
 
         try
         {
-            var client = await AjunaClientModel.GetOrAddSubstrateClientAsync(Constants.EndpointEnum.Opal);
+            var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(Constants.EndpointEnum.Opal, token);
 
             var viewModel = new CollectionDetailViewModel();
 

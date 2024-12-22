@@ -13,7 +13,6 @@ using PlutoWallet.Components.AwesomeAjunaAvatars;
 using PlutoWallet.Components.Contract;
 using PlutoWallet.Components.AzeroId;
 using PlutoWallet.Components.HydraDX;
-using PlutoWallet.ViewModel;
 using PlutoWallet.Components.Identity;
 using PlutoWallet.Components.Referenda;
 using Substrate.NetApi.Model.Types.Base;
@@ -26,6 +25,7 @@ using PlutoWallet.Components.UpdateView;
 using PlutoWallet.Components.GalaxyLogicGame;
 using PlutoWallet.Components.PredefinedLayouts;
 using PlutoWallet.Components.Xcm;
+using PlutoWallet.View;
 
 namespace PlutoWallet.Model
 {
@@ -42,7 +42,7 @@ namespace PlutoWallet.Model
         // This constant is used to fetch all items
         public const string ALL_ITEMS = "plutolayout: [U, dApp, ExSL, UsdB, RnT, SubK, ChaK, " +
             "AAALeaderboard, AZEROPrimaryName, HDXOmniLiquidity, HDXDCA, id, Ref, contract, " +
-            "BMnR, NftG, VDot, GLGPowerups, xTrnsfr];[";
+            "BMnR, NftG, NftOG, NftFG, VDot, GLGPowerups, xTrnsfr];[";
 
         // EXTRA: StDash, AAASeasonCountdown, PubK, FeeA, CalEx
 
@@ -149,8 +149,7 @@ namespace PlutoWallet.Model
             // Save
             Preferences.Set("PlutoLayout", result);
 
-            var basePageViewModel = DependencyService.Get<BasePageViewModel>();
-            basePageViewModel.MainView.Setup();
+            MainPage.SetupLayout();
         }
 
         public static void SaveLayout(string layoutItemInfos)
@@ -159,8 +158,7 @@ namespace PlutoWallet.Model
 
             SaveEndpoints(layoutItemInfos);
 
-            var basePageViewModel = DependencyService.Get<BasePageViewModel>();
-            basePageViewModel.MainView.Setup();
+            MainPage.SetupLayout();
         }
 
         /**
@@ -358,7 +356,11 @@ namespace PlutoWallet.Model
                 case "RnT":
                     return new ReceiveAndTransferView();
                 case "NftG":
-                    return new NftGalleryView();
+                    return new NftFavouriteGalleryView();
+                case "NftOG":
+                    return new NftOwnedGalleryView();
+                case "NftFG":
+                    return new NftFavouriteGalleryView();
                 case "FeeA":
                     return new FeeAssetView();
                 case "VDot":
@@ -451,7 +453,11 @@ namespace PlutoWallet.Model
                 case "RnT":
                     return new ReceiveAndTransferView();
                 case "NftG":
-                    return new NftGalleryView();
+                    return new NftFavouriteGalleryView();
+                case "NftOG":
+                    return new NftOwnedGalleryView();
+                case "NftFG":
+                    return new NftFavouriteGalleryView();
                 case "FeeA":
                     return new FeeAssetView();
                 case "VDot":
@@ -588,6 +594,18 @@ namespace PlutoWallet.Model
                     {
                         Name = "Nft Galery",
                         PlutoLayoutId = "NftG",
+                    };
+                case "NftOG":
+                    return new LayoutItemInfo
+                    {
+                        Name = "Onwed Nfts Galery",
+                        PlutoLayoutId = "NftOG",
+                    };
+                case "NftFG":
+                    return new LayoutItemInfo
+                    {
+                        Name = "Favourite Nfts Galery",
+                        PlutoLayoutId = "NftFG",
                     };
                 case "FeeA":
                     return new LayoutItemInfo

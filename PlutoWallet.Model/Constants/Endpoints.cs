@@ -458,7 +458,7 @@ namespace PlutoWallet.Constants
                 {
                     Name = "Bifrost",
                     Key = EndpointEnum.Bifrost,
-                    URLs =  new string[3] { "wss://bifrost-polkadot.api.onfinality.io/public-ws", "wss://eu.bifrost-polkadot-rpc.liebi.com/ws", "wss://hk.p.bifrost-rpc.liebi.com/ws" /*"wss://bifrost-rpc.dwellir.com"*/ },
+                    URLs =  new string[3] { "wss://eu.bifrost-polkadot-rpc.liebi.com/ws", "wss://hk.p.bifrost-rpc.liebi.com/ws", "wss://bifrost-polkadot-rpc.dwellir.com" },
                     Icon = "bifrost.png",
                     DarkIcon = "bifrost.png",
                     SubscanChainName = "bifrost",

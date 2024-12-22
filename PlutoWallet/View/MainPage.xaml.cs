@@ -1,25 +1,62 @@
-﻿using PlutoWallet.ViewModel;
-using PlutoWallet.Components.UniversalScannerView;
 using Plutonication;
 using PlutoWallet.Components.MessagePopup;
-using PlutoWallet.Components.Vault;
-using Substrate.NetApi;
-using PlutoWallet.Components.TransferView;
-using PlutoWallet.Model;
+using PlutoWallet.Components.NetworkSelect;
 using PlutoWallet.Components.Settings;
+using PlutoWallet.Components.TransferView;
+using PlutoWallet.Components.UniversalScannerView;
+using PlutoWallet.Components.Vault;
+using PlutoWallet.Model;
+using PlutoWallet.ViewModel;
 
 namespace PlutoWallet.View;
 
-public partial class BasePage : ContentPage
+public partial class MainPage : ContentPage
 {
-	public BasePage()
-	{
+    public static IList<IView> Views => StackLayout.Children;
+    public static VerticalStackLayout StackLayout { get; set; }
+    public MainPage()
+    {
+
         NavigationPage.SetHasNavigationBar(this, false);
         Shell.SetNavBarIsVisible(this, false);
 
         InitializeComponent();
 
-        BindingContext = DependencyService.Get<BasePageViewModel>();
+        BindingContext = DependencyService.Get<MainViewModel>();
+
+        StackLayout = stackLayout;
+
+        SetupLayout();
+    }
+
+    public static void SetupLayout()
+    {
+        if (StackLayout.Children.Count() != 0)
+        {
+            StackLayout.Children.Clear();
+        }
+
+        List<IView> views = [];
+        try
+        {
+            views = Model.CustomLayoutModel.ParsePlutoLayout(Preferences.Get(
+                "PlutoLayout",
+                Model.CustomLayoutModel.DEFAULT_PLUTO_LAYOUT));
+        }
+        catch
+        {
+            views = Model.CustomLayoutModel.ParsePlutoLayout(Model.CustomLayoutModel.DEFAULT_PLUTO_LAYOUT);
+        }
+
+        foreach (IView view in views)
+        {
+            ((ContentView)view).Parent = null;
+            StackLayout.Children.Add(view);
+        }
+
+        // Load
+        var multiNetworkSelectViewModel = DependencyService.Get<MultiNetworkSelectViewModel>();
+        multiNetworkSelectViewModel.SetupDefault();
     }
 
     async void OnQRClicked(System.Object sender, System.EventArgs e)
@@ -79,11 +116,11 @@ public partial class BasePage : ContentPage
 
                     viewModel.GetFeeAsync();
                 }
-                else if (Utils.Bytes2HexString(e.Results[0].Raw).IndexOf("530102") != -1)
+                else if (Substrate.NetApi.Utils.Bytes2HexString(e.Results[0].Raw).IndexOf("530102") != -1)
                 {
                     var vaultSign = DependencyService.Get<VaultSignViewModel>();
 
-                    await vaultSign.SignExtrinsicAsync("0x" + Utils.Bytes2HexString(e.Results[0].Raw).Substring(Utils.Bytes2HexString(e.Results[0].Raw).IndexOf("530102") + 6));
+                    await vaultSign.SignExtrinsicAsync("0x" + Substrate.NetApi.Utils.Bytes2HexString(e.Results[0].Raw).Substring(Substrate.NetApi.Utils.Bytes2HexString(e.Results[0].Raw).IndexOf("530102") + 6));
                 }
                 else
                 {

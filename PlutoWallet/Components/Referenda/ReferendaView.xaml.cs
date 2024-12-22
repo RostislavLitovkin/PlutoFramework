@@ -1,12 +1,15 @@
-﻿namespace PlutoWallet.Components.Referenda;
+﻿using PlutoWallet.Model;
+using PlutoWallet.Model.SubSquare;
 
-public partial class ReferendaView : ContentView
+namespace PlutoWallet.Components.Referenda;
+
+public partial class ReferendaView : ContentView, ISubstrateClientLoadableAsyncView, ISetEmptyView
 {
 	public ReferendaView()
 	{
 		InitializeComponent();
 
-        BindingContext = DependencyService.Get<ReferendaViewModel>();
+        BindingContext = new ReferendaViewModel();
     }
 
     public ReferendaView(ReferendaViewModel viewModel)
@@ -14,5 +17,17 @@ public partial class ReferendaView : ContentView
         InitializeComponent();
 
         BindingContext = viewModel;
+    }
+
+    public async Task LoadAsync(PlutoWalletSubstrateClient client, CancellationToken token)
+    {
+        await ReferendumModel.GetReferendaAsync(client, KeysModel.GetSubstrateKey(), token).ConfigureAwait(false);
+
+        (BindingContext as ReferendaViewModel).UpdateReferenda();
+    }
+
+    public void SetEmpty()
+    {
+        (BindingContext as ReferendaViewModel).NoReferenda();
     }
 }

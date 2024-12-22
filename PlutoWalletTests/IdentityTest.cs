@@ -27,7 +27,7 @@ namespace PlutoWalletTests
         [Test]
         public async Task GetIdentityForAddressAsync()
         {
-            var identity = await IdentityModel.GetIdentityForAddressAsync((PolkadotPeople.NetApi.Generated.SubstrateClientExt)client.SubstrateClient, substrateAddress);
+            var identity = await IdentityModel.GetIdentityForAddressAsync((PolkadotPeople.NetApi.Generated.SubstrateClientExt)client.SubstrateClient, substrateAddress, CancellationToken.None);
 
             Assert.That(identity.DisplayName == "Rosta");
             Assert.That(identity.FinalJudgement, Is.EqualTo(Judgement.Reasonable));

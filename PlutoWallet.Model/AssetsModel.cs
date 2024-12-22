@@ -8,10 +8,7 @@ using PlutoWallet.Types;
 using PlutoWallet.Constants;
 using Bifrost.NetApi.Generated.Model.orml_tokens;
 using Substrate.NetApi.Model.Types.Primitive;
-using Bifrost.NetApi.Generated.Model.bifrost_asset_registry.pallet;
-
 using AssetKey = (PlutoWallet.Constants.EndpointEnum, PlutoWallet.Types.AssetPallet, System.Numerics.BigInteger);
-using AssetMetadata = PlutoWallet.Types.AssetMetadata;
 
 namespace PlutoWallet.Model
 {
@@ -21,7 +18,7 @@ namespace PlutoWallet.Model
 
         public static double UsdSum = 0.0;
 
-        public static Dictionary<AssetKey, Asset> AssetsDict = new System.Collections.Generic.Dictionary<AssetKey, Asset>();
+        public static Dictionary<AssetKey, Asset> AssetsDict = new Dictionary<AssetKey, Asset>();
 
         public static IEnumerable<Asset> GetAssetsWithSymbol(string symbol)
         {
@@ -29,18 +26,21 @@ namespace PlutoWallet.Model
                      .Where(asset => asset.Symbol.Equals(symbol, StringComparison.Ordinal));
         }
 
-
-        public static async Task GetBalanceAsync(SubstrateClientExt client, string substrateAddress, CancellationToken token = default)
+        public static async Task GetBalanceAsync(SubstrateClientExt client, string substrateAddress, CancellationToken token, bool forceReload = false)
         {
+            if (AssetsDict.ContainsKey((client.Endpoint.Key, AssetPallet.Native, 0)) && forceReload)
+            {
+                return;
+            }
+
             if (doNotReload)
             {
                 return;
             }
 
-            double usdSumValue = 0;
-
             var endpoint = client.Endpoint;
 
+            // Skip non-substrate chains, as they are not supported at the moment
             if (endpoint.ChainType != PlutoWallet.Constants.ChainType.Substrate)
             {
                 /*tempAssets.Add(new Asset
@@ -94,7 +94,6 @@ namespace PlutoWallet.Model
 
             try
             {
-                
                 foreach ((BigInteger, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetDetails, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetAccount) asset in await GetPolkadotAssetHubAssetsAsync(client.SubstrateClient, substrateAddress, 1000, CancellationToken.None))
                 {
                     var symbol = Model.ToStringModel.VecU8ToString(asset.Item3.Symbol.Value);

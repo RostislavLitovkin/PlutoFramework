@@ -17,22 +17,21 @@ namespace PlutoWallet.Components.Identity
 
         public IdentityViewModel()
 		{
+            name = "Loading";
+
             verificationIconIsVisible = false;
 		}
 
-        public async Task GetIdentity(PolkadotPeople.NetApi.Generated.SubstrateClientExt client)
+        public async Task GetIdentityAsync(PolkadotPeople.NetApi.Generated.SubstrateClientExt client, CancellationToken token)
         {
             if (client is null)
             {
-                Name = "Failed";
-
                 return;
             }
 
-            Name = "Loading";
             VerificationIconIsVisible = false;
 
-            var identity = await IdentityModel.GetIdentityForAddressAsync(client, KeysModel.GetSubstrateKey());
+            var identity = await IdentityModel.GetIdentityForAddressAsync(client, KeysModel.GetSubstrateKey(), token);
 
             if (identity == null)
             {
@@ -86,6 +85,16 @@ namespace PlutoWallet.Components.Identity
                     break;
             }
         }
-	}
+
+        public void SetEmpty()
+        {
+            if (Name != "Loading")
+            {
+                return;
+            }
+
+            Name = "None";
+        }
+    }
 }
 

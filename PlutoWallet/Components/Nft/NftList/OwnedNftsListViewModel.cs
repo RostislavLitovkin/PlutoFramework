@@ -60,8 +60,7 @@ namespace PlutoWallet.Components.Nft
 
                         var uniqueryNftEnumerable = UniqueryPlus.Nfts.NftModel.GetNftsOwnedByAsync(
                             [(await completedClientTask.ConfigureAwait(false)).SubstrateClient],
-                            /*KeysModel.GetSubstrateKey()*/
-                            "5EU6EyEq6RhqYed1gCYyQRVttdy6FC9yAtUUGzPe3gfpFX8y",
+                            KeysModel.GetSubstrateKey(),
                             limit: LIMIT
                         );
 
@@ -82,7 +81,7 @@ namespace PlutoWallet.Components.Nft
         {
             Loading = true;
 
-            clientTasks = AjunaClientModel.Clients.Values.Where(_client => true).Select(client => client.Task).ToList();
+            clientTasks = SubstrateClientModel.Clients.Values.ToList();
 
             await LoadSavedNftsAsync().ConfigureAwait(false);
 
@@ -94,7 +93,7 @@ namespace PlutoWallet.Components.Nft
         private async Task LoadSavedNftsAsync()
         {
             // Not favourite, owned Nfts
-            foreach (var savedNft in await NftDatabase.GetNftsOwnedByAsync(/*KeysModel.GetSubstrateKey()*/ "5EU6EyEq6RhqYed1gCYyQRVttdy6FC9yAtUUGzPe3gfpFX8y").ConfigureAwait(false))
+            foreach (var savedNft in await NftDatabase.GetNftsOwnedByAsync(KeysModel.GetSubstrateKey()).ConfigureAwait(false))
             {
                 if (savedNft.Key is not null && !ItemsDict.ContainsKey((NftKey)savedNft.Key))
                 {

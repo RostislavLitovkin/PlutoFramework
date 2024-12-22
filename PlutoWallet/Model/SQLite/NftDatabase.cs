@@ -21,7 +21,7 @@ namespace PlutoWallet.Model.SQLite
         {
             var endpointKey = NftModel.GetEndpointKey(Type);
 
-            var client = await AjunaClientModel.GetOrAddSubstrateClientAsync(endpointKey);
+            var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(endpointKey, token);
 
             return await UniqueryPlus.Collections.CollectionModel.GetCollectionByCollectionIdAsync(client.SubstrateClient, Type, (uint)CollectionId, token).ConfigureAwait(false);
         }
@@ -29,7 +29,7 @@ namespace PlutoWallet.Model.SQLite
         {
             var endpointKey = NftModel.GetEndpointKey(Type);
 
-            var client = await AjunaClientModel.GetOrAddSubstrateClientAsync(endpointKey);
+            var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(endpointKey, token);
 
             var nft = await UniqueryPlus.Nfts.NftModel.GetNftByIdAsync(client.SubstrateClient, Type, (uint)CollectionId, (uint)Id, token).ConfigureAwait(false);
 

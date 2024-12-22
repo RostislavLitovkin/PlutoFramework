@@ -10,8 +10,6 @@ namespace PlutoWallet.ViewModel
 {
 	public partial class BasePageViewModel : ObservableObject
 	{
-        public MainView MainView = new MainView();
-
         private CancellationTokenSource nftsCancellationTokenSource;
 
         [ObservableProperty]
@@ -19,8 +17,6 @@ namespace PlutoWallet.ViewModel
 
 		public BasePageViewModel()
 		{
-			content = MainView;
-
             Console.WriteLine("Calling BasePageViewModel constructor.");
 
             var networkViewModel = DependencyService.Get<MultiNetworkSelectViewModel>();
@@ -46,7 +42,7 @@ namespace PlutoWallet.ViewModel
                 DependencyService.Get<NftLoadingViewModel>().IsVisible = false;
             }
             
-            Content = MainView;
+            //Content = MainView;
 
             Console.WriteLine("SetMainView() -> Calling MultiNetworkSelectViewModel.SetupDefault()");
 

@@ -6,6 +6,7 @@ using PlutoWallet.Types;
 using PlutoWallet.Constants;
 using PlutoWallet.Components.TransactionAnalyzer;
 using Microsoft.Maui.Controls.PlatformConfiguration;
+using PlutoWallet.Components.NetworkSelect;
 
 namespace PlutoWallet.Components.TransferView;
 
@@ -28,7 +29,7 @@ public partial class TransferView : ContentView
 
         errorLabel.Text = "";
 
-        var clientExt = await Model.AjunaClientModel.GetMainClientAsync();
+        var clientExt = await Model.SubstrateClientModel.GetMainSubstrateClientAsync(CancellationToken.None);
 
         var client = clientExt.SubstrateClient;
 
@@ -83,7 +84,7 @@ public partial class TransferView : ContentView
         {
             var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();
 
-            var clientExt = await Model.AjunaClientModel.GetOrAddSubstrateClientAsync(transactionAnalyzerConfirmationViewModel.Endpoint.Key);
+            var clientExt = await Model.SubstrateClientModel.GetOrAddSubstrateClientAsync(transactionAnalyzerConfirmationViewModel.Endpoint.Key, CancellationToken.None);
 
             try
             {

@@ -41,7 +41,7 @@ namespace PlutoWallet.Components.Vault
 
         public async Task SignExtrinsicAsync(string encodedBytes)
         {
-            var clientExt = await Model.AjunaClientModel.GetMainClientAsync();
+            var clientExt = await Model.SubstrateClientModel.GetMainSubstrateClientAsync(CancellationToken.None);
             var client = clientExt.SubstrateClient;
 
             if (!client.IsConnected)

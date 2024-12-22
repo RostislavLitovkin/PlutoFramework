@@ -1,12 +1,27 @@
-﻿namespace PlutoWallet.Components.CalamarView;
+﻿using PlutoWallet.Model;
 
-public partial class CalamarView : ContentView
+namespace PlutoWallet.Components.CalamarView;
+
+public partial class CalamarView : ContentView, ISubstrateClientLoadableView
 {
     public CalamarView()
 	{
 		InitializeComponent();
 
         BindingContext = DependencyService.Get<CalamarViewModel>();
+    }
+
+    public void Load(PlutoWalletSubstrateClient client)
+    {
+        var viewModel = (CalamarViewModel)BindingContext;
+        string address = KeysModel.GetPublicKey();
+
+        if (client.Endpoint.CalamarChainName == null)
+        {
+            // Not supported
+        }
+
+        viewModel.WebAddress = "https://calamar.app/" + client.Endpoint.CalamarChainName + "/account/" + address;
     }
 
     void OnReloadClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)

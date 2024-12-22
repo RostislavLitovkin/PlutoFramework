@@ -9,7 +9,7 @@ using Polkadot.NetApi.Generated.Model.sp_weights.weight_v2;
 
 namespace PlutoWallet.Components.Contract;
 
-public partial class ContractView : ContentView
+public partial class ContractView : ContentView, ISubstrateClientLoadableAsyncView
 {
 	public ContractView()
 	{
@@ -17,9 +17,12 @@ public partial class ContractView : ContentView
 
 	}
 
-	private async Task Setup()
+	public async Task LoadAsync(PlutoWalletSubstrateClient client, CancellationToken token)
 	{
-        var client = await Model.AjunaClientModel.GetMainClientAsync();
+        if (client.Endpoint.Key != Constants.EndpointEnum.AzeroTestnet)
+        {
+            return;
+        }
 
         try
         {
@@ -88,12 +91,9 @@ public partial class ContractView : ContentView
             byteArray.AddRange(storageDepositLimitParam.Encode());
             byteArray.AddRange(dataParam.Encode());
 
-            var client = await Model.AjunaClientModel.GetMainClientAsync();
+            var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(Constants.EndpointEnum.AzeroTestnet, CancellationToken.None).ConfigureAwait(false);
 
             var (palletIndex, callIndex) = PalletCallModel.GetPalletAndCallIndex(client, "Contracts", "call");
-
-
-
 
             Method transfer = new Method(palletIndex, "Contracts", callIndex, "call", byteArray.ToArray());
 
@@ -116,7 +116,7 @@ public partial class ContractView : ContentView
 
     async void OnReloadClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
-        await Setup();
+        await LoadAsync(await SubstrateClientModel.GetOrAddSubstrateClientAsync(Constants.EndpointEnum.AzeroTestnet, CancellationToken.None).ConfigureAwait(false), CancellationToken.None);
     }
 }
 

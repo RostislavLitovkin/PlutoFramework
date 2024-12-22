@@ -52,11 +52,12 @@ namespace PlutoWallet.Components.Nft
         [RelayCommand]
         public async Task SellAsync()
         {
+            CancellationToken token = CancellationToken.None;
             // Send the actual transaction
 
             ErrorMessage = "";
 
-            var clientExt = await Model.AjunaClientModel.GetOrAddSubstrateClientAsync(Endpoint.Key);
+            var clientExt = await Model.SubstrateClientModel.GetOrAddSubstrateClientAsync(Endpoint.Key, token);
 
             var client = clientExt.SubstrateClient;
 
@@ -111,7 +112,7 @@ namespace PlutoWallet.Components.Nft
         {
             Fee = "Estimated fee: Loading";
 
-            var client = await Model.AjunaClientModel.GetOrAddSubstrateClientAsync(endpointKey);
+            var client = await Model.SubstrateClientModel.GetOrAddSubstrateClientAsync(endpointKey, CancellationToken.None);
             if (client is null || !await client.IsConnectedAsync() || nftBase is not INftSellable)
             {
                 Fee = "Estimated fee: Failed";

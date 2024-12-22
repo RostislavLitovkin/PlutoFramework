@@ -11,7 +11,6 @@ using System.Collections.ObjectModel;
 using System.Numerics;
 using UniqueryPlus.Collections;
 using UniqueryPlus.Metadata;
-using UniqueryPlus.Nfts;
 
 namespace PlutoWallet.Components.Nft
 {
@@ -28,7 +27,7 @@ namespace PlutoWallet.Components.Nft
         public string Description => CollectionBase.Metadata?.Description ?? "";
         public string Image => CollectionBase.Metadata?.Image ?? "";
         public ObservableCollection<MetadataAttribute> Attributes => new ObservableCollection<MetadataAttribute>(CollectionBase.Metadata?.Attributes ?? []);
-        public bool AttributesIsVisible => CollectionBase.Metadata.Attributes is not null && CollectionBase.Metadata.Attributes.Length > 0;
+        public bool AttributesIsVisible => CollectionBase.Metadata?.Attributes is not null && CollectionBase.Metadata.Attributes.Length > 0;
 
         [ObservableProperty]
         private ObservableCollection<NftWrapper> nfts = new ObservableCollection<NftWrapper>();
@@ -133,7 +132,8 @@ namespace PlutoWallet.Components.Nft
         [RelayCommand]
         public async Task ClaimAsync()
         {
-            var clientExt = await Model.AjunaClientModel.GetOrAddSubstrateClientAsync(Endpoint.Key);
+            CancellationToken token = CancellationToken.None;
+            var clientExt = await Model.SubstrateClientModel.GetOrAddSubstrateClientAsync(Endpoint.Key, token);
 
             var client = clientExt.SubstrateClient;
 
@@ -149,7 +149,7 @@ namespace PlutoWallet.Components.Nft
 
                 var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();
 
-                await transactionAnalyzerConfirmationViewModel.LoadAsync(clientExt, claim, false);
+                await transactionAnalyzerConfirmationViewModel.LoadAsync(clientExt, claim, false, token: token);
             }
             catch (Exception ex)
             {

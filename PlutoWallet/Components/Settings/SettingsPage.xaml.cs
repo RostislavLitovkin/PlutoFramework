@@ -25,9 +25,9 @@ public partial class SettingsPage : ContentPage
         SecureStorage.Default.Remove("password");
         Preferences.Remove("biometricsEnabled");
 
-        Navigation.InsertPageBefore(new SetupPasswordPage(), Navigation.NavigationStack[0]);
+        // Delete Local SQLite databases
 
-        await Navigation.PopToRootAsync();
+        Application.Current.MainPage = new SetupPasswordPage();
     }
 
     async void OnDeveloperSettingsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)

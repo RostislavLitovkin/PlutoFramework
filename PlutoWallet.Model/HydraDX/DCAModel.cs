@@ -10,8 +10,8 @@ namespace PlutoWallet.Model.HydraDX
 {
 	public class DCAModel
 	{
-        private const long TICKS_PER_BLOCK = 12_0000000; // 12 seconds
-        public static async Task<List<DCAPosition>> GetDCAPositions(SubstrateClientExt client, string substrateAddress)
+        private const long TICKS_PER_BLOCK = 6_0000000; // 12 seconds
+        public static async Task<List<DCAPosition>> GetDCAPositionsAsync(SubstrateClientExt client, string substrateAddress, CancellationToken token)
         {
             var account32 = new AccountId32();
             account32.Create(Utils.GetPublicKeyFrom(substrateAddress));
@@ -26,7 +26,7 @@ namespace PlutoWallet.Model.HydraDX
 
             List<U32> positionIds;
 
-            var keysPaged = await client.State.GetKeysPagedAsync(prefix, 1000, startKey, string.Empty, CancellationToken.None);
+            var keysPaged = await client.State.GetKeysPagedAsync(prefix, 1000, startKey, string.Empty, token);
 
             if (keysPaged == null || !keysPaged.Any())
             {
@@ -42,22 +42,22 @@ namespace PlutoWallet.Model.HydraDX
             foreach (U32 positionId in positionIds)
             {
 
-                var schedule = await client.DCAStorage.Schedules(positionId, null, CancellationToken.None);
+                var schedule = await client.DCAStorage.Schedules(positionId, null, token);
 
                 if (schedule.Order.Value.ToString() != "Sell")
                 {
                     continue;
                 }
 
-                U128 amount = await client.DCAStorage.RemainingAmounts(positionId, null, CancellationToken.None);
+                U128 amount = await client.DCAStorage.RemainingAmounts(positionId, null, token);
 
                 int i = 0;
                 var scheduleOrder = new BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9>();
                 scheduleOrder.Decode(schedule.Order.Value2.Encode(), ref i);
 
-                var fromAsset = await client.AssetRegistryStorage.Assets((U32)scheduleOrder.Value[0], null, CancellationToken.None);
+                var fromAsset = await client.AssetRegistryStorage.Assets((U32)scheduleOrder.Value[0], null, token);
 
-                var toAsset = await client.AssetRegistryStorage.Assets((U32)scheduleOrder.Value[1], null, CancellationToken.None);
+                var toAsset = await client.AssetRegistryStorage.Assets((U32)scheduleOrder.Value[1], null, token);
 
                 // Get the time left for the DCA order
                 BigInteger times = (schedule.TotalAmount.Value - amount.Value) / ((U128)scheduleOrder.Value[2]).Value + 1;

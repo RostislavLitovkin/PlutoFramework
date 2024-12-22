@@ -20,32 +20,39 @@
                                             Endpoint="{Binding Endpoint}"
                                             Favourite="{Binding Favourite}"/>
                     </DataTemplate>
-                
+
                 </BindableLayout.ItemTemplate>
 
             </HorizontalStackLayout>
 
-            <customlayouts:PlusItemView HeightRequest="200"
-                                        WidthRequest="200"
-                                        x:Name="plusButton"
-                                        IsVisible="False">
-                <customlayouts:PlusItemView.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnPlusClicked" />
-
-                </customlayouts:PlusItemView.GestureRecognizers>
-
-            </customlayouts:PlusItemView>
-
             <customlayouts:LoadingItemView HeightRequest="200"
                                            WidthRequest="200"
                                            x:Name="loadingItem"
-                                           IsVisible="True"/>
+                                           IsVisible="True" />
 
             <customlayouts:ErrorItemView HeightRequest="200"
                                          WidthRequest="200"
                                          ErrorText="Bad Internet connection"
                                          x:Name="errorItem"
                                          IsVisible="False"/>
+
+            <customlayouts:TransparentItemView HeightRequest="200"
+                                               WidthRequest="200"
+                                               Text="No NFTs"
+                                               x:Name="noNftsItem"
+                                               IsVisible="False" />
+
+            <customlayouts:PlusItemView HeightRequest="200"
+                            WidthRequest="200"
+                            x:Name="plusButton"
+                            IsVisible="False">
+                <customlayouts:PlusItemView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPlusClicked" />
+
+                </customlayouts:PlusItemView.GestureRecognizers>
+
+            </customlayouts:PlusItemView>
+            
         </HorizontalStackLayout>
     </ScrollView>
 </ContentView>

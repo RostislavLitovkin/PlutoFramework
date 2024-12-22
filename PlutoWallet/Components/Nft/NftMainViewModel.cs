@@ -4,7 +4,6 @@ using System.Collections.ObjectModel;
 using UniqueryPlus;
 using Microsoft.VisualStudio.Threading;
 using PlutoWallet.Model.SQLite;
-
 using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
 using CollectionKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger);
 using SubstrateClientExt = PlutoWallet.Model.AjunaExt.SubstrateClientExt;
@@ -120,7 +119,7 @@ namespace PlutoWallet.Components.Nft
 
                 DatabaseLoading = false;
 
-                clientTasks = AjunaClientModel.Clients.Values.Where(_client => true).Select(client => client.Task).ToList();
+                clientTasks = SubstrateClientModel.Clients.Values.ToList();
 
                 while (clientTasks.Count() > 0)
                 {

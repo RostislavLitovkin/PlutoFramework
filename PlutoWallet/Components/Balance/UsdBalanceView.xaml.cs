@@ -1,9 +1,11 @@
 ﻿
 using PlutoWallet.Model;
+using PlutoWallet.Model.HydraDX;
+using Substrate.NetApi;
 
 namespace PlutoWallet.Components.Balance;
 
-public partial class UsdBalanceView : ContentView
+public partial class UsdBalanceView : ContentView, ISubstrateClientLoadableAsyncView, ISetEmptyView
 {
 	public UsdBalanceView()
 	{
@@ -12,29 +14,23 @@ public partial class UsdBalanceView : ContentView
         BindingContext = DependencyService.Get<UsdBalanceViewModel>();
     }
 
-    async void OnReloadClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
+    public async Task LoadAsync(PlutoWalletSubstrateClient client, CancellationToken token)
     {
-        Console.WriteLine
-            ("Reload clicked");
-        var usdBalanceViewModel = DependencyService.Get<UsdBalanceViewModel>();
-
-        usdBalanceViewModel.UsdSum = "Loading";
-
-        usdBalanceViewModel.ReloadIsVisible = false;
-
-        Console.WriteLine
-    ("Reload ...");
-        foreach (var client in Model.AjunaClientModel.Clients.Values)
+        if (client is not null && client.Endpoint.Key == Constants.EndpointEnum.Hydration && client.SubstrateClient.IsConnected && Sdk.AssetsById.Count() == 0)
         {
-            await Model.AssetsModel.GetBalanceAsync(await client.Task, KeysModel.GetSubstrateKey());
-
-            usdBalanceViewModel.UpdateBalances();
+            await Sdk.GetAssetsAsync((Hydration.NetApi.Generated.SubstrateClientExt)client.SubstrateClient, token);
         }
 
+        await Model.AssetsModel.GetBalanceAsync(client, KeysModel.GetSubstrateKey(), token, false);
 
-        usdBalanceViewModel.ReloadIsVisible = true;
-        Console.WriteLine
-    ("Reload Done");
+        var viewModel = (UsdBalanceViewModel)BindingContext;
+        viewModel.UpdateBalances();
+    }
+
+    public void SetEmpty()
+    {
+        var viewModel = (UsdBalanceViewModel)BindingContext;
+        viewModel.ReloadIsVisible = true;
     }
 }
 

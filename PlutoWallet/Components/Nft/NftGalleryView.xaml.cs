@@ -15,41 +15,7 @@ public partial class NftGalleryView : ContentView
         {
             var control = (NftGalleryView)bindable;
 
-            Console.WriteLine("Received new featured Nfts");
-
             BindableLayout.SetItemsSource(control.horizontalStackLayout, (ObservableCollection<NftWrapper>)newValue);
-
-            /*try
-            {
-                var collection = (ObservableCollection<NftWrapper>)newValue;
-
-                foreach (var nftWrapper in collection)
-                {
-                    if (nftWrapper.Key.HasValue && !nftsDict.ContainsKey(nftWrapper.Key.Value))
-                    {
-                        nftsDict.Add(nftWrapper.Key.Value, nftWrapper);
-
-                        control.horizontalStackLayout.Children.Add(new NftPictureView
-                        {
-                            HeightRequest = 200,
-                            WidthRequest = 200,
-                            NftBase = nftWrapper.NftBase,
-                            Favourite = nftWrapper.Favourite,
-                            Endpoint = nftWrapper.Endpoint
-                        });
-
-                        Console.WriteLine("Just added featured nft: " + nftWrapper.NftBase.Metadata.Name);
-
-                    }
-                }
-
-                Console.WriteLine("ItemsSource set: " + collection.Count());
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Setting Gallery View failed:");
-                Console.WriteLine(ex);
-            }*/
         });
 
     public static readonly BindableProperty PlusIsVisibleProperty = BindableProperty.Create(
@@ -81,11 +47,29 @@ public partial class NftGalleryView : ContentView
 
           control.errorItem.IsVisible = (bool)newValue;
       });
+
+    public static readonly BindableProperty NoNftsIsVisibleProperty = BindableProperty.Create(
+      nameof(NoNftsIsVisible), typeof(bool), typeof(NftGalleryView),
+      defaultBindingMode: BindingMode.TwoWay,
+      propertyChanging: (bindable, oldValue, newValue) =>
+      {
+          var control = (NftGalleryView)bindable;
+
+          control.noNftsItem.IsVisible = (bool)newValue;
+      });
+
+    public static readonly BindableProperty NoNftsTextProperty = BindableProperty.Create(
+      nameof(NoNftsText), typeof(string), typeof(NftGalleryView),
+      defaultBindingMode: BindingMode.TwoWay,
+      propertyChanging: (bindable, oldValue, newValue) =>
+      {
+          var control = (NftGalleryView)bindable;
+
+          control.noNftsItem.Text = (string)newValue;
+      });
     public NftGalleryView()
     {
         InitializeComponent();
-
-        //BindingContext = DependencyService.Get<NftGalleryViewModel>();
     }
     public ObservableCollection<NftWrapper> Nfts
     {
@@ -109,6 +93,16 @@ public partial class NftGalleryView : ContentView
     {
         get => (bool)GetValue(ErrorIsVisibleProperty);
         set => SetValue(ErrorIsVisibleProperty, value);
+    }
+    public bool NoNftsIsVisible
+    {
+        get => (bool)GetValue(NoNftsIsVisibleProperty);
+        set => SetValue(NoNftsIsVisibleProperty, value);
+    }
+    public string NoNftsText
+    {
+        get => (string)GetValue(NoNftsTextProperty);
+        set => SetValue(NoNftsTextProperty, value);
     }
     void OnPlusClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {

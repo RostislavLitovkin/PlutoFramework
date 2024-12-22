@@ -17,7 +17,7 @@ namespace PlutoWallet.Model.HydraDX
         public static Dictionary<uint, HydraDXTokenInfo> AssetsById = new Dictionary<uint, HydraDXTokenInfo>();
 
 
-        public static async Task<Dictionary<string, HydraDXTokenInfo>> GetAssets(SubstrateClientExt client, CancellationToken token)
+        public static async Task<Dictionary<string, HydraDXTokenInfo>> GetAssetsAsync(SubstrateClientExt client, CancellationToken token)
         {
             if (client is null)
             {

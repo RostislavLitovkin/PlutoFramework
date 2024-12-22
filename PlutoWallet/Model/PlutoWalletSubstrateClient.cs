@@ -37,8 +37,8 @@ namespace PlutoWallet.Model
                     var selectedEndpointKey = multiNetworkSelectViewModel.SelectFirst();
 
                     multiNetworkSelectViewModel.UpdateNetworkInfos();
-
-                    Task change = Model.AjunaClientModel.ChangeChainAsync(selectedEndpointKey);
+                    
+                    Task change = Model.SubstrateClientModel.ChangeMainSubstrateClientAsync(selectedEndpointKey, CancellationToken.None);
                 }
             }
 
