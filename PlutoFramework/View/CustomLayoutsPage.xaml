@@ -37,11 +37,11 @@
                                  HorizontalOptions="Center"
                                  Spacing="5"
                                  ZIndex="10"
-                                 BindableLayout.ItemsSource="{Binding LayoutItemInfos}">
+                                 BindableLayout.ItemsSource="{Binding ComponentInfos}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <customlayouts:CustomLayoutItemDragger ItemName="{Binding Name}"
-                                                                   PlutoLayoutId="{Binding PlutoLayoutId}"/>
+                                                                   ComponentId="{Binding ComponentId}"/>
 
                         </DataTemplate>
 
@@ -68,7 +68,7 @@
             <VerticalStackLayout HorizontalOptions="Center"
                                  Margin="0, 61, 0, 100"
                                  Spacing="5"
-                                 BindableLayout.ItemsSource="{Binding LayoutItemInfos}"
+                                 BindableLayout.ItemsSource="{Binding ComponentInfos}"
                                  x:Name="draggerStackLayout">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>

@@ -1,4 +1,5 @@
-﻿using PlutoFramework.View;
+﻿using PlutoFramework.Model;
+using PlutoFramework.View;
 
 namespace PlutoFramework.Components.Mnemonics;
 
@@ -15,7 +16,7 @@ public partial class BackupMnemonicsReminderView : ContentView
         {
             await Navigation.PushAsync(new MnemonicsPage(secretValues));
 
-            Model.CustomLayoutModel.RemoveItemFromSavedLayout("BMnR");
+            Model.CustomLayoutModel.RemoveComponentFromSavedLayout(ComponentId.BMnR);
         }
     }
 }

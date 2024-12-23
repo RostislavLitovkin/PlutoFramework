@@ -65,8 +65,6 @@ public partial class App : Application
 
         DependencyService.Register<StakingDashboardViewModel>();
 
-        DependencyService.Register<UsdBalanceViewModel>();
-
         DependencyService.Register<CalamarViewModel>();
 
         DependencyService.Register<ExtrinsicStatusStackViewModel>();

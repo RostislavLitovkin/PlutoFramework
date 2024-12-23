@@ -1,10 +1,7 @@
-﻿using System;
-using PlutoFramework.Components.Balance;
+﻿using PlutoFramework.Components.Balance;
 using PlutoFramework.Components.AddressView;
 using PlutoFramework.Components.DAppConnectionView;
 using PlutoFramework.Components.Extrinsic;
-using PlutoFramework.Components.CalamarView;
-using PlutoFramework.Components.Staking;
 using System.Collections.ObjectModel;
 using PlutoFramework.Components.MessagePopup;
 using PlutoFramework.Constants;
@@ -15,11 +12,9 @@ using PlutoFramework.Components.AzeroId;
 using PlutoFramework.Components.HydraDX;
 using PlutoFramework.Components.Identity;
 using PlutoFramework.Components.Referenda;
-using Substrate.NetApi.Model.Types.Base;
 using PlutoFramework.Components.Mnemonics;
 using PlutoFramework.Components.Buttons;
 using PlutoFramework.Components.Nft;
-using PlutoFramework.Components.Fee;
 using PlutoFramework.Components.VTokens;
 using PlutoFramework.Components.UpdateView;
 using PlutoFramework.Components.GalaxyLogicGame;
@@ -29,20 +24,43 @@ using PlutoFramework.View;
 
 namespace PlutoFramework.Model
 {
-    public class LayoutItemInfo
+    public class ComponentInfo
     {
         public string Name { get; set; }
-        public string PlutoLayoutId { get; set; }
+        public ComponentId ComponentId { get; set; }
+    }
+
+    public enum ComponentId
+    {
+        U,
+        dApp,
+        ExSL,
+        UsdB,
+        RnT,
+        SubK,
+        ChaK,
+        AAALeaderboard,
+        AZEROPrimaryName,
+        HDXOmniLiquidity,
+        HDXDCA,
+        id,
+        Ref,
+        contract,
+        BMnR,
+        NftG,
+        NftOG,
+        NftFG,
+        VDot,
+        GLGPowerups,
+        xTrnsfr,
     }
 
     public class CustomLayoutModel
     {
         public const string DEFAULT_PLUTO_LAYOUT = "plutolayout: [U, dApp, BMnR, ExSL, UsdB, RnT, SubK, ChaK];[Polkadot, Kusama]";
 
-        // This constant is used to fetch all items
-        public const string ALL_ITEMS = "plutolayout: [U, dApp, ExSL, UsdB, RnT, SubK, ChaK, " +
-            "AAALeaderboard, AZEROPrimaryName, HDXOmniLiquidity, HDXDCA, id, Ref, contract, " +
-            "BMnR, NftG, NftOG, NftFG, VDot, GLGPowerups, xTrnsfr];[";
+        // This constant is used to fetch all components
+        public static string AllComponentsString = $"plutolayout: [{string.Join(",", Enum.GetValues(typeof(ComponentId)))}];[";
 
         // EXTRA: StDash, AAASeasonCountdown, PubK, FeeA, CalEx
 
@@ -53,9 +71,9 @@ namespace PlutoFramework.Model
                 throw new Exception("Could not parse the PlutoLayout");
             }
 
-            string[] itemsAndNetworksStrings = plutoLayoutString.Split(";");
+            string[] componentsAndNetworksStrings = plutoLayoutString.Split(";");
 
-            string[] layoutEndpointKeys = itemsAndNetworksStrings[1].Trim(new char[] { '[', ']' }).Split(',');
+            string[] layoutEndpointKeys = componentsAndNetworksStrings[1].Trim(new char[] { '[', ']' }).Split(',');
 
             List<Endpoint> result = new List<Endpoint>();
 
@@ -68,7 +86,7 @@ namespace PlutoFramework.Model
         }
 
         public static List<IView> ParsePlutoLayout(string plutoLayoutString)
-		{
+        {
             if (plutoLayoutString.Substring(0, 13) != "plutolayout: ")
             {
                 throw new Exception("Could not parse the PlutoLayout");
@@ -85,19 +103,19 @@ namespace PlutoFramework.Model
                 return result;
             }
 
-            string[] itemsAndNetworksStrings = plutoLayoutString.Split(";");
+            string[] componentsAndNetworksStrings = plutoLayoutString.Split(";");
 
-            string[] layoutItemStrings = itemsAndNetworksStrings[0].Trim(new char[] { '[', ']' }).Split(',');
+            string[] componentStrings = componentsAndNetworksStrings[0].Trim(new char[] { '[', ']' }).Split(',');
 
-            foreach (string item in layoutItemStrings)
+            foreach (string component in componentStrings)
             {
-                result.Add(GetItem(item.Trim()));
+                result.Add(GetView((ComponentId)Enum.Parse(typeof(ComponentId), component.Trim())));
             }
 
             return result;
         }
 
-        public static ObservableCollection<LayoutItemInfo> ParsePlutoLayoutItemInfos(string plutoLayoutString)
+        public static ObservableCollection<ComponentInfo> ParsePlutoComponentInfos(string plutoLayoutString)
         {
             if (plutoLayoutString.Substring(0, 13) != "plutolayout: ")
             {
@@ -106,45 +124,32 @@ namespace PlutoFramework.Model
 
             plutoLayoutString = plutoLayoutString.Substring(13);
 
-            ObservableCollection<LayoutItemInfo> result = new ObservableCollection<LayoutItemInfo>();
+            ObservableCollection<ComponentInfo> result = new ObservableCollection<ComponentInfo>();
 
             if (plutoLayoutString.Length == 2)
             {
                 return result;
             }
 
-            string[] itemsAndNetworksStrings = plutoLayoutString.Split(";");
+            string[] componentsAndNetworksStrings = plutoLayoutString.Split(";");
 
-            string[] layoutItemStrings = itemsAndNetworksStrings[0].Trim(new char[] { '[', ']' }).Split(',');
+            string[] componentStrings = componentsAndNetworksStrings[0].Trim(new char[] { '[', ']' }).Split(',');
 
-            foreach (string item in layoutItemStrings)
+            foreach (string component in componentStrings)
             {
-                result.Add(GetItemInfo(item.Trim()));
+                result.Add(GetComponentInfo((ComponentId)Enum.Parse(typeof(ComponentId), component.Trim())));
             }
 
             return result;
         }
 
-        public static void SaveLayout(ObservableCollection<LayoutItemInfo> layoutItemInfos)
+        public static void SaveLayout(ObservableCollection<ComponentInfo> componentInfos)
         {
-            string result = "plutolayout: [";
-
-            // Pluto items
-            foreach (LayoutItemInfo info in layoutItemInfos)
-            {
-                result += info.PlutoLayoutId + ", ";
-            }
-
-            if (layoutItemInfos.Count() > 0)
-            {
-                result = result.Substring(0, result.Length - 2); // Remove last ", " (comma + space)
-            }
-
-            result += "];";
+            var componentIds = string.Join(",", componentInfos.Select(info => info.ComponentId));
+            string result = $"plutolayout: [{componentIds}];";
 
             // save Endpoints
             result += Preferences.Get("SelectedNetworks", EndpointsModel.DefaultEndpoints);
-                
 
             // Save
             Preferences.Set("PlutoLayout", result);
@@ -152,11 +157,11 @@ namespace PlutoFramework.Model
             MainPage.SetupLayout();
         }
 
-        public static void SaveLayout(string layoutItemInfos)
+        public static void SaveLayout(string componentInfos)
         {
-            Preferences.Set("PlutoLayout", layoutItemInfos);
+            Preferences.Set("PlutoLayout", componentInfos);
 
-            SaveEndpoints(layoutItemInfos);
+            SaveEndpoints(componentInfos);
 
             MainPage.SetupLayout();
         }
@@ -180,36 +185,36 @@ namespace PlutoFramework.Model
             Preferences.Set("PlutoLayout", result);
         }
 
-        public static void AddItemToSavedLayout(string itemId)
+        public static void AddComponentToSavedLayout(ComponentId componentId)
         {
             string savedLayout = Preferences.Get("PlutoLayout", DEFAULT_PLUTO_LAYOUT);
 
-            string[] itemsAndNetworksStrings = savedLayout.Split(";");
+            string[] componentsAndNetworksStrings = savedLayout.Split(";");
 
-            string newLayout = itemsAndNetworksStrings[0].Length != 15 ?
-                itemsAndNetworksStrings[0].Substring(0, itemsAndNetworksStrings[0].Length - 1) + ", " + itemId + "]" :
-                "plutolayout: [" + itemId + "]";
+            string newLayout = componentsAndNetworksStrings[0].Length != 15 ?
+                componentsAndNetworksStrings[0].Substring(0, componentsAndNetworksStrings[0].Length - 1) + ", " + componentId + "]" :
+                "plutolayout: [" + componentId + "]";
 
-            SaveLayout(newLayout + ";" + itemsAndNetworksStrings[1]);
+            SaveLayout(newLayout + ";" + componentsAndNetworksStrings[1]);
         }
 
-        public static void RemoveItemFromSavedLayout(string itemId)
+        public static void RemoveComponentFromSavedLayout(ComponentId componentId)
         {
-            var layoutItemInfos = Model.CustomLayoutModel.ParsePlutoLayoutItemInfos(
+            var componentInfos = Model.CustomLayoutModel.ParsePlutoComponentInfos(
                     Preferences.Get("PlutoLayout",
                     Model.CustomLayoutModel.DEFAULT_PLUTO_LAYOUT)
                 );
 
-            var infos = new ObservableCollection<LayoutItemInfo>();
+            var infos = new ObservableCollection<ComponentInfo>();
 
-            for (int i = 0; i < layoutItemInfos.Count(); i++)
+            for (int i = 0; i < componentInfos.Count(); i++)
             {
-                if (itemId == layoutItemInfos[i].PlutoLayoutId)
+                if (componentId == componentInfos[i].ComponentId)
                 {
                     continue;
                 }
 
-                infos.Add(layoutItemInfos[i]);
+                infos.Add(componentInfos[i]);
             }
 
             Model.CustomLayoutModel.SaveLayout(infos);
@@ -217,35 +222,26 @@ namespace PlutoFramework.Model
 
         public static void MergePlutoLayouts(string plutoLayout)
         {
-            var layoutItemInfos = Model.CustomLayoutModel.ParsePlutoLayoutItemInfos(
+            var componentInfos = Model.CustomLayoutModel.ParsePlutoComponentInfos(
                 plutoLayout
             );
 
-            var savedLayoutItemInfos = Model.CustomLayoutModel.ParsePlutoLayoutItemInfos(
+            var savedComponentInfos = Model.CustomLayoutModel.ParsePlutoComponentInfos(
                 Preferences.Get("PlutoLayout",
                 Model.CustomLayoutModel.DEFAULT_PLUTO_LAYOUT)
             );
 
-            for (int i = 0; i < layoutItemInfos.Count(); i++)
+            var savedComponentIds = savedComponentInfos.Select(info => info.ComponentId);
+
+            for (int i = 0; i < componentInfos.Count(); i++)
             {
-                var itemPlutoLayoutId = layoutItemInfos[i].PlutoLayoutId;
-
-                for (int j = 0; j < savedLayoutItemInfos.Count(); j++) {
-                    if (savedLayoutItemInfos[j].PlutoLayoutId == itemPlutoLayoutId)
-                    {
-                        goto OUTER;
-                    }
-                }
-
-                savedLayoutItemInfos.Add(layoutItemInfos[i]);
-
-                OUTER:
+                if (!savedComponentIds.Contains(componentInfos[i].ComponentId))
                 {
-
+                    savedComponentInfos.Add(componentInfos[i]);
                 }
             }
 
-            Model.CustomLayoutModel.SaveLayout(savedLayoutItemInfos);
+            Model.CustomLayoutModel.SaveLayout(savedComponentInfos);
         }
 
         private static void SaveEndpoints(string plutoLayoutString)
@@ -255,9 +251,9 @@ namespace PlutoFramework.Model
                 throw new Exception("Could not parse the PlutoLayout");
             }
 
-            string[] itemsAndNetworksStrings = plutoLayoutString.Split(";");
+            string[] componentsAndNetworksStrings = plutoLayoutString.Split(";");
 
-            if (itemsAndNetworksStrings[1].Length < 2)
+            if (componentsAndNetworksStrings[1].Length < 2)
             {
                 // The endpoint is not saved in the layout
 
@@ -268,7 +264,7 @@ namespace PlutoFramework.Model
             }
 
             // Save Selected Networks
-            Preferences.Set("SelectedNetworks", itemsAndNetworksStrings[1]);
+            Preferences.Set("SelectedNetworks", componentsAndNetworksStrings[1]);
 
             Console.WriteLine("Save Endpoint -> Calling MultiNetworkSelectViewModel.SetupDefault()");
 
@@ -303,337 +299,235 @@ namespace PlutoFramework.Model
             messagePopup.IsVisible = true;
         }
 
-        public static IView GetItem(string plutoLayoutId)
+        public static IView GetView(ComponentId componentId)
         {
-            switch (plutoLayoutId)
+            switch (componentId)
             {
-                case "U":
+                case ComponentId.U:
                     return new UpdateView();
-                case "dApp":
+                case ComponentId.dApp:
                     return new DAppConnectionView();
-                case "ExSL":
+                case ComponentId.ExSL:
                     return new ExtrinsicStatusStackLayout();
-                case "UsdB":
+                case ComponentId.UsdB:
                     return new UsdBalanceView();
-                case "PubK":
+                /*case ComponentId.PubK:
                     return new AddressView
                     {
                         Title = "Public key",
                         Address = KeysModel.GetPublicKey(),
                         QrAddress = KeysModel.GetPublicKey(),
-                    };
-                case "SubK":
-                    return new AddressView
-                    {
-                        Title = "Substrate key",
-                        Address = KeysModel.GetSubstrateKey(),
-                        QrAddress = "substrate:" + KeysModel.GetSubstrateKey()
-                    };
-                case "ChaK":
+                    };*/
+                case ComponentId.SubK:
+                    return new SubstrateAddressView();
+                case ComponentId.ChaK:
                     return new ChainAddressView();
-                case "StDash":
+                /*case ComponentId.StDash:
                     return new StakingDashboardView();
-                case "CalEx":
+                case ComponentId.CalEx:
                     return new CalamarView();
-                case "AAASeasonCountdown":
-                    return new SeasonCountdownView();
-                case "AAALeaderboard":
+                case ComponentId.AAASeasonCountdown:
+                    return new SeasonCountdownView();*/
+                case ComponentId.AAALeaderboard:
                     return new AAALeaderboard();
-                case "contract":
+                case ComponentId.contract:
                     return new ContractView();
-                case "AZEROPrimaryName":
+                case ComponentId.AZEROPrimaryName:
                     return new AzeroPrimaryNameView();
-                case "HDXOmniLiquidity":
+                case ComponentId.HDXOmniLiquidity:
                     return new OmnipoolLiquidityView();
-                case "HDXDCA":
+                case ComponentId.HDXDCA:
                     return new DCAView();
-                case "id":
+                case ComponentId.id:
                     return new IdentityView();
-                case "Ref":
+                case ComponentId.Ref:
                     return new ReferendaView();
-                case "BMnR":
+                case ComponentId.BMnR:
                     return new BackupMnemonicsReminderView();
-                case "RnT":
+                case ComponentId.RnT:
                     return new ReceiveAndTransferView();
-                case "NftG":
+                case ComponentId.NftG:
                     return new NftFavouriteGalleryView();
-                case "NftOG":
+                case ComponentId.NftOG:
                     return new NftOwnedGalleryView();
-                case "NftFG":
+                case ComponentId.NftFG:
                     return new NftFavouriteGalleryView();
-                case "FeeA":
-                    return new FeeAssetView();
-                case "VDot":
+                /*case ComponentId.FeeA:
+                    return new FeeAssetView();*/
+                case ComponentId.VDot:
                     return new VDotTokenView();
-                case "GLGPowerups":
+                case ComponentId.GLGPowerups:
                     return new GLGPowerupsView();
-                case "xTrnsfr":
+                case ComponentId.xTrnsfr:
                     return new XcmTransferView();
             }
 
             throw new Exception("Could not parse the PlutoLayout");
         }
 
-        public static IView GetItemPreview(string plutoLayoutId)
+        public static ComponentInfo GetComponentInfo(ComponentId componentId)
         {
-            switch (plutoLayoutId)
+            switch (componentId)
             {
-                case "U":
-                    return new UpdateView();
-                case "dApp":
-                    var dAppConnectionViewModel = new DAppConnectionViewModel();
-                    dAppConnectionViewModel.Name = "Galaxy Logic Game";
-                    dAppConnectionViewModel.Icon = "https://rostislavlitovkin.pythonanywhere.com/logo";
-                    dAppConnectionViewModel.IsVisible = true;
-
-                    return new DAppConnectionView(dAppConnectionViewModel);
-                case "ExSL":
-                    ExtrinsicStatusStackViewModel extrinsicStatusViewModel = new ExtrinsicStatusStackViewModel();
-                    var tempExtrinsics = new Dictionary<string, ExtrinsicInfo>();
-                    tempExtrinsics.Add("18736389", new ExtrinsicInfo
-                    {
-                        CallName = "EVM.eth_call_v2",
-                        Hash = new Hash("0x97ad595390e73c9421b21d130291bdcbc24267d3ccb58dd27e71177d15e68991"),
-                        Endpoint = Endpoints.GetEndpointDictionary[EndpointEnum.Acala],
-                        ExtrinsicId = "18736389",
-                        Status = ExtrinsicStatusEnum.InBlockSuccess,
-                    });
-
-                    tempExtrinsics.Add("18737890", new ExtrinsicInfo
-                    {
-                        CallName = "XcmPallet.limited_reserve_transfer_assets",
-                        Endpoint = Endpoints.GetEndpointDictionary[EndpointEnum.Polkadot],
-                        Hash = new Hash("0x89bca86385b938c90e230a9837bce7e09991dde37f44b98b347c1d8ae2813654"),
-                        ExtrinsicId = "18737890",
-                        Status = ExtrinsicStatusEnum.FinalizedSuccess,
-                    });
-
-                    extrinsicStatusViewModel.Extrinsics = tempExtrinsics;
-                    extrinsicStatusViewModel.Update();
-
-                    return new ExtrinsicStatusStackLayout(extrinsicStatusViewModel);
-                case "UsdB":
-                    return new UsdBalanceView();
-                case "PubK":
-                    return new AddressView
-                    {
-                        Title = "Public key",
-                        Address = KeysModel.GetPublicKey(),
-                    };
-                case "SubK":
-                    return new AddressView
-                    {
-                        Title = "Substrate key",
-                        Address = KeysModel.GetPublicKey(),
-                    };
-                case "ChaK":
-                    return new ChainAddressView();
-                case "StDash":
-                    return new StakingDashboardView();
-                case "CalEx":
-                    return new CalamarView();
-                case "AAASeasonCountdown":
-                    return new SeasonCountdownView();
-                case "AAALeaderboard":
-                    return new AAALeaderboard();
-                case "contract":
-                    return new ContractView();
-                case "AZEROPrimaryName":
-                    return new AzeroPrimaryNameView();
-                case "HDXOmniLiquidity":
-                    return new OmnipoolLiquidityView();
-                case "HDXDCA":
-                    return new DCAView();
-                case "id":
-                    return new IdentityView();
-                case "Ref":
-                    return new ReferendaView();
-                case "BMnR":
-                    return new BackupMnemonicsReminderView();
-                case "RnT":
-                    return new ReceiveAndTransferView();
-                case "NftG":
-                    return new NftFavouriteGalleryView();
-                case "NftOG":
-                    return new NftOwnedGalleryView();
-                case "NftFG":
-                    return new NftFavouriteGalleryView();
-                case "FeeA":
-                    return new FeeAssetView();
-                case "VDot":
-                    return new VDotTokenView();
-                case "GLGPowerups":
-                    return new GLGPowerupsView();
-                case "xTrnsfr":
-                    return new XcmTransferView();
-            }
-
-            throw new Exception("Could not parse the PlutoLayout");
-        }
-
-        public static LayoutItemInfo GetItemInfo(string plutoLayoutId)
-        {
-            switch (plutoLayoutId)
-            {
-                case "U":
-                    return new LayoutItemInfo
+                case ComponentId.U:
+                    return new ComponentInfo
                     {
                         Name = "Update notification",
-                        PlutoLayoutId = "U"
+                        ComponentId = ComponentId.U
                     };
-                case "dApp":
-                    return new LayoutItemInfo
+                case ComponentId.dApp:
+                    return new ComponentInfo
                     {
                         Name = "dApp connection",
-                        PlutoLayoutId = "dApp",
+                        ComponentId = ComponentId.dApp,
                     };
-                case "ExSL":
-                    return new LayoutItemInfo
+                case ComponentId.ExSL:
+                    return new ComponentInfo
                     {
                         Name = "Extrinsic status",
-                        PlutoLayoutId = "ExSL",
+                        ComponentId = ComponentId.ExSL,
                     };
-                case "UsdB":
-                    return new LayoutItemInfo
+                case ComponentId.UsdB:
+                    return new ComponentInfo
                     {
                         Name = "Balance",
-                        PlutoLayoutId = "UsdB",
+                        ComponentId = ComponentId.UsdB,
                     };
-                case "PubK":
-                    return new LayoutItemInfo
+                /*case ComponentId.PubK:
+                    return new ComponentInfo
                     {
                         Name = "Public key",
-                        PlutoLayoutId = "PubK",
-                    };
-                case "SubK":
-                    return new LayoutItemInfo
+                        ComponentId = ComponentId.PubK,
+                    };*/
+                case ComponentId.SubK:
+                    return new ComponentInfo
                     {
                         Name = "Substrate key",
-                        PlutoLayoutId = "SubK",
+                        ComponentId = ComponentId.SubK,
                     };
-                case "ChaK":
-                    return new LayoutItemInfo
+                case ComponentId.ChaK:
+                    return new ComponentInfo
                     {
                         Name = "Chain specific key",
-                        PlutoLayoutId = "ChaK",
+                        ComponentId = ComponentId.ChaK,
                     };
-                case "StDash":
-                    return new LayoutItemInfo
+                /*case ComponentId.StDash:
+                    return new ComponentInfo
                     {
                         Name = "Staking dashboard",
-                        PlutoLayoutId = "StDash",
+                        ComponentId = ComponentId.StDash,
                     };
-                case "CalEx":
-                    return new LayoutItemInfo
+                case ComponentId.CalEx:
+                    return new ComponentInfo
                     {
                         Name = "Calamar",
-                        PlutoLayoutId = "CalEx",
+                        ComponentId = ComponentId.CalEx,
                     };
-                case "AAASeasonCountdown":
-                    return new LayoutItemInfo
+                case ComponentId.AAASeasonCountdown:
+                    return new ComponentInfo
                     {
                         Name = "AAA Season countdown",
-                        PlutoLayoutId = "AAASeasonCountdown",
-                    };
-                case "AAALeaderboard":
-                    return new LayoutItemInfo
+                        ComponentId = ComponentId.AAASeasonCountdown,
+                    };*/
+                case ComponentId.AAALeaderboard:
+                    return new ComponentInfo
                     {
                         Name = "AAA Leaderboard",
-                        PlutoLayoutId = "AAALeaderboard",
+                        ComponentId = ComponentId.AAALeaderboard,
                     };
-                case "contract":
-                    return new LayoutItemInfo
+                case ComponentId.contract:
+                    return new ComponentInfo
                     {
                         Name = "Contract",
-                        PlutoLayoutId = "contract",
+                        ComponentId = ComponentId.contract,
                     };
-                case "AZEROPrimaryName":
-                    return new LayoutItemInfo
+                case ComponentId.AZEROPrimaryName:
+                    return new ComponentInfo
                     {
                         Name = "AZERO.ID Primary Name",
-                        PlutoLayoutId = "AZEROPrimaryName",
+                        ComponentId = ComponentId.AZEROPrimaryName,
                     };
-                case "HDXOmniLiquidity":
-                    return new LayoutItemInfo
+                case ComponentId.HDXOmniLiquidity:
+                    return new ComponentInfo
                     {
                         Name = "Hydration Omnipool Liquidity",
-                        PlutoLayoutId = "HDXOmniLiquidity",
+                        ComponentId = ComponentId.HDXOmniLiquidity,
                     };
-                case "HDXDCA":
-                    return new LayoutItemInfo
+                case ComponentId.HDXDCA:
+                    return new ComponentInfo
                     {
                         Name = "Hydration DCA Position",
-                        PlutoLayoutId = "HDXDCA",
+                        ComponentId = ComponentId.HDXDCA,
                     };
-                case "id":
-                    return new LayoutItemInfo
+                case ComponentId.id:
+                    return new ComponentInfo
                     {
                         Name = "Identity",
-                        PlutoLayoutId = "id",
+                        ComponentId = ComponentId.id,
                     };
-                case "Ref":
-                    return new LayoutItemInfo
+                case ComponentId.Ref:
+                    return new ComponentInfo
                     {
                         Name = "Referenda",
-                        PlutoLayoutId = "Ref",
+                        ComponentId = ComponentId.Ref,
                     };
-                case "BMnR":
-                    return new LayoutItemInfo
+                case ComponentId.BMnR:
+                    return new ComponentInfo
                     {
                         Name = "Backup Mnemonics Reminder",
-                        PlutoLayoutId = "BMnR",
+                        ComponentId = ComponentId.BMnR,
                     };
-                case "RnT":
-                    return new LayoutItemInfo
+                case ComponentId.RnT:
+                    return new ComponentInfo
                     {
                         Name = "Receive and Transfer",
-                        PlutoLayoutId = "RnT",
+                        ComponentId = ComponentId.RnT,
                     };
-                case "NftG":
-                    return new LayoutItemInfo
+                case ComponentId.NftG:
+                    return new ComponentInfo
                     {
                         Name = "Nft Galery",
-                        PlutoLayoutId = "NftG",
+                        ComponentId = ComponentId.NftG,
                     };
-                case "NftOG":
-                    return new LayoutItemInfo
+                case ComponentId.NftOG:
+                    return new ComponentInfo
                     {
                         Name = "Onwed Nfts Galery",
-                        PlutoLayoutId = "NftOG",
+                        ComponentId = ComponentId.NftOG,
                     };
-                case "NftFG":
-                    return new LayoutItemInfo
+                case ComponentId.NftFG:
+                    return new ComponentInfo
                     {
                         Name = "Favourite Nfts Galery",
-                        PlutoLayoutId = "NftFG",
+                        ComponentId = ComponentId.NftFG,
                     };
-                case "FeeA":
-                    return new LayoutItemInfo
+                /*case ComponentId.FeeA:
+                    return new ComponentInfo
                     {
                         Name = "Fee Asset",
-                        PlutoLayoutId = "FeeA",
-                    };
-                case "VDot":
-                    return new LayoutItemInfo
+                        ComponentId = ComponentId.FeeA,
+                    };*/
+                case ComponentId.VDot:
+                    return new ComponentInfo
                     {
                         Name = "vDOT staking",
-                        PlutoLayoutId = "VDot",
+                        ComponentId = ComponentId.VDot,
                     };
-                case "GLGPowerups":
-                    return new LayoutItemInfo
+                case ComponentId.GLGPowerups:
+                    return new ComponentInfo
                     {
                         Name = "Galaxy Logic Game Powerups",
-                        PlutoLayoutId = "GLGPowerups",
+                        ComponentId = ComponentId.GLGPowerups,
                     };
-                case "xTrnsfr":
-                    return new LayoutItemInfo
+                case ComponentId.xTrnsfr:
+                    return new ComponentInfo
                     {
                         Name = "XCM Transfer",
-                        PlutoLayoutId = "xTrnsfr",
+                        ComponentId = ComponentId.xTrnsfr,
                     };
             }
 
-            throw new Exception("Could not parse the PlutoLayoutId");
+            throw new Exception("Could not parse the ComponentId");
         }
 
         public static string GetLayoutString(string plutoLayout)

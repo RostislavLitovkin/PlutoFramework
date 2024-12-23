@@ -1,4 +1,6 @@
-﻿namespace PlutoFramework.Components.CustomLayouts;
+﻿using PlutoFramework.Model;
+
+namespace PlutoFramework.Components.CustomLayouts;
 
 public partial class CustomLayoutItemAddView : ContentView
 {
@@ -10,8 +12,8 @@ public partial class CustomLayoutItemAddView : ContentView
             control.nameLabelText.Text = (string)newValue;
         });
 
-    public static readonly BindableProperty PlutoLayoutIdProperty = BindableProperty.Create(
-        nameof(PlutoLayoutId), typeof(string), typeof(CustomLayoutItemAddView),
+    public static readonly BindableProperty ComponentIdProperty = BindableProperty.Create(
+        nameof(ComponentId), typeof(ComponentId), typeof(CustomLayoutItemAddView),
         defaultBindingMode: BindingMode.TwoWay,
         propertyChanging: (bindable, oldValue, newValue) => {
 
@@ -29,11 +31,11 @@ public partial class CustomLayoutItemAddView : ContentView
         set => SetValue(ItemNameProperty, value);
     }
 
-    public string PlutoLayoutId
+    public ComponentId ComponentId
     {
-        get => (string)GetValue(PlutoLayoutIdProperty);
+        get => (ComponentId)GetValue(ComponentIdProperty);
 
-        set => SetValue(PlutoLayoutIdProperty, value);
+        set => SetValue(ComponentIdProperty, value);
     }
 
 }

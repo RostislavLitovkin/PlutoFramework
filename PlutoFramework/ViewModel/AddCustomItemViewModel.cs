@@ -8,27 +8,27 @@ namespace PlutoFramework.ViewModel
 	public partial class AddCustomItemViewModel : ObservableObject
 	{
         [ObservableProperty]
-        private ObservableCollection<LayoutItemInfo> layoutItemInfos = new ObservableCollection<LayoutItemInfo>();
+        private ObservableCollection<ComponentInfo> componentInfos = new ObservableCollection<ComponentInfo>();
 
         public AddCustomItemViewModel()
         {
             try
             {
-                var selectedItemInfos = Model.CustomLayoutModel.ParsePlutoLayoutItemInfos(
+                var selectedItemInfos = Model.CustomLayoutModel.ParsePlutoComponentInfos(
                     Preferences.Get("PlutoLayout",
                     Model.CustomLayoutModel.DEFAULT_PLUTO_LAYOUT)
                 );
 
-                var allItemInfos = Model.CustomLayoutModel.ParsePlutoLayoutItemInfos(Model.CustomLayoutModel.ALL_ITEMS);
+                var allItemInfos = Model.CustomLayoutModel.ParsePlutoComponentInfos(Model.CustomLayoutModel.AllComponentsString);
 
                 for(int i = 0; i < allItemInfos.Count(); i++)
                 {
                     foreach(var selectedItem in selectedItemInfos)
                     {
 
-                        if (allItemInfos[i].PlutoLayoutId == selectedItem.PlutoLayoutId)
+                        if (allItemInfos[i].ComponentId == selectedItem.ComponentId)
                         {
-                            Console.WriteLine("Removed: " + allItemInfos[i].PlutoLayoutId);
+                            Console.WriteLine("Removed: " + allItemInfos[i].ComponentId);
                             allItemInfos.RemoveAt(i);
                             i--;
                             break;
@@ -36,12 +36,12 @@ namespace PlutoFramework.ViewModel
                     }
                 }
 
-                layoutItemInfos = allItemInfos;
+                componentInfos = allItemInfos;
             }
             catch
             {
                 Console.WriteLine("Layout Error");
-                layoutItemInfos = Model.CustomLayoutModel.ParsePlutoLayoutItemInfos(Model.CustomLayoutModel.ALL_ITEMS);
+                componentInfos = Model.CustomLayoutModel.ParsePlutoComponentInfos(Model.CustomLayoutModel.AllComponentsString);
             }
         }
 	}

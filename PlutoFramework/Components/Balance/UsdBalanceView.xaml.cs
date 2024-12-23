@@ -11,7 +11,7 @@ public partial class UsdBalanceView : ContentView, ISubstrateClientLoadableAsync
 	{
 		InitializeComponent();
 
-        BindingContext = DependencyService.Get<UsdBalanceViewModel>();
+        BindingContext = new UsdBalanceViewModel();
     }
 
     public async Task LoadAsync(PlutoFrameworkSubstrateClient client, CancellationToken token)

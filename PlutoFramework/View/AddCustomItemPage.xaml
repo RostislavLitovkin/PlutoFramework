@@ -29,11 +29,11 @@
                                 Padding="20, 10, 20, 100"
                                 Spacing="5"
                                 ZIndex="10"
-                                BindableLayout.ItemsSource="{Binding LayoutItemInfos}">
+                                BindableLayout.ItemsSource="{Binding ComponentInfos}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <customlayouts:CustomLayoutItemAddView ItemName="{Binding Name}"
-                                                                PlutoLayoutId="{Binding PlutoLayoutId}">
+                                                                ComponentId="{Binding ComponentId}">
 
                             <customlayouts:CustomLayoutItemAddView.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="OnClicked" />

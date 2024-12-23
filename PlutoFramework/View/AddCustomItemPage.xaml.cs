@@ -20,9 +20,9 @@ public partial class AddCustomItemPage : ContentPage
 
     private async void OnClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
-		Model.CustomLayoutModel.AddItemToSavedLayout(((CustomLayoutItemAddView)sender).PlutoLayoutId);
+		Model.CustomLayoutModel.AddComponentToSavedLayout(((CustomLayoutItemAddView)sender).ComponentId);
 
-        customLayoutsViewModel.LayoutItemInfos = Model.CustomLayoutModel.ParsePlutoLayoutItemInfos(
+        customLayoutsViewModel.ComponentInfos = Model.CustomLayoutModel.ParsePlutoComponentInfos(
                     Preferences.Get("PlutoLayout",
                     Model.CustomLayoutModel.DEFAULT_PLUTO_LAYOUT)
                 );

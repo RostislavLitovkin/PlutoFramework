@@ -8,20 +8,20 @@ namespace PlutoFramework.ViewModel
 	public partial class CustomLayoutsViewModel : ObservableObject
     {
 		[ObservableProperty]
-        private ObservableCollection<LayoutItemInfo> layoutItemInfos = new ObservableCollection<LayoutItemInfo>();
+        private ObservableCollection<ComponentInfo> componentInfos = new ObservableCollection<ComponentInfo>();
 
         public CustomLayoutsViewModel()
 		{
             try
             {
-                layoutItemInfos = Model.CustomLayoutModel.ParsePlutoLayoutItemInfos(
+                componentInfos = Model.CustomLayoutModel.ParsePlutoComponentInfos(
                     Preferences.Get("PlutoLayout",
                     Model.CustomLayoutModel.DEFAULT_PLUTO_LAYOUT)
                 );
             }
             catch
             {
-                layoutItemInfos = Model.CustomLayoutModel.ParsePlutoLayoutItemInfos(Model.CustomLayoutModel.DEFAULT_PLUTO_LAYOUT);
+                componentInfos = Model.CustomLayoutModel.ParsePlutoComponentInfos(Model.CustomLayoutModel.DEFAULT_PLUTO_LAYOUT);
             }
         }
 
@@ -29,14 +29,14 @@ namespace PlutoFramework.ViewModel
         {
             if (originalIndex == newIndex) return;
 
-            var infos = new ObservableCollection<LayoutItemInfo>();
+            var infos = new ObservableCollection<ComponentInfo>();
 
             if (originalIndex < newIndex)
             {
                 newIndex++;
             }
 
-            for (int i = 0; i < LayoutItemInfos.Count(); i++)
+            for (int i = 0; i < ComponentInfos.Count(); i++)
             {
                 if (i == originalIndex)
                 {
@@ -45,37 +45,37 @@ namespace PlutoFramework.ViewModel
 
                 if (i == newIndex)
                 {
-                    infos.Add(LayoutItemInfos[originalIndex]);
+                    infos.Add(ComponentInfos[originalIndex]);
                 }
 
-                infos.Add(LayoutItemInfos[i]);
+                infos.Add(ComponentInfos[i]);
             }
 
-            if (newIndex == LayoutItemInfos.Count())
+            if (newIndex == ComponentInfos.Count())
             {
-                infos.Add(LayoutItemInfos[originalIndex]);
+                infos.Add(ComponentInfos[originalIndex]);
             }
 
-            LayoutItemInfos = infos;
+            ComponentInfos = infos;
 
             Model.CustomLayoutModel.SaveLayout(infos);
         }
 
         public void DeleteItem(int originalIndex)
         {
-            var infos = new ObservableCollection<LayoutItemInfo>();
+            var infos = new ObservableCollection<ComponentInfo>();
 
-            for (int i = 0; i < LayoutItemInfos.Count(); i++)
+            for (int i = 0; i < ComponentInfos.Count(); i++)
             {
                 if (i == originalIndex)
                 {
                     continue;
                 }
 
-                infos.Add(LayoutItemInfos[i]);
+                infos.Add(ComponentInfos[i]);
             }
 
-            LayoutItemInfos = infos;
+            ComponentInfos = infos;
 
             Model.CustomLayoutModel.SaveLayout(infos);
         }

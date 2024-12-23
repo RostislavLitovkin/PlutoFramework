@@ -10,8 +10,8 @@ public partial class CustomLayoutItemDragger : ContentView
             control.nameLabelText.Text = (string)newValue;
         });
 
-    public static readonly BindableProperty PlutoLayoutIdProperty = BindableProperty.Create(
-        nameof(PlutoLayoutId), typeof(string), typeof(CustomLayoutItemDragger),
+    public static readonly BindableProperty ComponentIdProperty = BindableProperty.Create(
+        nameof(ComponentId), typeof(string), typeof(CustomLayoutItemDragger),
         defaultBindingMode: BindingMode.TwoWay,
         propertyChanging: (bindable, oldValue, newValue) => {
 
@@ -29,23 +29,10 @@ public partial class CustomLayoutItemDragger : ContentView
         set => SetValue(ItemNameProperty, value);
     }
 
-    public string PlutoLayoutId
+    public string ComponentId
     {
-        get => (string)GetValue(PlutoLayoutIdProperty);
+        get => (string)GetValue(ComponentIdProperty);
 
-        set => SetValue(PlutoLayoutIdProperty, value);
-    }
-
-    
-    private void OnClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
-    {
-        var customItemViewModel = DependencyService.Get<CustomItemViewModel>();
-
-        customItemViewModel.Content = (ContentView)Model.CustomLayoutModel.GetItemPreview(PlutoLayoutId);
-
-        customItemViewModel.ItemName = ItemName;
-
-        customItemViewModel.IsVisible = true;
-
+        set => SetValue(ComponentIdProperty, value);
     }
 }
