@@ -1,7 +1,4 @@
-﻿using PlutoFramework.Components.CustomLayouts;
-using PlutoFramework.ViewModel;
-
-namespace PlutoFramework.View;
+﻿namespace PlutoFramework.Components.CustomLayouts;
 
 public partial class AddCustomItemPage : ContentPage
 {
@@ -16,6 +13,8 @@ public partial class AddCustomItemPage : ContentPage
         InitializeComponent();
 
         this.customLayoutsViewModel = customLayoutsViewModel;
+
+        BindingContext = new AddCustomItemViewModel();
     }
 
     private async void OnClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)

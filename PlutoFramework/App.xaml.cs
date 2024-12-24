@@ -1,5 +1,4 @@
 ﻿using PlutoFramework.Components.ArgumentsView;
-using PlutoFramework.Components.Balance;
 using PlutoFramework.Components.ConnectionRequestView;
 using PlutoFramework.Components.MessagePopup;
 using PlutoFramework.Components.NetworkSelect;
@@ -16,20 +15,14 @@ using PlutoFramework.Components.CustomLayouts;
 using PlutoFramework.Components.ConfirmTransaction;
 using PlutoFramework.Components.AzeroId;
 using PlutoFramework.Components.AssetSelect;
-using PlutoFramework.Components.HydraDX;
 using PlutoFramework.Components.Nft;
-using PlutoFramework.Components.Identity;
 using PlutoFramework.Components.Vault;
-using PlutoFramework.Components.Referenda;
 using PlutoFramework.Components.ChangeLayoutRequest;
 using PlutoFramework.Components.NavigationBar;
 using PlutoFramework.Components.Fee;
 using PlutoFramework.Components.VTokens;
-using PlutoFramework.Components.UpdateView;
 using PlutoFramework.Components.Xcm;
 using PlutoFramework.Components.TransactionAnalyzer;
-using Bajun.NetApi.Generated.Model.sp_consensus_aura.sr25519.app_sr25519;
-using PlutoFramework.Model.SQLite;
 
 namespace PlutoFramework;
 

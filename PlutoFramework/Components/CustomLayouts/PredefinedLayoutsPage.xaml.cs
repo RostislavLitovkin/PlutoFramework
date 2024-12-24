@@ -1,4 +1,4 @@
-﻿namespace PlutoFramework.View;
+﻿namespace PlutoFramework.Components.CustomLayouts;
 
 public partial class PredefinedLayoutsPage : ContentPage
 {

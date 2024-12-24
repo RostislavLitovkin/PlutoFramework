@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:card="clr-namespace:PlutoFramework.Components.Card" xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
              x:Class="PlutoFramework.Components.CustomLayouts.ExportPlutoLayoutQRView"
              IsVisible="{Binding IsVisible}"
+             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
              AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
              AbsoluteLayout.LayoutFlags="All"
              BackgroundColor="#66000000">
@@ -13,7 +14,7 @@
 
                     <Label
                         FontAttributes="Bold"
-                        Text="Pluto layout export"
+                        Text="PlutoLayout export"
                         HeightRequest="30"
                         HorizontalOptions="Center" />
 
@@ -24,8 +25,8 @@
                                                  BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
                                                  Value="{Binding PlutoLayoutValue}"/>
 
-                    <Button Text="Export PNG"
-                            IsEnabled="False"/> 
+                    <buttons:BasicGrayButton Text="Copy to clipboard"
+                                             Clicked="OnCopyClicked"/>
                 </VerticalStackLayout>
 
                 <AbsoluteLayout AbsoluteLayout.LayoutBounds="0, 0, 40, 40">

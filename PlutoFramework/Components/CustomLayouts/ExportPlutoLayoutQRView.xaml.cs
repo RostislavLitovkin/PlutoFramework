@@ -1,4 +1,6 @@
-﻿namespace PlutoFramework.Components.CustomLayouts;
+﻿using PlutoFramework.Components.AddressView;
+
+namespace PlutoFramework.Components.CustomLayouts;
 
 public partial class ExportPlutoLayoutQRView : ContentView
 {
@@ -7,7 +9,6 @@ public partial class ExportPlutoLayoutQRView : ContentView
 		InitializeComponent();
 
         BindingContext = DependencyService.Get<ExportPlutoLayoutQRViewModel>();
-
     }
 
     async void OnBackClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
@@ -16,5 +17,12 @@ public partial class ExportPlutoLayoutQRView : ContentView
         var viewModel = DependencyService.Get<ExportPlutoLayoutQRViewModel>();
 
         viewModel.IsVisible = false;
+    }
+
+    private async void OnCopyClicked(object sender, EventArgs e)
+    {
+        var viewModel = DependencyService.Get<ExportPlutoLayoutQRViewModel>();
+
+        await CopyAddress.CopyToClipboardAsync(viewModel.PlutoLayoutValue);
     }
 }

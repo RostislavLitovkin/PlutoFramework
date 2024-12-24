@@ -1,9 +1,8 @@
-﻿using System;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System.Collections.ObjectModel;
 using PlutoFramework.Model;
 
-namespace PlutoFramework.ViewModel
+namespace PlutoFramework.Components.CustomLayouts
 {
 	public partial class AddCustomItemViewModel : ObservableObject
 	{

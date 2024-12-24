@@ -1,7 +1,4 @@
-﻿using PlutoFramework.Components.CustomLayouts;
-using PlutoFramework.ViewModel;
-
-namespace PlutoFramework.View;
+﻿namespace PlutoFramework.Components.CustomLayouts;
 
 public partial class CustomLayoutsPage : ContentPage
 {
@@ -15,6 +12,8 @@ public partial class CustomLayoutsPage : ContentPage
         Shell.SetNavBarIsVisible(this, false);
 
         InitializeComponent();
+
+        BindingContext = new CustomLayoutsViewModel();
 
         topNavigationBar.ExtraFunc = OnExtraClicked;
     }

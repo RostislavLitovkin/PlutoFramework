@@ -1,4 +1,4 @@
-using PlutoFramework.View;
+using PlutoFramework.Components.CustomLayouts;
 
 namespace PlutoFramework.Components.Settings;
 
