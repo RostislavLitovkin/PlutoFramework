@@ -43,6 +43,10 @@
     {
       "name": "Mythos",
       "websocket": "wss://polkadot-mythos-rpc.polkadot.io"
+    },
+    {
+      "name": "Kilt",
+      "websocket": "wss://kilt-rpc.dwellir.com"
     }
   ]
 }
