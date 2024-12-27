@@ -37,10 +37,12 @@ namespace PlutoFramework.Components.CustomLayouts
 
                 componentInfos = allItemInfos;
             }
-            catch
+            catch (Exception ex)
             {
                 Console.WriteLine("Layout Error");
-                componentInfos = Model.CustomLayoutModel.ParsePlutoComponentInfos(Model.CustomLayoutModel.AllComponentsString);
+
+                Console.WriteLine(ex);
+                //componentInfos = Model.CustomLayoutModel.ParsePlutoComponentInfos(Model.CustomLayoutModel.AllComponentsString);
             }
         }
 	}

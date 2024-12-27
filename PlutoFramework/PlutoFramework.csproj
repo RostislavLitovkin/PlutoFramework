@@ -15,7 +15,7 @@
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
 
 		<!-- Display name -->
-		<ApplicationTitle>Pluto wallet</ApplicationTitle>
+		<ApplicationTitle>Pluto Wallet</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.rostislavlitovkin.plutowallet</ApplicationId>

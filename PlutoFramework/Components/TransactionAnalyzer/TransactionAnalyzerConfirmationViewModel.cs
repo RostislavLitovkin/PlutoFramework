@@ -55,7 +55,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
         [ObservableProperty]
         private Func<Task> onConfirm;
 
-        public async Task LoadAsync(SubstrateClientExt client, Method method, bool showDAppView, Func<Task>? onConfirm = null, CancellationToken token = default)
+        public async Task LoadAsync(SubstrateClientExt client, Method method, bool showDAppView = false, Func<Task>? onConfirm = null, CancellationToken token = default)
         {
             var account = new ChopsticksMockAccount();
             account.Create(KeyType.Sr25519, KeysModel.GetPublicKeyBytes());

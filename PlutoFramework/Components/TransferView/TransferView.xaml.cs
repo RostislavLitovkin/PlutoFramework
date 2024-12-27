@@ -60,47 +60,17 @@ public partial class TransferView : ContentView
             };
 
 
-            /// Hide this layout
+            // Hide this layout
             viewModel.SetToDefault();
 
             var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();
 
-            await transactionAnalyzerConfirmationViewModel.LoadAsync(clientExt, transfer, false, onConfirm: OnConfirmClicked);
-
-
+            await transactionAnalyzerConfirmationViewModel.LoadAsync(clientExt, transfer, showDAppView: false);
         }
         catch (Exception ex)
         {
             errorLabel.Text = ex.Message;
             Console.WriteLine(ex);
-        }
-    }
-
-    public static async Task OnConfirmClicked()
-    {
-        if ((await KeysModel.GetAccount()).IsSome(out var account))
-        {
-            var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();
-
-            var clientExt = await Model.SubstrateClientModel.GetOrAddSubstrateClientAsync(transactionAnalyzerConfirmationViewModel.Endpoint.Key, CancellationToken.None);
-
-            try
-            {
-                string extrinsicId = await clientExt.SubmitExtrinsicAsync(transactionAnalyzerConfirmationViewModel.Payload.Call, account, token: CancellationToken.None);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Failed at confirm clicked");
-                Console.WriteLine(ex);
-            }
-
-            /// Hide
-
-            transactionAnalyzerConfirmationViewModel.IsVisible = false;
-        }
-        else
-        {
-            // Verification failed, do something about it
         }
     }
 
