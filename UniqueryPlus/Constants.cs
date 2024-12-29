@@ -12,5 +12,7 @@
 
         public const string UNIQUE_EVM_RPC = "https://rpc.unique.network";
         public const string OPAL_EVM_RPC = "https://rpc-opal.unique.network/";
+
+        public const string EVM_NFT_ADDRESS_PREFIX = "0xf8238ccfff8ed887463fd5e0";
     }
 }

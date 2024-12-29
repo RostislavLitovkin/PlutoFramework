@@ -53,6 +53,7 @@ namespace UniqueryPlus.Nfts
         public BigInteger CollectionId { get; set; }
         public BigInteger Id { get; set; }
         public required string Owner { get; set; }
+        public bool HasParentNft => Owner.Contains(Constants.EVM_NFT_ADDRESS_PREFIX);
         public MetadataBase? Metadata { get; set; }
         public string UniqueMarketplaceLink => $"https://unqnft.io/unique/token/{CollectionId}/{Id}";
         public UniqueNft(SubstrateClientExt client)
@@ -69,8 +70,20 @@ namespace UniqueryPlus.Nfts
                 NftBase = (UniqueNft)nftBase,
             });
         }
-        public Task<ICollectionBase> GetCollectionAsync(CancellationToken token) => UniqueCollectionModel.GetCollectionByCollectionIdAsync(client, (uint)CollectionId, token);
+        public Task<INftBase?> GetParentNftAsync(CancellationToken token)
+        {
+            if (!HasParentNft)
+            {
+                return Task.FromResult<INftBase?>(null);
+            }
 
+            var nftId = EVM.Helpers.GetNftIdFromNftAddress(Owner);
+
+            return UniqueNftModel.GetNftByIdAsync(client, nftId.CollectionId, nftId.Id, token);
+        }
+        public Method Nest(uint collectionId, uint id) => UniqueNftModel.TransferFrom(Owner, EVM.Helpers.GetNftAddress(collectionId, id), collectionId, id);
+        public Method UnNest(string receiverAddress) => UniqueNftModel.TransferFrom(Owner, receiverAddress, (uint)CollectionId, (uint)Id);
+        public Task<ICollectionBase> GetCollectionAsync(CancellationToken token) => UniqueCollectionModel.GetCollectionByCollectionIdAsync(client, (uint)CollectionId, token);
         public required bool IsTransferable { get; set; }
         public Method Transfer(string recipientAddress)
         {
@@ -514,7 +527,7 @@ namespace UniqueryPlus.Nfts
 
                 var metadata = new MetadataBase
                 {
-                    
+
                 };
 
                 var ipfsImageProperties = nftProperties.Map.Value.Value.Value.Value.Where(nftProperty => new string[] { "i.c", "f.i", "i.i" }.Contains(System.Text.Encoding.UTF8.GetString(Helpers.RemoveCompactIntegerPrefix(((BoundedVecT12)nftProperty.Value[0]).Value.Encode()))));
@@ -549,6 +562,21 @@ namespace UniqueryPlus.Nfts
             };
 
             return metadatas;
+        }
+
+        public static Method TransferFrom(string fromAddress, string receiverAddress, uint collectionId, uint id)
+        {
+            EnumBasicCrossAccountIdRepr from = EVM.Helpers.ToUniqueCrossAccountIdRepr(fromAddress);
+
+            EnumBasicCrossAccountIdRepr to = EVM.Helpers.ToUniqueCrossAccountIdRepr(receiverAddress);
+
+            CollectionId uniqueCollectionId = new CollectionId();
+            uniqueCollectionId.Value = new U32(collectionId);
+
+            TokenId uniqueTokenId = new TokenId();
+            uniqueTokenId.Value = new U32(id);
+
+            return UniqueCalls.TransferFrom(from, to, uniqueCollectionId, uniqueTokenId, new U128(1));
         }
 
         public static async Task<BigInteger?> GetNftPriceAsync(uint collectionId, uint tokenId)
