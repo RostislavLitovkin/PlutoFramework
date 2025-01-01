@@ -1,11 +1,8 @@
-using PlutoFramework.Components.Buttons;
+using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.TransactionAnalyzer;
 using PlutoFramework.Constants;
 using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
-using System.Collections.ObjectModel;
-using UniqueryPlus.Collections;
-using UniqueryPlus.External;
 using UniqueryPlus.Nfts;
 
 namespace PlutoFramework.Components.Nft;
@@ -36,6 +33,8 @@ public partial class NftLittleThumbnailView : ContentView
                 _ => nftBase.Metadata.Image
             };
 
+            control.cardTapGestureRecognizer.CommandParameter = nftBase;
+
             // TODO: nftBase.Metadata?.Attributes ?? [];
         });
 
@@ -48,6 +47,50 @@ public partial class NftLittleThumbnailView : ContentView
 
             control.filledFavouriteIcon.IsVisible = (bool)newValue;
         });
+
+    public static readonly BindableProperty IsSelectedProperty = BindableProperty.Create(
+        nameof(IsSelected), typeof(bool), typeof(NftLittleThumbnailView),
+        defaultBindingMode: BindingMode.TwoWay,
+        propertyChanging: (bindable, oldValue, newValue) =>
+        {
+            var control = (NftLittleThumbnailView)bindable;
+
+            if ((bool)newValue)
+            {
+                control.card.Color = Color.FromArgb("#7aff7a");
+            }
+            else
+            {
+                control.card.SetDefaultColor();
+            }
+        });
+
+    public static readonly BindableProperty SelectCommandProperty = BindableProperty.Create(
+       nameof(SelectCommand), typeof(IAsyncRelayCommand<INftBase>), typeof(NftLittleThumbnailView),
+       defaultBindingMode: BindingMode.TwoWay,
+       propertyChanging: (bindable, oldValue, newValue) =>
+       {
+           Console.WriteLine("Console command set");
+
+           var control = (NftLittleThumbnailView)bindable;
+
+           if (control.moreLabel.GestureRecognizers.Count > 0)
+           {
+               control.moreLabel.GestureRecognizers.Clear();
+           }
+
+           if (control.card.GestureRecognizers.Count > 0)
+           {
+               control.card.GestureRecognizers.Clear();
+           }
+
+           control.cardTapGestureRecognizer.Command = (IAsyncRelayCommand<INftBase>)newValue;
+
+           control.card.SetAppThemeColor(Label.BackgroundColorProperty, Color.FromArgb("#fdfdfd"), Color.FromArgb("#0a0a0a"));
+
+           Console.WriteLine("Console command set done");
+
+       });
 
     public static readonly BindableProperty EndpointProperty = BindableProperty.Create(
         nameof(Endpoint), typeof(Endpoint), typeof(NftLittleThumbnailView),
@@ -111,6 +154,12 @@ public partial class NftLittleThumbnailView : ContentView
         set => SetValue(FavouriteProperty, value);
     }
 
+    public bool IsSelected
+    {
+        get => (bool)GetValue(IsSelectedProperty);
+
+        set => SetValue(IsSelectedProperty, value);
+    }
     public Endpoint Endpoint
     {
         get => (Endpoint)GetValue(EndpointProperty);
@@ -142,92 +191,15 @@ public partial class NftLittleThumbnailView : ContentView
         });
     }
 
+    public bool IsSelectable { get; set; } = false;
+
+    public IAsyncRelayCommand<INftBase> SelectCommand
+    {
+        get => (IAsyncRelayCommand<INftBase>)GetValue(SelectCommandProperty);
+        set => SetValue(SelectCommandProperty, value);
+    }
     async void OnMoreClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
-        CancellationToken token = CancellationToken.None;
-        try
-        {
-            var viewModel = new NftDetailViewModel();
-
-            viewModel.Endpoint = this.Endpoint;
-            viewModel.CollectionId = this.NftBase.CollectionId;
-            viewModel.ItemId = this.NftBase.Id;
-            viewModel.Favourite = this.Favourite;
-            viewModel.OwnerAddress = this.NftBase.Owner;
-
-            var savedCollection = await CollectionDatabase.GetCollectionAsync($"{this.NftBase.Type}-{this.NftBase.CollectionId}");
-
-            if (savedCollection is not null)
-            {
-                viewModel.CollectionFavourite = savedCollection.Favourite;
-                viewModel.CollectionBase = savedCollection.CollectionBase;
-                viewModel.CollectionNftImages = savedCollection.NftImages;
-            }
-
-            await UpdateViewModelAsync(viewModel, this.NftBase, token);
-
-            if (this.Endpoint.Key == EndpointEnum.AzeroTestnet)
-            {
-                viewModel.AzeroIdReservedUntil = await Model.AzeroId.AzeroIdModel.GetReservedUntilStringForName(this.NftBase.Metadata.Name).ConfigureAwait(false);
-            }
-
-            await Navigation.PushAsync(new NftDetailPage(viewModel));
-
-            // load these details after
-            viewModel.KodadotUnlockableUrl = await Model.Kodadot.UnlockablesModel.FetchKeywiseAsync(this.Endpoint, this.NftBase.CollectionId).ConfigureAwait(false);
-
-            ICollectionBase fullCollection;
-            if (savedCollection is null)
-            {
-                var collection = await Model.CollectionModel.ToCollectionWrapperAsync(await this.NftBase.GetCollectionAsync(token).ConfigureAwait(false), CancellationToken.None).ConfigureAwait(false);
-
-                viewModel.CollectionBase = collection.CollectionBase;
-                viewModel.CollectionNftImages = collection.NftImages;
-
-                fullCollection = await collection.CollectionBase.GetFullAsync(token).ConfigureAwait(false);
-
-            }
-            else
-            {
-                fullCollection = await savedCollection.CollectionBase.GetFullAsync(token).ConfigureAwait(false);
-            }
-
-            if (fullCollection is ICollectionStats)
-            {
-                viewModel.FloorPrice = ((ICollectionStats)fullCollection).FloorPrice;
-                viewModel.HighestSale = ((ICollectionStats)fullCollection).HighestSale;
-                viewModel.Volume = ((ICollectionStats)fullCollection).Volume;
-            }
-
-            // These can be implemented only on the full variant...
-            var fullNft = await this.NftBase.GetFullAsync(token);
-
-            await UpdateViewModelAsync(viewModel, fullNft, token);
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex);
-        }
-    }
-
-    private async Task UpdateViewModelAsync(NftDetailViewModel viewModel, INftBase nft, CancellationToken token)
-    {
-        viewModel.NftBase = nft;
-
-        viewModel.Price = (nft is INftBuyable && ((INftBuyable)nft).IsForSale) ? ((INftBuyable)nft).Price ?? 0 : 0;
-        viewModel.IsForSale = nft is INftBuyable && ((INftBuyable)nft).IsForSale;
-        viewModel.KodaIsVisible = nft is IKodaLink;
-        viewModel.UniqueIsVisible = nft is IUniqueMarketplaceLink;
-
-        viewModel.TransferButtonState = nft is INftTransferable && ((INftTransferable)nft).IsTransferable ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
-        viewModel.SellButtonState = nft is INftSellable /* && ((INftSellable)this.NftBase) */ ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
-        viewModel.ModifyButtonState = ButtonStateEnum.Disabled; // Maybe later
-        viewModel.BurnButtonState = nft is INftBurnable && ((INftBurnable)nft).IsBurnable ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
-
-        if (nft is INftNestable && !viewModel.IsNestable)
-        {
-            viewModel.IsNestable = true;
-            viewModel.NestedNfts = new ObservableCollection<NftWrapper>((await ((INftNestable)nft).GetNestedNftsAsync(token).ConfigureAwait(false)).Select(nestedNftWrapper => Model.NftModel.ToNftWrapper(nestedNftWrapper.NftBase)));
-        }
+        await NftModel.NavigateToNftDetailPageAsync(NftBase, Endpoint, Favourite, CancellationToken.None);
     }
 }

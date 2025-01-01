@@ -65,7 +65,7 @@ namespace UniqueryPlus.Nfts
 
             return OpalNftModel.GetNftByIdAsync(client, nftId.CollectionId, nftId.Id, token);
         }
-        public Method Nest(uint collectionId, uint id) => OpalNftModel.TransferFrom(Owner, EVM.Helpers.GetNftAddress(collectionId, id), collectionId, id);
+        public Method Nest(BigInteger collectionId, BigInteger id) => OpalNftModel.TransferFrom(Owner, EVM.Helpers.GetNftAddress((uint)CollectionId, (uint)Id), (uint)collectionId, (uint)id);
         public Method UnNest(string receiverAddress) => OpalNftModel.TransferFrom(Owner, receiverAddress, (uint)CollectionId, (uint)Id);
         public Task<ICollectionBase> GetCollectionAsync(CancellationToken token) => OpalCollectionModel.GetCollectionByCollectionIdAsync(client, (uint)CollectionId, token);
 
@@ -334,7 +334,7 @@ namespace UniqueryPlus.Nfts
                         Owner = data.Owner.Value switch
                         {
                             BasicCrossAccountIdRepr.Substrate => Utils.GetAddressFrom(data.Owner.Value2.Encode()),
-                            BasicCrossAccountIdRepr.Ethereum => "Unknown",
+                            BasicCrossAccountIdRepr.Ethereum => Utils.Bytes2HexString(data.Owner.Value2.Encode()).ToLower(),
                             _ => "Unknown"
                         },
                         Id = ids.Item2,

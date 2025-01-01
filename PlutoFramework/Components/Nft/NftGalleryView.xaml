@@ -47,7 +47,7 @@
                             x:Name="plusButton"
                             IsVisible="False">
                 <customlayouts:PlusItemView.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnPlusClicked" />
+                    <TapGestureRecognizer x:Name="plusTapGestureRecognizer" />
 
                 </customlayouts:PlusItemView.GestureRecognizers>
 

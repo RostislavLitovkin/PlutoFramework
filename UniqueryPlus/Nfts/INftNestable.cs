@@ -1,4 +1,5 @@
 ﻿using Substrate.NetApi.Model.Extrinsics;
+using System.Numerics;
 
 namespace UniqueryPlus.Nfts
 {
@@ -8,7 +9,7 @@ namespace UniqueryPlus.Nfts
         Task<IEnumerable<NestedNftWrapper<INftBaseNestable>>> GetNestedNftsAsync(CancellationToken token);
         Task<INftBase?> GetParentNftAsync(CancellationToken token);
         bool HasParentNft { get; }
-        Method Nest(uint collectionId, uint id);
+        Method Nest(BigInteger collectionId, BigInteger id);
         Method UnNest(string receiverAddress);
     }
 

@@ -152,5 +152,19 @@ namespace PlutoFramework.Model.SQLite
             await InitAsync().ConfigureAwait(false);
             await Database.DeleteAllAsync<NftDatabaseItem>().ConfigureAwait(false);
         }
+
+        public static async Task<bool> IsNftFavouriteAsync(NftTypeEnum type, BigInteger collectionId, BigInteger itemId)
+        {
+            await InitAsync().ConfigureAwait(false);
+
+            var item = await Database.FindAsync<NftDatabaseItem>($"{type}-{collectionId}-{itemId}").ConfigureAwait(false);
+
+            if (item is null)
+            {
+                return false;
+            }
+
+            return item.Favourite;
+        }
     }
 }

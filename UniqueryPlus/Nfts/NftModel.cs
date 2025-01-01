@@ -79,5 +79,19 @@ namespace UniqueryPlus.Nfts
                 (int)limit
             );
         }
+
+        public static IAsyncEnumerable<INftBase> GetNftsInCollectionOwnedByAsync(
+            IEnumerable<SubstrateClient> clients,
+            BigInteger collectionId,
+            string owner,
+            uint limit = 25
+        )
+        {
+            return RecursionHelper.ToIAsyncEnumerableAsync(
+                clients,
+                (SubstrateClient client, NftTypeEnum type, byte[]? lastKey, CancellationToken token) => GetNftsInCollectionOwnedByOnChainAsync(client, type, collectionId, owner, limit, lastKey, token),
+                limit
+            );
+        }
     }
 }

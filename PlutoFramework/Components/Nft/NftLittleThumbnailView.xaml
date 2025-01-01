@@ -6,7 +6,8 @@
              xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
              x:Class="PlutoFramework.Components.Nft.NftLittleThumbnailView"
              HeightRequest="70">
-    <card:ClickableCard CardPadding="0, 0, 0, 0">
+    <card:ClickableCard CardPadding="0, 0, 0, 0"
+                        x:Name="card">
         <card:ClickableCard.View>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -15,6 +16,10 @@
                     <ColumnDefinition Width="120" />
                 </Grid.ColumnDefinitions>
 
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="cardTapGestureRecognizer" />
+                </Grid.GestureRecognizers>
+                
                 <Border Margin="5"
                      Padding="0"
                      HeightRequest="60"
@@ -25,7 +30,7 @@
                         <RoundRectangle CornerRadius="20" />
 
                     </Border.StrokeShape>
-                    
+
                     <AbsoluteLayout>
 
                         <Image 
@@ -130,7 +135,9 @@
                         <Label
                             HorizontalTextAlignment="Center"
                             VerticalTextAlignment="Center"
-                            Grid.Column="2">
+                            Grid.Column="2"
+                            x:Name="moreLabel">
+
                             <Label.FormattedText>
                                 <FormattedString>
                                     <Span FontAttributes="Bold" Text="More" />
@@ -163,6 +170,5 @@
             </Grid>
 
         </card:ClickableCard.View>
-
     </card:ClickableCard>
 </ContentView>

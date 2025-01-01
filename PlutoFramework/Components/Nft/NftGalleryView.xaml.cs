@@ -1,4 +1,5 @@
-﻿using PlutoFramework.Model;
+﻿using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Model;
 using System.Collections.ObjectModel;
 using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
 
@@ -67,6 +68,16 @@ public partial class NftGalleryView : ContentView
 
           control.noNftsItem.Text = (string)newValue;
       });
+
+    public static readonly BindableProperty PlusCommandProperty = BindableProperty.Create(
+      nameof(PlusCommand), typeof(IAsyncRelayCommand), typeof(NftGalleryView),
+      defaultBindingMode: BindingMode.TwoWay,
+      propertyChanging: (bindable, oldValue, newValue) =>
+      {
+          var control = (NftGalleryView)bindable;
+
+          control.plusTapGestureRecognizer.Command = (IAsyncRelayCommand)newValue;
+      });
     public NftGalleryView()
     {
         InitializeComponent();
@@ -104,8 +115,10 @@ public partial class NftGalleryView : ContentView
         get => (string)GetValue(NoNftsTextProperty);
         set => SetValue(NoNftsTextProperty, value);
     }
-    void OnPlusClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
-    {
 
+    public IAsyncRelayCommand PlusCommand
+    {
+        get => (IAsyncRelayCommand)GetValue(PlusCommandProperty);
+        set => SetValue(PlusCommandProperty, value);
     }
 }

@@ -54,6 +54,8 @@
 
                 <nft:NftOwnerView />
 
+                <nft:NftNestedParentNftView IsVisible="{Binding HasParentNft}" />
+
                 <nft:NftTradingStats IsVisible="{Binding TradingStatsIsVisible}" />
 
                 <nft:NftDescriptionView Description="{Binding Description}" />
@@ -61,7 +63,11 @@
                 <nft:NftAttributesView IsVisible="{Binding AttributesIsVisible}" />
 
                 <nft:NftNestedNftsView IsVisible="{Binding IsNestable}" />
-                
+
+                <buttons:ElevatedButton Text="Nest"
+                                        ButtonState="{Binding NestButtonState}"
+                                        Command="{Binding NestCommand}" />
+
                 <unique:OpenUniqueButton IsVisible="{Binding UniqueIsVisible}">
                     <unique:OpenUniqueButton.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding OpenUniqueCommand}"/>
@@ -105,6 +111,8 @@
         <nft:NftTransferView />
 
         <nft:NftSellView />
+
+        <nft:NestNftSelectView />
 
         <txanalyzer:TransactionAnalyzerConfirmationView />
 

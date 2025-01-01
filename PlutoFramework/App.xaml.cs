@@ -104,7 +104,7 @@ public partial class App : Application
 
         DependencyService.Register<NftSellViewModel>();
 
-        DependencyService.Register<NftMainViewModel>();
+        DependencyService.Register<NestNftSelectViewModel>();
 
         if (Preferences.ContainsKey("publicKey"))
         {
