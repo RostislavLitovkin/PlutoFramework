@@ -64,6 +64,7 @@
     <ProjectReference Include="..\Generated\Mythos\Mythos.NetApi\Mythos.NetApi.csproj" />
     <ProjectReference Include="..\Generated\Polkadot\Polkadot.NetApi\Polkadot.NetApi.csproj" />
     <ProjectReference Include="..\Generated\Unique\Unique.NetApi\Unique.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\XCavatePaseo\XCavatePaseo.NetApi\XCavatePaseo.NetApi.csproj" />
     <ProjectReference Include="..\UniqueryPlus\UniqueryPlus.csproj" />
   </ItemGroup>
 </Project>

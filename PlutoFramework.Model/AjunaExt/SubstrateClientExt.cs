@@ -175,6 +175,7 @@ namespace PlutoFramework.Model.AjunaExt
                 EndpointEnum.KusamaAssetHub => new KusamaAssetHub.NetApi.Generated.SubstrateClientExt(websocket, ChargeTransactionPayment.Default()),
                 EndpointEnum.Unique => new Unique.NetApi.Generated.SubstrateClientExt(websocket, ChargeTransactionPayment.Default()),
                 EndpointEnum.Mythos => new Mythos.NetApi.Generated.SubstrateClientExt(websocket, ChargeTransactionPayment.Default()),
+                EndpointEnum.XCavatePaseo => new XCavatePaseo.NetApi.Generated.SubstrateClientExt(websocket, ChargeTransactionPayment.Default()),
 
                 _ => new SubstrateClient(websocket, ChargeTransactionPayment.Default()),
             };

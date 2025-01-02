@@ -43,6 +43,10 @@
     {
       "name": "Mythos",
       "websocket": "wss://polkadot-mythos-rpc.polkadot.io"
+    },
+    {
+      "name": "XCavatePaseo",
+      "websocket": "wss://rpc-paseo.xcavate.io/443"
     }
   ]
 }
