@@ -451,6 +451,9 @@
 	  <MauiXaml Update="Components\CustomLayouts\ErrorItemView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\CustomLayouts\ItemView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\CustomLayouts\LoadingItemView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

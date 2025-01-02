@@ -104,13 +104,24 @@ namespace PlutoFramework
         {
             viewModel.NftBase = nft;
 
-            viewModel.Price = (nft is INftBuyable && ((INftBuyable)nft).IsForSale) ? ((INftBuyable)nft).Price ?? 0 : 0;
-            viewModel.IsForSale = nft is INftBuyable && ((INftBuyable)nft).IsForSale;
+            viewModel.Price = nft switch
+            {
+                INftBuyable nftBuyable => nftBuyable.IsForSale ? nftBuyable.Price ?? 0 : 0,
+                INftBuyableWithReceiver nftBuyableWithReceiver => nftBuyableWithReceiver.IsForSale ? nftBuyableWithReceiver.Price ?? 0 : 0,
+                INftEVMBuyableWithReceiver nftEVMBuyableWithReceiver => nftEVMBuyableWithReceiver.IsForSale ? nftEVMBuyableWithReceiver.Price ?? 0 : 0,
+                _ => 0
+            };
+
+            viewModel.IsForSale = (nft is INftBuyable && ((INftBuyable)nft).IsForSale) ||
+                (nft is INftBuyableWithReceiver && ((INftBuyableWithReceiver)nft).IsForSale) ||
+                (nft is INftEVMBuyableWithReceiver && ((INftEVMBuyableWithReceiver)nft).IsForSale);
+
             viewModel.KodaIsVisible = nft is IKodaLink;
             viewModel.UniqueIsVisible = nft is IUniqueMarketplaceLink;
 
             viewModel.TransferButtonState = nft is INftTransferable && ((INftTransferable)nft).IsTransferable ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
-            viewModel.SellButtonState = nft is INftSellable /* && ((INftSellable)nftBase) */ ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
+            viewModel.SellButtonState = nft is INftSellable || nft is INftEVMSellable ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
+
             viewModel.ModifyButtonState = ButtonStateEnum.Disabled; // Maybe later
             viewModel.BurnButtonState = nft is INftBurnable && ((INftBurnable)nft).IsBurnable ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
         }

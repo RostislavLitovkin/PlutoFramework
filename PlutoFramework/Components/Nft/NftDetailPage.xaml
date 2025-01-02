@@ -8,6 +8,7 @@
              xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
              xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
              xmlns:confirmtransaction="clr-namespace:PlutoFramework.Components.ConfirmTransaction"
+             xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
              x:Class="PlutoFramework.Components.Nft.NftDetailPage"
              Title="NftDetailPage"
              BackgroundColor="Black">
@@ -42,6 +43,10 @@
                                             ButtonState="{Binding TransferButtonState}"
                                             />
                 </Grid>
+
+                <customlayouts:ItemView Text="This NFT is Soulbound"
+                                        HeightRequest="80"
+                                        IsVisible="{Binding IsSoulbound}" />
 
                 <nft:NftBuyView IsVisible="{Binding BuyViewIsVisible}" />
 

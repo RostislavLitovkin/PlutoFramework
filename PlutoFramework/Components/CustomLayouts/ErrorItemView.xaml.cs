@@ -9,7 +9,7 @@ public partial class ErrorItemView : ContentView
       {
           var control = (ErrorItemView)bindable;
 
-          control.label.Text = (string)newValue;
+          control.item.Text = (string)newValue;
       });
     public ErrorItemView()
 	{
