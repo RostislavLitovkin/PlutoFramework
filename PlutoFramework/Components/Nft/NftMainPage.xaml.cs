@@ -1,4 +1,5 @@
 using PlutoFramework.Model;
+using System.Collections;
 using System.Collections.ObjectModel;
 using UniqueryPlus;
 
@@ -6,8 +7,8 @@ namespace PlutoFramework.Components.Nft;
 
 public partial class NftMainPage : ContentPage
 {
-	public NftMainPage()
-	{
+    public NftMainPage()
+    {
         NavigationPage.SetHasNavigationBar(this, false);
         Shell.SetNavBarIsVisible(this, false);
 
@@ -28,24 +29,9 @@ public partial class NftMainPage : ContentPage
         {
             var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(Constants.EndpointEnum.Opal, token);
 
-            var viewModel = new CollectionDetailViewModel();
-
             var collectionBase = await UniqueryPlus.Collections.CollectionModel.GetCollectionByCollectionIdAsync(client.SubstrateClient, NftTypeEnum.Opal, 4557, CancellationToken.None);
 
-            viewModel.Endpoint = client.Endpoint;
-            viewModel.CollectionId = collectionBase.CollectionId;
-            viewModel.Favourite = false;
-            viewModel.OwnerAddress = collectionBase.Owner;
-
-            await CollectionThumbnailView.UpdateViewModelAsync(viewModel, collectionBase, token);
-
-            await Navigation.PushAsync(new CollectionDetailPage(viewModel));
-
-            var fullCollection = await collectionBase.GetFullAsync(token);
-
-            await CollectionThumbnailView.UpdateViewModelAsync(viewModel, fullCollection, token);
-
-            viewModel.Nfts = new ObservableCollection<NftWrapper>((await fullCollection.GetNftsAsync(25, null, token)).Select(Model.NftModel.ToNftWrapper));
+            await NftModel.NavigateToCollectionDetailPageAsync(collectionBase, client.Endpoint, false, token);
         }
         catch (Exception ex)
         {

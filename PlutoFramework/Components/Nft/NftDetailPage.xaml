@@ -8,6 +8,7 @@
              xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
              xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
              xmlns:confirmtransaction="clr-namespace:PlutoFramework.Components.ConfirmTransaction"
+             xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
              x:Class="PlutoFramework.Components.Nft.NftDetailPage"
              Title="NftDetailPage"
              BackgroundColor="Black">
@@ -43,6 +44,10 @@
                                             />
                 </Grid>
 
+                <customlayouts:ItemView Text="This NFT is Soulbound"
+                                        HeightRequest="80"
+                                        IsVisible="{Binding IsSoulbound}" />
+
                 <nft:NftBuyView IsVisible="{Binding BuyViewIsVisible}" />
 
                 <nft:NftSoldForView IsVisible="{Binding SoldForViewIsVisible}" />
@@ -54,6 +59,8 @@
 
                 <nft:NftOwnerView />
 
+                <nft:NftNestedParentNftView IsVisible="{Binding HasParentNft}" />
+
                 <nft:NftTradingStats IsVisible="{Binding TradingStatsIsVisible}" />
 
                 <nft:NftDescriptionView Description="{Binding Description}" />
@@ -61,7 +68,11 @@
                 <nft:NftAttributesView IsVisible="{Binding AttributesIsVisible}" />
 
                 <nft:NftNestedNftsView IsVisible="{Binding IsNestable}" />
-                
+
+                <buttons:ElevatedButton Text="Nest"
+                                        ButtonState="{Binding NestButtonState}"
+                                        Command="{Binding NestCommand}" />
+
                 <unique:OpenUniqueButton IsVisible="{Binding UniqueIsVisible}">
                     <unique:OpenUniqueButton.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding OpenUniqueCommand}"/>
@@ -105,6 +116,8 @@
         <nft:NftTransferView />
 
         <nft:NftSellView />
+
+        <nft:NestNftSelectView />
 
         <txanalyzer:TransactionAnalyzerConfirmationView />
 

@@ -38,6 +38,7 @@ namespace UniqueryPlus.Nfts
         public BigInteger CollectionId { get; set; }
         public BigInteger Id { get; set; }
         public required string Owner { get; set; }
+        public bool HasParentNft => Owner.Contains(Constants.EVM_NFT_ADDRESS_PREFIX);
         public MetadataBase? Metadata { get; set; }
         public OpalNft(SubstrateClientExt client)
         {
@@ -53,6 +54,19 @@ namespace UniqueryPlus.Nfts
                 NftBase = (OpalNft)nftBase,
             });
         }
+        public Task<INftBase?> GetParentNftAsync(CancellationToken token)
+        {
+            if (!HasParentNft)
+            {
+                return Task.FromResult<INftBase?>(null);
+            }
+
+            var nftId = EVM.Helpers.GetNftIdFromNftAddress(Owner);
+
+            return OpalNftModel.GetNftByIdAsync(client, nftId.CollectionId, nftId.Id, token);
+        }
+        public Method Nest(BigInteger collectionId, BigInteger id) => OpalNftModel.TransferFrom(Owner, EVM.Helpers.GetNftAddress((uint)CollectionId, (uint)Id), (uint)collectionId, (uint)id);
+        public Method UnNest(string receiverAddress) => OpalNftModel.TransferFrom(Owner, receiverAddress, (uint)CollectionId, (uint)Id);
         public Task<ICollectionBase> GetCollectionAsync(CancellationToken token) => OpalCollectionModel.GetCollectionByCollectionIdAsync(client, (uint)CollectionId, token);
 
         public required bool IsTransferable { get; set; }
@@ -320,7 +334,7 @@ namespace UniqueryPlus.Nfts
                         Owner = data.Owner.Value switch
                         {
                             BasicCrossAccountIdRepr.Substrate => Utils.GetAddressFrom(data.Owner.Value2.Encode()),
-                            BasicCrossAccountIdRepr.Ethereum => "Unknown",
+                            BasicCrossAccountIdRepr.Ethereum => Utils.Bytes2HexString(data.Owner.Value2.Encode()).ToLower(),
                             _ => "Unknown"
                         },
                         Id = ids.Item2,
@@ -532,6 +546,20 @@ namespace UniqueryPlus.Nfts
             };
 
             return metadatas;
+        }
+        public static Method TransferFrom(string fromAddress, string receiverAddress, uint collectionId, uint id)
+        {
+            EnumBasicCrossAccountIdRepr from = EVM.Helpers.ToOpalCrossAccountIdRepr(fromAddress);
+
+            EnumBasicCrossAccountIdRepr to = EVM.Helpers.ToOpalCrossAccountIdRepr(receiverAddress);
+
+            CollectionId uniqueCollectionId = new CollectionId();
+            uniqueCollectionId.Value = new U32(collectionId);
+
+            TokenId uniqueTokenId = new TokenId();
+            uniqueTokenId.Value = new U32(id);
+
+            return UniqueCalls.TransferFrom(from, to, uniqueCollectionId, uniqueTokenId, new U128(1));
         }
         private record NftIds
         {

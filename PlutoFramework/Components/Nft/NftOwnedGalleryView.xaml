@@ -9,5 +9,6 @@
                         ErrorIsVisible="False"
                         NoNftsIsVisible="{Binding NoOwnedNfts}"
                         NoNftsText="No owned NFTs"
+                        PlusCommand="{Binding NavigateToNftOwnedPageCommand}"
     />
 </ContentView>

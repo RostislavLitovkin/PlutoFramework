@@ -40,7 +40,8 @@ public partial class CollectionThumbnailView : ContentView
     public static readonly BindableProperty NftImagesProperty = BindableProperty.Create(
         nameof(NftImages), typeof(string[]), typeof(CollectionThumbnailView),
         defaultBindingMode: BindingMode.TwoWay,
-        propertyChanging: (bindable, oldValue, newValue) => {
+        propertyChanging: (bindable, oldValue, newValue) =>
+        {
             var control = (CollectionThumbnailView)bindable;
 
             var images = (string[])newValue;
@@ -75,7 +76,8 @@ public partial class CollectionThumbnailView : ContentView
     public static readonly BindableProperty EndpointProperty = BindableProperty.Create(
         nameof(Endpoint), typeof(Endpoint), typeof(CollectionThumbnailView),
         defaultBindingMode: BindingMode.TwoWay,
-        propertyChanging: (bindable, oldValue, newValue) => {
+        propertyChanging: (bindable, oldValue, newValue) =>
+        {
             var control = (CollectionThumbnailView)bindable;
 
             if (newValue is null)
@@ -134,68 +136,6 @@ public partial class CollectionThumbnailView : ContentView
 
     async void OnMoreClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
-        CancellationToken token = CancellationToken.None;
-
-        try
-        {
-            var viewModel = new CollectionDetailViewModel();
-
-            viewModel.Endpoint = this.Endpoint;
-            viewModel.CollectionId = this.CollectionBase.CollectionId;
-            viewModel.Favourite = this.Favourite;
-            viewModel.OwnerAddress = this.CollectionBase.Owner;
-
-            await UpdateViewModelAsync(viewModel, this.CollectionBase, token);
-
-            await Navigation.PushAsync(new CollectionDetailPage(viewModel));
-
-            var fullCollection = await this.CollectionBase.GetFullAsync(token);
-
-            await UpdateViewModelAsync(viewModel, fullCollection, token);
-
-            viewModel.Nfts = new ObservableCollection<NftWrapper>((await fullCollection.GetNftsAsync(25, null, token)).Select(Model.NftModel.ToNftWrapper));
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex);
-        }
-    }
-    public static async Task UpdateViewModelAsync(CollectionDetailViewModel viewModel, ICollectionBase collection, CancellationToken token)
-    {
-        if (collection is ICollectionStats)
-        {
-            viewModel.FloorPrice = ((ICollectionStats)collection).FloorPrice;
-            viewModel.HighestSale = ((ICollectionStats)collection).HighestSale;
-            viewModel.Volume = ((ICollectionStats)collection).Volume;
-        }
-
-        viewModel.KodaIsVisible = collection is IKodaLink;
-        viewModel.UniqueIsVisible = collection is IUniqueMarketplaceLink;
-
-        viewModel.TransferButtonState = collection is ICollectionTransferable && ((ICollectionTransferable)collection).IsTransferable ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
-        viewModel.ModifyButtonState = ButtonStateEnum.Disabled; // Maybe later
-
-        viewModel.CollectionBase = collection;
-
-        if (collection is ICollectionEVMClaimable)
-        {
-            var eventInfo = await ((ICollectionEVMClaimable)collection).GetEventInfoAsync(token).ConfigureAwait(false);
-
-            if (eventInfo is not null)
-            {
-                viewModel.EventStartTimestamp = (long)eventInfo.StartTimestamp;
-                viewModel.EventEndTimestamp = (long)eventInfo.EndTimestamp;
-
-                var timestampNow = DateTime.Now.ToUnixTimestamp();
-
-                var canBeClaimed = (eventInfo.StartTimestamp <= timestampNow && timestampNow < eventInfo.EndTimestamp);
-                Console.WriteLine("Can be claimed" + canBeClaimed);
-                viewModel.ClaimButtonState = canBeClaimed ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
-            }
-            else
-            {
-                Console.WriteLine("EVM event info was null");
-            }
-        }
+        await NftModel.NavigateToCollectionDetailPageAsync(CollectionBase, Endpoint, Favourite, CancellationToken.None);
     }
 }

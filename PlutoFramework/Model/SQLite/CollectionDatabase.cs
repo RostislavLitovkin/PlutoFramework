@@ -116,6 +116,8 @@ namespace PlutoFramework.Model.SQLite
 
         public static async Task<CollectionWrapper?> GetCollectionAsync(string key)
         {
+            await InitAsync().ConfigureAwait(false);
+
             var collection = await Database.FindAsync<CollectionDatabaseItem>(key).ConfigureAwait(false);
 
             // This avoids implicit casting, which would lead to System.NullReferenceException

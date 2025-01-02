@@ -4,10 +4,11 @@
              x:Class="PlutoFramework.Components.Nft.NftFavouriteGalleryView"
              xmlns:nft="clr-namespace:PlutoFramework.Components.Nft">
     <nft:NftGalleryView PlusIsVisible="True"
-                    LoadingIsVisible="{Binding LoadingFavouriteNfts}"
-                    Nfts="{Binding FavouriteNfts}"
-                    ErrorIsVisible="False"
-                    NoNftsIsVisible="{Binding NoFavouriteNfts}"
-                    NoNftsText="No favourite NFTs"
+                        LoadingIsVisible="{Binding LoadingFavouriteNfts}"
+                        Nfts="{Binding FavouriteNfts}"
+                        ErrorIsVisible="False"
+                        NoNftsIsVisible="{Binding NoFavouriteNfts}"
+                        NoNftsText="No favourite NFTs"
+                        PlusCommand="{Binding NavigateToNftOwnedPageCommand}"
     />
 </ContentView>

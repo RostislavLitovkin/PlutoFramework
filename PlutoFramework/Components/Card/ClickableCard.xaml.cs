@@ -42,8 +42,13 @@ public partial class ClickableCard : ContentView
     }
 
     public Thickness CardPadding { set { border.Padding = value; } }
-
     public Color Color { set { border.BackgroundColor = value; } }
-
+    public void SetDefaultColor()
+    {
+        border.SetAppThemeColor(
+            Border.BackgroundColorProperty,
+            Resources.TryGetValue("White", out object white) ? (Color)white : Colors.White,
+            Resources.TryGetValue("Black", out object black) ? (Color)black : Colors.Black);
+    }
     public LinearGradientBrush LinearGradientBrushColor { set { border.Background = value; } }
 }

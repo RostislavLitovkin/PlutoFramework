@@ -151,10 +151,15 @@ namespace PlutoFramework.Components.Nft
 
             var client = clientExt.SubstrateClient;
 
+            Method buy = NftBase switch {
+                INftBuyable nftBuyable => nftBuyable.Buy(),
+                INftBuyableWithReceiver nftBuyableWithReceiver => nftBuyableWithReceiver.Buy(KeysModel.GetSubstrateKey()),
+                INftEVMBuyableWithReceiver nftEVMBuyableWithReceiver => nftEVMBuyableWithReceiver.Buy(KeysModel.GetSubstrateKey(), KeysModel.GetSubstrateKey()),
+                _ => throw new NotSupportedException()
+            };
+
             try
             {
-                Method buy = ((INftBuyable)NftBase).Buy();
-
                 var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();
 
                 await transactionAnalyzerConfirmationViewModel.LoadAsync(clientExt, buy, false);
@@ -177,6 +182,7 @@ namespace PlutoFramework.Components.Nft
         private ButtonStateEnum transferButtonState = ButtonStateEnum.Disabled;
 
         public bool IsTransferable => TransferButtonState == ButtonStateEnum.Enabled;
+        public bool IsSoulbound => TransferButtonState == ButtonStateEnum.Disabled;
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(IsSellable))]
@@ -190,8 +196,16 @@ namespace PlutoFramework.Components.Nft
             var nftSellViewModel = DependencyService.Get<NftSellViewModel>();
 
             nftSellViewModel.Endpoint = Endpoint;
-            nftSellViewModel.SellFunction = ((INftSellable)NftBase).Sell;
+
+            nftSellViewModel.SellFunction = NftBase switch
+            {
+                INftSellable nftSellable => nftSellable.Sell,
+                INftEVMSellable nftEVMSellable => (BigInteger price) => nftEVMSellable.Sell(price, KeysModel.GetSubstrateKey()),
+                _ => throw new NotSupportedException()
+            };
+
             nftSellViewModel.IsVisible = true;
+
             await nftSellViewModel.GetFeeAsync(Endpoint.Key, NftBase);
         }
 
@@ -221,11 +235,11 @@ namespace PlutoFramework.Components.Nft
 
             try
             {
-                Method transfer = ((INftBurnable)NftBase).Burn();
+                Method burn = ((INftBurnable)NftBase).Burn();
 
                 var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();
 
-                await transactionAnalyzerConfirmationViewModel.LoadAsync(clientExt, transfer, false, token: token);
+                await transactionAnalyzerConfirmationViewModel.LoadAsync(clientExt, burn, false, token: token);
             }
             catch (Exception ex)
             {
@@ -235,7 +249,20 @@ namespace PlutoFramework.Components.Nft
         }
 
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(NestedNftsLoading))]
         private bool isNestable = false;
+
+        [ObservableProperty]
+        private ButtonStateEnum nestButtonState = ButtonStateEnum.Invisible;
+
+        [RelayCommand]
+        public async Task NestAsync()
+        {
+            var token = CancellationToken.None;
+            var nestNftSelectViewModel = DependencyService.Get<NestNftSelectViewModel>();
+
+            await nestNftSelectViewModel.AppearAsync(((ICollectionNestable)CollectionBase).RestrictedByCollectionIds, NftBase, Endpoint, token);
+        }
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(NestedNftsLoading))]
@@ -248,8 +275,13 @@ namespace PlutoFramework.Components.Nft
             (true, _) => ""
         };
 
-        public NftDetailViewModel()
-        {
-        }
+        [ObservableProperty]
+        private INftBase parentNftBase;
+
+        [ObservableProperty]
+        private bool parentNftFavourite;
+
+        [ObservableProperty]
+        private bool hasParentNft = false;
     }
 }

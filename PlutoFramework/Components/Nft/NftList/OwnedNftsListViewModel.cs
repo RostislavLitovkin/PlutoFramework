@@ -21,6 +21,13 @@ namespace PlutoFramework.Components.Nft
                 return;
             }
 
+            if (uniqueryNftEnumerator == null)
+            {
+                return;
+            }
+
+            Loading = true;
+
             try
             {
                 for (uint i = 0; i < LIMIT; i++)
@@ -75,6 +82,9 @@ namespace PlutoFramework.Components.Nft
                 Console.WriteLine("Nft owned list error: ");
                 Console.WriteLine(ex);
             }
+
+            Loading = false;
+
         }
 
         public override async Task InitialLoadAsync(CancellationToken token)
@@ -85,9 +95,9 @@ namespace PlutoFramework.Components.Nft
 
             await LoadSavedNftsAsync().ConfigureAwait(false);
 
-            await LoadMoreAsync(token).ConfigureAwait(false);
-
             Loading = false;
+
+            await LoadMoreAsync(token).ConfigureAwait(false);
         }
 
         private async Task LoadSavedNftsAsync()

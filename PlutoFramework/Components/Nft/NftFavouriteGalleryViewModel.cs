@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
 using System.Collections.ObjectModel;
@@ -56,5 +57,8 @@ namespace PlutoFramework.Components.Nft
 
             Console.WriteLine("Loading finished");
         }
+
+        [RelayCommand]
+        public Task NavigateToNftOwnedPageAsync() => Application.Current.MainPage.Navigation.PushAsync(new NftListPage(new OwnedNftsListViewModel()));
     }
 }

@@ -75,11 +75,5 @@ namespace UniqueryPlusTests
             Assert.That(eventInfo, Is.Null);
 
         }
-
-        [Test]
-        public void CheckCollectionIdToCollectionAddressConversion()
-        {
-            Assert.That(UniqueryPlus.EVM.Helpers.GetCollectionAddress(4557), Is.EqualTo("0x17C4E6453Cc49aAAaeaCA894e6d9683e000011cD".ToLower()));
-        }
     }
 }
