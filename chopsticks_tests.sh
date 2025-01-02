@@ -10,7 +10,7 @@ fi
 # Load chains data from the chains.json file
 CHAINS=$(jq -c '.chains[]' "chains.json")
 
-cd PlutoWalletTests
+cd PlutoFrameworkTests
 
 # Loop through all chains
 echo "$CHAINS" | while read -r chain; do
@@ -35,7 +35,7 @@ echo "$CHAINS" | while read -r chain; do
 
   echo "Now running actual tests :)))"
 
-  dotnet test --filter "FullyQualifiedName~PlutoWalletTests.TransferTests"
+  dotnet test --filter "FullyQualifiedName~PlutoFrameworkTests.TransferTests"
 
   echo "dotnet test finished"
 

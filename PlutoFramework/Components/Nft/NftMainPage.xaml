@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Nft.NftMainPage"
+             Title="NftMainPage"
+             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+             xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
+             xmlns:unique="clr-namespace:PlutoFramework.Components.Unique"
+             xmlns:koda="clr-namespace:PlutoFramework.Components.Koda"
+             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+             xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
+             xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
+             xmlns:confirmtransaction="clr-namespace:PlutoFramework.Components.ConfirmTransaction"
+             xmlns:model="clr-namespace:PlutoFramework.Model;assembly=PlutoFramework.Model"
+             BackgroundColor="Black">
+    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+
+        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+               Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground2.png}"
+               Opacity="{AppThemeBinding Light=0.96}"
+               Aspect="AspectFill"/>
+
+        <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+            <VerticalStackLayout Margin="0, 45, 0, 0"
+                            Spacing="15"
+                            Padding="20, 15, 20, 200">
+
+                <buttons:ElevatedButton Text="Claim Diamonds POAP"
+                                        Clicked="OnClaimDiamondsClicked"
+                        ButtonState="Enabled"
+                        />
+                <customlayouts:CategoryHeaderView TitleText="Featured: "
+                                                  ImageSource="{AppThemeBinding Light=hotblack.png, Dark=hotwhite.png}"/>
+                <nft:NftGalleryView Nfts="{Binding FeaturedNfts}"
+                                    LoadingIsVisible="{Binding LoadingFeaturedNfts}"
+                                    PlusIsVisible="False"
+                                    ErrorIsVisible="{Binding FeaturedNftErrorIsVisible}"
+                                    />
+
+                <customlayouts:CategoryHeaderView TitleText="Favourite: "
+                                  >
+                    <customlayouts:CategoryHeaderView.ImageSource>
+                        <FontImageSource Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                                         Glyph="&#xf08a;"
+                                         FontFamily="FontAwesome"
+                                         Size="50" />
+                    </customlayouts:CategoryHeaderView.ImageSource>
+                </customlayouts:CategoryHeaderView>
+                <VerticalStackLayout
+                                    HorizontalOptions="Center"
+                                    Spacing="15"
+                                    BindableLayout.ItemsSource="{Binding FavouriteNfts}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="model:NftWrapper">
+                            <nft:NftThumbnailView Endpoint="{Binding Endpoint}"
+                                                  Favourite="{Binding Favourite}"
+                                                  NftBase="{Binding NftBase}" />
+
+                        </DataTemplate>
+
+                    </BindableLayout.ItemTemplate>
+                </VerticalStackLayout>
+
+                <customlayouts:LoadingItemView HeightRequest="80" 
+                                               IsVisible="{Binding LoadingFavouriteNfts}"/>
+
+                <customlayouts:TransparentItemView Text="No Favourite NFTs"
+                                                   IsVisible="{Binding NoFavouriteNfts}" />
+
+                <buttons:ElevatedButton Text="All Favourite NFTs"
+                                        Command="{Binding ShowAllFavouriteNftsCommand}"
+                                        ButtonState="Enabled"
+                                        />
+                
+                <customlayouts:CategoryHeaderView TitleText="Owned: "
+                                                  ImageSource="{AppThemeBinding Light=nftblack.png, Dark=nftwhite.png}"/>
+                <VerticalStackLayout
+                                    HorizontalOptions="Center"
+                                    Spacing="15"
+                                    BindableLayout.ItemsSource="{Binding OwnedNfts}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="model:NftWrapper">
+                            <nft:NftThumbnailView Endpoint="{Binding Endpoint}"
+                                                  Favourite="{Binding Favourite}"
+                                                  NftBase="{Binding NftBase}"
+                                />
+
+                        </DataTemplate>
+
+                    </BindableLayout.ItemTemplate>
+                </VerticalStackLayout>
+
+                <customlayouts:LoadingItemView HeightRequest="80" 
+                               IsVisible="{Binding LoadingOwnedNfts}"/>
+
+                <customlayouts:TransparentItemView Text="No Owned NFTs"
+                                                    IsVisible="{Binding NoOwnedNfts}" />
+
+                <buttons:ElevatedButton Text="All Owned NFTs"
+                        Command="{Binding ShowAllOwnedNftsCommand}"
+                        ButtonState="Enabled"
+                        />
+
+                <customlayouts:CategoryHeaderView TitleText="Favourite Collections: ">
+                    <customlayouts:CategoryHeaderView.ImageSource>
+                        <FontImageSource Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                      Glyph="&#xf08a;"
+                      FontFamily="FontAwesome"
+                      Size="50" />
+                    </customlayouts:CategoryHeaderView.ImageSource>
+                </customlayouts:CategoryHeaderView>
+                  
+                <VerticalStackLayout
+                                    HorizontalOptions="Center"
+                                    Spacing="15"
+                                    BindableLayout.ItemsSource="{Binding FavouriteCollections}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="model:CollectionWrapper">
+                            <nft:CollectionThumbnailView Endpoint="{Binding Endpoint}"
+                                  Favourite="{Binding Favourite}"
+                                  CollectionBase="{Binding CollectionBase}"/>
+
+                        </DataTemplate>
+
+                    </BindableLayout.ItemTemplate>
+                </VerticalStackLayout>
+
+                <customlayouts:LoadingItemView HeightRequest="80" 
+                                                IsVisible="{Binding LoadingFavouriteCollections}"/>
+
+                <customlayouts:TransparentItemView Text="No Favourite Collections"
+                                                    IsVisible="{Binding NoFavouriteCollections}" />
+
+                <buttons:ElevatedButton Text="All Favourite Collections"
+                                        Command="{Binding ShowAllFavouriteCollectionsCommand}"
+                                        ButtonState="Enabled"
+                                        />
+                
+                <customlayouts:CategoryHeaderView TitleText="Owned Collections: "
+                                                  ImageSource="{AppThemeBinding Light=collectionblack.png, Dark=collectionwhite.png}"/>
+                <VerticalStackLayout
+                                    HorizontalOptions="Center"
+                                    Spacing="15"
+                                    BindableLayout.ItemsSource="{Binding OwnedCollections}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="model:CollectionWrapper">
+                            <nft:CollectionThumbnailView Endpoint="{Binding Endpoint}"
+                                                          Favourite="{Binding Favourite}"
+                                                          CollectionBase="{Binding CollectionBase}"/>
+
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </VerticalStackLayout>
+
+                <customlayouts:LoadingItemView HeightRequest="80" 
+                                                IsVisible="{Binding LoadingOwnedCollections}"/>
+
+                <customlayouts:TransparentItemView Text="No Owned Collections"
+                                    IsVisible="{Binding NoOwnedCollections}" />
+
+                <buttons:ElevatedButton Text="All Owned Collections"
+                        Command="{Binding ShowAllOwnedCollectionsCommand}"
+                        ButtonState="Enabled"
+                        />
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <navigationbar:NavigationBarView SelectedOption="Nfts" />
+
+        <nft:NftTransferView />
+
+        <nft:NftSellView />
+
+        <txanalyzer:TransactionAnalyzerConfirmationView />
+
+        <confirmtransaction:ConfirmTransactionView />
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Nft.NestNftSelectView"
+             xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
+             xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
+             AbsoluteLayout.LayoutBounds=".5, .5, 1, 1"
+             AbsoluteLayout.LayoutFlags="All"
+             IsVisible="{Binding IsVisible}">
+    <card:BottomPopupCard Title="Select NFT to nest">
+        <card:BottomPopupCard.View>
+            <CollectionView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                ItemSizingStrategy="MeasureAllItems"
+                ItemsSource="{Binding Items}"
+                RemainingItemsThreshold="1"
+                RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}">
+                <CollectionView.Footer>
+                    <StackLayout HeightRequest="200">
+                        <customlayouts:LoadingItemView HeightRequest="80" 
+                                                       Margin="20, 0, 20, 0"
+                                                       IsVisible="{Binding Loading}"/>
+                        <customlayouts:TransparentItemView Text="No NFTs"
+                                               Margin="20, 0, 20, 0"
+                                               IsVisible="{Binding NoItems}" />
+                    </StackLayout>
+                </CollectionView.Footer>
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" 
+                           ItemSpacing="15"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <nft:NftLittleThumbnailView Endpoint="{Binding Endpoint}"
+                                  Favourite="{Binding Favourite}"
+                                  NftBase="{Binding NftBase}"
+                                  Margin="5, 0, 5, 0"
+                                  SelectCommand="{Binding Path=NestCommand, Source={RelativeSource AncestorType={x:Type nft:NestNftSelectViewModel}}}"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </card:BottomPopupCard.View>
+
+    </card:BottomPopupCard>
+
+</ContentView>

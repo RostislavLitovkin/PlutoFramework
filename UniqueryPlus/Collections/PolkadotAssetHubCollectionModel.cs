@@ -14,6 +14,7 @@ using UniqueryPlus.External;
 using StrawberryShake;
 using Substrate.NetApi.Model.Extrinsics;
 using PolkadotAssetHub.NetApi.Generated.Model.sp_runtime.multiaddress;
+using UniqueryPlus.Metadata;
 
 
 namespace UniqueryPlus.Collections
@@ -34,6 +35,7 @@ namespace UniqueryPlus.Collections
         {
             this.client = client;
         }
+        public bool IsTransferable { get; set; } = true;
         public Method Transfer(string recipientAddress)
         {
             var accountId = new AccountId32();
@@ -53,7 +55,7 @@ namespace UniqueryPlus.Collections
         public required BigInteger CollectionId { get; set; }
         public required string Owner { get; set; }
         public required uint NftCount { get; set; }
-        public ICollectionMetadataBase? Metadata { get; set; }
+        public MetadataBase? Metadata { get; set; }
         public string KodaLink => $"https://koda.art/ahp/collection/{CollectionId}";
         public PolkadotAssetHubNftsPalletCollection(SubstrateClientExt client)
         {
@@ -66,7 +68,7 @@ namespace UniqueryPlus.Collections
                 return [];
             }
 
-            var result = await PolkadotAssetHubNftModel.GetNftsNftsPalletInCollectionAsync(client, (uint)CollectionId, limit, lastKey, token);
+            var result = await PolkadotAssetHubNftModel.GetNftsNftsPalletInCollectionAsync(client, (uint)CollectionId, limit, lastKey, token).ConfigureAwait(false);
 
             return result.Items;
         }
@@ -78,18 +80,18 @@ namespace UniqueryPlus.Collections
                 return [];
             }
 
-            var result = await PolkadotAssetHubNftModel.GetNftsNftsPalletInCollectionOwnedByAsync(client, (uint)CollectionId, owner, limit, lastKey, token);
+            var result = await PolkadotAssetHubNftModel.GetNftsNftsPalletInCollectionOwnedByAsync(client, (uint)CollectionId, owner, limit, lastKey, token).ConfigureAwait(false);
 
             return result.Items;
         }
 
         public async Task<ICollectionBase> GetFullAsync(CancellationToken token)
         {
-            var mintConfig = await PolkadotAssetHubCollectionModel.GetCollectionMintConfigNftsPalletAsync(client, (uint)CollectionId, token);
+            var mintConfig = await PolkadotAssetHubCollectionModel.GetCollectionMintConfigNftsPalletAsync(client, (uint)CollectionId, token).ConfigureAwait(false);
 
             var speckClient = Indexers.GetSpeckClient();
 
-            var collectionStats = await speckClient.GetCollectionStats.ExecuteAsync(CollectionId.ToString(), token);
+            var collectionStats = await speckClient.GetCollectionStats.ExecuteAsync(CollectionId.ToString(), token).ConfigureAwait(false);
             
             collectionStats.EnsureNoErrors();
 
@@ -124,7 +126,7 @@ namespace UniqueryPlus.Collections
 
             var keyPrefix = Utils.HexToByteArray(NftsStorage.CollectionAccountParams(new BaseTuple<AccountId32, U32>(accountId32, new U32(0))).Substring(0, keyPrefixLength));
 
-            var fullKeys = await client.State.GetKeysPagedAsync(keyPrefix, limit, lastKey, string.Empty, token);
+            var fullKeys = await client.State.GetKeysPagedAsync(keyPrefix, limit, lastKey, string.Empty, token).ConfigureAwait(false);
 
             // No more collections found
             if (fullKeys == null || !fullKeys.Any())
@@ -139,14 +141,14 @@ namespace UniqueryPlus.Collections
             // Filter only the CollectionId keys
             var collectionIdKeys = fullKeys.Select(p => p.ToString().Substring(keyPrefixLength));
 
-            return await GetCollectionsNftsPalletByIdKeysAsync(client, collectionIdKeys, fullKeys.Last().ToString(), token);
+            return await GetCollectionsNftsPalletByIdKeysAsync(client, collectionIdKeys, fullKeys.Last().ToString(), token).ConfigureAwait(false);
         }
 
         internal static async Task<ICollectionBase> GetCollectionNftsPalletByCollectionIdAsync(SubstrateClientExt client, uint collectionId, CancellationToken token)
         {
             var collectionIdKey = NftsStorage.CollectionParams(new U32(collectionId)).Substring(Constants.BASE_STORAGE_KEY_LENGTH);
 
-            var result = await GetCollectionsNftsPalletByIdKeysAsync(client, [collectionIdKey], "", token);
+            var result = await GetCollectionsNftsPalletByIdKeysAsync(client, [collectionIdKey], "", token).ConfigureAwait(false);
 
             return result.Items.First();
         }
@@ -155,8 +157,8 @@ namespace UniqueryPlus.Collections
         {
             var collectionIds = collectionIdKeys.Select(Helpers.GetBigIntegerFromBlake2_128Concat);
 
-            var collectionDetails = await GetCollectionCollectionNftsPalletByCollectionIdKeysAsync(client, collectionIdKeys, token);
-            var collectionMetadatas = await GetCollectionMetadataNftsPalletByCollectionIdKeysAsync(client, collectionIdKeys, token);
+            var collectionDetails = await GetCollectionCollectionNftsPalletByCollectionIdKeysAsync(client, collectionIdKeys, token).ConfigureAwait(false);
+            var collectionMetadatas = await GetCollectionMetadataNftsPalletByCollectionIdKeysAsync(client, collectionIdKeys, token).ConfigureAwait(false);
 
             return new RecursiveReturn<ICollectionBase>
             {
@@ -178,7 +180,7 @@ namespace UniqueryPlus.Collections
                             NftCount = details.Items.Value
                         }
                     };
-                }).Zip(collectionMetadatas, (PolkadotAssetHubNftsPalletCollection collectionBase, CollectionMetadata? metadata) =>
+                }).Zip(collectionMetadatas, (PolkadotAssetHubNftsPalletCollection collectionBase, MetadataBase? metadata) =>
                 {
                     collectionBase.Metadata = metadata;
                     return collectionBase;
@@ -193,7 +195,7 @@ namespace UniqueryPlus.Collections
 
             var collectionCollectionKeys = collectionIdKeys.Select(collectionIdKey => Utils.HexToByteArray(keyPrefix + collectionIdKey));
 
-            var storageChangeSets = await client.State.GetQueryStorageAtAsync(collectionCollectionKeys.ToList(), string.Empty, token);
+            var storageChangeSets = await client.State.GetQueryStorageAtAsync(collectionCollectionKeys.ToList(), string.Empty, token).ConfigureAwait(false);
 
             return storageChangeSets.First().Changes.Select(change =>
             {
@@ -209,14 +211,14 @@ namespace UniqueryPlus.Collections
             });
         }
 
-        internal static async Task<IEnumerable<CollectionMetadata?>> GetCollectionMetadataNftsPalletByCollectionIdKeysAsync(SubstrateClientExt client, IEnumerable<string> collectionIdKeys, CancellationToken token)
+        internal static async Task<IEnumerable<MetadataBase?>> GetCollectionMetadataNftsPalletByCollectionIdKeysAsync(SubstrateClientExt client, IEnumerable<string> collectionIdKeys, CancellationToken token)
         {
             var keyPrefix = NftsStorage.CollectionMetadataOfParams(new U32(0)).Substring(0, Constants.BASE_STORAGE_KEY_LENGTH);
 
             var collectionMetadataKeys = collectionIdKeys.Select(collectionIdKey => Utils.HexToByteArray(keyPrefix + collectionIdKey));
-            var storageChangeSets = await client.State.GetQueryStorageAtAsync(collectionMetadataKeys.ToList(), string.Empty, token);
+            var storageChangeSets = await client.State.GetQueryStorageAtAsync(collectionMetadataKeys.ToList(), string.Empty, token).ConfigureAwait(false);
 
-            var metadatas = new List<CollectionMetadata?>();
+            var metadatas = new List<MetadataBase?>();
 
             foreach (var change in storageChangeSets.First().Changes)
             {
@@ -240,7 +242,7 @@ namespace UniqueryPlus.Collections
                     continue;
                 }
 
-                metadatas.Add(await IpfsModel.GetMetadataAsync<CollectionMetadata>(ipfsLink, token));
+                metadatas.Add(await IpfsModel.GetMetadataAsync<MetadataBase>(ipfsLink, Constants.KODA_IPFS_ENDPOINT, token).ConfigureAwait(false));
             };
 
             return metadatas;
@@ -248,7 +250,7 @@ namespace UniqueryPlus.Collections
 
         internal static async Task<CollectionMintConfig> GetCollectionMintConfigNftsPalletAsync(SubstrateClientExt client, uint collectionId, CancellationToken token)
         {
-            var collectionMintConfig = await client.NftsStorage.CollectionConfigOf(new U32(collectionId), null, token);
+            var collectionMintConfig = await client.NftsStorage.CollectionConfigOf(new U32(collectionId), null, token).ConfigureAwait(false);
 
             return new CollectionMintConfig
             {
@@ -320,7 +322,7 @@ namespace UniqueryPlus.Collections
 
         internal static async Task<uint> GetTotalCountOfCollectionsAsync(SubstrateClientExt client, CancellationToken token)
         {
-            return await client.NftsStorage.NextCollectionId(null, token);
+            return await client.NftsStorage.NextCollectionId(null, token).ConfigureAwait(false);
         }
 
         internal static async Task<uint> GetTotalCountOfCollectionsForSaleAsync(CancellationToken token)
@@ -328,7 +330,7 @@ namespace UniqueryPlus.Collections
             var speckClient = Indexers.GetSpeckClient();
 
 
-            var result = await speckClient.GetTotalCountOfCollectionsForSale.ExecuteAsync();
+            var result = await speckClient.GetTotalCountOfCollectionsForSale.ExecuteAsync().ConfigureAwait(false);
 
             result.EnsureNoErrors();
 
@@ -344,7 +346,7 @@ namespace UniqueryPlus.Collections
         {
             var speckClient = Indexers.GetSpeckClient();
 
-            var result = await speckClient.GetCollectionsForSale.ExecuteAsync(offset, limit);
+            var result = await speckClient.GetCollectionsForSale.ExecuteAsync(offset, limit).ConfigureAwait(false);
 
             result.EnsureNoErrors();
 
@@ -360,7 +362,7 @@ namespace UniqueryPlus.Collections
                     CollectionId = uint.Parse(collectionEntity.Id),
                     Owner = collectionEntity.CurrentOwner,
                     NftCount = (uint)collectionEntity.NftCount,
-                    Metadata = new CollectionMetadata
+                    Metadata = new MetadataBase
                     {
                         Name = collectionEntity.Meta?.Name ?? "Unknown",
                         Description = collectionEntity.Meta?.Description ?? "",

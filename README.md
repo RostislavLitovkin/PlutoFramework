@@ -7,7 +7,7 @@ Other platforms will be available for download probably in November.
 # Build and Debug locally
 
 ```
-git clone https://github.com/RostislavLitovkin/PlutoWallet
+git clone https://github.com/RostislavLitovkin/PlutoFramework
 
 git checkout devel
 
@@ -21,8 +21,8 @@ Install **.net MAUI**: https://learn.microsoft.com/en-us/dotnet/maui/get-started
 
 Detailed description on how to run the code: https://docs.microsoft.com/en-us/dotnet/maui/get-started/first-app?tabs=vswin&pivots=devices-android
 
-# PlutoWallet
-<img width="1019" alt="Screenshot 2023-11-09 at 23 21 17" src="https://github.com/RostislavLitovkin/PlutoWallet/assets/77352013/e1928376-6c63-46b2-9c35-4e00ec6a9070">
+# PlutoFramework
+<img width="1019" alt="Screenshot 2023-11-09 at 23 21 17" src="https://github.com/RostislavLitovkin/PlutoFramework/assets/77352013/e1928376-6c63-46b2-9c35-4e00ec6a9070">
 
 Multi-platform mobile wallet for substrate-based chains.
 Focuses on the best UX.
@@ -81,7 +81,7 @@ This can be especially handy for dApp projects:
 - It is highly customisable. When the users decide they want to do more in the ecosystem, they can easily add more functionalities to the wallet. They can learn to use Polkadot on their own pace.
 
 ### 3) Plutonication
-Plutonication allows users to connect PlutoWallet to other dApps seamlessly on any platforms, accross multiple codebases, while preserving security.
+Plutonication allows users to connect PlutoFramework to other dApps seamlessly on any platforms, accross multiple codebases, while preserving security.
 
 DApp just generates a QR code and once it is scanned in the wallet, they will pair and the wallet will be able to receive transaction requests from the dApp. To learn more, visit https://github.com/cisar2218/Plutonication.
 
@@ -114,7 +114,7 @@ Supported Networks/NftStandards:
 
 # [Plutonication](https://github.com/cisar2218/Plutonication)
 Allows the wallet to communicate with any dApps and sign their respective transaction requests without the risk of compromising the private key.
-<img width="1512" alt="Screenshot 2023-08-19 at 22 50 21" src="https://github.com/RostislavLitovkin/PlutoWallet/assets/77352013/6c10fbe1-ad31-4aa3-8e3f-dcfbfeaf4aaf">
+<img width="1512" alt="Screenshot 2023-08-19 at 22 50 21" src="https://github.com/RostislavLitovkin/PlutoFramework/assets/77352013/6c10fbe1-ad31-4aa3-8e3f-dcfbfeaf4aaf">
 
 # Security
 
@@ -127,7 +127,7 @@ Allows the wallet to communicate with any dApps and sign their respective transa
 - Private key / Mnemonics are saved in the Secure storage according to these docs: https://learn.microsoft.com/en-us/dotnet/maui/platform-integration/storage/secure-storage.
 
 # Achievements
-- 2nd place at Polkadot Global Series hackathon 2023, Europe edition in the Web3 & Tooling category with PlutoWallet & Plutonication
+- 2nd place at Polkadot Global Series hackathon 2023, Europe edition in the Web3 & Tooling category with PlutoFramework & Plutonication
 - 2nd place at Polkadot Global Series hackathon 2023, APEC edition in the Web3 & Tooling category with Uniquery.Net
 - Part of Polkadot Relayers Incubator 2023
 

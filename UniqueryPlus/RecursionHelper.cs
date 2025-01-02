@@ -1,5 +1,4 @@
-﻿using Org.BouncyCastle.Utilities;
-using Substrate.NetApi;
+﻿using Substrate.NetApi;
 using System.Runtime.CompilerServices;
 
 namespace UniqueryPlus
@@ -21,20 +20,28 @@ namespace UniqueryPlus
 
                     while (true)
                     {
-                        var nfts = await getter.Invoke(client, nftType, lastKey, token);
+                        RecursiveReturn<T> recursiveReturn;
+                        try
+                        {
+                            recursiveReturn = await getter.Invoke(client, nftType, lastKey, token);
+                        }
+                        catch
+                        {
+                            break;
+                        }
 
-                        foreach (var item in nfts.Items)
+                        foreach (var item in recursiveReturn.Items)
                         {
                             yield return item;
                         }
 
-                        if (nfts.Items.Count() != limit)
+                        if (recursiveReturn.Items.Count() != limit)
                         {
                             break;
                         }
 
 
-                        lastKey = nfts.LastKey;
+                        lastKey = recursiveReturn.LastKey;
                     }
                 }
             }
@@ -54,7 +61,15 @@ namespace UniqueryPlus
 
                     while (true)
                     {
-                        var items = await getter.Invoke(client, nftType, limit, offset, token);
+                        IEnumerable<T> items;
+                        try
+                        {
+                            items = await getter.Invoke(client, nftType, limit, offset, token);
+                        }
+                        catch
+                        {
+                            break;
+                        }
 
                         foreach (var item in items)
                         {
@@ -67,6 +82,7 @@ namespace UniqueryPlus
                         }
 
                         offset += items.Count();
+
                     }
                 }
             }
@@ -98,10 +114,18 @@ namespace UniqueryPlus
                         catch
                         {
                             // Fallback to on-chain query
-                            var nfts = await onChainFallbackGetter.Invoke(client, nftType, lastKey, token);
+                            try
+                            {
+                                var nfts = await onChainFallbackGetter.Invoke(client, nftType, lastKey, token);
 
-                            items = nfts.Items;
-                            lastKey = nfts.LastKey;
+                                items = nfts.Items;
+                                lastKey = nfts.LastKey;
+                            }
+                            catch
+                            {
+                                items = [];
+                                lastKey = null;
+                            }
                         }
 
                         foreach (var item in items)
@@ -126,6 +150,8 @@ namespace UniqueryPlus
                 PolkadotAssetHub.NetApi.Generated.SubstrateClientExt => [NftTypeEnum.PolkadotAssetHub_NftsPallet],
                 KusamaAssetHub.NetApi.Generated.SubstrateClientExt => [NftTypeEnum.KusamaAssetHub_NftsPallet],
                 Unique.NetApi.Generated.SubstrateClientExt => [NftTypeEnum.Unique],
+                Opal.NetApi.Generated.SubstrateClientExt => [NftTypeEnum.Opal],
+                Mythos.NetApi.Generated.SubstrateClientExt => [NftTypeEnum.Mythos],
                 _ => []
             };
         }
