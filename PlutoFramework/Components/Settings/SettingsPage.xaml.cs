@@ -1,4 +1,6 @@
 using PlutoFramework.Components.CustomLayouts;
+using PlutoFramework.Components.XCavate;
+using PlutoFramework.Model.XCavate;
 using PlutoFramework.View;
 
 namespace PlutoFramework.Components.Settings;
@@ -34,6 +36,15 @@ public partial class SettingsPage : ContentPage
     async void OnDeveloperSettingsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
         await Navigation.PushAsync(new DeveloperSettingsPage());
+    }
+
+    async void OnXCavateProfileClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
+    {
+        var viewModel = new UserProfileViewModel();
+
+        await Navigation.PushAsync(new UserProfilePage(viewModel));
+
+        viewModel.User = await XCavateUserModel.GetMockUserAsync();
     }
 
     async void OnShowMnemonicsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)

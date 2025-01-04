@@ -45,7 +45,14 @@
                     </settings:GenericButton.GestureRecognizers>
 
                 </settings:GenericButton>
-                
+
+                <settings:GenericButton Title="XCavate profile">
+                    <settings:GenericButton.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnXCavateProfileClicked" />
+                    </settings:GenericButton.GestureRecognizers>
+
+                </settings:GenericButton>
+
                 <settings:GenericButton Title="Log out (Delete private key)">
                     <settings:GenericButton.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnLogOutClicked" />
