@@ -12,6 +12,7 @@ using UniqueryPlus.External;
 using Substrate.NetApi.Model.Extrinsics;
 using XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress;
 using UniqueryPlus.Metadata;
+using Newtonsoft.Json;
 
 namespace UniqueryPlus.Nfts
 {
@@ -36,7 +37,7 @@ namespace UniqueryPlus.Nfts
             return NftsCalls.BuyItem(new U32((uint)CollectionId), new U32((uint)Id), new U128(Price ?? 0));
         }
     }
-    public record XCavatePaseoNftsPalletNft : INftBase, IKodaLink, INftTransferable, INftBurnable, INftMarketPrice
+    public record XCavatePaseoNftsPalletNft : INftBase, INftTransferable, INftBurnable, INftMarketPrice, INftFractionalization, INftXCavateMetadata
     {
         private SubstrateClientExt client;
         public NftTypeEnum Type => NftTypeEnum.XCavatePaseo;
@@ -44,7 +45,7 @@ namespace UniqueryPlus.Nfts
         public BigInteger Id { get; set; }
         public required string Owner { get; set; }
         public MetadataBase? Metadata { get; set; }
-        public string KodaLink => $"https://koda.art/ahp/gallery/{CollectionId}-{Id}";
+        public XCavateMetadata? XCavateMetadata { get; set; }
         public XCavatePaseoNftsPalletNft(SubstrateClientExt client)
         {
             this.client = client;
@@ -63,7 +64,12 @@ namespace UniqueryPlus.Nfts
 
             return NftsCalls.Transfer(new U32((uint)CollectionId), new U32((uint)Id), multiAddress);
         }
+        public async Task<BigInteger> NftToAssetAsync(CancellationToken token)
+        {
+            var details = await client.NftFractionalizationStorage.NftToAsset(new BaseTuple<U32, U32>(new U32((uint)CollectionId), new U32((uint)Id)), null, token);
 
+            return details.Asset.Value;
+        }
         public bool IsBurnable { get; set; } = true;
         public Method Burn() => NftsCalls.Burn(new U32((uint)CollectionId), new U32((uint)Id));
 
@@ -227,9 +233,13 @@ namespace UniqueryPlus.Nfts
                         Owner = Utils.GetAddressFrom(details.Owner.Encode()),
                         Id = ids.Item2,
                     }
-                }).Zip(nftMetadatas, (XCavatePaseoNftsPalletNft nft, MetadataBase? metadata) =>
+                }).Zip(nftMetadatas, (XCavatePaseoNftsPalletNft nft, (MetadataBase Metadata, XCavateMetadata XCavateMetadata)? metadata) =>
                 {
-                    nft.Metadata = metadata;
+                    if (metadata.HasValue)
+                    {
+                        nft.Metadata = metadata.Value.Metadata;
+                        nft.XCavateMetadata = metadata.Value.XCavateMetadata;
+                    }
                     return nft;
                 }),
                 LastKey = Utils.HexToByteArray(lastKey)
@@ -261,7 +271,7 @@ namespace UniqueryPlus.Nfts
             });
         }
 
-        internal static async Task<IEnumerable<MetadataBase?>> GetNftMetadataNftsPalletByIdKeysAsync(SubstrateClientExt client, IEnumerable<string> idKeys, CancellationToken token)
+        internal static async Task<IEnumerable<(MetadataBase Metadata, XCavateMetadata XCavateMetadata)?>> GetNftMetadataNftsPalletByIdKeysAsync(SubstrateClientExt client, IEnumerable<string> idKeys, CancellationToken token)
         {
             // 0x + Twox64 pallet + Twox64 storage
             var keyPrefixLength = 66;
@@ -271,7 +281,7 @@ namespace UniqueryPlus.Nfts
             var nftMetadataKeys = idKeys.Select(idKey => Utils.HexToByteArray(keyPrefix + idKey));
             var storageChangeSets = await client.State.GetQueryStorageAtAsync(nftMetadataKeys.ToList(), string.Empty, token).ConfigureAwait(false);
 
-            var metadatas = new List<MetadataBase?>();
+            var metadatas = new List<(MetadataBase Metadata, XCavateMetadata XCavateMetadata)?>();
 
             foreach (var change in storageChangeSets.First().Changes)
             {
@@ -284,11 +294,24 @@ namespace UniqueryPlus.Nfts
                 var nftMetadata = new ItemMetadata();
                 nftMetadata.Create(change[1]);
 
-                string ipfsLink = System.Text.Encoding.UTF8.GetString(nftMetadata.Data.Value.Bytes);
+                string metadataJson = System.Text.Encoding.UTF8.GetString(nftMetadata.Data.Value.Bytes);
 
-                Console.WriteLine(ipfsLink);
+                XCavateMetadata? xCavateMetadata = JsonConvert.DeserializeObject<XCavateMetadata>(metadataJson);
 
-                metadatas.Add(await IpfsModel.GetMetadataAsync<MetadataBase>(ipfsLink, Constants.KODA_IPFS_ENDPOINT, token).ConfigureAwait(false));
+                if (xCavateMetadata == null)
+                {
+                    metadatas.Add(null);
+                    continue;
+                }
+
+                var metadata = new MetadataBase
+                {
+                    Name = xCavateMetadata.PropertyName,
+                    Description = xCavateMetadata.PropertyDescription,
+                    Image = xCavateMetadata.PropertyImages.Count() == 0 ? null : xCavateMetadata.PropertyImages.First(),
+                };
+
+                metadatas.Add((metadata, xCavateMetadata));
             };
 
             return metadatas;

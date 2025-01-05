@@ -48,7 +48,7 @@ namespace UniqueryPlus.Collections
         }
     }
 
-    public record XCavatePaseoNftsPalletCollection : ICollectionBase, IKodaLink
+    public record XCavatePaseoNftsPalletCollection : ICollectionBase
     {
         private SubstrateClientExt client;
         public NftTypeEnum Type => NftTypeEnum.XCavatePaseo;
@@ -56,7 +56,6 @@ namespace UniqueryPlus.Collections
         public required string Owner { get; set; }
         public required uint NftCount { get; set; }
         public MetadataBase? Metadata { get; set; }
-        public string KodaLink => $"https://koda.art/ahp/collection/{CollectionId}";
         public XCavatePaseoNftsPalletCollection(SubstrateClientExt client)
         {
             this.client = client;

@@ -2,10 +2,6 @@
 
 namespace UniqueryPlus.Metadata
 {
-    public record File
-    {
-
-    }
     public record XCavateMetadata
     {
         [JsonPropertyName("property_name")] public required string PropertyName;
@@ -17,8 +13,8 @@ namespace UniqueryPlus.Metadata
         [JsonPropertyName("local_authority")] public required string LocalAuthority;
         [JsonPropertyName("planning_permission_code")] public string? PlanningPermissionCode;
         [JsonPropertyName("map")] public required string Map;
-        [JsonPropertyName("floor_plan")] public required File FloorPlan;
-        [JsonPropertyName("sales_agreement")] public required File SalesAgreement;
+        [JsonPropertyName("floor_plan")] public required string FloorPlan;
+        [JsonPropertyName("sales_agreement")] public required string SalesAgreement;
         [JsonPropertyName("region")] public required int Region;
         [JsonPropertyName("location")] public required int Location;
         [JsonPropertyName("number_of_tokens")] public required string NumberOfTokens;
@@ -35,6 +31,6 @@ namespace UniqueryPlus.Metadata
         [JsonPropertyName("property_description")] public required string PropertyDescription;
         [JsonPropertyName("property_development_code")] public string? PropertyDevelopmentCode;
         [JsonPropertyName("title_deed_number")] public required string TitleDeedNumber;
-        [JsonPropertyName("property_images")] public required List<File> PropertyImages;
+        [JsonPropertyName("property_images")] public required List<string> PropertyImages;
     }
 }
