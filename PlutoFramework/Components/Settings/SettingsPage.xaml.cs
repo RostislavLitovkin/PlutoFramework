@@ -34,7 +34,6 @@ public partial class SettingsPage : ContentPage
 
         Application.Current.MainPage = new SetupPasswordPage();
     }
-
     async void OnDeveloperSettingsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
         await Navigation.PushAsync(new DeveloperSettingsPage());
@@ -67,6 +66,14 @@ public partial class SettingsPage : ContentPage
         }
 
         await Navigation.PushAsync(new UserProfilePage(viewModel));
+    }
+    private async void OnXCavateCompanyClicked(object sender, TappedEventArgs e)
+    {
+        var viewModel = new CompanyViewModel();
+        viewModel.Company = await XCavateCompanyModel.GetMockCompanyAsync();
+
+        await Navigation.PushAsync(new CompanyPage(viewModel));
+
     }
 
     async void OnShowMnemonicsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)

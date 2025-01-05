@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.XCavate.ModifyCompanyPage"
+                      xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+         xmlns:form="clr-namespace:PlutoFramework.Components.Form"
+         xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+         Title="ModifyUserProfilePage"
+         BackgroundColor="{AppThemeBinding Light=White, Dark=Black}">
+    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+        <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+            <VerticalStackLayout Margin="0, 45, 0, 0"
+                                Spacing="15"
+                                Padding="0, 20, 0, 200">
+
+                <VerticalStackLayout Spacing="15"
+                                 Margin="20,0,20,0"
+                                x:Name="verticalStackLayout"
+                                 >
+
+                    <form:FormInputView Placeholder="Company name"
+                                        CardWidth="{Binding Source={x:Reference verticalStackLayout}, Path=Width}"
+                                        Text="{Binding CompanyName}" />
+
+                    <form:FormInputView Placeholder="Registration number"
+                                        CardWidth="{Binding Source={x:Reference verticalStackLayout}, Path=Width}"
+                                        Text="{Binding RegistrationNumber}" />
+
+                    <form:FormInputView Placeholder="Phone Number"
+                                        CardWidth="{Binding Source={x:Reference verticalStackLayout}, Path=Width}"
+                                        Text="{Binding PhoneNumber}"/>
+
+                    <form:FormInputView Placeholder="Email"
+                                        CardWidth="{Binding Source={x:Reference verticalStackLayout}, Path=Width}"
+                                        ValidateEmail="True"
+                                        Text="{Binding Email}" />
+
+                    <form:FormLargeInputView Placeholder="Address"
+                                        CardWidth="{Binding Source={x:Reference verticalStackLayout}, Path=Width}"
+                                        Text="{Binding Address}" />
+
+                    <form:FormInputView Placeholder="Associated website"
+                                        CardWidth="{Binding Source={x:Reference verticalStackLayout}, Path=Width}"
+                                        Text="{Binding Website}" />
+
+                    <form:FormInputView Placeholder="Associated membership number"
+                                        CardWidth="{Binding Source={x:Reference verticalStackLayout}, Path=Width}"
+                                        Text="{Binding AssociatedMembershipNumber}" />
+                    
+                    <!-- Passport verification here -->
+
+
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 80"
+            AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
+
+            <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 50"
+              AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+              ColumnSpacing="15"
+              Margin="20, 0, 20, 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <buttons:BasicGrayButton Text="Cancel"
+                                     Command="{Binding CancelCommand}"
+                                     Grid.Column="0"
+                                />
+
+                <buttons:ElevatedButton Text="Save"
+                                    Grid.Column="1"
+                                    Command="{Binding SaveCommand}"
+                                    ButtonState="{Binding SaveButtonState}"/>
+
+            </Grid>
+        </AbsoluteLayout>
+
+        <navigationbar:TopNavigationBar Title="{Binding Title}"/>
+    </AbsoluteLayout>
+</ContentPage>

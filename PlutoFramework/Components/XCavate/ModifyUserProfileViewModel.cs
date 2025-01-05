@@ -49,8 +49,6 @@ namespace PlutoFramework.Components.XCavate
                 return;
             }
 
-            Console.WriteLine("Picked: " + result.FileName);
-
             string targetFile = Path.Combine(FileSystem.Current.AppDataDirectory, "temporaryprofilepicture");
 
             using (var inputStream = await result.OpenReadAsync())
@@ -81,22 +79,16 @@ namespace PlutoFramework.Components.XCavate
                 FileTypes = FilePickerFileType.Images,
             });
 
-            Console.WriteLine("picking result"); ;
-
-
             if (result == null)
             {
                 return;
             }
-
-            Console.WriteLine("Picked: " + result.FileName);
 
             string targetFile = Path.Combine(FileSystem.Current.AppDataDirectory, "temporaryprofilebackground");
 
             if (File.Exists(targetFile))
             {
                 File.Delete(targetFile);
-                Console.WriteLine("File deleted");
             }
 
             using (var inputStream = await result.OpenReadAsync())
@@ -112,8 +104,6 @@ namespace PlutoFramework.Components.XCavate
                     return File.OpenRead(targetFile);
                 });
             }
-
-            Console.WriteLine("Done");
         }
 
         [RelayCommand]
@@ -151,8 +141,6 @@ namespace PlutoFramework.Components.XCavate
 
             string tempProfileBackgroundPath = Path.Combine(FileSystem.Current.AppDataDirectory, "temporaryprofilebackground");
             string profileBackgroundPath = Path.Combine(FileSystem.Current.AppDataDirectory, XCavateConstants.PROFILE_BACKGROUND_FILE_NAME);
-
-            Console.WriteLine("This is the path: " + tempProfileBackgroundPath);
 
             if (File.Exists(tempProfileBackgroundPath))
             {

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.XCavate.DocumentVerificationView"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card">
+    <card:ClickableCard 
+                    AbsoluteLayout.LayoutBounds="0, .5, 1, 60"
+                    AbsoluteLayout.LayoutFlags="YProportional, WidthProportional">
+        <card:ClickableCard.View>
+
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                     x:Name="absoluteLayout">
+                <Grid AbsoluteLayout.LayoutBounds="0, .5, 1, 60"
+               AbsoluteLayout.LayoutFlags="YProportional, WidthProportional">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+
+                    <Label
+                     VerticalOptions="End" 
+                     HorizontalOptions="StartAndExpand"
+                     FontAttributes="Bold"
+                     x:Name="titleLabel"
+                     Margin="5, 0, 5, 0"
+                     Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                 >
+                    </Label>
+
+                    <Label x:Name="valueLabel"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="FillAndExpand"
+                        Margin="5, 0, 5, 0"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        LineBreakMode="TailTruncation"
+                        TextColor="{AppThemeBinding Dark=#fdfdfd, Light=#0a0a0a}">
+
+                    </Label>
+
+                    <Label Text="View"
+                            VerticalOptions="Start" 
+                            HorizontalOptions="FillAndExpand"
+                            Margin="5, 0, 5, 0"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            LineBreakMode="TailTruncation">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="tapGestureRecognizer" />
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                </Grid>
+            </AbsoluteLayout>
+        </card:ClickableCard.View>
+
+    </card:ClickableCard>
+</ContentView>

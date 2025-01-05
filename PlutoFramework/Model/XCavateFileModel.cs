@@ -10,12 +10,8 @@ namespace PlutoFramework.Model
 
             if (!File.Exists(profilePicturePath))
             {
-                Console.WriteLine("Getting null profile picture");
                 return null;
-
             }
-
-            Console.WriteLine("New path : " + profilePicturePath);
 
             return ImageSource.FromStream(() =>
             {
@@ -28,10 +24,9 @@ namespace PlutoFramework.Model
 
             if (!File.Exists(profileBackgroundPath))
             {
-                Console.WriteLine("Returning null");
                 return null;
-
             }
+
             return ImageSource.FromStream(() =>
             {
                 return File.OpenRead(profileBackgroundPath);
