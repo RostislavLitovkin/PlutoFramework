@@ -50,6 +50,7 @@
 
             <Label.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnExtraClicked" />
+                <TapGestureRecognizer x:Name="extraLabelTapGestureRecognizer" />
 
             </Label.GestureRecognizers>
 

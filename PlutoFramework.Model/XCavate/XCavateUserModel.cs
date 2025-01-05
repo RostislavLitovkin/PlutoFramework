@@ -16,20 +16,16 @@
         public required int TotalSales { get; set; }
         public required int AverageSaleTime { get; set; }
     }
-
     public record XCavateUser
     {
-        public required string FirstName { get; set; }
-        public required string LastName { get; set; }
-        public required string? ProfilePicture { get; set; }
-        public required string? ProfileBackground { get; set; }
-        public required DateTime? AccountCreatedAt { get; set; }
         public required UserRoleEnum Role { get; set; }
         public required string Email { get; set; }
         public required string PhoneNumber { get; set; }
+        public required string FirstName { get; set; }
+        public required string LastName { get; set; }
+        public required DateTime? AccountCreatedAt { get; set; }
         public DeveloperStats? DeveloperStats { get; set; }
     }
-
     public class XCavateUserModel
     {
         public static async Task<XCavateUser> GetMockUserAsync()
@@ -40,8 +36,6 @@
             {
                 FirstName = "Richard",
                 LastName = "Grey",
-                ProfilePicture = null,
-                ProfileBackground = null,
                 AccountCreatedAt = new DateTime(2023, 5, 1),
                 Role = UserRoleEnum.Developer,
                 Email = "Richard120@gmail.com",

@@ -2,7 +2,8 @@ namespace PlutoFramework.Components.XCavate;
 
 public partial class UserProfilePage : ContentPage
 {
-	public UserProfilePage(UserProfileViewModel viewModel)
+    public static UserProfileViewModel ViewModel;
+    public UserProfilePage(UserProfileViewModel viewModel)
 	{
         NavigationPage.SetHasNavigationBar(this, false);
         Shell.SetNavBarIsVisible(this, false);
@@ -10,5 +11,7 @@ public partial class UserProfilePage : ContentPage
         InitializeComponent();
 
         this.BindingContext = viewModel;
-	}
+
+        ViewModel = viewModel;
+    }
 }

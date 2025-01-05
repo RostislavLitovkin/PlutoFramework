@@ -10,7 +10,6 @@ namespace PlutoFramework.Model.Constants
         public const string NftDatabaseFilename = "NftSQLite.db3";
         public const string CollectionDatabaseFilename = "CollectionSQLite.db3";
 
-
         public const SQLiteOpenFlags NftDatabaseFlags =
             // open the database in read/write mode
             SQLiteOpenFlags.ReadWrite |
@@ -22,6 +21,16 @@ namespace PlutoFramework.Model.Constants
             SQLiteOpenFlags.ProtectionNone;
 
         public const SQLiteOpenFlags CollectionDatabaseFlags =
+            // open the database in read/write mode
+            SQLiteOpenFlags.ReadWrite |
+            // create the database if it doesn't exist
+            SQLiteOpenFlags.Create |
+            // enable multi-threaded database access
+            SQLiteOpenFlags.SharedCache |
+
+            SQLiteOpenFlags.ProtectionNone;
+
+        public const SQLiteOpenFlags XCavateDatabaseFlags =
             // open the database in read/write mode
             SQLiteOpenFlags.ReadWrite |
             // create the database if it doesn't exist

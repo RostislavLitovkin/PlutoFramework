@@ -1,5 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Model;
 using PlutoFramework.Model.XCavate;
+using System.Text;
 
 namespace PlutoFramework.Components.XCavate
 {
@@ -24,8 +27,6 @@ namespace PlutoFramework.Components.XCavate
         {
             FirstName = "",
             LastName = "",
-            ProfilePicture = null,
-            ProfileBackground = null,
             AccountCreatedAt = null,
             Role = UserRoleEnum.None,
             Email = "",
@@ -33,8 +34,12 @@ namespace PlutoFramework.Components.XCavate
             DeveloperStats = null,
         };
         public string FullName => $"{User.FirstName} {User.LastName}";
-        public string ProfilePicture => User.ProfilePicture ?? "xcavate.png";
-        public string ProfileBackground => User.ProfileBackground ?? "whitebackground.png";
+
+        [ObservableProperty]
+        private ImageSource profilePicture;
+
+        [ObservableProperty]
+        private ImageSource profileBackground;
         public string AccountCreatedAtText => User.AccountCreatedAt is null ? "" : $"Account created {User.AccountCreatedAt?.ToString("MMMM")}, {User.AccountCreatedAt?.Year}";
         public UserRoleEnum UserRole => User.Role;
         public bool DeveloperStatsIsVisible => User.Role == UserRoleEnum.Developer;
@@ -46,5 +51,18 @@ namespace PlutoFramework.Components.XCavate
         public string LastName => User.LastName;
         public string Email => User.Email;
         public string PhoneNumber => User.PhoneNumber;
+
+        [RelayCommand]
+        public Task EditAsync() => Application.Current.MainPage.Navigation.PushAsync(new ModifyUserProfilePage(
+            new ModifyUserProfileViewModel
+            {
+                Title = "Modify personal profile",
+                ProfilePicture = XCavateFileModel.GetSavedProfilePicture(),
+                ProfileBackground = XCavateFileModel.GetSavedProfileBackground(),
+                FirstName = User.FirstName,
+                LastName = User.LastName,
+                Email = User.Email,
+                PhoneNumber = User.PhoneNumber,
+            }));
     }
 }

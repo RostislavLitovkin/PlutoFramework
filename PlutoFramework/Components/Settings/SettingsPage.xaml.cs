@@ -1,5 +1,7 @@
 using PlutoFramework.Components.CustomLayouts;
 using PlutoFramework.Components.XCavate;
+using PlutoFramework.Model;
+using PlutoFramework.Model.SQLite;
 using PlutoFramework.Model.XCavate;
 using PlutoFramework.View;
 
@@ -7,13 +9,13 @@ namespace PlutoFramework.Components.Settings;
 
 public partial class SettingsPage : ContentPage
 {
-	public SettingsPage()
-	{
+    public SettingsPage()
+    {
         NavigationPage.SetHasNavigationBar(this, false);
         Shell.SetNavBarIsVisible(this, false);
 
         InitializeComponent();
-	}
+    }
 
     async void OnPredefinedLayoutsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
@@ -42,9 +44,29 @@ public partial class SettingsPage : ContentPage
     {
         var viewModel = new UserProfileViewModel();
 
-        await Navigation.PushAsync(new UserProfilePage(viewModel));
+        var userInfo = await XCavateUserDatabase.GetUserInformationAsync();
+        viewModel.User = userInfo ?? await XCavateUserModel.GetMockUserAsync();
 
-        viewModel.User = await XCavateUserModel.GetMockUserAsync();
+        viewModel.ProfilePicture = XCavateFileModel.GetSavedProfilePicture();
+
+        viewModel.ProfileBackground = XCavateFileModel.GetSavedProfileBackground();
+
+        // Clean temporary files
+        string tempProfileBackgroundPath = Path.Combine(FileSystem.Current.AppDataDirectory, "temporaryprofilebackground");
+
+        if (File.Exists(tempProfileBackgroundPath))
+        {
+            File.Delete(tempProfileBackgroundPath);
+        }
+
+        string tempProfilePicturePath = Path.Combine(FileSystem.Current.AppDataDirectory, "temporaryprofilepicture");
+
+        if (File.Exists(tempProfilePicturePath))
+        {
+            File.Delete(tempProfilePicturePath);
+        }
+
+        await Navigation.PushAsync(new UserProfilePage(viewModel));
     }
 
     async void OnShowMnemonicsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
