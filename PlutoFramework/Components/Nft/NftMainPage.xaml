@@ -65,6 +65,7 @@
                                                IsVisible="{Binding LoadingFavouriteNfts}"/>
 
                 <customlayouts:TransparentItemView Text="No Favourite NFTs"
+                                                    HeightRequest="80"
                                                    IsVisible="{Binding NoFavouriteNfts}" />
 
                 <buttons:ElevatedButton Text="All Favourite NFTs"
@@ -94,6 +95,7 @@
                                IsVisible="{Binding LoadingOwnedNfts}"/>
 
                 <customlayouts:TransparentItemView Text="No Owned NFTs"
+                                                   HeightRequest="80"
                                                     IsVisible="{Binding NoOwnedNfts}" />
 
                 <buttons:ElevatedButton Text="All Owned NFTs"
@@ -129,6 +131,7 @@
                                                 IsVisible="{Binding LoadingFavouriteCollections}"/>
 
                 <customlayouts:TransparentItemView Text="No Favourite Collections"
+                                                   HeightRequest="80" 
                                                     IsVisible="{Binding NoFavouriteCollections}" />
 
                 <buttons:ElevatedButton Text="All Favourite Collections"
@@ -156,6 +159,7 @@
                                                 IsVisible="{Binding LoadingOwnedCollections}"/>
 
                 <customlayouts:TransparentItemView Text="No Owned Collections"
+                                                   HeightRequest="80" 
                                     IsVisible="{Binding NoOwnedCollections}" />
 
                 <buttons:ElevatedButton Text="All Owned Collections"

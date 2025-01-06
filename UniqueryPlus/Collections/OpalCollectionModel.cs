@@ -69,7 +69,7 @@ namespace UniqueryPlus.Collections
 
     }
 
-    public record OpalCollection : ICollectionBase, ICollectionMintConfig, ICollectionNestable
+    public record OpalCollection : ICollectionBase, ICollectionMintConfig, ICollectionNestable, ICollectionNftsSoulbound
     {
         private SubstrateClientExt client;
         public NftTypeEnum Type => NftTypeEnum.Opal;
@@ -84,6 +84,7 @@ namespace UniqueryPlus.Collections
         public BigInteger? MintPrice { get; set; }
         public required bool IsNestableByTokenOwner { get; set; }
         public required bool IsNestableByCollectionOwner { get; set; }
+        public bool NftsSoulbound { get; set; }
         public IEnumerable<BigInteger>? RestrictedByCollectionIds { get; set; }
         public OpalCollection(SubstrateClientExt client)
         {
@@ -219,6 +220,12 @@ namespace UniqueryPlus.Collections
                                     }
                                 },
                                 CollectionId = null
+                            },
+                            NftsSoulbound = (details.Limits.TransfersEnabled.OptionFlag, details.Limits.OwnerCanTransfer.OptionFlag) switch
+                            {
+                                (false, false) => true,
+                                (true, _) => details.Limits.TransfersEnabled.Value,
+                                (false, true) => details.Limits.OwnerCanTransfer.Value
                             },
                             NftMaxSuply = details.Limits.TokenLimit.OptionFlag ? (uint)details.Limits.TokenLimit.Value : null,
                             MintPrice = null,

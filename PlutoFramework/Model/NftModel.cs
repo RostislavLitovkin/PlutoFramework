@@ -57,7 +57,6 @@ namespace PlutoFramework
 
                 ICollectionBase fullCollection = await savedCollection.CollectionBase.GetFullAsync(token).ConfigureAwait(false);
 
-
                 if (fullCollection is ICollectionStats)
                 {
                     viewModel.FloorPrice = ((ICollectionStats)fullCollection).FloorPrice;
@@ -189,6 +188,25 @@ namespace PlutoFramework
                 {
                     Console.WriteLine("EVM event info was null");
                 }
+            }
+
+            if (collection is ICollectionMintConfig)
+            {
+                viewModel.MintPrice = (collection as ICollectionMintConfig).MintPrice;
+                viewModel.MintStartBlock = (collection as ICollectionMintConfig).MintStartBlock;
+                viewModel.MintEndBlock = (collection as ICollectionMintConfig).MintEndBlock;
+                viewModel.MintType = (collection as ICollectionMintConfig).MintType;
+                viewModel.NftMaxSuply = (collection as ICollectionMintConfig).NftMaxSuply;
+            }
+
+            if (collection is ICollectionCreatedAt)
+            {
+                viewModel.DateOfCreation = (collection as ICollectionCreatedAt).CreatedAt.UtcDateTime;
+            }
+
+            if (collection is ICollectionNftsSoulbound)
+            {
+                viewModel.NftsSoulbound = (collection as ICollectionNftsSoulbound).NftsSoulbound;
             }
         }
     }

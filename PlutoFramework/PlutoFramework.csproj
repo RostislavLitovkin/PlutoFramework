@@ -493,6 +493,12 @@
 	  <MauiXaml Update="Components\Nft\CollectionListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Nft\CollectionMintConfigView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Nft\CollectionStatsView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Nft\CollectionThumbnailView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -702,6 +708,9 @@
 	  </Compile>
 	  <Compile Update="Components\Extrinsic\CallParametersView.xaml.cs">
 	    <DependentUpon>CallParametersView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Components\Nft\CollectionStatsView.xaml.cs">
+	    <DependentUpon>CollectionStatsView.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Components\Nft\NftGalleryView.xaml.cs">
 	    <DependentUpon>NftGalleryView.xaml</DependentUpon>

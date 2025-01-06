@@ -182,6 +182,11 @@ public partial class NftLittleThumbnailView : ContentView
     }
     void OnFavouriteClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
+        if (NftBase is null)
+        {
+            return;
+        }
+
         Favourite = !Favourite;
         Task save = NftDatabase.SaveItemAsync(new NftWrapper
         {

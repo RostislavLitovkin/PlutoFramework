@@ -69,6 +69,16 @@
 
                 <nft:NftDescriptionView Description="{Binding Description}" />
 
+                <nft:CollectionStatsView DateOfCreation="{Binding DateOfCreation}"
+                                        Transferable="{Binding NftsSoulbound}"/>
+
+                <nft:CollectionMintConfigView NftsMintedText="{Binding NftsMintedText}"
+                                              MintType="{Binding MintType}"
+                                              MintPriceText="{Binding MintPriceText}"
+                                              FromBlock="{Binding MintStartBlock}"
+                                              ToBlock="{Binding MintEndBlock}"
+                                              />
+
                 <nft:NftAttributesView IsVisible="{Binding AttributesIsVisible}" />
 
                 <unique:OpenUniqueButton IsVisible="{Binding UniqueIsVisible}">
