@@ -59,7 +59,7 @@
     <MauiIcon Include="Resources\AppIcon\appicon.png" Color="#FFFFFF" />
 
 		<!-- Splash Screen -->
-    <MauiSplashScreen Include="Resources\Splash\xcavateiconwhite.png" Color="#000000" />
+    <MauiSplashScreen Include="Resources\Splash\realxmarketsplash.png" Color="#000000" BaseSize="1200,1200"/>
 
     <!-- Images -->
 
@@ -120,13 +120,23 @@
 	  <None Remove="Resources\Images\dappwhite.svg" />
 	  <None Remove="Resources\Images\deviceblack.svg" />
 	  <None Remove="Resources\Images\devicewhite.svg" />
+	  <None Remove="Resources\Images\discordblack.svg" />
+	  <None Remove="Resources\Images\discordwhite.svg" />
 	  <None Remove="Resources\Images\expandblack.svg" />
 	  <None Remove="Resources\Images\expandwhite.svg" />
+	  <None Remove="Resources\Images\facebookblack.png" />
+	  <None Remove="Resources\Images\facebookwhite.png" />
+	  <None Remove="Resources\Images\githubblack.svg" />
+	  <None Remove="Resources\Images\githubwhite.svg" />
 	  <None Remove="Resources\Images\hotblack.svg" />
 	  <None Remove="Resources\Images\hotwhite.svg" />
 	  <None Remove="Resources\Images\imageloading.png" />
 	  <None Remove="Resources\Images\kodablack.svg" />
 	  <None Remove="Resources\Images\kodawhite.svg" />
+	  <None Remove="Resources\Images\linkedinblack.png" />
+	  <None Remove="Resources\Images\linkedinwhite.png" />
+	  <None Remove="Resources\Images\liquidityfinderblack.png" />
+	  <None Remove="Resources\Images\liquidityfinderwhite.png" />
 	  <None Remove="Resources\Images\NetworkIcons\hydration.svg" />
 	  <None Remove="Resources\Images\NetworkIcons\kusamaassethub.svg" />
 	  <None Remove="Resources\Images\NetworkIcons\mythos.png" />
@@ -136,10 +146,16 @@
 	  <None Remove="Resources\Images\noimage.png" />
 	  <None Remove="Resources\Images\plutowalletclearwhite.png" />
 	  <None Remove="Resources\Images\plutowalleticonwhite.png" />
+	  <None Remove="Resources\Images\realxmarket.png" />
 	  <None Remove="Resources\Images\subscan.png" />
 	  <None Remove="Resources\Images\subscanicon.png" />
 	  <None Remove="Resources\Images\uniqueblack.svg" />
 	  <None Remove="Resources\Images\uniquewhite.svg" />
+	  <None Remove="Resources\Images\xblack.png" />
+	  <None Remove="Resources\Images\xcavatergb.png" />
+	  <None Remove="Resources\Images\xwhite.png" />
+	  <None Remove="Resources\Images\youtubeblack.png" />
+	  <None Remove="Resources\Images\youtubewhite.png" />
 	  <None Remove="SubstrateNetApi" />
 	  <None Remove="Components\TransferView\" />
 	  <None Remove="ZXing.Net.Maui" />
@@ -571,6 +587,9 @@
 	  <MauiXaml Update="Components\Settings\DeveloperSettingsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Settings\QuestionAnswerView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Settings\SettingsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -598,6 +617,9 @@
 	  <MauiXaml Update="Components\Unique\OpenUniqueButton.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\XCavate\AboutUsView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\XCavate\CompanyPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -605,6 +627,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\XCavate\DocumentVerificationView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XCavate\FrequentlyAskedQuestionsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\XCavate\ModifyCompanyPage.xaml">

@@ -28,7 +28,7 @@
                                      Spacing="5">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
-                            <nft:NftAttributeView Name="{Binding TraitType}"
+                            <nft:NftAttributeView AttributeName="{Binding TraitType}"
                                                   Value="{Binding Value}"/>
 
                         </DataTemplate>

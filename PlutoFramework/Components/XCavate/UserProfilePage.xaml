@@ -5,7 +5,7 @@
              xmlns:xcavate="clr-namespace:PlutoFramework.Components.XCavate"
              xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
              xmlns:form="clr-namespace:PlutoFramework.Components.Form"
-             BackgroundColor="{AppThemeBinding Light=White, Dark=Black}">
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
         
