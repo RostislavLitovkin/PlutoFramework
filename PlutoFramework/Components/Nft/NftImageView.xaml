@@ -29,6 +29,7 @@
                     StrokeThickness="0"
                     AbsoluteLayout.LayoutBounds="1, 1, 90, 50"
                     AbsoluteLayout.LayoutFlags="PositionProportional"
+                    x:Name="extraButtonsBorder"
                     >
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="20, 0, 0, 20" />

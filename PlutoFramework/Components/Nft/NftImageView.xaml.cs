@@ -12,6 +12,15 @@ public partial class NftImageView : ContentView
 
             control.image.Source = (string)newValue;
         });
+
+    public static readonly BindableProperty ExtraButtonsVisibleProperty = BindableProperty.Create(
+        nameof(ExtraButtonsVisible), typeof(bool), typeof(NftImageView),
+        defaultBindingMode: BindingMode.TwoWay,
+        propertyChanging: (bindable, oldValue, newValue) => {
+            var control = (NftImageView)bindable;
+
+            control.extraButtonsBorder.IsVisible = (bool)newValue;
+        });
     public NftImageView()
 	{
 		InitializeComponent();
@@ -20,6 +29,12 @@ public partial class NftImageView : ContentView
     {
         get => (string)GetValue(ImageSourceProperty);
         set => SetValue(ImageSourceProperty, value);
+    }
+
+    public bool ExtraButtonsVisible
+    {
+        get => (bool)GetValue(ExtraButtonsVisibleProperty);
+        set => SetValue(ExtraButtonsVisibleProperty, value);
     }
     private async void OnDownloadClicked(object sender, TappedEventArgs e)
     {
