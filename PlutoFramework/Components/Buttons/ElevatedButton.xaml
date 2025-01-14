@@ -2,11 +2,22 @@
 <Button xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
         x:Class="PlutoFramework.Components.Buttons.ElevatedButton"
-        BackgroundColor="{StaticResource Primary}"
         TextColor="White"
         FontAttributes="Bold"
         CornerRadius="15"
         >
+    <Button.Background>
+        <LinearGradientBrush EndPoint="1,0">
+            <GradientStop Color="#ecb278"
+                  Offset="0.1" />
+            <GradientStop Color="#dc7da6"
+                  Offset="0.4" />
+            <GradientStop Color="#3b4f74"
+                  Offset="0.7" />
+            <GradientStop Color="#57a0c5"
+                  Offset="1.0" />
+        </LinearGradientBrush>
+    </Button.Background>
     <Button.Shadow>
         <Shadow Brush="Black"
                 Offset="0,10" 
