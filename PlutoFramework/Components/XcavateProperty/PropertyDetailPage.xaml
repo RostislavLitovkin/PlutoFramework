@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.XcavateProperty.PropertyDetailPage"
+             xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
+             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+             xmlns:table="clr-namespace:PlutoFramework.Components.Table"
+             xmlns:xcavateproperty="clr-namespace:PlutoFramework.Components.XcavateProperty"
+             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
+    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+        <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+            <VerticalStackLayout Margin="0, 45, 0, 0"
+                            Spacing="15"
+                            Padding="20, 20, 20, 200">
+                <nft:NftMultiImageView ImageSources="{Binding Images}" />
+
+                <Grid HorizontalOptions="Center"
+                      ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image WidthRequest="20"
+                            HeightRequest="20"
+                            VerticalOptions="Center" 
+                            HorizontalOptions="Center"
+                            Aspect="AspectFit"
+                            IsVisible="{Binding Favourite}"
+                            x:Name="filledFavouriteIcon"
+                            Grid.Column="0">
+
+                        <Image.Source>
+                            <FontImageSource Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                                              Glyph="&#xf004;"
+                                              FontFamily="FontAwesome"
+                                              Size="50" />
+                        </Image.Source>
+                    </Image>
+
+                    <Image WidthRequest="20"
+                            HeightRequest="20"
+                            VerticalOptions="Center" 
+                            HorizontalOptions="Center"
+                            Aspect="AspectFit"
+                            x:Name="favouriteIcon"
+                            Grid.Column="0">
+
+                        <Image.Source>
+                            <FontImageSource Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                                              Glyph="&#xf08a;"
+                                              FontFamily="FontAwesome"
+                                              Size="50" />
+                        </Image.Source>
+
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding MakeFavouriteCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Image Source="{AppThemeBinding Light=shareblack.png, Dark=sharewhite.png}"
+                           Grid.Column="1"
+                           HeightRequest="20"
+                           WidthRequest="20">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ShareCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+                
+                <xcavateproperty:CompanyThumbnailView />
+
+                <xcavateproperty:LocationView />
+
+                <Label Text="{Binding PropertyName}"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Start"
+                       />
+
+                <Label Text="Price per token"
+                       Margin="0,10,0,-10"
+                       HorizontalTextAlignment="Start" />
+
+                <Label Text="{Binding PricePerTokenText}"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Start"
+                       />
+
+                <Grid AbsoluteLayout.LayoutBounds="0.5, 25, 1, 185"
+                  AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                  ColumnSpacing="5"
+                  RowSpacing="5"
+                       Margin="0,10,0,10"
+                      >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80" />
+                        <RowDefinition Height="70" />
+                    </Grid.RowDefinitions>
+
+                    <table:TableCurrencyCell Grid.Column="0"
+                                         Grid.Row="0"
+                                         Title="Listing price"
+                                         Value="{Binding ListingPrice}" />
+                    <table:TableCurrencyCell Grid.Column="1"
+                                         Grid.Row="0"
+                                      Title="APY per NFT"
+                                      Value="{Binding Apy}" />
+                    <table:TableCurrencyCell Grid.Column="0"
+                                         Grid.Row="1"
+                                      Title="Tokens available"
+                                      Value="{Binding TokensAvailable}" />
+                    <table:TableCurrencyCell Grid.Column="1"
+                                         Grid.Row="1"
+                                      Title="Property time"
+                                      Value="{Binding PropertyType}" />
+                </Grid>
+
+                <xcavateproperty:SliderView Title="Area prices"
+                                            Percentage="{Binding AreaPricesPercentage}"
+                                            MinimumTitle="£200,000"
+                                            MaximumTitle="£270,000" />
+
+                <Line Stroke="#888888" X2="{Binding Width, Source={RelativeSource Self}}" HorizontalOptions="Fill" StrokeThickness="1" />
+
+                <Label FontAttributes="Bold"
+                       Text="Rental income"
+                       HorizontalTextAlignment="Start" />
+
+                <Label Text="{Binding RentalIncome}"
+                       HorizontalTextAlignment="Start" />
+
+                <Line Stroke="#888888" X2="{Binding Width, Source={RelativeSource Self}}" HorizontalOptions="Fill" StrokeThickness="1" />
+
+                <xcavateproperty:SliderView Title="Rental demand"
+                                            Percentage="{Binding RentalDemandPercentage}"
+                                            MinimumTitle="Low"
+                                            MaximumTitle="High" />
+
+                <buttons:ElevatedButton Text="Buy"
+                                        Command="{Binding BuyCommand}" />
+
+                <StackLayout BackgroundColor="#22888888"
+                             Padding="20,30,20,30"
+                             Margin="-20,20,-20,20"
+                             Spacing="15">
+                    <Label FontAttributes="Bold"
+                           Text="Property description"
+                           HorizontalTextAlignment="Start" />
+                    <Label Text="{Binding PropertyDescription}"
+                           HorizontalTextAlignment="Start" />
+
+
+                    <Label FontAttributes="Bold"
+                           Text="Details"
+                           HorizontalTextAlignment="Start" />
+
+                    
+                    <nft:NftAttributeView AttributeName="Blocks"
+                                          Value="{Binding Blocks}"
+                                           CardBackgroundColor="#11888888"/>
+
+                    <nft:NftAttributeView AttributeName="Bedrooms"
+                                          Value="{Binding Bedrooms}"
+                                          CardBackgroundColor="#11888888"/>
+
+                    <nft:NftAttributeView AttributeName="Bathrooms"
+                                          Value="{Binding Bathrooms}"
+                                          CardBackgroundColor="#11888888"/>
+
+                    <nft:NftAttributeView AttributeName="Type"
+                                          Value="{Binding Type}"
+                                          CardBackgroundColor="#11888888"/>
+
+                    <nft:NftAttributeView AttributeName="Location"
+                                          Value="{Binding LocationShortName}"
+                                          CardBackgroundColor="#11888888" />
+                </StackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <navigationbar:TopNavigationBar Title="{Binding PropertyName}"/>
+    </AbsoluteLayout>
+
+</ContentPage>

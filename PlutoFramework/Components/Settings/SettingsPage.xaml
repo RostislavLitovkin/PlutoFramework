@@ -42,6 +42,13 @@
 
                 </settings:GenericButton>
 
+                <settings:GenericButton Title="Mock property">
+                    <settings:GenericButton.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnPropertyClicked" />
+                    </settings:GenericButton.GestureRecognizers>
+
+                </settings:GenericButton>
+                
                 <settings:GenericButton Title="XCavate profile">
                     <settings:GenericButton.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnXCavateProfileClicked" />

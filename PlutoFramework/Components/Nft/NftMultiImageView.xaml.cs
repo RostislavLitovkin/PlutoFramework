@@ -5,43 +5,54 @@ namespace PlutoFramework.Components.Nft;
 public partial class NftMultiImageView : ContentView
 {
     public static readonly BindableProperty ImageSourcesProperty = BindableProperty.Create(
-        nameof(ImageSource), typeof(string[]), typeof(NftMultiImageView),
+        nameof(ImageSources), typeof(List<string>), typeof(NftMultiImageView),
         defaultBindingMode: BindingMode.TwoWay,
         propertyChanging: (bindable, oldValue, newValue) => {
             var control = (NftMultiImageView)bindable;
 
+            Console.WriteLine("Images received");
 
-            var imageSources = (string[])newValue;
+            var imageSources = (List<string>)newValue;
 
-            if (imageSources == null || imageSources.Length == 0)
+            if (imageSources == null || imageSources.Count() == 0)
             {
-                control.viewModel.MainImageSource = "noimage.png";
+                Console.WriteLine("Null");
+
+                control.mainImage.ImageSource = "noimage.png";
                 return;
             }
 
-            control.viewModel.MainImageSource = imageSources[0];
+            control.mainImage.ImageSource = imageSources[0];
 
-            control.viewModel.ImageSources = new ObservableCollection<string>(imageSources);
+
+            foreach(string imageSource in imageSources)
+            {
+                NftImageView imageView = new NftImageView(false)
+                {
+                    ImageSource = imageSource,
+                    HeightRequest = 60,
+                    WidthRequest = 60,
+                };
+
+                TapGestureRecognizer tapGestureRecognizer = new TapGestureRecognizer();
+                tapGestureRecognizer.Tapped += (s, e) =>
+                {
+                    control.mainImage.ImageSource = ((NftImageView)s).ImageSource;
+                };
+
+                imageView.GestureRecognizers.Add(tapGestureRecognizer);
+
+                control.imagesStackLayout.Children.Add(imageView);
+            }
         });
-
-    private NftMultiImageViewModel viewModel;
     public NftMultiImageView()
 	{
 		InitializeComponent();
-
-        viewModel = new NftMultiImageViewModel();
-
-        BindingContext = viewModel;
     }
 
-    public string[] ImageSources
+    public List<string> ImageSources
     {
-        get => (string[])GetValue(ImageSourcesProperty);
+        get => (List<string>)GetValue(ImageSourcesProperty);
         set => SetValue(ImageSourcesProperty, value);
-    }
-
-    private void OnImageClicked(object sender, TappedEventArgs e)
-    {
-        viewModel.MainImageSource = ((NftImageView)sender).ImageSource;
     }
 }

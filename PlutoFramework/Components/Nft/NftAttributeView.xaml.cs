@@ -21,9 +21,24 @@ public partial class NftAttributeView : ContentView
 
             control.attributeValueLabel.Text = (string)newValue;
         });
+
+    public static readonly BindableProperty CardBackgroundColorProperty = BindableProperty.Create(
+        nameof(CardBackgroundColor), typeof(Color), typeof(NftAttributeView),
+        propertyChanging: (bindable, oldValue, newValue) =>
+        {
+            var control = (NftAttributeView)bindable;
+
+            control.border.BackgroundColor = (Color)newValue;
+        });
     public NftAttributeView()
     {
         InitializeComponent();
+    }
+
+    public Color CardBackgroundColor
+    {
+        get => (Color)GetValue(CardBackgroundColorProperty);
+        set => SetValue(CardBackgroundColorProperty, value);
     }
 
     public string AttributeName

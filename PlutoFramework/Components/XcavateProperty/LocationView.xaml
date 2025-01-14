@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.XcavateProperty.LocationView">
+    <HorizontalStackLayout Spacing="10">
+        <Image WidthRequest="20"
+               HeightRequest="20">
+            <Image.Source>
+                <FontImageSource Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                 Glyph="&#xf041;"
+                 FontFamily="FontAwesome"
+                 Size="20" />
+            </Image.Source>
+        </Image>
+        <Label 
+            Text="{Binding LocationName}"
+            HorizontalTextAlignment="Start"
+            VerticalOptions="Center"/>
+
+        <HorizontalStackLayout.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding OpenMapCommand}" />
+        </HorizontalStackLayout.GestureRecognizers>
+    </HorizontalStackLayout>
+</ContentView>

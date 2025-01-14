@@ -1,5 +1,6 @@
 using PlutoFramework.Components.CustomLayouts;
 using PlutoFramework.Components.XCavate;
+using PlutoFramework.Components.XcavateProperty;
 using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
 using PlutoFramework.Model.XCavate;
@@ -74,6 +75,11 @@ public partial class SettingsPage : ContentPage
 
         await Navigation.PushAsync(new CompanyPage(viewModel));
 
+    }
+
+    private async void OnPropertyClicked(object sender, TappedEventArgs e)
+    {
+        await Navigation.PushAsync(new PropertyDetailPage());
     }
 
     async void OnShowMnemonicsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)

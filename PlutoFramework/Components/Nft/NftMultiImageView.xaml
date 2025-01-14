@@ -4,23 +4,11 @@
              x:Class="PlutoFramework.Components.Nft.NftMultiImageView"
              xmlns:nft="clr-namespace:PlutoFramework.Components.Nft">
     <VerticalStackLayout Spacing="10">
-        <nft:NftImageView ImageSource="{Binding MainImageSource}" />
+        <nft:NftImageView x:Name="mainImage" />
 
         <HorizontalStackLayout Spacing="10"
+                               x:Name="imagesStackLayout"
                                BindableLayout.ItemsSource="{Binding ImageSources}">
-            <BindableLayout.ItemTemplate>
-                <DataTemplate >
-                    <nft:NftImageView ExtraButtonsVisible="False"
-                                      HeightRequest="60"
-                                      WidthRequest="60"
-                                      ImageSource="{Binding .}">
-                        <nft:NftImageView.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnImageClicked" />
-                        </nft:NftImageView.GestureRecognizers>
-                    </nft:NftImageView>
-                    
-                </DataTemplate>
-            </BindableLayout.ItemTemplate>
         </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentView>

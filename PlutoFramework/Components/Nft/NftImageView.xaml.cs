@@ -1,7 +1,5 @@
 namespace PlutoFramework.Components.Nft;
 
-#pragma warning disable CA1416 // Validate platform compatibility
-
 public partial class NftImageView : ContentView
 {
     public static readonly BindableProperty ImageSourceProperty = BindableProperty.Create(
@@ -25,6 +23,13 @@ public partial class NftImageView : ContentView
 	{
 		InitializeComponent();
 	}
+
+    public NftImageView(bool extraButtonsVisible)
+    {
+        InitializeComponent();
+
+        extraButtonsBorder.IsVisible = extraButtonsVisible;
+    }
     public string ImageSource
     {
         get => (string)GetValue(ImageSourceProperty);
@@ -46,4 +51,3 @@ public partial class NftImageView : ContentView
         await Navigation.PushAsync(new NftImageFullScreenPage(ImageSource));
     }
 }
-#pragma warning restore CA1416 // Validate platform compatibility

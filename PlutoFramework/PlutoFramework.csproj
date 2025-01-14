@@ -59,7 +59,7 @@
     <MauiIcon Include="Resources\AppIcon\appicon.png" Color="#FFFFFF" />
 
 		<!-- Splash Screen -->
-    <MauiSplashScreen Include="Resources\Splash\realxmarketsplash.png" Color="#000000" BaseSize="1200,1200" />
+		<MauiSplashScreen Include="Resources\Splash\realxmarketsplash.png" Color="#FFFFFF" />
 
     <!-- Images -->
 
@@ -84,6 +84,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="9.0.22" />
 		<PackageReference Include="Microsoft.VisualStudio.VsixColorCompiler" Version="17.0.31709.430" />
 		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="3.0.0-preview.7" />
 		<PackageReference Include="websocketsharp.core" Version="1.0.0" />
@@ -147,6 +148,8 @@
 	  <None Remove="Resources\Images\plutowalletclearwhite.png" />
 	  <None Remove="Resources\Images\plutowalleticonwhite.png" />
 	  <None Remove="Resources\Images\realxmarket.png" />
+	  <None Remove="Resources\Images\shareblack.svg" />
+	  <None Remove="Resources\Images\sharewhite.svg" />
 	  <None Remove="Resources\Images\subscan.png" />
 	  <None Remove="Resources\Images\subscanicon.png" />
 	  <None Remove="Resources\Images\uniqueblack.svg" />
@@ -618,6 +621,18 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Unique\OpenUniqueButton.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XcavateProperty\CompanyThumbnailView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XcavateProperty\LocationView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XcavateProperty\PropertyDetailPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XcavateProperty\SliderView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\XCavate\AboutUsView.xaml">
