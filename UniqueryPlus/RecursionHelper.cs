@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace UniqueryPlus
 {
-    internal class RecursionHelper
+    public class RecursionHelper
     {
         internal static async IAsyncEnumerable<T> ToIAsyncEnumerableAsync<T>(
             IEnumerable<SubstrateClient> clients,
@@ -143,7 +143,7 @@ namespace UniqueryPlus
                 }
             }
         }
-        private static IEnumerable<NftTypeEnum> GetNftTypeForClient(SubstrateClient client)
+        public static IEnumerable<NftTypeEnum> GetNftTypeForClient(SubstrateClient client)
         {
             return client switch
             {
