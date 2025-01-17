@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.re
     
     
     /// <summary>
-    /// >> 333 - Composite[cumulus_pallet_parachain_system.relay_state_snapshot.MessagingStateSnapshot]
+    /// >> 209 - Composite[cumulus_pallet_parachain_system.relay_state_snapshot.MessagingStateSnapshot]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MessagingStateSnapshot : BaseType

@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_support
     
     
     /// <summary>
-    /// >> 412 - Composite[frame_support.PalletId]
+    /// >> 487 - Composite[frame_support.PalletId]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PalletId : BaseType

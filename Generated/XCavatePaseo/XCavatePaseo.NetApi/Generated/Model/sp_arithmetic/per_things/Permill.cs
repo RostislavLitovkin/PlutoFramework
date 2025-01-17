@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things
     
     
     /// <summary>
-    /// >> 411 - Composite[sp_arithmetic.per_things.Permill]
+    /// >> 520 - Composite[sp_arithmetic.per_things.Permill]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Permill : BaseType

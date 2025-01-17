@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// Creates a new region for the marketplace.
         /// This function calls the nfts-pallet to create a new collection.
         /// 
-        /// The origin must be the LocationOrigin.
+        /// The origin must be the sudo.
         /// 
         /// Emits `RegionCreated` event when succesfful.
         /// </summary>
@@ -37,7 +37,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// >> create_new_location
         /// Creates a new location for a region.
         /// 
-        /// The origin must be the LocationOrigin.
+        /// The origin must be the sudo.
         /// 
         /// Parameters:
         /// - `region`: The region where the new location should be created.
@@ -133,7 +133,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// 
         /// Parameters:
         /// - `listing_id`: The listing that the investor wants to buy from.
-        /// - `offeror`: AccountId of the person that the seller wants to handle the offer from.
+        /// - `offer_id`: The offer that the seller wants to cancel.
         /// - `offer`: Enum for offer which is either Accept or Reject.
         /// </summary>
         handle_offer = 7,
@@ -146,6 +146,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// 
         /// Parameters:
         /// - `listing_id`: The listing that the investor wants to buy from.
+        /// - `offer_id`: The offer that the seller wants to cancel.
         /// 
         /// Emits `OfferCancelled` event when succesfful.
         /// </summary>
@@ -192,65 +193,10 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// Emits `ListingDelisted` event when succesfful.
         /// </summary>
         delist_token = 11,
-        
-        /// <summary>
-        /// >> register_lawyer
-        /// Registers a new lawyer.
-        /// 
-        /// The origin must be the LocationOrigin.
-        /// 
-        /// Parameters:
-        /// - `lawyer`: The lawyer that should be registered.
-        /// 
-        /// Emits `LawyerRegistered` event when succesfful.
-        /// </summary>
-        register_lawyer = 12,
-        
-        /// <summary>
-        /// >> lawyer_claim_property
-        /// Lets a lawyer claim a property to handle the legal work.
-        /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
-        /// 
-        /// Parameters:
-        /// - `listing_id`: The listing from the property.
-        /// - `legal_side`: The side that the lawyer wants to represent.
-        /// - `costs`: The costs thats the lawyer demands for his work.
-        /// 
-        /// Emits `LawyerClaimedProperty` event when succesfful.
-        /// </summary>
-        lawyer_claim_property = 13,
-        
-        /// <summary>
-        /// >> remove_from_case
-        /// Lets a lawyer step back from a case.
-        /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
-        /// 
-        /// Parameters:
-        /// - `listing_id`: The listing from the property.
-        /// 
-        /// Emits `LawyerRemovedFromCase` event when succesfful.
-        /// </summary>
-        remove_from_case = 14,
-        
-        /// <summary>
-        /// >> lawyer_confirm_documents
-        /// Lets a lawyer confirm a legal case.
-        /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
-        /// 
-        /// Parameters:
-        /// - `listing_id`: The listing from the property.
-        /// - `approve`: Approves or Rejects the case.
-        /// 
-        /// Emits `DocumentsConfirmed` event when succesfful.
-        /// </summary>
-        lawyer_confirm_documents = 15,
     }
     
     /// <summary>
-    /// >> 266 - Variant[pallet_nft_marketplace.pallet.Call]
+    /// >> 340 - Variant[pallet_nft_marketplace.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -262,21 +208,17 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         public EnumCall()
         {
 				AddTypeDecoder<BaseVoid>(Call.create_new_region);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>>(Call.create_new_location);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9>>(Call.list_object);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8>>(Call.create_new_location);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5>>(Call.list_object);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.buy_token);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.relist_token);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.buy_relisted_token);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.make_offer);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.EnumOffer>>(Call.handle_offer);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.cancel_offer);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.EnumOffer>>(Call.handle_offer);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.cancel_offer);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.upgrade_listing);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.upgrade_object);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.delist_token);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Call.register_lawyer);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.EnumLegalProperty, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.lawyer_claim_property);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.remove_from_case);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.lawyer_confirm_documents);
         }
     }
 }

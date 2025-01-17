@@ -255,7 +255,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.pallet
     }
     
     /// <summary>
-    /// >> 294 - Variant[pallet_nfts.pallet.Event]
+    /// >> 146 - Variant[pallet_nfts.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -282,13 +282,13 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.ApprovalCancelled);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.AllApprovalsCancelled);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.CollectionConfigChanged);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9>>(Event.CollectionMetadataSet);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5>>(Event.CollectionMetadataSet);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.CollectionMetadataCleared);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9>>(Event.ItemMetadataSet);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5>>(Event.ItemMetadataSet);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.ItemMetadataCleared);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U32>>>(Event.Redeposited);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace>>(Event.AttributeSet);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace>>(Event.AttributeCleared);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace>>(Event.AttributeSet);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace>>(Event.AttributeCleared);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.ItemAttributesApprovalAdded);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.ItemAttributesApprovalRemoved);
 				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>>>(Event.OwnershipAcceptanceChanged);
@@ -303,7 +303,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.PriceWithDirection>, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.SwapCancelled);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.PriceWithDirection>, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.SwapClaimed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace>>(Event.PreSignedAttributesSet);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumPalletAttributes, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8>>(Event.PalletAttributeSet);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumPalletAttributes, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7>>(Event.PalletAttributeSet);
         }
     }
 }

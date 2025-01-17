@@ -294,7 +294,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.pallet
     }
     
     /// <summary>
-    /// >> 523 - Variant[pallet_nfts.pallet.Error]
+    /// >> 482 - Variant[pallet_nfts.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

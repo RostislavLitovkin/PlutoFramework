@@ -40,9 +40,11 @@ namespace XCavatePaseo.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NftMarketplace", "NextAssetId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NftMarketplace", "NextRegionId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("NftMarketplace", "NextOfferId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NftMarketplace", "LocationRegistration"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>), typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8>), typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NftMarketplace", "NextListingId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NftMarketplace", "RegionCollections"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
@@ -54,26 +56,22 @@ namespace XCavatePaseo.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NftMarketplace", "ListedToken"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NftMarketplace", "TokenBuyer"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT31)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NftMarketplace", "TokenOwner"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.TokenOwnerDetails)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NftMarketplace", "TokenListings"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.TokenListingDetails)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NftMarketplace", "PropertyOwner"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT31)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NftMarketplace", "PropertyOwnerToken"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NftMarketplace", "AssetIdDetails"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.AssetDetails)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("NftMarketplace", "OngoingOffers"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("NftMarketplace", "OngoingOffer"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.OfferDetails)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("NftMarketplace", "RealEstateLawyer"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("NftMarketplace", "PropertyLawyer"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.PropertyLawyerDetails)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.OfferDetails)));
         }
         
         /// <summary>
@@ -168,10 +166,41 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         }
         
         /// <summary>
+        /// >> NextOfferIdParams
+        ///  Id for the next offer for a listing.
+        /// </summary>
+        public static string NextOfferIdParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        {
+            return RequestGenerator.GetStorage("NftMarketplace", "NextOfferId", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> NextOfferIdDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string NextOfferIdDefault()
+        {
+            return "0x00000000";
+        }
+        
+        /// <summary>
+        /// >> NextOfferId
+        ///  Id for the next offer for a listing.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> NextOfferId(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        {
+            string parameters = NftMarketplaceStorage.NextOfferIdParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
         /// >> LocationRegistrationParams
         ///  True if a location is registered.
         /// </summary>
-        public static string LocationRegistrationParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11> key)
+        public static string LocationRegistrationParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8> key)
         {
             return RequestGenerator.GetStorage("NftMarketplace", "LocationRegistration", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -191,7 +220,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> LocationRegistration
         ///  True if a location is registered.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.Bool> LocationRegistration(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.Bool> LocationRegistration(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8> key, string blockhash, CancellationToken token)
         {
             string parameters = NftMarketplaceStorage.LocationRegistrationParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.Bool>(parameters, blockhash, token);
@@ -375,10 +404,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> TokenBuyer
         ///  Mapping of the listing to the buyer of the sold token.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35> TokenBuyer(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT31> TokenBuyer(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = NftMarketplaceStorage.TokenBuyerParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT31>(parameters, blockhash, token);
             return result;
         }
         
@@ -400,7 +429,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// </summary>
         public static string TokenOwnerDefault()
         {
-            return "0x000000000000000000000000000000000000000000000000000000000000000000000000";
+            return "0x00000000";
         }
         
         /// <summary>
@@ -408,10 +437,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  Double mapping of the account id of the token owner
         ///  and the listing to the amount of token.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.TokenOwnerDetails> TokenOwner(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> TokenOwner(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
         {
             string parameters = NftMarketplaceStorage.TokenOwnerParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.TokenOwnerDetails>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
             return result;
         }
         
@@ -470,10 +499,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> PropertyOwner
         ///  Mapping of the assetid to the vector of token holder.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35> PropertyOwner(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT31> PropertyOwner(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = NftMarketplaceStorage.PropertyOwnerParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT31>(parameters, blockhash, token);
             return result;
         }
         
@@ -540,93 +569,33 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> OngoingOffersParams
+        /// >> OngoingOfferParams
         ///  Mapping from listing to offer details.
         /// </summary>
-        public static string OngoingOffersParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
+        public static string OngoingOfferParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key)
         {
-            return RequestGenerator.GetStorage("NftMarketplace", "OngoingOffers", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+            return RequestGenerator.GetStorage("NftMarketplace", "OngoingOffer", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, key.Value);
         }
         
         /// <summary>
-        /// >> OngoingOffersDefault
+        /// >> OngoingOfferDefault
         /// Default value as hex string
         /// </summary>
-        public static string OngoingOffersDefault()
+        public static string OngoingOfferDefault()
         {
             return "0x00";
         }
         
         /// <summary>
-        /// >> OngoingOffers
+        /// >> OngoingOffer
         ///  Mapping from listing to offer details.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.OfferDetails> OngoingOffers(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
+        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.OfferDetails> OngoingOffer(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
         {
-            string parameters = NftMarketplaceStorage.OngoingOffersParams(key);
+            string parameters = NftMarketplaceStorage.OngoingOfferParams(key);
             var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.OfferDetails>(parameters, blockhash, token);
-            return result;
-        }
-        
-        /// <summary>
-        /// >> RealEstateLawyerParams
-        ///  Stores the lawyer info.
-        /// </summary>
-        public static string RealEstateLawyerParams(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
-        {
-            return RequestGenerator.GetStorage("NftMarketplace", "RealEstateLawyer", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
-                        key});
-        }
-        
-        /// <summary>
-        /// >> RealEstateLawyerDefault
-        /// Default value as hex string
-        /// </summary>
-        public static string RealEstateLawyerDefault()
-        {
-            return "0x00";
-        }
-        
-        /// <summary>
-        /// >> RealEstateLawyer
-        ///  Stores the lawyer info.
-        /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.Bool> RealEstateLawyer(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
-        {
-            string parameters = NftMarketplaceStorage.RealEstateLawyerParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.Bool>(parameters, blockhash, token);
-            return result;
-        }
-        
-        /// <summary>
-        /// >> PropertyLawyerParams
-        /// </summary>
-        public static string PropertyLawyerParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
-        {
-            return RequestGenerator.GetStorage("NftMarketplace", "PropertyLawyer", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
-                        key});
-        }
-        
-        /// <summary>
-        /// >> PropertyLawyerDefault
-        /// Default value as hex string
-        /// </summary>
-        public static string PropertyLawyerDefault()
-        {
-            return "0x00";
-        }
-        
-        /// <summary>
-        /// >> PropertyLawyer
-        /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.PropertyLawyerDetails> PropertyLawyer(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
-        {
-            string parameters = NftMarketplaceStorage.PropertyLawyerParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.PropertyLawyerDetails>(parameters, blockhash, token);
             return result;
         }
     }
@@ -644,26 +613,26 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         public static Method CreateNewRegion()
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            return new Method(51, "NftMarketplace", 0, "create_new_region", byteArray.ToArray());
+            return new Method(118, "NftMarketplace", 0, "create_new_region", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> create_new_location
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method CreateNewLocation(Substrate.NetApi.Model.Types.Primitive.U32 region, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11 location)
+        public static Method CreateNewLocation(Substrate.NetApi.Model.Types.Primitive.U32 region, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 location)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(region.Encode());
             byteArray.AddRange(location.Encode());
-            return new Method(51, "NftMarketplace", 1, "create_new_location", byteArray.ToArray());
+            return new Method(118, "NftMarketplace", 1, "create_new_location", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> list_object
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ListObject(Substrate.NetApi.Model.Types.Primitive.U32 region, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11 location, Substrate.NetApi.Model.Types.Primitive.U128 token_price, Substrate.NetApi.Model.Types.Primitive.U32 token_amount, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 data)
+        public static Method ListObject(Substrate.NetApi.Model.Types.Primitive.U32 region, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 location, Substrate.NetApi.Model.Types.Primitive.U128 token_price, Substrate.NetApi.Model.Types.Primitive.U32 token_amount, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 data)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(region.Encode());
@@ -671,7 +640,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(token_price.Encode());
             byteArray.AddRange(token_amount.Encode());
             byteArray.AddRange(data.Encode());
-            return new Method(51, "NftMarketplace", 2, "list_object", byteArray.ToArray());
+            return new Method(118, "NftMarketplace", 2, "list_object", byteArray.ToArray());
         }
         
         /// <summary>
@@ -683,7 +652,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(51, "NftMarketplace", 3, "buy_token", byteArray.ToArray());
+            return new Method(118, "NftMarketplace", 3, "buy_token", byteArray.ToArray());
         }
         
         /// <summary>
@@ -697,7 +666,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(item_id.Encode());
             byteArray.AddRange(token_price.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(51, "NftMarketplace", 4, "relist_token", byteArray.ToArray());
+            return new Method(118, "NftMarketplace", 4, "relist_token", byteArray.ToArray());
         }
         
         /// <summary>
@@ -709,7 +678,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(51, "NftMarketplace", 5, "buy_relisted_token", byteArray.ToArray());
+            return new Method(118, "NftMarketplace", 5, "buy_relisted_token", byteArray.ToArray());
         }
         
         /// <summary>
@@ -722,31 +691,32 @@ namespace XCavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(listing_id.Encode());
             byteArray.AddRange(offer_price.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(51, "NftMarketplace", 6, "make_offer", byteArray.ToArray());
+            return new Method(118, "NftMarketplace", 6, "make_offer", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> handle_offer
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method HandleOffer(Substrate.NetApi.Model.Types.Primitive.U32 listing_id, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 offeror, XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.EnumOffer offer)
+        public static Method HandleOffer(Substrate.NetApi.Model.Types.Primitive.U32 listing_id, Substrate.NetApi.Model.Types.Primitive.U32 offer_id, XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.EnumOffer offer)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            byteArray.AddRange(offeror.Encode());
+            byteArray.AddRange(offer_id.Encode());
             byteArray.AddRange(offer.Encode());
-            return new Method(51, "NftMarketplace", 7, "handle_offer", byteArray.ToArray());
+            return new Method(118, "NftMarketplace", 7, "handle_offer", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> cancel_offer
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method CancelOffer(Substrate.NetApi.Model.Types.Primitive.U32 listing_id)
+        public static Method CancelOffer(Substrate.NetApi.Model.Types.Primitive.U32 listing_id, Substrate.NetApi.Model.Types.Primitive.U32 offer_id)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(51, "NftMarketplace", 8, "cancel_offer", byteArray.ToArray());
+            byteArray.AddRange(offer_id.Encode());
+            return new Method(118, "NftMarketplace", 8, "cancel_offer", byteArray.ToArray());
         }
         
         /// <summary>
@@ -758,7 +728,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
             byteArray.AddRange(new_price.Encode());
-            return new Method(51, "NftMarketplace", 9, "upgrade_listing", byteArray.ToArray());
+            return new Method(118, "NftMarketplace", 9, "upgrade_listing", byteArray.ToArray());
         }
         
         /// <summary>
@@ -770,7 +740,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
             byteArray.AddRange(new_price.Encode());
-            return new Method(51, "NftMarketplace", 10, "upgrade_object", byteArray.ToArray());
+            return new Method(118, "NftMarketplace", 10, "upgrade_object", byteArray.ToArray());
         }
         
         /// <summary>
@@ -781,54 +751,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(51, "NftMarketplace", 11, "delist_token", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> register_lawyer
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method RegisterLawyer(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 lawyer)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(lawyer.Encode());
-            return new Method(51, "NftMarketplace", 12, "register_lawyer", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> lawyer_claim_property
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method LawyerClaimProperty(Substrate.NetApi.Model.Types.Primitive.U32 listing_id, XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.EnumLegalProperty legal_side, Substrate.NetApi.Model.Types.Primitive.U128 costs)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(listing_id.Encode());
-            byteArray.AddRange(legal_side.Encode());
-            byteArray.AddRange(costs.Encode());
-            return new Method(51, "NftMarketplace", 13, "lawyer_claim_property", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> remove_from_case
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method RemoveFromCase(Substrate.NetApi.Model.Types.Primitive.U32 listing_id)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(listing_id.Encode());
-            return new Method(51, "NftMarketplace", 14, "remove_from_case", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> lawyer_confirm_documents
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method LawyerConfirmDocuments(Substrate.NetApi.Model.Types.Primitive.U32 listing_id, Substrate.NetApi.Model.Types.Primitive.Bool approve)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(listing_id.Encode());
-            byteArray.AddRange(approve.Encode());
-            return new Method(51, "NftMarketplace", 15, "lawyer_confirm_documents", byteArray.ToArray());
+            return new Method(118, "NftMarketplace", 11, "delist_token", byteArray.ToArray());
         }
     }
     
@@ -1005,41 +928,5 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// The object can not be divided in so many token.
         /// </summary>
         TooManyToken,
-        
-        /// <summary>
-        /// >> OnlyOneOfferPerUser
-        /// A user can only make one offer per listing.
-        /// </summary>
-        OnlyOneOfferPerUser,
-        
-        /// <summary>
-        /// >> LawyerAlreadyRegistered
-        /// The lawyer has already been registered.
-        /// </summary>
-        LawyerAlreadyRegistered,
-        
-        /// <summary>
-        /// >> LawyerJobTaken
-        /// The lawyer job has already been taken.
-        /// </summary>
-        LawyerJobTaken,
-        
-        /// <summary>
-        /// >> LawyerNotFound
-        /// A lawyer has not been set.
-        /// </summary>
-        LawyerNotFound,
-        
-        /// <summary>
-        /// >> AlreadyConfirmed
-        /// The lawyer already submitted his answer.
-        /// </summary>
-        AlreadyConfirmed,
-        
-        /// <summary>
-        /// >> CostsTooHigh
-        /// The costs of the lawyer can't be that high.
-        /// </summary>
-        CostsTooHigh,
     }
 }

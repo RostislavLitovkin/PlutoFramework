@@ -26,7 +26,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         /// >> add_letting_agent
         /// Adds an account as a letting agent.
         /// 
-        /// The origin must be the AgentOrigin.
+        /// The origin must be the sudo.
         /// 
         /// Parameters:
         /// - `region`: The region number where the letting agent should be added to.
@@ -51,7 +51,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         /// >> add_letting_agent_to_location
         /// Adds a letting agent to a location.
         /// 
-        /// The origin must be the AgentOrigin.
+        /// The origin must be the sudo.
         /// 
         /// Parameters:
         /// - `location`: The location number where the letting agent should be added to.
@@ -100,7 +100,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
     }
     
     /// <summary>
-    /// >> 270 - Variant[pallet_property_management.pallet.Call]
+    /// >> 342 - Variant[pallet_property_management.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -111,9 +111,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.add_letting_agent);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.add_letting_agent);
 				AddTypeDecoder<BaseVoid>(Call.letting_agent_deposit);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.add_letting_agent_to_location);
+				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.add_letting_agent_to_location);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.set_letting_agent);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.distribute_income);
 				AddTypeDecoder<BaseVoid>(Call.withdraw_funds);

@@ -38,7 +38,7 @@ public partial class NftThumbnailView : ContentView
 
             if (nftBase is INftXCavateMetadata)
             {
-                control.priceAttribute.Value = ((INftXCavateMetadata)nftBase).XCavateMetadata?.PropertyPrice;
+                control.priceAttribute.Value = $"£{((INftXCavateMetadata)nftBase).XCavateMetadata?.PropertyPrice}";
 
                 // Set XCavate apy
 

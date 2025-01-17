@@ -90,7 +90,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(asset_id.Encode());
             byteArray.AddRange(beneficiary.Encode());
             byteArray.AddRange(fractions.Encode());
-            return new Method(41, "NftFractionalization", 0, "fractionalize", byteArray.ToArray());
+            return new Method(117, "NftFractionalization", 0, "fractionalize", byteArray.ToArray());
         }
         
         /// <summary>
@@ -104,7 +104,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(nft_id.Encode());
             byteArray.AddRange(asset_id.Encode());
             byteArray.AddRange(beneficiary.Encode());
-            return new Method(41, "NftFractionalization", 1, "unify", byteArray.ToArray());
+            return new Method(117, "NftFractionalization", 1, "unify", byteArray.ToArray());
         }
     }
     
@@ -122,7 +122,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 Deposit()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00407A10F35A00000000000000000000");
+            result.Create("0x0000C16FF28623000000000000000000");
             return result;
         }
         
@@ -141,10 +141,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> NewAssetSymbol
         ///  The newly created asset's symbol.
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 NewAssetSymbol()
+        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 NewAssetSymbol()
         {
-            var result = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9();
-            result.Create("0x1042524958");
+            var result = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5();
+            result.Create("0x1046524143");
             return result;
         }
         
@@ -152,10 +152,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> NewAssetName
         ///  The newly created asset's name.
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 NewAssetName()
+        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 NewAssetName()
         {
-            var result = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9();
-            result.Create("0x1042726978");
+            var result = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5();
+            result.Create("0x1046726163");
             return result;
         }
         
@@ -166,7 +166,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 StringLimit()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x32000000");
+            result.Create("0x88130000");
             return result;
         }
     }

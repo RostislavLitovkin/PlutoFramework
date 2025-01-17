@@ -33,7 +33,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v3.multiasset
     }
     
     /// <summary>
-    /// >> 193 - Variant[xcm.v3.multiasset.MultiAssetFilter]
+    /// >> 284 - Variant[xcm.v3.multiasset.MultiAssetFilter]
     /// </summary>
     public sealed class EnumMultiAssetFilter : BaseEnumRust<MultiAssetFilter>
     {

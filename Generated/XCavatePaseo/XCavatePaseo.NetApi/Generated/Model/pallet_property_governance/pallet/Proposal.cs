@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
     
     
     /// <summary>
-    /// >> 549 - Composite[pallet_property_governance.pallet.Proposal]
+    /// >> 503 - Composite[pallet_property_governance.pallet.Proposal]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Proposal : BaseType
@@ -33,17 +33,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 AssetId { get; set; }
         /// <summary>
-        /// >> amount
-        /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U128 Amount { get; set; }
-        /// <summary>
         /// >> created_at
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 CreatedAt { get; set; }
-        /// <summary>
-        /// >> proposal_info
-        /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 ProposalInfo { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -57,9 +49,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
             var result = new List<byte>();
             result.AddRange(Proposer.Encode());
             result.AddRange(AssetId.Encode());
-            result.AddRange(Amount.Encode());
             result.AddRange(CreatedAt.Encode());
-            result.AddRange(ProposalInfo.Encode());
             return result.ToArray();
         }
         
@@ -71,12 +61,8 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
             Proposer.Decode(byteArray, ref p);
             AssetId = new Substrate.NetApi.Model.Types.Primitive.U32();
             AssetId.Decode(byteArray, ref p);
-            Amount = new Substrate.NetApi.Model.Types.Primitive.U128();
-            Amount.Decode(byteArray, ref p);
             CreatedAt = new Substrate.NetApi.Model.Types.Primitive.U32();
             CreatedAt.Decode(byteArray, ref p);
-            ProposalInfo = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9();
-            ProposalInfo.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;
             Bytes = new byte[bytesLength];

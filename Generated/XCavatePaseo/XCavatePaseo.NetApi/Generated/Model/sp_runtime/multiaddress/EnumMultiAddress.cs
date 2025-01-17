@@ -48,7 +48,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress
     }
     
     /// <summary>
-    /// >> 111 - Variant[sp_runtime.multiaddress.MultiAddress]
+    /// >> 247 - Variant[sp_runtime.multiaddress.MultiAddress]
     /// </summary>
     public sealed class EnumMultiAddress : BaseEnumRust<MultiAddress>
     {

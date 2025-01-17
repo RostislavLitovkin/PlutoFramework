@@ -48,7 +48,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v3.junction
     }
     
     /// <summary>
-    /// >> 60 - Variant[xcm.v3.junction.BodyPart]
+    /// >> 71 - Variant[xcm.v3.junction.BodyPart]
     /// </summary>
     public sealed class EnumBodyPart : BaseEnumRust<BodyPart>
     {

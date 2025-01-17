@@ -4,33 +4,91 @@ namespace UniqueryPlus.Metadata
 {
     public record XCavateMetadata
     {
-        [JsonPropertyName("property_name")] public required string PropertyName;
-        [JsonPropertyName("address_street")] public required string AddressStreet;
-        [JsonPropertyName("address_town_city")] public required string AddressTownCity;
-        [JsonPropertyName("post_code")] public required string PostCode;
-        [JsonPropertyName("property_type")] public required string PropertyType;
-        [JsonPropertyName("property_number")] public required string PropertyNumber;
-        [JsonPropertyName("local_authority")] public required string LocalAuthority;
-        [JsonPropertyName("planning_permission_code")] public string? PlanningPermissionCode;
-        [JsonPropertyName("map")] public required string Map;
-        [JsonPropertyName("floor_plan")] public required string FloorPlan;
-        [JsonPropertyName("sales_agreement")] public required string SalesAgreement;
-        [JsonPropertyName("region")] public required int Region;
-        [JsonPropertyName("location")] public required int Location;
-        [JsonPropertyName("number_of_tokens")] public required string NumberOfTokens;
-        [JsonPropertyName("price_per_token")] public required string PricePerToken;
-        [JsonPropertyName("property_price")] public required string PropertyPrice;
-        [JsonPropertyName("estimated_rental_income")] public required string EstimatedRentalIncome;
-        [JsonPropertyName("area")] public required string Area;
-        [JsonPropertyName("quality")] public required string Quality;
-        [JsonPropertyName("outdoor_space")] public required string OutdoorSpace;
-        [JsonPropertyName("no_of_bedrooms")] public required string NoOfBedrooms;
-        [JsonPropertyName("construction_date")] public required string ConstructionDate;
-        [JsonPropertyName("no_of_bathrooms")] public required string NoOfBathrooms;
-        [JsonPropertyName("off_street_parking")] public required string OffStreetParking;
-        [JsonPropertyName("property_description")] public required string PropertyDescription;
-        [JsonPropertyName("property_development_code")] public string? PropertyDevelopmentCode;
-        [JsonPropertyName("title_deed_number")] public required string TitleDeedNumber;
-        [JsonPropertyName("property_images")] public required List<string> PropertyImages;
+        [JsonPropertyName("price_per_token")]
+        public int PricePerToken { get; init; }
+
+        [JsonPropertyName("title_deed_number")]
+        public string TitleDeedNumber { get; init; }
+
+        [JsonPropertyName("outdoor_space")]
+        public string OutdoorSpace { get; init; }
+
+        [JsonPropertyName("property_name")]
+        public string PropertyName { get; init; }
+
+        [JsonPropertyName("no_of_bathrooms")]
+        public string NoOfBathrooms { get; init; }
+
+        [JsonPropertyName("files")]
+        public List<string> Files { get; init; }
+
+        [JsonPropertyName("planning_permission_Code")]
+        public string PlanningPermissionCode { get; init; }
+
+        [JsonPropertyName("property_number")]
+        public string PropertyNumber { get; init; }
+
+        [JsonPropertyName("property_type")]
+        public string PropertyType { get; init; }
+
+        [JsonPropertyName("construction_date")]
+        public string ConstructionDate { get; init; }
+
+        [JsonPropertyName("no_of_Bedrooms")]
+        public string NoOfBedrooms { get; init; }
+
+        [JsonPropertyName("region")]
+        public int Region { get; init; }
+
+        [JsonPropertyName("address_street")]
+        public string AddressStreet { get; init; }
+
+        [JsonPropertyName("location")]
+        public int Location { get; init; }
+
+        [JsonPropertyName("propertyId")]
+        public long PropertyId { get; init; }
+
+        [JsonPropertyName("address_town_city")]
+        public string AddressTownCity { get; init; }
+
+        [JsonPropertyName("Off_street_parking")]
+        public string OffStreetParking { get; init; }
+
+        [JsonPropertyName("property_development_Code")]
+        public string PropertyDevelopmentCode { get; init; }
+
+        [JsonPropertyName("post_code")]
+        public string PostCode { get; init; }
+
+        [JsonPropertyName("quality")]
+        public string Quality { get; init; }
+
+        [JsonPropertyName("estimated_rental_income")]
+        public uint EstimatedRentalIncome { get; init; }
+
+        [JsonPropertyName("number_of_tokens")]
+        public uint NumberOfTokens { get; init; }
+
+        [JsonPropertyName("accountAddress")]
+        public string AccountAddress { get; init; }
+
+        [JsonPropertyName("area")]
+        public string Area { get; init; }
+
+        [JsonPropertyName("local_authority")]
+        public string LocalAuthority { get; init; }
+
+        [JsonPropertyName("map")]
+        public string Map { get; init; }
+
+        [JsonPropertyName("property_description")]
+        public string PropertyDescription { get; init; }
+
+        [JsonPropertyName("property_price")]
+        public uint PropertyPrice { get; init; }
+
+        [JsonPropertyName("fileUrls")]
+        public List<string> FileUrls { get; init; }
     }
 }

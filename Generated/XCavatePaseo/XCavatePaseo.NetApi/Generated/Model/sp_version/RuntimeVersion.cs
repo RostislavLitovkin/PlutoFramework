@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.sp_version
     
     
     /// <summary>
-    /// >> 316 - Composite[sp_version.RuntimeVersion]
+    /// >> 187 - Composite[sp_version.RuntimeVersion]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RuntimeVersion : BaseType

@@ -28,7 +28,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7
     }
     
     /// <summary>
-    /// >> 332 - Variant[polkadot_primitives.v7.UpgradeRestriction]
+    /// >> 206 - Variant[polkadot_primitives.v7.UpgradeRestriction]
     /// </summary>
     public sealed class EnumUpgradeRestriction : BaseEnum<UpgradeRestriction>
     {

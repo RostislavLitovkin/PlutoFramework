@@ -33,7 +33,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 119 - Variant[pallet_xcm.pallet.Origin]
+    /// >> 241 - Variant[pallet_xcm.pallet.Origin]
     /// </summary>
     public sealed class EnumOrigin : BaseEnumRust<Origin>
     {

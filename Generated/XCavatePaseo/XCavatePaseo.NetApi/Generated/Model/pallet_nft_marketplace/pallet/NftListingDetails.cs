@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
     
     
     /// <summary>
-    /// >> 534 - Composite[pallet_nft_marketplace.pallet.NftListingDetails]
+    /// >> 491 - Composite[pallet_nft_marketplace.pallet.NftListingDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class NftListingDetails : BaseType
@@ -36,14 +36,6 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// >> collected_funds
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U128 CollectedFunds { get; set; }
-        /// <summary>
-        /// >> collected_tax
-        /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U128 CollectedTax { get; set; }
-        /// <summary>
-        /// >> collected_fees
-        /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U128 CollectedFees { get; set; }
         /// <summary>
         /// >> asset_id
         /// </summary>
@@ -74,8 +66,6 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
             result.AddRange(RealEstateDeveloper.Encode());
             result.AddRange(TokenPrice.Encode());
             result.AddRange(CollectedFunds.Encode());
-            result.AddRange(CollectedTax.Encode());
-            result.AddRange(CollectedFees.Encode());
             result.AddRange(AssetId.Encode());
             result.AddRange(ItemId.Encode());
             result.AddRange(CollectionId.Encode());
@@ -93,10 +83,6 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
             TokenPrice.Decode(byteArray, ref p);
             CollectedFunds = new Substrate.NetApi.Model.Types.Primitive.U128();
             CollectedFunds.Decode(byteArray, ref p);
-            CollectedTax = new Substrate.NetApi.Model.Types.Primitive.U128();
-            CollectedTax.Decode(byteArray, ref p);
-            CollectedFees = new Substrate.NetApi.Model.Types.Primitive.U128();
-            CollectedFees.Decode(byteArray, ref p);
             AssetId = new Substrate.NetApi.Model.Types.Primitive.U32();
             AssetId.Decode(byteArray, ref p);
             ItemId = new Substrate.NetApi.Model.Types.Primitive.U32();

@@ -36,7 +36,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.palle
     }
     
     /// <summary>
-    /// >> 296 - Variant[pallet_nft_fractionalization.pallet.Event]
+    /// >> 158 - Variant[pallet_nft_fractionalization.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

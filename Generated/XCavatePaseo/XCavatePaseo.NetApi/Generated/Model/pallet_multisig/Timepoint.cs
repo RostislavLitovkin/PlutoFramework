@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_multisig
     
     
     /// <summary>
-    /// >> 40 - Composite[pallet_multisig.Timepoint]
+    /// >> 50 - Composite[pallet_multisig.Timepoint]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Timepoint : BaseType

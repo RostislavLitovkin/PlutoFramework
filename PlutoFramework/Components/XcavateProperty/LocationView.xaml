@@ -14,6 +14,7 @@
         </Image>
         <Label 
             Text="{Binding LocationName}"
+            LineBreakMode="TailTruncation"
             HorizontalTextAlignment="Start"
             VerticalOptions="Center"/>
 

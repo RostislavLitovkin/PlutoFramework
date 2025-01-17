@@ -1,12 +1,22 @@
 ﻿using Substrate.NetApi.Model.Types.Primitive;
 using Substrate.NetApi;
 using System.Numerics;
-using System.Collections;
+using System.Text;
 
 namespace UniqueryPlus
 {
     public static class Helpers
     {
+        public static string VecU8ToString(U8[] value)
+        {
+            string result = "";
+            for (int i = 0; i < value.Count(); i++)
+            {
+                result += Encoding.ASCII.GetString(new byte[1] { value.ElementAt(i).Value });
+            }
+
+            return result;
+        }
         public static Mythos.NetApi.Generated.Model.primitive_types.U256 GetMythosU256FromBigInteger(BigInteger value)
         {
             // Ensure the BigInteger fits within 256 bits

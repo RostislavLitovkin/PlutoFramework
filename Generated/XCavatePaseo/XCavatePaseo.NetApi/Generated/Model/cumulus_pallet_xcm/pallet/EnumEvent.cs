@@ -45,7 +45,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 291 - Variant[cumulus_pallet_xcm.pallet.Event]
+    /// >> 56 - Variant[cumulus_pallet_xcm.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

@@ -3,9 +3,9 @@ using System.Runtime.CompilerServices;
 
 namespace UniqueryPlus
 {
-    internal class RecursionHelper
+    public class RecursionHelper
     {
-        internal static async IAsyncEnumerable<T> ToIAsyncEnumerableAsync<T>(
+        public static async IAsyncEnumerable<T> ToIAsyncEnumerableAsync<T>(
             IEnumerable<SubstrateClient> clients,
             Func<SubstrateClient, NftTypeEnum, byte[]?, CancellationToken, Task<RecursiveReturn<T>>> getter,
             uint limit,
@@ -152,6 +152,7 @@ namespace UniqueryPlus
                 Unique.NetApi.Generated.SubstrateClientExt => [NftTypeEnum.Unique],
                 Opal.NetApi.Generated.SubstrateClientExt => [NftTypeEnum.Opal],
                 Mythos.NetApi.Generated.SubstrateClientExt => [NftTypeEnum.Mythos],
+                XCavatePaseo.NetApi.Generated.SubstrateClientExt => [NftTypeEnum.XCavatePaseo],
                 _ => []
             };
         }

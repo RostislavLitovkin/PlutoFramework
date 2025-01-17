@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 99 - Composite[BTreeSetT1]
+    /// >> 208 - Composite[BTreeSetT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BTreeSetT1 : BaseType

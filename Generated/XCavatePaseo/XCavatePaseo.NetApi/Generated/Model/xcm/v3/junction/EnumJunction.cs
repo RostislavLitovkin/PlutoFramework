@@ -73,7 +73,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v3.junction
     }
     
     /// <summary>
-    /// >> 53 - Variant[xcm.v3.junction.Junction]
+    /// >> 127 - Variant[xcm.v3.junction.Junction]
     /// </summary>
     public sealed class EnumJunction : BaseEnumRust<Junction>
     {

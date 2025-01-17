@@ -90,9 +90,9 @@
                        />
 
                 <Grid AbsoluteLayout.LayoutBounds="0.5, 25, 1, 185"
-                  AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
-                  ColumnSpacing="5"
-                  RowSpacing="5"
+                      AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                      ColumnSpacing="5"
+                      RowSpacing="5"
                        Margin="0,10,0,10"
                       >
                     <Grid.ColumnDefinitions>

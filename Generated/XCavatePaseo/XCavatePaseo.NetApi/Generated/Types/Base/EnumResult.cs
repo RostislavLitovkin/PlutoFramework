@@ -33,7 +33,7 @@ namespace XCavatePaseo.NetApi.Generated.Types.Base
     }
     
     /// <summary>
-    /// >> 282 - Variant[Result]
+    /// >> 34 - Variant[Result]
     /// </summary>
     public sealed class EnumResult : BaseEnumRust<Result>
     {
@@ -43,8 +43,8 @@ namespace XCavatePaseo.NetApi.Generated.Types.Base
         /// </summary>
         public EnumResult()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.frame_support.dispatch.PostDispatchInfo>(Result.Ok);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_runtime.DispatchErrorWithPostInfo>(Result.Err);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseTuple>(Result.Ok);
+				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Result.Err);
         }
     }
 }

@@ -43,7 +43,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v2
     }
     
     /// <summary>
-    /// >> 163 - Variant[xcm.v2.Response]
+    /// >> 266 - Variant[xcm.v2.Response]
     /// </summary>
     public sealed class EnumResponse : BaseEnumRust<Response>
     {

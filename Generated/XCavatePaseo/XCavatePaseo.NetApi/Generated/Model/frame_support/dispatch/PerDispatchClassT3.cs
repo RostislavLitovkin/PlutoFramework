@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_support.dispatch
     
     
     /// <summary>
-    /// >> 314 - Composite[frame_support.dispatch.PerDispatchClassT3]
+    /// >> 185 - Composite[frame_support.dispatch.PerDispatchClassT3]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PerDispatchClassT3 : BaseType

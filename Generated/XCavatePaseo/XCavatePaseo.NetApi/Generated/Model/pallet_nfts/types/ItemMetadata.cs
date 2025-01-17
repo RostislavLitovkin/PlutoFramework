@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 512 - Composite[pallet_nfts.types.ItemMetadata]
+    /// >> 471 - Composite[pallet_nfts.types.ItemMetadata]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ItemMetadata : BaseType
@@ -31,7 +31,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
         /// <summary>
         /// >> data
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 Data { get; set; }
+        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 Data { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -54,7 +54,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
             var start = p;
             Deposit = new XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemMetadataDeposit();
             Deposit.Decode(byteArray, ref p);
-            Data = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9();
+            Data = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5();
             Data.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

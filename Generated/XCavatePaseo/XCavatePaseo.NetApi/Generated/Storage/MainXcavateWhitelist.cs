@@ -86,7 +86,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(user.Encode());
-            return new Method(50, "XcavateWhitelist", 0, "add_to_whitelist", byteArray.ToArray());
+            return new Method(111, "XcavateWhitelist", 0, "add_to_whitelist", byteArray.ToArray());
         }
         
         /// <summary>
@@ -97,7 +97,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(user.Encode());
-            return new Method(50, "XcavateWhitelist", 1, "remove_from_whitelist", byteArray.ToArray());
+            return new Method(111, "XcavateWhitelist", 1, "remove_from_whitelist", byteArray.ToArray());
         }
     }
     

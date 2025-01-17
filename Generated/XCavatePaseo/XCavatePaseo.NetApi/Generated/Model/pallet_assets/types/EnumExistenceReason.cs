@@ -48,7 +48,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_assets.types
     }
     
     /// <summary>
-    /// >> 401 - Variant[pallet_assets.types.ExistenceReason]
+    /// >> 439 - Variant[pallet_assets.types.ExistenceReason]
     /// </summary>
     public sealed class EnumExistenceReason : BaseEnumRust<ExistenceReason>
     {

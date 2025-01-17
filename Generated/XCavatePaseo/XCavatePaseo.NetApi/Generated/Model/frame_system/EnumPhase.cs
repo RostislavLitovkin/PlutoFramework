@@ -38,7 +38,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_system
     }
     
     /// <summary>
-    /// >> 305 - Variant[frame_system.Phase]
+    /// >> 169 - Variant[frame_system.Phase]
     /// </summary>
     public sealed class EnumPhase : BaseEnumRust<Phase>
     {

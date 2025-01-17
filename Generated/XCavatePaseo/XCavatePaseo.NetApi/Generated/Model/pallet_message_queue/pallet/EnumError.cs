@@ -84,7 +84,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_message_queue.pallet
     }
     
     /// <summary>
-    /// >> 499 - Variant[pallet_message_queue.pallet.Error]
+    /// >> 433 - Variant[pallet_message_queue.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

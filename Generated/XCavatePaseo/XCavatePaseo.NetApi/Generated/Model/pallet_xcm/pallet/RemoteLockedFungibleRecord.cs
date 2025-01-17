@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
     
     
     /// <summary>
-    /// >> 485 - Composite[pallet_xcm.pallet.RemoteLockedFungibleRecord]
+    /// >> 419 - Composite[pallet_xcm.pallet.RemoteLockedFungibleRecord]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RemoteLockedFungibleRecord : BaseType
@@ -39,7 +39,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
         /// <summary>
         /// >> consumers
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30 Consumers { get; set; }
+        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24 Consumers { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -68,7 +68,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
             Owner.Decode(byteArray, ref p);
             Locker = new XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation();
             Locker.Decode(byteArray, ref p);
-            Consumers = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30();
+            Consumers = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24();
             Consumers.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

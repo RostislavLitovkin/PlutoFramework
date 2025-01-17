@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
     
     
     /// <summary>
-    /// >> 538 - Composite[pallet_nft_marketplace.pallet.AssetDetails]
+    /// >> 494 - Composite[pallet_nft_marketplace.pallet.AssetDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetDetails : BaseType
@@ -39,15 +39,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// <summary>
         /// >> location
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11 Location { get; set; }
-        /// <summary>
-        /// >> price
-        /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U128 Price { get; set; }
-        /// <summary>
-        /// >> token_amount
-        /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U32 TokenAmount { get; set; }
+        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 Location { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -63,8 +55,6 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
             result.AddRange(ItemId.Encode());
             result.AddRange(Region.Encode());
             result.AddRange(Location.Encode());
-            result.AddRange(Price.Encode());
-            result.AddRange(TokenAmount.Encode());
             return result.ToArray();
         }
         
@@ -78,12 +68,8 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
             ItemId.Decode(byteArray, ref p);
             Region = new Substrate.NetApi.Model.Types.Primitive.U32();
             Region.Decode(byteArray, ref p);
-            Location = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11();
+            Location = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8();
             Location.Decode(byteArray, ref p);
-            Price = new Substrate.NetApi.Model.Types.Primitive.U128();
-            Price.Decode(byteArray, ref p);
-            TokenAmount = new Substrate.NetApi.Model.Types.Primitive.U32();
-            TokenAmount.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;
             Bytes = new byte[bytesLength];

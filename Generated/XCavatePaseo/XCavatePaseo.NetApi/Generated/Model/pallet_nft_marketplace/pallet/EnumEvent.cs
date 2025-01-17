@@ -87,40 +87,10 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// An offer has been cancelled.
         /// </summary>
         OfferCancelled = 10,
-        
-        /// <summary>
-        /// >> LawyerRegistered
-        /// A lawyer has been registered.
-        /// </summary>
-        LawyerRegistered = 11,
-        
-        /// <summary>
-        /// >> LawyerClaimedProperty
-        /// A lawyer claimed a property.
-        /// </summary>
-        LawyerClaimedProperty = 12,
-        
-        /// <summary>
-        /// >> LawyerRemovedFromCase
-        /// A lawyer stepped back from a legal case.
-        /// </summary>
-        LawyerRemovedFromCase = 13,
-        
-        /// <summary>
-        /// >> DocumentsConfirmed
-        /// Documents have been approved or rejected.
-        /// </summary>
-        DocumentsConfirmed = 14,
-        
-        /// <summary>
-        /// >> PropertyNftBurned
-        /// The property nft got burned.
-        /// </summary>
-        PropertyNftBurned = 15,
     }
     
     /// <summary>
-    /// >> 299 - Variant[pallet_nft_marketplace.pallet.Event]
+    /// >> 159 - Variant[pallet_nft_marketplace.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -139,14 +109,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.ListingDelisted);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.ObjectUpdated);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.RegionCreated);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>>(Event.LocationCreated);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8>>(Event.LocationCreated);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.OfferCreated);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.OfferCancelled);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.LawyerRegistered);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.EnumLegalProperty>>(Event.LawyerClaimedProperty);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.LawyerRemovedFromCase);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.Bool>>(Event.DocumentsConfirmed);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.PropertyNftBurned);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.OfferCancelled);
         }
     }
 }

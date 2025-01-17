@@ -33,7 +33,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v3
     }
     
     /// <summary>
-    /// >> 196 - Variant[xcm.v3.WeightLimit]
+    /// >> 106 - Variant[xcm.v3.WeightLimit]
     /// </summary>
     public sealed class EnumWeightLimit : BaseEnumRust<WeightLimit>
     {

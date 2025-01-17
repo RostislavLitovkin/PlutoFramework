@@ -288,59 +288,6 @@ namespace XCavatePaseo.NetApi.Generated.Storage
     /// </summary>
     public sealed class XcmpQueueCalls
     {
-        
-        /// <summary>
-        /// >> suspend_xcm_execution
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method SuspendXcmExecution()
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            return new Method(30, "XcmpQueue", 1, "suspend_xcm_execution", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> resume_xcm_execution
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method ResumeXcmExecution()
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            return new Method(30, "XcmpQueue", 2, "resume_xcm_execution", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> update_suspend_threshold
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method UpdateSuspendThreshold(Substrate.NetApi.Model.Types.Primitive.U32 @new)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(@new.Encode());
-            return new Method(30, "XcmpQueue", 3, "update_suspend_threshold", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> update_drop_threshold
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method UpdateDropThreshold(Substrate.NetApi.Model.Types.Primitive.U32 @new)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(@new.Encode());
-            return new Method(30, "XcmpQueue", 4, "update_drop_threshold", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> update_resume_threshold
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method UpdateResumeThreshold(Substrate.NetApi.Model.Types.Primitive.U32 @new)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(@new.Encode());
-            return new Method(30, "XcmpQueue", 5, "update_resume_threshold", byteArray.ToArray());
-        }
     }
     
     /// <summary>

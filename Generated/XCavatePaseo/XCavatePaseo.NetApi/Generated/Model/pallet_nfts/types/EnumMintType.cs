@@ -38,7 +38,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
     }
     
     /// <summary>
-    /// >> 236 - Variant[pallet_nfts.types.MintType]
+    /// >> 320 - Variant[pallet_nfts.types.MintType]
     /// </summary>
     public sealed class EnumMintType : BaseEnumRust<MintType>
     {

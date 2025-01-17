@@ -29,10 +29,10 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         Proposed = 0,
         
         /// <summary>
-        /// >> Challenge
-        /// A new challenge has been made.
+        /// >> Inquery
+        /// A new inquery has been made.
         /// </summary>
-        Challenge = 1,
+        Inquery = 1,
         
         /// <summary>
         /// >> VotedOnProposal
@@ -41,56 +41,14 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         VotedOnProposal = 2,
         
         /// <summary>
-        /// >> VotedOnChallenge
-        /// Voted on challenge.
+        /// >> VotedOnInquery
+        /// Voted on inquery.
         /// </summary>
-        VotedOnChallenge = 3,
-        
-        /// <summary>
-        /// >> ProposalExecuted
-        /// The proposal has been executed.
-        /// </summary>
-        ProposalExecuted = 4,
-        
-        /// <summary>
-        /// >> AgentSlashed
-        /// The agent got slashed.
-        /// </summary>
-        AgentSlashed = 5,
-        
-        /// <summary>
-        /// >> AgentChanged
-        /// The agent has been changed.
-        /// </summary>
-        AgentChanged = 6,
-        
-        /// <summary>
-        /// >> ProposalRejected
-        /// A proposal got rejected.
-        /// </summary>
-        ProposalRejected = 7,
-        
-        /// <summary>
-        /// >> ChallengeRejected
-        /// A challenge has been rejected/
-        /// </summary>
-        ChallengeRejected = 8,
-        
-        /// <summary>
-        /// >> ProposalThresHoldNotReached
-        /// The threshold could not be reached for a proposal.
-        /// </summary>
-        ProposalThresHoldNotReached = 9,
-        
-        /// <summary>
-        /// >> ChallengeThresHoldNotReached
-        /// The threshold could not be reached for a challenge.
-        /// </summary>
-        ChallengeThresHoldNotReached = 10,
+        VotedOnInquery = 3,
     }
     
     /// <summary>
-    /// >> 301 - Variant[pallet_property_governance.pallet.Event]
+    /// >> 162 - Variant[pallet_property_governance.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -102,16 +60,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         public EnumEvent()
         {
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.Proposed);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.Challenge);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.Inquery);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote>>(Event.VotedOnProposal);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote>>(Event.VotedOnChallenge);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.ProposalExecuted);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.AgentSlashed);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.AgentChanged);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.ProposalRejected);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumChallengeState>>(Event.ChallengeRejected);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Percent>>(Event.ProposalThresHoldNotReached);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Percent, XCavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumChallengeState>>(Event.ChallengeThresHoldNotReached);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote>>(Event.VotedOnInquery);
         }
     }
 }

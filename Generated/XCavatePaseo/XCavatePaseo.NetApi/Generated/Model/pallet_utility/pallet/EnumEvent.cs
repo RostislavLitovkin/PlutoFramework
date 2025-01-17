@@ -61,7 +61,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_utility.pallet
     }
     
     /// <summary>
-    /// >> 38 - Variant[pallet_utility.pallet.Event]
+    /// >> 37 - Variant[pallet_utility.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

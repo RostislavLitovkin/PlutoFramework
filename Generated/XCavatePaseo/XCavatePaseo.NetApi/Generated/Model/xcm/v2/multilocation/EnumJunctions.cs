@@ -68,7 +68,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation
     }
     
     /// <summary>
-    /// >> 78 - Variant[xcm.v2.multilocation.Junctions]
+    /// >> 113 - Variant[xcm.v2.multilocation.Junctions]
     /// </summary>
     public sealed class EnumJunctions : BaseEnumRust<Junctions>
     {

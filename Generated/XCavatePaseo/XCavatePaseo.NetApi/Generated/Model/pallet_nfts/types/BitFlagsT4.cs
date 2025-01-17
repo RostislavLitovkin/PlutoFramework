@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 521 - Composite[pallet_nfts.types.BitFlagsT4]
+    /// >> 480 - Composite[pallet_nfts.types.BitFlagsT4]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BitFlagsT4 : BaseType

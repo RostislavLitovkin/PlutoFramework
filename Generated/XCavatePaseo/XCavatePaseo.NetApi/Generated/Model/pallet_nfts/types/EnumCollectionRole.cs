@@ -38,7 +38,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
     }
     
     /// <summary>
-    /// >> 504 - Variant[pallet_nfts.types.CollectionRole]
+    /// >> 463 - Variant[pallet_nfts.types.CollectionRole]
     /// </summary>
     public sealed class EnumCollectionRole : BaseEnum<CollectionRole>
     {

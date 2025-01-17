@@ -43,7 +43,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 481 - Variant[pallet_xcm.pallet.VersionMigrationStage]
+    /// >> 416 - Variant[pallet_xcm.pallet.VersionMigrationStage]
     /// </summary>
     public sealed class EnumVersionMigrationStage : BaseEnumRust<VersionMigrationStage>
     {

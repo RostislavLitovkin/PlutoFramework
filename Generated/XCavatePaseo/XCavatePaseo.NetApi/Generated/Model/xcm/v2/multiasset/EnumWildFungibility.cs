@@ -33,7 +33,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset
     }
     
     /// <summary>
-    /// >> 171 - Variant[xcm.v2.multiasset.WildFungibility]
+    /// >> 272 - Variant[xcm.v2.multiasset.WildFungibility]
     /// </summary>
     public sealed class EnumWildFungibility : BaseEnum<WildFungibility>
     {

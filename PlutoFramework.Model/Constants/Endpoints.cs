@@ -430,7 +430,7 @@ namespace PlutoFramework.Constants
                 {
                     Name = "XCavate Paseo",
                     Key = EndpointEnum.XCavatePaseo,
-                    URLs =  new string[1] { "wss://rpc-paseo.xcavate.io/443" },
+                    URLs =  new string[1] { "wss://fraa-dancebox-3107-rpc.a.dancebox.tanssi.network/" },
                     Icon = "xcavate.png",
                     DarkIcon = "xcavate.png",
                     Unit = "XCAV",

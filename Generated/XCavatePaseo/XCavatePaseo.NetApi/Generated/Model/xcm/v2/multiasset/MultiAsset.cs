@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset
     
     
     /// <summary>
-    /// >> 157 - Composite[xcm.v2.multiasset.MultiAsset]
+    /// >> 110 - Composite[xcm.v2.multiasset.MultiAsset]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MultiAsset : BaseType

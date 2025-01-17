@@ -113,7 +113,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_balances.pallet
     }
     
     /// <summary>
-    /// >> 129 - Variant[pallet_balances.pallet.Call]
+    /// >> 252 - Variant[pallet_balances.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

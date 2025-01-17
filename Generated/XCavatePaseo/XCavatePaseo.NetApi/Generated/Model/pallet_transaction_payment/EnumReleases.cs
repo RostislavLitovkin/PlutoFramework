@@ -33,7 +33,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_transaction_payment
     }
     
     /// <summary>
-    /// >> 395 - Variant[pallet_transaction_payment.Releases]
+    /// >> 387 - Variant[pallet_transaction_payment.Releases]
     /// </summary>
     public sealed class EnumReleases : BaseEnum<Releases>
     {

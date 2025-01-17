@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_mort
     
     
     /// <summary>
-    /// >> 575 - Composite[frame_system.extensions.check_mortality.CheckMortality]
+    /// >> 536 - Composite[frame_system.extensions.check_mortality.CheckMortality]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckMortality : BaseType

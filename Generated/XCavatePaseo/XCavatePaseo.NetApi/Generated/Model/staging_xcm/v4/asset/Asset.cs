@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset
     
     
     /// <summary>
-    /// >> 202 - Composite[staging_xcm.v4.asset.Asset]
+    /// >> 84 - Composite[staging_xcm.v4.asset.Asset]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Asset : BaseType

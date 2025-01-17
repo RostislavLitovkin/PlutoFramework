@@ -70,7 +70,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.pa
     }
     
     /// <summary>
-    /// >> 94 - Variant[cumulus_pallet_parachain_system.pallet.Call]
+    /// >> 222 - Variant[cumulus_pallet_parachain_system.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

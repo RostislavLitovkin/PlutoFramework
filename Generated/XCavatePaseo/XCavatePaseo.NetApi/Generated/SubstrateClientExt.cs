@@ -50,9 +50,9 @@ namespace XCavatePaseo.NetApi.Generated
         public ParachainInfoStorage ParachainInfoStorage;
         
         /// <summary>
-        /// ProxyStorage storage calls.
+        /// SudoStorage storage calls.
         /// </summary>
-        public ProxyStorage ProxyStorage;
+        public SudoStorage SudoStorage;
         
         /// <summary>
         /// UtilityStorage storage calls.
@@ -60,19 +60,24 @@ namespace XCavatePaseo.NetApi.Generated
         public UtilityStorage UtilityStorage;
         
         /// <summary>
-        /// MultisigStorage storage calls.
+        /// ProxyStorage storage calls.
         /// </summary>
-        public MultisigStorage MultisigStorage;
+        public ProxyStorage ProxyStorage;
         
         /// <summary>
-        /// SchedulerStorage storage calls.
+        /// MigrationsStorage storage calls.
         /// </summary>
-        public SchedulerStorage SchedulerStorage;
+        public MigrationsStorage MigrationsStorage;
         
         /// <summary>
-        /// PreimageStorage storage calls.
+        /// MaintenanceModeStorage storage calls.
         /// </summary>
-        public PreimageStorage PreimageStorage;
+        public MaintenanceModeStorage MaintenanceModeStorage;
+        
+        /// <summary>
+        /// TxPauseStorage storage calls.
+        /// </summary>
+        public TxPauseStorage TxPauseStorage;
         
         /// <summary>
         /// BalancesStorage storage calls.
@@ -85,64 +90,19 @@ namespace XCavatePaseo.NetApi.Generated
         public TransactionPaymentStorage TransactionPaymentStorage;
         
         /// <summary>
-        /// AssetsStorage storage calls.
+        /// MultisigStorage storage calls.
         /// </summary>
-        public AssetsStorage AssetsStorage;
+        public MultisigStorage MultisigStorage;
         
         /// <summary>
-        /// ForeignAssetsStorage storage calls.
+        /// AuthoritiesNotingStorage storage calls.
         /// </summary>
-        public ForeignAssetsStorage ForeignAssetsStorage;
+        public AuthoritiesNotingStorage AuthoritiesNotingStorage;
         
         /// <summary>
-        /// TreasuryStorage storage calls.
+        /// AuthorInherentStorage storage calls.
         /// </summary>
-        public TreasuryStorage TreasuryStorage;
-        
-        /// <summary>
-        /// SudoStorage storage calls.
-        /// </summary>
-        public SudoStorage SudoStorage;
-        
-        /// <summary>
-        /// ConvictionVotingStorage storage calls.
-        /// </summary>
-        public ConvictionVotingStorage ConvictionVotingStorage;
-        
-        /// <summary>
-        /// ReferendaStorage storage calls.
-        /// </summary>
-        public ReferendaStorage ReferendaStorage;
-        
-        /// <summary>
-        /// WhitelistStorage storage calls.
-        /// </summary>
-        public WhitelistStorage WhitelistStorage;
-        
-        /// <summary>
-        /// AuthorshipStorage storage calls.
-        /// </summary>
-        public AuthorshipStorage AuthorshipStorage;
-        
-        /// <summary>
-        /// CollatorSelectionStorage storage calls.
-        /// </summary>
-        public CollatorSelectionStorage CollatorSelectionStorage;
-        
-        /// <summary>
-        /// SessionStorage storage calls.
-        /// </summary>
-        public SessionStorage SessionStorage;
-        
-        /// <summary>
-        /// AuraStorage storage calls.
-        /// </summary>
-        public AuraStorage AuraStorage;
-        
-        /// <summary>
-        /// AuraExtStorage storage calls.
-        /// </summary>
-        public AuraExtStorage AuraExtStorage;
+        public AuthorInherentStorage AuthorInherentStorage;
         
         /// <summary>
         /// XcmpQueueStorage storage calls.
@@ -150,14 +110,19 @@ namespace XCavatePaseo.NetApi.Generated
         public XcmpQueueStorage XcmpQueueStorage;
         
         /// <summary>
-        /// PolkadotXcmStorage storage calls.
-        /// </summary>
-        public PolkadotXcmStorage PolkadotXcmStorage;
-        
-        /// <summary>
         /// CumulusXcmStorage storage calls.
         /// </summary>
         public CumulusXcmStorage CumulusXcmStorage;
+        
+        /// <summary>
+        /// DmpQueueStorage storage calls.
+        /// </summary>
+        public DmpQueueStorage DmpQueueStorage;
+        
+        /// <summary>
+        /// PolkadotXcmStorage storage calls.
+        /// </summary>
+        public PolkadotXcmStorage PolkadotXcmStorage;
         
         /// <summary>
         /// MessageQueueStorage storage calls.
@@ -165,29 +130,69 @@ namespace XCavatePaseo.NetApi.Generated
         public MessageQueueStorage MessageQueueStorage;
         
         /// <summary>
-        /// NftsStorage storage calls.
+        /// ForeignAssetsStorage storage calls.
         /// </summary>
-        public NftsStorage NftsStorage;
+        public ForeignAssetsStorage ForeignAssetsStorage;
         
         /// <summary>
-        /// NftFractionalizationStorage storage calls.
+        /// ForeignAssetsCreatorStorage storage calls.
         /// </summary>
-        public NftFractionalizationStorage NftFractionalizationStorage;
+        public ForeignAssetsCreatorStorage ForeignAssetsCreatorStorage;
         
         /// <summary>
-        /// VestingStorage storage calls.
+        /// AssetRateStorage storage calls.
         /// </summary>
-        public VestingStorage VestingStorage;
+        public AssetRateStorage AssetRateStorage;
         
         /// <summary>
-        /// RandomnessCollectiveFlipStorage storage calls.
+        /// XcmExecutorUtilsStorage storage calls.
         /// </summary>
-        public RandomnessCollectiveFlipStorage RandomnessCollectiveFlipStorage;
+        public XcmExecutorUtilsStorage XcmExecutorUtilsStorage;
+        
+        /// <summary>
+        /// RootTestingStorage storage calls.
+        /// </summary>
+        public RootTestingStorage RootTestingStorage;
+        
+        /// <summary>
+        /// AsyncBackingStorage storage calls.
+        /// </summary>
+        public AsyncBackingStorage AsyncBackingStorage;
         
         /// <summary>
         /// XcavateWhitelistStorage storage calls.
         /// </summary>
         public XcavateWhitelistStorage XcavateWhitelistStorage;
+        
+        /// <summary>
+        /// CouncilStorage storage calls.
+        /// </summary>
+        public CouncilStorage CouncilStorage;
+        
+        /// <summary>
+        /// TechnicalCommitteeStorage storage calls.
+        /// </summary>
+        public TechnicalCommitteeStorage TechnicalCommitteeStorage;
+        
+        /// <summary>
+        /// AllianceMotionStorage storage calls.
+        /// </summary>
+        public AllianceMotionStorage AllianceMotionStorage;
+        
+        /// <summary>
+        /// NftsStorage storage calls.
+        /// </summary>
+        public NftsStorage NftsStorage;
+        
+        /// <summary>
+        /// AssetsStorage storage calls.
+        /// </summary>
+        public AssetsStorage AssetsStorage;
+        
+        /// <summary>
+        /// NftFractionalizationStorage storage calls.
+        /// </summary>
+        public NftFractionalizationStorage NftFractionalizationStorage;
         
         /// <summary>
         /// NftMarketplaceStorage storage calls.
@@ -205,9 +210,19 @@ namespace XCavatePaseo.NetApi.Generated
         public PropertyGovernanceStorage PropertyGovernanceStorage;
         
         /// <summary>
-        /// GameModuleStorage storage calls.
+        /// XcavateStakingStorage storage calls.
         /// </summary>
-        public GameModuleStorage GameModuleStorage;
+        public XcavateStakingStorage XcavateStakingStorage;
+        
+        /// <summary>
+        /// CommunityLoanPoolStorage storage calls.
+        /// </summary>
+        public CommunityLoanPoolStorage CommunityLoanPoolStorage;
+        
+        /// <summary>
+        /// CommunityProjectStorage storage calls.
+        /// </summary>
+        public CommunityProjectStorage CommunityProjectStorage;
         
         public SubstrateClientExt(System.Uri uri, Substrate.NetApi.Model.Extrinsics.ChargeType chargeType) : 
                 base(uri, chargeType)
@@ -217,38 +232,41 @@ namespace XCavatePaseo.NetApi.Generated
             this.ParachainSystemStorage = new ParachainSystemStorage(this);
             this.TimestampStorage = new TimestampStorage(this);
             this.ParachainInfoStorage = new ParachainInfoStorage(this);
-            this.ProxyStorage = new ProxyStorage(this);
+            this.SudoStorage = new SudoStorage(this);
             this.UtilityStorage = new UtilityStorage(this);
-            this.MultisigStorage = new MultisigStorage(this);
-            this.SchedulerStorage = new SchedulerStorage(this);
-            this.PreimageStorage = new PreimageStorage(this);
+            this.ProxyStorage = new ProxyStorage(this);
+            this.MigrationsStorage = new MigrationsStorage(this);
+            this.MaintenanceModeStorage = new MaintenanceModeStorage(this);
+            this.TxPauseStorage = new TxPauseStorage(this);
             this.BalancesStorage = new BalancesStorage(this);
             this.TransactionPaymentStorage = new TransactionPaymentStorage(this);
-            this.AssetsStorage = new AssetsStorage(this);
-            this.ForeignAssetsStorage = new ForeignAssetsStorage(this);
-            this.TreasuryStorage = new TreasuryStorage(this);
-            this.SudoStorage = new SudoStorage(this);
-            this.ConvictionVotingStorage = new ConvictionVotingStorage(this);
-            this.ReferendaStorage = new ReferendaStorage(this);
-            this.WhitelistStorage = new WhitelistStorage(this);
-            this.AuthorshipStorage = new AuthorshipStorage(this);
-            this.CollatorSelectionStorage = new CollatorSelectionStorage(this);
-            this.SessionStorage = new SessionStorage(this);
-            this.AuraStorage = new AuraStorage(this);
-            this.AuraExtStorage = new AuraExtStorage(this);
+            this.MultisigStorage = new MultisigStorage(this);
+            this.AuthoritiesNotingStorage = new AuthoritiesNotingStorage(this);
+            this.AuthorInherentStorage = new AuthorInherentStorage(this);
             this.XcmpQueueStorage = new XcmpQueueStorage(this);
-            this.PolkadotXcmStorage = new PolkadotXcmStorage(this);
             this.CumulusXcmStorage = new CumulusXcmStorage(this);
+            this.DmpQueueStorage = new DmpQueueStorage(this);
+            this.PolkadotXcmStorage = new PolkadotXcmStorage(this);
             this.MessageQueueStorage = new MessageQueueStorage(this);
-            this.NftsStorage = new NftsStorage(this);
-            this.NftFractionalizationStorage = new NftFractionalizationStorage(this);
-            this.VestingStorage = new VestingStorage(this);
-            this.RandomnessCollectiveFlipStorage = new RandomnessCollectiveFlipStorage(this);
+            this.ForeignAssetsStorage = new ForeignAssetsStorage(this);
+            this.ForeignAssetsCreatorStorage = new ForeignAssetsCreatorStorage(this);
+            this.AssetRateStorage = new AssetRateStorage(this);
+            this.XcmExecutorUtilsStorage = new XcmExecutorUtilsStorage(this);
+            this.RootTestingStorage = new RootTestingStorage(this);
+            this.AsyncBackingStorage = new AsyncBackingStorage(this);
             this.XcavateWhitelistStorage = new XcavateWhitelistStorage(this);
+            this.CouncilStorage = new CouncilStorage(this);
+            this.TechnicalCommitteeStorage = new TechnicalCommitteeStorage(this);
+            this.AllianceMotionStorage = new AllianceMotionStorage(this);
+            this.NftsStorage = new NftsStorage(this);
+            this.AssetsStorage = new AssetsStorage(this);
+            this.NftFractionalizationStorage = new NftFractionalizationStorage(this);
             this.NftMarketplaceStorage = new NftMarketplaceStorage(this);
             this.PropertyManagementStorage = new PropertyManagementStorage(this);
             this.PropertyGovernanceStorage = new PropertyGovernanceStorage(this);
-            this.GameModuleStorage = new GameModuleStorage(this);
+            this.XcavateStakingStorage = new XcavateStakingStorage(this);
+            this.CommunityLoanPoolStorage = new CommunityLoanPoolStorage(this);
+            this.CommunityProjectStorage = new CommunityProjectStorage(this);
         }
     }
 }

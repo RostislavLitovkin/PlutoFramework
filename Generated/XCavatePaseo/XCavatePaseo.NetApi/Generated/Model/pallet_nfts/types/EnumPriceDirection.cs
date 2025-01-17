@@ -33,7 +33,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
     }
     
     /// <summary>
-    /// >> 256 - Variant[pallet_nfts.types.PriceDirection]
+    /// >> 155 - Variant[pallet_nfts.types.PriceDirection]
     /// </summary>
     public sealed class EnumPriceDirection : BaseEnum<PriceDirection>
     {

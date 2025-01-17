@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things
     
     
     /// <summary>
-    /// >> 303 - Composite[sp_arithmetic.per_things.Percent]
+    /// >> 348 - Composite[sp_arithmetic.per_things.Percent]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Percent : BaseType

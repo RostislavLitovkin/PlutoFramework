@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_balances.types
     
     
     /// <summary>
-    /// >> 386 - Composite[pallet_balances.types.IdAmountT1]
+    /// >> 378 - Composite[pallet_balances.types.IdAmountT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class IdAmountT1 : BaseType
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_balances.types
         /// <summary>
         /// >> id
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.generic_runtime_template.EnumRuntimeHoldReason Id { get; set; }
+        public XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeHoldReason Id { get; set; }
         /// <summary>
         /// >> amount
         /// </summary>
@@ -52,7 +52,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_balances.types
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Id = new XCavatePaseo.NetApi.Generated.Model.generic_runtime_template.EnumRuntimeHoldReason();
+            Id = new XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeHoldReason();
             Id.Decode(byteArray, ref p);
             Amount = new Substrate.NetApi.Model.Types.Primitive.U128();
             Amount.Decode(byteArray, ref p);

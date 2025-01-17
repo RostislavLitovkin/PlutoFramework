@@ -37,23 +37,23 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ForeignAssets", "Asset"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetDetails)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetDetails)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ForeignAssets", "Account"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetAccount)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetAccount)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ForeignAssets", "Approvals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.Approval)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.Approval)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ForeignAssets", "Metadata"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetMetadata)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1)));
         }
         
         /// <summary>
         /// >> AssetParams
         ///  Details of an asset.
         /// </summary>
-        public static string AssetParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        public static string AssetParams(Substrate.NetApi.Model.Types.Primitive.U16 key)
         {
             return RequestGenerator.GetStorage("ForeignAssets", "Asset", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -73,7 +73,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Asset
         ///  Details of an asset.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetDetails> Asset(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetDetails> Asset(Substrate.NetApi.Model.Types.Primitive.U16 key, string blockhash, CancellationToken token)
         {
             string parameters = ForeignAssetsStorage.AssetParams(key);
             var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetDetails>(parameters, blockhash, token);
@@ -84,7 +84,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> AccountParams
         ///  The holdings of a specific account for a specific asset.
         /// </summary>
-        public static string AccountParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
+        public static string AccountParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
         {
             return RequestGenerator.GetStorage("ForeignAssets", "Account", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -104,7 +104,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Account
         ///  The holdings of a specific account for a specific asset.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetAccount> Account(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
+        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetAccount> Account(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
         {
             string parameters = ForeignAssetsStorage.AccountParams(key);
             var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetAccount>(parameters, blockhash, token);
@@ -117,7 +117,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  is the amount of `T::Currency` reserved for storing this.
         ///  First key is the asset ID, second key is the owner and third key is the delegate.
         /// </summary>
-        public static string ApprovalsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
+        public static string ApprovalsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
         {
             return RequestGenerator.GetStorage("ForeignAssets", "Approvals", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -140,7 +140,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  is the amount of `T::Currency` reserved for storing this.
         ///  First key is the asset ID, second key is the owner and third key is the delegate.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.Approval> Approvals(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
+        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.Approval> Approvals(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
         {
             string parameters = ForeignAssetsStorage.ApprovalsParams(key);
             var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.Approval>(parameters, blockhash, token);
@@ -151,7 +151,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> MetadataParams
         ///  Metadata of an asset.
         /// </summary>
-        public static string MetadataParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        public static string MetadataParams(Substrate.NetApi.Model.Types.Primitive.U16 key)
         {
             return RequestGenerator.GetStorage("ForeignAssets", "Metadata", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -171,10 +171,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Metadata
         ///  Metadata of an asset.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetMetadata> Metadata(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1> Metadata(Substrate.NetApi.Model.Types.Primitive.U16 key, string blockhash, CancellationToken token)
         {
             string parameters = ForeignAssetsStorage.MetadataParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetMetadata>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1>(parameters, blockhash, token);
             return result;
         }
     }
@@ -189,241 +189,241 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> create
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Create(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress admin, Substrate.NetApi.Model.Types.Primitive.U128 min_balance)
+        public static Method Create(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress admin, Substrate.NetApi.Model.Types.Primitive.U128 min_balance)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(admin.Encode());
             byteArray.AddRange(min_balance.Encode());
-            return new Method(13, "ForeignAssets", 0, "create", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 0, "create", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> force_create
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceCreate(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner, Substrate.NetApi.Model.Types.Primitive.Bool is_sufficient, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> min_balance)
+        public static Method ForceCreate(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner, Substrate.NetApi.Model.Types.Primitive.Bool is_sufficient, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> min_balance)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(owner.Encode());
             byteArray.AddRange(is_sufficient.Encode());
             byteArray.AddRange(min_balance.Encode());
-            return new Method(13, "ForeignAssets", 1, "force_create", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 1, "force_create", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> start_destroy
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method StartDestroy(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id)
+        public static Method StartDestroy(Substrate.NetApi.Model.Types.Primitive.U16 id)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
-            return new Method(13, "ForeignAssets", 2, "start_destroy", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 2, "start_destroy", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> destroy_accounts
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method DestroyAccounts(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id)
+        public static Method DestroyAccounts(Substrate.NetApi.Model.Types.Primitive.U16 id)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
-            return new Method(13, "ForeignAssets", 3, "destroy_accounts", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 3, "destroy_accounts", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> destroy_approvals
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method DestroyApprovals(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id)
+        public static Method DestroyApprovals(Substrate.NetApi.Model.Types.Primitive.U16 id)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
-            return new Method(13, "ForeignAssets", 4, "destroy_approvals", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 4, "destroy_approvals", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> finish_destroy
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method FinishDestroy(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id)
+        public static Method FinishDestroy(Substrate.NetApi.Model.Types.Primitive.U16 id)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
-            return new Method(13, "ForeignAssets", 5, "finish_destroy", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 5, "finish_destroy", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> mint
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Mint(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress beneficiary, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
+        public static Method Mint(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress beneficiary, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(beneficiary.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(13, "ForeignAssets", 6, "mint", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 6, "mint", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> burn
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Burn(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
+        public static Method Burn(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(who.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(13, "ForeignAssets", 7, "burn", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 7, "burn", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> transfer
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Transfer(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress target, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
+        public static Method Transfer(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress target, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(target.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(13, "ForeignAssets", 8, "transfer", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 8, "transfer", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> transfer_keep_alive
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method TransferKeepAlive(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress target, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
+        public static Method TransferKeepAlive(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress target, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(target.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(13, "ForeignAssets", 9, "transfer_keep_alive", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 9, "transfer_keep_alive", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> force_transfer
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceTransfer(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress source, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress dest, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
+        public static Method ForceTransfer(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress source, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress dest, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(source.Encode());
             byteArray.AddRange(dest.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(13, "ForeignAssets", 10, "force_transfer", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 10, "force_transfer", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> freeze
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Freeze(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
+        public static Method Freeze(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(who.Encode());
-            return new Method(13, "ForeignAssets", 11, "freeze", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 11, "freeze", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> thaw
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Thaw(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
+        public static Method Thaw(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(who.Encode());
-            return new Method(13, "ForeignAssets", 12, "thaw", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 12, "thaw", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> freeze_asset
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method FreezeAsset(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id)
+        public static Method FreezeAsset(Substrate.NetApi.Model.Types.Primitive.U16 id)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
-            return new Method(13, "ForeignAssets", 13, "freeze_asset", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 13, "freeze_asset", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> thaw_asset
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ThawAsset(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id)
+        public static Method ThawAsset(Substrate.NetApi.Model.Types.Primitive.U16 id)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
-            return new Method(13, "ForeignAssets", 14, "thaw_asset", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 14, "thaw_asset", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> transfer_ownership
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method TransferOwnership(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner)
+        public static Method TransferOwnership(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(owner.Encode());
-            return new Method(13, "ForeignAssets", 15, "transfer_ownership", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 15, "transfer_ownership", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> set_team
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetTeam(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress issuer, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress admin, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress freezer)
+        public static Method SetTeam(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress issuer, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress admin, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress freezer)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(issuer.Encode());
             byteArray.AddRange(admin.Encode());
             byteArray.AddRange(freezer.Encode());
-            return new Method(13, "ForeignAssets", 16, "set_team", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 16, "set_team", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> set_metadata
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetMetadata(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> name, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> symbol, Substrate.NetApi.Model.Types.Primitive.U8 decimals)
+        public static Method SetMetadata(Substrate.NetApi.Model.Types.Primitive.U16 id, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> name, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> symbol, Substrate.NetApi.Model.Types.Primitive.U8 decimals)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(name.Encode());
             byteArray.AddRange(symbol.Encode());
             byteArray.AddRange(decimals.Encode());
-            return new Method(13, "ForeignAssets", 17, "set_metadata", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 17, "set_metadata", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> clear_metadata
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ClearMetadata(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id)
+        public static Method ClearMetadata(Substrate.NetApi.Model.Types.Primitive.U16 id)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
-            return new Method(13, "ForeignAssets", 18, "clear_metadata", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 18, "clear_metadata", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> force_set_metadata
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceSetMetadata(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> name, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> symbol, Substrate.NetApi.Model.Types.Primitive.U8 decimals, Substrate.NetApi.Model.Types.Primitive.Bool is_frozen)
+        public static Method ForceSetMetadata(Substrate.NetApi.Model.Types.Primitive.U16 id, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> name, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> symbol, Substrate.NetApi.Model.Types.Primitive.U8 decimals, Substrate.NetApi.Model.Types.Primitive.Bool is_frozen)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -431,25 +431,25 @@ namespace XCavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(symbol.Encode());
             byteArray.AddRange(decimals.Encode());
             byteArray.AddRange(is_frozen.Encode());
-            return new Method(13, "ForeignAssets", 19, "force_set_metadata", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 19, "force_set_metadata", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> force_clear_metadata
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceClearMetadata(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id)
+        public static Method ForceClearMetadata(Substrate.NetApi.Model.Types.Primitive.U16 id)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
-            return new Method(13, "ForeignAssets", 20, "force_clear_metadata", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 20, "force_clear_metadata", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> force_asset_status
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceAssetStatus(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress issuer, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress admin, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress freezer, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> min_balance, Substrate.NetApi.Model.Types.Primitive.Bool is_sufficient, Substrate.NetApi.Model.Types.Primitive.Bool is_frozen)
+        public static Method ForceAssetStatus(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress issuer, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress admin, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress freezer, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> min_balance, Substrate.NetApi.Model.Types.Primitive.Bool is_sufficient, Substrate.NetApi.Model.Types.Primitive.Bool is_frozen)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -460,130 +460,130 @@ namespace XCavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(min_balance.Encode());
             byteArray.AddRange(is_sufficient.Encode());
             byteArray.AddRange(is_frozen.Encode());
-            return new Method(13, "ForeignAssets", 21, "force_asset_status", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 21, "force_asset_status", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> approve_transfer
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ApproveTransfer(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
+        public static Method ApproveTransfer(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(@delegate.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(13, "ForeignAssets", 22, "approve_transfer", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 22, "approve_transfer", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> cancel_approval
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method CancelApproval(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate)
+        public static Method CancelApproval(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(@delegate.Encode());
-            return new Method(13, "ForeignAssets", 23, "cancel_approval", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 23, "cancel_approval", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> force_cancel_approval
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceCancelApproval(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate)
+        public static Method ForceCancelApproval(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(owner.Encode());
             byteArray.AddRange(@delegate.Encode());
-            return new Method(13, "ForeignAssets", 24, "force_cancel_approval", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 24, "force_cancel_approval", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> transfer_approved
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method TransferApproved(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress destination, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
+        public static Method TransferApproved(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress destination, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(owner.Encode());
             byteArray.AddRange(destination.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(13, "ForeignAssets", 25, "transfer_approved", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 25, "transfer_approved", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> touch
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Touch(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id)
+        public static Method Touch(Substrate.NetApi.Model.Types.Primitive.U16 id)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
-            return new Method(13, "ForeignAssets", 26, "touch", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 26, "touch", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> refund
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Refund(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, Substrate.NetApi.Model.Types.Primitive.Bool allow_burn)
+        public static Method Refund(Substrate.NetApi.Model.Types.Primitive.U16 id, Substrate.NetApi.Model.Types.Primitive.Bool allow_burn)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(allow_burn.Encode());
-            return new Method(13, "ForeignAssets", 27, "refund", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 27, "refund", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> set_min_balance
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetMinBalance(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, Substrate.NetApi.Model.Types.Primitive.U128 min_balance)
+        public static Method SetMinBalance(Substrate.NetApi.Model.Types.Primitive.U16 id, Substrate.NetApi.Model.Types.Primitive.U128 min_balance)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(min_balance.Encode());
-            return new Method(13, "ForeignAssets", 28, "set_min_balance", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 28, "set_min_balance", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> touch_other
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method TouchOther(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
+        public static Method TouchOther(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(who.Encode());
-            return new Method(13, "ForeignAssets", 29, "touch_other", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 29, "touch_other", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> refund_other
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method RefundOther(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
+        public static Method RefundOther(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(who.Encode());
-            return new Method(13, "ForeignAssets", 30, "refund_other", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 30, "refund_other", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> block
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Block(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
+        public static Method Block(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(who.Encode());
-            return new Method(13, "ForeignAssets", 31, "block", byteArray.ToArray());
+            return new Method(75, "ForeignAssets", 31, "block", byteArray.ToArray());
         }
     }
     
@@ -613,7 +613,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 AssetDeposit()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00A0724E180900000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         
@@ -625,7 +625,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 AssetAccountDeposit()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00F09133F46400000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         
@@ -636,7 +636,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 MetadataDepositBase()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x0070BD5CB78001000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         
@@ -648,7 +648,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 MetadataDepositPerByte()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x0060DEFB740500000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         
@@ -659,7 +659,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 ApprovalDeposit()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00CA9A3B000000000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         

@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.bounded_collections.weak_bounded_v
     
     
     /// <summary>
-    /// >> 378 - Composite[bounded_collections.weak_bounded_vec.WeakBoundedVecT2]
+    /// >> 370 - Composite[bounded_collections.weak_bounded_vec.WeakBoundedVecT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class WeakBoundedVecT2 : BaseType

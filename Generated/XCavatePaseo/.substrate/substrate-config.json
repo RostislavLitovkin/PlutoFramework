@@ -6,7 +6,7 @@
     "rest_client": "Substrate.RestClient"
   },
    "metadata": {
-      "websocket": "wss://rpc-paseo.xcavate.io/443"
+      "websocket": "wss://fraa-dancebox-3107-rpc.a.dancebox.tanssi.network/"
    },
   "rest_client_settings": {
     "service_assembly": "Substrate.RestService.dll"

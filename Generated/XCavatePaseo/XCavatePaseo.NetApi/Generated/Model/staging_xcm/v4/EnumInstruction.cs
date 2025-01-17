@@ -263,7 +263,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4
     }
     
     /// <summary>
-    /// >> 226 - Variant[staging_xcm.v4.Instruction]
+    /// >> 297 - Variant[staging_xcm.v4.Instruction]
     /// </summary>
     public sealed class EnumInstruction : BaseEnumRust<Instruction>
     {

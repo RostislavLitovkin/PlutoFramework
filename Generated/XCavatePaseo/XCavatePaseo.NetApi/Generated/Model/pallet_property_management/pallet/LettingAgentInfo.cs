@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
     
     
     /// <summary>
-    /// >> 543 - Composite[pallet_property_management.pallet.LettingAgentInfo]
+    /// >> 497 - Composite[pallet_property_management.pallet.LettingAgentInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class LettingAgentInfo : BaseType
@@ -35,11 +35,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         /// <summary>
         /// >> locations
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT36 Locations { get; set; }
+        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32 Locations { get; set; }
         /// <summary>
         /// >> assigned_properties
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37 AssignedProperties { get; set; }
+        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT33 AssignedProperties { get; set; }
         /// <summary>
         /// >> deposited
         /// </summary>
@@ -71,9 +71,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
             Account.Decode(byteArray, ref p);
             Region = new Substrate.NetApi.Model.Types.Primitive.U32();
             Region.Decode(byteArray, ref p);
-            Locations = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT36();
+            Locations = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32();
             Locations.Decode(byteArray, ref p);
-            AssignedProperties = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37();
+            AssignedProperties = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT33();
             AssignedProperties.Decode(byteArray, ref p);
             Deposited = new Substrate.NetApi.Model.Types.Primitive.Bool();
             Deposited.Decode(byteArray, ref p);

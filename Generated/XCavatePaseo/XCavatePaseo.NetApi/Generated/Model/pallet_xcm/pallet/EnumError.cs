@@ -146,12 +146,6 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
         InUse = 19,
         
         /// <summary>
-        /// >> InvalidAssetNotConcrete
-        /// Invalid non-concrete asset.
-        /// </summary>
-        InvalidAssetNotConcrete = 20,
-        
-        /// <summary>
         /// >> InvalidAssetUnknownReserve
         /// Invalid asset, reserve chain could not be determined for it.
         /// </summary>
@@ -174,23 +168,10 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
         /// Local XCM execution incomplete.
         /// </summary>
         LocalExecutionIncomplete = 24,
-        
-        /// <summary>
-        /// >> UnableToDecode
-        /// Could not decode XCM.
-        /// </summary>
-        UnableToDecode = 25,
-        
-        /// <summary>
-        /// >> XcmTooLarge
-        /// XCM encoded length is too large.
-        /// Returned when an XCM encoded length is larger than `MaxXcmEncodedSize`.
-        /// </summary>
-        XcmTooLarge = 26,
     }
     
     /// <summary>
-    /// >> 492 - Variant[pallet_xcm.pallet.Error]
+    /// >> 426 - Variant[pallet_xcm.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

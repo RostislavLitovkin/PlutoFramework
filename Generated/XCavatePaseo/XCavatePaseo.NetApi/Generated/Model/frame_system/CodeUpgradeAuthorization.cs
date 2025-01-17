@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_system
     
     
     /// <summary>
-    /// >> 309 - Composite[frame_system.CodeUpgradeAuthorization]
+    /// >> 175 - Composite[frame_system.CodeUpgradeAuthorization]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CodeUpgradeAuthorization : BaseType

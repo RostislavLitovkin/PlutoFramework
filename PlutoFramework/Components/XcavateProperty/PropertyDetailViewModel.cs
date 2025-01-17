@@ -32,13 +32,13 @@ namespace PlutoFramework.Components.XcavateProperty
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(TokensAvailable))]
-        private int tokens;
+        private uint? tokens;
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(TokensAvailable))]
-        private int maxTokens;
+        private uint maxTokens;
 
-        public string TokensAvailable => $"{Tokens} / {MaxTokens}";
+        public string TokensAvailable => $"{Tokens?.ToString() ?? "-"} / {MaxTokens}";
 
         [ObservableProperty]
         private string propertyDescription;

@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_system.limits
     
     
     /// <summary>
-    /// >> 312 - Composite[frame_system.limits.WeightsPerClass]
+    /// >> 182 - Composite[frame_system.limits.WeightsPerClass]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class WeightsPerClass : BaseType

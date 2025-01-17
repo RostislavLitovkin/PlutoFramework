@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.async_backi
     
     
     /// <summary>
-    /// >> 339 - Composite[polkadot_primitives.v7.async_backing.AsyncBackingParams]
+    /// >> 215 - Composite[polkadot_primitives.v7.async_backing.AsyncBackingParams]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AsyncBackingParams : BaseType

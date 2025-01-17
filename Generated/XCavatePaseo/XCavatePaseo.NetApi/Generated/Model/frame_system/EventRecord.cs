@@ -31,7 +31,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_system
         /// <summary>
         /// >> event
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.generic_runtime_template.EnumRuntimeEvent Event { get; set; }
+        public XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeEvent Event { get; set; }
         /// <summary>
         /// >> topics
         /// </summary>
@@ -59,7 +59,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_system
             var start = p;
             Phase = new XCavatePaseo.NetApi.Generated.Model.frame_system.EnumPhase();
             Phase.Decode(byteArray, ref p);
-            Event = new XCavatePaseo.NetApi.Generated.Model.generic_runtime_template.EnumRuntimeEvent();
+            Event = new XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeEvent();
             Event.Decode(byteArray, ref p);
             Topics = new Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.primitive_types.H256>();
             Topics.Decode(byteArray, ref p);

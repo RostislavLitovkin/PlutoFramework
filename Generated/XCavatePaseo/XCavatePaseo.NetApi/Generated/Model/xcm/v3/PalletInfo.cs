@@ -18,7 +18,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v3
     
     
     /// <summary>
-    /// >> 186 - Composite[xcm.v3.PalletInfo]
+    /// >> 279 - Composite[xcm.v3.PalletInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PalletInfo : BaseType
@@ -31,11 +31,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v3
         /// <summary>
         /// >> name
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2 Name { get; set; }
+        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10 Name { get; set; }
         /// <summary>
         /// >> module_name
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2 ModuleName { get; set; }
+        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10 ModuleName { get; set; }
         /// <summary>
         /// >> major
         /// </summary>
@@ -74,9 +74,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v3
             var start = p;
             Index = new Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>();
             Index.Decode(byteArray, ref p);
-            Name = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2();
+            Name = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10();
             Name.Decode(byteArray, ref p);
-            ModuleName = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2();
+            ModuleName = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10();
             ModuleName.Decode(byteArray, ref p);
             Major = new Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>();
             Major.Decode(byteArray, ref p);

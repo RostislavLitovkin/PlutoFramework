@@ -33,7 +33,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset
     }
     
     /// <summary>
-    /// >> 212 - Variant[staging_xcm.v4.asset.AssetFilter]
+    /// >> 103 - Variant[staging_xcm.v4.asset.AssetFilter]
     /// </summary>
     public sealed class EnumAssetFilter : BaseEnumRust<AssetFilter>
     {

@@ -42,7 +42,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet
     }
     
     /// <summary>
-    /// >> 531 - Variant[pallet_xcavate_whitelist.pallet.Error]
+    /// >> 450 - Variant[pallet_xcavate_whitelist.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

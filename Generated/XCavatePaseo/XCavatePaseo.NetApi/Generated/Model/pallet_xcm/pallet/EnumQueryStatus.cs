@@ -38,7 +38,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 471 - Variant[pallet_xcm.pallet.QueryStatus]
+    /// >> 406 - Variant[pallet_xcm.pallet.QueryStatus]
     /// </summary>
     public sealed class EnumQueryStatus : BaseEnumRust<QueryStatus>
     {
