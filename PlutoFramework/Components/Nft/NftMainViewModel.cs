@@ -15,6 +15,8 @@ namespace PlutoFramework.Components.Nft
 {
     internal partial class NftMainViewModel : ObservableObject
     {
+        private Dictionary<NftTypeEnum, List<NftId>> featuredNftsToQuery;
+
         // There is no ObserableDictionary<_> type
         private Dictionary<NftKey, NftWrapper> featuredNftsDict = new Dictionary<NftKey, NftWrapper>();
 
@@ -114,8 +116,12 @@ namespace PlutoFramework.Components.Nft
 
             try
             {
+                var loadFeaturedNfts = UniqueryPlusApiModel.GetFeaturedNftsAsync(token).ConfigureAwait(false);
+
                 await LoadSavedNftsAsync().ConfigureAwait(false);
                 await LoadSavedCollectionsAsync().ConfigureAwait(false);
+
+                featuredNftsToQuery = await loadFeaturedNfts;
 
                 DatabaseLoading = false;
 
@@ -153,18 +159,12 @@ namespace PlutoFramework.Components.Nft
         {
             try
             {
-                switch (client.SubstrateClient)
-                {
-                    case PolkadotAssetHub.NetApi.Generated.SubstrateClientExt:
-
-                        // This would be connected to an API
-
-                        (uint,uint)[] ahpIds = [(208, 1), (258, 4230904976)];
-
-                        foreach (var id in ahpIds)
+                foreach (var nftType in RecursionHelper.GetNftTypeForClient(client.SubstrateClient)) { 
+                    if (featuredNftsToQuery.ContainsKey(nftType))
+                    {
+                        foreach (var nftId in featuredNftsToQuery[nftType])
                         {
-
-                            var newNft = Model.NftModel.ToNftWrapper(await UniqueryPlus.Nfts.NftModel.GetNftByIdAsync(client.SubstrateClient, NftTypeEnum.PolkadotAssetHub_NftsPallet, id.Item1, id.Item2, token).ConfigureAwait(false));
+                            var newNft = Model.NftModel.ToNftWrapper(await UniqueryPlus.Nfts.NftModel.GetNftByIdAsync(client.SubstrateClient, nftId.NftType, nftId.CollectionId, nftId.Id, token).ConfigureAwait(false));
 
                             if (newNft.Key is not null && !featuredNftsDict.ContainsKey((NftKey)newNft.Key))
                             {
@@ -176,47 +176,7 @@ namespace PlutoFramework.Components.Nft
                                 // Was already loaded
                             }
                         }
-
-                        break;
-                    case Mythos.NetApi.Generated.SubstrateClientExt:
-                        (BigInteger, BigInteger)[] mythosIds = [(BigInteger.Parse("86219270927352332455509372315086258213278212512"), new BigInteger(101))];
-
-                        foreach (var id in mythosIds)
-                        {
-                            var newNft = Model.NftModel.ToNftWrapper(await UniqueryPlus.Nfts.NftModel.GetNftByIdAsync(client.SubstrateClient, NftTypeEnum.Mythos, id.Item1, id.Item2, token).ConfigureAwait(false));
-
-                            if (newNft.Key is not null && !featuredNftsDict.ContainsKey((NftKey)newNft.Key))
-                            {
-                                featuredNftsDict.Add((NftKey)newNft.Key, newNft);
-                            }
-                            else
-                            {
-                                Console.WriteLine("Not added");
-                                // Was already loaded
-                            }
-                        }
-
-                        break;
-                    case UniqueSubstrateClientExt:
-                        (BigInteger, BigInteger)[] uniqueIds = [(new BigInteger(304), new BigInteger(1))];
-
-                        foreach (var id in uniqueIds)
-                        {
-                            var newNft = Model.NftModel.ToNftWrapper(await UniqueryPlus.Nfts.NftModel.GetNftByIdAsync(client.SubstrateClient, NftTypeEnum.Unique, id.Item1, id.Item2, token).ConfigureAwait(false));
-
-                            if (newNft.Key is not null && !featuredNftsDict.ContainsKey((NftKey)newNft.Key))
-                            {
-                                featuredNftsDict.Add((NftKey)newNft.Key, newNft);
-                            }
-                            else
-                            {
-                                Console.WriteLine("Not added");
-                                // Was already loaded
-                            }
-                        }
-
-                        break;
-
+                    }
                 }
 
                 FeaturedNfts = new ObservableCollection<NftWrapper>(featuredNftsDict.Values);

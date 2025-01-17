@@ -178,7 +178,7 @@ namespace UniqueryPlus
                 }
             }
         }
-        private static IEnumerable<NftTypeEnum> GetNftTypeForClient(SubstrateClient client)
+        public static IEnumerable<NftTypeEnum> GetNftTypeForClient(SubstrateClient client)
         {
             return client switch
             {
