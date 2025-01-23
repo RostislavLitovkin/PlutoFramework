@@ -21,10 +21,12 @@
                     RemainingItemsThreshold="1"
                     RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}">
             <CollectionView.Header>
-                <AbsoluteLayout HeightRequest="45"
-                            WidthRequest="10">
-
-                </AbsoluteLayout>
+                <VerticalStackLayout Margin="20">
+                    <Label Text="MARKET PLACE"
+                           FontSize="20"
+                          >
+                    </Label>
+                </VerticalStackLayout>
             </CollectionView.Header>
             <CollectionView.Footer>
                 <StackLayout HeightRequest="200">

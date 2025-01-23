@@ -9,20 +9,13 @@
     <Button.Background>
         <LinearGradientBrush EndPoint="1,0">
             <GradientStop Color="#ecb278"
-                  Offset="0.1" />
+                  Offset="0.0" />
             <GradientStop Color="#dc7da6"
-                  Offset="0.4" />
+                  Offset="0.3" />
             <GradientStop Color="#3b4f74"
-                  Offset="0.7" />
+                  Offset="0.8" />
             <GradientStop Color="#57a0c5"
                   Offset="1.0" />
         </LinearGradientBrush>
     </Button.Background>
-    <Button.Shadow>
-        <Shadow Brush="Black"
-                Offset="0,10" 
-                Radius="40"
-                Opacity="0.6" />
-    
-    </Button.Shadow>
 </Button>

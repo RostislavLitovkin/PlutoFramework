@@ -13,7 +13,7 @@
                     AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
                     StrokeThickness="0"
                     Stroke="#00000000"
-                    BackgroundColor="#888888">
+                    BackgroundColor="#44888888">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="2.5" />
                 </Border.StrokeShape>
@@ -50,7 +50,8 @@
                     AbsoluteLayout.LayoutBounds="0.5, 0.5, 20, 20"
                     AbsoluteLayout.LayoutFlags="PositionProportional"
                     x:Name="thumb"
-                    StrokeThickness="2">
+                    StrokeThickness="2"
+                    IsVisible="False">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="20" />
                 </Border.StrokeShape>
