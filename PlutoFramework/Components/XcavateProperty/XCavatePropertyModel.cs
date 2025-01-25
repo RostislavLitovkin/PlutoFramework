@@ -8,17 +8,21 @@ namespace PlutoFramework.Components.XcavateProperty
     {
         private static double GetAreaPricesPercentage(uint price)
         {
+            // TODO
             return 0.7;
         }
 
         private static double GetRentalDemand()
         {
+            // TODO
             return 0.3;
         }
 
-        private static string GetAPY()
+        private static string GetAPY(uint rentalIncome, uint price)
         {
-            return "5%";
+            var ari = rentalIncome * 12;
+            var apy = (double)ari / price;
+            return $"{String.Format("{0:0.00}", apy * 100.0)}";
         }
         public static async Task NavigateToPropertyDetailPageAsync(XCavatePaseoNftsPalletNft nft, CancellationToken token)
         {
@@ -41,7 +45,7 @@ namespace PlutoFramework.Components.XcavateProperty
                 PropertyName = nft.XCavateMetadata.PropertyName,
 
                 ListingPrice = $"£{nft.XCavateMetadata.PropertyPrice}",
-                Apy = GetAPY(),
+                Apy = GetAPY(nft.XCavateMetadata.EstimatedRentalIncome, nft.XCavateMetadata.PropertyPrice),
                 Tokens = nft.NftMarketplaceDetails.Listed,
                 MaxTokens = nft.XCavateMetadata.NumberOfTokens,
                 PropertyType = nft.XCavateMetadata.PropertyType,
