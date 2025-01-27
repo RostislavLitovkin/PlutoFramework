@@ -1,11 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Microsoft.Maui.Storage;
 using PlutoFramework.Components.Buttons;
 using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
 using PlutoFramework.Model.XCavate;
-using System.Text;
 
 namespace PlutoFramework.Components.XCavate
 {
@@ -118,19 +116,6 @@ namespace PlutoFramework.Components.XCavate
                 return;
             }
 
-            var newUserInfo = new XCavateUser
-            {
-                FirstName = FirstName,
-                LastName = LastName,
-                Email = Email,
-                PhoneNumber = PhoneNumber,
-                Role = UserProfilePage.ViewModel.User.Role,
-                DeveloperStats = UserProfilePage.ViewModel.User.DeveloperStats,
-                AccountCreatedAt = UserProfilePage.ViewModel.User.AccountCreatedAt,
-            };
-
-            UserProfilePage.ViewModel.User = newUserInfo;
-
             string tempProfilePicturePath = Path.Combine(FileSystem.Current.AppDataDirectory, "temporaryprofilepicture");
             string profilePicturePath = Path.Combine(FileSystem.Current.AppDataDirectory, XCavateConstants.PROFILE_PICTURE_FILE_NAME);
 
@@ -147,8 +132,20 @@ namespace PlutoFramework.Components.XCavate
                 File.Move(tempProfileBackgroundPath, profileBackgroundPath, true);
             }
 
-            UserProfilePage.ViewModel.ProfilePicture = XCavateFileModel.GetSavedProfilePicture();
-            UserProfilePage.ViewModel.ProfileBackground = XCavateFileModel.GetSavedProfileBackground();
+            var newUserInfo = new XCavateUser
+            {
+                FirstName = FirstName,
+                LastName = LastName,
+                Email = Email,
+                PhoneNumber = PhoneNumber,
+                Role = UserProfilePage.ViewModel.User.Role,
+                DeveloperStats = UserProfilePage.ViewModel.User.DeveloperStats,
+                AccountCreatedAt = UserProfilePage.ViewModel.User.AccountCreatedAt,
+                ProfilePicture = XCavateFileModel.GetSavedProfilePicture(),
+                ProfileBackground = XCavateFileModel.GetSavedProfileBackground(),
+            };
+
+            UserProfilePage.ViewModel.User = newUserInfo;
 
             await Application.Current.MainPage.Navigation.PopAsync();
 

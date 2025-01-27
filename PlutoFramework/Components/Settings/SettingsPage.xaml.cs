@@ -42,14 +42,13 @@ public partial class SettingsPage : ContentPage
 
     async void OnXCavateProfileClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
-        var viewModel = new UserProfileViewModel();
-
         var userInfo = await XCavateUserDatabase.GetUserInformationAsync();
-        viewModel.User = userInfo ?? await XCavateUserModel.GetMockUserAsync();
 
-        viewModel.ProfilePicture = XCavateFileModel.GetSavedProfilePicture();
-
-        viewModel.ProfileBackground = XCavateFileModel.GetSavedProfileBackground();
+        var viewModel = new UserProfileViewModel
+        {
+            CanEdit = true,
+            User = userInfo ?? await XCavateUserModel.GetMockUserAsync(),
+        };
 
         // Clean temporary files
         string tempProfileBackgroundPath = Path.Combine(FileSystem.Current.AppDataDirectory, "temporaryprofilebackground");

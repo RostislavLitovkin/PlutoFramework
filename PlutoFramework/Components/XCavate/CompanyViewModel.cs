@@ -1,11 +1,86 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Components.Nft;
 using PlutoFramework.Model.XCavate;
 
 namespace PlutoFramework.Components.XCavate
 {
-    public partial class CompanyViewModel : ObservableObject
+    public partial class CompanyViewModel : BaseListViewModel<uint, XCavateCompanyUser>
     {
+        public override string Title => "Company page";
+
+        private IAsyncEnumerator<XCavateCompanyUser> userEnumerator = null;
+
+        public override async Task LoadMoreAsync(CancellationToken token)
+        {
+            if (Loading)
+            {
+                return;
+            }
+
+            if (userEnumerator == null)
+            {
+                return;
+            }
+
+            Loading = true;
+
+            try
+            {
+                for (uint i = 0; i < LIMIT; i++)
+                {
+                    if (token.IsCancellationRequested)
+                    {
+                        break;
+                    }
+
+                    if (userEnumerator != null && await userEnumerator.MoveNextAsync().ConfigureAwait(false))
+                    {
+                        var user = userEnumerator.Current;
+
+                        Console.WriteLine("User name: " + user.FullName);
+
+                        if (user.Id is not null && !ItemsDict.ContainsKey(user.Id.Value))
+                        {
+                            ItemsDict.Add(user.Id.Value, user);
+
+                            MainThread.BeginInvokeOnMainThread(() =>
+                            {
+                                Console.WriteLine("User name: " + user.FullName + "   " + user.Id);
+
+                                Items.Add(user);
+                            });
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Nft owned list error: ");
+                Console.WriteLine(ex);
+            }
+
+            Loading = false;
+
+        }
+
+        public override async Task InitialLoadAsync(CancellationToken token)
+        {
+            Console.WriteLine($"Initial load: Company id {Company?.CompanyId}");
+
+            if (Company?.CompanyId is null)
+            {
+                return;
+            }
+
+            var asyncEnumerable = XCavateCompanyModel.GetMockCompanyUsersAsync(Company.CompanyId.Value, 25);
+            userEnumerator = asyncEnumerable.GetAsyncEnumerator(token);
+
+            await LoadMoreAsync(token);
+
+            Console.WriteLine("Initial load ended");
+        }
+
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(CompanyName))]
         [NotifyPropertyChangedFor(nameof(RegistrationNumber))]

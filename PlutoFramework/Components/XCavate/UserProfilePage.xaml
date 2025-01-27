@@ -35,6 +35,7 @@
         </ScrollView>
 
         <navigationbar:TopNavigationBar Title="Personal profile"
+                                        ExtraIsVisible="{Binding CanEdit}"
                                         ExtraTitle="Edit"
                                         ExtraCommand="{Binding EditCommand}" />
     </AbsoluteLayout>

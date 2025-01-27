@@ -1,6 +1,3 @@
-using PlutoFramework.Components.Nft;
-using PlutoFramework.Model;
-
 namespace PlutoFramework.Components.XcavateProperty;
 
 using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);

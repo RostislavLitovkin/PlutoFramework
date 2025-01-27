@@ -20,20 +20,7 @@ public partial class DocumentVerificationView : ContentView
         propertyChanged: (bindable, oldValue, newValue) =>
         {
             var control = (DocumentVerificationView)bindable;
-            control.valueLabel.Text = ((VerificationEnum)newValue).ToString();
-
-            switch ((VerificationEnum)newValue)
-            {
-                case VerificationEnum.Pending:
-                    control.valueLabel.TextColor = Color.FromArgb("#FFA500");
-                    break;
-                case VerificationEnum.Verified:
-                    control.valueLabel.TextColor = Color.FromArgb("#457461");
-                    break;
-                case VerificationEnum.Rejected:
-                    control.valueLabel.TextColor = Color.FromArgb("#FF0000");
-                    break;
-            }
+            control.verificationBadge.Value = (VerificationEnum)newValue;
         });
     public static readonly BindableProperty ViewCommandProperty = BindableProperty.Create(
         nameof(ViewCommand), typeof(IAsyncRelayCommand), typeof(DocumentVerificationView),

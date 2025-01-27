@@ -5,5 +5,6 @@
              xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
              >
     <customlayouts:ItemView Text="Loading"
-                            IsTransparent="True" />
+                            IsTransparent="True"
+                            HeightRequest="70"/>
 </ContentView>

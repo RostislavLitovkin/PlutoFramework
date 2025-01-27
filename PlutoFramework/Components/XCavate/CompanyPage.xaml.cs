@@ -2,7 +2,6 @@ namespace PlutoFramework.Components.XCavate;
 
 public partial class CompanyPage : ContentPage
 {
-    public static CompanyViewModel ViewModel;
     public CompanyPage(CompanyViewModel viewModel)
 	{
         NavigationPage.SetHasNavigationBar(this, false);
@@ -10,7 +9,13 @@ public partial class CompanyPage : ContentPage
 
         InitializeComponent();
 
-        this.BindingContext = viewModel;
-        ViewModel = viewModel;
+        BindingContext = viewModel;
+    }
+
+    protected override async void OnNavigatedTo(NavigatedToEventArgs args)
+    {
+        base.OnNavigatedTo(args);
+
+        await ((CompanyViewModel)BindingContext).InitialLoadAsync(CancellationToken.None);
     }
 }

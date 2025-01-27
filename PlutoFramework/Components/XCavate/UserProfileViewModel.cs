@@ -2,12 +2,14 @@
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Model;
 using PlutoFramework.Model.XCavate;
-using System.Text;
 
 namespace PlutoFramework.Components.XCavate
 {
     public partial class UserProfileViewModel : ObservableObject
     {
+        [ObservableProperty]
+        private bool canEdit;
+
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(FullName))]
         [NotifyPropertyChangedFor(nameof(ProfilePicture))]
@@ -27,19 +29,17 @@ namespace PlutoFramework.Components.XCavate
         {
             FirstName = "",
             LastName = "",
-            AccountCreatedAt = null,
+            ProfileBackground = null,
+            ProfilePicture = null,
             Role = UserRoleEnum.None,
             Email = "",
             PhoneNumber = "",
+            AccountCreatedAt = null,
             DeveloperStats = null,
         };
-        public string FullName => $"{User.FirstName} {User.LastName}";
-
-        [ObservableProperty]
-        private ImageSource profilePicture;
-
-        [ObservableProperty]
-        private ImageSource profileBackground;
+        public string FullName => User.FullName;
+        public ImageSource ProfilePicture => User.ProfilePicture;
+        public ImageSource ProfileBackground => User.ProfileBackground;
         public string AccountCreatedAtText => User.AccountCreatedAt is null ? "" : $"Account created {User.AccountCreatedAt?.ToString("MMMM")}, {User.AccountCreatedAt?.Year}";
         public UserRoleEnum UserRole => User.Role;
         public bool DeveloperStatsIsVisible => User.Role == UserRoleEnum.Developer;

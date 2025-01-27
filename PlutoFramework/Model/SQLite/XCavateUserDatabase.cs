@@ -21,9 +21,10 @@ namespace PlutoFramework.Model.SQLite
 
         public static implicit operator XCavateUser(XCavateUserDatabaseItem item)
         {
-            Console.WriteLine("Converting");
             return new XCavateUser
             {
+                ProfilePicture = XCavateFileModel.GetSavedProfilePicture(),
+                ProfileBackground = XCavateFileModel.GetSavedProfileBackground(),
                 Role = item.Role,
                 FirstName = item.FirstName,
                 LastName = item.LastName,

@@ -23,8 +23,7 @@
             <CollectionView.Header>
                 <VerticalStackLayout Margin="20">
                     <Label Text="MARKET PLACE"
-                           FontSize="20"
-                          >
+                           FontSize="20">
                     </Label>
                 </VerticalStackLayout>
             </CollectionView.Header>
@@ -41,14 +40,15 @@
             </CollectionView.Footer>
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical" 
-                                   ItemSpacing="15"/>
+                                   ItemSpacing="0"
+                                   />
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <xcavateproperty:PropertyThumbnailView Endpoint="{Binding Endpoint}"
                                           Favourite="{Binding Favourite}"
                                           NftBase="{Binding NftBase}"
-                                          Margin="20, 0, 20, 0" />
+                                          Padding="20, 5, 20, 10" />
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

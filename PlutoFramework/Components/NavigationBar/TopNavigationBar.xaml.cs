@@ -4,6 +4,16 @@ namespace PlutoFramework.Components.NavigationBar;
 
 public partial class TopNavigationBar : ContentView
 {
+    public static readonly BindableProperty ExtraIsVisibleProperty = BindableProperty.Create(
+        nameof(ExtraIsVisible), typeof(bool), typeof(TopNavigationBar),
+        defaultBindingMode: BindingMode.TwoWay,
+        defaultValue: true,
+        propertyChanging: (bindable, oldValue, newValue) => {
+            var control = (TopNavigationBar)bindable;
+
+            control.extraLabel.IsVisible = (bool)newValue;
+        });
+
     public static readonly BindableProperty TitleProperty = BindableProperty.Create(
         nameof(Title), typeof(string), typeof(TopNavigationBar),
         defaultBindingMode: BindingMode.TwoWay,
@@ -33,7 +43,7 @@ public partial class TopNavigationBar : ContentView
         set => SetValue(TitleProperty, value);
     }
 
-    public string ExtraTitle { set { extraLabel.Text = value; } }
+    public string ExtraTitle { set { extraLabelText.Text = value; } }
 
     public Func<Task> ExtraFunc { get; set; }
 
@@ -44,6 +54,12 @@ public partial class TopNavigationBar : ContentView
         set => SetValue(ExtraCommandProperty, value);
     }
 
+    public bool ExtraIsVisible
+    {
+        get => (bool)GetValue(ExtraIsVisibleProperty);
+
+        set => SetValue(ExtraIsVisibleProperty, value);
+    }
     private async void OnBackClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
         await Shell.Current.GoToAsync("..");
