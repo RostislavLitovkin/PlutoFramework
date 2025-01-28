@@ -1,7 +1,5 @@
-﻿using ADRaffy.ENSNormalize;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System.Numerics;
-using UniqueryPlus;
 
 namespace UniqueryPlus
 {

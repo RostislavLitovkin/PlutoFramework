@@ -39,8 +39,14 @@ namespace PlutoFramework.Types
     public enum AssetPallet
     {
         Native,
+        NativeReserved,
+        NativeFrozen,
         Assets,
+        AssetsReserved,
+        AssetsFrozen,
         Tokens,
+        TokensReserved,
+        TokensFrozen,
     }
 }
 
