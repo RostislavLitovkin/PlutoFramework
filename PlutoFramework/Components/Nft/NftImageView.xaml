@@ -40,6 +40,7 @@
                                HeightRequest="20"
                                WidthRequest="20"
                                Margin="10"
+                               x:Name="downloadButton"
                                >
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="OnDownloadClicked"/>

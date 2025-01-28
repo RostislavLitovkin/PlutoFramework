@@ -71,7 +71,7 @@
                 
                 <xcavateproperty:CompanyThumbnailView />
 
-                <xcavateproperty:LocationView />
+                <xcavateproperty:LocationView LocationName="{Binding LocationName}" />
 
                 <Label Text="{Binding PropertyName}"
                        FontSize="20"

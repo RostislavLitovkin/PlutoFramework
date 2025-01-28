@@ -1,5 +1,10 @@
-﻿
+﻿using Amazon.S3;
+using Microsoft.Extensions.Configuration;
+using PlutoFramework.Constants;
+using PlutoFramework.Model.XCavate;
+using PlutoFramework.Model;
 using UniqueryPlus.Nfts;
+using Amazon;
 
 namespace PlutoFramework.Components.XcavateProperty
 {
@@ -18,12 +23,63 @@ namespace PlutoFramework.Components.XcavateProperty
             return 0.3;
         }
 
-        private static string GetAPY(uint rentalIncome, uint price)
+        public static string GetAPY(uint rentalIncome, uint price)
         {
             var ari = rentalIncome * 12;
             var apy = (double)ari / price;
-            return $"{String.Format("{0:0.00}", apy * 100.0)}";
+            return $"{String.Format("{0:0.00}", apy * 100.0)}%";
         }
+        public static async Task<NftWrapper> ToNftWrapperAsync(XCavatePaseoNftsPalletNft nft)
+        {
+            try
+            {
+                var configuration = MauiProgram.Services.GetService<IConfiguration>();
+
+                RegionEndpoint region = RegionEndpoint.EUWest1;
+
+                IAmazonS3 s3Client = new AmazonS3Client(
+                    configuration.GetValue<string>("DYNAMO_ACCESS_KEY"),
+                    configuration.GetValue<string>("DYNAMO_SECRET_KEY"),
+                    region);
+
+                Console.WriteLine("Property name: " + nft.Type + " " + nft.CollectionId + " - " + nft.Id);
+
+                // Handle S3
+                if (nft.XCavateMetadata is not null)
+                {
+                    var images = new List<string>();
+
+                    foreach (var file in nft.XCavateMetadata.Files.Where(file =>
+                        (file.Contains(".jpg") || file.Contains(".jpeg") || file.Contains(".png")) && file[0] == '5'
+                    ))
+                    {
+                        const string bucketName = "real-marketplace-properties";
+
+                        var presignedUrl = await S3Model.GeneratePresignedURLAsync(s3Client, bucketName, file);
+
+                        images.Add(presignedUrl);
+                    }
+                    nft.XCavateMetadata.Images = images;
+                }
+
+                /*if (nft.Metadata is not null && nft.Metadata.Image is null)
+                {
+                    nft.Metadata.Image = "noimage.png";
+                }*/
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("To wrapper error:");
+                Console.WriteLine(ex);
+            }
+
+            return new NftWrapper
+            {
+                NftBase = nft,
+                Endpoint = Endpoints.GetEndpointDictionary[Model.NftModel.GetEndpointKey(nft.Type)]
+            };
+        }
+
         public static async Task NavigateToPropertyDetailPageAsync(XCavatePaseoNftsPalletNft nft, CancellationToken token)
         {
             if (nft.XCavateMetadata is null)
@@ -40,7 +96,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
                 CompanyImage = "xcavate.png",
 
-                LocationName = $"{nft.XCavateMetadata.AddressStreet}, {nft.XCavateMetadata.AddressTownCity}",
+                LocationName = nft.XCavateMetadata.LocationName,
 
                 PropertyName = nft.XCavateMetadata.PropertyName,
 
@@ -62,10 +118,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
                 RentalIncome = $"£{nft.XCavateMetadata.EstimatedRentalIncome}",
 
-                Images = [
-                    "https://www.nintendo.com/eu/media/images/assets/nintendo_switch_games/xenobladechroniclesxdefinitiveedition/nswitch_xenobladechroniclesxdefinitiveedition/XenobladeChroniclesXDefinitiveEdition_27.png",
-                    "https://www.nintendo.com/eu/media/images/assets/nintendo_switch_games/xenobladechroniclesxdefinitiveedition/nswitch_xenobladechroniclesxdefinitiveedition/XenobladeChroniclesXDefinitiveEdition_GP_19.png",
-                ]
+                Images = nft.XCavateMetadata.Images,
             };
 
             await Application.Current.MainPage.Navigation.PushAsync(new PropertyDetailPage(viewModel));

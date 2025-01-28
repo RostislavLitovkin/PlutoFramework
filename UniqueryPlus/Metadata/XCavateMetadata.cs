@@ -4,6 +4,9 @@ namespace UniqueryPlus.Metadata
 {
     public record XCavateMetadata
     {
+        public string LocationName => $"{AddressStreet ?? "Unknown street"}, {AddressTownCity ?? "Unknown town"}";
+        public List<string> Images { get; set; } = [];
+
         [JsonPropertyName("price_per_token")]
         public int PricePerToken { get; init; }
 

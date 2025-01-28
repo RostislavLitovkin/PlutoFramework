@@ -74,7 +74,6 @@ namespace UniqueryPlus.Nfts
         }
         public bool IsBurnable { get; set; } = true;
         public Method Burn() => NftsCalls.Burn(new U32((uint)CollectionId), new U32((uint)Id));
-
         public async Task<BigInteger?> GetMarketPriceAsync(CancellationToken token)
         {
             var speckClient = Indexers.GetSpeckClient();
@@ -252,6 +251,8 @@ namespace UniqueryPlus.Nfts
                 {
                     if (metadata.HasValue)
                     {
+                        Console.WriteLine("Metadata was set");
+
                         nft.Metadata = metadata.Value.Metadata;
                         nft.XCavateMetadata = metadata.Value.XCavateMetadata;
                     }
@@ -383,8 +384,6 @@ namespace UniqueryPlus.Nfts
 
                     string metadataJson = System.Text.Encoding.UTF8.GetString(nftMetadata.Data.Value.Bytes.Slice(p));
 
-                    Console.WriteLine(metadataJson);
-
                     var options = new JsonSerializerOptions
                     {
                         PropertyNameCaseInsensitive = true
@@ -409,7 +408,9 @@ namespace UniqueryPlus.Nfts
                 }
                 catch (Exception e)
                 {
-                    //Console.WriteLine(e);
+                    Console.WriteLine("Metadata exception:");
+
+                    Console.WriteLine(e);
                     metadatas.Add(null);
                 }
             };

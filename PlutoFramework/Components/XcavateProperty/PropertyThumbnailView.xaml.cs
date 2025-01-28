@@ -27,23 +27,30 @@ public partial class PropertyThumbnailView : ContentView
 
             control.propertyNameLabel.Text = nftBase.XCavateMetadata.PropertyName;
 
-            control.apyLabel.Text = "5.0%"; //nftBase.XCavateMetadata
+            control.apyLabel.Text = XCavatePropertyModel.GetAPY(nftBase.XCavateMetadata.EstimatedRentalIncome, nftBase.XCavateMetadata.PropertyPrice);
 
             control.tokensLabel.Text = nftBase.NftMarketplaceDetails?.Listed?.ToString() ?? "-";
 
             control.priceLabel.Text = $"£{nftBase.XCavateMetadata.PropertyPrice}";
 
-            control.image.Source = nftBase.Metadata?.Image[0..4] switch
+            control.locationView.LocationName = nftBase.XCavateMetadata.LocationName;
+
+            control.image.Source = (nftBase.XCavateMetadata is not null && nftBase.XCavateMetadata.Images.Count() > 0) switch
             {
                 // Default image
-                null => "noimage.png",
-                "http" => new UriImageSource
+                false => "noimage.png",
+                true => nftBase.XCavateMetadata?.Images[0][0..4] switch
                 {
-                    Uri = new Uri(nftBase.Metadata.Image),
-                    CacheValidity = new TimeSpan(1, 0, 0),
+                    "http" => new UriImageSource
+                    {
+                        Uri = new Uri(nftBase.XCavateMetadata?.Images[0]),
+                        CacheValidity = new TimeSpan(1, 0, 0),
+                    },
+                    _ => nftBase.XCavateMetadata?.Images[0]
                 },
-                _ => nftBase.Metadata.Image
             };
+
+            Console.WriteLine("Done loading XCavate property");
         });
 
     public static readonly BindableProperty FavouriteProperty = BindableProperty.Create(

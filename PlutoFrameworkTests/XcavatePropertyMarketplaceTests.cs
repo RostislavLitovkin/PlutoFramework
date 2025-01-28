@@ -36,7 +36,7 @@ namespace PlutoFrameworkTests
 
             var uniqueryNftEnumerator = uniqueryNftEnumerable.GetAsyncEnumerator(token);
 
-            for (uint i = 0; i < LIMIT; i++)
+            for (uint i = 0; i < 100; i++)
             {
                 if (uniqueryNftEnumerator != null && await uniqueryNftEnumerator.MoveNextAsync().ConfigureAwait(false))
                 {
@@ -44,12 +44,10 @@ namespace PlutoFrameworkTests
 
                     var property = (XCavatePaseoNftsPalletNft)newNft.NftBase;
 
-                    Console.WriteLine("Property: " + property.XCavateMetadata?.PropertyName + " - " + property.NftMarketplaceDetails?.Listed);
+                    Console.WriteLine("Property: " + property?.XCavateMetadata?.PropertyName + " - " + property?.XCavateMetadata?.Files?.FirstOrDefault());
 
                 }
             }
-
-
 
             return;
 

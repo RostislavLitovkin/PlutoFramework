@@ -4,16 +4,9 @@
              x:Class="PlutoFramework.Components.XcavateProperty.LocationView">
     <HorizontalStackLayout Spacing="10">
         <Image WidthRequest="20"
-               HeightRequest="20">
-            <Image.Source>
-                <FontImageSource Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
-                 Glyph="&#xf041;"
-                 FontFamily="FontAwesome"
-                 Size="20" />
-            </Image.Source>
-        </Image>
-        <Label 
-            Text="{Binding LocationName}"
+               HeightRequest="20"
+               Source="xcavatemappin.png" />
+        <Label x:Name="locationNameLabel"
             LineBreakMode="TailTruncation"
             HorizontalTextAlignment="Start"
             VerticalOptions="Center"/>

@@ -9,6 +9,11 @@ public partial class NftImageView : ContentView
             var control = (NftImageView)bindable;
 
             control.image.Source = (string)newValue;
+
+            if (((string)newValue).Length <= 4 || ((string)newValue)[0..4] != "http")
+            {
+                control.downloadButton.Opacity = 0.5;
+            }
         });
 
     public static readonly BindableProperty ExtraButtonsVisibleProperty = BindableProperty.Create(
@@ -43,8 +48,12 @@ public partial class NftImageView : ContentView
     }
     private async void OnDownloadClicked(object sender, TappedEventArgs e)
     {
+        if (downloadButton.Opacity == 0.5)
+        {
+            return;
+        }
+        
         await Browser.Default.OpenAsync(new Uri(ImageSource), BrowserLaunchMode.SystemPreferred);
-        //await FileModel.SaveImageAsync(ImageSource, "nft.png");
     }
     private async void OnExpandClicked(object sender, TappedEventArgs e)
     {
