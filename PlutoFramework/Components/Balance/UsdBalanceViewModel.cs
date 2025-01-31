@@ -8,23 +8,15 @@ namespace PlutoFramework.Components.Balance
 {
     public partial class UsdBalanceViewModel : ObservableObject
     {
-        public bool DoNotReload { get; set; } = false;
 
         [ObservableProperty]
-        private ObservableCollection<AssetInfo> assets;
+        private ObservableCollection<AssetInfo> assets = new ObservableCollection<AssetInfo>();
 
         [ObservableProperty]
-        private string usdSum;
+        private string usdSum = "Loading";
 
         [ObservableProperty]
-        private bool reloadIsVisible;
-
-        public UsdBalanceViewModel()
-        {
-            assets = new ObservableCollection<AssetInfo>();
-            usdSum = "Loading";
-            reloadIsVisible = false;
-        }
+        private bool reloadIsVisible = false;
 
         [RelayCommand]
         private async Task ReloadAsync()
