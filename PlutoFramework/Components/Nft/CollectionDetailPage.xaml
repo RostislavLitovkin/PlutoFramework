@@ -9,7 +9,7 @@
              xmlns:koda="clr-namespace:PlutoFramework.Components.Koda"
              xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
              xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
-             xmlns:confirmtransaction="clr-namespace:PlutoFramework.Components.ConfirmTransaction"
+             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
              xmlns:model="clr-namespace:PlutoFramework.Model;assembly=PlutoFramework.Model"
              xmlns:date="clr-namespace:PlutoFramework.Components.Date"
             BackgroundColor="Black">
@@ -109,6 +109,6 @@
 
         <txanalyzer:TransactionAnalyzerConfirmationView />
 
-        <confirmtransaction:ConfirmTransactionView />
+        <password:EnterPasswordPopupView />
     </AbsoluteLayout>
 </ContentPage>

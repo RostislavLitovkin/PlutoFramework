@@ -4,7 +4,7 @@
              xmlns:settings="clr-namespace:PlutoFramework.Components.Settings"
              x:Class="PlutoFramework.Components.Settings.SettingsPage"
              xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-             xmlns:confirmtransaction="clr-namespace:PlutoFramework.Components.ConfirmTransaction"
+             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
              xmlns:xcavate="clr-namespace:PlutoFramework.Components.XCavate"
              Title="Settings"
              BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
@@ -79,6 +79,6 @@
         <navigationbar:TopNavigationBar Title="Settings"
                                     x:Name="topNavigationBar" />
 
-        <confirmtransaction:ConfirmTransactionView />
+        <password:EnterPasswordPopupView />
     </AbsoluteLayout>
 </ContentPage>

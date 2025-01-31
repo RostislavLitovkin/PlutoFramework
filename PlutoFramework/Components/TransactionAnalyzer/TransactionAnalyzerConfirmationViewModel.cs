@@ -81,7 +81,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
 
             var dAppConnectionViewModel = DependencyService.Get<DAppConnectionViewModel>();
 
-            
+
 
             if (showDAppView) {
                 DAppName = dAppConnectionViewModel.Name;
@@ -109,7 +109,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
 
             #region other awaitable things
             try
-            { 
+            {
                 var account = new ChopsticksMockAccount();
                 account.Create(KeyType.Sr25519, KeysModel.GetPublicKeyBytes());
 
@@ -131,7 +131,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                         var extrinsicDetails = await EventsModel.GetExtrinsicEventsForClientAsync(client, extrinsicIndex: events.ExtrinsicIndex, events.Events, blockNumber: 0, CancellationToken.None);
 
                         var extrinsicResult = TransactionAnalyzerModel.GetExtrinsicResult(extrinsicDetails.Events);
-                        
+
                         if (extrinsicResult == ExtrinsicResult.Failed)
                         {
                             ExtrinsicFailedIsVisible = true;
@@ -192,31 +192,30 @@ namespace PlutoFramework.Components.TransactionAnalyzer
 
         public static async Task OnConfirmClickedAsync()
         {
-            if ((await KeysModel.GetAccount()).IsSome(out var account))
+            var account = await KeysModel.GetAccountAsync();
+
+            if (account is null)
             {
-                var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();
-
-                var clientExt = await Model.SubstrateClientModel.GetOrAddSubstrateClientAsync(transactionAnalyzerConfirmationViewModel.Endpoint.Key, CancellationToken.None);
-
-                try
-                {
-                    string extrinsicId = await clientExt.SubmitExtrinsicAsync(transactionAnalyzerConfirmationViewModel.Payload.Call, account, token: CancellationToken.None);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Failed at confirm clicked");
-                    Console.WriteLine(ex);
-                }
-
-                /// Hide
-
-                transactionAnalyzerConfirmationViewModel.IsVisible = false;
+                return;
             }
-            else
+
+            var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();
+
+            var clientExt = await Model.SubstrateClientModel.GetOrAddSubstrateClientAsync(transactionAnalyzerConfirmationViewModel.Endpoint.Key, CancellationToken.None);
+
+            try
             {
-                // Verification failed, do something about it
+                string extrinsicId = await clientExt.SubmitExtrinsicAsync(transactionAnalyzerConfirmationViewModel.Payload.Call, account, token: CancellationToken.None);
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Failed at confirm clicked");
+                Console.WriteLine(ex);
+            }
+
+            transactionAnalyzerConfirmationViewModel.IsVisible = false;
         }
+
         public void LoadUnknown(TempUnCheckedExtrinsic unCheckedExtrinsic, RuntimeVersion runtimeVersion, Func<Task> onConfirm)
         {
             OnConfirm = onConfirm;

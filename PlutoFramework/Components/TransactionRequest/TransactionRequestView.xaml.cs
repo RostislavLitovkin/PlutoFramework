@@ -30,41 +30,45 @@ public partial class TransactionRequestView : ContentView
             var viewModel = DependencyService.Get<TransactionRequestViewModel>();
             Substrate.NetApi.Model.Extrinsics.Payload payload = viewModel.Payload;
 
-            if ((await Model.KeysModel.GetAccount()).IsSome(out var account))
+            var account = await Model.KeysModel.GetAccountAsync();
+
+            if (account is null)
             {
-                #region Temp
-                var signedExtensions = payload.SignedExtension;
-
-                var tempPayload = new TempPayload(
-                    payload.Call,
-                    new TempSignedExtensions(
-                        specVersion: signedExtensions.SpecVersion,
-                        txVersion: signedExtensions.TxVersion,
-                        genesis: signedExtensions.Genesis,
-                        startEra: signedExtensions.StartEra,
-                        mortality: signedExtensions.Mortality,
-                        nonce: signedExtensions.Nonce,
-                        charge: signedExtensions.Charge,
-                        checkMetadata: true
-                    )
-                );
-
-                #endregion
-
-                byte[] signature = account.Sign(tempPayload.Encode());
-
-                var signerResult = new SignerResult
-                {
-                    id = 1,
-                    signature = Utils.Bytes2HexString(
-                        // This 1 means the signature is using Sr25519
-                        new byte[1] { 1 }
-                        .Concat(signature).ToArray()
-                    ).ToLower(),
-                };
-
-                await PlutonicationWalletClient.SendPayloadSignatureAsync(signerResult);
+                return;
             }
+            #region Temp
+            var signedExtensions = payload.SignedExtension;
+
+            var tempPayload = new TempPayload(
+                payload.Call,
+                new TempSignedExtensions(
+                    specVersion: signedExtensions.SpecVersion,
+                    txVersion: signedExtensions.TxVersion,
+                    genesis: signedExtensions.Genesis,
+                    startEra: signedExtensions.StartEra,
+                    mortality: signedExtensions.Mortality,
+                    nonce: signedExtensions.Nonce,
+                    charge: signedExtensions.Charge,
+                    checkMetadata: true
+                )
+            );
+
+            #endregion
+
+            byte[] signature = account.Sign(tempPayload.Encode());
+
+            var signerResult = new SignerResult
+            {
+                id = 1,
+                signature = Utils.Bytes2HexString(
+                    // This 1 means the signature is using Sr25519
+                    new byte[1] { 1 }
+                    .Concat(signature).ToArray()
+                ).ToLower(),
+            };
+
+            await PlutonicationWalletClient.SendPayloadSignatureAsync(signerResult);
+
 
             // Hide this layout
             viewModel.IsVisible = false;

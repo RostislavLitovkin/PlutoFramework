@@ -12,7 +12,6 @@ using PlutoFramework.View;
 using PlutoFramework.ViewModel;
 using PlutoFramework.Components.Staking;
 using PlutoFramework.Components.CustomLayouts;
-using PlutoFramework.Components.ConfirmTransaction;
 using PlutoFramework.Components.AzeroId;
 using PlutoFramework.Components.AssetSelect;
 using PlutoFramework.Components.Nft;
@@ -23,6 +22,9 @@ using PlutoFramework.Components.Fee;
 using PlutoFramework.Components.VTokens;
 using PlutoFramework.Components.Xcm;
 using PlutoFramework.Components.TransactionAnalyzer;
+using PlutoFramework.Components.Password;
+using PlutoFramework.Model;
+using PlutoFramework.Components.Mnemonics;
 
 namespace PlutoFramework;
 
@@ -66,8 +68,6 @@ public partial class App : Application
 
         DependencyService.Register<CustomItemViewModel>();
 
-        DependencyService.Register<ConfirmTransactionViewModel>();
-
         DependencyService.Register<MessageSignRequestViewModel>();
 
         DependencyService.Register<AzeroPrimaryNameViewModel>();
@@ -106,17 +106,31 @@ public partial class App : Application
 
         DependencyService.Register<NestNftSelectViewModel>();
 
-        if (Preferences.ContainsKey("publicKey"))
+        DependencyService.Register<EnterPasswordPopupViewModel>();
+
+        DependencyService.Register<SuccessfulImportPopupViewModel>();
+
+        if (Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY))
         {
+            // Set Account type if it did not exist
+            if (!Preferences.ContainsKey(PreferencesModel.ACCOUNT_TYPE))
+            {
+                Preferences.Set(
+                    PreferencesModel.ACCOUNT_TYPE,
+                    (Preferences.Get(PreferencesModel.USE_PRIVATE_KEY, false) ? AccountType.PrivateKey : AccountType.Mnemonic).ToString()
+                );
+            };
+
             MainPage = new AppShell();
         }
         else
         {
-            Preferences.Remove("publicKey");
-            SecureStorage.Default.Remove("privateKey");
-            SecureStorage.Default.Remove("mnemonics");
-            SecureStorage.Default.Remove("password");
-            Preferences.Remove("biometricsEnabled");
+            Preferences.Remove(PreferencesModel.PUBLIC_KEY);
+            SecureStorage.Default.Remove(PreferencesModel.PRIVATE_KEY);
+            SecureStorage.Default.Remove(PreferencesModel.MNEMONICS);
+            SecureStorage.Default.Remove(PreferencesModel.PASSWORD);
+            Preferences.Remove(PreferencesModel.BIOMETRICS_ENABLED);
+            Preferences.Set(PreferencesModel.ACCOUNT_TYPE, AccountType.Mnemonic.ToString());
             MainPage = new SetupPasswordPage();
         }
     }

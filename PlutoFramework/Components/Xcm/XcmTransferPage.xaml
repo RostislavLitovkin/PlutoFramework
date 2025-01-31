@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar" xmlns:confirmtransaction="clr-namespace:PlutoFramework.Components.ConfirmTransaction" xmlns:identity="clr-namespace:PlutoFramework.Components.Identity" xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect" xmlns:card="clr-namespace:PlutoFramework.Components.Card" xmlns:xcm="clr-namespace:PlutoFramework.Components.Xcm"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
+             xmlns:identity="clr-namespace:PlutoFramework.Components.Identity"
+             xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             xmlns:xcm="clr-namespace:PlutoFramework.Components.Xcm"
              x:Class="PlutoFramework.Components.Xcm.XcmTransferPage"
              Title="XcmTransferPage"
              BackgroundColor="Black">
@@ -64,11 +70,9 @@
         <navigationbar:TopNavigationBar Title="XCM Transfer"
                                         x:Name="topNavigationBar" />
 
-        <confirmtransaction:ConfirmTransactionView />
-
         <xcm:XcmNetworkSelectPopup />
 
-        <confirmtransaction:ConfirmTransactionView />
+        <password:EnterPasswordPopupView />
 
     </AbsoluteLayout>
 </ContentPage>

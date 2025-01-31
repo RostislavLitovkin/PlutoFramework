@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.XCavate.FrequentlyAskedQuestionsPage"
              xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-         xmlns:confirmtransaction="clr-namespace:PlutoFramework.Components.ConfirmTransaction"
+         xmlns:password="clr-namespace:PlutoFramework.Components.Password"
              xmlns:settings="clr-namespace:PlutoFramework.Components.Settings"
          Title="Settings"
          BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
@@ -31,6 +31,6 @@
         <navigationbar:TopNavigationBar Title="FAQ"
                                         x:Name="topNavigationBar" />
 
-        <confirmtransaction:ConfirmTransactionView />
+        <password:EnterPasswordPopupView />
     </AbsoluteLayout>
 </ContentPage>

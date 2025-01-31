@@ -81,7 +81,7 @@ namespace PlutoFramework.Components.Nft
         private bool favourite;
 
         [ObservableProperty]
-        private Option<string> kodadotUnlockableUrl;
+        private string? kodadotUnlockableUrl;
 
         [ObservableProperty]
         private string azeroIdReservedUntil;

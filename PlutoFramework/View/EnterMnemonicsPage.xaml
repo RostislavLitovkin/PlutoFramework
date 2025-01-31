@@ -4,7 +4,9 @@
              xmlns:viewmodel="clr-namespace:PlutoFramework.ViewModel"
              xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
              xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
              x:Class="PlutoFramework.View.EnterMnemonicsPage"
+             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
              BackgroundColor="Black">
     <ContentPage.BindingContext>
         <viewmodel:EnterMnemonicsViewModel x:Name="viewModel" />
@@ -50,7 +52,8 @@
                                         </Label>
                                         <Editor HeightRequest="120" x:Name="mnemonicsEntry"
                                                 Placeholder="Start entering here.."
-                                                Text="{Binding Mnemonics}">
+                                                Text="{Binding Mnemonics}"
+                                                >
                               
                                         </Editor>
                                     </VerticalStackLayout>
@@ -61,7 +64,7 @@
                     </card:Card>
                 </ContentView>
 
-                <Button Text="Continue" Clicked="ContinueWithMnemonicClicked" />
+                <buttons:ElevatedButton Text="Continue" Clicked="ContinueWithMnemonicClicked" />
 
 
                 <ContentView HeightRequest="120" Margin="0, 40, 0, 0">
@@ -99,10 +102,9 @@
                     </card:Card>
                 </ContentView>
 
-                <Button Text="Continue" Clicked="ContinueWithPrivateKeyClicked" />
+                <buttons:ElevatedButton ButtonState="Enabled" Text="Continue" Clicked="ContinueWithPrivateKeyClicked" />
 
-                <Button Text="Import json" Clicked="ImportJsonClicked"
-                        IsEnabled="False"/>
+                <buttons:ElevatedButton ButtonState="Enabled" Text="Import json" Clicked="ImportJsonClicked"/>
             </VerticalStackLayout>
             
         </ScrollView>
@@ -110,5 +112,6 @@
         <navigationbar:TopNavigationBar Title="Enter mnemonics"
                                         x:Name="topNavigationBar" />
 
+        <password:EnterPasswordPopupView />
     </AbsoluteLayout>
 </ContentPage>

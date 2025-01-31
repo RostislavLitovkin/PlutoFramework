@@ -29,6 +29,7 @@
 		<!-- Increases performance, but disables hot-reload -->
     <UseInterpreter>false</UseInterpreter>
     <MauiStrictXamlCompilation>true</MauiStrictXamlCompilation>
+		<Nullable>enable</Nullable>    
 
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
@@ -534,6 +535,9 @@
 	  <MauiXaml Update="Components\Koda\OpenKodaButton.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Mnemonics\SuccessfulImportPopupView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Nft\CollectionDetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -601,6 +605,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Nft\NftTransferView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Password\EnterPasswordPopupView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Settings\DeveloperSettingsPage.xaml">
@@ -786,14 +793,12 @@
 	  <Folder Include="Resources\Images\PredefinedLayouts\" />
 	  <Folder Include="Components\AwesomeAjunaAvatars\" />
 	  <Folder Include="Components\Contract\" />
-	  <Folder Include="Components\ConfirmTransaction\" />
 	  <Folder Include="Components\AzeroId\" />
 	  <Folder Include="Resources\Images\FatCat\" />
 	  <Folder Include="Components\Identity\" />
 	  <Folder Include="Components\Vault\" />
 	  <Folder Include="Components\Referenda\" />
 	  <Folder Include="Components\ChangeLayoutRequest\" />
-	  <Folder Include="Components\Mnemonics\" />
 	  <Folder Include="Components\Fee\" />
 	  <Folder Include="Components\VTokens\" />
 	  <Folder Include="Components\UpdateView\" />

@@ -48,9 +48,9 @@
 
                             <Image.Source>
                                 <FontImageSource Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
-                          Glyph="&#xf004;"
-                          FontFamily="FontAwesome"
-                          Size="50" />
+                                                  Glyph="&#xf004;"
+                                                  FontFamily="FontAwesome"
+                                                  Size="50" />
                             </Image.Source>
                         </Image>
 

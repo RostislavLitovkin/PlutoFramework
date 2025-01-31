@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.Extrinsic.ExtrinsicDetailPage"
              xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-             xmlns:confirmtransaction="clr-namespace:PlutoFramework.Components.ConfirmTransaction"
+             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
              xmlns:events="clr-namespace:PlutoFramework.Components.Events"
              xmlns:subscan="clr-namespace:PlutoFramework.Components.Subscan"
              Title="ExtrinsicDetailPage"
@@ -37,7 +37,7 @@
         <navigationbar:TopNavigationBar Title="Extrinsic detail"
                                         x:Name="topNavigationBar" />
 
-        <confirmtransaction:ConfirmTransactionView />
+        <password:EnterPasswordPopupView />
 
     </AbsoluteLayout>
 

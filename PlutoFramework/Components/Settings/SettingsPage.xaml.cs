@@ -1,7 +1,6 @@
 using PlutoFramework.Components.CustomLayouts;
 using PlutoFramework.Components.XCavate;
 using PlutoFramework.Components.XcavateProperty;
-using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
 using PlutoFramework.Model.XCavate;
 using PlutoFramework.View;
@@ -25,6 +24,14 @@ public partial class SettingsPage : ContentPage
 
     async void OnLogOutClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
+        // Authenticate before logging out
+        var account = await Model.KeysModel.GetAccountAsync();
+
+        if (account is null)
+        {
+            return;
+        }
+
         Preferences.Remove("publicKey");
         SecureStorage.Default.Remove("privateKey");
         SecureStorage.Default.Remove("mnemonics");
@@ -33,7 +40,10 @@ public partial class SettingsPage : ContentPage
 
         // Delete Local SQLite databases
 
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
         Application.Current.MainPage = new SetupPasswordPage();
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+
     }
     async void OnDeveloperSettingsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
@@ -121,9 +131,15 @@ public partial class SettingsPage : ContentPage
 
     async void OnShowMnemonicsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
-        if ((await Model.KeysModel.GetMnemonicsOrPrivateKeyAsync()).IsSome(out (string, bool) secretValues))
+        try
         {
-            await Navigation.PushAsync(new MnemonicsPage(secretValues));
+            var secret = await Model.KeysModel.GetMnemonicsOrPrivateKeyAsync();
+
+            await Navigation.PushAsync(new MnemonicsPage(secret));
+        }
+        catch
+        {
+            // Failed to authenticate
         }
     }
 }

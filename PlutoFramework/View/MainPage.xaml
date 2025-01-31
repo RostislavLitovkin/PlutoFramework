@@ -12,7 +12,7 @@
          xmlns:addressview="clr-namespace:PlutoFramework.Components.AddressView"
          xmlns:staking="clr-namespace:PlutoFramework.Components.Staking"
          xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-         xmlns:confirmtransaction="clr-namespace:PlutoFramework.Components.ConfirmTransaction"
+         xmlns:password="clr-namespace:PlutoFramework.Components.Password"
          xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
          xmlns:vault="clr-namespace:PlutoFramework.Components.Vault"
          xmlns:changelayoutrequest="clr-namespace:PlutoFramework.Components.ChangeLayoutRequest"
@@ -88,7 +88,9 @@
 
         <txanalyzer:TransactionAnalyzerConfirmationView />
 
-        <confirmtransaction:ConfirmTransactionView />
+        <password:EnterPasswordPopupView />
+        
+        
 
     </AbsoluteLayout>
 </ContentPage>
