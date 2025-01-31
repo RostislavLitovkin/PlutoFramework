@@ -179,6 +179,7 @@ namespace PlutoFramework.Components.Nft
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(IsTransferable))]
+        [NotifyPropertyChangedFor(nameof(IsSoulbound))]
         private ButtonStateEnum transferButtonState = ButtonStateEnum.Disabled;
 
         public bool IsTransferable => TransferButtonState == ButtonStateEnum.Enabled;

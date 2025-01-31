@@ -46,18 +46,32 @@ namespace PlutoFramework
                 // load these details after
                 viewModel.KodadotUnlockableUrl = await Model.Kodadot.UnlockablesModel.FetchKeywiseAsync(endpoint, nftBase.CollectionId).ConfigureAwait(false);
 
-
-                if (savedCollection is null)
+                try
                 {
-                    savedCollection = await Model.CollectionModel.ToCollectionWrapperAsync(await nftBase.GetCollectionAsync(token).ConfigureAwait(false), CancellationToken.None).ConfigureAwait(false);
+                    if (savedCollection is null)
+                    {
+                        savedCollection = await Model.CollectionModel.ToCollectionWrapperAsync(await nftBase.GetCollectionAsync(token).ConfigureAwait(false), CancellationToken.None).ConfigureAwait(false);
 
-                    viewModel.CollectionBase = savedCollection.CollectionBase;
-                    viewModel.CollectionNftImages = savedCollection.NftImages;
+                        viewModel.CollectionBase = savedCollection.CollectionBase;
+                        viewModel.CollectionNftImages = savedCollection.NftImages;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
                 }
 
-                ICollectionBase fullCollection = await savedCollection.CollectionBase.GetFullAsync(token).ConfigureAwait(false);
+                ICollectionBase fullCollection = null;
+                try
+                {
+                    fullCollection = await savedCollection.CollectionBase.GetFullAsync(token).ConfigureAwait(false);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
 
-                if (fullCollection is ICollectionStats)
+                if (fullCollection is not null && fullCollection is ICollectionStats)
                 {
                     viewModel.FloorPrice = ((ICollectionStats)fullCollection).FloorPrice;
                     viewModel.HighestSale = ((ICollectionStats)fullCollection).HighestSale;
@@ -81,6 +95,7 @@ namespace PlutoFramework
 
                 if (
                     fullNft is INftNestable &&
+                    fullCollection is not null &&
                     fullCollection is ICollectionNestable &&
                     (
                         (((ICollectionNestable)fullCollection).IsNestableByTokenOwner && fullNft.Owner == KeysModel.GetSubstrateKey()) ||
@@ -118,7 +133,7 @@ namespace PlutoFramework
             viewModel.KodaIsVisible = nft is IKodaLink;
             viewModel.UniqueIsVisible = nft is IUniqueMarketplaceLink;
 
-            viewModel.TransferButtonState = nft is INftTransferable && ((INftTransferable)nft).IsTransferable ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
+            viewModel.TransferButtonState = (nft is INftTransferable && ((INftTransferable)nft).IsTransferable) ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
             viewModel.SellButtonState = nft is INftSellable || nft is INftEVMSellable ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
 
             viewModel.ModifyButtonState = ButtonStateEnum.Disabled; // Maybe later
