@@ -56,8 +56,6 @@ public partial class App : Application
 
         DependencyService.Register<ChainAddressViewModel>();
 
-        DependencyService.Register<BasePageViewModel>();
-
         DependencyService.Register<StakingDashboardViewModel>();
 
         DependencyService.Register<CalamarViewModel>();

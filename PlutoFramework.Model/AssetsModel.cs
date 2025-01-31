@@ -26,10 +26,10 @@ namespace PlutoFramework.Model
 
         public static async Task GetBalanceAsync(SubstrateClientExt client, string substrateAddress, CancellationToken token, bool forceReload = false)
         {
-            if (AssetsDict.ContainsKey((client.Endpoint.Key, AssetPallet.Native, 0)) && forceReload)
+            /*if (AssetsDict.ContainsKey((client.Endpoint.Key, AssetPallet.Native, 0)) && forceReload)
             {
                 return;
-            }
+            }*/
 
             if (doNotReload)
             {
@@ -288,7 +288,7 @@ namespace PlutoFramework.Model
             CalculateTotalUsdBalance();
         }
 
-        public static void GetUsdBalance()
+        public static void UpdateUsdBalance()
         {
             double usdSumValue = 0.0;
 
