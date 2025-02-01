@@ -406,9 +406,8 @@
 	  <BundleResource Include="Resources\Images\FatCat\tail1.png" />
 	  <BundleResource Include="Resources\Images\azeroidtext.png" />
 	  <BundleResource Include="Resources\Images\whitebackground.png" />
-	  <BundleResource Include="Resources\Images\darkbackground.png" />
-	  <BundleResource Include="Resources\Images\darkbackground2.png" />
-	  <BundleResource Include="Resources\Images\rightarrowblack.svg" />
+    <BundleResource Include="Resources\Images\darkbackground.png" />
+    <BundleResource Include="Resources\Images\rightarrowblack.svg" />
 	  <BundleResource Include="Resources\Images\rightarrowwhite.svg" />
 	  <BundleResource Include="Resources\Images\unknownwhite.svg" />
 	  <BundleResource Include="Resources\Images\unknownblack.svg" />
@@ -442,6 +441,9 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiXaml Update="AppShell.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\000ComponentTemplate\NewPageTemplate.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\000ComponentTemplate\TemplateView.xaml">
