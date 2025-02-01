@@ -15,7 +15,7 @@ namespace UniqueryPlus
 
             serviceCollection
                 .AddSpeck()
-                .ConfigureHttpClient(client => client.BaseAddress = new Uri("https://squid.subsquid.io/speck/graphql"));
+                .ConfigureHttpClient(client => client.BaseAddress = new Uri("https://kodadot.squids.live/speck:prod/api/graphql"));
 
             IServiceProvider services = serviceCollection.BuildServiceProvider();
 
@@ -28,7 +28,7 @@ namespace UniqueryPlus
 
             serviceCollection
                 .AddStick()
-                .ConfigureHttpClient(client => client.BaseAddress = new Uri("https://squid.subsquid.io/speck/graphql"));
+                .ConfigureHttpClient(client => client.BaseAddress = new Uri("https://kodadot.squids.live/stick:prod/api/graphql"));
 
             IServiceProvider services = serviceCollection.BuildServiceProvider();
 
