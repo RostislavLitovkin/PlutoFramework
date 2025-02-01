@@ -35,17 +35,17 @@ namespace PlutoFramework.Model
         {
             var mnemonics = GenerateMnemonics();
 
-            return GetAccount(mnemonics);
+            return GetAccountFromMnemonics(mnemonics);
         }
 
         public static (Account, string) GenerateNewAccountAndMnemonics()
         {
             var mnemonics = GenerateMnemonics();
 
-            return (GetAccount(mnemonics), mnemonics);
+            return (GetAccountFromMnemonics(mnemonics), mnemonics);
         }
 
-        public static Account GetAccount(string mnemonics)
+        public static Account GetAccountFromMnemonics(string mnemonics)
         {
             var keyring = new Substrate.NET.Wallet.Keyring.Keyring();
 

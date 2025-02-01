@@ -5,18 +5,24 @@ namespace PlutoFramework.Components.Mnemonics;
 
 public partial class BackupMnemonicsReminderView : ContentView
 {
-	public BackupMnemonicsReminderView()
-	{
-		InitializeComponent();
-	}
+    public BackupMnemonicsReminderView()
+    {
+        InitializeComponent();
+    }
 
     async void OnClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
-        if ((await Model.KeysModel.GetMnemonicsOrPrivateKeyAsync()).IsSome(out (string, bool) secretValues))
+        try
         {
-            await Navigation.PushAsync(new MnemonicsPage(secretValues));
+            var secret = await Model.KeysModel.GetMnemonicsOrPrivateKeyAsync();
+
+            await Navigation.PushAsync(new MnemonicsPage(secret));
 
             Model.CustomLayoutModel.RemoveComponentFromSavedLayout(ComponentId.BMnR);
+        }
+        catch
+        {
+
         }
     }
 }

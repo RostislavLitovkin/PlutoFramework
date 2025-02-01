@@ -30,7 +30,7 @@ namespace PlutoFramework.Components.Nft
 
         public string Description => NftBase.Metadata?.Description ?? "";
 
-        public string Image => NftBase.Metadata?.Image ?? "";
+        public string Image => NftBase.Metadata?.Image ?? "noimage.png";
 
         public ObservableCollection<MetadataAttribute> Attributes => new ObservableCollection<MetadataAttribute>(NftBase.Metadata?.Attributes ?? []);
         public bool AttributesIsVisible => NftBase.Metadata?.Attributes is not null && NftBase.Metadata.Attributes.Length > 0;
@@ -81,7 +81,7 @@ namespace PlutoFramework.Components.Nft
         private bool favourite;
 
         [ObservableProperty]
-        private Option<string> kodadotUnlockableUrl;
+        private string? kodadotUnlockableUrl;
 
         [ObservableProperty]
         private string azeroIdReservedUntil;

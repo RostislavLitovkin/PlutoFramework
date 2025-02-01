@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using PlutoFramework.Model;
+using Substrate.NET.Wallet.Keyring;
+using System.Text;
 
 namespace PlutoFramework.View;
 
@@ -43,15 +45,28 @@ public partial class EnterMnemonicsPage : ContentPage
 
         var result = await FilePicker.PickAsync(new PickOptions {
             PickerTitle = "Import json",
-            //FileTypes = jsonType,
+            FileTypes = jsonType,
         });
 
-        if (result == null && result.FileName.Contains(".json"))
+        if (result is null || !result.FileName.Contains(".json"))
             return;
 
         using var jsonStream = await result.OpenReadAsync();
 
         string json = StreamToString(jsonStream);
+
+        try
+        {
+            await KeysModel.GenerateNewAccountFromJsonAsync(json);
+        }
+        catch
+        {
+            return;
+        }
+
+        MainPage.SetupLayout();
+
+        await Navigation.PopToRootAsync();
     }
 
     public static string StreamToString(Stream stream)
@@ -62,6 +77,4 @@ public partial class EnterMnemonicsPage : ContentPage
             return reader.ReadToEnd();
         }
     }
-
-
 }

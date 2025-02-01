@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.Mnemonics.MnemonicsExplanationPage"
              xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-             xmlns:confirmtransaction="clr-namespace:PlutoFramework.Components.ConfirmTransaction"
+             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
              xmlns:card="clr-namespace:PlutoFramework.Components.Card"
              Title="MnemonicsExplanationPage"
              BackgroundColor="Black">
@@ -72,7 +72,7 @@
         <navigationbar:TopNavigationBar Title="About Mnemonics"
                                       x:Name="topNavigationBar" />
 
-        <confirmtransaction:ConfirmTransactionView />
+        <password:EnterPasswordPopupView />
 
     </AbsoluteLayout>
 </ContentPage>

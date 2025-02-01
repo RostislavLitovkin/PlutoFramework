@@ -159,29 +159,31 @@ namespace PlutoFramework.Model
             {
                 var viewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();
 
-                if ((await Model.KeysModel.GetAccount()).IsSome(out var account))
+                var account = await Model.KeysModel.GetAccountAsync();
+
+                if (account is null)
                 {
-                    Console.WriteLine("Authenticated");
-
-                    byte[] signature = account.Sign(viewModel.Payload.Encode());
-
-                    var signerResult = new SignerResult
-                    {
-                        id = 1,
-                        signature = Utils.Bytes2HexString(
-                            // This 1 means the signature is using Sr25519
-                            new byte[1] { 1 }
-                            .Concat(signature).ToArray()
-                        ).ToLower(),
-                    };
-
-                    Console.WriteLine("Signed");
-
-                    await PlutonicationWalletClient.SendPayloadSignatureAsync(signerResult);
-
-                    Console.WriteLine("Sending");
-
+                    return;
                 }
+                Console.WriteLine("Authenticated");
+
+                byte[] signature = account.Sign(viewModel.Payload.Encode());
+
+                var signerResult = new SignerResult
+                {
+                    id = 1,
+                    signature = Utils.Bytes2HexString(
+                        // This 1 means the signature is using Sr25519
+                        new byte[1] { 1 }
+                        .Concat(signature).ToArray()
+                    ).ToLower(),
+                };
+
+                Console.WriteLine("Signed");
+
+                await PlutonicationWalletClient.SendPayloadSignatureAsync(signerResult);
+
+                Console.WriteLine("Sending");
 
                 // Hide this layout
                 viewModel.IsVisible = false;

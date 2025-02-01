@@ -4,6 +4,8 @@
              xmlns:viewmodel="clr-namespace:PlutoFramework.ViewModel"
              xmlns:card="clr-namespace:PlutoFramework.Components.Card"
              xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
              x:Class="PlutoFramework.View.MnemonicsPage"
              Title="Mnemonics"
              BackgroundColor="Black">
@@ -58,16 +60,12 @@
                     </card:Card>
                 </ContentView>
 
-                <Button Text="Export json" Clicked="ExportJsonClicked"
-                         IsEnabled="False"/>
+                <buttons:ElevatedButton ButtonState="Enabled" Text="Export json" Command="{Binding ExportJsonCommand}"
+                                        x:Name="exportJsonButton"/>
 
-                <Button Text="Use existing mnemonics" Clicked="GoToEnterMnemonics"
-                        />
+                <buttons:ElevatedButton ButtonState="Enabled" Text="Use existing mnemonics" Clicked="GoToEnterMnemonics" />
 
-                <Button Text="What are mnemonics?" Clicked="OnMnemonicsExplanationClicked"
-                        />
-
-                <Button Text="Back to main screen" Clicked="ContinueToMainPageClicked" />
+                <buttons:ElevatedButton ButtonState="Enabled" Text="What are mnemonics?" Clicked="OnMnemonicsExplanationClicked" />
 
             </VerticalStackLayout>
             
@@ -76,5 +74,7 @@
         <navigationbar:TopNavigationBar Title="New mnemonics"
                                         x:Name="topNavigationBar" />
 
+        <password:EnterPasswordPopupView />
+       
     </AbsoluteLayout>
 </ContentPage>

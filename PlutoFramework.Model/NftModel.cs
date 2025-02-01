@@ -132,6 +132,7 @@ namespace PlutoFramework.Model
             NftTypeEnum.Unique => EndpointEnum.Unique,
             NftTypeEnum.Opal => EndpointEnum.Opal,
             NftTypeEnum.Mythos => EndpointEnum.Mythos,
+            NftTypeEnum.XCavatePaseo => EndpointEnum.XCavatePaseo,
             _ => throw new NotImplementedException(),
         };
     }

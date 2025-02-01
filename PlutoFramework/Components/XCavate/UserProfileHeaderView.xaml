@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xcavate="clr-namespace:PlutoFramework.Components.XCavate"
+             x:Class="PlutoFramework.Components.XCavate.UserProfileHeaderView">
+    <VerticalStackLayout BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
+                         Padding="0,0,0,20">
+        <AbsoluteLayout HeightRequest="200">
+            <Image AbsoluteLayout.LayoutBounds="0,0,1,160"
+                   AbsoluteLayout.LayoutFlags="WidthProportional"
+                    Source="{Binding ProfileBackground}"
+                    Aspect="AspectFill"
+                    BackgroundColor="Gray" />
+            <Border BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
+                    Stroke="{AppThemeBinding Light=White, Dark=Black}"
+                    StrokeThickness="5"
+                    AbsoluteLayout.LayoutBounds="10,1,80,80"
+                    AbsoluteLayout.LayoutFlags="YProportional">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="40" />
+                </Border.StrokeShape>
+
+                <Image Aspect="AspectFill"
+                       Source="{Binding ProfilePicture}" />
+            </Border>
+        </AbsoluteLayout>
+        
+        <HorizontalStackLayout Spacing="10"
+                               Margin="0,5,0,5">
+            <ScrollView Orientation="Horizontal" 
+                        Margin="15, 2.5, 0, 0"
+                        HeightRequest="20"
+                        MaximumWidthRequest="230">
+                <Label HorizontalOptions="Start"
+                       VerticalOptions="End"
+                        VerticalTextAlignment="End"
+                        HorizontalTextAlignment="Center"
+                        FontSize="18">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span FontAttributes="Bold" Text="{Binding FullName}" />
+
+                        </FormattedString>
+
+                    </Label.FormattedText>
+                </Label>
+            </ScrollView>
+
+            <xcavate:UserTypeBadgeView UserRole="{Binding UserRole}" />
+        </HorizontalStackLayout>
+
+        <Label HorizontalOptions="Start"
+                VerticalOptions="End"
+                VerticalTextAlignment="End"
+                HorizontalTextAlignment="Start"
+               Margin="15,0,0,0"
+               TextColor="Gray"
+               Text="{Binding AccountCreatedAtText}"/>
+
+    </VerticalStackLayout>
+</ContentView>

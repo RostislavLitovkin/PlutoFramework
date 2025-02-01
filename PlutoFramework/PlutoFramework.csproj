@@ -81,9 +81,15 @@
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
+	<ItemGroup>
+	  <AndroidResource Remove="Platforms\Android\Resources\drawable\maui_splash.xml" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.1" />
+		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="9.0.22" />
 		<PackageReference Include="Microsoft.VisualStudio.VsixColorCompiler" Version="17.0.31709.430" />
 		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="3.0.0-preview.7" />
 		<PackageReference Include="websocketsharp.core" Version="1.0.0" />
@@ -106,6 +112,7 @@
 	<ItemGroup>
 	  <None Remove="Ajuna.NetApi" />
 	  <None Remove="Ajuna.NetWallet" />
+	  <None Remove="appsettings.json" />
 	  <None Remove="Components\" />
 	  <None Remove="Components\NetworkSelect\" />
 	  <None Remove="Components\AddressView\" />
@@ -120,13 +127,24 @@
 	  <None Remove="Resources\Images\dappwhite.svg" />
 	  <None Remove="Resources\Images\deviceblack.svg" />
 	  <None Remove="Resources\Images\devicewhite.svg" />
+	  <None Remove="Resources\Images\discordblack.svg" />
+	  <None Remove="Resources\Images\discordwhite.svg" />
 	  <None Remove="Resources\Images\expandblack.svg" />
 	  <None Remove="Resources\Images\expandwhite.svg" />
+	  <None Remove="Resources\Images\facebookblack.png" />
+	  <None Remove="Resources\Images\facebookwhite.png" />
+	  <None Remove="Resources\Images\githubblack.svg" />
+	  <None Remove="Resources\Images\githubwhite.svg" />
 	  <None Remove="Resources\Images\hotblack.svg" />
 	  <None Remove="Resources\Images\hotwhite.svg" />
 	  <None Remove="Resources\Images\imageloading.png" />
 	  <None Remove="Resources\Images\kodablack.svg" />
 	  <None Remove="Resources\Images\kodawhite.svg" />
+	  <None Remove="Resources\Images\linkedinblack.png" />
+	  <None Remove="Resources\Images\linkedinwhite.png" />
+	  <None Remove="Resources\Images\liquidityfinderblack.png" />
+	  <None Remove="Resources\Images\liquidityfinderwhite.png" />
+	  <None Remove="Resources\Images\moredotsgray.svg" />
 	  <None Remove="Resources\Images\NetworkIcons\hydration.svg" />
 	  <None Remove="Resources\Images\NetworkIcons\kusamaassethub.svg" />
 	  <None Remove="Resources\Images\NetworkIcons\mythos.png" />
@@ -136,10 +154,19 @@
 	  <None Remove="Resources\Images\noimage.png" />
 	  <None Remove="Resources\Images\plutowalletclearwhite.png" />
 	  <None Remove="Resources\Images\plutowalleticonwhite.png" />
+	  <None Remove="Resources\Images\realxmarket.png" />
+	  <None Remove="Resources\Images\shareblack.svg" />
+	  <None Remove="Resources\Images\sharewhite.svg" />
 	  <None Remove="Resources\Images\subscan.png" />
 	  <None Remove="Resources\Images\subscanicon.png" />
 	  <None Remove="Resources\Images\uniqueblack.svg" />
 	  <None Remove="Resources\Images\uniquewhite.svg" />
+	  <None Remove="Resources\Images\xblack.png" />
+	  <None Remove="Resources\Images\xcavatemappin.png" />
+	  <None Remove="Resources\Images\xcavatergb.png" />
+	  <None Remove="Resources\Images\xwhite.png" />
+	  <None Remove="Resources\Images\youtubeblack.png" />
+	  <None Remove="Resources\Images\youtubewhite.png" />
 	  <None Remove="SubstrateNetApi" />
 	  <None Remove="Components\TransferView\" />
 	  <None Remove="ZXing.Net.Maui" />
@@ -409,6 +436,11 @@
 	  <BundleResource Include="Resources\Images\GalaxyLogicGame\galaxylogo.png" />
 	</ItemGroup>
 	<ItemGroup>
+	  <EmbeddedResource Include="appsettings.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup>
 	  <MauiXaml Update="AppShell.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -484,7 +516,25 @@
 	  <MauiXaml Update="Components\Extrinsic\CallParametersView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Form\FormInputView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Form\FormLargeInputView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Form\FormLargeValueView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Form\FormValueView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Form\FormWideValueView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Koda\OpenKodaButton.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Mnemonics\SuccessfulImportPopupView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Nft\CollectionDetailPage.xaml">
@@ -535,6 +585,9 @@
 	  <MauiXaml Update="Components\Nft\NftMainPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Nft\NftMultiImageView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Nft\NftNestedNftsView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -559,7 +612,13 @@
 	  <MauiXaml Update="Components\Nft\NftTransferView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Password\EnterPasswordPopupView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Settings\DeveloperSettingsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Settings\QuestionAnswerView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Settings\SettingsPage.xaml">
@@ -569,6 +628,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Table\TableCurrencyCell.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Tabs\TabsView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\TransactionAnalyzer\AnalyzedOutcomeView.xaml">
@@ -587,6 +649,63 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Unique\OpenUniqueButton.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XcavateProperty\CompanyThumbnailView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XcavateProperty\LocationView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XcavateProperty\PropertyDetailPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XcavateProperty\PropertyThumbnailView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XcavateProperty\SliderView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XcavateProperty\XcavatePropertyMarketplacePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XCavate\AboutUsView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XCavate\CompanyPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XCavate\CompanyUserStatusBadgeView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XCavate\DeveloperStatsView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XCavate\DocumentVerificationView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XCavate\FrequentlyAskedQuestionsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XCavate\ModifyCompanyPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XCavate\ModifyUserProfilePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XCavate\TeamMemberView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XCavate\UserProfileHeaderView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XCavate\UserProfilePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XCavate\UserTypeBadgeView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XCavate\VerificationBadgeView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\MainPage.xaml">
@@ -679,14 +798,12 @@
 	  <Folder Include="Resources\Images\PredefinedLayouts\" />
 	  <Folder Include="Components\AwesomeAjunaAvatars\" />
 	  <Folder Include="Components\Contract\" />
-	  <Folder Include="Components\ConfirmTransaction\" />
 	  <Folder Include="Components\AzeroId\" />
 	  <Folder Include="Resources\Images\FatCat\" />
 	  <Folder Include="Components\Identity\" />
 	  <Folder Include="Components\Vault\" />
 	  <Folder Include="Components\Referenda\" />
 	  <Folder Include="Components\ChangeLayoutRequest\" />
-	  <Folder Include="Components\Mnemonics\" />
 	  <Folder Include="Components\Fee\" />
 	  <Folder Include="Components\VTokens\" />
 	  <Folder Include="Components\UpdateView\" />

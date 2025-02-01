@@ -43,6 +43,10 @@
     {
       "name": "Mythos",
       "websocket": "wss://polkadot-mythos-rpc.polkadot.io"
+    },
+    {
+      "name": "XCavatePaseo",
+      "websocket": "wss://fraa-dancebox-3107-rpc.a.dancebox.tanssi.network/"
     }
   ]
 }

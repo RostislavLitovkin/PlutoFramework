@@ -3,30 +3,34 @@ using Substrate.NetApi.Model.Types;
 using Polkadot.NetApi.Generated.Model.sp_core.crypto;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
-using PlutoFramework.Components.ConfirmTransaction;
 using Substrate.NET.Wallet;
 using Substrate.NET.Schnorrkel.Keys;
+using PlutoFramework.Components.Password;
 
 namespace PlutoFramework.Model
 {
+    public enum AccountType
+    {
+        None,
+        Mnemonic,
+        PrivateKey,
+        Json,
+    }
     public class KeysModel
     {
-
+        // Can change with future updates to substrate
+        private const ExpandMode DEFAULT_EXPAND_MODE = ExpandMode.Ed25519;
         public static async Task GenerateNewAccountAsync(string password)
         {
-            Console.WriteLine("Generate started");
-
             string mnemonics = MnemonicsModel.GenerateMnemonics();
-
-            Console.WriteLine("New mnemonics generated");
 
             await GenerateNewAccountAsync(mnemonics, password);
         }
 
-        public static async Task GenerateNewAccountAsync(string mnemonics, string password)
+        private static async Task RegisterBiometricAuthenticationAsync()
         {
-            Preferences.Set("biometricsEnabled", false);
-           
+            Preferences.Set(PreferencesModel.BIOMETRICS_ENABLED, false);
+
             try
             {
                 // Set biometrics
@@ -40,97 +44,133 @@ namespace PlutoFramework.Model
                     {
                         // Fingerprint set, perhaps do with it something in the future
 
-                        Preferences.Set("biometricsEnabled", true);
+                        Preferences.Set(PreferencesModel.BIOMETRICS_ENABLED, true);
 
                         break;
-                    }
-                    else
-                    {
-
                     }
                 }
             }
             catch
             {
-
+                // throws exception if Authentication is not awailable
+                // Instead, just password will be used
             }
+        }
 
-            // This is default, could be changed in the future or with a setting
-            // ExpandMode expandMode = ExpandMode.Ed25519;
+        public static async Task GenerateNewAccountAsync(string mnemonics, string password)
+        {
+            await RegisterBiometricAuthenticationAsync();
 
-            Account account = MnemonicsModel.GetAccount(mnemonics);
+            Account account = MnemonicsModel.GetAccountFromMnemonics(mnemonics);
 
             Preferences.Set(
-                "publicKey",
+                PreferencesModel.PUBLIC_KEY,
                  account.Value
             );
 
             await SecureStorage.Default.SetAsync(
-                "mnemonics",
+                PreferencesModel.MNEMONICS,
                  mnemonics
             );
 
             await SecureStorage.Default.SetAsync(
-                "password",
+                PreferencesModel.PASSWORD,
                 password
             );
 
-            Preferences.Set("privateKeyExpandMode", 1);
+            Preferences.Set(PreferencesModel.PRIVATE_KEY_EXPAND_MODE, (int)DEFAULT_EXPAND_MODE);
 
-            Preferences.Set("usePrivateKey", false);
+            Preferences.Set(PreferencesModel.ACCOUNT_TYPE, AccountType.Mnemonic.ToString());
         }
 
         public static async Task GenerateNewAccountFromPrivateKeyAsync(string privateKey)
         {
-            // This is default, could be changed in the future or with a setting
-            ExpandMode expandMode = ExpandMode.Ed25519;
-
-            var miniSecret = new MiniSecret(Utils.HexToByteArray(privateKey), expandMode);
+            var miniSecret = new MiniSecret(Utils.HexToByteArray(privateKey), ExpandMode.Ed25519);
 
             Account account = Account.Build(
                 KeyType.Sr25519,
                 miniSecret.ExpandToSecret().ToEd25519Bytes(),
-                miniSecret.GetPair().Public.Key);
+                miniSecret.GetPair().Public.Key
+            );
 
             await SecureStorage.Default.SetAsync(
-                "privateKey",
+                 PreferencesModel.PRIVATE_KEY,
                  privateKey
             );
 
             Preferences.Set(
-                "publicKey",
+                 PreferencesModel.PUBLIC_KEY,
                  account.Value
             );
 
-            Preferences.Set("privateKeyExpandMode", 1);
+            Preferences.Set(PreferencesModel.PRIVATE_KEY_EXPAND_MODE, (int)ExpandMode.Ed25519);
 
-            Preferences.Set("usePrivateKey", true);
+            Preferences.Set(PreferencesModel.ACCOUNT_TYPE, AccountType.PrivateKey.ToString());
         }
 
         public static async Task GenerateNewAccountFromJsonAsync(string json)
         {
-            Wallet wallet = MnemonicsModel.ImportJson(json, await SecureStorage.Default.GetAsync("password"));
+            var viewModel = DependencyService.Get<EnterPasswordPopupViewModel>();
 
-            if (wallet.IsLocked)
+            viewModel.IsVisible = true;
+
+            string correctPassword = "";
+            string publicKey = "";
+
+            for (int i = 0; i < 5; i++)
             {
-                throw new Exception("Bad password");
+                var password = await viewModel.EnteredPassword.Task;
+
+                if (password is null)
+                {
+                    return;
+                }
+
+                Wallet wallet = MnemonicsModel.ImportJson(json, password);
+
+                if (wallet.IsUnlocked)
+                {
+                    correctPassword = password.ToString();
+                    publicKey = wallet.Account.Value;
+
+                    viewModel.SetToDefault();
+
+                    break;
+                }
+
+                viewModel.ErrorIsVisible = true;
+
+                viewModel.EnteredPassword = new();
+
+                if (i == 4)
+                {
+                    viewModel.SetToDefault();
+                    throw new Exception("Failed to authenticate");
+                }
             }
 
-            Account account = wallet.Account;
-
             Preferences.Set(
-                "publicKey",
-                 account.Value
+                 PreferencesModel.PUBLIC_KEY,
+                 publicKey
             );
 
-            Preferences.Set("privateKeyExpandMode", 1);
+            await SecureStorage.Default.SetAsync(
+                PreferencesModel.PASSWORD,
+                correctPassword
+            );
 
-            Preferences.Set("usePrivateKey", true);
+            await SecureStorage.Default.SetAsync(
+                 PreferencesModel.JSON_ACCOUNT,
+                 json
+            );
+
+            Preferences.Set(PreferencesModel.ACCOUNT_TYPE, AccountType.Json.ToString());
         }
 
         public static string GetSubstrateKey()
         {
-            return Preferences.Get("publicKey", "Error - no pubKey");
+            // publicKey should be always saved
+            return Preferences.Get(PreferencesModel.PUBLIC_KEY, "Error - no pubKey");
         }
 
         public static string GetPublicKey()
@@ -146,27 +186,18 @@ namespace PlutoFramework.Model
             return Utils.GetPublicKeyFrom(GetSubstrateKey());
         }
 
-        /// <summary>
-        /// Call this method when you want get the mnemonics or private key
-        ///
-        /// To use correctly, use this line:
-        ///
-        /// if ((await KeysModel.GetMnemonicsOrPrivateKeyAsync()).IsSome(out (string, bool) secretValues))
-        /// {
-        ///     var(mnemonicsOrPrivateKey, usePrivateKey) = secretValues;
-        ///     ...
-        /// }
-        /// </summary>
-        public static async Task<Option<(string, bool)>> GetMnemonicsOrPrivateKeyAsync()
+        public static async Task<string?> GetMnemonicsOrPrivateKeyAsync()
         {
-            var biometricsEnabled = Preferences.Get("biometricsEnabled", false);
+            var accountType = (AccountType)Enum.Parse(typeof(AccountType), Preferences.Get(PreferencesModel.ACCOUNT_TYPE, AccountType.None.ToString()));
+
+            var biometricsEnabled = Preferences.Get(PreferencesModel.BIOMETRICS_ENABLED, false);
 
             var request = new AuthenticationRequestConfiguration("Biometric verification", "..");
             FingerprintAuthenticationResult result;
 
             if (biometricsEnabled)
             {
-                result = await CrossFingerprint.Current.AuthenticateAsync(request);
+                result = await CrossFingerprint.Current.AuthenticateAsync(request).ConfigureAwait(false);
             }
             else
             {
@@ -176,96 +207,108 @@ namespace PlutoFramework.Model
                 };
             }
 
-            if (result.Authenticated)
+            if (!result.Authenticated)
             {
-                if (Preferences.Get("usePrivateKey", false))
-                {
-                    return Option<(string, bool)>.Some((await SecureStorage.Default.GetAsync("privateKey"), true));
-                }
-                else
-                {
-                    return Option<(string, bool)>.Some((await SecureStorage.Default.GetAsync("mnemonics"), false));
-                }
-            }
-            else // Request password instead..
-            {
-                var viewModel = DependencyService.Get<ConfirmTransactionViewModel>();
 
-                viewModel.Status = ConfirmTransactionStatus.Waiting;
-                viewModel.Password = "";
-                viewModel.ErrorIsVisible = false;
+                var viewModel = DependencyService.Get<EnterPasswordPopupViewModel>();
+
                 viewModel.IsVisible = true;
 
+                var correctPassword = await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD).ConfigureAwait(false) ?? throw new ArgumentNullException("Password was not setup");
 
-                while (viewModel.Status == ConfirmTransactionStatus.Waiting)
+                for (int i = 0; i < 5; i++)
                 {
-                    await Task.Delay(500);
-                }
+                    var password = await viewModel.EnteredPassword.Task;
 
-                if (viewModel.Status == ConfirmTransactionStatus.Verified)
-                {
-                    if (Preferences.Get("usePrivateKey", false))
+                    if (password is null)
                     {
-                        return Option<(string, bool)>.Some((await SecureStorage.Default.GetAsync("privateKey"), true));
+                        viewModel.SetToDefault();
+                        throw new Exception("Failed to authenticate");
                     }
-                    else
+
+                    if (password == correctPassword)
                     {
-                        return Option<(string, bool)>.Some((await SecureStorage.Default.GetAsync("mnemonics"), false));
+                        viewModel.SetToDefault();
+
+                        break;
                     }
-                }
-                else if (viewModel.Status == ConfirmTransactionStatus.Denied)
-                {
-                    return Option<(string, bool)>.None;
+
+                    viewModel.ErrorIsVisible = true;
+
+                    viewModel.EnteredPassword = new();
+
+                    if (i == 4)
+                    {
+                        viewModel.SetToDefault();
+                        throw new Exception("Failed to authenticate");
+                    }
                 }
             }
 
-            return Option<(string, bool)>.None;
+            return accountType switch {
+                AccountType.Mnemonic => await SecureStorage.Default.GetAsync(PreferencesModel.MNEMONICS).ConfigureAwait(false),
+                AccountType.PrivateKey => await SecureStorage.Default.GetAsync(PreferencesModel.PRIVATE_KEY).ConfigureAwait(false),
+                AccountType.Json => await SecureStorage.Default.GetAsync(PreferencesModel.JSON_ACCOUNT).ConfigureAwait(false),
+                _ => null
+            };
         }
 
-        /// <summary>
-        /// Call this method when you want to sign a message or transaction.
-        ///
-        /// To use correctly, use this line:
-        ///
-        /// if ((await KeysModel.GetAccount()).IsSome(out var account))
-        /// </summary>
-        public static async Task<Option<Account>> GetAccount()
+        public static async Task<Account?> GetAccountAsync()
         {
-            ExpandMode expandMode;
-
-            switch (Preferences.Get("privateKeyExpandMode", 1))
+            var expandMode = Preferences.Get(PreferencesModel.PRIVATE_KEY_EXPAND_MODE, (int)DEFAULT_EXPAND_MODE) switch
             {
-                case 0:
-                    expandMode = ExpandMode.Uniform;
-                    break;
-                case 1:
-                    expandMode = ExpandMode.Ed25519;
-                    break;
-                default:
-                    expandMode = ExpandMode.Uniform;
-                    break;
-            }
+                0 => ExpandMode.Uniform,
+                1 => ExpandMode.Ed25519,
+                _ => DEFAULT_EXPAND_MODE,
+            };
 
-            if ((await KeysModel.GetMnemonicsOrPrivateKeyAsync()).IsSome(out (string, bool) secretValues))
+            try
             {
-                var (mnemonicsOrPrivateKey, _usePrivateKey) = secretValues;
+                var secret = await GetMnemonicsOrPrivateKeyAsync();
 
-                // use Private key
-                if (Preferences.Get("usePrivateKey", false))
+                if (secret is null)
                 {
-                    var miniSecret2 = new MiniSecret(Utils.HexToByteArray(mnemonicsOrPrivateKey), expandMode);
-
-                    return Option<Account>.Some(Account.Build(KeyType.Sr25519,
-                        miniSecret2.ExpandToSecret().ToEd25519Bytes(),
-                        miniSecret2.GetPair().Public.Key));
+                    return null;
                 }
 
-                return Option<Account>.Some(MnemonicsModel.GetAccount(mnemonicsOrPrivateKey));
-            }
+                var accountType = (AccountType)Enum.Parse(typeof(AccountType), Preferences.Get(PreferencesModel.ACCOUNT_TYPE, AccountType.None.ToString()));
 
-            return Option<Account>.None;
+                return accountType switch
+                {
+                    AccountType.Mnemonic => MnemonicsModel.GetAccountFromMnemonics(secret),
+                    AccountType.PrivateKey => GetAccountFromPrivateKey(secret, expandMode),
+                    AccountType.Json => GetAccountFromJson(secret, await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD).ConfigureAwait(false) ?? ""),
+                    _ => null
+                };
+            }
+            catch
+            {
+                return null;
+            }
         }
 
+        private static Account GetAccountFromPrivateKey(string secret, ExpandMode expandMode)
+        {
+            var miniSecret = new MiniSecret(Utils.HexToByteArray(secret), expandMode);
+
+            return Account.Build(
+                KeyType.Sr25519,
+                miniSecret.ExpandToSecret().ToEd25519Bytes(),
+                miniSecret.GetPair().Public.Key);
+        }
+        private static Account? GetAccountFromJson(string json, string password)
+        {
+            var keyring = new Substrate.NET.Wallet.Keyring.Keyring();
+
+            var wallet = keyring.AddFromJson(json);
+
+            if(!wallet.Unlock(password))
+            {
+                return null;
+            }
+
+            return wallet.Account;
+        }
         public static AccountId32 GetAccountId32()
         {
             var accountId = new AccountId32();

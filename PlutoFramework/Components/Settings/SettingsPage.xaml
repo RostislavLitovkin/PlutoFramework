@@ -4,7 +4,7 @@
              xmlns:settings="clr-namespace:PlutoFramework.Components.Settings"
              x:Class="PlutoFramework.Components.Settings.SettingsPage"
              xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-             xmlns:confirmtransaction="clr-namespace:PlutoFramework.Components.ConfirmTransaction"
+             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
              Title="Settings"
              BackgroundColor="Black">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
@@ -60,6 +60,6 @@
         <navigationbar:TopNavigationBar Title="Settings"
                                     x:Name="topNavigationBar" />
 
-        <confirmtransaction:ConfirmTransactionView />
+        <password:EnterPasswordPopupView />
     </AbsoluteLayout>
 </ContentPage>

@@ -34,6 +34,7 @@ namespace PlutoFramework.Constants
         Local8000,
         Local8001,
         Local8002,
+        XCavatePaseo,
     }
     public class Endpoints
     {
@@ -64,6 +65,7 @@ namespace PlutoFramework.Constants
             { "0xafdc188f45c71dacbaa0b62e16a91f726c7b8699a9748cdf715459de6b7f366d", EndpointEnum.Hydration },
             { "0x401a1f9dca3da46f5c4091016c8a2f26dcea05865116b286f60f668207d1474b", EndpointEnum.Moonriver },
             { "0x262e1b2ad728475fd6fe88e62d34c200abe6fd693931ddad144059b1eb884e5b", EndpointEnum.Bifrost },
+            { "0xbd91a2939adb4f6fb9f53b9a778176d6da0a708d56dc8beceab2e93445ed0bbc", EndpointEnum.XCavatePaseo },
         });
 
         public static readonly ReadOnlyDictionary<string, EndpointEnum> ParachainIdToKey = new ReadOnlyDictionary<string, EndpointEnum>(new Dictionary<string, EndpointEnum>()
@@ -423,12 +425,12 @@ namespace PlutoFramework.Constants
                     Id = 2034
                 },
             } },
-            /*{
-                "xcavate", new Endpoint
+            {
+                EndpointEnum.XCavatePaseo, new Endpoint
                 {
-                    Name = "XCavate",
-                    Key = "xcavate",
-                    URLs =  new string[2] { "wss://fraa-dancebox-3031-rpc.a.dancebox.tanssi.network" },
+                    Name = "XCavate Paseo",
+                    Key = EndpointEnum.XCavatePaseo,
+                    URLs =  new string[1] { "wss://fraa-dancebox-3107-rpc.a.dancebox.tanssi.network/" },
                     Icon = "xcavate.png",
                     DarkIcon = "xcavate.png",
                     Unit = "XCAV",
@@ -437,7 +439,7 @@ namespace PlutoFramework.Constants
                     ChainType = ChainType.Substrate,
                     SupportsNfts = true,
                 }
-            },*/
+            },
             {
                 EndpointEnum.Moonriver, new Endpoint
                 {

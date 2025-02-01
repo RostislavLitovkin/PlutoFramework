@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.XCavate.DeveloperStatsView"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             xmlns:table="clr-namespace:PlutoFramework.Components.Table">
+    <Grid AbsoluteLayout.LayoutBounds="0.5, 25, 1, 185"
+                      AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                      ColumnSpacing="5"
+                      RowSpacing="5"
+                      Margin="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="70" />
+        </Grid.RowDefinitions>
+
+        <table:TableCurrencyCell Grid.Column="0"
+                                             Grid.Row="0"
+                                             Title="Listed properties"
+                                             Value="{Binding ActiveListedProperties}" />
+        <table:TableCurrencyCell Grid.Column="1"
+                                             Grid.Row="0"
+                                          Title="Tokens sold"
+                                          Value="{Binding PropertyTokensSold}" />
+        <table:TableCurrencyCell Grid.Column="0"
+                                             Grid.Row="1"
+                                          Title="Total sales"
+                                          Value="{Binding TotalSales}" />
+        <table:TableCurrencyCell Grid.Column="1"
+                                             Grid.Row="1"
+                                          Title="Average sale time"
+                                          Value="{Binding AverageSaleTime}" />
+    </Grid>
+</ContentView>
