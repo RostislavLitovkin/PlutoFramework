@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.rostislavlitovkin.plutowallet" android:versionName="1.18" android:versionCode="19">
-	<application android:allowBackup="false" android:supportsRtl="true" android:label="Pluto Wallet" android:icon="@mipmap/appicon"></application>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.rostislavlitovkin.plutowallet" android:versionName="1.20" android:versionCode="21">
+	<application android:allowBackup="false" android:supportsRtl="true" android:label="PlutoWallet" android:icon="@mipmap/appicon"></application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.CAMERA" />
@@ -9,7 +9,6 @@
 	<uses-permission android:name="android.permission.USE_FINGERPRINT" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
-  <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 	<uses-permission android:name="android.permission.FOREGROUND_SERVICE_REMOTE_MESSAGING" />
 	<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
