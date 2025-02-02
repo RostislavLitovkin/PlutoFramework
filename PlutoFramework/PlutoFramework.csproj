@@ -147,6 +147,7 @@
 	  <None Remove="Resources\Images\liquidityfinderwhite.png" />
 	  <None Remove="Resources\Images\moredotsgray.svg" />
 	  <None Remove="Resources\Images\NetworkIcons\hydration.svg" />
+	  <None Remove="Resources\Images\NetworkIcons\kilt.png" />
 	  <None Remove="Resources\Images\NetworkIcons\kusamaassethub.svg" />
 	  <None Remove="Resources\Images\NetworkIcons\mythos.png" />
 	  <None Remove="Resources\Images\NetworkIcons\polkadotassethub.svg" />
