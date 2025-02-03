@@ -14,11 +14,11 @@ namespace PlutoFrameworkTests
         [SetUp]
         public async Task SetupAsync()
         {
-            Endpoint hdxEndpoint = PlutoFramework.Constants.Endpoints.GetEndpointDictionary[EndpointEnum.PolkadotPeople];
+            Endpoint endpoint = PlutoFramework.Constants.Endpoints.GetEndpointDictionary[EndpointEnum.PolkadotPeople];
 
             client = new SubstrateClientExt(
-                    hdxEndpoint,
-                        new Uri(hdxEndpoint.URLs[0]),
+                    endpoint,
+                        new Uri(endpoint.URLs[0]),
                         Substrate.NetApi.Model.Extrinsics.ChargeTransactionPayment.Default());
 
             await client.ConnectAndLoadMetadataAsync();
