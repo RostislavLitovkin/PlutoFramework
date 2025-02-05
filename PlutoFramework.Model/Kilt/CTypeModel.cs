@@ -39,9 +39,21 @@ namespace PlutoFramework.Model
         public required string Type { get; set; }
     }
 
+    public record FullCTypeSchema : CTypeSchema
+    {
+        [JsonPropertyName("$id")]
+        public string Id => $"kilt:ctype:{CTypeModel.ComputeCTypeIdHash(this)}";
+    }
+
+    public record CredentialsClaim
+    {
+        public required string CTypeHash { get; set; }
+        public required Dictionary<string, object> Contents { get; set; }
+        public required string OwnerDid { get; set; }
+    }
     public class CTypeModel
     {
-        public static string ComputeCTypeId(CTypeSchema schema)
+        public static string ComputeCTypeIdHash(CTypeSchema schema)
         {
             schema.Properties = CanonicalizeProperties(schema.Properties);
             string json = JsonSerializer.Serialize(schema);
@@ -50,9 +62,25 @@ namespace PlutoFramework.Model
 
             var hash = HashExtension.Blake2(Encoding.UTF8.GetBytes(json), 256);
 
-            return $"kilt:ctype:{Utils.Bytes2HexString(hash).ToLower()}";
+            return Utils.Bytes2HexString(hash).ToLower();
         }
 
+        /// <summary>
+        /// https://github.com/KILTprotocol/sdk-js/blob/74f4d5cd6e2a417af4ff53c58bd56acfe2c75dd8/packages/legacy-credentials/src/Claim.ts#L208
+        /// </summary>
+        public static CredentialsClaim fromCTypeAndClaimContents(
+            CTypeSchema ctype,
+            Dictionary<string, object> claimContents,
+            string claimerDid
+            )
+        {
+            return new CredentialsClaim
+            {
+                CTypeHash = ComputeCTypeIdHash(ctype),
+                Contents = claimContents,
+                OwnerDid = claimerDid
+            };
+        }
         private static Dictionary<string, CTypeProperty> CanonicalizeProperties(Dictionary<string, CTypeProperty> properties)
         {
             var sortedProperties = new Dictionary<string, CTypeProperty>();
@@ -64,5 +92,7 @@ namespace PlutoFramework.Model
 
             return sortedProperties;
         }
+
+        
     }
 }
