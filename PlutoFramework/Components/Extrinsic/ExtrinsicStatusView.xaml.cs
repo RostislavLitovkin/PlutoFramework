@@ -180,10 +180,6 @@ public partial class ExtrinsicStatusView : ContentView
     {
         if (e.StatusType == GestureStatus.Started)
         {
-            var mainViewModel = DependencyService.Get<MainViewModel>();
-
-            mainViewModel.ScrollIsEnabled = false;
-
             _positions = new Queue<(float, float)>();
         }
 
@@ -225,10 +221,6 @@ public partial class ExtrinsicStatusView : ContentView
             extrinsicStackViewModel.Extrinsics.Remove(ExtrinsicId);
 
             extrinsicStackViewModel.Update();
-
-            var mainViewModel = DependencyService.Get<MainViewModel>();
-
-            mainViewModel.ScrollIsEnabled = true;
         }
     }
 

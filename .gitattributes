@@ -61,3 +61,9 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+PlutoFramework/PlutoFramework.csproj merge=ours
+PlutoFramework/Platforms/Android/AndroidManifest.xml merge=ours
+PlutoFramework/Resources/AppIcon/appicon.png merge=ours
+PlutoFramework/Resources/Images/whitebackground.png merge=ours
+PlutoFramework/Resources/Images/darkbackground.png merge=ours
