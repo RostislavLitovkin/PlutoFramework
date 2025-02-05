@@ -46,4 +46,10 @@ public partial class NftAttributeView : ContentView
         get => (string)GetValue(ValueProperty);
         set => SetValue(ValueProperty, value);
     }
+
+    public Color CardBackgroundColor
+    {
+        get => (Color)GetValue(CardBackgroundColorProperty);
+        set => SetValue(CardBackgroundColorProperty, value);
+    }
 }

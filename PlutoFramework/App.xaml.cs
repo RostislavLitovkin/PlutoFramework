@@ -1,5 +1,4 @@
-﻿using PlutoFramework.Components.ArgumentsView;
-using PlutoFramework.Components.ConnectionRequestView;
+﻿using PlutoFramework.Components.ConnectionRequestView;
 using PlutoFramework.Components.MessagePopup;
 using PlutoFramework.Components.NetworkSelect;
 using PlutoFramework.Components.TransactionRequest;
@@ -41,8 +40,6 @@ public partial class App : Application
         DependencyService.Register<MessagePopupViewModel>();
 
         DependencyService.Register<TransactionRequestViewModel>();
-
-        DependencyService.Register<ArgumentsViewModel>();
 
         DependencyService.Register<AddressQrCodeViewModel>();
 
