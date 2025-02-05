@@ -22,8 +22,6 @@ public partial class MainPage : ContentPage
 
         InitializeComponent();
 
-        BindingContext = DependencyService.Get<MainViewModel>();
-
         StackLayout = stackLayout;
 
         SetupLayout();

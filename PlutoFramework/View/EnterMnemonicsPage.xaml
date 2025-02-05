@@ -7,7 +7,7 @@
              xmlns:password="clr-namespace:PlutoFramework.Components.Password"
              x:Class="PlutoFramework.View.EnterMnemonicsPage"
              xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
-             BackgroundColor="Black">
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <ContentPage.BindingContext>
         <viewmodel:EnterMnemonicsViewModel x:Name="viewModel" />
 
