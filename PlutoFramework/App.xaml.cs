@@ -34,8 +34,6 @@ public partial class App : Application
     {
         InitializeComponent();
 
-        DependencyService.Register<MainViewModel>();
-
         DependencyService.Register<TransferViewModel>();
 
         DependencyService.Register<ConnectionRequestViewModel>();

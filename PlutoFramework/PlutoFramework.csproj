@@ -742,10 +742,6 @@
 	  <MauiXaml Update="Components\BalanceView\BalanceView.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
-
-	  <MauiXaml Update="Components\ArgumentsView\ArgumentsView.xaml">
-		<SubType></SubType>
-	  </MauiXaml>
 	  <MauiXaml Update="Components\DAppConnectionView\DAppConnectionView.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
@@ -794,7 +790,6 @@
 	  <Folder Include="Components\MessagePopup\" />
 	  <Folder Include="Components\TransactionRequest\" />
 	  <Folder Include="Components\CalamarView\" />
-	  <Folder Include="Components\ArgumentsView\" />
 	  <Folder Include="Components\Staking\" />
 	  <Folder Include="Components\Switch\" />
 	  <Folder Include="Components\WebView\" />

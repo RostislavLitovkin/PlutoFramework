@@ -12,7 +12,7 @@
              xmlns:password="clr-namespace:PlutoFramework.Components.Password"
              xmlns:model="clr-namespace:PlutoFramework.Model;assembly=PlutoFramework.Model"
              xmlns:date="clr-namespace:PlutoFramework.Components.Date"
-            BackgroundColor="Black">
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
         <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
