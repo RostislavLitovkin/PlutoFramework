@@ -16,7 +16,7 @@
          xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
          xmlns:vault="clr-namespace:PlutoFramework.Components.Vault"
          xmlns:changelayoutrequest="clr-namespace:PlutoFramework.Components.ChangeLayoutRequest"
-         BackgroundColor="Black">
+         BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
 
     <AbsoluteLayout
                 AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">

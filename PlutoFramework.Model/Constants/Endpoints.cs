@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using Amazon.Runtime.Internal.Transform;
+using System.Collections.ObjectModel;
 
 namespace PlutoFramework.Constants
 {
@@ -30,6 +31,7 @@ namespace PlutoFramework.Constants
         Hydration,
         Moonriver,
         Bifrost,
+        Kilt,
         Local,
         Local8000,
         Local8001,
@@ -65,6 +67,7 @@ namespace PlutoFramework.Constants
             { "0xafdc188f45c71dacbaa0b62e16a91f726c7b8699a9748cdf715459de6b7f366d", EndpointEnum.Hydration },
             { "0x401a1f9dca3da46f5c4091016c8a2f26dcea05865116b286f60f668207d1474b", EndpointEnum.Moonriver },
             { "0x262e1b2ad728475fd6fe88e62d34c200abe6fd693931ddad144059b1eb884e5b", EndpointEnum.Bifrost },
+            { "0x411f057b9107718c9624d6aa4a3f23c1653898297f3d4d529d9bb6511a39dd21", EndpointEnum.Kilt },
             { "0xbd91a2939adb4f6fb9f53b9a778176d6da0a708d56dc8beceab2e93445ed0bbc", EndpointEnum.XCavatePaseo },
         });
 
@@ -467,6 +470,20 @@ namespace PlutoFramework.Constants
                     Unit = "BNC",
                     SS58Prefix = 6,
                     Decimals = 12,
+                    ChainType = ChainType.Substrate,
+                }
+            },
+            {
+                EndpointEnum.Kilt, new Endpoint
+                {
+                    Name = "Kilt",
+                    Key = EndpointEnum.Kilt,
+                    URLs =  new string[2] { "wss://kilt.ibp.network", "wss://kilt-rpc.dwellir.com" },
+                    Icon = "kilt.png",
+                    DarkIcon = "kilt.png",
+                    Unit = "KILT",
+                    SS58Prefix = 38,
+                    Decimals = 15,
                     ChainType = ChainType.Substrate,
                 }
             },

@@ -259,6 +259,11 @@ namespace PlutoFramework.Model
                 EndpointEnum.Opal => await GetExtrinsicEventsAsync<Opal.NetApi.Generated.Model.opal_runtime.EnumRuntimeEvent>(substrateClient, extrinsicIndex, eventsBytes, blockNumber, token),
                 EndpointEnum.Hydration => await GetExtrinsicEventsAsync<Hydration.NetApi.Generated.Model.hydradx_runtime.EnumRuntimeEvent>(substrateClient, extrinsicIndex, eventsBytes, blockNumber, token),
                 EndpointEnum.XCavatePaseo => await GetExtrinsicEventsAsync<XCavatePaseo.NetApi.Generated.Model.generic_runtime_template.EnumRuntimeEvent>(substrateClient, extrinsicIndex, eventsBytes, blockNumber, token),
+                EndpointEnum.Mythos => await GetExtrinsicEventsAsync<Mythos.NetApi.Generated.Model.mainnet_runtime.EnumRuntimeEvent>(substrateClient, extrinsicIndex, eventsBytes, blockNumber, token),
+                EndpointEnum.Bajun => await GetExtrinsicEventsAsync<Bajun.NetApi.Generated.Model.bajun_runtime.EnumRuntimeEvent>(substrateClient, extrinsicIndex, eventsBytes, blockNumber, token),
+                EndpointEnum.Bifrost => await GetExtrinsicEventsAsync<Bifrost.NetApi.Generated.Model.bifrost_polkadot_runtime.EnumRuntimeEvent>(substrateClient, extrinsicIndex, eventsBytes, blockNumber, token),
+                EndpointEnum.PolkadotPeople => await GetExtrinsicEventsAsync<PolkadotPeople.NetApi.Generated.Model.people_polkadot_runtime.EnumRuntimeEvent>(substrateClient, extrinsicIndex, eventsBytes, blockNumber, token),
+                EndpointEnum.Kilt => await GetExtrinsicEventsAsync<Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeEvent>(substrateClient, extrinsicIndex, eventsBytes, blockNumber, token),
                 _ => await GetExtrinsicDetailsAsync(substrateClient, extrinsicIndex, eventsBytes, blockNumber, token),
             };
         }

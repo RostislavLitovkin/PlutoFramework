@@ -47,6 +47,10 @@
     {
       "name": "XCavatePaseo",
       "websocket": "wss://fraa-dancebox-3107-rpc.a.dancebox.tanssi.network/"
+    },
+    {
+      "name": "Kilt",
+      "websocket": "wss://kilt.ibp.network"
     }
   ]
 }
