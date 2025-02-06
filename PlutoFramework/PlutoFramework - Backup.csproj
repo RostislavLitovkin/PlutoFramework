@@ -15,7 +15,7 @@
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
 
 		<!-- Display name -->
-		<ApplicationTitle>XCavate</ApplicationTitle>
+		<ApplicationTitle>Xcavate</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.xcavate.xcavate</ApplicationId>

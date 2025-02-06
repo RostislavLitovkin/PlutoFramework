@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7
+namespace XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7
 {
     
     
@@ -63,7 +63,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7
         /// <summary>
         /// >> async_backing_params
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.async_backing.AsyncBackingParams AsyncBackingParams { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.async_backing.AsyncBackingParams AsyncBackingParams { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -110,7 +110,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7
             ValidationUpgradeCooldown.Decode(byteArray, ref p);
             ValidationUpgradeDelay = new Substrate.NetApi.Model.Types.Primitive.U32();
             ValidationUpgradeDelay.Decode(byteArray, ref p);
-            AsyncBackingParams = new XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.async_backing.AsyncBackingParams();
+            AsyncBackingParams = new XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.async_backing.AsyncBackingParams();
             AsyncBackingParams.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

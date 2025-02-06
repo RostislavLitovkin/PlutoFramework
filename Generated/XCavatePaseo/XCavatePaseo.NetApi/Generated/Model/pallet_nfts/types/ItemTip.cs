@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
 {
     
     
@@ -35,7 +35,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
         /// <summary>
         /// >> receiver
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Receiver { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Receiver { get; set; }
         /// <summary>
         /// >> amount
         /// </summary>
@@ -66,7 +66,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
             Collection.Decode(byteArray, ref p);
             Item = new Substrate.NetApi.Model.Types.Primitive.U32();
             Item.Decode(byteArray, ref p);
-            Receiver = new XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            Receiver = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Receiver.Decode(byteArray, ref p);
             Amount = new Substrate.NetApi.Model.Types.Primitive.U128();
             Amount.Decode(byteArray, ref p);

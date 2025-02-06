@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.pallet
 {
     
     
@@ -41,7 +41,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Types.Base.Arr32U8>(Event.XcmpMessageSent);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8>(Event.XcmpMessageSent);
         }
     }
 }

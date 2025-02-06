@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.xcm.v2
+namespace XcavatePaseo.NetApi.Generated.Model.xcm.v2
 {
     
     
@@ -54,7 +54,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v2
         public EnumNetworkId()
         {
 				AddTypeDecoder<BaseVoid>(NetworkId.Any);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT1>(NetworkId.Named);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT1>(NetworkId.Named);
 				AddTypeDecoder<BaseVoid>(NetworkId.Polkadot);
 				AddTypeDecoder<BaseVoid>(NetworkId.Kusama);
         }

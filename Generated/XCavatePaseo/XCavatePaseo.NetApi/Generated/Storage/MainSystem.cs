@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -37,34 +37,34 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "Account"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(XCavatePaseo.NetApi.Generated.Model.frame_system.AccountInfo)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(XcavatePaseo.NetApi.Generated.Model.frame_system.AccountInfo)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "ExtrinsicCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "InherentsApplied"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "BlockWeight"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.frame_support.dispatch.PerDispatchClassT1)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "BlockWeight"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.frame_support.dispatch.PerDispatchClassT1)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "AllExtrinsicsLen"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "BlockHash"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.primitive_types.H256)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.primitive_types.H256)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "ExtrinsicData"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "Number"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "ParentHash"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.primitive_types.H256)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "Digest"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.sp_runtime.generic.digest.Digest)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "Events"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.frame_system.EventRecord>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "ParentHash"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.primitive_types.H256)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "Digest"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.sp_runtime.generic.digest.Digest)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "Events"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.frame_system.EventRecord>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "EventCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "EventTopics"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XCavatePaseo.NetApi.Generated.Model.primitive_types.H256), typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "LastRuntimeUpgrade"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.frame_system.LastRuntimeUpgradeInfo)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.primitive_types.H256), typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "LastRuntimeUpgrade"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.frame_system.LastRuntimeUpgradeInfo)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "UpgradedToU32RefCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "UpgradedToTripleRefCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "ExecutionPhase"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.frame_system.EnumPhase)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "AuthorizedUpgrade"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.frame_system.CodeUpgradeAuthorization)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "ExecutionPhase"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.frame_system.EnumPhase)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "AuthorizedUpgrade"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.frame_system.CodeUpgradeAuthorization)));
         }
         
         /// <summary>
         /// >> AccountParams
         ///  The full account information for a particular account ID.
         /// </summary>
-        public static string AccountParams(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+        public static string AccountParams(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
         {
             return RequestGenerator.GetStorage("System", "Account", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -86,10 +86,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Account
         ///  The full account information for a particular account ID.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.frame_system.AccountInfo> Account(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.frame_system.AccountInfo> Account(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = SystemStorage.AccountParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.frame_system.AccountInfo>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.frame_system.AccountInfo>(parameters, blockhash, token);
             return result;
         }
         
@@ -173,10 +173,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> BlockWeight
         ///  The current weight for the block.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.frame_support.dispatch.PerDispatchClassT1> BlockWeight(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.frame_support.dispatch.PerDispatchClassT1> BlockWeight(string blockhash, CancellationToken token)
         {
             string parameters = SystemStorage.BlockWeightParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.frame_support.dispatch.PerDispatchClassT1>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.frame_support.dispatch.PerDispatchClassT1>(parameters, blockhash, token);
             return result;
         }
         
@@ -233,10 +233,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> BlockHash
         ///  Map of block numbers to block hashes.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.primitive_types.H256> BlockHash(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256> BlockHash(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = SystemStorage.BlockHashParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.primitive_types.H256>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256>(parameters, blockhash, token);
             return result;
         }
         
@@ -322,10 +322,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> ParentHash
         ///  Hash of the previous block.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.primitive_types.H256> ParentHash(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256> ParentHash(string blockhash, CancellationToken token)
         {
             string parameters = SystemStorage.ParentHashParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.primitive_types.H256>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256>(parameters, blockhash, token);
             return result;
         }
         
@@ -351,10 +351,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Digest
         ///  Digest of the current block, also part of the block header.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.sp_runtime.generic.digest.Digest> Digest(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.sp_runtime.generic.digest.Digest> Digest(string blockhash, CancellationToken token)
         {
             string parameters = SystemStorage.DigestParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.sp_runtime.generic.digest.Digest>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.sp_runtime.generic.digest.Digest>(parameters, blockhash, token);
             return result;
         }
         
@@ -392,10 +392,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  Events have a large in-memory size. Box the events to not go out-of-memory
         ///  just in case someone still reads them from within the runtime.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.frame_system.EventRecord>> Events(string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.frame_system.EventRecord>> Events(string blockhash, CancellationToken token)
         {
             string parameters = SystemStorage.EventsParams();
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.frame_system.EventRecord>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.frame_system.EventRecord>>(parameters, blockhash, token);
             return result;
         }
         
@@ -441,7 +441,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  the `EventIndex` then in case if the topic has the same contents on the next block
         ///  no notification will be triggered thus the event might be lost.
         /// </summary>
-        public static string EventTopicsParams(XCavatePaseo.NetApi.Generated.Model.primitive_types.H256 key)
+        public static string EventTopicsParams(XcavatePaseo.NetApi.Generated.Model.primitive_types.H256 key)
         {
             return RequestGenerator.GetStorage("System", "EventTopics", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -470,7 +470,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  the `EventIndex` then in case if the topic has the same contents on the next block
         ///  no notification will be triggered thus the event might be lost.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>> EventTopics(XCavatePaseo.NetApi.Generated.Model.primitive_types.H256 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>> EventTopics(XcavatePaseo.NetApi.Generated.Model.primitive_types.H256 key, string blockhash, CancellationToken token)
         {
             string parameters = SystemStorage.EventTopicsParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>>(parameters, blockhash, token);
@@ -499,10 +499,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> LastRuntimeUpgrade
         ///  Stores the `spec_version` and `spec_name` of when the last runtime upgrade happened.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.frame_system.LastRuntimeUpgradeInfo> LastRuntimeUpgrade(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.frame_system.LastRuntimeUpgradeInfo> LastRuntimeUpgrade(string blockhash, CancellationToken token)
         {
             string parameters = SystemStorage.LastRuntimeUpgradeParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.frame_system.LastRuntimeUpgradeInfo>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.frame_system.LastRuntimeUpgradeInfo>(parameters, blockhash, token);
             return result;
         }
         
@@ -588,10 +588,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> ExecutionPhase
         ///  The execution phase of the block.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.frame_system.EnumPhase> ExecutionPhase(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.frame_system.EnumPhase> ExecutionPhase(string blockhash, CancellationToken token)
         {
             string parameters = SystemStorage.ExecutionPhaseParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.frame_system.EnumPhase>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.frame_system.EnumPhase>(parameters, blockhash, token);
             return result;
         }
         
@@ -617,10 +617,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> AuthorizedUpgrade
         ///  `Some` if a code upgrade has been authorized.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.frame_system.CodeUpgradeAuthorization> AuthorizedUpgrade(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.frame_system.CodeUpgradeAuthorization> AuthorizedUpgrade(string blockhash, CancellationToken token)
         {
             string parameters = SystemStorage.AuthorizedUpgradeParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.frame_system.CodeUpgradeAuthorization>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.frame_system.CodeUpgradeAuthorization>(parameters, blockhash, token);
             return result;
         }
     }
@@ -724,7 +724,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> authorize_upgrade
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AuthorizeUpgrade(XCavatePaseo.NetApi.Generated.Model.primitive_types.H256 code_hash)
+        public static Method AuthorizeUpgrade(XcavatePaseo.NetApi.Generated.Model.primitive_types.H256 code_hash)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(code_hash.Encode());
@@ -735,7 +735,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> authorize_upgrade_without_checks
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AuthorizeUpgradeWithoutChecks(XCavatePaseo.NetApi.Generated.Model.primitive_types.H256 code_hash)
+        public static Method AuthorizeUpgradeWithoutChecks(XcavatePaseo.NetApi.Generated.Model.primitive_types.H256 code_hash)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(code_hash.Encode());
@@ -764,9 +764,9 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> BlockWeights
         ///  Block & extrinsics weights: base values and limits.
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.frame_system.limits.BlockWeights BlockWeights()
+        public XcavatePaseo.NetApi.Generated.Model.frame_system.limits.BlockWeights BlockWeights()
         {
-            var result = new XCavatePaseo.NetApi.Generated.Model.frame_system.limits.BlockWeights();
+            var result = new XcavatePaseo.NetApi.Generated.Model.frame_system.limits.BlockWeights();
             result.Create("0x624D186C00070088526A740200400142478719000107305A3E77510200E000010700E6BD4F57020" +
                     "0F0000100004247871900010730FCD2916E0200300101070088526A7402004001010700A2941A1D0" +
                     "20050004247871900000000");
@@ -777,9 +777,9 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> BlockLength
         ///  The maximum length of a block (in bytes).
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.frame_system.limits.BlockLength BlockLength()
+        public XcavatePaseo.NetApi.Generated.Model.frame_system.limits.BlockLength BlockLength()
         {
-            var result = new XCavatePaseo.NetApi.Generated.Model.frame_system.limits.BlockLength();
+            var result = new XcavatePaseo.NetApi.Generated.Model.frame_system.limits.BlockLength();
             result.Create("0x00003C000000500000005000");
             return result;
         }
@@ -799,9 +799,9 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> DbWeight
         ///  The weight of runtime database operations the runtime can invoke.
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_weights.RuntimeDbWeight DbWeight()
+        public XcavatePaseo.NetApi.Generated.Model.sp_weights.RuntimeDbWeight DbWeight()
         {
-            var result = new XCavatePaseo.NetApi.Generated.Model.sp_weights.RuntimeDbWeight();
+            var result = new XcavatePaseo.NetApi.Generated.Model.sp_weights.RuntimeDbWeight();
             result.Create("0x40787D010000000000E1F50500000000");
             return result;
         }
@@ -810,9 +810,9 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Version
         ///  Get the chain's in-code version.
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_version.RuntimeVersion Version()
+        public XcavatePaseo.NetApi.Generated.Model.sp_version.RuntimeVersion Version()
         {
-            var result = new XCavatePaseo.NetApi.Generated.Model.sp_version.RuntimeVersion();
+            var result = new XcavatePaseo.NetApi.Generated.Model.sp_version.RuntimeVersion();
             result.Create(@"0x60636F6E7461696E65722D636861696E2D74656D706C61746560636F6E7461696E65722D636861696E2D74656D706C61746501000000C90200000000000030DF6ACB689907609B0500000037E397FC7C91F5E40200000040FE3AD401F8959A06000000D2BC9897EED08F1503000000F78B278BE53F454C02000000AB3C0572291FEB8B01000000BC9D89904F5B923F01000000EA93E3F16F3D696202000000D0399CD053ADDA2B01000000FBC577B9D747EFD60100000037C8BB1350A9A2A804000000D7ECF53E4977BC9B010000000100000001");
             return result;
         }

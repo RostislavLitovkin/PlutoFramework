@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -38,35 +38,35 @@ namespace XCavatePaseo.NetApi.Generated.Storage
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityProject", "OngoingNftDetails"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.NftDetails)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.NftDetails)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityProject", "OngoingProjects"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.ProjectDetails)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.ProjectDetails)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityProject", "EndedProjects"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.EndedProjectDetails)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.EndedProjectDetails)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityProject", "ListedNftTypes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U8>), typeof(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U8>), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityProject", "MilestonePeriodExpiring"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityProject", "VotingPeriodExpiring"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityProject", "OngoingVotes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.VoteStats)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.VoteStats)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityProject", "VotedUser"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityProject", "NftHolder"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityProject", "ProjectBonding"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityProject", "UserBondedAmount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityProject", "TotalBonded"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityProject", "VotingPower"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
         }
         
         /// <summary>
@@ -93,10 +93,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> OngoingNftDetails
         ///  Mapping from the nft to the nft details.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.NftDetails> OngoingNftDetails(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.NftDetails> OngoingNftDetails(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityProjectStorage.OngoingNftDetailsParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.NftDetails>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.NftDetails>(parameters, blockhash, token);
             return result;
         }
         
@@ -124,10 +124,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> OngoingProjects
         ///  Mapping from collection id to the project.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.ProjectDetails> OngoingProjects(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.ProjectDetails> OngoingProjects(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityProjectStorage.OngoingProjectsParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.ProjectDetails>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.ProjectDetails>(parameters, blockhash, token);
             return result;
         }
         
@@ -155,10 +155,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> EndedProjects
         ///  Mapping from collection id to ended project.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.EndedProjectDetails> EndedProjects(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.EndedProjectDetails> EndedProjects(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityProjectStorage.EndedProjectsParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.EndedProjectDetails>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.EndedProjectDetails>(parameters, blockhash, token);
             return result;
         }
         
@@ -186,10 +186,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> ListedNftTypes
         ///  Mapping from the collection and nft type to the listed nfts.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40> ListedNftTypes(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U8> key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40> ListedNftTypes(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U8> key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityProjectStorage.ListedNftTypesParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40>(parameters, blockhash, token);
             return result;
         }
         
@@ -217,10 +217,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> MilestonePeriodExpiring
         ///  Stores the project keys and round types ending on a given block for milestone period.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41> MilestonePeriodExpiring(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41> MilestonePeriodExpiring(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityProjectStorage.MilestonePeriodExpiringParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41>(parameters, blockhash, token);
             return result;
         }
         
@@ -248,10 +248,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> VotingPeriodExpiring
         ///  Stores the project keys and round types ending on a given block for milestone period.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41> VotingPeriodExpiring(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41> VotingPeriodExpiring(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityProjectStorage.VotingPeriodExpiringParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41>(parameters, blockhash, token);
             return result;
         }
         
@@ -279,10 +279,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> OngoingVotes
         ///  Mapping of ongoing votes.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.VoteStats> OngoingVotes(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.VoteStats> OngoingVotes(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityProjectStorage.OngoingVotesParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.VoteStats>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.VoteStats>(parameters, blockhash, token);
             return result;
         }
         
@@ -290,7 +290,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> VotedUserParams
         ///  Mapping of collection to the users.
         /// </summary>
-        public static string VotedUserParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
+        public static string VotedUserParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
         {
             return RequestGenerator.GetStorage("CommunityProject", "VotedUser", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -310,7 +310,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> VotedUser
         ///  Mapping of collection to the users.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.Bool> VotedUser(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.Bool> VotedUser(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityProjectStorage.VotedUserParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.Bool>(parameters, blockhash, token);
@@ -321,7 +321,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> NftHolderParams
         ///  Mapping of a collection to the nft holder.
         /// </summary>
-        public static string NftHolderParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
+        public static string NftHolderParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
         {
             return RequestGenerator.GetStorage("CommunityProject", "NftHolder", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -341,7 +341,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> NftHolder
         ///  Mapping of a collection to the nft holder.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.Bool> NftHolder(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.Bool> NftHolder(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityProjectStorage.NftHolderParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.Bool>(parameters, blockhash, token);
@@ -352,7 +352,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> ProjectBondingParams
         ///  Mapping of a collection to the token bonder.
         /// </summary>
-        public static string ProjectBondingParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
+        public static string ProjectBondingParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
         {
             return RequestGenerator.GetStorage("CommunityProject", "ProjectBonding", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -372,7 +372,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> ProjectBonding
         ///  Mapping of a collection to the token bonder.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.U128> ProjectBonding(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U128> ProjectBonding(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityProjectStorage.ProjectBondingParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U128>(parameters, blockhash, token);
@@ -383,7 +383,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> UserBondedAmountParams
         ///  Mapping of a accountid to the total bonded amount of a user.
         /// </summary>
-        public static string UserBondedAmountParams(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+        public static string UserBondedAmountParams(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
         {
             return RequestGenerator.GetStorage("CommunityProject", "UserBondedAmount", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -403,7 +403,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> UserBondedAmount
         ///  Mapping of a accountid to the total bonded amount of a user.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.U128> UserBondedAmount(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U128> UserBondedAmount(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityProjectStorage.UserBondedAmountParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U128>(parameters, blockhash, token);
@@ -443,7 +443,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> VotingPowerParams
         ///  Mapping of collection id and account id to the voting power.
         /// </summary>
-        public static string VotingPowerParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
+        public static string VotingPowerParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
         {
             return RequestGenerator.GetStorage("CommunityProject", "VotingPower", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -463,7 +463,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> VotingPower
         ///  Mapping of collection id and account id to the voting power.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.U64> VotingPower(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U64> VotingPower(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityProjectStorage.VotingPowerParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U64>(parameters, blockhash, token);
@@ -481,7 +481,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> list_project
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ListProject(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14 nft_types, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15 metadata, Substrate.NetApi.Model.Types.Primitive.U32 duration, Substrate.NetApi.Model.Types.Primitive.U128 price, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 data)
+        public static Method ListProject(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14 nft_types, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15 metadata, Substrate.NetApi.Model.Types.Primitive.U32 duration, Substrate.NetApi.Model.Types.Primitive.U128 price, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 data)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(nft_types.Encode());
@@ -509,7 +509,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> vote_on_milestone
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method VoteOnMilestone(Substrate.NetApi.Model.Types.Primitive.U32 collection_id, XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.EnumVote vote)
+        public static Method VoteOnMilestone(Substrate.NetApi.Model.Types.Primitive.U32 collection_id, XcavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.EnumVote vote)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection_id.Encode());
@@ -562,9 +562,9 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> PalletId
         ///  The marketplace's pallet id, used for deriving its sovereign account ID.
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.frame_support.PalletId PalletId()
+        public XcavatePaseo.NetApi.Generated.Model.frame_support.PalletId PalletId()
         {
-            var result = new XCavatePaseo.NetApi.Generated.Model.frame_support.PalletId();
+            var result = new XcavatePaseo.NetApi.Generated.Model.frame_support.PalletId();
             result.Create("0x70792F636D70726A");
             return result;
         }

@@ -1,13 +1,13 @@
 ﻿using Substrate.NetApi.Model.Types.Primitive;
-using XCavatePaseo.NetApi.Generated;
+using XcavatePaseo.NetApi.Generated;
 using UniqueryPlus;
 using Substrate.NetApi;
-using XCavatePaseo.NetApi.Generated.Storage;
-using XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet;
+using XcavatePaseo.NetApi.Generated.Storage;
+using XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet;
 using UniqueryPlus.Nfts;
 
 
-namespace PlutoFramework.Model.XCavate
+namespace PlutoFramework.Model.Xcavate
 {
     public class PropertyMarketplaceModel
     {
@@ -49,7 +49,7 @@ namespace PlutoFramework.Model.XCavate
                 nftIds.Add((details.CollectionId, details.ItemId));
             };
 
-            return await XCavatePaseoNftModel.GetNftsNftsPalletAsync(client, nftIds, fullKeys.Last().ToString(), token).ConfigureAwait(false);
+            return await XcavatePaseoNftModel.GetNftsNftsPalletAsync(client, nftIds, fullKeys.Last().ToString(), token).ConfigureAwait(false);
         }
 
         public static IAsyncEnumerable<INftBase> GetPropertiesAsync(

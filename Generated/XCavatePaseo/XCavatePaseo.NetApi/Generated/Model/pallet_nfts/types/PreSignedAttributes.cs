@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
 {
     
     
@@ -39,7 +39,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
         /// <summary>
         /// >> namespace
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace Namespace { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace Namespace { get; set; }
         /// <summary>
         /// >> deadline
         /// </summary>
@@ -73,7 +73,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
             Item.Decode(byteArray, ref p);
             Attributes = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>>();
             Attributes.Decode(byteArray, ref p);
-            Namespace = new XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace();
+            Namespace = new XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace();
             Namespace.Decode(byteArray, ref p);
             Deadline = new Substrate.NetApi.Model.Types.Primitive.U32();
             Deadline.Decode(byteArray, ref p);

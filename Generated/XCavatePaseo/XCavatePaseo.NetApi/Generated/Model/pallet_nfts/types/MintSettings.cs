@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
         /// <summary>
         /// >> mint_type
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumMintType MintType { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumMintType MintType { get; set; }
         /// <summary>
         /// >> price
         /// </summary>
@@ -43,7 +43,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
         /// <summary>
         /// >> default_item_settings
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.BitFlagsT2 DefaultItemSettings { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.BitFlagsT2 DefaultItemSettings { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -67,7 +67,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            MintType = new XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumMintType();
+            MintType = new XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumMintType();
             MintType.Decode(byteArray, ref p);
             Price = new Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128>();
             Price.Decode(byteArray, ref p);
@@ -75,7 +75,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
             StartBlock.Decode(byteArray, ref p);
             EndBlock = new Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>();
             EndBlock.Decode(byteArray, ref p);
-            DefaultItemSettings = new XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.BitFlagsT2();
+            DefaultItemSettings = new XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.BitFlagsT2();
             DefaultItemSettings.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

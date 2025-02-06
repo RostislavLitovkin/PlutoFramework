@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
 {
     
     
@@ -43,8 +43,8 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
         /// </summary>
         public EnumOrigin()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Origin.Xcm);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Origin.Response);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Origin.Xcm);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Origin.Response);
         }
     }
 }

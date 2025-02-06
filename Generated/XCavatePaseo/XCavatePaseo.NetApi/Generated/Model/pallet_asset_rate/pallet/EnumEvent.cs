@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_asset_rate.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_asset_rate.pallet
 {
     
     
@@ -50,9 +50,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_asset_rate.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>>(Event.AssetRateCreated);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>>(Event.AssetRateCreated);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U16>(Event.AssetRateRemoved);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128, XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>>(Event.AssetRateUpdated);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>>(Event.AssetRateUpdated);
         }
     }
 }

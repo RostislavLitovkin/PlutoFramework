@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -37,9 +37,9 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Proxy", "Proxies"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16, Substrate.NetApi.Model.Types.Primitive.U128>)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16, Substrate.NetApi.Model.Types.Primitive.U128>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Proxy", "Announcements"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17, Substrate.NetApi.Model.Types.Primitive.U128>)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17, Substrate.NetApi.Model.Types.Primitive.U128>)));
         }
         
         /// <summary>
@@ -47,7 +47,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  The set of account proxies. Maps the account which has delegated to the accounts
         ///  which are being delegated to, together with the amount held on deposit.
         /// </summary>
-        public static string ProxiesParams(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+        public static string ProxiesParams(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
         {
             return RequestGenerator.GetStorage("Proxy", "Proxies", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -68,10 +68,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  The set of account proxies. Maps the account which has delegated to the accounts
         ///  which are being delegated to, together with the amount held on deposit.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16, Substrate.NetApi.Model.Types.Primitive.U128>> Proxies(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16, Substrate.NetApi.Model.Types.Primitive.U128>> Proxies(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = ProxyStorage.ProxiesParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16, Substrate.NetApi.Model.Types.Primitive.U128>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16, Substrate.NetApi.Model.Types.Primitive.U128>>(parameters, blockhash, token);
             return result;
         }
         
@@ -79,7 +79,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> AnnouncementsParams
         ///  The announcements made by the proxy (key).
         /// </summary>
-        public static string AnnouncementsParams(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+        public static string AnnouncementsParams(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
         {
             return RequestGenerator.GetStorage("Proxy", "Announcements", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -99,10 +99,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Announcements
         ///  The announcements made by the proxy (key).
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17, Substrate.NetApi.Model.Types.Primitive.U128>> Announcements(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17, Substrate.NetApi.Model.Types.Primitive.U128>> Announcements(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = ProxyStorage.AnnouncementsParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17, Substrate.NetApi.Model.Types.Primitive.U128>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17, Substrate.NetApi.Model.Types.Primitive.U128>>(parameters, blockhash, token);
             return result;
         }
     }
@@ -117,7 +117,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> proxy
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Proxy(XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress real, Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType> force_proxy_type, XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall call)
+        public static Method Proxy(XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress real, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType> force_proxy_type, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(real.Encode());
@@ -130,7 +130,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> add_proxy
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AddProxy(XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U32 delay)
+        public static Method AddProxy(XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U32 delay)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@delegate.Encode());
@@ -143,7 +143,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> remove_proxy
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method RemoveProxy(XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U32 delay)
+        public static Method RemoveProxy(XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U32 delay)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@delegate.Encode());
@@ -166,7 +166,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> create_pure
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method CreatePure(XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U32 delay, Substrate.NetApi.Model.Types.Primitive.U16 index)
+        public static Method CreatePure(XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U32 delay, Substrate.NetApi.Model.Types.Primitive.U16 index)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(proxy_type.Encode());
@@ -179,7 +179,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> kill_pure
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method KillPure(XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress spawner, XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U16 index, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> height, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> ext_index)
+        public static Method KillPure(XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress spawner, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U16 index, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> height, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> ext_index)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(spawner.Encode());
@@ -194,7 +194,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> announce
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Announce(XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress real, XCavatePaseo.NetApi.Generated.Model.primitive_types.H256 call_hash)
+        public static Method Announce(XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress real, XcavatePaseo.NetApi.Generated.Model.primitive_types.H256 call_hash)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(real.Encode());
@@ -206,7 +206,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> remove_announcement
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method RemoveAnnouncement(XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress real, XCavatePaseo.NetApi.Generated.Model.primitive_types.H256 call_hash)
+        public static Method RemoveAnnouncement(XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress real, XcavatePaseo.NetApi.Generated.Model.primitive_types.H256 call_hash)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(real.Encode());
@@ -218,7 +218,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> reject_announcement
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method RejectAnnouncement(XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, XCavatePaseo.NetApi.Generated.Model.primitive_types.H256 call_hash)
+        public static Method RejectAnnouncement(XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, XcavatePaseo.NetApi.Generated.Model.primitive_types.H256 call_hash)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@delegate.Encode());
@@ -230,7 +230,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> proxy_announced
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ProxyAnnounced(XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress real, Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType> force_proxy_type, XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall call)
+        public static Method ProxyAnnounced(XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress real, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType> force_proxy_type, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@delegate.Encode());

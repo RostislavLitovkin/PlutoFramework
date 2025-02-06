@@ -16,7 +16,7 @@ namespace UniqueryPlus.Collections
                 // NftTypeEnum.Unique => UniqueCollectionModel.GetCollections
                 // NftTypeEnum.Opal
                 NftTypeEnum.Mythos => MythosCollectionModel.GetCollectionsOwnedByAsync((Mythos.NetApi.Generated.SubstrateClientExt)client, owner, limit, lastKey, token),
-                NftTypeEnum.XCavatePaseo => XCavatePaseoCollectionModel.GetCollectionsNftsPalletOwnedByAsync((XCavatePaseo.NetApi.Generated.SubstrateClientExt)client, owner, limit, lastKey, token),
+                NftTypeEnum.XcavatePaseo => XcavatePaseoCollectionModel.GetCollectionsNftsPalletOwnedByAsync((XcavatePaseo.NetApi.Generated.SubstrateClientExt)client, owner, limit, lastKey, token),
                 _ => throw new NotImplementedException()
             };
         }
@@ -43,7 +43,7 @@ namespace UniqueryPlus.Collections
                 NftTypeEnum.Unique => UniqueCollectionModel.GetCollectionByCollectionIdAsync((Unique.NetApi.Generated.SubstrateClientExt)client, (uint)collectionId, token),
                 NftTypeEnum.Opal => OpalCollectionModel.GetCollectionByCollectionIdAsync((Opal.NetApi.Generated.SubstrateClientExt)client, (uint)collectionId, token),
                 NftTypeEnum.Mythos => MythosCollectionModel.GetCollectionByCollectionIdAsync((Mythos.NetApi.Generated.SubstrateClientExt)client, collectionId, token),
-                NftTypeEnum.XCavatePaseo => XCavatePaseoCollectionModel.GetCollectionNftsPalletByCollectionIdAsync((XCavatePaseo.NetApi.Generated.SubstrateClientExt)client, (uint)collectionId, token),
+                NftTypeEnum.XcavatePaseo => XcavatePaseoCollectionModel.GetCollectionNftsPalletByCollectionIdAsync((XcavatePaseo.NetApi.Generated.SubstrateClientExt)client, (uint)collectionId, token),
                 _ => throw new NotImplementedException()
             };
         }
@@ -57,7 +57,7 @@ namespace UniqueryPlus.Collections
                 // NftTypeEnum.Unique
                 // NftTypeEnum.Opal
                 NftTypeEnum.Mythos => MythosCollectionModel.CreateCollection(adminAddress, config),
-                NftTypeEnum.XCavatePaseo => XCavatePaseoCollectionModel.CreateCollectionNftsPallet(adminAddress, config),
+                NftTypeEnum.XcavatePaseo => XcavatePaseoCollectionModel.CreateCollectionNftsPallet(adminAddress, config),
                 _ => throw new NotImplementedException(),
             };
         }

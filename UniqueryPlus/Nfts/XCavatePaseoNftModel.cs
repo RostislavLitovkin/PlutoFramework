@@ -1,29 +1,29 @@
-﻿using XCavatePaseo.NetApi.Generated;
-using XCavatePaseo.NetApi.Generated.Storage;
+﻿using XcavatePaseo.NetApi.Generated;
+using XcavatePaseo.NetApi.Generated.Storage;
 using Substrate.NetApi;
 using Substrate.NetApi.Model.Types.Base;
 using Substrate.NetApi.Model.Types.Primitive;
 using System.Numerics;
-using XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types;
-using XCavatePaseo.NetApi.Generated.Model.sp_core.crypto;
+using XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types;
+using XcavatePaseo.NetApi.Generated.Model.sp_core.crypto;
 using UniqueryPlus.Collections;
 using Substrate.NetApi.Model.Extrinsics;
-using XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress;
+using XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress;
 using UniqueryPlus.Metadata;
 using System.Text.Json;
-using XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet;
+using XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet;
 using System.Collections;
 using Nethereum.Util;
 
 namespace UniqueryPlus.Nfts
 {
-    public record XCavatePaseoNftsPalletNftFull : XCavatePaseoNftsPalletNft, INftSellable, INftBuyable
+    public record XcavatePaseoNftsPalletNftFull : XcavatePaseoNftsPalletNft, INftSellable, INftBuyable
     {
         private SubstrateClientExt client;
         public required BigInteger? Price { get; set; }
         public required bool IsForSale { get; set; }
 
-        public XCavatePaseoNftsPalletNftFull(SubstrateClientExt client) : base(client)
+        public XcavatePaseoNftsPalletNftFull(SubstrateClientExt client) : base(client)
         {
             this.client = client;
         }
@@ -38,21 +38,21 @@ namespace UniqueryPlus.Nfts
             return NftsCalls.BuyItem(new U32((uint)CollectionId), new U32((uint)Id), new U128(Price ?? 0));
         }
     }
-    public record XCavatePaseoNftsPalletNft : INftBase, INftTransferable, INftBurnable, INftMarketPrice, INftFractionalization, INftXCavateMetadata, INftXcavateNftMarketplace
+    public record XcavatePaseoNftsPalletNft : INftBase, INftTransferable, INftBurnable, INftMarketPrice, INftFractionalization, INftXcavateMetadata, INftXcavateNftMarketplace
     {
         private SubstrateClientExt client;
-        public NftTypeEnum Type => NftTypeEnum.XCavatePaseo;
+        public NftTypeEnum Type => NftTypeEnum.XcavatePaseo;
         public BigInteger CollectionId { get; set; }
         public BigInteger Id { get; set; }
         public required string Owner { get; set; }
         public NftMarketplaceDetails? NftMarketplaceDetails { get; set; }
         public MetadataBase? Metadata { get; set; }
-        public XCavateMetadata? XCavateMetadata { get; set; }
-        public XCavatePaseoNftsPalletNft(SubstrateClientExt client)
+        public XcavateMetadata? XcavateMetadata { get; set; }
+        public XcavatePaseoNftsPalletNft(SubstrateClientExt client)
         {
             this.client = client;
         }
-        public Task<ICollectionBase> GetCollectionAsync(CancellationToken token) => XCavatePaseoCollectionModel.GetCollectionNftsPalletByCollectionIdAsync(client, (uint)CollectionId, token);
+        public Task<ICollectionBase> GetCollectionAsync(CancellationToken token) => XcavatePaseoCollectionModel.GetCollectionNftsPalletByCollectionIdAsync(client, (uint)CollectionId, token);
 
         public bool IsTransferable { get; set; } = true;
 
@@ -91,9 +91,9 @@ namespace UniqueryPlus.Nfts
 
         public async Task<INftBase> GetFullAsync(CancellationToken token)
         {
-            var price = await XCavatePaseoNftModel.GetNftPriceNftsPalletAsync(client, (uint)CollectionId, (uint)Id, token).ConfigureAwait(false);
+            var price = await XcavatePaseoNftModel.GetNftPriceNftsPalletAsync(client, (uint)CollectionId, (uint)Id, token).ConfigureAwait(false);
 
-            return new XCavatePaseoNftsPalletNftFull(client)
+            return new XcavatePaseoNftsPalletNftFull(client)
             {
                 Owner = Owner,
                 CollectionId = CollectionId,
@@ -104,7 +104,7 @@ namespace UniqueryPlus.Nfts
             };
         }
     }
-    public class XCavatePaseoNftModel
+    public class XcavatePaseoNftModel
     {
 
         public static Task<RecursiveReturn<INftBase>> GetNftsNftsPalletAsync(SubstrateClientExt client, List<(U32, U32)> nftIds, string lastKey, CancellationToken token)
@@ -235,29 +235,29 @@ namespace UniqueryPlus.Nfts
                 Items = ids.Zip(nftDetails, ((BigInteger, BigInteger) ids, ItemDetails? details) => details switch
                 {
                     // Should never be null
-                    null => new XCavatePaseoNftsPalletNft(client)
+                    null => new XcavatePaseoNftsPalletNft(client)
                     {
                         CollectionId = ids.Item1,
                         Owner = "Unknown",
                         Id = ids.Item2,
                     },
-                    _ => new XCavatePaseoNftsPalletNft(client)
+                    _ => new XcavatePaseoNftsPalletNft(client)
                     {
                         CollectionId = ids.Item1,
                         Owner = Utils.GetAddressFrom(details.Owner.Encode()),
                         Id = ids.Item2,
                     }
-                }).Zip(nftMetadatas, (XCavatePaseoNftsPalletNft nft, (MetadataBase Metadata, XCavateMetadata XCavateMetadata)? metadata) =>
+                }).Zip(nftMetadatas, (XcavatePaseoNftsPalletNft nft, (MetadataBase Metadata, XcavateMetadata XcavateMetadata)? metadata) =>
                 {
                     if (metadata.HasValue)
                     {
                         Console.WriteLine("Metadata was set");
 
                         nft.Metadata = metadata.Value.Metadata;
-                        nft.XCavateMetadata = metadata.Value.XCavateMetadata;
+                        nft.XcavateMetadata = metadata.Value.XcavateMetadata;
                     }
                     return nft;
-                }).Zip(nftMarketplaceDetails, (XCavatePaseoNftsPalletNft nft, NftMarketplaceDetails? details) =>
+                }).Zip(nftMarketplaceDetails, (XcavatePaseoNftsPalletNft nft, NftMarketplaceDetails? details) =>
                 {
                     if (details is not null) {
                         nft.NftMarketplaceDetails = details;
@@ -354,7 +354,7 @@ namespace UniqueryPlus.Nfts
         }
 
 
-        internal static async Task<IEnumerable<(MetadataBase Metadata, XCavateMetadata XCavateMetadata)?>> GetNftMetadataNftsPalletByIdKeysAsync(SubstrateClientExt client, IEnumerable<string> idKeys, CancellationToken token)
+        internal static async Task<IEnumerable<(MetadataBase Metadata, XcavateMetadata XcavateMetadata)?>> GetNftMetadataNftsPalletByIdKeysAsync(SubstrateClientExt client, IEnumerable<string> idKeys, CancellationToken token)
         {
             // 0x + Twox64 pallet + Twox64 storage
             var keyPrefixLength = 66;
@@ -364,7 +364,7 @@ namespace UniqueryPlus.Nfts
             var nftMetadataKeys = idKeys.Select(idKey => Utils.HexToByteArray(keyPrefix + idKey));
             var storageChangeSets = await client.State.GetQueryStorageAtAsync(nftMetadataKeys.ToList(), string.Empty, token).ConfigureAwait(false);
 
-            var metadatas = new List<(MetadataBase Metadata, XCavateMetadata XCavateMetadata)?>();
+            var metadatas = new List<(MetadataBase Metadata, XcavateMetadata XcavateMetadata)?>();
 
             foreach (var change in storageChangeSets.First().Changes)
             {
@@ -389,7 +389,7 @@ namespace UniqueryPlus.Nfts
                         PropertyNameCaseInsensitive = true
                     };
 
-                    XCavateMetadata? xCavateMetadata = JsonSerializer.Deserialize<XCavateMetadata>(metadataJson, options);
+                    XcavateMetadata? xCavateMetadata = JsonSerializer.Deserialize<XcavateMetadata>(metadataJson, options);
 
                     if (xCavateMetadata == null)
                     {

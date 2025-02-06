@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -37,7 +37,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NftFractionalization", "NftToAsset"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.types.Details)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.types.Details)));
         }
         
         /// <summary>
@@ -64,10 +64,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> NftToAsset
         ///  Keeps track of the corresponding NFT ID, asset ID and amount minted.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.types.Details> NftToAsset(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.types.Details> NftToAsset(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
         {
             string parameters = NftFractionalizationStorage.NftToAssetParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.types.Details>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.types.Details>(parameters, blockhash, token);
             return result;
         }
     }
@@ -82,7 +82,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> fractionalize
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Fractionalize(Substrate.NetApi.Model.Types.Primitive.U32 nft_collection_id, Substrate.NetApi.Model.Types.Primitive.U32 nft_id, Substrate.NetApi.Model.Types.Primitive.U32 asset_id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress beneficiary, Substrate.NetApi.Model.Types.Primitive.U128 fractions)
+        public static Method Fractionalize(Substrate.NetApi.Model.Types.Primitive.U32 nft_collection_id, Substrate.NetApi.Model.Types.Primitive.U32 nft_id, Substrate.NetApi.Model.Types.Primitive.U32 asset_id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress beneficiary, Substrate.NetApi.Model.Types.Primitive.U128 fractions)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(nft_collection_id.Encode());
@@ -97,7 +97,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> unify
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Unify(Substrate.NetApi.Model.Types.Primitive.U32 nft_collection_id, Substrate.NetApi.Model.Types.Primitive.U32 nft_id, Substrate.NetApi.Model.Types.Primitive.U32 asset_id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress beneficiary)
+        public static Method Unify(Substrate.NetApi.Model.Types.Primitive.U32 nft_collection_id, Substrate.NetApi.Model.Types.Primitive.U32 nft_id, Substrate.NetApi.Model.Types.Primitive.U32 asset_id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress beneficiary)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(nft_collection_id.Encode());
@@ -130,9 +130,9 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> PalletId
         ///  The pallet's id, used for deriving its sovereign account ID.
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.frame_support.PalletId PalletId()
+        public XcavatePaseo.NetApi.Generated.Model.frame_support.PalletId PalletId()
         {
-            var result = new XCavatePaseo.NetApi.Generated.Model.frame_support.PalletId();
+            var result = new XcavatePaseo.NetApi.Generated.Model.frame_support.PalletId();
             result.Create("0x6672616374696F6E");
             return result;
         }
@@ -141,9 +141,9 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> NewAssetSymbol
         ///  The newly created asset's symbol.
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 NewAssetSymbol()
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 NewAssetSymbol()
         {
-            var result = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5();
+            var result = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5();
             result.Create("0x1046524143");
             return result;
         }
@@ -152,9 +152,9 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> NewAssetName
         ///  The newly created asset's name.
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 NewAssetName()
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 NewAssetName()
         {
-            var result = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5();
+            var result = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5();
             result.Create("0x1046726163");
             return result;
         }

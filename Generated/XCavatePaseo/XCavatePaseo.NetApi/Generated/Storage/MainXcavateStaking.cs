@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -39,14 +39,14 @@ namespace XCavatePaseo.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcavateStaking", "StakingCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcavateStaking", "QueueCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcavateStaking", "Ledger"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_xcavate_staking.pallet.LedgerAccount)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_staking.pallet.LedgerAccount)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcavateStaking", "QueueLedger"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_xcavate_staking.pallet.QueueLedgerAccount)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcavateStaking", "ActiveStakings"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcavateStaking", "QueueStaking"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_staking.pallet.QueueLedgerAccount)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcavateStaking", "ActiveStakings"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcavateStaking", "QueueStaking"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcavateStaking", "TotalStake"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcavateStaking", "AmountLocked"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
         }
         
         /// <summary>
@@ -131,10 +131,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Ledger
         ///  Mapping of the account to the staking info.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_xcavate_staking.pallet.LedgerAccount> Ledger(Substrate.NetApi.Model.Types.Primitive.U64 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_staking.pallet.LedgerAccount> Ledger(Substrate.NetApi.Model.Types.Primitive.U64 key, string blockhash, CancellationToken token)
         {
             string parameters = XcavateStakingStorage.LedgerParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_xcavate_staking.pallet.LedgerAccount>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_staking.pallet.LedgerAccount>(parameters, blockhash, token);
             return result;
         }
         
@@ -162,10 +162,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> QueueLedger
         ///  Mapping of the account to the queue info.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_xcavate_staking.pallet.QueueLedgerAccount> QueueLedger(Substrate.NetApi.Model.Types.Primitive.U64 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_staking.pallet.QueueLedgerAccount> QueueLedger(Substrate.NetApi.Model.Types.Primitive.U64 key, string blockhash, CancellationToken token)
         {
             string parameters = XcavateStakingStorage.QueueLedgerParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_xcavate_staking.pallet.QueueLedgerAccount>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_staking.pallet.QueueLedgerAccount>(parameters, blockhash, token);
             return result;
         }
         
@@ -191,10 +191,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> ActiveStakings
         ///  All current stakers.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37> ActiveStakings(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37> ActiveStakings(string blockhash, CancellationToken token)
         {
             string parameters = XcavateStakingStorage.ActiveStakingsParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37>(parameters, blockhash, token);
             return result;
         }
         
@@ -220,10 +220,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> QueueStaking
         ///  All current users waiting in the queue.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37> QueueStaking(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37> QueueStaking(string blockhash, CancellationToken token)
         {
             string parameters = XcavateStakingStorage.QueueStakingParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37>(parameters, blockhash, token);
             return result;
         }
         
@@ -260,7 +260,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> AmountLockedParams
         ///  Mapping of account id to the amount locked
         /// </summary>
-        public static string AmountLockedParams(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+        public static string AmountLockedParams(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
         {
             return RequestGenerator.GetStorage("XcavateStaking", "AmountLocked", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -280,7 +280,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> AmountLocked
         ///  Mapping of account id to the amount locked
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.U128> AmountLocked(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U128> AmountLocked(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = XcavateStakingStorage.AmountLockedParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U128>(parameters, blockhash, token);

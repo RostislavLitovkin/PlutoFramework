@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation
+namespace XcavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation
 {
     
     
@@ -79,14 +79,14 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation
         public EnumJunctions()
         {
 				AddTypeDecoder<BaseVoid>(Junctions.Here);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction>(Junctions.X1);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction>>(Junctions.X2);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction>>(Junctions.X3);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction>>(Junctions.X4);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction>>(Junctions.X5);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction>>(Junctions.X6);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction>>(Junctions.X7);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction>>(Junctions.X8);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction>(Junctions.X1);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction>>(Junctions.X2);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction>>(Junctions.X3);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction>>(Junctions.X4);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction>>(Junctions.X5);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction>>(Junctions.X6);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction>>(Junctions.X7);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction, XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction.EnumJunction>>(Junctions.X8);
         }
     }
 }

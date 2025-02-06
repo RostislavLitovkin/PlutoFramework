@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet
         /// <summary>
         /// >> project_owner
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 ProjectOwner { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 ProjectOwner { get; set; }
         /// <summary>
         /// >> price
         /// </summary>
@@ -62,7 +62,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            ProjectOwner = new XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            ProjectOwner = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             ProjectOwner.Decode(byteArray, ref p);
             Price = new Substrate.NetApi.Model.Types.Primitive.U128();
             Price.Decode(byteArray, ref p);

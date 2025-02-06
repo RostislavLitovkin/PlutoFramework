@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_utility.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_utility.pallet
 {
     
     
@@ -134,12 +134,12 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_utility.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>>(Call.batch);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>>(Call.as_derivative);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>>(Call.batch_all);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumOriginCaller, XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>>(Call.dispatch_as);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>>(Call.force_batch);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall, XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Call.with_weight);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>>(Call.batch);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>>(Call.as_derivative);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>>(Call.batch_all);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumOriginCaller, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>>(Call.dispatch_as);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>>(Call.force_batch);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Call.with_weight);
         }
     }
 }

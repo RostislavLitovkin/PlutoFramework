@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_tx_pause.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_tx_pause.pallet
 {
     
     
@@ -47,8 +47,8 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_tx_pause.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1>>(Event.CallPaused);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1>>(Event.CallUnpaused);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1>>(Event.CallPaused);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1>>(Event.CallUnpaused);
         }
     }
 }

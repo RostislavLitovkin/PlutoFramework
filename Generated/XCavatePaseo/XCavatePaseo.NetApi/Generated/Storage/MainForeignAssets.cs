@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -37,16 +37,16 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ForeignAssets", "Asset"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetDetails)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetDetails)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ForeignAssets", "Account"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetAccount)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetAccount)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ForeignAssets", "Approvals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.Approval)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.Approval)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ForeignAssets", "Metadata"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1)));
         }
         
         /// <summary>
@@ -73,10 +73,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Asset
         ///  Details of an asset.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetDetails> Asset(Substrate.NetApi.Model.Types.Primitive.U16 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetDetails> Asset(Substrate.NetApi.Model.Types.Primitive.U16 key, string blockhash, CancellationToken token)
         {
             string parameters = ForeignAssetsStorage.AssetParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetDetails>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetDetails>(parameters, blockhash, token);
             return result;
         }
         
@@ -84,7 +84,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> AccountParams
         ///  The holdings of a specific account for a specific asset.
         /// </summary>
-        public static string AccountParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
+        public static string AccountParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
         {
             return RequestGenerator.GetStorage("ForeignAssets", "Account", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -104,10 +104,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Account
         ///  The holdings of a specific account for a specific asset.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetAccount> Account(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetAccount> Account(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
         {
             string parameters = ForeignAssetsStorage.AccountParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetAccount>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetAccount>(parameters, blockhash, token);
             return result;
         }
         
@@ -117,7 +117,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  is the amount of `T::Currency` reserved for storing this.
         ///  First key is the asset ID, second key is the owner and third key is the delegate.
         /// </summary>
-        public static string ApprovalsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
+        public static string ApprovalsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
         {
             return RequestGenerator.GetStorage("ForeignAssets", "Approvals", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -140,10 +140,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  is the amount of `T::Currency` reserved for storing this.
         ///  First key is the asset ID, second key is the owner and third key is the delegate.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.Approval> Approvals(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.Approval> Approvals(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
         {
             string parameters = ForeignAssetsStorage.ApprovalsParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.Approval>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.Approval>(parameters, blockhash, token);
             return result;
         }
         
@@ -171,10 +171,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Metadata
         ///  Metadata of an asset.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1> Metadata(Substrate.NetApi.Model.Types.Primitive.U16 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1> Metadata(Substrate.NetApi.Model.Types.Primitive.U16 key, string blockhash, CancellationToken token)
         {
             string parameters = ForeignAssetsStorage.MetadataParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1>(parameters, blockhash, token);
             return result;
         }
     }
@@ -189,7 +189,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> create
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Create(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress admin, Substrate.NetApi.Model.Types.Primitive.U128 min_balance)
+        public static Method Create(Substrate.NetApi.Model.Types.Primitive.U16 id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress admin, Substrate.NetApi.Model.Types.Primitive.U128 min_balance)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -202,7 +202,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> force_create
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceCreate(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner, Substrate.NetApi.Model.Types.Primitive.Bool is_sufficient, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> min_balance)
+        public static Method ForceCreate(Substrate.NetApi.Model.Types.Primitive.U16 id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner, Substrate.NetApi.Model.Types.Primitive.Bool is_sufficient, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> min_balance)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -260,7 +260,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> mint
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Mint(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress beneficiary, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
+        public static Method Mint(Substrate.NetApi.Model.Types.Primitive.U16 id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress beneficiary, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -273,7 +273,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> burn
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Burn(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
+        public static Method Burn(Substrate.NetApi.Model.Types.Primitive.U16 id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -286,7 +286,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> transfer
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Transfer(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress target, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
+        public static Method Transfer(Substrate.NetApi.Model.Types.Primitive.U16 id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress target, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -299,7 +299,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> transfer_keep_alive
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method TransferKeepAlive(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress target, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
+        public static Method TransferKeepAlive(Substrate.NetApi.Model.Types.Primitive.U16 id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress target, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -312,7 +312,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> force_transfer
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceTransfer(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress source, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress dest, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
+        public static Method ForceTransfer(Substrate.NetApi.Model.Types.Primitive.U16 id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress source, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress dest, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -326,7 +326,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> freeze
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Freeze(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
+        public static Method Freeze(Substrate.NetApi.Model.Types.Primitive.U16 id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -338,7 +338,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> thaw
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Thaw(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
+        public static Method Thaw(Substrate.NetApi.Model.Types.Primitive.U16 id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -372,7 +372,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> transfer_ownership
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method TransferOwnership(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner)
+        public static Method TransferOwnership(Substrate.NetApi.Model.Types.Primitive.U16 id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -384,7 +384,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> set_team
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetTeam(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress issuer, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress admin, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress freezer)
+        public static Method SetTeam(Substrate.NetApi.Model.Types.Primitive.U16 id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress issuer, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress admin, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress freezer)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -449,7 +449,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> force_asset_status
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceAssetStatus(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress issuer, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress admin, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress freezer, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> min_balance, Substrate.NetApi.Model.Types.Primitive.Bool is_sufficient, Substrate.NetApi.Model.Types.Primitive.Bool is_frozen)
+        public static Method ForceAssetStatus(Substrate.NetApi.Model.Types.Primitive.U16 id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress issuer, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress admin, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress freezer, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> min_balance, Substrate.NetApi.Model.Types.Primitive.Bool is_sufficient, Substrate.NetApi.Model.Types.Primitive.Bool is_frozen)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -467,7 +467,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> approve_transfer
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ApproveTransfer(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
+        public static Method ApproveTransfer(Substrate.NetApi.Model.Types.Primitive.U16 id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -480,7 +480,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> cancel_approval
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method CancelApproval(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate)
+        public static Method CancelApproval(Substrate.NetApi.Model.Types.Primitive.U16 id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -492,7 +492,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> force_cancel_approval
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceCancelApproval(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate)
+        public static Method ForceCancelApproval(Substrate.NetApi.Model.Types.Primitive.U16 id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -505,7 +505,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> transfer_approved
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method TransferApproved(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress destination, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
+        public static Method TransferApproved(Substrate.NetApi.Model.Types.Primitive.U16 id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress destination, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -554,7 +554,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> touch_other
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method TouchOther(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
+        public static Method TouchOther(Substrate.NetApi.Model.Types.Primitive.U16 id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -566,7 +566,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> refund_other
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method RefundOther(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
+        public static Method RefundOther(Substrate.NetApi.Model.Types.Primitive.U16 id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -578,7 +578,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> block
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Block(Substrate.NetApi.Model.Types.Primitive.U16 id, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
+        public static Method Block(Substrate.NetApi.Model.Types.Primitive.U16 id, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());

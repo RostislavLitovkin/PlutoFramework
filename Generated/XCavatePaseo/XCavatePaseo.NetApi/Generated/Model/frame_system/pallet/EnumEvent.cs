@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.frame_system.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.frame_system.pallet
 {
     
     
@@ -77,13 +77,13 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_system.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.frame_support.dispatch.DispatchInfo>(Event.ExtrinsicSuccess);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError, XCavatePaseo.NetApi.Generated.Model.frame_support.dispatch.DispatchInfo>>(Event.ExtrinsicFailed);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.frame_support.dispatch.DispatchInfo>(Event.ExtrinsicSuccess);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError, XcavatePaseo.NetApi.Generated.Model.frame_support.dispatch.DispatchInfo>>(Event.ExtrinsicFailed);
 				AddTypeDecoder<BaseVoid>(Event.CodeUpdated);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.NewAccount);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.KilledAccount);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.primitive_types.H256>>(Event.Remarked);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Primitive.Bool>>(Event.UpgradeAuthorized);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.NewAccount);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.KilledAccount);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.primitive_types.H256>>(Event.Remarked);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Primitive.Bool>>(Event.UpgradeAuthorized);
         }
     }
 }

@@ -1,12 +1,12 @@
-﻿using PlutoFramework.Model.XCavate;
+﻿using PlutoFramework.Model.Xcavate;
 
 namespace PlutoFramework.Model
 {
-    public class XCavateFileModel
+    public class XcavateFileModel
     {
         public static ImageSource? GetSavedProfilePicture()
         {
-            var profilePicturePath = Path.Combine(FileSystem.AppDataDirectory, XCavateConstants.PROFILE_PICTURE_FILE_NAME);
+            var profilePicturePath = Path.Combine(FileSystem.AppDataDirectory, XcavateConstants.PROFILE_PICTURE_FILE_NAME);
 
             if (!File.Exists(profilePicturePath))
             {
@@ -20,7 +20,7 @@ namespace PlutoFramework.Model
         }
         public static ImageSource? GetSavedProfileBackground()
         {
-            var profileBackgroundPath = Path.Combine(FileSystem.AppDataDirectory, XCavateConstants.PROFILE_BACKGROUND_FILE_NAME);
+            var profileBackgroundPath = Path.Combine(FileSystem.AppDataDirectory, XcavateConstants.PROFILE_BACKGROUND_FILE_NAME);
 
             if (!File.Exists(profileBackgroundPath))
             {

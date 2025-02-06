@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet
 {
     
     
@@ -47,8 +47,8 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.NewUserWhitelisted);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.UserRemoved);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.NewUserWhitelisted);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.UserRemoved);
         }
     }
 }

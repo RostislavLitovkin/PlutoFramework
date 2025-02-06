@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_assets.types
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_assets.types
 {
     
     
@@ -27,19 +27,19 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_assets.types
         /// <summary>
         /// >> owner
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Owner { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Owner { get; set; }
         /// <summary>
         /// >> issuer
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Issuer { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Issuer { get; set; }
         /// <summary>
         /// >> admin
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Admin { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Admin { get; set; }
         /// <summary>
         /// >> freezer
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Freezer { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Freezer { get; set; }
         /// <summary>
         /// >> supply
         /// </summary>
@@ -71,7 +71,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_assets.types
         /// <summary>
         /// >> status
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.EnumAssetStatus Status { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.EnumAssetStatus Status { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -102,13 +102,13 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_assets.types
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Owner = new XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            Owner = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Owner.Decode(byteArray, ref p);
-            Issuer = new XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            Issuer = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Issuer.Decode(byteArray, ref p);
-            Admin = new XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            Admin = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Admin.Decode(byteArray, ref p);
-            Freezer = new XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            Freezer = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Freezer.Decode(byteArray, ref p);
             Supply = new Substrate.NetApi.Model.Types.Primitive.U128();
             Supply.Decode(byteArray, ref p);
@@ -124,7 +124,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_assets.types
             Sufficients.Decode(byteArray, ref p);
             Approvals = new Substrate.NetApi.Model.Types.Primitive.U32();
             Approvals.Decode(byteArray, ref p);
-            Status = new XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.EnumAssetStatus();
+            Status = new XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.EnumAssetStatus();
             Status.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

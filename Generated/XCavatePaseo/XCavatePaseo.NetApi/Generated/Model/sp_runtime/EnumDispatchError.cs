@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.sp_runtime
+namespace XcavatePaseo.NetApi.Generated.Model.sp_runtime
 {
     
     
@@ -106,13 +106,13 @@ namespace XCavatePaseo.NetApi.Generated.Model.sp_runtime
 				AddTypeDecoder<BaseVoid>(DispatchError.Other);
 				AddTypeDecoder<BaseVoid>(DispatchError.CannotLookup);
 				AddTypeDecoder<BaseVoid>(DispatchError.BadOrigin);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_runtime.ModuleError>(DispatchError.Module);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_runtime.ModuleError>(DispatchError.Module);
 				AddTypeDecoder<BaseVoid>(DispatchError.ConsumerRemaining);
 				AddTypeDecoder<BaseVoid>(DispatchError.NoProviders);
 				AddTypeDecoder<BaseVoid>(DispatchError.TooManyConsumers);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_runtime.EnumTokenError>(DispatchError.Token);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.EnumArithmeticError>(DispatchError.Arithmetic);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_runtime.EnumTransactionalError>(DispatchError.Transactional);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_runtime.EnumTokenError>(DispatchError.Token);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.EnumArithmeticError>(DispatchError.Arithmetic);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_runtime.EnumTransactionalError>(DispatchError.Transactional);
 				AddTypeDecoder<BaseVoid>(DispatchError.Exhausted);
 				AddTypeDecoder<BaseVoid>(DispatchError.Corruption);
 				AddTypeDecoder<BaseVoid>(DispatchError.Unavailable);

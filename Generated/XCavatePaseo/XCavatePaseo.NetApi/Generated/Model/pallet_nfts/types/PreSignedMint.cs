@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
 {
     
     
@@ -43,7 +43,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
         /// <summary>
         /// >> only_account
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> OnlyAccount { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> OnlyAccount { get; set; }
         /// <summary>
         /// >> deadline
         /// </summary>
@@ -85,7 +85,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
             Attributes.Decode(byteArray, ref p);
             Metadata = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>();
             Metadata.Decode(byteArray, ref p);
-            OnlyAccount = new Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>();
+            OnlyAccount = new Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>();
             OnlyAccount.Decode(byteArray, ref p);
             Deadline = new Substrate.NetApi.Model.Types.Primitive.U32();
             Deadline.Decode(byteArray, ref p);

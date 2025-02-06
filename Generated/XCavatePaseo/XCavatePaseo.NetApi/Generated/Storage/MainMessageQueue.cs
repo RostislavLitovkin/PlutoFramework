@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -37,18 +37,18 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("MessageQueue", "BookStateFor"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_message_queue.BookState)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("MessageQueue", "ServiceHead"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_message_queue.BookState)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("MessageQueue", "ServiceHead"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("MessageQueue", "Pages"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_message_queue.Page)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_message_queue.Page)));
         }
         
         /// <summary>
         /// >> BookStateForParams
         ///  The index of the first and last (non-empty) pages.
         /// </summary>
-        public static string BookStateForParams(XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin key)
+        public static string BookStateForParams(XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin key)
         {
             return RequestGenerator.GetStorage("MessageQueue", "BookStateFor", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -68,10 +68,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> BookStateFor
         ///  The index of the first and last (non-empty) pages.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_message_queue.BookState> BookStateFor(XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_message_queue.BookState> BookStateFor(XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin key, string blockhash, CancellationToken token)
         {
             string parameters = MessageQueueStorage.BookStateForParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_message_queue.BookState>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_message_queue.BookState>(parameters, blockhash, token);
             return result;
         }
         
@@ -97,10 +97,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> ServiceHead
         ///  The origin at which we should begin servicing.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin> ServiceHead(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin> ServiceHead(string blockhash, CancellationToken token)
         {
             string parameters = MessageQueueStorage.ServiceHeadParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin>(parameters, blockhash, token);
             return result;
         }
         
@@ -108,7 +108,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> PagesParams
         ///  The map of page indices to pages.
         /// </summary>
-        public static string PagesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin, Substrate.NetApi.Model.Types.Primitive.U32> key)
+        public static string PagesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin, Substrate.NetApi.Model.Types.Primitive.U32> key)
         {
             return RequestGenerator.GetStorage("MessageQueue", "Pages", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
@@ -128,10 +128,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Pages
         ///  The map of page indices to pages.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_message_queue.Page> Pages(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_message_queue.Page> Pages(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
         {
             string parameters = MessageQueueStorage.PagesParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_message_queue.Page>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_message_queue.Page>(parameters, blockhash, token);
             return result;
         }
     }
@@ -146,7 +146,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> reap_page
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ReapPage(XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin message_origin, Substrate.NetApi.Model.Types.Primitive.U32 page_index)
+        public static Method ReapPage(XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin message_origin, Substrate.NetApi.Model.Types.Primitive.U32 page_index)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(message_origin.Encode());
@@ -158,7 +158,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> execute_overweight
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ExecuteOverweight(XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin message_origin, Substrate.NetApi.Model.Types.Primitive.U32 page, Substrate.NetApi.Model.Types.Primitive.U32 index, XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight weight_limit)
+        public static Method ExecuteOverweight(XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin message_origin, Substrate.NetApi.Model.Types.Primitive.U32 page, Substrate.NetApi.Model.Types.Primitive.U32 index, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight weight_limit)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(message_origin.Encode());
@@ -212,9 +212,9 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  `ServiceQueues::service_queues` manually or set [`Self::IdleMaxServiceWeight`] to have
         ///  it run in `on_idle`.
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight> ServiceWeight()
+        public Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight> ServiceWeight()
         {
-            var result = new Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>();
+            var result = new Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>();
             result.Create("0x010700A2941A1D02005000");
             return result;
         }
@@ -227,9 +227,9 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// 
         ///  If `None`, it will not call `ServiceQueues::service_queues` in `on_idle`.
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight> IdleMaxServiceWeight()
+        public Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight> IdleMaxServiceWeight()
         {
-            var result = new Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>();
+            var result = new Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>();
             result.Create("0x010700A2941A1D02005000");
             return result;
         }

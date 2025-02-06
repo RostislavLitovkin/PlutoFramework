@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.frame_system.limits
+namespace XcavatePaseo.NetApi.Generated.Model.frame_system.limits
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_system.limits
         /// <summary>
         /// >> max
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.frame_support.dispatch.PerDispatchClassT3 Max { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.frame_support.dispatch.PerDispatchClassT3 Max { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_system.limits
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Max = new XCavatePaseo.NetApi.Generated.Model.frame_support.dispatch.PerDispatchClassT3();
+            Max = new XcavatePaseo.NetApi.Generated.Model.frame_support.dispatch.PerDispatchClassT3();
             Max.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

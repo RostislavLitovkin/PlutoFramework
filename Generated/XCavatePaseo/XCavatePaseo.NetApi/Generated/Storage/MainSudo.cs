@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -36,7 +36,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         public SudoStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Sudo", "Key"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Sudo", "Key"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32)));
         }
         
         /// <summary>
@@ -61,10 +61,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Key
         ///  The `AccountId` of the sudo key.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> Key(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> Key(string blockhash, CancellationToken token)
         {
             string parameters = SudoStorage.KeyParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(parameters, blockhash, token);
             return result;
         }
     }
@@ -79,7 +79,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> sudo
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Sudo(XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall call)
+        public static Method Sudo(XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(call.Encode());
@@ -90,7 +90,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> sudo_unchecked_weight
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SudoUncheckedWeight(XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall call, XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight weight)
+        public static Method SudoUncheckedWeight(XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall call, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight weight)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(call.Encode());
@@ -102,7 +102,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> set_key
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetKey(XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @new)
+        public static Method SetKey(XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @new)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@new.Encode());
@@ -113,7 +113,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> sudo_as
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SudoAs(XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who, XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall call)
+        public static Method SudoAs(XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(who.Encode());

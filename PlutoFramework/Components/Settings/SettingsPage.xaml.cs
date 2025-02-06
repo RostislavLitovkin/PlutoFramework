@@ -1,8 +1,8 @@
 using PlutoFramework.Components.CustomLayouts;
-using PlutoFramework.Components.XCavate;
+using PlutoFramework.Components.Xcavate;
 using PlutoFramework.Components.XcavateProperty;
 using PlutoFramework.Model.SQLite;
-using PlutoFramework.Model.XCavate;
+using PlutoFramework.Model.Xcavate;
 using PlutoFramework.View;
 
 namespace PlutoFramework.Components.Settings;
@@ -50,14 +50,14 @@ public partial class SettingsPage : ContentPage
         await Navigation.PushAsync(new DeveloperSettingsPage());
     }
 
-    async void OnXCavateProfileClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
+    async void OnXcavateProfileClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
-        var userInfo = await XCavateUserDatabase.GetUserInformationAsync();
+        var userInfo = await XcavateUserDatabase.GetUserInformationAsync();
 
         var viewModel = new UserProfileViewModel
         {
             CanEdit = true,
-            User = userInfo ?? await XCavateUserModel.GetMockUserAsync(),
+            User = userInfo ?? await XcavateUserModel.GetMockUserAsync(),
         };
 
         // Clean temporary files
@@ -77,10 +77,10 @@ public partial class SettingsPage : ContentPage
 
         await Navigation.PushAsync(new UserProfilePage(viewModel));
     }
-    private async void OnXCavateCompanyClicked(object sender, TappedEventArgs e)
+    private async void OnXcavateCompanyClicked(object sender, TappedEventArgs e)
     {
         var viewModel = new CompanyViewModel();
-        viewModel.Company = await XCavateCompanyModel.GetMockCompanyAsync();
+        viewModel.Company = await XcavateCompanyModel.GetMockCompanyAsync();
 
         await Navigation.PushAsync(new CompanyPage(viewModel));
 

@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet
 {
     
     
@@ -55,10 +55,10 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Event.ReservePolicySet);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Event.ReservePolicyRemoved);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Event.TeleportPolicySet);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Event.TeleportPolicyRemoved);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Event.ReservePolicySet);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Event.ReservePolicyRemoved);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Event.TeleportPolicySet);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Event.TeleportPolicyRemoved);
         }
     }
 }

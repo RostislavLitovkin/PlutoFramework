@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet
 {
     
     
@@ -140,10 +140,10 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.ApyCharged);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.LoanUpdated);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Withdraw);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote>>(Event.VotedOnProposal);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote>>(Event.VotedOnMilestone);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote>>(Event.VotedOnDeletion);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.CommiteeMemberAdded);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote>>(Event.VotedOnProposal);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote>>(Event.VotedOnMilestone);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote>>(Event.VotedOnDeletion);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.CommiteeMemberAdded);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.MilestoneApproved);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.MilestoneRejected);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.MilestonesSet);

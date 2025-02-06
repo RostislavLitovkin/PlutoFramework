@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         /// <summary>
         /// >> account
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Account { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Account { get; set; }
         /// <summary>
         /// >> region
         /// </summary>
@@ -35,11 +35,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         /// <summary>
         /// >> locations
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32 Locations { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32 Locations { get; set; }
         /// <summary>
         /// >> assigned_properties
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT33 AssignedProperties { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT33 AssignedProperties { get; set; }
         /// <summary>
         /// >> deposited
         /// </summary>
@@ -67,13 +67,13 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Account = new XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            Account = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Account.Decode(byteArray, ref p);
             Region = new Substrate.NetApi.Model.Types.Primitive.U32();
             Region.Decode(byteArray, ref p);
-            Locations = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32();
+            Locations = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32();
             Locations.Decode(byteArray, ref p);
-            AssignedProperties = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT33();
+            AssignedProperties = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT33();
             AssignedProperties.Decode(byteArray, ref p);
             Deposited = new Substrate.NetApi.Model.Types.Primitive.Bool();
             Deposited.Decode(byteArray, ref p);

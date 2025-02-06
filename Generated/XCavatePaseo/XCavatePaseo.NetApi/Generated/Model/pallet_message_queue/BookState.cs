@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_message_queue
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_message_queue
 {
     
     
@@ -39,7 +39,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_message_queue
         /// <summary>
         /// >> ready_neighbours
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.pallet_message_queue.Neighbours> ReadyNeighbours { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.pallet_message_queue.Neighbours> ReadyNeighbours { get; set; }
         /// <summary>
         /// >> message_count
         /// </summary>
@@ -78,7 +78,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_message_queue
             End.Decode(byteArray, ref p);
             Count = new Substrate.NetApi.Model.Types.Primitive.U32();
             Count.Decode(byteArray, ref p);
-            ReadyNeighbours = new Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.pallet_message_queue.Neighbours>();
+            ReadyNeighbours = new Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.pallet_message_queue.Neighbours>();
             ReadyNeighbours.Decode(byteArray, ref p);
             MessageCount = new Substrate.NetApi.Model.Types.Primitive.U64();
             MessageCount.Decode(byteArray, ref p);

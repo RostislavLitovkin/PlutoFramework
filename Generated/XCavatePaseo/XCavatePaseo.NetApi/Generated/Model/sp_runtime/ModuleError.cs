@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.sp_runtime
+namespace XcavatePaseo.NetApi.Generated.Model.sp_runtime
 {
     
     
@@ -31,7 +31,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.sp_runtime
         /// <summary>
         /// >> error
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Types.Base.Arr4U8 Error { get; set; }
+        public XcavatePaseo.NetApi.Generated.Types.Base.Arr4U8 Error { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -54,7 +54,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.sp_runtime
             var start = p;
             Index = new Substrate.NetApi.Model.Types.Primitive.U8();
             Index.Decode(byteArray, ref p);
-            Error = new XCavatePaseo.NetApi.Generated.Types.Base.Arr4U8();
+            Error = new XcavatePaseo.NetApi.Generated.Types.Base.Arr4U8();
             Error.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

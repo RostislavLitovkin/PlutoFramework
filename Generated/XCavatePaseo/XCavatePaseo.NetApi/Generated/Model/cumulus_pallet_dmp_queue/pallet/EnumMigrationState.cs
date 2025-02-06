@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_dmp_queue.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_dmp_queue.pallet
 {
     
     
@@ -73,7 +73,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_dmp_queue.pallet
 				AddTypeDecoder<BaseVoid>(MigrationState.CompletedExport);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U64>(MigrationState.StartedOverweightExport);
 				AddTypeDecoder<BaseVoid>(MigrationState.CompletedOverweightExport);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22>>(MigrationState.StartedCleanup);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22>>(MigrationState.StartedCleanup);
 				AddTypeDecoder<BaseVoid>(MigrationState.Completed);
         }
     }

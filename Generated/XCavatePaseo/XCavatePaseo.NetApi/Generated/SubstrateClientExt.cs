@@ -11,10 +11,10 @@ using Substrate.NetApi.Model.Extrinsics;
 using Substrate.NetApi.Model.Meta;
 using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
-using XCavatePaseo.NetApi.Generated.Storage;
+using XcavatePaseo.NetApi.Generated.Storage;
 
 
-namespace XCavatePaseo.NetApi.Generated
+namespace XcavatePaseo.NetApi.Generated
 {
     
     

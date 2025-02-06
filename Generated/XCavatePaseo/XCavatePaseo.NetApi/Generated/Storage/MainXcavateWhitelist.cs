@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -37,14 +37,14 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcavateWhitelist", "WhitelistedAccounts"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
         }
         
         /// <summary>
         /// >> WhitelistedAccountsParams
         ///  Mapping of an account to a bool.
         /// </summary>
-        public static string WhitelistedAccountsParams(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+        public static string WhitelistedAccountsParams(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
         {
             return RequestGenerator.GetStorage("XcavateWhitelist", "WhitelistedAccounts", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -64,7 +64,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> WhitelistedAccounts
         ///  Mapping of an account to a bool.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.Bool> WhitelistedAccounts(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.Bool> WhitelistedAccounts(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = XcavateWhitelistStorage.WhitelistedAccountsParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.Bool>(parameters, blockhash, token);
@@ -82,7 +82,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> add_to_whitelist
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AddToWhitelist(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 user)
+        public static Method AddToWhitelist(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 user)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(user.Encode());
@@ -93,7 +93,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> remove_from_whitelist
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method RemoveFromWhitelist(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 user)
+        public static Method RemoveFromWhitelist(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 user)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(user.Encode());

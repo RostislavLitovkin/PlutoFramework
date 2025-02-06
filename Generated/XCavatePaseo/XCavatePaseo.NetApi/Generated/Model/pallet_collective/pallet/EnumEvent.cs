@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_collective.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_collective.pallet
 {
     
     
@@ -79,13 +79,13 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_collective.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.Proposed);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Primitive.Bool, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.Voted);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.primitive_types.H256>(Event.Approved);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.primitive_types.H256>(Event.Disapproved);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.primitive_types.H256, XCavatePaseo.NetApi.Generated.Types.Base.EnumResult>>(Event.Executed);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.primitive_types.H256, XCavatePaseo.NetApi.Generated.Types.Base.EnumResult>>(Event.MemberExecuted);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.Closed);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.Proposed);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Primitive.Bool, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.Voted);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256>(Event.Approved);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256>(Event.Disapproved);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256, XcavatePaseo.NetApi.Generated.Types.Base.EnumResult>>(Event.Executed);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256, XcavatePaseo.NetApi.Generated.Types.Base.EnumResult>>(Event.MemberExecuted);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.Closed);
         }
     }
 }

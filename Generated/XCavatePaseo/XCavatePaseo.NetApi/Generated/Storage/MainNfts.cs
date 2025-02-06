@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -37,47 +37,47 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Nfts", "Collection"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionDetails)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionDetails)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Nfts", "OwnershipAcceptance"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Nfts", "Account"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Nfts", "CollectionAccount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Nfts", "CollectionRoleOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.BitFlagsT3)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.BitFlagsT3)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Nfts", "Item"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemDetails)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemDetails)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Nfts", "CollectionMetadataOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionMetadata)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionMetadata)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Nfts", "ItemMetadataOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemMetadata)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemMetadata)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Nfts", "Attribute"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.AttributeDeposit>)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7, XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.AttributeDeposit>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Nfts", "ItemPriceOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Nfts", "ItemAttributesApprovalsOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT2)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT2)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Nfts", "NextCollectionId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Nfts", "PendingSwapOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.PendingSwap)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.PendingSwap)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Nfts", "CollectionConfigOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionConfig)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionConfig)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Nfts", "ItemConfigOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemConfig)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemConfig)));
         }
         
         /// <summary>
@@ -104,10 +104,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Collection
         ///  Details of a collection.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionDetails> Collection(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionDetails> Collection(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = NftsStorage.CollectionParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionDetails>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionDetails>(parameters, blockhash, token);
             return result;
         }
         
@@ -115,7 +115,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> OwnershipAcceptanceParams
         ///  The collection, if any, of which an account is willing to take ownership.
         /// </summary>
-        public static string OwnershipAcceptanceParams(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+        public static string OwnershipAcceptanceParams(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
         {
             return RequestGenerator.GetStorage("Nfts", "OwnershipAcceptance", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -135,7 +135,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> OwnershipAcceptance
         ///  The collection, if any, of which an account is willing to take ownership.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> OwnershipAcceptance(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> OwnershipAcceptance(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = NftsStorage.OwnershipAcceptanceParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
@@ -147,7 +147,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  The items held by any given account; set out this way so that items owned by a single
         ///  account can be enumerated.
         /// </summary>
-        public static string AccountParams(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key)
+        public static string AccountParams(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key)
         {
             return RequestGenerator.GetStorage("Nfts", "Account", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -169,7 +169,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  The items held by any given account; set out this way so that items owned by a single
         ///  account can be enumerated.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> Account(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> Account(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
         {
             string parameters = NftsStorage.AccountParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple>(parameters, blockhash, token);
@@ -181,7 +181,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  The collections owned by any given account; set out this way so that collections owned by
         ///  a single account can be enumerated.
         /// </summary>
-        public static string CollectionAccountParams(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32> key)
+        public static string CollectionAccountParams(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32> key)
         {
             return RequestGenerator.GetStorage("Nfts", "CollectionAccount", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -202,7 +202,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  The collections owned by any given account; set out this way so that collections owned by
         ///  a single account can be enumerated.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> CollectionAccount(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> CollectionAccount(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
         {
             string parameters = NftsStorage.CollectionAccountParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple>(parameters, blockhash, token);
@@ -214,7 +214,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  The items in existence and their ownership details.
         ///  Stores collection roles as per account.
         /// </summary>
-        public static string CollectionRoleOfParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
+        public static string CollectionRoleOfParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
         {
             return RequestGenerator.GetStorage("Nfts", "CollectionRoleOf", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -235,10 +235,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  The items in existence and their ownership details.
         ///  Stores collection roles as per account.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.BitFlagsT3> CollectionRoleOf(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.BitFlagsT3> CollectionRoleOf(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
         {
             string parameters = NftsStorage.CollectionRoleOfParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.BitFlagsT3>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.BitFlagsT3>(parameters, blockhash, token);
             return result;
         }
         
@@ -266,10 +266,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Item
         ///  The items in existence and their ownership details.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemDetails> Item(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemDetails> Item(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
         {
             string parameters = NftsStorage.ItemParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemDetails>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemDetails>(parameters, blockhash, token);
             return result;
         }
         
@@ -297,10 +297,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> CollectionMetadataOf
         ///  Metadata of a collection.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionMetadata> CollectionMetadataOf(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionMetadata> CollectionMetadataOf(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = NftsStorage.CollectionMetadataOfParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionMetadata>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionMetadata>(parameters, blockhash, token);
             return result;
         }
         
@@ -328,10 +328,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> ItemMetadataOf
         ///  Metadata of an item.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemMetadata> ItemMetadataOf(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemMetadata> ItemMetadataOf(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
         {
             string parameters = NftsStorage.ItemMetadataOfParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemMetadata>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemMetadata>(parameters, blockhash, token);
             return result;
         }
         
@@ -339,7 +339,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> AttributeParams
         ///  Attributes of a collection.
         /// </summary>
-        public static string AttributeParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6> key)
+        public static string AttributeParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6> key)
         {
             return RequestGenerator.GetStorage("Nfts", "Attribute", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -361,10 +361,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Attribute
         ///  Attributes of a collection.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.AttributeDeposit>> Attribute(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7, XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.AttributeDeposit>> Attribute(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6> key, string blockhash, CancellationToken token)
         {
             string parameters = NftsStorage.AttributeParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.AttributeDeposit>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7, XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.AttributeDeposit>>(parameters, blockhash, token);
             return result;
         }
         
@@ -392,10 +392,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> ItemPriceOf
         ///  A price of an item.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>> ItemPriceOf(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>> ItemPriceOf(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
         {
             string parameters = NftsStorage.ItemPriceOfParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>>(parameters, blockhash, token);
             return result;
         }
         
@@ -423,10 +423,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> ItemAttributesApprovalsOf
         ///  Item attribute approvals.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT2> ItemAttributesApprovalsOf(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT2> ItemAttributesApprovalsOf(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
         {
             string parameters = NftsStorage.ItemAttributesApprovalsOfParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT2>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT2>(parameters, blockhash, token);
             return result;
         }
         
@@ -485,10 +485,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> PendingSwapOf
         ///  Handles all the pending swaps.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.PendingSwap> PendingSwapOf(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.PendingSwap> PendingSwapOf(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
         {
             string parameters = NftsStorage.PendingSwapOfParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.PendingSwap>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.PendingSwap>(parameters, blockhash, token);
             return result;
         }
         
@@ -516,10 +516,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> CollectionConfigOf
         ///  Config of a collection.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionConfig> CollectionConfigOf(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionConfig> CollectionConfigOf(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = NftsStorage.CollectionConfigOfParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionConfig>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionConfig>(parameters, blockhash, token);
             return result;
         }
         
@@ -547,10 +547,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> ItemConfigOf
         ///  Config of an item.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemConfig> ItemConfigOf(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemConfig> ItemConfigOf(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
         {
             string parameters = NftsStorage.ItemConfigOfParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemConfig>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemConfig>(parameters, blockhash, token);
             return result;
         }
     }
@@ -565,7 +565,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> create
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Create(XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress admin, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionConfig config)
+        public static Method Create(XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress admin, XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionConfig config)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(admin.Encode());
@@ -577,7 +577,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> force_create
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceCreate(XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionConfig config)
+        public static Method ForceCreate(XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner, XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionConfig config)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(owner.Encode());
@@ -589,7 +589,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> destroy
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Destroy(Substrate.NetApi.Model.Types.Primitive.U32 collection, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.DestroyWitness witness)
+        public static Method Destroy(Substrate.NetApi.Model.Types.Primitive.U32 collection, XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.DestroyWitness witness)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -601,7 +601,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> mint
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Mint(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Primitive.U32 item, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress mint_to, Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.MintWitness> witness_data)
+        public static Method Mint(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Primitive.U32 item, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress mint_to, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.MintWitness> witness_data)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -615,7 +615,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> force_mint
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceMint(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Primitive.U32 item, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress mint_to, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemConfig item_config)
+        public static Method ForceMint(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Primitive.U32 item, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress mint_to, XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemConfig item_config)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -641,7 +641,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> transfer
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Transfer(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Primitive.U32 item, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress dest)
+        public static Method Transfer(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Primitive.U32 item, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress dest)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -690,7 +690,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> lock_collection
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method LockCollection(Substrate.NetApi.Model.Types.Primitive.U32 collection, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.BitFlagsT1 lock_settings)
+        public static Method LockCollection(Substrate.NetApi.Model.Types.Primitive.U32 collection, XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.BitFlagsT1 lock_settings)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -702,7 +702,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> transfer_ownership
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method TransferOwnership(Substrate.NetApi.Model.Types.Primitive.U32 collection, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress new_owner)
+        public static Method TransferOwnership(Substrate.NetApi.Model.Types.Primitive.U32 collection, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress new_owner)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -714,7 +714,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> set_team
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetTeam(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress> issuer, Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress> admin, Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress> freezer)
+        public static Method SetTeam(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress> issuer, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress> admin, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress> freezer)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -728,7 +728,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> force_collection_owner
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceCollectionOwner(Substrate.NetApi.Model.Types.Primitive.U32 collection, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner)
+        public static Method ForceCollectionOwner(Substrate.NetApi.Model.Types.Primitive.U32 collection, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress owner)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -740,7 +740,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> force_collection_config
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceCollectionConfig(Substrate.NetApi.Model.Types.Primitive.U32 collection, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionConfig config)
+        public static Method ForceCollectionConfig(Substrate.NetApi.Model.Types.Primitive.U32 collection, XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionConfig config)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -752,7 +752,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> approve_transfer
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ApproveTransfer(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Primitive.U32 item, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> maybe_deadline)
+        public static Method ApproveTransfer(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Primitive.U32 item, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> maybe_deadline)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -766,7 +766,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> cancel_approval
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method CancelApproval(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Primitive.U32 item, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate)
+        public static Method CancelApproval(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Primitive.U32 item, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -805,7 +805,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> set_attribute
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetAttribute(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> maybe_item, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace @namespace, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 key, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7 value)
+        public static Method SetAttribute(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> maybe_item, XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace @namespace, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 key, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7 value)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -820,7 +820,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> force_set_attribute
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceSetAttribute(Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> set_as, Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> maybe_item, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace @namespace, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 key, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7 value)
+        public static Method ForceSetAttribute(Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> set_as, Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> maybe_item, XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace @namespace, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 key, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7 value)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(set_as.Encode());
@@ -836,7 +836,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> clear_attribute
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ClearAttribute(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> maybe_item, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace @namespace, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 key)
+        public static Method ClearAttribute(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> maybe_item, XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace @namespace, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 key)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -850,7 +850,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> approve_item_attributes
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ApproveItemAttributes(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Primitive.U32 item, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate)
+        public static Method ApproveItemAttributes(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Primitive.U32 item, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -863,7 +863,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> cancel_item_attributes_approval
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method CancelItemAttributesApproval(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Primitive.U32 item, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CancelAttributesApprovalWitness witness)
+        public static Method CancelItemAttributesApproval(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Primitive.U32 item, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CancelAttributesApprovalWitness witness)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -877,7 +877,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> set_metadata
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetMetadata(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Primitive.U32 item, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 data)
+        public static Method SetMetadata(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Primitive.U32 item, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 data)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -902,7 +902,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> set_collection_metadata
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetCollectionMetadata(Substrate.NetApi.Model.Types.Primitive.U32 collection, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 data)
+        public static Method SetCollectionMetadata(Substrate.NetApi.Model.Types.Primitive.U32 collection, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 data)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -948,7 +948,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> update_mint_settings
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method UpdateMintSettings(Substrate.NetApi.Model.Types.Primitive.U32 collection, XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.MintSettings mint_settings)
+        public static Method UpdateMintSettings(Substrate.NetApi.Model.Types.Primitive.U32 collection, XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.MintSettings mint_settings)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -960,7 +960,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> set_price
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetPrice(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Primitive.U32 item, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128> price, Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress> whitelisted_buyer)
+        public static Method SetPrice(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Primitive.U32 item, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128> price, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress> whitelisted_buyer)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -987,7 +987,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> pay_tips
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method PayTips(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12 tips)
+        public static Method PayTips(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12 tips)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(tips.Encode());
@@ -998,7 +998,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> create_swap
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method CreateSwap(Substrate.NetApi.Model.Types.Primitive.U32 offered_collection, Substrate.NetApi.Model.Types.Primitive.U32 offered_item, Substrate.NetApi.Model.Types.Primitive.U32 desired_collection, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> maybe_desired_item, Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.PriceWithDirection> maybe_price, Substrate.NetApi.Model.Types.Primitive.U32 duration)
+        public static Method CreateSwap(Substrate.NetApi.Model.Types.Primitive.U32 offered_collection, Substrate.NetApi.Model.Types.Primitive.U32 offered_item, Substrate.NetApi.Model.Types.Primitive.U32 desired_collection, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> maybe_desired_item, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.PriceWithDirection> maybe_price, Substrate.NetApi.Model.Types.Primitive.U32 duration)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(offered_collection.Encode());
@@ -1026,7 +1026,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> claim_swap
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ClaimSwap(Substrate.NetApi.Model.Types.Primitive.U32 send_collection, Substrate.NetApi.Model.Types.Primitive.U32 send_item, Substrate.NetApi.Model.Types.Primitive.U32 receive_collection, Substrate.NetApi.Model.Types.Primitive.U32 receive_item, Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.PriceWithDirection> witness_price)
+        public static Method ClaimSwap(Substrate.NetApi.Model.Types.Primitive.U32 send_collection, Substrate.NetApi.Model.Types.Primitive.U32 send_item, Substrate.NetApi.Model.Types.Primitive.U32 receive_collection, Substrate.NetApi.Model.Types.Primitive.U32 receive_item, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.PriceWithDirection> witness_price)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(send_collection.Encode());
@@ -1041,7 +1041,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> mint_pre_signed
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method MintPreSigned(XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.PreSignedMint mint_data, XCavatePaseo.NetApi.Generated.Model.sp_runtime.EnumMultiSignature signature, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 signer)
+        public static Method MintPreSigned(XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.PreSignedMint mint_data, XcavatePaseo.NetApi.Generated.Model.sp_runtime.EnumMultiSignature signature, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 signer)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(mint_data.Encode());
@@ -1054,7 +1054,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> set_attributes_pre_signed
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetAttributesPreSigned(XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.PreSignedAttributes data, XCavatePaseo.NetApi.Generated.Model.sp_runtime.EnumMultiSignature signature, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 signer)
+        public static Method SetAttributesPreSigned(XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.PreSignedAttributes data, XcavatePaseo.NetApi.Generated.Model.sp_runtime.EnumMultiSignature signature, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 signer)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(data.Encode());
@@ -1218,9 +1218,9 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Features
         ///  Disables some of pallet's features.
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.BitFlagsT4 Features()
+        public XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.BitFlagsT4 Features()
         {
-            var result = new XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.BitFlagsT4();
+            var result = new XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.BitFlagsT4();
             result.Create("0x0000000000000000");
             return result;
         }

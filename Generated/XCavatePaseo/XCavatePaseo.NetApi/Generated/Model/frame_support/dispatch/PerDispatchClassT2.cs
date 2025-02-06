@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.frame_support.dispatch
+namespace XcavatePaseo.NetApi.Generated.Model.frame_support.dispatch
 {
     
     
@@ -27,15 +27,15 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_support.dispatch
         /// <summary>
         /// >> normal
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.frame_system.limits.WeightsPerClass Normal { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.frame_system.limits.WeightsPerClass Normal { get; set; }
         /// <summary>
         /// >> operational
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.frame_system.limits.WeightsPerClass Operational { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.frame_system.limits.WeightsPerClass Operational { get; set; }
         /// <summary>
         /// >> mandatory
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.frame_system.limits.WeightsPerClass Mandatory { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.frame_system.limits.WeightsPerClass Mandatory { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -57,11 +57,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_support.dispatch
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Normal = new XCavatePaseo.NetApi.Generated.Model.frame_system.limits.WeightsPerClass();
+            Normal = new XcavatePaseo.NetApi.Generated.Model.frame_system.limits.WeightsPerClass();
             Normal.Decode(byteArray, ref p);
-            Operational = new XCavatePaseo.NetApi.Generated.Model.frame_system.limits.WeightsPerClass();
+            Operational = new XcavatePaseo.NetApi.Generated.Model.frame_system.limits.WeightsPerClass();
             Operational.Decode(byteArray, ref p);
-            Mandatory = new XCavatePaseo.NetApi.Generated.Model.frame_system.limits.WeightsPerClass();
+            Mandatory = new XcavatePaseo.NetApi.Generated.Model.frame_system.limits.WeightsPerClass();
             Mandatory.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

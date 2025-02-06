@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -37,14 +37,14 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyManagement", "LettingStorage"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyManagement", "StoredFunds"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyManagement", "LettingInfo"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.LettingAgentInfo)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.LettingAgentInfo)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyManagement", "LettingAgentLocations"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8>), typeof(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8>), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34)));
         }
         
         /// <summary>
@@ -71,10 +71,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> LettingStorage
         ///  Mapping from the real estate object to the letting agent.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> LettingStorage(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> LettingStorage(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = PropertyManagementStorage.LettingStorageParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(parameters, blockhash, token);
             return result;
         }
         
@@ -82,7 +82,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> StoredFundsParams
         ///  Mapping from account to currently stored balance.
         /// </summary>
-        public static string StoredFundsParams(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+        public static string StoredFundsParams(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
         {
             return RequestGenerator.GetStorage("PropertyManagement", "StoredFunds", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -102,7 +102,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> StoredFunds
         ///  Mapping from account to currently stored balance.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.U128> StoredFunds(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U128> StoredFunds(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = PropertyManagementStorage.StoredFundsParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U128>(parameters, blockhash, token);
@@ -113,7 +113,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> LettingInfoParams
         ///  Mapping from account to letting agent info
         /// </summary>
-        public static string LettingInfoParams(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+        public static string LettingInfoParams(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
         {
             return RequestGenerator.GetStorage("PropertyManagement", "LettingInfo", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -133,10 +133,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> LettingInfo
         ///  Mapping from account to letting agent info
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.LettingAgentInfo> LettingInfo(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.LettingAgentInfo> LettingInfo(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = PropertyManagementStorage.LettingInfoParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.LettingAgentInfo>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.LettingAgentInfo>(parameters, blockhash, token);
             return result;
         }
         
@@ -144,7 +144,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> LettingAgentLocationsParams
         ///  Mapping from location to the letting agents of this location.
         /// </summary>
-        public static string LettingAgentLocationsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8> key)
+        public static string LettingAgentLocationsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8> key)
         {
             return RequestGenerator.GetStorage("PropertyManagement", "LettingAgentLocations", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -164,10 +164,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> LettingAgentLocations
         ///  Mapping from location to the letting agents of this location.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34> LettingAgentLocations(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8> key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34> LettingAgentLocations(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8> key, string blockhash, CancellationToken token)
         {
             string parameters = PropertyManagementStorage.LettingAgentLocationsParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34>(parameters, blockhash, token);
             return result;
         }
     }
@@ -182,7 +182,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> add_letting_agent
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AddLettingAgent(Substrate.NetApi.Model.Types.Primitive.U32 region, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 location, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 letting_agent)
+        public static Method AddLettingAgent(Substrate.NetApi.Model.Types.Primitive.U32 region, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 location, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 letting_agent)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(region.Encode());
@@ -205,7 +205,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> add_letting_agent_to_location
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AddLettingAgentToLocation(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 location, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 letting_agent)
+        public static Method AddLettingAgentToLocation(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 location, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 letting_agent)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(location.Encode());
@@ -257,9 +257,9 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> PalletId
         ///  The property management's pallet id, used for deriving its sovereign account ID.
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.frame_support.PalletId PalletId()
+        public XcavatePaseo.NetApi.Generated.Model.frame_support.PalletId PalletId()
         {
-            var result = new XCavatePaseo.NetApi.Generated.Model.frame_support.PalletId();
+            var result = new XcavatePaseo.NetApi.Generated.Model.frame_support.PalletId();
             result.Create("0x70792F70706D6D74");
             return result;
         }

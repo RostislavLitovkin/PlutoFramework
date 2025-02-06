@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -36,7 +36,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         public DmpQueueStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("DmpQueue", "MigrationStatus"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_dmp_queue.pallet.EnumMigrationState)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("DmpQueue", "MigrationStatus"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_dmp_queue.pallet.EnumMigrationState)));
         }
         
         /// <summary>
@@ -61,10 +61,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> MigrationStatus
         ///  The migration state of this pallet.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_dmp_queue.pallet.EnumMigrationState> MigrationStatus(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_dmp_queue.pallet.EnumMigrationState> MigrationStatus(string blockhash, CancellationToken token)
         {
             string parameters = DmpQueueStorage.MigrationStatusParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_dmp_queue.pallet.EnumMigrationState>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_dmp_queue.pallet.EnumMigrationState>(parameters, blockhash, token);
             return result;
         }
     }

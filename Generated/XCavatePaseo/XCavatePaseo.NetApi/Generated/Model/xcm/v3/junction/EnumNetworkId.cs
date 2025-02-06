@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.xcm.v3.junction
+namespace XcavatePaseo.NetApi.Generated.Model.xcm.v3.junction
 {
     
     
@@ -88,8 +88,8 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v3.junction
         /// </summary>
         public EnumNetworkId()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Types.Base.Arr32U8>(NetworkId.ByGenesis);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XCavatePaseo.NetApi.Generated.Types.Base.Arr32U8>>(NetworkId.ByFork);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8>(NetworkId.ByGenesis);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8>>(NetworkId.ByFork);
 				AddTypeDecoder<BaseVoid>(NetworkId.Polkadot);
 				AddTypeDecoder<BaseVoid>(NetworkId.Kusama);
 				AddTypeDecoder<BaseVoid>(NetworkId.Westend);

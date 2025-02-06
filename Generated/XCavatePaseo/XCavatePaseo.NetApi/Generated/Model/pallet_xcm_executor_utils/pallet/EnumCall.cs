@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet
 {
     
     
@@ -55,10 +55,10 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location, XCavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet.EnumTrustPolicy>>(Call.set_reserve_policy);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Call.remove_reserve_policy);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location, XCavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet.EnumTrustPolicy>>(Call.set_teleport_policy);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Call.remove_teleport_policy);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location, XcavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet.EnumTrustPolicy>>(Call.set_reserve_policy);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Call.remove_reserve_policy);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location, XcavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet.EnumTrustPolicy>>(Call.set_teleport_policy);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Call.remove_teleport_policy);
         }
     }
 }

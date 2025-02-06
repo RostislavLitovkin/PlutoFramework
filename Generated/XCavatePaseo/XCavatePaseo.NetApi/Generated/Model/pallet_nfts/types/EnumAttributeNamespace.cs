@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
 {
     
     
@@ -56,7 +56,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
 				AddTypeDecoder<BaseVoid>(AttributeNamespace.Pallet);
 				AddTypeDecoder<BaseVoid>(AttributeNamespace.CollectionOwner);
 				AddTypeDecoder<BaseVoid>(AttributeNamespace.ItemOwner);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(AttributeNamespace.Account);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(AttributeNamespace.Account);
         }
     }
 }

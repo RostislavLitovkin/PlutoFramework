@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.traits
+namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.traits
 {
     
     
@@ -48,9 +48,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.traits
         /// </summary>
         public EnumOutcome()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>(Outcome.Complete);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight, XCavatePaseo.NetApi.Generated.Model.xcm.v3.traits.EnumError>>(Outcome.Incomplete);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.xcm.v3.traits.EnumError>(Outcome.Error);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>(Outcome.Complete);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight, XcavatePaseo.NetApi.Generated.Model.xcm.v3.traits.EnumError>>(Outcome.Incomplete);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.v3.traits.EnumError>(Outcome.Error);
         }
     }
 }

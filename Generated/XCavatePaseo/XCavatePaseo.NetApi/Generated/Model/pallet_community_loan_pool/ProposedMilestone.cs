@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool
         /// <summary>
         /// >> percentage_to_unlock
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Percent PercentageToUnlock { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Percent PercentageToUnlock { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            PercentageToUnlock = new XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Percent();
+            PercentageToUnlock = new XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Percent();
             PercentageToUnlock.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.relay_state_snapshot
+namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.relay_state_snapshot
 {
     
     
@@ -27,19 +27,19 @@ namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.re
         /// <summary>
         /// >> dmq_mqc_head
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.primitive_types.H256 DmqMqcHead { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.primitive_types.H256 DmqMqcHead { get; set; }
         /// <summary>
         /// >> relay_dispatch_queue_remaining_capacity
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.relay_state_snapshot.RelayDispatchQueueRemainingCapacity RelayDispatchQueueRemainingCapacity { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.relay_state_snapshot.RelayDispatchQueueRemainingCapacity RelayDispatchQueueRemainingCapacity { get; set; }
         /// <summary>
         /// >> ingress_channels
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.AbridgedHrmpChannel>> IngressChannels { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.AbridgedHrmpChannel>> IngressChannels { get; set; }
         /// <summary>
         /// >> egress_channels
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.AbridgedHrmpChannel>> EgressChannels { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.AbridgedHrmpChannel>> EgressChannels { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -62,13 +62,13 @@ namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.re
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            DmqMqcHead = new XCavatePaseo.NetApi.Generated.Model.primitive_types.H256();
+            DmqMqcHead = new XcavatePaseo.NetApi.Generated.Model.primitive_types.H256();
             DmqMqcHead.Decode(byteArray, ref p);
-            RelayDispatchQueueRemainingCapacity = new XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.relay_state_snapshot.RelayDispatchQueueRemainingCapacity();
+            RelayDispatchQueueRemainingCapacity = new XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.relay_state_snapshot.RelayDispatchQueueRemainingCapacity();
             RelayDispatchQueueRemainingCapacity.Decode(byteArray, ref p);
-            IngressChannels = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.AbridgedHrmpChannel>>();
+            IngressChannels = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.AbridgedHrmpChannel>>();
             IngressChannels.Decode(byteArray, ref p);
-            EgressChannels = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.AbridgedHrmpChannel>>();
+            EgressChannels = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.AbridgedHrmpChannel>>();
             EgressChannels.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

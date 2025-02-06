@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.pallet
 {
     
     
@@ -81,9 +81,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.pa
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inherent.ParachainInherentData>(Call.set_validation_data);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inherent.ParachainInherentData>(Call.set_validation_data);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>(Call.sudo_send_upward_message);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.authorize_upgrade);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.authorize_upgrade);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>(Call.enact_authorized_upgrade);
         }
     }

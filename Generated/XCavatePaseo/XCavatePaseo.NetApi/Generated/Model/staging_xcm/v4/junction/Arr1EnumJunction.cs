@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction
+namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction
 {
     
     
@@ -25,9 +25,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction
     {
         
         /// <summary>
-        /// >> XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.EnumJunction[]
+        /// >> XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.EnumJunction[]
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.EnumJunction[] Value { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.EnumJunction[] Value { get; set; }
         
         /// <inheritdoc/>
         public override int TypeSize
@@ -41,7 +41,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction
         /// <inheritdoc/>
         public override string TypeName()
         {
-            return string.Format("[{0}; {1}]", new XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.EnumJunction().TypeName(), this.TypeSize);
+            return string.Format("[{0}; {1}]", new XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.EnumJunction().TypeName(), this.TypeSize);
         }
         
         /// <inheritdoc/>
@@ -56,8 +56,8 @@ namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            var array = new XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.EnumJunction[TypeSize];
-            for (var i = 0; i < array.Length; i++) {var t = new XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.EnumJunction();t.Decode(byteArray, ref p);array[i] = t;};
+            var array = new XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.EnumJunction[TypeSize];
+            for (var i = 0; i < array.Length; i++) {var t = new XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.EnumJunction();t.Decode(byteArray, ref p);array[i] = t;};
             var bytesLength = p - start;
             Bytes = new byte[bytesLength];
             System.Array.Copy(byteArray, start, Bytes, 0, bytesLength);
@@ -65,7 +65,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction
         }
         
         /// <inheritdoc/>
-        public void Create(XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.EnumJunction[] array)
+        public void Create(XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.EnumJunction[] array)
         {
             Value = array;
             Bytes = Encode();

@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_assets.types
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_assets.types
 {
     
     
@@ -31,11 +31,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_assets.types
         /// <summary>
         /// >> status
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.EnumAccountStatus Status { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.EnumAccountStatus Status { get; set; }
         /// <summary>
         /// >> reason
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.EnumExistenceReason Reason { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.EnumExistenceReason Reason { get; set; }
         /// <summary>
         /// >> extra
         /// </summary>
@@ -64,9 +64,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_assets.types
             var start = p;
             Balance = new Substrate.NetApi.Model.Types.Primitive.U128();
             Balance.Decode(byteArray, ref p);
-            Status = new XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.EnumAccountStatus();
+            Status = new XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.EnumAccountStatus();
             Status.Decode(byteArray, ref p);
-            Reason = new XCavatePaseo.NetApi.Generated.Model.pallet_assets.types.EnumExistenceReason();
+            Reason = new XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.EnumExistenceReason();
             Reason.Decode(byteArray, ref p);
             Extra = new Substrate.NetApi.Model.Types.Base.BaseTuple();
             Extra.Decode(byteArray, ref p);

@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core
+namespace XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core
 {
     
     
@@ -50,7 +50,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core
         {
 				AddTypeDecoder<BaseVoid>(AggregateMessageOrigin.Here);
 				AddTypeDecoder<BaseVoid>(AggregateMessageOrigin.Parent);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>(AggregateMessageOrigin.Sibling);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>(AggregateMessageOrigin.Sibling);
         }
     }
 }

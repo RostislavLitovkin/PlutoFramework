@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.types
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.types
 {
     
     
@@ -39,7 +39,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.types
         /// <summary>
         /// >> asset_creator
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 AssetCreator { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 AssetCreator { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -68,7 +68,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.types
             Fractions.Decode(byteArray, ref p);
             Deposit = new Substrate.NetApi.Model.Types.Primitive.U128();
             Deposit.Decode(byteArray, ref p);
-            AssetCreator = new XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            AssetCreator = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             AssetCreator.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

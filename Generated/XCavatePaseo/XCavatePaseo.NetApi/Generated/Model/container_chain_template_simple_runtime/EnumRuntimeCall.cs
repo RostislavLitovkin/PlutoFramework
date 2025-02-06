@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime
+namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime
 {
     
     
@@ -203,40 +203,40 @@ namespace XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         /// </summary>
         public EnumRuntimeCall()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.frame_system.pallet.EnumCall>(RuntimeCall.System);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.pallet.EnumCall>(RuntimeCall.ParachainSystem);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_timestamp.pallet.EnumCall>(RuntimeCall.Timestamp);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_parachain_info.pallet.EnumCall>(RuntimeCall.ParachainInfo);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_sudo.pallet.EnumCall>(RuntimeCall.Sudo);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_utility.pallet.EnumCall>(RuntimeCall.Utility);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_proxy.pallet.EnumCall>(RuntimeCall.Proxy);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_maintenance_mode.pallet.EnumCall>(RuntimeCall.MaintenanceMode);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_tx_pause.pallet.EnumCall>(RuntimeCall.TxPause);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_balances.pallet.EnumCall>(RuntimeCall.Balances);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_multisig.pallet.EnumCall>(RuntimeCall.Multisig);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_cc_authorities_noting.pallet.EnumCall>(RuntimeCall.AuthoritiesNoting);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_author_inherent.pallet.EnumCall>(RuntimeCall.AuthorInherent);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_dmp_queue.pallet.EnumCall>(RuntimeCall.DmpQueue);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.EnumCall>(RuntimeCall.PolkadotXcm);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_message_queue.pallet.EnumCall>(RuntimeCall.MessageQueue);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_assets.pallet.EnumCall>(RuntimeCall.ForeignAssets);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_foreign_asset_creator.pallet.EnumCall>(RuntimeCall.ForeignAssetsCreator);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_asset_rate.pallet.EnumCall>(RuntimeCall.AssetRate);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet.EnumCall>(RuntimeCall.XcmExecutorUtils);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_root_testing.pallet.EnumCall>(RuntimeCall.RootTesting);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumCall>(RuntimeCall.XcavateWhitelist);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_collective.pallet.EnumCall>(RuntimeCall.Council);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_collective.pallet.EnumCall>(RuntimeCall.TechnicalCommittee);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_collective.pallet.EnumCall>(RuntimeCall.AllianceMotion);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_nfts.pallet.EnumCall>(RuntimeCall.Nfts);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_assets.pallet.EnumCall>(RuntimeCall.Assets);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.pallet.EnumCall>(RuntimeCall.NftFractionalization);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.EnumCall>(RuntimeCall.NftMarketplace);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.EnumCall>(RuntimeCall.PropertyManagement);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumCall>(RuntimeCall.PropertyGovernance);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_xcavate_staking.pallet.EnumCall>(RuntimeCall.XcavateStaking);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumCall>(RuntimeCall.CommunityLoanPool);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.EnumCall>(RuntimeCall.CommunityProject);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.frame_system.pallet.EnumCall>(RuntimeCall.System);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.pallet.EnumCall>(RuntimeCall.ParachainSystem);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_timestamp.pallet.EnumCall>(RuntimeCall.Timestamp);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_parachain_info.pallet.EnumCall>(RuntimeCall.ParachainInfo);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_sudo.pallet.EnumCall>(RuntimeCall.Sudo);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_utility.pallet.EnumCall>(RuntimeCall.Utility);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_proxy.pallet.EnumCall>(RuntimeCall.Proxy);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_maintenance_mode.pallet.EnumCall>(RuntimeCall.MaintenanceMode);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_tx_pause.pallet.EnumCall>(RuntimeCall.TxPause);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_balances.pallet.EnumCall>(RuntimeCall.Balances);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_multisig.pallet.EnumCall>(RuntimeCall.Multisig);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_cc_authorities_noting.pallet.EnumCall>(RuntimeCall.AuthoritiesNoting);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_author_inherent.pallet.EnumCall>(RuntimeCall.AuthorInherent);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_dmp_queue.pallet.EnumCall>(RuntimeCall.DmpQueue);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.EnumCall>(RuntimeCall.PolkadotXcm);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_message_queue.pallet.EnumCall>(RuntimeCall.MessageQueue);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_assets.pallet.EnumCall>(RuntimeCall.ForeignAssets);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_foreign_asset_creator.pallet.EnumCall>(RuntimeCall.ForeignAssetsCreator);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_asset_rate.pallet.EnumCall>(RuntimeCall.AssetRate);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet.EnumCall>(RuntimeCall.XcmExecutorUtils);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_root_testing.pallet.EnumCall>(RuntimeCall.RootTesting);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumCall>(RuntimeCall.XcavateWhitelist);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_collective.pallet.EnumCall>(RuntimeCall.Council);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_collective.pallet.EnumCall>(RuntimeCall.TechnicalCommittee);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_collective.pallet.EnumCall>(RuntimeCall.AllianceMotion);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.pallet.EnumCall>(RuntimeCall.Nfts);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_assets.pallet.EnumCall>(RuntimeCall.Assets);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.pallet.EnumCall>(RuntimeCall.NftFractionalization);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.EnumCall>(RuntimeCall.NftMarketplace);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.EnumCall>(RuntimeCall.PropertyManagement);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumCall>(RuntimeCall.PropertyGovernance);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_staking.pallet.EnumCall>(RuntimeCall.XcavateStaking);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumCall>(RuntimeCall.CommunityLoanPool);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.EnumCall>(RuntimeCall.CommunityProject);
         }
     }
 }

@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.xcm.v3
+namespace XcavatePaseo.NetApi.Generated.Model.xcm.v3
 {
     
     
@@ -64,11 +64,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v3
         public EnumResponse()
         {
 				AddTypeDecoder<BaseVoid>(Response.Null);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.xcm.v3.multiasset.MultiAssets>(Response.Assets);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.xcm.v3.traits.EnumError>>>(Response.ExecutionResult);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.v3.multiasset.MultiAssets>(Response.Assets);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.xcm.v3.traits.EnumError>>>(Response.ExecutionResult);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Response.Version);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9>(Response.PalletsInfo);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.xcm.v3.EnumMaybeErrorCode>(Response.DispatchResult);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9>(Response.PalletsInfo);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.v3.EnumMaybeErrorCode>(Response.DispatchResult);
         }
     }
 }

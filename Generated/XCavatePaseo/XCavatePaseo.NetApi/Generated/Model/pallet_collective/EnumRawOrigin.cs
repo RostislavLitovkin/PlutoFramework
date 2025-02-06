@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_collective
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_collective
 {
     
     
@@ -49,7 +49,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_collective
         public EnumRawOrigin()
         {
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(RawOrigin.Members);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(RawOrigin.Member);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(RawOrigin.Member);
 				AddTypeDecoder<BaseVoid>(RawOrigin._Phantom);
         }
     }

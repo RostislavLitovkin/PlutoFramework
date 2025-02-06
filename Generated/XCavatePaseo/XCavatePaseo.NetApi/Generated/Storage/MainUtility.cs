@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -49,7 +49,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> batch
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Batch(Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall> calls)
+        public static Method Batch(Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall> calls)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(calls.Encode());
@@ -60,7 +60,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> as_derivative
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AsDerivative(Substrate.NetApi.Model.Types.Primitive.U16 index, XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall call)
+        public static Method AsDerivative(Substrate.NetApi.Model.Types.Primitive.U16 index, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(index.Encode());
@@ -72,7 +72,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> batch_all
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method BatchAll(Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall> calls)
+        public static Method BatchAll(Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall> calls)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(calls.Encode());
@@ -83,7 +83,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> dispatch_as
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method DispatchAs(XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumOriginCaller as_origin, XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall call)
+        public static Method DispatchAs(XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumOriginCaller as_origin, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(as_origin.Encode());
@@ -95,7 +95,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> force_batch
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceBatch(Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall> calls)
+        public static Method ForceBatch(Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall> calls)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(calls.Encode());
@@ -106,7 +106,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> with_weight
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method WithWeight(XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall call, XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight weight)
+        public static Method WithWeight(XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall call, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight weight)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(call.Encode());

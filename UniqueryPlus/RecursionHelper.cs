@@ -187,7 +187,7 @@ namespace UniqueryPlus
                 Unique.NetApi.Generated.SubstrateClientExt => [NftTypeEnum.Unique],
                 Opal.NetApi.Generated.SubstrateClientExt => [NftTypeEnum.Opal],
                 Mythos.NetApi.Generated.SubstrateClientExt => [NftTypeEnum.Mythos],
-                XCavatePaseo.NetApi.Generated.SubstrateClientExt => [NftTypeEnum.XCavatePaseo],
+                XcavatePaseo.NetApi.Generated.SubstrateClientExt => [NftTypeEnum.XcavatePaseo],
                 _ => []
             };
         }

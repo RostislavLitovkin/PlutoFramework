@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.xcavate.xcavate" android:versionName="1.0" android:versionCode="1">
-	<application android:allowBackup="false" android:supportsRtl="true" android:label="XCavate" android:icon="@mipmap/appicon"></application>
+	<application android:allowBackup="false" android:supportsRtl="true" android:label="Xcavate" android:icon="@mipmap/appicon"></application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.CAMERA" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PlutoFramework.Components.XCavate.FrequentlyAskedQuestionsPage"
+             x:Class="PlutoFramework.Components.Xcavate.FrequentlyAskedQuestionsPage"
              xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
          xmlns:password="clr-namespace:PlutoFramework.Components.Password"
              xmlns:settings="clr-namespace:PlutoFramework.Components.Settings"
