@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm_executor.traits.asset_transfer
+namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm_executor.traits.asset_transfer
 {
     
     
@@ -56,7 +56,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm_executor.traits.asset_
 				AddTypeDecoder<BaseVoid>(TransferType.Teleport);
 				AddTypeDecoder<BaseVoid>(TransferType.LocalReserve);
 				AddTypeDecoder<BaseVoid>(TransferType.DestinationReserve);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation>(TransferType.RemoteReserve);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation>(TransferType.RemoteReserve);
         }
     }
 }

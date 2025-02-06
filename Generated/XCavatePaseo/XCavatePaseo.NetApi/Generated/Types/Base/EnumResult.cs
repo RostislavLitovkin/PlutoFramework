@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Types.Base
+namespace XcavatePaseo.NetApi.Generated.Types.Base
 {
     
     
@@ -44,7 +44,7 @@ namespace XCavatePaseo.NetApi.Generated.Types.Base
         public EnumResult()
         {
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseTuple>(Result.Ok);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Result.Err);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Result.Err);
         }
     }
 }

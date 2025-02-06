@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.bounded_collections.weak_bounded_vec
+namespace XcavatePaseo.NetApi.Generated.Model.bounded_collections.weak_bounded_vec
 {
     
     

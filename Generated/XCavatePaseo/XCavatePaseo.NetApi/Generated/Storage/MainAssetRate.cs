@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -37,7 +37,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("AssetRate", "ConversionRateToNative"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128)));
         }
         
         /// <summary>
@@ -68,10 +68,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// 
         ///  E.g. `native_amount = asset_amount * ConversionRateToNative::<T>::get(asset_kind)`
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128> ConversionRateToNative(Substrate.NetApi.Model.Types.Primitive.U16 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128> ConversionRateToNative(Substrate.NetApi.Model.Types.Primitive.U16 key, string blockhash, CancellationToken token)
         {
             string parameters = AssetRateStorage.ConversionRateToNativeParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>(parameters, blockhash, token);
             return result;
         }
     }
@@ -86,7 +86,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> create
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Create(Substrate.NetApi.Model.Types.Primitive.U16 asset_kind, XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128 rate)
+        public static Method Create(Substrate.NetApi.Model.Types.Primitive.U16 asset_kind, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128 rate)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset_kind.Encode());
@@ -98,7 +98,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> update
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Update(Substrate.NetApi.Model.Types.Primitive.U16 asset_kind, XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128 rate)
+        public static Method Update(Substrate.NetApi.Model.Types.Primitive.U16 asset_kind, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128 rate)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset_kind.Encode());

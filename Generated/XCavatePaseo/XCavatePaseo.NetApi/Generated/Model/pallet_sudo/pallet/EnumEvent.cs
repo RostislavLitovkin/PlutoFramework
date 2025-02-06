@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_sudo.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_sudo.pallet
 {
     
     
@@ -59,10 +59,10 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_sudo.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Types.Base.EnumResult>(Event.Sudid);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.KeyChanged);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.EnumResult>(Event.Sudid);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.KeyChanged);
 				AddTypeDecoder<BaseVoid>(Event.KeyRemoved);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Types.Base.EnumResult>(Event.SudoAsDone);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.EnumResult>(Event.SudoAsDone);
         }
     }
 }

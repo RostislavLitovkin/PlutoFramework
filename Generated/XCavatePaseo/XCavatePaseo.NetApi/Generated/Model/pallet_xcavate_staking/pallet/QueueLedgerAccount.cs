@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcavate_staking.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_staking.pallet
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcavate_staking.pallet
         /// <summary>
         /// >> staker
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Staker { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Staker { get; set; }
         /// <summary>
         /// >> locked
         /// </summary>
@@ -57,7 +57,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcavate_staking.pallet
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Staker = new XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            Staker = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Staker.Decode(byteArray, ref p);
             Locked = new Substrate.NetApi.Model.Types.Primitive.U128();
             Locked.Decode(byteArray, ref p);

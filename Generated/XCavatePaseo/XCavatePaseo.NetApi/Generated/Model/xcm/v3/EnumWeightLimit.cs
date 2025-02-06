@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.xcm.v3
+namespace XcavatePaseo.NetApi.Generated.Model.xcm.v3
 {
     
     
@@ -44,7 +44,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v3
         public EnumWeightLimit()
         {
 				AddTypeDecoder<BaseVoid>(WeightLimit.Unlimited);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>(WeightLimit.Limited);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>(WeightLimit.Limited);
         }
     }
 }

@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.async_backing
+namespace XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.async_backing
 {
     
     

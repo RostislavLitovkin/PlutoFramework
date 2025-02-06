@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_cc_authorities_noting.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_cc_authorities_noting.pallet
 {
     
     
@@ -47,8 +47,8 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_cc_authorities_noting.palle
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.nimbus_primitives.nimbus_crypto.Public>>(Event.AuthoritiesInserted);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>(Event.OrchestratorParachainIdUpdated);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.nimbus_primitives.nimbus_crypto.Public>>(Event.AuthoritiesInserted);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>(Event.OrchestratorParachainIdUpdated);
         }
     }
 }

@@ -36,15 +36,15 @@ public partial class NftThumbnailView : ContentView
                 _ => nftBase.Metadata.Image
             };
 
-            if (nftBase is INftXCavateMetadata)
+            if (nftBase is INftXcavateMetadata)
             {
-                control.priceAttribute.Value = $"£{((INftXCavateMetadata)nftBase).XCavateMetadata?.PropertyPrice}";
+                control.priceAttribute.Value = $"£{((INftXcavateMetadata)nftBase).XcavateMetadata?.PropertyPrice}";
 
-                // Set XCavate apy
+                // Set Xcavate apy
 
                 control.apyAttribute.Value = "10.0%";
 
-                control.xCavateAttributes.IsVisible = true;
+                control.xcavateAttributes.IsVisible = true;
             }
 
             // TODO: nftBase.Metadata?.Attributes ?? [];

@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_message_queue.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_message_queue.pallet
 {
     
     
@@ -59,10 +59,10 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_message_queue.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.primitive_types.H256, XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin, XCavatePaseo.NetApi.Generated.Model.frame_support.traits.messages.EnumProcessMessageError>>(Event.ProcessingFailed);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.primitive_types.H256, XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin, XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Substrate.NetApi.Model.Types.Primitive.Bool>>(Event.Processed);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Types.Base.Arr32U8, XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.OverweightEnqueued);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.PageReaped);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256, XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin, XcavatePaseo.NetApi.Generated.Model.frame_support.traits.messages.EnumProcessMessageError>>(Event.ProcessingFailed);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256, XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Substrate.NetApi.Model.Types.Primitive.Bool>>(Event.Processed);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8, XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.OverweightEnqueued);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.PageReaped);
         }
     }
 }

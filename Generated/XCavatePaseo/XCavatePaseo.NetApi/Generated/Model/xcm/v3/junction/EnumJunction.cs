@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.xcm.v3.junction
+namespace XcavatePaseo.NetApi.Generated.Model.xcm.v3.junction
 {
     
     
@@ -84,15 +84,15 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v3.junction
         public EnumJunction()
         {
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>(Junction.Parachain);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.xcm.v3.junction.EnumNetworkId>, XCavatePaseo.NetApi.Generated.Types.Base.Arr32U8>>(Junction.AccountId32);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.xcm.v3.junction.EnumNetworkId>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>>>(Junction.AccountIndex64);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.xcm.v3.junction.EnumNetworkId>, XCavatePaseo.NetApi.Generated.Types.Base.Arr20U8>>(Junction.AccountKey20);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.xcm.v3.junction.EnumNetworkId>, XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8>>(Junction.AccountId32);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.xcm.v3.junction.EnumNetworkId>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>>>(Junction.AccountIndex64);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.xcm.v3.junction.EnumNetworkId>, XcavatePaseo.NetApi.Generated.Types.Base.Arr20U8>>(Junction.AccountKey20);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U8>(Junction.PalletInstance);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>(Junction.GeneralIndex);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U8, XCavatePaseo.NetApi.Generated.Types.Base.Arr32U8>>(Junction.GeneralKey);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U8, XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8>>(Junction.GeneralKey);
 				AddTypeDecoder<BaseVoid>(Junction.OnlyChild);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v3.junction.EnumBodyId, XCavatePaseo.NetApi.Generated.Model.xcm.v3.junction.EnumBodyPart>>(Junction.Plurality);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.xcm.v3.junction.EnumNetworkId>(Junction.GlobalConsensus);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v3.junction.EnumBodyId, XcavatePaseo.NetApi.Generated.Model.xcm.v3.junction.EnumBodyPart>>(Junction.Plurality);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.v3.junction.EnumNetworkId>(Junction.GlobalConsensus);
         }
     }
 }

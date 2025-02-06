@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_message_queue
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_message_queue
 {
     
     
@@ -27,11 +27,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_message_queue
         /// <summary>
         /// >> prev
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin Prev { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin Prev { get; set; }
         /// <summary>
         /// >> next
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin Next { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin Next { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -52,9 +52,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_message_queue
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Prev = new XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin();
+            Prev = new XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin();
             Prev.Decode(byteArray, ref p);
-            Next = new XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin();
+            Next = new XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core.EnumAggregateMessageOrigin();
             Next.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

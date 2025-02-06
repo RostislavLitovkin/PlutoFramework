@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:xcavate="clr-namespace:PlutoFramework.Components.XCavate"
-             x:Class="PlutoFramework.Components.XCavate.UserProfileHeaderView">
+             xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
+             x:Class="PlutoFramework.Components.Xcavate.UserProfileHeaderView">
     <VerticalStackLayout BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
                          Padding="0,0,0,20">
         <AbsoluteLayout HeightRequest="200">

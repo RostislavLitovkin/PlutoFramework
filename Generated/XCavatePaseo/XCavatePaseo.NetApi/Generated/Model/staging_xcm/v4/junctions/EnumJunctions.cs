@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junctions
+namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junctions
 {
     
     
@@ -79,14 +79,14 @@ namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junctions
         public EnumJunctions()
         {
 				AddTypeDecoder<BaseVoid>(Junctions.Here);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.Arr1EnumJunction>(Junctions.X1);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.Arr2EnumJunction>(Junctions.X2);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.Arr3EnumJunction>(Junctions.X3);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.Arr4EnumJunction>(Junctions.X4);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.Arr5EnumJunction>(Junctions.X5);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.Arr6EnumJunction>(Junctions.X6);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.Arr7EnumJunction>(Junctions.X7);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.Arr8EnumJunction>(Junctions.X8);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.Arr1EnumJunction>(Junctions.X1);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.Arr2EnumJunction>(Junctions.X2);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.Arr3EnumJunction>(Junctions.X3);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.Arr4EnumJunction>(Junctions.X4);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.Arr5EnumJunction>(Junctions.X5);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.Arr6EnumJunction>(Junctions.X6);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.Arr7EnumJunction>(Junctions.X7);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.Arr8EnumJunction>(Junctions.X8);
         }
     }
 }

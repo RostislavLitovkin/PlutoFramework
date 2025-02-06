@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_multisig
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_multisig
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_multisig
         /// <summary>
         /// >> when
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.pallet_multisig.Timepoint When { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.pallet_multisig.Timepoint When { get; set; }
         /// <summary>
         /// >> deposit
         /// </summary>
@@ -35,11 +35,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_multisig
         /// <summary>
         /// >> depositor
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Depositor { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Depositor { get; set; }
         /// <summary>
         /// >> approvals
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21 Approvals { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21 Approvals { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -62,13 +62,13 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_multisig
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            When = new XCavatePaseo.NetApi.Generated.Model.pallet_multisig.Timepoint();
+            When = new XcavatePaseo.NetApi.Generated.Model.pallet_multisig.Timepoint();
             When.Decode(byteArray, ref p);
             Deposit = new Substrate.NetApi.Model.Types.Primitive.U128();
             Deposit.Decode(byteArray, ref p);
-            Depositor = new XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            Depositor = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Depositor.Decode(byteArray, ref p);
-            Approvals = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21();
+            Approvals = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21();
             Approvals.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

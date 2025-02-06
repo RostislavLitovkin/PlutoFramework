@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_root_testing.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_root_testing.pallet
 {
     
     
@@ -46,7 +46,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_root_testing.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill>(Call.fill_block);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill>(Call.fill_block);
 				AddTypeDecoder<BaseVoid>(Call.trigger_defensive);
         }
     }

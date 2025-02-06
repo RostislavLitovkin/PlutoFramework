@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_proxy.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_proxy.pallet
 {
     
     
@@ -196,16 +196,16 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_proxy.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType>, XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>>(Call.proxy);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.add_proxy);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.remove_proxy);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType>, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>>(Call.proxy);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.add_proxy);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.remove_proxy);
 				AddTypeDecoder<BaseVoid>(Call.remove_proxies);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U16>>(Call.create_pure);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>>(Call.kill_pure);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, XCavatePaseo.NetApi.Generated.Model.primitive_types.H256>>(Call.announce);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, XCavatePaseo.NetApi.Generated.Model.primitive_types.H256>>(Call.remove_announcement);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, XCavatePaseo.NetApi.Generated.Model.primitive_types.H256>>(Call.reject_announcement);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType>, XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>>(Call.proxy_announced);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U16>>(Call.create_pure);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>>(Call.kill_pure);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, XcavatePaseo.NetApi.Generated.Model.primitive_types.H256>>(Call.announce);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, XcavatePaseo.NetApi.Generated.Model.primitive_types.H256>>(Call.remove_announcement);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, XcavatePaseo.NetApi.Generated.Model.primitive_types.H256>>(Call.reject_announcement);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType>, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>>(Call.proxy_announced);
         }
     }
 }

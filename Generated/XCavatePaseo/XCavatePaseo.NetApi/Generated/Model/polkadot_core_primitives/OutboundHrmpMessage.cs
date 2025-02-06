@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.polkadot_core_primitives
+namespace XcavatePaseo.NetApi.Generated.Model.polkadot_core_primitives
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.polkadot_core_primitives
         /// <summary>
         /// >> recipient
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id Recipient { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id Recipient { get; set; }
         /// <summary>
         /// >> data
         /// </summary>
@@ -52,7 +52,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.polkadot_core_primitives
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Recipient = new XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id();
+            Recipient = new XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id();
             Recipient.Decode(byteArray, ref p);
             Data = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>();
             Data.Decode(byteArray, ref p);

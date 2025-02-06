@@ -1,4 +1,4 @@
-namespace PlutoFramework.Components.XCavate;
+namespace PlutoFramework.Components.Xcavate;
 
 public partial class CompanyPage : ContentPage
 {

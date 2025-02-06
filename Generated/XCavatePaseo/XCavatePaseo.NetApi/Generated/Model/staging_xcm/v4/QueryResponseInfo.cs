@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4
+namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4
         /// <summary>
         /// >> destination
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location Destination { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location Destination { get; set; }
         /// <summary>
         /// >> query_id
         /// </summary>
@@ -35,7 +35,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4
         /// <summary>
         /// >> max_weight
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight MaxWeight { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight MaxWeight { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -57,11 +57,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Destination = new XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location();
+            Destination = new XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location();
             Destination.Decode(byteArray, ref p);
             QueryId = new Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>();
             QueryId.Decode(byteArray, ref p);
-            MaxWeight = new XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight();
+            MaxWeight = new XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight();
             MaxWeight.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

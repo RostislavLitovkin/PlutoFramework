@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet
 {
     
     

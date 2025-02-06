@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4
+namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4
 {
     
     
@@ -273,54 +273,54 @@ namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4
         /// </summary>
         public EnumInstruction()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Assets>(Instruction.WithdrawAsset);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Assets>(Instruction.ReserveAssetDeposited);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Assets>(Instruction.ReceiveTeleportedAsset);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.EnumResponse, XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>>(Instruction.QueryResponse);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Assets, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Instruction.TransferAsset);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Assets, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.XcmT1>>(Instruction.TransferReserveAsset);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.EnumOriginKind, XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight, XCavatePaseo.NetApi.Generated.Model.xcm.double_encoded.DoubleEncodedT2>>(Instruction.Transact);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Assets>(Instruction.WithdrawAsset);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Assets>(Instruction.ReserveAssetDeposited);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Assets>(Instruction.ReceiveTeleportedAsset);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.EnumResponse, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>>(Instruction.QueryResponse);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Assets, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Instruction.TransferAsset);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Assets, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.XcmT1>>(Instruction.TransferReserveAsset);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.EnumOriginKind, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight, XcavatePaseo.NetApi.Generated.Model.xcm.double_encoded.DoubleEncodedT2>>(Instruction.Transact);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>>(Instruction.HrmpNewChannelOpenRequest);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>(Instruction.HrmpChannelAccepted);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>>(Instruction.HrmpChannelClosing);
 				AddTypeDecoder<BaseVoid>(Instruction.ClearOrigin);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junctions.EnumJunctions>(Instruction.DescendOrigin);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.QueryResponseInfo>(Instruction.ReportError);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.EnumAssetFilter, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Instruction.DepositAsset);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.EnumAssetFilter, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.XcmT1>>(Instruction.DepositReserveAsset);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.EnumAssetFilter, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Assets, Substrate.NetApi.Model.Types.Primitive.Bool>>(Instruction.ExchangeAsset);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.EnumAssetFilter, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.XcmT1>>(Instruction.InitiateReserveWithdraw);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.EnumAssetFilter, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.XcmT1>>(Instruction.InitiateTeleport);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.QueryResponseInfo, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.EnumAssetFilter>>(Instruction.ReportHolding);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Asset, XCavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Instruction.BuyExecution);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junctions.EnumJunctions>(Instruction.DescendOrigin);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.QueryResponseInfo>(Instruction.ReportError);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.EnumAssetFilter, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Instruction.DepositAsset);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.EnumAssetFilter, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.XcmT1>>(Instruction.DepositReserveAsset);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.EnumAssetFilter, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Assets, Substrate.NetApi.Model.Types.Primitive.Bool>>(Instruction.ExchangeAsset);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.EnumAssetFilter, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.XcmT1>>(Instruction.InitiateReserveWithdraw);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.EnumAssetFilter, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.XcmT1>>(Instruction.InitiateTeleport);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.QueryResponseInfo, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.EnumAssetFilter>>(Instruction.ReportHolding);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Asset, XcavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Instruction.BuyExecution);
 				AddTypeDecoder<BaseVoid>(Instruction.RefundSurplus);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.XcmT2>(Instruction.SetErrorHandler);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.XcmT2>(Instruction.SetAppendix);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.XcmT2>(Instruction.SetErrorHandler);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.XcmT2>(Instruction.SetAppendix);
 				AddTypeDecoder<BaseVoid>(Instruction.ClearError);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Assets, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Instruction.ClaimAsset);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Assets, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Instruction.ClaimAsset);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>>(Instruction.Trap);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>, XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Instruction.SubscribeVersion);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Instruction.SubscribeVersion);
 				AddTypeDecoder<BaseVoid>(Instruction.UnsubscribeVersion);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Assets>(Instruction.BurnAsset);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Assets>(Instruction.ExpectAsset);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Instruction.ExpectOrigin);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.xcm.v3.traits.EnumError>>>(Instruction.ExpectError);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.xcm.v3.EnumMaybeErrorCode>(Instruction.ExpectTransactStatus);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.QueryResponseInfo>>(Instruction.QueryPallet);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Assets>(Instruction.BurnAsset);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Assets>(Instruction.ExpectAsset);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Instruction.ExpectOrigin);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.xcm.v3.traits.EnumError>>>(Instruction.ExpectError);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.v3.EnumMaybeErrorCode>(Instruction.ExpectTransactStatus);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.QueryResponseInfo>>(Instruction.QueryPallet);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>>(Instruction.ExpectPallet);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.QueryResponseInfo>(Instruction.ReportTransactStatus);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.QueryResponseInfo>(Instruction.ReportTransactStatus);
 				AddTypeDecoder<BaseVoid>(Instruction.ClearTransactStatus);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.EnumJunction>(Instruction.UniversalOrigin);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.EnumNetworkId, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junctions.EnumJunctions, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.XcmT1>>(Instruction.ExportMessage);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Asset, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Instruction.LockAsset);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Asset, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Instruction.UnlockAsset);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Asset, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Instruction.NoteUnlockable);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Asset, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Instruction.RequestUnlock);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.EnumJunction>(Instruction.UniversalOrigin);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junction.EnumNetworkId, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junctions.EnumJunctions, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.XcmT1>>(Instruction.ExportMessage);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Asset, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Instruction.LockAsset);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Asset, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Instruction.UnlockAsset);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Asset, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Instruction.NoteUnlockable);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.Asset, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Instruction.RequestUnlock);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.Bool>(Instruction.SetFeesMode);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Types.Base.Arr32U8>(Instruction.SetTopic);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8>(Instruction.SetTopic);
 				AddTypeDecoder<BaseVoid>(Instruction.ClearTopic);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Instruction.AliasOrigin);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit, Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>>(Instruction.UnpaidExecution);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Instruction.AliasOrigin);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>>(Instruction.UnpaidExecution);
         }
     }
 }

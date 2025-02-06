@@ -2,7 +2,7 @@
 using Amazon.S3;
 using Amazon;
 
-namespace PlutoFramework.Model.XCavate
+namespace PlutoFramework.Model.Xcavate
 {
     public class S3Model
     {

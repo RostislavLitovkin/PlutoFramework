@@ -1,9 +1,9 @@
 ﻿using PlutoFramework.Components.Nft;
 using PlutoFramework.Constants;
 using PlutoFramework.Model;
-using PlutoFramework.Model.XCavate;
+using PlutoFramework.Model.Xcavate;
 using UniqueryPlus.Nfts;
-using XCavatePaseo.NetApi.Generated;
+using XcavatePaseo.NetApi.Generated;
 using NftKey = (PlutoFramework.Constants.EndpointEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
 
 namespace PlutoFramework.Components.XcavateProperty
@@ -43,7 +43,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
                     if (uniqueryNftEnumerator != null && await uniqueryNftEnumerator.MoveNextAsync().ConfigureAwait(false))
                     {
-                        var newNft = await XCavatePropertyModel.ToNftWrapperAsync((XCavatePaseoNftsPalletNft)uniqueryNftEnumerator.Current);
+                        var newNft = await XcavatePropertyModel.ToNftWrapperAsync((XcavatePaseoNftsPalletNft)uniqueryNftEnumerator.Current);
 
                         if (newNft.Key is not null && !ItemsDict.ContainsKey((NftKey)newNft.Key))
                         {
@@ -75,7 +75,7 @@ namespace PlutoFramework.Components.XcavateProperty
             Loading = true;
 
             var uniqueryNftEnumerable = PropertyMarketplaceModel.GetPropertiesAsync(
-                            (SubstrateClientExt)(await SubstrateClientModel.GetOrAddSubstrateClientAsync(EndpointEnum.XCavatePaseo, token).ConfigureAwait(false)).SubstrateClient,
+                            (SubstrateClientExt)(await SubstrateClientModel.GetOrAddSubstrateClientAsync(EndpointEnum.XcavatePaseo, token).ConfigureAwait(false)).SubstrateClient,
                             limit: LIMIT
                         );
 

@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcm.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcm.pallet
 {
     
     
@@ -56,9 +56,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcm.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Types.Base.Arr32U8>(Event.InvalidFormat);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Types.Base.Arr32U8>(Event.UnsupportedVersion);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Types.Base.Arr32U8, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.traits.EnumOutcome>>(Event.ExecutedDownward);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8>(Event.InvalidFormat);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8>(Event.UnsupportedVersion);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.traits.EnumOutcome>>(Event.ExecutedDownward);
         }
     }
 }

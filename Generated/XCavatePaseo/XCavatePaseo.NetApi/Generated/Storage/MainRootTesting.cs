@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -49,7 +49,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> fill_block
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method FillBlock(XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill ratio)
+        public static Method FillBlock(XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill ratio)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(ratio.Encode());

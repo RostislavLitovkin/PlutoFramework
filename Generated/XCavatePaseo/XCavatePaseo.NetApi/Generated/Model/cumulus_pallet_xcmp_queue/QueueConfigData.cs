@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcmp_queue
+namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcmp_queue
 {
     
     

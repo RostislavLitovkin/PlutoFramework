@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_balances.types
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_balances.types
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_balances.types
         /// <summary>
         /// >> id
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeHoldReason Id { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeHoldReason Id { get; set; }
         /// <summary>
         /// >> amount
         /// </summary>
@@ -52,7 +52,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_balances.types
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Id = new XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeHoldReason();
+            Id = new XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeHoldReason();
             Id.Decode(byteArray, ref p);
             Amount = new Substrate.NetApi.Model.Types.Primitive.U128();
             Amount.Decode(byteArray, ref p);

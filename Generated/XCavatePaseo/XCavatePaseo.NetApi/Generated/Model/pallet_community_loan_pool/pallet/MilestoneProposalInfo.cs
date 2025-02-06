@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet
         /// <summary>
         /// >> proposer
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Proposer { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Proposer { get; set; }
         /// <summary>
         /// >> bond
         /// </summary>
@@ -52,7 +52,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Proposer = new XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            Proposer = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Proposer.Decode(byteArray, ref p);
             Bond = new Substrate.NetApi.Model.Types.Primitive.U128();
             Bond.Decode(byteArray, ref p);

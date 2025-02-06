@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.frame_support.traits.messages
+namespace XcavatePaseo.NetApi.Generated.Model.frame_support.traits.messages
 {
     
     
@@ -61,7 +61,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_support.traits.messages
 				AddTypeDecoder<BaseVoid>(ProcessMessageError.BadFormat);
 				AddTypeDecoder<BaseVoid>(ProcessMessageError.Corrupt);
 				AddTypeDecoder<BaseVoid>(ProcessMessageError.Unsupported);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>(ProcessMessageError.Overweight);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>(ProcessMessageError.Overweight);
 				AddTypeDecoder<BaseVoid>(ProcessMessageError.Yield);
         }
     }

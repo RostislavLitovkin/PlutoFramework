@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inherent
+namespace XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inherent
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inher
         /// <summary>
         /// >> value
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.primitive_types.H256 Value { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.primitive_types.H256 Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inher
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new XCavatePaseo.NetApi.Generated.Model.primitive_types.H256();
+            Value = new XcavatePaseo.NetApi.Generated.Model.primitive_types.H256();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

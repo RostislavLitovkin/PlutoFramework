@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_multisig.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_multisig.pallet
 {
     
     
@@ -59,10 +59,10 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_multisig.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Types.Base.Arr32U8>>(Event.NewMultisig);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.pallet_multisig.Timepoint, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Types.Base.Arr32U8>>(Event.MultisigApproval);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.pallet_multisig.Timepoint, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Types.Base.Arr32U8, XCavatePaseo.NetApi.Generated.Types.Base.EnumResult>>(Event.MultisigExecuted);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.pallet_multisig.Timepoint, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Types.Base.Arr32U8>>(Event.MultisigCancelled);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8>>(Event.NewMultisig);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_multisig.Timepoint, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8>>(Event.MultisigApproval);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_multisig.Timepoint, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8, XcavatePaseo.NetApi.Generated.Types.Base.EnumResult>>(Event.MultisigExecuted);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_multisig.Timepoint, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8>>(Event.MultisigCancelled);
         }
     }
 }

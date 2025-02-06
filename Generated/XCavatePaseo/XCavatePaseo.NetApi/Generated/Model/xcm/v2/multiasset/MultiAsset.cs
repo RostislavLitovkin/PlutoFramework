@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset
+namespace XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset
 {
     
     
@@ -27,11 +27,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset
         /// <summary>
         /// >> id
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumAssetId Id { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumAssetId Id { get; set; }
         /// <summary>
         /// >> fun
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumFungibility Fun { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumFungibility Fun { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -52,9 +52,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Id = new XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumAssetId();
+            Id = new XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumAssetId();
             Id.Decode(byteArray, ref p);
-            Fun = new XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumFungibility();
+            Fun = new XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumFungibility();
             Fun.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

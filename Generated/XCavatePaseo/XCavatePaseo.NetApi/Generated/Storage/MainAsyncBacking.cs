@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -36,7 +36,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         public AsyncBackingStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("AsyncBacking", "SlotInfo"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_consensus_slots.Slot, Substrate.NetApi.Model.Types.Primitive.U32>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("AsyncBacking", "SlotInfo"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_consensus_slots.Slot, Substrate.NetApi.Model.Types.Primitive.U32>)));
         }
         
         /// <summary>
@@ -65,10 +65,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  Second tuple element is the number of authored blocks so far.
         ///  This is a strictly-increasing value if T::AllowMultipleBlocksPerSlot = false.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_consensus_slots.Slot, Substrate.NetApi.Model.Types.Primitive.U32>> SlotInfo(string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_consensus_slots.Slot, Substrate.NetApi.Model.Types.Primitive.U32>> SlotInfo(string blockhash, CancellationToken token)
         {
             string parameters = AsyncBackingStorage.SlotInfoParams();
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_consensus_slots.Slot, Substrate.NetApi.Model.Types.Primitive.U32>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_consensus_slots.Slot, Substrate.NetApi.Model.Types.Primitive.U32>>(parameters, blockhash, token);
             return result;
         }
     }

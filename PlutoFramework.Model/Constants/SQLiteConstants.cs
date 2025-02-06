@@ -30,7 +30,7 @@ namespace PlutoFramework.Model.Constants
 
             SQLiteOpenFlags.ProtectionNone;
 
-        public const SQLiteOpenFlags XCavateDatabaseFlags =
+        public const SQLiteOpenFlags XcavateDatabaseFlags =
             // open the database in read/write mode
             SQLiteOpenFlags.ReadWrite |
             // create the database if it doesn't exist

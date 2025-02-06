@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.xcm
+namespace XcavatePaseo.NetApi.Generated.Model.xcm
 {
     
     
@@ -43,8 +43,8 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm
         /// </summary>
         public EnumVersionedAssetId()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.xcm.v3.multiasset.EnumAssetId>(VersionedAssetId.V3);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.AssetId>(VersionedAssetId.V4);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.v3.multiasset.EnumAssetId>(VersionedAssetId.V3);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.AssetId>(VersionedAssetId.V4);
         }
     }
 }

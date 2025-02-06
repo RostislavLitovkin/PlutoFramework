@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -38,27 +38,27 @@ namespace XCavatePaseo.NetApi.Generated.Storage
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "QueryCounter"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "Queries"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.EnumQueryStatus)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.EnumQueryStatus)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "AssetTraps"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(XCavatePaseo.NetApi.Generated.Model.primitive_types.H256), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(XcavatePaseo.NetApi.Generated.Model.primitive_types.H256), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "SafeXcmVersion"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "SupportedVersion"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation>), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation>), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "VersionNotifiers"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation>), typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation>), typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "VersionNotifyTargets"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Substrate.NetApi.Model.Types.Primitive.U32>)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "VersionDiscoveryQueue"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "CurrentMigration"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.EnumVersionMigrationStage)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Substrate.NetApi.Model.Types.Primitive.U32>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "VersionDiscoveryQueue"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "CurrentMigration"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.EnumVersionMigrationStage)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "RemoteLockedFungibles"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssetId>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.RemoteLockedFungibleRecord)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssetId>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.RemoteLockedFungibleRecord)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "LockedFungibles"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "XcmExecutionSuspended"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
         }
         
@@ -115,10 +115,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Queries
         ///  The ongoing queries.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.EnumQueryStatus> Queries(Substrate.NetApi.Model.Types.Primitive.U64 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.EnumQueryStatus> Queries(Substrate.NetApi.Model.Types.Primitive.U64 key, string blockhash, CancellationToken token)
         {
             string parameters = PolkadotXcmStorage.QueriesParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.EnumQueryStatus>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.EnumQueryStatus>(parameters, blockhash, token);
             return result;
         }
         
@@ -129,7 +129,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  Key is the blake2 256 hash of (origin, versioned `Assets`) pair. Value is the number of
         ///  times this pair has been trapped (usually just 1 if it exists at all).
         /// </summary>
-        public static string AssetTrapsParams(XCavatePaseo.NetApi.Generated.Model.primitive_types.H256 key)
+        public static string AssetTrapsParams(XcavatePaseo.NetApi.Generated.Model.primitive_types.H256 key)
         {
             return RequestGenerator.GetStorage("PolkadotXcm", "AssetTraps", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.Identity}, new Substrate.NetApi.Model.Types.IType[] {
@@ -152,7 +152,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  Key is the blake2 256 hash of (origin, versioned `Assets`) pair. Value is the number of
         ///  times this pair has been trapped (usually just 1 if it exists at all).
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> AssetTraps(XCavatePaseo.NetApi.Generated.Model.primitive_types.H256 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> AssetTraps(XcavatePaseo.NetApi.Generated.Model.primitive_types.H256 key, string blockhash, CancellationToken token)
         {
             string parameters = PolkadotXcmStorage.AssetTrapsParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
@@ -194,7 +194,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> SupportedVersionParams
         ///  The Latest versions that we know various locations support.
         /// </summary>
-        public static string SupportedVersionParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation> key)
+        public static string SupportedVersionParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation> key)
         {
             return RequestGenerator.GetStorage("PolkadotXcm", "SupportedVersion", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
@@ -214,7 +214,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> SupportedVersion
         ///  The Latest versions that we know various locations support.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> SupportedVersion(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> SupportedVersion(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation> key, string blockhash, CancellationToken token)
         {
             string parameters = PolkadotXcmStorage.SupportedVersionParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
@@ -225,7 +225,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> VersionNotifiersParams
         ///  All locations that we have requested version notifications from.
         /// </summary>
-        public static string VersionNotifiersParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation> key)
+        public static string VersionNotifiersParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation> key)
         {
             return RequestGenerator.GetStorage("PolkadotXcm", "VersionNotifiers", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
@@ -245,7 +245,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> VersionNotifiers
         ///  All locations that we have requested version notifications from.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.U64> VersionNotifiers(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U64> VersionNotifiers(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation> key, string blockhash, CancellationToken token)
         {
             string parameters = PolkadotXcmStorage.VersionNotifiersParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U64>(parameters, blockhash, token);
@@ -257,7 +257,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  The target locations that are subscribed to our version changes, as well as the most recent
         ///  of our versions we informed them of.
         /// </summary>
-        public static string VersionNotifyTargetsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation> key)
+        public static string VersionNotifyTargetsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation> key)
         {
             return RequestGenerator.GetStorage("PolkadotXcm", "VersionNotifyTargets", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
@@ -278,10 +278,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  The target locations that are subscribed to our version changes, as well as the most recent
         ///  of our versions we informed them of.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Substrate.NetApi.Model.Types.Primitive.U32>> VersionNotifyTargets(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Substrate.NetApi.Model.Types.Primitive.U32>> VersionNotifyTargets(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation> key, string blockhash, CancellationToken token)
         {
             string parameters = PolkadotXcmStorage.VersionNotifyTargetsParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Substrate.NetApi.Model.Types.Primitive.U32>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Substrate.NetApi.Model.Types.Primitive.U32>>(parameters, blockhash, token);
             return result;
         }
         
@@ -311,10 +311,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  the `u32` counter is the number of times that a send to the destination has been attempted,
         ///  which is used as a prioritization.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23> VersionDiscoveryQueue(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23> VersionDiscoveryQueue(string blockhash, CancellationToken token)
         {
             string parameters = PolkadotXcmStorage.VersionDiscoveryQueueParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23>(parameters, blockhash, token);
             return result;
         }
         
@@ -340,10 +340,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> CurrentMigration
         ///  The current migration's stage, if any.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.EnumVersionMigrationStage> CurrentMigration(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.EnumVersionMigrationStage> CurrentMigration(string blockhash, CancellationToken token)
         {
             string parameters = PolkadotXcmStorage.CurrentMigrationParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.EnumVersionMigrationStage>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.EnumVersionMigrationStage>(parameters, blockhash, token);
             return result;
         }
         
@@ -351,7 +351,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> RemoteLockedFungiblesParams
         ///  Fungible assets which we know are locked on a remote chain.
         /// </summary>
-        public static string RemoteLockedFungiblesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssetId> key)
+        public static string RemoteLockedFungiblesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssetId> key)
         {
             return RequestGenerator.GetStorage("PolkadotXcm", "RemoteLockedFungibles", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
@@ -372,10 +372,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> RemoteLockedFungibles
         ///  Fungible assets which we know are locked on a remote chain.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.RemoteLockedFungibleRecord> RemoteLockedFungibles(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssetId> key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.RemoteLockedFungibleRecord> RemoteLockedFungibles(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssetId> key, string blockhash, CancellationToken token)
         {
             string parameters = PolkadotXcmStorage.RemoteLockedFungiblesParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.RemoteLockedFungibleRecord>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.RemoteLockedFungibleRecord>(parameters, blockhash, token);
             return result;
         }
         
@@ -383,7 +383,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> LockedFungiblesParams
         ///  Fungible assets which we know are locked on this chain.
         /// </summary>
-        public static string LockedFungiblesParams(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+        public static string LockedFungiblesParams(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
         {
             return RequestGenerator.GetStorage("PolkadotXcm", "LockedFungibles", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -403,10 +403,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> LockedFungibles
         ///  Fungible assets which we know are locked on this chain.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25> LockedFungibles(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25> LockedFungibles(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = PolkadotXcmStorage.LockedFungiblesParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25>(parameters, blockhash, token);
             return result;
         }
         
@@ -450,7 +450,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> send
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Send(XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation dest, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedXcm message)
+        public static Method Send(XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation dest, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedXcm message)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(dest.Encode());
@@ -462,7 +462,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> teleport_assets
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method TeleportAssets(XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation dest, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation beneficiary, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets assets, Substrate.NetApi.Model.Types.Primitive.U32 fee_asset_item)
+        public static Method TeleportAssets(XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation dest, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation beneficiary, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets assets, Substrate.NetApi.Model.Types.Primitive.U32 fee_asset_item)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(dest.Encode());
@@ -476,7 +476,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> reserve_transfer_assets
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ReserveTransferAssets(XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation dest, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation beneficiary, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets assets, Substrate.NetApi.Model.Types.Primitive.U32 fee_asset_item)
+        public static Method ReserveTransferAssets(XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation dest, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation beneficiary, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets assets, Substrate.NetApi.Model.Types.Primitive.U32 fee_asset_item)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(dest.Encode());
@@ -490,7 +490,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> execute
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Execute(XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedXcm message, XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight max_weight)
+        public static Method Execute(XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedXcm message, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight max_weight)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(message.Encode());
@@ -502,7 +502,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> force_xcm_version
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceXcmVersion(XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location location, Substrate.NetApi.Model.Types.Primitive.U32 version)
+        public static Method ForceXcmVersion(XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location location, Substrate.NetApi.Model.Types.Primitive.U32 version)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(location.Encode());
@@ -525,7 +525,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> force_subscribe_version_notify
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceSubscribeVersionNotify(XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation location)
+        public static Method ForceSubscribeVersionNotify(XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation location)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(location.Encode());
@@ -536,7 +536,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> force_unsubscribe_version_notify
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceUnsubscribeVersionNotify(XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation location)
+        public static Method ForceUnsubscribeVersionNotify(XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation location)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(location.Encode());
@@ -547,7 +547,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> limited_reserve_transfer_assets
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method LimitedReserveTransferAssets(XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation dest, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation beneficiary, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets assets, Substrate.NetApi.Model.Types.Primitive.U32 fee_asset_item, XCavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit weight_limit)
+        public static Method LimitedReserveTransferAssets(XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation dest, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation beneficiary, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets assets, Substrate.NetApi.Model.Types.Primitive.U32 fee_asset_item, XcavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit weight_limit)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(dest.Encode());
@@ -562,7 +562,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> limited_teleport_assets
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method LimitedTeleportAssets(XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation dest, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation beneficiary, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets assets, Substrate.NetApi.Model.Types.Primitive.U32 fee_asset_item, XCavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit weight_limit)
+        public static Method LimitedTeleportAssets(XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation dest, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation beneficiary, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets assets, Substrate.NetApi.Model.Types.Primitive.U32 fee_asset_item, XcavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit weight_limit)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(dest.Encode());
@@ -588,7 +588,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> transfer_assets
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method TransferAssets(XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation dest, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation beneficiary, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets assets, Substrate.NetApi.Model.Types.Primitive.U32 fee_asset_item, XCavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit weight_limit)
+        public static Method TransferAssets(XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation dest, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation beneficiary, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets assets, Substrate.NetApi.Model.Types.Primitive.U32 fee_asset_item, XcavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit weight_limit)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(dest.Encode());
@@ -603,7 +603,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> claim_assets
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ClaimAssets(XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets assets, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation beneficiary)
+        public static Method ClaimAssets(XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets assets, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation beneficiary)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(assets.Encode());
@@ -615,7 +615,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> transfer_assets_using_type_and_then
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method TransferAssetsUsingTypeAndThen(XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation dest, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets assets, XCavatePaseo.NetApi.Generated.Model.staging_xcm_executor.traits.asset_transfer.EnumTransferType assets_transfer_type, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssetId remote_fees_id, XCavatePaseo.NetApi.Generated.Model.staging_xcm_executor.traits.asset_transfer.EnumTransferType fees_transfer_type, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedXcm custom_xcm_on_dest, XCavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit weight_limit)
+        public static Method TransferAssetsUsingTypeAndThen(XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation dest, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets assets, XcavatePaseo.NetApi.Generated.Model.staging_xcm_executor.traits.asset_transfer.EnumTransferType assets_transfer_type, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssetId remote_fees_id, XcavatePaseo.NetApi.Generated.Model.staging_xcm_executor.traits.asset_transfer.EnumTransferType fees_transfer_type, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedXcm custom_xcm_on_dest, XcavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit weight_limit)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(dest.Encode());

@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.bounded_collections.weak_bounded_vec
+namespace XcavatePaseo.NetApi.Generated.Model.bounded_collections.weak_bounded_vec
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.bounded_collections.weak_bounded_v
         /// <summary>
         /// >> value
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.pallet_balances.types.BalanceLock> Value { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.pallet_balances.types.BalanceLock> Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.bounded_collections.weak_bounded_v
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.pallet_balances.types.BalanceLock>();
+            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.pallet_balances.types.BalanceLock>();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

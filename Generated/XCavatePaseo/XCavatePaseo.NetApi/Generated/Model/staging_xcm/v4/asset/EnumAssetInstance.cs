@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset
+namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset
 {
     
     
@@ -65,10 +65,10 @@ namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset
         {
 				AddTypeDecoder<BaseVoid>(AssetInstance.Undefined);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>(AssetInstance.Index);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Types.Base.Arr4U8>(AssetInstance.Array4);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Types.Base.Arr8U8>(AssetInstance.Array8);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Types.Base.Arr16U8>(AssetInstance.Array16);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Types.Base.Arr32U8>(AssetInstance.Array32);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.Arr4U8>(AssetInstance.Array4);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.Arr8U8>(AssetInstance.Array8);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.Arr16U8>(AssetInstance.Array16);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8>(AssetInstance.Array32);
         }
     }
 }

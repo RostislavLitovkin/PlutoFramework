@@ -1,15 +1,15 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.Nft;
-using PlutoFramework.Model.XCavate;
+using PlutoFramework.Model.Xcavate;
 
-namespace PlutoFramework.Components.XCavate
+namespace PlutoFramework.Components.Xcavate
 {
-    public partial class CompanyViewModel : BaseListViewModel<uint, XCavateCompanyUser>
+    public partial class CompanyViewModel : BaseListViewModel<uint, XcavateCompanyUser>
     {
         public override string Title => "Company page";
 
-        private IAsyncEnumerator<XCavateCompanyUser> userEnumerator = null;
+        private IAsyncEnumerator<XcavateCompanyUser> userEnumerator = null;
 
         public override async Task LoadMoreAsync(CancellationToken token)
         {
@@ -73,7 +73,7 @@ namespace PlutoFramework.Components.XCavate
                 return;
             }
 
-            var asyncEnumerable = XCavateCompanyModel.GetMockCompanyUsersAsync(Company.CompanyId.Value, 25);
+            var asyncEnumerable = XcavateCompanyModel.GetMockCompanyUsersAsync(Company.CompanyId.Value, 25);
             userEnumerator = asyncEnumerable.GetAsyncEnumerator(token);
 
             await LoadMoreAsync(token);
@@ -90,7 +90,7 @@ namespace PlutoFramework.Components.XCavate
         [NotifyPropertyChangedFor(nameof(Address))]
         [NotifyPropertyChangedFor(nameof(AssociatedMembershipNumber))]
         [NotifyPropertyChangedFor(nameof(PassportOrDriversLicenseVerified))]
-        private XCavateCompany company;
+        private XcavateCompany company;
         public string CompanyName => Company.CompanyName;
         public string RegistrationNumber => Company.RegistrationNumber;
         public string PhoneNumber => Company.PhoneNumber;

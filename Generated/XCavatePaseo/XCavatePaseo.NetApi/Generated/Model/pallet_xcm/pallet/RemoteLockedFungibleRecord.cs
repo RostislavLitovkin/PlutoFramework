@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
 {
     
     
@@ -31,15 +31,15 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
         /// <summary>
         /// >> owner
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation Owner { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation Owner { get; set; }
         /// <summary>
         /// >> locker
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation Locker { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation Locker { get; set; }
         /// <summary>
         /// >> consumers
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24 Consumers { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24 Consumers { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -64,11 +64,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
             var start = p;
             Amount = new Substrate.NetApi.Model.Types.Primitive.U128();
             Amount.Decode(byteArray, ref p);
-            Owner = new XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation();
+            Owner = new XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation();
             Owner.Decode(byteArray, ref p);
-            Locker = new XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation();
+            Locker = new XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation();
             Locker.Decode(byteArray, ref p);
-            Consumers = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24();
+            Consumers = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24();
             Consumers.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

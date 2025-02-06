@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcmp_queue
+namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcmp_queue
 {
     
     
@@ -27,11 +27,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcmp_queue
         /// <summary>
         /// >> recipient
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id Recipient { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id Recipient { get; set; }
         /// <summary>
         /// >> state
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.EnumOutboundState State { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.EnumOutboundState State { get; set; }
         /// <summary>
         /// >> signals_exist
         /// </summary>
@@ -67,9 +67,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcmp_queue
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Recipient = new XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id();
+            Recipient = new XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id();
             Recipient.Decode(byteArray, ref p);
-            State = new XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.EnumOutboundState();
+            State = new XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.EnumOutboundState();
             State.Decode(byteArray, ref p);
             SignalsExist = new Substrate.NetApi.Model.Types.Primitive.Bool();
             SignalsExist.Decode(byteArray, ref p);

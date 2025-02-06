@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using PlutoFramework.Model.XCavate;
+using PlutoFramework.Model.Xcavate;
 
 namespace PlutoFramework.Components.XcavateProperty
 {

@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_balances.types
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_balances.types
 {
     
     

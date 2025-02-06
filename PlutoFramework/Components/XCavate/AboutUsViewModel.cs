@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-namespace PlutoFramework.Components.XCavate
+namespace PlutoFramework.Components.Xcavate
 {
     public partial class AboutUsViewModel : ObservableObject
     {

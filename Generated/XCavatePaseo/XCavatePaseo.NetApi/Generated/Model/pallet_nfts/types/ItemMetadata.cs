@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
 {
     
     
@@ -27,11 +27,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
         /// <summary>
         /// >> deposit
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemMetadataDeposit Deposit { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemMetadataDeposit Deposit { get; set; }
         /// <summary>
         /// >> data
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 Data { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 Data { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -52,9 +52,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Deposit = new XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemMetadataDeposit();
+            Deposit = new XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemMetadataDeposit();
             Deposit.Decode(byteArray, ref p);
-            Data = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5();
+            Data = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5();
             Data.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

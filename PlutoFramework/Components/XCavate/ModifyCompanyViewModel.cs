@@ -5,7 +5,7 @@ using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.Buttons;
 using PlutoFramework.Model;
 
-namespace PlutoFramework.Components.XCavate
+namespace PlutoFramework.Components.Xcavate
 {
     public partial class ModifyCompanyViewModel : ObservableObject
     {

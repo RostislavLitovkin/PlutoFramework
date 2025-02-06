@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.frame_system
+namespace XcavatePaseo.NetApi.Generated.Model.frame_system
 {
     
     
@@ -27,15 +27,15 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_system
         /// <summary>
         /// >> phase
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.frame_system.EnumPhase Phase { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.frame_system.EnumPhase Phase { get; set; }
         /// <summary>
         /// >> event
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeEvent Event { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeEvent Event { get; set; }
         /// <summary>
         /// >> topics
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.primitive_types.H256> Topics { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256> Topics { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -57,11 +57,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_system
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Phase = new XCavatePaseo.NetApi.Generated.Model.frame_system.EnumPhase();
+            Phase = new XcavatePaseo.NetApi.Generated.Model.frame_system.EnumPhase();
             Phase.Decode(byteArray, ref p);
-            Event = new XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeEvent();
+            Event = new XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeEvent();
             Event.Decode(byteArray, ref p);
-            Topics = new Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.primitive_types.H256>();
+            Topics = new Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256>();
             Topics.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.sp_core.crypto
+namespace XcavatePaseo.NetApi.Generated.Model.sp_core.crypto
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.sp_core.crypto
         /// <summary>
         /// >> value
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Types.Base.Arr32U8 Value { get; set; }
+        public XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8 Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.sp_core.crypto
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new XCavatePaseo.NetApi.Generated.Types.Base.Arr32U8();
+            Value = new XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

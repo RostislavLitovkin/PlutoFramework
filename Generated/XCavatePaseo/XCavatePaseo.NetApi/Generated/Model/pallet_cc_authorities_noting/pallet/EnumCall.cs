@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_cc_authorities_noting.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_cc_authorities_noting.pallet
 {
     
     
@@ -50,9 +50,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_cc_authorities_noting.palle
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.ccp_authorities_noting_inherent.ContainerChainAuthoritiesInherentData>(Call.set_latest_authorities_data);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.nimbus_primitives.nimbus_crypto.Public>>(Call.set_authorities);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>(Call.set_orchestrator_para_id);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.ccp_authorities_noting_inherent.ContainerChainAuthoritiesInherentData>(Call.set_latest_authorities_data);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.nimbus_primitives.nimbus_crypto.Public>>(Call.set_authorities);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>(Call.set_orchestrator_para_id);
         }
     }
 }

@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.frame_system
+namespace XcavatePaseo.NetApi.Generated.Model.frame_system
 {
     
     
@@ -43,7 +43,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_system
         /// <summary>
         /// >> data
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.pallet_balances.types.AccountData Data { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.pallet_balances.types.AccountData Data { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -75,7 +75,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_system
             Providers.Decode(byteArray, ref p);
             Sufficients = new Substrate.NetApi.Model.Types.Primitive.U32();
             Sufficients.Decode(byteArray, ref p);
-            Data = new XCavatePaseo.NetApi.Generated.Model.pallet_balances.types.AccountData();
+            Data = new XcavatePaseo.NetApi.Generated.Model.pallet_balances.types.AccountData();
             Data.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

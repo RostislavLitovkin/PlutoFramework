@@ -1,25 +1,25 @@
 ﻿
 using Substrate.NetApi;
-using XCavatePaseo.NetApi.Generated;
-using XCavatePaseo.NetApi.Generated.Model.sp_core.crypto;
+using XcavatePaseo.NetApi.Generated;
+using XcavatePaseo.NetApi.Generated.Model.sp_core.crypto;
 using Substrate.NetApi.Model.Types.Primitive;
-using XCavatePaseo.NetApi.Generated.Storage;
-using XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types;
+using XcavatePaseo.NetApi.Generated.Storage;
+using XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types;
 using System.Numerics;
 using UniqueryPlus.Ipfs;
 using UniqueryPlus.Nfts;
-using SubstrateCollectionMetadata = XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionMetadata;
+using SubstrateCollectionMetadata = XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionMetadata;
 using Substrate.NetApi.Model.Types.Base;
 using UniqueryPlus.External;
 using StrawberryShake;
 using Substrate.NetApi.Model.Extrinsics;
-using XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress;
+using XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress;
 using UniqueryPlus.Metadata;
 
 
 namespace UniqueryPlus.Collections
 {
-    public record XCavatePaseoNftsPalletCollectionFull : XCavatePaseoNftsPalletCollection, ICollectionMintConfig, ICollectionStats, ICollectionCreatedAt, ICollectionTransferable
+    public record XcavatePaseoNftsPalletCollectionFull : XcavatePaseoNftsPalletCollection, ICollectionMintConfig, ICollectionStats, ICollectionCreatedAt, ICollectionTransferable
     {
         private SubstrateClientExt client;
         public uint? NftMaxSuply { get; set; }
@@ -31,7 +31,7 @@ namespace UniqueryPlus.Collections
         public required BigInteger FloorPrice { get; set; }
         public required BigInteger Volume { get; set; }
         public required DateTimeOffset CreatedAt { get; set; }
-        public XCavatePaseoNftsPalletCollectionFull(SubstrateClientExt client) : base(client)
+        public XcavatePaseoNftsPalletCollectionFull(SubstrateClientExt client) : base(client)
         {
             this.client = client;
         }
@@ -48,15 +48,15 @@ namespace UniqueryPlus.Collections
         }
     }
 
-    public record XCavatePaseoNftsPalletCollection : ICollectionBase
+    public record XcavatePaseoNftsPalletCollection : ICollectionBase
     {
         private SubstrateClientExt client;
-        public NftTypeEnum Type => NftTypeEnum.XCavatePaseo;
+        public NftTypeEnum Type => NftTypeEnum.XcavatePaseo;
         public required BigInteger CollectionId { get; set; }
         public required string Owner { get; set; }
         public required uint NftCount { get; set; }
         public MetadataBase? Metadata { get; set; }
-        public XCavatePaseoNftsPalletCollection(SubstrateClientExt client)
+        public XcavatePaseoNftsPalletCollection(SubstrateClientExt client)
         {
             this.client = client;
         }
@@ -67,7 +67,7 @@ namespace UniqueryPlus.Collections
                 return [];
             }
 
-            var result = await XCavatePaseoNftModel.GetNftsNftsPalletInCollectionAsync(client, (uint)CollectionId, limit, lastKey, token).ConfigureAwait(false);
+            var result = await XcavatePaseoNftModel.GetNftsNftsPalletInCollectionAsync(client, (uint)CollectionId, limit, lastKey, token).ConfigureAwait(false);
 
             return result.Items;
         }
@@ -79,14 +79,14 @@ namespace UniqueryPlus.Collections
                 return [];
             }
 
-            var result = await XCavatePaseoNftModel.GetNftsNftsPalletInCollectionOwnedByAsync(client, (uint)CollectionId, owner, limit, lastKey, token).ConfigureAwait(false);
+            var result = await XcavatePaseoNftModel.GetNftsNftsPalletInCollectionOwnedByAsync(client, (uint)CollectionId, owner, limit, lastKey, token).ConfigureAwait(false);
 
             return result.Items;
         }
 
         public async Task<ICollectionBase> GetFullAsync(CancellationToken token)
         {
-            var mintConfig = await XCavatePaseoCollectionModel.GetCollectionMintConfigNftsPalletAsync(client, (uint)CollectionId, token).ConfigureAwait(false);
+            var mintConfig = await XcavatePaseoCollectionModel.GetCollectionMintConfigNftsPalletAsync(client, (uint)CollectionId, token).ConfigureAwait(false);
 
             var speckClient = Indexers.GetSpeckClient();
 
@@ -94,7 +94,7 @@ namespace UniqueryPlus.Collections
 
             collectionStats.EnsureNoErrors();
 
-            return new XCavatePaseoNftsPalletCollectionFull(client)
+            return new XcavatePaseoNftsPalletCollectionFull(client)
             {
                 CollectionId = CollectionId,
                 Owner = Owner,
@@ -113,7 +113,7 @@ namespace UniqueryPlus.Collections
         }
     }
 
-    internal class XCavatePaseoCollectionModel
+    internal class XcavatePaseoCollectionModel
     {
         internal static async Task<RecursiveReturn<ICollectionBase>> GetCollectionsNftsPalletOwnedByAsync(SubstrateClientExt client, string owner, uint limit, byte[]? lastKey, CancellationToken token)
         {
@@ -166,20 +166,20 @@ namespace UniqueryPlus.Collections
                     return details switch
                     {
                         // Should never be null
-                        null => new XCavatePaseoNftsPalletCollection(client)
+                        null => new XcavatePaseoNftsPalletCollection(client)
                         {
                             CollectionId = collectionId,
                             Owner = "Unknown",
                             NftCount = 0
                         },
-                        _ => new XCavatePaseoNftsPalletCollection(client)
+                        _ => new XcavatePaseoNftsPalletCollection(client)
                         {
                             CollectionId = collectionId,
                             Owner = Utils.GetAddressFrom(details.Owner.Encode()),
                             NftCount = details.Items.Value
                         }
                     };
-                }).Zip(collectionMetadatas, (XCavatePaseoNftsPalletCollection collectionBase, MetadataBase? metadata) =>
+                }).Zip(collectionMetadatas, (XcavatePaseoNftsPalletCollection collectionBase, MetadataBase? metadata) =>
                 {
                     collectionBase.Metadata = metadata;
                     return collectionBase;
@@ -255,15 +255,15 @@ namespace UniqueryPlus.Collections
             {
                 MintType = collectionMintConfig.MintSettings.MintType.Value switch
                 {
-                    XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.MintType.Public => new MintType
+                    XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.MintType.Public => new MintType
                     {
                         Type = MintTypeEnum.Public,
                     },
-                    XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.MintType.Issuer => new MintType
+                    XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.MintType.Issuer => new MintType
                     {
                         Type = MintTypeEnum.Issuer,
                     },
-                    XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.MintType.HolderOf => new MintType
+                    XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.MintType.HolderOf => new MintType
                     {
                         Type = MintTypeEnum.HolderOfCollection,
                         CollectionId = (U32)collectionMintConfig.MintSettings.MintType.Value2
@@ -285,18 +285,18 @@ namespace UniqueryPlus.Collections
             multiAddress.Create(MultiAddress.Id, accountId);
 
 
-            var mintType = new XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumMintType();
+            var mintType = new XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumMintType();
             switch (collectionConfig.MintType.Type)
             {
                 case MintTypeEnum.HolderOfCollection:
                     if (collectionConfig.MintType.CollectionId is null) throw new Exception("CollectionId can not be null when MintType is HolderOfCollection");
-                    mintType.Create(XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.MintType.HolderOf, new U32((uint)collectionConfig.MintType.CollectionId));
+                    mintType.Create(XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.MintType.HolderOf, new U32((uint)collectionConfig.MintType.CollectionId));
                     break;
                 case MintTypeEnum.Issuer:
-                    mintType.Create(XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.MintType.Issuer, new BaseVoid());
+                    mintType.Create(XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.MintType.Issuer, new BaseVoid());
                     break;
                 case MintTypeEnum.Public:
-                    mintType.Create(XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.MintType.Public, new BaseVoid());
+                    mintType.Create(XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.MintType.Public, new BaseVoid());
                     break;
             }
 
@@ -356,7 +356,7 @@ namespace UniqueryPlus.Collections
 
             return result.Data.CollectionEntities.Select(collectionEntity =>
             {
-                return new XCavatePaseoNftsPalletCollection(client)
+                return new XcavatePaseoNftsPalletCollection(client)
                 {
                     CollectionId = uint.Parse(collectionEntity.Id),
                     Owner = collectionEntity.CurrentOwner,

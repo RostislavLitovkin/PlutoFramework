@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet
 {
     
     

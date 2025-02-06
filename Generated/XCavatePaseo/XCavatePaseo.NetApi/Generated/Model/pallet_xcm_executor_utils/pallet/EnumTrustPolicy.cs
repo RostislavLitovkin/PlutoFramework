@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet
 {
     
     
@@ -43,8 +43,8 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet
         /// </summary>
         public EnumTrustPolicy()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet.EnumDefaultTrustPolicy>(TrustPolicy.DefaultTrustPolicy);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>(TrustPolicy.AllowedAssets);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet.EnumDefaultTrustPolicy>(TrustPolicy.DefaultTrustPolicy);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>(TrustPolicy.AllowedAssets);
         }
     }
 }

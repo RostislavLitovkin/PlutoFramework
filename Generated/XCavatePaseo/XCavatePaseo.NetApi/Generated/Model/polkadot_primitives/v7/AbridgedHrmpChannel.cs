@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7
+namespace XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7
 {
     
     
@@ -47,7 +47,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7
         /// <summary>
         /// >> mqc_head
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.primitive_types.H256> MqcHead { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256> MqcHead { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -82,7 +82,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7
             MsgCount.Decode(byteArray, ref p);
             TotalSize = new Substrate.NetApi.Model.Types.Primitive.U32();
             TotalSize.Decode(byteArray, ref p);
-            MqcHead = new Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.primitive_types.H256>();
+            MqcHead = new Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256>();
             MqcHead.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

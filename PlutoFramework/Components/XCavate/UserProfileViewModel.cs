@@ -1,9 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Model;
-using PlutoFramework.Model.XCavate;
+using PlutoFramework.Model.Xcavate;
 
-namespace PlutoFramework.Components.XCavate
+namespace PlutoFramework.Components.Xcavate
 {
     public partial class UserProfileViewModel : ObservableObject
     {
@@ -25,7 +25,7 @@ namespace PlutoFramework.Components.XCavate
         [NotifyPropertyChangedFor(nameof(LastName))]
         [NotifyPropertyChangedFor(nameof(Email))]
         [NotifyPropertyChangedFor(nameof(PhoneNumber))]
-        private XCavateUser user = new XCavateUser
+        private XcavateUser user = new XcavateUser
         {
             FirstName = "",
             LastName = "",
@@ -57,8 +57,8 @@ namespace PlutoFramework.Components.XCavate
             new ModifyUserProfileViewModel
             {
                 Title = "Modify personal profile",
-                ProfilePicture = XCavateFileModel.GetSavedProfilePicture(),
-                ProfileBackground = XCavateFileModel.GetSavedProfileBackground(),
+                ProfilePicture = XcavateFileModel.GetSavedProfilePicture(),
+                ProfileBackground = XcavateFileModel.GetSavedProfileBackground(),
                 FirstName = User.FirstName,
                 LastName = User.LastName,
                 Email = User.Email,

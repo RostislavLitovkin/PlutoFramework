@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.xcm.v2
+namespace XcavatePaseo.NetApi.Generated.Model.xcm.v2
 {
     
     
@@ -173,31 +173,31 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v2
         /// </summary>
         public EnumInstruction()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.MultiAssets>(Instruction.WithdrawAsset);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.MultiAssets>(Instruction.ReserveAssetDeposited);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.MultiAssets>(Instruction.ReceiveTeleportedAsset);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>, XCavatePaseo.NetApi.Generated.Model.xcm.v2.EnumResponse, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>>>(Instruction.QueryResponse);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.MultiAssets, XCavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.MultiLocation>>(Instruction.TransferAsset);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.MultiAssets, XCavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.MultiLocation, XCavatePaseo.NetApi.Generated.Model.xcm.v2.XcmT1>>(Instruction.TransferReserveAsset);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.EnumOriginKind, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>, XCavatePaseo.NetApi.Generated.Model.xcm.double_encoded.DoubleEncodedT2>>(Instruction.Transact);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.MultiAssets>(Instruction.WithdrawAsset);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.MultiAssets>(Instruction.ReserveAssetDeposited);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.MultiAssets>(Instruction.ReceiveTeleportedAsset);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>, XcavatePaseo.NetApi.Generated.Model.xcm.v2.EnumResponse, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>>>(Instruction.QueryResponse);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.MultiAssets, XcavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.MultiLocation>>(Instruction.TransferAsset);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.MultiAssets, XcavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.MultiLocation, XcavatePaseo.NetApi.Generated.Model.xcm.v2.XcmT1>>(Instruction.TransferReserveAsset);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.EnumOriginKind, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>, XcavatePaseo.NetApi.Generated.Model.xcm.double_encoded.DoubleEncodedT2>>(Instruction.Transact);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>>(Instruction.HrmpNewChannelOpenRequest);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>(Instruction.HrmpChannelAccepted);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>>(Instruction.HrmpChannelClosing);
 				AddTypeDecoder<BaseVoid>(Instruction.ClearOrigin);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.EnumJunctions>(Instruction.DescendOrigin);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>, XCavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.MultiLocation, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>>>(Instruction.ReportError);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumMultiAssetFilter, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, XCavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.MultiLocation>>(Instruction.DepositAsset);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumMultiAssetFilter, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, XCavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.MultiLocation, XCavatePaseo.NetApi.Generated.Model.xcm.v2.XcmT1>>(Instruction.DepositReserveAsset);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumMultiAssetFilter, XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.MultiAssets>>(Instruction.ExchangeAsset);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumMultiAssetFilter, XCavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.MultiLocation, XCavatePaseo.NetApi.Generated.Model.xcm.v2.XcmT1>>(Instruction.InitiateReserveWithdraw);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumMultiAssetFilter, XCavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.MultiLocation, XCavatePaseo.NetApi.Generated.Model.xcm.v2.XcmT1>>(Instruction.InitiateTeleport);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>, XCavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.MultiLocation, XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumMultiAssetFilter, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>>>(Instruction.QueryHolding);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.MultiAsset, XCavatePaseo.NetApi.Generated.Model.xcm.v2.EnumWeightLimit>>(Instruction.BuyExecution);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.EnumJunctions>(Instruction.DescendOrigin);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>, XcavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.MultiLocation, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>>>(Instruction.ReportError);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumMultiAssetFilter, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, XcavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.MultiLocation>>(Instruction.DepositAsset);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumMultiAssetFilter, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, XcavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.MultiLocation, XcavatePaseo.NetApi.Generated.Model.xcm.v2.XcmT1>>(Instruction.DepositReserveAsset);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumMultiAssetFilter, XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.MultiAssets>>(Instruction.ExchangeAsset);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumMultiAssetFilter, XcavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.MultiLocation, XcavatePaseo.NetApi.Generated.Model.xcm.v2.XcmT1>>(Instruction.InitiateReserveWithdraw);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumMultiAssetFilter, XcavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.MultiLocation, XcavatePaseo.NetApi.Generated.Model.xcm.v2.XcmT1>>(Instruction.InitiateTeleport);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>, XcavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.MultiLocation, XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumMultiAssetFilter, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>>>(Instruction.QueryHolding);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.MultiAsset, XcavatePaseo.NetApi.Generated.Model.xcm.v2.EnumWeightLimit>>(Instruction.BuyExecution);
 				AddTypeDecoder<BaseVoid>(Instruction.RefundSurplus);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.xcm.v2.XcmT2>(Instruction.SetErrorHandler);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.xcm.v2.XcmT2>(Instruction.SetAppendix);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.v2.XcmT2>(Instruction.SetErrorHandler);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.v2.XcmT2>(Instruction.SetAppendix);
 				AddTypeDecoder<BaseVoid>(Instruction.ClearError);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.MultiAssets, XCavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.MultiLocation>>(Instruction.ClaimAsset);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.MultiAssets, XcavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.MultiLocation>>(Instruction.ClaimAsset);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>>(Instruction.Trap);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>>>(Instruction.SubscribeVersion);
 				AddTypeDecoder<BaseVoid>(Instruction.UnsubscribeVersion);

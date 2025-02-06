@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_maintenance_mode.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_maintenance_mode.pallet
 {
     
     
@@ -61,8 +61,8 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_maintenance_mode.pallet
         {
 				AddTypeDecoder<BaseVoid>(Event.EnteredMaintenanceMode);
 				AddTypeDecoder<BaseVoid>(Event.NormalOperationResumed);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Event.FailedToSuspendIdleXcmExecution);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Event.FailedToResumeIdleXcmExecution);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Event.FailedToSuspendIdleXcmExecution);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Event.FailedToResumeIdleXcmExecution);
         }
     }
 }
