@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Xcavate.UserTypeSelectionPage"
+             Title="UserTypeSelectionPage"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+            xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+         xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
+         xmlns:password="clr-namespace:PlutoFramework.Components.Password"
+         BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
+    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+
+        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+           Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
+           Opacity="{AppThemeBinding Light=0.96}"
+           Aspect="AspectFill"/>
+
+        <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+              Padding="20"
+              ColumnSpacing="15"
+              RowSpacing="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="40" />
+
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Who are you?"
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   Grid.Column="0"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="2"/>
+
+            <card:ClickableCard Grid.Column="0"
+                                Grid.Row="1"
+                                HorizontalOptions="Fill">
+                <card:ClickableCard.View>
+                    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                    AbsoluteLayout.LayoutFlags="All">
+                        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
+                                             AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image WidthRequest="80"
+                                   HeightRequest="80"
+                                   Source="xcavatedeveloper.png" />
+                            <Label Text="Developer"
+                                   FontAttributes="Bold"
+                                   HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </AbsoluteLayout>
+
+                </card:ClickableCard.View>
+            </card:ClickableCard>
+            <card:ClickableCard Grid.Column="1"
+                                Grid.Row="1">
+                <card:ClickableCard.View>
+                    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                        AbsoluteLayout.LayoutFlags="All">
+                        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
+                                 AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image WidthRequest="80"
+                                       HeightRequest="80"
+                                       Source="xcavateinvestor.png" />
+                            <Label Text="Investor"
+                                       FontAttributes="Bold"
+                                       HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </AbsoluteLayout>
+
+                </card:ClickableCard.View>
+            </card:ClickableCard>
+            <card:ClickableCard Grid.Column="0"
+                    Grid.Row="2">
+                <card:ClickableCard.View>
+                    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                            AbsoluteLayout.LayoutFlags="All">
+                        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
+                     AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image WidthRequest="80"
+                           HeightRequest="80"
+                           Source="xcavatelettingagent.png" />
+                            <Label Text="Letting Agent"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </AbsoluteLayout>
+
+                </card:ClickableCard.View>
+            </card:ClickableCard>
+
+            <card:ClickableCard Grid.Column="1"
+                    Grid.Row="2">
+                <card:ClickableCard.View>
+                    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                            AbsoluteLayout.LayoutFlags="All">
+                        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
+                     AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image WidthRequest="80"
+                           HeightRequest="80"
+                           Source="xcavateloanevaluator.png" />
+                            <Label Text="Loan Evaluator"
+                                    FontAttributes="Bold"
+                                   
+                           HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </AbsoluteLayout>
+
+                </card:ClickableCard.View>
+            </card:ClickableCard>
+        </Grid>
+
+        <txanalyzer:TransactionAnalyzerConfirmationView />
+
+        <password:EnterPasswordPopupView />
+    </AbsoluteLayout>
+</ContentPage>

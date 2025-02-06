@@ -166,6 +166,10 @@
 	  <None Remove="Resources\Images\uniqueblack.svg" />
 	  <None Remove="Resources\Images\uniquewhite.svg" />
 	  <None Remove="Resources\Images\xblack.png" />
+	  <None Remove="Resources\Images\xcavatedeveloper.png" />
+	  <None Remove="Resources\Images\xcavateinvestor.png" />
+	  <None Remove="Resources\Images\xcavatelettingagent.png" />
+	  <None Remove="Resources\Images\xcavateloanevaluator.png" />
 	  <None Remove="Resources\Images\xcavatemappin.png" />
 	  <None Remove="Resources\Images\xcavatergb.png" />
 	  <None Remove="Resources\Images\xwhite.png" />
@@ -707,6 +711,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Xcavate\UserTypeBadgeView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Xcavate\UserTypeSelectionPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Xcavate\VerificationBadgeView.xaml">

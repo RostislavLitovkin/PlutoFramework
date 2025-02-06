@@ -3,36 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.Card.ClickableCard"
             ZIndex="10">
-    <StackLayout Spacing="5">
-        <Border
-            IsVisible="False"
+    <Border
             HorizontalOptions="Fill"
-            VerticalOptions="Center"
+            VerticalOptions="Fill"
             BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
             StrokeThickness="0"
             Padding="10, 0, 10, 0"
             x:Name="border"
             >
-            <Border.StrokeShape>
-                <RoundRectangle CornerRadius="20"
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="20"
                                 x:Name="roundRectangle"/>
 
-            </Border.StrokeShape>
-            <Border.Shadow>
-                <Shadow Brush="Black"
-                        Offset="0,2" 
-                        Radius="20"
-                        Opacity="0.1" />
+        </Border.StrokeShape>
+        <Border.Shadow>
+            <Shadow Brush="Black"
+                    Offset="0,2" 
+                    Radius="20"
+                    Opacity="0.1" />
 
-            </Border.Shadow>
-        </Border>
-
-        <Line Stroke="#888888" X2="{Binding Width, Source={RelativeSource Self}}" HorizontalOptions="Fill" StrokeThickness="1" />
+        </Border.Shadow>
 
         <ContentView x:Name="contentView"
-             HorizontalOptions="Fill"
-             VerticalOptions="Center">
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill">
         </ContentView>
-    </StackLayout>
+    </Border>
 
 </ContentView>
