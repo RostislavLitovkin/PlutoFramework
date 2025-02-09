@@ -1,6 +1,8 @@
 using PlutoFramework.Components.CustomLayouts;
+using PlutoFramework.Components.Kilt;
 using PlutoFramework.Components.Xcavate;
 using PlutoFramework.Components.XcavateProperty;
+using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
 using PlutoFramework.Model.Xcavate;
 using PlutoFramework.View;
@@ -32,11 +34,10 @@ public partial class SettingsPage : ContentPage
             return;
         }
 
-        Preferences.Remove("publicKey");
-        SecureStorage.Default.Remove("privateKey");
-        SecureStorage.Default.Remove("mnemonics");
-        SecureStorage.Default.Remove("password");
-        Preferences.Remove("biometricsEnabled");
+        KeysModel.RemoveAccount();
+
+        SecureStorage.Default.Remove(PreferencesModel.PASSWORD);
+        Preferences.Remove(PreferencesModel.BIOMETRICS_ENABLED);
 
         // Delete Local SQLite databases
 
@@ -136,6 +137,27 @@ public partial class SettingsPage : ContentPage
             var secret = await Model.KeysModel.GetMnemonicsOrPrivateKeyAsync();
 
             await Navigation.PushAsync(new MnemonicsPage(secret));
+        }
+        catch
+        {
+            // Failed to authenticate
+        }
+    }
+
+    async void OnManageKiltDidClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
+    {
+        if (!Preferences.ContainsKey(PreferencesModel.DID + "kilt1"))
+        {
+            await Navigation.PushAsync(new NoDidPage());
+
+            return;
+        }
+
+        try
+        {
+            var secret = await Model.KeysModel.GetMnemonicsOrPrivateKeyAsync(accountVariant: "kilt1");
+
+            await Navigation.PushAsync(new DidManagementPage(secret));
         }
         catch
         {

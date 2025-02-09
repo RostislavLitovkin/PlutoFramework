@@ -120,6 +120,7 @@
 	  <None Remove="Components\NetworkSelect\" />
 	  <None Remove="Components\AddressView\" />
 	  <None Remove="CommunityToolkit.Maui" />
+	  <None Remove="Resources\Images\chaingreen.svg" />
 	  <None Remove="Resources\Images\cloudblack.svg" />
 	  <None Remove="Resources\Images\cloudwhite.svg" />
 	  <None Remove="Resources\Images\collectionblack.svg" />
@@ -136,6 +137,8 @@
 	  <None Remove="Resources\Images\expandwhite.svg" />
 	  <None Remove="Resources\Images\facebookblack.png" />
 	  <None Remove="Resources\Images\facebookwhite.png" />
+	  <None Remove="Resources\Images\featherblack.svg" />
+	  <None Remove="Resources\Images\featherwhite.svg" />
 	  <None Remove="Resources\Images\githubblack.svg" />
 	  <None Remove="Resources\Images\githubwhite.svg" />
 	  <None Remove="Resources\Images\hotblack.svg" />
@@ -539,7 +542,28 @@
 	  <MauiXaml Update="Components\Form\FormWideValueView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Kilt\DidExplanationPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Kilt\DidListView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Kilt\DidManagementPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Kilt\DidView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Kilt\MainDidView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Kilt\NoDidPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Koda\OpenKodaButton.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Mnemonics\MnemonicsView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Mnemonics\SuccessfulImportPopupView.xaml">

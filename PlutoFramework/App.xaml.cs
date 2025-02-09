@@ -8,7 +8,6 @@ using PlutoFramework.Components.AddressView;
 using PlutoFramework.Components.CalamarView;
 using PlutoFramework.Components.Extrinsic;
 using PlutoFramework.View;
-using PlutoFramework.ViewModel;
 using PlutoFramework.Components.Staking;
 using PlutoFramework.Components.CustomLayouts;
 using PlutoFramework.Components.AzeroId;
@@ -124,12 +123,11 @@ public partial class App : Application
         }
         else
         {
-            Preferences.Remove(PreferencesModel.PUBLIC_KEY);
-            SecureStorage.Default.Remove(PreferencesModel.PRIVATE_KEY);
-            SecureStorage.Default.Remove(PreferencesModel.MNEMONICS);
+            KeysModel.RemoveAccount();
+
             SecureStorage.Default.Remove(PreferencesModel.PASSWORD);
             Preferences.Remove(PreferencesModel.BIOMETRICS_ENABLED);
-            Preferences.Set(PreferencesModel.ACCOUNT_TYPE, AccountType.Mnemonic.ToString());
+
             MainPage = new SetupPasswordPage();
         }
     }

@@ -6,6 +6,7 @@
              xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
              xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
              xmlns:password="clr-namespace:PlutoFramework.Components.Password"
+             xmlns:mnemonics="clr-namespace:PlutoFramework.Components.Mnemonics"
              x:Class="PlutoFramework.View.MnemonicsPage"
              Title="Mnemonics"
              BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
@@ -27,45 +28,15 @@
             <VerticalStackLayout HorizontalOptions="Center"
                                  Padding="20, 10, 20, 100"
                                  Spacing="15">
-                <ContentView HeightRequest="120">
-                    <card:Card>
-                        <card:Card.View>
-                            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                                            AbsoluteLayout.LayoutFlags="All"
-                                            Margin="0, 10, 0, 10">
-                                <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
-                                                     AbsoluteLayout.LayoutFlags="SizeProportional">
-                                    <VerticalStackLayout>
-                                        <Label 
-                                            FontAttributes="Bold"
-                                            HorizontalOptions="Center"
-                                            VerticalTextAlignment="End">
-                                            <Label.FormattedText>
-                                                <FormattedString>
-                                                    <Span FontAttributes="Bold"
-                                                          Text="{Binding Title}"/>
-
-                                                </FormattedString>
-
-                                            </Label.FormattedText>
-
-                                        </Label>
-                                         <Label Text="{Binding Mnemonics}"
-                                                HorizontalTextAlignment="Center" />
-                                    </VerticalStackLayout>
-                
-                                </VerticalStackLayout>
-                            </AbsoluteLayout>
-                        </card:Card.View>
-                    </card:Card>
-                </ContentView>
+                <mnemonics:MnemonicsView Title="{Binding MnemonicsTitle}"
+                                         Mnemonics="{Binding Mnemonics}" />
 
                 <buttons:ElevatedButton ButtonState="Enabled" Text="Export json" Command="{Binding ExportJsonCommand}"
                                         x:Name="exportJsonButton"/>
 
-                <buttons:ElevatedButton ButtonState="Enabled" Text="Use existing mnemonics" Clicked="GoToEnterMnemonics" />
+                <buttons:ElevatedButton ButtonState="Enabled" Text="Use existing mnemonics" Command="{Binding GoToEnterMnemonicsCommand}" />
 
-                <buttons:ElevatedButton ButtonState="Enabled" Text="What are mnemonics?" Clicked="OnMnemonicsExplanationClicked" />
+                <buttons:ElevatedButton ButtonState="Enabled" Text="What are mnemonics?" Command="{Binding GoToMnemonicsExplanationCommand}" />
 
             </VerticalStackLayout>
             

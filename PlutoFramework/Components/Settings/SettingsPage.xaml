@@ -39,6 +39,14 @@
 
                 </settings:GenericButton>
 
+                <settings:GenericButton Title="Manage Kilt DID">
+                    <settings:GenericButton.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnManageKiltDidClicked" />
+
+                    </settings:GenericButton.GestureRecognizers>
+
+                </settings:GenericButton>
+
                 <settings:GenericButton Title="Developer settings">
                     <settings:GenericButton.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnDeveloperSettingsClicked" />
