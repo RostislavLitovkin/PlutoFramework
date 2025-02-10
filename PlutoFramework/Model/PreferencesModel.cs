@@ -25,5 +25,7 @@
         public const string DID_VERIFICATION = "didVerification";
 
         public const string SETTINGS_DISPLAY_NETWORKS = "settingsDisplayNetworks";
+
+        public const string SETTINGS_ALLOW_PRIVATE_KEY = "settingsAllowPrivateKey";
     }
 }

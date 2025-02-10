@@ -67,7 +67,8 @@
                 <buttons:ElevatedButton Text="Continue" Clicked="ContinueWithMnemonicClicked" />
 
 
-                <ContentView HeightRequest="120" Margin="0, 40, 0, 0">
+                <ContentView HeightRequest="120" Margin="0, 40, 0, 0"
+                             IsVisible="{Binding UsePrivateKeyIsVisible}">
                     <card:Card>
                         <card:Card.View>
                             <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
@@ -102,7 +103,8 @@
                     </card:Card>
                 </ContentView>
 
-                <buttons:ElevatedButton ButtonState="Enabled" Text="Continue" Clicked="ContinueWithPrivateKeyClicked" />
+                <buttons:ElevatedButton ButtonState="Enabled" Text="Continue" Clicked="ContinueWithPrivateKeyClicked"
+                                        IsVisible="{Binding UsePrivateKeyIsVisible}" />
 
                 <buttons:ElevatedButton ButtonState="Enabled" Text="Import json" Clicked="ImportJsonClicked"/>
             </VerticalStackLayout>

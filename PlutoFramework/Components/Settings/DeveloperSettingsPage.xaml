@@ -31,8 +31,12 @@
 
                 <settings:GenericSwitch Title="Display networks"
                                         IsToggled="{Binding DisplayNetworks}"
-                                        Command="{Binding ToggleDislayNetworksCommand}">
-                </settings:GenericSwitch>
+                                        Command="{Binding ToggleDislayNetworksCommand}"/>
+
+
+                <settings:GenericSwitch Title="Allow Private key usage"
+                                        IsToggled="{Binding AllowPrivateKey}"
+                                        Command="{Binding ToggleAllowPrivateKeyCommand}"/>
             </VerticalStackLayout>
 
         </ScrollView>

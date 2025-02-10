@@ -19,5 +19,16 @@ namespace PlutoFramework.Components.Settings
 
             MainPage.NetworksView.IsVisible = DisplayNetworks;
         }
+
+        [ObservableProperty]
+        private bool allowPrivateKey = Preferences.Get(PreferencesModel.SETTINGS_ALLOW_PRIVATE_KEY, false);
+
+        [RelayCommand]
+        public void ToggleAllowPrivateKey()
+        {
+            AllowPrivateKey = !AllowPrivateKey;
+
+            Preferences.Set(PreferencesModel.SETTINGS_ALLOW_PRIVATE_KEY, AllowPrivateKey);
+        }
     }
 }
