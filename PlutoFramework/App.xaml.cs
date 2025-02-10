@@ -103,10 +103,7 @@ public partial class App : Application
 
         DependencyService.Register<SuccessfulImportPopupViewModel>();
 
-
-        MainPage = new UserTypeSelectionPage();
-
-        return;
+        //MainPage = new UserTypeSelectionPage();
 
         if (Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY))
         {

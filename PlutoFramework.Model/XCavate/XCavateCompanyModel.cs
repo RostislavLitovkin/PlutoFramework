@@ -117,8 +117,8 @@ namespace PlutoFramework.Model.Xcavate
                         CompanyIds = [1],
                         Id = 2,
                         Verification = VerificationEnum.Pending,
-                        ProfilePicture = ImageSource.FromFile(""),
-                        ProfileBackground = ImageSource.FromFile(""),
+                        ProfilePicture = ImageSource.FromResource(""),
+                        ProfileBackground = ImageSource.FromResource(""),
                     }
                 ],
                 LastKey = 2,

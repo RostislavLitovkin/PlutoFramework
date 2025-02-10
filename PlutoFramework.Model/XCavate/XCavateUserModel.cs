@@ -61,8 +61,8 @@
                 Role = UserRoleEnum.Developer,
                 Email = "Richard120@gmail.com",
                 PhoneNumber = "07766544445",
-                ProfilePicture = ImageSource.FromUri(new Uri("")),
-                ProfileBackground = ImageSource.FromUri(new Uri("")),
+                ProfilePicture = ImageSource.FromResource(""),
+                ProfileBackground = ImageSource.FromResource("")
             };
         }
     }
