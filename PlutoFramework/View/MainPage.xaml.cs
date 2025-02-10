@@ -14,13 +14,17 @@ public partial class MainPage : ContentPage
 {
     public static IList<IView> Views => StackLayout.Children;
     public static VerticalStackLayout StackLayout { get; set; }
+    public static MultiNetworkSelectView NetworksView { get; set; }
     public MainPage()
     {
-
         NavigationPage.SetHasNavigationBar(this, false);
         Shell.SetNavBarIsVisible(this, false);
 
         InitializeComponent();
+
+        networksView.IsVisible = Preferences.Get(PreferencesModel.SETTINGS_DISPLAY_NETWORKS, false);
+
+        NetworksView = networksView;
 
         StackLayout = stackLayout;
 

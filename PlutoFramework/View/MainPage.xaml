@@ -34,7 +34,7 @@
             </VerticalStackLayout>
         </ScrollView>
 
-        <networkselect:MultiNetworkSelectView />
+        <networkselect:MultiNetworkSelectView x:Name="networksView" />
 
         <!--QR code button-->
         <Image WidthRequest="36" Margin="10, 10, 10, 10"

@@ -23,7 +23,7 @@ using PlutoFramework.Components.TransactionAnalyzer;
 using PlutoFramework.Components.Password;
 using PlutoFramework.Model;
 using PlutoFramework.Components.Mnemonics;
-using PlutoFramework.Components.Xcavate;
+using PlutoFramework.ViewModel;
 
 namespace PlutoFramework;
 

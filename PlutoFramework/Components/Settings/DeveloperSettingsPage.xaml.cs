@@ -10,7 +10,9 @@ public partial class DeveloperSettingsPage : ContentPage
         Shell.SetNavBarIsVisible(this, false);
 
         InitializeComponent();
-	}
+
+        BindingContext = new DeveloperSettingsViewModel();
+    }
 
     private async void OnCreateCustomLayoutsClicked(object sender, TappedEventArgs e)
     {

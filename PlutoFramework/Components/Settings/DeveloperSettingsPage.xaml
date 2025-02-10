@@ -4,8 +4,8 @@
              xmlns:settings="clr-namespace:PlutoFramework.Components.Settings"
              xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
              x:Class="PlutoFramework.Components.Settings.DeveloperSettingsPage"
-                      Title="Developer Settings"
-         BackgroundColor="Black">
+             Title="Developer Settings"
+         BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
         <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
@@ -28,6 +28,11 @@
                     </settings:GenericButton.GestureRecognizers>
 
                 </settings:GenericButton>
+
+                <settings:GenericSwitch Title="Display networks"
+                                        IsToggled="{Binding DisplayNetworks}"
+                                        Command="{Binding ToggleDislayNetworksCommand}">
+                </settings:GenericSwitch>
             </VerticalStackLayout>
 
         </ScrollView>
