@@ -4,16 +4,16 @@
              x:Class="PlutoFramework.Components.Card.ClickableCard"
             ZIndex="10">
     <Border
-        HorizontalOptions="Fill"
-        VerticalOptions="Center"
-        BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
-        StrokeThickness="0"
-        Padding="10, 0, 10, 0"
-        x:Name="border"
-        >
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill"
+            BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
+            StrokeThickness="0"
+            Padding="10, 0, 10, 0"
+            x:Name="border"
+            >
         <Border.StrokeShape>
             <RoundRectangle CornerRadius="20"
-                        x:Name="roundRectangle"/>
+                                x:Name="roundRectangle"/>
 
         </Border.StrokeShape>
         <Border.Shadow>
@@ -25,8 +25,9 @@
         </Border.Shadow>
         <!--BorderColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"-->
         <ContentView x:Name="contentView"
-                     HorizontalOptions="Fill"
-                     VerticalOptions="Center">
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill">
         </ContentView>
     </Border>
+
 </ContentView>

@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcm.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcm.pallet
 {
     
     
@@ -44,7 +44,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcm.pallet
         public EnumOrigin()
         {
 				AddTypeDecoder<BaseVoid>(Origin.Relay);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>(Origin.SiblingParachain);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>(Origin.SiblingParachain);
         }
     }
 }

@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction
+namespace XcavatePaseo.NetApi.Generated.Model.xcm.v2.junction
 {
     
     
@@ -79,14 +79,14 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v2.junction
         public EnumJunction()
         {
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>(Junction.Parachain);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.EnumNetworkId, XCavatePaseo.NetApi.Generated.Types.Base.Arr32U8>>(Junction.AccountId32);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.EnumNetworkId, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>>>(Junction.AccountIndex64);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.EnumNetworkId, XCavatePaseo.NetApi.Generated.Types.Base.Arr20U8>>(Junction.AccountKey20);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.EnumNetworkId, XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8>>(Junction.AccountId32);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.EnumNetworkId, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>>>(Junction.AccountIndex64);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.EnumNetworkId, XcavatePaseo.NetApi.Generated.Types.Base.Arr20U8>>(Junction.AccountKey20);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U8>(Junction.PalletInstance);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>(Junction.GeneralIndex);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT1>(Junction.GeneralKey);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT1>(Junction.GeneralKey);
 				AddTypeDecoder<BaseVoid>(Junction.OnlyChild);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.EnumBodyId, XCavatePaseo.NetApi.Generated.Model.xcm.v2.EnumBodyPart>>(Junction.Plurality);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.EnumBodyId, XcavatePaseo.NetApi.Generated.Model.xcm.v2.EnumBodyPart>>(Junction.Plurality);
         }
     }
 }

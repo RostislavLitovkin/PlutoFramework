@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_migrations.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_migrations.pallet
 {
     
     
@@ -72,11 +72,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_migrations.pallet
         public EnumEvent()
         {
 				AddTypeDecoder<BaseVoid>(Event.RuntimeUpgradeStarted);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>(Event.RuntimeUpgradeCompleted);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>(Event.RuntimeUpgradeCompleted);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>(Event.MigrationStarted);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Event.MigrationCompleted);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Event.FailedToSuspendIdleXcmExecution);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Event.FailedToResumeIdleXcmExecution);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Event.MigrationCompleted);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Event.FailedToSuspendIdleXcmExecution);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Event.FailedToResumeIdleXcmExecution);
         }
     }
 }

@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.pallet
 {
     
     
@@ -75,8 +75,8 @@ namespace XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.pa
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.ValidationFunctionApplied);
 				AddTypeDecoder<BaseVoid>(Event.ValidationFunctionDiscarded);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.DownwardMessagesReceived);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight, XCavatePaseo.NetApi.Generated.Model.primitive_types.H256>>(Event.DownwardMessagesProcessed);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Types.Base.Arr32U8>>(Event.UpwardMessageSent);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight, XcavatePaseo.NetApi.Generated.Model.primitive_types.H256>>(Event.DownwardMessagesProcessed);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8>>(Event.UpwardMessageSent);
         }
     }
 }

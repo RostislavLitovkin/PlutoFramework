@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset
+namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset
 {
     
     
@@ -54,9 +54,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset
         public EnumWildAsset()
         {
 				AddTypeDecoder<BaseVoid>(WildAsset.All);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.AssetId, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.EnumWildFungibility>>(WildAsset.AllOf);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.AssetId, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.EnumWildFungibility>>(WildAsset.AllOf);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>(WildAsset.AllCounted);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.AssetId, XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.EnumWildFungibility, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>>(WildAsset.AllOfCounted);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.AssetId, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.EnumWildFungibility, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>>(WildAsset.AllOfCounted);
         }
     }
 }

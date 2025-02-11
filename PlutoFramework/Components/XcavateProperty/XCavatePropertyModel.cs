@@ -1,7 +1,7 @@
 ﻿using Amazon.S3;
 using Microsoft.Extensions.Configuration;
 using PlutoFramework.Constants;
-using PlutoFramework.Model.XCavate;
+using PlutoFramework.Model.Xcavate;
 using PlutoFramework.Model;
 using UniqueryPlus.Nfts;
 using Amazon;
@@ -9,7 +9,7 @@ using Amazon;
 namespace PlutoFramework.Components.XcavateProperty
 {
     
-    public class XCavatePropertyModel
+    public class XcavatePropertyModel
     {
         private static double GetAreaPricesPercentage(uint price)
         {
@@ -29,7 +29,7 @@ namespace PlutoFramework.Components.XcavateProperty
             var apy = (double)ari / price;
             return $"{String.Format("{0:0.00}", apy * 100.0)}%";
         }
-        public static async Task<NftWrapper> ToNftWrapperAsync(XCavatePaseoNftsPalletNft nft)
+        public static async Task<NftWrapper> ToNftWrapperAsync(XcavatePaseoNftsPalletNft nft)
         {
             try
             {
@@ -45,11 +45,11 @@ namespace PlutoFramework.Components.XcavateProperty
                 Console.WriteLine("Property name: " + nft.Type + " " + nft.CollectionId + " - " + nft.Id);
 
                 // Handle S3
-                if (nft.XCavateMetadata is not null)
+                if (nft.XcavateMetadata is not null)
                 {
                     var images = new List<string>();
 
-                    foreach (var file in nft.XCavateMetadata.Files.Where(file =>
+                    foreach (var file in nft.XcavateMetadata.Files.Where(file =>
                         (file.Contains(".jpg") || file.Contains(".jpeg") || file.Contains(".png")) && file[0] == '5'
                     ))
                     {
@@ -59,7 +59,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
                         images.Add(presignedUrl);
                     }
-                    nft.XCavateMetadata.Images = images;
+                    nft.XcavateMetadata.Images = images;
                 }
 
                 /*if (nft.Metadata is not null && nft.Metadata.Image is null)
@@ -80,45 +80,45 @@ namespace PlutoFramework.Components.XcavateProperty
             };
         }
 
-        public static async Task NavigateToPropertyDetailPageAsync(XCavatePaseoNftsPalletNft nft, CancellationToken token)
+        public static async Task NavigateToPropertyDetailPageAsync(XcavatePaseoNftsPalletNft nft, CancellationToken token)
         {
-            if (nft.XCavateMetadata is null)
+            if (nft.XcavateMetadata is null)
             {
                 return;
             }
 
             var viewModel = new PropertyDetailViewModel
             {
-                AreaPricesPercentage = GetAreaPricesPercentage(nft.XCavateMetadata.PropertyPrice),
+                AreaPricesPercentage = GetAreaPricesPercentage(nft.XcavateMetadata.PropertyPrice),
                 RentalDemandPercentage = GetRentalDemand(),
 
                 CompanyName = "Bob T builder",
 
                 CompanyImage = "xcavate.png",
 
-                LocationName = nft.XCavateMetadata.LocationName,
+                LocationName = nft.XcavateMetadata.LocationName,
 
-                PropertyName = nft.XCavateMetadata.PropertyName,
+                PropertyName = nft.XcavateMetadata.PropertyName,
 
-                ListingPrice = $"£{nft.XCavateMetadata.PropertyPrice}",
-                Apy = GetAPY(nft.XCavateMetadata.EstimatedRentalIncome, nft.XCavateMetadata.PropertyPrice),
+                ListingPrice = $"£{nft.XcavateMetadata.PropertyPrice}",
+                Apy = GetAPY(nft.XcavateMetadata.EstimatedRentalIncome, nft.XcavateMetadata.PropertyPrice),
                 Tokens = nft.NftMarketplaceDetails.Listed,
-                MaxTokens = nft.XCavateMetadata.NumberOfTokens,
-                PropertyType = nft.XCavateMetadata.PropertyType,
+                MaxTokens = nft.XcavateMetadata.NumberOfTokens,
+                PropertyType = nft.XcavateMetadata.PropertyType,
 
-                PropertyDescription = nft.XCavateMetadata.PropertyDescription,
+                PropertyDescription = nft.XcavateMetadata.PropertyDescription,
 
-                Blocks = nft.XCavateMetadata.Area,
-                Bedrooms = nft.XCavateMetadata.NoOfBedrooms,
-                Bathrooms = nft.XCavateMetadata.NoOfBathrooms,
-                Type = nft.XCavateMetadata.PropertyType,
-                LocationShortName = $"{nft.XCavateMetadata.AddressStreet}, {nft.XCavateMetadata.AddressTownCity}",
+                Blocks = nft.XcavateMetadata.Area,
+                Bedrooms = nft.XcavateMetadata.NoOfBedrooms,
+                Bathrooms = nft.XcavateMetadata.NoOfBathrooms,
+                Type = nft.XcavateMetadata.PropertyType,
+                LocationShortName = $"{nft.XcavateMetadata.AddressStreet}, {nft.XcavateMetadata.AddressTownCity}",
 
-                UsdtPricePerToken = nft.XCavateMetadata.PricePerToken,
+                UsdtPricePerToken = nft.XcavateMetadata.PricePerToken,
 
-                RentalIncome = $"£{nft.XCavateMetadata.EstimatedRentalIncome}",
+                RentalIncome = $"£{nft.XcavateMetadata.EstimatedRentalIncome}",
 
-                Images = nft.XCavateMetadata.Images,
+                Images = nft.XcavateMetadata.Images,
             };
 
             await Application.Current.MainPage.Navigation.PushAsync(new PropertyDetailPage(viewModel));

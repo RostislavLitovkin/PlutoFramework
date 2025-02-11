@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet
         /// <summary>
         /// >> proposer
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Proposer { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Proposer { get; set; }
         /// <summary>
         /// >> amount
         /// </summary>
@@ -35,11 +35,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet
         /// <summary>
         /// >> milestones
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13 Milestones { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13 Milestones { get; set; }
         /// <summary>
         /// >> beneficiary
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Beneficiary { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Beneficiary { get; set; }
         /// <summary>
         /// >> apr_rate
         /// </summary>
@@ -77,13 +77,13 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Proposer = new XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            Proposer = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Proposer.Decode(byteArray, ref p);
             Amount = new Substrate.NetApi.Model.Types.Primitive.U128();
             Amount.Decode(byteArray, ref p);
-            Milestones = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13();
+            Milestones = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13();
             Milestones.Decode(byteArray, ref p);
-            Beneficiary = new XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            Beneficiary = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Beneficiary.Decode(byteArray, ref p);
             AprRate = new Substrate.NetApi.Model.Types.Primitive.U64();
             AprRate.Decode(byteArray, ref p);

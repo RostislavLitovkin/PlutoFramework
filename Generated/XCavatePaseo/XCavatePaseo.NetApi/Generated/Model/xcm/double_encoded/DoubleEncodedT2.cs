@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.xcm.double_encoded
+namespace XcavatePaseo.NetApi.Generated.Model.xcm.double_encoded
 {
     
     

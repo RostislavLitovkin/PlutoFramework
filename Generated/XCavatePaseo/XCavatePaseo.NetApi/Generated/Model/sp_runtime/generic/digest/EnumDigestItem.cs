@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.sp_runtime.generic.digest
+namespace XcavatePaseo.NetApi.Generated.Model.sp_runtime.generic.digest
 {
     
     
@@ -58,9 +58,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.sp_runtime.generic.digest
         /// </summary>
         public EnumDigestItem()
         {
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Types.Base.Arr4U8, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>>(DigestItem.PreRuntime);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Types.Base.Arr4U8, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>>(DigestItem.Consensus);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Types.Base.Arr4U8, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>>(DigestItem.Seal);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Types.Base.Arr4U8, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>>(DigestItem.PreRuntime);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Types.Base.Arr4U8, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>>(DigestItem.Consensus);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Types.Base.Arr4U8, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>>(DigestItem.Seal);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>(DigestItem.Other);
 				AddTypeDecoder<BaseVoid>(DigestItem.RuntimeEnvironmentUpdated);
         }

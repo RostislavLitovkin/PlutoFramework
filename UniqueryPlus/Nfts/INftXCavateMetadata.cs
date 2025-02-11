@@ -2,8 +2,8 @@
 
 namespace UniqueryPlus.Nfts
 {
-    public interface INftXCavateMetadata
+    public interface INftXcavateMetadata
     {
-        public XCavateMetadata? XCavateMetadata { get; set; }
+        public XcavateMetadata? XcavateMetadata { get; set; }
     }
 }

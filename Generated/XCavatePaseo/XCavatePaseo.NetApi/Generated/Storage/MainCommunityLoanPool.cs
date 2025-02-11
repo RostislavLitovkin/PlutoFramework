@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -36,7 +36,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         public CommunityLoanPoolStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "VotingCommittee"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT38)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "VotingCommittee"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT38)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "LoanCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "ProposalCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "MilestoneProposalCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
@@ -44,38 +44,38 @@ namespace XCavatePaseo.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "TotalLoanAmount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "TotalLoanInterests"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "ReservedLoanAmount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "OngoingLoans"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "OngoingLoans"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "Proposals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.Proposal)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.Proposal)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "MilestoneProposals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "MilestoneInfo"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.MilestoneProposalInfo)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.MilestoneProposalInfo)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "DeletionProposals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "Loans"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.LoanInfo)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.LoanInfo)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "OngoingVotes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.VoteStats)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.VoteStats)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "OngoingMilestoneVotes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.VoteStats)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.VoteStats)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "OngoingDeletionVotes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.VoteStats)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.VoteStats)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "UserVotes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "UserMilestoneVotes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "UserDeletionVotes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "RoundsExpiring"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "MilestoneRoundsExpiring"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CommunityLoanPool", "DeletionRoundsExpiring"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39)));
         }
         
         /// <summary>
@@ -100,10 +100,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> VotingCommittee
         ///  Vec of admins who are able to vote.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT38> VotingCommittee(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT38> VotingCommittee(string blockhash, CancellationToken token)
         {
             string parameters = CommunityLoanPoolStorage.VotingCommitteeParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT38>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT38>(parameters, blockhash, token);
             return result;
         }
         
@@ -332,10 +332,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> OngoingLoans
         ///  All currently ongoing loans.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39> OngoingLoans(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39> OngoingLoans(string blockhash, CancellationToken token)
         {
             string parameters = CommunityLoanPoolStorage.OngoingLoansParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39>(parameters, blockhash, token);
             return result;
         }
         
@@ -363,10 +363,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Proposals
         ///  Proposals that have been made.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.Proposal> Proposals(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.Proposal> Proposals(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityLoanPoolStorage.ProposalsParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.Proposal>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.Proposal>(parameters, blockhash, token);
             return result;
         }
         
@@ -425,10 +425,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> MilestoneInfo
         ///  Milestone proposal that has been made.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.MilestoneProposalInfo> MilestoneInfo(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.MilestoneProposalInfo> MilestoneInfo(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityLoanPoolStorage.MilestoneInfoParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.MilestoneProposalInfo>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.MilestoneProposalInfo>(parameters, blockhash, token);
             return result;
         }
         
@@ -487,10 +487,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Loans
         ///  Mapping of ongoing loans.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.LoanInfo> Loans(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.LoanInfo> Loans(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityLoanPoolStorage.LoansParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.LoanInfo>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.LoanInfo>(parameters, blockhash, token);
             return result;
         }
         
@@ -518,10 +518,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> OngoingVotes
         ///  Mapping of ongoing votes.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.VoteStats> OngoingVotes(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.VoteStats> OngoingVotes(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityLoanPoolStorage.OngoingVotesParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.VoteStats>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.VoteStats>(parameters, blockhash, token);
             return result;
         }
         
@@ -549,10 +549,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> OngoingMilestoneVotes
         ///  Mapping of ongoing milstone votes.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.VoteStats> OngoingMilestoneVotes(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.VoteStats> OngoingMilestoneVotes(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityLoanPoolStorage.OngoingMilestoneVotesParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.VoteStats>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.VoteStats>(parameters, blockhash, token);
             return result;
         }
         
@@ -580,10 +580,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> OngoingDeletionVotes
         ///  Mapping of ongoing deletion votes.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.VoteStats> OngoingDeletionVotes(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.VoteStats> OngoingDeletionVotes(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityLoanPoolStorage.OngoingDeletionVotesParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.VoteStats>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.VoteStats>(parameters, blockhash, token);
             return result;
         }
         
@@ -591,7 +591,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> UserVotesParams
         ///  Mapping of user who voted for a proposal.
         /// </summary>
-        public static string UserVotesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
+        public static string UserVotesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
         {
             return RequestGenerator.GetStorage("CommunityLoanPool", "UserVotes", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -611,10 +611,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> UserVotes
         ///  Mapping of user who voted for a proposal.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote> UserVotes(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote> UserVotes(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityLoanPoolStorage.UserVotesParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote>(parameters, blockhash, token);
             return result;
         }
         
@@ -622,7 +622,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> UserMilestoneVotesParams
         ///  Mapping of user who voted for a milestone proposal.
         /// </summary>
-        public static string UserMilestoneVotesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
+        public static string UserMilestoneVotesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
         {
             return RequestGenerator.GetStorage("CommunityLoanPool", "UserMilestoneVotes", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -642,10 +642,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> UserMilestoneVotes
         ///  Mapping of user who voted for a milestone proposal.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote> UserMilestoneVotes(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote> UserMilestoneVotes(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityLoanPoolStorage.UserMilestoneVotesParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote>(parameters, blockhash, token);
             return result;
         }
         
@@ -653,7 +653,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> UserDeletionVotesParams
         ///  Mapping of user who voted for a deletion proposal.
         /// </summary>
-        public static string UserDeletionVotesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
+        public static string UserDeletionVotesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
         {
             return RequestGenerator.GetStorage("CommunityLoanPool", "UserDeletionVotes", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -673,10 +673,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> UserDeletionVotes
         ///  Mapping of user who voted for a deletion proposal.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote> UserDeletionVotes(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote> UserDeletionVotes(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityLoanPoolStorage.UserDeletionVotesParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote>(parameters, blockhash, token);
             return result;
         }
         
@@ -704,10 +704,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> RoundsExpiring
         ///  Stores the project keys and round types ending on a given block.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39> RoundsExpiring(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39> RoundsExpiring(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityLoanPoolStorage.RoundsExpiringParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39>(parameters, blockhash, token);
             return result;
         }
         
@@ -735,10 +735,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> MilestoneRoundsExpiring
         ///  Stores the project keys and round types ending on a given block for milestone votings.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39> MilestoneRoundsExpiring(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39> MilestoneRoundsExpiring(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityLoanPoolStorage.MilestoneRoundsExpiringParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39>(parameters, blockhash, token);
             return result;
         }
         
@@ -766,10 +766,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> DeletionRoundsExpiring
         ///  Stores the project keys and round types ending on a given block for deletion votings.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39> DeletionRoundsExpiring(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39> DeletionRoundsExpiring(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = CommunityLoanPoolStorage.DeletionRoundsExpiringParams(key);
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39>(parameters, blockhash, token);
             return result;
         }
     }
@@ -784,7 +784,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> propose
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Propose(Substrate.NetApi.Model.Types.Primitive.U128 amount, XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress beneficiary, Substrate.NetApi.Model.Types.Primitive.U64 developer_experience, Substrate.NetApi.Model.Types.Primitive.U64 loan_term)
+        public static Method Propose(Substrate.NetApi.Model.Types.Primitive.U128 amount, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress beneficiary, Substrate.NetApi.Model.Types.Primitive.U64 developer_experience, Substrate.NetApi.Model.Types.Primitive.U64 loan_term)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(amount.Encode());
@@ -844,7 +844,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> set_milestones
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetMilestones(Substrate.NetApi.Model.Types.Primitive.U32 proposal_index, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13 proposed_milestones)
+        public static Method SetMilestones(Substrate.NetApi.Model.Types.Primitive.U32 proposal_index, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13 proposed_milestones)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(proposal_index.Encode());
@@ -856,7 +856,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> vote_on_proposal
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method VoteOnProposal(Substrate.NetApi.Model.Types.Primitive.U32 proposal_index, XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote vote)
+        public static Method VoteOnProposal(Substrate.NetApi.Model.Types.Primitive.U32 proposal_index, XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote vote)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(proposal_index.Encode());
@@ -868,7 +868,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> vote_on_milestone_proposal
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method VoteOnMilestoneProposal(Substrate.NetApi.Model.Types.Primitive.U32 proposal_index, XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote vote)
+        public static Method VoteOnMilestoneProposal(Substrate.NetApi.Model.Types.Primitive.U32 proposal_index, XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote vote)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(proposal_index.Encode());
@@ -880,7 +880,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> vote_on_deletion_proposal
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method VoteOnDeletionProposal(Substrate.NetApi.Model.Types.Primitive.U32 proposal_index, XCavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote vote)
+        public static Method VoteOnDeletionProposal(Substrate.NetApi.Model.Types.Primitive.U32 proposal_index, XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumVote vote)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(proposal_index.Encode());
@@ -892,7 +892,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> add_committee_member
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AddCommitteeMember(XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 member)
+        public static Method AddCommitteeMember(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 member)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(member.Encode());
@@ -911,9 +911,9 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  Fraction of a proposal's value that should be bonded in order to place the proposal.
         ///  An accepted proposal gets these back. A rejected proposal does not.
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Permill ProposalBond()
+        public XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Permill ProposalBond()
         {
-            var result = new XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Permill();
+            var result = new XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Permill();
             result.Create("0x50C30000");
             return result;
         }
@@ -944,9 +944,9 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> PalletId
         ///  The community-loan-pool's pallet id, used for deriving its sovereign account ID.
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.frame_support.PalletId PalletId()
+        public XcavatePaseo.NetApi.Generated.Model.frame_support.PalletId PalletId()
         {
-            var result = new XCavatePaseo.NetApi.Generated.Model.frame_support.PalletId();
+            var result = new XcavatePaseo.NetApi.Generated.Model.frame_support.PalletId();
             result.Create("0x70792F6C6F616E61");
             return result;
         }

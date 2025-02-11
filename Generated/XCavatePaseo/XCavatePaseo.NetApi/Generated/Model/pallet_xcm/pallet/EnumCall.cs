@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
 {
     
     
@@ -321,20 +321,20 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedXcm>>(Call.send);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.teleport_assets);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.reserve_transfer_assets);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedXcm, XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Call.execute);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.force_xcm_version);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedXcm>>(Call.send);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.teleport_assets);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.reserve_transfer_assets);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedXcm, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Call.execute);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.force_xcm_version);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>>(Call.force_default_xcm_version);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation>(Call.force_subscribe_version_notify);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation>(Call.force_unsubscribe_version_notify);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets, Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.limited_reserve_transfer_assets);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets, Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.limited_teleport_assets);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation>(Call.force_subscribe_version_notify);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation>(Call.force_unsubscribe_version_notify);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.limited_reserve_transfer_assets);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.limited_teleport_assets);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.Bool>(Call.force_suspension);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets, Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.transfer_assets);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation>>(Call.claim_assets);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets, XCavatePaseo.NetApi.Generated.Model.staging_xcm_executor.traits.asset_transfer.EnumTransferType, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssetId, XCavatePaseo.NetApi.Generated.Model.staging_xcm_executor.traits.asset_transfer.EnumTransferType, XCavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedXcm, XCavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.transfer_assets_using_type_and_then);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.transfer_assets);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation>>(Call.claim_assets);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets, XcavatePaseo.NetApi.Generated.Model.staging_xcm_executor.traits.asset_transfer.EnumTransferType, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssetId, XcavatePaseo.NetApi.Generated.Model.staging_xcm_executor.traits.asset_transfer.EnumTransferType, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedXcm, XcavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.transfer_assets_using_type_and_then);
         }
     }
 }

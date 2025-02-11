@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_balances.types
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_balances.types
 {
     
     
@@ -39,7 +39,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_balances.types
         /// <summary>
         /// >> flags
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.pallet_balances.types.ExtraFlags Flags { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.pallet_balances.types.ExtraFlags Flags { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -68,7 +68,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_balances.types
             Reserved.Decode(byteArray, ref p);
             Frozen = new Substrate.NetApi.Model.Types.Primitive.U128();
             Frozen.Decode(byteArray, ref p);
-            Flags = new XCavatePaseo.NetApi.Generated.Model.pallet_balances.types.ExtraFlags();
+            Flags = new XcavatePaseo.NetApi.Generated.Model.pallet_balances.types.ExtraFlags();
             Flags.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

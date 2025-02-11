@@ -119,6 +119,7 @@
 	  <None Remove="Components\NetworkSelect\" />
 	  <None Remove="Components\AddressView\" />
 	  <None Remove="CommunityToolkit.Maui" />
+	  <None Remove="Resources\Images\chaingreen.svg" />
 	  <None Remove="Resources\Images\cloudblack.svg" />
 	  <None Remove="Resources\Images\cloudwhite.svg" />
 	  <None Remove="Resources\Images\collectionblack.svg" />
@@ -135,6 +136,8 @@
 	  <None Remove="Resources\Images\expandwhite.svg" />
 	  <None Remove="Resources\Images\facebookblack.png" />
 	  <None Remove="Resources\Images\facebookwhite.png" />
+	  <None Remove="Resources\Images\featherblack.svg" />
+	  <None Remove="Resources\Images\featherwhite.svg" />
 	  <None Remove="Resources\Images\githubblack.svg" />
 	  <None Remove="Resources\Images\githubwhite.svg" />
 	  <None Remove="Resources\Images\hotblack.svg" />
@@ -165,6 +168,10 @@
 	  <None Remove="Resources\Images\uniqueblack.svg" />
 	  <None Remove="Resources\Images\uniquewhite.svg" />
 	  <None Remove="Resources\Images\xblack.png" />
+	  <None Remove="Resources\Images\xcavatedeveloper.png" />
+	  <None Remove="Resources\Images\xcavateinvestor.png" />
+	  <None Remove="Resources\Images\xcavatelettingagent.png" />
+	  <None Remove="Resources\Images\xcavateloanevaluator.png" />
 	  <None Remove="Resources\Images\xcavatemappin.png" />
 	  <None Remove="Resources\Images\xcavatergb.png" />
 	  <None Remove="Resources\Images\xwhite.png" />
@@ -535,7 +542,28 @@
 	  <MauiXaml Update="Components\Form\FormWideValueView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Kilt\DidExplanationPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Kilt\DidListView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Kilt\DidManagementPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Kilt\DidView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Kilt\MainDidView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Kilt\NoDidPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Koda\OpenKodaButton.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Mnemonics\MnemonicsView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Mnemonics\SuccessfulImportPopupView.xaml">
@@ -622,6 +650,9 @@
 	  <MauiXaml Update="Components\Settings\DeveloperSettingsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Settings\GenericSwitch.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Settings\QuestionAnswerView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -673,43 +704,46 @@
 	  <MauiXaml Update="Components\XcavateProperty\XcavatePropertyMarketplacePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Components\XCavate\AboutUsView.xaml">
+	  <MauiXaml Update="Components\Xcavate\AboutUsView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Components\XCavate\CompanyPage.xaml">
+	  <MauiXaml Update="Components\Xcavate\CompanyPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Components\XCavate\CompanyUserStatusBadgeView.xaml">
+	  <MauiXaml Update="Components\Xcavate\CompanyUserStatusBadgeView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Components\XCavate\DeveloperStatsView.xaml">
+	  <MauiXaml Update="Components\Xcavate\DeveloperStatsView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Components\XCavate\DocumentVerificationView.xaml">
+	  <MauiXaml Update="Components\Xcavate\DocumentVerificationView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Components\XCavate\FrequentlyAskedQuestionsPage.xaml">
+	  <MauiXaml Update="Components\Xcavate\FrequentlyAskedQuestionsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Components\XCavate\ModifyCompanyPage.xaml">
+	  <MauiXaml Update="Components\Xcavate\ModifyCompanyPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Components\XCavate\ModifyUserProfilePage.xaml">
+	  <MauiXaml Update="Components\Xcavate\ModifyUserProfilePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Components\XCavate\TeamMemberView.xaml">
+	  <MauiXaml Update="Components\Xcavate\TeamMemberView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Components\XCavate\UserProfileHeaderView.xaml">
+	  <MauiXaml Update="Components\Xcavate\UserProfileHeaderView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Components\XCavate\UserProfilePage.xaml">
+	  <MauiXaml Update="Components\Xcavate\UserProfilePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Components\XCavate\UserTypeBadgeView.xaml">
+	  <MauiXaml Update="Components\Xcavate\UserTypeBadgeView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Components\XCavate\VerificationBadgeView.xaml">
+	  <MauiXaml Update="Components\Xcavate\UserTypeSelectionPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Xcavate\VerificationBadgeView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\MainPage.xaml">

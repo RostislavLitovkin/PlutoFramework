@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inherent
+namespace XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inherent
 {
     
     
@@ -27,19 +27,19 @@ namespace XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inher
         /// <summary>
         /// >> validation_data
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.PersistedValidationData ValidationData { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.PersistedValidationData ValidationData { get; set; }
         /// <summary>
         /// >> relay_chain_state
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof RelayChainState { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof RelayChainState { get; set; }
         /// <summary>
         /// >> downward_messages
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.polkadot_core_primitives.InboundDownwardMessage> DownwardMessages { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.polkadot_core_primitives.InboundDownwardMessage> DownwardMessages { get; set; }
         /// <summary>
         /// >> horizontal_messages
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Types.Base.BTreeMapT3 HorizontalMessages { get; set; }
+        public XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT3 HorizontalMessages { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -62,13 +62,13 @@ namespace XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inher
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            ValidationData = new XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.PersistedValidationData();
+            ValidationData = new XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.PersistedValidationData();
             ValidationData.Decode(byteArray, ref p);
-            RelayChainState = new XCavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof();
+            RelayChainState = new XcavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof();
             RelayChainState.Decode(byteArray, ref p);
-            DownwardMessages = new Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.polkadot_core_primitives.InboundDownwardMessage>();
+            DownwardMessages = new Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.polkadot_core_primitives.InboundDownwardMessage>();
             DownwardMessages.Decode(byteArray, ref p);
-            HorizontalMessages = new XCavatePaseo.NetApi.Generated.Types.Base.BTreeMapT3();
+            HorizontalMessages = new XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT3();
             HorizontalMessages.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

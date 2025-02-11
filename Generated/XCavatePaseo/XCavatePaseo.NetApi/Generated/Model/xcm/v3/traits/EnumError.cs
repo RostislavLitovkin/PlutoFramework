@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.xcm.v3.traits
+namespace XcavatePaseo.NetApi.Generated.Model.xcm.v3.traits
 {
     
     
@@ -269,7 +269,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v3.traits
 				AddTypeDecoder<BaseVoid>(Error.Unanchored);
 				AddTypeDecoder<BaseVoid>(Error.NotDepositable);
 				AddTypeDecoder<BaseVoid>(Error.UnhandledXcmVersion);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>(Error.WeightLimitReached);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>(Error.WeightLimitReached);
 				AddTypeDecoder<BaseVoid>(Error.Barrier);
 				AddTypeDecoder<BaseVoid>(Error.WeightNotComputable);
 				AddTypeDecoder<BaseVoid>(Error.ExceedsStackLimit);

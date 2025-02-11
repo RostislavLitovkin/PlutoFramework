@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -36,7 +36,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         public ParachainInfoStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainInfo", "ParachainId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainInfo", "ParachainId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id)));
         }
         
         /// <summary>
@@ -59,10 +59,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// <summary>
         /// >> ParachainId
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id> ParachainId(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id> ParachainId(string blockhash, CancellationToken token)
         {
             string parameters = ParachainInfoStorage.ParachainIdParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>(parameters, blockhash, token);
             return result;
         }
     }

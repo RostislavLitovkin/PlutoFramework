@@ -1,11 +1,11 @@
-using PlutoFramework.Model.XCavate;
+using PlutoFramework.Model.Xcavate;
 
-namespace PlutoFramework.Components.XCavate;
+namespace PlutoFramework.Components.Xcavate;
 
 public partial class TeamMemberView : ContentView
 {
     public static readonly BindableProperty UserProperty = BindableProperty.Create(
-        nameof(User), typeof(XCavateCompanyUser), typeof(TeamMemberView),
+        nameof(User), typeof(XcavateCompanyUser), typeof(TeamMemberView),
         defaultBindingMode: BindingMode.TwoWay,
         propertyChanging: (bindable, oldValue, newValue) =>
         {
@@ -15,9 +15,9 @@ public partial class TeamMemberView : ContentView
 		InitializeComponent();
 	}
 
-    public XCavateCompanyUser User
+    public XcavateCompanyUser User
     {
-        get => (XCavateCompanyUser)GetValue(UserProperty);
+        get => (XcavateCompanyUser)GetValue(UserProperty);
         set => SetValue(UserProperty, value);
     }
 

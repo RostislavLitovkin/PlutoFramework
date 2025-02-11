@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Types.Base
+namespace XcavatePaseo.NetApi.Generated.Types.Base
 {
     
     

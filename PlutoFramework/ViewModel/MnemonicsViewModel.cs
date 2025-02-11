@@ -5,6 +5,8 @@ using Substrate.NET.Wallet.Keyring;
 using CommunityToolkit.Maui.Storage;
 using CommunityToolkit.Maui.Alerts;
 using PlutoFramework.Model;
+using PlutoFramework.View;
+using PlutoFramework.Components.Mnemonics;
 
 namespace PlutoFramework.ViewModel
 {
@@ -16,7 +18,15 @@ namespace PlutoFramework.ViewModel
         [ObservableProperty]
         private string password = "";
         [ObservableProperty]
-        private string title = "";
+        private string mnemonicsTitle = "";
+
+        [RelayCommand]
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+        public Task GoToEnterMnemonicsAsync() => Application.Current.MainPage.Navigation.PushAsync(new EnterMnemonicsPage());
+
+        [RelayCommand]
+        public Task GoToMnemonicsExplanationAsync() => Application.Current.MainPage.Navigation.PushAsync(new MnemonicsExplanationPage());
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
         [RelayCommand]
         public async Task ExportJsonAsync()

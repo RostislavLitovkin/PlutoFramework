@@ -12,45 +12,45 @@ public partial class PropertyThumbnailView : ContentView
         {
             var control = (PropertyThumbnailView)bindable;
 
-            if (newValue is not XCavatePaseoNftsPalletNft)
+            if (newValue is not XcavatePaseoNftsPalletNft)
             {
                 return;
             }
 
 
-            var nftBase = (XCavatePaseoNftsPalletNft)newValue;
+            var nftBase = (XcavatePaseoNftsPalletNft)newValue;
             
-            if (nftBase.XCavateMetadata is null)
+            if (nftBase.XcavateMetadata is null)
             {
                 return;
             }
 
-            control.propertyNameLabel.Text = nftBase.XCavateMetadata.PropertyName;
+            control.propertyNameLabel.Text = nftBase.XcavateMetadata.PropertyName;
 
-            control.apyLabel.Text = XCavatePropertyModel.GetAPY(nftBase.XCavateMetadata.EstimatedRentalIncome, nftBase.XCavateMetadata.PropertyPrice);
+            control.apyLabel.Text = XcavatePropertyModel.GetAPY(nftBase.XcavateMetadata.EstimatedRentalIncome, nftBase.XcavateMetadata.PropertyPrice);
 
             control.tokensLabel.Text = nftBase.NftMarketplaceDetails?.Listed?.ToString() ?? "-";
 
-            control.priceLabel.Text = $"£{nftBase.XCavateMetadata.PropertyPrice}";
+            control.priceLabel.Text = $"£{nftBase.XcavateMetadata.PropertyPrice}";
 
-            control.locationView.LocationName = nftBase.XCavateMetadata.LocationName;
+            control.locationView.LocationName = nftBase.XcavateMetadata.LocationName;
 
-            control.image.Source = (nftBase.XCavateMetadata is not null && nftBase.XCavateMetadata.Images.Count() > 0) switch
+            control.image.Source = (nftBase.XcavateMetadata is not null && nftBase.XcavateMetadata.Images.Count() > 0) switch
             {
                 // Default image
                 false => "noimage.png",
-                true => nftBase.XCavateMetadata?.Images[0][0..4] switch
+                true => nftBase.XcavateMetadata?.Images[0][0..4] switch
                 {
                     "http" => new UriImageSource
                     {
-                        Uri = new Uri(nftBase.XCavateMetadata?.Images[0]),
+                        Uri = new Uri(nftBase.XcavateMetadata?.Images[0]),
                         CacheValidity = new TimeSpan(1, 0, 0),
                     },
-                    _ => nftBase.XCavateMetadata?.Images[0]
+                    _ => nftBase.XcavateMetadata?.Images[0]
                 },
             };
 
-            Console.WriteLine("Done loading XCavate property");
+            Console.WriteLine("Done loading Xcavate property");
         });
 
     public static readonly BindableProperty FavouriteProperty = BindableProperty.Create(
@@ -107,6 +107,6 @@ public partial class PropertyThumbnailView : ContentView
 
     async void OnMoreClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
-        await XCavatePropertyModel.NavigateToPropertyDetailPageAsync((XCavatePaseoNftsPalletNft)NftBase, CancellationToken.None);
+        await XcavatePropertyModel.NavigateToPropertyDetailPageAsync((XcavatePaseoNftsPalletNft)NftBase, CancellationToken.None);
     }
 }

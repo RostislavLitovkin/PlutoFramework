@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.sp_consensus_slots
+namespace XcavatePaseo.NetApi.Generated.Model.sp_consensus_slots
 {
     
     

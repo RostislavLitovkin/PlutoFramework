@@ -1,8 +1,6 @@
-﻿using Nethereum.Contracts.Standards.ERC20.TokenList;
-using PlutoFramework.Constants;
+﻿using PlutoFramework.Constants;
 using PlutoFramework.Model.AjunaExt;
-using PlutoFramework.Model.XCavate;
-using System.Runtime.CompilerServices;
+using PlutoFramework.Model.Xcavate;
 using UniqueryPlus.Nfts;
 
 namespace PlutoFrameworkTests
@@ -14,7 +12,7 @@ namespace PlutoFrameworkTests
         [SetUp]
         public async Task SetupAsync()
         {
-            Endpoint endpoint = PlutoFramework.Constants.Endpoints.GetEndpointDictionary[EndpointEnum.XCavatePaseo];
+            Endpoint endpoint = PlutoFramework.Constants.Endpoints.GetEndpointDictionary[EndpointEnum.XcavatePaseo];
 
             client = new SubstrateClientExt(
                     endpoint,
@@ -30,7 +28,7 @@ namespace PlutoFrameworkTests
             var token = CancellationToken.None;
             uint LIMIT = 4;
             var uniqueryNftEnumerable = PropertyMarketplaceModel.GetPropertiesAsync(
-                           (XCavatePaseo.NetApi.Generated.SubstrateClientExt)client.SubstrateClient,
+                           (XcavatePaseo.NetApi.Generated.SubstrateClientExt)client.SubstrateClient,
                             limit: LIMIT
                         );
 
@@ -42,20 +40,20 @@ namespace PlutoFrameworkTests
                 {
                     var newNft = PlutoFramework.Model.NftModel.ToNftWrapper(uniqueryNftEnumerator.Current);
 
-                    var property = (XCavatePaseoNftsPalletNft)newNft.NftBase;
+                    var property = (XcavatePaseoNftsPalletNft)newNft.NftBase;
 
-                    Console.WriteLine("Property: " + property?.XCavateMetadata?.PropertyName + " - " + property?.XCavateMetadata?.Files?.FirstOrDefault());
+                    Console.WriteLine("Property: " + property?.XcavateMetadata?.PropertyName + " - " + property?.XcavateMetadata?.Files?.FirstOrDefault());
 
                 }
             }
 
             return;
 
-            var properties = await PropertyMarketplaceModel.GetPropertiesAsync((XCavatePaseo.NetApi.Generated.SubstrateClientExt)client.SubstrateClient, 50, null, CancellationToken.None);
+            var properties = await PropertyMarketplaceModel.GetPropertiesAsync((XcavatePaseo.NetApi.Generated.SubstrateClientExt)client.SubstrateClient, 50, null, CancellationToken.None);
 
-            foreach (XCavatePaseoNftsPalletNft property in properties.Items)
+            foreach (XcavatePaseoNftsPalletNft property in properties.Items)
             {
-                Console.WriteLine("Property: " + property.XCavateMetadata?.PropertyName + " - " + property.NftMarketplaceDetails?.Listed);
+                Console.WriteLine("Property: " + property.XcavateMetadata?.PropertyName + " - " + property.NftMarketplaceDetails?.Listed);
             }
         }
     }

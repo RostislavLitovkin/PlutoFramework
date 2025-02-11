@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
 {
     
     
@@ -27,15 +27,15 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
         /// <summary>
         /// >> owner
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Owner { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Owner { get; set; }
         /// <summary>
         /// >> approvals
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMap Approvals { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMap Approvals { get; set; }
         /// <summary>
         /// >> deposit
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemDeposit Deposit { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemDeposit Deposit { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -57,11 +57,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Owner = new XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            Owner = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Owner.Decode(byteArray, ref p);
-            Approvals = new XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMap();
+            Approvals = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMap();
             Approvals.Decode(byteArray, ref p);
-            Deposit = new XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemDeposit();
+            Deposit = new XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemDeposit();
             Deposit.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// <summary>
         /// >> buyer
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Buyer { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Buyer { get; set; }
         /// <summary>
         /// >> token_price
         /// </summary>
@@ -57,7 +57,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Buyer = new XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            Buyer = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Buyer.Decode(byteArray, ref p);
             TokenPrice = new Substrate.NetApi.Model.Types.Primitive.U128();
             TokenPrice.Decode(byteArray, ref p);

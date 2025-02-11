@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.frame_system
+namespace XcavatePaseo.NetApi.Generated.Model.frame_system
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_system
         /// <summary>
         /// >> code_hash
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.primitive_types.H256 CodeHash { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.primitive_types.H256 CodeHash { get; set; }
         /// <summary>
         /// >> check_version
         /// </summary>
@@ -52,7 +52,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_system
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            CodeHash = new XCavatePaseo.NetApi.Generated.Model.primitive_types.H256();
+            CodeHash = new XcavatePaseo.NetApi.Generated.Model.primitive_types.H256();
             CodeHash.Decode(byteArray, ref p);
             CheckVersion = new Substrate.NetApi.Model.Types.Primitive.Bool();
             CheckVersion.Decode(byteArray, ref p);

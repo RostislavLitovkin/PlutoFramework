@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.frame_support.dispatch
+namespace XcavatePaseo.NetApi.Generated.Model.frame_support.dispatch
 {
     
     
@@ -27,15 +27,15 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_support.dispatch
         /// <summary>
         /// >> weight
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight Weight { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight Weight { get; set; }
         /// <summary>
         /// >> class
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.frame_support.dispatch.EnumDispatchClass Class { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.frame_support.dispatch.EnumDispatchClass Class { get; set; }
         /// <summary>
         /// >> pays_fee
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.frame_support.dispatch.EnumPays PaysFee { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.frame_support.dispatch.EnumPays PaysFee { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -57,11 +57,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_support.dispatch
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Weight = new XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight();
+            Weight = new XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight();
             Weight.Decode(byteArray, ref p);
-            Class = new XCavatePaseo.NetApi.Generated.Model.frame_support.dispatch.EnumDispatchClass();
+            Class = new XcavatePaseo.NetApi.Generated.Model.frame_support.dispatch.EnumDispatchClass();
             Class.Decode(byteArray, ref p);
-            PaysFee = new XCavatePaseo.NetApi.Generated.Model.frame_support.dispatch.EnumPays();
+            PaysFee = new XcavatePaseo.NetApi.Generated.Model.frame_support.dispatch.EnumPays();
             PaysFee.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

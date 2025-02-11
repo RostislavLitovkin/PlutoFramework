@@ -2,7 +2,7 @@
 
 namespace UniqueryPlus.Metadata
 {
-    public record XCavateMetadata
+    public record XcavateMetadata
     {
         public string LocationName => $"{AddressStreet ?? "Unknown street"}, {AddressTownCity ?? "Unknown town"}";
         public List<string> Images { get; set; } = [];

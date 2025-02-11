@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.xcm.v2
+namespace XcavatePaseo.NetApi.Generated.Model.xcm.v2
 {
     
     
@@ -84,7 +84,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v2
         public EnumBodyId()
         {
 				AddTypeDecoder<BaseVoid>(BodyId.Unit);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT1>(BodyId.Named);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT1>(BodyId.Named);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>(BodyId.Index);
 				AddTypeDecoder<BaseVoid>(BodyId.Executive);
 				AddTypeDecoder<BaseVoid>(BodyId.Technical);

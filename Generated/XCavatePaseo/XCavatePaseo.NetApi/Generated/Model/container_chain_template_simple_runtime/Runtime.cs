@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime
+namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime
 {
     
     

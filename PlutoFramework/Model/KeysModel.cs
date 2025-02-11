@@ -57,19 +57,29 @@ namespace PlutoFramework.Model
             }
         }
 
-        public static async Task GenerateNewAccountAsync(string mnemonics, string password)
+        public static async Task GenerateNewAccountAsync(string mnemonics, string password, string accountVariant = "")
         {
             await RegisterBiometricAuthenticationAsync();
 
             Account account = MnemonicsModel.GetAccountFromMnemonics(mnemonics);
 
-            Preferences.Set(
-                PreferencesModel.PUBLIC_KEY,
-                 account.Value
-            );
+            if (accountVariant.StartsWith("kilt"))
+            {
+                Preferences.Set(
+                     PreferencesModel.PUBLIC_KEY + accountVariant,
+                     $"did:kilt:{Utils.GetAddressFrom(Utils.GetPublicKeyFrom(account.Value), 38)}"
+                );
+            }
+            else
+            {
+                Preferences.Set(
+                     PreferencesModel.PUBLIC_KEY + accountVariant,
+                     account.Value
+                );
+            }
 
             await SecureStorage.Default.SetAsync(
-                PreferencesModel.MNEMONICS,
+                PreferencesModel.MNEMONICS + accountVariant,
                  mnemonics
             );
 
@@ -78,12 +88,12 @@ namespace PlutoFramework.Model
                 password
             );
 
-            Preferences.Set(PreferencesModel.PRIVATE_KEY_EXPAND_MODE, (int)DEFAULT_EXPAND_MODE);
+            Preferences.Set(PreferencesModel.PRIVATE_KEY_EXPAND_MODE + accountVariant, (int)DEFAULT_EXPAND_MODE);
 
-            Preferences.Set(PreferencesModel.ACCOUNT_TYPE, AccountType.Mnemonic.ToString());
+            Preferences.Set(PreferencesModel.ACCOUNT_TYPE + accountVariant, AccountType.Mnemonic.ToString());
         }
 
-        public static async Task GenerateNewAccountFromPrivateKeyAsync(string privateKey)
+        public static async Task GenerateNewAccountFromPrivateKeyAsync(string privateKey, string accountVariant = "")
         {
             var miniSecret = new MiniSecret(Utils.HexToByteArray(privateKey), ExpandMode.Ed25519);
 
@@ -94,21 +104,21 @@ namespace PlutoFramework.Model
             );
 
             await SecureStorage.Default.SetAsync(
-                 PreferencesModel.PRIVATE_KEY,
+                 PreferencesModel.PRIVATE_KEY + accountVariant,
                  privateKey
             );
 
             Preferences.Set(
-                 PreferencesModel.PUBLIC_KEY,
+                 PreferencesModel.PUBLIC_KEY + accountVariant,
                  account.Value
             );
 
-            Preferences.Set(PreferencesModel.PRIVATE_KEY_EXPAND_MODE, (int)ExpandMode.Ed25519);
+            Preferences.Set(PreferencesModel.PRIVATE_KEY_EXPAND_MODE + accountVariant, (int)ExpandMode.Ed25519);
 
-            Preferences.Set(PreferencesModel.ACCOUNT_TYPE, AccountType.PrivateKey.ToString());
+            Preferences.Set(PreferencesModel.ACCOUNT_TYPE + accountVariant, AccountType.PrivateKey.ToString());
         }
 
-        public static async Task GenerateNewAccountFromJsonAsync(string json)
+        public static async Task GenerateNewAccountFromJsonAsync(string json, string accountVariant = "")
         {
             var viewModel = DependencyService.Get<EnterPasswordPopupViewModel>();
 
@@ -150,27 +160,27 @@ namespace PlutoFramework.Model
             }
 
             Preferences.Set(
-                 PreferencesModel.PUBLIC_KEY,
+                 PreferencesModel.PUBLIC_KEY + accountVariant,
                  publicKey
             );
 
             await SecureStorage.Default.SetAsync(
-                PreferencesModel.PASSWORD,
+                PreferencesModel.PASSWORD + accountVariant,
                 correctPassword
             );
 
             await SecureStorage.Default.SetAsync(
-                 PreferencesModel.JSON_ACCOUNT,
+                 PreferencesModel.JSON_ACCOUNT + accountVariant,
                  json
             );
 
-            Preferences.Set(PreferencesModel.ACCOUNT_TYPE, AccountType.Json.ToString());
+            Preferences.Set(PreferencesModel.ACCOUNT_TYPE + accountVariant, AccountType.Json.ToString());
         }
 
-        public static string GetSubstrateKey()
+        public static string GetSubstrateKey(string accountVariant = "")
         {
             // publicKey should be always saved
-            return Preferences.Get(PreferencesModel.PUBLIC_KEY, "Error - no pubKey");
+            return Preferences.Get(PreferencesModel.PUBLIC_KEY + accountVariant, "Error - no pubKey");
         }
 
         public static string GetPublicKey()
@@ -186,9 +196,9 @@ namespace PlutoFramework.Model
             return Utils.GetPublicKeyFrom(GetSubstrateKey());
         }
 
-        public static async Task<string?> GetMnemonicsOrPrivateKeyAsync()
+        public static async Task<string?> GetMnemonicsOrPrivateKeyAsync(string accountVariant = "")
         {
-            var accountType = (AccountType)Enum.Parse(typeof(AccountType), Preferences.Get(PreferencesModel.ACCOUNT_TYPE, AccountType.None.ToString()));
+            var accountType = (AccountType)Enum.Parse(typeof(AccountType), Preferences.Get(PreferencesModel.ACCOUNT_TYPE + accountVariant, AccountType.None.ToString()));
 
             var biometricsEnabled = Preferences.Get(PreferencesModel.BIOMETRICS_ENABLED, false);
 
@@ -246,16 +256,16 @@ namespace PlutoFramework.Model
             }
 
             return accountType switch {
-                AccountType.Mnemonic => await SecureStorage.Default.GetAsync(PreferencesModel.MNEMONICS).ConfigureAwait(false),
-                AccountType.PrivateKey => await SecureStorage.Default.GetAsync(PreferencesModel.PRIVATE_KEY).ConfigureAwait(false),
-                AccountType.Json => await SecureStorage.Default.GetAsync(PreferencesModel.JSON_ACCOUNT).ConfigureAwait(false),
+                AccountType.Mnemonic => await SecureStorage.Default.GetAsync(PreferencesModel.MNEMONICS + accountVariant).ConfigureAwait(false),
+                AccountType.PrivateKey => await SecureStorage.Default.GetAsync(PreferencesModel.PRIVATE_KEY + accountVariant).ConfigureAwait(false),
+                AccountType.Json => await SecureStorage.Default.GetAsync(PreferencesModel.JSON_ACCOUNT + accountVariant).ConfigureAwait(false),
                 _ => null
             };
         }
 
-        public static async Task<Account?> GetAccountAsync()
+        public static async Task<Account?> GetAccountAsync(string accountVariant = "")
         {
-            var expandMode = Preferences.Get(PreferencesModel.PRIVATE_KEY_EXPAND_MODE, (int)DEFAULT_EXPAND_MODE) switch
+            var expandMode = Preferences.Get(PreferencesModel.PRIVATE_KEY_EXPAND_MODE + accountVariant, (int)DEFAULT_EXPAND_MODE) switch
             {
                 0 => ExpandMode.Uniform,
                 1 => ExpandMode.Ed25519,
@@ -271,7 +281,7 @@ namespace PlutoFramework.Model
                     return null;
                 }
 
-                var accountType = (AccountType)Enum.Parse(typeof(AccountType), Preferences.Get(PreferencesModel.ACCOUNT_TYPE, AccountType.None.ToString()));
+                var accountType = (AccountType)Enum.Parse(typeof(AccountType), Preferences.Get(PreferencesModel.ACCOUNT_TYPE + accountVariant, AccountType.None.ToString()));
 
                 return accountType switch
                 {
@@ -315,6 +325,16 @@ namespace PlutoFramework.Model
             accountId.Create(GetPublicKeyBytes());
 
             return accountId;
+        }
+
+        public static void RemoveAccount(string accountVariant = "")
+        {
+            Preferences.Remove(PreferencesModel.PUBLIC_KEY + accountVariant);
+            Preferences.Remove(PreferencesModel.PRIVATE_KEY_EXPAND_MODE + accountVariant);
+            SecureStorage.Default.Remove(PreferencesModel.PRIVATE_KEY + accountVariant);
+            SecureStorage.Default.Remove(PreferencesModel.MNEMONICS + accountVariant);
+            SecureStorage.Default.Remove(PreferencesModel.JSON_ACCOUNT + accountVariant);
+            Preferences.Remove(PreferencesModel.ACCOUNT_TYPE + accountVariant);
         }
     }
 }

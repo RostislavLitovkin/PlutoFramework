@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.ccp_authorities_noting_inherent
+namespace XcavatePaseo.NetApi.Generated.Model.ccp_authorities_noting_inherent
 {
     
     
@@ -27,11 +27,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.ccp_authorities_noting_inherent
         /// <summary>
         /// >> relay_chain_state
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof RelayChainState { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof RelayChainState { get; set; }
         /// <summary>
         /// >> orchestrator_chain_state
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof OrchestratorChainState { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof OrchestratorChainState { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -52,9 +52,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.ccp_authorities_noting_inherent
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            RelayChainState = new XCavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof();
+            RelayChainState = new XcavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof();
             RelayChainState.Decode(byteArray, ref p);
-            OrchestratorChainState = new XCavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof();
+            OrchestratorChainState = new XcavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof();
             OrchestratorChainState.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

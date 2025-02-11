@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
         /// <summary>
         /// >> settings
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.BitFlagsT2 Settings { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.BitFlagsT2 Settings { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Settings = new XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.BitFlagsT2();
+            Settings = new XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.BitFlagsT2();
             Settings.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

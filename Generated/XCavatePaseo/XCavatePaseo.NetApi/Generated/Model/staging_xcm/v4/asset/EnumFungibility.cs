@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset
+namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset
 {
     
     
@@ -44,7 +44,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset
         public EnumFungibility()
         {
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>(Fungibility.Fungible);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.EnumAssetInstance>(Fungibility.NonFungible);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset.EnumAssetInstance>(Fungibility.NonFungible);
         }
     }
 }

@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet
 {
     
     
@@ -120,9 +120,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5>>(Call.list_project);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5>>(Call.list_project);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U8, Substrate.NetApi.Model.Types.Primitive.U64>>(Call.buy_nft);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.EnumVote>>(Call.vote_on_milestone);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.EnumVote>>(Call.vote_on_milestone);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.bond_token);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.claim_refunded_token);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.claim_bonding);

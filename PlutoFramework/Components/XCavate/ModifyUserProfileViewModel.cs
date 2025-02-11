@@ -3,9 +3,9 @@ using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.Buttons;
 using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
-using PlutoFramework.Model.XCavate;
+using PlutoFramework.Model.Xcavate;
 
-namespace PlutoFramework.Components.XCavate
+namespace PlutoFramework.Components.Xcavate
 {
     public partial class ModifyUserProfileViewModel : ObservableObject
     {
@@ -117,7 +117,7 @@ namespace PlutoFramework.Components.XCavate
             }
 
             string tempProfilePicturePath = Path.Combine(FileSystem.Current.AppDataDirectory, "temporaryprofilepicture");
-            string profilePicturePath = Path.Combine(FileSystem.Current.AppDataDirectory, XCavateConstants.PROFILE_PICTURE_FILE_NAME);
+            string profilePicturePath = Path.Combine(FileSystem.Current.AppDataDirectory, XcavateConstants.PROFILE_PICTURE_FILE_NAME);
 
             if (File.Exists(tempProfilePicturePath))
             {
@@ -125,14 +125,14 @@ namespace PlutoFramework.Components.XCavate
             }
 
             string tempProfileBackgroundPath = Path.Combine(FileSystem.Current.AppDataDirectory, "temporaryprofilebackground");
-            string profileBackgroundPath = Path.Combine(FileSystem.Current.AppDataDirectory, XCavateConstants.PROFILE_BACKGROUND_FILE_NAME);
+            string profileBackgroundPath = Path.Combine(FileSystem.Current.AppDataDirectory, XcavateConstants.PROFILE_BACKGROUND_FILE_NAME);
 
             if (File.Exists(tempProfileBackgroundPath))
             {
                 File.Move(tempProfileBackgroundPath, profileBackgroundPath, true);
             }
 
-            var newUserInfo = new XCavateUser
+            var newUserInfo = new XcavateUser
             {
                 FirstName = FirstName,
                 LastName = LastName,
@@ -141,15 +141,15 @@ namespace PlutoFramework.Components.XCavate
                 Role = UserProfilePage.ViewModel.User.Role,
                 DeveloperStats = UserProfilePage.ViewModel.User.DeveloperStats,
                 AccountCreatedAt = UserProfilePage.ViewModel.User.AccountCreatedAt,
-                ProfilePicture = XCavateFileModel.GetSavedProfilePicture(),
-                ProfileBackground = XCavateFileModel.GetSavedProfileBackground(),
+                ProfilePicture = XcavateFileModel.GetSavedProfilePicture(),
+                ProfileBackground = XcavateFileModel.GetSavedProfileBackground(),
             };
 
             UserProfilePage.ViewModel.User = newUserInfo;
 
             await Application.Current.MainPage.Navigation.PopAsync();
 
-            await XCavateUserDatabase.SaveUserInformationAsync(newUserInfo);
+            await XcavateUserDatabase.SaveUserInformationAsync(newUserInfo);
         }
 
         public ButtonStateEnum SaveButtonState => (FirstName != "" && LastName != "" && FormModel.IsValidEmail(Email) && PhoneNumber != "") ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;

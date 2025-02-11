@@ -24,7 +24,7 @@ public partial class MnemonicsPage : ContentPage
 
         var accountType = (AccountType)Enum.Parse(typeof(AccountType), Preferences.Get(PreferencesModel.ACCOUNT_TYPE, AccountType.None.ToString()));
 
-        viewModel.Title = accountType switch
+        viewModel.MnemonicsTitle = accountType switch
         {
             AccountType.Mnemonic => "Mnemonics:",
             AccountType.PrivateKey => "Private key:",
@@ -39,13 +39,4 @@ public partial class MnemonicsPage : ContentPage
             viewModel.Mnemonics = "Mnemonics are not available for your account.";
         }
 	}
-
-	private async void GoToEnterMnemonics(System.Object sender, System.EventArgs e)
-    {
-		await Navigation.PushAsync(new EnterMnemonicsPage());
-    }
-    private async void OnMnemonicsExplanationClicked(System.Object sender, System.EventArgs e)
-    {
-        await Navigation.PushAsync(new MnemonicsExplanationPage());
-    }
 }

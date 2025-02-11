@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.frame_system.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.frame_system.pallet
 {
     
     
@@ -135,8 +135,8 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_system.pallet
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>>(Call.kill_storage);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.kill_prefix);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>(Call.remark_with_event);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.primitive_types.H256>(Call.authorize_upgrade);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.primitive_types.H256>(Call.authorize_upgrade_without_checks);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256>(Call.authorize_upgrade);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256>(Call.authorize_upgrade_without_checks);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>(Call.apply_authorized_upgrade);
         }
     }

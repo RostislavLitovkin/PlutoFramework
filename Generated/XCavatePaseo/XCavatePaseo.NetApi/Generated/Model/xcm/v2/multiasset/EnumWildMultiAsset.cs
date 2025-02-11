@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset
+namespace XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset
 {
     
     
@@ -44,7 +44,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset
         public EnumWildMultiAsset()
         {
 				AddTypeDecoder<BaseVoid>(WildMultiAsset.All);
-				AddTypeDecoder<BaseTuple<XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumAssetId, XCavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumWildFungibility>>(WildMultiAsset.AllOf);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumAssetId, XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset.EnumWildFungibility>>(WildMultiAsset.AllOf);
         }
     }
 }

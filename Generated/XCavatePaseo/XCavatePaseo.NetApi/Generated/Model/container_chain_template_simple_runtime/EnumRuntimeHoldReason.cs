@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime
+namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime
 {
     
     
@@ -38,7 +38,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         /// </summary>
         public EnumRuntimeHoldReason()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.pallet.EnumHoldReason>(RuntimeHoldReason.NftFractionalization);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.pallet.EnumHoldReason>(RuntimeHoldReason.NftFractionalization);
         }
     }
 }

@@ -65,7 +65,7 @@
                                  Margin="0,0,0,35"
                                  Spacing="5"
                                  IsVisible="False"
-                                 x:Name="xCavateAttributes">
+                                 x:Name="xcavateAttributes">
 
                         <nft:NftAttributeView AttributeName="Price"
                                               x:Name="priceAttribute" />

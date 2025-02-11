@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -36,8 +36,8 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         public AuthoritiesNotingStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("AuthoritiesNoting", "OrchestratorParaId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("AuthoritiesNoting", "Authorities"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.nimbus_primitives.nimbus_crypto.Public>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("AuthoritiesNoting", "OrchestratorParaId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("AuthoritiesNoting", "Authorities"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.nimbus_primitives.nimbus_crypto.Public>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("AuthoritiesNoting", "DidSetOrchestratorAuthorityData"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
         }
         
@@ -61,10 +61,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// <summary>
         /// >> OrchestratorParaId
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id> OrchestratorParaId(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id> OrchestratorParaId(string blockhash, CancellationToken token)
         {
             string parameters = AuthoritiesNotingStorage.OrchestratorParaIdParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>(parameters, blockhash, token);
             return result;
         }
         
@@ -88,10 +88,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// <summary>
         /// >> Authorities
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.nimbus_primitives.nimbus_crypto.Public>> Authorities(string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.nimbus_primitives.nimbus_crypto.Public>> Authorities(string blockhash, CancellationToken token)
         {
             string parameters = AuthoritiesNotingStorage.AuthoritiesParams();
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.nimbus_primitives.nimbus_crypto.Public>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.nimbus_primitives.nimbus_crypto.Public>>(parameters, blockhash, token);
             return result;
         }
         
@@ -135,7 +135,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> set_latest_authorities_data
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetLatestAuthoritiesData(XCavatePaseo.NetApi.Generated.Model.ccp_authorities_noting_inherent.ContainerChainAuthoritiesInherentData data)
+        public static Method SetLatestAuthoritiesData(XcavatePaseo.NetApi.Generated.Model.ccp_authorities_noting_inherent.ContainerChainAuthoritiesInherentData data)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(data.Encode());
@@ -146,7 +146,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> set_authorities
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetAuthorities(Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.nimbus_primitives.nimbus_crypto.Public> authorities)
+        public static Method SetAuthorities(Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.nimbus_primitives.nimbus_crypto.Public> authorities)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(authorities.Encode());
@@ -157,7 +157,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> set_orchestrator_para_id
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetOrchestratorParaId(XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id new_para_id)
+        public static Method SetOrchestratorParaId(XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id new_para_id)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(new_para_id.Encode());

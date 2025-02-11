@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.xcm
+namespace XcavatePaseo.NetApi.Generated.Model.xcm
 {
     
     
@@ -48,9 +48,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm
         /// </summary>
         public EnumVersionedLocation()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.MultiLocation>(VersionedLocation.V2);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation>(VersionedLocation.V3);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(VersionedLocation.V4);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation.MultiLocation>(VersionedLocation.V2);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation>(VersionedLocation.V3);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(VersionedLocation.V4);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace PlutoFramework.Model.XCavate
+﻿namespace PlutoFramework.Model.Xcavate
 {
     public enum UserRoleEnum
     {
@@ -16,7 +16,7 @@
         public required int TotalSales { get; set; }
         public required int AverageSaleTime { get; set; }
     }
-    public record XCavateUser
+    public record XcavateUser
     {
         public required ImageSource ProfilePicture { get; set; }
         public required ImageSource ProfileBackground { get; set; }
@@ -39,7 +39,7 @@
         Invited,
         Active
     }
-    public record XCavateCompanyUser : XCavateUser
+    public record XcavateCompanyUser : XcavateUser
     {
         public required CompanyUserStatusEnum CompanyUserStatus { get; set; }
         public required DateTime? AddedAt { get; set; }
@@ -47,13 +47,13 @@
         public required uint[] CompanyIds { get; set; }
         public required VerificationEnum Verification { get; set; }
     }
-    public class XCavateUserModel
+    public class XcavateUserModel
     {
-        public static async Task<XCavateUser> GetMockUserAsync()
+        public static async Task<XcavateUser> GetMockUserAsync()
         {
             await Task.FromResult(0);
 
-            return new XCavateUser
+            return new XcavateUser
             {
                 FirstName = "Richard",
                 LastName = "Grey",
@@ -61,8 +61,8 @@
                 Role = UserRoleEnum.Developer,
                 Email = "Richard120@gmail.com",
                 PhoneNumber = "07766544445",
-                ProfilePicture = ImageSource.FromUri(new Uri("")),
-                ProfileBackground = ImageSource.FromUri(new Uri("")),
+                ProfilePicture = ImageSource.FromResource(""),
+                ProfileBackground = ImageSource.FromResource("")
             };
         }
     }

@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof
+namespace XcavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof
         /// <summary>
         /// >> trie_nodes
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Types.Base.BTreeSetT1 TrieNodes { get; set; }
+        public XcavatePaseo.NetApi.Generated.Types.Base.BTreeSetT1 TrieNodes { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            TrieNodes = new XCavatePaseo.NetApi.Generated.Types.Base.BTreeSetT1();
+            TrieNodes = new XcavatePaseo.NetApi.Generated.Types.Base.BTreeSetT1();
             TrieNodes.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_utility.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_utility.pallet
 {
     
     
@@ -72,12 +72,12 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_utility.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError>>(Event.BatchInterrupted);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError>>(Event.BatchInterrupted);
 				AddTypeDecoder<BaseVoid>(Event.BatchCompleted);
 				AddTypeDecoder<BaseVoid>(Event.BatchCompletedWithErrors);
 				AddTypeDecoder<BaseVoid>(Event.ItemCompleted);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Event.ItemFailed);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Types.Base.EnumResult>(Event.DispatchedAs);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Event.ItemFailed);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.EnumResult>(Event.DispatchedAs);
         }
     }
 }

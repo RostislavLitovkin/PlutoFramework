@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.xcm.v2.traits
+namespace XcavatePaseo.NetApi.Generated.Model.xcm.v2.traits
 {
     
     

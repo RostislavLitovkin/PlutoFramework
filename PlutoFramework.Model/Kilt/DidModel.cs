@@ -28,6 +28,18 @@ namespace PlutoFramework.Model
             return arr;
         }
 
+        public static AccountId32 DidAddressToAccountId32(string didAddress)
+        {
+            if (didAddress.Contains("did:kilt:"))
+            {
+                didAddress = didAddress.Remove(0, 9);
+            }
+
+            var accountId = new AccountId32();
+            accountId.Create(Utils.GetPublicKeyFrom(didAddress));
+            return accountId;
+        }
+
         public static Method Create(Account account, Account did)
         {
             var details = new DidCreationDetails

@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.xcm.v3.multiasset
+namespace XcavatePaseo.NetApi.Generated.Model.xcm.v3.multiasset
 {
     
     
@@ -43,8 +43,8 @@ namespace XCavatePaseo.NetApi.Generated.Model.xcm.v3.multiasset
         /// </summary>
         public EnumMultiAssetFilter()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.xcm.v3.multiasset.MultiAssets>(MultiAssetFilter.Definite);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.xcm.v3.multiasset.EnumWildMultiAsset>(MultiAssetFilter.Wild);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.v3.multiasset.MultiAssets>(MultiAssetFilter.Definite);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.v3.multiasset.EnumWildMultiAsset>(MultiAssetFilter.Wild);
         }
     }
 }

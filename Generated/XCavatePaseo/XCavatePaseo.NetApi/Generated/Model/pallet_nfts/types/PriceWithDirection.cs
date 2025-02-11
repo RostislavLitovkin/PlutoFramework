@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
 {
     
     
@@ -31,7 +31,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
         /// <summary>
         /// >> direction
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumPriceDirection Direction { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumPriceDirection Direction { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -54,7 +54,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types
             var start = p;
             Amount = new Substrate.NetApi.Model.Types.Primitive.U128();
             Amount.Decode(byteArray, ref p);
-            Direction = new XCavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumPriceDirection();
+            Direction = new XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.EnumPriceDirection();
             Direction.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

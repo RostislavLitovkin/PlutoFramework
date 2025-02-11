@@ -1,6 +1,6 @@
 ﻿using UniqueryPlus;
 
-namespace PlutoFramework.Model.XCavate
+namespace PlutoFramework.Model.Xcavate
 {
     public enum VerificationEnum
     {
@@ -19,7 +19,7 @@ namespace PlutoFramework.Model.XCavate
 
 
     }
-    public record XCavateCompany
+    public record XcavateCompany
     {
         public uint? CompanyId { get; set; } = null;
         public required string CompanyName { get; set; }
@@ -31,12 +31,12 @@ namespace PlutoFramework.Model.XCavate
         public required string AssociatedMembershipNumber { get; set; }
         public required PassportOrDriversLicense PassportOrDriversLicense { get; set; }
     }
-    public class XCavateCompanyModel
+    public class XcavateCompanyModel
     {
-        public static async Task<XCavateCompany> GetMockCompanyAsync()
+        public static async Task<XcavateCompany> GetMockCompanyAsync()
         {
             await Task.FromResult(0);
-            return new XCavateCompany
+            return new XcavateCompany
             {
                 CompanyId = 1,
                 CompanyName = "PrimeStone Developments",
@@ -55,18 +55,18 @@ namespace PlutoFramework.Model.XCavate
             };
         }
 
-        public static IAsyncEnumerable<XCavateCompanyUser> GetMockCompanyUsersAsync(
+        public static IAsyncEnumerable<XcavateCompanyUser> GetMockCompanyUsersAsync(
             uint companyId,
             uint limit = 25
         )
         {
-            return RecursionHelper.ToIAsyncEnumerableAsync<uint?, XCavateCompanyUser>(
+            return RecursionHelper.ToIAsyncEnumerableAsync<uint?, XcavateCompanyUser>(
                 (lastId, token) => GetMockCompanyUsersAsync(companyId, lastId, limit, token),
                 limit
                 );
         }
 
-        public static async Task<RecursiveReturn<uint?, XCavateCompanyUser>> GetMockCompanyUsersAsync(
+        public static async Task<RecursiveReturn<uint?, XcavateCompanyUser>> GetMockCompanyUsersAsync(
              uint companyId,
              uint? lastId,
             uint limit,
@@ -76,7 +76,7 @@ namespace PlutoFramework.Model.XCavate
 
             if (lastId != null)
             {
-                return new RecursiveReturn<uint?, XCavateCompanyUser>
+                return new RecursiveReturn<uint?, XcavateCompanyUser>
                 {
                     Items = [],
                     LastKey = lastId,
@@ -85,10 +85,10 @@ namespace PlutoFramework.Model.XCavate
 
             Console.WriteLine("Returning 2");
 
-            return new RecursiveReturn<uint?, XCavateCompanyUser>
+            return new RecursiveReturn<uint?, XcavateCompanyUser>
             {
                 Items = [
-                    new XCavateCompanyUser
+                    new XcavateCompanyUser
                     {
                         FirstName = "Richard",
                         LastName = "Grey",
@@ -104,7 +104,7 @@ namespace PlutoFramework.Model.XCavate
                         ProfilePicture = ImageSource.FromUri(new Uri("https://static1.thegamerimages.com/wordpress/wp-content/uploads/2022/02/pjimage-(71)-2.jpg")),
                         ProfileBackground = ImageSource.FromUri(new Uri("https://www.pixelstalk.net/wp-content/uploads/images6/Free-download-Xenoblade-Chronicles-2-Wallpaper-HD.jpg")),
                     },
-                    new XCavateCompanyUser
+                    new XcavateCompanyUser
                     {
                         FirstName = "Richard2",
                         LastName = "Grey",
@@ -117,8 +117,8 @@ namespace PlutoFramework.Model.XCavate
                         CompanyIds = [1],
                         Id = 2,
                         Verification = VerificationEnum.Pending,
-                        ProfilePicture = ImageSource.FromFile(""),
-                        ProfileBackground = ImageSource.FromFile(""),
+                        ProfilePicture = ImageSource.FromResource(""),
+                        ProfileBackground = ImageSource.FromResource(""),
                     }
                 ],
                 LastKey = 2,

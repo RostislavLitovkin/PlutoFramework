@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.frame_system.limits
+namespace XcavatePaseo.NetApi.Generated.Model.frame_system.limits
 {
     
     
@@ -27,19 +27,19 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_system.limits
         /// <summary>
         /// >> base_extrinsic
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight BaseExtrinsic { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight BaseExtrinsic { get; set; }
         /// <summary>
         /// >> max_extrinsic
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight> MaxExtrinsic { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight> MaxExtrinsic { get; set; }
         /// <summary>
         /// >> max_total
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight> MaxTotal { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight> MaxTotal { get; set; }
         /// <summary>
         /// >> reserved
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight> Reserved { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight> Reserved { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -62,13 +62,13 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_system.limits
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            BaseExtrinsic = new XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight();
+            BaseExtrinsic = new XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight();
             BaseExtrinsic.Decode(byteArray, ref p);
-            MaxExtrinsic = new Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>();
+            MaxExtrinsic = new Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>();
             MaxExtrinsic.Decode(byteArray, ref p);
-            MaxTotal = new Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>();
+            MaxTotal = new Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>();
             MaxTotal.Decode(byteArray, ref p);
-            Reserved = new Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>();
+            Reserved = new Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>();
             Reserved.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

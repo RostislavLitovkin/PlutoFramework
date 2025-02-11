@@ -8,7 +8,6 @@ using PlutoFramework.Components.AddressView;
 using PlutoFramework.Components.CalamarView;
 using PlutoFramework.Components.Extrinsic;
 using PlutoFramework.View;
-using PlutoFramework.ViewModel;
 using PlutoFramework.Components.Staking;
 using PlutoFramework.Components.CustomLayouts;
 using PlutoFramework.Components.AzeroId;
@@ -24,6 +23,7 @@ using PlutoFramework.Components.TransactionAnalyzer;
 using PlutoFramework.Components.Password;
 using PlutoFramework.Model;
 using PlutoFramework.Components.Mnemonics;
+using PlutoFramework.ViewModel;
 
 namespace PlutoFramework;
 
@@ -103,6 +103,8 @@ public partial class App : Application
 
         DependencyService.Register<SuccessfulImportPopupViewModel>();
 
+        //MainPage = new UserTypeSelectionPage();
+
         if (Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY))
         {
             // Set Account type if it did not exist
@@ -118,12 +120,11 @@ public partial class App : Application
         }
         else
         {
-            Preferences.Remove(PreferencesModel.PUBLIC_KEY);
-            SecureStorage.Default.Remove(PreferencesModel.PRIVATE_KEY);
-            SecureStorage.Default.Remove(PreferencesModel.MNEMONICS);
+            KeysModel.RemoveAccount();
+
             SecureStorage.Default.Remove(PreferencesModel.PASSWORD);
             Preferences.Remove(PreferencesModel.BIOMETRICS_ENABLED);
-            Preferences.Set(PreferencesModel.ACCOUNT_TYPE, AccountType.Mnemonic.ToString());
+
             MainPage = new SetupPasswordPage();
         }
     }

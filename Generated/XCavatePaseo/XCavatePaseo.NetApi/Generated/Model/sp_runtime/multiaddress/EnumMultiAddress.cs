@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress
+namespace XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress
 {
     
     
@@ -58,11 +58,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress
         /// </summary>
         public EnumMultiAddress()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(MultiAddress.Id);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(MultiAddress.Id);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Base.BaseTuple>>(MultiAddress.Index);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>(MultiAddress.Raw);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Types.Base.Arr32U8>(MultiAddress.Address32);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Types.Base.Arr20U8>(MultiAddress.Address20);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8>(MultiAddress.Address32);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.Arr20U8>(MultiAddress.Address20);
         }
     }
 }

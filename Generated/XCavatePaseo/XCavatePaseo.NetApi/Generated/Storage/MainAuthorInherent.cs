@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -36,7 +36,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         public AuthorInherentStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("AuthorInherent", "Author"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.nimbus_primitives.nimbus_crypto.Public)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("AuthorInherent", "Author"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.nimbus_primitives.nimbus_crypto.Public)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("AuthorInherent", "InherentIncluded"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
         }
         
@@ -62,10 +62,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> Author
         ///  Author of current block.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.nimbus_primitives.nimbus_crypto.Public> Author(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.nimbus_primitives.nimbus_crypto.Public> Author(string blockhash, CancellationToken token)
         {
             string parameters = AuthorInherentStorage.AuthorParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.nimbus_primitives.nimbus_crypto.Public>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.nimbus_primitives.nimbus_crypto.Public>(parameters, blockhash, token);
             return result;
         }
         

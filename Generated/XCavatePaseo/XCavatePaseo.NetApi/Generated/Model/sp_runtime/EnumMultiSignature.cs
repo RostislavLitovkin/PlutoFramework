@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.sp_runtime
+namespace XcavatePaseo.NetApi.Generated.Model.sp_runtime
 {
     
     
@@ -48,9 +48,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.sp_runtime
         /// </summary>
         public EnumMultiSignature()
         {
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Types.Base.Arr64U8>(MultiSignature.Ed25519);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Types.Base.Arr64U8>(MultiSignature.Sr25519);
-				AddTypeDecoder<XCavatePaseo.NetApi.Generated.Types.Base.Arr65U8>(MultiSignature.Ecdsa);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.Arr64U8>(MultiSignature.Ed25519);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.Arr64U8>(MultiSignature.Sr25519);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.Arr65U8>(MultiSignature.Ecdsa);
         }
     }
 }

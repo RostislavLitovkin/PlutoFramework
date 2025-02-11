@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v3.multilocation
+namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v3.multilocation
 {
     
     
@@ -31,7 +31,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v3.multilocation
         /// <summary>
         /// >> interior
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.xcm.v3.junctions.EnumJunctions Interior { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.xcm.v3.junctions.EnumJunctions Interior { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -54,7 +54,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.staging_xcm.v3.multilocation
             var start = p;
             Parents = new Substrate.NetApi.Model.Types.Primitive.U8();
             Parents.Decode(byteArray, ref p);
-            Interior = new XCavatePaseo.NetApi.Generated.Model.xcm.v3.junctions.EnumJunctions();
+            Interior = new XcavatePaseo.NetApi.Generated.Model.xcm.v3.junctions.EnumJunctions();
             Interior.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

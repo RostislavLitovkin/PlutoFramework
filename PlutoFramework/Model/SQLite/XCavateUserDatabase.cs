@@ -1,11 +1,11 @@
 ﻿using PlutoFramework.Model.Constants;
-using PlutoFramework.Model.XCavate;
+using PlutoFramework.Model.Xcavate;
 using SQLite;
 using System.Text.Json;
 
 namespace PlutoFramework.Model.SQLite
 {
-    public record XCavateUserDatabaseItem
+    public record XcavateUserDatabaseItem
     {
         [PrimaryKey]
         public int Key { get; set; } = 0;
@@ -19,12 +19,12 @@ namespace PlutoFramework.Model.SQLite
         public string? SerializedProfileBackground { get; set; }
         public long? AccountCreatedAt { get; set; }
 
-        public static implicit operator XCavateUser(XCavateUserDatabaseItem item)
+        public static implicit operator XcavateUser(XcavateUserDatabaseItem item)
         {
-            return new XCavateUser
+            return new XcavateUser
             {
-                ProfilePicture = XCavateFileModel.GetSavedProfilePicture(),
-                ProfileBackground = XCavateFileModel.GetSavedProfileBackground(),
+                ProfilePicture = XcavateFileModel.GetSavedProfilePicture(),
+                ProfileBackground = XcavateFileModel.GetSavedProfileBackground(),
                 Role = item.Role,
                 FirstName = item.FirstName,
                 LastName = item.LastName,
@@ -36,11 +36,11 @@ namespace PlutoFramework.Model.SQLite
         }
     }
 
-    public static class XCavateUserDatabase
+    public static class XcavateUserDatabase
     {
-        public static XCavateUserDatabaseItem ToDatabaseItem(this XCavateUser user)
+        public static XcavateUserDatabaseItem ToDatabaseItem(this XcavateUser user)
         {
-            return new XCavateUserDatabaseItem
+            return new XcavateUserDatabaseItem
             {
                 AccountCreatedAt = user.AccountCreatedAt?.Ticks,
                 FirstName = user.FirstName,
@@ -60,15 +60,15 @@ namespace PlutoFramework.Model.SQLite
             if (Database is not null)
                 return;
 
-            Database = new SQLiteAsyncConnection(Path.Combine(FileSystem.AppDataDirectory, "XCavateSQLite.db3"), SQLiteConstants.XCavateDatabaseFlags);
-            var result = await Database.CreateTableAsync<XCavateUserDatabaseItem>().ConfigureAwait(false);
+            Database = new SQLiteAsyncConnection(Path.Combine(FileSystem.AppDataDirectory, "XcavateSQLite.db3"), SQLiteConstants.XcavateDatabaseFlags);
+            var result = await Database.CreateTableAsync<XcavateUserDatabaseItem>().ConfigureAwait(false);
         }
 
-        public static async Task<XCavateUser?> GetUserInformationAsync()
+        public static async Task<XcavateUser?> GetUserInformationAsync()
         {
             await InitAsync().ConfigureAwait(false);
 
-            var item = await Database.FindAsync<XCavateUserDatabaseItem>(0).ConfigureAwait(false);
+            var item = await Database.FindAsync<XcavateUserDatabaseItem>(0).ConfigureAwait(false);
             if (item is null)
             {
                 return null;
@@ -76,13 +76,13 @@ namespace PlutoFramework.Model.SQLite
             return item;
         }
 
-        public static async Task<int> SaveUserInformationAsync(XCavateUser item)
+        public static async Task<int> SaveUserInformationAsync(XcavateUser item)
         {
             var databaseItem = item.ToDatabaseItem();
 
             await InitAsync().ConfigureAwait(false);
 
-            var exists = (await Database.FindAsync<XCavateUserDatabaseItem>(0).ConfigureAwait(false)) is not null;
+            var exists = (await Database.FindAsync<XcavateUserDatabaseItem>(0).ConfigureAwait(false)) is not null;
 
             if (exists)
             {

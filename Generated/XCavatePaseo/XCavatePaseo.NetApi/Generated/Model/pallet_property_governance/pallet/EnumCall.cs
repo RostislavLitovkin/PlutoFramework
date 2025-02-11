@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
 {
     
     
@@ -93,8 +93,8 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         {
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.propose);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.inquery_against_letting_agent);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote>>(Call.vote_on_proposal);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XCavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote>>(Call.vote_on_letting_agent_inquery);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote>>(Call.vote_on_proposal);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote>>(Call.vote_on_letting_agent_inquery);
         }
     }
 }

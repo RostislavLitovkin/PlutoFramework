@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7
+namespace XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7
         /// <summary>
         /// >> parent_head
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.HeadData ParentHead { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.HeadData ParentHead { get; set; }
         /// <summary>
         /// >> relay_parent_number
         /// </summary>
@@ -35,7 +35,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7
         /// <summary>
         /// >> relay_parent_storage_root
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.primitive_types.H256 RelayParentStorageRoot { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.primitive_types.H256 RelayParentStorageRoot { get; set; }
         /// <summary>
         /// >> max_pov_size
         /// </summary>
@@ -62,11 +62,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            ParentHead = new XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.HeadData();
+            ParentHead = new XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.HeadData();
             ParentHead.Decode(byteArray, ref p);
             RelayParentNumber = new Substrate.NetApi.Model.Types.Primitive.U32();
             RelayParentNumber.Decode(byteArray, ref p);
-            RelayParentStorageRoot = new XCavatePaseo.NetApi.Generated.Model.primitive_types.H256();
+            RelayParentStorageRoot = new XcavatePaseo.NetApi.Generated.Model.primitive_types.H256();
             RelayParentStorageRoot.Decode(byteArray, ref p);
             MaxPovSize = new Substrate.NetApi.Model.Types.Primitive.U32();
             MaxPovSize.Decode(byteArray, ref p);

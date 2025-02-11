@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_proxy
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_proxy
 {
     
     
@@ -27,11 +27,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_proxy
         /// <summary>
         /// >> real
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Real { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Real { get; set; }
         /// <summary>
         /// >> call_hash
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.primitive_types.H256 CallHash { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.primitive_types.H256 CallHash { get; set; }
         /// <summary>
         /// >> height
         /// </summary>
@@ -57,9 +57,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_proxy
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Real = new XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            Real = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Real.Decode(byteArray, ref p);
-            CallHash = new XCavatePaseo.NetApi.Generated.Model.primitive_types.H256();
+            CallHash = new XcavatePaseo.NetApi.Generated.Model.primitive_types.H256();
             CallHash.Decode(byteArray, ref p);
             Height = new Substrate.NetApi.Model.Types.Primitive.U32();
             Height.Decode(byteArray, ref p);

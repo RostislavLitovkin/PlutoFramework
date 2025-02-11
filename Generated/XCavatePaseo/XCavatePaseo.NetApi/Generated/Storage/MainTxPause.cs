@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -37,14 +37,14 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("TxPause", "PausedCalls"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
         }
         
         /// <summary>
         /// >> PausedCallsParams
         ///  The set of calls that are explicitly paused.
         /// </summary>
-        public static string PausedCallsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1> key)
+        public static string PausedCallsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1> key)
         {
             return RequestGenerator.GetStorage("TxPause", "PausedCalls", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -64,7 +64,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> PausedCalls
         ///  The set of calls that are explicitly paused.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> PausedCalls(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> PausedCalls(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1> key, string blockhash, CancellationToken token)
         {
             string parameters = TxPauseStorage.PausedCallsParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple>(parameters, blockhash, token);
@@ -82,7 +82,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> pause
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Pause(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1> full_name)
+        public static Method Pause(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1> full_name)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(full_name.Encode());
@@ -93,7 +93,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> unpause
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Unpause(Substrate.NetApi.Model.Types.Base.BaseTuple<XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1, XCavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1> ident)
+        public static Method Unpause(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1> ident)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(ident.Encode());

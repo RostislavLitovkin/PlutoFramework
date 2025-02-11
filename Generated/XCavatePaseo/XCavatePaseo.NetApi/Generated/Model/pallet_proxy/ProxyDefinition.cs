@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.pallet_proxy
+namespace XcavatePaseo.NetApi.Generated.Model.pallet_proxy
 {
     
     
@@ -27,11 +27,11 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_proxy
         /// <summary>
         /// >> delegate
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Delegate { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Delegate { get; set; }
         /// <summary>
         /// >> proxy_type
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType ProxyType { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType ProxyType { get; set; }
         /// <summary>
         /// >> delay
         /// </summary>
@@ -57,9 +57,9 @@ namespace XCavatePaseo.NetApi.Generated.Model.pallet_proxy
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Delegate = new XCavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            Delegate = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Delegate.Decode(byteArray, ref p);
-            ProxyType = new XCavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType();
+            ProxyType = new XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType();
             ProxyType.Decode(byteArray, ref p);
             Delay = new Substrate.NetApi.Model.Types.Primitive.U32();
             Delay.Decode(byteArray, ref p);

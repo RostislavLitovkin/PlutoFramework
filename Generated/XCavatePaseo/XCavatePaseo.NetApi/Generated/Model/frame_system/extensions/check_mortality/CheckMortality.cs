@@ -13,7 +13,7 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XCavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_mortality
+namespace XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_mortality
 {
     
     
@@ -27,7 +27,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_mort
         /// <summary>
         /// >> value
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.sp_runtime.generic.era.EnumEra Value { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.sp_runtime.generic.era.EnumEra Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace XCavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_mort
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new XCavatePaseo.NetApi.Generated.Model.sp_runtime.generic.era.EnumEra();
+            Value = new XcavatePaseo.NetApi.Generated.Model.sp_runtime.generic.era.EnumEra();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

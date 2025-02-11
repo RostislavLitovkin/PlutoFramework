@@ -17,7 +17,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace XCavatePaseo.NetApi.Generated.Storage
+namespace XcavatePaseo.NetApi.Generated.Storage
 {
     
     
@@ -36,29 +36,29 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         public ParachainSystemStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "UnincludedSegment"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded_segment.Ancestor>)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "AggregatedUnincludedSegment"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded_segment.SegmentTracker)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "UnincludedSegment"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded_segment.Ancestor>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "AggregatedUnincludedSegment"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded_segment.SegmentTracker)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "PendingValidationCode"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "NewValidationCode"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "ValidationData"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.PersistedValidationData)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "ValidationData"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.PersistedValidationData)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "DidSetValidationCode"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "LastRelayChainBlockNumber"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "UpgradeRestrictionSignal"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.EnumUpgradeRestriction>)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "UpgradeGoAhead"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.EnumUpgradeGoAhead>)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "RelayStateProof"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "RelevantMessagingState"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.relay_state_snapshot.MessagingStateSnapshot)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "HostConfiguration"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.AbridgedHostConfiguration)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "LastDmqMqcHead"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inherent.MessageQueueChain)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "LastHrmpMqcHeads"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Types.Base.BTreeMapT2)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "UpgradeRestrictionSignal"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.EnumUpgradeRestriction>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "UpgradeGoAhead"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.EnumUpgradeGoAhead>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "RelayStateProof"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "RelevantMessagingState"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.relay_state_snapshot.MessagingStateSnapshot)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "HostConfiguration"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.AbridgedHostConfiguration)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "LastDmqMqcHead"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inherent.MessageQueueChain)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "LastHrmpMqcHeads"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT2)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "ProcessedDownwardMessages"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "HrmpWatermark"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "HrmpOutboundMessages"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.polkadot_core_primitives.OutboundHrmpMessage>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "HrmpOutboundMessages"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.polkadot_core_primitives.OutboundHrmpMessage>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "UpwardMessages"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "PendingUpwardMessages"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "UpwardDeliveryFeeFactor"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "UpwardDeliveryFeeFactor"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "AnnouncedHrmpMessagesPerCandidate"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "ReservedXcmpWeightOverride"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "ReservedDmpWeightOverride"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "ReservedXcmpWeightOverride"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "ReservedDmpWeightOverride"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "CustomValidationHeadData"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>)));
         }
         
@@ -94,10 +94,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  The segment length is limited by the capacity returned from the [`ConsensusHook`] configured
         ///  in the pallet.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded_segment.Ancestor>> UnincludedSegment(string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded_segment.Ancestor>> UnincludedSegment(string blockhash, CancellationToken token)
         {
             string parameters = ParachainSystemStorage.UnincludedSegmentParams();
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded_segment.Ancestor>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded_segment.Ancestor>>(parameters, blockhash, token);
             return result;
         }
         
@@ -127,10 +127,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  latest HRMP watermark. Used for limiting the acceptance of new blocks with
         ///  respect to relay chain constraints.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded_segment.SegmentTracker> AggregatedUnincludedSegment(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded_segment.SegmentTracker> AggregatedUnincludedSegment(string blockhash, CancellationToken token)
         {
             string parameters = ParachainSystemStorage.AggregatedUnincludedSegmentParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded_segment.SegmentTracker>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded_segment.SegmentTracker>(parameters, blockhash, token);
             return result;
         }
         
@@ -236,10 +236,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  This value is expected to be set only once per block and it's never stored
         ///  in the trie.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.PersistedValidationData> ValidationData(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.PersistedValidationData> ValidationData(string blockhash, CancellationToken token)
         {
             string parameters = ParachainSystemStorage.ValidationDataParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.PersistedValidationData>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.PersistedValidationData>(parameters, blockhash, token);
             return result;
         }
         
@@ -339,10 +339,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  relay-chain. This value is ephemeral which means it doesn't hit the storage. This value is
         ///  set after the inherent.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.EnumUpgradeRestriction>> UpgradeRestrictionSignal(string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.EnumUpgradeRestriction>> UpgradeRestrictionSignal(string blockhash, CancellationToken token)
         {
             string parameters = ParachainSystemStorage.UpgradeRestrictionSignalParams();
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.EnumUpgradeRestriction>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.EnumUpgradeRestriction>>(parameters, blockhash, token);
             return result;
         }
         
@@ -376,10 +376,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  relay-chain. This value is ephemeral which means it doesn't hit the storage. This value is
         ///  set after the inherent.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.EnumUpgradeGoAhead>> UpgradeGoAhead(string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.EnumUpgradeGoAhead>> UpgradeGoAhead(string blockhash, CancellationToken token)
         {
             string parameters = ParachainSystemStorage.UpgradeGoAheadParams();
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseOpt<XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.EnumUpgradeGoAhead>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.EnumUpgradeGoAhead>>(parameters, blockhash, token);
             return result;
         }
         
@@ -415,10 +415,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// 
         ///  This data is also absent from the genesis.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof> RelayStateProof(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof> RelayStateProof(string blockhash, CancellationToken token)
         {
             string parameters = ParachainSystemStorage.RelayStateProofParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof>(parameters, blockhash, token);
             return result;
         }
         
@@ -456,10 +456,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// 
         ///  This data is also absent from the genesis.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.relay_state_snapshot.MessagingStateSnapshot> RelevantMessagingState(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.relay_state_snapshot.MessagingStateSnapshot> RelevantMessagingState(string blockhash, CancellationToken token)
         {
             string parameters = ParachainSystemStorage.RelevantMessagingStateParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.relay_state_snapshot.MessagingStateSnapshot>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.relay_state_snapshot.MessagingStateSnapshot>(parameters, blockhash, token);
             return result;
         }
         
@@ -495,10 +495,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// 
         ///  This data is also absent from the genesis.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.AbridgedHostConfiguration> HostConfiguration(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.AbridgedHostConfiguration> HostConfiguration(string blockhash, CancellationToken token)
         {
             string parameters = ParachainSystemStorage.HostConfigurationParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.AbridgedHostConfiguration>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.AbridgedHostConfiguration>(parameters, blockhash, token);
             return result;
         }
         
@@ -530,10 +530,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  This value is loaded before and saved after processing inbound downward messages carried
         ///  by the system inherent.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inherent.MessageQueueChain> LastDmqMqcHead(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inherent.MessageQueueChain> LastDmqMqcHead(string blockhash, CancellationToken token)
         {
             string parameters = ParachainSystemStorage.LastDmqMqcHeadParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inherent.MessageQueueChain>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inherent.MessageQueueChain>(parameters, blockhash, token);
             return result;
         }
         
@@ -565,10 +565,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  This value is loaded before and saved after processing inbound downward messages carried
         ///  by the system inherent.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Types.Base.BTreeMapT2> LastHrmpMqcHeads(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT2> LastHrmpMqcHeads(string blockhash, CancellationToken token)
         {
             string parameters = ParachainSystemStorage.LastHrmpMqcHeadsParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Types.Base.BTreeMapT2>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT2>(parameters, blockhash, token);
             return result;
         }
         
@@ -664,10 +664,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// 
         ///  This will be cleared in `on_initialize` of each new block.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.polkadot_core_primitives.OutboundHrmpMessage>> HrmpOutboundMessages(string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.polkadot_core_primitives.OutboundHrmpMessage>> HrmpOutboundMessages(string blockhash, CancellationToken token)
         {
             string parameters = ParachainSystemStorage.HrmpOutboundMessagesParams();
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseVec<XCavatePaseo.NetApi.Generated.Model.polkadot_core_primitives.OutboundHrmpMessage>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.polkadot_core_primitives.OutboundHrmpMessage>>(parameters, blockhash, token);
             return result;
         }
         
@@ -755,10 +755,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> UpwardDeliveryFeeFactor
         ///  The factor to multiply the base delivery fee by for UMP.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128> UpwardDeliveryFeeFactor(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128> UpwardDeliveryFeeFactor(string blockhash, CancellationToken token)
         {
             string parameters = ParachainSystemStorage.UpwardDeliveryFeeFactorParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>(parameters, blockhash, token);
             return result;
         }
         
@@ -817,10 +817,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  The weight we reserve at the beginning of the block for processing XCMP messages. This
         ///  overrides the amount set in the Config trait.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight> ReservedXcmpWeightOverride(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight> ReservedXcmpWeightOverride(string blockhash, CancellationToken token)
         {
             string parameters = ParachainSystemStorage.ReservedXcmpWeightOverrideParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>(parameters, blockhash, token);
             return result;
         }
         
@@ -848,10 +848,10 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         ///  The weight we reserve at the beginning of the block for processing DMP messages. This
         ///  overrides the amount set in the Config trait.
         /// </summary>
-        public async Task<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight> ReservedDmpWeightOverride(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight> ReservedDmpWeightOverride(string blockhash, CancellationToken token)
         {
             string parameters = ParachainSystemStorage.ReservedDmpWeightOverrideParams();
-            var result = await _client.GetStorageAsync<XCavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>(parameters, blockhash, token);
             return result;
         }
         
@@ -899,7 +899,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> set_validation_data
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetValidationData(XCavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inherent.ParachainInherentData data)
+        public static Method SetValidationData(XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inherent.ParachainInherentData data)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(data.Encode());
@@ -921,7 +921,7 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> authorize_upgrade
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AuthorizeUpgrade(XCavatePaseo.NetApi.Generated.Model.primitive_types.H256 code_hash, Substrate.NetApi.Model.Types.Primitive.Bool check_version)
+        public static Method AuthorizeUpgrade(XcavatePaseo.NetApi.Generated.Model.primitive_types.H256 code_hash, Substrate.NetApi.Model.Types.Primitive.Bool check_version)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(code_hash.Encode());
@@ -951,9 +951,9 @@ namespace XCavatePaseo.NetApi.Generated.Storage
         /// >> SelfParaId
         ///  Returns the parachain ID we are running with.
         /// </summary>
-        public XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id SelfParaId()
+        public XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id SelfParaId()
         {
-            var result = new XCavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id();
+            var result = new XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id();
             result.Create("0x230C0000");
             return result;
         }

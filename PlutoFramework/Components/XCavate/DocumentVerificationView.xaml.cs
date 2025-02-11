@@ -1,7 +1,7 @@
 using CommunityToolkit.Mvvm.Input;
-using PlutoFramework.Model.XCavate;
+using PlutoFramework.Model.Xcavate;
 
-namespace PlutoFramework.Components.XCavate;
+namespace PlutoFramework.Components.Xcavate;
 
 public partial class DocumentVerificationView : ContentView
 {

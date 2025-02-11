@@ -1,4 +1,4 @@
-﻿namespace PlutoFramework.Model.XCavate
+﻿namespace PlutoFramework.Model.Xcavate
 {
     public class ExchangeRateModel
     {
