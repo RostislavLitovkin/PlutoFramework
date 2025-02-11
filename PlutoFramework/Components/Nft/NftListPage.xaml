@@ -34,7 +34,9 @@
                     <customlayouts:LoadingItemView HeightRequest="80" 
                                                    Margin="20, 0, 20, 0"
                                                     IsVisible="{Binding Loading}"/>
+                    
                     <customlayouts:TransparentItemView Text="No NFTs"
+                                                       HeightRequest="80" 
                                                        Margin="20, 0, 20, 0"
                                                        IsVisible="{Binding NoItems}" />
                 </StackLayout>

@@ -21,7 +21,7 @@ namespace PlutoFramework.Components.Nft
                 return;
             }
 
-            if (uniqueryCollectionEnumerator == null)
+            if (clientTasks.Count() == 0 && uniqueryCollectionEnumerator is null)
             {
                 return;
             }
@@ -52,11 +52,11 @@ namespace PlutoFramework.Components.Nft
                             });
                         }
                     }
-
                     else
                     {
                         if (clientTasks.Count() == 0)
                         {
+                            uniqueryCollectionEnumerator = null;
                             return;
                         }
 

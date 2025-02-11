@@ -39,6 +39,8 @@ public partial class SettingsPage : ContentPage
         Preferences.Remove("biometricsEnabled");
 
         // Delete Local SQLite databases
+        await NftDatabase.DeleteAllAsync();
+        await CollectionDatabase.DeleteAllAsync();
 
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
         Application.Current.MainPage = new SetupPasswordPage();
