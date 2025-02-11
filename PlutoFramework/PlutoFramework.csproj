@@ -22,9 +22,9 @@
 		<ApplicationIdGuid>3ba8b589-69cd-429f-866f-94877f789515</ApplicationIdGuid>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.20</ApplicationDisplayVersion>
-    <PackageVersion>1.20</PackageVersion>
-    <ApplicationVersion>21</ApplicationVersion>
+		<ApplicationDisplayVersion>1.21</ApplicationDisplayVersion>
+    <PackageVersion>1.21</PackageVersion>
+    <ApplicationVersion>22</ApplicationVersion>
 		
 		<!-- Increases performance, but disables hot-reload -->
     <UseInterpreter>false</UseInterpreter>
