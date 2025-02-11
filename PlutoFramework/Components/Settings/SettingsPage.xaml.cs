@@ -39,9 +39,7 @@ public partial class SettingsPage : ContentPage
         SecureStorage.Default.Remove(PreferencesModel.PASSWORD);
         Preferences.Remove(PreferencesModel.BIOMETRICS_ENABLED);
 
-        // Delete Local SQLite databases
-        await NftDatabase.DeleteAllAsync();
-        await CollectionDatabase.DeleteAllAsync();
+        await SQLiteModel.DeleteAllDatabasesAsync();
 
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
         Application.Current.MainPage = new SetupPasswordPage();

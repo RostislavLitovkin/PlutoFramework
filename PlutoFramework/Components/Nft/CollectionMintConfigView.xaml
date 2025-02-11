@@ -21,8 +21,8 @@
                 </VerticalStackLayout>
 
                 <VerticalStackLayout Margin="0, 40, 0, 10"
-                             WidthRequest="{Binding Source={x:Reference absoluteLayout}, Path=Width}"
-                             Spacing="5">
+                                     WidthRequest="{Binding Source={x:Reference absoluteLayout}, Path=Width}"
+                                     Spacing="5">
 
                     <nft:NftAttributeView AttributeName="Nfts Minted"
                                           x:Name="nftsMintedAttribute"
