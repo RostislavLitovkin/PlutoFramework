@@ -178,6 +178,8 @@
 	  <None Remove="Resources\Images\xwhite.png" />
 	  <None Remove="Resources\Images\youtubeblack.png" />
 	  <None Remove="Resources\Images\youtubewhite.png" />
+	  <None Remove="Resources\Raw\SumsubWebSDK\index.html" />
+	  <None Remove="Resources\Raw\SumsubWebSDK\scripts\HybridWebView.js" />
 	  <None Remove="SubstrateNetApi" />
 	  <None Remove="Components\TransferView\" />
 	  <None Remove="ZXing.Net.Maui" />

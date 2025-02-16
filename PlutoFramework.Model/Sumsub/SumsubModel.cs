@@ -36,8 +36,8 @@ namespace PlutoFramework.Model.Sumsub
     public class SumsubModel
     {
         // The description of the authorization method is available here: https://docs.sumsub.com/reference/authentication
-        private static readonly string SUMSUB_SECRET_KEY = ""; // Example: Hej2ch71kG2kTd1iIUDZFNsO5C1lh5Gq - Please don't forget to change when switching to production
-        private static readonly string SUMSUB_APP_TOKEN = "";  // Example: sbx:uY0CgwELmgUAEyl4hNWxLngb.0WSeQeiYny4WEqmAALEAiK2qTC96fBad - Please don't forget to change when switching to production
+        private static readonly string SUMSUB_SECRET_KEY = "1SiTD0DH50SB71Qlk2Omp07LGD0Dtk4M"; // Example: Hej2ch71kG2kTd1iIUDZFNsO5C1lh5Gq - Please don't forget to change when switching to production
+        private static readonly string SUMSUB_APP_TOKEN = "sbx:3OcGQFD4j812xUoAhPBvOew3.02kIimwmfz6aj34wAcRVX6hrMVn6kjZm";  // Example: sbx:uY0CgwELmgUAEyl4hNWxLngb.0WSeQeiYny4WEqmAALEAiK2qTC96fBad - Please don't forget to change when switching to production
         private static readonly string SUMSUB_TEST_BASE_URL = "https://api.sumsub.com";
 
         /// <summary>

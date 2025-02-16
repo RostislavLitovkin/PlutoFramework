@@ -62,7 +62,7 @@ public partial class TopNavigationBar : ContentView
     }
     private async void OnBackClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
-        await Shell.Current.GoToAsync("..");
+        await Navigation.PopAsync();
     }
 
     private async void OnExtraClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
