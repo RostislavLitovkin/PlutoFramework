@@ -50,13 +50,6 @@ namespace PlutoFramework.Components.Sumsub
         .on(""idCheck.onStepCompleted"", (payload) => {
           console.log(""onStepCompleted"", payload);
         })
-        .on(""idCheck.onApplicantSubmitted"", () => {
-            console.log(""onApplicantSubmitted"");
-
-            // TODO: Invoke C#
-            window.hybridWebView.
-
-        })
         .on(""idCheck.onError"", (error) => {
           console.log(""onError"", error);
         })
@@ -68,18 +61,13 @@ namespace PlutoFramework.Components.Sumsub
     }
 
     function getNewAccessToken() {
-
-
-        // TODO: Invoke C#
-        
-
-        return Promise.resolve(""ahojky""); // get a new token from your backend
+      return Promise.resolve(""ahojky""); // get a new token from your backend
     }
 
     launchWebSdk(
-      """ + accessToken + @""",
-      """ + applicant.ApplicantIdentifiers.Email + @""",
-      """ + applicant.ApplicantIdentifiers.Phone + @"""
+        """ + accessToken + @""",
+        """ + applicant.ApplicantIdentifiers.Email + @""",
+        """ + applicant.ApplicantIdentifiers.Phone + @"""
     )
   </script>
 </body>
