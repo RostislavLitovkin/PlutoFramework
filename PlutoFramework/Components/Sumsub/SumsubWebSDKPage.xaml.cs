@@ -1,4 +1,5 @@
 using PlutoFramework.Model.Sumsub;
+using System.Web;
 
 namespace PlutoFramework.Components.Sumsub
 {
@@ -50,6 +51,10 @@ namespace PlutoFramework.Components.Sumsub
         .on(""idCheck.onStepCompleted"", (payload) => {
           console.log(""onStepCompleted"", payload);
         })
+        .on(""idCheck.onApplicantSubmitted"", (payload) => {
+            console.log(""onApplicantSubmitted"", payload);
+            window.location.href = ""/someRandomPageDoesntMatter?operation=completed"";
+        })
         .on(""idCheck.onError"", (error) => {
           console.log(""onError"", error);
         })
@@ -75,6 +80,20 @@ namespace PlutoFramework.Components.Sumsub
 </html>
                 "
             };
+        }
+
+        private async void OnNavigated(object sender, WebNavigatedEventArgs e)
+        {
+            Uri uri = new Uri(e.Url);
+            var queryParams = HttpUtility.ParseQueryString(uri.Query);
+
+            // Check if the 'registrationId' query parameter exists
+            string operation = queryParams.Get("operation");
+
+            if (operation == "completed")
+            {
+                await Navigation.PushAsync(new VerificationCompletedPage());
+            }
         }
     }
 }

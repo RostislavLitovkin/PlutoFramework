@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="150" fill="#E8F5E9"/>
+  
+  <!-- Checkmark -->
+  <path d="M180 200 L200 220 L240 180" stroke="#2E7D32" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <animate attributeName="stroke-dasharray" from="0,1000" to="200,1000" dur="1s" fill="freeze"/>
+  </path>
+  
+  <!-- Celebration stars -->
+  <g>
+    <!-- Star 1 -->
+    <path d="M120 140 L125 150 L135 150 L127 157 L130 167 L120 162 L110 167 L113 157 L105 150 L115 150 Z" fill="#FFD700">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Star 2 -->
+    <path d="M280 140 L285 150 L295 150 L287 157 L290 167 L280 162 L270 167 L273 157 L265 150 L275 150 Z" fill="#FFD700">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+    </path>
+    
+    <!-- Star 3 -->
+    <path d="M200 80 L205 90 L215 90 L207 97 L210 107 L200 102 L190 107 L193 97 L185 90 L195 90 Z" fill="#FFD700">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="1s"/>
+    </path>
+  </g>
+  
+  <!-- Text -->
+  <text x="200" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2E7D32">
+    Verification Complete!
+  </text>
+  
+  <!-- Circular progress/success indicator -->
+  <circle cx="200" cy="200" r="40" stroke="#2E7D32" stroke-width="4" fill="none">
+    <animate attributeName="stroke-dasharray" from="0,251.2" to="251.2,251.2" dur="1s" fill="freeze"/>
+  </circle>
+</svg>

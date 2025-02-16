@@ -146,6 +146,7 @@
 	  <None Remove="Resources\Images\imageloading.png" />
 	  <None Remove="Resources\Images\kodablack.svg" />
 	  <None Remove="Resources\Images\kodawhite.svg" />
+	  <None Remove="Resources\Images\kyccompleted.svg" />
 	  <None Remove="Resources\Images\linkedinblack.png" />
 	  <None Remove="Resources\Images\linkedinwhite.png" />
 	  <None Remove="Resources\Images\liquidityfinderblack.png" />
@@ -668,6 +669,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Sumsub\SumsubWebSDKPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Sumsub\VerificationCompletedPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Table\TableCurrencyCell.xaml">
