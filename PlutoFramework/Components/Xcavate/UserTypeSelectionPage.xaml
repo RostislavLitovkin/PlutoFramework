@@ -57,6 +57,10 @@
                     </AbsoluteLayout>
 
                 </card:ClickableCard.View>
+
+                <card:ClickableCard.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SelectDeveloperCommand}" />
+                </card:ClickableCard.GestureRecognizers>
             </card:ClickableCard>
             <card:ClickableCard Grid.Column="1"
                                 Grid.Row="1">

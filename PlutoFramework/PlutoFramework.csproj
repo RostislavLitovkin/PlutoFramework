@@ -506,6 +506,9 @@
 	  <MauiXaml Update="Components\Date\DateView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Error\BadInternetConnectionPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Events\EventItemView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -660,6 +663,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Subscan\OpenSubscanButton.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Sumsub\SumsubWebSDKPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Table\TableCurrencyCell.xaml">
@@ -826,7 +832,6 @@
 	  <Folder Include="Components\CalamarView\" />
 	  <Folder Include="Components\Staking\" />
 	  <Folder Include="Components\Switch\" />
-	  <Folder Include="Components\WebView\" />
 	  <Folder Include="Components\NavigationBar\" />
 	  <Folder Include="Resources\Images\PredefinedLayouts\" />
 	  <Folder Include="Components\AwesomeAjunaAvatars\" />

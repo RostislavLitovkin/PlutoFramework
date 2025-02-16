@@ -24,6 +24,7 @@ using PlutoFramework.Components.Password;
 using PlutoFramework.Model;
 using PlutoFramework.Components.Mnemonics;
 using PlutoFramework.ViewModel;
+using PlutoFramework.Components.Xcavate;
 
 namespace PlutoFramework;
 
@@ -103,7 +104,9 @@ public partial class App : Application
 
         DependencyService.Register<SuccessfulImportPopupViewModel>();
 
-        //MainPage = new UserTypeSelectionPage();
+        MainPage = new NavigationPage(new UserTypeSelectionPage());
+
+        return;
 
         if (Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY))
         {
