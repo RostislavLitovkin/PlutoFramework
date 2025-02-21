@@ -57,5 +57,17 @@ namespace PlutoFrameworkTests
 
             Console.WriteLine("Access token Result: " + result);
         }
+        [Test]
+        [TestCase("USER_1739731212")] // Verified user
+        [TestCase("USER_1739728710")] // Unverified user
+        [TestCase("USER_NONE")] // None existant user user
+        public async Task GetApplicantDataAsync(string externalUserId)
+        {
+            CancellationToken token = CancellationToken.None;
+
+            var result = await SumsubModel.GetApplicantDataAsync(externalUserId, token);
+        }
+
+
     }
 }

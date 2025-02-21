@@ -111,8 +111,7 @@
                            Source="xcavateloanevaluator.png" />
                             <Label Text="Loan Evaluator"
                                     FontAttributes="Bold"
-                                   
-                           HorizontalTextAlignment="Center"/>
+                                    HorizontalTextAlignment="Center"/>
                         </VerticalStackLayout>
                     </AbsoluteLayout>
 

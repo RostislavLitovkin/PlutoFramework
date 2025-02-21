@@ -13,6 +13,7 @@
     <ContentPage.BindingContext>
         <viewmodel:MnemonicsViewModel x:Name="viewModel" />
     </ContentPage.BindingContext>
+    
    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
         
         <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
@@ -31,8 +32,8 @@
                 <mnemonics:MnemonicsView Title="{Binding MnemonicsTitle}"
                                          Mnemonics="{Binding Mnemonics}" />
 
-                <buttons:ElevatedButton ButtonState="Enabled" Text="Export json" Command="{Binding ExportJsonCommand}"
-                                        x:Name="exportJsonButton"/>
+                <buttons:ElevatedButton ButtonState="{Binding ExportJsonButtonState}" Text="Export json" Command="{Binding ExportJsonCommand}"
+                                        x:Name="exportJsonButton" />
 
                 <buttons:ElevatedButton ButtonState="Enabled" Text="Use existing mnemonics" Command="{Binding GoToEnterMnemonicsCommand}" />
 

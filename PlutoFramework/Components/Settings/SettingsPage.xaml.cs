@@ -148,7 +148,7 @@ public partial class SettingsPage : ContentPage
     {
         if (!Preferences.ContainsKey(PreferencesModel.DID + "kilt1"))
         {
-            await Navigation.PushAsync(new NoDidPage());
+            await Navigation.PushAsync(new NoDidPage(new NoDidViewModel()));
 
             return;
         }

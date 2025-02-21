@@ -1,10 +1,9 @@
-﻿using PlutoFramework.ViewModel;
+namespace PlutoFramework.Components.Kilt;
 
-namespace PlutoFramework.View;
-
-public partial class EnterMnemonicsPage : ContentPage
+public partial class ImportDidPage : ContentPage
 {
-	public EnterMnemonicsPage(EnterMnemonicsViewModel viewModel)
+
+    public ImportDidPage(ImportDidViewModel viewModel)
 	{
         NavigationPage.SetHasNavigationBar(this, false);
         Shell.SetNavBarIsVisible(this, false);
@@ -12,5 +11,6 @@ public partial class EnterMnemonicsPage : ContentPage
         InitializeComponent();
 
         BindingContext = viewModel;
+
     }
 }

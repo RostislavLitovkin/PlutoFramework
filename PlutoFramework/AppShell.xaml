@@ -14,7 +14,5 @@
     </ShellContent>
     <ShellContent ContentTemplate="{DataTemplate xcavateproperty:XcavatePropertyMarketplacePage}" 
                   Route="NftMainPage">
-
     </ShellContent>
-
 </Shell>

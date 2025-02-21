@@ -57,7 +57,7 @@ namespace PlutoFramework.Model
             }
         }
 
-        public static async Task GenerateNewAccountAsync(string mnemonics, string password, string accountVariant = "")
+        public static async Task GenerateNewAccountAsync(string mnemonics, string? password, string accountVariant = "")
         {
             await RegisterBiometricAuthenticationAsync();
 
@@ -67,7 +67,7 @@ namespace PlutoFramework.Model
             {
                 Preferences.Set(
                      PreferencesModel.PUBLIC_KEY + accountVariant,
-                     $"did:kilt:{Utils.GetAddressFrom(Utils.GetPublicKeyFrom(account.Value), 38)}"
+                     account.ToDidAddress()
                 );
             }
             else
@@ -79,14 +79,17 @@ namespace PlutoFramework.Model
             }
 
             await SecureStorage.Default.SetAsync(
-                PreferencesModel.MNEMONICS + accountVariant,
+                 PreferencesModel.MNEMONICS + accountVariant,
                  mnemonics
             );
 
-            await SecureStorage.Default.SetAsync(
-                PreferencesModel.PASSWORD,
-                password
-            );
+            if (password is not null)
+            {
+                await SecureStorage.Default.SetAsync(
+                    PreferencesModel.PASSWORD,
+                    password
+                );
+            }
 
             Preferences.Set(PreferencesModel.PRIVATE_KEY_EXPAND_MODE + accountVariant, (int)DEFAULT_EXPAND_MODE);
 

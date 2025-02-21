@@ -23,7 +23,6 @@ using PlutoFramework.Components.TransactionAnalyzer;
 using PlutoFramework.Components.Password;
 using PlutoFramework.Model;
 using PlutoFramework.Components.Mnemonics;
-using PlutoFramework.ViewModel;
 using PlutoFramework.Components.Xcavate;
 
 namespace PlutoFramework;
@@ -104,7 +103,7 @@ public partial class App : Application
 
         DependencyService.Register<SuccessfulImportPopupViewModel>();
 
-        MainPage = new NavigationPage(new UserTypeSelectionPage());
+        MainPage = new OnboardingShell();
 
         return;
 

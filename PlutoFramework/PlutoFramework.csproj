@@ -127,10 +127,14 @@
 	  <None Remove="Resources\Images\collectionwhite.svg" />
 	  <None Remove="Resources\Images\copyblack.svg" />
 	  <None Remove="Resources\Images\copywhite.svg" />
+	  <None Remove="Resources\Images\createmnemonicsblack.svg" />
+	  <None Remove="Resources\Images\createmnemonicswhite.svg" />
 	  <None Remove="Resources\Images\dappblack.svg" />
 	  <None Remove="Resources\Images\dappwhite.svg" />
 	  <None Remove="Resources\Images\deviceblack.svg" />
 	  <None Remove="Resources\Images\devicewhite.svg" />
+	  <None Remove="Resources\Images\didcreate.svg" />
+	  <None Remove="Resources\Images\didimport.svg" />
 	  <None Remove="Resources\Images\discordblack.svg" />
 	  <None Remove="Resources\Images\discordwhite.svg" />
 	  <None Remove="Resources\Images\expandblack.svg" />
@@ -144,6 +148,8 @@
 	  <None Remove="Resources\Images\hotblack.svg" />
 	  <None Remove="Resources\Images\hotwhite.svg" />
 	  <None Remove="Resources\Images\imageloading.png" />
+	  <None Remove="Resources\Images\importmnemonicsblack.svg" />
+	  <None Remove="Resources\Images\importmnemonicswhite.svg" />
 	  <None Remove="Resources\Images\kodablack.svg" />
 	  <None Remove="Resources\Images\kodawhite.svg" />
 	  <None Remove="Resources\Images\kyccompleted.svg" />
@@ -154,6 +160,8 @@
 	  <None Remove="Resources\Images\moredotsgray.svg" />
 	  <None Remove="Resources\Images\NetworkIcons\hydration.svg" />
 	  <None Remove="Resources\Images\NetworkIcons\kilt.png" />
+	  <None Remove="Resources\Images\NetworkIcons\kiltblack.svg" />
+	  <None Remove="Resources\Images\NetworkIcons\kiltwhite.svg" />
 	  <None Remove="Resources\Images\NetworkIcons\kusamaassethub.svg" />
 	  <None Remove="Resources\Images\NetworkIcons\mythos.png" />
 	  <None Remove="Resources\Images\NetworkIcons\polkadotassethub.svg" />
@@ -548,6 +556,9 @@
 	  <MauiXaml Update="Components\Form\FormWideValueView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Kilt\CreateNewDidPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Kilt\DidExplanationPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -560,6 +571,9 @@
 	  <MauiXaml Update="Components\Kilt\DidView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Kilt\ImportDidPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Kilt\MainDidView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -567,6 +581,12 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Koda\OpenKodaButton.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Mnemonics\CreateMnemonicsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Mnemonics\NoMnemonicsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Mnemonics\MnemonicsView.xaml">
@@ -740,6 +760,9 @@
 	  <MauiXaml Update="Components\Xcavate\ModifyUserProfilePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Xcavate\OnboardingShell.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Xcavate\TeamMemberView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -756,6 +779,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Xcavate\VerificationBadgeView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Xcavate\WelcomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\MainPage.xaml">
@@ -869,6 +895,9 @@
 	  </Compile>
 	  <Compile Update="Components\Extrinsic\CallParametersView.xaml.cs">
 	    <DependentUpon>CallParametersView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Components\Mnemonics\NoMnemonicsPage.xaml.cs">
+	    <DependentUpon>NoMnemonicsPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Components\Nft\CollectionStatsView.xaml.cs">
 	    <DependentUpon>CollectionStatsView.xaml</DependentUpon>
