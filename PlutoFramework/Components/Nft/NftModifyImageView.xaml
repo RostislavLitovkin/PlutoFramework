@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Nft.NftModifyImageView"
+             x:Name="thisNftModifyImageView">
+    <Border Padding="0"
+        HeightRequest="{Binding Source={x:Reference border}, Path=Width}"
+        x:Name="border"
+        Grid.Column="0"
+        StrokeThickness="0"
+        Stroke="{AppThemeBinding Light=White, Dark=Black}"
+        BackgroundColor="Black">
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="20" />
+
+        </Border.StrokeShape>
+        <Border.Shadow>
+            <Shadow Brush="Black"
+                    Offset="0,2" 
+                    Radius="20"
+                    Opacity="0.1" />
+
+        </Border.Shadow>
+
+        <AbsoluteLayout>
+            <AbsoluteLayout BackgroundColor="Gray"
+                            AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                            AbsoluteLayout.LayoutFlags="All"
+                            x:Name="addImageView"
+                            IsVisible="True">
+                <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 40, 40"
+                       AbsoluteLayout.LayoutFlags="PositionProportional">
+                    <Image.Source>
+                        <FontImageSource Color="Black"
+                                         Glyph="&#xf030;"
+                                         FontFamily="FontAwesome"
+                                         Size="20" />
+                    </Image.Source>
+                </Image>
+
+                <AbsoluteLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding AddImageCommand}" />
+                </AbsoluteLayout.GestureRecognizers>
+            </AbsoluteLayout>
+
+            <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                   AbsoluteLayout.LayoutFlags="All"
+                   x:Name="image" Aspect="AspectFill"
+                   IsVisible="False" />
+
+            <AbsoluteLayout BackgroundColor="#88888888"
+                            AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                            AbsoluteLayout.LayoutFlags="All"
+                            IsVisible="False"
+                            x:Name="removeImageView">
+                <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 40, 40"
+                       AbsoluteLayout.LayoutFlags="PositionProportional">
+                    <Image.Source>
+                        <FontImageSource Color="{StaticResource DangerousRed}"
+                                         Glyph="&#xf014;"
+                                         FontFamily="FontAwesome"
+                                         Size="20" />
+                    </Image.Source>
+                </Image>
+
+                <AbsoluteLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RemoveImageCommand}" CommandParameter="{x:Reference thisNftModifyImageView}" />
+                </AbsoluteLayout.GestureRecognizers>
+            </AbsoluteLayout>
+        </AbsoluteLayout>
+    </Border>
+</ContentView>

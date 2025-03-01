@@ -46,7 +46,7 @@
     },
     {
       "name": "XcavatePaseo",
-      "websocket": "wss://fraa-dancebox-3107-rpc.a.dancebox.tanssi.network/"
+      "websocket": "wss://rpc2-paseo.xcavate.io/"
     },
     {
       "name": "Kilt",

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.XcavateProperty.ModifyPropertyPage"
+             Title="ModifyPropertyPage"
+             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+             xmlns:form="clr-namespace:PlutoFramework.Components.Form"
+             xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
+            xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+         xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
+         xmlns:password="clr-namespace:PlutoFramework.Components.Password"
+         BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
+    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+
+        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+           Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
+           Opacity="{AppThemeBinding Light=0.96}"
+           Aspect="AspectFill"/>
+
+        <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+            <VerticalStackLayout Margin="0, 45, 0, 0"
+                Spacing="15"
+                Padding="20, 20, 20, 200">
+
+                <nft:NftModifyMultiImageView ImageSources="{Binding ImageSources}" />
+
+                <form:FormInputView Text="{Binding Metadata.PropertyName}"
+                                    Placeholder="Property name"
+                                    UpdateCommand="{Binding FormChangedCommand}"/>
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 80"
+        AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
+
+            <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 50"
+                  AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                  ColumnSpacing="15"
+                  Margin="20, 0, 20, 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <buttons:BasicGrayButton Text="Cancel"
+                                 Command="{Binding CancelCommand}"
+                                 Grid.Column="0" />
+
+                <buttons:ElevatedButton Text="Submit"
+                                Grid.Column="1"
+                                Command="{Binding SubmitCommand}"
+                                ButtonState="{Binding SubmitButtonState}"/>
+
+            </Grid>
+        </AbsoluteLayout>
+        
+        <navigationbar:TopNavigationBar Title="{Binding Title}"
+                                        ExtraIsVisible="{Binding CanBeDeleted}"
+                                        ExtraTitle="Delete"
+                                        ExtraCommand="{Binding DeleteCommand}"/>
+
+        <txanalyzer:TransactionAnalyzerConfirmationView />
+
+        <password:EnterPasswordPopupView />
+    </AbsoluteLayout>
+</ContentPage>

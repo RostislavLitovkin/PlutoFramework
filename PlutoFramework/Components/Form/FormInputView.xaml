@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:card="clr-namespace:PlutoFramework.Components.Card"
              x:Class="PlutoFramework.Components.Form.FormInputView"
+             HorizontalOptions="Fill"
              HeightRequest="40">
     <card:Card HeightRequest="40"
                x:Name="card"
@@ -11,13 +12,14 @@
         <card:Card.View>
 
             <Entry x:Name="entry"
-                       Grid.Column="0"
-                        Keyboard="Text"
-                        HeightRequest="40"
-                        FontAttributes="Bold"
-                        IsSpellCheckEnabled="false"
-                        IsTextPredictionEnabled="false"
-                     PropertyChanged="OnPropertyChanged"
+                   HorizontalOptions="Fill"
+                    Grid.Column="0"
+                    Keyboard="Text"
+                    HeightRequest="40"
+                    FontAttributes="Bold"
+                    IsSpellCheckEnabled="false"
+                    IsTextPredictionEnabled="false"
+                   PropertyChanged="OnPropertyChanged"
                    Unfocused="OnUnfocused"
                    Focused="OnFocused"/>
         </card:Card.View>

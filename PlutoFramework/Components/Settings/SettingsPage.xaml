@@ -55,6 +55,13 @@
 
                 </settings:GenericButton>
 
+                <settings:GenericButton Title="Create new property">
+                    <settings:GenericButton.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCreateNewPropertyClicked" />
+                    </settings:GenericButton.GestureRecognizers>
+
+                </settings:GenericButton>
+                
                 <settings:GenericButton Title="Mock property">
                     <settings:GenericButton.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnPropertyClicked" />

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PlutoFramework.Components.Nft.NftMultiImageView"
-             xmlns:nft="clr-namespace:PlutoFramework.Components.Nft">
+             xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
+             x:Class="PlutoFramework.Components.Nft.NftModifyMultiImageView">
     <VerticalStackLayout Spacing="10">
-        <nft:NftImageView x:Name="mainImage" />
+        <nft:NftModifyImageView x:Name="mainImage" />
 
         <HorizontalStackLayout Spacing="10"
                                x:Name="imagesStackLayout">
-            
+
         </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentView>

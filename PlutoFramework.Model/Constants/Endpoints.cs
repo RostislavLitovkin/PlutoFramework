@@ -1,5 +1,4 @@
-﻿using Amazon.Runtime.Internal.Transform;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 
 namespace PlutoFramework.Constants
 {
@@ -433,7 +432,7 @@ namespace PlutoFramework.Constants
                 {
                     Name = "Xcavate Paseo",
                     Key = EndpointEnum.XcavatePaseo,
-                    URLs =  new string[1] { "wss://fraa-dancebox-3107-rpc.a.dancebox.tanssi.network/" },
+                    URLs =  new string[1] { "wss://rpc2-paseo.xcavate.io/" },
                     Icon = "xcavate.png",
                     DarkIcon = "xcavate.png",
                     Unit = "XCAV",

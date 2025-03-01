@@ -103,10 +103,6 @@ public partial class App : Application
 
         DependencyService.Register<SuccessfulImportPopupViewModel>();
 
-        MainPage = new OnboardingShell();
-
-        return;
-
         if (Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY))
         {
             // Set Account type if it did not exist
@@ -127,7 +123,7 @@ public partial class App : Application
             SecureStorage.Default.Remove(PreferencesModel.PASSWORD);
             Preferences.Remove(PreferencesModel.BIOMETRICS_ENABLED);
 
-            MainPage = new SetupPasswordPage();
+            MainPage = new OnboardingShell();
         }
     }
 }
