@@ -82,7 +82,7 @@
                 </card:ClickableCard.View>
 
                 <card:ClickableCard.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding CreateDidCommand}" />
+                    <TapGestureRecognizer Command="{Binding ImportDidCommand}" />
                 </card:ClickableCard.GestureRecognizers>
             </card:ClickableCard>
         </Grid>
