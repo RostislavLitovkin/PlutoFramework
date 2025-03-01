@@ -24,6 +24,7 @@ using PlutoFramework.Components.Password;
 using PlutoFramework.Model;
 using PlutoFramework.Components.Mnemonics;
 using PlutoFramework.Components.Xcavate;
+using PlutoFramework.Components.XcavateProperty;
 
 namespace PlutoFramework;
 
@@ -102,6 +103,8 @@ public partial class App : Application
         DependencyService.Register<EnterPasswordPopupViewModel>();
 
         DependencyService.Register<SuccessfulImportPopupViewModel>();
+
+        DependencyService.Register<BuyPropertyTokensViewModel>();  
 
         if (Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY))
         {

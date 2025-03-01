@@ -466,7 +466,7 @@
 	  <MauiXaml Update="Components\000ComponentTemplate\NewPageTemplate.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Components\000ComponentTemplate\TemplateView.xaml">
+	  <MauiXaml Update="Components\000ComponentTemplate\NewPopupViewTemplate.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\AddressView\AddressQrCodeView.xaml">
@@ -724,7 +724,7 @@
 	  <MauiXaml Update="Components\Unique\OpenUniqueButton.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Components\XcavateProperty\BuyPropertyView.xaml">
+	  <MauiXaml Update="Components\XcavateProperty\BuyPropertyTokensView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\XcavateProperty\CompanyThumbnailView.xaml">
