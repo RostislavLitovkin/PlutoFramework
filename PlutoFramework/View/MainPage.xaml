@@ -61,9 +61,6 @@
             </Image.GestureRecognizers>
         </Image>
 
-
-        <addressview:AddressQrCodeView />
-
         <connectionrequestview:ConnectionRequestView />
 
         <vault:VaultSignView />
@@ -77,6 +74,8 @@
         <messagepopup:MessagePopupView />
 
         <navigationbar:NavigationBarView SelectedOption="Home"/>
+
+        <addressview:AddressQrCodeView />
 
         <transferview:TransferView />
 
