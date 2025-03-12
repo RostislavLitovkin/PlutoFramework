@@ -1,5 +1,4 @@
-﻿using PlutoFramework.Components.ArgumentsView;
-using PlutoFramework.Components.ConnectionRequestView;
+﻿using PlutoFramework.Components.ConnectionRequestView;
 using PlutoFramework.Components.MessagePopup;
 using PlutoFramework.Components.NetworkSelect;
 using PlutoFramework.Components.TransactionRequest;
@@ -9,10 +8,8 @@ using PlutoFramework.Components.AddressView;
 using PlutoFramework.Components.CalamarView;
 using PlutoFramework.Components.Extrinsic;
 using PlutoFramework.View;
-using PlutoFramework.ViewModel;
 using PlutoFramework.Components.Staking;
 using PlutoFramework.Components.CustomLayouts;
-using PlutoFramework.Components.ConfirmTransaction;
 using PlutoFramework.Components.AzeroId;
 using PlutoFramework.Components.AssetSelect;
 using PlutoFramework.Components.Nft;
@@ -23,6 +20,10 @@ using PlutoFramework.Components.Fee;
 using PlutoFramework.Components.VTokens;
 using PlutoFramework.Components.Xcm;
 using PlutoFramework.Components.TransactionAnalyzer;
+using PlutoFramework.Components.Password;
+using PlutoFramework.Model;
+using PlutoFramework.Components.Mnemonics;
+using PlutoFramework.ViewModel;
 
 namespace PlutoFramework;
 
@@ -32,8 +33,6 @@ public partial class App : Application
     {
         InitializeComponent();
 
-        DependencyService.Register<MainViewModel>();
-
         DependencyService.Register<TransferViewModel>();
 
         DependencyService.Register<ConnectionRequestViewModel>();
@@ -41,8 +40,6 @@ public partial class App : Application
         DependencyService.Register<MessagePopupViewModel>();
 
         DependencyService.Register<TransactionRequestViewModel>();
-
-        DependencyService.Register<ArgumentsViewModel>();
 
         DependencyService.Register<AddressQrCodeViewModel>();
 
@@ -54,8 +51,6 @@ public partial class App : Application
 
         DependencyService.Register<ChainAddressViewModel>();
 
-        DependencyService.Register<BasePageViewModel>();
-
         DependencyService.Register<StakingDashboardViewModel>();
 
         DependencyService.Register<CalamarViewModel>();
@@ -65,8 +60,6 @@ public partial class App : Application
         DependencyService.Register<ExportPlutoLayoutQRViewModel>();
 
         DependencyService.Register<CustomItemViewModel>();
-
-        DependencyService.Register<ConfirmTransactionViewModel>();
 
         DependencyService.Register<MessageSignRequestViewModel>();
 
@@ -106,17 +99,32 @@ public partial class App : Application
 
         DependencyService.Register<NestNftSelectViewModel>();
 
-        if (Preferences.ContainsKey("publicKey"))
+        DependencyService.Register<EnterPasswordPopupViewModel>();
+
+        DependencyService.Register<SuccessfulImportPopupViewModel>();
+
+        //MainPage = new UserTypeSelectionPage();
+
+        if (Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY))
         {
+            // Set Account type if it did not exist
+            if (!Preferences.ContainsKey(PreferencesModel.ACCOUNT_TYPE))
+            {
+                Preferences.Set(
+                    PreferencesModel.ACCOUNT_TYPE,
+                    (Preferences.Get(PreferencesModel.USE_PRIVATE_KEY, false) ? AccountType.PrivateKey : AccountType.Mnemonic).ToString()
+                );
+            };
+
             MainPage = new AppShell();
         }
         else
         {
-            Preferences.Remove("publicKey");
-            SecureStorage.Default.Remove("privateKey");
-            SecureStorage.Default.Remove("mnemonics");
-            SecureStorage.Default.Remove("password");
-            Preferences.Remove("biometricsEnabled");
+            KeysModel.RemoveAccount();
+
+            SecureStorage.Default.Remove(PreferencesModel.PASSWORD);
+            Preferences.Remove(PreferencesModel.BIOMETRICS_ENABLED);
+
             MainPage = new SetupPasswordPage();
         }
     }

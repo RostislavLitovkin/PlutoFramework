@@ -9,6 +9,7 @@
         Opal,
 
         Mythos,
+        XcavatePaseo,
         // Other types?
     }
 }

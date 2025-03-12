@@ -2,8 +2,8 @@ namespace PlutoFramework.Components.Nft;
 
 public partial class NftAttributeView : ContentView
 {
-    public static readonly BindableProperty NameProperty = BindableProperty.Create(
-        nameof(Name), typeof(string), typeof(NftAttributeView),
+    public static readonly BindableProperty AttributeNameProperty = BindableProperty.Create(
+        nameof(AttributeName), typeof(string), typeof(NftAttributeView),
         defaultBindingMode: BindingMode.TwoWay,
         propertyChanging: (bindable, oldValue, newValue) =>
         {
@@ -21,20 +21,35 @@ public partial class NftAttributeView : ContentView
 
             control.attributeValueLabel.Text = (string)newValue;
         });
+
+    public static readonly BindableProperty CardBackgroundColorProperty = BindableProperty.Create(
+        nameof(CardBackgroundColor), typeof(Color), typeof(NftAttributeView),
+        propertyChanging: (bindable, oldValue, newValue) =>
+        {
+            var control = (NftAttributeView)bindable;
+
+            control.border.BackgroundColor = (Color)newValue;
+        });
     public NftAttributeView()
     {
         InitializeComponent();
     }
 
-    public string Name
+    public string AttributeName
     {
-        get => (string)GetValue(NameProperty);
-        set => SetValue(NameProperty, value);
+        get => (string)GetValue(AttributeNameProperty);
+        set => SetValue(AttributeNameProperty, value);
     }
 
     public string Value
     {
         get => (string)GetValue(ValueProperty);
         set => SetValue(ValueProperty, value);
+    }
+
+    public Color CardBackgroundColor
+    {
+        get => (Color)GetValue(CardBackgroundColorProperty);
+        set => SetValue(CardBackgroundColorProperty, value);
     }
 }

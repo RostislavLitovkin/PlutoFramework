@@ -12,16 +12,16 @@
          xmlns:addressview="clr-namespace:PlutoFramework.Components.AddressView"
          xmlns:staking="clr-namespace:PlutoFramework.Components.Staking"
          xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-         xmlns:confirmtransaction="clr-namespace:PlutoFramework.Components.ConfirmTransaction"
+         xmlns:password="clr-namespace:PlutoFramework.Components.Password"
          xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
          xmlns:vault="clr-namespace:PlutoFramework.Components.Vault"
          xmlns:changelayoutrequest="clr-namespace:PlutoFramework.Components.ChangeLayoutRequest"
-         BackgroundColor="Black">
+         BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
 
     <AbsoluteLayout
                 AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
         <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-           Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground2.png}" Opacity="{AppThemeBinding Light=0.96}" Aspect="AspectFill"/>
+           Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}" Opacity="{AppThemeBinding Light=0.96}" Aspect="AspectFill"/>
         <ScrollView
                     AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
                     IsEnabled="{Binding scrollIsEnabled}">
@@ -34,7 +34,7 @@
             </VerticalStackLayout>
         </ScrollView>
 
-        <networkselect:MultiNetworkSelectView />
+        <networkselect:MultiNetworkSelectView x:Name="networksView" />
 
         <!--QR code button-->
         <Image WidthRequest="36" Margin="10, 10, 10, 10"
@@ -61,9 +61,6 @@
             </Image.GestureRecognizers>
         </Image>
 
-
-        <addressview:AddressQrCodeView />
-
         <connectionrequestview:ConnectionRequestView />
 
         <vault:VaultSignView />
@@ -78,6 +75,8 @@
 
         <navigationbar:NavigationBarView SelectedOption="Home"/>
 
+        <addressview:AddressQrCodeView />
+
         <transferview:TransferView />
 
         <assetselect:AssetSelectView />
@@ -88,7 +87,9 @@
 
         <txanalyzer:TransactionAnalyzerConfirmationView />
 
-        <confirmtransaction:ConfirmTransactionView />
+        <password:EnterPasswordPopupView />
+        
+        
 
     </AbsoluteLayout>
 </ContentPage>

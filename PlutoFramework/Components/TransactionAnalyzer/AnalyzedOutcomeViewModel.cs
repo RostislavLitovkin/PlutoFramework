@@ -57,6 +57,8 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                         _ => Colors.Gray,
                     },
                     ChainIcon = Application.Current.UserAppTheme != AppTheme.Dark ? a.ChainIcon : a.DarkChainIcon,
+                    IsFrozen = false,
+                    IsReserved = false,
                 });
 
             }
@@ -86,7 +88,8 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                     Favourite = nft.Favourite,
                     Price = new AssetInfoExpanded
                     {
-
+                        IsReserved = false,
+                        IsFrozen = false,
                         Amount = nft.AssetPrice.Amount switch
                         {
                             > 0 => "+" + String.Format("{0:0.00}", nft.AssetPrice.Amount),
@@ -122,7 +125,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
         }
     }
 
-    public class AssetInfoExpanded : AssetInfo
+    public record AssetInfoExpanded : AssetInfo
     {
         public Color UsdColor { get; set; }
     }

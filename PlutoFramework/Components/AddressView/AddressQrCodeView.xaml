@@ -13,53 +13,46 @@
         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
     </ContentView.GestureRecognizers>
     
-    <card:Card IsPopup="True">
-        <card:Card.View>
-            <AbsoluteLayout>
-                <VerticalStackLayout>
-
-                    <Label
-                    FontAttributes="Bold"
-                    Text="Address"
-                    HeightRequest="30"
-                    HorizontalOptions="Center" />
-
-                    <zxing:BarcodeGeneratorView Format="QrCode"
+    <card:BottomPopupCard Title="Address">
+        <card:BottomPopupCard.View>
+            <VerticalStackLayout>
+                <zxing:BarcodeGeneratorView Format="QrCode"
                                             ForegroundColor="Black"
                                             WidthRequest="200"
                                              HeightRequest="200"
                                              BackgroundColor="White"
+                                             HorizontalOptions="Center"
                                              Value="{Binding QrAddress}"/>
 
-                    <Border 
-                        WidthRequest="210"
+                <Border 
+                        HorizontalOptions="Center"
                         StrokeThickness="0"
                         BackgroundColor="{AppThemeBinding Light=#fdfdfd, Dark=#0a0a0a}"
                         Padding="10, 5, 10, 5"
                         Margin="0, 10, 0, 0">
-                        <Border.Shadow>
-                            <Shadow Brush="Black"
+                    <Border.Shadow>
+                        <Shadow Brush="Black"
                                     Offset="0,2" 
                                     Radius="3"
                                     Opacity="0.1" />
 
-                        </Border.Shadow>
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="15" />
+                    </Border.Shadow>
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="15" />
 
-                        </Border.StrokeShape>
+                    </Border.StrokeShape>
 
-                        <Border.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnCopyAddressClicked" />
-                        </Border.GestureRecognizers>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCopyAddressClicked" />
+                    </Border.GestureRecognizers>
 
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="155"/>
-                                <ColumnDefinition Width="35" />
-                            </Grid.ColumnDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="155"/>
+                            <ColumnDefinition Width="35" />
+                        </Grid.ColumnDefinitions>
 
-                            <Label Text="{Binding Address}"
+                        <Label Text="{Binding Address}"
                                FontSize="10"
                                Grid.Column="0"
                                    Margin="5, 0, 0, 0"
@@ -68,29 +61,17 @@
                                    FontAttributes="Bold"
                                FontFamily="SourceCode"/>
 
-                            <Image Source="{AppThemeBinding Dark=copywhite.png, Light=copyblack.png}"
+                        <Image Source="{AppThemeBinding Dark=copywhite.png, Light=copyblack.png}"
                                Grid.Column="1"
                                HeightRequest="20"
                                WidthRequest="20"
                                Margin="10, 0, 5, 0"
                                    x:Name="copyImage"/>
 
-                        </Grid>
+                    </Grid>
 
-                    </Border>
-                </VerticalStackLayout>
-
-                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0, 0, 40, 40">
-                    <Image AbsoluteLayout.LayoutBounds="0, 0, 20, 20"
-                   Source="{AppThemeBinding Light=arrowbackblack.png, Dark=backwhite.png }" />
-
-                    <AbsoluteLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnBackClicked" />
-
-                    </AbsoluteLayout.GestureRecognizers>
-
-                </AbsoluteLayout>
-            </AbsoluteLayout>
-        </card:Card.View>
-    </card:Card>
+                </Border>
+            </VerticalStackLayout>
+        </card:BottomPopupCard.View>
+    </card:BottomPopupCard>
 </ContentView>

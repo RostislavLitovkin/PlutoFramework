@@ -2,14 +2,13 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.Nft.NftImageView">
-    <Border
-        Padding="0"
-        HeightRequest="{Binding Source={x:Reference border}, Path=Width}"
-        x:Name="border"
-        Grid.Column="0"
-        StrokeThickness="0"
+    <Border Padding="0"
+            HeightRequest="{Binding Source={x:Reference border}, Path=Width}"
+            x:Name="border"
+            Grid.Column="0"
+            StrokeThickness="0"
             Stroke="{AppThemeBinding Light=White, Dark=Black}"
-        BackgroundColor="Black">
+            BackgroundColor="Black">
         <Border.StrokeShape>
             <RoundRectangle CornerRadius="20" />
 
@@ -29,6 +28,7 @@
                     StrokeThickness="0"
                     AbsoluteLayout.LayoutBounds="1, 1, 90, 50"
                     AbsoluteLayout.LayoutFlags="PositionProportional"
+                    x:Name="extraButtonsBorder"
                     >
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="20, 0, 0, 20" />
@@ -40,6 +40,7 @@
                                HeightRequest="20"
                                WidthRequest="20"
                                Margin="10"
+                               x:Name="downloadButton"
                                >
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="OnDownloadClicked"/>

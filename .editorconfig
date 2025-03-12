@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS1570: XML comment has badly formed XML
+dotnet_diagnostic.CS1570.severity = none

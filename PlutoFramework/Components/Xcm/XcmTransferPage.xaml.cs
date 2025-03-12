@@ -9,8 +9,8 @@ namespace PlutoFramework.Components.Xcm;
 
 public partial class XcmTransferPage : ContentPage
 {
-	public XcmTransferPage()
-	{
+    public XcmTransferPage()
+    {
         NavigationPage.SetHasNavigationBar(this, false);
         Shell.SetNavBarIsVisible(this, false);
 
@@ -19,7 +19,7 @@ public partial class XcmTransferPage : ContentPage
         BindingContext = viewModel;
 
         InitializeComponent();
-	}
+    }
 
     async void OnSignAndTransferClicked(System.Object sender, System.EventArgs e)
     {
@@ -56,22 +56,14 @@ public partial class XcmTransferPage : ContentPage
                  (BigInteger)viewModel.Amount
             );
 
-            Console.WriteLine(Utils.Bytes2HexString(transferMethod.Encode()).ToLower());
+            var account = await KeysModel.GetAccountAsync();
 
-            // 0x630903000100a10f03000101006a4e76d530fa715a95388b889ad33c1665062c3dec9bf0aca3a9e4ff45781e480304000000000700743ba40b0000000000
-            // 0x630903000100a10f03000101006a4e76d530fa715a95388b889ad33c1665062c3dec9bf0aca3a9e4ff45781e480304000000000700743ba40b0000000000
-
-            if ((await KeysModel.GetAccount()).IsSome(out var account))
+            if (account is null)
             {
-                string extrinsicId = await clientExt.SubmitExtrinsicAsync(transferMethod, account, token: CancellationToken.None);
-
-
-                Console.WriteLine("Extrinsic ID: " + extrinsicId);
+                return;
             }
-            else
-            {
-                // Verification failed, do something about it
-            }
+
+            string extrinsicId = await clientExt.SubmitExtrinsicAsync(transferMethod, account, token: CancellationToken.None);
         }
         catch (Exception ex)
         {

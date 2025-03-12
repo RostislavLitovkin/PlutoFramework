@@ -20,7 +20,7 @@ namespace PlutoFrameworkTests
         [Test]
         public async Task GetAccount()
         {
-            Account account = MnemonicsModel.GetAccount("flight rent steel toddler casino party exact duck square segment charge swap");
+            Account account = MnemonicsModel.GetAccountFromMnemonics("flight rent steel toddler casino party exact duck square segment charge swap");
 
             string addressFromPolkadotJs = "5CDYtN4QFWUNtRkoAKB5oSGBCpbMJXEjNDAtQYyqAVmCadYQ";
             Assert.That(account.Value == addressFromPolkadotJs);
@@ -29,7 +29,7 @@ namespace PlutoFrameworkTests
         [Test]
         public async Task GetAlice()
         {
-            Account account = MnemonicsModel.GetAccount("//Alice");
+            Account account = MnemonicsModel.GetAccountFromMnemonics("//Alice");
 
             string addressFromPolkadotJs = "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY";
             Assert.That(account.Value == addressFromPolkadotJs);

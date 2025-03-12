@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Xcavate.CompanyPage"
+             xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
+             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+             xmlns:form="clr-namespace:PlutoFramework.Components.Form"
+             xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
+    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+        <CollectionView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                ItemSizingStrategy="MeasureAllItems"
+                ItemsSource="{Binding Items}"
+                RemainingItemsThreshold="1"
+                RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}">
+            <CollectionView.Header>
+                <VerticalStackLayout Margin="0, 45, 0, 0"
+                     Spacing="15"
+                     Padding="20, 20, 20, 5">
+
+                    <form:FormWideValueView Title="Company name"
+                        Value="{Binding CompanyName}"/>
+
+                    <form:FormWideValueView Title="Registration number"
+                        Value="{Binding RegistrationNumber}"/>
+
+                    <form:FormWideValueView Title="Phone number"
+                        Value="{Binding PhoneNumber}"/>
+
+                    <form:FormWideValueView Title="Email"
+                         Value="{Binding Email}"/>
+
+                    <form:FormLargeValueView Title="Address"
+                         Value="{Binding Address}"/>
+
+                    <form:FormWideValueView Title="Associated website"
+                        Value="{Binding Website}"/>
+
+                    <form:FormWideValueView Title="Associated membership number"
+                        Value="{Binding AssociatedMembershipNumber}"/>
+
+                    <xcavate:DocumentVerificationView Title="Passport/Drivers license"
+                                      Value="{Binding PassportOrDriversLicenseVerified}"
+                                      ViewCommand="{Binding ViewDocumentCommand}"/>
+
+                    <Line Stroke="#888888" X2="{Binding Width, Source={RelativeSource Self}}" HorizontalOptions="Fill" StrokeThickness="1" />
+
+                    <Label FontAttributes="Bold"
+                           Text="Team members"
+                           HorizontalTextAlignment="Start" />
+
+                </VerticalStackLayout>
+            </CollectionView.Header>
+            <CollectionView.Footer>
+                <StackLayout HeightRequest="200">
+                    <customlayouts:LoadingItemView HeightRequest="80" 
+                                           Margin="20, 0, 20, 0"
+                                            IsVisible="{Binding Loading}"/>
+                    <customlayouts:TransparentItemView Text="No team members"
+                                                       HeightRequest="70"
+                                               Margin="20, 0, 20, 0"
+                                               IsVisible="{Binding NoItems}" />
+                </StackLayout>
+            </CollectionView.Footer>
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" 
+                                   ItemSpacing="0"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <xcavate:TeamMemberView Padding="20, 5, 20, 10"
+                                            User="{Binding .}"/>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <navigationbar:TopNavigationBar Title="Company"
+                                        ExtraTitle="Edit"
+                                        ExtraCommand="{Binding EditCommand}" />
+    </AbsoluteLayout>
+</ContentPage>

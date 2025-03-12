@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             x:Class="PlutoFramework.Components.Kilt.DidView"
+             HeightRequest="40">
+
+    <card:Card IsThin="True"
+           AbsoluteLayout.LayoutBounds="0, .5, 1, 40"
+           AbsoluteLayout.LayoutFlags="YProportional, WidthProportional">
+        <card:Card.View>
+
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                        x:Name="absoluteLayout">
+                <Grid AbsoluteLayout.LayoutBounds="0, .5, 1, 40"
+                  AbsoluteLayout.LayoutFlags="YProportional, WidthProportional">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="40" />
+                    </Grid.ColumnDefinitions>
+
+                    <HorizontalStackLayout>
+                        <Image Source="kilt.png"
+                                 WidthRequest="20"
+                                 HeightRequest="20"
+                                 VerticalOptions="Center" 
+                                 HorizontalOptions="End"
+                                 Margin="0, 0, 5, 0"/>
+                        <Label Text="Kilt DID"
+                               VerticalOptions="Center" 
+                               HorizontalOptions="End"
+                               FontAttributes="Bold">
+                            
+                        </Label>
+                        
+                    </HorizontalStackLayout>
+
+
+                    <Label x:Name="addressLabel"
+                           VerticalOptions="Center" 
+                           HorizontalOptions="FillAndExpand"
+                           Grid.Column="1"
+                           TextColor="{AppThemeBinding Dark=#fdfdfd, Light=#0a0a0a}"
+                           FontAttributes="Bold"
+                           LineBreakMode="TailTruncation"
+                           FontFamily="SourceCode"
+                           Text="None">
+
+                    </Label>
+
+                    <Image WidthRequest="20"
+                           Margin="5, 0, 0, 0"
+                           VerticalOptions="Center" 
+                           HorizontalOptions="End"
+                           Grid.Column="2"
+                           x:Name="verificationImage"
+                           IsVisible="False"
+                           Source="{AppThemeBinding Dark=featherwhite.png, Light=featherblack.png}">
+                    </Image>
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTapped"/>
+
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </AbsoluteLayout>
+        </card:Card.View>
+
+    </card:Card>
+</ContentView>

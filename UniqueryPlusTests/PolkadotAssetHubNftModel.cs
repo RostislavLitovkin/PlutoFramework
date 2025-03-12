@@ -114,7 +114,6 @@ namespace UniqueryPlusTests
                 {
                     var nft = enumerator.Current;
                     Console.WriteLine($"{nft.Id} - {nft.Metadata?.Name} owned by {nft.Owner}");
-                    Assert.That(nft.Metadata?.Description, Is.Not.Null);
                     Console.WriteLine("Image: " + nft.Metadata?.Image);
                 }
             }

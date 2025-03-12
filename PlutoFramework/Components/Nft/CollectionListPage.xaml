@@ -9,14 +9,14 @@
              xmlns:koda="clr-namespace:PlutoFramework.Components.Koda"
              xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
              xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
-             xmlns:confirmtransaction="clr-namespace:PlutoFramework.Components.ConfirmTransaction"
              xmlns:model="clr-namespace:PlutoFramework.Model;assembly=PlutoFramework.Model"
+             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
              xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
-             BackgroundColor="Black">
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
         <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-           Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground2.png}"
+           Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
            Opacity="{AppThemeBinding Light=0.96}"
            Aspect="AspectFill"/>
 
@@ -37,6 +37,7 @@
                                                    Margin="20, 0, 20, 0"
                                                     IsVisible="{Binding Loading}"/>
                     <customlayouts:TransparentItemView Text="No Collections"
+                                                       HeightRequest="80" 
                                                         IsVisible="{Binding NoItems}" 
                                                         Margin="20, 0, 20, 0"/>
                 </StackLayout>
@@ -56,6 +57,8 @@
         </CollectionView>
 
         <txanalyzer:TransactionAnalyzerConfirmationView />
+
+        <password:EnterPasswordPopupView />
 
         <navigationbar:TopNavigationBar Title="{Binding Title}" />
     </AbsoluteLayout>

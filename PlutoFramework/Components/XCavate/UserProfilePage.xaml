@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Xcavate.UserProfilePage"
+             xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
+             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+             xmlns:form="clr-namespace:PlutoFramework.Components.Form"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
+    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+
+        
+        <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+            <VerticalStackLayout Margin="0, 30, 0, 0"
+                                Spacing="15"
+                                Padding="0, 15, 0, 200">
+                <xcavate:UserProfileHeaderView />
+
+                <xcavate:DeveloperStatsView IsVisible="{Binding DeveloperStatsIsVisible}"
+                                            Margin="20, 0, 20, 0"/>
+
+                <form:FormValueView Title="First name"
+                                    Value="{Binding FirstName}"
+                                    Margin="20, 0, 20, 0"/>
+                <form:FormValueView Title="Last name"
+                                    Value="{Binding LastName}"
+                                    Margin="20, 0, 20, 0"/>
+                <form:FormValueView Title="Email"
+                                    Value="{Binding Email}"
+                                    Margin="20, 0, 20, 0"/>
+                <form:FormValueView Title="Phone number"
+                                    Value="{Binding PhoneNumber}"
+                                    Margin="20, 0, 20, 0"/>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <navigationbar:TopNavigationBar Title="Personal profile"
+                                        ExtraIsVisible="{Binding CanEdit}"
+                                        ExtraTitle="Edit"
+                                        ExtraCommand="{Binding EditCommand}" />
+    </AbsoluteLayout>
+</ContentPage>

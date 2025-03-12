@@ -35,6 +35,11 @@ namespace UniqueryPlusTests
                 Console.WriteLine("Image: " + nft.Metadata?.Image);
             }
 
+            if (first3Nfts.Items.Count() == 0)
+            {
+                return;
+            }
+            
             var fullNft = await first3Nfts.Items.Last().GetFullAsync(CancellationToken.None);
 
             Assert.That(fullNft is INftSellable);

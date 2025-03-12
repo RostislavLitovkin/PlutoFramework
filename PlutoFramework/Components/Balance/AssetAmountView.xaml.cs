@@ -42,6 +42,26 @@ public partial class AssetAmountView : ContentView
             control.usdLabel.Text = (string)newValue;
         });
 
+    public static readonly BindableProperty IsFrozenProperty = BindableProperty.Create(
+        nameof(IsFrozen), typeof(bool), typeof(AssetAmountView),
+        defaultBindingMode: BindingMode.TwoWay,
+        propertyChanging: (bindable, oldValue, newValue) =>
+        {
+            var control = (AssetAmountView)bindable;
+
+            control.frozenImage.IsVisible = (bool)newValue;
+        });
+
+    public static readonly BindableProperty IsReservedProperty = BindableProperty.Create(
+        nameof(IsReserved), typeof(bool), typeof(AssetAmountView),
+        defaultBindingMode: BindingMode.TwoWay,
+        propertyChanging: (bindable, oldValue, newValue) =>
+        {
+            var control = (AssetAmountView)bindable;
+
+            control.lockImage.IsVisible = (bool)newValue;
+        });
+
     public static readonly BindableProperty UsdColorProperty = BindableProperty.Create(
             nameof(UsdColor), typeof(Color), typeof(AssetAmountView),
             defaultBindingMode: BindingMode.TwoWay,
@@ -68,28 +88,36 @@ public partial class AssetAmountView : ContentView
 
         set => SetValue(AmountProperty, value);
     }
-
     public string Symbol
     {
         get => (string)GetValue(SymbolProperty);
 
         set => SetValue(SymbolProperty, value);
     }
-
     public string ChainIcon
     {
         get => (string)GetValue(ChainIconProperty);
 
         set => SetValue(ChainIconProperty, value);
     }
-
     public string UsdValue
     {
         get => (string)GetValue(UsdValueProperty);
 
         set => SetValue(UsdValueProperty, value);
     }
+    public bool IsFrozen
+    {
+        get => (bool)GetValue(IsFrozenProperty);
 
+        set => SetValue(IsFrozenProperty, value);
+    }
+    public bool IsReserved
+    {
+        get => (bool)GetValue(IsReservedProperty);
+
+        set => SetValue(IsReservedProperty, value);
+    }
     public Color UsdColor
     {
         get => (Color)GetValue(UsdColorProperty);

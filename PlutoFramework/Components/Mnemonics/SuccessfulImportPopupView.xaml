@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Mnemonics.SuccessfulImportPopupView"
+             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+    xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+         BackgroundColor="#88000000"
+         AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+         AbsoluteLayout.LayoutFlags="All"
+         IsVisible="{Binding IsVisible}">
+    <card:BottomPopupCard Title="Restart required">
+        <card:BottomPopupCard.View>
+            <AbsoluteLayout>
+
+                <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, AutoSize"
+                                 AbsoluteLayout.LayoutFlags="WidthProportional"
+                                 Spacing="10"
+                                 Padding="0, 50, 0, 0">
+
+                    <Image HeightRequest="50"
+                           WidthRequest="50">
+                        <Image.Source>
+                            <!-- Reload icon -->
+                            <FontImageSource Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource DarkThemeWhite}}"
+                                Glyph="&#xf021;"
+                                FontFamily="FontAwesome"
+                                Size="20" />
+                        </Image.Source>
+                    </Image>
+
+                    <Label Text="Please, restart this application now in order to see correct information." />
+
+                </VerticalStackLayout>
+
+
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 80"
+              AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
+
+
+                    <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 50"
+                      AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                      ColumnSpacing="15"
+                      Margin="0, 0, 0, 10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <buttons:BasicGrayButton Text="Dismiss" Grid.Column="0"
+                                                 Command="{Binding DismissCommand}"/>
+                    </Grid>
+                </AbsoluteLayout>
+
+            </AbsoluteLayout>
+
+        </card:BottomPopupCard.View>
+    </card:BottomPopupCard>
+</ContentView>

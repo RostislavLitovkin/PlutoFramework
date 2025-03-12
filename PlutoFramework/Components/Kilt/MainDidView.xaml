@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kilt:DidView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:kilt="clr-namespace:PlutoFramework.Components.Kilt"
+              x:Class="PlutoFramework.Components.Kilt.MainDidView">
+    
+</kilt:DidView>

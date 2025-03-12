@@ -22,10 +22,31 @@ namespace PlutoFramework.Components.Nft
         [NotifyPropertyChangedFor(nameof(Image))]
         [NotifyPropertyChangedFor(nameof(Attributes))]
         [NotifyPropertyChangedFor(nameof(AttributesIsVisible))]
+        [NotifyPropertyChangedFor(nameof(NftsMintedText))]
         private ICollectionBase collectionBase;
         public string Name => CollectionBase.Metadata?.Name ?? "Unknown";
         public string Description => CollectionBase.Metadata?.Description ?? "";
         public string Image => CollectionBase.Metadata?.Image ?? "";
+
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(NftsMintedText))]
+        private uint? nftMaxSuply = null;
+        public string NftsMintedText => (NftMaxSuply is not null) ? $"{CollectionBase.NftCount}/{NftMaxSuply}" : CollectionBase.NftCount.ToString();
+
+        [ObservableProperty]
+        private MintType mintType;
+
+        [ObservableProperty]
+        private BigInteger? mintStartBlock;
+
+        [ObservableProperty]
+        private BigInteger? mintEndBlock;
+
+        [ObservableProperty]
+        private DateTime dateOfCreation;
+
+        [ObservableProperty]
+        private bool nftsSoulbound;
         public ObservableCollection<MetadataAttribute> Attributes => new ObservableCollection<MetadataAttribute>(CollectionBase.Metadata?.Attributes ?? []);
         public bool AttributesIsVisible => CollectionBase.Metadata?.Attributes is not null && CollectionBase.Metadata.Attributes.Length > 0;
 
@@ -56,6 +77,12 @@ namespace PlutoFramework.Components.Nft
             false => OwnerAddress,
         };
 
+        [ObservableProperty]
+        private uint maxNfts;
+
+        [ObservableProperty]
+        private bool mintable;
+
         [RelayCommand]
         public async Task CopyAddressAsync() => await CopyAddress.CopyToClipboardAsync(OwnerAddress);
 
@@ -64,6 +91,7 @@ namespace PlutoFramework.Components.Nft
 
 
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(MintPriceText))]
         private Endpoint endpoint;
 
         [ObservableProperty]
@@ -83,6 +111,12 @@ namespace PlutoFramework.Components.Nft
 
         [ObservableProperty]
         private bool kodaIsVisible;
+
+
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(MintPriceText))]
+        private BigInteger? mintPrice = null;
+        public string? MintPriceText => MintPrice is null ? null : String.Format("{0:0.00} {1}", (double)MintPrice / double.Pow(10, Endpoint.Decimals), Endpoint.Unit);
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(FloorPriceText))]
@@ -115,8 +149,10 @@ namespace PlutoFramework.Components.Nft
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(IsModifiable))]
+        [NotifyPropertyChangedFor(nameof(IsImmutable))]
         private ButtonStateEnum modifyButtonState = ButtonStateEnum.Disabled;
         public bool IsModifiable => ModifyButtonState == ButtonStateEnum.Enabled;
+        public bool IsImmutable => ModifyButtonState != ButtonStateEnum.Enabled;
 
         [ObservableProperty]
         private long eventStartTimestamp;
@@ -156,11 +192,6 @@ namespace PlutoFramework.Components.Nft
                 //errorLabel.Text = ex.Message;
                 Console.WriteLine(ex);
             }
-        }
-
-        public CollectionDetailViewModel()
-        {
-
         }
     }
 }

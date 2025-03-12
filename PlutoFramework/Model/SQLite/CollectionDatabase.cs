@@ -173,7 +173,7 @@ namespace PlutoFramework.Model.SQLite
 
             if (exists)
             {
-                return await Database.UpdateAsync(item.ToCollectionDatabaseItem()).ConfigureAwait(false);
+                return await Database.UpdateAsync(databaseItem).ConfigureAwait(false);
             }
             else
             {

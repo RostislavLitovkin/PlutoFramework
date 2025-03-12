@@ -29,7 +29,35 @@
                 <ColumnDefinition Width="120"/>
             </Grid.ColumnDefinitions>
 
+            <Image Grid.Column="0"
+                   x:Name="lockImage"
+                   HorizontalOptions="Start" VerticalOptions="Center"
+                   HeightRequest="15" WidthRequest="15"
+                   IsVisible="False"
+                    Margin="0, 0, 10, 0">
+                <Image.Source>
+                    <FontImageSource Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                                     Glyph="&#xf023;"
+                                     FontFamily="FontAwesome"
+                                     Size="15" />
+                </Image.Source>
+            </Image>
+            <Image Grid.Column="0"
+                   IsVisible="False"
+                   x:Name="frozenImage"
+                   HorizontalOptions="Start" VerticalOptions="Center"
+                   HeightRequest="15" WidthRequest="15"
+                    Margin="0, 0, 10, 0">
+                <Image.Source>
+                    <FontImageSource Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                                     Glyph="&#xf2dc;"
+                                     FontFamily="FontAwesome"
+                                     Size="15" />
+                </Image.Source>
+            </Image>
+
             <Label x:Name="amountLabel"
+                   Grid.Column="0"
                    HorizontalTextAlignment="End"
                    VerticalTextAlignment="Center" />
             <Label x:Name="symbolLabel"

@@ -8,23 +8,15 @@ namespace PlutoFramework.Components.Balance
 {
     public partial class UsdBalanceViewModel : ObservableObject
     {
-        public bool DoNotReload { get; set; } = false;
 
         [ObservableProperty]
-        private ObservableCollection<AssetInfo> assets;
+        private ObservableCollection<AssetInfo> assets = new ObservableCollection<AssetInfo>();
 
         [ObservableProperty]
-        private string usdSum;
+        private string usdSum = "Loading";
 
         [ObservableProperty]
-        private bool reloadIsVisible;
-
-        public UsdBalanceViewModel()
-        {
-            assets = new ObservableCollection<AssetInfo>();
-            usdSum = "Loading";
-            reloadIsVisible = false;
-        }
+        private bool reloadIsVisible = false;
 
         [RelayCommand]
         private async Task ReloadAsync()
@@ -62,6 +54,8 @@ namespace PlutoFramework.Components.Balance
                         Symbol = a.Symbol,
                         UsdValue = a.UsdValue > 0 ? String.Format("{0:0.00}", a.UsdValue) + " USD" : "~ USD",
                         ChainIcon = Application.Current.UserAppTheme != AppTheme.Dark ? a.ChainIcon : a.DarkChainIcon,
+                        IsReserved = a.Pallet == AssetPallet.NativeReserved || a.Pallet == AssetPallet.AssetsReserved || a.Pallet == AssetPallet.TokensReserved,
+                        IsFrozen = a.Pallet == AssetPallet.NativeFrozen || a.Pallet == AssetPallet.AssetsFrozen || a.Pallet == AssetPallet.TokensFrozen,
                     });
                 }
             }
@@ -72,12 +66,14 @@ namespace PlutoFramework.Components.Balance
         }
     }
 
-    public class AssetInfo
+    public record AssetInfo
     {
-        public string Amount { get; set; }
-        public string Symbol { get; set; }
-        public string UsdValue { get; set; }
-        public string ChainIcon { get; set; }
+        public required string Amount { get; set; }
+        public required string Symbol { get; set; }
+        public required string UsdValue { get; set; }
+        public required string ChainIcon { get; set; }
+        public required bool IsReserved { get; set; }
+        public required bool IsFrozen { get; set; }
     }
 }
 

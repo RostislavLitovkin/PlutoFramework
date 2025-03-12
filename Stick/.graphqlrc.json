@@ -4,7 +4,7 @@
   "extensions": {
     "strawberryShake": {
       "name": "Stick",
-      "url": "https://squid.subsquid.io/stick/graphql",
+      "url": "https://kodadot.squids.live/stick:prod/api/graphql",
       "records": {
         "inputs": false,
         "entities": false

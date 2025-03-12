@@ -40,16 +40,18 @@
                 TextColor="White"
                 HorizontalTextAlignment="Center"
                 VerticalTextAlignment="Center"
-                Padding="0, 0, 10, 0">
+                Padding="0, 0, 10, 0"
+                x:Name="extraLabel">
 
             <Label.FormattedText>
                 <FormattedString>
-                    <Span x:Name="extraLabel"/>
+                    <Span x:Name="extraLabelText"/>
                 </FormattedString>
             </Label.FormattedText>
 
             <Label.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnExtraClicked" />
+                <TapGestureRecognizer x:Name="extraLabelTapGestureRecognizer" />
 
             </Label.GestureRecognizers>
 

@@ -21,6 +21,7 @@ using PlutoFramework.Components.GalaxyLogicGame;
 using PlutoFramework.Components.PredefinedLayouts;
 using PlutoFramework.Components.Xcm;
 using PlutoFramework.View;
+using PlutoFramework.Components.Kilt;
 
 namespace PlutoFramework.Model
 {
@@ -53,6 +54,7 @@ namespace PlutoFramework.Model
         VDot,
         GLGPowerups,
         xTrnsfr,
+        mainDid,
     }
 
     public class CustomLayoutModel
@@ -361,6 +363,8 @@ namespace PlutoFramework.Model
                     return new GLGPowerupsView();
                 case ComponentId.xTrnsfr:
                     return new XcmTransferView();
+                case ComponentId.mainDid:
+                    return new MainDidView();
             }
 
             throw new Exception("Could not parse the PlutoLayout");
@@ -525,6 +529,12 @@ namespace PlutoFramework.Model
                     {
                         Name = "XCM Transfer",
                         ComponentId = ComponentId.xTrnsfr,
+                    };
+                case ComponentId.mainDid:
+                    return new ComponentInfo
+                    {
+                        Name = "Main Kilt DID",
+                        ComponentId = ComponentId.mainDid,
                     };
             }
 

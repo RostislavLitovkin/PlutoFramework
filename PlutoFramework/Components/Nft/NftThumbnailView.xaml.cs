@@ -2,10 +2,6 @@
 using PlutoFramework.Constants;
 using PlutoFramework.Model;
 using UniqueryPlus.Nfts;
-using UniqueryPlus.External;
-using PlutoFramework.Components.Buttons;
-using UniqueryPlus.Collections;
-using System.Collections.ObjectModel;
 using PlutoFramework.Model.SQLite;
 
 namespace PlutoFramework.Components.Nft;
@@ -39,6 +35,17 @@ public partial class NftThumbnailView : ContentView
                 },
                 _ => nftBase.Metadata.Image
             };
+
+            if (nftBase is INftXcavateMetadata)
+            {
+                control.priceAttribute.Value = $"£{((INftXcavateMetadata)nftBase).XcavateMetadata?.PropertyPrice}";
+
+                // Set Xcavate apy
+
+                control.apyAttribute.Value = "10.0%";
+
+                control.xcavateAttributes.IsVisible = true;
+            }
 
             // TODO: nftBase.Metadata?.Attributes ?? [];
         });
