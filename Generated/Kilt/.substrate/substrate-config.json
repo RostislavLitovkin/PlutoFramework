@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "net_api": "Kilt.NetApi",
+    "net_integration": "Substrate.Integration",
+    "rest_service": "Substrate.RestService",
+    "rest_client": "Substrate.RestClient"
+  },
+   "metadata": {
+      "websocket": "wss://kilt.ibp.network"
+   },
+  "rest_client_settings": {
+    "service_assembly": "Substrate.RestService.dll"
+  }
+}

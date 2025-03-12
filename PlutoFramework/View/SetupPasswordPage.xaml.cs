@@ -1,22 +1,33 @@
-﻿namespace PlutoFramework.View;
+﻿using PlutoFramework.Components.Buttons;
+using Substrate.NET.Wallet;
+
+namespace PlutoFramework.View;
 
 public partial class SetupPasswordPage : ContentPage
 {
-	public SetupPasswordPage()
-	{
+    private bool clicked = false;
+    public SetupPasswordPage()
+    {
         NavigationPage.SetHasNavigationBar(this, false);
         Shell.SetNavBarIsVisible(this, false);
 
         InitializeComponent();
-	}
+    }
 
     private async void ContinueToMainPageClicked(System.Object sender, System.EventArgs e)
     {
+        if (clicked)
+        {
+            return;
+        }
+
+        clicked = true;
+
         await Model.KeysModel.GenerateNewAccountAsync(passwordEntry.Text != null ? passwordEntry.Text : "");
 
-        Console.WriteLine("Account created");
-
         Application.Current.MainPage = new AppShell();
+
+        clicked = false;
     }
 
     private void OnEyeballClicked(object sender, TappedEventArgs e)
@@ -32,5 +43,57 @@ public partial class SetupPasswordPage : ContentPage
         var entry = (Entry)sender;
         if (entry.IsSoftInputShowing())
             await entry.HideSoftInputAsync(System.Threading.CancellationToken.None);
+    }
+
+    private void OnPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName != "Text")
+        {
+            return;
+        }
+
+        if (WordManager.Create().WithMinimumLength(6).WithMaximumLength(20).IsValid(((Entry)sender).Text))
+        {
+            lengthRequirementLabel.TextColor = Colors.Green;
+        }
+        else
+        {
+            lengthRequirementLabel.TextColor = Colors.DarkRed;
+        }
+
+        if (WordManager.Create().Should().AtLeastOneLowercase().IsValid(((Entry)sender).Text))
+        {
+            lowercaseRequirementLabel.TextColor = Colors.Green;
+        }
+        else
+        {
+            lowercaseRequirementLabel.TextColor = Colors.DarkRed;
+        }
+
+        if (WordManager.Create().Should().AtLeastOneUppercase().IsValid(((Entry)sender).Text))
+        {
+            uppercaseRequirementLabel.TextColor = Colors.Green;
+        }
+        else
+        {
+            uppercaseRequirementLabel.TextColor = Colors.DarkRed;
+        }
+
+        if (WordManager.Create().Should().AtLeastOneDigit().IsValid(((Entry)sender).Text))
+        {
+            numberRequirementLabel.TextColor = Colors.Green;
+        }
+        else
+        {
+            numberRequirementLabel.TextColor = Colors.DarkRed;
+        }
+
+        continueButton.ButtonState = WordManager.Create().WithMinimumLength(6).WithMaximumLength(20).Should()
+            .AtLeastOneDigit()
+            .Should()
+            .AtLeastOneLowercase()
+            .Should()
+            .AtLeastOneUppercase().IsValid(((Entry)sender).Text) ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
+
     }
 }

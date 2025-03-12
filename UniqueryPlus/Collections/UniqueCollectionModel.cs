@@ -41,7 +41,7 @@ namespace UniqueryPlus.Collections
         }
     }
 
-    public record UniqueCollection : ICollectionBase, IUniqueMarketplaceLink, ICollectionMintConfig, ICollectionNestable
+    public record UniqueCollection : ICollectionBase, IUniqueMarketplaceLink, ICollectionMintConfig, ICollectionNestable, ICollectionNftsSoulbound
     {
         private SubstrateClientExt client;
         public NftTypeEnum Type => NftTypeEnum.Unique;
@@ -54,6 +54,7 @@ namespace UniqueryPlus.Collections
         public BigInteger? MintStartBlock { get; set; }
         public BigInteger? MintEndBlock { get; set; }
         public BigInteger? MintPrice { get; set; }
+        public bool NftsSoulbound { get; set; }
         public string UniqueMarketplaceLink => $"https://unqnft.io/unique/collection/{CollectionId}";
         public required bool IsNestableByTokenOwner { get; set; }
         public required bool IsNestableByCollectionOwner { get; set; }
@@ -178,6 +179,12 @@ namespace UniqueryPlus.Collections
                                     }
                                 },
                                 CollectionId = null
+                            },
+                            NftsSoulbound = (details.Limits.TransfersEnabled.OptionFlag, details.Limits.OwnerCanTransfer.OptionFlag) switch
+                            {
+                                (false, false) => true,
+                                (true, _) => details.Limits.TransfersEnabled.Value,
+                                (false, true) => details.Limits.OwnerCanTransfer.Value
                             },
                             NftMaxSuply = details.Limits.TokenLimit.OptionFlag ? (uint)details.Limits.TokenLimit.Value : null,
                             MintPrice = null,

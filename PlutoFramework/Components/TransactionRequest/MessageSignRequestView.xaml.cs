@@ -31,38 +31,42 @@ public partial class MessageSignRequestView : ContentView
             var viewModel = DependencyService.Get<MessageSignRequestViewModel>();
             byte[] msg = Utils.HexToByteArray(viewModel.Message.data);
 
-            if ((await Model.KeysModel.GetAccount()).IsSome(out var account))
+            var account = await Model.KeysModel.GetAccountAsync();
+            if (account is null)
             {
-                if (msg.Length > 256) msg = HashExtension.Blake2(msg, 256);
-
-                byte[] signature;
-                switch (account.KeyType)
-                {
-                    case KeyType.Ed25519:
-                        signature = Ed25519.Sign(msg, account.PrivateKey);
-                        break;
-
-                    case KeyType.Sr25519:
-                        signature = Sr25519v091.SignSimple(account.Bytes, account.PrivateKey, msg);
-                        break;
-
-                    default:
-                        throw new Exception($"Unknown key type found '{account.KeyType}'.");
-                }
-
-                var signerResult = new SignerResult
-                {
-                    id = 1,
-                    signature = Utils.Bytes2HexString(signature).ToLower(),
-                };
-
-                await PlutonicationWalletClient.SendRawSignatureAsync(signerResult);
+                return;
             }
+
+            if (msg.Length > 256) msg = HashExtension.Blake2(msg, 256);
+
+            byte[] signature;
+            switch (account.KeyType)
+            {
+                case KeyType.Ed25519:
+                    signature = Ed25519.Sign(msg, account.PrivateKey);
+                    break;
+
+                case KeyType.Sr25519:
+                    signature = Sr25519v091.SignSimple(account.Bytes, account.PrivateKey, msg);
+                    break;
+
+                default:
+                    throw new Exception($"Unknown key type found '{account.KeyType}'.");
+            }
+
+            var signerResult = new SignerResult
+            {
+                id = 1,
+                signature = Utils.Bytes2HexString(signature).ToLower(),
+            };
+
+            await PlutonicationWalletClient.SendRawSignatureAsync(signerResult);
 
             // Tell the dApp that the transaction was successfull
 
             // Hide this layout
             viewModel.IsVisible = false;
+
         }
         catch (Exception ex)
         {

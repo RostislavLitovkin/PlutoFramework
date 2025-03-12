@@ -46,7 +46,13 @@ namespace PlutoFramework.Components.AssetSelect
                     continue;
                 }
 
-				bool isSelected = assetSelectButtonViewModel.SelectedAssetKey == (a.Endpoint.Key, a.Pallet, a.AssetId);
+                // Ignore reserved and frozen assets
+                if (!(a.Pallet == AssetPallet.Native || a.Pallet == AssetPallet.Assets || a.Pallet == AssetPallet.Tokens))
+                {
+                    continue;
+                }
+
+                bool isSelected = assetSelectButtonViewModel.SelectedAssetKey == (a.Endpoint.Key, a.Pallet, a.AssetId);
 
                 tempAssets.Add(new AssetSelect
 				{

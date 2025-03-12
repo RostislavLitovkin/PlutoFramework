@@ -16,11 +16,11 @@ public partial class NftTitleView : ContentView
         });
 
     public static readonly BindableProperty KodadotUnlockableUrlProperty = BindableProperty.Create(
-        nameof(KodadotUnlockableUrl), typeof(Option<string>), typeof(NftTitleView),
+        nameof(KodadotUnlockableUrl), typeof(string), typeof(NftTitleView),
         defaultBindingMode: BindingMode.TwoWay,
         propertyChanging: (bindable, oldValue, newValue) => {
             var control = (NftTitleView)bindable;
-            if(((Option<string>)newValue).IsSome(out var url))
+            if(((string?)newValue) is not null)
             {
                 control.kodadotUnlockableButton.IsVisible = true;
             }
@@ -42,9 +42,9 @@ public partial class NftTitleView : ContentView
 		InitializeComponent();
 	}
 
-    public Option<string> KodadotUnlockableUrl
+    public string KodadotUnlockableUrl
     {
-        get => (Option<string>)GetValue(KodadotUnlockableUrlProperty);
+        get => (string?)GetValue(KodadotUnlockableUrlProperty);
 
         set => SetValue(KodadotUnlockableUrlProperty, value);
     }
@@ -65,9 +65,11 @@ public partial class NftTitleView : ContentView
 
     async void ClaimPhysicalDropClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
-        if (KodadotUnlockableUrl.IsSome(out var url))
+        if (KodadotUnlockableUrl is null)
         {
-            await Navigation.PushAsync(new WebView.WebViewPage(url));
+            return;
         }
+            await Navigation.PushAsync(new WebView.WebViewPage(KodadotUnlockableUrl));
+        
     }
 }

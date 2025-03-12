@@ -99,11 +99,13 @@ public partial class ContractView : ContentView, ISubstrateClientLoadableAsyncVi
 
             var charge = ChargeTransactionPayment.Default();
 
-            if ((await KeysModel.GetAccount()).IsSome(out var account))
+            try
             {
+                var account = await KeysModel.GetAccountAsync();
+
                 string extrinsicId = await client.SubmitExtrinsicAsync(transfer, account, token: CancellationToken.None);
             }
-            else
+            catch
             {
                 // Verification failed, do something about it
             }

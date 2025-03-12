@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.Mnemonics.MnemonicsExplanationPage"
              xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-             xmlns:confirmtransaction="clr-namespace:PlutoFramework.Components.ConfirmTransaction"
+             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
              xmlns:card="clr-namespace:PlutoFramework.Components.Card"
              Title="MnemonicsExplanationPage"
-             BackgroundColor="Black">
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
         <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-               Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground2.png}"
+               Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
                Opacity="{AppThemeBinding Light=0.96}"
                Aspect="AspectFill"/>
 
@@ -72,7 +72,7 @@
         <navigationbar:TopNavigationBar Title="About Mnemonics"
                                       x:Name="topNavigationBar" />
 
-        <confirmtransaction:ConfirmTransactionView />
+        <password:EnterPasswordPopupView />
 
     </AbsoluteLayout>
 </ContentPage>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Xcavate.AboutUsView"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card">
+    <card:ClickableCard x:Name="card">
+        <card:ClickableCard.View>
+            <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                AbsoluteLayout.LayoutFlags="All"
+                             Spacing="20"
+                             Padding="0,10,0,15">
+                <Grid WidthRequest="{Binding Source={x:Reference card}, Path=Width}"
+                  ColumnSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    
+                    
+                    <Label Grid.Column="1"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="FAQ">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding FAQCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Label Grid.Column="2"
+                            VerticalTextAlignment="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="Team" >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenTeamCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Label Grid.Column="3"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="Blog" >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenBlogCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Label Grid.Column="4"
+                            VerticalTextAlignment="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="Whitepaper" >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenWhitepaperCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+                <Image Source="realxmarket.png"
+                   Aspect="AspectFill"
+                   WidthRequest="150"
+                   HorizontalOptions="Center" />
+
+                <Label TextColor="Gray"
+                   Text="© 2023 Xcavate. All rights reserved. Terms of service and privacy policy"
+                   HorizontalTextAlignment="Center"/>
+
+                <Grid WidthRequest="{Binding Source={x:Reference card}, Path=Width}"
+                  ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image HeightRequest="20"
+                       Source="{AppThemeBinding Light=xblack.png, Dark=xwhite.png}"
+                        Grid.Column="1">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenXCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Image HeightRequest="20"
+                        Source="{AppThemeBinding Light=facebookblack.png, Dark=facebookwhite.png}"
+                         Grid.Column="2"
+                       IsVisible="False">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenFacebookCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Image HeightRequest="20"
+                        Source="{AppThemeBinding Light=youtubeblack.png, Dark=youtubewhite.png}"
+                         Grid.Column="2" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenYoutubeCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+
+                    <Image HeightRequest="20"
+                        Source="{AppThemeBinding Light=githubblack.png, Dark=githubwhite.png}"
+                         Grid.Column="3" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenGithubCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Image HeightRequest="20"
+                        Source="{AppThemeBinding Light=liquidityfinderblack.png, Dark=liquidityfinderwhite.png}"
+                         Grid.Column="4">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenLiquidityFinderCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Image HeightRequest="20"
+                        Source="{AppThemeBinding Light=discordblack.png, Dark=discordwhite.png}"
+                         Grid.Column="5" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenDiscordCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Image HeightRequest="20"
+                        Source="{AppThemeBinding Light=linkedinblack.png, Dark=linkedinwhite.png}"
+                         Grid.Column="5"
+                       IsVisible="False">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenLinkedInCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                </Grid>
+            </VerticalStackLayout>
+        </card:ClickableCard.View>
+    </card:ClickableCard>
+</ContentView>

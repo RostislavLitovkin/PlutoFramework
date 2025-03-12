@@ -35,17 +35,17 @@ namespace PlutoFramework.Model
         {
             var mnemonics = GenerateMnemonics();
 
-            return GetAccount(mnemonics);
+            return GetAccountFromMnemonics(mnemonics);
         }
 
         public static (Account, string) GenerateNewAccountAndMnemonics()
         {
             var mnemonics = GenerateMnemonics();
 
-            return (GetAccount(mnemonics), mnemonics);
+            return (GetAccountFromMnemonics(mnemonics), mnemonics);
         }
 
-        public static Account GetAccount(string mnemonics)
+        public static Account GetAccountFromMnemonics(string mnemonics)
         {
             var keyring = new Substrate.NET.Wallet.Keyring.Keyring();
 
@@ -78,32 +78,6 @@ namespace PlutoFramework.Model
 
             return wallet;
         }
-
-        /*public static Wallet GetWalletFromPair(PairInfo pair, string password)
-        {
-            var setup = new KeyringAddress(KeyType.Sr25519);
-
-            short ss58Format = 42;
-
-            return new Wallet(
-                setup.ToSS58(pair.PublicKey, ss58Format),
-                null,
-                META,
-                pair.PublicKey,
-                pair.SecretKey,
-                KeyType.Sr25519,
-                null
-            );
-        }
-
-        public static string ExportJsonFromPair(PairInfo pair, string password)
-        {
-            Wallet wallet = GetWalletFromPair(pair, password);
-
-            Account account = wallet.Account;
-
-            return wallet.ToJson("PlutoFramework", password);
-        }*/
     }
 }
 

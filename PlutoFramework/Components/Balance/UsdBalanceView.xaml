@@ -61,7 +61,9 @@
                             <balance:AssetAmountView Amount="{Binding Amount}"
                                                     Symbol="{Binding Symbol}"
                                                     UsdValue="{Binding UsdValue}"
-                                                    ChainIcon="{Binding ChainIcon}" />
+                                                    ChainIcon="{Binding ChainIcon}"
+                                                     IsReserved="{Binding IsReserved}"
+                                                     IsFrozen="{Binding IsFrozen}" />
 
                         </DataTemplate>
 

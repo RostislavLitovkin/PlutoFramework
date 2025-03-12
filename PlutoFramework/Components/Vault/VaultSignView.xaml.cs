@@ -7,9 +7,9 @@ namespace PlutoFramework.Components.Vault;
 
 public partial class VaultSignView : ContentView
 {
-	public VaultSignView()
-	{
-		InitializeComponent();
+    public VaultSignView()
+    {
+        InitializeComponent();
         BindingContext = DependencyService.Get<VaultSignViewModel>();
     }
 
@@ -22,31 +22,34 @@ public partial class VaultSignView : ContentView
 
     async void OnSignClicked(System.Object sender, System.EventArgs e)
     {
-        if ((await Model.KeysModel.GetAccount()).IsSome(out var account))
+        var account = await Model.KeysModel.GetAccountAsync();
+
+        if (account is null)
         {
-            var viewModel = DependencyService.Get<VaultSignViewModel>();
-
-            string signature;
-            switch (account.KeyType)
-            {
-                case KeyType.Ed25519:
-                    signature = "00" + Utils.Bytes2HexString(Ed25519.Sign(viewModel.Payload, account.PrivateKey), Utils.HexStringFormat.Pure);
-                    break;
-
-                case KeyType.Sr25519:
-                    signature = "01" + Utils.Bytes2HexString(await account.SignAsync(viewModel.Payload), Utils.HexStringFormat.Pure);
-                    break;
-
-                default:
-                    return;
-            }
-
-            viewModel.Signature = signature;
-            viewModel.SignatureIsVisible = false;
-            viewModel.SignButtonIsVisible = false;
-
-            Console.WriteLine(signature);
+            return;
         }
+
+        var viewModel = DependencyService.Get<VaultSignViewModel>();
+
+        string signature;
+        switch (account.KeyType)
+        {
+            case KeyType.Ed25519:
+                signature = "00" + Utils.Bytes2HexString(Ed25519.Sign(viewModel.Payload, account.PrivateKey), Utils.HexStringFormat.Pure);
+                break;
+
+            case KeyType.Sr25519:
+                signature = "01" + Utils.Bytes2HexString(await account.SignAsync(viewModel.Payload), Utils.HexStringFormat.Pure);
+                break;
+
+            default:
+                return;
+        }
+
+        viewModel.Signature = signature;
+        viewModel.SignatureIsVisible = false;
+        viewModel.SignButtonIsVisible = false;
+
     }
 
     async void OnRejectClicked(System.Object sender, System.EventArgs e)

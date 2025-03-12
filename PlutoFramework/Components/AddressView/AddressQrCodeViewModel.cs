@@ -1,8 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using PlutoFramework.Model;
 
 namespace PlutoFramework.Components.AddressView
 {
-    internal partial class AddressQrCodeViewModel : ObservableObject
+    internal partial class AddressQrCodeViewModel : ObservableObject, IPopup
     {
         [ObservableProperty]
         private string qrAddress;
@@ -16,11 +17,6 @@ namespace PlutoFramework.Components.AddressView
         }
 
         [ObservableProperty]
-        private bool isVisible;
-
-        public AddressQrCodeViewModel()
-        {
-            isVisible = false;
-        }
+        private bool isVisible = false;
     }
 }

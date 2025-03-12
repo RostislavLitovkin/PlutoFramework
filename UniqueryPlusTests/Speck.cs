@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using StrawberryShake;
 using UniqueryPlus.Speck;
 
 namespace UniqueryPlusTests
@@ -12,7 +13,7 @@ namespace UniqueryPlusTests
 
             serviceCollection
                 .AddSpeck()
-                .ConfigureHttpClient(client => client.BaseAddress = new Uri("https://squid.subsquid.io/speck/graphql"));
+                .ConfigureHttpClient(client => client.BaseAddress = new Uri("https://kodadot.squids.live/speck:prod/api/graphql"));
 
             IServiceProvider services = serviceCollection.BuildServiceProvider();
 

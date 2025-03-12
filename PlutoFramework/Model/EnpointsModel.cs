@@ -24,7 +24,14 @@ namespace PlutoFramework.Model
 
         public static IEnumerable<EndpointEnum> ToEndpointEnums(this string[] keys)
         {
-            return keys.Select(str => (EndpointEnum)EndpointEnum.Parse(typeof(EndpointEnum), str));
+            try
+            {
+                return keys.Select(str => (EndpointEnum)EndpointEnum.Parse(typeof(EndpointEnum), str));
+            }
+            catch
+            {
+                return [EndpointEnum.Polkadot, EndpointEnum.Kusama];
+            }
         }
 
         public static void SaveEndpoint(EndpointEnum newKey, bool setupMultiNetworkSelect = true)

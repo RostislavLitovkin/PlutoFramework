@@ -3,15 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.Extrinsic.ExtrinsicDetailPage"
              xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-             xmlns:confirmtransaction="clr-namespace:PlutoFramework.Components.ConfirmTransaction"
+             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
              xmlns:events="clr-namespace:PlutoFramework.Components.Events"
              xmlns:subscan="clr-namespace:PlutoFramework.Components.Subscan"
              Title="ExtrinsicDetailPage"
-         BackgroundColor="Black">
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
         <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-           Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground2.png}"
+           Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
            Opacity="{AppThemeBinding Light=0.96}"
            Aspect="AspectFill"/>
 
@@ -37,7 +37,7 @@
         <navigationbar:TopNavigationBar Title="Extrinsic detail"
                                         x:Name="topNavigationBar" />
 
-        <confirmtransaction:ConfirmTransactionView />
+        <password:EnterPasswordPopupView />
 
     </AbsoluteLayout>
 

@@ -13,16 +13,13 @@ namespace PlutoFramework.Model.Kodadot
         /// <param name="endpoint"></param>
         /// <param name="collectionId"></param>
         /// <returns>URL for Kodadot Unlockable</returns>
-        public static async Task<Option<string>> FetchKeywiseAsync(Endpoint endpoint, BigInteger collectionId)
+        public static Task<string?> FetchKeywiseAsync(Endpoint endpoint, BigInteger collectionId)
         {
-            
-            switch (endpoint.Key)
+            return endpoint.Key switch
             {
-                case EndpointEnum.KusamaAssetHub:
-                    return await FetchKeywiseAsync("ahk", collectionId);
-            }
-
-            return Option<string>.None;
+                EndpointEnum.KusamaAssetHub => FetchKeywiseAsync("ahk", collectionId),
+                _ => Task.FromResult<string?>(null),
+            };
         }
 
         /// <summary>
@@ -31,7 +28,7 @@ namespace PlutoFramework.Model.Kodadot
         /// <param name="prefix">Chain prefix, check: https://github.com/kodadot/nft-gallery/blob/main/services/keywise.ts</param>
         /// <param name="collectionId"></param>
         /// <returns>URL for Kodadot Unlockable</returns>
-        public static async Task<Option<string>> FetchKeywiseAsync(string prefix, BigInteger collectionId)
+        public static async Task<string?> FetchKeywiseAsync(string prefix, BigInteger collectionId)
         {
             HttpClient httpClient = new HttpClient();
             try
@@ -39,16 +36,16 @@ namespace PlutoFramework.Model.Kodadot
                 string json = await httpClient.GetStringAsync("https://keywise.kodadot.workers.dev/resolve/" + prefix + "-" + collectionId);
 
                 var response = JsonConvert.DeserializeObject<UnlockablesResponse>(json);
-                if (response.Status == 200)
+                if (response is not null && response.Status == 200)
                 {
-                    return Option<string>.Some(response.Url);
+                    return response.Url;
                 }
             }
             catch {
 
             }
 
-            return Option<string>.None;
+            return null;
         }
     }
 
