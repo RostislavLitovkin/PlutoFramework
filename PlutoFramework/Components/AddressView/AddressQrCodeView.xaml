@@ -52,7 +52,7 @@
                             <ColumnDefinition Width="35" />
                         </Grid.ColumnDefinitions>
 
-                        <Label Text="{Binding Address}"
+                        <Label Text="{Binding TwoLineAddress}"
                                FontSize="10"
                                Grid.Column="0"
                                    Margin="5, 0, 0, 0"
