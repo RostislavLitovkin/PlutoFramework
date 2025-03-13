@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things
     
     
     /// <summary>
-    /// >> 310 - Composite[sp_arithmetic.per_things.Perbill]
+    /// >> 337 - Composite[sp_arithmetic.per_things.Perbill]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Perbill : BaseType

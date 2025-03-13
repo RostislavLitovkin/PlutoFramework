@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet
     }
     
     /// <summary>
-    /// >> 305 - Variant[pallet_xcm_executor_utils.pallet.TrustPolicy]
+    /// >> 324 - Variant[pallet_xcm_executor_utils.pallet.TrustPolicy]
     /// </summary>
     public sealed class EnumTrustPolicy : BaseEnumRust<TrustPolicy>
     {
@@ -44,7 +44,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet
         public EnumTrustPolicy()
         {
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet.EnumDefaultTrustPolicy>(TrustPolicy.DefaultTrustPolicy);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>(TrustPolicy.AllowedAssets);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13>(TrustPolicy.AllowedAssets);
         }
     }
 }

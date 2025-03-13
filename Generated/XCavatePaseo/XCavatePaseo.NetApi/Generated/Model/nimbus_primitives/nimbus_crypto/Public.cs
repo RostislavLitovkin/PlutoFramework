@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.nimbus_primitives.nimbus_crypto
     
     
     /// <summary>
-    /// >> 53 - Composite[nimbus_primitives.nimbus_crypto.Public]
+    /// >> 66 - Composite[nimbus_primitives.nimbus_crypto.Public]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Public : BaseType

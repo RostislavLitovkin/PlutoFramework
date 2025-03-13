@@ -25,20 +25,22 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         /// <summary>
         /// >> propose
         /// Creates a proposal for a real estate object.
-        /// Only one of the owner of the property can propose.
+        /// Only the letting agent can propose.
         /// 
         /// The origin must be Signed and the sender must have sufficient funds free.
         /// 
         /// Parameters:
         /// - `asset_id`: The asset id of the property.
+        /// - `amount`: The amount the letting agent is asking for.
+        /// - `data`: The data regarding this proposal.
         /// 
         /// Emits `Proposed` event when succesfful.
         /// </summary>
         propose = 0,
         
         /// <summary>
-        /// >> inquery_against_letting_agent
-        /// Creates an inquery against the letting agent of the real estate object.
+        /// >> challenge_against_letting_agent
+        /// Creates an challenge against the letting agent of the real estate object.
         /// Only one of the owner of the property can propose.
         /// 
         /// The origin must be Signed and the sender must have sufficient funds free.
@@ -46,9 +48,9 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         /// Parameters:
         /// - `asset_id`: The asset id of the property.
         /// 
-        /// Emits `Inquery` event when succesfful.
+        /// Emits `Challenge` event when succesfful.
         /// </summary>
-        inquery_against_letting_agent = 1,
+        challenge_against_letting_agent = 1,
         
         /// <summary>
         /// >> vote_on_proposal
@@ -65,22 +67,22 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         vote_on_proposal = 2,
         
         /// <summary>
-        /// >> vote_on_letting_agent_inquery
-        /// Lets owner of the real estate object vote on an inquery.
+        /// >> vote_on_letting_agent_challenge
+        /// Lets owner of the real estate object vote on an challenge.
         /// 
         /// The origin must be Signed and the sender must have sufficient funds free.
         /// 
         /// Parameters:
-        /// - `inquery_id`: The index of the inquery.
+        /// - `challenge_id`: The index of the challenge.
         /// - `vote`: Must be either a Yes vote or a No vote.
         /// 
-        /// Emits `VotedOnInquery` event when succesfful.
+        /// Emits `VotedOnChallenge` event when succesfful.
         /// </summary>
-        vote_on_letting_agent_inquery = 3,
+        vote_on_letting_agent_challenge = 3,
     }
     
     /// <summary>
-    /// >> 343 - Variant[pallet_property_governance.pallet.Call]
+    /// >> 332 - Variant[pallet_property_governance.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -91,10 +93,10 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.propose);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.inquery_against_letting_agent);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2>>(Call.propose);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.challenge_against_letting_agent);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote>>(Call.vote_on_proposal);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote>>(Call.vote_on_letting_agent_inquery);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote>>(Call.vote_on_letting_agent_challenge);
         }
     }
 }

@@ -39,7 +39,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_asset_rate.pallet
     }
     
     /// <summary>
-    /// >> 138 - Variant[pallet_asset_rate.pallet.Event]
+    /// >> 150 - Variant[pallet_asset_rate.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -50,9 +50,9 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_asset_rate.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>>(Event.AssetRateCreated);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U16>(Event.AssetRateRemoved);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>>(Event.AssetRateUpdated);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>>(Event.AssetRateCreated);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.AssetRateRemoved);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>>(Event.AssetRateUpdated);
         }
     }
 }

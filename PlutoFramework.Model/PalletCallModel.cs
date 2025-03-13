@@ -139,6 +139,7 @@ namespace PlutoFramework.Model
                 EndpointEnum.Unique => new Unique.NetApi.Generated.Model.unique_runtime.EnumRuntimeCall(),
                 EndpointEnum.Opal => new Opal.NetApi.Generated.Model.opal_runtime.EnumRuntimeCall(),
                 EndpointEnum.Mythos => new Mythos.NetApi.Generated.Model.mainnet_runtime.EnumRuntimeCall(),
+                EndpointEnum.XcavatePaseo => new XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall(),
                 _ => null,
             };
 

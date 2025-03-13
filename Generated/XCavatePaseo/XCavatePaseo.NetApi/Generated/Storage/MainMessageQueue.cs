@@ -215,7 +215,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight> ServiceWeight()
         {
             var result = new Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>();
-            result.Create("0x010700A2941A1D02005000");
+            result.Create("0x01070088526A7402005000");
             return result;
         }
         
@@ -230,7 +230,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight> IdleMaxServiceWeight()
         {
             var result = new Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>();
-            result.Create("0x010700A2941A1D02005000");
+            result.Create("0x01070088526A7402005000");
             return result;
         }
     }

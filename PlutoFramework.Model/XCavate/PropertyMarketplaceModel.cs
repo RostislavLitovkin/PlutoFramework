@@ -5,12 +5,15 @@ using Substrate.NetApi;
 using XcavatePaseo.NetApi.Generated.Storage;
 using XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet;
 using UniqueryPlus.Nfts;
+using Substrate.NetApi.Model.Extrinsics;
 
 
 namespace PlutoFramework.Model.Xcavate
 {
     public class PropertyMarketplaceModel
     {
+        public static Method BuyPropertyTokens(uint listingId, uint amount) => NftMarketplaceCalls.BuyToken(new U32(listingId), new U32(amount));
+
         public static async Task<RecursiveReturn<INftBase>> GetPropertiesAsync(SubstrateClientExt client, uint limit, byte[]? lastKey, CancellationToken token)
         {
             Console.WriteLine("Finding properties.");

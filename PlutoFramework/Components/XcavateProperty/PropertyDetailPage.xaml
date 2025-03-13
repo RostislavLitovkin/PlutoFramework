@@ -7,13 +7,15 @@
              xmlns:table="clr-namespace:PlutoFramework.Components.Table"
              xmlns:xcavateproperty="clr-namespace:PlutoFramework.Components.XcavateProperty"
              xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
+             xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
              BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
         <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
             <VerticalStackLayout Margin="0, 45, 0, 0"
                             Spacing="15"
                             Padding="20, 20, 20, 200">
-                <nft:NftMultiImageView ImageSources="{Binding Images}" />
+                <nft:NftMultiImageView ImageSources="{Binding Metadata.Images}" />
 
                 <Grid HorizontalOptions="Center"
                       ColumnSpacing="10">
@@ -71,9 +73,9 @@
                 
                 <xcavateproperty:CompanyThumbnailView />
 
-                <xcavateproperty:LocationView LocationName="{Binding LocationName}" />
+                <xcavateproperty:LocationView LocationName="{Binding Metadata.LocationName}" />
 
-                <Label Text="{Binding PropertyName}"
+                <Label Text="{Binding Metadata.PropertyName}"
                        FontSize="20"
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Start"
@@ -120,7 +122,7 @@
                     <table:TableCurrencyCell Grid.Column="1"
                                          Grid.Row="1"
                                       Title="Property time"
-                                      Value="{Binding PropertyType}" />
+                                      Value="{Binding Metadata.PropertyType}" />
                 </Grid>
 
                 <xcavateproperty:SliderView Title="Area prices"
@@ -154,7 +156,7 @@
                     <Label FontAttributes="Bold"
                            Text="Property description"
                            HorizontalTextAlignment="Start" />
-                    <Label Text="{Binding PropertyDescription}"
+                    <Label Text="{Binding Metadata.PropertyDescription}"
                            HorizontalTextAlignment="Start" />
 
 
@@ -164,19 +166,19 @@
 
                     
                     <nft:NftAttributeView AttributeName="Blocks"
-                                          Value="{Binding Blocks}"
+                                          Value="{Binding Metadata.Area}"
                                            CardBackgroundColor="#11888888"/>
 
                     <nft:NftAttributeView AttributeName="Bedrooms"
-                                          Value="{Binding Bedrooms}"
+                                          Value="{Binding Metadata.NoOfBedrooms}"
                                           CardBackgroundColor="#11888888"/>
 
                     <nft:NftAttributeView AttributeName="Bathrooms"
-                                          Value="{Binding Bathrooms}"
+                                          Value="{Binding Metadata.NoOfBathrooms}"
                                           CardBackgroundColor="#11888888"/>
 
                     <nft:NftAttributeView AttributeName="Type"
-                                          Value="{Binding Type}"
+                                          Value="{Binding Metadata.PropertyType}"
                                           CardBackgroundColor="#11888888"/>
 
                     <nft:NftAttributeView AttributeName="Location"
@@ -186,7 +188,13 @@
             </VerticalStackLayout>
         </ScrollView>
 
-        <navigationbar:TopNavigationBar Title="{Binding PropertyName}"/>
+        <navigationbar:TopNavigationBar Title="{Binding Metadata.PropertyName}"/>
+
+        <xcavateproperty:BuyPropertyTokensView />
+
+        <txanalyzer:TransactionAnalyzerConfirmationView />
+
+        <password:EnterPasswordPopupView />
     </AbsoluteLayout>
 
 </ContentPage>

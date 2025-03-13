@@ -24,11 +24,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         /// <summary>
         /// >> NftFractionalization
         /// </summary>
-        NftFractionalization = 117,
+        NftFractionalization = 18,
     }
     
     /// <summary>
-    /// >> 379 - Variant[container_chain_template_simple_runtime.RuntimeHoldReason]
+    /// >> 361 - Variant[container_chain_template_simple_runtime.RuntimeHoldReason]
     /// </summary>
     public sealed class EnumRuntimeHoldReason : BaseEnumRust<RuntimeHoldReason>
     {

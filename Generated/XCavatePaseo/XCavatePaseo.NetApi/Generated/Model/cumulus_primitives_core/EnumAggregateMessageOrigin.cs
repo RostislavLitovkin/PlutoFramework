@@ -38,7 +38,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_core
     }
     
     /// <summary>
-    /// >> 134 - Variant[cumulus_primitives_core.AggregateMessageOrigin]
+    /// >> 146 - Variant[cumulus_primitives_core.AggregateMessageOrigin]
     /// </summary>
     public sealed class EnumAggregateMessageOrigin : BaseEnumRust<AggregateMessageOrigin>
     {

@@ -18,20 +18,20 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
     
     
     /// <summary>
-    /// >> 505 - Composite[pallet_property_governance.pallet.VoteStats]
+    /// >> 480 - Composite[pallet_property_governance.pallet.VoteStats]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class VoteStats : BaseType
     {
         
         /// <summary>
-        /// >> yes_votes
+        /// >> yes_voting_power
         /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U32 YesVotes { get; set; }
+        public Substrate.NetApi.Model.Types.Primitive.U32 YesVotingPower { get; set; }
         /// <summary>
-        /// >> no_votes
+        /// >> no_voting_power
         /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U32 NoVotes { get; set; }
+        public Substrate.NetApi.Model.Types.Primitive.U32 NoVotingPower { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -43,8 +43,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         public override byte[] Encode()
         {
             var result = new List<byte>();
-            result.AddRange(YesVotes.Encode());
-            result.AddRange(NoVotes.Encode());
+            result.AddRange(YesVotingPower.Encode());
+            result.AddRange(NoVotingPower.Encode());
             return result.ToArray();
         }
         
@@ -52,10 +52,10 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            YesVotes = new Substrate.NetApi.Model.Types.Primitive.U32();
-            YesVotes.Decode(byteArray, ref p);
-            NoVotes = new Substrate.NetApi.Model.Types.Primitive.U32();
-            NoVotes.Decode(byteArray, ref p);
+            YesVotingPower = new Substrate.NetApi.Model.Types.Primitive.U32();
+            YesVotingPower.Decode(byteArray, ref p);
+            NoVotingPower = new Substrate.NetApi.Model.Types.Primitive.U32();
+            NoVotingPower.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;
             Bytes = new byte[bytesLength];

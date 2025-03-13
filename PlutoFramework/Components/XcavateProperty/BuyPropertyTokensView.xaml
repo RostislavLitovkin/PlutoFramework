@@ -3,13 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.XcavateProperty.BuyPropertyTokensView"
              xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             xmlns:form="clr-namespace:PlutoFramework.Components.Form"
              xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+             xmlns:xcavateproperty="clr-namespace:PlutoFramework.Components.XcavateProperty"
              IsVisible="{Binding IsVisible}"
              AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
              AbsoluteLayout.LayoutFlags="All"
              BackgroundColor="#66000000">
 
-    <card:BottomPopupCard Title="">
+    <card:BottomPopupCard Title="Buy Property Tokens">
         <card:BottomPopupCard.View>
             <AbsoluteLayout>
 
@@ -19,6 +21,17 @@
                          Spacing="20">
 
                     <!-- Add your content here -->
+
+                    <xcavateproperty:PropertyLittleThumbnailView XcavateMetadata="{Binding Metadata}" />
+
+                    <form:FormInputView KeyboardType="Numeric"
+                                            Placeholder="Tokens"
+                                            Text="{Binding Tokens}"
+                                        MaxValue="{Binding MaxValue}"
+                                        UpdateCommand="{Binding FormChangedCommand}"
+                                        />
+                    
+                    <Label Text="{Binding ErrorMessage}" TextColor="Red" />
 
                 </VerticalStackLayout>
                 <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 80"

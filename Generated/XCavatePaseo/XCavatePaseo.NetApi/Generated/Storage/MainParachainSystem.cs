@@ -954,7 +954,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id SelfParaId()
         {
             var result = new XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id();
-            result.Create("0x230C0000");
+            result.Create("0x24120000");
             return result;
         }
     }

@@ -21,8 +21,10 @@
                 <VerticalStackLayout HorizontalOptions="CenterAndExpand"
                                      Spacing="5">
                     <Image HorizontalOptions="Fill"
-                       BackgroundColor="Black"
-                       x:Name="image"
+                           BackgroundColor="{AppThemeBinding Light=#dddddd, Dark=#222222}"
+                           Source="xcavateloading.gif"
+                           IsAnimationPlaying="True"
+                           x:Name="image"
                            />
                     <Grid ColumnSpacing="5"
                           Margin="10, 5, 10, 0"

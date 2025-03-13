@@ -26,7 +26,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         /// >> add_letting_agent
         /// Adds an account as a letting agent.
         /// 
-        /// The origin must be the sudo.
+        /// The origin must be the AgentOrigin.
         /// 
         /// Parameters:
         /// - `region`: The region number where the letting agent should be added to.
@@ -51,7 +51,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         /// >> add_letting_agent_to_location
         /// Adds a letting agent to a location.
         /// 
-        /// The origin must be the sudo.
+        /// The origin must be the AgentOrigin.
         /// 
         /// Parameters:
         /// - `location`: The location number where the letting agent should be added to.
@@ -100,7 +100,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
     }
     
     /// <summary>
-    /// >> 342 - Variant[pallet_property_management.pallet.Call]
+    /// >> 331 - Variant[pallet_property_management.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

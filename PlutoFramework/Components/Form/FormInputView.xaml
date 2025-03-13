@@ -11,17 +11,56 @@
                CardPadding="10, 0, 10, 0">
         <card:Card.View>
 
-            <Entry x:Name="entry"
-                   HorizontalOptions="Fill"
-                    Grid.Column="0"
-                    Keyboard="Text"
-                    HeightRequest="40"
-                    FontAttributes="Bold"
-                    IsSpellCheckEnabled="false"
-                    IsTextPredictionEnabled="false"
-                   PropertyChanged="OnPropertyChanged"
-                   Unfocused="OnUnfocused"
-                   Focused="OnFocused"/>
+            <Grid HeightRequest="40"
+                  ColumnSpacing="10"
+                  x:Name="usdGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+
+                </Grid.ColumnDefinitions>
+
+                <Entry x:Name="entry"
+                       HorizontalOptions="Fill"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       Keyboard="Text"
+                       HeightRequest="40"
+                       FontAttributes="Bold"
+                       IsSpellCheckEnabled="false"
+                       IsTextPredictionEnabled="false"
+                       PropertyChanged="OnPropertyChanged"
+                       Unfocused="OnUnfocused"
+                       Focused="OnFocused" />
+
+                <Border HeightRequest="40"
+                        Grid.Column="1"
+                        x:Name="maxButton"
+                        IsVisible="False"
+                        BackgroundColor="{x:StaticResource PrimaryGray}"
+                        Stroke="{x:StaticResource PrimaryGray}">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="15" />
+                    </Border.StrokeShape>
+                    <HorizontalStackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                            AbsoluteLayout.LayoutFlags="All"
+                            Spacing="5"
+                            Padding="15,0,15,0"
+                            HorizontalOptions="Center">
+                        <Label Text="Max"
+                                TextColor="Black"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"
+                                HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                            />
+
+                    </HorizontalStackLayout>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnMaxClicked" />
+                    </Border.GestureRecognizers>
+                </Border>
+            </Grid>
         </card:Card.View>
     </card:Card>
 </ContentView>

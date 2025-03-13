@@ -127,10 +127,46 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// The object can not be divided in so many token.
         /// </summary>
         TooManyToken = 17,
+        
+        /// <summary>
+        /// >> OnlyOneOfferPerUser
+        /// A user can only make one offer per listing.
+        /// </summary>
+        OnlyOneOfferPerUser = 18,
+        
+        /// <summary>
+        /// >> LawyerAlreadyRegistered
+        /// The lawyer has already been registered.
+        /// </summary>
+        LawyerAlreadyRegistered = 19,
+        
+        /// <summary>
+        /// >> LawyerJobTaken
+        /// The lawyer job has already been taken.
+        /// </summary>
+        LawyerJobTaken = 20,
+        
+        /// <summary>
+        /// >> LawyerNotFound
+        /// A lawyer has not been set.
+        /// </summary>
+        LawyerNotFound = 21,
+        
+        /// <summary>
+        /// >> AlreadyConfirmed
+        /// The lawyer already submitted his answer.
+        /// </summary>
+        AlreadyConfirmed = 22,
+        
+        /// <summary>
+        /// >> CostsTooHigh
+        /// The costs of the lawyer can't be that high.
+        /// </summary>
+        CostsTooHigh = 23,
     }
     
     /// <summary>
-    /// >> 496 - Variant[pallet_nft_marketplace.pallet.Error]
+    /// >> 470 - Variant[pallet_nft_marketplace.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

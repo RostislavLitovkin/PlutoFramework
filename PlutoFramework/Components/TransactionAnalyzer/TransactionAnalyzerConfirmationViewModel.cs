@@ -19,6 +19,9 @@ namespace PlutoFramework.Components.TransactionAnalyzer
     public partial class TransactionAnalyzerConfirmationViewModel : ObservableObject, IPopup, ISetToDefault
     {
         [ObservableProperty]
+        private ObservableCollection<ExtrinsicEvent> extrinsicEvents = new ObservableCollection<ExtrinsicEvent>();
+
+        [ObservableProperty]
         private bool isVisible;
 
         [ObservableProperty]
@@ -129,6 +132,8 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                     if (!(events is null))
                     {
                         var extrinsicDetails = await EventsModel.GetExtrinsicEventsForClientAsync(client, extrinsicIndex: events.ExtrinsicIndex, events.Events, blockNumber: 0, CancellationToken.None);
+
+                        ExtrinsicEvents = new ObservableCollection<ExtrinsicEvent>(extrinsicDetails.Events);
 
                         var extrinsicResult = TransactionAnalyzerModel.GetExtrinsicResult(extrinsicDetails.Events);
 
@@ -300,6 +305,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                 PalletCallName = methodUnified.PalletName + "." + methodUnified.EventName,
                 CallParameters = new ObservableCollection<EventParameter>(methodUnified.Parameters),
                 Endpoint = Endpoint,
+                ExtrinsicEvents = ExtrinsicEvents,
             };
 
             await Application.Current.MainPage.Navigation.PushAsync(new CallDetailPage(viewModel));

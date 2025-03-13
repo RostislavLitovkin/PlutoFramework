@@ -30,7 +30,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_root_testing.pallet
     }
     
     /// <summary>
-    /// >> 141 - Variant[pallet_root_testing.pallet.Event]
+    /// >> 165 - Variant[pallet_root_testing.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnum<Event>

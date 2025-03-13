@@ -110,10 +110,22 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_balances.pallet
         /// # Example
         /// </summary>
         force_adjust_total_issuance = 9,
+        
+        /// <summary>
+        /// >> burn
+        /// Burn the specified liquid free balance from the origin account.
+        /// 
+        /// If the origin's account ends up below the existential deposit as a result
+        /// of the burn and `keep_alive` is false, the account will be reaped.
+        /// 
+        /// Unlike sending funds to a _burn_ address, which merely makes the funds inaccessible,
+        /// this `burn` operation will reduce total issuance by the amount _burned_.
+        /// </summary>
+        burn = 10,
     }
     
     /// <summary>
-    /// >> 252 - Variant[pallet_balances.pallet.Call]
+    /// >> 246 - Variant[pallet_balances.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -132,6 +144,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_balances.pallet
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.upgrade_accounts);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.force_set_balance);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.pallet_balances.types.EnumAdjustmentDirection, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.force_adjust_total_issuance);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.burn);
         }
     }
 }

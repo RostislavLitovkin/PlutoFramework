@@ -72,9 +72,24 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         Balances = 10,
         
         /// <summary>
+        /// >> Assets
+        /// </summary>
+        Assets = 12,
+        
+        /// <summary>
         /// >> Multisig
         /// </summary>
         Multisig = 16,
+        
+        /// <summary>
+        /// >> Nfts
+        /// </summary>
+        Nfts = 17,
+        
+        /// <summary>
+        /// >> NftFractionalization
+        /// </summary>
+        NftFractionalization = 18,
         
         /// <summary>
         /// >> AuthoritiesNoting
@@ -85,11 +100,6 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         /// >> AuthorInherent
         /// </summary>
         AuthorInherent = 51,
-        
-        /// <summary>
-        /// >> DmpQueue
-        /// </summary>
-        DmpQueue = 72,
         
         /// <summary>
         /// >> PolkadotXcm
@@ -122,78 +132,38 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         XcmExecutorUtils = 78,
         
         /// <summary>
-        /// >> RootTesting
-        /// </summary>
-        RootTesting = 100,
-        
-        /// <summary>
         /// >> XcavateWhitelist
         /// </summary>
-        XcavateWhitelist = 111,
-        
-        /// <summary>
-        /// >> Council
-        /// </summary>
-        Council = 112,
-        
-        /// <summary>
-        /// >> TechnicalCommittee
-        /// </summary>
-        TechnicalCommittee = 113,
-        
-        /// <summary>
-        /// >> AllianceMotion
-        /// </summary>
-        AllianceMotion = 114,
-        
-        /// <summary>
-        /// >> Nfts
-        /// </summary>
-        Nfts = 115,
-        
-        /// <summary>
-        /// >> Assets
-        /// </summary>
-        Assets = 116,
-        
-        /// <summary>
-        /// >> NftFractionalization
-        /// </summary>
-        NftFractionalization = 117,
+        XcavateWhitelist = 80,
         
         /// <summary>
         /// >> NftMarketplace
         /// </summary>
-        NftMarketplace = 118,
+        NftMarketplace = 81,
         
         /// <summary>
         /// >> PropertyManagement
         /// </summary>
-        PropertyManagement = 119,
+        PropertyManagement = 82,
         
         /// <summary>
         /// >> PropertyGovernance
         /// </summary>
-        PropertyGovernance = 120,
+        PropertyGovernance = 83,
         
         /// <summary>
-        /// >> XcavateStaking
+        /// >> GameModule
         /// </summary>
-        XcavateStaking = 121,
+        GameModule = 84,
         
         /// <summary>
-        /// >> CommunityLoanPool
+        /// >> RootTesting
         /// </summary>
-        CommunityLoanPool = 122,
-        
-        /// <summary>
-        /// >> CommunityProject
-        /// </summary>
-        CommunityProject = 123,
+        RootTesting = 100,
     }
     
     /// <summary>
-    /// >> 235 - Variant[container_chain_template_simple_runtime.RuntimeCall]
+    /// >> 232 - Variant[container_chain_template_simple_runtime.RuntimeCall]
     /// </summary>
     public sealed class EnumRuntimeCall : BaseEnumRust<RuntimeCall>
     {
@@ -213,30 +183,24 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_maintenance_mode.pallet.EnumCall>(RuntimeCall.MaintenanceMode);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_tx_pause.pallet.EnumCall>(RuntimeCall.TxPause);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_balances.pallet.EnumCall>(RuntimeCall.Balances);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_assets.pallet.EnumCall>(RuntimeCall.Assets);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_multisig.pallet.EnumCall>(RuntimeCall.Multisig);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.pallet.EnumCall>(RuntimeCall.Nfts);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.pallet.EnumCall>(RuntimeCall.NftFractionalization);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_cc_authorities_noting.pallet.EnumCall>(RuntimeCall.AuthoritiesNoting);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_author_inherent.pallet.EnumCall>(RuntimeCall.AuthorInherent);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_dmp_queue.pallet.EnumCall>(RuntimeCall.DmpQueue);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.EnumCall>(RuntimeCall.PolkadotXcm);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_message_queue.pallet.EnumCall>(RuntimeCall.MessageQueue);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_assets.pallet.EnumCall>(RuntimeCall.ForeignAssets);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_foreign_asset_creator.pallet.EnumCall>(RuntimeCall.ForeignAssetsCreator);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_asset_rate.pallet.EnumCall>(RuntimeCall.AssetRate);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet.EnumCall>(RuntimeCall.XcmExecutorUtils);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_root_testing.pallet.EnumCall>(RuntimeCall.RootTesting);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumCall>(RuntimeCall.XcavateWhitelist);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_collective.pallet.EnumCall>(RuntimeCall.Council);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_collective.pallet.EnumCall>(RuntimeCall.TechnicalCommittee);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_collective.pallet.EnumCall>(RuntimeCall.AllianceMotion);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.pallet.EnumCall>(RuntimeCall.Nfts);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_assets.pallet.EnumCall>(RuntimeCall.Assets);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.pallet.EnumCall>(RuntimeCall.NftFractionalization);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.EnumCall>(RuntimeCall.NftMarketplace);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.EnumCall>(RuntimeCall.PropertyManagement);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumCall>(RuntimeCall.PropertyGovernance);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_staking.pallet.EnumCall>(RuntimeCall.XcavateStaking);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_community_loan_pool.pallet.EnumCall>(RuntimeCall.CommunityLoanPool);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_community_projects.pallet.EnumCall>(RuntimeCall.CommunityProject);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_game.pallet.EnumCall>(RuntimeCall.GameModule);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_root_testing.pallet.EnumCall>(RuntimeCall.RootTesting);
         }
     }
 }

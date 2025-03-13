@@ -51,7 +51,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_asset_rate.pallet
     }
     
     /// <summary>
-    /// >> 303 - Variant[pallet_asset_rate.pallet.Call]
+    /// >> 322 - Variant[pallet_asset_rate.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -62,9 +62,9 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_asset_rate.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>>(Call.create);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>>(Call.update);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U16>(Call.remove);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>>(Call.create);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>>(Call.update);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.remove);
         }
     }
 }

@@ -47,20 +47,32 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         TooManyVotes = 3,
         
         /// <summary>
-        /// >> AlreadyVoted
-        /// The user already voted.
-        /// </summary>
-        AlreadyVoted = 4,
-        
-        /// <summary>
         /// >> NoAssetFound
         /// The assets details could not be found.
         /// </summary>
-        NoAssetFound = 5,
+        NoAssetFound = 4,
+        
+        /// <summary>
+        /// >> NoLettingAgentFound
+        /// There is no letting agent for this property.
+        /// </summary>
+        NoLettingAgentFound = 5,
+        
+        /// <summary>
+        /// >> NotEnoughFunds
+        /// The pallet has not enough funds.
+        /// </summary>
+        NotEnoughFunds = 6,
+        
+        /// <summary>
+        /// >> ConversionError
+        /// Error during converting types.
+        /// </summary>
+        ConversionError = 7,
     }
     
     /// <summary>
-    /// >> 508 - Variant[pallet_property_governance.pallet.Error]
+    /// >> 484 - Variant[pallet_property_governance.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

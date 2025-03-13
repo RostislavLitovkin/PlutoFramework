@@ -144,10 +144,16 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_assets.pallet
         /// Callback action resulted in error
         /// </summary>
         CallbackFailed = 19,
+        
+        /// <summary>
+        /// >> BadAssetId
+        /// The asset ID must be equal to the [`NextAssetId`].
+        /// </summary>
+        BadAssetId = 20,
     }
     
     /// <summary>
-    /// >> 485 - Variant[pallet_assets.pallet.Error]
+    /// >> 455 - Variant[pallet_assets.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

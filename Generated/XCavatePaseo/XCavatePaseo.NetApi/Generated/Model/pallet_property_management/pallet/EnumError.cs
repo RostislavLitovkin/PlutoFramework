@@ -46,104 +46,127 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         ArithmeticOverflow = 3,
         
         /// <summary>
+        /// >> ArithmeticUnderflow
+        /// </summary>
+        ArithmeticUnderflow = 4,
+        
+        /// <summary>
         /// >> UserHasNoFundsStored
         /// The caller has no funds stored.
         /// </summary>
-        UserHasNoFundsStored = 4,
+        UserHasNoFundsStored = 5,
         
         /// <summary>
         /// >> NotEnoughFunds
         /// The pallet has not enough funds.
         /// </summary>
-        NotEnoughFunds = 5,
+        NotEnoughFunds = 6,
         
         /// <summary>
         /// >> TooManyAssignedProperties
-        /// The letting agent already has too many assigned properties.
+        /// The letting agent has already too many assigned properties.
         /// </summary>
-        TooManyAssignedProperties = 6,
+        TooManyAssignedProperties = 7,
         
         /// <summary>
         /// >> NoLettingAgentFound
         /// No letting agent could be selected.
         /// </summary>
-        NoLettingAgentFound = 7,
+        NoLettingAgentFound = 8,
         
         /// <summary>
         /// >> RegionUnknown
         /// The region is not registered.
         /// </summary>
-        RegionUnknown = 8,
+        RegionUnknown = 9,
         
         /// <summary>
         /// >> TooManyLettingAgents
         /// The location has already the maximum amount of letting agents.
         /// </summary>
-        TooManyLettingAgents = 9,
+        TooManyLettingAgents = 10,
         
         /// <summary>
         /// >> TooManyLocations
         /// The letting agent is already active in too many locations.
         /// </summary>
-        TooManyLocations = 10,
+        TooManyLocations = 11,
         
         /// <summary>
         /// >> NoPermission
         /// The user is not a property owner and has no permission to deposit.
         /// </summary>
-        NoPermission = 11,
+        NoPermission = 12,
         
         /// <summary>
         /// >> LettingAgentAlreadySet
         /// The letting agent of this property is already set.
         /// </summary>
-        LettingAgentAlreadySet = 12,
+        LettingAgentAlreadySet = 13,
         
         /// <summary>
         /// >> NoObjectFound
         /// The real estate object could not be found.
         /// </summary>
-        NoObjectFound = 13,
+        NoObjectFound = 14,
         
         /// <summary>
         /// >> AgentNotFound
         /// The account is not a letting agent of this location.
         /// </summary>
-        AgentNotFound = 14,
+        AgentNotFound = 15,
         
         /// <summary>
         /// >> AlreadyDeposited
         /// The letting already deposited the necessary amount.
         /// </summary>
-        AlreadyDeposited = 15,
+        AlreadyDeposited = 16,
         
         /// <summary>
         /// >> LocationUnknown
         /// The location is not registered.
         /// </summary>
-        LocationUnknown = 16,
+        LocationUnknown = 17,
         
         /// <summary>
         /// >> LettingAgentInLocation
         /// The letting agent is already assigned to this location.
         /// </summary>
-        LettingAgentInLocation = 17,
+        LettingAgentInLocation = 18,
         
         /// <summary>
         /// >> NotDeposited
         /// The letting agent has no funds deposited.
         /// </summary>
-        NotDeposited = 18,
+        NotDeposited = 19,
         
         /// <summary>
         /// >> LettingAgentExists
         /// The letting agent is already registered.
         /// </summary>
-        LettingAgentExists = 19,
+        LettingAgentExists = 20,
+        
+        /// <summary>
+        /// >> NotEnoughReserves
+        /// The property does not have enough reserves to make this proposal.
+        /// </summary>
+        NotEnoughReserves = 21,
+        
+        /// <summary>
+        /// >> AssetNotFound
+        /// This asset has no token.
+        /// </summary>
+        AssetNotFound = 22,
+        
+        /// <summary>
+        /// >> NoLoactions
+        /// This letting agent has no location.
+        /// </summary>
+        NoLoactions = 23,
     }
     
     /// <summary>
-    /// >> 502 - Variant[pallet_property_management.pallet.Error]
+    /// >> 476 - Variant[pallet_property_management.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

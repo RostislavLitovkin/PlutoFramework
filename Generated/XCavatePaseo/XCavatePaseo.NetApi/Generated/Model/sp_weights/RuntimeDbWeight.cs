@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.sp_weights
     
     
     /// <summary>
-    /// >> 186 - Composite[sp_weights.RuntimeDbWeight]
+    /// >> 183 - Composite[sp_weights.RuntimeDbWeight]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RuntimeDbWeight : BaseType

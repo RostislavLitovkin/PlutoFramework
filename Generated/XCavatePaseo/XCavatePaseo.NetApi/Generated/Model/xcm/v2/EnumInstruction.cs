@@ -163,7 +163,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcm.v2
     }
     
     /// <summary>
-    /// >> 290 - Variant[xcm.v2.Instruction]
+    /// >> 309 - Variant[xcm.v2.Instruction]
     /// </summary>
     public sealed class EnumInstruction : BaseEnumRust<Instruction>
     {

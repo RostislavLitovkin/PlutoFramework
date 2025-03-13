@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7
     }
     
     /// <summary>
-    /// >> 201 - Variant[polkadot_primitives.v7.UpgradeGoAhead]
+    /// >> 198 - Variant[polkadot_primitives.v7.UpgradeGoAhead]
     /// </summary>
     public sealed class EnumUpgradeGoAhead : BaseEnum<UpgradeGoAhead>
     {

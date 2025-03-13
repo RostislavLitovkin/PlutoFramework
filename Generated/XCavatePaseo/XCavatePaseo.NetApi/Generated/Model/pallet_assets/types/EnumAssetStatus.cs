@@ -38,7 +38,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_assets.types
     }
     
     /// <summary>
-    /// >> 435 - Variant[pallet_assets.types.AssetStatus]
+    /// >> 371 - Variant[pallet_assets.types.AssetStatus]
     /// </summary>
     public sealed class EnumAssetStatus : BaseEnum<AssetStatus>
     {

@@ -37,28 +37,13 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         PolkadotXcm = 73,
         
         /// <summary>
-        /// >> Council
-        /// </summary>
-        Council = 112,
-        
-        /// <summary>
-        /// >> TechnicalCommittee
-        /// </summary>
-        TechnicalCommittee = 113,
-        
-        /// <summary>
-        /// >> AllianceMotion
-        /// </summary>
-        AllianceMotion = 114,
-        
-        /// <summary>
         /// >> Void
         /// </summary>
-        Void = 6,
+        Void = 3,
     }
     
     /// <summary>
-    /// >> 238 - Variant[container_chain_template_simple_runtime.OriginCaller]
+    /// >> 235 - Variant[container_chain_template_simple_runtime.OriginCaller]
     /// </summary>
     public sealed class EnumOriginCaller : BaseEnumRust<OriginCaller>
     {
@@ -71,9 +56,6 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.frame_support.dispatch.EnumRawOrigin>(OriginCaller.system);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcm.pallet.EnumOrigin>(OriginCaller.CumulusXcm);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.EnumOrigin>(OriginCaller.PolkadotXcm);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_collective.EnumRawOrigin>(OriginCaller.Council);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_collective.EnumRawOrigin>(OriginCaller.TechnicalCommittee);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_collective.EnumRawOrigin>(OriginCaller.AllianceMotion);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVoid>(OriginCaller.Void);
         }
     }

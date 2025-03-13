@@ -1,5 +1,6 @@
 using PlutoFramework.Constants;
 using UniqueryPlus.Nfts;
+using PropertyModel = PlutoFramework.Model.Xcavate.XcavatePropertyModel;
 
 namespace PlutoFramework.Components.XcavateProperty;
 
@@ -27,7 +28,7 @@ public partial class PropertyThumbnailView : ContentView
 
             control.propertyNameLabel.Text = nftBase.XcavateMetadata.PropertyName;
 
-            control.apyLabel.Text = XcavatePropertyModel.GetAPY(nftBase.XcavateMetadata.EstimatedRentalIncome, nftBase.XcavateMetadata.PropertyPrice);
+            control.apyLabel.Text = PropertyModel.GetAPY(nftBase.XcavateMetadata.EstimatedRentalIncome, nftBase.XcavateMetadata.PropertyPrice);
 
             control.tokensLabel.Text = nftBase.NftMarketplaceDetails?.Listed?.ToString() ?? "-";
 
@@ -49,8 +50,6 @@ public partial class PropertyThumbnailView : ContentView
                     _ => nftBase.XcavateMetadata?.Images[0]
                 },
             };
-
-            Console.WriteLine("Done loading Xcavate property");
         });
 
     public static readonly BindableProperty FavouriteProperty = BindableProperty.Create(

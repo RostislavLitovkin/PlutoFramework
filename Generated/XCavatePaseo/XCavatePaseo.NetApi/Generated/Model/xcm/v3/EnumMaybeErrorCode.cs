@@ -38,7 +38,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcm.v3
     }
     
     /// <summary>
-    /// >> 97 - Variant[xcm.v3.MaybeErrorCode]
+    /// >> 109 - Variant[xcm.v3.MaybeErrorCode]
     /// </summary>
     public sealed class EnumMaybeErrorCode : BaseEnumRust<MaybeErrorCode>
     {
@@ -49,8 +49,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcm.v3
         public EnumMaybeErrorCode()
         {
 				AddTypeDecoder<BaseVoid>(MaybeErrorCode.Success);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4>(MaybeErrorCode.Error);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4>(MaybeErrorCode.TruncatedError);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7>(MaybeErrorCode.Error);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7>(MaybeErrorCode.TruncatedError);
         }
     }
 }

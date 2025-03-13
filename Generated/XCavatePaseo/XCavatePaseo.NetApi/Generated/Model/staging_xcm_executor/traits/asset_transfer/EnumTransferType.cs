@@ -43,7 +43,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm_executor.traits.asset_
     }
     
     /// <summary>
-    /// >> 298 - Variant[staging_xcm_executor.traits.asset_transfer.TransferType]
+    /// >> 317 - Variant[staging_xcm_executor.traits.asset_transfer.TransferType]
     /// </summary>
     public sealed class EnumTransferType : BaseEnumRust<TransferType>
     {

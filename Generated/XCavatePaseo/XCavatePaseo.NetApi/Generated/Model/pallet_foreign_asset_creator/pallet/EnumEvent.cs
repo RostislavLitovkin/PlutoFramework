@@ -48,7 +48,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_foreign_asset_creator.palle
     }
     
     /// <summary>
-    /// >> 137 - Variant[pallet_foreign_asset_creator.pallet.Event]
+    /// >> 149 - Variant[pallet_foreign_asset_creator.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -59,10 +59,10 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_foreign_asset_creator.palle
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Event.ForeignAssetCreated);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Event.ForeignAssetTypeChanged);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Event.ForeignAssetRemoved);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Event.ForeignAssetDestroyed);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Event.ForeignAssetCreated);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Event.ForeignAssetTypeChanged);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Event.ForeignAssetRemoved);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Event.ForeignAssetDestroyed);
         }
     }
 }

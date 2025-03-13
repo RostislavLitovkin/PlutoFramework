@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 464 - Composite[pallet_nfts.types.ItemDetails]
+    /// >> 389 - Composite[pallet_nfts.types.ItemDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ItemDetails : BaseType
@@ -31,7 +31,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
         /// <summary>
         /// >> approvals
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMap Approvals { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 Approvals { get; set; }
         /// <summary>
         /// >> deposit
         /// </summary>
@@ -59,7 +59,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
             var start = p;
             Owner = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Owner.Decode(byteArray, ref p);
-            Approvals = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMap();
+            Approvals = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             Approvals.Decode(byteArray, ref p);
             Deposit = new XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.ItemDeposit();
             Deposit.Decode(byteArray, ref p);

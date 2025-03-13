@@ -95,7 +95,7 @@ public partial class SettingsPage : ContentPage
 
     private async void OnPropertyClicked(object sender, TappedEventArgs e)
     {
-        var viewModel = new PropertyDetailViewModel
+        /*var viewModel = new PropertyDetailViewModel
         {
             AreaPricesPercentage = 0.7,
 
@@ -133,7 +133,7 @@ public partial class SettingsPage : ContentPage
                 "xcavatergb.png",
             ]
         };
-        await Navigation.PushAsync(new PropertyDetailPage(viewModel));
+        await Navigation.PushAsync(new PropertyDetailPage(viewModel));*/
     }
 
     async void OnShowMnemonicsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
