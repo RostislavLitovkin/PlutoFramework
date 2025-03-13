@@ -10,7 +10,7 @@ namespace PlutoFramework.Components.AddressView
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(TwoLineAddress))]
-        private string address;
+        private string address = "";
 
         public string TwoLineAddress => Address.Substring(0, Address.Length / 2) + "\n" + Address.Substring(Address.Length / 2);
 

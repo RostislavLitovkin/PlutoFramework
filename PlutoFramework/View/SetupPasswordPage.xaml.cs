@@ -36,6 +36,8 @@ public partial class SetupPasswordPage : ContentPage
 
         clicked = true;
 
+        await Model.KeysModel.GenerateNewAccountAsync(passwordEntry.Text != null ? passwordEntry.Text : "");
+
         Application.Current.MainPage = new AppShell();
 
         clicked = false;
