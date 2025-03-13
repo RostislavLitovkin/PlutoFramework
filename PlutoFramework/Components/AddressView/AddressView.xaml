@@ -36,6 +36,7 @@
                            VerticalOptions="Center" 
                            HorizontalOptions="FillAndExpand"
                            Grid.Column="1"
+                           Grid.ColumnSpan="2"
                             TextColor="{AppThemeBinding Dark=#fdfdfd, Light=#0a0a0a}"
                             FontAttributes="Bold"
                            LineBreakMode="TailTruncation"
@@ -51,6 +52,8 @@
                        Margin="5, 0, 0, 0"
                        VerticalOptions="Center" 
                        HorizontalOptions="End"
+                           x:Name="qr"
+                           IsVisible="False"
                        Grid.Column="2">
 
                         <Image.Source>

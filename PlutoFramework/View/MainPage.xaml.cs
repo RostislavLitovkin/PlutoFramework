@@ -12,9 +12,9 @@ namespace PlutoFramework.View;
 
 public partial class MainPage : ContentPage
 {
-    public static IList<IView> Views => StackLayout.Children;
-    public static VerticalStackLayout StackLayout { get; set; }
-    public static MultiNetworkSelectView NetworksView { get; set; }
+    public static IList<IView> Views => StackLayout?.Children ?? [];
+    public static VerticalStackLayout? StackLayout { get; set; }
+    public static MultiNetworkSelectView? NetworksView { get; set; }
     public MainPage()
     {
         NavigationPage.SetHasNavigationBar(this, false);
@@ -33,6 +33,11 @@ public partial class MainPage : ContentPage
 
     public static void SetupLayout()
     {
+        if (StackLayout is null)
+        {
+            return;
+        }
+
         if (StackLayout.Children.Count() != 0)
         {
             StackLayout.Children.Clear();

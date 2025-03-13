@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Mnemonics.CreateMnemonicsPage"
+             Title="CreateMnemonicsPage"
+             xmlns:mnemonics="clr-namespace:PlutoFramework.Components.Mnemonics"
+             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+            xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+         xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
+         xmlns:password="clr-namespace:PlutoFramework.Components.Password"
+             xmlns:address="clr-namespace:PlutoFramework.Components.AddressView"
+         BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
+    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+
+        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+           Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
+           Opacity="{AppThemeBinding Light=0.96}"
+           Aspect="AspectFill"/>
+
+        <ScrollView Orientation="Vertical"
+            x:Name="scrollView"
+            AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All"
+            Padding="0, 55, 0, 0">
+            <VerticalStackLayout HorizontalOptions="Center"
+                         Padding="20, 10, 20, 100"
+                         Spacing="15">
+
+                <Label Text="{Binding Title}"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,0,0,20"
+                       IsVisible="{Binding TitleIsVisible}" />
+
+                <address:AddressView Title="Substrate key"
+                                     Address="{Binding Address}" />
+
+                <mnemonics:MnemonicsView Title="{Binding MnemonicsTitle}"
+                                         Mnemonics="{Binding Mnemonics}" />
+
+                <buttons:ElevatedButton ButtonState="{Binding ExportJsonButtonState}"
+                                        Text="Export json"
+                                        Command="{Binding ExportJsonCommand}"
+                                        x:Name="exportJsonButton" />
+
+                <buttons:ElevatedButton ButtonState="Enabled"
+                                        Text="What are mnemonics?"
+                                        Command="{Binding GoToMnemonicsExplanationCommand}" />
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, AutoSize"
+                             AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                             Padding="20, 10, 20, 10"
+                             Spacing="15">
+            <buttons:ElevatedButton Text="Continue"
+                                    ButtonState="Enabled"
+                                    Command="{Binding ContinueToNextPageCommand}" />
+        </VerticalStackLayout>
+
+        <navigationbar:TopNavigationBar Title="New mnemonics" />
+
+        <txanalyzer:TransactionAnalyzerConfirmationView />
+
+        <password:EnterPasswordPopupView />
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,3 +1,4 @@
+using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Model;
 
 namespace PlutoFramework.Components.Form;
@@ -45,6 +46,10 @@ public partial class FormInputView : ContentView
             }
         });
 
+
+    public static readonly BindableProperty UpdateCommandProperty = BindableProperty.Create(
+        nameof(UpdateCommand), typeof(IRelayCommand), typeof(FormInputView),
+        defaultBindingMode: BindingMode.TwoWay);
     public FormInputView()
     {
         InitializeComponent();
@@ -65,6 +70,10 @@ public partial class FormInputView : ContentView
         get => (string)GetValue(PlaceholderProperty);
         set => SetValue(PlaceholderProperty, value);
     }
+    public IRelayCommand UpdateCommand { 
+        get => (IRelayCommand)GetValue(UpdateCommandProperty);
+        set => SetValue(UpdateCommandProperty, value);
+    }
 
     public bool ValidateEmail { get; set; } = false;
     private void OnPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -77,6 +86,11 @@ public partial class FormInputView : ContentView
             }
 
             SetValue(TextProperty, ((Entry)sender).Text);
+
+            if (UpdateCommand != null)
+            {
+                UpdateCommand.Execute(null);
+            }
         }
         catch (Exception ex)
         {

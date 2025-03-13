@@ -22,19 +22,11 @@ public partial class MnemonicsPage : ContentPage
 
         InitializeComponent();
 
-        var accountType = (AccountType)Enum.Parse(typeof(AccountType), Preferences.Get(PreferencesModel.ACCOUNT_TYPE, AccountType.None.ToString()));
-
-        viewModel.MnemonicsTitle = accountType switch
-        {
-            AccountType.Mnemonic => "Mnemonics:",
-            AccountType.PrivateKey => "Private key:",
-            _ => "Mnemonics:"
-        };
-
-        exportJsonButton.ButtonState = accountType == AccountType.PrivateKey ? Components.Buttons.ButtonStateEnum.Disabled : Components.Buttons.ButtonStateEnum.Enabled;
+        viewModel.AccountType = (AccountType)Enum.Parse(typeof(AccountType), Preferences.Get(PreferencesModel.ACCOUNT_TYPE, AccountType.None.ToString()));
 
         viewModel.Mnemonics = secret ?? "Mnemonics are not available for your account.";
-        if (accountType == AccountType.Json)
+
+        if (viewModel.AccountType == AccountType.Json)
         {
             viewModel.Mnemonics = "Mnemonics are not available for your account.";
         }

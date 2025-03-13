@@ -7,8 +7,8 @@
         <nft:NftImageView x:Name="mainImage" />
 
         <HorizontalStackLayout Spacing="10"
-                               x:Name="imagesStackLayout"
-                               BindableLayout.ItemsSource="{Binding ImageSources}">
+                               x:Name="imagesStackLayout">
+            
         </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentView>

@@ -64,7 +64,7 @@
                     </card:Card>
                 </ContentView>
 
-                <buttons:ElevatedButton Text="Continue" Clicked="ContinueWithMnemonicClicked" />
+                <buttons:ElevatedButton Text="Continue" Command="{Binding ContinueWithMnemonicsCommand}" />
 
 
                 <ContentView HeightRequest="120" Margin="0, 40, 0, 0"
@@ -103,10 +103,10 @@
                     </card:Card>
                 </ContentView>
 
-                <buttons:ElevatedButton ButtonState="Enabled" Text="Continue" Clicked="ContinueWithPrivateKeyClicked"
+                <buttons:ElevatedButton ButtonState="Enabled" Text="Continue" Command="{Binding ContinueWithPrivateKeyCommand}"
                                         IsVisible="{Binding UsePrivateKeyIsVisible}" />
 
-                <buttons:ElevatedButton ButtonState="Enabled" Text="Import json" Clicked="ImportJsonClicked"/>
+                <buttons:ElevatedButton ButtonState="Enabled" Text="Import json" Command="{Binding ImportJsonCommand}"/>
             </VerticalStackLayout>
             
         </ScrollView>

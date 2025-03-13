@@ -1,4 +1,5 @@
 ﻿using PlutoFramework.Components.Buttons;
+using PlutoFramework.Model;
 using Substrate.NET.Wallet;
 
 namespace PlutoFramework.View;
@@ -14,6 +15,18 @@ public partial class SetupPasswordPage : ContentPage
         InitializeComponent();
     }
 
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+
+        var accountType = (AccountType)Enum.Parse(typeof(AccountType), Preferences.Get(PreferencesModel.ACCOUNT_TYPE, AccountType.None.ToString()));
+
+        if (accountType == AccountType.Json && SecureStorage.GetAsync(PreferencesModel.PASSWORD) is not null)
+        {
+            Application.Current.MainPage = new AppShell();
+        }
+    }
+
     private async void ContinueToMainPageClicked(System.Object sender, System.EventArgs e)
     {
         if (clicked)
@@ -22,8 +35,6 @@ public partial class SetupPasswordPage : ContentPage
         }
 
         clicked = true;
-
-        await Model.KeysModel.GenerateNewAccountAsync(passwordEntry.Text != null ? passwordEntry.Text : "");
 
         Application.Current.MainPage = new AppShell();
 

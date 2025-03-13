@@ -7,6 +7,7 @@ using CommunityToolkit.Maui.Alerts;
 using PlutoFramework.Model;
 using PlutoFramework.View;
 using PlutoFramework.Components.Mnemonics;
+using PlutoFramework.Components.Buttons;
 
 namespace PlutoFramework.ViewModel
 {
@@ -15,14 +16,26 @@ namespace PlutoFramework.ViewModel
 
         [ObservableProperty]
         private string mnemonics = "";
+
         [ObservableProperty]
-        private string password = "";
-        [ObservableProperty]
-        private string mnemonicsTitle = "";
+        [NotifyPropertyChangedFor(nameof(MnemonicsTitle))]
+        [NotifyPropertyChangedFor(nameof(ExportJsonButtonState))]
+        private AccountType accountType = AccountType.Mnemonic;
+
+        public string MnemonicsTitle => AccountType switch
+        {
+            AccountType.Mnemonic => "Mnemonics:",
+            AccountType.PrivateKey => "Private key:",
+            _ => "Mnemonics:"
+        };
+
+        public ButtonStateEnum ExportJsonButtonState => AccountType == AccountType.PrivateKey ? Components.Buttons.ButtonStateEnum.Disabled : Components.Buttons.ButtonStateEnum.Enabled;
 
         [RelayCommand]
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
-        public Task GoToEnterMnemonicsAsync() => Application.Current.MainPage.Navigation.PushAsync(new EnterMnemonicsPage());
+        public Task GoToEnterMnemonicsAsync() => Application.Current.MainPage.Navigation.PushAsync(new EnterMnemonicsPage(new EnterMnemonicsViewModel {
+            Navigation = () => Shell.Current.GoToAsync("../..")
+        }));
 
         [RelayCommand]
         public Task GoToMnemonicsExplanationAsync() => Application.Current.MainPage.Navigation.PushAsync(new MnemonicsExplanationPage());

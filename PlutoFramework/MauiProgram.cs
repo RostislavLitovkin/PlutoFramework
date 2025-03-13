@@ -3,6 +3,11 @@ using Microsoft.Extensions.Configuration;
 using System.Reflection;
 using ZXing.Net.Maui.Controls;
 
+#if ANDROID26_0_OR_GREATER
+using PlutoFramework.Platforms.Android;
+#endif
+
+
 namespace PlutoFramework;
 
 public static class MauiProgram
@@ -28,6 +33,8 @@ public static class MauiProgram
         builder.AddAppSettings();
 
         //builder.Services.AddSingleton<Model.PlutonicationModel>();
+
+        CustomizeWebViewHandler();
 
         var app = builder.Build();
 
@@ -56,5 +63,17 @@ public static class MauiProgram
             .Build();
 
         builder.Configuration.AddConfiguration(configuration);
+    }
+
+    /// <summary>
+    /// https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/webview?view=net-maui-9.0&pivots=devices-android#handle-permissions-on-android
+    /// </summary>
+    private static void CustomizeWebViewHandler()
+    {
+#if ANDROID26_0_OR_GREATER
+        Microsoft.Maui.Handlers.WebViewHandler.Mapper.ModifyMapping(
+            nameof(Android.Webkit.WebView.WebChromeClient),
+            (handler, view, args) => handler.PlatformView.SetWebChromeClient(new WebChromeClientWithPermissions(handler)));
+#endif
     }
 }

@@ -35,6 +35,7 @@ public partial class SettingsPage : ContentPage
         }
 
         KeysModel.RemoveAccount();
+        KeysModel.RemoveAccount("kilt1");
 
         SecureStorage.Default.Remove(PreferencesModel.PASSWORD);
         Preferences.Remove(PreferencesModel.BIOMETRICS_ENABLED);
@@ -42,7 +43,7 @@ public partial class SettingsPage : ContentPage
         await SQLiteModel.DeleteAllDatabasesAsync();
 
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
-        Application.Current.MainPage = new SetupPasswordPage();
+        Application.Current.MainPage = new WelcomePage();
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
 
     }
@@ -55,10 +56,15 @@ public partial class SettingsPage : ContentPage
     {
         var userInfo = await XcavateUserDatabase.GetUserInformationAsync();
 
+        if (userInfo is null)
+        {
+            return;
+        }
+
         var viewModel = new UserProfileViewModel
         {
             CanEdit = true,
-            User = userInfo ?? await XcavateUserModel.GetMockUserAsync(),
+            User = userInfo,
         };
 
         // Clean temporary files
@@ -146,9 +152,9 @@ public partial class SettingsPage : ContentPage
 
     async void OnManageKiltDidClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
-        if (!Preferences.ContainsKey(PreferencesModel.DID + "kilt1"))
+        if (!Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY + "kilt1"))
         {
-            await Navigation.PushAsync(new NoDidPage());
+            await Navigation.PushAsync(new NoDidPage(new NoDidViewModel()));
 
             return;
         }
@@ -163,5 +169,16 @@ public partial class SettingsPage : ContentPage
         {
             // Failed to authenticate
         }
+    }
+
+    private async void OnCreateNewPropertyClicked(object sender, TappedEventArgs e)
+    {
+        var property = await XcavatePropertyDatabase.GetPropertyAsync() ?? new UniqueryPlus.Metadata.XcavateMetadata
+        {
+            Images = [],
+            PropertyName = ""
+        };
+
+        await Navigation.PushAsync(new ModifyPropertyPage(property));
     }
 }

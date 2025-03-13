@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.Kilt.NoDidPage"
              Title="NoDidPage"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
          xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
          xmlns:password="clr-namespace:PlutoFramework.Components.Password"
@@ -14,14 +15,79 @@
            Opacity="{AppThemeBinding Light=0.96}"
            Aspect="AspectFill"/>
 
-        <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-                    Padding="0, 45, 0, 200">
-           
-            <!-- Add your content here -->
+        <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+      Padding="20"
+      ColumnSpacing="15"
+      RowSpacing="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="40" />
+
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Do you have DID?"
+                   VerticalTextAlignment="End"
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   Grid.Column="0"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="2"/>
+
+            <card:ClickableCard Grid.Column="0"
+                        Grid.Row="1"
+                        HorizontalOptions="Fill">
+                <card:ClickableCard.View>
+                    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                            AbsoluteLayout.LayoutFlags="All">
+                        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
+                                     AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image WidthRequest="80"
+                           HeightRequest="80"
+                           Source="didcreate.png" />
+                            <Label Text="Create DID"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </AbsoluteLayout>
+
+                </card:ClickableCard.View>
+
+                <card:ClickableCard.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CreateDidCommand}" />
+                </card:ClickableCard.GestureRecognizers>
+            </card:ClickableCard>
             
-        </ScrollView>
-        
-        <navigationbar:TopNavigationBar Title="Manage Kilt DID" />
+            <card:ClickableCard Grid.Column="0"
+                            Grid.Row="2">
+                <card:ClickableCard.View>
+                    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                    AbsoluteLayout.LayoutFlags="All">
+                        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
+                                             AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <Image WidthRequest="80"
+                                   HeightRequest="80"
+                                   Source="didimport.png" />      
+                            <Label Text="Import DID"
+                                   FontAttributes="Bold"
+                                   HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </AbsoluteLayout>
+
+                </card:ClickableCard.View>
+
+                <card:ClickableCard.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ImportDidCommand}" />
+                </card:ClickableCard.GestureRecognizers>
+            </card:ClickableCard>
+        </Grid>
+
+        <navigationbar:TopNavigationBar Title="Kilt DID" />
 
         <txanalyzer:TransactionAnalyzerConfirmationView />
 

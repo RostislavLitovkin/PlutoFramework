@@ -41,7 +41,7 @@
 
                 <Label.FormattedText>
                   <FormattedString>
-                     <Span Text="NFTs"
+                     <Span Text="Marketplace"
                            x:Name="nftsSpan"/>
                   </FormattedString>
                </Label.FormattedText>

@@ -8,6 +8,8 @@ namespace PlutoFramework.Components.Xcavate
             Shell.SetNavBarIsVisible(this, false);
 
             InitializeComponent();
+
+            BindingContext = new UserTypeSelectionViewModel();
         }
     }
 }

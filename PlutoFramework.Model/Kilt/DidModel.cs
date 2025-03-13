@@ -40,6 +40,8 @@ namespace PlutoFramework.Model
             return accountId;
         }
 
+        public static string ToDidAddress(this Account account) => $"did:kilt:{Utils.GetAddressFrom(Utils.GetPublicKeyFrom(account.Value), 38)}";
+
         public static Method Create(Account account, Account did)
         {
             var details = new DidCreationDetails

@@ -17,6 +17,7 @@ namespace PlutoFramework.Components.Xcavate
 
         [ObservableProperty]
         private ImageSource profileBackground;
+
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(SaveButtonState))]
         private string firstName = "";

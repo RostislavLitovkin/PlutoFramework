@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Kilt.CreateNewDidPage"
+             Title="CreateNewDidPage"
+             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+             xmlns:kilt="clr-namespace:PlutoFramework.Components.Kilt"
+             xmlns:mnemonics="clr-namespace:PlutoFramework.Components.Mnemonics"
+            xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+         xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
+         xmlns:password="clr-namespace:PlutoFramework.Components.Password"
+         BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
+    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+
+        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+           Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
+           Opacity="{AppThemeBinding Light=0.96}"
+           Aspect="AspectFill"/>
+
+        <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                    Padding="0,55,0,0">
+            <VerticalStackLayout Spacing="15"
+                                 Padding="20, 10, 20, 100">
+
+                <Label Text="{Binding Title}"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,0,0,20"
+                       IsVisible="{Binding TitleIsVisible}" />
+
+                <kilt:DidView Did="{Binding Did}"
+                              Verification="Light" />
+
+                <mnemonics:MnemonicsView Mnemonics="{Binding Mnemonics}"
+                                         Title="Mnemonics:"/>
+
+                <buttons:ElevatedButton ButtonState="Enabled"
+                                        Text="How to save Mnemonics?"
+                                        Command="{Binding GoToMnemonicsExplanationCommand}" />
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, AutoSize"
+             AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+             Padding="20, 10, 20, 10"
+             Spacing="15">
+            <buttons:ElevatedButton Text="Continue"
+                x:Name="continueButton"
+                ButtonState="Enabled"
+                Command="{Binding ContinueToNextPageCommand}" />
+        </VerticalStackLayout>
+
+        <navigationbar:TopNavigationBar Title="New DID" />
+
+        <txanalyzer:TransactionAnalyzerConfirmationView />
+
+        <password:EnterPasswordPopupView />
+    </AbsoluteLayout>
+</ContentPage>

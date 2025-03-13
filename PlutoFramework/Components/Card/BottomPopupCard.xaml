@@ -4,12 +4,10 @@
              x:Class="PlutoFramework.Components.Card.BottomPopupCard"
              AbsoluteLayout.LayoutBounds=".5, .5, 1, 1"
             AbsoluteLayout.LayoutFlags="All"
-            BackgroundColor="#66000000"
-            >
+            BackgroundColor="#66000000">
     <AbsoluteLayout.GestureRecognizers>
         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
     </AbsoluteLayout.GestureRecognizers>
-
 
     <AbsoluteLayout AbsoluteLayout.LayoutBounds=".5, 1, 1, .6"
                 AbsoluteLayout.LayoutFlags="All">
@@ -52,13 +50,6 @@
 
             </Border>
 
-            <!--<Button AbsoluteLayout.LayoutBounds=".5, 1, 1, 50"
-                    AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
-                    Text="Confirm"
-                    Margin="10, 10, 10, 0"
-                    x:Name="closeButton"
-                    Clicked="OnCloseClicked"/>-->
-
             <Label
                 AbsoluteLayout.LayoutBounds=".5, 1, 1, 30"
                 AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
@@ -73,9 +64,6 @@
                 <PanGestureRecognizer PanUpdated="OnPanUpdated" />
             </AbsoluteLayout.GestureRecognizers>
         </AbsoluteLayout>
-
     </AbsoluteLayout>
-
-
 </AbsoluteLayout>
 

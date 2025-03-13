@@ -2,9 +2,9 @@
 
 	<PropertyGroup>
 		 <!--<TargetFrameworks>net8.0-ios;net8.0-maccatalyst;net8.0-android34.0</TargetFrameworks>-->
-    <TargetFrameworks>net8.0-android34.0</TargetFrameworks>
+    <TargetFrameworks>net9.0-android35.0</TargetFrameworks>
 
-    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
@@ -126,10 +126,14 @@
 	  <None Remove="Resources\Images\collectionwhite.svg" />
 	  <None Remove="Resources\Images\copyblack.svg" />
 	  <None Remove="Resources\Images\copywhite.svg" />
+	  <None Remove="Resources\Images\createmnemonicsblack.svg" />
+	  <None Remove="Resources\Images\createmnemonicswhite.svg" />
 	  <None Remove="Resources\Images\dappblack.svg" />
 	  <None Remove="Resources\Images\dappwhite.svg" />
 	  <None Remove="Resources\Images\deviceblack.svg" />
 	  <None Remove="Resources\Images\devicewhite.svg" />
+	  <None Remove="Resources\Images\didcreate.svg" />
+	  <None Remove="Resources\Images\didimport.svg" />
 	  <None Remove="Resources\Images\discordblack.svg" />
 	  <None Remove="Resources\Images\discordwhite.svg" />
 	  <None Remove="Resources\Images\expandblack.svg" />
@@ -143,8 +147,11 @@
 	  <None Remove="Resources\Images\hotblack.svg" />
 	  <None Remove="Resources\Images\hotwhite.svg" />
 	  <None Remove="Resources\Images\imageloading.png" />
+	  <None Remove="Resources\Images\importmnemonicsblack.svg" />
+	  <None Remove="Resources\Images\importmnemonicswhite.svg" />
 	  <None Remove="Resources\Images\kodablack.svg" />
 	  <None Remove="Resources\Images\kodawhite.svg" />
+	  <None Remove="Resources\Images\kyccompleted.svg" />
 	  <None Remove="Resources\Images\linkedinblack.png" />
 	  <None Remove="Resources\Images\linkedinwhite.png" />
 	  <None Remove="Resources\Images\liquidityfinderblack.png" />
@@ -152,6 +159,8 @@
 	  <None Remove="Resources\Images\moredotsgray.svg" />
 	  <None Remove="Resources\Images\NetworkIcons\hydration.svg" />
 	  <None Remove="Resources\Images\NetworkIcons\kilt.png" />
+	  <None Remove="Resources\Images\NetworkIcons\kiltblack.svg" />
+	  <None Remove="Resources\Images\NetworkIcons\kiltwhite.svg" />
 	  <None Remove="Resources\Images\NetworkIcons\kusamaassethub.svg" />
 	  <None Remove="Resources\Images\NetworkIcons\mythos.png" />
 	  <None Remove="Resources\Images\NetworkIcons\polkadotassethub.svg" />
@@ -177,6 +186,8 @@
 	  <None Remove="Resources\Images\xwhite.png" />
 	  <None Remove="Resources\Images\youtubeblack.png" />
 	  <None Remove="Resources\Images\youtubewhite.png" />
+	  <None Remove="Resources\Raw\SumsubWebSDK\index.html" />
+	  <None Remove="Resources\Raw\SumsubWebSDK\scripts\HybridWebView.js" />
 	  <None Remove="SubstrateNetApi" />
 	  <None Remove="Components\TransferView\" />
 	  <None Remove="ZXing.Net.Maui" />
@@ -455,7 +466,7 @@
 	  <MauiXaml Update="Components\000ComponentTemplate\NewPageTemplate.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Components\000ComponentTemplate\TemplateView.xaml">
+	  <MauiXaml Update="Components\000ComponentTemplate\NewPopupViewTemplate.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\AddressView\AddressQrCodeView.xaml">
@@ -506,6 +517,9 @@
 	  <MauiXaml Update="Components\Date\DateView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Error\BadInternetConnectionPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Events\EventItemView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -542,6 +556,9 @@
 	  <MauiXaml Update="Components\Form\FormWideValueView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Kilt\CreateNewDidPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Kilt\DidExplanationPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -554,6 +571,9 @@
 	  <MauiXaml Update="Components\Kilt\DidView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Kilt\ImportDidPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Kilt\MainDidView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -561,6 +581,12 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Koda\OpenKodaButton.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Mnemonics\CreateMnemonicsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Mnemonics\NoMnemonicsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Mnemonics\MnemonicsView.xaml">
@@ -617,6 +643,12 @@
 	  <MauiXaml Update="Components\Nft\NftMainPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Nft\NftModifyImageView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Nft\NftModifyMultiImageView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Nft\NftMultiImageView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -662,6 +694,12 @@
 	  <MauiXaml Update="Components\Subscan\OpenSubscanButton.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Sumsub\SumsubWebSDKPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Sumsub\VerificationCompletedPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Table\TableCurrencyCell.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -686,10 +724,16 @@
 	  <MauiXaml Update="Components\Unique\OpenUniqueButton.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\XcavateProperty\BuyPropertyTokensView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\XcavateProperty\CompanyThumbnailView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\XcavateProperty\LocationView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XcavateProperty\ModifyPropertyPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\XcavateProperty\PropertyDetailPage.xaml">
@@ -728,6 +772,9 @@
 	  <MauiXaml Update="Components\Xcavate\ModifyUserProfilePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Xcavate\OnboardingShell.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Xcavate\TeamMemberView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -744,6 +791,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Xcavate\VerificationBadgeView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Xcavate\WelcomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\MainPage.xaml">
@@ -826,7 +876,6 @@
 	  <Folder Include="Components\CalamarView\" />
 	  <Folder Include="Components\Staking\" />
 	  <Folder Include="Components\Switch\" />
-	  <Folder Include="Components\WebView\" />
 	  <Folder Include="Components\NavigationBar\" />
 	  <Folder Include="Resources\Images\PredefinedLayouts\" />
 	  <Folder Include="Components\AwesomeAjunaAvatars\" />
@@ -858,6 +907,9 @@
 	  </Compile>
 	  <Compile Update="Components\Extrinsic\CallParametersView.xaml.cs">
 	    <DependentUpon>CallParametersView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Components\Mnemonics\NoMnemonicsPage.xaml.cs">
+	    <DependentUpon>NoMnemonicsPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Components\Nft\CollectionStatsView.xaml.cs">
 	    <DependentUpon>CollectionStatsView.xaml</DependentUpon>

@@ -13,7 +13,5 @@
     </ShellContent>
     <ShellContent ContentTemplate="{DataTemplate nft:NftMainPage}" 
                   Route="NftMainPage">
-
     </ShellContent>
-
 </Shell>

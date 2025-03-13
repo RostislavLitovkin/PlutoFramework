@@ -54,7 +54,6 @@ public partial class BottomPopupCard : AbsoluteLayout
         border.TranslationY = 0;
         dragger.TranslationY = 0;
         contentView.TranslationY = 0;
-        //closeButton.TranslationY = 0;
         titleLabel.TranslationY = 0;
     }
     private async void OnPanUpdated(System.Object sender, Microsoft.Maui.Controls.PanUpdatedEventArgs e)

@@ -23,7 +23,8 @@ using PlutoFramework.Components.TransactionAnalyzer;
 using PlutoFramework.Components.Password;
 using PlutoFramework.Model;
 using PlutoFramework.Components.Mnemonics;
-using PlutoFramework.ViewModel;
+using PlutoFramework.Components.Xcavate;
+using PlutoFramework.Components.XcavateProperty;
 
 namespace PlutoFramework;
 
@@ -103,7 +104,7 @@ public partial class App : Application
 
         DependencyService.Register<SuccessfulImportPopupViewModel>();
 
-        //MainPage = new UserTypeSelectionPage();
+        DependencyService.Register<BuyPropertyTokensViewModel>();  
 
         if (Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY))
         {

@@ -21,7 +21,7 @@
                     </Grid.ColumnDefinitions>
 
                     <HorizontalStackLayout>
-                        <Image Source="kilt.png"
+                        <Image Source="{AppThemeBinding Light=kiltblack.png, Dark=kiltwhite.png}"
                                  WidthRequest="20"
                                  HeightRequest="20"
                                  VerticalOptions="Center" 
