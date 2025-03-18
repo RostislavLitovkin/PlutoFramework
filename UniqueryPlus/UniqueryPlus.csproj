@@ -20,7 +20,6 @@
     <PackageReference Include="Nethereum.Web3" Version="4.26.0" />
     <PackageReference Include="PolkadotAssetHub.NetApi" Version="0.1.4" />
     <PackageReference Include="Unique.NetApi" Version="0.1.4" />
-    <PackageReference Include="UniqueryPlus.Speck" Version="0.1.4" />
     <PackageReference Include="UniqueryPlus.Stick" Version="0.1.4" />
     <PackageReference Include="UniqueryPlus.UniqueSubquery" Version="0.1.4" />
   </ItemGroup>
@@ -30,5 +29,6 @@
     <ProjectReference Include="..\Generated\Opal\Opal.NetApi\Opal.NetApi.csproj" />
     <ProjectReference Include="..\Generated\XcavatePaseo\XcavatePaseo.NetApi\XcavatePaseo.NetApi.csproj" />
     <ProjectReference Include="..\OpalSubquery\OpalSubquery.csproj" />
+    <ProjectReference Include="..\Speck\UniqueryPlus.Speck.csproj" />
   </ItemGroup>
 </Project>
