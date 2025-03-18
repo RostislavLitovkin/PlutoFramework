@@ -4,7 +4,7 @@
 		 <!--<TargetFrameworks>net8.0-ios;net8.0-maccatalyst;net8.0-android34.0</TargetFrameworks>-->
     <TargetFrameworks>net9.0-android35.0</TargetFrameworks>
 
-    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
+    <!--<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>-->
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
@@ -22,9 +22,9 @@
 		<ApplicationIdGuid>3ba8b589-69cd-429f-866f-94877f789515</ApplicationIdGuid>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.23</ApplicationDisplayVersion>
-    <PackageVersion>1.23</PackageVersion>
-    <ApplicationVersion>24</ApplicationVersion>
+		<ApplicationDisplayVersion>1.25</ApplicationDisplayVersion>
+    <PackageVersion>1.25</PackageVersion>
+    <ApplicationVersion>26</ApplicationVersion>
 		
 		<!-- Increases performance, but disables hot-reload -->
     <UseInterpreter>false</UseInterpreter>
@@ -37,7 +37,6 @@
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 		<AndroidSigningKeyStore />
-    <AndroidLinkMode>None</AndroidLinkMode>
 
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
