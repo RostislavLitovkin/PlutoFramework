@@ -7,9 +7,9 @@ using PlutoFramework.Model.SQLite;
 using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
 using CollectionKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger);
 using SubstrateClientExt = PlutoFramework.Model.AjunaExt.SubstrateClientExt;
-using UniqueSubstrateClientExt = Unique.NetApi.Generated.SubstrateClientExt;
-using System.Numerics;
 using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Components.Nft.NftList;
+using CommunityToolkit.Maui.Core.Platform;
 
 namespace PlutoFramework.Components.Nft
 {
@@ -359,5 +359,13 @@ namespace PlutoFramework.Components.Nft
 
         [RelayCommand]
         public Task ShowAllFavouriteCollectionsAsync() => Application.Current.MainPage.Navigation.PushAsync(new CollectionListPage(new FavouriteCollectionsListViewModel()));
+
+        #region Search
+        [ObservableProperty]
+        private string searchText = "";
+
+        [RelayCommand]
+        public Task SearchAsync() => Application.Current.MainPage.Navigation.PushAsync(new NftListPage(new SearchByNameNftsListViewModel(SearchText)));
+        #endregion
     }
 }
