@@ -25,7 +25,7 @@
                              Spacing="15">
                 <events:EventsListView x:Name="eventsListView" />
 
-                <subscan:OpenSubscanButton >
+                <subscan:OpenSubscanButton x:Name="subscanButton">
                     <subscan:OpenSubscanButton.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnOpenSubscanClicked" />
                     </subscan:OpenSubscanButton.GestureRecognizers>

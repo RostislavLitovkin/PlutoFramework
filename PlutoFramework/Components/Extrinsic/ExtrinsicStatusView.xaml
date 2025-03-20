@@ -5,8 +5,8 @@
              x:Class="PlutoFramework.Components.Extrinsic.ExtrinsicStatusView"
              IsVisible="{Binding IsVisible}"
              HeightRequest="60">
-   <card:Card x:Name="card">
-        <card:Card.View>
+   <card:ClickableCard x:Name="card">
+        <card:ClickableCard.View>
             <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                             AbsoluteLayout.LayoutFlags="All"
                             Margin="0, 10, 0, 10">
@@ -51,8 +51,8 @@
 
                 </Image>
             </AbsoluteLayout>
-        </card:Card.View>
-    </card:Card>
+        </card:ClickableCard.View>
+    </card:ClickableCard>
 
     <ContentView.GestureRecognizers>
         <PanGestureRecognizer PanUpdated="OnPanUpdated" />
