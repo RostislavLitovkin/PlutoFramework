@@ -281,14 +281,9 @@ namespace PlutoFramework.Model
 
             Console.WriteLine("Events bytes: " + eventsBytes);
 
-            Console.WriteLine("check metadata: " + substrateClient.CheckMetadata);
-
-            if (substrateClient.CheckMetadata)
+            try
             {
                 BlockData block = await substrateClient.SubstrateClient.Chain.GetBlockAsync(blockHash, CancellationToken.None);
-
-                var sblock = await substrateClient.SubstrateClient.InvokeAsync<object>("chain_getBlock", new object[1] { (string)blockHash.Value }, token);
-                Console.WriteLine(sblock);
 
                 Console.WriteLine("block number: " + block.Block.Header.Number.Value);
 
@@ -307,11 +302,10 @@ namespace PlutoFramework.Model
                 Console.WriteLine("Extrinsic index found: " + extrinsicIndex);
 
                 return await GetExtrinsicEventsForClientAsync(substrateClient, extrinsicIndex, eventsBytes, blockNumber: block.Block.Header.Number.Value, token);
-
             }
-            else
-            {
-                var block = await substrateClient.SubstrateClient.InvokeAsync<TempOldBlockData>("chain_getBlock", new object[1] { (string)blockHash.Value }, token);
+            catch {
+
+                var block = await substrateClient.SubstrateClient.InvokeAsync<TempOldBlockData>("chain_getBlock", new object[1] { blockHash?.Value }, token);
 
                 Console.WriteLine("block number: " + block.Block.Header.Number.Value);
 
@@ -319,7 +313,7 @@ namespace PlutoFramework.Model
                 for (uint i = 0; i < block.Block.Extrinsics.Count(); i++)
                 {
                     // Same extrinsic
-                    if (Utils.Bytes2HexString(HashExtension.Blake2(block.Block.Extrinsics[i].Encode(), 256)).Equals(Utils.Bytes2HexString(extrinsicHash)))
+                    if (Utils.Bytes2HexString(HashExtension.Blake2(Utils.HexToByteArray(block.Block.Extrinsics[i]), 256)).Equals(Utils.Bytes2HexString(extrinsicHash)))
                     {
                         extrinsicIndex = i;
 

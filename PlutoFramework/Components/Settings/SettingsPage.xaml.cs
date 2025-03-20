@@ -37,7 +37,6 @@ public partial class SettingsPage : ContentPage
         KeysModel.RemoveAccount();
         KeysModel.RemoveAccount("kilt1");
 
-        SecureStorage.Default.Remove(PreferencesModel.PASSWORD);
         Preferences.Remove(PreferencesModel.BIOMETRICS_ENABLED);
 
         // Delete Local SQLite databases

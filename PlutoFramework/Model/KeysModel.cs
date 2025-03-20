@@ -86,7 +86,7 @@ namespace PlutoFramework.Model
             if (password is not null)
             {
                 await SecureStorage.Default.SetAsync(
-                    PreferencesModel.PASSWORD,
+                    PreferencesModel.PASSWORD + accountVariant,
                     password
                 );
             }
@@ -201,6 +201,7 @@ namespace PlutoFramework.Model
 
         public static async Task<string?> GetMnemonicsOrPrivateKeyAsync(string accountVariant = "")
         {
+            Console.WriteLine("Getting mnemonics");
             var accountType = (AccountType)Enum.Parse(typeof(AccountType), Preferences.Get(PreferencesModel.ACCOUNT_TYPE + accountVariant, AccountType.None.ToString()));
 
             var biometricsEnabled = Preferences.Get(PreferencesModel.BIOMETRICS_ENABLED, false);
@@ -220,18 +221,25 @@ namespace PlutoFramework.Model
                 };
             }
 
-            if (!result.Authenticated)
+            if (!result.Authenticated || result.Status == FingerprintAuthenticationResultStatus.Denied)
             {
+                Console.WriteLine("Trying password");
 
                 var viewModel = DependencyService.Get<EnterPasswordPopupViewModel>();
 
                 viewModel.IsVisible = true;
 
-                var correctPassword = await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD).ConfigureAwait(false) ?? throw new ArgumentNullException("Password was not setup");
+                var correctPassword = await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD + accountVariant).ConfigureAwait(false) ?? throw new ArgumentNullException("Password was not setup");
+
+                Console.WriteLine("correctPassword: " + correctPassword);
 
                 for (int i = 0; i < 5; i++)
                 {
+                    Console.WriteLine("Waiting for password to be entered");
+
                     var password = await viewModel.EnteredPassword.Task;
+
+                    Console.WriteLine($"Password entered: {password} - {correctPassword}");
 
                     if (password is null)
                     {
@@ -253,7 +261,7 @@ namespace PlutoFramework.Model
                     if (i == 4)
                     {
                         viewModel.SetToDefault();
-                        throw new Exception("Failed to authenticate");
+                        throw new Exception("5 bad password attempts. Access denied.");
                     }
                 }
             }
@@ -290,7 +298,7 @@ namespace PlutoFramework.Model
                 {
                     AccountType.Mnemonic => MnemonicsModel.GetAccountFromMnemonics(secret),
                     AccountType.PrivateKey => GetAccountFromPrivateKey(secret, expandMode),
-                    AccountType.Json => GetAccountFromJson(secret, await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD).ConfigureAwait(false) ?? ""),
+                    AccountType.Json => GetAccountFromJson(secret, await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD + accountVariant).ConfigureAwait(false) ?? ""),
                     _ => null
                 };
             }
@@ -338,6 +346,8 @@ namespace PlutoFramework.Model
             SecureStorage.Default.Remove(PreferencesModel.MNEMONICS + accountVariant);
             SecureStorage.Default.Remove(PreferencesModel.JSON_ACCOUNT + accountVariant);
             Preferences.Remove(PreferencesModel.ACCOUNT_TYPE + accountVariant);
+            SecureStorage.Default.Remove(PreferencesModel.PASSWORD + accountVariant);
+
         }
     }
 }

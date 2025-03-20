@@ -104,7 +104,7 @@ public partial class App : Application
 
         DependencyService.Register<SuccessfulImportPopupViewModel>();
 
-        DependencyService.Register<BuyPropertyTokensViewModel>();  
+        DependencyService.Register<BuyPropertyTokensViewModel>();
 
         if (Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY))
         {
@@ -123,7 +123,6 @@ public partial class App : Application
         {
             KeysModel.RemoveAccount();
 
-            SecureStorage.Default.Remove(PreferencesModel.PASSWORD);
             Preferences.Remove(PreferencesModel.BIOMETRICS_ENABLED);
 
             MainPage = new OnboardingShell();

@@ -41,9 +41,9 @@ public class BifrostAssetsTests
     [Test]
     public async Task Assets()
     {
-        var assets = await AssetsModel.GetPolkadotAssetHubAssetsAsync(client, substrateAddress, 1000, CancellationToken.None);
+        var assets = await AssetsModel.GetPolkadotAssetHubAssetsAsync(client, substrateAddress, 1000, "Assets", CancellationToken.None);
 
-        Console.WriteLine("Assets: " + assets.Count);
+        Console.WriteLine("Assets: " + assets.Count());
     }
 
     [Test]
@@ -88,7 +88,7 @@ public class HydrationAssetsTests
     [Test]
     public async Task Assets()
     {
-        var assets = await AssetsModel.GetPolkadotAssetHubAssetsAsync(client, substrateAddress, 1000, CancellationToken.None);
+        var assets = await AssetsModel.GetPolkadotAssetHubAssetsAsync(client, substrateAddress, 1000, "Assets", CancellationToken.None);
 
         Console.WriteLine("Assets: " + assets.Count());
     }
@@ -140,9 +140,9 @@ public class PolkadotAssetHubAssetsTests
     {
         try
         {
-            var assets = await AssetsModel.GetPolkadotAssetHubAssetsAsync(client, substrateAddress, 1000, CancellationToken.None);
+            var assets = await AssetsModel.GetPolkadotAssetHubAssetsAsync(client, substrateAddress, 1000, "Assets", CancellationToken.None);
 
-            Console.WriteLine("Assets: " + assets.Count);
+            Console.WriteLine("Assets: " + assets.Count());
         }
         catch(Exception ex)
         {
