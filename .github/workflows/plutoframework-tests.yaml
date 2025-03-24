@@ -1,0 +1,45 @@
+name: PlutoFramework Unit tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_name:
+        description: 'Name of the test to run'
+jobs:
+  publish-uniquery-plus:
+    env:
+      BUILD_CONFIG: 'Release'
+      SOLUTION: 'PlutoFramework.sln'
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.5
+
+    - name: Restore dependencies
+      run: nuget restore $SOLUTION
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 9.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore $SOLUTION
+
+    - name: Build
+      run: dotnet build $SOLUTION --configuration Release --no-restore
+    
+    - name: Build
+      run: dotnet build $SOLUTION --configuration Release --no-restore
+
+    - name: Run tests
+      run: |
+        if [ -z "${{ github.event.inputs.test_name }}" ]; then
+          dotnet test ./PlutoFrameworkTests/PlutoFrameworkTests.csproj
+        else
+          dotnet test ./PlutoFrameworkTests/PlutoFrameworkTests.csproj --filter "FullyQualifiedName~${{ github.event.inputs.test_name }}"
+        fi
