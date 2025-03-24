@@ -24,15 +24,9 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore $SOLUTION
 
-    - name: Restore dependencies
-      run: dotnet restore $SOLUTION
-
     - name: Build
       run: dotnet build $SOLUTION --configuration Release --no-restore
     
-    - name: Build
-      run: dotnet build $SOLUTION --configuration Release --no-restore
-
     - name: Run tests
       run: |
         if [ -z "${{ github.event.inputs.test_name }}" ]; then
