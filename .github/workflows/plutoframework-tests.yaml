@@ -23,6 +23,12 @@ jobs:
       with:
         dotnet-version: 9.0.x
 
+    - name: Restore .NET workloads
+      run: dotnet workload restore $SOLUTION
+
+    - name: Restore
+      run: dotnet restore $SOLUTION
+
     - name: Build
       run: dotnet build $SOLUTION --configuration Release
     
