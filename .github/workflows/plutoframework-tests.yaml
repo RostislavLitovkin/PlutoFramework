@@ -26,6 +26,9 @@ jobs:
     - name: Restore .NET workloads
       run: dotnet workload restore $SOLUTION
 
+    - name: Download tools
+      run: dotnet tool install --global StrawberryShake.Tools
+
     - name: Restore
       run: dotnet restore $SOLUTION
 
