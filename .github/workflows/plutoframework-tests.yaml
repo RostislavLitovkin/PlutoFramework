@@ -21,11 +21,8 @@ jobs:
       with:
         dotnet-version: 9.0.x
 
-    - name: Restore dependencies
-      run: dotnet restore $SOLUTION
-
     - name: Build
-      run: dotnet build $SOLUTION --configuration Release --no-restore
+      run: dotnet build $SOLUTION --configuration Release
     
     - name: Run tests
       run: |
