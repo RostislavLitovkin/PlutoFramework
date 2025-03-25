@@ -27,7 +27,7 @@ jobs:
       run: dotnet workload restore $SOLUTION
 
     - name: Download tools
-      run: dotnet tool install --global StrawberryShake.Tools
+      run: dotnet tool install --global StrawberryShake.Tools --version 13.9.12
 
     - name: Restore
       run: dotnet restore $SOLUTION
