@@ -23,6 +23,16 @@ jobs:
       with:
         dotnet-version: 9.0.x
 
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 8.0.x
+
     - name: Restore .NET workloads
       run: dotnet workload restore $SOLUTION
 
