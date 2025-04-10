@@ -251,8 +251,6 @@ namespace UniqueryPlus.Nfts
                 {
                     if (metadata.HasValue)
                     {
-                        Console.WriteLine("Metadata was set");
-
                         nft.Metadata = metadata.Value.Metadata;
                         nft.XcavateMetadata = metadata.Value.XcavateMetadata;
                     }

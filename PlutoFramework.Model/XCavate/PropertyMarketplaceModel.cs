@@ -8,6 +8,7 @@ using UniqueryPlus.Nfts;
 using Substrate.NetApi.Model.Extrinsics;
 using XcavatePaseo.NetApi.Generated.Model.sp_core.crypto;
 using Substrate.NetApi.Model.Types.Base;
+using UniqueryPlus.Collections;
 
 
 namespace PlutoFramework.Model.Xcavate
@@ -128,7 +129,6 @@ namespace PlutoFramework.Model.Xcavate
 
                 var propertyId = change[0];
 
-                Console.WriteLine($"Property id: {details.CollectionId} - {details.ItemId}");
                 nftIds.Add((details.CollectionId, details.ItemId));
             };
 
@@ -157,6 +157,18 @@ namespace PlutoFramework.Model.Xcavate
                 [client],
                 (SubstrateClient client, NftTypeEnum _type, byte[]? lastKey, CancellationToken token) => GetPropertiesOwnedByAsync((SubstrateClientExt)client, owner, limit, lastKey, token),
                 limit
+            );
+        }
+
+        public static IAsyncEnumerable<INftBase> GetIndexedPropertiesForSaleAsync(
+            SubstrateClientExt client,
+            uint limit = 25
+        )
+        {
+            return RecursionHelper.ToIAsyncEnumerableAsync(
+                [client],
+                (SubstrateClient client, NftTypeEnum _type, int limit, int offset, CancellationToken token) => XcavateSubqueryModel.GetPropertiesForSaleAsync((SubstrateClientExt)client, limit, offset, token),
+                (int)limit
             );
         }
     }

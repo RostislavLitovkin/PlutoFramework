@@ -81,7 +81,7 @@ namespace UniqueryPlus
                 }
             }
         }
-        internal static async IAsyncEnumerable<T> ToIAsyncEnumerableAsync<T>(
+        public static async IAsyncEnumerable<T> ToIAsyncEnumerableAsync<T>(
             IEnumerable<SubstrateClient> clients,
             Func<SubstrateClient, NftTypeEnum, int, int, CancellationToken, Task<IEnumerable<T>>> getter,
             int limit,
