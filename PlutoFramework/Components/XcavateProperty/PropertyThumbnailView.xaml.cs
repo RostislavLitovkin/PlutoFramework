@@ -76,15 +76,17 @@ public partial class PropertyThumbnailView : ContentView
         {
             var control = (PropertyThumbnailView)bindable;
 
-            control.tokensTitleLabel.Text = "Tokens available";
+            control.tokensTitleLabel.Text = "Tokens owned";
+
+            var tokensOwned = (uint)newValue;
 
             if (control.NftBase is not null && ((XcavatePaseoNftsPalletNft)control.NftBase)?.XcavateMetadata is not null)
             {
-                control.tokensLabel.Text = $"{control.TokensOwned} / {((XcavatePaseoNftsPalletNft)control.NftBase).XcavateMetadata?.NumberOfTokens}";
+                control.tokensLabel.Text = $"{tokensOwned} / {((XcavatePaseoNftsPalletNft)control.NftBase).XcavateMetadata?.NumberOfTokens}";
             }
             else
             {
-                control.tokensLabel.Text = $"{control.TokensOwned}";
+                control.tokensLabel.Text = $"{tokensOwned}";
             }
         });
 

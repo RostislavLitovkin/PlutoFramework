@@ -17,13 +17,11 @@
         <CollectionView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
                     ItemSizingStrategy="MeasureAllItems"
                     ItemsSource="{Binding Items}"
-                    RemainingItemsThreshold="1"
+                    RemainingItemsThreshold="0"
                     RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}">
             <CollectionView.Header>
-                <VerticalStackLayout Margin="20">
-                    <Label Text="MARKET PLACE"
-                           FontSize="20">
-                    </Label>
+                <VerticalStackLayout Margin="40">
+                    <Image Source="xcavatemarketplace.png"/>
                 </VerticalStackLayout>
             </CollectionView.Header>
             <CollectionView.Footer>
@@ -45,9 +43,9 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <xcavateproperty:PropertyThumbnailView Endpoint="{Binding Endpoint}"
-                                          Favourite="{Binding Favourite}"
-                                          NftBase="{Binding NftBase}"
-                                          Padding="20, 5, 20, 10" />
+                                                            Favourite="{Binding Favourite}"
+                                                            NftBase="{Binding NftBase}"
+                                                            Padding="20, 5, 20, 10" />
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

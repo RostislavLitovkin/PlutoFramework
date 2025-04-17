@@ -129,7 +129,7 @@ namespace PlutoFramework.Model
             }
 
 
-            foreach (string palletName in new string[] { "Assets", "ForeignAssets" })
+            foreach (string palletName in new string[] { "Assets" })
             {
                 try
                 {
@@ -148,6 +148,38 @@ namespace PlutoFramework.Model
                             DarkChainIcon = endpoint.DarkIcon,
                             Endpoint = endpoint,
                             Pallet = AssetPallet.Assets,
+                            AssetId = asset.Item1,
+                            UsdValue = assetBalance * spotPrice,
+                            Decimals = asset.Item3.Decimals.Value,
+                        };
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+
+            foreach (string palletName in new string[] { "ForeignAssets" })
+            {
+                try
+                {
+                    foreach ((BigInteger, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetDetails, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetAccount) asset in await GetPolkadotAssetHubAssetsAsync(client.SubstrateClient, substrateAddress, 1000, palletName, CancellationToken.None))
+                    {
+                        var symbol = Model.ToStringModel.VecU8ToString(asset.Item3.Symbol.Value);
+                        double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(symbol);
+
+                        double assetBalance = asset.Item4 != null ? (double)asset.Item4.Balance.Value / Math.Pow(10, asset.Item3.Decimals.Value) : 0.0;
+
+                        AssetsDict[(endpoint.Key, AssetPallet.ForeignAssets, asset.Item1)] = new Asset
+                        {
+                            Amount = assetBalance,
+                            Symbol = symbol,
+                            ChainIcon = endpoint.Icon,
+                            DarkChainIcon = endpoint.DarkIcon,
+                            Endpoint = endpoint,
+                            Pallet = AssetPallet.ForeignAssets,
                             AssetId = asset.Item1,
                             UsdValue = assetBalance * spotPrice,
                             Decimals = asset.Item3.Decimals.Value,

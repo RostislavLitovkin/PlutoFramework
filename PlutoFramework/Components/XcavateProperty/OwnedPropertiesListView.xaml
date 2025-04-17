@@ -10,6 +10,7 @@
             <BindableLayout.ItemTemplate>
                 <DataTemplate>
                     <xcavateproperty:PropertyThumbnailView NftBase="{Binding NftBase}"
+                                                           TokensOwned="{Binding Amount}"
                                                            Favourite="False"
                                                            />
 
@@ -19,11 +20,12 @@
         </VerticalStackLayout>
 
         <customlayouts:LoadingItemView HeightRequest="80" 
-                               Margin="20, 0, 20, 0"
+                               Margin="0, 0, 0, 0"
                                 IsVisible="{Binding Loading}"/>
 
-        <customlayouts:TransparentItemView Text="No Collections"
-                                    IsVisible="{Binding NoItems}" 
-                                    Margin="20, 0, 20, 0"/>
+        <customlayouts:TransparentItemView Text="No Properties"
+                                           HeightRequest="80" 
+                                            IsVisible="{Binding NoItems}" 
+                                            Margin="0, 0, 0, 0"/>
     </VerticalStackLayout>
 </ContentView>

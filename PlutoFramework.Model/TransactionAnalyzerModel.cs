@@ -79,8 +79,24 @@ namespace PlutoFramework.Model
                     ExtrinsicEvent { PalletName: "Tokens", EventName: "Withdrawn" } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.Tokens, BigInteger.Parse(e.Parameters[0].Value)), -BigInteger.Parse(e.Parameters[2].Value))],
 
                     // Assets
+                    ExtrinsicEvent { PalletName: "Assets", EventName: "Transferred" } => [
+                        // From negative
+                        (e.Parameters[1].Value, (endpoint.Key, AssetPallet.Assets, BigInteger.Parse(e.Parameters[0].Value)), -BigInteger.Parse(e.Parameters[3].Value)),
+                        // To positive
+                        (e.Parameters[2].Value, (endpoint.Key, AssetPallet.Assets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[3].Value))
+                    ],
                     ExtrinsicEvent { PalletName: "Assets", EventName: "Issued" } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.Assets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[2].Value))],
                     ExtrinsicEvent { PalletName: "Assets", EventName: "Burned" } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.Assets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[2].Value))],
+
+                    // ForeignAssets
+                    ExtrinsicEvent { PalletName: "ForeignAssets", EventName: "Transferred" } => [
+                        // From negative
+                        (e.Parameters[1].Value, (endpoint.Key, AssetPallet.ForeignAssets, BigInteger.Parse(e.Parameters[0].Value)), -BigInteger.Parse(e.Parameters[3].Value)),
+                        // To positive
+                        (e.Parameters[2].Value, (endpoint.Key, AssetPallet.ForeignAssets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[3].Value))
+                    ],
+                    ExtrinsicEvent { PalletName: "ForeignAssets", EventName: "Issued" } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.ForeignAssets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[2].Value))],
+                    ExtrinsicEvent { PalletName: "ForeignAssets", EventName: "Burned" } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.ForeignAssets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[2].Value))],
 
                     // Fees
                     ExtrinsicEvent { PalletName: "TransactionPayment", EventName: "TransactionFeePaid" } => [("fee", (endpoint.Key, AssetPallet.Native, 0), -BigInteger.Parse(e.Parameters[1].Value) - BigInteger.Parse(e.Parameters[2].Value))],
