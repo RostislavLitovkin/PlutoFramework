@@ -22,6 +22,7 @@ using PlutoFramework.Components.PredefinedLayouts;
 using PlutoFramework.Components.Xcm;
 using PlutoFramework.View;
 using PlutoFramework.Components.Kilt;
+using PlutoFramework.Components.XcavateProperty;
 
 namespace PlutoFramework.Model
 {
@@ -55,6 +56,7 @@ namespace PlutoFramework.Model
         GLGPowerups,
         xTrnsfr,
         mainDid,
+        XcPaseoOwnedProperties
     }
 
     public class CustomLayoutModel
@@ -365,6 +367,8 @@ namespace PlutoFramework.Model
                     return new XcmTransferView();
                 case ComponentId.mainDid:
                     return new MainDidView();
+                case ComponentId.XcPaseoOwnedProperties:
+                    return new OwnedPropertiesListView();
             }
 
             throw new Exception("Could not parse the PlutoLayout");
@@ -535,6 +539,12 @@ namespace PlutoFramework.Model
                     {
                         Name = "Main Kilt DID",
                         ComponentId = ComponentId.mainDid,
+                    };
+                case ComponentId.XcPaseoOwnedProperties:
+                    return new ComponentInfo
+                    {
+                        Name = "Xcavate Paseo Owned Properties",
+                        ComponentId = ComponentId.XcPaseoOwnedProperties,
                     };
             }
 

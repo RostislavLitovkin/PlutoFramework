@@ -167,7 +167,6 @@
 	  <None Remove="Resources\Images\NetworkIcons\polkadotassethub.svg" />
 	  <None Remove="Resources\Images\nftblack.svg" />
 	  <None Remove="Resources\Images\nftwhite.svg" />
-	  <None Remove="Resources\Images\noimage.svg" />
 	  <None Remove="Resources\Images\plutowalletclearwhite.png" />
 	  <None Remove="Resources\Images\plutowalleticonwhite.png" />
 	  <None Remove="Resources\Images\realxmarket.png" />
@@ -734,6 +733,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\XcavateProperty\ModifyPropertyPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XcavateProperty\OwnedPropertiesListView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\XcavateProperty\PropertyDetailPage.xaml">

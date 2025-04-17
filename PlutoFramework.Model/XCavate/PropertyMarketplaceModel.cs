@@ -8,13 +8,13 @@ using UniqueryPlus.Nfts;
 using Substrate.NetApi.Model.Extrinsics;
 using XcavatePaseo.NetApi.Generated.Model.sp_core.crypto;
 using Substrate.NetApi.Model.Types.Base;
-using UniqueryPlus.Collections;
-
+using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
 
 namespace PlutoFramework.Model.Xcavate
 {
     public record PropertyTokenOwnershipInfo
     {
+        public NftKey? Key => NftBase is not null ? (NftBase.Type, NftBase.CollectionId, NftBase.Id) : null;
         public required uint Amount { get; set; }
 
         public required INftBase NftBase { get; set; }

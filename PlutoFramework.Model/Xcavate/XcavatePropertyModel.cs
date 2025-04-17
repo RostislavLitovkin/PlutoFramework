@@ -2,7 +2,7 @@
 {
     public class XcavatePropertyModel
     {
-        public static double GetAreaPricesPercentage(uint price)
+        public static double GetAreaPricesPercentage(long price)
         {
             // TODO
             return 0.7;
@@ -14,7 +14,7 @@
             return 0.3;
         }
 
-        public static string GetAPY(uint rentalIncome, uint price)
+        public static string GetAPY(uint rentalIncome, long price)
         {
             var ari = rentalIncome * 12;
             var apy = (double)ari / price;
