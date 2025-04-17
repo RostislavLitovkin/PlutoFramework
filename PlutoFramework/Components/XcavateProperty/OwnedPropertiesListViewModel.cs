@@ -4,6 +4,7 @@ using PlutoFramework.Model.Xcavate;
 using PlutoFramework.Model;
 using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
 using XcavatePaseo.NetApi.Generated;
+using UniqueryPlus.Nfts;
 
 namespace PlutoFramework.Components.XcavateProperty
 {
@@ -42,7 +43,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
                     if (uniqueryNftEnumerator != null && await uniqueryNftEnumerator.MoveNextAsync().ConfigureAwait(false))
                     {
-                        var newNft = uniqueryNftEnumerator.Current;
+                        var newNft = await ToWrappedButUnwrappedAsync(uniqueryNftEnumerator.Current);
 
                         if (newNft.Key is not null && !ItemsDict.ContainsKey((NftKey)newNft.Key))
                         {
@@ -106,6 +107,15 @@ namespace PlutoFramework.Components.XcavateProperty
                     });
                 }
             }*/
+        }
+
+        private async Task<PropertyTokenOwnershipInfo> ToWrappedButUnwrappedAsync(PropertyTokenOwnershipInfo info)
+        {
+            return new PropertyTokenOwnershipInfo
+            {
+                Amount = info.Amount,
+                NftBase = (await XcavatePropertyModel.ToNftWrapperAsync((XcavatePaseoNftsPalletNft)info.NftBase)).NftBase
+            };
         }
     }
 }
