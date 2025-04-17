@@ -4,6 +4,7 @@
              xmlns:card="clr-namespace:PlutoFramework.Components.Card"
              xmlns:balance="clr-namespace:PlutoFramework.Components.Balance"
              xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
+             xmlns:xcavateproperty="clr-namespace:PlutoFramework.Components.XcavateProperty"
              x:Class="PlutoFramework.Components.TransactionAnalyzer.AnalyzedOutcomeView"
              HeightRequest="{Binding HeightRequest}">
     <card:Card>
@@ -41,10 +42,9 @@
                 <VerticalStackLayout Margin="0, 40, 0, 10"
                                      WidthRequest="{Binding Source={x:Reference absoluteLayout}, Path=Width}"
                                      Spacing="10">
-                    <VerticalStackLayout
-                                            WidthRequest="{Binding Source={x:Reference absoluteLayout}, Path=Width}"
-                                             BindableLayout.ItemsSource="{Binding Assets}"
-                                             Spacing="10">
+                    <VerticalStackLayout WidthRequest="{Binding Source={x:Reference absoluteLayout}, Path=Width}"
+                                         BindableLayout.ItemsSource="{Binding Assets}"
+                                         Spacing="10">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
                                 <balance:AssetAmountView Amount="{Binding Amount}"
@@ -60,9 +60,9 @@
 
 
                     </VerticalStackLayout>
-                    <VerticalStackLayout 
-                                         WidthRequest="{Binding Source={x:Reference absoluteLayout}, Path=Width}"
+                    <VerticalStackLayout WidthRequest="{Binding Source={x:Reference absoluteLayout}, Path=Width}"
                                          BindableLayout.ItemsSource="{Binding Nfts}"
+                                         IsVisible="{Binding NftsIsVisible}"
                                          Spacing="5">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
@@ -77,6 +77,19 @@
                         </BindableLayout.ItemTemplate>
 
 
+                    </VerticalStackLayout>
+                    <VerticalStackLayout WidthRequest="{Binding Source={x:Reference absoluteLayout}, Path=Width}"
+                                         BindableLayout.ItemsSource="{Binding XcavateProperties}"
+                                         IsVisible="{Binding XcavatePropertiesIsVisible}"
+                                         Spacing="5">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <xcavateproperty:PropertyLittleThumbnailView XcavateMetadata="{Binding NftBase.XcavateMetadata}"
+                                                                             Operation="{Binding Operation}"
+                                                                             Amount="{Binding Amount}"/>
+                            </DataTemplate>
+
+                        </BindableLayout.ItemTemplate>
                     </VerticalStackLayout>
                 </VerticalStackLayout>
 

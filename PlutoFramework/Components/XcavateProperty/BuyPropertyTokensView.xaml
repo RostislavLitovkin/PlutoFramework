@@ -23,10 +23,18 @@
                     <!-- Add your content here -->
 
                     <xcavateproperty:PropertyLittleThumbnailView XcavateMetadata="{Binding Metadata}" />
+                    
+                    <AbsoluteLayout Margin="10, 0, 10, -10">
+                        <Label Text="Tokens available:"
+                               AbsoluteLayout.LayoutBounds="0,0,AutoSize, AutoSize"/>
+                        <Label Text="{Binding MaxValue}"
+                               AbsoluteLayout.LayoutBounds="1,0,AutoSize, AutoSize"
+                               AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                    </AbsoluteLayout>
 
                     <form:FormInputView KeyboardType="Numeric"
-                                            Placeholder="Tokens"
-                                            Text="{Binding Tokens}"
+                                        Placeholder="Tokens"
+                                        Text="{Binding Tokens}"
                                         MaxValue="{Binding MaxValue}"
                                         UpdateCommand="{Binding FormChangedCommand}"
                                         />

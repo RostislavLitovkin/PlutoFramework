@@ -45,7 +45,7 @@
                 <AbsoluteLayout HeightRequest="60"
                                 Grid.Column="1"
                                 Grid.ColumnSpan="2"
-                                x:Name="nftInfoLayout">
+                                x:Name="infoLayout">
                     <Label Padding="5, 0, 0, 0"
                               AbsoluteLayout.LayoutBounds="0.5, 0, 1, 30"
                               AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
@@ -67,8 +67,6 @@
                                                   x:Name="locationView" />
                 </AbsoluteLayout>
 
-                <!-- Could be useful later :D -->
-                <!--
                 <AbsoluteLayout HeightRequest="60"
                              Grid.Column="2">
                     <Label x:Name="operationLabel"
@@ -76,14 +74,14 @@
                        VerticalTextAlignment="Center"
                        FontAttributes="Bold"
                        AbsoluteLayout.LayoutBounds="0,0,110,30"/>
-                    <Label x:Name="usdLabel"
+                    <Label x:Name="amountLabel"
                        HorizontalTextAlignment="End"
                        VerticalTextAlignment="Center"
                        TextColor="#888888"
                        FontAttributes="Bold"
                        AbsoluteLayout.LayoutBounds="0,30,110,30"/>
                 </AbsoluteLayout>
-                -->
+               
             </Grid>
 
         </card:ClickableCard.View>

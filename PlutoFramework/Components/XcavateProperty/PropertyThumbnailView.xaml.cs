@@ -30,7 +30,14 @@ public partial class PropertyThumbnailView : ContentView
 
             control.apyLabel.Text = PropertyModel.GetAPY(nftBase.XcavateMetadata.EstimatedRentalIncome, nftBase.XcavateMetadata.PropertyPrice);
 
-            control.tokensLabel.Text = nftBase.NftMarketplaceDetails?.Listed?.ToString() ?? "-";
+            if (control.TokensOwned == 0)
+            {
+                control.tokensLabel.Text = nftBase.NftMarketplaceDetails?.Listed?.ToString() ?? "-";
+            }
+            else
+            {
+                control.tokensLabel.Text = $"{control.TokensOwned} / {nftBase.XcavateMetadata.NumberOfTokens}";
+            }
 
             control.priceLabel.Text = $"£{nftBase.XcavateMetadata.PropertyPrice}";
 
@@ -62,13 +69,33 @@ public partial class PropertyThumbnailView : ContentView
             control.filledFavouriteIcon.IsVisible = (bool)newValue;
         });
 
+    public static readonly BindableProperty TokensOwnedProperty = BindableProperty.Create(
+        nameof(TokensOwned), typeof(uint), typeof(PropertyThumbnailView),
+        defaultBindingMode: BindingMode.TwoWay,
+        propertyChanging: (bindable, oldValue, newValue) =>
+        {
+            var control = (PropertyThumbnailView)bindable;
+
+            control.tokensTitleLabel.Text = "Tokens available";
+
+            if (control.NftBase is not null && ((XcavatePaseoNftsPalletNft)control.NftBase)?.XcavateMetadata is not null)
+            {
+                control.tokensLabel.Text = $"{control.TokensOwned} / {((XcavatePaseoNftsPalletNft)control.NftBase).XcavateMetadata?.NumberOfTokens}";
+            }
+            else
+            {
+                control.tokensLabel.Text = $"{control.TokensOwned}";
+            }
+        });
+
     public static readonly BindableProperty EndpointProperty = BindableProperty.Create(
         nameof(Endpoint), typeof(Endpoint), typeof(PropertyThumbnailView),
         defaultBindingMode: BindingMode.TwoWay,
         propertyChanging: (bindable, oldValue, newValue) =>
         {
-            var control = (PropertyThumbnailView)bindable;
         });
+
+
     public PropertyThumbnailView()
     {
         InitializeComponent();
@@ -77,6 +104,12 @@ public partial class PropertyThumbnailView : ContentView
     {
         get => (INftBase)GetValue(NftBaseProperty);
         set => SetValue(NftBaseProperty, value);
+    }
+
+    public uint TokensOwned
+    {
+        get => (uint)GetValue(TokensOwnedProperty);
+        set => SetValue(TokensOwnedProperty, value);
     }
 
     public bool Favourite

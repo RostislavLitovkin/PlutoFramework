@@ -19,6 +19,20 @@ namespace PlutoFramework.Model.Xcavate
 
         public required INftBase NftBase { get; set; }
     }
+
+    public enum XcavatePropertyOperation
+    {
+        // Has to be there due to binding
+        None,
+
+        Buy
+    }
+
+    public record PropertyTokenOwnershipChangeInfo : PropertyTokenOwnershipInfo
+    {
+        public required XcavatePropertyOperation Operation { get; set; }
+    }
+
     public class PropertyMarketplaceModel
     {
         public static Method BuyPropertyTokens(uint listingId, uint amount) => NftMarketplaceCalls.BuyToken(new U32(listingId), new U32(amount));
@@ -130,9 +144,26 @@ namespace PlutoFramework.Model.Xcavate
                 var propertyId = change[0];
 
                 nftIds.Add((details.CollectionId, details.ItemId));
-            };
+            }
 
             return await XcavatePaseoNftModel.GetNftsNftsPalletAsync(client, nftIds, fullKeys.Last().ToString(), token).ConfigureAwait(false);
+        }
+
+        public static async Task<INftBase> GetPropertyByIdAsync(SubstrateClientExt client, uint propertyId, CancellationToken token)
+        {
+            // 0x + Twox64 pallet + Twox64 storage + Blake2_128Concat U32
+            var keyPrefixLength = 66;
+
+            string[] idKeys = [NftMarketplaceStorage.AssetIdDetailsParams(new U32(propertyId)).Substring(keyPrefixLength)];
+
+            var propertyDetails = await GetPropertyAssetDetailsAsync(client, idKeys, null, token);
+
+            if (propertyDetails.Items.Count() == 0)
+            {
+                throw new Exception("Unexpected failure");
+            }
+
+            return propertyDetails.Items.First();
         }
 
         public static IAsyncEnumerable<INftBase> GetPropertiesAsync(

@@ -6,6 +6,7 @@ using PlutoFramework.Components.Extrinsic;
 using PlutoFramework.Constants;
 using PlutoFramework.Model;
 using PlutoFramework.Model.AjunaExt;
+using PlutoFramework.Model.Xcavate;
 using PlutoFramework.Types;
 using Substrate.NetApi.Model.Extrinsics;
 using Substrate.NetApi.Model.Rpc;
@@ -13,6 +14,7 @@ using Substrate.NetApi.Model.Types;
 using System.Collections.ObjectModel;
 using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.AssetPallet, System.Numerics.BigInteger);
 using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
+using XcavatePropertyKey = (PlutoFramework.Constants.EndpointEnum, uint);
 
 namespace PlutoFramework.Components.TransactionAnalyzer
 {
@@ -124,6 +126,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
 
                 Dictionary<string, Dictionary<AssetKey, Asset>> currencyChanges = new Dictionary<string, Dictionary<AssetKey, Asset>>();
                 Dictionary<string, Dictionary<NftKey, NftAssetWrapper>> nftChanges = new Dictionary<string, Dictionary<NftKey, NftAssetWrapper>>();
+                Dictionary<string, Dictionary<XcavatePropertyKey, PropertyTokenOwnershipChangeInfo>> xcavatePropertyChanges = new();
 
                 if (xcmDestinationEndpointKey is null)
                 {
@@ -147,6 +150,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
 
                         nftChanges = await TransactionAnalyzerModel.AnalyzeNftChangesInEventsAsync(client, extrinsicDetails.Events, client.Endpoint, CancellationToken.None);
 
+                        xcavatePropertyChanges = await TransactionAnalyzerModel.AnalyzeXcavatePropertyChangesInEventsAsync(client, extrinsicDetails.Events, client.Endpoint, CancellationToken.None);
                     }
                 }
                 else
@@ -174,11 +178,18 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                         var fromNftChanges = await TransactionAnalyzerModel.AnalyzeNftChangesInEventsAsync(client, fromExtrinsicDetails.Events, client.Endpoint, CancellationToken.None);
 
                         nftChanges = await TransactionAnalyzerModel.AnalyzeNftChangesInEventsAsync(destionationClient, toExtrinsicDetails.Events, destionationClient.Endpoint, CancellationToken.None, existingNftChanges: fromNftChanges);
+
+                        var fromXcavatePropertyChanges = await TransactionAnalyzerModel.AnalyzeXcavatePropertyChangesInEventsAsync(client, fromExtrinsicDetails.Events, client.Endpoint, CancellationToken.None);
+
+                        xcavatePropertyChanges = await TransactionAnalyzerModel.AnalyzeXcavatePropertyChangesInEventsAsync(client, toExtrinsicDetails.Events, client.Endpoint, CancellationToken.None, existingPropertyChanges: fromXcavatePropertyChanges);
+
                     }
-                };
+                }
+                ;
 
                 analyzedOutcomeViewModel.UpdateAssetChanges(currencyChanges);
                 analyzedOutcomeViewModel.UpdateNftChanges(nftChanges);
+                await analyzedOutcomeViewModel.UpdateXcavatePropertyChanges(xcavatePropertyChanges);
 
                 analyzedOutcomeViewModel.Loading = "";
 

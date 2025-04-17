@@ -58,6 +58,16 @@ namespace PlutoFrameworkTests
         }
 
         [Test]
+        public async Task GetXcavatePropertyByIdAsync()
+        {
+            var nft = await PropertyMarketplaceModel.GetPropertyByIdAsync((XcavatePaseo.NetApi.Generated.SubstrateClientExt)client.SubstrateClient, 0, CancellationToken.None);
+
+            var property = (XcavatePaseoNftsPalletNft)nft;
+
+            Console.WriteLine("Property: " + property?.XcavateMetadata?.PropertyName + " - " + property?.XcavateMetadata?.Files?.FirstOrDefault());
+        }
+
+        [Test]
         public async Task GetIndexedPropertiesAsync()
         {
             var token = CancellationToken.None;
@@ -121,5 +131,7 @@ namespace PlutoFrameworkTests
                 }
             }
         }
+
+
     }
 }

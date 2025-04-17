@@ -123,6 +123,7 @@
                            HorizontalTextAlignment="Start"
                            VerticalOptions="Center"
                            VerticalTextAlignment="Center"
+                           x:Name="tokensTitleLabel"
                            Grid.Column="0" />
 
                         <Label x:Name="tokensLabel"
@@ -133,17 +134,17 @@
                            Grid.Column="1" />
 
                         <Label Text="Price"
-                           HorizontalTextAlignment="End"
-                           VerticalOptions="Center"
-                           VerticalTextAlignment="Center"
-                           Grid.Column="2" />
+                               HorizontalTextAlignment="End"
+                               VerticalOptions="Center"
+                               VerticalTextAlignment="Center"
+                               Grid.Column="2" />
 
                         <Label x:Name="priceLabel"
-                           FontAttributes="Bold"
-                           HorizontalTextAlignment="End"
-                           VerticalOptions="Center"
-                           VerticalTextAlignment="Center"
-                           Grid.Column="3" />
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="End"
+                               VerticalOptions="Center"
+                               VerticalTextAlignment="Center"
+                               Grid.Column="3" />
                     </Grid>
 
                 </VerticalStackLayout>

@@ -1,10 +1,14 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using PlutoFramework.Components.Balance;
 using PlutoFramework.Model;
+using PlutoFramework.Model.Xcavate;
 using PlutoFramework.Types;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using UniqueryPlus.Nfts;
 using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.AssetPallet, System.Numerics.BigInteger);
 using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
+using XcavatePropertyKey = (PlutoFramework.Constants.EndpointEnum, uint);
 
 namespace PlutoFramework.Components.TransactionAnalyzer
 {
@@ -15,7 +19,16 @@ namespace PlutoFramework.Components.TransactionAnalyzer
         private ObservableCollection<AssetInfoExpanded> assets = new ObservableCollection<AssetInfoExpanded>();
 
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(NftsIsVisible))]
         private ObservableCollection<NftAssetWrapperExpanded> nfts = new ObservableCollection<NftAssetWrapperExpanded>();
+
+        public bool NftsIsVisible => Nfts.Count() > 0;
+
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(XcavatePropertiesIsVisible))]
+        private ObservableCollection<PropertyTokenOwnershipChangeInfo> xcavateProperties = new ObservableCollection<PropertyTokenOwnershipChangeInfo>();
+
+        public bool XcavatePropertiesIsVisible => XcavateProperties.Count() > 0;
 
         [ObservableProperty]
         private string loading = "Loading";
@@ -117,11 +130,36 @@ namespace PlutoFramework.Components.TransactionAnalyzer
             Nfts = tempNfts;
         }
 
+
+        public async Task UpdateXcavatePropertyChanges(Dictionary<string, Dictionary<XcavatePropertyKey, PropertyTokenOwnershipChangeInfo>> propertyChanges)
+        {
+            var tempProperties = new ObservableCollection<PropertyTokenOwnershipChangeInfo>();
+
+            var walletAddress = Model.KeysModel.GetSubstrateKey();
+
+            if (!propertyChanges.ContainsKey(walletAddress))
+            {
+                return;
+            }
+
+            foreach (var property in propertyChanges[walletAddress].Values)
+            {
+                tempProperties.Add(new PropertyTokenOwnershipChangeInfo
+                {
+                    NftBase = (await PlutoFramework.Components.XcavateProperty.XcavatePropertyModel.ToNftWrapperAsync((XcavatePaseoNftsPalletNft)property.NftBase)).NftBase,
+                    Operation = property.Operation,
+                    Amount = property.Amount,
+                });
+            }
+
+            XcavateProperties = tempProperties;
+        }
         public void SetToDefault()
         {
             Loading = "Loading";
             Assets = new ObservableCollection<AssetInfoExpanded>();
             Nfts = new ObservableCollection<NftAssetWrapperExpanded>();
+            XcavateProperties = new();
         }
     }
 
