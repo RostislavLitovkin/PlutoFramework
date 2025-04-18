@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		 <!--<TargetFrameworks>net8.0-ios;net8.0-maccatalyst;net8.0-android34.0</TargetFrameworks>-->
-    <TargetFrameworks>net9.0-android35.0</TargetFrameworks>
+    <TargetFrameworks>net9.0-ios;net9.0-android35.0</TargetFrameworks>
 
     <!--<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>-->
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
@@ -54,6 +54,9 @@
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
 	  <AndroidSigningKeyStore>/Users/rostislavlitovkin/certificates/Keystore/RostislavLitovkin/RostislavLitovkin.keystore</AndroidSigningKeyStore>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(TargetFramework)'=='net9.0-ios'">
+	  <ProvisioningType>manual</ProvisioningType>
 	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
@@ -366,7 +369,6 @@
 	  <BundleResource Include="Resources\Images\NetworkIcons\alephzerotestnet.png" />
 	  <BundleResource Include="Resources\Images\NetworkIcons\litmus.png" />
 	  <BundleResource Include="Resources\Images\NetworkIcons\shibuya.png" />
-    <BundleResource Include="Resources\Images\NetworkIcons\mythos.jpg" />
     <BundleResource Include="Resources\Images\menuwhite.svg" />
 	  <BundleResource Include="Resources\Images\menublack.svg" />
 	  <BundleResource Include="Resources\Images\NetworkIcons\kusamawhite.png" />
@@ -378,7 +380,6 @@
 	  <BundleResource Include="Resources\Images\NetworkIcons\crust.png" />
 	  <BundleResource Include="Resources\Images\NetworkIcons\efinity.png" />
 	  <BundleResource Include="Resources\Images\NetworkIcons\gemini2atestnet.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\hydradx.png" />
 	  <BundleResource Include="Resources\Images\NetworkIcons\interlay.png" />
 	  <BundleResource Include="Resources\Images\NetworkIcons\invarchtinkernet.png" />
 	  <BundleResource Include="Resources\Images\NetworkIcons\joystream.png" />
@@ -424,8 +425,6 @@
 	  <BundleResource Include="Resources\Images\FatCat\tail2.png" />
 	  <BundleResource Include="Resources\Images\FatCat\tail1.png" />
 	  <BundleResource Include="Resources\Images\azeroidtext.png" />
-	  <BundleResource Include="Resources\Images\whitebackground.png" />
-    <BundleResource Include="Resources\Images\darkbackground.png" />
     <BundleResource Include="Resources\Images\rightarrowblack.svg" />
 	  <BundleResource Include="Resources\Images\rightarrowwhite.svg" />
 	  <BundleResource Include="Resources\Images\unknownwhite.svg" />
@@ -926,7 +925,7 @@
 	    <DependentUpon>HydrationOmnipoolLayoutItem.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
-	<PropertyGroup Condition="$(TargetFramework.Contains('-ios')) and '$(Configuration)' == 'Release'">
+	<!--<PropertyGroup Condition="$(TargetFramework.Contains('-ios')) and '$(Configuration)' == 'Release'">
 		<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
 		<CodesignEntitlement>Entitlements.plist</CodesignEntitlement>
 		<CodesignKey>Apple Distribution: Rostislav Litovkin (M38VV8KHX5)</CodesignKey>
@@ -939,7 +938,7 @@
 		
 		<CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
 	</PropertyGroup>
-
+	-->
 	<ItemGroup>
 	  <PackageReference Update="Microsoft.Maui.Controls" Version="8.0.83" />
 	</ItemGroup>
