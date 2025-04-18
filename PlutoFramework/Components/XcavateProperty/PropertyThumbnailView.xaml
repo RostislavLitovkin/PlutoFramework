@@ -25,6 +25,8 @@
                            Source="xcavateloading.gif"
                            IsAnimationPlaying="True"
                            x:Name="image"
+                           Aspect="AspectFill"
+                           HeightRequest="200"
                            />
                     <Grid ColumnSpacing="5"
                           Margin="10, 5, 10, 0"

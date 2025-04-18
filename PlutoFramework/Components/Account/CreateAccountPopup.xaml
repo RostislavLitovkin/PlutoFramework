@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Account.CreateAccountPopup"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+             IsVisible="{Binding IsVisible}"
+             AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+             AbsoluteLayout.LayoutFlags="All"
+             BackgroundColor="#66000000">
+
+    <card:BottomPopupCard Title="">
+        <card:BottomPopupCard.View>
+            <AbsoluteLayout>
+
+                <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 1"
+                     AbsoluteLayout.LayoutFlags="All"
+                     Padding="20, 10, 20, 10"
+                     Spacing="15">
+                    <ContentView HeightRequest="200">
+                        <card:Card CardPadding="0">
+                            <card:Card.View>
+                                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                                AbsoluteLayout.LayoutFlags="All"
+                                Margin="10">
+                                    <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                                            AbsoluteLayout.LayoutFlags="SizeProportional">
+                                        <VerticalStackLayout>
+                                            <Label 
+                                FontAttributes="Bold"
+                                HorizontalOptions="Center"
+                                VerticalTextAlignment="End">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span FontAttributes="Bold" Text="Set new password: "/>
+
+                                                    </FormattedString>
+
+                                                </Label.FormattedText>
+
+                                            </Label>
+                                            <Grid HeightRequest="40"
+                                  x:Name="grid"
+                                  Margin="0, 10, 0, 0"
+                                  >
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="40" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <AbsoluteLayout x:Name="layout"/>
+                                                <Entry HeightRequest="40"
+                                       HorizontalOptions="Start"
+                                       Placeholder="Password"
+                                        Margin="0, 0, 50, 0"
+                                        Keyboard="Plain"
+                                        IsPassword="True"
+                                        x:Name="passwordEntry"
+                                       Grid.Column="0"
+                                       WidthRequest="{Binding Source={x:Reference layout}, Path=Width}"
+                                       IsSpellCheckEnabled="false"
+                                       IsTextPredictionEnabled="false"
+                                       Completed="OnEnterPressedAsync"
+                                       PropertyChanged="OnPropertyChanged"
+                                       />
+
+                                                <Image AbsoluteLayout.LayoutBounds="1, .5, 20, 20"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       Margin="10"
+                                       Grid.Column="1"
+                                       ZIndex="1000"
+                                       x:Name="eyeball"
+                                       >
+
+                                                    <Image.Source>
+                                                        <FontImageSource Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                                                         Glyph="&#xf06e;"
+                                                         FontFamily="FontAwesome"
+                                                         Size="20" />
+                                                    </Image.Source>
+
+                                                    <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="OnEyeballClicked" />
+
+                                                    </Image.GestureRecognizers>
+                                                </Image>
+                                                <Image AbsoluteLayout.LayoutBounds="1, .5, 20, 20"
+                                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                                       Margin="10"
+                                       Grid.Column="1"
+                                       ZIndex="1000"
+                                       x:Name="eyeballSlash"
+                                       IsVisible="false"
+                                       >
+
+                                                    <Image.Source>
+                                                        <FontImageSource Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                                                         Glyph="&#xf070;"
+                                                         FontFamily="FontAwesome"
+                                                         Size="20" />
+                                                    </Image.Source>
+
+                                                    <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="OnEyeballClicked" />
+
+                                                    </Image.GestureRecognizers>
+                                                </Image>
+
+
+                                            </Grid>
+
+                                            <Label VerticalTextAlignment="Start"
+                                   HorizontalTextAlignment="Start"
+                                   TextColor="#888888"
+                                   Margin="5"
+                                   Text="Used just for this app instance."/>
+
+                                            <Label VerticalTextAlignment="Start"
+                                   HorizontalTextAlignment="Start"
+                                   x:Name="lengthRequirementLabel"
+                                   TextColor="DarkRed"
+                                   Margin="5,0,5,0"
+                                   Text="Length 6-20 characters" />
+
+                                            <Label VerticalTextAlignment="Start"
+                                                   HorizontalTextAlignment="Start"
+                                                   x:Name="lowercaseRequirementLabel"
+                                                   TextColor="DarkRed"
+                                                   Margin="5,0,5,0"
+                                                   Text="At least 1 lowercase"/>
+
+                                            <Label VerticalTextAlignment="Start"
+                                                   HorizontalTextAlignment="Start"
+                                                   x:Name="uppercaseRequirementLabel"
+                                                   TextColor="DarkRed"
+                                                   Margin="5,0,5,0"
+                                                   Text="At least 1 uppercase"/>
+
+                                            <Label VerticalTextAlignment="Start"
+                                                   HorizontalTextAlignment="Start"
+                                                   x:Name="numberRequirementLabel"
+                                                   TextColor="DarkRed"
+                                                   Margin="5,0,5,0"
+                                                   Text="At least 1 number" />
+
+                                        </VerticalStackLayout>
+
+                                    </VerticalStackLayout>
+                                </AbsoluteLayout>
+                            </card:Card.View>
+                        </card:Card>
+                    </ContentView>
+                </VerticalStackLayout>
+                
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 80"
+                    AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
+
+                    <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 50"
+                      AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                      ColumnSpacing="15"
+                      Margin="0, 0, 0, 10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <buttons:PlutoFrameworkElevatedButton Text="Continue"
+                                                               Grid.Column="0"
+                                                               Command="{Binding ContinueCommand}"
+                                                               ButtonState="{Binding ContinueButtonState}"/>
+                    </Grid>
+                </AbsoluteLayout>
+
+            </AbsoluteLayout>
+
+        </card:BottomPopupCard.View>
+    </card:BottomPopupCard>
+</ContentView>

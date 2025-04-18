@@ -11,22 +11,22 @@ namespace PlutoFramework.Components.Xcavate
 {
     public partial class WelcomeViewModel : ObservableObject
     {
+        private bool clicked = false;
+
         [RelayCommand]
-        public Task ContinueToNextPageAsync() => Application.Current.MainPage.Navigation.PushAsync(
-            new NoMnemonicsPage(
-                new NoMnemonicsViewModel
-                {
-                    Navigation = () => Application.Current.MainPage.Navigation.PushAsync(
-                        new NoDidPage(
-                            new NoDidViewModel
-                            {
-                                Navigation = DidNavigateToNextPageAsync
-                            }
-                        )
-                    )
-                }
-            )
-        );
+        public void ContinueToNextPage()
+        {
+            if (clicked)
+            {
+                return;
+            }
+
+            clicked = true;
+
+            Application.Current.MainPage = new AppShell();
+
+            clicked = false;
+        }
 
         private static async Task DidNavigateToNextPageAsync()
         {

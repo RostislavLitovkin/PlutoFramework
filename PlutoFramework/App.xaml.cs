@@ -25,6 +25,7 @@ using PlutoFramework.Model;
 using PlutoFramework.Components.Mnemonics;
 using PlutoFramework.Components.Xcavate;
 using PlutoFramework.Components.XcavateProperty;
+using PlutoFramework.Components.Account;
 
 namespace PlutoFramework;
 
@@ -105,6 +106,8 @@ public partial class App : Application
         DependencyService.Register<SuccessfulImportPopupViewModel>();
 
         DependencyService.Register<BuyPropertyTokensViewModel>();
+
+        DependencyService.Register<NoAccountPopupModel>();
 
         if (Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY))
         {
