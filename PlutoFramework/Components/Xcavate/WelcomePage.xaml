@@ -45,9 +45,16 @@
                          AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
                          Padding="20, 10, 20, 10"
                          Spacing="15">
-            <buttons:ElevatedButton Text="Get Started"
+
+            <buttons:ElevatedButton Text="Create Account"
                                     ButtonState="Enabled"
-                                    Command="{Binding ContinueToNextPageCommand}" />
+                                    Command="{Binding CreateAccountCommand}" />    
+            <buttons:ElevatedButton Text="Import Account"
+                                    ButtonState="Enabled"
+                                    Command="{Binding ImportAccountCommand}" />
+            <buttons:BasicGrayButton Text="Browse Properties"
+                                     ButtonState="Enabled"
+                                     Command="{Binding BrowsePropertiesCommand}" />
         </VerticalStackLayout>
 
         <txanalyzer:TransactionAnalyzerConfirmationView />

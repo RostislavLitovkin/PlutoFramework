@@ -14,19 +14,9 @@ namespace PlutoFramework.Components.Xcavate
         private bool clicked = false;
 
         [RelayCommand]
-        public void ContinueToNextPage()
-        {
-            if (clicked)
-            {
-                return;
-            }
+        public Task BrowsePropertiesAsync() => Application.Current.MainPage.Navigation.PushAsync(new SetupPasswordPage());
 
-            clicked = true;
-
-            Application.Current.MainPage = new AppShell();
-
-            clicked = false;
-        }
+        // TODO other commands
 
         private static async Task DidNavigateToNextPageAsync()
         {

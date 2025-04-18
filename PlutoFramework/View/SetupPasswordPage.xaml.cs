@@ -1,4 +1,5 @@
-﻿using PlutoFramework.Components.Buttons;
+﻿using Microsoft.Maui.Storage;
+using PlutoFramework.Components.Buttons;
 using PlutoFramework.Model;
 using Substrate.NET.Wallet;
 
@@ -35,6 +36,11 @@ public partial class SetupPasswordPage : ContentPage
         }
 
         clicked = true;
+
+        await SecureStorage.Default.SetAsync(
+            PreferencesModel.PASSWORD,
+            passwordEntry.Text
+        );
 
         Application.Current.MainPage = new AppShell();
 
