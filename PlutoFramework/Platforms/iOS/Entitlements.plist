@@ -4,7 +4,7 @@
 <dict>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)com.rostislavlitovkin.plutowallet</string>
+		<string>$(AppIdentifierPrefix)com.xcavate.realxmarket</string>
 	</array>
 
 	<key>com.apple.security.files.user-selected.read-only</key>

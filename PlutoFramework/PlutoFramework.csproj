@@ -18,7 +18,7 @@
 		<ApplicationTitle>XCavate</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.xcavate.xcavate</ApplicationId>
+		<ApplicationId>com.xcavate.realxmarket</ApplicationId>
 		<ApplicationIdGuid>3ba8b589-69cd-429f-866f-94877f789515</ApplicationIdGuid>
 
 		<!-- Versions -->
@@ -54,6 +54,9 @@
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
 	  <AndroidSigningKeyStore>/Users/rostislavlitovkin/certificates/Keystore/RostislavLitovkin/RostislavLitovkin.keystore</AndroidSigningKeyStore>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(TargetFramework)'=='net9.0-ios'">
+	  <ProvisioningType>manual</ProvisioningType>
 	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
@@ -366,7 +369,6 @@
 	  <BundleResource Include="Resources\Images\NetworkIcons\alephzerotestnet.png" />
 	  <BundleResource Include="Resources\Images\NetworkIcons\litmus.png" />
 	  <BundleResource Include="Resources\Images\NetworkIcons\shibuya.png" />
-    <BundleResource Include="Resources\Images\NetworkIcons\mythos.jpg" />
     <BundleResource Include="Resources\Images\menuwhite.svg" />
 	  <BundleResource Include="Resources\Images\menublack.svg" />
 	  <BundleResource Include="Resources\Images\NetworkIcons\kusamawhite.png" />
@@ -378,7 +380,6 @@
 	  <BundleResource Include="Resources\Images\NetworkIcons\crust.png" />
 	  <BundleResource Include="Resources\Images\NetworkIcons\efinity.png" />
 	  <BundleResource Include="Resources\Images\NetworkIcons\gemini2atestnet.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\hydradx.png" />
 	  <BundleResource Include="Resources\Images\NetworkIcons\interlay.png" />
 	  <BundleResource Include="Resources\Images\NetworkIcons\invarchtinkernet.png" />
 	  <BundleResource Include="Resources\Images\NetworkIcons\joystream.png" />
@@ -424,8 +425,6 @@
 	  <BundleResource Include="Resources\Images\FatCat\tail2.png" />
 	  <BundleResource Include="Resources\Images\FatCat\tail1.png" />
 	  <BundleResource Include="Resources\Images\azeroidtext.png" />
-	  <BundleResource Include="Resources\Images\whitebackground.png" />
-    <BundleResource Include="Resources\Images\darkbackground.png" />
     <BundleResource Include="Resources\Images\rightarrowblack.svg" />
 	  <BundleResource Include="Resources\Images\rightarrowwhite.svg" />
 	  <BundleResource Include="Resources\Images\unknownwhite.svg" />
@@ -932,7 +931,7 @@
 	    <DependentUpon>HydrationOmnipoolLayoutItem.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
-	<PropertyGroup Condition="$(TargetFramework.Contains('-ios')) and '$(Configuration)' == 'Release'">
+	<!--<PropertyGroup Condition="$(TargetFramework.Contains('-ios')) and '$(Configuration)' == 'Release'">
 		<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
 		<CodesignEntitlement>Entitlements.plist</CodesignEntitlement>
 		<CodesignKey>Apple Distribution: Rostislav Litovkin (M38VV8KHX5)</CodesignKey>
@@ -944,7 +943,7 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-maccatalyst|AnyCPU'">
 		<CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
 	</PropertyGroup>
-
+	-->
 	<ItemGroup>
 	  <PackageReference Update="Microsoft.Maui.Controls" Version="8.0.83" />
 	</ItemGroup>
