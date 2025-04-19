@@ -7,7 +7,7 @@
              xmlns:networkselect="clr-namespace:PlutoFramework.Components.NetworkSelect"
              x:Class="PlutoFramework.Components.CustomLayouts.CustomLayoutsPage"
              Title="CustomLayoutsPage"
-             BackgroundColor="Black"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}"
              >
 
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">

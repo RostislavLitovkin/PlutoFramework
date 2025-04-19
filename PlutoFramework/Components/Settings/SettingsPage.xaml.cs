@@ -17,6 +17,8 @@ public partial class SettingsPage : ContentPage
         Shell.SetNavBarIsVisible(this, false);
 
         InitializeComponent();
+
+        BindingContext = new SettingsViewModel();
     }
 
     async void OnPredefinedLayoutsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)

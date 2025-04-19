@@ -25,6 +25,12 @@ public partial class ChainAddressView : ContentView, IMainSubstrateClientLoadabl
             viewModel.ChainAddressName = endpoint.Name.Split(" ")[0] + " key";
         }
 
+        if(!KeysModel.HasSubstrateKey())
+        {
+            viewModel.Address = "None";
+            return;
+        }
+
         if (endpoint.ChainType == Constants.ChainType.Substrate)
         {
             viewModel.Address = Utils.GetAddressFrom(KeysModel.GetPublicKeyBytes(), endpoint.SS58Prefix);

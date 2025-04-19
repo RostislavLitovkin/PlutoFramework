@@ -23,7 +23,7 @@
                 <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 145"
                     AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
 
-                    <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 50"
+                    <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 115"
                           AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
                           ColumnSpacing="15"
                           RowSpacing="15"
@@ -36,14 +36,14 @@
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
 
-                        <buttons:PlutoFrameworkElevatedButton Text="Create Account"
+                        <buttons:ElevatedButton Text="Create Account"
                                                                Grid.Column="0"
                                                                 Grid.Row="0"
                                                                Command="{Binding CreateAccountCommand}"
                                                                ButtonState="Enabled"/>
-                        <buttons:PlutoFrameworkElevatedButton Text="Import Account"
+                        <buttons:ElevatedButton Text="Import Account"
                                                                Grid.Column="0"
-                                                                Grid.Row="1"
+                                                               Grid.Row="1"
                                                                Command="{Binding ImportAccountCommand}"
                                                                ButtonState="Enabled"/>
                     </Grid>

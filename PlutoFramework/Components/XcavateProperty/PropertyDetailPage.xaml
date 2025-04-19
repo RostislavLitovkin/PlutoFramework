@@ -9,6 +9,7 @@
              xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
              xmlns:password="clr-namespace:PlutoFramework.Components.Password"
              xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
+             xmlns:account="clr-namespace:PlutoFramework.Components.Account"
              BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
         <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
@@ -113,7 +114,7 @@
                                          Value="{Binding ListingPrice}" />
                     <table:TableCurrencyCell Grid.Column="1"
                                          Grid.Row="0"
-                                      Title="APY per NFT"
+                                      Title="Rental yield"
                                       Value="{Binding Apy}" />
                     <table:TableCurrencyCell Grid.Column="0"
                                          Grid.Row="1"
@@ -191,6 +192,8 @@
         <navigationbar:TopNavigationBar Title="{Binding Metadata.PropertyName}"/>
 
         <xcavateproperty:BuyPropertyTokensView />
+        
+        <account:NoAccountPopup />
 
         <txanalyzer:TransactionAnalyzerConfirmationView />
 

@@ -19,11 +19,16 @@ public partial class OwnedPropertiesListView : ContentView, ISubstrateClientLoad
             return;
         }
 
+        if (!Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY))
+        {
+            return;
+        }
+
         await ((OwnedPropertiesListViewModel)BindingContext).InitialLoadAsync(token);
     }
 
     public void SetEmpty()
     {
-        // Maybe set later
+        ((OwnedPropertiesListViewModel)BindingContext).Loading = false;
     }
 }

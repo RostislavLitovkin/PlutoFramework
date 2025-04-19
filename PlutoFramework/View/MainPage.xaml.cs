@@ -7,6 +7,7 @@ using PlutoFramework.Components.UniversalScannerView;
 using PlutoFramework.Components.Vault;
 using PlutoFramework.Model;
 using PlutoFramework.ViewModel;
+using PlutoFramework.Components.Account;
 
 namespace PlutoFramework.View;
 
@@ -68,6 +69,15 @@ public partial class MainPage : ContentPage
 
     async void OnQRClicked(System.Object sender, System.EventArgs e)
     {
+        if (!KeysModel.HasSubstrateKey())
+        {
+            var noAccountPopupViewModel = DependencyService.Get<NoAccountPopupModel>();
+
+            noAccountPopupViewModel.IsVisible = true;
+
+            return;
+        }
+
         await Navigation.PushAsync(new UniversalScannerPage
         {
             OnScannedMethod = OnScanned

@@ -16,6 +16,7 @@
          xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
          xmlns:vault="clr-namespace:PlutoFramework.Components.Vault"
          xmlns:changelayoutrequest="clr-namespace:PlutoFramework.Components.ChangeLayoutRequest"
+             xmlns:account="clr-namespace:PlutoFramework.Components.Account"
          BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
 
     <AbsoluteLayout
@@ -79,6 +80,8 @@
         <navigationbar:NavigationBarView SelectedOption="Home"/>
 
         <transferview:TransferView />
+
+        <account:NoAccountPopup />
 
         <assetselect:AssetSelectView />
 

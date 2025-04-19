@@ -31,15 +31,16 @@
 
                 </settings:GenericButton>
 
-                <settings:GenericButton Title="Show mnemonics">
+                <settings:GenericButton Title="Show mnemonics"
+                                        IsVisible="{Binding HasAccount}">
                     <settings:GenericButton.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnShowMnemonicsClicked" />
 
                     </settings:GenericButton.GestureRecognizers>
-
                 </settings:GenericButton>
 
-                <settings:GenericButton Title="Manage Kilt DID">
+                <settings:GenericButton Title="Manage Kilt DID"
+                                        IsVisible="{Binding HasAccount}">
                     <settings:GenericButton.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnManageKiltDidClicked" />
 
@@ -83,7 +84,8 @@
 
                 </settings:GenericButton>
 
-                <settings:GenericButton Title="Log out (Delete private key)">
+                <settings:GenericButton Title="Log out (Delete private key)"
+                                         IsVisible="{Binding HasAccount}">
                     <settings:GenericButton.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnLogOutClicked" />
 

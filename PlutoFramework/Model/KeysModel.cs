@@ -20,16 +20,19 @@ namespace PlutoFramework.Model
     {
         // Can change with future updates to substrate
         private const ExpandMode DEFAULT_EXPAND_MODE = ExpandMode.Ed25519;
-        public static async Task GenerateNewAccountAsync(string password)
+        public static async Task GenerateNewAccountAsync(string? password, string accountVariant = "")
         {
             string mnemonics = MnemonicsModel.GenerateMnemonics();
 
-            await GenerateNewAccountAsync(mnemonics, password);
+            await GenerateNewAccountAsync(mnemonics, password, accountVariant);
         }
 
         private static async Task RegisterBiometricAuthenticationAsync()
         {
-            Preferences.Set(PreferencesModel.BIOMETRICS_ENABLED, false);
+            if (Preferences.Get(PreferencesModel.BIOMETRICS_ENABLED, false))
+            {
+                return;
+            }
 
             try
             {
@@ -178,6 +181,11 @@ namespace PlutoFramework.Model
             );
 
             Preferences.Set(PreferencesModel.ACCOUNT_TYPE + accountVariant, AccountType.Json.ToString());
+        }
+
+        public static bool HasSubstrateKey(string accountVariant = "")
+        {
+            return Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY + accountVariant);
         }
 
         public static string GetSubstrateKey(string accountVariant = "")

@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Components.Account;
+using PlutoFramework.Model;
 using PlutoFramework.Model.Xcavate;
 using UniqueryPlus.Metadata;
 using UniqueryPlus.Nfts;
@@ -54,6 +56,15 @@ namespace PlutoFramework.Components.XcavateProperty
         [RelayCommand]
         public void Buy()
         {
+            if (!KeysModel.HasSubstrateKey())
+            {
+                var noAccountPopupViewModel = DependencyService.Get<NoAccountPopupModel>();
+
+                noAccountPopupViewModel.IsVisible = true;
+
+                return;
+            }
+
             var viewModel = DependencyService.Get<BuyPropertyTokensViewModel>();
 
             viewModel.NftMarketplaceDetails = NftMarketplaceDetails;

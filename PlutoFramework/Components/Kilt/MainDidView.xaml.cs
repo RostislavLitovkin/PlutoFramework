@@ -13,12 +13,12 @@ public partial class MainDidView : DidView, ILocalLoadableView, ISubstrateClient
 
     public void Load()
     {
+        this.Did = Preferences.Get(PreferencesModel.PUBLIC_KEY + "kilt1", "");
+
         if (!Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY + "kilt1"))
         {
             return;
         }
-
-        this.Did = Preferences.Get(PreferencesModel.PUBLIC_KEY + "kilt1", "");
 
         this.Verification = (DidVerificationEnum)Enum.Parse(typeof(DidVerificationEnum), Preferences.Get(PreferencesModel.DID_VERIFICATION + "kilt1", DidVerificationEnum.Light.ToString()));
     }

@@ -2,13 +2,15 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.XcavateProperty.PropertyThumbnailView"
+             HorizontalOptions="Fill"
              xmlns:xcavateproperty="clr-namespace:PlutoFramework.Components.XcavateProperty"
              xmlns:card="clr-namespace:PlutoFramework.Components.Card">
     <ContentView.Resources>
         <xcavateproperty:WidthToHeightConverter x:Key="widthToHeight" />
     </ContentView.Resources>
 
-    <card:ClickableCard CardPadding="0, 0, 0, 0">
+    <card:ClickableCard CardPadding="0, 0, 0, 0"
+                        HorizontalOptions="Fill">
         <card:ClickableCard.GestureRecognizers>
             <TapGestureRecognizer Tapped="OnMoreClicked" />
         </card:ClickableCard.GestureRecognizers>
@@ -18,7 +20,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <VerticalStackLayout HorizontalOptions="CenterAndExpand"
+                <VerticalStackLayout HorizontalOptions="Fill"
                                      Spacing="5">
                     <Image HorizontalOptions="Fill"
                            BackgroundColor="{AppThemeBinding Light=#dddddd, Dark=#222222}"

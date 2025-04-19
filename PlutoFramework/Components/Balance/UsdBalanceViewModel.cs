@@ -21,6 +21,11 @@ namespace PlutoFramework.Components.Balance
         [RelayCommand]
         private async Task ReloadAsync()
         {
+            if (!KeysModel.HasSubstrateKey())
+            {
+                return;
+            }
+
             CancellationToken token = CancellationToken.None;
             Console.WriteLine("Reload clicked");
 

@@ -11,10 +11,17 @@ public partial class SubstrateAddressView : ContentView, ILocalLoadableView
 
 	public void Load()
 	{
-		var addressKey = KeysModel.GetSubstrateKey();
+        addressView.Title = "Substrate key";
+
+        if (!KeysModel.HasSubstrateKey())
+        {
+            addressView.Address = "None";
+            return;
+        }
+
+        var addressKey = KeysModel.GetSubstrateKey();
 
         addressView.Address = addressKey;
         addressView.QrAddress = addressKey;
-		addressView.Title = "Substrate key";
     }
 }

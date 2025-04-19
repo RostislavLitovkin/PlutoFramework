@@ -10,40 +10,57 @@
          BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
-        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-           Source="xcavatelaunchbg.jpg"
-           Aspect="AspectFill"/>
-
         <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-              Padding="20"
-              ColumnSpacing="15"
-              RowSpacing="15">
+           >
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="40" />
 
             </Grid.RowDefinitions>
-
+           
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Label Text="Welcome to XCavate"
+            <VerticalStackLayout Grid.Row="0"
+                                 Margin="20,10,20,10">
+                <Label Text="Don't invest unless you're prepared to lose all the money you invest. This is a high-risk investment and you should not expect to be protected if something goes wrong." />
+                <Label Text="Take 2 mins to learn more."
+                       TextColor="{StaticResource Primary}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding LearnMoreCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </VerticalStackLayout>
+
+            <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                   Grid.Row="1"
+                   Grid.RowSpan="4"
+                   Source="xcavatelaunchbg.jpg"
+                   Aspect="AspectFill"/>
+
+
+
+            <VerticalStackLayout Grid.Row="1"
+                                 Spacing="5"
+                     Margin="20,20,20,5">
+                <Label Text="Welcome to Xcavate"
                      FontAttributes="Bold"
                      FontSize="20"
                      Grid.Column="0"
-                     Grid.Row="0"/>
-            <Label Text="Unlock the future of real estate with secure, tokenized ownership"
-                    TextColor="#888888"
-                     Grid.Column="0"
                      Grid.Row="1"/>
+            <Label Text="Unlock the future of real estate with secure, tokenized ownership"
+                     Grid.Column="0"
+                     Grid.Row="2"/>
+                </VerticalStackLayout>
         </Grid>
 
         <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, AutoSize"
                          AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
-                         Padding="20, 10, 20, 10"
+                         Padding="20, 10, 20, 15"
                          Spacing="15">
 
             <buttons:ElevatedButton Text="Create Account"
