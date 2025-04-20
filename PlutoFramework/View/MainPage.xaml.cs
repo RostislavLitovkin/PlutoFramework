@@ -69,12 +69,8 @@ public partial class MainPage : ContentPage
 
     async void OnQRClicked(System.Object sender, System.EventArgs e)
     {
-        if (!KeysModel.HasSubstrateKey())
+        if(! AccountModel.CheckRequirements())
         {
-            var noAccountPopupViewModel = DependencyService.Get<NoAccountPopupModel>();
-
-            noAccountPopupViewModel.IsVisible = true;
-
             return;
         }
 

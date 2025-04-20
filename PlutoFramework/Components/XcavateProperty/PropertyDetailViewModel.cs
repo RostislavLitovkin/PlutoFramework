@@ -56,12 +56,8 @@ namespace PlutoFramework.Components.XcavateProperty
         [RelayCommand]
         public void Buy()
         {
-            if (!KeysModel.HasSubstrateKey())
+            if (!AccountModel.CheckRequirements())
             {
-                var noAccountPopupViewModel = DependencyService.Get<NoAccountPopupModel>();
-
-                noAccountPopupViewModel.IsVisible = true;
-
                 return;
             }
 

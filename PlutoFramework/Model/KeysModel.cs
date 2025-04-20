@@ -27,7 +27,7 @@ namespace PlutoFramework.Model
             await GenerateNewAccountAsync(mnemonics, password, accountVariant);
         }
 
-        private static async Task RegisterBiometricAuthenticationAsync()
+        public static async Task RegisterBiometricAuthenticationAsync()
         {
             if (Preferences.Get(PreferencesModel.BIOMETRICS_ENABLED, false))
             {
@@ -62,7 +62,10 @@ namespace PlutoFramework.Model
 
         public static async Task GenerateNewAccountAsync(string mnemonics, string? password, string accountVariant = "")
         {
-            await RegisterBiometricAuthenticationAsync();
+            if (password != null)
+            {
+                await RegisterBiometricAuthenticationAsync();
+            }
 
             Account account = MnemonicsModel.GetAccountFromMnemonics(mnemonics);
 

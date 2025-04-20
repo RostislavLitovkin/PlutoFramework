@@ -40,6 +40,7 @@ public partial class SettingsPage : ContentPage
         KeysModel.RemoveAccount("kilt1");
 
         Preferences.Remove(PreferencesModel.BIOMETRICS_ENABLED);
+        Preferences.Remove(PreferencesModel.SHOW_WELCOME_SCREEN);
 
         await SQLiteModel.DeleteAllDatabasesAsync();
 

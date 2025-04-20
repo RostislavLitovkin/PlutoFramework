@@ -25,6 +25,8 @@ using PlutoFramework.Components.Mnemonics;
 using PlutoFramework.Components.Xcavate;
 using PlutoFramework.Components.XcavateProperty;
 using PlutoFramework.Components.Account;
+using PlutoFramework.Components.Kilt;
+using PlutoFramework.Components.Sumsub;
 
 namespace PlutoFramework;
 
@@ -107,6 +109,10 @@ public partial class App : Application
         DependencyService.Register<BuyPropertyTokensViewModel>();
 
         DependencyService.Register<NoAccountPopupModel>();
+
+        DependencyService.Register<NoDidPopupViewModel>();
+
+        DependencyService.Register<NoKYCPopupViewModel>();
 
         if (Preferences.Get(PreferencesModel.SHOW_WELCOME_SCREEN, true))
         {

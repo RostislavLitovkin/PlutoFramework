@@ -42,6 +42,10 @@ public partial class SetupPasswordPage : ContentPage
             passwordEntry.Text
         );
 
+        Preferences.Set(PreferencesModel.SHOW_WELCOME_SCREEN, false);
+
+        await KeysModel.RegisterBiometricAuthenticationAsync();
+
         Application.Current.MainPage = new AppShell();
 
         clicked = false;

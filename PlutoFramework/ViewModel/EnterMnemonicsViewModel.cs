@@ -10,6 +10,9 @@ namespace PlutoFramework.ViewModel
         public required Func<Task> Navigation;
 
         [ObservableProperty]
+        private bool incorrectMnemonicsEntered = false;
+
+        [ObservableProperty]
         private string mnemonics = "";
 
         [ObservableProperty]
@@ -20,14 +23,22 @@ namespace PlutoFramework.ViewModel
         [RelayCommand]
         public async Task ContinueWithMnemonicsAsync()
         {
-            await Model.KeysModel.GenerateNewAccountAsync(
-                Mnemonics,
-                null
-            );
+            try
+            {
+                await Model.KeysModel.GenerateNewAccountAsync(
+                    Mnemonics,
+                    null,
+                    accountVariant: ""
+                );
 
-            MainPage.SetupLayout();
+                MainPage.SetupLayout();
 
-            await Navigation.Invoke();
+                await Navigation.Invoke();
+            }
+            catch
+            {
+                IncorrectMnemonicsEntered = true;
+            }
         }
 
         [RelayCommand]

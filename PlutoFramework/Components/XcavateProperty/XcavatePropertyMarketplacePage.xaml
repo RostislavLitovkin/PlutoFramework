@@ -11,6 +11,7 @@
                 xmlns:model="clr-namespace:PlutoFramework.Model;assembly=PlutoFramework.Model"
                 xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
              xmlns:xcavateproperty="clr-namespace:PlutoFramework.Components.XcavateProperty"
+             xmlns:transfer="clr-namespace:PlutoFramework.Components.TransferView"
                 BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
@@ -19,6 +20,7 @@
                     ItemsSource="{Binding Items}"
                     RemainingItemsThreshold="0"
                     RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}">
+            
             <CollectionView.Header>
                 <VerticalStackLayout Margin="40">
                     <Image Source="xcavatemarketplace.png"/>
@@ -51,6 +53,8 @@
         </CollectionView>
 
         <navigationbar:NavigationBarView SelectedOption="Nfts" />
+
+        <transfer:TransferView />
 
         <txanalyzer:TransactionAnalyzerConfirmationView />
     </AbsoluteLayout>

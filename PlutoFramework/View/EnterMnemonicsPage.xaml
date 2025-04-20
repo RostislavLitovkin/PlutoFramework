@@ -63,7 +63,9 @@
                         </card:Card.View>
                     </card:Card>
                 </ContentView>
-
+                <Label Text="The entered mnemonic phrase was not correct." 
+                        IsVisible="{Binding IncorrectMnemonicsEntered}"/>
+                
                 <buttons:ElevatedButton Text="Continue" Command="{Binding ContinueWithMnemonicsCommand}" />
 
 
@@ -93,10 +95,10 @@
                                         <Editor HeightRequest="80" x:Name="privateKeyEntry"
                                                 Placeholder="Start entering here.."
                                                 Text="{Binding PrivateKey}">
-                              
+
                                         </Editor>
                                     </VerticalStackLayout>
-                
+
                                 </VerticalStackLayout>
                             </AbsoluteLayout>
                         </card:Card.View>

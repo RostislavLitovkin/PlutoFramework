@@ -17,6 +17,8 @@
          xmlns:vault="clr-namespace:PlutoFramework.Components.Vault"
          xmlns:changelayoutrequest="clr-namespace:PlutoFramework.Components.ChangeLayoutRequest"
              xmlns:account="clr-namespace:PlutoFramework.Components.Account"
+             xmlns:kilt="clr-namespace:PlutoFramework.Components.Kilt"
+             xmlns:sumsub="clr-namespace:PlutoFramework.Components.Sumsub"
          BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
 
     <AbsoluteLayout
@@ -82,6 +84,10 @@
 
         <account:NoAccountPopup />
 
+        <kilt:NoDidPopupView />
+
+        <sumsub:NoKYCPopupView />
+
         <assetselect:AssetSelectView />
 
         <networkselect:NetworkSelectPopup />
@@ -91,5 +97,6 @@
         <txanalyzer:TransactionAnalyzerConfirmationView />
 
         <password:EnterPasswordPopupView />
+
     </AbsoluteLayout>
 </ContentPage>
