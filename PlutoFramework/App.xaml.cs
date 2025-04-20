@@ -7,7 +7,6 @@ using PlutoFramework.Components.DAppConnectionView;
 using PlutoFramework.Components.AddressView;
 using PlutoFramework.Components.CalamarView;
 using PlutoFramework.Components.Extrinsic;
-using PlutoFramework.View;
 using PlutoFramework.Components.Staking;
 using PlutoFramework.Components.CustomLayouts;
 using PlutoFramework.Components.AzeroId;
@@ -109,7 +108,11 @@ public partial class App : Application
 
         DependencyService.Register<NoAccountPopupModel>();
 
-        if (Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY))
+        if (Preferences.Get(PreferencesModel.SHOW_WELCOME_SCREEN, true))
+        {
+            MainPage = new OnboardingShell();
+        }
+        else
         {
             // Set Account type if it did not exist
             if (!Preferences.ContainsKey(PreferencesModel.ACCOUNT_TYPE))
@@ -121,14 +124,6 @@ public partial class App : Application
             };
 
             MainPage = new AppShell();
-        }
-        else
-        {
-            KeysModel.RemoveAccount();
-
-            Preferences.Remove(PreferencesModel.BIOMETRICS_ENABLED);
-
-            MainPage = new OnboardingShell();
         }
     }
 }

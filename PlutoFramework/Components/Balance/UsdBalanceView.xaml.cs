@@ -1,7 +1,6 @@
 ﻿
 using PlutoFramework.Model;
 using PlutoFramework.Model.HydraDX;
-using Substrate.NetApi;
 
 namespace PlutoFramework.Components.Balance;
 
@@ -54,7 +53,7 @@ public partial class UsdBalanceView : ContentView, ISubstrateClientLoadableAsync
 
     public void SetEmpty()
     {
-        if (KeysModel.HasSubstrateKey())
+        if (!KeysModel.HasSubstrateKey())
         {
             return;
         }
