@@ -43,10 +43,7 @@ public partial class SettingsPage : ContentPage
 
         await SQLiteModel.DeleteAllDatabasesAsync();
 
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
         Application.Current.MainPage = new WelcomePage();
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
-
     }
     async void OnDeveloperSettingsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
