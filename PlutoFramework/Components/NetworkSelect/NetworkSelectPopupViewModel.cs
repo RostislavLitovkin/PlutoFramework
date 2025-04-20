@@ -71,24 +71,15 @@ namespace PlutoFramework.Components.NetworkSelect
 
 		public void SelectEndpoint(EndpointEnum key)
 		{
-			List<NetworkSelectInfo> tempNetworks = new List<NetworkSelectInfo>(Networks);
-			List<EndpointEnum> selectedKeys = new List<EndpointEnum>();
+            foreach (var network in Networks)
+            {
+                if (network.EndpointKey == key)
+                {
+                    network.IsSelected = !network.IsSelected;
+                }
+            }
 
-			for(int i = 0; i < tempNetworks.Count(); i++)
-			{
-				if (tempNetworks[i].EndpointKey == key)
-				{
-                    tempNetworks[i].IsSelected = !tempNetworks[i].IsSelected;
-				}
-
-				if (tempNetworks[i].IsSelected)
-				{
-					selectedKeys.Add(tempNetworks[i].EndpointKey);
-				}
-			}
-
-			Networks = new ObservableCollection<NetworkSelectInfo>(tempNetworks);
-		}
+        }
 	}
 }
 

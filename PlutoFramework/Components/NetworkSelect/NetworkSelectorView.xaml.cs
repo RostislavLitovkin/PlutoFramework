@@ -45,13 +45,15 @@ public partial class NetworkSelectorView : ContentView
         propertyChanging: (bindable, oldValue, newValue) => {
             var control = (NetworkSelectorView)bindable;
 
+            Console.WriteLine("Should have changed selected");
+
             if ((bool)newValue)
             {
-                control.border.BackgroundColor = Color.FromHex("7aff7a");
+                control.border.BackgroundColor = Color.FromArgb("7aff7a");
             }
             else
             {
-                control.border.SetAppThemeColor(Label.BackgroundColorProperty, Color.FromHex("fdfdfd"), Color.FromHex("000000"));
+                control.border.SetAppThemeColor(Label.BackgroundColorProperty, Color.FromArgb("fdfdfd"), Color.FromArgb("000000"));
             }
         });
 

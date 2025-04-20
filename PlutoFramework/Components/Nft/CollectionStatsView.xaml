@@ -7,9 +7,9 @@
     <card:ClickableCard>
         <card:ClickableCard.View>
             <AbsoluteLayout  AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-         x:Name="absoluteLayout"
-         MinimumHeightRequest="80"
-         >
+                             x:Name="absoluteLayout"
+                             MinimumHeightRequest="80"
+                             >
 
                 <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
@@ -22,6 +22,7 @@
                 </VerticalStackLayout>
 
                 <VerticalStackLayout Margin="0, 40, 0, 10"
+                                     
                                  WidthRequest="{Binding Source={x:Reference absoluteLayout}, Path=Width}"
                                  Spacing="5">
 

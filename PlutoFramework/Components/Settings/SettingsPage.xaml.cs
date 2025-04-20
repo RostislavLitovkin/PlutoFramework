@@ -41,7 +41,7 @@ public partial class SettingsPage : ContentPage
 
         Preferences.Remove(PreferencesModel.BIOMETRICS_ENABLED);
 
-        // Delete Local SQLite databases
+        await SQLiteModel.DeleteAllDatabasesAsync();
 
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
         Application.Current.MainPage = new WelcomePage();

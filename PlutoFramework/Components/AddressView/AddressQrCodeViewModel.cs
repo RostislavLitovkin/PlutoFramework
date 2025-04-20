@@ -1,26 +1,20 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using PlutoFramework.Model;
 
 namespace PlutoFramework.Components.AddressView
 {
-    internal partial class AddressQrCodeViewModel : ObservableObject
+    internal partial class AddressQrCodeViewModel : ObservableObject, IPopup
     {
         [ObservableProperty]
         private string qrAddress;
 
-        private string address;
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(TwoLineAddress))]
+        private string address = "";
 
-        public string Address
-        {
-            get => address;
-            set => SetProperty(ref address, value.Substring(0, value.Length / 2) + "\n" + value.Substring(value.Length / 2));
-        }
+        public string TwoLineAddress => Address.Substring(0, Address.Length / 2) + "\n" + Address.Substring(Address.Length / 2);
 
         [ObservableProperty]
-        private bool isVisible;
-
-        public AddressQrCodeViewModel()
-        {
-            isVisible = false;
-        }
+        private bool isVisible = false;
     }
 }

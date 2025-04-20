@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.SearchBar.SearchBarView"
+             HorizontalOptions="Fill"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             HeightRequest="40">
+    <card:Card HeightRequest="40"
+               x:Name="card"
+               IsThin="True"
+               CardPadding="10, 0, 0, 0">
+        <card:Card.View>
+
+            <Grid HeightRequest="40"
+                  ColumnSpacing="10"
+                  x:Name="usdGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+
+                </Grid.ColumnDefinitions>
+
+                <Entry x:Name="entry"
+                       HorizontalOptions="Fill"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="1"
+                       Keyboard="Text"
+                       HeightRequest="40"
+                       FontAttributes="Bold"
+                       IsSpellCheckEnabled="false"
+                       IsTextPredictionEnabled="false"
+                       PropertyChanged="OnPropertyChanged" 
+                       PlaceholderColor="Gray"/>
+
+                <Border HeightRequest="40"
+                        Grid.Column="1"
+                        IsVisible="True"
+                        BackgroundColor="{x:StaticResource Primary}"
+                        Stroke="{x:StaticResource Primary}">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="15" />
+                    </Border.StrokeShape>
+                    <HorizontalStackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                            AbsoluteLayout.LayoutFlags="All"
+                            Spacing="5"
+                            Padding="15,0,15,0"
+                            HorizontalOptions="Center">
+                        <Label Text="Search"
+                                TextColor="White"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"
+                                HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                            />
+
+                    </HorizontalStackLayout>
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSearchClicked" />
+                    </Border.GestureRecognizers>
+                </Border>
+            </Grid>
+        </card:Card.View>
+    </card:Card>
+</ContentView>

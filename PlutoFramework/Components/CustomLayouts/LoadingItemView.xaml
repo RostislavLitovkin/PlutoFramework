@@ -6,5 +6,6 @@
              >
     <customlayouts:ItemView Text="Loading"
                             IsTransparent="True"
-                            HeightRequest="70"/>
+                            x:Name="itemView"
+                            />
 </ContentView>

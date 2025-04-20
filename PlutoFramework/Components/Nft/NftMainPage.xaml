@@ -12,6 +12,8 @@
              xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
              xmlns:password="clr-namespace:PlutoFramework.Components.Password"
              xmlns:model="clr-namespace:PlutoFramework.Model;assembly=PlutoFramework.Model"
+             xmlns:searchBar="clr-namespace:PlutoFramework.Components.SearchBar"
+             HideSoftInputOnTapped="true"
              BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
@@ -27,7 +29,8 @@
 
                 <buttons:ElevatedButton Text="Claim Diamonds POAP"
                                         Clicked="OnClaimDiamondsClicked"
-                        ButtonState="Enabled"
+                                        ButtonState="Enabled"
+                                        IsVisible="False"
                         />
                 <customlayouts:CategoryHeaderView TitleText="Featured: "
                                                   ImageSource="{AppThemeBinding Light=hotblack.png, Dark=hotwhite.png}"/>
@@ -65,7 +68,7 @@
                                                IsVisible="{Binding LoadingFavouriteNfts}"/>
 
                 <customlayouts:TransparentItemView Text="No Favourite NFTs"
-                                                    HeightRequest="80"
+                                                   HeightRequest="80"
                                                    IsVisible="{Binding NoFavouriteNfts}" />
 
                 <buttons:ElevatedButton Text="All Favourite NFTs"
@@ -168,6 +171,13 @@
                         />
             </VerticalStackLayout>
         </ScrollView>
+
+        <searchBar:SearchBarView Text="{Binding SearchText}"
+                                 SearchCommand="{Binding SearchCommand}"
+                                 Placeholder="Find NFTs"
+                                 AbsoluteLayout.LayoutBounds="0.5, 0, 1, 60"
+                                 AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                                 Margin="20,10,20,10"/>
 
         <navigationbar:NavigationBarView SelectedOption="Nfts" />
 

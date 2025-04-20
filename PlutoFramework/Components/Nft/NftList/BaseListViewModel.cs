@@ -20,7 +20,7 @@ namespace PlutoFramework.Components.Nft
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(NoItems))]
-        private bool loading = false;
+        private bool loading = true;
 
         [RelayCommand]
         public abstract Task LoadMoreAsync(CancellationToken token);

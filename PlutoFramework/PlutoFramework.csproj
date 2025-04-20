@@ -15,7 +15,7 @@
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
 
 		<!-- Display name -->
-		<ApplicationTitle>XCavate</ApplicationTitle>
+		<ApplicationTitle>RealXMarket</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.xcavate.realxmarket</ApplicationId>
@@ -29,7 +29,6 @@
 		<!-- Increases performance, but disables hot-reload -->
     <UseInterpreter>false</UseInterpreter>
     <MauiStrictXamlCompilation>true</MauiStrictXamlCompilation>
-		<Nullable>enable</Nullable>    
 
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
@@ -38,6 +37,7 @@
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 		<AndroidSigningKeyStore />
+
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
@@ -303,8 +303,9 @@
 	  <None Remove="Resources\Images\FatCat\tail2.png" />
 	  <None Remove="Resources\Images\FatCat\tail1.png" />
 	  <None Remove="Resources\Images\azeroidtext.png" />
-	  <None Remove="Resources\Images\darkbackground.png" />
-	  <None Remove="Resources\Images\rightarrowblack.svg" />
+	  <None Remove="Resources\Images\whitebackground.png" />
+    <None Remove="Resources\Images\darkbackground.png" />
+    <None Remove="Resources\Images\rightarrowblack.svg" />
 	  <None Remove="Resources\Images\rightarrowwhite.svg" />
 	  <None Remove="Components\Identity\" />
 	  <None Remove="Resources\Images\unknownwhite.svg" />
@@ -681,6 +682,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Password\EnterPasswordPopupView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\SearchBar\SearchBarView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Settings\DeveloperSettingsPage.xaml">

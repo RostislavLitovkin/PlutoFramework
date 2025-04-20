@@ -76,7 +76,8 @@
                     
                     <Grid AbsoluteLayout.LayoutBounds=".5, 1, 1, 30"
                           AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
-                          Margin="0,0,0,5"
+                          Padding="0,5,0,5"
+                          Margin="0,0,0,-5"
                           BackgroundColor="{AppThemeBinding Light=White, Dark=Black}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="30" />

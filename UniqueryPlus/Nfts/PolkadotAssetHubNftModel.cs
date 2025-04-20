@@ -12,6 +12,7 @@ using UniqueryPlus.External;
 using Substrate.NetApi.Model.Extrinsics;
 using PolkadotAssetHub.NetApi.Generated.Model.sp_runtime.multiaddress;
 using UniqueryPlus.Metadata;
+using StrawberryShake;
 
 namespace UniqueryPlus.Nfts
 {
@@ -310,6 +311,36 @@ namespace UniqueryPlus.Nfts
             }
 
             return (U128)price.Value[0];
+        }
+
+        internal static async Task<IEnumerable<INftBase>> GetNftsNftsPalletByNameAsync(SubstrateClientExt client, string name, int limit = 25, int offset = 0, CancellationToken token = default)
+        {
+            var speckClient = Indexers.GetSpeckClient();
+
+            var result = await speckClient.GetNftsByName.ExecuteAsync(name, limit, offset).ConfigureAwait(false);
+
+            result.EnsureNoErrors();
+
+            if (result.Data is null)
+            {
+                return [];
+            }
+
+            return result.Data.NftEntities.Select(nftEntity =>
+            {
+                return new PolkadotAssetHubNftsPalletNft(client)
+                {
+                    CollectionId = uint.Parse(nftEntity.Collection.Id),
+                    Id = uint.Parse(nftEntity.Sn),
+                    Owner = nftEntity.CurrentOwner,
+                    Metadata = new MetadataBase
+                    {
+                        Name = nftEntity.Meta?.Name ?? "Unknown",
+                        Description = nftEntity.Meta?.Description ?? "",
+                        Image = IpfsModel.ToIpfsLink(nftEntity.Meta?.Image ?? "")
+                    }
+                };
+            });
         }
     }
 }

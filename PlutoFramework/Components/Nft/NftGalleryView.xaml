@@ -43,9 +43,9 @@
                                                IsVisible="False" />
 
             <customlayouts:PlusItemView HeightRequest="200"
-                            WidthRequest="200"
-                            x:Name="plusButton"
-                            IsVisible="False">
+                                        WidthRequest="200"
+                                        x:Name="plusButton"
+                                        IsVisible="False">
                 <customlayouts:PlusItemView.GestureRecognizers>
                     <TapGestureRecognizer x:Name="plusTapGestureRecognizer" />
 

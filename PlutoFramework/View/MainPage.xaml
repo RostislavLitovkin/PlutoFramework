@@ -62,9 +62,6 @@
             </Image.GestureRecognizers>
         </Image>
 
-
-        <addressview:AddressQrCodeView />
-
         <connectionrequestview:ConnectionRequestView />
 
         <vault:VaultSignView />
@@ -79,6 +76,8 @@
 
         <navigationbar:NavigationBarView SelectedOption="Home"/>
 
+        <addressview:AddressQrCodeView />
+
         <transferview:TransferView />
 
         <account:NoAccountPopup />
@@ -92,8 +91,5 @@
         <txanalyzer:TransactionAnalyzerConfirmationView />
 
         <password:EnterPasswordPopupView />
-        
-        
-
     </AbsoluteLayout>
 </ContentPage>

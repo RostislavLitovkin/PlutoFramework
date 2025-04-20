@@ -1,0 +1,23 @@
+﻿query GetNftsByName($name_containsInsensitive: String, $limit: Int, $offset: Int) {
+  nftEntities(limit: $limit, offset: $offset, where: {name_containsInsensitive: $name_containsInsensitive}) {
+    price
+    sn
+    createdAt
+    currentOwner
+    id
+    collection {
+      id
+    }
+    issuer
+    meta {
+      name
+      image
+      description
+      attributes {
+        display
+        trait
+        value
+      }
+    }
+  }
+}

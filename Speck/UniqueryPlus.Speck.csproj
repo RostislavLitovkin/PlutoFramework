@@ -13,6 +13,7 @@
   <ItemGroup>
     <GraphQL Remove="CollectionStatsQuery.graphql" />
     <GraphQL Remove="NftsForSaleQuery.graphql" />
+    <GraphQL Remove="NftsByName.graphql" />
   </ItemGroup>
 
   <ItemGroup>

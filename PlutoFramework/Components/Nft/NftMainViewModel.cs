@@ -7,9 +7,9 @@ using PlutoFramework.Model.SQLite;
 using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
 using CollectionKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger);
 using SubstrateClientExt = PlutoFramework.Model.AjunaExt.SubstrateClientExt;
-using UniqueSubstrateClientExt = Unique.NetApi.Generated.SubstrateClientExt;
-using System.Numerics;
 using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Components.Nft.NftList;
+using CommunityToolkit.Maui.Core.Platform;
 
 namespace PlutoFramework.Components.Nft
 {
@@ -194,8 +194,7 @@ namespace PlutoFramework.Components.Nft
         {
             var uniqueryNftEnumerable = UniqueryPlus.Nfts.NftModel.GetNftsOwnedByAsync(
                         [client.SubstrateClient],
-                        /*KeysModel.GetSubstrateKey()*/
-                        "5EU6EyEq6RhqYed1gCYyQRVttdy6FC9yAtUUGzPe3gfpFX8y",
+                        KeysModel.GetSubstrateKey(),
                         limit: limit
                     );
 
@@ -230,8 +229,7 @@ namespace PlutoFramework.Components.Nft
         {
             var uniqueryCollectionEnumerable = UniqueryPlus.Collections.CollectionModel.GetCollectionsOwnedByAsync(
                 [client.SubstrateClient],
-                /*KeysModel.GetSubstrateKey()*/
-                "5EU6EyEq6RhqYed1gCYyQRVttdy6FC9yAtUUGzPe3gfpFX8y",
+                KeysModel.GetSubstrateKey(),
                 limit: limit
             );
 
@@ -287,7 +285,7 @@ namespace PlutoFramework.Components.Nft
                 }
 
                 // Not favourite, owned Nfts
-                foreach (var savedNft in await NftDatabase.GetNotFavouriteNftsOwnedByAsync(/*KeysModel.GetSubstrateKey()*/ "5EU6EyEq6RhqYed1gCYyQRVttdy6FC9yAtUUGzPe3gfpFX8y").ConfigureAwait(false))
+                foreach (var savedNft in await NftDatabase.GetNotFavouriteNftsOwnedByAsync(KeysModel.GetSubstrateKey()).ConfigureAwait(false))
                 {
                     if (savedNft.Key is not null && !ownedNftsDict.ContainsKey((NftKey)savedNft.Key))
                     {
@@ -332,7 +330,7 @@ namespace PlutoFramework.Components.Nft
             }
 
             // Not favourite, owned Collections
-            foreach (var savedCollection in await CollectionDatabase.GetNotFavouriteCollectionsOwnedByAsync(/*KeysModel.GetSubstrateKey()*/ "5EU6EyEq6RhqYed1gCYyQRVttdy6FC9yAtUUGzPe3gfpFX8y").ConfigureAwait(false))
+            foreach (var savedCollection in await CollectionDatabase.GetNotFavouriteCollectionsOwnedByAsync(KeysModel.GetSubstrateKey()).ConfigureAwait(false))
             {
                 if (savedCollection.Key is not null && !ownedCollectionsDict.ContainsKey((CollectionKey)savedCollection.Key))
                 {
@@ -361,5 +359,13 @@ namespace PlutoFramework.Components.Nft
 
         [RelayCommand]
         public Task ShowAllFavouriteCollectionsAsync() => Application.Current.MainPage.Navigation.PushAsync(new CollectionListPage(new FavouriteCollectionsListViewModel()));
+
+        #region Search
+        [ObservableProperty]
+        private string searchText = "";
+
+        [RelayCommand]
+        public Task SearchAsync() => Application.Current.MainPage.Navigation.PushAsync(new NftListPage(new SearchByNameNftsListViewModel(SearchText)));
+        #endregion
     }
 }

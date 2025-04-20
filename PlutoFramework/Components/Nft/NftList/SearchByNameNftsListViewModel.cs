@@ -1,14 +1,20 @@
 ﻿using Microsoft.VisualStudio.Threading;
-using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
-using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
+using PlutoFramework.Model;
 using UniqueryPlus.Nfts;
+using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
 
-namespace PlutoFramework.Components.Nft
+
+namespace PlutoFramework.Components.Nft.NftList
 {
-    public partial class OwnedNftsListViewModel : BaseListViewModel<NftKey, NftWrapper>
+    public partial class SearchByNameNftsListViewModel : BaseListViewModel<NftKey, NftWrapper>
     {
-        public override string Title => "Owned NFTs";
+        private string name;
+        public SearchByNameNftsListViewModel(string name)
+        {
+            this.name = name;
+        }
+        public override string Title => $"Searching: {name}";
 
         private List<Task<PlutoFrameworkSubstrateClient>> clientTasks;
 
@@ -22,7 +28,7 @@ namespace PlutoFramework.Components.Nft
             }
 
             if (clientTasks.Count() == 0 && uniqueryNftEnumerator is null)
-            { 
+            {
                 return;
             }
 
@@ -67,11 +73,11 @@ namespace PlutoFramework.Components.Nft
 
                         clientTasks.Remove(completedClientTask);
 
-                        var uniqueryNftEnumerable = UniqueryPlus.Nfts.NftModel.GetNftsOwnedByAsync(
-                            [(await completedClientTask.ConfigureAwait(false)).SubstrateClient],
-                            KeysModel.GetSubstrateKey(),
-                            limit: LIMIT
-                        );
+                        var uniqueryNftEnumerable = UniqueryPlus.Nfts.NftModel.GetNftsByNameAsync(
+                           [(await completedClientTask.ConfigureAwait(false)).SubstrateClient],
+                           name,
+                           limit: LIMIT
+                           );
 
                         uniqueryNftEnumerator = uniqueryNftEnumerable.GetAsyncEnumerator(token);
 
@@ -79,7 +85,7 @@ namespace PlutoFramework.Components.Nft
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine("Nft owned list error: ");
                 Console.WriteLine(ex);
@@ -100,43 +106,16 @@ namespace PlutoFramework.Components.Nft
 
                 clientTasks = SubstrateClientModel.Clients.Values.ToList();
 
-                await LoadSavedNftsAsync().ConfigureAwait(false);
-
                 Loading = false;
 
                 await LoadMoreAsync(token).ConfigureAwait(false);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine("Nft owned list error 2: ");
                 Console.WriteLine(ex);
             }
         }
 
-        private async Task LoadSavedNftsAsync()
-        {
-            Console.WriteLine("Load saved nfts");
-            // Not favourite, owned Nfts
-            foreach (var savedNft in await NftDatabase.GetNftsOwnedByAsync(KeysModel.GetSubstrateKey()).ConfigureAwait(false))
-            {
-                Console.WriteLine("Maybe added, length = " + Items.Count());
-
-                if (savedNft.Key is not null && !ItemsDict.ContainsKey((NftKey)savedNft.Key))
-                {
-                    Console.WriteLine("Added something");
-                    ItemsDict.Add((NftKey)savedNft.Key, savedNft);
-
-                    MainThread.BeginInvokeOnMainThread(() =>
-                    {
-                        Items.Add(savedNft);
-                    });
-                }
-                else
-                {
-                    Console.WriteLine("Did not add something");
-
-                }
-            }
-        }
     }
 }

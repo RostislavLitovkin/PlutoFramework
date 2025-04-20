@@ -1,5 +1,6 @@
 ﻿using Substrate.NetApi;
 using System.Numerics;
+using UniqueryPlus.Collections;
 
 namespace UniqueryPlus.Nfts
 {
@@ -95,6 +96,28 @@ namespace UniqueryPlus.Nfts
                 clients,
                 (SubstrateClient client, NftTypeEnum type, byte[]? lastKey, CancellationToken token) => GetNftsInCollectionOwnedByOnChainAsync(client, type, collectionId, owner, limit, lastKey, token),
                 limit
+            );
+        }
+
+        public static Task<IEnumerable<INftBase>> GetNftsByNameAsync(SubstrateClient client, NftTypeEnum type, string name, int limit = 25, int offset = 0, CancellationToken token = default)
+        {
+            return type switch
+            {
+                NftTypeEnum.PolkadotAssetHub_NftsPallet => PolkadotAssetHubNftModel.GetNftsNftsPalletByNameAsync((PolkadotAssetHub.NetApi.Generated.SubstrateClientExt)client, name, limit, offset, token),
+                _ => throw new NotImplementedException(),
+            };
+        }
+
+        public static IAsyncEnumerable<INftBase> GetNftsByNameAsync(
+           IEnumerable<SubstrateClient> clients,
+           string name,
+           uint limit = 25
+        )
+        {
+            return RecursionHelper.ToIAsyncEnumerableAsync(
+                clients,
+                (SubstrateClient client, NftTypeEnum type, int limit, int offset, CancellationToken token) => GetNftsByNameAsync(client, type, name, limit, offset, token),
+                (int)limit
             );
         }
     }
