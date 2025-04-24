@@ -1,6 +1,4 @@
-﻿using Plutonication;
-using PlutoFramework.Components.DAppConnectionView;
-using PlutoFramework.Components.MessagePopup;
+﻿using PlutoFramework.Components.DAppConnectionView;
 using PlutoFramework.Model;
 
 #if ANDROID26_0_OR_GREATER
@@ -35,7 +33,10 @@ public partial class ConnectionRequestView : ContentView
         {
             await PlutonicationModel.AcceptConnectionAsync();
         }
+#elif IOS10_0_OR_GREATER
+        await AppDelegate.PlutonicationService.StartAsync();
 #else
+
         await PlutonicationModel.AcceptConnectionAsync();
 #endif
     }

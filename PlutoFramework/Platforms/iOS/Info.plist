@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSCameraUsageDescription</key>
-	<string>This app uses QR code scanning</string>
+	<string>This app uses camera for QR code scanning and for KYC verification</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -36,6 +36,12 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
 	<key>NSFaceIDUsageDescription</key>
-	<string>Biometric verification is required to further secure this crypto wallet.</string>
+	<string>Biometric verification is required to further secure your account.</string>
+  <key>UIBackgroundModes</key>
+  <array>
+    <string>fetch</string>
+    <string>processing</string>
+    <!-- Add any other background modes that this app may require: https://developer.apple.com/documentation/bundleresources/information-property-list/uibackgroundmodes -->
+  </array>
 </dict>
 </plist>
