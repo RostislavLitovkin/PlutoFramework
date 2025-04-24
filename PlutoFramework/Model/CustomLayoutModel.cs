@@ -22,6 +22,7 @@ using PlutoFramework.Components.PredefinedLayouts;
 using PlutoFramework.Components.Xcm;
 using PlutoFramework.View;
 using PlutoFramework.Components.Kilt;
+using PlutoFramework.Components.OpenGov;
 
 namespace PlutoFramework.Model
 {
@@ -55,6 +56,7 @@ namespace PlutoFramework.Model
         GLGPowerups,
         xTrnsfr,
         mainDid,
+        OpenGovDel
     }
 
     public class CustomLayoutModel
@@ -365,6 +367,8 @@ namespace PlutoFramework.Model
                     return new XcmTransferView();
                 case ComponentId.mainDid:
                     return new MainDidView();
+                case ComponentId.OpenGovDel:
+                    return new VotingDelegationView();
             }
 
             throw new Exception("Could not parse the PlutoLayout");
@@ -535,6 +539,12 @@ namespace PlutoFramework.Model
                     {
                         Name = "Main Kilt DID",
                         ComponentId = ComponentId.mainDid,
+                    };
+                case ComponentId.OpenGovDel:
+                    return new ComponentInfo
+                    {
+                        Name = "OpenGov Voting Delegation",
+                        ComponentId = ComponentId.OpenGovDel,
                     };
             }
 
