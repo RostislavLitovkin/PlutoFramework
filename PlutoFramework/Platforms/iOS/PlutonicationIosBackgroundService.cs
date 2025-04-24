@@ -15,7 +15,7 @@ namespace PlutoFramework.Platforms.iOS
         public async Task StartAsync()
         {
             _cts = new CancellationTokenSource();
-            _taskId = UIApplication.SharedApplication.BeginBackgroundTask("com.xcavate.realxmarket", OnExpiration);
+            _taskId = UIApplication.SharedApplication.BeginBackgroundTask("com.xcavate.realxmarket.plutonication", OnExpiration);
 
             try
             {

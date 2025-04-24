@@ -43,5 +43,9 @@
     <string>processing</string>
     <!-- Add any other background modes that this app may require: https://developer.apple.com/documentation/bundleresources/information-property-list/uibackgroundmodes -->
   </array>
+  <key>BGTaskSchedulerPermittedIdentifiers</key>
+  <array>
+    <string>com.xcavate.realxmarket.plutonication</string>
+  </array>
 </dict>
 </plist>
