@@ -27,6 +27,7 @@ using PlutoFramework.Components.XcavateProperty;
 using PlutoFramework.Components.Account;
 using PlutoFramework.Components.Kilt;
 using PlutoFramework.Components.Sumsub;
+using PlutoFramework.View;
 
 namespace PlutoFramework;
 

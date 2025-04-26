@@ -33,8 +33,8 @@ public partial class ConnectionRequestView : ContentView
         {
             await PlutonicationModel.AcceptConnectionAsync();
         }
-#elif IOS10_0_OR_GREATER
-        await AppDelegate.PlutonicationService.StartAsync();
+//#elif IOS10_0_OR_GREATER
+        //await AppDelegate.PlutonicationService.StartAsync();
 #else
 
         await PlutonicationModel.AcceptConnectionAsync();

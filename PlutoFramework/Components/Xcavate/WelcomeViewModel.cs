@@ -11,7 +11,7 @@ namespace PlutoFramework.Components.Xcavate
     public partial class WelcomeViewModel : ObservableObject
     {
         [RelayCommand]
-        public Task LearnMoreAsync() => Application.Current.MainPage.Navigation.PushAsync(new WebViewPage("https://xcavate.io"));
+        public Task LearnMoreAsync() => Application.Current.MainPage.Navigation.PushAsync(new WebViewPage("https://xcavate.io/risk-warning/"));
 
         [RelayCommand]
         public Task BrowsePropertiesAsync() => Application.Current.MainPage.Navigation.PushAsync(new SetupPasswordPage());

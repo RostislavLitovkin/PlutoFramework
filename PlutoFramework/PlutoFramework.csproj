@@ -56,14 +56,16 @@
 	  <AndroidSigningKeyStore>/Users/rostislavlitovkin/certificates/Keystore/RostislavLitovkin/RostislavLitovkin.keystore</AndroidSigningKeyStore>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(TargetFramework)'=='net9.0-ios'">
-	  <ProvisioningType>manual</ProvisioningType>
+	  <ProvisioningType>automatic</ProvisioningType>
+	  <CodesignKey>Apple Development: Created via API (3XMFUNSZ92)</CodesignKey>
+	  <CodesignProvision>VS: com.xcavate.realxmarket Development</CodesignProvision>
 	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
     <MauiIcon Include="Resources\AppIcon\appicon.png" Color="#FFFFFF" />
 
 		<!-- Splash Screen -->
-    <MauiSplashScreen Include="Resources\Splash\realxmarketsplash.png" Color="#FFFFFF" />
+    <MauiSplashScreen Include="Resources\Splash\realxmarketsplash.png" Color="#FFFFFF" BaseSize="128,128" />
 
     <!-- Images -->
 
@@ -817,6 +819,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Xcavate\WelcomePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\BlankPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\MainPage.xaml">
