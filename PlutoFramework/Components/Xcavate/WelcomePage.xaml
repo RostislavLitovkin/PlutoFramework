@@ -47,9 +47,9 @@
             <VerticalStackLayout Grid.Row="1"
                                  Spacing="5"
                      Margin="20,20,20,5">
-                <Label Text="Welcome to Xcavate"
+                <Label Text="Welcome to the RealXMarket"
                      FontAttributes="Bold"
-                     FontSize="20"
+                     FontSize="25"
                      Grid.Column="0"
                      Grid.Row="1"/>
             <Label Text="Unlock the future of real estate with secure, tokenized ownership"
