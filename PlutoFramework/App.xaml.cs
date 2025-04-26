@@ -130,6 +130,8 @@ public partial class App : Application
                 );
             };
 
+            Console.WriteLine("Loading app shell");
+
             MainPage = new AppShell();
         }
     }
