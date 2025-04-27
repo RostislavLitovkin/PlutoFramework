@@ -56,7 +56,7 @@ namespace PlutoFramework.Components.NetworkSelect
             {
                 SelectFirst();
             }
-            
+
             UpdateNetworkInfos();
 
             // Update other views

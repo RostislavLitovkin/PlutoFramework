@@ -14,28 +14,41 @@ namespace PlutoFramework.Components.Xcavate
         public Task LearnMoreAsync() => Application.Current.MainPage.Navigation.PushAsync(new WebViewPage("https://xcavate.io/risk-warning/"));
 
         [RelayCommand]
-        public Task BrowsePropertiesAsync() => Application.Current.MainPage.Navigation.PushAsync(new SetupPasswordPage());
+        public void BrowseProperties()
+        {
+            Application.Current.MainPage = new AppShell();
+        }
 
         [RelayCommand]
         public Task ImportAccountAsync() => Application.Current.MainPage.Navigation.PushAsync(
-            new EnterMnemonicsPage(
-                new EnterMnemonicsViewModel
-                {
-                    Navigation = () => Application.Current.MainPage.Navigation.PushAsync(
-                        new NoDidPage(
-                            new NoDidViewModel
-                            {
-                                Navigation = NoDidModel.DidNavigateToNextPageAsync
-                                // #PyramidCode
-                            }
-                        )
+            new SetupPasswordPage()
+            {
+                Navigation = () => Application.Current.MainPage.Navigation.PushAsync(
+                    new EnterMnemonicsPage(
+                        new EnterMnemonicsViewModel
+                        {
+                            Navigation = () => Application.Current.MainPage.Navigation.PushAsync(
+                                new NoDidPage(
+                                    new NoDidViewModel
+                                    {
+                                        Navigation = NoDidModel.DidNavigateToNextPageAsync
+                                        // #PyramidCode
+                                    }
+                                )
+                            )
+                        }
                     )
-                }
-            )
+                )
+            }
         );
 
         [RelayCommand]
-        public async Task CreateAccountAsync()
+        public Task CreateAccountAsync() => Application.Current.MainPage.Navigation.PushAsync(
+            new SetupPasswordPage() {
+                Navigation = CreateAccountNavigationAsync
+            }
+        );
+        public async Task CreateAccountNavigationAsync()
         {
             await Model.KeysModel.GenerateNewAccountAsync(null, accountVariant: "");
 

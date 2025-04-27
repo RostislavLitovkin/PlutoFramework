@@ -15,8 +15,8 @@ public partial class DidManagementPage : ContentPage
 
         BindingContext = new DidManagementViewModel
         {
-            Did = Preferences.Get(PreferencesModel.DID + "kilt1", ""),
-            Mnemonics = secret ?? "No mnemonics found"
+            Did = Preferences.Get(PreferencesModel.PUBLIC_KEY + "kilt1", ""),
+            Mnemonics = secret ?? "No mnemonics found",
         };
     }
 

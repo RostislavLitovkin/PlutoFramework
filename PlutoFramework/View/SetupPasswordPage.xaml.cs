@@ -7,6 +7,8 @@ namespace PlutoFramework.View;
 
 public partial class SetupPasswordPage : ContentPage
 {
+    public required Func<Task> Navigation;
+
     private bool clicked = false;
     public SetupPasswordPage()
     {
@@ -46,7 +48,8 @@ public partial class SetupPasswordPage : ContentPage
 
         await KeysModel.RegisterBiometricAuthenticationAsync();
 
-        Application.Current.MainPage = new AppShell();
+        await Navigation.Invoke();
+        // Application.Current.MainPage = new AppShell();
     }
 
     private void OnEyeballClicked(object sender, TappedEventArgs e)

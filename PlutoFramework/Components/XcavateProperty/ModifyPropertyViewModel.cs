@@ -47,11 +47,11 @@ namespace PlutoFramework.Components.XcavateProperty
         {
             var token = CancellationToken.None;
 
-            var result = await FilePicker.PickAsync(new PickOptions
+            var result = await MediaPicker.PickPhotoAsync(new MediaPickerOptions
             {
-                PickerTitle = ImageSources.Count() == 0 ? "Select main Property Image" : "Select a new Property image",
-                FileTypes = FilePickerFileType.Images,
+                Title = ImageSources.Count() == 0 ? "Select the main Property image" : "Select a new Property image",
             });
+
 
             if (result == null)
             {

@@ -4,18 +4,7 @@
         x:Class="PlutoFramework.Components.Buttons.ElevatedButton"
         TextColor="White"
         FontAttributes="Bold"
+        BackgroundColor="#57a0c5"
         CornerRadius="15"
         >
-    <Button.Background>
-        <LinearGradientBrush EndPoint="1,0">
-            <GradientStop Color="#ecb278"
-                  Offset="0.0" />
-            <GradientStop Color="#dc7da6"
-                  Offset="0.3" />
-            <GradientStop Color="#3b4f74"
-                  Offset="0.8" />
-            <GradientStop Color="#57a0c5"
-                  Offset="1.0" />
-        </LinearGradientBrush>
-    </Button.Background>
 </Button>

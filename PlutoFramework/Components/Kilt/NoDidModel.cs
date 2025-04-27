@@ -28,10 +28,7 @@ namespace PlutoFramework.Components.Kilt
 
             if (applicantData is not null)
             {
-                await Application.Current.MainPage.Navigation.PushAsync(
-                    new SetupPasswordPage()
-                );
-
+                Application.Current.MainPage = new AppShell();
                 return;
             }
 

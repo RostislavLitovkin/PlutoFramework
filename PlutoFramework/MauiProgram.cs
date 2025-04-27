@@ -42,6 +42,21 @@ public static class MauiProgram
 
         AppContext.SetSwitch("System.Reflection.NullabilityInfoContext.IsSupported", true);
 
+        //https://stackoverflow.com/questions/76547461/how-to-remove-the-outline-of-entry-control-in-maui-ios
+        Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping("SetUpEntry", (handler, view) =>
+        {
+#if ANDROID
+
+#elif IOS || MACCATALYST
+
+            //remove outline
+            handler.PlatformView.BorderStyle = UIKit.UITextBorderStyle.None;
+
+#elif WINDOWS
+      
+#endif
+        });
+
         return app;
     }
 

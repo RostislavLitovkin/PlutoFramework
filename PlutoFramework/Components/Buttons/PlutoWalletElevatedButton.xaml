@@ -3,7 +3,7 @@
                          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                          x:Class="PlutoFramework.Components.Buttons.PlutoFrameworkElevatedButton"
                         xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
-                        ImageSource="plutowalletclearwhite.png"
+                        ImageSource="xcavatexwhite.png"
                         ContentLayout="left, 10"
                         MaximumHeightRequest="40">
 </buttons:ElevatedButton>

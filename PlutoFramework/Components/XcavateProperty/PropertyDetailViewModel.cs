@@ -32,7 +32,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
         public string ListingPrice=> $"£{Metadata?.PropertyPrice}";
 
-        public string PricePerTokenText => $"£{String.Format("{0:0.00}", ExchangeRateModel.GetExchangeRate("USDT", "£") * Metadata?.PricePerToken)} ~ {String.Format("{0:0.00}", Metadata?.PricePerToken)} USDT";
+        public string PricePerTokenText => $"£{String.Format("{0:0.00}", ExchangeRateModel.GetExchangeRate("USDT", "£") * Metadata?.PricePerToken)} [{String.Format("{0:0.00}", Metadata?.PricePerToken)} USDT]";
 
         public string Apy => PropertyModel.GetAPY(Metadata?.EstimatedRentalIncome ?? 1, Metadata?.PropertyPrice ?? 1);
 

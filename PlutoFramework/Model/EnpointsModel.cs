@@ -6,7 +6,7 @@ namespace PlutoFramework.Model
 {
     public static class EndpointsModel
     {
-        public static string DefaultEndpoints = "[Polkadot, Kusama]";
+        public static string DefaultEndpoints = "[XcavatePaseo]";
 
         public static IEnumerable<EndpointEnum> GetSelectedEndpointKeys()
         {

@@ -61,7 +61,7 @@ namespace PlutoFramework.Model
 
     public class CustomLayoutModel
     {
-        public const string DEFAULT_PLUTO_LAYOUT = "plutolayout: [UsdB];[Polkadot]";
+        public const string DEFAULT_PLUTO_LAYOUT = "plutolayout: [dApp, ExSL, UsdB, RnT, SubK, ChaK, mainDid, XcPaseoOwnedProperties];[XcavatePaseo]";
 
         // This constant is used to fetch all components
         public static string AllComponentsString = $"plutolayout: [{string.Join(",", Enum.GetNames(typeof(ComponentId)))}];[";

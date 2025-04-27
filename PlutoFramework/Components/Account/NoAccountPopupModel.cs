@@ -23,7 +23,14 @@ public partial class NoAccountPopupModel : ObservableObject, IPopup, ISetToDefau
     public void Cancel() => SetToDefault();
 
     [RelayCommand]
-    public async Task CreateAccountAsync()
+    public Task CreateAccountAsync() => Application.Current.MainPage.Navigation.PushAsync(
+        new SetupPasswordPage()
+        {
+            Navigation = CreateAccountNavigationAsync
+        }
+    );
+
+    public async Task CreateAccountNavigationAsync()
     {
         SetToDefault();
 
@@ -42,20 +49,25 @@ public partial class NoAccountPopupModel : ObservableObject, IPopup, ISetToDefau
         SetToDefault();
 
         await Application.Current.MainPage.Navigation.PushAsync(
-            new EnterMnemonicsPage(
-                new EnterMnemonicsViewModel
-                {
-                    Navigation = () => Application.Current.MainPage.Navigation.PushAsync(
-                        new NoDidPage(
-                            new NoDidViewModel
-                            {
-                                Navigation = NoDidModel.DidNavigateToNextPageAsync
-                                // #PyramidCode
-                            }
-                        )
+             new SetupPasswordPage()
+             {
+                 Navigation = () => Application.Current.MainPage.Navigation.PushAsync(
+                    new EnterMnemonicsPage(
+                        new EnterMnemonicsViewModel
+                        {
+                            Navigation = () => Application.Current.MainPage.Navigation.PushAsync(
+                                new NoDidPage(
+                                    new NoDidViewModel
+                                    {
+                                        Navigation = NoDidModel.DidNavigateToNextPageAsync
+                                        // #PyramidCode
+                                    }
+                                )
+                            )
+                        }
                     )
-                }
-            )
+                )
+             }
         );
     }
 }

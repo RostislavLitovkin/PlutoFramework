@@ -35,9 +35,7 @@
 		<string>com.xcavate.realxmarket.plutonication</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-  <array>
-    <string>com.xcavate.realxmarket.plutonication</string>
-  </array>
+  <string>com.xcavate.realxmarket</string>
   <key>NSLocationWhenInUseUsageDescription</key>
   <string>Some features may require location access due to third-party services used by the app.</string>
 </dict>

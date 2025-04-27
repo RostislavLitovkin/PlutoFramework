@@ -44,7 +44,7 @@ public partial class SettingsPage : ContentPage
 
         await SQLiteModel.DeleteAllDatabasesAsync();
 
-        Application.Current.MainPage = new WelcomePage();
+        Application.Current.MainPage = new OnboardingShell();
     }
     async void OnDeveloperSettingsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {

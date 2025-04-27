@@ -13,7 +13,7 @@ public partial class ElevatedButton : Button
             switch ((ButtonStateEnum)newValue)
             {
                 case ButtonStateEnum.Enabled:
-                    control.Background = new LinearGradientBrush
+                    /*control.Background = new LinearGradientBrush
                     {
                         EndPoint = new Point(1, 0),
                         GradientStops = new GradientStopCollection
@@ -23,14 +23,16 @@ public partial class ElevatedButton : Button
                             new GradientStop { Offset = 0.8f, Color = Color.FromArgb("3b4f74") },
                             new GradientStop { Offset = 1.0f, Color = Color.FromArgb("57a0c5") }
                         },
-                    };
+                    };*/
+
+                    control.BackgroundColor = Color.FromArgb("57a0c5");
 
                     control.TextColor = Colors.White;
 
                     control.IsEnabled = true;
                     break;
                 case ButtonStateEnum.Disabled:
-                    control.Background = new LinearGradientBrush
+                    /*control.Background = new LinearGradientBrush
                     {
                         EndPoint = new Point(1, 0),
                         GradientStops = new GradientStopCollection
@@ -40,7 +42,9 @@ public partial class ElevatedButton : Button
                             new GradientStop { Offset = 0.8f, Color = Color.FromArgb("#7585a3") },
                             new GradientStop { Offset = 1.0f, Color = Color.FromArgb("#98bbcd") }
                         },
-                    };
+                    };*/
+
+                    control.BackgroundColor = Color.FromArgb("7fa3b5");
 
                     control.IsEnabled = false;
                     break;

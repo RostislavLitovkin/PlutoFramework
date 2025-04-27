@@ -99,7 +99,8 @@
         </ScrollView>
 
         <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 80"
-                AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
+                AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                         IsVisible="{Binding SaveLayoutIsVisible}">
 
             <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 50"
                   AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
@@ -122,7 +123,27 @@
                 
             </Grid>
         </AbsoluteLayout>
-        
+
+        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 80"
+                        AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                        IsVisible="{Binding ContinueLayoutIsVisible}">
+
+            <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 50"
+                  AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                  ColumnSpacing="15"
+                  Margin="20, 0, 20, 10">   
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <buttons:ElevatedButton Text="Continue"
+                                Grid.Column="0"
+                                Command="{Binding ContinueCommand}"
+                                ButtonState="{Binding SaveButtonState}"/>
+
+            </Grid>
+        </AbsoluteLayout>
+
         <navigationbar:TopNavigationBar Title="{Binding Title}"/>
     </AbsoluteLayout>
 </ContentPage>

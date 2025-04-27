@@ -32,7 +32,7 @@
 
                 <buttons:ElevatedButton ButtonState="Enabled" Text="What are mnemonics?" Command="{Binding GoToMnemonicsExplanationCommand}" />
 
-                <buttons:ElevatedButton ButtonState="Disabled" Text="What are DIDs" Command="{Binding GoToDidExplanationPageCommand}" />
+                <buttons:ElevatedButton ButtonState="Enabled" Text="What are DIDs" Command="{Binding GoToDidExplanationPageCommand}" />
 
                 <buttons:ElevatedButton ButtonState="Warning" Text="Delete DID" Command="{Binding DeleteDIDCommand}" />
 

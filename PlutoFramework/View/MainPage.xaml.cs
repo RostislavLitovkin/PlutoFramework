@@ -63,8 +63,15 @@ public partial class MainPage : ContentPage
         }
 
         // Load
-        var multiNetworkSelectViewModel = DependencyService.Get<MultiNetworkSelectViewModel>();
-        multiNetworkSelectViewModel.SetupDefault();
+        try
+        {
+            var multiNetworkSelectViewModel = DependencyService.Get<MultiNetworkSelectViewModel>();
+            multiNetworkSelectViewModel.SetupDefault();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+        }
     }
 
     async void OnQRClicked(System.Object sender, System.EventArgs e)

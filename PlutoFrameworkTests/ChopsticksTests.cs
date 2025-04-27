@@ -12,6 +12,59 @@ namespace PlutoFrameworkTests
 
         static string senderAddress = "5CaUEtkTHmVM9aQ6XwiPkKcGscaKKxo5Zy2bCp2sRSXCevRf";
 
+        static string badSenderAddress = "5CqRJaSqUrr6XKhBuWjvcJafuoQF9LcteaMVjQgW6mc8A6cJ";
+        [Test]
+        public async Task SimulateCallFailAsync()
+        {
+            var endpoint = PlutoFramework.Constants.Endpoints.GetEndpointDictionary[EndpointEnum.Polkadot];
+
+            var client = new SubstrateClientExt(
+                    endpoint,
+                        new Uri(endpoint.URLs[0]),
+                        Substrate.NetApi.Model.Extrinsics.ChargeTransactionPayment.Default());
+
+            var x = await client.ConnectAndLoadMetadataAsync();
+
+            var transfer = TransferModel.NativeTransfer(client, substrateAddress, 10000000000);
+
+            
+            var account = new ChopsticksMockAccount();
+            account.Create(KeyType.Sr25519, Utils.GetPublicKeyFrom(badSenderAddress));
+
+            var extrinsic = await client.GetTempUnCheckedExtrinsicAsync(transfer, account, 64, CancellationToken.None, signed: true);
+
+            var header = await client.SubstrateClient.Chain.GetHeaderAsync(null, CancellationToken.None);
+
+            var url = endpoint.URLs[0];
+
+            Console.WriteLine(Utils.Bytes2HexString(extrinsic.Encode()).ToLower());
+
+            var events = await ChopsticksModel.SimulateCallAsync(url, extrinsic.Encode(), header.Number.Value, senderAddress);
+
+            Assert.That(!(events is null));
+
+            var extrinsicDetails = await EventsModel.GetExtrinsicEventsForClientAsync(client, extrinsicIndex: events.ExtrinsicIndex, events.Events, blockNumber: 0, CancellationToken.None);
+
+            Console.WriteLine(extrinsicDetails.Events.Count() + " events found");
+
+            foreach (var e in extrinsicDetails.Events)
+            {
+                Console.WriteLine(e.PalletName + " " + e.EventName + " " + e.Safety);
+
+                foreach (var parameter in e.Parameters)
+                {
+                    Console.WriteLine("   +- " + parameter.Name + ": " + parameter.Value);
+                }
+                Console.WriteLine();
+            }
+
+            var currencyChanges = await TransactionAnalyzerModel.AnalyzeCurrencyChangesInEventsAsync(client, extrinsicDetails.Events, endpoint, CancellationToken.None);
+
+            Assert.AreEqual(1, currencyChanges[senderAddress].Values.Count());
+            Assert.AreEqual("DOT", currencyChanges[senderAddress].Values.ElementAt(0).Symbol);
+            Assert.Greater(-1, currencyChanges[senderAddress].Values.ElementAt(0).Amount);
+        }
+
         [Test]
         public async Task SimulateCallAsync()
         {
