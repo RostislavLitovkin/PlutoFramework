@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.xcavate.realxmarket" android:versionName="1.0" android:versionCode="1">
-  <application android:allowBackup="false" android:supportsRtl="true" android:label="RealXMarket" android:icon="@mipmap/appicon" android:usesCleartextTraffic="true"></application>
+  <application android:allowBackup="false" android:supportsRtl="true" android:label="realXmarket" android:icon="@mipmap/appicon" android:usesCleartextTraffic="true"></application>
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.CAMERA" />

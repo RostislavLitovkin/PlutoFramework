@@ -13,6 +13,7 @@
              xmlns:xcavateproperty="clr-namespace:PlutoFramework.Components.XcavateProperty"
              xmlns:transfer="clr-namespace:PlutoFramework.Components.TransferView"
              xmlns:account="clr-namespace:PlutoFramework.Components.Account"
+             HideSoftInputOnTapped="True"
                 BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 

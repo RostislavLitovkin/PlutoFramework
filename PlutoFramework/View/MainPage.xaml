@@ -19,7 +19,8 @@
              xmlns:account="clr-namespace:PlutoFramework.Components.Account"
              xmlns:kilt="clr-namespace:PlutoFramework.Components.Kilt"
              xmlns:sumsub="clr-namespace:PlutoFramework.Components.Sumsub"
-         BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
+         BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}"
+             HideSoftInputOnTapped="True">
 
     <AbsoluteLayout
                 AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">

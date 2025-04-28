@@ -47,7 +47,7 @@
             <VerticalStackLayout Grid.Row="1"
                                  Spacing="5"
                      Margin="20,20,20,5">
-                <Label Text="Welcome to the RealXMarket"
+                <Label Text="Welcome to the realXmarket"
                      FontAttributes="Bold"
                      FontSize="25"
                      Grid.Column="0"

@@ -15,7 +15,7 @@
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
 
 		<!-- Display name -->
-		<ApplicationTitle>RealXMarket</ApplicationTitle>
+		<ApplicationTitle>realXmarket</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.xcavate.realxmarket</ApplicationId>
@@ -24,7 +24,7 @@
 		<!-- Versions -->
 		<ApplicationDisplayVersion>0.1</ApplicationDisplayVersion>
     <PackageVersion>0.1</PackageVersion>
-    <ApplicationVersion>4</ApplicationVersion>
+    <ApplicationVersion>5</ApplicationVersion>
 		
 		<!-- Increases performance, but disables hot-reload -->
     <UseInterpreter>false</UseInterpreter>
@@ -62,7 +62,7 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
-    <MauiIcon Include="Resources\AppIcon\appicon.png" Color="#FFFFFF" />
+    <MauiIcon Include="Resources\AppIcon\appicon.jpg" Color="#FFFFFF" />
 
 		<!-- Splash Screen -->
     <MauiSplashScreen Include="Resources\Splash\realxmarketsplash.png" Color="#FFFFFF" BaseSize="128,128" />
