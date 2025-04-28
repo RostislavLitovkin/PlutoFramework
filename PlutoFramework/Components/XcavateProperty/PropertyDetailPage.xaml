@@ -168,7 +168,7 @@
                            HorizontalTextAlignment="Start" />
 
                     
-                    <nft:NftAttributeView AttributeName="Blocks"
+                    <nft:NftAttributeView AttributeName="Size"
                                           Value="{Binding Metadata.Area}"
                                            CardBackgroundColor="#11888888"/>
 
