@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using PlutoFramework.Components.Balance;
 using PlutoFramework.Model;
+using PlutoFramework.Model.Currency;
 using PlutoFramework.Model.Xcavate;
 using PlutoFramework.Types;
 using System.Collections.ObjectModel;
@@ -60,8 +61,8 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                     Symbol = a.Symbol,
                     UsdValue = a.UsdValue switch
                     {
-                        > 0 => "+" + String.Format("{0:0.00}", a.UsdValue) + " USD",
-                        _ => String.Format("{0:0.00}", a.UsdValue) + " USD",
+                        > 0 => $"+{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format("{0:0.00}", ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * a.UsdValue)}",
+                        _ => $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format("{0:0.00}", ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * a.UsdValue)}",
                     },
                     UsdColor = a.UsdValue switch
                     {
@@ -111,8 +112,8 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                         Symbol = nft.AssetPrice.Symbol,
                         UsdValue = nft.AssetPrice.UsdValue switch
                         {
-                            > 0 => "+" + String.Format("{0:0.00}", nft.AssetPrice.UsdValue) + " USD",
-                            _ => String.Format("{0:0.00}", nft.AssetPrice.UsdValue) + " USD",
+                            > 0 => $"+{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format("{0:0.00}", ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * nft.AssetPrice.UsdValue)}",
+                            _ => $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format("{0:0.00}", ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * nft.AssetPrice.UsdValue)}",
                         },
                         UsdColor = nft.Operation switch
                         {

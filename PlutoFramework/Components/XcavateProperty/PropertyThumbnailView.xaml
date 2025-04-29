@@ -143,12 +143,17 @@
                                VerticalTextAlignment="Center"
                                Grid.Column="2" />
 
-                        <Label x:Name="priceLabel"
-                               FontAttributes="Bold"
+                        <Label FontAttributes="Bold"
                                HorizontalTextAlignment="End"
                                VerticalOptions="Center"
                                VerticalTextAlignment="Center"
-                               Grid.Column="3" />
+                               Grid.Column="3">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span FontAttributes="Bold" x:Name="priceLabelText" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
                     </Grid>
 
                 </VerticalStackLayout>

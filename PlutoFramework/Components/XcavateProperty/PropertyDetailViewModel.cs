@@ -2,7 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.Account;
 using PlutoFramework.Model;
-using PlutoFramework.Model.Xcavate;
+using PlutoFramework.Model.Currency;
 using UniqueryPlus.Metadata;
 using UniqueryPlus.Nfts;
 using PropertyModel = PlutoFramework.Model.Xcavate.XcavatePropertyModel;
@@ -30,9 +30,13 @@ namespace PlutoFramework.Components.XcavateProperty
 
         public string LocationShortName => $"{Metadata?.AddressStreet}, {Metadata?.AddressTownCity}";
 
-        public string ListingPrice=> $"£{Metadata?.PropertyPrice}";
+        public string ListingPrice=> $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{
+            String.Format("{0:0.00}", ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * Metadata?.PropertyPrice)
+            }";
 
-        public string PricePerTokenText => $"£{String.Format("{0:0.00}", ExchangeRateModel.GetExchangeRate("USDT", "£") * Metadata?.PricePerToken)} [{String.Format("{0:0.00}", Metadata?.PricePerToken)} USDT]";
+        public string PricePerTokenText => $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{
+            String.Format("{0:0.00}", ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * Metadata?.PricePerToken)
+            } [{String.Format("{0:0.00}", Metadata?.PricePerToken)} USDT]";
 
         public string Apy => PropertyModel.GetAPY(Metadata?.EstimatedRentalIncome ?? 1, Metadata?.PropertyPrice ?? 1);
 
@@ -42,7 +46,9 @@ namespace PlutoFramework.Components.XcavateProperty
 
         public string TokensAvailable => $"{NftMarketplaceDetails?.Listed.ToString() ?? "-"} / {Metadata?.NumberOfTokens.ToString() ?? "-"}";
 
-        public string RentalIncome => $"£{Metadata?.EstimatedRentalIncome}";
+        public string RentalIncome => $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{
+            String.Format("{0:0.00}", ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * Metadata?.EstimatedRentalIncome)
+            }";
 
         [ObservableProperty]
         private string companyName = "Needs to be filled";

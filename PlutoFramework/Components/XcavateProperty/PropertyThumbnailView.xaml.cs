@@ -1,4 +1,6 @@
 using PlutoFramework.Constants;
+using PlutoFramework.Model;
+using PlutoFramework.Model.Currency;
 using UniqueryPlus.Nfts;
 using PropertyModel = PlutoFramework.Model.Xcavate.XcavatePropertyModel;
 
@@ -39,7 +41,10 @@ public partial class PropertyThumbnailView : ContentView
                 control.tokensLabel.Text = $"{control.TokensOwned} / {nftBase.XcavateMetadata.NumberOfTokens}";
             }
 
-            control.priceLabel.Text = $"£{nftBase.XcavateMetadata.PropertyPrice}";
+            var currencySymbol = ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location);
+            var propertyPriceLocalized = ExchangeRateModel.GetExchangeRate("USDT", currencySymbol) * nftBase.XcavateMetadata.PropertyPrice;
+
+            control.priceLabelText.Text = $"{currencySymbol}{propertyPriceLocalized}";
 
             control.locationView.LocationName = nftBase.XcavateMetadata.LocationName;
 

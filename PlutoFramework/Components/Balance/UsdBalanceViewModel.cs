@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Model;
+using PlutoFramework.Model.Currency;
 using PlutoFramework.Types;
 
 namespace PlutoFramework.Components.Balance
@@ -27,7 +28,6 @@ namespace PlutoFramework.Components.Balance
             }
 
             CancellationToken token = CancellationToken.None;
-            Console.WriteLine("Reload clicked");
 
             UsdSum = "Loading";
 
@@ -36,14 +36,12 @@ namespace PlutoFramework.Components.Balance
             
             foreach (var client in Model.SubstrateClientModel.Clients.Values)
             {
-                Console.WriteLine("Reload ...");
                 await Model.AssetsModel.GetBalanceAsync(await client, KeysModel.GetSubstrateKey(), token, true);
 
                 UpdateBalances();
             }
 
             ReloadIsVisible = true;
-            Console.WriteLine("Reload Done");
         }
         public void UpdateBalances()
         {
@@ -57,7 +55,7 @@ namespace PlutoFramework.Components.Balance
                     {
                         Amount = String.Format("{0:0.00}", a.Amount),
                         Symbol = a.Symbol,
-                        UsdValue = a.UsdValue > 0 ? String.Format("{0:0.00}", a.UsdValue) + " USD" : "~ USD",
+                        UsdValue = ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location) + (a.UsdValue > 0 ? String.Format("{0:0.00}", ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * a.UsdValue) : "~"),
                         ChainIcon = Application.Current.UserAppTheme != AppTheme.Dark ? a.ChainIcon : a.DarkChainIcon,
                         IsReserved = a.Pallet == AssetPallet.NativeReserved || a.Pallet == AssetPallet.AssetsReserved || a.Pallet == AssetPallet.TokensReserved,
                         IsFrozen = a.Pallet == AssetPallet.NativeFrozen || a.Pallet == AssetPallet.AssetsFrozen || a.Pallet == AssetPallet.TokensFrozen,
@@ -67,7 +65,7 @@ namespace PlutoFramework.Components.Balance
 
             Assets = tempAssets;
 
-            UsdSum = String.Format("{0:0.00}", Model.AssetsModel.UsdSum) + " USD";
+            UsdSum = $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format("{0:0.00}", ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * Model.AssetsModel.UsdSum)}";
         }
     }
 

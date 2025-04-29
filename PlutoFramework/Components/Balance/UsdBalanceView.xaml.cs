@@ -1,6 +1,8 @@
 ﻿
 using PlutoFramework.Model;
+using PlutoFramework.Model.Currency;
 using PlutoFramework.Model.HydraDX;
+using Uniquery;
 
 namespace PlutoFramework.Components.Balance;
 
@@ -21,7 +23,7 @@ public partial class UsdBalanceView : ContentView, ISubstrateClientLoadableAsync
 
         var viewModel = (UsdBalanceViewModel)BindingContext;
         viewModel.ReloadIsVisible = false;
-        viewModel.UsdSum = "0 USD";
+        viewModel.UsdSum = $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format("{0:0.00}", 0)}";
     }
 
     public async Task LoadAsync(PlutoFrameworkSubstrateClient client, CancellationToken token)
