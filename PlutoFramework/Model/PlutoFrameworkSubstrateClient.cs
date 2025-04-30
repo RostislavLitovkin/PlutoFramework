@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using PlutoFramework.Components.NetworkSelect;
 using System.Net;
 using Substrate.NetApi.Model.Types;
+using PlutoFramework.View;
 
 namespace PlutoFramework.Model
 {
@@ -222,6 +223,8 @@ namespace PlutoFramework.Model
 
                         extrinsicStackViewModel.Update();
                     });
+
+                    MainPage.SetupLayout();
                 }
 
                 else

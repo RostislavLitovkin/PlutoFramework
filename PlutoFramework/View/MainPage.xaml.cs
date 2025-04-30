@@ -6,8 +6,6 @@ using PlutoFramework.Components.TransferView;
 using PlutoFramework.Components.UniversalScannerView;
 using PlutoFramework.Components.Vault;
 using PlutoFramework.Model;
-using PlutoFramework.ViewModel;
-using PlutoFramework.Components.Account;
 
 namespace PlutoFramework.View;
 
