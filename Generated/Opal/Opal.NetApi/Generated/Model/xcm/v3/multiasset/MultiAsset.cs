@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.xcm.v3.multiasset
     
     
     /// <summary>
-    /// >> 51 - Composite[xcm.v3.multiasset.MultiAsset]
+    /// >> 157 - Composite[xcm.v3.multiasset.MultiAsset]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MultiAsset : BaseType

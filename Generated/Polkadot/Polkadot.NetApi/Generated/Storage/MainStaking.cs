@@ -1988,6 +1988,17 @@ namespace Polkadot.NetApi.Generated.Storage
             byteArray.AddRange(maybe_unlocking.Encode());
             return new Method(7, "Staking", 29, "restore_ledger", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> withdraw_overstake
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method WithdrawOverstake(Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32 stash)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(stash.Encode());
+            return new Method(7, "Staking", 32, "withdraw_overstake", byteArray.ToArray());
+        }
     }
     
     /// <summary>
@@ -2299,5 +2310,12 @@ namespace Polkadot.NetApi.Generated.Storage
         /// Operation not allowed for virtual stakers.
         /// </summary>
         VirtualStakerNotAllowed,
+        
+        /// <summary>
+        /// >> Restricted
+        /// Account is restricted from participation in staking. This may happen if the account is
+        /// staking in another way already, such as via pool.
+        /// </summary>
+        Restricted,
     }
 }

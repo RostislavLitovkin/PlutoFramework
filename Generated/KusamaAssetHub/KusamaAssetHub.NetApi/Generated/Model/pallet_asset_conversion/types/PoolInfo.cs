@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_asset_conversion.types
     
     
     /// <summary>
-    /// >> 459 - Composite[pallet_asset_conversion.types.PoolInfo]
+    /// >> 474 - Composite[pallet_asset_conversion.types.PoolInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PoolInfo : BaseType

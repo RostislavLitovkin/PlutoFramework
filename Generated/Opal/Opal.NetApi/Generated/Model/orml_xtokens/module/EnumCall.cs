@@ -24,43 +24,133 @@ namespace Opal.NetApi.Generated.Model.orml_xtokens.module
         
         /// <summary>
         /// >> transfer
-        /// See [`Pallet::transfer`].
+        /// Transfer native currencies.
+        /// 
+        /// `dest_weight_limit` is the weight for XCM execution on the dest
+        /// chain, and it would be charged from the transferred assets. If set
+        /// below requirements, the execution may fail and assets wouldn't be
+        /// received.
+        /// 
+        /// It's a no-op if any error on local XCM execution or message sending.
+        /// Note sending assets out per se doesn't guarantee they would be
+        /// received. Receiving depends on if the XCM message could be delivered
+        /// by the network, and if the receiving chain would handle
+        /// messages correctly.
         /// </summary>
         transfer = 0,
         
         /// <summary>
         /// >> transfer_multiasset
-        /// See [`Pallet::transfer_multiasset`].
+        /// Transfer `Asset`.
+        /// 
+        /// `dest_weight_limit` is the weight for XCM execution on the dest
+        /// chain, and it would be charged from the transferred assets. If set
+        /// below requirements, the execution may fail and assets wouldn't be
+        /// received.
+        /// 
+        /// It's a no-op if any error on local XCM execution or message sending.
+        /// Note sending assets out per se doesn't guarantee they would be
+        /// received. Receiving depends on if the XCM message could be delivered
+        /// by the network, and if the receiving chain would handle
+        /// messages correctly.
         /// </summary>
         transfer_multiasset = 1,
         
         /// <summary>
         /// >> transfer_with_fee
-        /// See [`Pallet::transfer_with_fee`].
+        /// Transfer native currencies specifying the fee and amount as
+        /// separate.
+        /// 
+        /// `dest_weight_limit` is the weight for XCM execution on the dest
+        /// chain, and it would be charged from the transferred assets. If set
+        /// below requirements, the execution may fail and assets wouldn't be
+        /// received.
+        /// 
+        /// `fee` is the amount to be spent to pay for execution in destination
+        /// chain. Both fee and amount will be subtracted form the callers
+        /// balance.
+        /// 
+        /// If `fee` is not high enough to cover for the execution costs in the
+        /// destination chain, then the assets will be trapped in the
+        /// destination chain
+        /// 
+        /// It's a no-op if any error on local XCM execution or message sending.
+        /// Note sending assets out per se doesn't guarantee they would be
+        /// received. Receiving depends on if the XCM message could be delivered
+        /// by the network, and if the receiving chain would handle
+        /// messages correctly.
         /// </summary>
         transfer_with_fee = 2,
         
         /// <summary>
         /// >> transfer_multiasset_with_fee
-        /// See [`Pallet::transfer_multiasset_with_fee`].
+        /// Transfer `Asset` specifying the fee and amount as separate.
+        /// 
+        /// `dest_weight_limit` is the weight for XCM execution on the dest
+        /// chain, and it would be charged from the transferred assets. If set
+        /// below requirements, the execution may fail and assets wouldn't be
+        /// received.
+        /// 
+        /// `fee` is the Asset to be spent to pay for execution in
+        /// destination chain. Both fee and amount will be subtracted form the
+        /// callers balance For now we only accept fee and asset having the same
+        /// `Location` id.
+        /// 
+        /// If `fee` is not high enough to cover for the execution costs in the
+        /// destination chain, then the assets will be trapped in the
+        /// destination chain
+        /// 
+        /// It's a no-op if any error on local XCM execution or message sending.
+        /// Note sending assets out per se doesn't guarantee they would be
+        /// received. Receiving depends on if the XCM message could be delivered
+        /// by the network, and if the receiving chain would handle
+        /// messages correctly.
         /// </summary>
         transfer_multiasset_with_fee = 3,
         
         /// <summary>
         /// >> transfer_multicurrencies
-        /// See [`Pallet::transfer_multicurrencies`].
+        /// Transfer several currencies specifying the item to be used as fee
+        /// 
+        /// `dest_weight_limit` is the weight for XCM execution on the dest
+        /// chain, and it would be charged from the transferred assets. If set
+        /// below requirements, the execution may fail and assets wouldn't be
+        /// received.
+        /// 
+        /// `fee_item` is index of the currencies tuple that we want to use for
+        /// payment
+        /// 
+        /// It's a no-op if any error on local XCM execution or message sending.
+        /// Note sending assets out per se doesn't guarantee they would be
+        /// received. Receiving depends on if the XCM message could be delivered
+        /// by the network, and if the receiving chain would handle
+        /// messages correctly.
         /// </summary>
         transfer_multicurrencies = 4,
         
         /// <summary>
         /// >> transfer_multiassets
-        /// See [`Pallet::transfer_multiassets`].
+        /// Transfer several `Asset` specifying the item to be used as fee
+        /// 
+        /// `dest_weight_limit` is the weight for XCM execution on the dest
+        /// chain, and it would be charged from the transferred assets. If set
+        /// below requirements, the execution may fail and assets wouldn't be
+        /// received.
+        /// 
+        /// `fee_item` is index of the Assets that we want to use for
+        /// payment
+        /// 
+        /// It's a no-op if any error on local XCM execution or message sending.
+        /// Note sending assets out per se doesn't guarantee they would be
+        /// received. Receiving depends on if the XCM message could be delivered
+        /// by the network, and if the receiving chain would handle
+        /// messages correctly.
         /// </summary>
         transfer_multiassets = 5,
     }
     
     /// <summary>
-    /// >> 125 - Variant[orml_xtokens.module.Call]
+    /// >> 134 - Variant[orml_xtokens.module.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -71,12 +161,12 @@ namespace Opal.NetApi.Generated.Model.orml_xtokens.module
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Substrate.NetApi.Model.Types.Primitive.U128, Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiLocation, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.transfer);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiAsset, Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiLocation, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.transfer_multiasset);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiLocation, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.transfer_with_fee);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiAsset, Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiAsset, Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiLocation, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.transfer_multiasset_with_fee);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Substrate.NetApi.Model.Types.Primitive.U128>>, Substrate.NetApi.Model.Types.Primitive.U32, Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiLocation, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.transfer_multicurrencies);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiAssets, Substrate.NetApi.Model.Types.Primitive.U32, Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiLocation, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.transfer_multiassets);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Substrate.NetApi.Model.Types.Primitive.U128, Opal.NetApi.Generated.Model.xcm.EnumVersionedLocation, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.transfer);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.xcm.EnumVersionedAsset, Opal.NetApi.Generated.Model.xcm.EnumVersionedLocation, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.transfer_multiasset);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Opal.NetApi.Generated.Model.xcm.EnumVersionedLocation, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.transfer_with_fee);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.xcm.EnumVersionedAsset, Opal.NetApi.Generated.Model.xcm.EnumVersionedAsset, Opal.NetApi.Generated.Model.xcm.EnumVersionedLocation, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.transfer_multiasset_with_fee);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Substrate.NetApi.Model.Types.Primitive.U128>>, Substrate.NetApi.Model.Types.Primitive.U32, Opal.NetApi.Generated.Model.xcm.EnumVersionedLocation, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.transfer_multicurrencies);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.xcm.EnumVersionedAssets, Substrate.NetApi.Model.Types.Primitive.U32, Opal.NetApi.Generated.Model.xcm.EnumVersionedLocation, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.transfer_multiassets);
         }
     }
 }

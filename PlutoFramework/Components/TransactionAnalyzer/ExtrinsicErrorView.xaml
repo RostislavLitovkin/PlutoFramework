@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:card="clr-namespace:PlutoFramework.Components.Card"
              x:Class="PlutoFramework.Components.TransactionAnalyzer.ExtrinsicErrorView"
-             HeightRequest="90">
+             MinimumHeightRequest="90">
     <card:Card Color="{x:StaticResource DangerousRed}">
         <card:Card.View>
 
@@ -12,17 +12,16 @@
 
                 <Label AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                    AbsoluteLayout.LayoutFlags="All"
-                   Margin="0, 0, 0, 0"  
-                    HeightRequest="60"
-                    VerticalTextAlignment="Center"
+                   Margin="10"  
+                    VerticalTextAlignment="Start"
                     TextColor="White"
                     FontAttributes="Bold"
-                    HorizontalTextAlignment="Center"
-                    FontSize="25">
+                    HorizontalTextAlignment="Start">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span FontAttributes="Bold"
-                              Text="Extrinsic failed!" />
+                                  x:Name="errorLabelText"
+                                  Text="Extrinsic failed!" />
 
                         </FormattedString>
                     </Label.FormattedText>

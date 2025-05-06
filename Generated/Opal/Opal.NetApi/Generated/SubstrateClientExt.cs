@@ -160,6 +160,16 @@ namespace Opal.NetApi.Generated
         public SchedulerStorage SchedulerStorage;
         
         /// <summary>
+        /// FinancialCouncilStorage storage calls.
+        /// </summary>
+        public FinancialCouncilStorage FinancialCouncilStorage;
+        
+        /// <summary>
+        /// FinancialCouncilMembershipStorage storage calls.
+        /// </summary>
+        public FinancialCouncilMembershipStorage FinancialCouncilMembershipStorage;
+        
+        /// <summary>
         /// OriginsStorage storage calls.
         /// </summary>
         public OriginsStorage OriginsStorage;
@@ -183,6 +193,11 @@ namespace Opal.NetApi.Generated
         /// DmpQueueStorage storage calls.
         /// </summary>
         public DmpQueueStorage DmpQueueStorage;
+        
+        /// <summary>
+        /// MessageQueueStorage storage calls.
+        /// </summary>
+        public MessageQueueStorage MessageQueueStorage;
         
         /// <summary>
         /// InflationStorage storage calls.
@@ -319,11 +334,14 @@ namespace Opal.NetApi.Generated
             this.FellowshipCollectiveStorage = new FellowshipCollectiveStorage(this);
             this.FellowshipReferendaStorage = new FellowshipReferendaStorage(this);
             this.SchedulerStorage = new SchedulerStorage(this);
+            this.FinancialCouncilStorage = new FinancialCouncilStorage(this);
+            this.FinancialCouncilMembershipStorage = new FinancialCouncilMembershipStorage(this);
             this.OriginsStorage = new OriginsStorage(this);
             this.XcmpQueueStorage = new XcmpQueueStorage(this);
             this.PolkadotXcmStorage = new PolkadotXcmStorage(this);
             this.CumulusXcmStorage = new CumulusXcmStorage(this);
             this.DmpQueueStorage = new DmpQueueStorage(this);
+            this.MessageQueueStorage = new MessageQueueStorage(this);
             this.InflationStorage = new InflationStorage(this);
             this.UniqueStorage = new UniqueStorage(this);
             this.ConfigurationStorage = new ConfigurationStorage(this);

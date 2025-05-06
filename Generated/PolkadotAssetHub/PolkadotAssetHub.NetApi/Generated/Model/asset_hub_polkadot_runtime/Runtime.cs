@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
     
     
     /// <summary>
-    /// >> 468 - Composite[asset_hub_polkadot_runtime.Runtime]
+    /// >> 479 - Composite[asset_hub_polkadot_runtime.Runtime]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Runtime : BaseType

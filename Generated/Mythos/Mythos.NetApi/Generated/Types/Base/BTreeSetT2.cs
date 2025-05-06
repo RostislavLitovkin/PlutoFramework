@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 367 - Composite[BTreeSetT2]
+    /// >> 426 - Composite[BTreeSetT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BTreeSetT2 : BaseType

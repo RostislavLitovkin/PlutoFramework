@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.polkadot_parachain_primitives.
     
     
     /// <summary>
-    /// >> 120 - Composite[polkadot_parachain_primitives.primitives.Id]
+    /// >> 122 - Composite[polkadot_parachain_primitives.primitives.Id]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Id : BaseType

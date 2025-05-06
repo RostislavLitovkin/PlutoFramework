@@ -73,7 +73,7 @@ namespace Mythos.NetApi.Generated.Model.xcm.v3.junction
     }
     
     /// <summary>
-    /// >> 78 - Variant[xcm.v3.junction.BodyId]
+    /// >> 89 - Variant[xcm.v3.junction.BodyId]
     /// </summary>
     public sealed class EnumBodyId : BaseEnumRust<BodyId>
     {

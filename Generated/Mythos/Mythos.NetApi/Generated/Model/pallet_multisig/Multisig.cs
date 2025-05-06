@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_multisig
     
     
     /// <summary>
-    /// >> 324 - Composite[pallet_multisig.Multisig]
+    /// >> 363 - Composite[pallet_multisig.Multisig]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Multisig : BaseType
@@ -39,7 +39,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_multisig
         /// <summary>
         /// >> approvals
         /// </summary>
-        public Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11 Approvals { get; set; }
+        public Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16 Approvals { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -68,7 +68,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_multisig
             Deposit.Decode(byteArray, ref p);
             Depositor = new Mythos.NetApi.Generated.Model.account.AccountId20();
             Depositor.Decode(byteArray, ref p);
-            Approvals = new Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11();
+            Approvals = new Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16();
             Approvals.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

@@ -7,7 +7,8 @@
             AbsoluteLayout.LayoutBounds=".5, .5, 1, 1"
              AbsoluteLayout.LayoutFlags="All"
              IsVisible="{Binding IsVisible}">
-    <card:BottomPopupCard Title="Select Networks">
+    <card:BottomPopupCard Title="Select Networks"
+                          IsShown="{Binding IsVisible}">
         <card:BottomPopupCard.View>
 
             <ScrollView AbsoluteLayout.LayoutBounds=".5, .5, 1, 1"

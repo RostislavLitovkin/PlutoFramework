@@ -27,7 +27,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_circuit_breaker.pallet
         /// Set trade volume limit for an asset.
         /// 
         /// Parameters:
-        /// - `origin`: The dispatch origin for this call. Must be `TechnicalOrigin`
+        /// - `origin`: The dispatch origin for this call. Must be `UpdateLimitsOrigin`
         /// - `asset_id`: The identifier of an asset
         /// - `trade_volume_limit`: New trade volume limit represented as a percentage
         /// 
@@ -41,7 +41,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_circuit_breaker.pallet
         /// Set add liquidity limit for an asset.
         /// 
         /// Parameters:
-        /// - `origin`: The dispatch origin for this call. Must be `TechnicalOrigin`
+        /// - `origin`: The dispatch origin for this call. Must be `UpdateLimitsOrigin`
         /// - `asset_id`: The identifier of an asset
         /// - `liquidity_limit`: Optional add liquidity limit represented as a percentage
         /// 
@@ -55,7 +55,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_circuit_breaker.pallet
         /// Set remove liquidity limit for an asset.
         /// 
         /// Parameters:
-        /// - `origin`: The dispatch origin for this call. Must be `TechnicalOrigin`
+        /// - `origin`: The dispatch origin for this call. Must be `UpdateLimitsOrigin`
         /// - `asset_id`: The identifier of an asset
         /// - `liquidity_limit`: Optional remove liquidity limit represented as a percentage
         /// 
@@ -66,7 +66,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_circuit_breaker.pallet
     }
     
     /// <summary>
-    /// >> 370 - Variant[pallet_circuit_breaker.pallet.Call]
+    /// >> 230 - Variant[pallet_circuit_breaker.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

@@ -29,7 +29,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_multibatching.pallet
     }
     
     /// <summary>
-    /// >> 60 - Variant[pallet_multibatching.pallet.Event]
+    /// >> 64 - Variant[pallet_multibatching.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

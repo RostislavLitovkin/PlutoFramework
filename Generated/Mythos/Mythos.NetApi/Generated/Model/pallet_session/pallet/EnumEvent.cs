@@ -31,7 +31,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_session.pallet
     }
     
     /// <summary>
-    /// >> 65 - Variant[pallet_session.pallet.Event]
+    /// >> 76 - Variant[pallet_session.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

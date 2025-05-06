@@ -76,7 +76,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
             LoadPropertyImages();
         }
-        private Task SaveAsync() => XcavatePropertyDatabase.SavePropertyAsync(Metadata);
+        private Task SaveAsync() => Task.FromResult(0);//XcavatePropertyDatabase.SavePropertyAsync(Metadata);
         public void LoadPropertyImages()
         {
             ImageSources = Metadata.Images
@@ -118,7 +118,7 @@ namespace PlutoFramework.Components.XcavateProperty
         [RelayCommand]
         public async Task DeleteAsync()
         {
-            await XcavatePropertyDatabase.DeletePropertyAsync();
+            //await XcavatePropertyDatabase.DeleteAllAsync();
 
             await Application.Current.MainPage.Navigation.PopAsync();
         }

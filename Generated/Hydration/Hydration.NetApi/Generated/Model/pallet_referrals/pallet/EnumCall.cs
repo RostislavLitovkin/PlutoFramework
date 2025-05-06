@@ -95,7 +95,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_referrals.pallet
     }
     
     /// <summary>
-    /// >> 382 - Variant[pallet_referrals.pallet.Call]
+    /// >> 254 - Variant[pallet_referrals.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -106,8 +106,8 @@ namespace Hydration.NetApi.Generated.Model.pallet_referrals.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6>(Call.register_code);
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6>(Call.link_code);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14>(Call.register_code);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14>(Call.link_code);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.convert);
 				AddTypeDecoder<BaseVoid>(Call.claim_rewards);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.pallet_referrals.EnumLevel, Hydration.NetApi.Generated.Model.pallet_referrals.FeeDistribution>>(Call.set_reward_percentage);

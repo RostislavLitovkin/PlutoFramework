@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.bounded_collections.bounded_btree_set
     
     
     /// <summary>
-    /// >> 397 - Composite[bounded_collections.bounded_btree_set.BoundedBTreeSetT2]
+    /// >> 471 - Composite[bounded_collections.bounded_btree_set.BoundedBTreeSetT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedBTreeSetT2 : BaseType
@@ -27,7 +27,7 @@ namespace Mythos.NetApi.Generated.Model.bounded_collections.bounded_btree_set
         /// <summary>
         /// >> value
         /// </summary>
-        public Mythos.NetApi.Generated.Types.Base.BTreeSetT3 Value { get; set; }
+        public Mythos.NetApi.Generated.Types.Base.BTreeSetT2 Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace Mythos.NetApi.Generated.Model.bounded_collections.bounded_btree_set
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Mythos.NetApi.Generated.Types.Base.BTreeSetT3();
+            Value = new Mythos.NetApi.Generated.Types.Base.BTreeSetT2();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

@@ -60,7 +60,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_duster.pallet
     }
     
     /// <summary>
-    /// >> 573 - Variant[pallet_duster.pallet.Error]
+    /// >> 646 - Variant[pallet_duster.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

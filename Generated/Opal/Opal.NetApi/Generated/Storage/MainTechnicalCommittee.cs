@@ -36,9 +36,11 @@ namespace Opal.NetApi.Generated.Storage
         public TechnicalCommitteeStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("TechnicalCommittee", "Proposals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("TechnicalCommittee", "Proposals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("TechnicalCommittee", "ProposalOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(Opal.NetApi.Generated.Model.primitive_types.H256), typeof(Opal.NetApi.Generated.Model.opal_runtime.EnumRuntimeCall)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("TechnicalCommittee", "CostOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(Opal.NetApi.Generated.Model.primitive_types.H256), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32, Opal.NetApi.Generated.Model.frame_support.traits.tokens.fungible.HoldConsiderationT3>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("TechnicalCommittee", "Voting"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(Opal.NetApi.Generated.Model.primitive_types.H256), typeof(Opal.NetApi.Generated.Model.pallet_collective.Votes)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("TechnicalCommittee", "ProposalCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
@@ -68,10 +70,10 @@ namespace Opal.NetApi.Generated.Storage
         /// >> Proposals
         ///  The hashes of the active proposals.
         /// </summary>
-        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32> Proposals(string blockhash, CancellationToken token)
+        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37> Proposals(string blockhash, CancellationToken token)
         {
             string parameters = TechnicalCommitteeStorage.ProposalsParams();
-            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37>(parameters, blockhash, token);
             return result;
         }
         
@@ -103,6 +105,43 @@ namespace Opal.NetApi.Generated.Storage
         {
             string parameters = TechnicalCommitteeStorage.ProposalOfParams(key);
             var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.opal_runtime.EnumRuntimeCall>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> CostOfParams
+        ///  Consideration cost created for publishing and storing a proposal.
+        /// 
+        ///  Determined by [Config::Consideration] and may be not present for certain proposals (e.g. if
+        ///  the proposal count at the time of creation was below threshold N).
+        /// </summary>
+        public static string CostOfParams(Opal.NetApi.Generated.Model.primitive_types.H256 key)
+        {
+            return RequestGenerator.GetStorage("TechnicalCommittee", "CostOf", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.Identity}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> CostOfDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string CostOfDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> CostOf
+        ///  Consideration cost created for publishing and storing a proposal.
+        /// 
+        ///  Determined by [Config::Consideration] and may be not present for certain proposals (e.g. if
+        ///  the proposal count at the time of creation was below threshold N).
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32, Opal.NetApi.Generated.Model.frame_support.traits.tokens.fungible.HoldConsiderationT3>> CostOf(Opal.NetApi.Generated.Model.primitive_types.H256 key, string blockhash, CancellationToken token)
+        {
+            string parameters = TechnicalCommitteeStorage.CostOfParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32, Opal.NetApi.Generated.Model.frame_support.traits.tokens.fungible.HoldConsiderationT3>>(parameters, blockhash, token);
             return result;
         }
         
@@ -197,7 +236,7 @@ namespace Opal.NetApi.Generated.Storage
         
         /// <summary>
         /// >> PrimeParams
-        ///  The prime member that helps determine the default vote behavior in case of absentations.
+        ///  The prime member that helps determine the default vote behavior in case of abstentions.
         /// </summary>
         public static string PrimeParams()
         {
@@ -215,7 +254,7 @@ namespace Opal.NetApi.Generated.Storage
         
         /// <summary>
         /// >> Prime
-        ///  The prime member that helps determine the default vote behavior in case of absentations.
+        ///  The prime member that helps determine the default vote behavior in case of abstentions.
         /// </summary>
         public async Task<Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32> Prime(string blockhash, CancellationToken token)
         {
@@ -305,6 +344,28 @@ namespace Opal.NetApi.Generated.Storage
             byteArray.AddRange(proposal_weight_bound.Encode());
             byteArray.AddRange(length_bound.Encode());
             return new Method(44, "TechnicalCommittee", 6, "close", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> kill
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method Kill(Opal.NetApi.Generated.Model.primitive_types.H256 proposal_hash)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(proposal_hash.Encode());
+            return new Method(44, "TechnicalCommittee", 7, "kill", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> release_proposal_cost
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method ReleaseProposalCost(Opal.NetApi.Generated.Model.primitive_types.H256 proposal_hash)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(proposal_hash.Encode());
+            return new Method(44, "TechnicalCommittee", 8, "release_proposal_cost", byteArray.ToArray());
         }
     }
     
@@ -397,5 +458,11 @@ namespace Opal.NetApi.Generated.Storage
         /// Prime account is not a member
         /// </summary>
         PrimeAccountNotMember,
+        
+        /// <summary>
+        /// >> ProposalActive
+        /// Proposal is still active.
+        /// </summary>
+        ProposalActive,
     }
 }

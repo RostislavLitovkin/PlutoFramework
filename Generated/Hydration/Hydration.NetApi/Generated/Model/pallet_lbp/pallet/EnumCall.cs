@@ -131,7 +131,8 @@ namespace Hydration.NetApi.Generated.Model.pallet_lbp.pallet
         /// - `amount`: The amount of `asset_in`
         /// - `max_limit`: minimum amount of `asset_out` / amount of asset_out to be obtained from the pool in exchange for `asset_in`.
         /// 
-        /// Emits `SellExecuted` when successful.
+        /// Emits `SellExecuted` when successful. Deprecated.
+        /// Emits `pallet_broadcast::Swapped` when successful.
         /// </summary>
         sell = 4,
         
@@ -150,13 +151,14 @@ namespace Hydration.NetApi.Generated.Model.pallet_lbp.pallet
         /// - `amount`: The amount of `asset_out`.
         /// - `max_limit`: maximum amount of `asset_in` to be sold in exchange for `asset_out`.
         /// 
-        /// Emits `BuyExecuted` when successful.
+        /// Emits `BuyExecuted` when successful. Deprecated.
+        /// Emits `pallet_broadcast::Swapped` when successful.
         /// </summary>
         buy = 5,
     }
     
     /// <summary>
-    /// >> 379 - Variant[pallet_lbp.pallet.Call]
+    /// >> 250 - Variant[pallet_lbp.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

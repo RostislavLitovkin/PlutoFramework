@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.polkadot_parachain_primitives.primitives
     
     
     /// <summary>
-    /// >> 144 - Composite[polkadot_parachain_primitives.primitives.Id]
+    /// >> 169 - Composite[polkadot_parachain_primitives.primitives.Id]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Id : BaseType

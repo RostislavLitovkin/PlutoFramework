@@ -77,8 +77,8 @@ namespace Mythos.NetApi.Generated.Model.frame_system.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<Mythos.NetApi.Generated.Model.frame_support.dispatch.DispatchInfo>(Event.ExtrinsicSuccess);
-				AddTypeDecoder<BaseTuple<Mythos.NetApi.Generated.Model.sp_runtime.EnumDispatchError, Mythos.NetApi.Generated.Model.frame_support.dispatch.DispatchInfo>>(Event.ExtrinsicFailed);
+				AddTypeDecoder<Mythos.NetApi.Generated.Model.frame_system.DispatchEventInfo>(Event.ExtrinsicSuccess);
+				AddTypeDecoder<BaseTuple<Mythos.NetApi.Generated.Model.sp_runtime.EnumDispatchError, Mythos.NetApi.Generated.Model.frame_system.DispatchEventInfo>>(Event.ExtrinsicFailed);
 				AddTypeDecoder<BaseVoid>(Event.CodeUpdated);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.account.AccountId20>(Event.NewAccount);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.account.AccountId20>(Event.KilledAccount);

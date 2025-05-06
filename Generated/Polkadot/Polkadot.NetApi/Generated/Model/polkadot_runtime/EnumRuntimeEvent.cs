@@ -92,11 +92,6 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
         Whitelist = 23,
         
         /// <summary>
-        /// >> Parameters
-        /// </summary>
-        Parameters = 27,
-        
-        /// <summary>
         /// >> Claims
         /// </summary>
         Claims = 24,
@@ -150,6 +145,11 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
         /// >> FastUnstake
         /// </summary>
         FastUnstake = 40,
+        
+        /// <summary>
+        /// >> DelegatedStaking
+        /// </summary>
+        DelegatedStaking = 41,
         
         /// <summary>
         /// >> ParaInclusion
@@ -247,7 +247,6 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_conviction_voting.pallet.EnumEvent>(RuntimeEvent.ConvictionVoting);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_referenda.pallet.EnumEvent>(RuntimeEvent.Referenda);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_whitelist.pallet.EnumEvent>(RuntimeEvent.Whitelist);
-				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_parameters.pallet.EnumEvent>(RuntimeEvent.Parameters);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_runtime_common.claims.pallet.EnumEvent>(RuntimeEvent.Claims);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_vesting.pallet.EnumEvent>(RuntimeEvent.Vesting);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_utility.pallet.EnumEvent>(RuntimeEvent.Utility);
@@ -259,11 +258,12 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_bags_list.pallet.EnumEvent>(RuntimeEvent.VoterList);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_nomination_pools.pallet.EnumEvent>(RuntimeEvent.NominationPools);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_fast_unstake.pallet.EnumEvent>(RuntimeEvent.FastUnstake);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_delegated_staking.pallet.EnumEvent>(RuntimeEvent.DelegatedStaking);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.inclusion.pallet.EnumEvent>(RuntimeEvent.ParaInclusion);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.paras.pallet.EnumEvent>(RuntimeEvent.Paras);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.hrmp.pallet.EnumEvent>(RuntimeEvent.Hrmp);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.disputes.pallet.EnumEvent>(RuntimeEvent.ParasDisputes);
-				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.assigner_on_demand.pallet.EnumEvent>(RuntimeEvent.OnDemand);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.on_demand.pallet.EnumEvent>(RuntimeEvent.OnDemand);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_runtime_common.paras_registrar.pallet.EnumEvent>(RuntimeEvent.Registrar);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_runtime_common.slots.pallet.EnumEvent>(RuntimeEvent.Slots);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_runtime_common.auctions.pallet.EnumEvent>(RuntimeEvent.Auctions);

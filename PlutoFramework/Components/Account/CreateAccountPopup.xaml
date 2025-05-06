@@ -6,10 +6,10 @@
              xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
              IsVisible="{Binding IsVisible}"
              AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-             AbsoluteLayout.LayoutFlags="All"
-             BackgroundColor="#66000000">
+             AbsoluteLayout.LayoutFlags="All">
 
-    <card:BottomPopupCard Title="">
+    <card:BottomPopupCard Title=""
+                          IsShown="{Binding IsVisible}">
         <card:BottomPopupCard.View>
             <AbsoluteLayout>
 

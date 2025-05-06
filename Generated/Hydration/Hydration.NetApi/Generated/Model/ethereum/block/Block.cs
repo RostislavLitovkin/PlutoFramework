@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.ethereum.block
     
     
     /// <summary>
-    /// >> 644 - Composite[ethereum.block.Block]
+    /// >> 714 - Composite[ethereum.block.Block]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Block : BaseType

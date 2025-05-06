@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec
     
     
     /// <summary>
-    /// >> 239 - Composite[bounded_collections.bounded_vec.BoundedVecT6]
+    /// >> 131 - Composite[bounded_collections.bounded_vec.BoundedVecT6]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedVecT6 : BaseType
@@ -27,7 +27,7 @@ namespace Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec
         /// <summary>
         /// >> value
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<Mythos.NetApi.Generated.Model.pallet_nfts.types.ItemTip> Value { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Mythos.NetApi.Generated.Model.staging_xcm.v5.EnumHint> Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Mythos.NetApi.Generated.Model.pallet_nfts.types.ItemTip>();
+            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Mythos.NetApi.Generated.Model.staging_xcm.v5.EnumHint>();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

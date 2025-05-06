@@ -1,7 +1,6 @@
 ﻿using PlutoFramework.Components.Balance;
 using PlutoFramework.Components.AddressView;
 using PlutoFramework.Components.DAppConnectionView;
-using PlutoFramework.Components.Extrinsic;
 using System.Collections.ObjectModel;
 using PlutoFramework.Components.MessagePopup;
 using PlutoFramework.Constants;
@@ -36,7 +35,6 @@ namespace PlutoFramework.Model
     {
         U,
         dApp,
-        ExSL,
         UsdB,
         RnT,
         SubK,
@@ -113,7 +111,15 @@ namespace PlutoFramework.Model
 
             foreach (string component in componentStrings)
             {
-                result.Add(GetView((ComponentId)Enum.Parse(typeof(ComponentId), component.Trim())));
+                try
+                {
+                    result.Add(GetView((ComponentId)Enum.Parse(typeof(ComponentId), component.Trim())));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error parsing component: " + component.Trim());
+                    Console.WriteLine(ex);
+                }
             }
 
             return result;
@@ -312,8 +318,6 @@ namespace PlutoFramework.Model
                     return new UpdateView();
                 case ComponentId.dApp:
                     return new DAppConnectionView();
-                case ComponentId.ExSL:
-                    return new ExtrinsicStatusStackLayout();
                 case ComponentId.UsdB:
                     return new UsdBalanceView();
                 /*case ComponentId.PubK:
@@ -389,12 +393,6 @@ namespace PlutoFramework.Model
                     {
                         Name = "dApp connection",
                         ComponentId = ComponentId.dApp,
-                    };
-                case ComponentId.ExSL:
-                    return new ComponentInfo
-                    {
-                        Name = "Extrinsic status",
-                        ComponentId = ComponentId.ExSL,
                     };
                 case ComponentId.UsdB:
                     return new ComponentInfo

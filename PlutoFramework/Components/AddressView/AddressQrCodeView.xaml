@@ -6,14 +6,14 @@
                 x:Class="PlutoFramework.Components.AddressView.AddressQrCodeView"
                 IsVisible="{Binding IsVisible}"
                 AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                AbsoluteLayout.LayoutFlags="All"
-                BackgroundColor="#66000000">
+                AbsoluteLayout.LayoutFlags="All">
     
     <ContentView.GestureRecognizers>
         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
     </ContentView.GestureRecognizers>
     
-    <card:BottomPopupCard Title="Address">
+    <card:BottomPopupCard Title="Address"
+                          IsShown="{Binding IsVisible}">
         <card:BottomPopupCard.View>
             <VerticalStackLayout>
                 <zxing:BarcodeGeneratorView Format="QrCode"

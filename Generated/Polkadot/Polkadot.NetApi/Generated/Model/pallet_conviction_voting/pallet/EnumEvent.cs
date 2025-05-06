@@ -33,6 +33,18 @@ namespace Polkadot.NetApi.Generated.Model.pallet_conviction_voting.pallet
         /// An \[account\] has cancelled a previous delegation operation.
         /// </summary>
         Undelegated = 1,
+        
+        /// <summary>
+        /// >> Voted
+        /// An account that has voted
+        /// </summary>
+        Voted = 2,
+        
+        /// <summary>
+        /// >> VoteRemoved
+        /// A vote that been removed
+        /// </summary>
+        VoteRemoved = 3,
     }
     
     /// <summary>
@@ -49,6 +61,8 @@ namespace Polkadot.NetApi.Generated.Model.pallet_conviction_voting.pallet
         {
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.Delegated);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.Undelegated);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumAccountVote>>(Event.Voted);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumAccountVote>>(Event.VoteRemoved);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.sp_runtime.generic.unchecked_ext
     
     
     /// <summary>
-    /// >> 461 - Composite[sp_runtime.generic.unchecked_extrinsic.UncheckedExtrinsic]
+    /// >> 476 - Composite[sp_runtime.generic.unchecked_extrinsic.UncheckedExtrinsic]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UncheckedExtrinsic : BaseType

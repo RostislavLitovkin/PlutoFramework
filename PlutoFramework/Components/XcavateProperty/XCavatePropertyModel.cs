@@ -5,13 +5,15 @@ using PlutoFramework.Model.Xcavate;
 using PlutoFramework.Model;
 using UniqueryPlus.Nfts;
 using Amazon;
+using CommunityToolkit.Maui.Alerts;
+using PlutoFramework.Model.SQLite;
 
 namespace PlutoFramework.Components.XcavateProperty
 {
     
     public class XcavatePropertyModel
     {
-        public static async Task<NftWrapper> ToNftWrapperAsync(XcavatePaseoNftsPalletNft nft)
+        public static async Task<NftWrapper> ToNftWrapperAsync(INftXcavateBase nft)
         {
             try
             {
@@ -52,25 +54,36 @@ namespace PlutoFramework.Components.XcavateProperty
                 Console.WriteLine("To wrapper error:");
                 Console.WriteLine(ex);
             }
-
+            
             return new NftWrapper
             {
+                Favourite = await XcavatePropertyDatabase.IsPropertyFavouriteAsync(nft.Type, nft.CollectionId, nft.Id).ConfigureAwait(false),
                 NftBase = nft,
                 Endpoint = Endpoints.GetEndpointDictionary[Model.NftModel.GetEndpointKey(nft.Type)]
             };
         }
 
-        public static async Task NavigateToPropertyDetailPageAsync(XcavatePaseoNftsPalletNft nft, CancellationToken token)
+        public static async Task NavigateToPropertyDetailPageAsync(NftWrapper nft, CancellationToken token)
         {
-            if (nft.XcavateMetadata is null)
+            if (nft.NftBase is SavedXcavatePropertyBase)
             {
+                nft.NftBase = await nft.NftBase.GetFullAsync(token);
+            }
+            if (nft.NftBase is not INftXcavateMetadata || ((INftXcavateMetadata)nft.NftBase).XcavateMetadata is null || nft.NftBase is not INftXcavateNftMarketplace)
+            {
+                var toast = Toast.Make("Could not navigate.");
+                await toast.Show();
+
                 return;
             }
 
             var viewModel = new PropertyDetailViewModel
             {
-                Metadata = nft.XcavateMetadata,
-                NftMarketplaceDetails = nft.NftMarketplaceDetails,
+                Endpoint = nft.Endpoint,
+                Favourite = nft.Favourite,
+                NftBase = nft.NftBase,
+                Metadata = ((INftXcavateMetadata)nft.NftBase).XcavateMetadata,
+                NftMarketplaceDetails = ((INftXcavateNftMarketplace)nft.NftBase).NftMarketplaceDetails,
             };
 
             await Application.Current.MainPage.Navigation.PushAsync(new PropertyDetailPage(viewModel));

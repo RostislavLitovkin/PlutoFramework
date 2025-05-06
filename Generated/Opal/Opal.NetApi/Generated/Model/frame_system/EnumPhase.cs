@@ -38,7 +38,7 @@ namespace Opal.NetApi.Generated.Model.frame_system
     }
     
     /// <summary>
-    /// >> 388 - Variant[frame_system.Phase]
+    /// >> 454 - Variant[frame_system.Phase]
     /// </summary>
     public sealed class EnumPhase : BaseEnumRust<Phase>
     {

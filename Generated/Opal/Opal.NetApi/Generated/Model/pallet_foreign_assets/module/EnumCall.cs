@@ -24,13 +24,17 @@ namespace Opal.NetApi.Generated.Model.pallet_foreign_assets.module
         
         /// <summary>
         /// >> force_register_foreign_asset
-        /// See [`Pallet::force_register_foreign_asset`].
         /// </summary>
         force_register_foreign_asset = 0,
+        
+        /// <summary>
+        /// >> force_reset_foreign_asset_location
+        /// </summary>
+        force_reset_foreign_asset_location = 1,
     }
     
     /// <summary>
-    /// >> 330 - Variant[pallet_foreign_assets.module.Call]
+    /// >> 391 - Variant[pallet_foreign_assets.module.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -41,7 +45,8 @@ namespace Opal.NetApi.Generated.Model.pallet_foreign_assets.module
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.xcm.EnumVersionedAssetId, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10, Opal.NetApi.Generated.Model.pallet_foreign_assets.EnumForeignCollectionMode>>(Call.force_register_foreign_asset);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.xcm.EnumVersionedAssetId, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15, Opal.NetApi.Generated.Model.pallet_foreign_assets.EnumForeignCollectionMode>>(Call.force_register_foreign_asset);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.xcm.EnumVersionedAssetId, Opal.NetApi.Generated.Model.xcm.EnumVersionedAssetId>>(Call.force_reset_foreign_asset_location);
         }
     }
 }

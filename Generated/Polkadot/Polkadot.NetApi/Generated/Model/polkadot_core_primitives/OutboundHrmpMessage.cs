@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_core_primitives
     
     
     /// <summary>
-    /// >> 306 - Composite[polkadot_core_primitives.OutboundHrmpMessage]
+    /// >> 295 - Composite[polkadot_core_primitives.OutboundHrmpMessage]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OutboundHrmpMessage : BaseType

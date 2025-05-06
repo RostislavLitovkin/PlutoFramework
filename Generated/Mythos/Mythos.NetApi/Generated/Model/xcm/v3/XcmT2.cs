@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.xcm.v3
     
     
     /// <summary>
-    /// >> 297 - Composite[xcm.v3.XcmT2]
+    /// >> 333 - Composite[xcm.v3.XcmT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class XcmT2 : BaseType

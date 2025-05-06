@@ -28,7 +28,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.inclusion
     }
     
     /// <summary>
-    /// >> 434 - Variant[polkadot_runtime_parachains.inclusion.UmpQueueId]
+    /// >> 423 - Variant[polkadot_runtime_parachains.inclusion.UmpQueueId]
     /// </summary>
     public sealed class EnumUmpQueueId : BaseEnumRust<UmpQueueId>
     {

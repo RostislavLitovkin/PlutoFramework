@@ -38,7 +38,7 @@ namespace Mythos.NetApi.Generated.Model.cumulus_primitives_core
     }
     
     /// <summary>
-    /// >> 143 - Variant[cumulus_primitives_core.AggregateMessageOrigin]
+    /// >> 168 - Variant[cumulus_primitives_core.AggregateMessageOrigin]
     /// </summary>
     public sealed class EnumAggregateMessageOrigin : BaseEnumRust<AggregateMessageOrigin>
     {

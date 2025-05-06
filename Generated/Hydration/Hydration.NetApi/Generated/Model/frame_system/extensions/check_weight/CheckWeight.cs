@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.frame_system.extensions.check_weight
     
     
     /// <summary>
-    /// >> 776 - Composite[frame_system.extensions.check_weight.CheckWeight]
+    /// >> 850 - Composite[frame_system.extensions.check_weight.CheckWeight]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckWeight : BaseType

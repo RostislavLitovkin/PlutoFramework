@@ -24,19 +24,17 @@ namespace Opal.NetApi.Generated.Model.pallet_maintenance.pallet
         
         /// <summary>
         /// >> enable
-        /// See [`Pallet::enable`].
         /// </summary>
         enable = 0,
         
         /// <summary>
         /// >> disable
-        /// See [`Pallet::disable`].
         /// </summary>
         disable = 1,
     }
     
     /// <summary>
-    /// >> 356 - Variant[pallet_maintenance.pallet.Call]
+    /// >> 416 - Variant[pallet_maintenance.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnum<Call>

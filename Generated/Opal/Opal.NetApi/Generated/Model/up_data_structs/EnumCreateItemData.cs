@@ -38,7 +38,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
     }
     
     /// <summary>
-    /// >> 301 - Variant[up_data_structs.CreateItemData]
+    /// >> 362 - Variant[up_data_structs.CreateItemData]
     /// </summary>
     public sealed class EnumCreateItemData : BaseEnumRust<CreateItemData>
     {

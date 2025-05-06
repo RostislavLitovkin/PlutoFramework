@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_fast_unstake.types
     
     
     /// <summary>
-    /// >> 701 - Composite[pallet_fast_unstake.types.UnstakeRequest]
+    /// >> 691 - Composite[pallet_fast_unstake.types.UnstakeRequest]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UnstakeRequest : BaseType

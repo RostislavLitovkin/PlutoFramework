@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.sp_consensus_beefy.commitment
     
     
     /// <summary>
-    /// >> 441 - Composite[sp_consensus_beefy.commitment.Commitment]
+    /// >> 430 - Composite[sp_consensus_beefy.commitment.Commitment]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Commitment : BaseType

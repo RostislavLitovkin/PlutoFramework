@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.sp_core.crypto
     
     
     /// <summary>
-    /// >> 436 - Composite[sp_core.crypto.KeyTypeId]
+    /// >> 501 - Composite[sp_core.crypto.KeyTypeId]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class KeyTypeId : BaseType

@@ -55,7 +55,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_proxy.pallet
     }
     
     /// <summary>
-    /// >> 127 - Variant[pallet_proxy.pallet.Event]
+    /// >> 129 - Variant[pallet_proxy.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.sp_weights
     
     
     /// <summary>
-    /// >> 170 - Composite[sp_weights.RuntimeDbWeight]
+    /// >> 175 - Composite[sp_weights.RuntimeDbWeight]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RuntimeDbWeight : BaseType

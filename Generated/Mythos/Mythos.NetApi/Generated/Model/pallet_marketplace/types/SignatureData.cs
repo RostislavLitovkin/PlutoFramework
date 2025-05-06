@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_marketplace.types
     
     
     /// <summary>
-    /// >> 248 - Composite[pallet_marketplace.types.SignatureData]
+    /// >> 275 - Composite[pallet_marketplace.types.SignatureData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SignatureData : BaseType

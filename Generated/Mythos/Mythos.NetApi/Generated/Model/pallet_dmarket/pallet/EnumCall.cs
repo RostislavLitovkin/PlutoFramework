@@ -72,7 +72,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_dmarket.pallet
     }
     
     /// <summary>
-    /// >> 313 - Variant[pallet_dmarket.pallet.Call]
+    /// >> 353 - Variant[pallet_dmarket.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

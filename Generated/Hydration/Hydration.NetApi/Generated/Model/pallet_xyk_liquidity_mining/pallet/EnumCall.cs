@@ -271,8 +271,6 @@ namespace Hydration.NetApi.Generated.Model.pallet_xyk_liquidity_mining.pallet
         
         /// <summary>
         /// >> claim_rewards
-        /// Note: This extrinsic is disabled.
-        /// 
         /// Claim rewards from liq. mining for deposit represented by `nft_id`.
         /// 
         /// This function calculate user rewards from liq. mining and transfer rewards to `origin`
@@ -337,7 +335,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_xyk_liquidity_mining.pallet
     }
     
     /// <summary>
-    /// >> 402 - Variant[pallet_xyk_liquidity_mining.pallet.Call]
+    /// >> 280 - Variant[pallet_xyk_liquidity_mining.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -357,12 +355,12 @@ namespace Hydration.NetApi.Generated.Model.pallet_xyk_liquidity_mining.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.pallet_xyk.types.AssetPair, Hydration.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>>(Call.resume_yield_farm);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.pallet_xyk.types.AssetPair>>(Call.terminate_yield_farm);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.pallet_xyk.types.AssetPair, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.deposit_shares);
-				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21, Hydration.NetApi.Generated.Model.pallet_xyk.types.AssetPair, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.join_farms);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21>>(Call.add_liquidity_and_join_farms);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15, Hydration.NetApi.Generated.Model.pallet_xyk.types.AssetPair, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.join_farms);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15>>(Call.add_liquidity_and_join_farms);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.pallet_xyk.types.AssetPair, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.redeposit_shares);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.claim_rewards);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.pallet_xyk.types.AssetPair>>(Call.withdraw_shares);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Hydration.NetApi.Generated.Model.pallet_xyk.types.AssetPair, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22>>(Call.exit_farms);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Hydration.NetApi.Generated.Model.pallet_xyk.types.AssetPair, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16>>(Call.exit_farms);
         }
     }
 }

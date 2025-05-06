@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.frame_system.extensions.check_no
     
     
     /// <summary>
-    /// >> 469 - Composite[frame_system.extensions.check_nonce.CheckNonce]
+    /// >> 484 - Composite[frame_system.extensions.check_nonce.CheckNonce]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckNonce : BaseType

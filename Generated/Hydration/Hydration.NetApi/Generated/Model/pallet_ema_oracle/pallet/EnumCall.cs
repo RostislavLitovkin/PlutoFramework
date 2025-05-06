@@ -31,10 +31,15 @@ namespace Hydration.NetApi.Generated.Model.pallet_ema_oracle.pallet
         /// >> remove_oracle
         /// </summary>
         remove_oracle = 1,
+        
+        /// <summary>
+        /// >> update_bifrost_oracle
+        /// </summary>
+        update_bifrost_oracle = 2,
     }
     
     /// <summary>
-    /// >> 474 - Variant[pallet_ema_oracle.pallet.Call]
+    /// >> 404 - Variant[pallet_ema_oracle.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -47,6 +52,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_ema_oracle.pallet
         {
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Types.Base.Arr8U8, Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>>(Call.add_oracle);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Types.Base.Arr8U8, Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>>(Call.remove_oracle);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.xcm.EnumVersionedLocation, Hydration.NetApi.Generated.Model.xcm.EnumVersionedLocation, Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.update_bifrost_oracle);
         }
     }
 }

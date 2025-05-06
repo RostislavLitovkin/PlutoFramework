@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.primitive_types
     
     
     /// <summary>
-    /// >> 44 - Composite[primitive_types.U256]
+    /// >> 48 - Composite[primitive_types.U256]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class U256 : BaseType

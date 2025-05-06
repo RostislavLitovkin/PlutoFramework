@@ -24,13 +24,13 @@ namespace Opal.NetApi.Generated.Model.pallet_evm_contract_helpers.pallet
         
         /// <summary>
         /// >> migrate_from_self_sponsoring
-        /// See [`Pallet::migrate_from_self_sponsoring`].
+        /// Migrate contract to use `SponsoringMode` storage instead of `SelfSponsoring`
         /// </summary>
         migrate_from_self_sponsoring = 0,
     }
     
     /// <summary>
-    /// >> 349 - Variant[pallet_evm_contract_helpers.pallet.Call]
+    /// >> 409 - Variant[pallet_evm_contract_helpers.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

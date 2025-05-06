@@ -128,7 +128,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_vesting.pallet
     }
     
     /// <summary>
-    /// >> 309 - Variant[pallet_vesting.pallet.Call]
+    /// >> 349 - Variant[pallet_vesting.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

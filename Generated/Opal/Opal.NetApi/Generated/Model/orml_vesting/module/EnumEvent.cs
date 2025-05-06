@@ -42,7 +42,7 @@ namespace Opal.NetApi.Generated.Model.orml_vesting.module
     }
     
     /// <summary>
-    /// >> 45 - Variant[orml_vesting.module.Event]
+    /// >> 47 - Variant[orml_vesting.module.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

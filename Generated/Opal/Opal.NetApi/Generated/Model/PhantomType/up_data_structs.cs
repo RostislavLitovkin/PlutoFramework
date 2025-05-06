@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.PhantomType
     
     
     /// <summary>
-    /// >> 604 - Composite[PhantomType.up_data_structs]
+    /// >> 685 - Composite[PhantomType.up_data_structs]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class up_data_structs : BaseType

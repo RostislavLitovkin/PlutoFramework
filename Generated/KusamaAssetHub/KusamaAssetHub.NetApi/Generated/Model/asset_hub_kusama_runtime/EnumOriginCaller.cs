@@ -35,15 +35,10 @@ namespace KusamaAssetHub.NetApi.Generated.Model.asset_hub_kusama_runtime
         /// >> CumulusXcm
         /// </summary>
         CumulusXcm = 32,
-        
-        /// <summary>
-        /// >> Void
-        /// </summary>
-        Void = 3,
     }
     
     /// <summary>
-    /// >> 387 - Variant[asset_hub_kusama_runtime.OriginCaller]
+    /// >> 399 - Variant[asset_hub_kusama_runtime.OriginCaller]
     /// </summary>
     public sealed class EnumOriginCaller : BaseEnumRust<OriginCaller>
     {
@@ -56,7 +51,6 @@ namespace KusamaAssetHub.NetApi.Generated.Model.asset_hub_kusama_runtime
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.frame_support.dispatch.EnumRawOrigin>(OriginCaller.system);
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_xcm.pallet.EnumOrigin>(OriginCaller.PolkadotXcm);
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.cumulus_pallet_xcm.pallet.EnumOrigin>(OriginCaller.CumulusXcm);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVoid>(OriginCaller.Void);
         }
     }
 }

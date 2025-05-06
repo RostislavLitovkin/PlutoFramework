@@ -6,37 +6,59 @@ public partial class BottomPopupCard : AbsoluteLayout
 {
     private Queue<(float x, float y)> _positions = new Queue<(float, float)>();
 
+
+    public static readonly BindableProperty IsShownProperty = BindableProperty.Create(
+        nameof(IsShown), typeof(bool), typeof(BottomPopupCard),
+        defaultValue: false,
+        defaultBindingMode: BindingMode.TwoWay,
+        propertyChanged: (bindable, oldValue, newValue) =>
+        {
+            var control = (BottomPopupCard)bindable;
+            if ((bool)newValue)
+            {
+                Task show = control.ShowCardAsync();
+            }
+            else
+            {
+                Task close = control.CloseCardAsync();
+            }
+
+            try
+            {
+                // This is a great workaround.
+                // Most of the times, you will use this inside of a ContentView that has got a IPopup BindingContext.
+                // If not, then nothing will happen
+                ((IPopup)((ContentView)control.Parent).BindingContext).IsVisible = (bool)newValue;
+            }
+            catch
+            {
+
+            }
+        });
+
     public BottomPopupCard()
 	{
 		InitializeComponent();
-	}
+    }
+
+    public bool IsShown
+    {
+        get => (bool)GetValue(IsShownProperty);
+        set => SetValue(IsShownProperty, value);
+    }
 
     public Microsoft.Maui.Controls.View View { set { contentView.Content = value; } }
 
     public string Title { set { titleLabel.Text = value; } }
 
-    private async Task CloseCardAsync()
+    private async Task ShowCardAsync()
     {
-        await Task.WhenAll(
-                    border.TranslateTo(0, border.Height, 250, Easing.CubicOut),
-                    dragger.TranslateTo(0, border.Height, 250, Easing.CubicOut),
-                    contentView.TranslateTo(0, border.Height, 250, Easing.CubicOut),
-                    //,closeButton.TranslateTo(0, border.Height, 250, Easing.CubicOut)
-                    titleLabel.TranslateTo(0, border.Height, 250, Easing.CubicOut)
-                );
+        await AnimateToTop();
+    }
 
-        try
-        {
-
-            // This is a great workaround.
-            // Most of the times, you will use this inside of a ContentView that has got a IPopup BindingContext.
-            // If not, then nothing will happen
-            ((IPopup)((ContentView)this.Parent).BindingContext).IsVisible = false;
-        }
-        catch
-        {
-
-        }
+    public async Task CloseCardAsync()
+    {
+        await AnimateToBottom();
 
         try
         {
@@ -49,12 +71,6 @@ public partial class BottomPopupCard : AbsoluteLayout
         {
 
         }
-
-
-        border.TranslationY = 0;
-        dragger.TranslationY = 0;
-        contentView.TranslationY = 0;
-        titleLabel.TranslationY = 0;
     }
     private async void OnPanUpdated(System.Object sender, Microsoft.Maui.Controls.PanUpdatedEventArgs e)
     {
@@ -80,6 +96,7 @@ public partial class BottomPopupCard : AbsoluteLayout
                 contentView.TranslationY = yAverage;
                 //closeButton.TranslationY = yAverage;
                 titleLabel.TranslationY = yAverage;
+                darken.Opacity = 1 - (yAverage / border.Height);
             }
         }
 
@@ -87,13 +104,7 @@ public partial class BottomPopupCard : AbsoluteLayout
         {
             if (border.TranslationY < 50)
             {
-                await Task.WhenAll(
-                    border.TranslateTo(0, 0, 250, Easing.CubicOut),
-                    dragger.TranslateTo(0, 0, 250, Easing.CubicOut),
-                    contentView.TranslateTo(0, 0, 250, Easing.CubicOut)
-                    //,closeButton.TranslateTo(0, 0, 250, Easing.CubicOut)
-                    , titleLabel.TranslateTo(0, 0, 250, Easing.CubicOut)
-                    );
+                await AnimateToTop();
             }
             else
             {
@@ -102,6 +113,23 @@ public partial class BottomPopupCard : AbsoluteLayout
         }
     }
 
+    private Task AnimateToTop() => Task.WhenAll(
+                    border.TranslateTo(0, 0, DefaultAppConfiguration.BOTTOM_CARD_POPUP_ANIMATION_DURATION, Easing.CubicOut),
+                    dragger.TranslateTo(0, 0, DefaultAppConfiguration.BOTTOM_CARD_POPUP_ANIMATION_DURATION, Easing.CubicOut),
+                    contentView.TranslateTo(0, 0, DefaultAppConfiguration.BOTTOM_CARD_POPUP_ANIMATION_DURATION, Easing.CubicOut)
+                    //,closeButton.TranslateTo(0, 0, 250, Easing.CubicOut)
+                    , titleLabel.TranslateTo(0, 0, DefaultAppConfiguration.BOTTOM_CARD_POPUP_ANIMATION_DURATION, Easing.CubicOut)
+                    , darken.FadeTo(1, DefaultAppConfiguration.BOTTOM_CARD_POPUP_ANIMATION_DURATION, Easing.CubicOut)
+                    );
+
+    private Task AnimateToBottom() => Task.WhenAll(
+                    border.TranslateTo(0, border.Height, DefaultAppConfiguration.BOTTOM_CARD_POPUP_ANIMATION_DURATION, Easing.CubicOut),
+                    dragger.TranslateTo(0, border.Height, DefaultAppConfiguration.BOTTOM_CARD_POPUP_ANIMATION_DURATION, Easing.CubicOut),
+                    contentView.TranslateTo(0, border.Height, DefaultAppConfiguration.BOTTOM_CARD_POPUP_ANIMATION_DURATION, Easing.CubicOut),
+                    //,closeButton.TranslateTo(0, border.Height, 250, Easing.CubicOut)
+                    titleLabel.TranslateTo(0, border.Height, DefaultAppConfiguration.BOTTOM_CARD_POPUP_ANIMATION_DURATION, Easing.CubicOut)
+                    , darken.FadeTo(0, DefaultAppConfiguration.BOTTOM_CARD_POPUP_ANIMATION_DURATION, Easing.CubicOut)
+                );
     private async void OnCloseClicked(object sender, EventArgs e)
     {
         await CloseCardAsync();

@@ -111,7 +111,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_common.crowdloan.pall
     }
     
     /// <summary>
-    /// >> 337 - Variant[polkadot_runtime_common.crowdloan.pallet.Call]
+    /// >> 326 - Variant[polkadot_runtime_common.crowdloan.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

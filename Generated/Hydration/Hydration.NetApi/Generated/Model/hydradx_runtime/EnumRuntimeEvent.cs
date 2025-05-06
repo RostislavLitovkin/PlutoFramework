@@ -107,6 +107,26 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
         StateTrieMigration = 35,
         
         /// <summary>
+        /// >> ConvictionVoting
+        /// </summary>
+        ConvictionVoting = 36,
+        
+        /// <summary>
+        /// >> Referenda
+        /// </summary>
+        Referenda = 37,
+        
+        /// <summary>
+        /// >> Whitelist
+        /// </summary>
+        Whitelist = 39,
+        
+        /// <summary>
+        /// >> Dispatcher
+        /// </summary>
+        Dispatcher = 40,
+        
+        /// <summary>
         /// >> AssetRegistry
         /// </summary>
         AssetRegistry = 51,
@@ -200,6 +220,11 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
         /// >> Referrals
         /// </summary>
         Referrals = 75,
+        
+        /// <summary>
+        /// >> Liquidation
+        /// </summary>
+        Liquidation = 76,
         
         /// <summary>
         /// >> Tokens
@@ -310,6 +335,11 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
         /// >> EmaOracle
         /// </summary>
         EmaOracle = 202,
+        
+        /// <summary>
+        /// >> Broadcast
+        /// </summary>
+        Broadcast = 204,
     }
     
     /// <summary>
@@ -340,6 +370,10 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_multisig.pallet.EnumEvent>(RuntimeEvent.Multisig);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_uniques.pallet.EnumEvent>(RuntimeEvent.Uniques);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_state_trie_migration.pallet.EnumEvent>(RuntimeEvent.StateTrieMigration);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_conviction_voting.pallet.EnumEvent>(RuntimeEvent.ConvictionVoting);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_referenda.pallet.EnumEvent>(RuntimeEvent.Referenda);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_whitelist.pallet.EnumEvent>(RuntimeEvent.Whitelist);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_dispatcher.pallet.EnumEvent>(RuntimeEvent.Dispatcher);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_asset_registry.pallet.EnumEvent>(RuntimeEvent.AssetRegistry);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_claims.pallet.EnumEvent>(RuntimeEvent.Claims);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_collator_rewards.pallet.EnumEvent>(RuntimeEvent.CollatorRewards);
@@ -359,6 +393,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_lbp.pallet.EnumEvent>(RuntimeEvent.LBP);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_xyk.pallet.EnumEvent>(RuntimeEvent.XYK);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_referrals.pallet.EnumEvent>(RuntimeEvent.Referrals);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_liquidation.pallet.EnumEvent>(RuntimeEvent.Liquidation);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.orml_tokens.module.EnumEvent>(RuntimeEvent.Tokens);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_currencies.module.EnumEvent>(RuntimeEvent.Currencies);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.orml_vesting.module.EnumEvent>(RuntimeEvent.Vesting);
@@ -381,6 +416,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_collator_selection.pallet.EnumEvent>(RuntimeEvent.CollatorSelection);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_session.pallet.EnumEvent>(RuntimeEvent.Session);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_ema_oracle.pallet.EnumEvent>(RuntimeEvent.EmaOracle);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_broadcast.pallet.EnumEvent>(RuntimeEvent.Broadcast);
         }
     }
 }

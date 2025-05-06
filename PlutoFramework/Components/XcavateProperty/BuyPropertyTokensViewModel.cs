@@ -67,7 +67,7 @@ namespace PlutoFramework.Components.XcavateProperty
             // Submitting the extrinsic
             var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();
 
-            await transactionAnalyzerConfirmationViewModel.LoadAsync(
+            Task load = transactionAnalyzerConfirmationViewModel.LoadAsync(
                 client, // PlutoFrameworkSubstrateClient
                 method,
                 showDAppView: false,

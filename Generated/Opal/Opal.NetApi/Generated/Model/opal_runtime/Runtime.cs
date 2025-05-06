@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.opal_runtime
     
     
     /// <summary>
-    /// >> 690 - Composite[opal_runtime.Runtime]
+    /// >> 768 - Composite[opal_runtime.Runtime]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Runtime : BaseType

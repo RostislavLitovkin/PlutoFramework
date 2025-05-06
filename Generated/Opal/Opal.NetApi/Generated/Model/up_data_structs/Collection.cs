@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
     
     
     /// <summary>
-    /// >> 587 - Composite[up_data_structs.Collection]
+    /// >> 668 - Composite[up_data_structs.Collection]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Collection : BaseType
@@ -35,15 +35,15 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
         /// <summary>
         /// >> name
         /// </summary>
-        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 Name { get; set; }
+        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13 Name { get; set; }
         /// <summary>
         /// >> description
         /// </summary>
-        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 Description { get; set; }
+        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14 Description { get; set; }
         /// <summary>
         /// >> token_prefix
         /// </summary>
-        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10 TokenPrefix { get; set; }
+        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15 TokenPrefix { get; set; }
         /// <summary>
         /// >> sponsorship
         /// </summary>
@@ -91,11 +91,11 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
             Owner.Decode(byteArray, ref p);
             Mode = new Opal.NetApi.Generated.Model.up_data_structs.EnumCollectionMode();
             Mode.Decode(byteArray, ref p);
-            Name = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8();
+            Name = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13();
             Name.Decode(byteArray, ref p);
-            Description = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9();
+            Description = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14();
             Description.Decode(byteArray, ref p);
-            TokenPrefix = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10();
+            TokenPrefix = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15();
             TokenPrefix.Decode(byteArray, ref p);
             Sponsorship = new Opal.NetApi.Generated.Model.up_data_structs.EnumSponsorshipState();
             Sponsorship.Decode(byteArray, ref p);

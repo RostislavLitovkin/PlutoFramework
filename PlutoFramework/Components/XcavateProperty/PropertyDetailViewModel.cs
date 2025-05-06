@@ -1,8 +1,10 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.Account;
+using PlutoFramework.Constants;
 using PlutoFramework.Model;
 using PlutoFramework.Model.Currency;
+using PlutoFramework.Model.SQLite;
 using UniqueryPlus.Metadata;
 using UniqueryPlus.Nfts;
 using PropertyModel = PlutoFramework.Model.Xcavate.XcavatePropertyModel;
@@ -11,6 +13,12 @@ namespace PlutoFramework.Components.XcavateProperty
 {
     public partial class PropertyDetailViewModel : ObservableObject
     {
+        [ObservableProperty]
+        private Endpoint endpoint;
+
+        [ObservableProperty]
+        private INftBase nftBase;
+
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(AreaPricesPercentage))]
         [NotifyPropertyChangedFor(nameof(RentalDemandPercentage))]
@@ -78,9 +86,19 @@ namespace PlutoFramework.Components.XcavateProperty
         private bool favourite = false;
 
         [RelayCommand]
-        public void MakeFavourite()
+        public async Task MakeFavouriteAsync()
         {
             Favourite = !Favourite;
+
+            await XcavatePropertyDatabase.SavePropertyAsync(new NftWrapper
+            {
+                Endpoint = Endpoint,
+                NftBase = NftBase,
+                Favourite = Favourite
+            });
+
+            var marketplaceViewModel = DependencyService.Get<XcavatePropertyMarketplaceViewModel>();
+            marketplaceViewModel.UpdateFavourite(NftBase as INftXcavateBase, Favourite);
         }
 
         [RelayCommand]

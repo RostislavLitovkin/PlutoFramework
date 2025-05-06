@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.evm_core.opcode
     
     
     /// <summary>
-    /// >> 378 - Composite[evm_core.opcode.Opcode]
+    /// >> 444 - Composite[evm_core.opcode.Opcode]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Opcode : BaseType

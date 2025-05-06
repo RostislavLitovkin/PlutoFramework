@@ -38,7 +38,7 @@ namespace Hydration.NetApi.Generated.Model.sp_runtime
     }
     
     /// <summary>
-    /// >> 328 - Variant[sp_runtime.MultiSignature]
+    /// >> 162 - Variant[sp_runtime.MultiSignature]
     /// </summary>
     public sealed class EnumMultiSignature : BaseEnumRust<MultiSignature>
     {

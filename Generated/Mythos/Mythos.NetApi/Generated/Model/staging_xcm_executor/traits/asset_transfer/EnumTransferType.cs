@@ -43,7 +43,7 @@ namespace Mythos.NetApi.Generated.Model.staging_xcm_executor.traits.asset_transf
     }
     
     /// <summary>
-    /// >> 303 - Variant[staging_xcm_executor.traits.asset_transfer.TransferType]
+    /// >> 343 - Variant[staging_xcm_executor.traits.asset_transfer.TransferType]
     /// </summary>
     public sealed class EnumTransferType : BaseEnumRust<TransferType>
     {

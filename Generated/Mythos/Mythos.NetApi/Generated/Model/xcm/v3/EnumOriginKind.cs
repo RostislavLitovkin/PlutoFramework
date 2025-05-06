@@ -43,7 +43,7 @@ namespace Mythos.NetApi.Generated.Model.xcm.v3
     }
     
     /// <summary>
-    /// >> 108 - Variant[xcm.v3.OriginKind]
+    /// >> 119 - Variant[xcm.v3.OriginKind]
     /// </summary>
     public sealed class EnumOriginKind : BaseEnum<OriginKind>
     {

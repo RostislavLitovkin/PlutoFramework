@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.frame_system.extensions.check_no
     
     
     /// <summary>
-    /// >> 463 - Composite[frame_system.extensions.check_non_zero_sender.CheckNonZeroSender]
+    /// >> 478 - Composite[frame_system.extensions.check_non_zero_sender.CheckNonZeroSender]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckNonZeroSender : BaseType

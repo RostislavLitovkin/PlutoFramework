@@ -39,7 +39,7 @@ namespace Mythos.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "Authority"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Mythos.NetApi.Generated.Model.account.AccountId20)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "FeeSigner"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Mythos.NetApi.Generated.Model.account.AccountId20)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "Nonces"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15), typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22), typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "PayoutAddress"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Mythos.NetApi.Generated.Model.account.AccountId20)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "Asks"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -52,6 +52,7 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> AuthorityParams
+        ///  The current authority account for the pallet.
         /// </summary>
         public static string AuthorityParams()
         {
@@ -69,6 +70,7 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> Authority
+        ///  The current authority account for the pallet.
         /// </summary>
         public async Task<Mythos.NetApi.Generated.Model.account.AccountId20> Authority(string blockhash, CancellationToken token)
         {
@@ -79,6 +81,10 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> FeeSignerParams
+        ///  The account responsible for signing fee-related operations.
+        /// 
+        ///  This account is expected to provide valid signatures for operations
+        ///  requiring authentication related to transaction fees.
         /// </summary>
         public static string FeeSignerParams()
         {
@@ -96,6 +102,10 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> FeeSigner
+        ///  The account responsible for signing fee-related operations.
+        /// 
+        ///  This account is expected to provide valid signatures for operations
+        ///  requiring authentication related to transaction fees.
         /// </summary>
         public async Task<Mythos.NetApi.Generated.Model.account.AccountId20> FeeSigner(string blockhash, CancellationToken token)
         {
@@ -106,8 +116,9 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> NoncesParams
+        ///  A mapping that stores the state of nonces used for preventing replay attacks.
         /// </summary>
-        public static string NoncesParams(Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15 key)
+        public static string NoncesParams(Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22 key)
         {
             return RequestGenerator.GetStorage("Marketplace", "Nonces", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.Identity}, new Substrate.NetApi.Model.Types.IType[] {
@@ -125,8 +136,9 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> Nonces
+        ///  A mapping that stores the state of nonces used for preventing replay attacks.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.Bool> Nonces(Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.Bool> Nonces(Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22 key, string blockhash, CancellationToken token)
         {
             string parameters = MarketplaceStorage.NoncesParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.Bool>(parameters, blockhash, token);
@@ -135,6 +147,7 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> PayoutAddressParams
+        ///  The account where marketplace payouts will be sent.
         /// </summary>
         public static string PayoutAddressParams()
         {
@@ -152,6 +165,7 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> PayoutAddress
+        ///  The account where marketplace payouts will be sent.
         /// </summary>
         public async Task<Mythos.NetApi.Generated.Model.account.AccountId20> PayoutAddress(string blockhash, CancellationToken token)
         {
@@ -162,6 +176,7 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> AsksParams
+        ///  A mapping of active Ask orders in the marketplace.
         /// </summary>
         public static string AsksParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Mythos.NetApi.Generated.Model.runtime_common.IncrementableU256, Substrate.NetApi.Model.Types.Primitive.U128> key)
         {
@@ -181,6 +196,7 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> Asks
+        ///  A mapping of active Ask orders in the marketplace.
         /// </summary>
         public async Task<Mythos.NetApi.Generated.Model.pallet_marketplace.types.Ask> Asks(Substrate.NetApi.Model.Types.Base.BaseTuple<Mythos.NetApi.Generated.Model.runtime_common.IncrementableU256, Substrate.NetApi.Model.Types.Primitive.U128> key, string blockhash, CancellationToken token)
         {
@@ -191,6 +207,7 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> BidsParams
+        ///  A mapping that stores active Bid orders in the marketplace.
         /// </summary>
         public static string BidsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Mythos.NetApi.Generated.Model.runtime_common.IncrementableU256, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128> key)
         {
@@ -211,6 +228,7 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> Bids
+        ///  A mapping that stores active Bid orders in the marketplace.
         /// </summary>
         public async Task<Mythos.NetApi.Generated.Model.pallet_marketplace.types.Bid> Bids(Substrate.NetApi.Model.Types.Base.BaseTuple<Mythos.NetApi.Generated.Model.runtime_common.IncrementableU256, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128> key, string blockhash, CancellationToken token)
         {
@@ -323,7 +341,7 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> NotAuthority
-        /// The account is not the authority
+        /// The account is not the authority.
         /// </summary>
         NotAuthority,
         
@@ -335,11 +353,13 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> FeeSignerAddressNotSet
+        /// The fee signer address doesn't exist.
         /// </summary>
         FeeSignerAddressNotSet,
         
         /// <summary>
         /// >> PayoutAddressNotSet
+        /// The payout address doesn't exist.
         /// </summary>
         PayoutAddressNotSet,
         
@@ -375,7 +395,7 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ValidMatchMustExist
-        /// A valid match must exist to execute the order
+        /// A valid match must exist to execute the order.
         /// </summary>
         ValidMatchMustExist,
         
@@ -387,7 +407,7 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> BadSignedMessage
-        /// Invalid Signed message
+        /// Invalid Signed message.
         /// </summary>
         BadSignedMessage,
         
@@ -399,7 +419,7 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> AlreadyUsedNonce
-        /// Nonce has already been used
+        /// Nonce has already been used.
         /// </summary>
         AlreadyUsedNonce,
         
@@ -429,19 +449,19 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> InsufficientFunds
-        /// User Balance is insufficient for the required action
+        /// User Balance is insufficient for the required action.
         /// </summary>
         InsufficientFunds,
         
         /// <summary>
         /// >> NotOrderCreatorOrAdmin
-        /// The caller is not the orderc creator or the admin account of the pallet
+        /// The caller is not the order creator or the admin account of the pallet.
         /// </summary>
         NotOrderCreatorOrAdmin,
         
         /// <summary>
         /// >> BadNonce
-        /// The provided nonce had an invalid size
+        /// The provided nonce had an invalid size.
         /// </summary>
         BadNonce,
         

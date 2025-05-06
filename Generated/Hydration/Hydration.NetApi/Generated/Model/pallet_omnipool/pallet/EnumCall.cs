@@ -175,7 +175,8 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool.pallet
         /// - `amount`: Amount of asset sold
         /// - `min_buy_amount`: Minimum amount required to receive
         /// 
-        /// Emits `SellExecuted` event when successful.
+        /// Emits `SellExecuted` event when successful. Deprecated.
+        /// Emits `pallet_broadcast::Swapped` event when successful.
         /// 
         /// </summary>
         sell = 5,
@@ -196,7 +197,8 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool.pallet
         /// - `amount`: Amount of asset sold
         /// - `max_sell_amount`: Maximum amount to be sold.
         /// 
-        /// Emits `BuyExecuted` event when successful.
+        /// Emits `BuyExecuted` event when successful. Deprecated.
+        /// Emits `pallet_broadcast::Swapped` event when successful.
         /// 
         /// </summary>
         buy = 6,
@@ -275,7 +277,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool.pallet
     }
     
     /// <summary>
-    /// >> 361 - Variant[pallet_omnipool.pallet.Call]
+    /// >> 209 - Variant[pallet_omnipool.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

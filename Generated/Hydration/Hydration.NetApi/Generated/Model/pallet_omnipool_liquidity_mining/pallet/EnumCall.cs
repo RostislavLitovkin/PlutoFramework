@@ -224,8 +224,6 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool_liquidity_mining.pall
         
         /// <summary>
         /// >> claim_rewards
-        /// Note: This extrinsic is disabled
-        /// 
         /// Claim rewards from liquidity mining program for deposit represented by the `deposit_id`.
         /// 
         /// This function calculate user rewards from liquidity mining and transfer rewards to `origin`
@@ -308,6 +306,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool_liquidity_mining.pall
         /// - `farm_entries`: list of farms to join.
         /// - `asset`: id of the asset to be deposited into the liquidity mining.
         /// - `amount`: amount of the asset to be deposited into the liquidity mining.
+        /// - `min_shares_limit`: The min amount of delta share asset the user should receive in the position
         /// 
         /// Emits `SharesDeposited` event for the first farm entry
         /// Emits `SharesRedeposited` event for each farm entry after the first one
@@ -333,10 +332,31 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool_liquidity_mining.pall
         /// 
         /// </summary>
         exit_farms = 15,
+        
+        /// <summary>
+        /// >> add_liquidity_stableswap_omnipool_and_join_farms
+        /// This function allows user to add liquidity to stableswap pool,
+        /// then adding the stable shares as liquidity to omnipool
+        /// then use that omnipool shares to join multiple farms.
+        /// 
+        /// If farm entries are not specified (empty vectoo), then the liquidities are still added to the pools
+        /// 
+        /// Parameters:
+        /// - `origin`: owner of the omnipool position to deposit into the liquidity mining.
+        /// - `stable_pool_id`: id of the stableswap pool to add liquidity to.
+        /// - `stable_asset_amounts`: amount of each asset to be deposited into the stableswap pool.
+        /// - `farm_entries`: list of farms to join.
+        /// 
+        /// Emits `LiquidityAdded` events from both pool
+        /// Emits `SharesDeposited` event for the first farm entry
+        /// Emits `SharesRedeposited` event for each farm entry after the first one
+        /// 
+        /// </summary>
+        add_liquidity_stableswap_omnipool_and_join_farms = 16,
     }
     
     /// <summary>
-    /// >> 366 - Variant[pallet_omnipool_liquidity_mining.pallet.Call]
+    /// >> 216 - Variant[pallet_omnipool_liquidity_mining.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -359,9 +379,10 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool_liquidity_mining.pall
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.claim_rewards);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.withdraw_shares);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Perquintill, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.update_global_farm);
-				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.join_farms);
-				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.add_liquidity_and_join_farms);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19>>(Call.exit_farms);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.join_farms);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.add_liquidity_and_join_farms);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9>>(Call.exit_farms);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8>>>(Call.add_liquidity_stableswap_omnipool_and_join_farms);
         }
     }
 }

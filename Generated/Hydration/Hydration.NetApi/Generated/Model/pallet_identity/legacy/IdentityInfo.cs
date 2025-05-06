@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_identity.legacy
     
     
     /// <summary>
-    /// >> 290 - Composite[pallet_identity.legacy.IdentityInfo]
+    /// >> 122 - Composite[pallet_identity.legacy.IdentityInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class IdentityInfo : BaseType
@@ -27,7 +27,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_identity.legacy
         /// <summary>
         /// >> additional
         /// </summary>
-        public Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15 Additional { get; set; }
+        public Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 Additional { get; set; }
         /// <summary>
         /// >> display
         /// </summary>
@@ -87,7 +87,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_identity.legacy
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Additional = new Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15();
+            Additional = new Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5();
             Additional.Decode(byteArray, ref p);
             Display = new Hydration.NetApi.Generated.Model.pallet_identity.types.EnumData();
             Display.Decode(byteArray, ref p);

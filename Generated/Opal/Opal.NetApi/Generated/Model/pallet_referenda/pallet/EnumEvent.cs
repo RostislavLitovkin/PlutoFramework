@@ -42,7 +42,7 @@ namespace Opal.NetApi.Generated.Model.pallet_referenda.pallet
         
         /// <summary>
         /// >> DepositSlashed
-        /// A deposit has been slashaed.
+        /// A deposit has been slashed.
         /// </summary>
         DepositSlashed = 3,
         
@@ -118,7 +118,7 @@ namespace Opal.NetApi.Generated.Model.pallet_referenda.pallet
     }
     
     /// <summary>
-    /// >> 82 - Variant[pallet_referenda.pallet.Event]
+    /// >> 91 - Variant[pallet_referenda.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

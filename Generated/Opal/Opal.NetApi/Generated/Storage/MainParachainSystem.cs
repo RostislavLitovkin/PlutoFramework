@@ -40,14 +40,14 @@ namespace Opal.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "AggregatedUnincludedSegment"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded_segment.SegmentTracker)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "PendingValidationCode"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "NewValidationCode"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "ValidationData"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.polkadot_primitives.v6.PersistedValidationData)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "ValidationData"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.polkadot_primitives.v8.PersistedValidationData)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "DidSetValidationCode"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "LastRelayChainBlockNumber"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "UpgradeRestrictionSignal"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.polkadot_primitives.v6.EnumUpgradeRestriction>)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "UpgradeGoAhead"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.polkadot_primitives.v6.EnumUpgradeGoAhead>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "UpgradeRestrictionSignal"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.polkadot_primitives.v8.EnumUpgradeRestriction>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "UpgradeGoAhead"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.polkadot_primitives.v8.EnumUpgradeGoAhead>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "RelayStateProof"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "RelevantMessagingState"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.cumulus_pallet_parachain_system.relay_state_snapshot.MessagingStateSnapshot)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "HostConfiguration"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.polkadot_primitives.v6.AbridgedHostConfiguration)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "HostConfiguration"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.polkadot_primitives.v8.AbridgedHostConfiguration)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "LastDmqMqcHead"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.cumulus_primitives_parachain_inherent.MessageQueueChain)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "LastHrmpMqcHeads"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Types.Base.BTreeMapT4)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "ProcessedDownwardMessages"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
@@ -59,7 +59,6 @@ namespace Opal.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "AnnouncedHrmpMessagesPerCandidate"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "ReservedXcmpWeightOverride"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.sp_weights.weight_v2.Weight)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "ReservedDmpWeightOverride"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.sp_weights.weight_v2.Weight)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "AuthorizedUpgrade"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.cumulus_pallet_parachain_system.CodeUpgradeAuthorization)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "CustomValidationHeadData"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>)));
         }
         
@@ -237,10 +236,10 @@ namespace Opal.NetApi.Generated.Storage
         ///  This value is expected to be set only once per block and it's never stored
         ///  in the trie.
         /// </summary>
-        public async Task<Opal.NetApi.Generated.Model.polkadot_primitives.v6.PersistedValidationData> ValidationData(string blockhash, CancellationToken token)
+        public async Task<Opal.NetApi.Generated.Model.polkadot_primitives.v8.PersistedValidationData> ValidationData(string blockhash, CancellationToken token)
         {
             string parameters = ParachainSystemStorage.ValidationDataParams();
-            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.polkadot_primitives.v6.PersistedValidationData>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.polkadot_primitives.v8.PersistedValidationData>(parameters, blockhash, token);
             return result;
         }
         
@@ -340,10 +339,10 @@ namespace Opal.NetApi.Generated.Storage
         ///  relay-chain. This value is ephemeral which means it doesn't hit the storage. This value is
         ///  set after the inherent.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.polkadot_primitives.v6.EnumUpgradeRestriction>> UpgradeRestrictionSignal(string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.polkadot_primitives.v8.EnumUpgradeRestriction>> UpgradeRestrictionSignal(string blockhash, CancellationToken token)
         {
             string parameters = ParachainSystemStorage.UpgradeRestrictionSignalParams();
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.polkadot_primitives.v6.EnumUpgradeRestriction>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.polkadot_primitives.v8.EnumUpgradeRestriction>>(parameters, blockhash, token);
             return result;
         }
         
@@ -377,10 +376,10 @@ namespace Opal.NetApi.Generated.Storage
         ///  relay-chain. This value is ephemeral which means it doesn't hit the storage. This value is
         ///  set after the inherent.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.polkadot_primitives.v6.EnumUpgradeGoAhead>> UpgradeGoAhead(string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.polkadot_primitives.v8.EnumUpgradeGoAhead>> UpgradeGoAhead(string blockhash, CancellationToken token)
         {
             string parameters = ParachainSystemStorage.UpgradeGoAheadParams();
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.polkadot_primitives.v6.EnumUpgradeGoAhead>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.polkadot_primitives.v8.EnumUpgradeGoAhead>>(parameters, blockhash, token);
             return result;
         }
         
@@ -496,10 +495,10 @@ namespace Opal.NetApi.Generated.Storage
         /// 
         ///  This data is also absent from the genesis.
         /// </summary>
-        public async Task<Opal.NetApi.Generated.Model.polkadot_primitives.v6.AbridgedHostConfiguration> HostConfiguration(string blockhash, CancellationToken token)
+        public async Task<Opal.NetApi.Generated.Model.polkadot_primitives.v8.AbridgedHostConfiguration> HostConfiguration(string blockhash, CancellationToken token)
         {
             string parameters = ParachainSystemStorage.HostConfigurationParams();
-            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.polkadot_primitives.v6.AbridgedHostConfiguration>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.polkadot_primitives.v8.AbridgedHostConfiguration>(parameters, blockhash, token);
             return result;
         }
         
@@ -857,35 +856,6 @@ namespace Opal.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> AuthorizedUpgradeParams
-        ///  The next authorized upgrade, if there is one.
-        /// </summary>
-        public static string AuthorizedUpgradeParams()
-        {
-            return RequestGenerator.GetStorage("ParachainSystem", "AuthorizedUpgrade", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
-        }
-        
-        /// <summary>
-        /// >> AuthorizedUpgradeDefault
-        /// Default value as hex string
-        /// </summary>
-        public static string AuthorizedUpgradeDefault()
-        {
-            return "0x00";
-        }
-        
-        /// <summary>
-        /// >> AuthorizedUpgrade
-        ///  The next authorized upgrade, if there is one.
-        /// </summary>
-        public async Task<Opal.NetApi.Generated.Model.cumulus_pallet_parachain_system.CodeUpgradeAuthorization> AuthorizedUpgrade(string blockhash, CancellationToken token)
-        {
-            string parameters = ParachainSystemStorage.AuthorizedUpgradeParams();
-            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.cumulus_pallet_parachain_system.CodeUpgradeAuthorization>(parameters, blockhash, token);
-            return result;
-        }
-        
-        /// <summary>
         /// >> CustomValidationHeadDataParams
         ///  A custom head data that should be returned as result of `validate_block`.
         /// 
@@ -946,29 +916,6 @@ namespace Opal.NetApi.Generated.Storage
             byteArray.AddRange(message.Encode());
             return new Method(20, "ParachainSystem", 1, "sudo_send_upward_message", byteArray.ToArray());
         }
-        
-        /// <summary>
-        /// >> authorize_upgrade
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method AuthorizeUpgrade(Opal.NetApi.Generated.Model.primitive_types.H256 code_hash, Substrate.NetApi.Model.Types.Primitive.Bool check_version)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(code_hash.Encode());
-            byteArray.AddRange(check_version.Encode());
-            return new Method(20, "ParachainSystem", 2, "authorize_upgrade", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> enact_authorized_upgrade
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method EnactAuthorizedUpgrade(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> code)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(code.Encode());
-            return new Method(20, "ParachainSystem", 3, "enact_authorized_upgrade", byteArray.ToArray());
-        }
     }
     
     /// <summary>
@@ -976,6 +923,17 @@ namespace Opal.NetApi.Generated.Storage
     /// </summary>
     public sealed class ParachainSystemConstants
     {
+        
+        /// <summary>
+        /// >> SelfParaId
+        ///  Returns the parachain ID we are running with.
+        /// </summary>
+        public Opal.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id SelfParaId()
+        {
+            var result = new Opal.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id();
+            result.Create("0xF5070000");
+            return result;
+        }
     }
     
     /// <summary>

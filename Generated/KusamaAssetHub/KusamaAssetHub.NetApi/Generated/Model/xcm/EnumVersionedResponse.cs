@@ -38,7 +38,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.xcm
     }
     
     /// <summary>
-    /// >> 281 - Variant[xcm.VersionedResponse]
+    /// >> 285 - Variant[xcm.VersionedResponse]
     /// </summary>
     public sealed class EnumVersionedResponse : BaseEnumRust<VersionedResponse>
     {

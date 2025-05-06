@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.sp_weights
     
     
     /// <summary>
-    /// >> 507 - Composite[sp_weights.RuntimeDbWeight]
+    /// >> 496 - Composite[sp_weights.RuntimeDbWeight]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RuntimeDbWeight : BaseType

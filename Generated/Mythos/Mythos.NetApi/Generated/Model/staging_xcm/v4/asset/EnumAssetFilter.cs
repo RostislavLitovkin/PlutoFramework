@@ -33,7 +33,7 @@ namespace Mythos.NetApi.Generated.Model.staging_xcm.v4.asset
     }
     
     /// <summary>
-    /// >> 111 - Variant[staging_xcm.v4.asset.AssetFilter]
+    /// >> 329 - Variant[staging_xcm.v4.asset.AssetFilter]
     /// </summary>
     public sealed class EnumAssetFilter : BaseEnumRust<AssetFilter>
     {

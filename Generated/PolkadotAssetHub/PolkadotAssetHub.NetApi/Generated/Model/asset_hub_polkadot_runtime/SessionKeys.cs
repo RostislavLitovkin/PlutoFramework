@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
     
     
     /// <summary>
-    /// >> 252 - Composite[asset_hub_polkadot_runtime.SessionKeys]
+    /// >> 257 - Composite[asset_hub_polkadot_runtime.SessionKeys]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SessionKeys : BaseType

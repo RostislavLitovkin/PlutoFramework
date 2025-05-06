@@ -75,10 +75,22 @@ namespace Opal.NetApi.Generated.Model.pallet_ranked_collective.pallet
         /// The origin is not sufficiently privileged to do the operation.
         /// </summary>
         NoPermission = 8,
+        
+        /// <summary>
+        /// >> SameMember
+        /// The new member to exchange is the same as the old member
+        /// </summary>
+        SameMember = 9,
+        
+        /// <summary>
+        /// >> TooManyMembers
+        /// The max member count for the rank has been reached.
+        /// </summary>
+        TooManyMembers = 10,
     }
     
     /// <summary>
-    /// >> 519 - Variant[pallet_ranked_collective.pallet.Error]
+    /// >> 592 - Variant[pallet_ranked_collective.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

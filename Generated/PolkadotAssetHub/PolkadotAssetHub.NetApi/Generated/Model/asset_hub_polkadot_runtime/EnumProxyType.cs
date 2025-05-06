@@ -58,7 +58,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
     }
     
     /// <summary>
-    /// >> 128 - Variant[asset_hub_polkadot_runtime.ProxyType]
+    /// >> 130 - Variant[asset_hub_polkadot_runtime.ProxyType]
     /// </summary>
     public sealed class EnumProxyType : BaseEnum<ProxyType>
     {

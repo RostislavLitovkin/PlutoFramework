@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_referenda.types
     
     
     /// <summary>
-    /// >> 525 - Composite[pallet_referenda.types.DecidingStatus]
+    /// >> 598 - Composite[pallet_referenda.types.DecidingStatus]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DecidingStatus : BaseType

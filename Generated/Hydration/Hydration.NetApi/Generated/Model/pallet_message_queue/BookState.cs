@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_message_queue
     
     
     /// <summary>
-    /// >> 727 - Composite[pallet_message_queue.BookState]
+    /// >> 799 - Composite[pallet_message_queue.BookState]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BookState : BaseType

@@ -127,6 +127,16 @@ namespace Opal.NetApi.Generated.Model.opal_runtime
         Scheduler = 49,
         
         /// <summary>
+        /// >> FinancialCouncil
+        /// </summary>
+        FinancialCouncil = 97,
+        
+        /// <summary>
+        /// >> FinancialCouncilMembership
+        /// </summary>
+        FinancialCouncilMembership = 98,
+        
+        /// <summary>
         /// >> XcmpQueue
         /// </summary>
         XcmpQueue = 50,
@@ -145,6 +155,11 @@ namespace Opal.NetApi.Generated.Model.opal_runtime
         /// >> DmpQueue
         /// </summary>
         DmpQueue = 53,
+        
+        /// <summary>
+        /// >> MessageQueue
+        /// </summary>
+        MessageQueue = 54,
         
         /// <summary>
         /// >> Configuration
@@ -208,7 +223,7 @@ namespace Opal.NetApi.Generated.Model.opal_runtime
     }
     
     /// <summary>
-    /// >> 20 - Variant[opal_runtime.RuntimeEvent]
+    /// >> 21 - Variant[opal_runtime.RuntimeEvent]
     /// </summary>
     public sealed class EnumRuntimeEvent : BaseEnumRust<RuntimeEvent>
     {
@@ -239,10 +254,13 @@ namespace Opal.NetApi.Generated.Model.opal_runtime
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_ranked_collective.pallet.EnumEvent>(RuntimeEvent.FellowshipCollective);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_referenda.pallet.EnumEvent>(RuntimeEvent.FellowshipReferenda);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_scheduler.pallet.EnumEvent>(RuntimeEvent.Scheduler);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_collective.pallet.EnumEvent>(RuntimeEvent.FinancialCouncil);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_membership.pallet.EnumEvent>(RuntimeEvent.FinancialCouncilMembership);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.pallet.EnumEvent>(RuntimeEvent.XcmpQueue);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_xcm.pallet.EnumEvent>(RuntimeEvent.PolkadotXcm);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.cumulus_pallet_xcm.pallet.EnumEvent>(RuntimeEvent.CumulusXcm);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.cumulus_pallet_dmp_queue.pallet.EnumEvent>(RuntimeEvent.DmpQueue);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_message_queue.pallet.EnumEvent>(RuntimeEvent.MessageQueue);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_configuration.pallet.EnumEvent>(RuntimeEvent.Configuration);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_common.pallet.EnumEvent>(RuntimeEvent.Common);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_structure.pallet.EnumEvent>(RuntimeEvent.Structure);

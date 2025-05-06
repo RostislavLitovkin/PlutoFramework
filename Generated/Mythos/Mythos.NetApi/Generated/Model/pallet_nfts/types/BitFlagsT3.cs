@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 351 - Composite[pallet_nfts.types.BitFlagsT3]
+    /// >> 410 - Composite[pallet_nfts.types.BitFlagsT3]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BitFlagsT3 : BaseType

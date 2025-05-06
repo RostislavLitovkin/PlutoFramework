@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_election_provider_multi_phase
     
     
     /// <summary>
-    /// >> 668 - Composite[pallet_election_provider_multi_phase.ReadySolution]
+    /// >> 658 - Composite[pallet_election_provider_multi_phase.ReadySolution]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ReadySolution : BaseType

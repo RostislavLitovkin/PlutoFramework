@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
     
     
     /// <summary>
-    /// >> 302 - Composite[up_data_structs.CreateNftData]
+    /// >> 363 - Composite[up_data_structs.CreateNftData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CreateNftData : BaseType
@@ -27,7 +27,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
         /// <summary>
         /// >> properties
         /// </summary>
-        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13 Properties { get; set; }
+        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18 Properties { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Properties = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13();
+            Properties = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18();
             Properties.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.sp_consensus_beefy.ecdsa_crypto
     
     
     /// <summary>
-    /// >> 439 - Composite[sp_consensus_beefy.ecdsa_crypto.Signature]
+    /// >> 428 - Composite[sp_consensus_beefy.ecdsa_crypto.Signature]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Signature : BaseType

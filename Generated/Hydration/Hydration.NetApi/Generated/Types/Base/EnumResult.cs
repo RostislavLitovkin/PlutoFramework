@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Types.Base
     }
     
     /// <summary>
-    /// >> 38 - Variant[Result]
+    /// >> 410 - Variant[Result]
     /// </summary>
     public sealed class EnumResult : BaseEnumRust<Result>
     {
@@ -43,8 +43,8 @@ namespace Hydration.NetApi.Generated.Types.Base
         /// </summary>
         public EnumResult()
         {
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseTuple>(Result.Ok);
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Result.Err);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.frame_support.dispatch.PostDispatchInfo>(Result.Ok);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.sp_runtime.DispatchErrorWithPostInfo>(Result.Err);
         }
     }
 }

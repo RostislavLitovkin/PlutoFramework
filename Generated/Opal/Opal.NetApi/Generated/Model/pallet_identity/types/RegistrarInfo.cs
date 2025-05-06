@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_identity.types
     
     
     /// <summary>
-    /// >> 475 - Composite[pallet_identity.types.RegistrarInfo]
+    /// >> 544 - Composite[pallet_identity.types.RegistrarInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RegistrarInfo : BaseType

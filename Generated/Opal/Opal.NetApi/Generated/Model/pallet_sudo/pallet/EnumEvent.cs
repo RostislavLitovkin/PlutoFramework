@@ -35,14 +35,20 @@ namespace Opal.NetApi.Generated.Model.pallet_sudo.pallet
         KeyChanged = 1,
         
         /// <summary>
+        /// >> KeyRemoved
+        /// The key was permanently removed.
+        /// </summary>
+        KeyRemoved = 2,
+        
+        /// <summary>
         /// >> SudoAsDone
         /// A [sudo_as](Pallet::sudo_as) call just took place.
         /// </summary>
-        SudoAsDone = 2,
+        SudoAsDone = 3,
     }
     
     /// <summary>
-    /// >> 42 - Variant[pallet_sudo.pallet.Event]
+    /// >> 44 - Variant[pallet_sudo.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -54,7 +60,8 @@ namespace Opal.NetApi.Generated.Model.pallet_sudo.pallet
         public EnumEvent()
         {
 				AddTypeDecoder<Opal.NetApi.Generated.Types.Base.EnumResult>(Event.Sudid);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.KeyChanged);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.KeyChanged);
+				AddTypeDecoder<BaseVoid>(Event.KeyRemoved);
 				AddTypeDecoder<Opal.NetApi.Generated.Types.Base.EnumResult>(Event.SudoAsDone);
         }
     }

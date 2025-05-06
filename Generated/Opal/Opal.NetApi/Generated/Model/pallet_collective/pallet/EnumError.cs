@@ -87,10 +87,16 @@ namespace Opal.NetApi.Generated.Model.pallet_collective.pallet
         /// Prime account is not a member
         /// </summary>
         PrimeAccountNotMember = 10,
+        
+        /// <summary>
+        /// >> ProposalActive
+        /// Proposal is still active.
+        /// </summary>
+        ProposalActive = 11,
     }
     
     /// <summary>
-    /// >> 509 - Variant[pallet_collective.pallet.Error]
+    /// >> 618 - Variant[pallet_collective.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

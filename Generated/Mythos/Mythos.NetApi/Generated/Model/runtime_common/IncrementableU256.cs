@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.runtime_common
     
     
     /// <summary>
-    /// >> 43 - Composite[runtime_common.IncrementableU256]
+    /// >> 47 - Composite[runtime_common.IncrementableU256]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class IncrementableU256 : BaseType

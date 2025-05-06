@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.bounded_collections.bounded_btree_map
     
     
     /// <summary>
-    /// >> 596 - Composite[bounded_collections.bounded_btree_map.BoundedBTreeMapT3]
+    /// >> 677 - Composite[bounded_collections.bounded_btree_map.BoundedBTreeMapT3]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedBTreeMapT3 : BaseType

@@ -49,12 +49,14 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
         /// <summary>
         /// >> SellExecuted
         /// Sell trade executed. Trade fee paid in asset leaving the pool (already subtracted from amount_out).
+        /// Deprecated. Replaced by pallet_broadcast::Swapped
         /// </summary>
         SellExecuted = 4,
         
         /// <summary>
         /// >> BuyExecuted
         /// Buy trade executed. Trade fee paid in asset entering the pool (already included in amount_in).
+        /// Deprecated. Replaced by pallet_broadcast::Swapped
         /// </summary>
         BuyExecuted = 5,
         
@@ -78,7 +80,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
     }
     
     /// <summary>
-    /// >> 106 - Variant[pallet_stableswap.pallet.Event]
+    /// >> 429 - Variant[pallet_stableswap.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -89,10 +91,10 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U32>, Hydration.NetApi.Generated.Types.Base.NonZeroU16, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>>(Event.PoolCreated);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U32>, Hydration.NetApi.Generated.Types.Base.NonZeroU16, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.pallet_stableswap.types.PoolPegInfo>>>(Event.PoolCreated);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>>(Event.FeeUpdated);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.pallet_stableswap.types.AssetAmount>>>(Event.LiquidityAdded);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.pallet_stableswap.types.AssetAmount>, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.LiquidityRemoved);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.hydradx_traits.stableswap.AssetAmount>>>(Event.LiquidityAdded);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.hydradx_traits.stableswap.AssetAmount>, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.LiquidityRemoved);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.SellExecuted);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.BuyExecuted);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.pallet_stableswap.types.Tradability>>(Event.TradableStateUpdated);

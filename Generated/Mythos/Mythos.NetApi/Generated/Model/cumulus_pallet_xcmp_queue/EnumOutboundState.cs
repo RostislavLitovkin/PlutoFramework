@@ -33,7 +33,7 @@ namespace Mythos.NetApi.Generated.Model.cumulus_pallet_xcmp_queue
     }
     
     /// <summary>
-    /// >> 402 - Variant[cumulus_pallet_xcmp_queue.OutboundState]
+    /// >> 500 - Variant[cumulus_pallet_xcmp_queue.OutboundState]
     /// </summary>
     public sealed class EnumOutboundState : BaseEnum<OutboundState>
     {

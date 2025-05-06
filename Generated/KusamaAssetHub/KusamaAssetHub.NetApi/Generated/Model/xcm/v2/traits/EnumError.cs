@@ -153,7 +153,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.xcm.v2.traits
     }
     
     /// <summary>
-    /// >> 285 - Variant[xcm.v2.traits.Error]
+    /// >> 289 - Variant[xcm.v2.traits.Error]
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>
     {

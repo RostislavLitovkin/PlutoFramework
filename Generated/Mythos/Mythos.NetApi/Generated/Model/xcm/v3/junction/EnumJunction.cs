@@ -73,7 +73,7 @@ namespace Mythos.NetApi.Generated.Model.xcm.v3.junction
     }
     
     /// <summary>
-    /// >> 135 - Variant[xcm.v3.junction.Junction]
+    /// >> 141 - Variant[xcm.v3.junction.Junction]
     /// </summary>
     public sealed class EnumJunction : BaseEnumRust<Junction>
     {

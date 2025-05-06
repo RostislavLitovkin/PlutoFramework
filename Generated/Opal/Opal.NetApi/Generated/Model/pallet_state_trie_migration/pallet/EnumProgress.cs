@@ -38,7 +38,7 @@ namespace Opal.NetApi.Generated.Model.pallet_state_trie_migration.pallet
     }
     
     /// <summary>
-    /// >> 93 - Variant[pallet_state_trie_migration.pallet.Progress]
+    /// >> 102 - Variant[pallet_state_trie_migration.pallet.Progress]
     /// </summary>
     public sealed class EnumProgress : BaseEnumRust<Progress>
     {

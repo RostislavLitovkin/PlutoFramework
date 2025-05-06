@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_claims
     
     
     /// <summary>
-    /// >> 778 - Composite[pallet_claims.ValidateClaim]
+    /// >> 852 - Composite[pallet_claims.ValidateClaim]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ValidateClaim : BaseType

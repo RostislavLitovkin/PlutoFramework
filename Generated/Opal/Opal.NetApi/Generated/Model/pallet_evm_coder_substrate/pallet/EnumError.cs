@@ -38,7 +38,7 @@ namespace Opal.NetApi.Generated.Model.pallet_evm_coder_substrate.pallet
     }
     
     /// <summary>
-    /// >> 659 - Variant[pallet_evm_coder_substrate.pallet.Error]
+    /// >> 740 - Variant[pallet_evm_coder_substrate.pallet.Error]
     /// DispatchError is opaque, but we need to somehow extract correct error in case of OutOfGas failure
     /// So we have this pallet, which defines OutOfGas error, and knews its own id to check if DispatchError
     /// is thrown because of it

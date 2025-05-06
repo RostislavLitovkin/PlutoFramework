@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_multisig
     
     
     /// <summary>
-    /// >> 394 - Composite[pallet_multisig.Multisig]
+    /// >> 405 - Composite[pallet_multisig.Multisig]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Multisig : BaseType
@@ -39,7 +39,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_multisig
         /// <summary>
         /// >> approvals
         /// </summary>
-        public KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23 Approvals { get; set; }
+        public KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24 Approvals { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -68,7 +68,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_multisig
             Deposit.Decode(byteArray, ref p);
             Depositor = new KusamaAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Depositor.Decode(byteArray, ref p);
-            Approvals = new KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23();
+            Approvals = new KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24();
             Approvals.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

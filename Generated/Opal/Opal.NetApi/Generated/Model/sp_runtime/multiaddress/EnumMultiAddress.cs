@@ -48,7 +48,7 @@ namespace Opal.NetApi.Generated.Model.sp_runtime.multiaddress
     }
     
     /// <summary>
-    /// >> 116 - Variant[sp_runtime.multiaddress.MultiAddress]
+    /// >> 124 - Variant[sp_runtime.multiaddress.MultiAddress]
     /// </summary>
     public sealed class EnumMultiAddress : BaseEnumRust<MultiAddress>
     {

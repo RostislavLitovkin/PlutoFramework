@@ -40,10 +40,15 @@ namespace Hydration.NetApi.Generated.Model.hydradx_traits.router
         /// >> Omnipool
         /// </summary>
         Omnipool = 3,
+        
+        /// <summary>
+        /// >> Aave
+        /// </summary>
+        Aave = 4,
     }
     
     /// <summary>
-    /// >> 151 - Variant[hydradx_traits.router.PoolType]
+    /// >> 235 - Variant[hydradx_traits.router.PoolType]
     /// </summary>
     public sealed class EnumPoolType : BaseEnumRust<PoolType>
     {
@@ -57,6 +62,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_traits.router
 				AddTypeDecoder<BaseVoid>(PoolType.LBP);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(PoolType.Stableswap);
 				AddTypeDecoder<BaseVoid>(PoolType.Omnipool);
+				AddTypeDecoder<BaseVoid>(PoolType.Aave);
         }
     }
 }

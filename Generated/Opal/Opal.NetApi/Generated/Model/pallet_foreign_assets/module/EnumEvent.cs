@@ -27,10 +27,21 @@ namespace Opal.NetApi.Generated.Model.pallet_foreign_assets.module
         /// The foreign asset registered.
         /// </summary>
         ForeignAssetRegistered = 0,
+        
+        /// <summary>
+        /// >> MigrationStatus
+        /// The migration status.
+        /// </summary>
+        MigrationStatus = 1,
+        
+        /// <summary>
+        /// >> ForeignAssetMoved
+        /// </summary>
+        ForeignAssetMoved = 2,
     }
     
     /// <summary>
-    /// >> 372 - Variant[pallet_foreign_assets.module.Event]
+    /// >> 436 - Variant[pallet_foreign_assets.module.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -42,6 +53,8 @@ namespace Opal.NetApi.Generated.Model.pallet_foreign_assets.module
         public EnumEvent()
         {
 				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.xcm.EnumVersionedAssetId>>(Event.ForeignAssetRegistered);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_foreign_assets.EnumMigrationStatus>(Event.MigrationStatus);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.xcm.EnumVersionedAssetId, Opal.NetApi.Generated.Model.xcm.EnumVersionedAssetId>>(Event.ForeignAssetMoved);
         }
     }
 }

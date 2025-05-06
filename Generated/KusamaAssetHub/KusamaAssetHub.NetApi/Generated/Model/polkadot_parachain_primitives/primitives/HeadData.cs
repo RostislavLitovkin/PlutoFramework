@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.polkadot_parachain_primitives.pr
     
     
     /// <summary>
-    /// >> 188 - Composite[polkadot_parachain_primitives.primitives.HeadData]
+    /// >> 193 - Composite[polkadot_parachain_primitives.primitives.HeadData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class HeadData : BaseType

@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_message_queue
     
     
     /// <summary>
-    /// >> 431 - Composite[pallet_message_queue.Neighbours]
+    /// >> 529 - Composite[pallet_message_queue.Neighbours]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Neighbours : BaseType

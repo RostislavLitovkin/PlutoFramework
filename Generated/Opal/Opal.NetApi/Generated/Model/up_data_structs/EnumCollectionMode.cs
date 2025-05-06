@@ -38,7 +38,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
     }
     
     /// <summary>
-    /// >> 271 - Variant[up_data_structs.CollectionMode]
+    /// >> 332 - Variant[up_data_structs.CollectionMode]
     /// </summary>
     public sealed class EnumCollectionMode : BaseEnumRust<CollectionMode>
     {

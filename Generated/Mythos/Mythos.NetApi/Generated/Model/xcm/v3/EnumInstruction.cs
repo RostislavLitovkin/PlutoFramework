@@ -263,7 +263,7 @@ namespace Mythos.NetApi.Generated.Model.xcm.v3
     }
     
     /// <summary>
-    /// >> 299 - Variant[xcm.v3.Instruction]
+    /// >> 335 - Variant[xcm.v3.Instruction]
     /// </summary>
     public sealed class EnumInstruction : BaseEnumRust<Instruction>
     {

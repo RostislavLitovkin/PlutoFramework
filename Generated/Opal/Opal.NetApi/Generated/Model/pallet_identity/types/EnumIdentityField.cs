@@ -63,7 +63,7 @@ namespace Opal.NetApi.Generated.Model.pallet_identity.types
     }
     
     /// <summary>
-    /// >> 184 - Variant[pallet_identity.types.IdentityField]
+    /// >> 210 - Variant[pallet_identity.types.IdentityField]
     /// </summary>
     public sealed class EnumIdentityField : BaseEnum<IdentityField>
     {

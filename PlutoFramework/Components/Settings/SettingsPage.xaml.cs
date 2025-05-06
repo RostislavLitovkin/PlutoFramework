@@ -172,12 +172,12 @@ public partial class SettingsPage : ContentPage
 
     private async void OnCreateNewPropertyClicked(object sender, TappedEventArgs e)
     {
-        var property = await XcavatePropertyDatabase.GetPropertyAsync() ?? new UniqueryPlus.Metadata.XcavateMetadata
+        /*var property = await XcavatePropertyDatabase.GetPropertyAsync() ?? new UniqueryPlus.Metadata.XcavateMetadata
         {
             Images = [],
             PropertyName = ""
         };
 
-        await Navigation.PushAsync(new ModifyPropertyPage(property));
+        await Navigation.PushAsync(new ModifyPropertyPage(property));*/
     }
 }

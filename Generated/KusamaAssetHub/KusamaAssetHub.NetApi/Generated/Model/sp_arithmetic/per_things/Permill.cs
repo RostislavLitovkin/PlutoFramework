@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.sp_arithmetic.per_things
     
     
     /// <summary>
-    /// >> 150 - Composite[sp_arithmetic.per_things.Permill]
+    /// >> 152 - Composite[sp_arithmetic.per_things.Permill]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Permill : BaseType

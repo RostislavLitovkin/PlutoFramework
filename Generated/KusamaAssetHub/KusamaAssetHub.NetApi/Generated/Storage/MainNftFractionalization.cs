@@ -141,9 +141,9 @@ namespace KusamaAssetHub.NetApi.Generated.Storage
         /// >> NewAssetSymbol
         ///  The newly created asset's symbol.
         /// </summary>
-        public KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT26 NewAssetSymbol()
+        public KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28 NewAssetSymbol()
         {
-            var result = new KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT26();
+            var result = new KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28();
             result.Create("0x1046524143");
             return result;
         }
@@ -152,9 +152,9 @@ namespace KusamaAssetHub.NetApi.Generated.Storage
         /// >> NewAssetName
         ///  The newly created asset's name.
         /// </summary>
-        public KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT26 NewAssetName()
+        public KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28 NewAssetName()
         {
-            var result = new KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT26();
+            var result = new KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28();
             result.Create("0x1046726163");
             return result;
         }

@@ -49,7 +49,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> settle_otc_order
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SettleOtcOrder(Substrate.NetApi.Model.Types.Primitive.U32 otc_id, Substrate.NetApi.Model.Types.Primitive.U128 amount, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.hydradx_traits.router.Trade> route)
+        public static Method SettleOtcOrder(Substrate.NetApi.Model.Types.Primitive.U32 otc_id, Substrate.NetApi.Model.Types.Primitive.U128 amount, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11 route)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(otc_id.Encode());

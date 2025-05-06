@@ -58,7 +58,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_identity.types
     }
     
     /// <summary>
-    /// >> 326 - Variant[pallet_identity.types.Judgement]
+    /// >> 160 - Variant[pallet_identity.types.Judgement]
     /// </summary>
     public sealed class EnumJudgement : BaseEnumRust<Judgement>
     {

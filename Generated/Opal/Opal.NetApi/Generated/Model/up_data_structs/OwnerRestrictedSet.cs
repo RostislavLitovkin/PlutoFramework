@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
     
     
     /// <summary>
-    /// >> 286 - Composite[up_data_structs.OwnerRestrictedSet]
+    /// >> 347 - Composite[up_data_structs.OwnerRestrictedSet]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OwnerRestrictedSet : BaseType
@@ -27,7 +27,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
         /// <summary>
         /// >> value
         /// </summary>
-        public Opal.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSet Value { get; set; }
+        public Opal.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT1 Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Opal.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSet();
+            Value = new Opal.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT1();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

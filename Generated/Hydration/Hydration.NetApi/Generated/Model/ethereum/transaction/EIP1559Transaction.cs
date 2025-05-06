@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.ethereum.transaction
     
     
     /// <summary>
-    /// >> 400 - Composite[ethereum.transaction.EIP1559Transaction]
+    /// >> 278 - Composite[ethereum.transaction.EIP1559Transaction]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class EIP1559Transaction : BaseType

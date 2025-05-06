@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.cumulus_primitives_storage_weight_reclai
     
     
     /// <summary>
-    /// >> 467 - Composite[cumulus_primitives_storage_weight_reclaim.StorageWeightReclaim]
+    /// >> 564 - Composite[cumulus_primitives_storage_weight_reclaim.StorageWeightReclaim]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class StorageWeightReclaim : BaseType

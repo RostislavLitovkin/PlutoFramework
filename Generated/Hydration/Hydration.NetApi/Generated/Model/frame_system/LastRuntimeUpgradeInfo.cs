@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.frame_system
     
     
     /// <summary>
-    /// >> 235 - Composite[frame_system.LastRuntimeUpgradeInfo]
+    /// >> 488 - Composite[frame_system.LastRuntimeUpgradeInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class LastRuntimeUpgradeInfo : BaseType

@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_democracy.types
     
     
     /// <summary>
-    /// >> 500 - Composite[pallet_democracy.types.Delegations]
+    /// >> 569 - Composite[pallet_democracy.types.Delegations]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Delegations : BaseType

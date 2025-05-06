@@ -37,9 +37,9 @@ namespace Hydration.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Referrals", "ReferralCodes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6), typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14), typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Referrals", "ReferralAccounts"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Referrals", "LinkedAccounts"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Referrals", "ReferrerShares"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -62,7 +62,7 @@ namespace Hydration.NetApi.Generated.Storage
         ///  Referral codes
         ///  Maps a referral code to an account.
         /// </summary>
-        public static string ReferralCodesParams(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 key)
+        public static string ReferralCodesParams(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14 key)
         {
             return RequestGenerator.GetStorage("Referrals", "ReferralCodes", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -83,7 +83,7 @@ namespace Hydration.NetApi.Generated.Storage
         ///  Referral codes
         ///  Maps a referral code to an account.
         /// </summary>
-        public async Task<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32> ReferralCodes(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 key, string blockhash, CancellationToken token)
+        public async Task<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32> ReferralCodes(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14 key, string blockhash, CancellationToken token)
         {
             string parameters = ReferralsStorage.ReferralCodesParams(key);
             var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>(parameters, blockhash, token);
@@ -116,10 +116,10 @@ namespace Hydration.NetApi.Generated.Storage
         ///  Referral accounts
         ///  Maps an account to a referral code.
         /// </summary>
-        public async Task<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6> ReferralAccounts(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14> ReferralAccounts(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = ReferralsStorage.ReferralAccountsParams(key);
-            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14>(parameters, blockhash, token);
             return result;
         }
         
@@ -388,7 +388,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> register_code
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method RegisterCode(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 code)
+        public static Method RegisterCode(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14 code)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(code.Encode());
@@ -399,7 +399,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> link_code
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method LinkCode(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 code)
+        public static Method LinkCode(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14 code)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(code.Encode());

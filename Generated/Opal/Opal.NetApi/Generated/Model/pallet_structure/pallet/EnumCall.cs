@@ -24,7 +24,7 @@ namespace Opal.NetApi.Generated.Model.pallet_structure.pallet
     }
     
     /// <summary>
-    /// >> 327 - Variant[pallet_structure.pallet.Call]
+    /// >> 388 - Variant[pallet_structure.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnum<Call>

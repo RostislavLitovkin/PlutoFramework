@@ -226,7 +226,7 @@ namespace Opal.NetApi.Generated.Storage
         /// </summary>
         public static string SponsoringRateLimitDefault()
         {
-            return "0x201C0000";
+            return "0x40380000";
         }
         
         /// <summary>

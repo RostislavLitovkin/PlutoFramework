@@ -8000,7 +8000,7 @@
         ],
         "Path": [
           "polkadot_primitives",
-          "v7",
+          "v8",
           "UpgradeGoAhead"
         ],
         "TypeDef": "Variant"
@@ -8089,7 +8089,7 @@
         ],
         "Path": [
           "polkadot_primitives",
-          "v7",
+          "v8",
           "PersistedValidationData"
         ],
         "TypeParams": [
@@ -8156,7 +8156,7 @@
         ],
         "Path": [
           "polkadot_primitives",
-          "v7",
+          "v8",
           "UpgradeRestriction"
         ],
         "TypeDef": "Variant"
@@ -8289,7 +8289,7 @@
         ],
         "Path": [
           "polkadot_primitives",
-          "v7",
+          "v8",
           "AbridgedHrmpChannel"
         ],
         "TypeDef": "Composite"
@@ -8349,7 +8349,7 @@
         ],
         "Path": [
           "polkadot_primitives",
-          "v7",
+          "v8",
           "AbridgedHostConfiguration"
         ],
         "TypeDef": "Composite"
@@ -8369,7 +8369,7 @@
         ],
         "Path": [
           "polkadot_primitives",
-          "v7",
+          "v8",
           "async_backing",
           "AsyncBackingParams"
         ],
@@ -8433,7 +8433,7 @@
           },
           {
             "Name": "data",
-            "TypeName": "sp_std::vec::Vec<u8>",
+            "TypeName": "alloc::vec::Vec<u8>",
             "TypeId": 14
           }
         ],
@@ -8497,54 +8497,6 @@
               }
             ],
             "Index": 1
-          },
-          {
-            "Name": "authorize_upgrade",
-            "TypeFields": [
-              {
-                "Name": "code_hash",
-                "TypeName": "T::Hash",
-                "TypeId": 13
-              },
-              {
-                "Name": "check_version",
-                "TypeName": "bool",
-                "TypeId": 8
-              }
-            ],
-            "Index": 2,
-            "Docs": [
-              "Authorize an upgrade to a given `code_hash` for the runtime. The runtime can be supplied",
-              "later.",
-              "",
-              "The `check_version` parameter sets a boolean flag for whether or not the runtime's spec",
-              "version and name should be verified on upgrade. Since the authorization only has a hash,",
-              "it cannot actually perform the verification.",
-              "",
-              "This call requires Root origin."
-            ]
-          },
-          {
-            "Name": "enact_authorized_upgrade",
-            "TypeFields": [
-              {
-                "Name": "code",
-                "TypeName": "Vec<u8>",
-                "TypeId": 14
-              }
-            ],
-            "Index": 3,
-            "Docs": [
-              "Provide the preimage (runtime binary) `code` for an upgrade that has been authorized.",
-              "",
-              "If the authorization required a version check, this call will ensure the spec name",
-              "remains unchanged and that the spec version has increased.",
-              "",
-              "Note that this function will not apply the new `code`, but only attempt to schedule the",
-              "upgrade with the Relay Chain.",
-              "",
-              "All origins are allowed."
-            ]
           }
         ],
         "Path": [
@@ -8654,7 +8606,7 @@
           },
           {
             "Name": "data",
-            "TypeName": "sp_std::vec::Vec<u8>",
+            "TypeName": "alloc::vec::Vec<u8>",
             "TypeId": 14
           }
         ],
@@ -17049,7 +17001,7 @@
               "- `max_fee`: The maximum fee that may be paid. This should just be auto-populated as:",
               "",
               "```nocompile",
-              "Self::registrars().get(reg_index).unwrap().fee",
+              "Registrars::<T>::get().get(reg_index).unwrap().fee",
               "```",
               "",
               "Emits `JudgementRequested` if successful."
@@ -22125,7 +22077,7 @@
           {
             "Name": "Version",
             "TypeId": 148,
-            "Value": "PHBlb3BsZS1wb2xrYWRvdDxwZW9wbGUtcG9sa2Fkb3QBAAAA+00PAAAAAABA3XGNXMUyYtQBAAAA173YonLKDWUBAAAA32rLaJkHYJsFAAAAN+OX/HyR9eQCAAAAQP461AH4lZoGAAAA0ryYl+7QjxUDAAAA94sni+U/RUwCAAAAqzwFcikf64sBAAAAvJ2JkE9bkj8BAAAAN8i7E1CpoqgEAAAA8/8U1atScFkDAAAAb/Uu6Fjmxb0BAAAAkbHIsWMo65IBAAAAn/tQWqc41pwBAAAA6pPj8W89aWICAAAA+8V3uddH79YBAAAAAAAAAAE=",
+            "Value": "PHBlb3BsZS1wb2xrYWRvdDxwZW9wbGUtcG9sa2Fkb3QBAAAA4FEPAAAAAABA3XGNXMUyYtQBAAAA173YonLKDWUBAAAA32rLaJkHYJsFAAAAN+OX/HyR9eQCAAAAQP461AH4lZoGAAAA0ryYl+7QjxUDAAAA94sni+U/RUwCAAAAqzwFcikf64sBAAAAvJ2JkE9bkj8BAAAAN8i7E1CpoqgEAAAA8/8U1atScFkDAAAAb/Uu6Fjmxb0BAAAAkbHIsWMo65IBAAAAn/tQWqc41pwBAAAA6pPj8W89aWICAAAA+8V3uddH79YBAAAAAAAAAAE=",
             "Docs": [
               " Get the chain's in-code version."
             ]

@@ -13,7 +13,10 @@
              xmlns:xcavateproperty="clr-namespace:PlutoFramework.Components.XcavateProperty"
              xmlns:transfer="clr-namespace:PlutoFramework.Components.TransferView"
              xmlns:account="clr-namespace:PlutoFramework.Components.Account"
+                xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
              HideSoftInputOnTapped="True"
+             xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
+             xmlns:loading="clr-namespace:PlutoFramework.Components.Loading"
                 BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
@@ -55,12 +58,18 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
+        <extrinsic:ExtrinsicStatusStackLayout />
+
         <navigationbar:NavigationBarView SelectedOption="Nfts" />
 
         <transfer:TransferView />
 
+        <assetselect:AssetSelectView />
+
         <account:NoAccountPopup />
 
         <txanalyzer:TransactionAnalyzerConfirmationView />
+
+        <loading:FullPageLoadingView />
     </AbsoluteLayout>
 </ContentPage>

@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.bp_xcm_bridge_hub_router
     
     
     /// <summary>
-    /// >> 339 - Composite[bp_xcm_bridge_hub_router.BridgeState]
+    /// >> 343 - Composite[bp_xcm_bridge_hub_router.BridgeState]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BridgeState : BaseType

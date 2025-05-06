@@ -38,7 +38,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_balances.types
     }
     
     /// <summary>
-    /// >> 256 - Variant[pallet_balances.types.Reasons]
+    /// >> 503 - Variant[pallet_balances.types.Reasons]
     /// </summary>
     public sealed class EnumReasons : BaseEnum<Reasons>
     {

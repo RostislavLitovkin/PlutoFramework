@@ -38,7 +38,7 @@ namespace Polkadot.NetApi.Generated.Model.staging_xcm.v4.traits
     }
     
     /// <summary>
-    /// >> 493 - Variant[staging_xcm.v4.traits.Outcome]
+    /// >> 482 - Variant[staging_xcm.v4.traits.Outcome]
     /// </summary>
     public sealed class EnumOutcome : BaseEnumRust<Outcome>
     {

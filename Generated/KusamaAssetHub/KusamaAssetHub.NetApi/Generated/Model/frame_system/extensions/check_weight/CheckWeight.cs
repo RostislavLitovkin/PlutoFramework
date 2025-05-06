@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.frame_system.extensions.check_we
     
     
     /// <summary>
-    /// >> 470 - Composite[frame_system.extensions.check_weight.CheckWeight]
+    /// >> 485 - Composite[frame_system.extensions.check_weight.CheckWeight]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckWeight : BaseType

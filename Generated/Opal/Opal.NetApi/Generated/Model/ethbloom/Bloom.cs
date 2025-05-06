@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.ethbloom
     
     
     /// <summary>
-    /// >> 647 - Composite[ethbloom.Bloom]
+    /// >> 728 - Composite[ethbloom.Bloom]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Bloom : BaseType

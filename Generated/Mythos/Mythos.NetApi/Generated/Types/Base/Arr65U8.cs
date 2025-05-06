@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 244 - Array
+    /// >> 271 - Array
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Array)]
     public sealed class Arr65U8 : BaseType

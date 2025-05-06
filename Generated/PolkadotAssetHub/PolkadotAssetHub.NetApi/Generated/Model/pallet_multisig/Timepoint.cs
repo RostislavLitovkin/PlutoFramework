@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_multisig
     
     
     /// <summary>
-    /// >> 126 - Composite[pallet_multisig.Timepoint]
+    /// >> 128 - Composite[pallet_multisig.Timepoint]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Timepoint : BaseType

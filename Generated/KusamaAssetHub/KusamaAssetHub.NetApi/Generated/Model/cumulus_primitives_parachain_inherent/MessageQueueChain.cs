@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.cumulus_primitives_parachain_inh
     
     
     /// <summary>
-    /// >> 200 - Composite[cumulus_primitives_parachain_inherent.MessageQueueChain]
+    /// >> 205 - Composite[cumulus_primitives_parachain_inherent.MessageQueueChain]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MessageQueueChain : BaseType

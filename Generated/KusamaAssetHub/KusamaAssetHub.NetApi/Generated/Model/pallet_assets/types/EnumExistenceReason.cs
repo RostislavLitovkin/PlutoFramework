@@ -48,7 +48,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_assets.types
     }
     
     /// <summary>
-    /// >> 411 - Variant[pallet_assets.types.ExistenceReason]
+    /// >> 426 - Variant[pallet_assets.types.ExistenceReason]
     /// </summary>
     public sealed class EnumExistenceReason : BaseEnumRust<ExistenceReason>
     {

@@ -38,7 +38,7 @@ namespace UniqueryPlus.Nfts
             return NftsCalls.BuyItem(new U32((uint)CollectionId), new U32((uint)Id), new U128(Price ?? 0));
         }
     }
-    public record XcavatePaseoNftsPalletNft : INftBase, INftTransferable, INftBurnable, INftMarketPrice, INftFractionalization, INftXcavateMetadata, INftXcavateNftMarketplace
+    public record XcavatePaseoNftsPalletNft : INftXcavateBase, INftBase, INftTransferable, INftBurnable, INftMarketPrice, INftFractionalization, INftXcavateMetadata, INftXcavateNftMarketplace
     {
         private SubstrateClientExt client;
         public NftTypeEnum Type => NftTypeEnum.XcavatePaseo;

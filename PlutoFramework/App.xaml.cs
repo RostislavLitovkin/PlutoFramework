@@ -28,6 +28,8 @@ using PlutoFramework.Components.Account;
 using PlutoFramework.Components.Kilt;
 using PlutoFramework.Components.Sumsub;
 using PlutoFramework.View;
+using PlutoFramework.Model.SQLite;
+using PlutoFramework.Components.Loading;
 
 namespace PlutoFramework;
 
@@ -116,6 +118,10 @@ public partial class App : Application
         DependencyService.Register<NoDidPopupViewModel>();
 
         DependencyService.Register<NoKYCPopupViewModel>();
+
+        DependencyService.Register<XcavatePropertyMarketplaceViewModel>();
+
+        DependencyService.Register<FullPageLoadingViewModel>();
 
         if (Preferences.Get(PreferencesModel.SHOW_WELCOME_SCREEN, true))
         {

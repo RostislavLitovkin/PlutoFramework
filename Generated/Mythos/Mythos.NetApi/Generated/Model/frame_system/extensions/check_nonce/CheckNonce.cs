@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.frame_system.extensions.check_nonce
     
     
     /// <summary>
-    /// >> 464 - Composite[frame_system.extensions.check_nonce.CheckNonce]
+    /// >> 561 - Composite[frame_system.extensions.check_nonce.CheckNonce]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckNonce : BaseType

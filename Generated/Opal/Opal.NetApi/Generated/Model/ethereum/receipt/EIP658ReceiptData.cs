@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.ethereum.receipt
     
     
     /// <summary>
-    /// >> 650 - Composite[ethereum.receipt.EIP658ReceiptData]
+    /// >> 731 - Composite[ethereum.receipt.EIP658ReceiptData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class EIP658ReceiptData : BaseType

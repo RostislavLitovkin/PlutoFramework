@@ -33,7 +33,7 @@ namespace Opal.NetApi.Generated.Model.pallet_democracy.vote
     }
     
     /// <summary>
-    /// >> 496 - Variant[pallet_democracy.vote.Voting]
+    /// >> 565 - Variant[pallet_democracy.vote.Voting]
     /// </summary>
     public sealed class EnumVoting : BaseEnumRust<Voting>
     {
@@ -43,7 +43,7 @@ namespace Opal.NetApi.Generated.Model.pallet_democracy.vote
         /// </summary>
         public EnumVoting()
         {
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30, Opal.NetApi.Generated.Model.pallet_democracy.types.Delegations, Opal.NetApi.Generated.Model.pallet_democracy.vote.PriorLock>>(Voting.Direct);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35, Opal.NetApi.Generated.Model.pallet_democracy.types.Delegations, Opal.NetApi.Generated.Model.pallet_democracy.vote.PriorLock>>(Voting.Direct);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32, Opal.NetApi.Generated.Model.pallet_democracy.conviction.EnumConviction, Opal.NetApi.Generated.Model.pallet_democracy.types.Delegations, Opal.NetApi.Generated.Model.pallet_democracy.vote.PriorLock>>(Voting.Delegating);
         }
     }

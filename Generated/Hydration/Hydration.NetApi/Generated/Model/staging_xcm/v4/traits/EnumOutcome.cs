@@ -38,7 +38,7 @@ namespace Hydration.NetApi.Generated.Model.staging_xcm.v4.traits
     }
     
     /// <summary>
-    /// >> 157 - Variant[staging_xcm.v4.traits.Outcome]
+    /// >> 466 - Variant[staging_xcm.v4.traits.Outcome]
     /// </summary>
     public sealed class EnumOutcome : BaseEnumRust<Outcome>
     {

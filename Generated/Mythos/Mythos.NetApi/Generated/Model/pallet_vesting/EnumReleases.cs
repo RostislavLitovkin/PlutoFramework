@@ -33,7 +33,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_vesting
     }
     
     /// <summary>
-    /// >> 447 - Variant[pallet_vesting.Releases]
+    /// >> 545 - Variant[pallet_vesting.Releases]
     /// </summary>
     public sealed class EnumReleases : BaseEnum<Releases>
     {

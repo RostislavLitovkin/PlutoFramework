@@ -55,10 +55,15 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
         /// >> NominationPools
         /// </summary>
         NominationPools = 8,
+        
+        /// <summary>
+        /// >> ParaRegistration
+        /// </summary>
+        ParaRegistration = 9,
     }
     
     /// <summary>
-    /// >> 194 - Variant[polkadot_runtime.ProxyType]
+    /// >> 183 - Variant[polkadot_runtime.ProxyType]
     /// </summary>
     public sealed class EnumProxyType : BaseEnum<ProxyType>
     {

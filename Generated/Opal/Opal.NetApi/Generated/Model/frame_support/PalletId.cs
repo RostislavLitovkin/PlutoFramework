@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.frame_support
     
     
     /// <summary>
-    /// >> 465 - Composite[frame_support.PalletId]
+    /// >> 534 - Composite[frame_support.PalletId]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PalletId : BaseType

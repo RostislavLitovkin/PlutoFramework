@@ -98,7 +98,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.paras.pall
     }
     
     /// <summary>
-    /// >> 322 - Variant[polkadot_runtime_parachains.paras.pallet.Call]
+    /// >> 311 - Variant[polkadot_runtime_parachains.paras.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -116,7 +116,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.paras.pall
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>(Call.force_queue_action);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.ValidationCode>(Call.add_trusted_validation_code);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.ValidationCodeHash>(Call.poke_unused_validation_code);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.PvfCheckStatement, Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.validator_app.Signature>>(Call.include_pvf_check_statement);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.PvfCheckStatement, Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.validator_app.Signature>>(Call.include_pvf_check_statement);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.force_set_most_recent_context);
         }
     }

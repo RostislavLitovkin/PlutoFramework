@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.orml_vesting
     
     
     /// <summary>
-    /// >> 46 - Composite[orml_vesting.VestingSchedule]
+    /// >> 48 - Composite[orml_vesting.VestingSchedule]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class VestingSchedule : BaseType

@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.ethereum.block
     
     
     /// <summary>
-    /// >> 651 - Composite[ethereum.block.Block]
+    /// >> 732 - Composite[ethereum.block.Block]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Block : BaseType

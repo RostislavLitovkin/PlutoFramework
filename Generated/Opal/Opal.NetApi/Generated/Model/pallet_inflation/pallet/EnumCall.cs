@@ -24,13 +24,23 @@ namespace Opal.NetApi.Generated.Model.pallet_inflation.pallet
         
         /// <summary>
         /// >> start_inflation
-        /// See [`Pallet::start_inflation`].
+        /// This method sets the inflation start date. Can be only called once.
+        /// Inflation start block can be backdated and will catch up. The method will create Treasury
+        /// account if it does not exist and perform the first inflation deposit.
+        /// 
+        /// # Permissions
+        /// 
+        /// * Root
+        /// 
+        /// # Arguments
+        /// 
+        /// * inflation_start_relay_block: The relay chain block at which inflation should start
         /// </summary>
         start_inflation = 0,
     }
     
     /// <summary>
-    /// >> 265 - Variant[pallet_inflation.pallet.Call]
+    /// >> 326 - Variant[pallet_inflation.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

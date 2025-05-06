@@ -33,7 +33,7 @@ namespace Opal.NetApi.Generated.Model.pallet_foreign_assets
     }
     
     /// <summary>
-    /// >> 332 - Variant[pallet_foreign_assets.ForeignCollectionMode]
+    /// >> 392 - Variant[pallet_foreign_assets.ForeignCollectionMode]
     /// </summary>
     public sealed class EnumForeignCollectionMode : BaseEnumRust<ForeignCollectionMode>
     {

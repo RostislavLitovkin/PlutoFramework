@@ -49,7 +49,7 @@ namespace Opal.NetApi.Generated.Storage
         /// >> transfer
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Transfer(Opal.NetApi.Generated.Model.up_data_structs.CollectionId currency_id, Substrate.NetApi.Model.Types.Primitive.U128 amount, Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiLocation dest, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit dest_weight_limit)
+        public static Method Transfer(Opal.NetApi.Generated.Model.up_data_structs.CollectionId currency_id, Substrate.NetApi.Model.Types.Primitive.U128 amount, Opal.NetApi.Generated.Model.xcm.EnumVersionedLocation dest, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit dest_weight_limit)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(currency_id.Encode());
@@ -63,7 +63,7 @@ namespace Opal.NetApi.Generated.Storage
         /// >> transfer_multiasset
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method TransferMultiasset(Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiAsset asset, Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiLocation dest, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit dest_weight_limit)
+        public static Method TransferMultiasset(Opal.NetApi.Generated.Model.xcm.EnumVersionedAsset asset, Opal.NetApi.Generated.Model.xcm.EnumVersionedLocation dest, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit dest_weight_limit)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset.Encode());
@@ -76,7 +76,7 @@ namespace Opal.NetApi.Generated.Storage
         /// >> transfer_with_fee
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method TransferWithFee(Opal.NetApi.Generated.Model.up_data_structs.CollectionId currency_id, Substrate.NetApi.Model.Types.Primitive.U128 amount, Substrate.NetApi.Model.Types.Primitive.U128 fee, Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiLocation dest, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit dest_weight_limit)
+        public static Method TransferWithFee(Opal.NetApi.Generated.Model.up_data_structs.CollectionId currency_id, Substrate.NetApi.Model.Types.Primitive.U128 amount, Substrate.NetApi.Model.Types.Primitive.U128 fee, Opal.NetApi.Generated.Model.xcm.EnumVersionedLocation dest, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit dest_weight_limit)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(currency_id.Encode());
@@ -91,7 +91,7 @@ namespace Opal.NetApi.Generated.Storage
         /// >> transfer_multiasset_with_fee
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method TransferMultiassetWithFee(Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiAsset asset, Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiAsset fee, Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiLocation dest, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit dest_weight_limit)
+        public static Method TransferMultiassetWithFee(Opal.NetApi.Generated.Model.xcm.EnumVersionedAsset asset, Opal.NetApi.Generated.Model.xcm.EnumVersionedAsset fee, Opal.NetApi.Generated.Model.xcm.EnumVersionedLocation dest, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit dest_weight_limit)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset.Encode());
@@ -105,7 +105,7 @@ namespace Opal.NetApi.Generated.Storage
         /// >> transfer_multicurrencies
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method TransferMulticurrencies(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Substrate.NetApi.Model.Types.Primitive.U128>> currencies, Substrate.NetApi.Model.Types.Primitive.U32 fee_item, Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiLocation dest, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit dest_weight_limit)
+        public static Method TransferMulticurrencies(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Substrate.NetApi.Model.Types.Primitive.U128>> currencies, Substrate.NetApi.Model.Types.Primitive.U32 fee_item, Opal.NetApi.Generated.Model.xcm.EnumVersionedLocation dest, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit dest_weight_limit)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(currencies.Encode());
@@ -119,7 +119,7 @@ namespace Opal.NetApi.Generated.Storage
         /// >> transfer_multiassets
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method TransferMultiassets(Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiAssets assets, Substrate.NetApi.Model.Types.Primitive.U32 fee_item, Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiLocation dest, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit dest_weight_limit)
+        public static Method TransferMultiassets(Opal.NetApi.Generated.Model.xcm.EnumVersionedAssets assets, Substrate.NetApi.Model.Types.Primitive.U32 fee_item, Opal.NetApi.Generated.Model.xcm.EnumVersionedLocation dest, Opal.NetApi.Generated.Model.xcm.v3.EnumWeightLimit dest_weight_limit)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(assets.Encode());
@@ -140,9 +140,9 @@ namespace Opal.NetApi.Generated.Storage
         /// >> SelfLocation
         ///  Self chain location.
         /// </summary>
-        public Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation SelfLocation()
+        public Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location SelfLocation()
         {
-            var result = new Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation();
+            var result = new Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location();
             result.Create("0x010100D51F");
             return result;
         }
@@ -158,6 +158,17 @@ namespace Opal.NetApi.Generated.Storage
         {
             var result = new Opal.NetApi.Generated.Model.sp_weights.weight_v2.Weight();
             result.Create("0x0284D717A10F");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> RateLimiterId
+        ///  The id of the RateLimiter.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Base.BaseTuple RateLimiterId()
+        {
+            var result = new Substrate.NetApi.Model.Types.Base.BaseTuple();
+            result.Create("0x");
             return result;
         }
     }
@@ -219,13 +230,13 @@ namespace Opal.NetApi.Generated.Storage
         
         /// <summary>
         /// >> InvalidAsset
-        /// The MultiAsset is invalid.
+        /// The Asset is invalid.
         /// </summary>
         InvalidAsset,
         
         /// <summary>
         /// >> DestinationNotInvertible
-        /// The destination `MultiLocation` provided cannot be inverted.
+        /// The destination `Location` provided cannot be inverted.
         /// </summary>
         DestinationNotInvertible,
         
@@ -263,7 +274,7 @@ namespace Opal.NetApi.Generated.Storage
         
         /// <summary>
         /// >> AssetIndexNonExistent
-        /// The specified index does not exist in a MultiAssets struct.
+        /// The specified index does not exist in a Assets struct.
         /// </summary>
         AssetIndexNonExistent,
         
@@ -274,15 +285,21 @@ namespace Opal.NetApi.Generated.Storage
         FeeNotEnough,
         
         /// <summary>
-        /// >> NotSupportedMultiLocation
-        /// Not supported MultiLocation
+        /// >> NotSupportedLocation
+        /// Not supported Location
         /// </summary>
-        NotSupportedMultiLocation,
+        NotSupportedLocation,
         
         /// <summary>
         /// >> MinXcmFeeNotDefined
         /// MinXcmFee not registered for certain reserve location
         /// </summary>
         MinXcmFeeNotDefined,
+        
+        /// <summary>
+        /// >> RateLimited
+        /// Asset transfer is limited by RateLimiter.
+        /// </summary>
+        RateLimited,
     }
 }

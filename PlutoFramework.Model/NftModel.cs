@@ -8,6 +8,7 @@ using PlutoFramework.Types;
 using UniqueryPlus.Metadata;
 
 using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
+using System.ComponentModel;
 
 namespace PlutoFramework.Model
 {
@@ -35,12 +36,30 @@ namespace PlutoFramework.Model
         }
     }
 
-    public class NftWrapper
+    public class NftWrapper : INotifyPropertyChanged
     {
         public NftKey? Key => NftBase is not null ? (NftBase.Type, NftBase.CollectionId, NftBase.Id) : null;
         public INftBase? NftBase { get; set; }
         public Endpoint? Endpoint { get; set; }
-        public bool Favourite { get; set; } = false;
+
+        private bool favourite = false;
+        public bool Favourite
+        {
+            get => favourite;
+            set
+            {
+                if (favourite != value)
+                {
+                    favourite = value;
+                    OnPropertyChanged(nameof(Favourite));
+                }
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propertyName) =>
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
 
         public override bool Equals(object? obj)
         {

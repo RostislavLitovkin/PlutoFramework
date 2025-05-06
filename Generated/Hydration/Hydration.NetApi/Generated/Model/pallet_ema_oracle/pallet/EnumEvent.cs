@@ -36,7 +36,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_ema_oracle.pallet
     }
     
     /// <summary>
-    /// >> 232 - Variant[pallet_ema_oracle.pallet.Event]
+    /// >> 476 - Variant[pallet_ema_oracle.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

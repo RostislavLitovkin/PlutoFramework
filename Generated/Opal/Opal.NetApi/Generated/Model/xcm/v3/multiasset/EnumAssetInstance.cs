@@ -53,7 +53,7 @@ namespace Opal.NetApi.Generated.Model.xcm.v3.multiasset
     }
     
     /// <summary>
-    /// >> 63 - Variant[xcm.v3.multiasset.AssetInstance]
+    /// >> 160 - Variant[xcm.v3.multiasset.AssetInstance]
     /// </summary>
     public sealed class EnumAssetInstance : BaseEnumRust<AssetInstance>
     {

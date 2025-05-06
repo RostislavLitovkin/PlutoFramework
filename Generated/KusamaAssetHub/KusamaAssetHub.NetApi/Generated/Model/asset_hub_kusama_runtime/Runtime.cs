@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.asset_hub_kusama_runtime
     
     
     /// <summary>
-    /// >> 474 - Composite[asset_hub_kusama_runtime.Runtime]
+    /// >> 489 - Composite[asset_hub_kusama_runtime.Runtime]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Runtime : BaseType

@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.xcm.double_encoded
     
     
     /// <summary>
-    /// >> 232 - Composite[xcm.double_encoded.DoubleEncodedT1]
+    /// >> 267 - Composite[xcm.double_encoded.DoubleEncodedT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DoubleEncodedT1 : BaseType

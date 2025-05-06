@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_democracy.types
     
     
     /// <summary>
-    /// >> 495 - Composite[pallet_democracy.types.Tally]
+    /// >> 564 - Composite[pallet_democracy.types.Tally]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Tally : BaseType

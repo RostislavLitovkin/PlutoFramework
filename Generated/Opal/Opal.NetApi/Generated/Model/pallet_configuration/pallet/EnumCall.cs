@@ -24,43 +24,37 @@ namespace Opal.NetApi.Generated.Model.pallet_configuration.pallet
         
         /// <summary>
         /// >> set_weight_to_fee_coefficient_override
-        /// See [`Pallet::set_weight_to_fee_coefficient_override`].
         /// </summary>
         set_weight_to_fee_coefficient_override = 0,
         
         /// <summary>
         /// >> set_min_gas_price_override
-        /// See [`Pallet::set_min_gas_price_override`].
         /// </summary>
         set_min_gas_price_override = 1,
         
         /// <summary>
         /// >> set_app_promotion_configuration_override
-        /// See [`Pallet::set_app_promotion_configuration_override`].
         /// </summary>
         set_app_promotion_configuration_override = 3,
         
         /// <summary>
         /// >> set_collator_selection_desired_collators
-        /// See [`Pallet::set_collator_selection_desired_collators`].
         /// </summary>
         set_collator_selection_desired_collators = 4,
         
         /// <summary>
         /// >> set_collator_selection_license_bond
-        /// See [`Pallet::set_collator_selection_license_bond`].
         /// </summary>
         set_collator_selection_license_bond = 5,
         
         /// <summary>
         /// >> set_collator_selection_kick_threshold
-        /// See [`Pallet::set_collator_selection_kick_threshold`].
         /// </summary>
         set_collator_selection_kick_threshold = 6,
     }
     
     /// <summary>
-    /// >> 320 - Variant[pallet_configuration.pallet.Call]
+    /// >> 381 - Variant[pallet_configuration.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

@@ -24,7 +24,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_dynamic_fees.pallet
     }
     
     /// <summary>
-    /// >> 104 - Variant[pallet_dynamic_fees.pallet.Event]
+    /// >> 427 - Variant[pallet_dynamic_fees.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnum<Event>

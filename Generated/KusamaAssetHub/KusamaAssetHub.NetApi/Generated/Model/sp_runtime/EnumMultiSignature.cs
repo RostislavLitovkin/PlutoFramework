@@ -38,7 +38,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.sp_runtime
     }
     
     /// <summary>
-    /// >> 378 - Variant[sp_runtime.MultiSignature]
+    /// >> 384 - Variant[sp_runtime.MultiSignature]
     /// </summary>
     public sealed class EnumMultiSignature : BaseEnumRust<MultiSignature>
     {

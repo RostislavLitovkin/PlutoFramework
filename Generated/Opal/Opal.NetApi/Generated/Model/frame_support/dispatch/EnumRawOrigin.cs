@@ -38,7 +38,7 @@ namespace Opal.NetApi.Generated.Model.frame_support.dispatch
     }
     
     /// <summary>
-    /// >> 208 - Variant[frame_support.dispatch.RawOrigin]
+    /// >> 234 - Variant[frame_support.dispatch.RawOrigin]
     /// </summary>
     public sealed class EnumRawOrigin : BaseEnumRust<RawOrigin>
     {

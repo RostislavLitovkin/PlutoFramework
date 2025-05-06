@@ -33,7 +33,7 @@ namespace Mythos.NetApi.Generated.Model.xcm.v3
     }
     
     /// <summary>
-    /// >> 114 - Variant[xcm.v3.WeightLimit]
+    /// >> 126 - Variant[xcm.v3.WeightLimit]
     /// </summary>
     public sealed class EnumWeightLimit : BaseEnumRust<WeightLimit>
     {

@@ -33,7 +33,7 @@ namespace Opal.NetApi.Generated.Model.xcm.v3.multiasset
     }
     
     /// <summary>
-    /// >> 252 - Variant[xcm.v3.multiasset.MultiAssetFilter]
+    /// >> 269 - Variant[xcm.v3.multiasset.MultiAssetFilter]
     /// </summary>
     public sealed class EnumMultiAssetFilter : BaseEnumRust<MultiAssetFilter>
     {

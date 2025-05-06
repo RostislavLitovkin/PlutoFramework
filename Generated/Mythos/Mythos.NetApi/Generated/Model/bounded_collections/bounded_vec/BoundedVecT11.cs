@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec
     
     
     /// <summary>
-    /// >> 325 - Composite[bounded_collections.bounded_vec.BoundedVecT11]
+    /// >> 294 - Composite[bounded_collections.bounded_vec.BoundedVecT11]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedVecT11 : BaseType
@@ -27,7 +27,7 @@ namespace Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec
         /// <summary>
         /// >> value
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<Mythos.NetApi.Generated.Model.account.AccountId20> Value { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Mythos.NetApi.Generated.Model.pallet_collator_staking.pallet.StakeTarget> Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Mythos.NetApi.Generated.Model.account.AccountId20>();
+            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Mythos.NetApi.Generated.Model.pallet_collator_staking.pallet.StakeTarget>();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

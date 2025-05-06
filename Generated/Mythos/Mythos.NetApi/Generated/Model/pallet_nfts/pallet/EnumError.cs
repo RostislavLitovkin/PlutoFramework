@@ -324,7 +324,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_nfts.pallet
     }
     
     /// <summary>
-    /// >> 371 - Variant[pallet_nfts.pallet.Error]
+    /// >> 430 - Variant[pallet_nfts.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_assets.types
     
     
     /// <summary>
-    /// >> 450 - Composite[pallet_assets.types.AssetMetadataT2]
+    /// >> 465 - Composite[pallet_assets.types.AssetMetadataT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetMetadataT2 : BaseType
@@ -31,11 +31,11 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_assets.types
         /// <summary>
         /// >> name
         /// </summary>
-        public KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27 Name { get; set; }
+        public KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29 Name { get; set; }
         /// <summary>
         /// >> symbol
         /// </summary>
-        public KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27 Symbol { get; set; }
+        public KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29 Symbol { get; set; }
         /// <summary>
         /// >> decimals
         /// </summary>
@@ -69,9 +69,9 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_assets.types
             var start = p;
             Deposit = new Substrate.NetApi.Model.Types.Primitive.U128();
             Deposit.Decode(byteArray, ref p);
-            Name = new KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27();
+            Name = new KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29();
             Name.Decode(byteArray, ref p);
-            Symbol = new KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27();
+            Symbol = new KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29();
             Symbol.Decode(byteArray, ref p);
             Decimals = new Substrate.NetApi.Model.Types.Primitive.U8();
             Decimals.Decode(byteArray, ref p);

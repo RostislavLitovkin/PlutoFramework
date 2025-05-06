@@ -44,8 +44,13 @@ namespace PlutoFramework.Components.TransactionAnalyzer
         [ObservableProperty]
         private TempPayload payload;
 
+
         [ObservableProperty]
-        private bool extrinsicFailedIsVisible = false;
+        [NotifyPropertyChangedFor(nameof(ExtrinsicFailedIsVisible))]
+        private string extrinsicFailedMessage = "";
+
+        public bool ExtrinsicFailedIsVisible => ExtrinsicFailedMessage != "";
+
 
         [ObservableProperty]
         private ButtonStateEnum confirmButtonState = ButtonStateEnum.Enabled;
@@ -142,7 +147,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
 
                         if (extrinsicResult == ExtrinsicResult.Failed)
                         {
-                            ExtrinsicFailedIsVisible = true;
+                            ExtrinsicFailedMessage = TransactionAnalyzerModel.GetExtrinsicFailedMessage(extrinsicDetails.Events);
                             ConfirmButtonState = ButtonStateEnum.Warning;
                         }
 
@@ -299,6 +304,8 @@ namespace PlutoFramework.Components.TransactionAnalyzer
             EstimatedFee = "Estimated fee: Loading";
             EstimatedTime = "Estimated time: 6 sec";
             OnConfirm = null;
+            ExtrinsicFailedMessage = "";
+            ConfirmButtonState = ButtonStateEnum.Enabled;
 
             var analyzedOutcomeViewModel = DependencyService.Get<AnalyzedOutcomeViewModel>();
             analyzedOutcomeViewModel.SetToDefault();

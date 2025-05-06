@@ -48,7 +48,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_currencies.module
     }
     
     /// <summary>
-    /// >> 629 - Variant[pallet_currencies.module.Error]
+    /// >> 699 - Variant[pallet_currencies.module.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

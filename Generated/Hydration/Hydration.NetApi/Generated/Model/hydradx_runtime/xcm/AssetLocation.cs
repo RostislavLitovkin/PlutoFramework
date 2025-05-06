@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime.xcm
     
     
     /// <summary>
-    /// >> 73 - Composite[hydradx_runtime.xcm.AssetLocation]
+    /// >> 198 - Composite[hydradx_runtime.xcm.AssetLocation]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetLocation : BaseType

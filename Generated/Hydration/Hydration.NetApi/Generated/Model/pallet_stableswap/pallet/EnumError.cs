@@ -165,10 +165,28 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
         /// Failed to retrieve asset decimals.
         /// </summary>
         UnknownDecimals = 23,
+        
+        /// <summary>
+        /// >> IncorrectInitialPegs
+        /// List of provided pegs is incorrect.
+        /// </summary>
+        IncorrectInitialPegs = 24,
+        
+        /// <summary>
+        /// >> MissingTargetPegOracle
+        /// Failed to retrieve oracle entry.
+        /// </summary>
+        MissingTargetPegOracle = 25,
+        
+        /// <summary>
+        /// >> IncorrectAssetDecimals
+        /// Creating pool with pegs is not allowed for asset with different decimals.
+        /// </summary>
+        IncorrectAssetDecimals = 26,
     }
     
     /// <summary>
-    /// >> 611 - Variant[pallet_stableswap.pallet.Error]
+    /// >> 680 - Variant[pallet_stableswap.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

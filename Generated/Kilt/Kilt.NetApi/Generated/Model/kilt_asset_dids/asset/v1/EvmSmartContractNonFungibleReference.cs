@@ -29,7 +29,7 @@ namespace Kilt.NetApi.Generated.Model.kilt_asset_dids.asset.v1
         /// </summary>
         public Kilt.NetApi.Generated.Model.kilt_asset_dids.asset.v1.EvmSmartContractFungibleReference EvmSmartContractFungibleReference { get; set; }
         /// <summary>
-        /// >> OptionEvmSmartContractNonFungibleIdentifier
+        /// >> Option<EvmSmartContractNonFungibleIdentifier>
         /// </summary>
         public Substrate.NetApi.Model.Types.Base.BaseOpt<Kilt.NetApi.Generated.Model.kilt_asset_dids.asset.v1.EvmSmartContractNonFungibleIdentifier> OptionEvmSmartContractNonFungibleIdentifier { get; set; }
         

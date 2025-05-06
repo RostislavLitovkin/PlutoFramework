@@ -83,7 +83,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_multibatching.pallet
     }
     
     /// <summary>
-    /// >> 250 - Variant[pallet_multibatching.pallet.Call]
+    /// >> 277 - Variant[pallet_multibatching.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -94,8 +94,8 @@ namespace Mythos.NetApi.Generated.Model.pallet_multibatching.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<Mythos.NetApi.Generated.Types.Base.Arr8U8, Mythos.NetApi.Generated.Model.account.AccountId20, Mythos.NetApi.Generated.Types.Base.Arr32U8, Substrate.NetApi.Model.Types.Primitive.U64, Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7, Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8>>(Call.batch);
-				AddTypeDecoder<BaseTuple<Mythos.NetApi.Generated.Types.Base.Arr8U8, Mythos.NetApi.Generated.Model.account.AccountId20, Mythos.NetApi.Generated.Types.Base.Arr32U8, Substrate.NetApi.Model.Types.Primitive.U64, Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7, Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8>>(Call.batch_v2);
+				AddTypeDecoder<BaseTuple<Mythos.NetApi.Generated.Types.Base.Arr8U8, Mythos.NetApi.Generated.Model.account.AccountId20, Mythos.NetApi.Generated.Types.Base.Arr32U8, Substrate.NetApi.Model.Types.Primitive.U64, Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8, Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9>>(Call.batch);
+				AddTypeDecoder<BaseTuple<Mythos.NetApi.Generated.Types.Base.Arr8U8, Mythos.NetApi.Generated.Model.account.AccountId20, Mythos.NetApi.Generated.Types.Base.Arr32U8, Substrate.NetApi.Model.Types.Primitive.U64, Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8, Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9>>(Call.batch_v2);
         }
     }
 }

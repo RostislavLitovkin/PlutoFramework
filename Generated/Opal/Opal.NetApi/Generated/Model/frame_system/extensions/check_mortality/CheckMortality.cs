@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.frame_system.extensions.check_mortality
     
     
     /// <summary>
-    /// >> 683 - Composite[frame_system.extensions.check_mortality.CheckMortality]
+    /// >> 761 - Composite[frame_system.extensions.check_mortality.CheckMortality]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckMortality : BaseType

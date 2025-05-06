@@ -53,7 +53,7 @@ namespace Opal.NetApi.Generated.Model.xcm.v3
     }
     
     /// <summary>
-    /// >> 240 - Variant[xcm.v3.Response]
+    /// >> 255 - Variant[xcm.v3.Response]
     /// </summary>
     public sealed class EnumResponse : BaseEnumRust<Response>
     {

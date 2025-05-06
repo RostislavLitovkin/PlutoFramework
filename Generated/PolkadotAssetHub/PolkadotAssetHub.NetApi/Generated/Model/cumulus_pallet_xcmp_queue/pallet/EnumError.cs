@@ -54,7 +54,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.pall
     }
     
     /// <summary>
-    /// >> 273 - Variant[cumulus_pallet_xcmp_queue.pallet.Error]
+    /// >> 278 - Variant[cumulus_pallet_xcmp_queue.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

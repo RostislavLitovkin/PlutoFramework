@@ -352,7 +352,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_democracy.pallet
     }
     
     /// <summary>
-    /// >> 331 - Variant[pallet_democracy.pallet.Call]
+    /// >> 165 - Variant[pallet_democracy.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

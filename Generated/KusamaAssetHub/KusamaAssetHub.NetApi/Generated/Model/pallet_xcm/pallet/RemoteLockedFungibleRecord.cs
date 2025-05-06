@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_xcm.pallet
     
     
     /// <summary>
-    /// >> 300 - Composite[pallet_xcm.pallet.RemoteLockedFungibleRecord]
+    /// >> 304 - Composite[pallet_xcm.pallet.RemoteLockedFungibleRecord]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RemoteLockedFungibleRecord : BaseType

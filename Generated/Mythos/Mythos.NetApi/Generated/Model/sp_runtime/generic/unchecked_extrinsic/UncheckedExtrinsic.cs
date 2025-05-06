@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.sp_runtime.generic.unchecked_extrinsic
     
     
     /// <summary>
-    /// >> 468 - Composite[sp_runtime.generic.unchecked_extrinsic.UncheckedExtrinsic]
+    /// >> 553 - Composite[sp_runtime.generic.unchecked_extrinsic.UncheckedExtrinsic]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UncheckedExtrinsic : BaseType

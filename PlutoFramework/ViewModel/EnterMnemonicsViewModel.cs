@@ -57,16 +57,16 @@ namespace PlutoFramework.ViewModel
             var jsonType = new FilePickerFileType(
                 new Dictionary<DevicePlatform, IEnumerable<string>>
                 {
-                { DevicePlatform.iOS, new[] { "json" } }, // UTType values
+                { DevicePlatform.iOS, new[] { "public.json" } }, // UTType values
                 { DevicePlatform.Android, new[] { "application/json" } }, // MIME type
                 { DevicePlatform.WinUI, new[] { ".json" } }, // file extension
                 { DevicePlatform.Tizen, new[] { "*/*" } },
-                { DevicePlatform.macOS, new[] { "json" } }, // UTType values
+                { DevicePlatform.macOS, new[] { "public.json" } }, // UTType values
                 });
 
             var result = await FilePicker.PickAsync(new PickOptions
             {
-                PickerTitle = "Import json",
+                PickerTitle = "Import json account",
                 FileTypes = jsonType,
             });
 

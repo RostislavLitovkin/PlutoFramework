@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.cumulus_pallet_parachain_system.uninclud
     
     
     /// <summary>
-    /// >> 180 - Composite[cumulus_pallet_parachain_system.unincluded_segment.HrmpChannelUpdate]
+    /// >> 204 - Composite[cumulus_pallet_parachain_system.unincluded_segment.HrmpChannelUpdate]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class HrmpChannelUpdate : BaseType

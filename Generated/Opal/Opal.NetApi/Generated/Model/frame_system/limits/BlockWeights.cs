@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.frame_system.limits
     
     
     /// <summary>
-    /// >> 391 - Composite[frame_system.limits.BlockWeights]
+    /// >> 458 - Composite[frame_system.limits.BlockWeights]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BlockWeights : BaseType

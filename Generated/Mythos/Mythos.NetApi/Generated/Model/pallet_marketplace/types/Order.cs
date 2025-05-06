@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_marketplace.types
     
     
     /// <summary>
-    /// >> 247 - Composite[pallet_marketplace.types.Order]
+    /// >> 274 - Composite[pallet_marketplace.types.Order]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Order : BaseType

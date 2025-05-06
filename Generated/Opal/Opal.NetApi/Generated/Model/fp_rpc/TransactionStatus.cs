@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.fp_rpc
     
     
     /// <summary>
-    /// >> 645 - Composite[fp_rpc.TransactionStatus]
+    /// >> 726 - Composite[fp_rpc.TransactionStatus]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class TransactionStatus : BaseType

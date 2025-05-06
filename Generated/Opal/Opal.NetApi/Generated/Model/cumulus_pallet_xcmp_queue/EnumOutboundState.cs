@@ -33,7 +33,7 @@ namespace Opal.NetApi.Generated.Model.cumulus_pallet_xcmp_queue
     }
     
     /// <summary>
-    /// >> 550 - Variant[cumulus_pallet_xcmp_queue.OutboundState]
+    /// >> 626 - Variant[cumulus_pallet_xcmp_queue.OutboundState]
     /// </summary>
     public sealed class EnumOutboundState : BaseEnum<OutboundState>
     {

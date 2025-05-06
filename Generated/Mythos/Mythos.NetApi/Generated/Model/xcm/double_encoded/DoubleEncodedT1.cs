@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.xcm.double_encoded
     
     
     /// <summary>
-    /// >> 109 - Composite[xcm.double_encoded.DoubleEncodedT1]
+    /// >> 121 - Composite[xcm.double_encoded.DoubleEncodedT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DoubleEncodedT1 : BaseType

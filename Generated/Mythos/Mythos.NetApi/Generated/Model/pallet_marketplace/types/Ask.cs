@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_marketplace.types
     
     
     /// <summary>
-    /// >> 373 - Composite[pallet_marketplace.types.Ask]
+    /// >> 432 - Composite[pallet_marketplace.types.Ask]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Ask : BaseType

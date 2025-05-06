@@ -14,6 +14,8 @@ namespace PlutoFramework.Model
         public const double POUNDS_TO_USD = 0.82;
 
         public const string LOCATION = "UK";
+
+        public const uint BOTTOM_CARD_POPUP_ANIMATION_DURATION = 500;
     }
 
     public static class AppConfigurationModel

@@ -36,7 +36,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.coretime.p
     }
     
     /// <summary>
-    /// >> 488 - Variant[polkadot_runtime_parachains.coretime.pallet.Event]
+    /// >> 477 - Variant[polkadot_runtime_parachains.coretime.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -48,7 +48,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.coretime.p
         public EnumEvent()
         {
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.RevenueInfoRequested);
-				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.CoreIndex>(Event.CoreAssigned);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.CoreIndex>(Event.CoreAssigned);
         }
     }
 }

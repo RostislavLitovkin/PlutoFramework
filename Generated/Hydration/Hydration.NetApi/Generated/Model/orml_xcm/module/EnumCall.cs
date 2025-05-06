@@ -30,7 +30,7 @@ namespace Hydration.NetApi.Generated.Model.orml_xcm.module
     }
     
     /// <summary>
-    /// >> 466 - Variant[orml_xcm.module.Call]
+    /// >> 396 - Variant[orml_xcm.module.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

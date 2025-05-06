@@ -43,7 +43,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
     }
     
     /// <summary>
-    /// >> 308 - Variant[up_data_structs.CreateItemExData]
+    /// >> 369 - Variant[up_data_structs.CreateItemExData]
     /// </summary>
     public sealed class EnumCreateItemExData : BaseEnumRust<CreateItemExData>
     {
@@ -53,9 +53,9 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
         /// </summary>
         public EnumCreateItemExData()
         {
-				AddTypeDecoder<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15>(CreateItemExData.NFT);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT20>(CreateItemExData.NFT);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1>(CreateItemExData.Fungible);
-				AddTypeDecoder<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16>(CreateItemExData.RefungibleMultipleItems);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21>(CreateItemExData.RefungibleMultipleItems);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.up_data_structs.CreateRefungibleExMultipleOwners>(CreateItemExData.RefungibleMultipleOwners);
         }
     }

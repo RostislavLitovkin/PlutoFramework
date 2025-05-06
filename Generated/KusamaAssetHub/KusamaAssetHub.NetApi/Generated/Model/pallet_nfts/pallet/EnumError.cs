@@ -294,7 +294,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_nfts.pallet
     }
     
     /// <summary>
-    /// >> 447 - Variant[pallet_nfts.pallet.Error]
+    /// >> 462 - Variant[pallet_nfts.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

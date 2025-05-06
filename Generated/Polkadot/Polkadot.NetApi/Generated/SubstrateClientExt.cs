@@ -130,11 +130,6 @@ namespace Polkadot.NetApi.Generated
         public WhitelistStorage WhitelistStorage;
         
         /// <summary>
-        /// ParametersStorage storage calls.
-        /// </summary>
-        public ParametersStorage ParametersStorage;
-        
-        /// <summary>
         /// ClaimsStorage storage calls.
         /// </summary>
         public ClaimsStorage ClaimsStorage;
@@ -188,6 +183,11 @@ namespace Polkadot.NetApi.Generated
         /// FastUnstakeStorage storage calls.
         /// </summary>
         public FastUnstakeStorage FastUnstakeStorage;
+        
+        /// <summary>
+        /// DelegatedStakingStorage storage calls.
+        /// </summary>
+        public DelegatedStakingStorage DelegatedStakingStorage;
         
         /// <summary>
         /// ParachainsOriginStorage storage calls.
@@ -348,7 +348,6 @@ namespace Polkadot.NetApi.Generated
             this.ReferendaStorage = new ReferendaStorage(this);
             this.OriginsStorage = new OriginsStorage(this);
             this.WhitelistStorage = new WhitelistStorage(this);
-            this.ParametersStorage = new ParametersStorage(this);
             this.ClaimsStorage = new ClaimsStorage(this);
             this.VestingStorage = new VestingStorage(this);
             this.UtilityStorage = new UtilityStorage(this);
@@ -360,6 +359,7 @@ namespace Polkadot.NetApi.Generated
             this.VoterListStorage = new VoterListStorage(this);
             this.NominationPoolsStorage = new NominationPoolsStorage(this);
             this.FastUnstakeStorage = new FastUnstakeStorage(this);
+            this.DelegatedStakingStorage = new DelegatedStakingStorage(this);
             this.ParachainsOriginStorage = new ParachainsOriginStorage(this);
             this.ConfigurationStorage = new ConfigurationStorage(this);
             this.ParasSharedStorage = new ParasSharedStorage(this);

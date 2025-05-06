@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded
     
     
     /// <summary>
-    /// >> 405 - Composite[cumulus_pallet_parachain_system.unincluded_segment.UsedBandwidth]
+    /// >> 471 - Composite[cumulus_pallet_parachain_system.unincluded_segment.UsedBandwidth]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UsedBandwidth : BaseType

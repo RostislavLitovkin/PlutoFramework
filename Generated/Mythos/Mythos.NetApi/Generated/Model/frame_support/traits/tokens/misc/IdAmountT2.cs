@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.frame_support.traits.tokens.misc
     
     
     /// <summary>
-    /// >> 342 - Composite[frame_support.traits.tokens.misc.IdAmountT2]
+    /// >> 399 - Composite[frame_support.traits.tokens.misc.IdAmountT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class IdAmountT2 : BaseType
@@ -27,7 +27,7 @@ namespace Mythos.NetApi.Generated.Model.frame_support.traits.tokens.misc
         /// <summary>
         /// >> id
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseTuple Id { get; set; }
+        public Mythos.NetApi.Generated.Model.mainnet_runtime.EnumRuntimeFreezeReason Id { get; set; }
         /// <summary>
         /// >> amount
         /// </summary>
@@ -52,7 +52,7 @@ namespace Mythos.NetApi.Generated.Model.frame_support.traits.tokens.misc
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Id = new Substrate.NetApi.Model.Types.Base.BaseTuple();
+            Id = new Mythos.NetApi.Generated.Model.mainnet_runtime.EnumRuntimeFreezeReason();
             Id.Decode(byteArray, ref p);
             Amount = new Substrate.NetApi.Model.Types.Primitive.U128();
             Amount.Decode(byteArray, ref p);

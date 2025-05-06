@@ -23,14 +23,14 @@ namespace Opal.NetApi.Generated.Model.orml_xtokens.module
     {
         
         /// <summary>
-        /// >> TransferredMultiAssets
-        /// Transferred `MultiAsset` with fee.
+        /// >> TransferredAssets
+        /// Transferred `Asset` with fee.
         /// </summary>
-        TransferredMultiAssets = 0,
+        TransferredAssets = 0,
     }
     
     /// <summary>
-    /// >> 48 - Variant[orml_xtokens.module.Event]
+    /// >> 50 - Variant[orml_xtokens.module.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -41,7 +41,7 @@ namespace Opal.NetApi.Generated.Model.orml_xtokens.module
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32, Opal.NetApi.Generated.Model.xcm.v3.multiasset.MultiAssets, Opal.NetApi.Generated.Model.xcm.v3.multiasset.MultiAsset, Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation>>(Event.TransferredMultiAssets);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32, Opal.NetApi.Generated.Model.staging_xcm.v5.asset.Assets, Opal.NetApi.Generated.Model.staging_xcm.v5.asset.Asset, Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location>>(Event.TransferredAssets);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.xcm.v2.multiasset
     
     
     /// <summary>
-    /// >> 200 - Composite[xcm.v2.multiasset.MultiAssets]
+    /// >> 318 - Composite[xcm.v2.multiasset.MultiAssets]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MultiAssets : BaseType

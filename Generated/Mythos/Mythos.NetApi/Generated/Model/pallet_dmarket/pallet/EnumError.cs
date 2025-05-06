@@ -36,43 +36,43 @@ namespace Mythos.NetApi.Generated.Model.pallet_dmarket.pallet
         
         /// <summary>
         /// >> BidAlreadyExecuted
-        /// The bid with the provided parameters has already been executed
+        /// The bid with the provided parameters has already been executed.
         /// </summary>
         BidAlreadyExecuted = 2,
         
         /// <summary>
         /// >> AskAlreadyExecuted
-        /// The ask with the provided parameters has already been executed
+        /// The ask with the provided parameters has already been executed.
         /// </summary>
         AskAlreadyExecuted = 3,
         
         /// <summary>
         /// >> BuyerBalanceTooLow
-        /// Buyer balance is not enough to pay for trade costs
+        /// Buyer balance is not enough to pay for trade costs.
         /// </summary>
         BuyerBalanceTooLow = 4,
         
         /// <summary>
         /// >> BidExpired
-        /// Bid expiration timestamp must be in the future
+        /// Bid expiration timestamp must be in the future.
         /// </summary>
         BidExpired = 5,
         
         /// <summary>
         /// >> AskExpired
-        /// Ask expiration timestamp must be in the future
+        /// Ask expiration timestamp must be in the future.
         /// </summary>
         AskExpired = 6,
         
         /// <summary>
         /// >> InvalidBuyerSignature
-        /// The signature provided by the buyer is invalid
+        /// The signature provided by the buyer is invalid.
         /// </summary>
         InvalidBuyerSignature = 7,
         
         /// <summary>
         /// >> InvalidSellerSignature
-        /// The signature provided by the seller is invalid
+        /// The signature provided by the seller is invalid.
         /// </summary>
         InvalidSellerSignature = 8,
         
@@ -84,7 +84,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_dmarket.pallet
         
         /// <summary>
         /// >> BadSignedMessage
-        /// Invalid Signed message
+        /// Invalid Signed message.
         /// </summary>
         BadSignedMessage = 10,
         
@@ -96,19 +96,19 @@ namespace Mythos.NetApi.Generated.Model.pallet_dmarket.pallet
         
         /// <summary>
         /// >> CollectionNotSet
-        /// Dmarket collection has not been set
+        /// Dmarket collection has not been set.
         /// </summary>
         CollectionNotSet = 12,
         
         /// <summary>
         /// >> CollectionNotFound
-        /// The provided Dmarket collect was not found
+        /// The provided Dmarket collect was not found.
         /// </summary>
         CollectionNotFound = 13,
     }
     
     /// <summary>
-    /// >> 455 - Variant[pallet_dmarket.pallet.Error]
+    /// >> 552 - Variant[pallet_dmarket.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

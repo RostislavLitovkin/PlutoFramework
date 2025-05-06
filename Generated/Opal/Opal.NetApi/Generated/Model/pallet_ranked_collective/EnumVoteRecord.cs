@@ -33,7 +33,7 @@ namespace Opal.NetApi.Generated.Model.pallet_ranked_collective
     }
     
     /// <summary>
-    /// >> 80 - Variant[pallet_ranked_collective.VoteRecord]
+    /// >> 89 - Variant[pallet_ranked_collective.VoteRecord]
     /// </summary>
     public sealed class EnumVoteRecord : BaseEnumRust<VoteRecord>
     {

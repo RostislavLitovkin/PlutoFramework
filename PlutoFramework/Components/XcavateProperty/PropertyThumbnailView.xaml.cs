@@ -1,6 +1,8 @@
+using PlutoFramework.Components.Loading;
 using PlutoFramework.Constants;
 using PlutoFramework.Model;
 using PlutoFramework.Model.Currency;
+using PlutoFramework.Model.SQLite;
 using UniqueryPlus.Nfts;
 using PropertyModel = PlutoFramework.Model.Xcavate.XcavatePropertyModel;
 
@@ -15,13 +17,12 @@ public partial class PropertyThumbnailView : ContentView
         {
             var control = (PropertyThumbnailView)bindable;
 
-            if (newValue is not XcavatePaseoNftsPalletNft)
+            if (newValue is not INftXcavateBase)
             {
                 return;
             }
 
-
-            var nftBase = (XcavatePaseoNftsPalletNft)newValue;
+            var nftBase = (INftXcavateBase)newValue;
             
             if (nftBase.XcavateMetadata is null)
             {
@@ -34,7 +35,14 @@ public partial class PropertyThumbnailView : ContentView
 
             if (control.TokensOwned == 0)
             {
-                control.tokensLabel.Text = nftBase.NftMarketplaceDetails?.Listed?.ToString() ?? "-";
+                if (nftBase is INftXcavateNftMarketplace)
+                {
+                    control.tokensLabel.Text = ((INftXcavateNftMarketplace)nftBase).NftMarketplaceDetails?.Listed?.ToString() ?? "-";
+                }
+                else
+                {
+                    control.tokensLabel.Text = "-";
+                }
             }
             else
             {
@@ -136,16 +144,27 @@ public partial class PropertyThumbnailView : ContentView
     void OnFavouriteClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
         Favourite = !Favourite;
-        /*Task save = NftDatabase.SaveItemAsync(new NftWrapper
+        
+        Task save = XcavatePropertyDatabase.SavePropertyAsync(new NftWrapper
         {
             Endpoint = Endpoint,
             NftBase = NftBase,
             Favourite = Favourite
-        });*/
+        });
     }
 
     async void OnMoreClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
-        await XcavatePropertyModel.NavigateToPropertyDetailPageAsync((XcavatePaseoNftsPalletNft)NftBase, CancellationToken.None);
+        var loadingViewModel = DependencyService.Get<FullPageLoadingViewModel>();
+
+        loadingViewModel.IsVisible = true;
+
+        await XcavatePropertyModel.NavigateToPropertyDetailPageAsync(new NftWrapper {
+            NftBase = NftBase,
+            Endpoint = Endpoint,
+            Favourite = Favourite
+        }, CancellationToken.None);
+
+        loadingViewModel.IsVisible = false;
     }
 }

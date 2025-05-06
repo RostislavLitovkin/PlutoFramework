@@ -58,7 +58,7 @@ namespace Opal.NetApi.Generated.Model.pallet_identity.types
     }
     
     /// <summary>
-    /// >> 185 - Variant[pallet_identity.types.Judgement]
+    /// >> 211 - Variant[pallet_identity.types.Judgement]
     /// </summary>
     public sealed class EnumJudgement : BaseEnumRust<Judgement>
     {

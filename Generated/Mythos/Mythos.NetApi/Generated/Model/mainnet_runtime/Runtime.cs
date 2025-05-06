@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.mainnet_runtime
     
     
     /// <summary>
-    /// >> 469 - Composite[mainnet_runtime.Runtime]
+    /// >> 567 - Composite[mainnet_runtime.Runtime]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Runtime : BaseType

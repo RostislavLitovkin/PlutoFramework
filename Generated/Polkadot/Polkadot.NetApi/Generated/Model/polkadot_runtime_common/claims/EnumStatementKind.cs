@@ -33,7 +33,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_common.claims
     }
     
     /// <summary>
-    /// >> 187 - Variant[polkadot_runtime_common.claims.StatementKind]
+    /// >> 176 - Variant[polkadot_runtime_common.claims.StatementKind]
     /// </summary>
     public sealed class EnumStatementKind : BaseEnum<StatementKind>
     {

@@ -53,7 +53,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_referenda.types
     }
     
     /// <summary>
-    /// >> 623 - Variant[pallet_referenda.types.ReferendumInfo]
+    /// >> 613 - Variant[pallet_referenda.types.ReferendumInfo]
     /// </summary>
     public sealed class EnumReferendumInfo : BaseEnumRust<ReferendumInfo>
     {

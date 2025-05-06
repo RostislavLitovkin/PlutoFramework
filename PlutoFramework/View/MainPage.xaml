@@ -4,22 +4,23 @@
              x:Class="PlutoFramework.View.MainPage"
              Title="MainPage"
              xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
-         xmlns:networkselect="clr-namespace:PlutoFramework.Components.NetworkSelect"
-         xmlns:transferview="clr-namespace:PlutoFramework.Components.TransferView"
-         xmlns:connectionrequestview="clr-namespace:PlutoFramework.Components.ConnectionRequestView"
-         xmlns:messagepopup="clr-namespace:PlutoFramework.Components.MessagePopup"
-         xmlns:transactionrequest="clr-namespace:PlutoFramework.Components.TransactionRequest"
-         xmlns:addressview="clr-namespace:PlutoFramework.Components.AddressView"
-         xmlns:staking="clr-namespace:PlutoFramework.Components.Staking"
-         xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-         xmlns:password="clr-namespace:PlutoFramework.Components.Password"
-         xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
-         xmlns:vault="clr-namespace:PlutoFramework.Components.Vault"
-         xmlns:changelayoutrequest="clr-namespace:PlutoFramework.Components.ChangeLayoutRequest"
+             xmlns:networkselect="clr-namespace:PlutoFramework.Components.NetworkSelect"
+             xmlns:transferview="clr-namespace:PlutoFramework.Components.TransferView"
+             xmlns:connectionrequestview="clr-namespace:PlutoFramework.Components.ConnectionRequestView"
+             xmlns:messagepopup="clr-namespace:PlutoFramework.Components.MessagePopup"
+             xmlns:transactionrequest="clr-namespace:PlutoFramework.Components.TransactionRequest"
+             xmlns:addressview="clr-namespace:PlutoFramework.Components.AddressView"
+             xmlns:staking="clr-namespace:PlutoFramework.Components.Staking"
+             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
+             xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
+             xmlns:vault="clr-namespace:PlutoFramework.Components.Vault"
+             xmlns:changelayoutrequest="clr-namespace:PlutoFramework.Components.ChangeLayoutRequest"
              xmlns:account="clr-namespace:PlutoFramework.Components.Account"
              xmlns:kilt="clr-namespace:PlutoFramework.Components.Kilt"
              xmlns:sumsub="clr-namespace:PlutoFramework.Components.Sumsub"
-         BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}"
+             xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}"
              HideSoftInputOnTapped="True">
 
     <AbsoluteLayout
@@ -55,15 +56,17 @@
 
         <!--Settings button-->
         <Image WidthRequest="36" Margin="10, 10, 10, 10"
-           AbsoluteLayout.LayoutBounds="0, 0, AutoSize, AutoSize"
-            AbsoluteLayout.LayoutFlags="PositionProportional"
-            Source="{AppThemeBinding Light=settingsblack.png, Dark=settingswhite.png}"
+               AbsoluteLayout.LayoutBounds="0, 0, AutoSize, AutoSize"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               Source="{AppThemeBinding Light=settingsblack.png, Dark=settingswhite.png}"
            >
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnSettingsClicked" />
 
             </Image.GestureRecognizers>
         </Image>
+
+        <extrinsic:ExtrinsicStatusStackLayout />
 
         <connectionrequestview:ConnectionRequestView />
 

@@ -156,7 +156,7 @@ namespace Opal.NetApi.Generated.Model.pallet_common.pallet
     }
     
     /// <summary>
-    /// >> 369 - Variant[pallet_common.pallet.Event]
+    /// >> 433 - Variant[pallet_common.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -174,11 +174,11 @@ namespace Opal.NetApi.Generated.Model.pallet_common.pallet
 				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.up_data_structs.TokenId, Opal.NetApi.Generated.Model.pallet_evm.account.EnumBasicCrossAccountIdRepr, Opal.NetApi.Generated.Model.pallet_evm.account.EnumBasicCrossAccountIdRepr, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Transfer);
 				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.up_data_structs.TokenId, Opal.NetApi.Generated.Model.pallet_evm.account.EnumBasicCrossAccountIdRepr, Opal.NetApi.Generated.Model.pallet_evm.account.EnumBasicCrossAccountIdRepr, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Approved);
 				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.pallet_evm.account.EnumBasicCrossAccountIdRepr, Opal.NetApi.Generated.Model.pallet_evm.account.EnumBasicCrossAccountIdRepr, Substrate.NetApi.Model.Types.Primitive.Bool>>(Event.ApprovedForAll);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12>>(Event.CollectionPropertySet);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12>>(Event.CollectionPropertyDeleted);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.up_data_structs.TokenId, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12>>(Event.TokenPropertySet);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.up_data_structs.TokenId, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12>>(Event.TokenPropertyDeleted);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12>>(Event.PropertyPermissionSet);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17>>(Event.CollectionPropertySet);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17>>(Event.CollectionPropertyDeleted);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.up_data_structs.TokenId, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17>>(Event.TokenPropertySet);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.up_data_structs.TokenId, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17>>(Event.TokenPropertyDeleted);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17>>(Event.PropertyPermissionSet);
 				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.pallet_evm.account.EnumBasicCrossAccountIdRepr>>(Event.AllowListAddressAdded);
 				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.pallet_evm.account.EnumBasicCrossAccountIdRepr>>(Event.AllowListAddressRemoved);
 				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.pallet_evm.account.EnumBasicCrossAccountIdRepr>>(Event.CollectionAdminAdded);

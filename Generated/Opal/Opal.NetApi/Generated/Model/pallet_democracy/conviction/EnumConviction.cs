@@ -58,7 +58,7 @@ namespace Opal.NetApi.Generated.Model.pallet_democracy.conviction
     }
     
     /// <summary>
-    /// >> 199 - Variant[pallet_democracy.conviction.Conviction]
+    /// >> 225 - Variant[pallet_democracy.conviction.Conviction]
     /// </summary>
     public sealed class EnumConviction : BaseEnum<Conviction>
     {

@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.polkadot_core_primitives
     
     
     /// <summary>
-    /// >> 427 - Composite[polkadot_core_primitives.OutboundHrmpMessage]
+    /// >> 493 - Composite[polkadot_core_primitives.OutboundHrmpMessage]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OutboundHrmpMessage : BaseType

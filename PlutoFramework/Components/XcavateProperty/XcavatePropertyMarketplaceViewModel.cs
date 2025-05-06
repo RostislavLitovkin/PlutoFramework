@@ -1,10 +1,11 @@
 ﻿using PlutoFramework.Components.Nft;
 using PlutoFramework.Constants;
 using PlutoFramework.Model;
+using PlutoFramework.Model.SQLite;
 using PlutoFramework.Model.Xcavate;
 using UniqueryPlus.Nfts;
 using XcavatePaseo.NetApi.Generated;
-using NftKey = (PlutoFramework.Constants.EndpointEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
+using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
 
 namespace PlutoFramework.Components.XcavateProperty
 {
@@ -15,6 +16,11 @@ namespace PlutoFramework.Components.XcavateProperty
         //private List<Task<PlutoFrameworkSubstrateClient>> clientTasks;
 
         private IAsyncEnumerator<INftBase> uniqueryNftEnumerator = null;
+
+        public void UpdateFavourite(INftXcavateBase nftBase, bool newValue)
+        {
+            ItemsDict[(nftBase.Type, nftBase.CollectionId, nftBase.Id)].Favourite = newValue;
+        }
 
         public override async Task LoadMoreAsync(CancellationToken token)
         {
@@ -43,14 +49,14 @@ namespace PlutoFramework.Components.XcavateProperty
 
                     if (uniqueryNftEnumerator != null && await uniqueryNftEnumerator.MoveNextAsync().ConfigureAwait(false))
                     {
-                        var newNft = await XcavatePropertyModel.ToNftWrapperAsync((XcavatePaseoNftsPalletNft)uniqueryNftEnumerator.Current);
+                        var newNft = await XcavatePropertyModel.ToNftWrapperAsync((INftXcavateBase)uniqueryNftEnumerator.Current);
 
                         if (newNft.Key is not null && !ItemsDict.ContainsKey((NftKey)newNft.Key))
                         {
                             ItemsDict.Add((NftKey)newNft.Key, newNft);
 
                             // Save to DB
-                            //await NftDatabase.SaveItemAsync(newNft).ConfigureAwait(false);
+                            await XcavatePropertyDatabase.SavePropertyAsync(newNft).ConfigureAwait(false);
 
                             MainThread.BeginInvokeOnMainThread(() =>
                             {
@@ -81,7 +87,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
             uniqueryNftEnumerator = uniqueryNftEnumerable.GetAsyncEnumerator(token);
 
-            await LoadSavedNftsAsync().ConfigureAwait(false);
+            //await LoadSavedPropertiesAsync().ConfigureAwait(false);
 
             Loading = false;
 
@@ -90,11 +96,9 @@ namespace PlutoFramework.Components.XcavateProperty
             Console.WriteLine("initial load done");
         }
 
-        private Task LoadSavedNftsAsync()
+        private async Task LoadSavedPropertiesAsync()
         {
-            return Task.FromResult(0);
-            /*
-            foreach (var savedNft in await NftDatabase.GetNftsOwnedByAsync(KeysModel.GetSubstrateKey()).ConfigureAwait(false))
+            foreach (var savedNft in await XcavatePropertyDatabase.GetPropertiesAsync().ConfigureAwait(false))
             {
                 if (savedNft.Key is not null && !ItemsDict.ContainsKey((NftKey)savedNft.Key))
                 {
@@ -105,7 +109,7 @@ namespace PlutoFramework.Components.XcavateProperty
                         Items.Add(savedNft);
                     });
                 }
-            }*/
+            }
         }
     }
 }

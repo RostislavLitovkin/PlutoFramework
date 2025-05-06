@@ -33,7 +33,7 @@ namespace Mythos.NetApi.Generated.Types.Base
     }
     
     /// <summary>
-    /// >> 35 - Variant[Result]
+    /// >> 36 - Variant[Result]
     /// </summary>
     public sealed class EnumResult : BaseEnumRust<Result>
     {

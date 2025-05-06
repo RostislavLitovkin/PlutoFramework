@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
     
     
     /// <summary>
-    /// >> 277 - Composite[up_data_structs.CollectionLimits]
+    /// >> 338 - Composite[up_data_structs.CollectionLimits]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CollectionLimits : BaseType

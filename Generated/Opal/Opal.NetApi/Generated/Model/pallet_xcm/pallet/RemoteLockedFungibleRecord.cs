@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_xcm.pallet
     
     
     /// <summary>
-    /// >> 568 - Composite[pallet_xcm.pallet.RemoteLockedFungibleRecord]
+    /// >> 645 - Composite[pallet_xcm.pallet.RemoteLockedFungibleRecord]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RemoteLockedFungibleRecord : BaseType
@@ -31,15 +31,15 @@ namespace Opal.NetApi.Generated.Model.pallet_xcm.pallet
         /// <summary>
         /// >> owner
         /// </summary>
-        public Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiLocation Owner { get; set; }
+        public Opal.NetApi.Generated.Model.xcm.EnumVersionedLocation Owner { get; set; }
         /// <summary>
         /// >> locker
         /// </summary>
-        public Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiLocation Locker { get; set; }
+        public Opal.NetApi.Generated.Model.xcm.EnumVersionedLocation Locker { get; set; }
         /// <summary>
         /// >> consumers
         /// </summary>
-        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39 Consumers { get; set; }
+        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT47 Consumers { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -64,11 +64,11 @@ namespace Opal.NetApi.Generated.Model.pallet_xcm.pallet
             var start = p;
             Amount = new Substrate.NetApi.Model.Types.Primitive.U128();
             Amount.Decode(byteArray, ref p);
-            Owner = new Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiLocation();
+            Owner = new Opal.NetApi.Generated.Model.xcm.EnumVersionedLocation();
             Owner.Decode(byteArray, ref p);
-            Locker = new Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiLocation();
+            Locker = new Opal.NetApi.Generated.Model.xcm.EnumVersionedLocation();
             Locker.Decode(byteArray, ref p);
-            Consumers = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39();
+            Consumers = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT47();
             Consumers.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

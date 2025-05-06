@@ -38,7 +38,7 @@ namespace Opal.NetApi.Generated.Model.frame_support.traits.preimages
     }
     
     /// <summary>
-    /// >> 83 - Variant[frame_support.traits.preimages.Bounded]
+    /// >> 92 - Variant[frame_support.traits.preimages.Bounded]
     /// </summary>
     public sealed class EnumBounded : BaseEnumRust<Bounded>
     {
@@ -49,7 +49,7 @@ namespace Opal.NetApi.Generated.Model.frame_support.traits.preimages
         public EnumBounded()
         {
 				AddTypeDecoder<Opal.NetApi.Generated.Model.primitive_types.H256>(Bounded.Legacy);
-				AddTypeDecoder<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17>(Bounded.Inline);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22>(Bounded.Inline);
 				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Primitive.U32>>(Bounded.Lookup);
         }
     }

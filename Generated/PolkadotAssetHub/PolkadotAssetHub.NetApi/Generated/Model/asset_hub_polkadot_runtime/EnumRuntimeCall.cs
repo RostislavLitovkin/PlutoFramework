@@ -130,10 +130,15 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
         /// >> AssetConversion
         /// </summary>
         AssetConversion = 55,
+        
+        /// <summary>
+        /// >> StateTrieMigration
+        /// </summary>
+        StateTrieMigration = 70,
     }
     
     /// <summary>
-    /// >> 348 - Variant[asset_hub_polkadot_runtime.RuntimeCall]
+    /// >> 353 - Variant[asset_hub_polkadot_runtime.RuntimeCall]
     /// </summary>
     public sealed class EnumRuntimeCall : BaseEnumRust<RuntimeCall>
     {
@@ -165,6 +170,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet.EnumCall>(RuntimeCall.ForeignAssets);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet.EnumCall>(RuntimeCall.PoolAssets);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_asset_conversion.pallet.EnumCall>(RuntimeCall.AssetConversion);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_state_trie_migration.pallet.EnumCall>(RuntimeCall.StateTrieMigration);
         }
     }
 }

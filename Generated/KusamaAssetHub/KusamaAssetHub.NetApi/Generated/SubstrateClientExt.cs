@@ -135,6 +135,11 @@ namespace KusamaAssetHub.NetApi.Generated
         public ProxyStorage ProxyStorage;
         
         /// <summary>
+        /// RemoteProxyRelayChainStorage storage calls.
+        /// </summary>
+        public RemoteProxyRelayChainStorage RemoteProxyRelayChainStorage;
+        
+        /// <summary>
         /// AssetsStorage storage calls.
         /// </summary>
         public AssetsStorage AssetsStorage;
@@ -169,6 +174,11 @@ namespace KusamaAssetHub.NetApi.Generated
         /// </summary>
         public AssetConversionStorage AssetConversionStorage;
         
+        /// <summary>
+        /// StateTrieMigrationStorage storage calls.
+        /// </summary>
+        public StateTrieMigrationStorage StateTrieMigrationStorage;
+        
         public SubstrateClientExt(System.Uri uri, Substrate.NetApi.Model.Extrinsics.ChargeType chargeType) : 
                 base(uri, chargeType)
         {
@@ -194,6 +204,7 @@ namespace KusamaAssetHub.NetApi.Generated
             this.UtilityStorage = new UtilityStorage(this);
             this.MultisigStorage = new MultisigStorage(this);
             this.ProxyStorage = new ProxyStorage(this);
+            this.RemoteProxyRelayChainStorage = new RemoteProxyRelayChainStorage(this);
             this.AssetsStorage = new AssetsStorage(this);
             this.UniquesStorage = new UniquesStorage(this);
             this.NftsStorage = new NftsStorage(this);
@@ -201,6 +212,7 @@ namespace KusamaAssetHub.NetApi.Generated
             this.NftFractionalizationStorage = new NftFractionalizationStorage(this);
             this.PoolAssetsStorage = new PoolAssetsStorage(this);
             this.AssetConversionStorage = new AssetConversionStorage(this);
+            this.StateTrieMigrationStorage = new StateTrieMigrationStorage(this);
         }
     }
 }

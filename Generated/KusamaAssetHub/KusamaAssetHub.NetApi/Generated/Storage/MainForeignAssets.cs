@@ -631,6 +631,19 @@ namespace KusamaAssetHub.NetApi.Generated.Storage
             byteArray.AddRange(who.Encode());
             return new Method(53, "ForeignAssets", 31, "block", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> transfer_all
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method TransferAll(KusamaAssetHub.NetApi.Generated.Model.staging_xcm.v4.location.Location id, KusamaAssetHub.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress dest, Substrate.NetApi.Model.Types.Primitive.Bool keep_alive)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(id.Encode());
+            byteArray.AddRange(dest.Encode());
+            byteArray.AddRange(keep_alive.Encode());
+            return new Method(53, "ForeignAssets", 32, "transfer_all", byteArray.ToArray());
+        }
     }
     
     /// <summary>

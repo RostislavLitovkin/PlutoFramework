@@ -77,6 +77,11 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
         CumulusXcm = 32,
         
         /// <summary>
+        /// >> ToKusamaXcmRouter
+        /// </summary>
+        ToKusamaXcmRouter = 34,
+        
+        /// <summary>
         /// >> MessageQueue
         /// </summary>
         MessageQueue = 35,
@@ -125,6 +130,11 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
         /// >> AssetConversion
         /// </summary>
         AssetConversion = 55,
+        
+        /// <summary>
+        /// >> StateTrieMigration
+        /// </summary>
+        StateTrieMigration = 70,
     }
     
     /// <summary>
@@ -149,6 +159,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.pallet.EnumEvent>(RuntimeEvent.XcmpQueue);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_xcm.pallet.EnumEvent>(RuntimeEvent.PolkadotXcm);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_xcm.pallet.EnumEvent>(RuntimeEvent.CumulusXcm);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_xcm_bridge_hub_router.pallet.EnumEvent>(RuntimeEvent.ToKusamaXcmRouter);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_message_queue.pallet.EnumEvent>(RuntimeEvent.MessageQueue);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_utility.pallet.EnumEvent>(RuntimeEvent.Utility);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_multisig.pallet.EnumEvent>(RuntimeEvent.Multisig);
@@ -159,6 +170,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet.EnumEvent>(RuntimeEvent.ForeignAssets);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet.EnumEvent>(RuntimeEvent.PoolAssets);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_asset_conversion.pallet.EnumEvent>(RuntimeEvent.AssetConversion);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_state_trie_migration.pallet.EnumEvent>(RuntimeEvent.StateTrieMigration);
         }
     }
 }

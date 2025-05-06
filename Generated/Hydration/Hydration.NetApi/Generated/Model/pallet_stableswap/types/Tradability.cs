@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.types
     
     
     /// <summary>
-    /// >> 110 - Composite[pallet_stableswap.types.Tradability]
+    /// >> 242 - Composite[pallet_stableswap.types.Tradability]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Tradability : BaseType

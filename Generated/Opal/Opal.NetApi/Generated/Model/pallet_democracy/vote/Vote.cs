@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_democracy.vote
     
     
     /// <summary>
-    /// >> 71 - Composite[pallet_democracy.vote.Vote]
+    /// >> 81 - Composite[pallet_democracy.vote.Vote]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Vote : BaseType

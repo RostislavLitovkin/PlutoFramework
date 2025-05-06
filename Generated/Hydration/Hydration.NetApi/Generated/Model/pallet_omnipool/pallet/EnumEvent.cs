@@ -55,12 +55,14 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool.pallet
         /// <summary>
         /// >> SellExecuted
         /// Sell trade executed.
+        /// Deprecated. Replaced by pallet_broadcast::Swapped
         /// </summary>
         SellExecuted = 5,
         
         /// <summary>
         /// >> BuyExecuted
         /// Buy trade executed.
+        /// Deprecated. Replaced by pallet_broadcast::Swapped
         /// </summary>
         BuyExecuted = 6,
         
@@ -102,7 +104,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool.pallet
     }
     
     /// <summary>
-    /// >> 87 - Variant[pallet_omnipool.pallet.Event]
+    /// >> 419 - Variant[pallet_omnipool.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

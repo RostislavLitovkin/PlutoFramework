@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_vesting.vesting_info
     
     
     /// <summary>
-    /// >> 242 - Composite[pallet_vesting.vesting_info.VestingInfo]
+    /// >> 246 - Composite[pallet_vesting.vesting_info.VestingInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class VestingInfo : BaseType

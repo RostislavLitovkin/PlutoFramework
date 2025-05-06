@@ -163,12 +163,6 @@ namespace Polkadot.NetApi.Generated.Storage
         InvalidBacking,
         
         /// <summary>
-        /// >> NotCollatorSigned
-        /// Collator did not sign PoV.
-        /// </summary>
-        NotCollatorSigned,
-        
-        /// <summary>
         /// >> ValidationDataHashMismatch
         /// The validation data hash does not match expected.
         /// </summary>

@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
     
     
     /// <summary>
-    /// >> 310 - Composite[up_data_structs.CreateNftExData]
+    /// >> 371 - Composite[up_data_structs.CreateNftExData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CreateNftExData : BaseType
@@ -27,7 +27,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
         /// <summary>
         /// >> properties
         /// </summary>
-        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13 Properties { get; set; }
+        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18 Properties { get; set; }
         /// <summary>
         /// >> owner
         /// </summary>
@@ -52,7 +52,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Properties = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13();
+            Properties = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18();
             Properties.Decode(byteArray, ref p);
             Owner = new Opal.NetApi.Generated.Model.pallet_evm.account.EnumBasicCrossAccountIdRepr();
             Owner.Decode(byteArray, ref p);

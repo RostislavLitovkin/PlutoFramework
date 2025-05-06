@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_marketplace.types
     
     
     /// <summary>
-    /// >> 375 - Composite[pallet_marketplace.types.Bid]
+    /// >> 434 - Composite[pallet_marketplace.types.Bid]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Bid : BaseType

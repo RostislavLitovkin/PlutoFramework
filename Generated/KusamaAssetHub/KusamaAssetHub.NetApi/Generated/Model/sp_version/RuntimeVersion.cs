@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.sp_version
     
     
     /// <summary>
-    /// >> 171 - Composite[sp_version.RuntimeVersion]
+    /// >> 176 - Composite[sp_version.RuntimeVersion]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RuntimeVersion : BaseType

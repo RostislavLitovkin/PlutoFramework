@@ -28,7 +28,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_myth_proxy.pallet
     }
     
     /// <summary>
-    /// >> 339 - Variant[pallet_myth_proxy.pallet.HoldReason]
+    /// >> 396 - Variant[pallet_myth_proxy.pallet.HoldReason]
     /// </summary>
     public sealed class EnumHoldReason : BaseEnum<HoldReason>
     {

@@ -38,17 +38,12 @@
                         HorizontalOptions="Start" />
                 </VerticalStackLayout>
 
-                <Image Source="{AppThemeBinding Light=closeblack.png, Dark=closewhite.png}"
+                <Image Source="{AppThemeBinding Light=expandblack.png, Dark=expandwhite.png}"
                        x:Name="closeButton"
                        Aspect="AspectFit"
                        AbsoluteLayout.LayoutBounds="1, 0.5, 50, 50"
                        Margin="10"
                        AbsoluteLayout.LayoutFlags="PositionProportional">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnCloseClicked" />
-
-                    </Image.GestureRecognizers>
-
                 </Image>
             </AbsoluteLayout>
         </card:ClickableCard.View>

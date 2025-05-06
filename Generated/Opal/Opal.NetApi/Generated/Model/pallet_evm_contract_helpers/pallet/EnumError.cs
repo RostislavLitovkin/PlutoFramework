@@ -42,7 +42,7 @@ namespace Opal.NetApi.Generated.Model.pallet_evm_contract_helpers.pallet
     }
     
     /// <summary>
-    /// >> 667 - Variant[pallet_evm_contract_helpers.pallet.Error]
+    /// >> 748 - Variant[pallet_evm_contract_helpers.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

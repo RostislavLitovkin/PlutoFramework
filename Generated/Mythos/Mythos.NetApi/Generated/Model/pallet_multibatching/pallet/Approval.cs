@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_multibatching.pallet
     
     
     /// <summary>
-    /// >> 256 - Composite[pallet_multibatching.pallet.Approval]
+    /// >> 283 - Composite[pallet_multibatching.pallet.Approval]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Approval : BaseType

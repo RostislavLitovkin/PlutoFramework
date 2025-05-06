@@ -31,12 +31,14 @@ namespace Hydration.NetApi.Generated.Model.pallet_otc.pallet
         /// <summary>
         /// >> Filled
         /// An Order has been completely filled
+        /// Deprecated. Replaced by pallet_broadcast::Swapped
         /// </summary>
         Filled = 1,
         
         /// <summary>
         /// >> PartiallyFilled
         /// An Order has been partially filled
+        /// Deprecated. Replaced by pallet_broadcast::Swapped
         /// </summary>
         PartiallyFilled = 2,
         
@@ -48,7 +50,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_otc.pallet
     }
     
     /// <summary>
-    /// >> 98 - Variant[pallet_otc.pallet.Event]
+    /// >> 424 - Variant[pallet_otc.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

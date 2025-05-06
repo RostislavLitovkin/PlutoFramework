@@ -40,15 +40,10 @@ namespace Mythos.NetApi.Generated.Model.mainnet_runtime
         /// >> CumulusXcm
         /// </summary>
         CumulusXcm = 32,
-        
-        /// <summary>
-        /// >> Void
-        /// </summary>
-        Void = 4,
     }
     
     /// <summary>
-    /// >> 316 - Variant[mainnet_runtime.OriginCaller]
+    /// >> 356 - Variant[mainnet_runtime.OriginCaller]
     /// </summary>
     public sealed class EnumOriginCaller : BaseEnumRust<OriginCaller>
     {
@@ -62,7 +57,6 @@ namespace Mythos.NetApi.Generated.Model.mainnet_runtime
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_collective.EnumRawOrigin>(OriginCaller.Council);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_xcm.pallet.EnumOrigin>(OriginCaller.PolkadotXcm);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.cumulus_pallet_xcm.pallet.EnumOrigin>(OriginCaller.CumulusXcm);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVoid>(OriginCaller.Void);
         }
     }
 }

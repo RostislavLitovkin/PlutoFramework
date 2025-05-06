@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_xcm.pallet
     
     
     /// <summary>
-    /// >> 421 - Composite[pallet_xcm.pallet.RemoteLockedFungibleRecord]
+    /// >> 519 - Composite[pallet_xcm.pallet.RemoteLockedFungibleRecord]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RemoteLockedFungibleRecord : BaseType
@@ -39,7 +39,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_xcm.pallet
         /// <summary>
         /// >> consumers
         /// </summary>
-        public Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22 Consumers { get; set; }
+        public Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32 Consumers { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -68,7 +68,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_xcm.pallet
             Owner.Decode(byteArray, ref p);
             Locker = new Mythos.NetApi.Generated.Model.xcm.EnumVersionedLocation();
             Locker.Decode(byteArray, ref p);
-            Consumers = new Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22();
+            Consumers = new Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32();
             Consumers.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

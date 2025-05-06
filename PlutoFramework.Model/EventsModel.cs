@@ -369,11 +369,7 @@ namespace PlutoFramework.Model
         {
             if (eventsBytes == null || eventsBytes.Length == 0)
             {
-
                 Console.WriteLine("Something was null in events");
-                Console.WriteLine(extrinsicIndex is null);
-                Console.WriteLine(eventsBytes);
-                Console.WriteLine(eventsBytes.Length);
 
                 return new ExtrinsicDetails
                 {

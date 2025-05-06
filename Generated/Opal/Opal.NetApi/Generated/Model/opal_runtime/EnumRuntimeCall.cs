@@ -132,6 +132,16 @@ namespace Opal.NetApi.Generated.Model.opal_runtime
         Scheduler = 49,
         
         /// <summary>
+        /// >> FinancialCouncil
+        /// </summary>
+        FinancialCouncil = 97,
+        
+        /// <summary>
+        /// >> FinancialCouncilMembership
+        /// </summary>
+        FinancialCouncilMembership = 98,
+        
+        /// <summary>
         /// >> XcmpQueue
         /// </summary>
         XcmpQueue = 50,
@@ -150,6 +160,11 @@ namespace Opal.NetApi.Generated.Model.opal_runtime
         /// >> DmpQueue
         /// </summary>
         DmpQueue = 53,
+        
+        /// <summary>
+        /// >> MessageQueue
+        /// </summary>
+        MessageQueue = 54,
         
         /// <summary>
         /// >> Inflation
@@ -218,7 +233,7 @@ namespace Opal.NetApi.Generated.Model.opal_runtime
     }
     
     /// <summary>
-    /// >> 84 - Variant[opal_runtime.RuntimeCall]
+    /// >> 93 - Variant[opal_runtime.RuntimeCall]
     /// </summary>
     public sealed class EnumRuntimeCall : BaseEnumRust<RuntimeCall>
     {
@@ -250,10 +265,13 @@ namespace Opal.NetApi.Generated.Model.opal_runtime
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_ranked_collective.pallet.EnumCall>(RuntimeCall.FellowshipCollective);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_referenda.pallet.EnumCall>(RuntimeCall.FellowshipReferenda);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_scheduler.pallet.EnumCall>(RuntimeCall.Scheduler);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_collective.pallet.EnumCall>(RuntimeCall.FinancialCouncil);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_membership.pallet.EnumCall>(RuntimeCall.FinancialCouncilMembership);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.pallet.EnumCall>(RuntimeCall.XcmpQueue);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_xcm.pallet.EnumCall>(RuntimeCall.PolkadotXcm);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.cumulus_pallet_xcm.pallet.EnumCall>(RuntimeCall.CumulusXcm);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.cumulus_pallet_dmp_queue.pallet.EnumCall>(RuntimeCall.DmpQueue);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_message_queue.pallet.EnumCall>(RuntimeCall.MessageQueue);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_inflation.pallet.EnumCall>(RuntimeCall.Inflation);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_unique.pallet.EnumCall>(RuntimeCall.Unique);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_configuration.pallet.EnumCall>(RuntimeCall.Configuration);

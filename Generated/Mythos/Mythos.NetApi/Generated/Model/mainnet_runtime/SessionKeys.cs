@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.mainnet_runtime
     
     
     /// <summary>
-    /// >> 262 - Composite[mainnet_runtime.SessionKeys]
+    /// >> 298 - Composite[mainnet_runtime.SessionKeys]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SessionKeys : BaseType

@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.frame_system.extensions.check_ge
     
     
     /// <summary>
-    /// >> 466 - Composite[frame_system.extensions.check_genesis.CheckGenesis]
+    /// >> 481 - Composite[frame_system.extensions.check_genesis.CheckGenesis]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckGenesis : BaseType

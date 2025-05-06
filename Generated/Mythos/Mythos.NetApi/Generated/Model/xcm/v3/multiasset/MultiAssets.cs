@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.xcm.v3.multiasset
     
     
     /// <summary>
-    /// >> 129 - Composite[xcm.v3.multiasset.MultiAssets]
+    /// >> 135 - Composite[xcm.v3.multiasset.MultiAssets]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MultiAssets : BaseType

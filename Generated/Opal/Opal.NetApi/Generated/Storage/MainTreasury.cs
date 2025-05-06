@@ -40,14 +40,18 @@ namespace Opal.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Treasury", "Proposals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Opal.NetApi.Generated.Model.pallet_treasury.Proposal)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Treasury", "Deactivated"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Treasury", "Approvals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Treasury", "Approvals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Treasury", "SpendCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Treasury", "Spends"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Opal.NetApi.Generated.Model.pallet_treasury.SpendStatus)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Treasury", "LastSpendPeriod"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
         }
         
         /// <summary>
         /// >> ProposalCountParams
+        ///  DEPRECATED: associated with `spend_local` call and will be removed in May 2025.
+        ///  Refer to <https://github.com/paritytech/polkadot-sdk/pull/5961> for migration to `spend`.
+        /// 
         ///  Number of proposals that have been made.
         /// </summary>
         public static string ProposalCountParams()
@@ -66,6 +70,9 @@ namespace Opal.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ProposalCount
+        ///  DEPRECATED: associated with `spend_local` call and will be removed in May 2025.
+        ///  Refer to <https://github.com/paritytech/polkadot-sdk/pull/5961> for migration to `spend`.
+        /// 
         ///  Number of proposals that have been made.
         /// </summary>
         public async Task<Substrate.NetApi.Model.Types.Primitive.U32> ProposalCount(string blockhash, CancellationToken token)
@@ -77,6 +84,9 @@ namespace Opal.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ProposalsParams
+        ///  DEPRECATED: associated with `spend_local` call and will be removed in May 2025.
+        ///  Refer to <https://github.com/paritytech/polkadot-sdk/pull/5961> for migration to `spend`.
+        /// 
         ///  Proposals that have been made.
         /// </summary>
         public static string ProposalsParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
@@ -97,6 +107,9 @@ namespace Opal.NetApi.Generated.Storage
         
         /// <summary>
         /// >> Proposals
+        ///  DEPRECATED: associated with `spend_local` call and will be removed in May 2025.
+        ///  Refer to <https://github.com/paritytech/polkadot-sdk/pull/5961> for migration to `spend`.
+        /// 
         ///  Proposals that have been made.
         /// </summary>
         public async Task<Opal.NetApi.Generated.Model.pallet_treasury.Proposal> Proposals(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
@@ -137,6 +150,9 @@ namespace Opal.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ApprovalsParams
+        ///  DEPRECATED: associated with `spend_local` call and will be removed in May 2025.
+        ///  Refer to <https://github.com/paritytech/polkadot-sdk/pull/5961> for migration to `spend`.
+        /// 
         ///  Proposal indices that have been approved but not yet awarded.
         /// </summary>
         public static string ApprovalsParams()
@@ -155,12 +171,15 @@ namespace Opal.NetApi.Generated.Storage
         
         /// <summary>
         /// >> Approvals
+        ///  DEPRECATED: associated with `spend_local` call and will be removed in May 2025.
+        ///  Refer to <https://github.com/paritytech/polkadot-sdk/pull/5961> for migration to `spend`.
+        /// 
         ///  Proposal indices that have been approved but not yet awarded.
         /// </summary>
-        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23> Approvals(string blockhash, CancellationToken token)
+        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28> Approvals(string blockhash, CancellationToken token)
         {
             string parameters = TreasuryStorage.ApprovalsParams();
-            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28>(parameters, blockhash, token);
             return result;
         }
         
@@ -223,6 +242,35 @@ namespace Opal.NetApi.Generated.Storage
             var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.pallet_treasury.SpendStatus>(parameters, blockhash, token);
             return result;
         }
+        
+        /// <summary>
+        /// >> LastSpendPeriodParams
+        ///  The blocknumber for the last triggered spend period.
+        /// </summary>
+        public static string LastSpendPeriodParams()
+        {
+            return RequestGenerator.GetStorage("Treasury", "LastSpendPeriod", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> LastSpendPeriodDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string LastSpendPeriodDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> LastSpendPeriod
+        ///  The blocknumber for the last triggered spend period.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> LastSpendPeriod(string blockhash, CancellationToken token)
+        {
+            string parameters = TreasuryStorage.LastSpendPeriodParams();
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
+            return result;
+        }
     }
     
     /// <summary>
@@ -230,40 +278,6 @@ namespace Opal.NetApi.Generated.Storage
     /// </summary>
     public sealed class TreasuryCalls
     {
-        
-        /// <summary>
-        /// >> propose_spend
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method ProposeSpend(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> value, Opal.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress beneficiary)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(value.Encode());
-            byteArray.AddRange(beneficiary.Encode());
-            return new Method(34, "Treasury", 0, "propose_spend", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> reject_proposal
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method RejectProposal(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> proposal_id)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(proposal_id.Encode());
-            return new Method(34, "Treasury", 1, "reject_proposal", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> approve_proposal
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method ApproveProposal(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> proposal_id)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(proposal_id.Encode());
-            return new Method(34, "Treasury", 2, "approve_proposal", byteArray.ToArray());
-        }
         
         /// <summary>
         /// >> spend_local
@@ -343,47 +357,13 @@ namespace Opal.NetApi.Generated.Storage
     {
         
         /// <summary>
-        /// >> ProposalBond
-        ///  Fraction of a proposal's value that should be bonded in order to place the proposal.
-        ///  An accepted proposal gets these back. A rejected proposal does not.
-        /// </summary>
-        public Opal.NetApi.Generated.Model.sp_arithmetic.per_things.Permill ProposalBond()
-        {
-            var result = new Opal.NetApi.Generated.Model.sp_arithmetic.per_things.Permill();
-            result.Create("0x50C30000");
-            return result;
-        }
-        
-        /// <summary>
-        /// >> ProposalBondMinimum
-        ///  Minimum amount of funds that should be placed in a deposit for making a proposal.
-        /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U128 ProposalBondMinimum()
-        {
-            var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x000064A7B3B6E00D0000000000000000");
-            return result;
-        }
-        
-        /// <summary>
-        /// >> ProposalBondMaximum
-        ///  Maximum amount of funds that should be placed in a deposit for making a proposal.
-        /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128> ProposalBondMaximum()
-        {
-            var result = new Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128>();
-            result.Create("0x010000A0DEC5ADC9353600000000000000");
-            return result;
-        }
-        
-        /// <summary>
         /// >> SpendPeriod
         ///  Period between successive spends.
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 SpendPeriod()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x19000000");
+            result.Create("0x32000000");
             return result;
         }
         
@@ -411,6 +391,9 @@ namespace Opal.NetApi.Generated.Storage
         
         /// <summary>
         /// >> MaxApprovals
+        ///  DEPRECATED: associated with `spend_local` call and will be removed in May 2025.
+        ///  Refer to <https://github.com/paritytech/polkadot-sdk/pull/5961> for migration to `spend`.
+        /// 
         ///  The maximum number of approvals that can wait in the spending queue.
         /// 
         ///  NOTE: This parameter is also used within the Bounties Pallet extension if enabled.
@@ -439,12 +422,6 @@ namespace Opal.NetApi.Generated.Storage
     /// </summary>
     public enum TreasuryErrors
     {
-        
-        /// <summary>
-        /// >> InsufficientProposersBalance
-        /// Proposer's balance is too low.
-        /// </summary>
-        InsufficientProposersBalance,
         
         /// <summary>
         /// >> InvalidIndex

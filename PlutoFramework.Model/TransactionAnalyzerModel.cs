@@ -32,11 +32,22 @@ namespace PlutoFramework.Model
 
     public class TransactionAnalyzerModel
     {
-        public static ExtrinsicResult GetExtrinsicResult(IEnumerable<ExtrinsicEvent> events) => events.Last() switch
+        public static ExtrinsicResult GetExtrinsicResult(IEnumerable<ExtrinsicEvent> events) {
+            if (events.Count() == 0)
+                return ExtrinsicResult.Unknown;
+            else
+                return events.Last() switch
+                {
+                    ExtrinsicEvent { PalletName: "System", EventName: "ExtrinsicSuccess" } => ExtrinsicResult.Success,
+                    ExtrinsicEvent { PalletName: "System", EventName: "ExtrinsicFailed" } => ExtrinsicResult.Failed,
+                    _ => ExtrinsicResult.Unknown,
+                };
+        }
+
+        public static string GetExtrinsicFailedMessage(IEnumerable<ExtrinsicEvent> events) => events.Last() switch
         {
-            ExtrinsicEvent { PalletName: "System", EventName: "ExtrinsicSuccess" } => ExtrinsicResult.Success,
-            ExtrinsicEvent { PalletName: "System", EventName: "ExtrinsicFailed" } => ExtrinsicResult.Failed,
-            _ => ExtrinsicResult.Unknown,
+            ExtrinsicEvent { PalletName: "System", EventName: "ExtrinsicFailed" } => events.Last().Parameters[0].Value,
+            _ => string.Empty,
         };
 
         /// <summary>

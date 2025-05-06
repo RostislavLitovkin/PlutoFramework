@@ -84,6 +84,8 @@ namespace Polkadot.NetApi.Generated.Model.pallet_nomination_pools.pallet
         /// A member has been removed from a pool.
         /// 
         /// The removal can be voluntary (withdrawn all unbonded funds) or involuntary (kicked).
+        /// Any funds that are still delegated (i.e. dangling delegation) are released and are
+        /// represented by `released_balance`.
         /// </summary>
         MemberRemoved = 7,
         
@@ -150,7 +152,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_nomination_pools.pallet
     }
     
     /// <summary>
-    /// >> 472 - Variant[pallet_nomination_pools.pallet.Event]
+    /// >> 460 - Variant[pallet_nomination_pools.pallet.Event]
     /// Events of this pallet.
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -168,7 +170,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_nomination_pools.pallet
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Withdrawn);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.Destroyed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.pallet_nomination_pools.EnumPoolState>>(Event.StateChanged);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.MemberRemoved);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.MemberRemoved);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>>>(Event.RolesUpdated);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.PoolSlashed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.UnbondingPoolSlashed);

@@ -38,7 +38,7 @@ namespace Hydration.NetApi.Generated.Model.frame_support.dispatch
     }
     
     /// <summary>
-    /// >> 476 - Variant[frame_support.dispatch.RawOrigin]
+    /// >> 95 - Variant[frame_support.dispatch.RawOrigin]
     /// </summary>
     public sealed class EnumRawOrigin : BaseEnumRust<RawOrigin>
     {

@@ -29,26 +29,44 @@ namespace Polkadot.NetApi.Generated.Model.pallet_beefy.pallet
         InvalidKeyOwnershipProof = 0,
         
         /// <summary>
-        /// >> InvalidEquivocationProof
-        /// An equivocation proof provided as part of an equivocation report is invalid.
+        /// >> InvalidDoubleVotingProof
+        /// A double voting proof provided as part of an equivocation report is invalid.
         /// </summary>
-        InvalidEquivocationProof = 1,
+        InvalidDoubleVotingProof = 1,
+        
+        /// <summary>
+        /// >> InvalidForkVotingProof
+        /// A fork voting proof provided as part of an equivocation report is invalid.
+        /// </summary>
+        InvalidForkVotingProof = 2,
+        
+        /// <summary>
+        /// >> InvalidFutureBlockVotingProof
+        /// A future block voting proof provided as part of an equivocation report is invalid.
+        /// </summary>
+        InvalidFutureBlockVotingProof = 3,
+        
+        /// <summary>
+        /// >> InvalidEquivocationProofSession
+        /// The session of the equivocation proof is invalid
+        /// </summary>
+        InvalidEquivocationProofSession = 4,
         
         /// <summary>
         /// >> DuplicateOffenceReport
         /// A given equivocation report is valid but already previously reported.
         /// </summary>
-        DuplicateOffenceReport = 2,
+        DuplicateOffenceReport = 5,
         
         /// <summary>
         /// >> InvalidConfiguration
         /// Submitted configuration is invalid.
         /// </summary>
-        InvalidConfiguration = 3,
+        InvalidConfiguration = 6,
     }
     
     /// <summary>
-    /// >> 840 - Variant[pallet_beefy.pallet.Error]
+    /// >> 834 - Variant[pallet_beefy.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

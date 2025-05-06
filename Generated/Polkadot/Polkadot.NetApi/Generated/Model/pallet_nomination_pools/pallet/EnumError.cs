@@ -229,26 +229,39 @@ namespace Polkadot.NetApi.Generated.Model.pallet_nomination_pools.pallet
         NothingToSlash = 32,
         
         /// <summary>
+        /// >> SlashTooLow
+        /// The slash amount is too low to be applied.
+        /// </summary>
+        SlashTooLow = 33,
+        
+        /// <summary>
         /// >> AlreadyMigrated
         /// The pool or member delegation has already migrated to delegate stake.
         /// </summary>
-        AlreadyMigrated = 33,
+        AlreadyMigrated = 34,
         
         /// <summary>
         /// >> NotMigrated
         /// The pool or member delegation has not migrated yet to delegate stake.
         /// </summary>
-        NotMigrated = 34,
+        NotMigrated = 35,
         
         /// <summary>
         /// >> NotSupported
         /// This call is not allowed in the current state of the pallet.
         /// </summary>
-        NotSupported = 35,
+        NotSupported = 36,
+        
+        /// <summary>
+        /// >> Restricted
+        /// Account is restricted from participation in pools. This may happen if the account is
+        /// staking in another way already.
+        /// </summary>
+        Restricted = 37,
     }
     
     /// <summary>
-    /// >> 699 - Variant[pallet_nomination_pools.pallet.Error]
+    /// >> 689 - Variant[pallet_nomination_pools.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>
@@ -292,9 +305,11 @@ namespace Polkadot.NetApi.Generated.Model.pallet_nomination_pools.pallet
 				AddTypeDecoder<BaseVoid>(Error.BondExtraRestricted);
 				AddTypeDecoder<BaseVoid>(Error.NothingToAdjust);
 				AddTypeDecoder<BaseVoid>(Error.NothingToSlash);
+				AddTypeDecoder<BaseVoid>(Error.SlashTooLow);
 				AddTypeDecoder<BaseVoid>(Error.AlreadyMigrated);
 				AddTypeDecoder<BaseVoid>(Error.NotMigrated);
 				AddTypeDecoder<BaseVoid>(Error.NotSupported);
+				AddTypeDecoder<BaseVoid>(Error.Restricted);
         }
     }
 }

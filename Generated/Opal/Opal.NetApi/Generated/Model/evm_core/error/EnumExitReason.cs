@@ -43,7 +43,7 @@ namespace Opal.NetApi.Generated.Model.evm_core.error
     }
     
     /// <summary>
-    /// >> 375 - Variant[evm_core.error.ExitReason]
+    /// >> 441 - Variant[evm_core.error.ExitReason]
     /// </summary>
     public sealed class EnumExitReason : BaseEnumRust<ExitReason>
     {

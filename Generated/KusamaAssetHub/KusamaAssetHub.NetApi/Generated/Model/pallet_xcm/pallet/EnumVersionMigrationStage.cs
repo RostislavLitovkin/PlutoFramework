@@ -43,7 +43,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 296 - Variant[pallet_xcm.pallet.VersionMigrationStage]
+    /// >> 300 - Variant[pallet_xcm.pallet.VersionMigrationStage]
     /// </summary>
     public sealed class EnumVersionMigrationStage : BaseEnumRust<VersionMigrationStage>
     {

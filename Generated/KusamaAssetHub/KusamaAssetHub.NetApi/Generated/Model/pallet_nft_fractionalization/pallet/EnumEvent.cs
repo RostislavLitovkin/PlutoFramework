@@ -36,7 +36,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_nft_fractionalization.pal
     }
     
     /// <summary>
-    /// >> 146 - Variant[pallet_nft_fractionalization.pallet.Event]
+    /// >> 148 - Variant[pallet_nft_fractionalization.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

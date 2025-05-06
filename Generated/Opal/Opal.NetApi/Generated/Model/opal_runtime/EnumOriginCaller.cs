@@ -37,6 +37,11 @@ namespace Opal.NetApi.Generated.Model.opal_runtime
         TechnicalCommittee = 44,
         
         /// <summary>
+        /// >> FinancialCouncil
+        /// </summary>
+        FinancialCouncil = 97,
+        
+        /// <summary>
         /// >> Origins
         /// </summary>
         Origins = 99,
@@ -55,15 +60,10 @@ namespace Opal.NetApi.Generated.Model.opal_runtime
         /// >> Ethereum
         /// </summary>
         Ethereum = 101,
-        
-        /// <summary>
-        /// >> Void
-        /// </summary>
-        Void = 7,
     }
     
     /// <summary>
-    /// >> 207 - Variant[opal_runtime.OriginCaller]
+    /// >> 233 - Variant[opal_runtime.OriginCaller]
     /// </summary>
     public sealed class EnumOriginCaller : BaseEnumRust<OriginCaller>
     {
@@ -76,11 +76,11 @@ namespace Opal.NetApi.Generated.Model.opal_runtime
 				AddTypeDecoder<Opal.NetApi.Generated.Model.frame_support.dispatch.EnumRawOrigin>(OriginCaller.system);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_collective.EnumRawOrigin>(OriginCaller.Council);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_collective.EnumRawOrigin>(OriginCaller.TechnicalCommittee);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_collective.EnumRawOrigin>(OriginCaller.FinancialCouncil);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_gov_origins.pallet.EnumOrigin>(OriginCaller.Origins);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_xcm.pallet.EnumOrigin>(OriginCaller.PolkadotXcm);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.cumulus_pallet_xcm.pallet.EnumOrigin>(OriginCaller.CumulusXcm);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_ethereum.EnumRawOrigin>(OriginCaller.Ethereum);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVoid>(OriginCaller.Void);
         }
     }
 }

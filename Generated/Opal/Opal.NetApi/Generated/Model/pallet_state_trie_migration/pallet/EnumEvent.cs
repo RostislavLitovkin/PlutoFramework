@@ -49,7 +49,7 @@ namespace Opal.NetApi.Generated.Model.pallet_state_trie_migration.pallet
     }
     
     /// <summary>
-    /// >> 30 - Variant[pallet_state_trie_migration.pallet.Event]
+    /// >> 32 - Variant[pallet_state_trie_migration.pallet.Event]
     /// Inner events of this pallet.
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

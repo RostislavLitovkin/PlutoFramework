@@ -53,7 +53,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.xcm.v3
     }
     
     /// <summary>
-    /// >> 283 - Variant[xcm.v3.Response]
+    /// >> 288 - Variant[xcm.v3.Response]
     /// </summary>
     public sealed class EnumResponse : BaseEnumRust<Response>
     {

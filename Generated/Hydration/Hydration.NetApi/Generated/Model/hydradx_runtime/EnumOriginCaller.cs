@@ -37,6 +37,11 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
         TechnicalCommittee = 25,
         
         /// <summary>
+        /// >> Origins
+        /// </summary>
+        Origins = 38,
+        
+        /// <summary>
         /// >> Ethereum
         /// </summary>
         Ethereum = 92,
@@ -54,11 +59,11 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
         /// <summary>
         /// >> Void
         /// </summary>
-        Void = 6,
+        Void = 7,
     }
     
     /// <summary>
-    /// >> 475 - Variant[hydradx_runtime.OriginCaller]
+    /// >> 94 - Variant[hydradx_runtime.OriginCaller]
     /// </summary>
     public sealed class EnumOriginCaller : BaseEnumRust<OriginCaller>
     {
@@ -71,6 +76,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.frame_support.dispatch.EnumRawOrigin>(OriginCaller.system);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_collective.EnumRawOrigin>(OriginCaller.Council);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_collective.EnumRawOrigin>(OriginCaller.TechnicalCommittee);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.hydradx_runtime.governance.origins.pallet_custom_origins.EnumOrigin>(OriginCaller.Origins);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_ethereum.EnumRawOrigin>(OriginCaller.Ethereum);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_xcm.pallet.EnumOrigin>(OriginCaller.PolkadotXcm);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.cumulus_pallet_xcm.pallet.EnumOrigin>(OriginCaller.CumulusXcm);

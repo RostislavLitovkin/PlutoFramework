@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.asset_hub_kusama_runtime
     
     
     /// <summary>
-    /// >> 255 - Composite[asset_hub_kusama_runtime.SessionKeys]
+    /// >> 259 - Composite[asset_hub_kusama_runtime.SessionKeys]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SessionKeys : BaseType

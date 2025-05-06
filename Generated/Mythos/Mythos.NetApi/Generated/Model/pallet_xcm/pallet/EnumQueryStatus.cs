@@ -38,7 +38,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 408 - Variant[pallet_xcm.pallet.QueryStatus]
+    /// >> 506 - Variant[pallet_xcm.pallet.QueryStatus]
     /// </summary>
     public sealed class EnumQueryStatus : BaseEnumRust<QueryStatus>
     {

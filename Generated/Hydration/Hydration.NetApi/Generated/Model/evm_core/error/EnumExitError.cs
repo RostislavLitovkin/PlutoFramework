@@ -103,7 +103,7 @@ namespace Hydration.NetApi.Generated.Model.evm_core.error
     }
     
     /// <summary>
-    /// >> 136 - Variant[evm_core.error.ExitError]
+    /// >> 451 - Variant[evm_core.error.ExitError]
     /// </summary>
     public sealed class EnumExitError : BaseEnumRust<ExitError>
     {

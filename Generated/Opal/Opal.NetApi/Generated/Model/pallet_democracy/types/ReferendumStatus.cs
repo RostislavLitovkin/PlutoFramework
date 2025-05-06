@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_democracy.types
     
     
     /// <summary>
-    /// >> 494 - Composite[pallet_democracy.types.ReferendumStatus]
+    /// >> 563 - Composite[pallet_democracy.types.ReferendumStatus]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ReferendumStatus : BaseType

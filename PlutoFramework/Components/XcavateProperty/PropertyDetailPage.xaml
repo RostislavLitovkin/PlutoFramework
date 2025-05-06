@@ -11,6 +11,7 @@
              xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
              xmlns:account="clr-namespace:PlutoFramework.Components.Account"
              xmlns:kilt="clr-namespace:PlutoFramework.Components.Kilt"
+             xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
              xmlns:sumsub="clr-namespace:PlutoFramework.Components.Sumsub"
              HideSoftInputOnTapped="True"
              BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
@@ -193,6 +194,8 @@
         </ScrollView>
 
         <navigationbar:TopNavigationBar Title="{Binding Metadata.PropertyName}"/>
+
+        <extrinsic:ExtrinsicStatusStackLayout TranslationY="55" />
 
         <xcavateproperty:BuyPropertyTokensView />
         

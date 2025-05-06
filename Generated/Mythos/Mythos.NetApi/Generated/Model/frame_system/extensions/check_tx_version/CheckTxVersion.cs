@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.frame_system.extensions.check_tx_version
     
     
     /// <summary>
-    /// >> 460 - Composite[frame_system.extensions.check_tx_version.CheckTxVersion]
+    /// >> 557 - Composite[frame_system.extensions.check_tx_version.CheckTxVersion]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckTxVersion : BaseType

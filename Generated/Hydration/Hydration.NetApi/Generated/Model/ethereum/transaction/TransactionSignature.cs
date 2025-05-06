@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.ethereum.transaction
     
     
     /// <summary>
-    /// >> 395 - Composite[ethereum.transaction.TransactionSignature]
+    /// >> 273 - Composite[ethereum.transaction.TransactionSignature]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class TransactionSignature : BaseType

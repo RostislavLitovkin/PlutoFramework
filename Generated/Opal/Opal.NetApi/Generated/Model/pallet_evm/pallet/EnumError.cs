@@ -71,26 +71,38 @@ namespace Opal.NetApi.Generated.Model.pallet_evm.pallet
         GasLimitTooHigh = 7,
         
         /// <summary>
-        /// >> Undefined
-        /// Undefined error.
+        /// >> InvalidChainId
+        /// The chain id is invalid.
         /// </summary>
-        Undefined = 8,
+        InvalidChainId = 8,
+        
+        /// <summary>
+        /// >> InvalidSignature
+        /// the signature is invalid.
+        /// </summary>
+        InvalidSignature = 9,
         
         /// <summary>
         /// >> Reentrancy
         /// EVM reentrancy
         /// </summary>
-        Reentrancy = 9,
+        Reentrancy = 10,
         
         /// <summary>
         /// >> TransactionMustComeFromEOA
         /// EIP-3607,
         /// </summary>
-        TransactionMustComeFromEOA = 10,
+        TransactionMustComeFromEOA = 11,
+        
+        /// <summary>
+        /// >> Undefined
+        /// Undefined error.
+        /// </summary>
+        Undefined = 12,
     }
     
     /// <summary>
-    /// >> 642 - Variant[pallet_evm.pallet.Error]
+    /// >> 723 - Variant[pallet_evm.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

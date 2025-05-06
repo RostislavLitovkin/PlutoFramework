@@ -33,7 +33,7 @@ namespace Opal.NetApi.Generated.Model.xcm.v3.multiasset
     }
     
     /// <summary>
-    /// >> 62 - Variant[xcm.v3.multiasset.Fungibility]
+    /// >> 159 - Variant[xcm.v3.multiasset.Fungibility]
     /// </summary>
     public sealed class EnumFungibility : BaseEnumRust<Fungibility>
     {

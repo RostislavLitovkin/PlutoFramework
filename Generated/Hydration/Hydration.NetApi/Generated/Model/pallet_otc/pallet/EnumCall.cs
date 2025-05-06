@@ -61,7 +61,8 @@ namespace Hydration.NetApi.Generated.Model.pallet_otc.pallet
         ///   of asset_out multiplied by ExistentialDepositMultiplier
         /// 
         /// Events:
-        /// `PartiallyFilled` event when successful.
+        /// `PartiallyFilled` event when successful. Deprecated.
+        /// `pallet_broadcast::Swapped` event when successful.
         /// </summary>
         partial_fill_order = 1,
         
@@ -73,7 +74,8 @@ namespace Hydration.NetApi.Generated.Model.pallet_otc.pallet
         /// - `order_id`: ID of the order
         /// 
         /// Events:
-        /// `Filled` event when successful.
+        /// `Filled` event when successful. Deprecated.
+        /// `pallet_broadcast::Swapped` event when successful.
         /// </summary>
         fill_order = 2,
         
@@ -95,7 +97,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_otc.pallet
     }
     
     /// <summary>
-    /// >> 369 - Variant[pallet_otc.pallet.Call]
+    /// >> 229 - Variant[pallet_otc.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

@@ -38,7 +38,7 @@ namespace Opal.NetApi.Generated.Model.sp_runtime.transaction_validity
     }
     
     /// <summary>
-    /// >> 614 - Variant[sp_runtime.transaction_validity.UnknownTransaction]
+    /// >> 695 - Variant[sp_runtime.transaction_validity.UnknownTransaction]
     /// </summary>
     public sealed class EnumUnknownTransaction : BaseEnumRust<UnknownTransaction>
     {

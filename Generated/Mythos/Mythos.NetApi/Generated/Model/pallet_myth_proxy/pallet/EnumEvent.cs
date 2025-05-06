@@ -61,7 +61,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_myth_proxy.pallet
     }
     
     /// <summary>
-    /// >> 151 - Variant[pallet_myth_proxy.pallet.Event]
+    /// >> 176 - Variant[pallet_myth_proxy.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

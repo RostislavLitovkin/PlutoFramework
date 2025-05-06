@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.ethereum.log
     
     
     /// <summary>
-    /// >> 355 - Composite[ethereum.log.Log]
+    /// >> 415 - Composite[ethereum.log.Log]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Log : BaseType

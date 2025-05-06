@@ -54,7 +54,7 @@ namespace Opal.NetApi.Generated.Model.pallet_collator_selection.pallet
     }
     
     /// <summary>
-    /// >> 35 - Variant[pallet_collator_selection.pallet.Event]
+    /// >> 37 - Variant[pallet_collator_selection.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

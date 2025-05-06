@@ -60,7 +60,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_marketplace.pallet
     }
     
     /// <summary>
-    /// >> 58 - Variant[pallet_marketplace.pallet.Event]
+    /// >> 62 - Variant[pallet_marketplace.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

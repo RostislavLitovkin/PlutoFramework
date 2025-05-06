@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_proxy
     
     
     /// <summary>
-    /// >> 438 - Composite[pallet_proxy.ProxyDefinition]
+    /// >> 536 - Composite[pallet_proxy.ProxyDefinition]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ProxyDefinition : BaseType

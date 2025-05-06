@@ -33,7 +33,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
     }
     
     /// <summary>
-    /// >> 275 - Variant[up_data_structs.AccessMode]
+    /// >> 336 - Variant[up_data_structs.AccessMode]
     /// </summary>
     public sealed class EnumAccessMode : BaseEnum<AccessMode>
     {

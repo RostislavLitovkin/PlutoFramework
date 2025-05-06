@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.frame_support.dispatch
     
     
     /// <summary>
-    /// >> 396 - Composite[frame_support.dispatch.PerDispatchClassT3]
+    /// >> 462 - Composite[frame_support.dispatch.PerDispatchClassT3]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PerDispatchClassT3 : BaseType
