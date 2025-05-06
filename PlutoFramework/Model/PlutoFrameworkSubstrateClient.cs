@@ -224,7 +224,15 @@ namespace PlutoFramework.Model
                         extrinsicStackViewModel.Update();
                     });
 
-                    MainPage.SetupLayout();
+                    try
+                    {
+                        var multiNetworkSelectViewModel = DependencyService.Get<MultiNetworkSelectViewModel>();
+                        multiNetworkSelectViewModel.SetupDefault();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex);
+                    }
                 }
 
                 else

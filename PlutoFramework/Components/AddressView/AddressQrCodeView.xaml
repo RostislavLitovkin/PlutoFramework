@@ -7,11 +7,7 @@
                 IsVisible="{Binding IsVisible}"
                 AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                 AbsoluteLayout.LayoutFlags="All">
-    
-    <ContentView.GestureRecognizers>
-        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-    </ContentView.GestureRecognizers>
-    
+
     <card:BottomPopupCard Title="Address"
                           IsShown="{Binding IsVisible}">
         <card:BottomPopupCard.View>

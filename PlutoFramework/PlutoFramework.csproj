@@ -800,6 +800,9 @@
 	  <MauiXaml Update="Components\Xcavate\ModifyUserProfilePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Xcavate\ModifyUserProfilePopupView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Xcavate\OnboardingShell.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

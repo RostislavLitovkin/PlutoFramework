@@ -7,14 +7,10 @@ namespace PlutoFramework.Components.Xcavate
     public partial class UserTypeSelectionViewModel : ObservableObject
     {
         [RelayCommand]
-        public async Task SelectDeveloperAsync() => await Application.Current.MainPage.Navigation.PushAsync(
-            new ModifyUserProfilePage(
-                new ModifyUserProfileViewModel
-                {
-                    UserRole = UserRoleEnum.Developer,
-                    ContinueLayoutIsVisible = true,
-                }
-            )
-        );
+        public void SelectDeveloper()
+        {
+            var modifyUserProfileViewModel = DependencyService.Get<ModifyUserProfilePopupViewModel>();
+            modifyUserProfileViewModel.IsVisible = true;
+        }
     }
 }

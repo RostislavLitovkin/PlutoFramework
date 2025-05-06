@@ -123,6 +123,8 @@ public partial class App : Application
 
         DependencyService.Register<FullPageLoadingViewModel>();
 
+        DependencyService.Register<ModifyUserProfilePopupViewModel>();
+
         if (Preferences.Get(PreferencesModel.SHOW_WELCOME_SCREEN, true))
         {
             MainPage = new OnboardingShell();

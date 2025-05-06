@@ -49,7 +49,8 @@ public partial class SetupPasswordPage : ContentPage
         await KeysModel.RegisterBiometricAuthenticationAsync();
 
         await Navigation.Invoke();
-        // Application.Current.MainPage = new AppShell();
+
+        clicked = false;
     }
 
     private void OnEyeballClicked(object sender, TappedEventArgs e)

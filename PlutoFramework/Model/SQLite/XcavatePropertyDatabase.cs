@@ -91,6 +91,7 @@ namespace PlutoFramework.Model.SQLite
                 return;
 
             Database = new SQLiteAsyncConnection(Path.Combine(FileSystem.AppDataDirectory, "XcavatePropertySQLite.db3"), SQLiteConstants.XcavateDatabaseFlags);
+
             var result = await Database.CreateTableAsync<XcavatePropertyDatabaseItem>().ConfigureAwait(false);
         }
 

@@ -34,9 +34,4 @@ public partial class AddressQrCodeView : ContentView
 
 		await CopyAddress.CopyToClipboardAsync(viewModel.Address);
     }
-
-    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
-    {
-
-    }
 }

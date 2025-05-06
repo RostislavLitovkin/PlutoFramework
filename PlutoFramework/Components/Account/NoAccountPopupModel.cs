@@ -23,12 +23,13 @@ public partial class NoAccountPopupModel : ObservableObject, IPopup, ISetToDefau
     public void Cancel() => SetToDefault();
 
     [RelayCommand]
-    public Task CreateAccountAsync() => Application.Current.MainPage.Navigation.PushAsync(
-        new SetupPasswordPage()
+    public void CreateAccount()
+    {
+        Application.Current.MainPage = new SetupPasswordPage()
         {
             Navigation = CreateAccountNavigationAsync
-        }
-    );
+        };
+    }
 
     public async Task CreateAccountNavigationAsync()
     {
@@ -44,30 +45,28 @@ public partial class NoAccountPopupModel : ObservableObject, IPopup, ISetToDefau
     }
 
     [RelayCommand]
-    public async Task ImportAccountAsync()
+    public void ImportAccount()
     {
         SetToDefault();
 
-        await Application.Current.MainPage.Navigation.PushAsync(
-             new SetupPasswordPage()
-             {
-                 Navigation = () => Application.Current.MainPage.Navigation.PushAsync(
-                    new EnterMnemonicsPage(
-                        new EnterMnemonicsViewModel
-                        {
-                            Navigation = () => Application.Current.MainPage.Navigation.PushAsync(
-                                new NoDidPage(
-                                    new NoDidViewModel
-                                    {
-                                        Navigation = NoDidModel.DidNavigateToNextPageAsync
-                                        // #PyramidCode
-                                    }
-                                )
-                            )
-                        }
-                    )
-                )
-             }
-        );
+        Application.Current.MainPage = new SetupPasswordPage()
+        {
+            Navigation = () => Application.Current.MainPage.Navigation.PushAsync(
+               new EnterMnemonicsPage(
+                   new EnterMnemonicsViewModel
+                   {
+                       Navigation = () => Application.Current.MainPage.Navigation.PushAsync(
+                           new NoDidPage(
+                               new NoDidViewModel
+                               {
+                                   Navigation = NoDidModel.DidNavigateToNextPageAsync
+                                   // #PyramidCode
+                               }
+                           )
+                       )
+                   }
+               )
+           )
+        };
     }
 }

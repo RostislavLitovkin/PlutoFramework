@@ -3,13 +3,28 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.Kilt;
 using PlutoFramework.Components.WebView;
+using PlutoFramework.Model;
 using PlutoFramework.View;
 using PlutoFramework.ViewModel;
+using System.Collections.ObjectModel;
 
 namespace PlutoFramework.Components.Xcavate
 {
+    public class WelcomeSplash
+    {
+        public string Image { get; set; }
+        public string Description { get; set; }
+    }
+
     public partial class WelcomeViewModel : ObservableObject
     {
+        public ObservableCollection<WelcomeSplash> Splashes => new ObservableCollection<WelcomeSplash>
+        {
+            new WelcomeSplash{ Image = "xcavatelaunchbg1.jpg", Description = "Fractional real estate investment made simple and secure" },
+            new WelcomeSplash{ Image = "xcavatelaunchbg2.jpg", Description = "Browse the marketplace to find your ideal property investment" },
+            new WelcomeSplash{ Image = "xcavatelaunchbg3.jpg", Description = "Unlock the future of real estate with secure, tokenized ownership" },
+        };
+
         [RelayCommand]
         public Task LearnMoreAsync() => Application.Current.MainPage.Navigation.PushAsync(new WebViewPage("https://xcavate.io/risk-warning/"));
 

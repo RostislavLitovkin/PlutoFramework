@@ -7,6 +7,8 @@
             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
          xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
          xmlns:password="clr-namespace:PlutoFramework.Components.Password"
+             xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
+             HideSoftInputOnTapped="True"
          BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
@@ -45,13 +47,17 @@
                 <card:ClickableCard.View>
                     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
                                     AbsoluteLayout.LayoutFlags="All">
-                        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
-                                             AbsoluteLayout.LayoutFlags="PositionProportional">
+                        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,1,AutoSize"
+                                             AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
                             <Image WidthRequest="80"
                                    HeightRequest="80"
+                                   Margin="0,40,0,0"
                                    Source="xcavatedeveloper.png" />
                             <Label Text="Developer"
                                    FontAttributes="Bold"
+                                   HorizontalTextAlignment="Center"/>
+                            <Label Text="List and manage properties"
+                                   HeightRequest="70"
                                    HorizontalTextAlignment="Center"/>
                         </VerticalStackLayout>
                     </AbsoluteLayout>
@@ -67,14 +73,18 @@
                 <card:ClickableCard.View>
                     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
                                         AbsoluteLayout.LayoutFlags="All">
-                        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
-                                 AbsoluteLayout.LayoutFlags="PositionProportional">
+                        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,1,AutoSize"
+                                 AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
                             <Image WidthRequest="80"
-                                       HeightRequest="80"
-                                       Source="xcavateinvestor.png" />
+                                   HeightRequest="80"
+                                   Margin="0,40,0,0"
+                                   Source="xcavateinvestor.png" />
                             <Label Text="Investor"
-                                       FontAttributes="Bold"
-                                       HorizontalTextAlignment="Center"/>
+                                   FontAttributes="Bold"
+                                   HorizontalTextAlignment="Center"/>
+                            <Label Text="Buy &amp; sell tokenized real estate"
+                                   HeightRequest="70"
+                                   HorizontalTextAlignment="Center"/>
                         </VerticalStackLayout>
                     </AbsoluteLayout>
 
@@ -85,14 +95,18 @@
                 <card:ClickableCard.View>
                     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
                             AbsoluteLayout.LayoutFlags="All">
-                        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
-                     AbsoluteLayout.LayoutFlags="PositionProportional">
+                        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,1,AutoSize"
+                                             AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
                             <Image WidthRequest="80"
-                           HeightRequest="80"
-                           Source="xcavatelettingagent.png" />
+                                   HeightRequest="80"
+                                   Margin="0,40,0,0"
+                                   Source="xcavatelettingagent.png" />
                             <Label Text="Letting Agent"
-                           FontAttributes="Bold"
-                           HorizontalTextAlignment="Center"/>
+                                   FontAttributes="Bold"
+                                   HorizontalTextAlignment="Center"/>
+                            <Label Text="Facilitate transactions &amp; property management"
+                                   HorizontalTextAlignment="Center"
+                                   HeightRequest="70"/>
                         </VerticalStackLayout>
                     </AbsoluteLayout>
 
@@ -105,12 +119,16 @@
                     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
                             AbsoluteLayout.LayoutFlags="All">
                         <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
-                     AbsoluteLayout.LayoutFlags="PositionProportional">
+                                             AbsoluteLayout.LayoutFlags="PositionProportional">
                             <Image WidthRequest="80"
-                           HeightRequest="80"
-                           Source="xcavateloanevaluator.png" />
+                                   HeightRequest="80"
+                                   Margin="0,40,0,0"
+                                   Source="xcavateloanevaluator.png" />
                             <Label Text="Loan Evaluator"
                                     FontAttributes="Bold"
+                                    HorizontalTextAlignment="Center"/>
+                            <Label Text=""
+                                   HeightRequest="70"
                                     HorizontalTextAlignment="Center"/>
                         </VerticalStackLayout>
                     </AbsoluteLayout>
@@ -120,6 +138,8 @@
         </Grid>
 
         <txanalyzer:TransactionAnalyzerConfirmationView />
+
+        <xcavate:ModifyUserProfilePopupView />
 
         <password:EnterPasswordPopupView />
     </AbsoluteLayout>

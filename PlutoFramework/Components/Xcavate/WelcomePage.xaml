@@ -14,13 +14,14 @@
            >
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="40" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
 
             </Grid.RowDefinitions>
-           
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
@@ -36,43 +37,87 @@
                 </Label>
             </VerticalStackLayout>
 
-            <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-                   Grid.Row="1"
-                   Grid.RowSpan="4"
-                   Source="xcavatelaunchbg.jpg"
-                   Aspect="AspectFill"/>
+            <CarouselView x:Name="carouselView"
+                      ItemsSource="{Binding Splashes}"
+                      IndicatorView="indicatorView"
+                      Grid.Row="2"
+                      PeekAreaInsets="0"
+                      IsBounceEnabled="false">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                              Padding="20, 20, 20, 0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
 
+                            <Border Padding="0"
+                                    Grid.Row="0"
+                                    StrokeThickness="0"
+                                    AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                                    Stroke="{AppThemeBinding Light=White, Dark=Black}"
+                                    BackgroundColor="Black">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20" />
 
+                                </Border.StrokeShape>
+                                <Border.Shadow>
+                                    <Shadow Brush="Black"
+                                            Offset="0,2" 
+                                            Radius="20"
+                                            Opacity="0.1" />
 
-            <VerticalStackLayout Grid.Row="1"
-                                 Spacing="5"
-                     Margin="20,20,20,5">
-                <Label Text="Welcome to the realXmarket"
-                     FontAttributes="Bold"
-                     FontSize="25"
-                     Grid.Column="0"
-                     Grid.Row="1"/>
-            <Label Text="Unlock the future of real estate with secure, tokenized ownership"
-                     Grid.Column="0"
-                     Grid.Row="2"/>
-                </VerticalStackLayout>
+                                </Border.Shadow>
+
+                                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                                    <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                                           Source="{Binding Image}"
+                                           Aspect="AspectFill" />
+                                </AbsoluteLayout>
+                            </Border>
+                            
+                            <Label Text="{Binding Description}"
+                                   FontAttributes="Bold"
+                                   FontSize="16" HorizontalTextAlignment="Center"
+                                   Grid.Row="1"
+                                   Margin="20"/>
+                        </Grid>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <IndicatorView x:Name="indicatorView"
+                            IndicatorColor="Gray"
+                            SelectedIndicatorColor="{x:StaticResource Primary}"
+                            HorizontalOptions="Center"
+                           Margin="0,0,0,30"
+                            Grid.Row="3"/>
+
+            <Label Text="Welcome to the realXmarket"
+                    FontAttributes="Bold"
+                    FontSize="25"
+                    Grid.Column="0"
+                   IsVisible="False"
+                    Grid.Row="1"/>
+
+            <VerticalStackLayout Grid.Row="5"
+                 Padding="20, 10, 20, 15"
+                 Spacing="15">
+
+                <buttons:ElevatedButton Text="Create Account"
+                            ButtonState="Enabled"
+                            Command="{Binding CreateAccountCommand}" />
+                <buttons:ElevatedButton Text="Import Account"
+                            ButtonState="Enabled"
+                            Command="{Binding ImportAccountCommand}" />
+                <buttons:BasicGrayButton Text="Browse Properties"
+                             ButtonState="Enabled"
+                             Command="{Binding BrowsePropertiesCommand}" />
+            </VerticalStackLayout>
         </Grid>
 
-        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, AutoSize"
-                         AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
-                         Padding="20, 10, 20, 15"
-                         Spacing="15">
 
-            <buttons:ElevatedButton Text="Create Account"
-                                    ButtonState="Enabled"
-                                    Command="{Binding CreateAccountCommand}" />    
-            <buttons:ElevatedButton Text="Import Account"
-                                    ButtonState="Enabled"
-                                    Command="{Binding ImportAccountCommand}" />
-            <buttons:BasicGrayButton Text="Browse Properties"
-                                     ButtonState="Enabled"
-                                     Command="{Binding BrowsePropertiesCommand}" />
-        </VerticalStackLayout>
 
         <txanalyzer:TransactionAnalyzerConfirmationView />
 

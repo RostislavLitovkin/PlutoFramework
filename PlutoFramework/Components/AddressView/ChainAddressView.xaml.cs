@@ -28,6 +28,7 @@ public partial class ChainAddressView : ContentView, IMainSubstrateClientLoadabl
         if(!KeysModel.HasSubstrateKey())
         {
             viewModel.Address = "None";
+            viewModel.QrAddress = "";
             return;
         }
 
@@ -50,7 +51,5 @@ public partial class ChainAddressView : ContentView, IMainSubstrateClientLoadabl
 
             viewModel.QrAddress = viewModel.Address;
         }
-
-        IsVisible = true;
     }
 }

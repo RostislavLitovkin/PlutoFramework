@@ -6,6 +6,7 @@ public partial class BottomPopupCard : AbsoluteLayout
 {
     private Queue<(float x, float y)> _positions = new Queue<(float, float)>();
 
+    private bool animating = false;
 
     public static readonly BindableProperty IsShownProperty = BindableProperty.Create(
         nameof(IsShown), typeof(bool), typeof(BottomPopupCard),
@@ -13,6 +14,7 @@ public partial class BottomPopupCard : AbsoluteLayout
         defaultBindingMode: BindingMode.TwoWay,
         propertyChanged: (bindable, oldValue, newValue) =>
         {
+            Console.WriteLine("Got new value? " + newValue);    
             var control = (BottomPopupCard)bindable;
             if ((bool)newValue)
             {
@@ -21,18 +23,6 @@ public partial class BottomPopupCard : AbsoluteLayout
             else
             {
                 Task close = control.CloseCardAsync();
-            }
-
-            try
-            {
-                // This is a great workaround.
-                // Most of the times, you will use this inside of a ContentView that has got a IPopup BindingContext.
-                // If not, then nothing will happen
-                ((IPopup)((ContentView)control.Parent).BindingContext).IsVisible = (bool)newValue;
-            }
-            catch
-            {
-
             }
         });
 
@@ -44,7 +34,11 @@ public partial class BottomPopupCard : AbsoluteLayout
     public bool IsShown
     {
         get => (bool)GetValue(IsShownProperty);
-        set => SetValue(IsShownProperty, value);
+        set
+        {
+            //if ((bool)GetValue(animating) != value)
+                SetValue(IsShownProperty, value);
+        }
     }
 
     public Microsoft.Maui.Controls.View View { set { contentView.Content = value; } }
@@ -63,9 +57,21 @@ public partial class BottomPopupCard : AbsoluteLayout
         try
         {
             // This is a great workaround.
+            // Most of the times, you will use this inside of a ContentView that has got a IPopup BindingContext.
+            // If not, then nothing will happen
+            ((IPopup)((ContentView)Parent).BindingContext).IsVisible = false;
+        }
+        catch
+        {
+
+        }
+
+        try
+        {
+            // This is a great workaround.
             // Most of the times, you will use this inside of a ContentView that has got a ISetToDefault BindingContext.
             // If not, then nothing will happen
-            ((ISetToDefault)((ContentView)this.Parent).BindingContext).SetToDefault();
+            ((ISetToDefault)((ContentView)Parent).BindingContext).SetToDefault();
         }
         catch
         {
