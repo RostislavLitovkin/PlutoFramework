@@ -77,12 +77,18 @@
                                            Aspect="AspectFill" />
                                 </AbsoluteLayout>
                             </Border>
-                            
-                            <Label Text="{Binding Description}"
-                                   FontAttributes="Bold"
+
+                            <Label
                                    FontSize="16" HorizontalTextAlignment="Center"
                                    Grid.Row="1"
-                                   Margin="20"/>
+                                   Margin="20">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Description}"
+                                              FontAttributes="Bold"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                         </Grid>
                     </DataTemplate>
                 </CarouselView.ItemTemplate>

@@ -19,10 +19,16 @@
                         HeightRequest="30"
                         VerticalTextAlignment="Center"
                         HorizontalTextAlignment="Center"
-                        x:Name="titleLabel"
-                        FontAttributes="Bold"
+                        
                         HorizontalOptions="Center"
-                        />
+                        >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span x:Name="titleLabel"
+                                      FontAttributes="Bold" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
 
                     <Label HeightRequest="30"
                         VerticalTextAlignment="Center"

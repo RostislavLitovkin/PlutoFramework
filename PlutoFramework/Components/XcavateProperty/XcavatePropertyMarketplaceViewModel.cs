@@ -1,8 +1,12 @@
-﻿using PlutoFramework.Components.Nft;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Components.Nft;
 using PlutoFramework.Constants;
 using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
 using PlutoFramework.Model.Xcavate;
+using PlutoFramework.Types;
+using System.Collections.ObjectModel;
 using UniqueryPlus.Nfts;
 using XcavatePaseo.NetApi.Generated;
 using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
@@ -11,6 +15,9 @@ namespace PlutoFramework.Components.XcavateProperty
 {
     public partial class XcavatePropertyMarketplaceViewModel : BaseListViewModel<NftKey, NftWrapper>
     {
+        [ObservableProperty]
+        private bool isRefreshing = false;
+
         public override string Title => "Property Marketplace";
 
         //private List<Task<PlutoFrameworkSubstrateClient>> clientTasks;
@@ -56,7 +63,17 @@ namespace PlutoFramework.Components.XcavateProperty
                             ItemsDict.Add((NftKey)newNft.Key, newNft);
 
                             // Save to DB
-                            await XcavatePropertyDatabase.SavePropertyAsync(newNft).ConfigureAwait(false);
+                            try
+                            {
+                                await XcavatePropertyDatabase.SavePropertyAsync(newNft).ConfigureAwait(false);
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("Error saving to DB: ");
+                                Console.WriteLine(ex);
+
+                                await XcavatePropertyDatabase.DropAsync().ConfigureAwait(false);
+                            }
 
                             MainThread.BeginInvokeOnMainThread(() =>
                             {
@@ -94,6 +111,27 @@ namespace PlutoFramework.Components.XcavateProperty
             await LoadMoreAsync(token).ConfigureAwait(false);
 
             Console.WriteLine("initial load done");
+        }
+
+        [RelayCommand]
+        public async Task RefreshAsync()
+        {
+            IsRefreshing = true;
+
+            Clear();
+
+            await InitialLoadAsync(CancellationToken.None);
+            
+            IsRefreshing = false;
+        }
+
+        private void Clear()
+        {
+            uniqueryNftEnumerator = null;
+
+            ItemsDict = new Dictionary<NftKey, NftWrapper>();
+
+            Items = new ObservableCollection<NftWrapper>();
         }
 
         private async Task LoadSavedPropertiesAsync()

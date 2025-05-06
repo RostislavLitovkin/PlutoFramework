@@ -90,13 +90,20 @@
                             <ColumnDefinition Width="auto" />
                         </Grid.ColumnDefinitions>
 
-                        <Label x:Name="propertyNameLabel"
+                        <Label 
                            FontAttributes="Bold"
                            HorizontalTextAlignment="Start"
                            VerticalOptions="Center"
                            VerticalTextAlignment="Center"
                            LineBreakMode="TailTruncation"
-                           Grid.Column="0" />
+                           Grid.Column="0" >
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span x:Name="propertyNameLabel"
+                                          FontAttributes="Bold"></Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
 
                         <Label Text="APY"
                             HorizontalTextAlignment="End"
@@ -104,12 +111,19 @@
                             VerticalTextAlignment="Center"
                             Grid.Column="1" />
 
-                        <Label x:Name="apyLabel"
+                        <Label 
                            FontAttributes="Bold"
                             HorizontalTextAlignment="End"
                             VerticalOptions="Center"
                             VerticalTextAlignment="Center"
-                            Grid.Column="2" />
+                            Grid.Column="2" >
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span x:Name="apyLabel"
+                                            FontAttributes="Bold"></Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
                     </Grid>
 
                     <Grid ColumnSpacing="5"
@@ -130,12 +144,19 @@
                            x:Name="tokensTitleLabel"
                            Grid.Column="0" />
 
-                        <Label x:Name="tokensLabel"
+                        <Label 
                            FontAttributes="Bold"
                            HorizontalTextAlignment="Start"
                            VerticalOptions="Center"
                            VerticalTextAlignment="Center"
-                           Grid.Column="1" />
+                           Grid.Column="1" >
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span x:Name="tokensLabel"
+                                          FontAttributes="Bold"></Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
 
                         <Label Text="Price"
                                HorizontalTextAlignment="End"

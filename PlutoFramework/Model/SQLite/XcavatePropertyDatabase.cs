@@ -95,6 +95,16 @@ namespace PlutoFramework.Model.SQLite
             var result = await Database.CreateTableAsync<XcavatePropertyDatabaseItem>().ConfigureAwait(false);
         }
 
+        public static async Task DropAsync()
+        {
+            if (Database is not null)
+                return;
+
+            Database = new SQLiteAsyncConnection(Path.Combine(FileSystem.AppDataDirectory, "XcavatePropertySQLite.db3"), SQLiteConstants.XcavateDatabaseFlags);
+
+            await Database.DropTableAsync<XcavatePropertyDatabaseItem>();
+        }
+
         public static async Task<IEnumerable<NftWrapper>> GetPropertiesAsync()
         {
             await InitAsync().ConfigureAwait(false);

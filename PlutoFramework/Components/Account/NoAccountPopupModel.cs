@@ -23,13 +23,11 @@ public partial class NoAccountPopupModel : ObservableObject, IPopup, ISetToDefau
     public void Cancel() => SetToDefault();
 
     [RelayCommand]
-    public void CreateAccount()
-    {
-        Application.Current.MainPage = new SetupPasswordPage()
+    public Task CreateAccountAsync() => Application.Current.MainPage.Navigation.PushAsync(new SetupPasswordPage()
         {
             Navigation = CreateAccountNavigationAsync
-        };
-    }
+        });
+    
 
     public async Task CreateAccountNavigationAsync()
     {
@@ -45,11 +43,11 @@ public partial class NoAccountPopupModel : ObservableObject, IPopup, ISetToDefau
     }
 
     [RelayCommand]
-    public void ImportAccount()
+    public async Task ImportAccountAsync()
     {
         SetToDefault();
 
-        Application.Current.MainPage = new SetupPasswordPage()
+        await Application.Current.MainPage.Navigation.PushAsync(new SetupPasswordPage()
         {
             Navigation = () => Application.Current.MainPage.Navigation.PushAsync(
                new EnterMnemonicsPage(
@@ -66,7 +64,7 @@ public partial class NoAccountPopupModel : ObservableObject, IPopup, ISetToDefau
                        )
                    }
                )
-           )
-        };
+            )
+        });
     }
 }

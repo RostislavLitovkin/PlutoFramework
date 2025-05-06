@@ -20,44 +20,50 @@
                 BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
-        <CollectionView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+        <RefreshView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+            Command="{Binding RefreshCommand}" 
+            IsRefreshing="{Binding IsRefreshing}">
+
+            <CollectionView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
                     ItemSizingStrategy="MeasureAllItems"
                     ItemsSource="{Binding Items}"
                     RemainingItemsThreshold="0"
                     RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}">
-            
-            <CollectionView.Header>
-                <VerticalStackLayout>
-                    <Image Source="xcavatemarketplace.png"
+
+                <CollectionView.Header>
+                    <VerticalStackLayout>
+                        <Image Source="xcavatemarketplace.png"
                            Margin="40"/>
-                </VerticalStackLayout>
-            </CollectionView.Header>
-            <CollectionView.Footer>
-                <StackLayout HeightRequest="200" >
-                    <customlayouts:LoadingItemView HeightRequest="80" 
+                    </VerticalStackLayout>
+                </CollectionView.Header>
+                <CollectionView.Footer>
+                    <StackLayout HeightRequest="200" >
+                        <customlayouts:LoadingItemView HeightRequest="80" 
                                                Margin="20, 0, 20, 0"
                                                 IsVisible="{Binding Loading}"/>
-                    <customlayouts:TransparentItemView Text="No Properties"
+                        <customlayouts:TransparentItemView Text="No Properties"
                                                        HeightRequest="80" 
                                                    Margin="20, 0, 20, 0"
                                                    IsVisible="{Binding NoItems}" />
-                </StackLayout>
-            </CollectionView.Footer>
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Vertical" 
+                    </StackLayout>
+                </CollectionView.Footer>
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" 
                                    ItemSpacing="0"
                                    />
-            </CollectionView.ItemsLayout>
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <xcavateproperty:PropertyThumbnailView Endpoint="{Binding Endpoint}"
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <xcavateproperty:PropertyThumbnailView Endpoint="{Binding Endpoint}"
                                                             Favourite="{Binding Favourite}"
                                                             NftBase="{Binding NftBase}"
                                                             Padding="20, 5, 20, 10" />
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
+        </RefreshView>
+        
         <extrinsic:ExtrinsicStatusStackLayout />
 
         <navigationbar:NavigationBarView SelectedOption="Nfts" />

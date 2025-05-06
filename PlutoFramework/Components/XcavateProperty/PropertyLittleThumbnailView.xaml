@@ -69,17 +69,31 @@
 
                 <AbsoluteLayout HeightRequest="60"
                              Grid.Column="2">
-                    <Label x:Name="operationLabel"
+                    <Label
                        HorizontalTextAlignment="End"
                        VerticalTextAlignment="Center"
                        FontAttributes="Bold"
-                       AbsoluteLayout.LayoutBounds="0,0,110,30"/>
-                    <Label x:Name="amountLabel"
+                       AbsoluteLayout.LayoutBounds="0,0,110,30">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span  x:Name="operationLabel"
+                                        FontAttributes="Bold" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label 
                        HorizontalTextAlignment="End"
                        VerticalTextAlignment="Center"
                        TextColor="#888888"
                        FontAttributes="Bold"
-                       AbsoluteLayout.LayoutBounds="0,30,110,30"/>
+                       AbsoluteLayout.LayoutBounds="0,30,110,30">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span x:Name="amountLabel"
+                                         FontAttributes="Bold" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
                 </AbsoluteLayout>
                
             </Grid>

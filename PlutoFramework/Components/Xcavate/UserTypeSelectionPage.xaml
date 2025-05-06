@@ -34,12 +34,18 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Label Text="Who are you?"
-                   FontAttributes="Bold"
+            <Label
                    FontSize="20"
                    Grid.Column="0"
                    Grid.Row="0"
-                   Grid.ColumnSpan="2"/>
+                   Grid.ColumnSpan="2">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Who are you?"
+                              FontAttributes="Bold"></Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
             <card:ClickableCard Grid.Column="0"
                                 Grid.Row="1"
@@ -53,9 +59,14 @@
                                    HeightRequest="80"
                                    Margin="0,40,0,0"
                                    Source="xcavatedeveloper.png" />
-                            <Label Text="Developer"
-                                   FontAttributes="Bold"
-                                   HorizontalTextAlignment="Center"/>
+                            <Label HorizontalTextAlignment="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Developer"
+                                              FontAttributes="Bold"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                             <Label Text="List and manage properties"
                                    HeightRequest="70"
                                    HorizontalTextAlignment="Center"/>
@@ -79,9 +90,14 @@
                                    HeightRequest="80"
                                    Margin="0,40,0,0"
                                    Source="xcavateinvestor.png" />
-                            <Label Text="Investor"
-                                   FontAttributes="Bold"
-                                   HorizontalTextAlignment="Center"/>
+                            <Label HorizontalTextAlignment="Center">        
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Investor"
+                                              FontAttributes="Bold"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                             <Label Text="Buy &amp; sell tokenized real estate"
                                    HeightRequest="70"
                                    HorizontalTextAlignment="Center"/>
@@ -101,9 +117,16 @@
                                    HeightRequest="80"
                                    Margin="0,40,0,0"
                                    Source="xcavatelettingagent.png" />
-                            <Label Text="Letting Agent"
-                                   FontAttributes="Bold"
-                                   HorizontalTextAlignment="Center"/>
+                            <Label 
+                                   HorizontalTextAlignment="Center"
+                                   >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Letting Agent"
+                                              FontAttributes="Bold"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                             <Label Text="Facilitate transactions &amp; property management"
                                    HorizontalTextAlignment="Center"
                                    HeightRequest="70"/>
@@ -124,9 +147,14 @@
                                    HeightRequest="80"
                                    Margin="0,40,0,0"
                                    Source="xcavateloanevaluator.png" />
-                            <Label Text="Loan Evaluator"
-                                    FontAttributes="Bold"
-                                    HorizontalTextAlignment="Center"/>
+                            <Label HorizontalTextAlignment="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Loan Evaluator"
+                                              FontAttributes="Bold"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                             <Label Text=""
                                    HeightRequest="70"
                                     HorizontalTextAlignment="Center"/>
