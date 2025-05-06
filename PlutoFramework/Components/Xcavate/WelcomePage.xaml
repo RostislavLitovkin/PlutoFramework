@@ -42,7 +42,8 @@
                       IndicatorView="indicatorView"
                       Grid.Row="2"
                       PeekAreaInsets="0"
-                      IsBounceEnabled="false">
+                          HorizontalScrollBarVisibility="Never"
+                      IsBounceEnabled="True">
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
