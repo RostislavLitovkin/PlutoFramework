@@ -45,9 +45,7 @@ public partial class MainPage : ContentPage
         List<IView> views = [];
         try
         {
-            views = Model.CustomLayoutModel.ParsePlutoLayout(Preferences.Get(
-                "PlutoLayout",
-                Model.CustomLayoutModel.DEFAULT_PLUTO_LAYOUT));
+            views = Model.CustomLayoutModel.ParsePlutoLayout(Model.CustomLayoutModel.DEFAULT_PLUTO_LAYOUT);
         }
         catch
         {

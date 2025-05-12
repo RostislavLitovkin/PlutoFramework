@@ -24,6 +24,7 @@ using PlutoFramework.Components.Kilt;
 using PlutoFramework.Components.XcavateProperty;
 using PlutoFramework.Components.Table;
 using PlutoFramework.Components.XcavateProperty.Cells;
+using PlutoFramework.Components.Xcavate;
 
 namespace PlutoFramework.Model
 {
@@ -35,6 +36,7 @@ namespace PlutoFramework.Model
 
     public enum ComponentId
     {
+        Default,
         U,
         dApp,
         UsdB,
@@ -58,12 +60,15 @@ namespace PlutoFramework.Model
         mainDid,
         XcPaseoOwnedProperties,
         XcTableInvestmentSummary,
-        XcTableROIActiveLoan
+        XcTableROIActiveLoan,
+        XcRiskWarning,
+        None
+
     }
 
     public class CustomLayoutModel
     {
-        public const string DEFAULT_PLUTO_LAYOUT = "plutolayout: [dApp, UsdB, RnT, XcTableInvestmentSummary, XcTableROIActiveLoan, XcPaseoOwnedProperties];[XcavatePaseo]";
+        public const string DEFAULT_PLUTO_LAYOUT = "plutolayout: [XcRiskWarning, dApp, UsdB, RnT, XcTableInvestmentSummary, XcTableROIActiveLoan, XcPaseoOwnedProperties];[XcavatePaseo]";
 
         // This constant is used to fetch all components
         public static string AllComponentsString = $"plutolayout: [{string.Join(",", Enum.GetNames(typeof(ComponentId)))}];[";
@@ -387,6 +392,11 @@ namespace PlutoFramework.Model
                         new ROICellView(),
                         new ActiveLoadCellView()
                     );
+                case ComponentId.XcRiskWarning:
+                    return new RiskWarningView
+                    {
+                        HeightRequest = 90
+                    };
             }
 
             throw new Exception("Could not parse the PlutoLayout");
@@ -557,6 +567,12 @@ namespace PlutoFramework.Model
                     {
                         Name = "Xcavate Paseo Owned Properties",
                         ComponentId = ComponentId.XcPaseoOwnedProperties,
+                    };
+                case ComponentId.XcRiskWarning:
+                    return new ComponentInfo
+                    {
+                        Name = "Xcavate Risk Warning",
+                        ComponentId = ComponentId.XcRiskWarning,
                     };
             }
 

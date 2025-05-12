@@ -25,9 +25,6 @@ namespace PlutoFramework.Components.Xcavate
         };
 
         [RelayCommand]
-        public Task LearnMoreAsync() => Application.Current.MainPage.Navigation.PushAsync(new WebViewPage("https://xcavate.io/risk-warning/"));
-
-        [RelayCommand]
         public void BrowseProperties()
         {
             Application.Current.MainPage = new AppShell();

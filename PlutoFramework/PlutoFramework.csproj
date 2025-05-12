@@ -823,6 +823,9 @@
 	  <MauiXaml Update="Components\Xcavate\OnboardingShell.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Xcavate\RiskWarningView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Xcavate\TeamMemberView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

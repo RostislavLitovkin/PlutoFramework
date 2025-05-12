@@ -17,6 +17,7 @@
              HideSoftInputOnTapped="True"
              xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
              xmlns:loading="clr-namespace:PlutoFramework.Components.Loading"
+             xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
                 BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
@@ -32,8 +33,7 @@
 
                 <CollectionView.Header>
                     <VerticalStackLayout>
-                        <Image Source="xcavatemarketplace.png"
-                           Margin="40"/>
+                        <xcavate:RiskWarningView Margin="20,10,20,10" />
                     </VerticalStackLayout>
                 </CollectionView.Header>
                 <CollectionView.Footer>

@@ -22,11 +22,13 @@
               ColumnSpacing="15"
               RowSpacing="15">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="40" />
-
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -34,21 +36,30 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
+            <xcavate:RiskWarningView Grid.ColumnSpan="2" />
+            
             <Label
                    FontSize="20"
                    Grid.Column="0"
-                   Grid.Row="0"
+                   Grid.Row="1"
                    Grid.ColumnSpan="2">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Who are you?"
+                        <Span Text="Select account type"
                               FontAttributes="Bold"></Span>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
 
+            <Label FontSize="20"
+                   Grid.Column="0"
+                   Grid.Row="2"
+                   Grid.ColumnSpan="2"
+                   Text="Select what fits your interest">
+            </Label>
+
             <card:ClickableCard Grid.Column="0"
-                                Grid.Row="1"
+                                Grid.Row="3"
                                 HorizontalOptions="Fill">
                 <card:ClickableCard.View>
                     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
@@ -80,7 +91,7 @@
                 </card:ClickableCard.GestureRecognizers>
             </card:ClickableCard>
             <card:ClickableCard Grid.Column="1"
-                                Grid.Row="1">
+                                Grid.Row="3">
                 <card:ClickableCard.View>
                     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
                                         AbsoluteLayout.LayoutFlags="All">
@@ -107,7 +118,7 @@
                 </card:ClickableCard.View>
             </card:ClickableCard>
             <card:ClickableCard Grid.Column="0"
-                    Grid.Row="2">
+                                Grid.Row="4">
                 <card:ClickableCard.View>
                     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
                             AbsoluteLayout.LayoutFlags="All">
@@ -137,7 +148,7 @@
             </card:ClickableCard>
 
             <card:ClickableCard Grid.Column="1"
-                    Grid.Row="2">
+                                Grid.Row="4">
                 <card:ClickableCard.View>
                     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
                             AbsoluteLayout.LayoutFlags="All">

@@ -12,6 +12,7 @@
              xmlns:account="clr-namespace:PlutoFramework.Components.Account"
              xmlns:kilt="clr-namespace:PlutoFramework.Components.Kilt"
              xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
+             xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
              xmlns:sumsub="clr-namespace:PlutoFramework.Components.Sumsub"
              HideSoftInputOnTapped="True"
              BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
@@ -20,6 +21,8 @@
             <VerticalStackLayout Margin="0, 45, 0, 0"
                             Spacing="15"
                             Padding="20, 20, 20, 200">
+                <xcavate:RiskWarningView />
+                
                 <nft:NftMultiImageView ImageSources="{Binding Metadata.Images}" />
 
                 <Grid HorizontalOptions="Center"
