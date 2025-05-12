@@ -158,6 +158,16 @@ namespace PlutoFramework.Model.HydraDX
                 return 1;
             }
 
+            if (tokenSymbol.Equals("USD", StringComparison.CurrentCultureIgnoreCase))
+            {
+                return 1;
+            }
+
+            if (tokenSymbol.Equals("XCAV", StringComparison.CurrentCultureIgnoreCase))
+            {
+                return 0.1;
+            }
+
             if (!Assets.ContainsKey(tokenSymbol))
             {
                 return 0;

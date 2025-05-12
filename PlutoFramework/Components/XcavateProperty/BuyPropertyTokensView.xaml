@@ -17,13 +17,15 @@
 
                 <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, AutoSize"
                          AbsoluteLayout.LayoutFlags="WidthProportional"
+                                     
+                                     
                          x:Name="verticalStackLayout"
                          Spacing="20">
 
                     <!-- Add your content here -->
 
                     <xcavateproperty:PropertyLittleThumbnailView XcavateMetadata="{Binding Metadata}" />
-                    
+
                     <AbsoluteLayout Margin="10, 0, 10, -10">
                         <Label Text="Tokens available:"
                                AbsoluteLayout.LayoutBounds="0,0,AutoSize, AutoSize"/>
@@ -37,9 +39,49 @@
                                         Text="{Binding Tokens}"
                                         MaxValue="{Binding MaxValue}"
                                         UpdateCommand="{Binding FormChangedCommand}"
+                                        CardWidth="{Binding Source={x:Reference verticalStackLayout}, Path=Width}"
                                         />
                     
                     <Label Text="{Binding ErrorMessage}" TextColor="Red" />
+
+                    <AbsoluteLayout Margin="10, 0, 10, -10">
+                        <Label Text="Price:"
+                               AbsoluteLayout.LayoutBounds="0,0,AutoSize, AutoSize"/>
+                        <Label Text="{Binding TokensPrice}"
+                               HorizontalTextAlignment="End"
+                               AbsoluteLayout.LayoutBounds="1,0,AutoSize, AutoSize"
+                               AbsoluteLayout.LayoutFlags="PositionProportional"/>  
+                    </AbsoluteLayout>
+
+                    <AbsoluteLayout Margin="10, 0, 10, -10">
+                        <Label Text="Fees (1%):"
+                               AbsoluteLayout.LayoutBounds="0,0,AutoSize, AutoSize"/>
+                        <Label Text="{Binding Fees}"
+                               HorizontalTextAlignment="End"
+                               AbsoluteLayout.LayoutBounds="1,0,AutoSize, AutoSize"
+                               AbsoluteLayout.LayoutFlags="PositionProportional"/>      
+                    </AbsoluteLayout>
+
+                    <AbsoluteLayout Margin="10, 0, 10, -10">
+                        <Label AbsoluteLayout.LayoutBounds="0,0,AutoSize, AutoSize">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Total price:"
+                                          FontAttributes="Bold" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label AbsoluteLayout.LayoutBounds="1,0,AutoSize, AutoSize"
+                               AbsoluteLayout.LayoutFlags="PositionProportional"
+                               HorizontalTextAlignment="End">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding PriceTotal}"
+                                          FontAttributes="Bold" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </AbsoluteLayout>
 
                 </VerticalStackLayout>
                 <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 80"

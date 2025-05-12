@@ -113,7 +113,7 @@
 
                 <Grid AbsoluteLayout.LayoutBounds="0.5, 25, 1, 185"
                       AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
-                      ColumnSpacing="5"
+                      ColumnSpacing="15"
                       RowSpacing="5"
                        Margin="0,10,0,10"
                       >
@@ -223,7 +223,7 @@
 
         <navigationbar:TopNavigationBar Title="{Binding Metadata.PropertyName}"/>
 
-        <extrinsic:ExtrinsicStatusStackLayout TranslationY="55" />
+        <extrinsic:ExtrinsicStatusStackLayout />
 
         <xcavateproperty:BuyPropertyTokensView />
         

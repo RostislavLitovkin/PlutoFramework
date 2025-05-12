@@ -21,7 +21,8 @@
                 </Grid.ColumnDefinitions>
 
                 <Entry x:Name="entry"
-                       HorizontalOptions="Fill"
+                       HorizontalOptions="Start"
+                       HorizontalTextAlignment="Start"
                        Grid.Column="0"
                        Grid.ColumnSpan="2"
                        Keyboard="Text"
@@ -31,7 +32,8 @@
                        IsTextPredictionEnabled="false"
                        PropertyChanged="OnPropertyChanged"
                        Unfocused="OnUnfocused"
-                       Focused="OnFocused" />
+                       Focused="OnFocused"
+                       />
 
                 <Border HeightRequest="40"
                         Grid.Column="1"

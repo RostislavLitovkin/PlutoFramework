@@ -290,7 +290,8 @@ namespace PlutoFramework.Model
                     {
                         NftBase = cache[key],
                         Operation = operation,
-                        Amount = amount
+                        Amount = amount,
+                        Favourite = false
                     };
                 }
             }

@@ -1,7 +1,10 @@
 ﻿using PlutoFramework.Components.Account;
 using PlutoFramework.Components.AddressView;
+using PlutoFramework.Components.NetworkSelect;
 using PlutoFramework.Components.TransferView;
+using PlutoFramework.Constants;
 using PlutoFramework.Model;
+using Substrate.NetApi;
 
 namespace PlutoFramework.Components.Buttons;
 
@@ -14,6 +17,19 @@ public partial class ReceiveAndTransferView : ContentView
 
     void OnReceiveClicked(System.Object sender, System.EventArgs e)
     {
+        var qrViewModel = DependencyService.Get<AddressQrCodeViewModel>();
+
+        var selectedEndpointKey = DependencyService.Get<MultiNetworkSelectViewModel>().SelectedKey ?? EndpointEnum.None;
+
+        if (selectedEndpointKey == EndpointEnum.None)
+        {
+            return;
+        }
+
+        var endpoint = EndpointsModel.GetEndpoint(selectedEndpointKey);
+
+        var keyToGenesisHash = Endpoints.HashToKey.ToDictionary(x => x.Value, x => x.Key);
+
         if (!KeysModel.HasSubstrateKey())
         {
             var noAccountPopupViewModel = DependencyService.Get<NoAccountPopupModel>();
@@ -23,12 +39,27 @@ public partial class ReceiveAndTransferView : ContentView
             return;
         }
 
-        var chainAddressViewModel = DependencyService.Get<ChainAddressViewModel>();
 
-        var qrViewModel = DependencyService.Get<AddressQrCodeViewModel>();
+        if (endpoint.ChainType == Constants.ChainType.Substrate)
+        {
+            qrViewModel.Address = Utils.GetAddressFrom(KeysModel.GetPublicKeyBytes(), endpoint.SS58Prefix);
 
-        qrViewModel.QrAddress = chainAddressViewModel.QrAddress;
-        qrViewModel.Address = chainAddressViewModel.Address;
+            try
+            {
+                qrViewModel.QrAddress = "substrate:" + qrViewModel.Address + ":" + keyToGenesisHash[selectedEndpointKey];
+            }
+            catch
+            {
+                qrViewModel.QrAddress = "substrate:" + qrViewModel.Address;
+            }
+        }
+        else if (endpoint.ChainType == Constants.ChainType.Ethereum)
+        {
+            qrViewModel.Address = Utils.Bytes2HexString(KeysModel.GetPublicKeyBytes()).Substring(0, 42);
+
+            qrViewModel.QrAddress = qrViewModel.Address;
+        }
+
         qrViewModel.IsVisible = true;
     }
 

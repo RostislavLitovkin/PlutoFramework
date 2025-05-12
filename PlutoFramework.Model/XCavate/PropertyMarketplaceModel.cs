@@ -9,15 +9,35 @@ using Substrate.NetApi.Model.Extrinsics;
 using XcavatePaseo.NetApi.Generated.Model.sp_core.crypto;
 using Substrate.NetApi.Model.Types.Base;
 using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
+using System.ComponentModel;
 
 namespace PlutoFramework.Model.Xcavate
 {
-    public record PropertyTokenOwnershipInfo
+    public record PropertyTokenOwnershipInfo : INotifyPropertyChanged
     {
         public NftKey? Key => NftBase is not null ? (NftBase.Type, NftBase.CollectionId, NftBase.Id) : null;
         public required uint Amount { get; set; }
 
+        private bool favourite = false;
+        public bool Favourite
+        {
+            get => favourite;
+            set
+            {
+                if (favourite != value)
+                {
+                    favourite = value;
+                    OnPropertyChanged(nameof(Favourite));
+                }
+            }
+        }
+
         public required INftBase NftBase { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propertyName) =>
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
     }
 
     public enum XcavatePropertyOperation
@@ -89,7 +109,9 @@ namespace PlutoFramework.Model.Xcavate
                 Items = propertyAssetDetails.Items.Zip(tokenOwnerDetails, (propertyDetails, ownerDetails) => new PropertyTokenOwnershipInfo
                 {
                     Amount = ownerDetails.TokenAmount,
-                    NftBase = propertyDetails
+                    NftBase = propertyDetails,
+                    Favourite = false, // Is filled later
+
                 }),
                 LastKey = Utils.HexToByteArray(fullKeys.Last().ToString())
             };

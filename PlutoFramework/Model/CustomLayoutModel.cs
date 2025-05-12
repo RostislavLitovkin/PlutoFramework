@@ -22,6 +22,8 @@ using PlutoFramework.Components.Xcm;
 using PlutoFramework.View;
 using PlutoFramework.Components.Kilt;
 using PlutoFramework.Components.XcavateProperty;
+using PlutoFramework.Components.Table;
+using PlutoFramework.Components.XcavateProperty.Cells;
 
 namespace PlutoFramework.Model
 {
@@ -54,12 +56,14 @@ namespace PlutoFramework.Model
         GLGPowerups,
         xTrnsfr,
         mainDid,
-        XcPaseoOwnedProperties
+        XcPaseoOwnedProperties,
+        XcTableInvestmentSummary,
+        XcTableROIActiveLoan
     }
 
     public class CustomLayoutModel
     {
-        public const string DEFAULT_PLUTO_LAYOUT = "plutolayout: [dApp, ExSL, UsdB, RnT, SubK, ChaK, mainDid, XcPaseoOwnedProperties];[XcavatePaseo]";
+        public const string DEFAULT_PLUTO_LAYOUT = "plutolayout: [dApp, UsdB, RnT, XcTableInvestmentSummary, XcTableROIActiveLoan, XcPaseoOwnedProperties];[XcavatePaseo]";
 
         // This constant is used to fetch all components
         public static string AllComponentsString = $"plutolayout: [{string.Join(",", Enum.GetNames(typeof(ComponentId)))}];[";
@@ -373,6 +377,16 @@ namespace PlutoFramework.Model
                     return new MainDidView();
                 case ComponentId.XcPaseoOwnedProperties:
                     return new OwnedPropertiesListView();
+                case ComponentId.XcTableInvestmentSummary:
+                    return new TwoCellTableView(
+                        new PropertyTokensBoughtCellView(),
+                        new TotalInvestedCellView()
+                    );
+                case ComponentId.XcTableROIActiveLoan:
+                    return new TwoCellTableView(
+                        new ROICellView(),
+                        new ActiveLoadCellView()
+                    );
             }
 
             throw new Exception("Could not parse the PlutoLayout");

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Table.TwoCellTableView">
+    <Grid 
+      ColumnSpacing="15"
+      RowSpacing="5"
+      >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+        </Grid.RowDefinitions>
+
+        <ContentView Grid.Column="0"
+                     Grid.Row="0"
+                     x:Name="cell1">
+        </ContentView>
+        <ContentView Grid.Column="1"
+                     Grid.Row="0"
+                     x:Name="cell2">
+        </ContentView>
+    </Grid>
+</ContentView>

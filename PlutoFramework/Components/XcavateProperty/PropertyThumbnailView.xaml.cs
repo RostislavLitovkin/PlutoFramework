@@ -151,6 +151,9 @@ public partial class PropertyThumbnailView : ContentView
             NftBase = NftBase,
             Favourite = Favourite
         });
+
+            UpdateFavouritePropertiesModel.UpdateFavourite(NftBase as INftXcavateBase, Favourite);
+        
     }
 
     async void OnMoreClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)

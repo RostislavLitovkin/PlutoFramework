@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.Buttons;
 using PlutoFramework.Components.TransactionAnalyzer;
 using PlutoFramework.Model;
+using PlutoFramework.Model.Currency;
 using PlutoFramework.Model.Xcavate;
 using UniqueryPlus.Metadata;
 using UniqueryPlus.Nfts;
@@ -23,7 +24,56 @@ namespace PlutoFramework.Components.XcavateProperty
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(ContinueButtonState))]
+        [NotifyPropertyChangedFor(nameof(TokensPrice))]
+        [NotifyPropertyChangedFor(nameof(Fees))]
+        [NotifyPropertyChangedFor(nameof(PriceTotal))]
         private string tokens = "";
+
+        public string TokensPrice
+        {
+            get
+            {
+                int parsedTokens;
+                if (!int.TryParse(Tokens, out parsedTokens) || parsedTokens < 1 || parsedTokens > NftMarketplaceDetails?.Listed)
+                {
+                    return "-";
+                }
+
+                var usd = parsedTokens * Metadata?.PricePerToken ?? 0;
+                return $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format("{0:0.00}", ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * usd)}";
+            }
+        }
+
+        public string Fees
+        {
+            get
+            {
+                int parsedTokens;
+                if (!int.TryParse(Tokens, out parsedTokens) || parsedTokens < 1 || parsedTokens > NftMarketplaceDetails?.Listed)
+                {
+                    return "-";
+                }
+
+                var usd = 0.01 * parsedTokens * Metadata?.PricePerToken ?? 0;
+                return $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format("{0:0.00}", ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * usd)}";
+            }
+        }
+
+        public string PriceTotal
+        {
+            get
+            {
+                int parsedTokens;
+                if (!int.TryParse(Tokens, out parsedTokens) || parsedTokens < 1 || parsedTokens > NftMarketplaceDetails?.Listed)
+                {
+                    return "-";
+                }
+
+                var usd = 1.01 * parsedTokens * Metadata?.PricePerToken ?? 0;
+                return $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format("{0:0.00}", ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * usd)}";
+            }
+        }
+
         public string MaxValue => NftMarketplaceDetails?.Listed.ToString() ?? "";
 
         [ObservableProperty]

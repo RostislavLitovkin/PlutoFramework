@@ -7,12 +7,12 @@
              MinimumHeightRequest="80">
     <VerticalStackLayout Spacing="5">
         <VerticalStackLayout BindableLayout.ItemsSource="{Binding Items}"
-                             Spacing="5">
+                             Spacing="15">
             <BindableLayout.ItemTemplate>
                 <DataTemplate>
                     <xcavateproperty:PropertyThumbnailView NftBase="{Binding NftBase}"
                                                            TokensOwned="{Binding Amount}"
-                                                           Favourite="False"
+                                                           Favourite="{Binding Favourite}"
                                                            />
 
                 </DataTemplate>

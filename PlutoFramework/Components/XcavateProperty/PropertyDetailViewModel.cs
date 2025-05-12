@@ -97,8 +97,7 @@ namespace PlutoFramework.Components.XcavateProperty
                 Favourite = Favourite
             });
 
-            var marketplaceViewModel = DependencyService.Get<XcavatePropertyMarketplaceViewModel>();
-            marketplaceViewModel.UpdateFavourite(NftBase as INftXcavateBase, Favourite);
+            UpdateFavouritePropertiesModel.UpdateFavourite(NftBase as INftXcavateBase, Favourite);
         }
 
         [RelayCommand]

@@ -13,7 +13,7 @@ namespace PlutoFramework.Components.XcavateProperty
     
     public class XcavatePropertyModel
     {
-        public static async Task<NftWrapper> ToNftWrapperAsync(INftXcavateBase nft)
+        public static async Task<NftWrapper> ToNftWrapperAsync(INftXcavateBase nft, CancellationToken token)
         {
             try
             {

@@ -17,7 +17,11 @@ public partial class TableCurrencyCell : ContentView
         propertyChanging: (bindable, oldValue, newValue) => {
             var control = (TableCurrencyCell)bindable;
 
-            control.valueLabel.Text = ((string)newValue);
+            // Run on main thread
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                control.valueLabel.Text = ((string)newValue);
+            });
         });
     public TableCurrencyCell()
 	{

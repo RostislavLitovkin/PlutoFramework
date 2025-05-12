@@ -125,6 +125,8 @@ public partial class App : Application
 
         DependencyService.Register<ModifyUserProfilePopupViewModel>();
 
+        DependencyService.Register<OwnedPropertiesListViewModel>();
+
         if (Preferences.Get(PreferencesModel.SHOW_WELCOME_SCREEN, true))
         {
             MainPage = new OnboardingShell();

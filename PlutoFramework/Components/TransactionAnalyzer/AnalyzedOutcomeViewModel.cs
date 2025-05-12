@@ -147,9 +147,10 @@ namespace PlutoFramework.Components.TransactionAnalyzer
             {
                 tempProperties.Add(new PropertyTokenOwnershipChangeInfo
                 {
-                    NftBase = (await PlutoFramework.Components.XcavateProperty.XcavatePropertyModel.ToNftWrapperAsync((XcavatePaseoNftsPalletNft)property.NftBase)).NftBase,
+                    NftBase = (await PlutoFramework.Components.XcavateProperty.XcavatePropertyModel.ToNftWrapperAsync((XcavatePaseoNftsPalletNft)property.NftBase, CancellationToken.None)).NftBase,
                     Operation = property.Operation,
                     Amount = property.Amount,
+                    Favourite = false // Does not matter
                 });
             }
 

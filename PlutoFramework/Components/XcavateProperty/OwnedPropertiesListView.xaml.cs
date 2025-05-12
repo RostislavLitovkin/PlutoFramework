@@ -1,6 +1,7 @@
 using PlutoFramework.Components.Balance;
 using PlutoFramework.Model.HydraDX;
 using PlutoFramework.Model;
+using PlutoFramework.Model.Xcavate;
 
 namespace PlutoFramework.Components.XcavateProperty;
 
@@ -10,8 +11,8 @@ public partial class OwnedPropertiesListView : ContentView, ISubstrateClientLoad
 	{
 		InitializeComponent();
 
-		BindingContext = new OwnedPropertiesListViewModel();
-	}
+		BindingContext = DependencyService.Get<OwnedPropertiesListViewModel>();
+    }
     public async Task LoadAsync(PlutoFrameworkSubstrateClient client, CancellationToken token)
     {
         if (client.Endpoint.Key != Constants.EndpointEnum.XcavatePaseo)
@@ -19,12 +20,14 @@ public partial class OwnedPropertiesListView : ContentView, ISubstrateClientLoad
             return;
         }
 
-        if (!Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY))
+        if (!KeysModel.HasSubstrateKey())
         {
             return;
         }
 
-        await ((OwnedPropertiesListViewModel)BindingContext).InitialLoadAsync(token);
+        await XcavateOwnedPropertiesModel.LoadAsync(client, KeysModel.GetSubstrateKey(), token);
+
+        await ((OwnedPropertiesListViewModel)BindingContext).UpdateAsync(token);
     }
 
     public void SetEmpty()

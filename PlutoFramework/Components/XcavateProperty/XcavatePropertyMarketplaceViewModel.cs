@@ -26,7 +26,10 @@ namespace PlutoFramework.Components.XcavateProperty
 
         public void UpdateFavourite(INftXcavateBase nftBase, bool newValue)
         {
-            ItemsDict[(nftBase.Type, nftBase.CollectionId, nftBase.Id)].Favourite = newValue;
+            if (ItemsDict.ContainsKey((nftBase.Type, nftBase.CollectionId, nftBase.Id)))
+            {
+                ItemsDict[(nftBase.Type, nftBase.CollectionId, nftBase.Id)].Favourite = newValue;
+            }
         }
 
         public override async Task LoadMoreAsync(CancellationToken token)
@@ -56,7 +59,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
                     if (uniqueryNftEnumerator != null && await uniqueryNftEnumerator.MoveNextAsync().ConfigureAwait(false))
                     {
-                        var newNft = await XcavatePropertyModel.ToNftWrapperAsync((INftXcavateBase)uniqueryNftEnumerator.Current);
+                        var newNft = await XcavatePropertyModel.ToNftWrapperAsync((INftXcavateBase)uniqueryNftEnumerator.Current, token);
 
                         if (newNft.Key is not null && !ItemsDict.ContainsKey((NftKey)newNft.Key))
                         {
