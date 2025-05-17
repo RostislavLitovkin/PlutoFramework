@@ -16,6 +16,8 @@ namespace PlutoFramework.Model
         public const string LOCATION = "UK";
 
         public const uint BOTTOM_CARD_POPUP_ANIMATION_DURATION = 500;
+
+        public const string CURRENCY_FORMAT = "{0:0}";
     }
 
     public static class AppConfigurationModel

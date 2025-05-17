@@ -23,7 +23,7 @@ public partial class UsdBalanceView : ContentView, ISubstrateClientLoadableAsync
 
         var viewModel = (UsdBalanceViewModel)BindingContext;
         viewModel.ReloadIsVisible = false;
-        viewModel.UsdSum = $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format("{0:0.00}", 0)}";
+        viewModel.UsdSum = $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, 0)}";
     }
 
     public async Task LoadAsync(PlutoFrameworkSubstrateClient client, CancellationToken token)

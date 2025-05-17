@@ -16,7 +16,7 @@ public partial class AssetSelectorView : ContentView
         propertyChanging: (bindable, oldValue, newValue) => {
             var control = (AssetSelectorView)bindable;
 
-            control.amountLabel.Text = String.Format("{0:0.00}", (double)newValue);
+            control.amountLabel.Text = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, (double)newValue);
         });
 
     public static readonly BindableProperty SymbolProperty = BindableProperty.Create(
@@ -44,7 +44,7 @@ public partial class AssetSelectorView : ContentView
         propertyChanging: (bindable, oldValue, newValue) => {
             var control = (AssetSelectorView)bindable;
 
-            control.usdLabel.Text = String.Format("{0:0.00}", (double)newValue) + " USD";
+            control.usdLabel.Text = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, (double)newValue) + " USD";
         });
 
     public static readonly BindableProperty IsSelectedProperty = BindableProperty.Create(

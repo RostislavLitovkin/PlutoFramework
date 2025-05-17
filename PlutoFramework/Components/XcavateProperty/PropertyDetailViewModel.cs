@@ -39,12 +39,12 @@ namespace PlutoFramework.Components.XcavateProperty
         public string LocationShortName => $"{Metadata?.AddressStreet}, {Metadata?.AddressTownCity}";
 
         public string ListingPrice=> $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{
-            String.Format("{0:0.00}", ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * Metadata?.PropertyPrice)
+            String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * Metadata?.PropertyPrice)
             }";
 
         public string PricePerTokenText => $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{
-            String.Format("{0:0.00}", ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * Metadata?.PricePerToken)
-            } [{String.Format("{0:0.00}", Metadata?.PricePerToken)} USDT]";
+            String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * Metadata?.PricePerToken)
+            } [{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, Metadata?.PricePerToken)} USDT]";
 
         public string Apy => PropertyModel.GetAPY(Metadata?.EstimatedRentalIncome ?? 1, Metadata?.PropertyPrice ?? 1);
 
@@ -55,7 +55,7 @@ namespace PlutoFramework.Components.XcavateProperty
         public string TokensAvailable => $"{NftMarketplaceDetails?.Listed.ToString() ?? "-"} / {Metadata?.NumberOfTokens.ToString() ?? "-"}";
 
         public string RentalIncome => $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{
-            String.Format("{0:0.00}", ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * Metadata?.EstimatedRentalIncome)
+            String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * Metadata?.EstimatedRentalIncome)
             }";
 
         [ObservableProperty]

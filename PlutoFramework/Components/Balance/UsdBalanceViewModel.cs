@@ -53,9 +53,9 @@ namespace PlutoFramework.Components.Balance
                 {
                     tempAssets.Add(new AssetInfo
                     {
-                        Amount = String.Format("{0:0.00}", a.Amount),
+                        Amount = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, a.Amount),
                         Symbol = a.Symbol,
-                        UsdValue = ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location) + (a.UsdValue > 0 ? String.Format("{0:0.00}", ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * a.UsdValue) : "~"),
+                        UsdValue = ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location) + (a.UsdValue > 0 ? String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * a.UsdValue) : "~"),
                         ChainIcon = Application.Current.UserAppTheme != AppTheme.Dark ? a.ChainIcon : a.DarkChainIcon,
                         IsReserved = a.Pallet == AssetPallet.NativeReserved || a.Pallet == AssetPallet.AssetsReserved || a.Pallet == AssetPallet.TokensReserved,
                         IsFrozen = a.Pallet == AssetPallet.NativeFrozen || a.Pallet == AssetPallet.AssetsFrozen || a.Pallet == AssetPallet.TokensFrozen,
@@ -65,7 +65,7 @@ namespace PlutoFramework.Components.Balance
 
             Assets = tempAssets;
 
-            UsdSum = $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format("{0:0.00}", ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * Model.AssetsModel.UsdSum)}";
+            UsdSum = $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * Model.AssetsModel.UsdSum)}";
         }
     }
 
