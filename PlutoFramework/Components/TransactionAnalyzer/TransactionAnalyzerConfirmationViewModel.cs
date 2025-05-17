@@ -39,7 +39,10 @@ namespace PlutoFramework.Components.TransactionAnalyzer
         private Endpoint endpoint;
 
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(ProcessedPalletCallName))]
         private string palletCallName;
+
+        public string ProcessedPalletCallName => DefaultAppConfiguration.TRANSACTION_ANALYZER_PALLET_CALL_NAME_SUBSTITUTION ?? PalletCallName;
 
         [ObservableProperty]
         private TempPayload payload;

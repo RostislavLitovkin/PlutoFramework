@@ -18,6 +18,8 @@ namespace PlutoFramework.Model
         public const uint BOTTOM_CARD_POPUP_ANIMATION_DURATION = 500;
 
         public const string CURRENCY_FORMAT = "{0:0}";
+
+        public const string? TRANSACTION_ANALYZER_PALLET_CALL_NAME_SUBSTITUTION = "Transaction detail";
     }
 
     public static class AppConfigurationModel

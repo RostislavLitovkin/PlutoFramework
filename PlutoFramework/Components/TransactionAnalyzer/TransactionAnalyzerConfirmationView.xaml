@@ -23,7 +23,7 @@
                                                 Endpoint="{Binding Endpoint}"
                                                 IsVisible="{Binding IsDAppViewVisible}"/>
 
-                    <txanalyzer:PalletCallView PalletCallName="{Binding PalletCallName}" 
+                    <txanalyzer:PalletCallView PalletCallName="{Binding ProcessedPalletCallName}" 
                                                Endpoint="{Binding Endpoint}"
                                                ExpandIconIsVisible="True">
                         <txanalyzer:PalletCallView.GestureRecognizers>
