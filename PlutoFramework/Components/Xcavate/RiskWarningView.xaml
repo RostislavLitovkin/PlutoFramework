@@ -6,14 +6,20 @@
     <ContentView.BindingContext>
         <xcavate:RiskWarningViewModel />
     </ContentView.BindingContext>
-    
-    <VerticalStackLayout>
-        <Label Text="Don't invest unless you're prepared to lose all the money you invest. This is a high-risk investment and you should not expect to be protected if something goes wrong." />
-        <Label Text="Take 2 mins to learn more."
-           TextColor="{StaticResource Primary}">
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding LearnMoreCommand}" />
-            </Label.GestureRecognizers>
-        </Label>
-    </VerticalStackLayout>
+
+    <Label>
+        <Label.FormattedText>
+            <FormattedString>
+                <Span Text="Don't invest unless you're prepared to lose all the money you invest. This is a high-risk investment and you should not expect to be protected if something goes wrong.">
+
+                </Span>
+                <Span Text="Take 2 mins to learn more."
+                          TextColor="{StaticResource Primary}">
+                    <Span.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding LearnMoreCommand}" />
+                    </Span.GestureRecognizers>
+                </Span>
+            </FormattedString>
+        </Label.FormattedText>
+    </Label>
 </ContentView>
