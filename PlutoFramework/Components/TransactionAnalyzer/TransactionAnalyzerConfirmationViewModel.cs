@@ -47,7 +47,10 @@ namespace PlutoFramework.Components.TransactionAnalyzer
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(ExtrinsicFailedIsVisible))]
+        [NotifyPropertyChangedFor(nameof(ProcessedExtrinsicFailedMessage))]
         private string extrinsicFailedMessage = "";
+
+        public string ProcessedExtrinsicFailedMessage => ExtrinsicFailedMessage.Substring(ExtrinsicFailedMessage.IndexOf(':') + 1);
 
         public bool ExtrinsicFailedIsVisible => ExtrinsicFailedMessage != "";
 

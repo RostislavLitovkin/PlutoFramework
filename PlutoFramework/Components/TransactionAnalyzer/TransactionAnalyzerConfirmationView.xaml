@@ -34,7 +34,7 @@
                     <txanalyzer:AnalyzedOutcomeView />
 
                     <txanalyzer:ExtrinsicErrorView IsVisible="{Binding ExtrinsicFailedIsVisible}"
-                                                   ErrorMessage="{Binding ExtrinsicFailedMessage}"/>
+                                                   ErrorMessage="{Binding ProcessedExtrinsicFailedMessage}"/>
 
                     <Label TextColor="#888888"
                            FontAttributes="Bold"
