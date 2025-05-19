@@ -24,6 +24,20 @@ namespace PlutoFramework.Model
                      .Where(asset => asset.Symbol.Equals(symbol, StringComparison.Ordinal));
         }
 
+        public static Asset? GetFirstOwnedAsset(IEnumerable<AssetKey> assetKeys)
+        {
+            var filteredAssets = AssetsDict
+                .Where((pair) => pair.Value.Amount > 0)
+                .Where((pair) => assetKeys.Contains(pair.Key));
+
+            if (filteredAssets.Count() == 0 && AssetsDict.TryGetValue(assetKeys.First(), out Asset? value))
+            {
+                return value;
+            }
+
+            return filteredAssets.First().Value;
+        }
+
         public static async Task GetBalanceAsync(SubstrateClientExt client, string substrateAddress, CancellationToken token, bool forceReload = false)
         {
             /*if (AssetsDict.ContainsKey((client.Endpoint.Key, AssetPallet.Native, 0)) && forceReload)

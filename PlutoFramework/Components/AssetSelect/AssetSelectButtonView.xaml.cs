@@ -2,7 +2,14 @@
 
 public partial class AssetSelectButtonView : ContentView
 {
-	public AssetSelectButtonView()
+    public AssetSelectButtonView(AssetSelectButtonViewModel viewModel)
+    {
+        InitializeComponent();
+
+        BindingContext = viewModel;
+    }
+
+    public AssetSelectButtonView()
 	{
 		InitializeComponent();
 

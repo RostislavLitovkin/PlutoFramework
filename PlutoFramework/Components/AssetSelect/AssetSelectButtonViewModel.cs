@@ -29,6 +29,9 @@ namespace PlutoFramework.Components.AssetSelect
 		public AssetKey SelectedAssetKey { get; set; }
         public int Decimals { get; set; }
 
+		/// <summary>
+		/// Default native coin
+		/// </summary>
         public AssetSelectButtonViewModel()
 		{
 			var key = EndpointsModel.GetSelectedEndpointKeys().First();
@@ -42,6 +45,22 @@ namespace PlutoFramework.Components.AssetSelect
             var assetInputViewModel = DependencyService.Get<AssetInputViewModel>();
             assetInputViewModel.CurrencyChanged(endpoint.Unit);
         }
-	}
+
+        /// <summary>
+        /// Default any asset according to the asset key
+        /// </summary>
+        public AssetSelectButtonViewModel(IEnumerable<AssetKey> defaultAssetKeys)
+        {
+			var defaultAsset = AssetsModel.GetFirstOwnedAsset(defaultAssetKeys);
+
+            ChainIcon = defaultAsset.ChainIcon;
+			Symbol = defaultAsset.Symbol;
+            SelectedAssetKey = (defaultAsset.Endpoint.Key, defaultAsset.Pallet, defaultAsset.AssetId);
+            Decimals = defaultAsset.Decimals;
+
+            var assetInputViewModel = DependencyService.Get<AssetInputViewModel>();
+            assetInputViewModel.CurrencyChanged(defaultAsset.Symbol);
+        }
+    }
 }
 
