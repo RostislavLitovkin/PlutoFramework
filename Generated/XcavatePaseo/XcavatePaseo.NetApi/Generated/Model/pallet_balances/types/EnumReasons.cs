@@ -38,7 +38,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_balances.types
     }
     
     /// <summary>
-    /// >> 354 - Variant[pallet_balances.types.Reasons]
+    /// >> 352 - Variant[pallet_balances.types.Reasons]
     /// </summary>
     public sealed class EnumReasons : BaseEnum<Reasons>
     {

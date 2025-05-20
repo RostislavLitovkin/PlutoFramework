@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_tx_v
     
     
     /// <summary>
-    /// >> 509 - Composite[frame_system.extensions.check_tx_version.CheckTxVersion]
+    /// >> 504 - Composite[frame_system.extensions.check_tx_version.CheckTxVersion]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckTxVersion : BaseType

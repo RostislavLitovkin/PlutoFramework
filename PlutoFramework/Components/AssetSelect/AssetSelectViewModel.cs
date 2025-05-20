@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using System.Collections.ObjectModel;
 using PlutoFramework.Types;
+using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.AssetPallet, System.Numerics.BigInteger);
 
 namespace PlutoFramework.Components.AssetSelect
 {
@@ -24,7 +25,7 @@ namespace PlutoFramework.Components.AssetSelect
 			isVisible = false;
 		}
 
-		public void Appear()
+		public void Appear(IEnumerable<AssetKey>? allowedAssetKeys)
 		{
 			IsVisible = true;
 
@@ -39,6 +40,11 @@ namespace PlutoFramework.Components.AssetSelect
 					continue;
 				}
 
+				if (allowedAssetKeys is not null && !allowedAssetKeys.Contains(valuePair.Key))
+				{
+					continue;
+				}
+
 				var a = valuePair.Value;
 
 				if (a.Amount == 0)
@@ -47,7 +53,7 @@ namespace PlutoFramework.Components.AssetSelect
                 }
 
                 // Ignore reserved and frozen assets
-                if (!(a.Pallet == AssetPallet.Native || a.Pallet == AssetPallet.Assets || a.Pallet == AssetPallet.Tokens))
+                if (!(a.Pallet == AssetPallet.Native || a.Pallet == AssetPallet.Assets || a.Pallet == AssetPallet.Tokens || a.Pallet == AssetPallet.ForeignAssets))
                 {
                     continue;
                 }

@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcm.v2.multilocation
     
     
     /// <summary>
-    /// >> 124 - Composite[xcm.v2.multilocation.MultiLocation]
+    /// >> 127 - Composite[xcm.v2.multilocation.MultiLocation]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MultiLocation : BaseType

@@ -90,9 +90,24 @@ namespace XcavatePaseo.NetApi.Generated
         public TransactionPaymentStorage TransactionPaymentStorage;
         
         /// <summary>
-        /// AssetsStorage storage calls.
+        /// RealEstateAssetsStorage storage calls.
         /// </summary>
-        public AssetsStorage AssetsStorage;
+        public RealEstateAssetsStorage RealEstateAssetsStorage;
+        
+        /// <summary>
+        /// RealEstateAssetsFreezerStorage storage calls.
+        /// </summary>
+        public RealEstateAssetsFreezerStorage RealEstateAssetsFreezerStorage;
+        
+        /// <summary>
+        /// AssetsFreezerStorage storage calls.
+        /// </summary>
+        public AssetsFreezerStorage AssetsFreezerStorage;
+        
+        /// <summary>
+        /// AssetTxPaymentStorage storage calls.
+        /// </summary>
+        public AssetTxPaymentStorage AssetTxPaymentStorage;
         
         /// <summary>
         /// MultisigStorage storage calls.
@@ -145,9 +160,9 @@ namespace XcavatePaseo.NetApi.Generated
         public MessageQueueStorage MessageQueueStorage;
         
         /// <summary>
-        /// ForeignAssetsStorage storage calls.
+        /// AssetsStorage storage calls.
         /// </summary>
-        public ForeignAssetsStorage ForeignAssetsStorage;
+        public AssetsStorage AssetsStorage;
         
         /// <summary>
         /// ForeignAssetsCreatorStorage storage calls.
@@ -185,11 +200,6 @@ namespace XcavatePaseo.NetApi.Generated
         public PropertyGovernanceStorage PropertyGovernanceStorage;
         
         /// <summary>
-        /// GameModuleStorage storage calls.
-        /// </summary>
-        public GameModuleStorage GameModuleStorage;
-        
-        /// <summary>
         /// RootTestingStorage storage calls.
         /// </summary>
         public RootTestingStorage RootTestingStorage;
@@ -215,7 +225,10 @@ namespace XcavatePaseo.NetApi.Generated
             this.TxPauseStorage = new TxPauseStorage(this);
             this.BalancesStorage = new BalancesStorage(this);
             this.TransactionPaymentStorage = new TransactionPaymentStorage(this);
-            this.AssetsStorage = new AssetsStorage(this);
+            this.RealEstateAssetsStorage = new RealEstateAssetsStorage(this);
+            this.RealEstateAssetsFreezerStorage = new RealEstateAssetsFreezerStorage(this);
+            this.AssetsFreezerStorage = new AssetsFreezerStorage(this);
+            this.AssetTxPaymentStorage = new AssetTxPaymentStorage(this);
             this.MultisigStorage = new MultisigStorage(this);
             this.NftsStorage = new NftsStorage(this);
             this.NftFractionalizationStorage = new NftFractionalizationStorage(this);
@@ -226,7 +239,7 @@ namespace XcavatePaseo.NetApi.Generated
             this.CumulusXcmStorage = new CumulusXcmStorage(this);
             this.PolkadotXcmStorage = new PolkadotXcmStorage(this);
             this.MessageQueueStorage = new MessageQueueStorage(this);
-            this.ForeignAssetsStorage = new ForeignAssetsStorage(this);
+            this.AssetsStorage = new AssetsStorage(this);
             this.ForeignAssetsCreatorStorage = new ForeignAssetsCreatorStorage(this);
             this.AssetRateStorage = new AssetRateStorage(this);
             this.XcmExecutorUtilsStorage = new XcmExecutorUtilsStorage(this);
@@ -234,7 +247,6 @@ namespace XcavatePaseo.NetApi.Generated
             this.NftMarketplaceStorage = new NftMarketplaceStorage(this);
             this.PropertyManagementStorage = new PropertyManagementStorage(this);
             this.PropertyGovernanceStorage = new PropertyGovernanceStorage(this);
-            this.GameModuleStorage = new GameModuleStorage(this);
             this.RootTestingStorage = new RootTestingStorage(this);
             this.AsyncBackingStorage = new AsyncBackingStorage(this);
         }

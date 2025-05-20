@@ -1,7 +1,9 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Components.AssetSelect;
 using PlutoFramework.Components.Buttons;
 using PlutoFramework.Components.TransactionAnalyzer;
+using PlutoFramework.Constants;
 using PlutoFramework.Model;
 using PlutoFramework.Model.Currency;
 using PlutoFramework.Model.Xcavate;
@@ -82,6 +84,20 @@ namespace PlutoFramework.Components.XcavateProperty
 
         public ButtonStateEnum ContinueButtonState => ErrorMessage == "" && Tokens != "" ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
 
+        private EndpointEnum endpointKey;
+
+        public EndpointEnum EndpointKey
+        {
+            get => endpointKey;
+            set
+            {
+                endpointKey = value;
+
+                var assetSelectButtonViewModel = DependencyService.Get<AssetSelectButtonViewModel>();
+                assetSelectButtonViewModel.ChangeAllowedAssets(PropertyMarketplaceModel.GetAcceptedAssets(value));
+            }
+        }
+
         public void SetToDefault()
         {
             IsVisible = false;
@@ -89,6 +105,7 @@ namespace PlutoFramework.Components.XcavateProperty
             ErrorMessage = "";
             Metadata = null;
             NftMarketplaceDetails = null;
+            EndpointKey = EndpointEnum.None;
         }
 
         [RelayCommand]
@@ -110,9 +127,11 @@ namespace PlutoFramework.Components.XcavateProperty
                 return;
             }
 
-            var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(Constants.EndpointEnum.XcavatePaseo, token);
+            var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(EndpointKey, token);
 
-            var method = PropertyMarketplaceModel.BuyPropertyTokens(NftMarketplaceDetails.AssetId, parsedTokens);
+            var assetSelectButtonViewModel = DependencyService.Get<AssetSelectButtonViewModel>();
+
+            var method = PropertyMarketplaceModel.BuyPropertyTokens(EndpointKey, NftMarketplaceDetails.AssetId, parsedTokens, assetSelectButtonViewModel.SelectedAssetKey);
 
             // Submitting the extrinsic
             var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();

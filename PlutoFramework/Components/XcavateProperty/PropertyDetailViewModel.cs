@@ -27,7 +27,8 @@ namespace PlutoFramework.Components.XcavateProperty
         [NotifyPropertyChangedFor(nameof(PricePerTokenText))]
         [NotifyPropertyChangedFor(nameof(Apy))]
         [NotifyPropertyChangedFor(nameof(TokensAvailable))]
-        [NotifyPropertyChangedFor(nameof(RentalIncome))]    
+        [NotifyPropertyChangedFor(nameof(RentalIncome))]
+        [NotifyPropertyChangedFor(nameof(TokensOwnedWorth))]
         private XcavateMetadata? metadata;
 
         [ObservableProperty]
@@ -67,6 +68,15 @@ namespace PlutoFramework.Components.XcavateProperty
         [RelayCommand]
         public Task OpenMapAsync() => Task.FromResult(0); //Browser.Default.OpenAsync(<location url>, BrowserLaunchMode.SystemPreferred);
 
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(TokensOwnedWorth))]
+        [NotifyPropertyChangedFor(nameof(OwnedPropertyTokensViewIsVisible))]
+        private uint tokensOwned = 0;
+
+        public string TokensOwnedWorth => $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * (TokensOwned * Metadata?.PricePerToken ?? 0))}";
+
+        public bool OwnedPropertyTokensViewIsVisible => TokensOwned != 0;
+
         [RelayCommand]
         public void Buy()
         {
@@ -80,6 +90,7 @@ namespace PlutoFramework.Components.XcavateProperty
             viewModel.NftMarketplaceDetails = NftMarketplaceDetails;
             viewModel.Metadata = Metadata;
             viewModel.IsVisible = true;
+            viewModel.EndpointKey = Model.NftModel.GetEndpointKey(NftBase.Type);   
         }
 
         [ObservableProperty]

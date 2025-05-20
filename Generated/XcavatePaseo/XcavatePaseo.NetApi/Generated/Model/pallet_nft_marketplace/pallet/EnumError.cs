@@ -129,44 +129,175 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         TooManyToken = 17,
         
         /// <summary>
+        /// >> TokenAmountTooLow
+        /// The object needs more token.
+        /// </summary>
+        TokenAmountTooLow = 18,
+        
+        /// <summary>
         /// >> OnlyOneOfferPerUser
         /// A user can only make one offer per listing.
         /// </summary>
-        OnlyOneOfferPerUser = 18,
+        OnlyOneOfferPerUser = 19,
         
         /// <summary>
         /// >> LawyerAlreadyRegistered
         /// The lawyer has already been registered.
         /// </summary>
-        LawyerAlreadyRegistered = 19,
+        LawyerAlreadyRegistered = 20,
         
         /// <summary>
         /// >> LawyerJobTaken
         /// The lawyer job has already been taken.
         /// </summary>
-        LawyerJobTaken = 20,
+        LawyerJobTaken = 21,
         
         /// <summary>
         /// >> LawyerNotFound
         /// A lawyer has not been set.
         /// </summary>
-        LawyerNotFound = 21,
+        LawyerNotFound = 22,
         
         /// <summary>
         /// >> AlreadyConfirmed
         /// The lawyer already submitted his answer.
         /// </summary>
-        AlreadyConfirmed = 22,
+        AlreadyConfirmed = 23,
         
         /// <summary>
         /// >> CostsTooHigh
         /// The costs of the lawyer can't be that high.
         /// </summary>
-        CostsTooHigh = 23,
+        CostsTooHigh = 24,
+        
+        /// <summary>
+        /// >> AssetNotSupported
+        /// This Asset is not supported for payment.
+        /// </summary>
+        AssetNotSupported = 25,
+        
+        /// <summary>
+        /// >> PaymentAssetNotSupported
+        /// This Asset is not supported for payment.
+        /// </summary>
+        PaymentAssetNotSupported = 26,
+        
+        /// <summary>
+        /// >> ExceedsMaxEntries
+        /// </summary>
+        ExceedsMaxEntries = 27,
+        
+        /// <summary>
+        /// >> TokenNotRefunded
+        /// The property is not refunded.
+        /// </summary>
+        TokenNotRefunded = 28,
+        
+        /// <summary>
+        /// >> ListingDurationCantBeZero
+        /// The duration of a listing can not be zero.
+        /// </summary>
+        ListingDurationCantBeZero = 29,
+        
+        /// <summary>
+        /// >> PropertyAlreadySold
+        /// The property is already sold.
+        /// </summary>
+        PropertyAlreadySold = 30,
+        
+        /// <summary>
+        /// >> ListingExpired
+        /// Listing has already expired.
+        /// </summary>
+        ListingExpired = 31,
+        
+        /// <summary>
+        /// >> NoTokenBought
+        /// Signer has not bought any token.
+        /// </summary>
+        NoTokenBought = 32,
+        
+        /// <summary>
+        /// >> ListingNotExpired
+        /// The listing has not expired.
+        /// </summary>
+        ListingNotExpired = 33,
+        
+        /// <summary>
+        /// >> InvalidTokenPrice
+        /// Price of a token can not be zero.
+        /// </summary>
+        InvalidTokenPrice = 34,
+        
+        /// <summary>
+        /// >> AmountCannotBeZero
+        /// Token amount can not be zero.
+        /// </summary>
+        AmountCannotBeZero = 35,
+        
+        /// <summary>
+        /// >> InvalidFeePercentage
+        /// Marketplace fee needs to be below 100 %.
+        /// </summary>
+        InvalidFeePercentage = 36,
+        
+        /// <summary>
+        /// >> InvalidTaxPercentage
+        /// Marketplace tax needs to be below 100 %.
+        /// </summary>
+        InvalidTaxPercentage = 37,
+        
+        /// <summary>
+        /// >> NotEnoughToken
+        /// The sender has not enough token.
+        /// </summary>
+        NotEnoughToken = 38,
+        
+        /// <summary>
+        /// >> TokenNotReturned
+        /// Token have not been returned yet.
+        /// </summary>
+        TokenNotReturned = 39,
+        
+        /// <summary>
+        /// >> ListingDurationTooHigh
+        /// Listing limit is set too high.
+        /// </summary>
+        ListingDurationTooHigh = 40,
+        
+        /// <summary>
+        /// >> AlreadyRegionOwner
+        /// The proposer is already owner of this region.
+        /// </summary>
+        AlreadyRegionOwner = 41,
+        
+        /// <summary>
+        /// >> TakeoverAlreadyPending
+        /// There is already a takeover request pending.
+        /// </summary>
+        TakeoverAlreadyPending = 42,
+        
+        /// <summary>
+        /// >> NoTakeoverRequest
+        /// There is no pending takeover request.
+        /// </summary>
+        NoTakeoverRequest = 43,
+        
+        /// <summary>
+        /// >> NoObjectFound
+        /// The real estate object could not be found.
+        /// </summary>
+        NoObjectFound = 44,
+        
+        /// <summary>
+        /// >> WrongRegion
+        /// The lawyer has no permission for this region.
+        /// </summary>
+        WrongRegion = 45,
     }
     
     /// <summary>
-    /// >> 470 - Variant[pallet_nft_marketplace.pallet.Error]
+    /// >> 484 - Variant[pallet_nft_marketplace.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

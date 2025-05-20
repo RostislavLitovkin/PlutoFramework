@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset
     }
     
     /// <summary>
-    /// >> 123 - Variant[xcm.v2.multiasset.AssetId]
+    /// >> 126 - Variant[xcm.v2.multiasset.AssetId]
     /// </summary>
     public sealed class EnumAssetId : BaseEnumRust<AssetId>
     {

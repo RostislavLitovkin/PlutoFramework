@@ -43,7 +43,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcm.v2
     }
     
     /// <summary>
-    /// >> 127 - Variant[xcm.v2.NetworkId]
+    /// >> 130 - Variant[xcm.v2.NetworkId]
     /// </summary>
     public sealed class EnumNetworkId : BaseEnumRust<NetworkId>
     {

@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcmp_queue
     
     
     /// <summary>
-    /// >> 423 - Composite[cumulus_pallet_xcmp_queue.QueueConfigData]
+    /// >> 429 - Composite[cumulus_pallet_xcmp_queue.QueueConfigData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class QueueConfigData : BaseType

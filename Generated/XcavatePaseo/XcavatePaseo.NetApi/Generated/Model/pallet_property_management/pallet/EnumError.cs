@@ -147,26 +147,26 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         LettingAgentExists = 20,
         
         /// <summary>
-        /// >> NotEnoughReserves
-        /// The property does not have enough reserves to make this proposal.
-        /// </summary>
-        NotEnoughReserves = 21,
-        
-        /// <summary>
         /// >> AssetNotFound
         /// This asset has no token.
         /// </summary>
-        AssetNotFound = 22,
+        AssetNotFound = 21,
         
         /// <summary>
         /// >> NoLoactions
         /// This letting agent has no location.
         /// </summary>
-        NoLoactions = 23,
+        NoLoactions = 22,
+        
+        /// <summary>
+        /// >> PaymentAssetNotSupported
+        /// This Asset is not supported for payment.
+        /// </summary>
+        PaymentAssetNotSupported = 23,
     }
     
     /// <summary>
-    /// >> 476 - Variant[pallet_property_management.pallet.Error]
+    /// >> 489 - Variant[pallet_property_management.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

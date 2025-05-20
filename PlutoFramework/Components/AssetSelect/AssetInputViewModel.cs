@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using PlutoFramework.Model;
 using PlutoFramework.Model.HydraDX;
 
 namespace PlutoFramework.Components.AssetSelect

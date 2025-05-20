@@ -30,10 +30,11 @@
                     WidthRequest="20" HeightRequest="20"
                     Source="{Binding ChainIcon}" />
 
+            <HorizontalStackLayout.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ChangeAssetCommand}"/>
+            </HorizontalStackLayout.GestureRecognizers>
         </HorizontalStackLayout>
-        <Border.GestureRecognizers>
-            <TapGestureRecognizer Tapped="OnChangeTokenClicked" />
-        </Border.GestureRecognizers>
+        
     </Border>
 </ContentView>
 

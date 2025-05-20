@@ -58,7 +58,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset
     }
     
     /// <summary>
-    /// >> 132 - Variant[xcm.v2.multiasset.AssetInstance]
+    /// >> 135 - Variant[xcm.v2.multiasset.AssetInstance]
     /// </summary>
     public sealed class EnumAssetInstance : BaseEnumRust<AssetInstance>
     {

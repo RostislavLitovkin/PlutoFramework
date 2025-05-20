@@ -255,7 +255,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.pallet
     }
     
     /// <summary>
-    /// >> 52 - Variant[pallet_nfts.pallet.Event]
+    /// >> 56 - Variant[pallet_nfts.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

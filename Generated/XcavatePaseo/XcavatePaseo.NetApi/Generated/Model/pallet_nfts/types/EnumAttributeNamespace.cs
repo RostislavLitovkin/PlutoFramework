@@ -43,7 +43,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
     }
     
     /// <summary>
-    /// >> 58 - Variant[pallet_nfts.types.AttributeNamespace]
+    /// >> 61 - Variant[pallet_nfts.types.AttributeNamespace]
     /// </summary>
     public sealed class EnumAttributeNamespace : BaseEnumRust<AttributeNamespace>
     {

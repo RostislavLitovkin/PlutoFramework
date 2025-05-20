@@ -201,6 +201,16 @@ namespace PlutoFramework.Model
                             Console.WriteLine(e);
                             extrinsicStackViewModel.Extrinsics[extrinsicHashString].Status = ExtrinsicStatusEnum.InBlockSuccess;
                         }
+
+                        try
+                        {
+                            var multiNetworkSelectViewModel = DependencyService.Get<MultiNetworkSelectViewModel>();
+                            multiNetworkSelectViewModel.SetupDefault();
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex);
+                        }
                     });
                 }
 
@@ -223,16 +233,6 @@ namespace PlutoFramework.Model
 
                         extrinsicStackViewModel.Update();
                     });
-
-                    try
-                    {
-                        var multiNetworkSelectViewModel = DependencyService.Get<MultiNetworkSelectViewModel>();
-                        multiNetworkSelectViewModel.SetupDefault();
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex);
-                    }
                 }
 
                 else

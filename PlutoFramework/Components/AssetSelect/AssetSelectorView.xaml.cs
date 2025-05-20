@@ -5,6 +5,8 @@ using PlutoFramework.Components.NetworkSelect;
 using System.Net;
 using PlutoFramework.Components.TransferView;
 using PlutoFramework.Types;
+using PlutoFramework.Model;
+using PlutoFramework.Model.Currency;
 
 namespace PlutoFramework.Components.AssetSelect;
 
@@ -44,7 +46,8 @@ public partial class AssetSelectorView : ContentView
         propertyChanging: (bindable, oldValue, newValue) => {
             var control = (AssetSelectorView)bindable;
 
-            control.usdLabel.Text = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, (double)newValue) + " USD";
+            var usdValue = (double)newValue;
+            control.usdLabel.Text = ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location) + (usdValue > 0 ? String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * usdValue) : "~");
         });
 
     public static readonly BindableProperty IsSelectedProperty = BindableProperty.Create(
@@ -184,7 +187,9 @@ public partial class AssetSelectorView : ContentView
         assetInputViewModel.CurrencyChanged(Symbol);
 
         // Update the fee
-        var transferViewModel = DependencyService.Get<TransferViewModel>();
-        await transferViewModel.GetFeeAsync();
+        //var transferViewModel = DependencyService.Get<TransferViewModel>();
+        //await transferViewModel.GetFeeAsync();
+
+        Console.WriteLine("Selected: " + assetSelectButtonViewModel.SelectedAssetKey);
     }
 }

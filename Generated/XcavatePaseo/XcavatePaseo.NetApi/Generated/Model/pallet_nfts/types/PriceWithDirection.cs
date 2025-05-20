@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 60 - Composite[pallet_nfts.types.PriceWithDirection]
+    /// >> 63 - Composite[pallet_nfts.types.PriceWithDirection]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PriceWithDirection : BaseType

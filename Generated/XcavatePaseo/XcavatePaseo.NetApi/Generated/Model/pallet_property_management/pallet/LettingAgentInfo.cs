@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
     
     
     /// <summary>
-    /// >> 471 - Composite[pallet_property_management.pallet.LettingAgentInfo]
+    /// >> 485 - Composite[pallet_property_management.pallet.LettingAgentInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class LettingAgentInfo : BaseType

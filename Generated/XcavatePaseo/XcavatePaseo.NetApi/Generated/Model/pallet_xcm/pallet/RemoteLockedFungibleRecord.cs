@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
     
     
     /// <summary>
-    /// >> 438 - Composite[pallet_xcm.pallet.RemoteLockedFungibleRecord]
+    /// >> 444 - Composite[pallet_xcm.pallet.RemoteLockedFungibleRecord]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RemoteLockedFungibleRecord : BaseType

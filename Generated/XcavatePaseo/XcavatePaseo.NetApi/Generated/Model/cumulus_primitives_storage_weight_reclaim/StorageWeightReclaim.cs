@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_storage_weight_
     
     
     /// <summary>
-    /// >> 516 - Composite[cumulus_primitives_storage_weight_reclaim.StorageWeightReclaim]
+    /// >> 511 - Composite[cumulus_primitives_storage_weight_reclaim.StorageWeightReclaim]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class StorageWeightReclaim : BaseType

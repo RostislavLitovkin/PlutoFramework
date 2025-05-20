@@ -6,6 +6,7 @@
              xmlns:form="clr-namespace:PlutoFramework.Components.Form"
              xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
              xmlns:xcavateproperty="clr-namespace:PlutoFramework.Components.XcavateProperty"
+             xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
              IsVisible="{Binding IsVisible}"
              AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
              AbsoluteLayout.LayoutFlags="All">
@@ -17,8 +18,6 @@
 
                 <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, AutoSize"
                          AbsoluteLayout.LayoutFlags="WidthProportional"
-                                     
-                                     
                          x:Name="verticalStackLayout"
                          Spacing="20">
 
@@ -41,9 +40,15 @@
                                         UpdateCommand="{Binding FormChangedCommand}"
                                         CardWidth="{Binding Source={x:Reference verticalStackLayout}, Path=Width}"
                                         />
-                    
-                    <Label Text="{Binding ErrorMessage}" TextColor="Red" />
 
+                    <AbsoluteLayout Margin="10, 0, 0, -10">
+                        <Label Text="Paid in:"
+                               VerticalTextAlignment="Center"
+                               AbsoluteLayout.LayoutBounds="0,0,AutoSize, 40"/>
+                        <assetselect:AssetSelectButtonView
+                               AbsoluteLayout.LayoutBounds="1,0,AutoSize, 40"
+                               AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                    </AbsoluteLayout>
                     <AbsoluteLayout Margin="10, 0, 10, -10">
                         <Label Text="Price:"
                                AbsoluteLayout.LayoutBounds="0,0,AutoSize, AutoSize"/>
@@ -82,6 +87,8 @@
                             </Label.FormattedText>
                         </Label>
                     </AbsoluteLayout>
+
+                    <Label Text="{Binding ErrorMessage}" TextColor="Red" />
 
                 </VerticalStackLayout>
                 <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 80"

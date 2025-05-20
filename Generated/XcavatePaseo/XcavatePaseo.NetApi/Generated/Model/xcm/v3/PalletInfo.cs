@@ -31,11 +31,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcm.v3
         /// <summary>
         /// >> name
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12 Name { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11 Name { get; set; }
         /// <summary>
         /// >> module_name
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12 ModuleName { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11 ModuleName { get; set; }
         /// <summary>
         /// >> major
         /// </summary>
@@ -74,9 +74,9 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcm.v3
             var start = p;
             Index = new Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>();
             Index.Decode(byteArray, ref p);
-            Name = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12();
+            Name = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11();
             Name.Decode(byteArray, ref p);
-            ModuleName = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12();
+            ModuleName = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11();
             ModuleName.Decode(byteArray, ref p);
             Major = new Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>();
             Major.Decode(byteArray, ref p);

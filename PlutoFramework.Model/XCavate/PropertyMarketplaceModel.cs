@@ -11,6 +11,11 @@ using Substrate.NetApi.Model.Types.Base;
 using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
 using System.ComponentModel;
 
+using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.AssetPallet, System.Numerics.BigInteger);
+using PlutoFramework.Constants;
+using PlutoFramework.Types;
+using System.Numerics;
+
 namespace PlutoFramework.Model.Xcavate
 {
     public record PropertyTokenOwnershipInfo : INotifyPropertyChanged
@@ -55,7 +60,17 @@ namespace PlutoFramework.Model.Xcavate
 
     public class PropertyMarketplaceModel
     {
-        public static Method BuyPropertyTokens(uint listingId, uint amount) => NftMarketplaceCalls.BuyToken(new U32(listingId), new U32(amount));
+        public static IEnumerable<AssetKey> GetAcceptedAssets(EndpointEnum endpointKey) => endpointKey switch
+        {
+            EndpointEnum.XcavatePaseo => new NftMarketplaceConstants().AcceptedAssets().Value.Select(u32 => (EndpointEnum.XcavatePaseo, AssetPallet.Assets, new BigInteger(u32.Value))),
+            _ => [],
+        };
+
+        public static Method BuyPropertyTokens(EndpointEnum endpointKey, uint listingId, uint amount, AssetKey paymentAsset) => endpointKey switch
+        {
+            EndpointEnum.XcavatePaseo => NftMarketplaceCalls.BuyToken(new U32(listingId), new U32(amount), new U32((uint)paymentAsset.Item3)),
+            _ => throw new NotImplementedException($"BuyPropertyTokens not implemented for {endpointKey}"),
+        };
 
         public static async Task<RecursiveReturn<PropertyTokenOwnershipInfo>> GetPropertiesOwnedByAsync(SubstrateClientExt client, string address, uint limit, byte[]? lastKey, CancellationToken token)
         {

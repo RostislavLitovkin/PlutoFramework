@@ -119,18 +119,20 @@ public partial class MainPage : ContentPage
                 {
                     var viewModel = DependencyService.Get<TransferViewModel>();
 
+                    viewModel.GetFeeAsync();
+
                     viewModel.IsVisible = true;
 
-                    if (scannedValue.Substring(10).IndexOf(":") != -1)
+                    var scannedAddress = e.Results[e.Results.Length - 1].Value;
+
+                    if (scannedAddress.Substring(10).IndexOf(":") != -1)
                     {
-                        viewModel.Address = scannedValue.Substring(10, scannedValue.Substring(10).IndexOf(":"));
+                        viewModel.Address = scannedAddress.Substring(10, scannedAddress.Substring(10).IndexOf(":"));
                     }
                     else
                     {
-                        viewModel.Address = scannedValue.Substring(10);
+                        viewModel.Address = scannedAddress.Substring(10);
                     }
-
-                    viewModel.GetFeeAsync();
                 }
                 else if (Substrate.NetApi.Utils.Bytes2HexString(e.Results[0].Raw).IndexOf("530102") != -1)
                 {

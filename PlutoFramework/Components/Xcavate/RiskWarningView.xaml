@@ -10,7 +10,7 @@
     <Label>
         <Label.FormattedText>
             <FormattedString>
-                <Span Text="Don't invest unless you're prepared to lose all the money you invest. This is a high-risk investment and you should not expect to be protected if something goes wrong.">
+                <Span Text="Don't invest unless you're prepared to lose all the money you invest. This is a high-risk investment and you should not expect to be protected if something goes wrong. ">
 
                 </Span>
                 <Span Text="Take 2 mins to learn more."

@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_proxy
     
     
     /// <summary>
-    /// >> 346 - Composite[pallet_proxy.Announcement]
+    /// >> 344 - Composite[pallet_proxy.Announcement]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Announcement : BaseType

@@ -34,7 +34,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_foreign_asset_creator.palle
     }
     
     /// <summary>
-    /// >> 456 - Variant[pallet_foreign_asset_creator.pallet.Error]
+    /// >> 462 - Variant[pallet_foreign_asset_creator.pallet.Error]
     /// An error that can occur while executing the mapping pallet's logic.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

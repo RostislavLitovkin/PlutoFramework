@@ -26,6 +26,11 @@ namespace PlutoFramework.Model
 
         public static Asset? GetFirstOwnedAsset(IEnumerable<AssetKey> assetKeys)
         {
+            if (assetKeys.Count() == 0)
+            {
+                return null;
+            }
+
             var filteredAssets = AssetsDict
                 .Where((pair) => pair.Value.Amount > 0)
                 .Where((pair) => assetKeys.Contains(pair.Key));
@@ -175,7 +180,7 @@ namespace PlutoFramework.Model
                 }
             }
 
-            foreach (string palletName in new string[] { "ForeignAssets" })
+            /*foreach (string palletName in new string[] { "ForeignAssets" })
             {
                 try
                 {
@@ -205,7 +210,7 @@ namespace PlutoFramework.Model
                 {
                     Console.WriteLine(ex);
                 }
-            }
+            }*/
 
             try
             {

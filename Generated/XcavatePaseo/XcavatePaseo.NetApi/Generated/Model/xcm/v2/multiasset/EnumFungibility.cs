@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcm.v2.multiasset
     }
     
     /// <summary>
-    /// >> 131 - Variant[xcm.v2.multiasset.Fungibility]
+    /// >> 134 - Variant[xcm.v2.multiasset.Fungibility]
     /// </summary>
     public sealed class EnumFungibility : BaseEnumRust<Fungibility>
     {

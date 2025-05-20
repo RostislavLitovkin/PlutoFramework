@@ -90,7 +90,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
     }
     
     /// <summary>
-    /// >> 158 - Variant[pallet_property_governance.pallet.Event]
+    /// >> 161 - Variant[pallet_property_governance.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

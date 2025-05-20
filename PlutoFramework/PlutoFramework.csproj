@@ -778,6 +778,9 @@
 	  <MauiXaml Update="Components\XcavateProperty\OwnedPropertiesListView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\XcavateProperty\OwnedPropertyTokensView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\XcavateProperty\PropertyDetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

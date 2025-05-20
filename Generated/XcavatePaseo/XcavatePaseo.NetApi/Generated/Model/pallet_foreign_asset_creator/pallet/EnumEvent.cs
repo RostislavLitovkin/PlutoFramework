@@ -48,7 +48,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_foreign_asset_creator.palle
     }
     
     /// <summary>
-    /// >> 149 - Variant[pallet_foreign_asset_creator.pallet.Event]
+    /// >> 152 - Variant[pallet_foreign_asset_creator.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

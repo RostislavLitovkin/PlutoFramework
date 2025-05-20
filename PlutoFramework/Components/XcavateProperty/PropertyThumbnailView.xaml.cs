@@ -23,7 +23,7 @@ public partial class PropertyThumbnailView : ContentView
             }
 
             var nftBase = (INftXcavateBase)newValue;
-            
+
             if (nftBase.XcavateMetadata is null)
             {
                 return;
@@ -144,7 +144,7 @@ public partial class PropertyThumbnailView : ContentView
     void OnFavouriteClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
         Favourite = !Favourite;
-        
+
         Task save = XcavatePropertyDatabase.SavePropertyAsync(new NftWrapper
         {
             Endpoint = Endpoint,
@@ -152,8 +152,7 @@ public partial class PropertyThumbnailView : ContentView
             Favourite = Favourite
         });
 
-            UpdateFavouritePropertiesModel.UpdateFavourite(NftBase as INftXcavateBase, Favourite);
-        
+        UpdateFavouritePropertiesModel.UpdateFavourite(NftBase as INftXcavateBase, Favourite);
     }
 
     async void OnMoreClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
@@ -162,7 +161,8 @@ public partial class PropertyThumbnailView : ContentView
 
         loadingViewModel.IsVisible = true;
 
-        await XcavatePropertyModel.NavigateToPropertyDetailPageAsync(new NftWrapper {
+        await XcavatePropertyModel.NavigateToPropertyDetailPageAsync(new NftWrapper
+        {
             NftBase = NftBase,
             Endpoint = Endpoint,
             Favourite = Favourite

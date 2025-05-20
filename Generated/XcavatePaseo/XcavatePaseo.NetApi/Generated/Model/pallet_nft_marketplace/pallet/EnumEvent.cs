@@ -117,10 +117,100 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// The property nft got burned.
         /// </summary>
         PropertyNftBurned = 15,
+        
+        /// <summary>
+        /// >> PropertyTokenSent
+        /// Property token have been send to the investors.
+        /// </summary>
+        PropertyTokenSent = 16,
+        
+        /// <summary>
+        /// >> PropertySuccessfullySold
+        /// The property deal has been successfully sold.
+        /// </summary>
+        PropertySuccessfullySold = 17,
+        
+        /// <summary>
+        /// >> FundsWithdrawn
+        /// Funds has been withdrawn.
+        /// </summary>
+        FundsWithdrawn = 18,
+        
+        /// <summary>
+        /// >> FundsRefunded
+        /// Funds have been refunded after expired listing.
+        /// </summary>
+        FundsRefunded = 19,
+        
+        /// <summary>
+        /// >> OfferAccepted
+        /// An offer has been accepted.
+        /// </summary>
+        OfferAccepted = 20,
+        
+        /// <summary>
+        /// >> OfferRejected
+        /// An offer has been Rejected.
+        /// </summary>
+        OfferRejected = 21,
+        
+        /// <summary>
+        /// >> BuyCancelled
+        /// A buy has been cancelled.
+        /// </summary>
+        BuyCancelled = 22,
+        
+        /// <summary>
+        /// >> PropertyTokenSend
+        /// Property token have been sent to another account.
+        /// </summary>
+        PropertyTokenSend = 23,
+        
+        /// <summary>
+        /// >> ListingDepositReleased
+        /// The deposit of the real estate developer has been released.
+        /// </summary>
+        ListingDepositReleased = 24,
+        
+        /// <summary>
+        /// >> TakeoverProposed
+        /// Someone proposed to take over a region.
+        /// </summary>
+        TakeoverProposed = 25,
+        
+        /// <summary>
+        /// >> TakeoverAccepted
+        /// A takeover has been accepted from the region owner.
+        /// </summary>
+        TakeoverAccepted = 26,
+        
+        /// <summary>
+        /// >> TakeoverRejected
+        /// A takeover has been rejected from the region owner.
+        /// </summary>
+        TakeoverRejected = 27,
+        
+        /// <summary>
+        /// >> TakeoverCancelled
+        /// A Takeover has been cancelled.
+        /// </summary>
+        TakeoverCancelled = 28,
+        
+        /// <summary>
+        /// >> ListingDurationChanged
+        /// Listing duration of a region changed.
+        /// </summary>
+        ListingDurationChanged = 29,
+        
+        /// <summary>
+        /// >> RegionTaxChanged
+        /// Tax of a region changed.
+        /// </summary>
+        RegionTaxChanged = 30,
     }
     
     /// <summary>
-    /// >> 154 - Variant[pallet_nft_marketplace.pallet.Event]
+    /// >> 157 - Variant[pallet_nft_marketplace.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -131,10 +221,10 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.ObjectListed);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.ObjectListed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.TokenBought);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.TokenBoughtObject);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.TokenListed);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.TokenListed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.ListingUpdated);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.ListingDelisted);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.ObjectUpdated);
@@ -143,10 +233,25 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.OfferCreated);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.OfferCancelled);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.LawyerRegistered);
-				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.EnumLegalProperty>>(Event.LawyerClaimedProperty);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types.EnumLegalProperty>>(Event.LawyerClaimedProperty);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.LawyerRemovedFromCase);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.Bool>>(Event.DocumentsConfirmed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.PropertyNftBurned);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.PropertyTokenSent);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.PropertySuccessfullySold);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.FundsWithdrawn);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.FundsRefunded);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.OfferAccepted);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.OfferRejected);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.BuyCancelled);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.PropertyTokenSend);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.ListingDepositReleased);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.TakeoverProposed);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.TakeoverAccepted);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.TakeoverRejected);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.TakeoverCancelled);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.ListingDurationChanged);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.RegionTaxChanged);
         }
     }
 }

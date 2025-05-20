@@ -29,9 +29,37 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// 
         /// The origin must be the LocationOrigin.
         /// 
+        /// Parameters:
+        /// - `listing_duration`: Duration of a listing in this region.
+        /// 
         /// Emits `RegionCreated` event when succesfful.
         /// </summary>
         create_new_region = 0,
+        
+        /// <summary>
+        /// >> adjust_listing_duration
+        /// </summary>
+        adjust_listing_duration = 30,
+        
+        /// <summary>
+        /// >> adjust_region_tax
+        /// </summary>
+        adjust_region_tax = 31,
+        
+        /// <summary>
+        /// >> propose_region_takeover
+        /// </summary>
+        propose_region_takeover = 32,
+        
+        /// <summary>
+        /// >> handle_takeover
+        /// </summary>
+        handle_takeover = 33,
+        
+        /// <summary>
+        /// >> cancel_region_takeover
+        /// </summary>
+        cancel_region_takeover = 34,
         
         /// <summary>
         /// >> create_new_location
@@ -74,6 +102,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// Parameters:
         /// - `listing_id`: The listing that the investor wants to buy token from.
         /// - `amount`: The amount of token that the investor wants to buy.
+        /// - `payment_asset`: Asset in which the investor wants to pay.
         /// 
         /// Emits `TokenBoughtObject` event when succesfful.
         /// </summary>
@@ -105,10 +134,24 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// Parameters:
         /// - `listing_id`: The listing that the investor wants to buy from.
         /// - `amount`: The amount of token the investor wants to buy.
+        /// - `payment_asset`: Asset in which the investor wants to pay.
         /// 
         /// Emits `TokenBought` event when succesfful.
         /// </summary>
         buy_relisted_token = 5,
+        
+        /// <summary>
+        /// >> cancel_buy
+        /// Lets a investor cancel the property token purchase.
+        /// 
+        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// 
+        /// Parameters:
+        /// - `listing_id`: The listing that the investor wants to buy from.
+        /// 
+        /// Emits `BuyCancelled` event when succesfful.
+        /// </summary>
+        cancel_buy = 6,
         
         /// <summary>
         /// >> make_offer
@@ -120,10 +163,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// - `listing_id`: The listing that the investor wants to buy from.
         /// - `offer_price`: The offer price for token that are offered.
         /// - `amount`: The amount of token that the investor wants to buy.
+        /// - `payment_asset`: Asset in which the investor wants to pay.
         /// 
         /// Emits `OfferCreated` event when succesfful.
         /// </summary>
-        make_offer = 6,
+        make_offer = 7,
         
         /// <summary>
         /// >> handle_offer
@@ -135,8 +179,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// - `listing_id`: The listing that the investor wants to buy from.
         /// - `offeror`: AccountId of the person that the seller wants to handle the offer from.
         /// - `offer`: Enum for offer which is either Accept or Reject.
+        /// 
+        /// Emits `OfferAccepted` event when offer gets accepted succesffully.
+        /// Emits `OfferRejected` event when offer gets rejected succesffully.
         /// </summary>
-        handle_offer = 7,
+        handle_offer = 8,
         
         /// <summary>
         /// >> cancel_offer
@@ -149,7 +196,38 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// 
         /// Emits `OfferCancelled` event when succesfful.
         /// </summary>
-        cancel_offer = 8,
+        cancel_offer = 9,
+        
+        /// <summary>
+        /// >> withdraw_funds
+        /// Lets the investor withdraw his funds after a property deal was unsuccessful.
+        /// 
+        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// 
+        /// Parameters:
+        /// - `listing_id`: The listing that the investor wants to buy from.
+        /// 
+        /// Emits `FundsWithdrawn` event when succesfful.
+        /// </summary>
+        withdraw_funds = 10,
+        
+        /// <summary>
+        /// >> refund_expired
+        /// Lets the investor unfreeze his funds after a property listing expired.
+        /// 
+        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// 
+        /// Parameters:
+        /// - `listing_id`: The listing that the investor wants to buy from.
+        /// 
+        /// Emits `FundsRefunded` event when succesfful.
+        /// </summary>
+        refund_expired = 11,
+        
+        /// <summary>
+        /// >> reclaim_unsold
+        /// </summary>
+        reclaim_unsold = 12,
         
         /// <summary>
         /// >> upgrade_listing
@@ -163,7 +241,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// 
         /// Emits `ListingUpdated` event when succesfful.
         /// </summary>
-        upgrade_listing = 9,
+        upgrade_listing = 13,
         
         /// <summary>
         /// >> upgrade_object
@@ -177,7 +255,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// 
         /// Emits `ObjectUpdated` event when succesfful.
         /// </summary>
-        upgrade_object = 10,
+        upgrade_object = 14,
         
         /// <summary>
         /// >> delist_token
@@ -191,7 +269,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// 
         /// Emits `ListingDelisted` event when succesfful.
         /// </summary>
-        delist_token = 11,
+        delist_token = 15,
         
         /// <summary>
         /// >> register_lawyer
@@ -204,7 +282,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// 
         /// Emits `LawyerRegistered` event when succesfful.
         /// </summary>
-        register_lawyer = 12,
+        register_lawyer = 16,
         
         /// <summary>
         /// >> lawyer_claim_property
@@ -219,7 +297,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// 
         /// Emits `LawyerClaimedProperty` event when succesfful.
         /// </summary>
-        lawyer_claim_property = 13,
+        lawyer_claim_property = 17,
         
         /// <summary>
         /// >> remove_from_case
@@ -232,7 +310,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// 
         /// Emits `LawyerRemovedFromCase` event when succesfful.
         /// </summary>
-        remove_from_case = 14,
+        remove_from_case = 18,
         
         /// <summary>
         /// >> lawyer_confirm_documents
@@ -246,7 +324,22 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// 
         /// Emits `DocumentsConfirmed` event when succesfful.
         /// </summary>
-        lawyer_confirm_documents = 15,
+        lawyer_confirm_documents = 19,
+        
+        /// <summary>
+        /// >> send_property_token
+        /// Lets the sender send property token to another account.
+        /// 
+        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// 
+        /// Parameters:
+        /// - `asset_id`: The asset id of the property.
+        /// - `receiver`: AccountId of the person that the seller wants to handle the offer from.
+        /// - `token_amount`: The amount of token the sender wants to send.
+        /// 
+        /// Emits `DocumentsConfirmed` event when succesfful.
+        /// </summary>
+        send_property_token = 20,
     }
     
     /// <summary>
@@ -261,22 +354,32 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseVoid>(Call.create_new_region);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.create_new_region);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.adjust_listing_duration);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.adjust_region_tax);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.propose_region_takeover);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types.EnumTakeoverAction>>(Call.handle_takeover);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.cancel_region_takeover);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8>>(Call.create_new_location);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2>>(Call.list_object);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.buy_token);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.list_object);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.buy_token);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.relist_token);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.buy_relisted_token);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.make_offer);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.EnumOffer>>(Call.handle_offer);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.buy_relisted_token);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.cancel_buy);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.make_offer);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types.EnumOffer>>(Call.handle_offer);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.cancel_offer);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.withdraw_funds);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.refund_expired);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.reclaim_unsold);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.upgrade_listing);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.upgrade_object);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.delist_token);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Call.register_lawyer);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.EnumLegalProperty, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.lawyer_claim_property);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.register_lawyer);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types.EnumLegalProperty, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.lawyer_claim_property);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.remove_from_case);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.lawyer_confirm_documents);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.send_property_token);
         }
     }
 }

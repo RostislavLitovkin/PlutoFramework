@@ -100,7 +100,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
     }
     
     /// <summary>
-    /// >> 331 - Variant[pallet_property_management.pallet.Call]
+    /// >> 332 - Variant[pallet_property_management.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -115,8 +115,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
 				AddTypeDecoder<BaseVoid>(Call.letting_agent_deposit);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.add_letting_agent_to_location);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.set_letting_agent);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.distribute_income);
-				AddTypeDecoder<BaseVoid>(Call.withdraw_funds);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.distribute_income);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.withdraw_funds);
         }
     }
 }

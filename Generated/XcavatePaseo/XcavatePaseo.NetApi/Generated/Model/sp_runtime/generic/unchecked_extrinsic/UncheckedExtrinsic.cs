@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.sp_runtime.generic.unchecked_extri
     
     
     /// <summary>
-    /// >> 505 - Composite[sp_runtime.generic.unchecked_extrinsic.UncheckedExtrinsic]
+    /// >> 500 - Composite[sp_runtime.generic.unchecked_extrinsic.UncheckedExtrinsic]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UncheckedExtrinsic : BaseType

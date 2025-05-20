@@ -53,7 +53,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset
     }
     
     /// <summary>
-    /// >> 99 - Variant[staging_xcm.v4.asset.AssetInstance]
+    /// >> 102 - Variant[staging_xcm.v4.asset.AssetInstance]
     /// </summary>
     public sealed class EnumAssetInstance : BaseEnumRust<AssetInstance>
     {

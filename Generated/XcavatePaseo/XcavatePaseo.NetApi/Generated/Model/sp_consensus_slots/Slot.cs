@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.sp_consensus_slots
     
     
     /// <summary>
-    /// >> 504 - Composite[sp_consensus_slots.Slot]
+    /// >> 499 - Composite[sp_consensus_slots.Slot]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Slot : BaseType

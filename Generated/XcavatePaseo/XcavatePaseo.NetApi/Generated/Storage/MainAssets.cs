@@ -46,7 +46,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.Approval)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Assets", "Metadata"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT2)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Assets", "NextAssetId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
         }
         
@@ -172,10 +172,10 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> Metadata
         ///  Metadata of an asset.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1> Metadata(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT2> Metadata(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = AssetsStorage.MetadataParams(key);
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT2>(parameters, blockhash, token);
             return result;
         }
         
@@ -241,7 +241,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(admin.Encode());
             byteArray.AddRange(min_balance.Encode());
-            return new Method(12, "Assets", 0, "create", byteArray.ToArray());
+            return new Method(75, "Assets", 0, "create", byteArray.ToArray());
         }
         
         /// <summary>
@@ -255,7 +255,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(owner.Encode());
             byteArray.AddRange(is_sufficient.Encode());
             byteArray.AddRange(min_balance.Encode());
-            return new Method(12, "Assets", 1, "force_create", byteArray.ToArray());
+            return new Method(75, "Assets", 1, "force_create", byteArray.ToArray());
         }
         
         /// <summary>
@@ -266,7 +266,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
-            return new Method(12, "Assets", 2, "start_destroy", byteArray.ToArray());
+            return new Method(75, "Assets", 2, "start_destroy", byteArray.ToArray());
         }
         
         /// <summary>
@@ -277,7 +277,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
-            return new Method(12, "Assets", 3, "destroy_accounts", byteArray.ToArray());
+            return new Method(75, "Assets", 3, "destroy_accounts", byteArray.ToArray());
         }
         
         /// <summary>
@@ -288,7 +288,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
-            return new Method(12, "Assets", 4, "destroy_approvals", byteArray.ToArray());
+            return new Method(75, "Assets", 4, "destroy_approvals", byteArray.ToArray());
         }
         
         /// <summary>
@@ -299,7 +299,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
-            return new Method(12, "Assets", 5, "finish_destroy", byteArray.ToArray());
+            return new Method(75, "Assets", 5, "finish_destroy", byteArray.ToArray());
         }
         
         /// <summary>
@@ -312,7 +312,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(beneficiary.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(12, "Assets", 6, "mint", byteArray.ToArray());
+            return new Method(75, "Assets", 6, "mint", byteArray.ToArray());
         }
         
         /// <summary>
@@ -325,7 +325,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(who.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(12, "Assets", 7, "burn", byteArray.ToArray());
+            return new Method(75, "Assets", 7, "burn", byteArray.ToArray());
         }
         
         /// <summary>
@@ -338,7 +338,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(target.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(12, "Assets", 8, "transfer", byteArray.ToArray());
+            return new Method(75, "Assets", 8, "transfer", byteArray.ToArray());
         }
         
         /// <summary>
@@ -351,7 +351,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(target.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(12, "Assets", 9, "transfer_keep_alive", byteArray.ToArray());
+            return new Method(75, "Assets", 9, "transfer_keep_alive", byteArray.ToArray());
         }
         
         /// <summary>
@@ -365,7 +365,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(source.Encode());
             byteArray.AddRange(dest.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(12, "Assets", 10, "force_transfer", byteArray.ToArray());
+            return new Method(75, "Assets", 10, "force_transfer", byteArray.ToArray());
         }
         
         /// <summary>
@@ -377,7 +377,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(who.Encode());
-            return new Method(12, "Assets", 11, "freeze", byteArray.ToArray());
+            return new Method(75, "Assets", 11, "freeze", byteArray.ToArray());
         }
         
         /// <summary>
@@ -389,7 +389,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(who.Encode());
-            return new Method(12, "Assets", 12, "thaw", byteArray.ToArray());
+            return new Method(75, "Assets", 12, "thaw", byteArray.ToArray());
         }
         
         /// <summary>
@@ -400,7 +400,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
-            return new Method(12, "Assets", 13, "freeze_asset", byteArray.ToArray());
+            return new Method(75, "Assets", 13, "freeze_asset", byteArray.ToArray());
         }
         
         /// <summary>
@@ -411,7 +411,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
-            return new Method(12, "Assets", 14, "thaw_asset", byteArray.ToArray());
+            return new Method(75, "Assets", 14, "thaw_asset", byteArray.ToArray());
         }
         
         /// <summary>
@@ -423,7 +423,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(owner.Encode());
-            return new Method(12, "Assets", 15, "transfer_ownership", byteArray.ToArray());
+            return new Method(75, "Assets", 15, "transfer_ownership", byteArray.ToArray());
         }
         
         /// <summary>
@@ -437,7 +437,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(issuer.Encode());
             byteArray.AddRange(admin.Encode());
             byteArray.AddRange(freezer.Encode());
-            return new Method(12, "Assets", 16, "set_team", byteArray.ToArray());
+            return new Method(75, "Assets", 16, "set_team", byteArray.ToArray());
         }
         
         /// <summary>
@@ -451,7 +451,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(name.Encode());
             byteArray.AddRange(symbol.Encode());
             byteArray.AddRange(decimals.Encode());
-            return new Method(12, "Assets", 17, "set_metadata", byteArray.ToArray());
+            return new Method(75, "Assets", 17, "set_metadata", byteArray.ToArray());
         }
         
         /// <summary>
@@ -462,7 +462,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
-            return new Method(12, "Assets", 18, "clear_metadata", byteArray.ToArray());
+            return new Method(75, "Assets", 18, "clear_metadata", byteArray.ToArray());
         }
         
         /// <summary>
@@ -477,7 +477,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(symbol.Encode());
             byteArray.AddRange(decimals.Encode());
             byteArray.AddRange(is_frozen.Encode());
-            return new Method(12, "Assets", 19, "force_set_metadata", byteArray.ToArray());
+            return new Method(75, "Assets", 19, "force_set_metadata", byteArray.ToArray());
         }
         
         /// <summary>
@@ -488,7 +488,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
-            return new Method(12, "Assets", 20, "force_clear_metadata", byteArray.ToArray());
+            return new Method(75, "Assets", 20, "force_clear_metadata", byteArray.ToArray());
         }
         
         /// <summary>
@@ -506,7 +506,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(min_balance.Encode());
             byteArray.AddRange(is_sufficient.Encode());
             byteArray.AddRange(is_frozen.Encode());
-            return new Method(12, "Assets", 21, "force_asset_status", byteArray.ToArray());
+            return new Method(75, "Assets", 21, "force_asset_status", byteArray.ToArray());
         }
         
         /// <summary>
@@ -519,7 +519,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(@delegate.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(12, "Assets", 22, "approve_transfer", byteArray.ToArray());
+            return new Method(75, "Assets", 22, "approve_transfer", byteArray.ToArray());
         }
         
         /// <summary>
@@ -531,7 +531,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(@delegate.Encode());
-            return new Method(12, "Assets", 23, "cancel_approval", byteArray.ToArray());
+            return new Method(75, "Assets", 23, "cancel_approval", byteArray.ToArray());
         }
         
         /// <summary>
@@ -544,7 +544,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(owner.Encode());
             byteArray.AddRange(@delegate.Encode());
-            return new Method(12, "Assets", 24, "force_cancel_approval", byteArray.ToArray());
+            return new Method(75, "Assets", 24, "force_cancel_approval", byteArray.ToArray());
         }
         
         /// <summary>
@@ -558,7 +558,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(owner.Encode());
             byteArray.AddRange(destination.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(12, "Assets", 25, "transfer_approved", byteArray.ToArray());
+            return new Method(75, "Assets", 25, "transfer_approved", byteArray.ToArray());
         }
         
         /// <summary>
@@ -569,7 +569,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
-            return new Method(12, "Assets", 26, "touch", byteArray.ToArray());
+            return new Method(75, "Assets", 26, "touch", byteArray.ToArray());
         }
         
         /// <summary>
@@ -581,7 +581,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(allow_burn.Encode());
-            return new Method(12, "Assets", 27, "refund", byteArray.ToArray());
+            return new Method(75, "Assets", 27, "refund", byteArray.ToArray());
         }
         
         /// <summary>
@@ -593,7 +593,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(min_balance.Encode());
-            return new Method(12, "Assets", 28, "set_min_balance", byteArray.ToArray());
+            return new Method(75, "Assets", 28, "set_min_balance", byteArray.ToArray());
         }
         
         /// <summary>
@@ -605,7 +605,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(who.Encode());
-            return new Method(12, "Assets", 29, "touch_other", byteArray.ToArray());
+            return new Method(75, "Assets", 29, "touch_other", byteArray.ToArray());
         }
         
         /// <summary>
@@ -617,7 +617,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(who.Encode());
-            return new Method(12, "Assets", 30, "refund_other", byteArray.ToArray());
+            return new Method(75, "Assets", 30, "refund_other", byteArray.ToArray());
         }
         
         /// <summary>
@@ -629,7 +629,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
             byteArray.AddRange(who.Encode());
-            return new Method(12, "Assets", 31, "block", byteArray.ToArray());
+            return new Method(75, "Assets", 31, "block", byteArray.ToArray());
         }
     }
     
@@ -659,7 +659,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 AssetDeposit()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00A0724E180900000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         
@@ -671,7 +671,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 AssetAccountDeposit()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00E0308F3D0900000000000000000000");
+            result.Create("0x00F8D4A7170000000000000000000000");
             return result;
         }
         
@@ -682,7 +682,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 MetadataDepositBase()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00309BA1B60900000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         
@@ -694,7 +694,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 MetadataDepositPerByte()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00E40B54020000000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         
@@ -716,7 +716,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 StringLimit()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x88130000");
+            result.Create("0x32000000");
             return result;
         }
     }

@@ -86,6 +86,11 @@ namespace PlutoFramework.Components.XcavateProperty
                 NftMarketplaceDetails = ((INftXcavateNftMarketplace)nft.NftBase).NftMarketplaceDetails,
             };
 
+            if (nft.Key is not null && XcavateOwnedPropertiesModel.ItemsDict.TryGetValue(nft.Key.Value, out PropertyTokenOwnershipInfo tokenInfo))
+            {
+                viewModel.TokensOwned = tokenInfo.Amount;
+            }
+
             await Application.Current.MainPage.Navigation.PushAsync(new PropertyDetailPage(viewModel));
         }
     }
