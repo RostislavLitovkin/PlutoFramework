@@ -69,7 +69,7 @@
                         <buttons:BasicGrayButton Text="Cancel" Grid.Column="0"
                                                 Clicked="OnCancelClicked"/>
 
-                        <buttons:PlutoFrameworkElevatedButton Text="Confirm" Grid.Column="1"
+                        <buttons:PlutoFrameworkElevatedButton Text="{Binding ConfirmButtonText}" Grid.Column="1"
                                                            Clicked="OnConfirmClicked"
                                                            ButtonState="{Binding ConfirmButtonState}"
                                                            />

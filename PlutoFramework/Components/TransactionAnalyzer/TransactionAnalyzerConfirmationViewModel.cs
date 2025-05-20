@@ -62,6 +62,9 @@ namespace PlutoFramework.Components.TransactionAnalyzer
         private ButtonStateEnum confirmButtonState = ButtonStateEnum.Enabled;
 
         [ObservableProperty]
+        private string confirmButtonText = "Confirm";
+
+        [ObservableProperty]
         private string estimatedFee = "Estimated fee: Loading";
 
         // Estimated time should be calculated based the client
@@ -228,6 +231,9 @@ namespace PlutoFramework.Components.TransactionAnalyzer
 
             var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();
 
+            transactionAnalyzerConfirmationViewModel.ConfirmButtonState = ButtonStateEnum.Disabled;
+            transactionAnalyzerConfirmationViewModel.ConfirmButtonText = "Submitting";
+
             var clientExt = await Model.SubstrateClientModel.GetOrAddSubstrateClientAsync(transactionAnalyzerConfirmationViewModel.Endpoint.Key, CancellationToken.None);
 
             try
@@ -312,6 +318,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
             OnConfirm = null;
             ExtrinsicFailedMessage = "";
             ConfirmButtonState = ButtonStateEnum.Enabled;
+            ConfirmButtonText = "Confirm";
 
             var analyzedOutcomeViewModel = DependencyService.Get<AnalyzedOutcomeViewModel>();
             analyzedOutcomeViewModel.SetToDefault();
