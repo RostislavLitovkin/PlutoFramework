@@ -33,6 +33,8 @@
 
                 <events:EventsListView />
 
+                <extrinsic:EncodedCallView />
+
             </VerticalStackLayout>
 
         </ScrollView>

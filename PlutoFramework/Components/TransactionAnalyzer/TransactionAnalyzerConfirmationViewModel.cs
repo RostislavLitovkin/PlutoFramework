@@ -337,6 +337,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                 CallParameters = new ObservableCollection<EventParameter>(methodUnified.Parameters),
                 Endpoint = Endpoint,
                 ExtrinsicEvents = ExtrinsicEvents,
+                EncodedCall = Payload.Call.Encode(),
             };
 
             await Application.Current.MainPage.Navigation.PushAsync(new CallDetailPage(viewModel));
