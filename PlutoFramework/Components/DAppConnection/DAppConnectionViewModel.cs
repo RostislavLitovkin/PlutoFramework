@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace PlutoFramework.Components.DAppConnectionView
+namespace PlutoFramework.Components.DAppConnection
 {
     public partial class DAppConnectionViewModel : ObservableObject
     {

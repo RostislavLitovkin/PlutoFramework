@@ -1,6 +1,6 @@
 ﻿using PlutoFramework.Components.Balance;
 using PlutoFramework.Components.AddressView;
-using PlutoFramework.Components.DAppConnectionView;
+using PlutoFramework.Components.DAppConnection;
 using System.Collections.ObjectModel;
 using PlutoFramework.Components.MessagePopup;
 using PlutoFramework.Constants;

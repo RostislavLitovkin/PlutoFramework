@@ -6,7 +6,7 @@
              xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
              xmlns:networkselect="clr-namespace:PlutoFramework.Components.NetworkSelect"
              xmlns:transferview="clr-namespace:PlutoFramework.Components.TransferView"
-             xmlns:connectionrequestview="clr-namespace:PlutoFramework.Components.ConnectionRequestView"
+             xmlns:dappconnection="clr-namespace:PlutoFramework.Components.DAppConnection"
              xmlns:messagepopup="clr-namespace:PlutoFramework.Components.MessagePopup"
              xmlns:transactionrequest="clr-namespace:PlutoFramework.Components.TransactionRequest"
              xmlns:addressview="clr-namespace:PlutoFramework.Components.AddressView"
@@ -68,13 +68,8 @@
 
         <extrinsic:ExtrinsicStatusStackLayout />
 
-        <connectionrequestview:ConnectionRequestView />
-
         <vault:VaultSignView />
 
-        <transactionrequest:TransactionRequestView />
-
-        <transactionrequest:MessageSignRequestView />
 
         <staking:StakingRegistrationRequestView />
 
@@ -85,6 +80,10 @@
         <addressview:AddressQrCodeView />
 
         <transferview:TransferView />
+
+        <transactionrequest:MessageSignRequestView />
+
+        <dappconnection:DAppConnectionRequestView />
 
         <account:NoAccountPopup />
 

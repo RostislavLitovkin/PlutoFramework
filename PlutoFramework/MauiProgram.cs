@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Configuration;
+using System.Globalization;
+using System.Net;
 using System.Reflection;
 using ZXing.Net.Maui.Controls;
 
@@ -14,6 +16,12 @@ public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
     {
+        
+
+        // Set InvariantCulture globally
+        CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
+        CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
+
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()

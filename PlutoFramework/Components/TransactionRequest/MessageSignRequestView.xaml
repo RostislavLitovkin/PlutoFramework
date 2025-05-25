@@ -3,58 +3,84 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:card="clr-namespace:PlutoFramework.Components.Card"
              x:Class="PlutoFramework.Components.TransactionRequest.MessageSignRequestView"
+             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
              IsVisible="{Binding IsVisible}"
              AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-             AbsoluteLayout.LayoutFlags="All"
-             BackgroundColor="#66000000">
-    <card:Card IsPopup="True">
-        <card:Card.View>
+             AbsoluteLayout.LayoutFlags="All">
+    <card:BottomPopupCard IsShown="{Binding IsVisible}"
+                          Title="Sign message">
+        <card:BottomPopupCard.View>
         <AbsoluteLayout>
 
-            <VerticalStackLayout Spacing="10" x:Name="stackLayout">
-                <Label
-                    FontAttributes="Bold"
-                    Text="Sign message"
-                    HorizontalOptions="Center"
-                    Margin="20, 0, 20, 0"/>
+                <VerticalStackLayout Spacing="10" x:Name="stackLayout">
+                    <Label
+                            HorizontalOptions="Center"
+                            WidthRequest="{Binding Source={x:Reference stackLayout}, Path=Width}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span FontAttributes="Bold"
+                                      Text="{Binding MessageDecodedString}"/>
 
-                <Label
-                    HorizontalOptions="Center"
-                    WidthRequest="{Binding Source={x:Reference stackLayout}, Path=Width}">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span FontAttributes="Bold"
-                                  FontFamily="SourceCode"
-                                  Text="{Binding MessageString}"/>
+                            </FormattedString>
 
-                        </FormattedString>
+                        </Label.FormattedText>
 
-                    </Label.FormattedText>
+                    </Label>
 
-                </Label>
+                    <card:ClickableCard 
+                                        CardPadding="0,0,0,0">
+                        <card:ClickableCard.View>
+                            <StackLayout>
+                                <Label
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Center"
+                                       FontAttributes="Bold"
+                                        HeightRequest="30"
+                                       Text="Message bytes" />
+
+                                <Label
+                                        Text="{Binding MessageString}"
+                                        FontFamily="SourceCode" 
+                                        HorizontalTextAlignment="Start"
+                                        LineBreakMode="CharacterWrap"
+                                        Margin="10,0,10,10"
+                                        />
+                            </StackLayout>
+                        </card:ClickableCard.View>
+                    </card:ClickableCard>
 
 
-                <Label Text="" x:Name="errorLabel" TextColor="Red" IsVisible="false" />
+                    <Label Text="{Binding ErrorText}"
+                       TextColor="Red"
+                       IsVisible="{Binding ErrorIsVisible}" />
+                </VerticalStackLayout>
 
-                <Button Text="Sign and submit"
-                        Clicked="OnSubmitClicked" />
 
-                <Button Text="Reject" BackgroundColor="DarkRed"
-                        Clicked="OnRejectClicked" />
-            </VerticalStackLayout>
 
-            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0, 0, 40, 40">
-                <Image AbsoluteLayout.LayoutBounds="0, 0, 20, 20"
-                   Source="{AppThemeBinding Light=arrowbackblack.png, Dark=backwhite.png }" />
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 80"
+                                AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
+                    <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 50"
+                          AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                          ColumnSpacing="15"
+                          Margin="0, 0, 0, 10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
 
-                <AbsoluteLayout.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnBackClicked" />
+                        </Grid.ColumnDefinitions>
 
-                </AbsoluteLayout.GestureRecognizers>
+                        <buttons:BasicGrayButton Text="Reject"
+                             Grid.Column="0"
+                             Command="{Binding RejectCommand}"/>
 
+                        <buttons:PlutoFrameworkElevatedButton Text="{Binding SignButtonText}"
+                                                              Grid.Column="1"
+                                                              Command="{Binding SignCommand}"
+                                                              ButtonState="{Binding SignButtonState}" />
+                    </Grid>
+                </AbsoluteLayout>
             </AbsoluteLayout>
-        </AbsoluteLayout>
-    </card:Card.View>
-    </card:Card>
+    </card:BottomPopupCard.View>
+    </card:BottomPopupCard>
 </ContentView>
 

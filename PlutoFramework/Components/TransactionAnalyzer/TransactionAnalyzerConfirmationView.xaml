@@ -14,9 +14,9 @@
             <AbsoluteLayout>
 
                 <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, AutoSize"
-                         AbsoluteLayout.LayoutFlags="WidthProportional"
-                             x:Name="verticalStackLayout"
-                         Spacing="20">
+                                    AbsoluteLayout.LayoutFlags="WidthProportional"
+                                    x:Name="verticalStackLayout"
+                                    Spacing="20">
 
                     <txanalyzer:DAppNetworkView Name="{Binding DAppName}"
                                                 Icon="{Binding DAppIcon}"

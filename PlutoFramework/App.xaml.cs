@@ -1,9 +1,8 @@
-﻿using PlutoFramework.Components.ConnectionRequestView;
+﻿
 using PlutoFramework.Components.MessagePopup;
 using PlutoFramework.Components.NetworkSelect;
 using PlutoFramework.Components.TransactionRequest;
 using PlutoFramework.Components.TransferView;
-using PlutoFramework.Components.DAppConnectionView;
 using PlutoFramework.Components.AddressView;
 using PlutoFramework.Components.CalamarView;
 using PlutoFramework.Components.Extrinsic;
@@ -30,6 +29,7 @@ using PlutoFramework.Components.Sumsub;
 using PlutoFramework.View;
 using PlutoFramework.Model.SQLite;
 using PlutoFramework.Components.Loading;
+using PlutoFramework.Components.DAppConnection;
 
 namespace PlutoFramework;
 
@@ -43,11 +43,9 @@ public partial class App : Application
 
         DependencyService.Register<TransferViewModel>();
 
-        DependencyService.Register<ConnectionRequestViewModel>();
+        DependencyService.Register<DAppConnectionRequestViewModel>();
 
         DependencyService.Register<MessagePopupViewModel>();
-
-        DependencyService.Register<TransactionRequestViewModel>();
 
         DependencyService.Register<AddressQrCodeViewModel>();
 

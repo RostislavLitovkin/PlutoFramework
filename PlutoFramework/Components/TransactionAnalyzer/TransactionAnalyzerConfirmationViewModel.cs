@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.Buttons;
-using PlutoFramework.Components.DAppConnectionView;
+using PlutoFramework.Components.DAppConnection;
 using PlutoFramework.Components.Extrinsic;
 using PlutoFramework.Constants;
 using PlutoFramework.Model;

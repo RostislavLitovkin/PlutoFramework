@@ -60,6 +60,12 @@
 	  <CodesignKey>Apple Development: Created via API (3XMFUNSZ92)</CodesignKey>
 	  <CodesignProvision>VS: com.xcavate.realxmarket Development</CodesignProvision>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-ios|AnyCPU'">
+	  <MtouchLink>Full</MtouchLink>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-ios|AnyCPU'">
+	  <MtouchLink>Full</MtouchLink>
+	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
     <MauiIcon Include="Resources\AppIcon\appicon.png" Color="#FFFFFF" />
@@ -523,6 +529,9 @@
 	  <MauiXaml Update="Components\CustomLayouts\TransparentItemView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\DAppConnection\DAppConnectionRequestView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Date\DateView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -871,13 +880,7 @@
 	  <MauiXaml Update="Components\TransferView\TransferView.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
-	  <MauiXaml Update="Components\ConnectionRequestView\ConnectionRequestView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
 	  <MauiXaml Update="Components\MessagePopup\MessagePopupView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\TransactionRequest\TransactionRequestView.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\CalamarView\CalamarView.xaml">
@@ -886,7 +889,7 @@
 	  <MauiXaml Update="Components\BalanceView\BalanceView.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
-	  <MauiXaml Update="Components\DAppConnectionView\DAppConnectionView.xaml">
+	  <MauiXaml Update="Components\DAppConnection\DAppConnectionView.xaml">
 	    <SubType></SubType>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Staking\EzStakingEntryView.xaml">
@@ -929,7 +932,6 @@
 	<ItemGroup>
 	  <Folder Include="Components\NetworkSelect\" />
 	  <Folder Include="Components\TransferView\" />
-	  <Folder Include="Components\ConnectionRequestView\" />
 	  <Folder Include="Components\UniversalScannerView\" />
 	  <Folder Include="Components\MessagePopup\" />
 	  <Folder Include="Components\TransactionRequest\" />

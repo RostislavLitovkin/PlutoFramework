@@ -5,7 +5,7 @@ using PlutoFramework.Platforms.Android;
 using Android.Content;
 #endif
 
-namespace PlutoFramework.Components.DAppConnectionView;
+namespace PlutoFramework.Components.DAppConnection;
 
 public partial class DAppConnectionView : ContentView
 {

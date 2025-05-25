@@ -2,7 +2,7 @@
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
-using PlutoFramework.Components.DAppConnectionView;
+using PlutoFramework.Components.DAppConnection;
 using PlutoFramework.Model;
 
 namespace PlutoFramework.Platforms.Android

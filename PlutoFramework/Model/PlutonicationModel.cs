@@ -1,6 +1,5 @@
 ﻿using Plutonication;
-using PlutoFramework.Components.ConnectionRequestView;
-using PlutoFramework.Components.DAppConnectionView;
+using PlutoFramework.Components.DAppConnection;
 using PlutoFramework.Components.MessagePopup;
 using PlutoFramework.Components.TransactionAnalyzer;
 using PlutoFramework.Components.TransactionRequest;
@@ -14,7 +13,7 @@ namespace PlutoFramework.Model
     {
         public static void ProcessAccessCredentials(AccessCredentials ac)
         {
-            var connectionRequest = DependencyService.Get<ConnectionRequestViewModel>();
+            var connectionRequest = DependencyService.Get<DAppConnectionRequestViewModel>();
 
             connectionRequest.Show();
             connectionRequest.Icon = ac.Icon;
@@ -34,7 +33,7 @@ namespace PlutoFramework.Model
         {
             try
             {
-                var viewModel = DependencyService.Get<ConnectionRequestViewModel>();
+                var viewModel = DependencyService.Get<DAppConnectionRequestViewModel>();
 
                 viewModel.Connecting = true;
 
@@ -116,40 +115,58 @@ namespace PlutoFramework.Model
         }
         public static async Task ReceivePayload(UnCheckedExtrinsic unCheckedExtrinsic, Substrate.NetApi.Model.Rpc.RuntimeVersion runtime)
         {
-            CancellationToken token = CancellationToken.None;
-            Substrate.NetApi.Model.Extrinsics.Payload payload = unCheckedExtrinsic.GetPayload(runtime);
+            Console.WriteLine("Payload received");
 
-            string genesisHash = Utils.Bytes2HexString(payload.SignedExtension.Genesis).ToLower();
-
-            var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();
-
-            if (Endpoints.HashToKey.ContainsKey(genesisHash))
+            try
             {
-                EndpointEnum key = Endpoints.HashToKey[genesisHash];
+                Console.WriteLine("Payload received (in try catch)");
 
-                var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(key, token);
+                CancellationToken token = CancellationToken.None;
+                Substrate.NetApi.Model.Extrinsics.Payload payload = unCheckedExtrinsic.GetPayload(runtime);
 
-                var signedExtensions = payload.SignedExtension;
+                string genesisHash = Utils.Bytes2HexString(payload.SignedExtension.Genesis).ToLower();
 
-                var tempPayload = new TempPayload(
-                    payload.Call,
-                    new TempSignedExtensions(
-                        specVersion: signedExtensions.SpecVersion,
-                        txVersion: signedExtensions.TxVersion,
-                        genesis: signedExtensions.Genesis,
-                        startEra: signedExtensions.StartEra,
-                        mortality: signedExtensions.Mortality,
-                        nonce: signedExtensions.Nonce,
-                        charge: signedExtensions.Charge,
-                        checkMetadata: client.CheckMetadata
-                    )
-                );
+                var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();
 
-                await transactionAnalyzerConfirmationViewModel.LoadAsync(client, unCheckedExtrinsic.ToTempUnCheckedExtrinsic(payload, client.Endpoint.AddressVersion, client.CheckMetadata), true, onConfirm: OnConfirmClickedAsync, runtime);
+                if (Endpoints.HashToKey.ContainsKey(genesisHash))
+                {
+                    Console.WriteLine("Genesis hash found");
+                    EndpointEnum key = Endpoints.HashToKey[genesisHash];
+
+                    var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(key, token);
+
+
+                    Console.WriteLine("Client got");
+
+                    var signedExtensions = payload.SignedExtension;
+
+                    var tempPayload = new TempPayload(
+                        payload.Call,
+                        new TempSignedExtensions(
+                            specVersion: signedExtensions.SpecVersion,
+                            txVersion: signedExtensions.TxVersion,
+                            genesis: signedExtensions.Genesis,
+                            startEra: signedExtensions.StartEra,
+                            mortality: signedExtensions.Mortality,
+                            nonce: signedExtensions.Nonce,
+                            charge: signedExtensions.Charge,
+                            checkMetadata: client.CheckMetadata
+                        )
+                    );
+
+                    await transactionAnalyzerConfirmationViewModel.LoadAsync(client, unCheckedExtrinsic.ToTempUnCheckedExtrinsic(payload, client.Endpoint.AddressVersion, client.CheckMetadata), true, onConfirm: OnConfirmClickedAsync, runtime);
+
+                    Console.WriteLine("Load finished");
+
+                }
+                else
+                {
+                    transactionAnalyzerConfirmationViewModel.LoadUnknown(unCheckedExtrinsic.ToTempUnCheckedExtrinsic(payload, 2u, true), runtime, onConfirm: OnConfirmClickedAsync);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                transactionAnalyzerConfirmationViewModel.LoadUnknown(unCheckedExtrinsic.ToTempUnCheckedExtrinsic(payload, 2u, true), runtime, onConfirm: OnConfirmClickedAsync);
+                Console.WriteLine(ex);
             }
         }
 
@@ -208,7 +225,6 @@ namespace PlutoFramework.Model
                 var messageSignRequest = DependencyService.Get<MessageSignRequestViewModel>();
 
                 messageSignRequest.Message = message;
-                messageSignRequest.MessageString = GetMessageString(message.data);
                 messageSignRequest.IsVisible = true;
             }
             catch (Exception ex)
@@ -220,20 +236,6 @@ namespace PlutoFramework.Model
 
                 messagePopup.IsVisible = true;
             }
-        }
-
-        private static string GetMessageString(string hex)
-        {
-            int maxChars = 30;
-
-            string result = hex.Length >= maxChars ? hex.Substring(0, maxChars) : hex;
-
-            for (int i = 1; i <= hex.Length / maxChars; i++)
-            {
-                result += "\n" + (hex.Length - i * maxChars >= maxChars ? hex.Substring(i * maxChars, maxChars) : hex.Substring(i * maxChars));
-            }
-
-            return result;
         }
     }
 }

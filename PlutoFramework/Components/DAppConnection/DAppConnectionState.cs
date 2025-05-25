@@ -1,4 +1,4 @@
-﻿namespace PlutoFramework.Components.DAppConnectionView
+﻿namespace PlutoFramework.Components.DAppConnection
 {
     public enum DAppConnectionStateEnum
     {
