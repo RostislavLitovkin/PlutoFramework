@@ -44,7 +44,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet
     }
     
     /// <summary>
-    /// >> 155 - Variant[pallet_xcm_executor_utils.pallet.Event]
+    /// >> 171 - Variant[pallet_xcm_executor_utils.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -55,10 +55,10 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Event.ReservePolicySet);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Event.ReservePolicyRemoved);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Event.TeleportPolicySet);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Event.TeleportPolicyRemoved);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.location.Location>(Event.ReservePolicySet);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.location.Location>(Event.ReservePolicyRemoved);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.location.Location>(Event.TeleportPolicySet);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.location.Location>(Event.TeleportPolicyRemoved);
         }
     }
 }

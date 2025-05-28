@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_balances.types
     
     
     /// <summary>
-    /// >> 351 - Composite[pallet_balances.types.BalanceLock]
+    /// >> 382 - Composite[pallet_balances.types.BalanceLock]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BalanceLock : BaseType

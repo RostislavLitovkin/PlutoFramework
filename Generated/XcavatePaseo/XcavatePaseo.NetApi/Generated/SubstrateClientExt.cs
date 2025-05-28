@@ -70,6 +70,11 @@ namespace XcavatePaseo.NetApi.Generated
         public MigrationsStorage MigrationsStorage;
         
         /// <summary>
+        /// MultiBlockMigrationsStorage storage calls.
+        /// </summary>
+        public MultiBlockMigrationsStorage MultiBlockMigrationsStorage;
+        
+        /// <summary>
         /// MaintenanceModeStorage storage calls.
         /// </summary>
         public MaintenanceModeStorage MaintenanceModeStorage;
@@ -105,11 +110,6 @@ namespace XcavatePaseo.NetApi.Generated
         public AssetsFreezerStorage AssetsFreezerStorage;
         
         /// <summary>
-        /// AssetTxPaymentStorage storage calls.
-        /// </summary>
-        public AssetTxPaymentStorage AssetTxPaymentStorage;
-        
-        /// <summary>
         /// MultisigStorage storage calls.
         /// </summary>
         public MultisigStorage MultisigStorage;
@@ -123,11 +123,6 @@ namespace XcavatePaseo.NetApi.Generated
         /// NftFractionalizationStorage storage calls.
         /// </summary>
         public NftFractionalizationStorage NftFractionalizationStorage;
-        
-        /// <summary>
-        /// RandomnessCollectiveFlipStorage storage calls.
-        /// </summary>
-        public RandomnessCollectiveFlipStorage RandomnessCollectiveFlipStorage;
         
         /// <summary>
         /// AuthoritiesNotingStorage storage calls.
@@ -209,6 +204,11 @@ namespace XcavatePaseo.NetApi.Generated
         /// </summary>
         public AsyncBackingStorage AsyncBackingStorage;
         
+        /// <summary>
+        /// OffchainWorkerStorage storage calls.
+        /// </summary>
+        public OffchainWorkerStorage OffchainWorkerStorage;
+        
         public SubstrateClientExt(System.Uri uri, Substrate.NetApi.Model.Extrinsics.ChargeType chargeType) : 
                 base(uri, chargeType)
         {
@@ -221,6 +221,7 @@ namespace XcavatePaseo.NetApi.Generated
             this.UtilityStorage = new UtilityStorage(this);
             this.ProxyStorage = new ProxyStorage(this);
             this.MigrationsStorage = new MigrationsStorage(this);
+            this.MultiBlockMigrationsStorage = new MultiBlockMigrationsStorage(this);
             this.MaintenanceModeStorage = new MaintenanceModeStorage(this);
             this.TxPauseStorage = new TxPauseStorage(this);
             this.BalancesStorage = new BalancesStorage(this);
@@ -228,11 +229,9 @@ namespace XcavatePaseo.NetApi.Generated
             this.RealEstateAssetsStorage = new RealEstateAssetsStorage(this);
             this.RealEstateAssetsFreezerStorage = new RealEstateAssetsFreezerStorage(this);
             this.AssetsFreezerStorage = new AssetsFreezerStorage(this);
-            this.AssetTxPaymentStorage = new AssetTxPaymentStorage(this);
             this.MultisigStorage = new MultisigStorage(this);
             this.NftsStorage = new NftsStorage(this);
             this.NftFractionalizationStorage = new NftFractionalizationStorage(this);
-            this.RandomnessCollectiveFlipStorage = new RandomnessCollectiveFlipStorage(this);
             this.AuthoritiesNotingStorage = new AuthoritiesNotingStorage(this);
             this.AuthorInherentStorage = new AuthorInherentStorage(this);
             this.XcmpQueueStorage = new XcmpQueueStorage(this);
@@ -249,6 +248,7 @@ namespace XcavatePaseo.NetApi.Generated
             this.PropertyGovernanceStorage = new PropertyGovernanceStorage(this);
             this.RootTestingStorage = new RootTestingStorage(this);
             this.AsyncBackingStorage = new AsyncBackingStorage(this);
+            this.OffchainWorkerStorage = new OffchainWorkerStorage(this);
         }
     }
 }

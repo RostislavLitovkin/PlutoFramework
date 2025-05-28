@@ -151,7 +151,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> add_letting_agent
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AddLettingAgent(Substrate.NetApi.Model.Types.Primitive.U32 region, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 location, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 letting_agent)
+        public static Method AddLettingAgent(Substrate.NetApi.Model.Types.Primitive.U32 region, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 location, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 letting_agent)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(region.Encode());
@@ -174,7 +174,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> add_letting_agent_to_location
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AddLettingAgentToLocation(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 location, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 letting_agent)
+        public static Method AddLettingAgentToLocation(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 location, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 letting_agent)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(location.Encode());

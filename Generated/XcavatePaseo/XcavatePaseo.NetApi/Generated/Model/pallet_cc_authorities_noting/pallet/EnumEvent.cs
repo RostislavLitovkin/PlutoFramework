@@ -36,7 +36,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_cc_authorities_noting.palle
     }
     
     /// <summary>
-    /// >> 67 - Variant[pallet_cc_authorities_noting.pallet.Event]
+    /// >> 69 - Variant[pallet_cc_authorities_noting.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

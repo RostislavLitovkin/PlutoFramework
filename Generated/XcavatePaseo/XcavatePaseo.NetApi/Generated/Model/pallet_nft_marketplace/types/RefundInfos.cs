@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types
     
     
     /// <summary>
-    /// >> 481 - Composite[pallet_nft_marketplace.types.RefundInfos]
+    /// >> 510 - Composite[pallet_nft_marketplace.types.RefundInfos]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RefundInfos : BaseType

@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types
     
     
     /// <summary>
-    /// >> 468 - Composite[pallet_nft_marketplace.types.NftDetails]
+    /// >> 497 - Composite[pallet_nft_marketplace.types.NftDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class NftDetails : BaseType
@@ -39,7 +39,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types
         /// <summary>
         /// >> location
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 Location { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 Location { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -68,7 +68,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types
             AssetId.Decode(byteArray, ref p);
             Region = new Substrate.NetApi.Model.Types.Primitive.U32();
             Region.Decode(byteArray, ref p);
-            Location = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8();
+            Location = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9();
             Location.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

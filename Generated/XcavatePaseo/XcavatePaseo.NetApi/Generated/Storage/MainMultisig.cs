@@ -88,7 +88,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(other_signatories.Encode());
             byteArray.AddRange(call.Encode());
-            return new Method(17, "Multisig", 0, "as_multi_threshold_1", byteArray.ToArray());
+            return new Method(16, "Multisig", 0, "as_multi_threshold_1", byteArray.ToArray());
         }
         
         /// <summary>
@@ -103,7 +103,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(maybe_timepoint.Encode());
             byteArray.AddRange(call.Encode());
             byteArray.AddRange(max_weight.Encode());
-            return new Method(17, "Multisig", 1, "as_multi", byteArray.ToArray());
+            return new Method(16, "Multisig", 1, "as_multi", byteArray.ToArray());
         }
         
         /// <summary>
@@ -118,7 +118,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(maybe_timepoint.Encode());
             byteArray.AddRange(call_hash.Encode());
             byteArray.AddRange(max_weight.Encode());
-            return new Method(17, "Multisig", 2, "approve_as_multi", byteArray.ToArray());
+            return new Method(16, "Multisig", 2, "approve_as_multi", byteArray.ToArray());
         }
         
         /// <summary>
@@ -132,7 +132,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(other_signatories.Encode());
             byteArray.AddRange(timepoint.Encode());
             byteArray.AddRange(call_hash.Encode());
-            return new Method(17, "Multisig", 3, "cancel_as_multi", byteArray.ToArray());
+            return new Method(16, "Multisig", 3, "cancel_as_multi", byteArray.ToArray());
         }
     }
     

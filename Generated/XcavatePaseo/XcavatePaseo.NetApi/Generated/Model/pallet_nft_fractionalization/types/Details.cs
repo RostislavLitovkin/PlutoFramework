@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.types
     
     
     /// <summary>
-    /// >> 414 - Composite[pallet_nft_fractionalization.types.Details]
+    /// >> 445 - Composite[pallet_nft_fractionalization.types.Details]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Details : BaseType

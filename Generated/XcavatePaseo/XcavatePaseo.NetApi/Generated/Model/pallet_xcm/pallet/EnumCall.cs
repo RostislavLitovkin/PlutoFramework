@@ -310,7 +310,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 279 - Variant[pallet_xcm.pallet.Call]
+    /// >> 304 - Variant[pallet_xcm.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -325,7 +325,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.teleport_assets);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssets, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.reserve_transfer_assets);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedXcm, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Call.execute);
-				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.force_xcm_version);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.force_xcm_version);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>>(Call.force_default_xcm_version);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation>(Call.force_subscribe_version_notify);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation>(Call.force_unsubscribe_version_notify);

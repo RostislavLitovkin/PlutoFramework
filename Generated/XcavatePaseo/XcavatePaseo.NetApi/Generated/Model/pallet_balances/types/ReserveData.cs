@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_balances.types
     
     
     /// <summary>
-    /// >> 355 - Composite[pallet_balances.types.ReserveData]
+    /// >> 386 - Composite[pallet_balances.types.ReserveData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ReserveData : BaseType

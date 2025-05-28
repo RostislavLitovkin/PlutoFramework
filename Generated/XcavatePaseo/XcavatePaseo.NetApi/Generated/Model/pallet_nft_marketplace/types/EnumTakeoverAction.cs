@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types
     }
     
     /// <summary>
-    /// >> 330 - Variant[pallet_nft_marketplace.types.TakeoverAction]
+    /// >> 359 - Variant[pallet_nft_marketplace.types.TakeoverAction]
     /// </summary>
     public sealed class EnumTakeoverAction : BaseEnum<TakeoverAction>
     {

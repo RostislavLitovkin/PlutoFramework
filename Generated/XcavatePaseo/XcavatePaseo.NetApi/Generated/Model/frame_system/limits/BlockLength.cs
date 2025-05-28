@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_system.limits
     
     
     /// <summary>
-    /// >> 181 - Composite[frame_system.limits.BlockLength]
+    /// >> 198 - Composite[frame_system.limits.BlockLength]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BlockLength : BaseType

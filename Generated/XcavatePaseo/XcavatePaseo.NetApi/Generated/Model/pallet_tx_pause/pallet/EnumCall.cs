@@ -42,7 +42,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_tx_pause.pallet
     }
     
     /// <summary>
-    /// >> 245 - Variant[pallet_tx_pause.pallet.Call]
+    /// >> 270 - Variant[pallet_tx_pause.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

@@ -30,7 +30,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.pallet
     }
     
     /// <summary>
-    /// >> 71 - Variant[cumulus_pallet_xcmp_queue.pallet.Event]
+    /// >> 73 - Variant[cumulus_pallet_xcmp_queue.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

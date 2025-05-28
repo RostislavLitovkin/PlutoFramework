@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcmp_queue
     }
     
     /// <summary>
-    /// >> 425 - Variant[cumulus_pallet_xcmp_queue.OutboundState]
+    /// >> 455 - Variant[cumulus_pallet_xcmp_queue.OutboundState]
     /// </summary>
     public sealed class EnumOutboundState : BaseEnum<OutboundState>
     {

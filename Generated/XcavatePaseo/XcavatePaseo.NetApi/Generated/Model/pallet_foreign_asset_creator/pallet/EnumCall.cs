@@ -53,7 +53,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_foreign_asset_creator.palle
     }
     
     /// <summary>
-    /// >> 321 - Variant[pallet_foreign_asset_creator.pallet.Call]
+    /// >> 350 - Variant[pallet_foreign_asset_creator.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -64,8 +64,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_foreign_asset_creator.palle
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.Bool, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.create_foreign_asset);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Call.change_existing_asset_type);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.Bool, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.create_foreign_asset);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.location.Location>>(Call.change_existing_asset_type);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.remove_existing_asset_type);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.destroy_foreign_asset);
         }

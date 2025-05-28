@@ -53,7 +53,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_support.traits.messages
     }
     
     /// <summary>
-    /// >> 150 - Variant[frame_support.traits.messages.ProcessMessageError]
+    /// >> 166 - Variant[frame_support.traits.messages.ProcessMessageError]
     /// </summary>
     public sealed class EnumProcessMessageError : BaseEnumRust<ProcessMessageError>
     {

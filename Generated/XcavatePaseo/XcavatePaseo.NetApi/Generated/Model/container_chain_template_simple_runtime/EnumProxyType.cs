@@ -48,7 +48,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
     }
     
     /// <summary>
-    /// >> 39 - Variant[container_chain_template_simple_runtime.ProxyType]
+    /// >> 40 - Variant[container_chain_template_simple_runtime.ProxyType]
     /// </summary>
     public sealed class EnumProxyType : BaseEnum<ProxyType>
     {

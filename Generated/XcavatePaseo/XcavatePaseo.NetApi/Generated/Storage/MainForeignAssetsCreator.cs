@@ -37,9 +37,9 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ForeignAssetsCreator", "AssetIdToForeignAsset"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.location.Location)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ForeignAssetsCreator", "ForeignAssetToAssetId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.location.Location), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
         }
         
         /// <summary>
@@ -70,10 +70,10 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         ///  This is mostly used when receiving transaction specifying an asset directly,
         ///  like transferring an asset from this chain to another.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location> AssetIdToForeignAsset(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.location.Location> AssetIdToForeignAsset(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = ForeignAssetsCreatorStorage.AssetIdToForeignAssetParams(key);
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.location.Location>(parameters, blockhash, token);
             return result;
         }
         
@@ -83,7 +83,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         ///  This is mostly used when receiving a multilocation XCM message to retrieve
         ///  the corresponding asset in which tokens should me minted.
         /// </summary>
-        public static string ForeignAssetToAssetIdParams(XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location key)
+        public static string ForeignAssetToAssetIdParams(XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.location.Location key)
         {
             return RequestGenerator.GetStorage("ForeignAssetsCreator", "ForeignAssetToAssetId", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -105,7 +105,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         ///  This is mostly used when receiving a multilocation XCM message to retrieve
         ///  the corresponding asset in which tokens should me minted.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> ForeignAssetToAssetId(XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> ForeignAssetToAssetId(XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.location.Location key, string blockhash, CancellationToken token)
         {
             string parameters = ForeignAssetsCreatorStorage.ForeignAssetToAssetIdParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
@@ -123,7 +123,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> create_foreign_asset
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method CreateForeignAsset(XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location foreign_asset, Substrate.NetApi.Model.Types.Primitive.U32 asset_id, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 admin, Substrate.NetApi.Model.Types.Primitive.Bool is_sufficient, Substrate.NetApi.Model.Types.Primitive.U128 min_balance)
+        public static Method CreateForeignAsset(XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.location.Location foreign_asset, Substrate.NetApi.Model.Types.Primitive.U32 asset_id, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 admin, Substrate.NetApi.Model.Types.Primitive.Bool is_sufficient, Substrate.NetApi.Model.Types.Primitive.U128 min_balance)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(foreign_asset.Encode());
@@ -138,7 +138,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> change_existing_asset_type
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ChangeExistingAssetType(Substrate.NetApi.Model.Types.Primitive.U32 asset_id, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.location.Location new_foreign_asset)
+        public static Method ChangeExistingAssetType(Substrate.NetApi.Model.Types.Primitive.U32 asset_id, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.location.Location new_foreign_asset)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset_id.Encode());

@@ -43,7 +43,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
     }
     
     /// <summary>
-    /// >> 163 - Variant[pallet_property_governance.pallet.ChallengeState]
+    /// >> 179 - Variant[pallet_property_governance.pallet.ChallengeState]
     /// </summary>
     public sealed class EnumChallengeState : BaseEnum<ChallengeState>
     {

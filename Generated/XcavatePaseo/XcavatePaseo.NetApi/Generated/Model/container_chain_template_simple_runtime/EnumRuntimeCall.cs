@@ -57,6 +57,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         Proxy = 6,
         
         /// <summary>
+        /// >> MultiBlockMigrations
+        /// </summary>
+        MultiBlockMigrations = 121,
+        
+        /// <summary>
         /// >> MaintenanceMode
         /// </summary>
         MaintenanceMode = 8,
@@ -79,12 +84,12 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         /// <summary>
         /// >> Multisig
         /// </summary>
-        Multisig = 17,
+        Multisig = 16,
         
         /// <summary>
         /// >> Nfts
         /// </summary>
-        Nfts = 18,
+        Nfts = 17,
         
         /// <summary>
         /// >> NftFractionalization
@@ -155,10 +160,15 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         /// >> RootTesting
         /// </summary>
         RootTesting = 100,
+        
+        /// <summary>
+        /// >> OffchainWorker
+        /// </summary>
+        OffchainWorker = 120,
     }
     
     /// <summary>
-    /// >> 232 - Variant[container_chain_template_simple_runtime.RuntimeCall]
+    /// >> 249 - Variant[container_chain_template_simple_runtime.RuntimeCall]
     /// </summary>
     public sealed class EnumRuntimeCall : BaseEnumRust<RuntimeCall>
     {
@@ -175,6 +185,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_sudo.pallet.EnumCall>(RuntimeCall.Sudo);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_utility.pallet.EnumCall>(RuntimeCall.Utility);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_proxy.pallet.EnumCall>(RuntimeCall.Proxy);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_migrations.pallet.EnumCall>(RuntimeCall.MultiBlockMigrations);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_maintenance_mode.pallet.EnumCall>(RuntimeCall.MaintenanceMode);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_tx_pause.pallet.EnumCall>(RuntimeCall.TxPause);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_balances.pallet.EnumCall>(RuntimeCall.Balances);
@@ -195,6 +206,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.EnumCall>(RuntimeCall.PropertyManagement);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumCall>(RuntimeCall.PropertyGovernance);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_root_testing.pallet.EnumCall>(RuntimeCall.RootTesting);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_ocw_testing.pallet.EnumCall>(RuntimeCall.OffchainWorker);
         }
     }
 }

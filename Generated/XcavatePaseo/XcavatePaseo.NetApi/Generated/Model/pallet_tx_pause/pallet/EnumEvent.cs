@@ -36,7 +36,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_tx_pause.pallet
     }
     
     /// <summary>
-    /// >> 43 - Variant[pallet_tx_pause.pallet.Event]
+    /// >> 46 - Variant[pallet_tx_pause.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

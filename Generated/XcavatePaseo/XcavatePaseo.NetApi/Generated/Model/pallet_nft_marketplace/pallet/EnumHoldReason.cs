@@ -38,7 +38,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
     }
     
     /// <summary>
-    /// >> 361 - Variant[pallet_nft_marketplace.pallet.HoldReason]
+    /// >> 392 - Variant[pallet_nft_marketplace.pallet.HoldReason]
     /// </summary>
     public sealed class EnumHoldReason : BaseEnum<HoldReason>
     {

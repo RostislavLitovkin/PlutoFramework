@@ -77,8 +77,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_system.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.frame_support.dispatch.DispatchInfo>(Event.ExtrinsicSuccess);
-				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError, XcavatePaseo.NetApi.Generated.Model.frame_support.dispatch.DispatchInfo>>(Event.ExtrinsicFailed);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.frame_system.DispatchEventInfo>(Event.ExtrinsicSuccess);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError, XcavatePaseo.NetApi.Generated.Model.frame_system.DispatchEventInfo>>(Event.ExtrinsicFailed);
 				AddTypeDecoder<BaseVoid>(Event.CodeUpdated);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.NewAccount);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.KilledAccount);

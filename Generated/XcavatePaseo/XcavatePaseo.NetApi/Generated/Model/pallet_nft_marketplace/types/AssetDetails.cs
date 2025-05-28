@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types
     
     
     /// <summary>
-    /// >> 477 - Composite[pallet_nft_marketplace.types.AssetDetails]
+    /// >> 506 - Composite[pallet_nft_marketplace.types.AssetDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetDetails : BaseType
@@ -39,7 +39,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types
         /// <summary>
         /// >> location
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 Location { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 Location { get; set; }
         /// <summary>
         /// >> price
         /// </summary>
@@ -78,7 +78,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types
             ItemId.Decode(byteArray, ref p);
             Region = new Substrate.NetApi.Model.Types.Primitive.U32();
             Region.Decode(byteArray, ref p);
-            Location = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8();
+            Location = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9();
             Location.Decode(byteArray, ref p);
             Price = new Substrate.NetApi.Model.Types.Primitive.U128();
             Price.Decode(byteArray, ref p);

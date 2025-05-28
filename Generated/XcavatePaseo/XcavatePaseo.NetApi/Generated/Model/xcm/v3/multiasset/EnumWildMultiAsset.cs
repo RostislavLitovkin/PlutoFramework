@@ -43,7 +43,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcm.v3.multiasset
     }
     
     /// <summary>
-    /// >> 304 - Variant[xcm.v3.multiasset.WildMultiAsset]
+    /// >> 320 - Variant[xcm.v3.multiasset.WildMultiAsset]
     /// </summary>
     public sealed class EnumWildMultiAsset : BaseEnumRust<WildMultiAsset>
     {

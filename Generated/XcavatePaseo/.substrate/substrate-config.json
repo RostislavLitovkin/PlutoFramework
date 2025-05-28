@@ -6,7 +6,7 @@
     "rest_client": "Substrate.RestClient"
   },
    "metadata": {
-      "websocket": "wss://fraa-flashbox-4644-rpc.a.stagenet.tanssi.network"
+      "websocket": "wss://fraa-flashbox-4654-rpc.a.stagenet.tanssi.network"
    },
   "rest_client_settings": {
     "service_assembly": "Substrate.RestService.dll"

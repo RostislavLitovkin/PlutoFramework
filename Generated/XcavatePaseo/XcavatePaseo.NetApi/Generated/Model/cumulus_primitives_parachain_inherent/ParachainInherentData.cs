@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inher
     
     
     /// <summary>
-    /// >> 220 - Composite[cumulus_primitives_parachain_inherent.ParachainInherentData]
+    /// >> 237 - Composite[cumulus_primitives_parachain_inherent.ParachainInherentData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ParachainInherentData : BaseType
@@ -27,7 +27,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inher
         /// <summary>
         /// >> validation_data
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.PersistedValidationData ValidationData { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v8.PersistedValidationData ValidationData { get; set; }
         /// <summary>
         /// >> relay_chain_state
         /// </summary>
@@ -62,7 +62,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inher
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            ValidationData = new XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v7.PersistedValidationData();
+            ValidationData = new XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v8.PersistedValidationData();
             ValidationData.Decode(byteArray, ref p);
             RelayChainState = new XcavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof();
             RelayChainState.Decode(byteArray, ref p);

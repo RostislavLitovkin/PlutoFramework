@@ -23,44 +23,64 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_migrations.pallet
     {
         
         /// <summary>
-        /// >> RuntimeUpgradeStarted
-        /// Runtime upgrade started
+        /// >> UpgradeStarted
+        /// A Runtime upgrade started.
+        /// 
+        /// Its end is indicated by `UpgradeCompleted` or `UpgradeFailed`.
         /// </summary>
-        RuntimeUpgradeStarted = 0,
+        UpgradeStarted = 0,
         
         /// <summary>
-        /// >> RuntimeUpgradeCompleted
-        /// Runtime upgrade completed
+        /// >> UpgradeCompleted
+        /// The current runtime upgrade completed.
+        /// 
+        /// This implies that all of its migrations completed successfully as well.
         /// </summary>
-        RuntimeUpgradeCompleted = 1,
+        UpgradeCompleted = 1,
         
         /// <summary>
-        /// >> MigrationStarted
-        /// Migration started
+        /// >> UpgradeFailed
+        /// Runtime upgrade failed.
+        /// 
+        /// This is very bad and will require governance intervention.
         /// </summary>
-        MigrationStarted = 2,
+        UpgradeFailed = 2,
+        
+        /// <summary>
+        /// >> MigrationSkipped
+        /// A migration was skipped since it was already executed in the past.
+        /// </summary>
+        MigrationSkipped = 3,
+        
+        /// <summary>
+        /// >> MigrationAdvanced
+        /// A migration progressed.
+        /// </summary>
+        MigrationAdvanced = 4,
         
         /// <summary>
         /// >> MigrationCompleted
-        /// Migration completed
+        /// A Migration completed.
         /// </summary>
-        MigrationCompleted = 3,
+        MigrationCompleted = 5,
         
         /// <summary>
-        /// >> FailedToSuspendIdleXcmExecution
-        /// XCM execution suspension failed with inner error
+        /// >> MigrationFailed
+        /// A Migration failed.
+        /// 
+        /// This implies that the whole upgrade failed and governance intervention is required.
         /// </summary>
-        FailedToSuspendIdleXcmExecution = 4,
+        MigrationFailed = 6,
         
         /// <summary>
-        /// >> FailedToResumeIdleXcmExecution
-        /// XCM execution resume failed with inner error
+        /// >> HistoricCleared
+        /// The set of historical migrations has been cleared.
         /// </summary>
-        FailedToResumeIdleXcmExecution = 5,
+        HistoricCleared = 7,
     }
     
     /// <summary>
-    /// >> 41 - Variant[pallet_migrations.pallet.Event]
+    /// >> 43 - Variant[pallet_migrations.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -71,12 +91,14 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_migrations.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseVoid>(Event.RuntimeUpgradeStarted);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>(Event.RuntimeUpgradeCompleted);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>(Event.MigrationStarted);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Event.MigrationCompleted);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Event.FailedToSuspendIdleXcmExecution);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Event.FailedToResumeIdleXcmExecution);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.UpgradeStarted);
+				AddTypeDecoder<BaseVoid>(Event.UpgradeCompleted);
+				AddTypeDecoder<BaseVoid>(Event.UpgradeFailed);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.MigrationSkipped);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.MigrationAdvanced);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.MigrationCompleted);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.MigrationFailed);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>>(Event.HistoricCleared);
         }
     }
 }

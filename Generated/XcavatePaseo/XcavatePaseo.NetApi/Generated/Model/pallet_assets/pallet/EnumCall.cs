@@ -81,8 +81,6 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_assets.pallet
         /// 
         /// - `id`: The identifier of the asset to be destroyed. This must identify an existing
         ///   asset.
-        /// 
-        /// The asset class must be frozen before calling `start_destroy`.
         /// </summary>
         start_destroy = 2,
         
@@ -607,10 +605,31 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_assets.pallet
         /// Weight: `O(1)`
         /// </summary>
         block = 31,
+        
+        /// <summary>
+        /// >> transfer_all
+        /// Transfer the entire transferable balance from the caller asset account.
+        /// 
+        /// NOTE: This function only attempts to transfer _transferable_ balances. This means that
+        /// any held, frozen, or minimum balance (when `keep_alive` is `true`), will not be
+        /// transferred by this function. To ensure that this function results in a killed account,
+        /// you might need to prepare the account by removing any reference counters, storage
+        /// deposits, etc...
+        /// 
+        /// The dispatch origin of this call must be Signed.
+        /// 
+        /// - `id`: The identifier of the asset for the account holding a deposit.
+        /// - `dest`: The recipient of the transfer.
+        /// - `keep_alive`: A boolean to determine if the `transfer_all` operation should send all
+        ///   of the funds the asset account has, causing the sender asset account to be killed
+        ///   (false), or transfer everything except at least the minimum balance, which will
+        ///   guarantee to keep the sender asset account alive (true).
+        /// </summary>
+        transfer_all = 32,
     }
     
     /// <summary>
-    /// >> 320 - Variant[pallet_assets.pallet.Call]
+    /// >> 349 - Variant[pallet_assets.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -653,6 +672,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_assets.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.touch_other);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.refund_other);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.block);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.transfer_all);
         }
     }
 }

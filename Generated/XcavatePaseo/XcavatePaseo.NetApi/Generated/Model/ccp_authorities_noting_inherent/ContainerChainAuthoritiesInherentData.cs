@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.ccp_authorities_noting_inherent
     
     
     /// <summary>
-    /// >> 277 - Composite[ccp_authorities_noting_inherent.ContainerChainAuthoritiesInherentData]
+    /// >> 302 - Composite[ccp_authorities_noting_inherent.ContainerChainAuthoritiesInherentData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ContainerChainAuthoritiesInherentData : BaseType

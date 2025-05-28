@@ -45,7 +45,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 72 - Variant[cumulus_pallet_xcm.pallet.Event]
+    /// >> 74 - Variant[cumulus_pallet_xcm.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -58,7 +58,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcm.pallet
         {
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8>(Event.InvalidFormat);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8>(Event.UnsupportedVersion);
-				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.traits.EnumOutcome>>(Event.ExecutedDownward);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.traits.EnumOutcome>>(Event.ExecutedDownward);
         }
     }
 }

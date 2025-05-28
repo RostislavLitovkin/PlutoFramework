@@ -23,32 +23,14 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_migrations.pallet
     {
         
         /// <summary>
-        /// >> PreimageMissing
-        /// Missing preimage in original democracy storage
+        /// >> Ongoing
+        /// The operation cannot complete since some MBMs are ongoing.
         /// </summary>
-        PreimageMissing = 0,
-        
-        /// <summary>
-        /// >> WrongUpperBound
-        /// Provided upper bound is too low.
-        /// </summary>
-        WrongUpperBound = 1,
-        
-        /// <summary>
-        /// >> PreimageIsTooBig
-        /// Preimage is larger than the new max size.
-        /// </summary>
-        PreimageIsTooBig = 2,
-        
-        /// <summary>
-        /// >> PreimageAlreadyExists
-        /// Preimage already exists in the new storage.
-        /// </summary>
-        PreimageAlreadyExists = 3,
+        Ongoing = 0,
     }
     
     /// <summary>
-    /// >> 347 - Variant[pallet_migrations.pallet.Error]
+    /// >> 378 - Variant[pallet_migrations.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

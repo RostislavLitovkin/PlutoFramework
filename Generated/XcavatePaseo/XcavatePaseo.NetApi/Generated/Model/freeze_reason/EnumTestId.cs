@@ -28,7 +28,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.freeze_reason
     }
     
     /// <summary>
-    /// >> 382 - Variant[freeze_reason.TestId]
+    /// >> 413 - Variant[freeze_reason.TestId]
     /// </summary>
     public sealed class EnumTestId : BaseEnum<TestId>
     {

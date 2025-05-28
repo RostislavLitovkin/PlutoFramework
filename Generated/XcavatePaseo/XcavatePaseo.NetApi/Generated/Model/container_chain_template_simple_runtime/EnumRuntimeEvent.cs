@@ -52,6 +52,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         Migrations = 7,
         
         /// <summary>
+        /// >> MultiBlockMigrations
+        /// </summary>
+        MultiBlockMigrations = 121,
+        
+        /// <summary>
         /// >> MaintenanceMode
         /// </summary>
         MaintenanceMode = 8,
@@ -87,19 +92,14 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         AssetsFreezer = 15,
         
         /// <summary>
-        /// >> AssetTxPayment
-        /// </summary>
-        AssetTxPayment = 16,
-        
-        /// <summary>
         /// >> Multisig
         /// </summary>
-        Multisig = 17,
+        Multisig = 16,
         
         /// <summary>
         /// >> Nfts
         /// </summary>
-        Nfts = 18,
+        Nfts = 17,
         
         /// <summary>
         /// >> NftFractionalization
@@ -175,6 +175,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         /// >> RootTesting
         /// </summary>
         RootTesting = 100,
+        
+        /// <summary>
+        /// >> OffchainWorker
+        /// </summary>
+        OffchainWorker = 120,
     }
     
     /// <summary>
@@ -194,6 +199,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_utility.pallet.EnumEvent>(RuntimeEvent.Utility);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_proxy.pallet.EnumEvent>(RuntimeEvent.Proxy);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_migrations.pallet.EnumEvent>(RuntimeEvent.Migrations);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_migrations.pallet.EnumEvent>(RuntimeEvent.MultiBlockMigrations);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_maintenance_mode.pallet.EnumEvent>(RuntimeEvent.MaintenanceMode);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_tx_pause.pallet.EnumEvent>(RuntimeEvent.TxPause);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_balances.pallet.EnumEvent>(RuntimeEvent.Balances);
@@ -201,7 +207,6 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_assets.pallet.EnumEvent>(RuntimeEvent.RealEstateAssets);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_assets_freezer.pallet.EnumEvent>(RuntimeEvent.RealEstateAssetsFreezer);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_assets_freezer.pallet.EnumEvent>(RuntimeEvent.AssetsFreezer);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_asset_tx_payment.pallet.EnumEvent>(RuntimeEvent.AssetTxPayment);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_multisig.pallet.EnumEvent>(RuntimeEvent.Multisig);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.pallet.EnumEvent>(RuntimeEvent.Nfts);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.pallet.EnumEvent>(RuntimeEvent.NftFractionalization);
@@ -219,6 +224,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.EnumEvent>(RuntimeEvent.PropertyManagement);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumEvent>(RuntimeEvent.PropertyGovernance);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_root_testing.pallet.EnumEvent>(RuntimeEvent.RootTesting);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_ocw_testing.pallet.EnumEvent>(RuntimeEvent.OffchainWorker);
         }
     }
 }

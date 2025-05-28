@@ -223,7 +223,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcm.v3.traits
     }
     
     /// <summary>
-    /// >> 74 - Variant[xcm.v3.traits.Error]
+    /// >> 312 - Variant[xcm.v3.traits.Error]
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>
     {

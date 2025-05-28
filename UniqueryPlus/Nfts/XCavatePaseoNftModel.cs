@@ -320,7 +320,7 @@ namespace UniqueryPlus.Nfts
                     SpvCreated = nftDetails.SpvCreated,
                     AssetId = nftDetails.AssetId.Value,
                     Region = nftDetails.Region.Value,
-                    Location = Helpers.VecU8ToString(nftDetails.Location.Value),
+                    Location = Helpers.VecU8ToString(nftDetails.Location.Value.Value),
                 });
             }
 

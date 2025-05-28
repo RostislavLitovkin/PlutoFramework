@@ -90,6 +90,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.sp_runtime
         /// >> RootNotAllowed
         /// </summary>
         RootNotAllowed = 13,
+        
+        /// <summary>
+        /// >> Trie
+        /// </summary>
+        Trie = 14,
     }
     
     /// <summary>
@@ -117,6 +122,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.sp_runtime
 				AddTypeDecoder<BaseVoid>(DispatchError.Corruption);
 				AddTypeDecoder<BaseVoid>(DispatchError.Unavailable);
 				AddTypeDecoder<BaseVoid>(DispatchError.RootNotAllowed);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_runtime.proving_trie.EnumTrieError>(DispatchError.Trie);
         }
     }
 }

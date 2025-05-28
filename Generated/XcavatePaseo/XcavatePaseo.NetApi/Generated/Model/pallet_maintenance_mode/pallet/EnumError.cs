@@ -36,7 +36,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_maintenance_mode.pallet
     }
     
     /// <summary>
-    /// >> 348 - Variant[pallet_maintenance_mode.pallet.Error]
+    /// >> 379 - Variant[pallet_maintenance_mode.pallet.Error]
     /// An error that can occur while executing this pallet's extrinsics.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

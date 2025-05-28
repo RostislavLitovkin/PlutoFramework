@@ -30,7 +30,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_assets_freezer.pallet
     }
     
     /// <summary>
-    /// >> 385 - Variant[pallet_assets_freezer.pallet.Error]
+    /// >> 416 - Variant[pallet_assets_freezer.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

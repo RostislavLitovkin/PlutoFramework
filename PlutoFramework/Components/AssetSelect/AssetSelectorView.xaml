@@ -19,7 +19,7 @@
             <RoundRectangle CornerRadius="20" />
 
         </Border.StrokeShape>
-         <Grid>
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="Auto"/>
@@ -50,10 +50,5 @@
                    Text="0.00 USD" />
         </Grid>
     </Border>
-
-    <ContentView.GestureRecognizers>
-        <TapGestureRecognizer Tapped="OnClicked" />
-
-    </ContentView.GestureRecognizers>
 </ContentView>
 

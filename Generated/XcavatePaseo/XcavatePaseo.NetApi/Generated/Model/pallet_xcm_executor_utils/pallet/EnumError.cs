@@ -29,7 +29,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet
     }
     
     /// <summary>
-    /// >> 464 - Variant[pallet_xcm_executor_utils.pallet.Error]
+    /// >> 493 - Variant[pallet_xcm_executor_utils.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>
