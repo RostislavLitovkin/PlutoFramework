@@ -13,7 +13,7 @@ namespace PlutoFramework.Components.AssetSelect
         [ObservableProperty]
         private ImageSource chainIcon;
 
-        private string symbol;
+        private string symbol = "";
         public string Symbol
         {
             get => symbol;
@@ -28,11 +28,11 @@ namespace PlutoFramework.Components.AssetSelect
         [ObservableProperty]
         private int widthRequest;
         public AssetKey SelectedAssetKey { get; set; }
-        public int Decimals { get; set; }
+        public int Decimals { get; set; } = 0;
 
         private IEnumerable<AssetKey>? allowedAssetKeys = null;
 
-        private bool checkOwnership;
+        private bool checkOwnership = true;
 
         /// <summary>
         /// Default native coin

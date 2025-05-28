@@ -147,6 +147,8 @@ namespace PlutoFramework.Model.Xcavate
 
             var fullKeys = await client.State.GetKeysPagedAsync(keyPrefix, limit, lastKey, string.Empty, token).ConfigureAwait(false);
 
+            Console.WriteLine("Keys found: " + fullKeys.Count());
+
             // No more nfts found
             if (fullKeys == null || !fullKeys.Any())
             {
@@ -176,17 +178,25 @@ namespace PlutoFramework.Model.Xcavate
 
             foreach (var change in storageChangeSets.First().Changes)
             {
-                if (change[1] == null)
+                try
                 {
-                    continue;
+                    if (change[1] == null)
+                    {
+                        continue;
+                    }
+
+                    var details = new AssetDetails();
+                    details.Create(change[1]);
+
+                    var propertyId = change[0];
+
+                    nftIds.Add((details.CollectionId, details.ItemId));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error while processing property details: " + ex.Message);
                 }
 
-                var details = new AssetDetails();
-                details.Create(change[1]);
-
-                var propertyId = change[0];
-
-                nftIds.Add((details.CollectionId, details.ItemId));
             }
 
             return await XcavatePaseoNftModel.GetNftsNftsPalletAsync(client, nftIds, fullKeys.Last().ToString(), token).ConfigureAwait(false);

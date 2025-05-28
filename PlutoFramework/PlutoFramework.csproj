@@ -66,6 +66,17 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-ios|AnyCPU'">
 	  <MtouchLink>Full</MtouchLink>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-android35.0|AnyCPU'">
+	  <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+	  <Debugger>Xamarin</Debugger>
+	  <TrimMode>link</TrimMode>
+	  <JavaMaximumHeapSize>2G</JavaMaximumHeapSize>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-android35.0|AnyCPU'">
+	  <Debugger>Xamarin</Debugger>
+	  <TrimMode>link</TrimMode>
+	  <JavaMaximumHeapSize>2G</JavaMaximumHeapSize>
+	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
     <MauiIcon Include="Resources\AppIcon\appicon.png" Color="#FFFFFF" />

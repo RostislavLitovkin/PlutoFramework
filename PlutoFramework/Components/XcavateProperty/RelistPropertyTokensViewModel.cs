@@ -16,14 +16,14 @@ namespace PlutoFramework.Components.XcavateProperty
     public partial class RelistPropertyTokensViewModel : ObservableObject, IPopup, ISetToDefault
     {
         [ObservableProperty]
-        private XcavateMetadata? metadata;
+        private XcavateMetadata? metadata = null;
 
         [ObservableProperty]
-        private NftMarketplaceDetails? nftMarketplaceDetails;
+        private NftMarketplaceDetails? nftMarketplaceDetails = null;
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(MaxValue))]
-        private uint tokensOwned;
+        private uint tokensOwned = 0;
 
         public string MaxValue => TokensOwned.ToString();
 
@@ -38,7 +38,7 @@ namespace PlutoFramework.Components.XcavateProperty
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(ContinueButtonState))]
         [NotifyPropertyChangedFor(nameof(PriceTotal))]
-        private string pricePerToken;
+        private string pricePerToken = "";
 
         public string PriceTotal
         {
@@ -64,7 +64,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
         public ButtonStateEnum ContinueButtonState => ErrorMessage == "" && Tokens != "" && PricePerToken != "" ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
 
-        private EndpointEnum endpointKey;
+        private EndpointEnum endpointKey = EndpointEnum.None;
 
         public EndpointEnum EndpointKey
         {

@@ -26,9 +26,6 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="40" />
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -58,122 +55,136 @@
                    Text="Select what fits your interest">
             </Label>
 
-            <card:ClickableCard Grid.Column="0"
-                                Grid.Row="3"
-                                HorizontalOptions="Fill">
-                <card:ClickableCard.View>
-                    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
-                                    AbsoluteLayout.LayoutFlags="All">
-                        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,1,AutoSize"
-                                             AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
-                            <Image WidthRequest="80"
-                                   HeightRequest="80"
-                                   Margin="0,40,0,0"
-                                   Source="xcavatedeveloper.png" />
-                            <Label HorizontalTextAlignment="Center">
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Developer"
-                                              FontAttributes="Bold"></Span>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                            <Label Text="List and manage properties"
-                                   HeightRequest="70"
-                                   HorizontalTextAlignment="Center"/>
-                        </VerticalStackLayout>
-                    </AbsoluteLayout>
+            <Grid Grid.ColumnSpan="2"
+                  Grid.Row="3"
+                  ColumnSpacing="15"
+                  RowSpacing="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-                </card:ClickableCard.View>
+                <card:ClickableCard Grid.Column="0"
+                    Grid.Row="0"
+                    HorizontalOptions="Fill">
+                    <card:ClickableCard.View>
+                        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                        AbsoluteLayout.LayoutFlags="All">
+                            <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,1,AutoSize"
+                                 AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
+                                <Image WidthRequest="80"
+                       HeightRequest="80"
+                       Margin="0,40,0,0"
+                       Source="xcavatedeveloper.png" />
+                                <Label HorizontalTextAlignment="Center">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Developer"
+                                  FontAttributes="Bold"></Span>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label Text="List and manage properties"
+                       HeightRequest="70"
+                       HorizontalTextAlignment="Center"/>
+                            </VerticalStackLayout>
+                        </AbsoluteLayout>
 
-                <card:ClickableCard.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding SelectDeveloperCommand}" />
-                </card:ClickableCard.GestureRecognizers>
-            </card:ClickableCard>
-            <card:ClickableCard Grid.Column="1"
-                                Grid.Row="3">
-                <card:ClickableCard.View>
-                    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
-                                        AbsoluteLayout.LayoutFlags="All">
-                        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,1,AutoSize"
+                    </card:ClickableCard.View>
+
+                    <card:ClickableCard.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SelectDeveloperCommand}" />
+                    </card:ClickableCard.GestureRecognizers>
+                </card:ClickableCard>
+                <card:ClickableCard Grid.Column="1"
+                    Grid.Row="0">
+                    <card:ClickableCard.View>
+                        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                            AbsoluteLayout.LayoutFlags="All">
+                            <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,1,AutoSize"
+                     AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
+                                <Image WidthRequest="80"
+                       HeightRequest="80"
+                       Margin="0,40,0,0"
+                       Source="xcavateinvestor.png" />
+                                <Label HorizontalTextAlignment="Center">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Investor"
+                                  FontAttributes="Bold"></Span>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label Text="Buy &amp; sell tokenized real estate"
+                       HeightRequest="70"
+                       HorizontalTextAlignment="Center"/>
+                            </VerticalStackLayout>
+                        </AbsoluteLayout>
+
+                    </card:ClickableCard.View>
+                </card:ClickableCard>
+                <card:ClickableCard Grid.Column="0"
+                    Grid.Row="1">
+                    <card:ClickableCard.View>
+                        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All">
+                            <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,1,AutoSize"
                                  AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
-                            <Image WidthRequest="80"
-                                   HeightRequest="80"
-                                   Margin="0,40,0,0"
-                                   Source="xcavateinvestor.png" />
-                            <Label HorizontalTextAlignment="Center">        
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Investor"
-                                              FontAttributes="Bold"></Span>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                            <Label Text="Buy &amp; sell tokenized real estate"
-                                   HeightRequest="70"
-                                   HorizontalTextAlignment="Center"/>
-                        </VerticalStackLayout>
-                    </AbsoluteLayout>
+                                <Image WidthRequest="80"
+                       HeightRequest="80"
+                       Margin="0,40,0,0"
+                       Source="xcavatelettingagent.png" />
+                                <Label 
+                       HorizontalTextAlignment="Center"
+                       >
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Letting Agent"
+                                  FontAttributes="Bold"></Span>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label Text="Facilitate transactions &amp; property management"
+                       HorizontalTextAlignment="Center"
+                       HeightRequest="70"/>
+                            </VerticalStackLayout>
+                        </AbsoluteLayout>
 
-                </card:ClickableCard.View>
-            </card:ClickableCard>
-            <card:ClickableCard Grid.Column="0"
-                                Grid.Row="4">
-                <card:ClickableCard.View>
-                    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
-                            AbsoluteLayout.LayoutFlags="All">
-                        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,1,AutoSize"
-                                             AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
-                            <Image WidthRequest="80"
-                                   HeightRequest="80"
-                                   Margin="0,40,0,0"
-                                   Source="xcavatelettingagent.png" />
-                            <Label 
-                                   HorizontalTextAlignment="Center"
-                                   >
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Letting Agent"
-                                              FontAttributes="Bold"></Span>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                            <Label Text="Facilitate transactions &amp; property management"
-                                   HorizontalTextAlignment="Center"
-                                   HeightRequest="70"/>
-                        </VerticalStackLayout>
-                    </AbsoluteLayout>
+                    </card:ClickableCard.View>
+                </card:ClickableCard>
 
-                </card:ClickableCard.View>
-            </card:ClickableCard>
+                <card:ClickableCard Grid.Column="1"
+                    Grid.Row="1">
+                    <card:ClickableCard.View>
+                        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All">
+                            <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
+                                 AbsoluteLayout.LayoutFlags="PositionProportional">
+                                <Image WidthRequest="80"
+                       HeightRequest="80"
+                       Margin="0,40,0,0"
+                       Source="xcavateloanevaluator.png" />
+                                <Label HorizontalTextAlignment="Center">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Loan Evaluator"
+                                  FontAttributes="Bold"></Span>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label Text=""
+                       HeightRequest="70"
+                        HorizontalTextAlignment="Center"/>
+                            </VerticalStackLayout>
+                        </AbsoluteLayout>
 
-            <card:ClickableCard Grid.Column="1"
-                                Grid.Row="4">
-                <card:ClickableCard.View>
-                    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
-                            AbsoluteLayout.LayoutFlags="All">
-                        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
-                                             AbsoluteLayout.LayoutFlags="PositionProportional">
-                            <Image WidthRequest="80"
-                                   HeightRequest="80"
-                                   Margin="0,40,0,0"
-                                   Source="xcavateloanevaluator.png" />
-                            <Label HorizontalTextAlignment="Center">
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Loan Evaluator"
-                                              FontAttributes="Bold"></Span>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                            <Label Text=""
-                                   HeightRequest="70"
-                                    HorizontalTextAlignment="Center"/>
-                        </VerticalStackLayout>
-                    </AbsoluteLayout>
-
-                </card:ClickableCard.View>
-            </card:ClickableCard>
+                    </card:ClickableCard.View>
+                </card:ClickableCard>
+            </Grid>
         </Grid>
 
         <txanalyzer:TransactionAnalyzerConfirmationView />
