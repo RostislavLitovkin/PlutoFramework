@@ -31,7 +31,11 @@
                                                            Endpoint="{Binding Endpoint}"
                                                            Pallet="{Binding Pallet}"
                                                            AssetId="{Binding AssetId}"
-                                                           Decimals="{Binding Decimals}" />
+                                                           Decimals="{Binding Decimals}">
+                                <assetselect:AssetSelectorView.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnClicked" />
+                                </assetselect:AssetSelectorView.GestureRecognizers>
+                            </assetselect:AssetSelectorView>
                         </DataTemplate>
 
                     </BindableLayout.ItemTemplate>

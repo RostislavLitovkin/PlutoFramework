@@ -32,6 +32,8 @@ namespace PlutoFramework.Components.AssetSelect
 
         private IEnumerable<AssetKey>? allowedAssetKeys = null;
 
+        private bool checkOwnership;
+
         /// <summary>
         /// Default native coin
         /// </summary>
@@ -40,8 +42,14 @@ namespace PlutoFramework.Components.AssetSelect
             ChangeAllowedAssets(null);
         }
 
-        public void ChangeAllowedAssets(IEnumerable<AssetKey>? allowedAssetKeys)
+        /// <summary>
+        /// checkOwnership only works when allowedAssetKeys != null
+        /// Also, you need to ensure that at lest the first allowedAsset is present in the AssetsModel.AssetsDict
+        /// </summary>
+        public void ChangeAllowedAssets(IEnumerable<AssetKey>? allowedAssetKeys, bool checkOwnership = true)
         {
+            this.checkOwnership = checkOwnership;
+
             if (allowedAssetKeys == null)
             {
                 SetDefault();
@@ -49,25 +57,42 @@ namespace PlutoFramework.Components.AssetSelect
                 return;
             }
 
-            Console.WriteLine("Checking allowed asset keys: " + allowedAssetKeys.Count());
-
-            var defaultAsset = AssetsModel.GetFirstOwnedAsset(allowedAssetKeys);
-
-            if (defaultAsset == null)
+            if (checkOwnership)
             {
-                SetDefault();
-                return;
+                Console.WriteLine("Checking allowed asset keys: " + allowedAssetKeys.Count());
+
+                var defaultAsset = AssetsModel.GetFirstOwnedAsset(allowedAssetKeys);
+
+                if (defaultAsset == null)
+                {
+                    SetDefault();
+                    return;
+                }
+
+                ChainIcon = defaultAsset.ChainIcon;
+                Symbol = defaultAsset.Symbol;
+                SelectedAssetKey = (defaultAsset.Endpoint.Key, defaultAsset.Pallet, defaultAsset.AssetId);
+                Decimals = defaultAsset.Decimals;
+
+                var assetInputViewModel = DependencyService.Get<AssetInputViewModel>();
+                assetInputViewModel.CurrencyChanged(defaultAsset.Symbol);
+
+                this.allowedAssetKeys = allowedAssetKeys;
             }
+            else
+            {
+                Asset defaultAsset = AssetsModel.AssetsDict[allowedAssetKeys.First()];
 
-            ChainIcon = defaultAsset.ChainIcon;
-            Symbol = defaultAsset.Symbol;
-            SelectedAssetKey = (defaultAsset.Endpoint.Key, defaultAsset.Pallet, defaultAsset.AssetId);
-            Decimals = defaultAsset.Decimals;
+                ChainIcon = defaultAsset.ChainIcon;
+                Symbol = defaultAsset.Symbol;
+                SelectedAssetKey = (defaultAsset.Endpoint.Key, defaultAsset.Pallet, defaultAsset.AssetId);
+                Decimals = defaultAsset.Decimals;
 
-            var assetInputViewModel = DependencyService.Get<AssetInputViewModel>();
-            assetInputViewModel.CurrencyChanged(defaultAsset.Symbol);
+                var assetInputViewModel = DependencyService.Get<AssetInputViewModel>();
+                assetInputViewModel.CurrencyChanged(defaultAsset.Symbol);
 
-            this.allowedAssetKeys = allowedAssetKeys;
+                this.allowedAssetKeys = allowedAssetKeys;
+            }
         }
 
         private void SetDefault()

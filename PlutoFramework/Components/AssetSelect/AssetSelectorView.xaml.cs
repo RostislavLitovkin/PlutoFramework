@@ -1,9 +1,5 @@
 ﻿using PlutoFramework.Constants;
 using System.Numerics;
-using PlutoFramework.Components.Balance;
-using PlutoFramework.Components.NetworkSelect;
-using System.Net;
-using PlutoFramework.Components.TransferView;
 using PlutoFramework.Types;
 using PlutoFramework.Model;
 using PlutoFramework.Model.Currency;
@@ -156,40 +152,5 @@ public partial class AssetSelectorView : ContentView
         get => (int)GetValue(DecimalsProperty);
 
         set => SetValue(DecimalsProperty, value);
-    }
-
-    async void OnClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
-    {
-        
-        // Hide the AssetSelectView
-        var assetSelectViewModel = DependencyService.Get<AssetSelectViewModel>();
-
-        assetSelectViewModel.IsVisible = false;
-        
-        var networkingViewModel = DependencyService.Get<MultiNetworkSelectViewModel>();
-        foreach (NetworkSelectInfo info in networkingViewModel.NetworkInfos)
-        {
-            if (info.Name == Endpoint.Name && !info.ShowName)
-            {
-                // Change the network if not selected
-                // This line also updates the fee
-                networkingViewModel.Select(Endpoint.Key);
-            }
-        }
-
-        var assetSelectButtonViewModel = DependencyService.Get<AssetSelectButtonViewModel>();
-        assetSelectButtonViewModel.ChainIcon = Application.Current.UserAppTheme == AppTheme.Light ? Endpoint.Icon : Endpoint.DarkIcon;
-        assetSelectButtonViewModel.Symbol = Symbol;
-        assetSelectButtonViewModel.SelectedAssetKey = (Endpoint.Key, Pallet, AssetId);
-        assetSelectButtonViewModel.Decimals = Decimals;
-
-        var assetInputViewModel = DependencyService.Get<AssetInputViewModel>();
-        assetInputViewModel.CurrencyChanged(Symbol);
-
-        // Update the fee
-        //var transferViewModel = DependencyService.Get<TransferViewModel>();
-        //await transferViewModel.GetFeeAsync();
-
-        Console.WriteLine("Selected: " + assetSelectButtonViewModel.SelectedAssetKey);
     }
 }

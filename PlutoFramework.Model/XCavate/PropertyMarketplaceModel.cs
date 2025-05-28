@@ -72,6 +72,12 @@ namespace PlutoFramework.Model.Xcavate
             _ => throw new NotImplementedException($"BuyPropertyTokens not implemented for {endpointKey}"),
         };
 
+        public static Method RelistPropertyTokens(EndpointEnum endpointKey, uint regionId, uint assetId, uint amount, BigInteger pricePerToken, AssetKey paymentAsset) => endpointKey switch
+        {
+            EndpointEnum.XcavatePaseo => NftMarketplaceCalls.RelistToken(new U32(regionId), new U32(assetId), new U128(pricePerToken), new U32(amount)),
+            _ => throw new NotImplementedException($"RelistPropertyTokens not implemented for {endpointKey}"),
+        };
+
         public static async Task<RecursiveReturn<PropertyTokenOwnershipInfo>> GetPropertiesOwnedByAsync(SubstrateClientExt client, string address, uint limit, byte[]? lastKey, CancellationToken token)
         {
             Console.WriteLine($"Finding properties owned by {address}.");

@@ -179,6 +179,10 @@
 
                 <xcavateproperty:OwnedPropertyTokensView IsVisible="{Binding OwnedPropertyTokensViewIsVisible}"/>
 
+                <buttons:ElevatedButton Text="Re-list"
+                                        Command="{Binding RelistCommand}"
+                                        IsVisible="{Binding RelistPropertyTokensButtonIsVisible}" />
+                
                 <buttons:ElevatedButton Text="Buy"
                                         Command="{Binding BuyCommand}" />
 
@@ -232,6 +236,8 @@
         <extrinsic:ExtrinsicStatusStackLayout />
 
         <xcavateproperty:BuyPropertyTokensView />
+
+        <xcavateproperty:RelistPropertyTokensView />
 
         <assetselect:AssetSelectView />
 

@@ -5,6 +5,7 @@ using PlutoFramework.Constants;
 using PlutoFramework.Model;
 using PlutoFramework.Model.Currency;
 using PlutoFramework.Model.SQLite;
+using SocketIOClient.Messages;
 using UniqueryPlus.Metadata;
 using UniqueryPlus.Nfts;
 using PropertyModel = PlutoFramework.Model.Xcavate.XcavatePropertyModel;
@@ -71,11 +72,14 @@ namespace PlutoFramework.Components.XcavateProperty
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(TokensOwnedWorth))]
         [NotifyPropertyChangedFor(nameof(OwnedPropertyTokensViewIsVisible))]
+        [NotifyPropertyChangedFor(nameof(RelistPropertyTokensButtonIsVisible))]
         private uint tokensOwned = 0;
 
         public string TokensOwnedWorth => $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * (TokensOwned * Metadata?.PricePerToken ?? 0))}";
 
-        public bool OwnedPropertyTokensViewIsVisible => TokensOwned != 0;
+        public bool OwnedPropertyTokensViewIsVisible => TokensOwned > 0;
+
+        public bool RelistPropertyTokensButtonIsVisible => TokensOwned > 0;
 
         [RelayCommand]
         public void Buy()
@@ -91,6 +95,23 @@ namespace PlutoFramework.Components.XcavateProperty
             viewModel.Metadata = Metadata;
             viewModel.IsVisible = true;
             viewModel.EndpointKey = Model.NftModel.GetEndpointKey(NftBase.Type);   
+        }
+
+        [RelayCommand]
+        public void Relist()
+        {
+            if (!AccountModel.CheckRequirements())
+            {
+                return;
+            }
+
+            var viewModel = DependencyService.Get<RelistPropertyTokensViewModel>();
+
+            viewModel.NftMarketplaceDetails = NftMarketplaceDetails;
+            viewModel.Metadata = Metadata;
+            viewModel.IsVisible = true;
+            viewModel.EndpointKey = Model.NftModel.GetEndpointKey(NftBase.Type);
+            viewModel.TokensOwned = TokensOwned;
         }
 
         [ObservableProperty]

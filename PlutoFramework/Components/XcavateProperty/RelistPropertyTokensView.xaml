@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.XcavateProperty.RelistPropertyTokensView"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+             xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
+             xmlns:xcavateproperty="clr-namespace:PlutoFramework.Components.XcavateProperty"
+             xmlns:form="clr-namespace:PlutoFramework.Components.Form"
+             IsVisible="{Binding IsVisible}"
+             AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+             AbsoluteLayout.LayoutFlags="All"
+             BackgroundColor="#66000000">
+
+    <card:BottomPopupCard Title="Re-list">
+        <card:BottomPopupCard.View>
+            <AbsoluteLayout>
+
+                <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, AutoSize"
+                         AbsoluteLayout.LayoutFlags="WidthProportional"
+                         x:Name="verticalStackLayout"
+                         Spacing="20">
+
+                    <!-- Add your content here -->
+
+                    <xcavateproperty:PropertyLittleThumbnailView XcavateMetadata="{Binding Metadata}" />
+                    
+                    <AbsoluteLayout Margin="10, 0, 10, -10">
+                        <Label Text="Tokens owned:"
+                                AbsoluteLayout.LayoutBounds="0,0,AutoSize, AutoSize"/>
+                        <Label Text="{Binding MaxValue}"
+                               AbsoluteLayout.LayoutBounds="1,0,AutoSize, AutoSize"
+                               AbsoluteLayout.LayoutFlags="PositionProportional"/>      
+                    </AbsoluteLayout>
+                    
+                    <form:FormInputView KeyboardType="Numeric"
+                                        Placeholder="Tokens"
+                                        Text="{Binding Tokens}"
+                                        MaxValue="{Binding MaxValue}"
+                                        UpdateCommand="{Binding FormChangedCommand}"
+                                        CardWidth="{Binding Source={x:Reference verticalStackLayout}, Path=Width}"
+                                        />
+                    <form:FormAssetInputView KeyboardType="Numeric"
+                                        Placeholder="Price per token"
+                                        Text="{Binding PricePerToken}"
+                                        UpdateCommand="{Binding FormChangedCommand}"
+                                        CardWidth="{Binding Source={x:Reference verticalStackLayout}, Path=Width}"/>
+
+                    <AbsoluteLayout Margin="10, 0, 10, -10">
+                        <Label AbsoluteLayout.LayoutBounds="0,0,AutoSize, AutoSize">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Total price:"
+                                            FontAttributes="Bold" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label AbsoluteLayout.LayoutBounds="1,0,AutoSize, AutoSize"
+                               AbsoluteLayout.LayoutFlags="PositionProportional"
+                               HorizontalTextAlignment="End">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding PriceTotal}"
+                                          FontAttributes="Bold" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </AbsoluteLayout>
+
+                    <Label Text="{Binding ErrorMessage}" TextColor="Red" />
+                    
+                </VerticalStackLayout>
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 80"
+                    AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
+
+                    <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 50"
+                      AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                      ColumnSpacing="15"
+                      Margin="0, 0, 0, 10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <buttons:BasicGrayButton Text="Cancel" Grid.Column="0"
+                                                 Command="{Binding CancelCommand}"/>
+
+                        <buttons:PlutoFrameworkElevatedButton Text="Continue"
+                                                               Grid.Column="1"
+                                                               Command="{Binding ContinueCommand}"
+                                                               ButtonState="{Binding ContinueButtonState}"/>
+                    </Grid>
+                </AbsoluteLayout>
+
+            </AbsoluteLayout>
+
+        </card:BottomPopupCard.View>
+    </card:BottomPopupCard>
+</ContentView>
