@@ -23,7 +23,7 @@
                        WidthRequest="100"
                         HeightRequest="100"
                         BorderColor="#00000000">
-                        <Image x:Name="icon"
+                        <Image
                            Source="{Binding Icon}"
                            WidthRequest="100"
                            HeightRequest="100" />
@@ -119,7 +119,6 @@
                     </AbsoluteLayout>
 
                     <Label
-                    WidthRequest="{Binding Source={x:Reference thisLabel}, Path=Width}"
                     Text="{Binding ConnectionStatusText}"
                     HorizontalTextAlignment="Center"
                     VerticalTextAlignment="Start"
@@ -129,9 +128,6 @@
                     />
 
                     <Label
-                    WidthRequest="{Binding Source={x:Reference thisLabel}, Path=Width}"
-                   
-                    
                     HorizontalTextAlignment="Center"
                     VerticalOptions="Center"
                     HorizontalOptions="Center">

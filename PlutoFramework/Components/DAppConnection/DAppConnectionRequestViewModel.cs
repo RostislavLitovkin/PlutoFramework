@@ -87,7 +87,7 @@ namespace PlutoFramework.Components.DAppConnection
         }
 
         [RelayCommand]
-        public async Task Accept()
+        public async Task AcceptAsync()
         {
 #if ANDROID29_0_OR_GREATER
         PermissionStatus status = await Permissions.RequestAsync<NotificationPermission>();
