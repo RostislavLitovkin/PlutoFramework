@@ -118,7 +118,7 @@ namespace PlutoFramework.Components.AssetSelect
 
             var viewModel = DependencyService.Get<AssetSelectViewModel>();
 
-            viewModel.Appear(allowedAssetKeys);
+            viewModel.Appear(allowedAssetKeys, checkOwnership);
         }
     }
 }

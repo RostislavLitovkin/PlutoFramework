@@ -93,6 +93,8 @@ namespace PlutoFramework.Model
                     $"{url}/get-extrinsic-events",
                     jsonContent);
 
+                Console.WriteLine(await response.Content.ReadAsStringAsync());
+
                 var jsonResponse = await response.Content.ReadFromJsonAsync<ChopsticksEventsOutput>();
 
                 return jsonResponse;

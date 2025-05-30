@@ -213,7 +213,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
             {
                 Console.WriteLine(ex);
 
-                analyzedOutcomeViewModel.Loading = "Failed";
+                analyzedOutcomeViewModel.Loading = "Failed to simulate";
 
                 EstimatedFee = "Estimated fee: Unknown";
             }

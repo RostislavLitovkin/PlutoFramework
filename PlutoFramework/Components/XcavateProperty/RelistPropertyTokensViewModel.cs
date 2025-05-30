@@ -97,47 +97,55 @@ namespace PlutoFramework.Components.XcavateProperty
         [RelayCommand]
         public async Task ContinueAsync()
         {
-            var token = CancellationToken.None;
-
-            var assetSelectButtonViewModel = DependencyService.Get<AssetSelectButtonViewModel>();
-
-
-            if (NftMarketplaceDetails is null)
+            try
             {
-                return;
+                var token = CancellationToken.None;
+
+                var assetSelectButtonViewModel = DependencyService.Get<AssetSelectButtonViewModel>();
+
+
+                if (NftMarketplaceDetails is null)
+                {
+                    return;
+                }
+
+                uint parsedTokens;
+                if (!uint.TryParse(Tokens, out parsedTokens))
+                {
+                    return;
+                }
+
+                decimal parsedPricePerToken;
+                if (!decimal.TryParse(PricePerToken, out parsedPricePerToken))
+                {
+                    return;
+                }
+
+                BigInteger actualPricePerToken = (BigInteger)(parsedPricePerToken * (decimal)Math.Pow(10, assetSelectButtonViewModel.Decimals));
+
+                var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(EndpointKey, token);
+
+                var method = PropertyMarketplaceModel.RelistPropertyTokens(EndpointKey, NftMarketplaceDetails.Region, NftMarketplaceDetails.AssetId, parsedTokens, actualPricePerToken, assetSelectButtonViewModel.SelectedAssetKey);
+
+                // Submitting the extrinsic
+                var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();
+
+                Task load = transactionAnalyzerConfirmationViewModel.LoadAsync(
+                    client, // PlutoFrameworkSubstrateClient
+                    method,
+                    showDAppView: false,
+                    token: token
+                );
+
+                SetToDefault();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error during ContinueAsync: {ex.Message}");
+                ErrorMessage = "An error occurred while processing your request.";
             }
 
-            uint parsedTokens;
-            if (!uint.TryParse(Tokens, out parsedTokens))
-            {
-                return;
-            }
-
-            decimal parsedPricePerToken;
-            if (!decimal.TryParse(PricePerToken, out parsedPricePerToken))
-            {
-                return;
-            }
-
-            BigInteger actualPricePerToken = (BigInteger)(parsedPricePerToken * (decimal)Math.Pow(10, assetSelectButtonViewModel.Decimals));
-
-            var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(EndpointKey, token);
-
-            var method = PropertyMarketplaceModel.RelistPropertyTokens(EndpointKey, NftMarketplaceDetails.Region, NftMarketplaceDetails.AssetId, parsedTokens, actualPricePerToken, assetSelectButtonViewModel.SelectedAssetKey);
-
-            // Submitting the extrinsic
-            var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();
-
-            Task load = transactionAnalyzerConfirmationViewModel.LoadAsync(
-                client, // PlutoFrameworkSubstrateClient
-                method,
-                showDAppView: false,
-                token: token
-            );
-
-            SetToDefault();
         }
-
         [RelayCommand]
         public void FormChanged()
         {

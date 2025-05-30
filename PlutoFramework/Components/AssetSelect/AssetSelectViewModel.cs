@@ -25,7 +25,7 @@ namespace PlutoFramework.Components.AssetSelect
 			isVisible = false;
 		}
 
-		public void Appear(IEnumerable<AssetKey>? allowedAssetKeys)
+		public void Appear(IEnumerable<AssetKey>? allowedAssetKeys, bool checkOwnership)
 		{
 			IsVisible = true;
 
@@ -47,7 +47,7 @@ namespace PlutoFramework.Components.AssetSelect
 
 				var a = valuePair.Value;
 
-				if (a.Amount == 0)
+				if (checkOwnership && a.Amount == 0)
                 {
                     continue;
                 }

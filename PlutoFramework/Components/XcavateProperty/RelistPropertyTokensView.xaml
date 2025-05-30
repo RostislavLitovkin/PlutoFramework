@@ -9,10 +9,9 @@
              xmlns:form="clr-namespace:PlutoFramework.Components.Form"
              IsVisible="{Binding IsVisible}"
              AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-             AbsoluteLayout.LayoutFlags="All"
-             BackgroundColor="#66000000">
-
-    <card:BottomPopupCard Title="Re-list">
+             AbsoluteLayout.LayoutFlags="All">
+    <card:BottomPopupCard Title="Re-list"
+                          IsShown="{Binding IsVisible}">
         <card:BottomPopupCard.View>
             <AbsoluteLayout>
 

@@ -20,13 +20,17 @@
 
                 </Grid.ColumnDefinitions>
 
-                <Entry HeightRequest="40"
-                    FontAttributes="Bold"
-                    Grid.Column="0"
-                    IsSpellCheckEnabled="false"
-                    IsTextPredictionEnabled="false"
-                       x:Name="entry"
-                   PropertyChanged="OnPropertyChanged"/>
+                <Entry x:Name="entry"
+                        HorizontalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        HeightRequest="40"
+                        FontAttributes="Bold"
+                        IsSpellCheckEnabled="false"
+                        IsTextPredictionEnabled="false"
+                        PropertyChanged="OnPropertyChanged"
+                        />
                 <assetselect:AssetSelectButtonView HeightRequest="40"
                                                    Grid.Column="1" />
             </Grid>

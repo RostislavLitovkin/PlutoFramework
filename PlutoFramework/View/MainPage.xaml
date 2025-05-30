@@ -18,6 +18,7 @@
              xmlns:changelayoutrequest="clr-namespace:PlutoFramework.Components.ChangeLayoutRequest"
              xmlns:account="clr-namespace:PlutoFramework.Components.Account"
              xmlns:kilt="clr-namespace:PlutoFramework.Components.Kilt"
+             xmlns:loading="clr-namespace:PlutoFramework.Components.Loading"
              xmlns:sumsub="clr-namespace:PlutoFramework.Components.Sumsub"
              xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
              BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}"
@@ -101,5 +102,7 @@
 
         <password:EnterPasswordPopupView />
 
+        <loading:FullPageLoadingView />
+        
     </AbsoluteLayout>
 </ContentPage>
