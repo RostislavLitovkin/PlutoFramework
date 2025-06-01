@@ -24,7 +24,7 @@
 		<!-- Versions -->
 		<ApplicationDisplayVersion>0.1</ApplicationDisplayVersion>
     <PackageVersion>0.1</PackageVersion>
-    <ApplicationVersion>14</ApplicationVersion>
+    <ApplicationVersion>15</ApplicationVersion>
 		
 		<!-- Increases performance, but disables hot-reload -->
     <UseInterpreter>false</UseInterpreter>
