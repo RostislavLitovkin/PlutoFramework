@@ -49,10 +49,7 @@ public partial class PropertyThumbnailView : ContentView
                 control.tokensLabel.Text = $"{control.TokensOwned} / {nftBase.XcavateMetadata.NumberOfTokens}";
             }
 
-            var currencySymbol = ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location);
-            var propertyPriceLocalized = ExchangeRateModel.GetExchangeRate("USDT", currencySymbol) * nftBase.XcavateMetadata.PropertyPrice;
-
-            control.priceLabelText.Text = $"{currencySymbol}{propertyPriceLocalized}";
+            control.priceLabelText.Text = $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * nftBase.XcavateMetadata.PropertyPrice)}";
 
             control.locationView.LocationName = nftBase.XcavateMetadata.LocationName;
 

@@ -115,11 +115,5 @@
                              Command="{Binding BrowsePropertiesCommand}" />
             </VerticalStackLayout>
         </Grid>
-
-
-
-        <txanalyzer:TransactionAnalyzerConfirmationView />
-
-        <password:EnterPasswordPopupView />
     </AbsoluteLayout>
 </ContentPage>

@@ -71,7 +71,6 @@
 
         <vault:VaultSignView />
 
-
         <staking:StakingRegistrationRequestView />
 
         <messagepopup:MessagePopupView />
@@ -95,8 +94,6 @@
         <assetselect:AssetSelectView />
 
         <networkselect:NetworkSelectPopup />
-
-        <changelayoutrequest:ChangeLayoutRequestView />
 
         <txanalyzer:TransactionAnalyzerConfirmationView />
 
