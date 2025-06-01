@@ -24,7 +24,7 @@
 		<!-- Versions -->
 		<ApplicationDisplayVersion>0.1</ApplicationDisplayVersion>
     <PackageVersion>0.1</PackageVersion>
-    <ApplicationVersion>15</ApplicationVersion>
+    <ApplicationVersion>16</ApplicationVersion>
 		
 		<!-- Increases performance, but disables hot-reload -->
     <UseInterpreter>false</UseInterpreter>
@@ -59,12 +59,6 @@
 	  <ProvisioningType>automatic</ProvisioningType>
 	  <CodesignKey>Apple Development: Created via API (3XMFUNSZ92)</CodesignKey>
 	  <CodesignProvision>VS: com.xcavate.realxmarket Development</CodesignProvision>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-ios|AnyCPU'">
-	  <MtouchLink>Full</MtouchLink>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-ios|AnyCPU'">
-	  <MtouchLink>Full</MtouchLink>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-android35.0|AnyCPU'">
 	  <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
