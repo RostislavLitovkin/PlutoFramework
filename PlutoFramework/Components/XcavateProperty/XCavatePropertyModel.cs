@@ -10,10 +10,14 @@ using PlutoFramework.Model.SQLite;
 
 namespace PlutoFramework.Components.XcavateProperty
 {
-    
+    public class XcavateNftWrapper : NftWrapper
+    {
+        public required XcavateRegion Region { get; set; }
+    }
+
     public class XcavatePropertyModel
     {
-        public static async Task<NftWrapper> ToNftWrapperAsync(INftXcavateBase nft, CancellationToken token)
+        public static async Task<XcavateNftWrapper> ToXcavateNftWrapperAsync(INftXcavateBase nft, CancellationToken token)
         {
             try
             {
@@ -51,14 +55,15 @@ namespace PlutoFramework.Components.XcavateProperty
             }
             catch(Exception ex)
             {
-                Console.WriteLine("To wrapper error:");
+                Console.WriteLine("To Xcavate nft wrapper error:");
                 Console.WriteLine(ex);
             }
             
-            return new NftWrapper
+            return new XcavateNftWrapper
             {
                 Favourite = await XcavatePropertyDatabase.IsPropertyFavouriteAsync(nft.Type, nft.CollectionId, nft.Id).ConfigureAwait(false),
                 NftBase = nft,
+                Region = await RegionModel.GetCachedRegionAsync(await SubstrateClientModel.GetOrAddSubstrateClientAsync(Model.NftModel.GetEndpointKey(nft.Type), token), ((INftXcavateNftMarketplace)nft).NftMarketplaceDetails.Region, token),
                 Endpoint = Endpoints.GetEndpointDictionary[Model.NftModel.GetEndpointKey(nft.Type)]
             };
         }

@@ -13,6 +13,8 @@
                     <xcavateproperty:PropertyThumbnailView NftBase="{Binding NftBase}"
                                                            TokensOwned="{Binding Amount}"
                                                            Favourite="{Binding Favourite}"
+                                                           Region="{Binding Region}"
+                                                           ShowHasExpired="False"
                                                            />
 
                 </DataTemplate>

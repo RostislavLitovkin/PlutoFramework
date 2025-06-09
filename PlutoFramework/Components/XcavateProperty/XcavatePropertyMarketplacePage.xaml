@@ -55,9 +55,11 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <xcavateproperty:PropertyThumbnailView Endpoint="{Binding Endpoint}"
-                                                            Favourite="{Binding Favourite}"
-                                                            NftBase="{Binding NftBase}"
-                                                            Padding="20, 5, 20, 10" />
+                                                                Favourite="{Binding Favourite}"
+                                                                NftBase="{Binding NftBase}"
+                                                                Padding="20, 5, 20, 10"
+                                                               Region="{Binding Region}"
+                                                               ShowHasExpired="True" />
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

@@ -22,14 +22,26 @@
                 </Grid.ColumnDefinitions>
                 <VerticalStackLayout HorizontalOptions="Fill"
                                      Spacing="5">
-                    <Image HorizontalOptions="Fill"
-                           BackgroundColor="{AppThemeBinding Light=#dddddd, Dark=#222222}"
-                           Source="xcavateloading.gif"
-                           IsAnimationPlaying="True"
-                           x:Name="image"
-                           Aspect="AspectFill"
-                           HeightRequest="200"
-                           />
+                    <AbsoluteLayout 
+                        HorizontalOptions="Fill"
+                           HeightRequest="200">
+                        <Image Aspect="AspectFill"
+                               BackgroundColor="{AppThemeBinding Light=#dddddd, Dark=#222222}"
+                               Source="xcavateloading.gif"
+                               IsAnimationPlaying="True"
+                               x:Name="image"
+                               AbsoluteLayout.LayoutBounds="0.5,0.5 ,1,1"
+                               AbsoluteLayout.LayoutFlags="All"
+                               />
+                        <Label AbsoluteLayout.LayoutBounds="0.5, 0.5, AutoSize, AutoSize"
+                               AbsoluteLayout.LayoutFlags="PositionProportional"
+                               IsVisible="False"
+                                 x:Name="expiredLabel"
+                                 Text="Expired"
+                               TextColor="Gray"
+                               FontSize="30" />
+                    </AbsoluteLayout>
+                    
                     <Grid ColumnSpacing="5"
                           Margin="10, 5, 10, 0"
                           Grid.Row="1">
@@ -42,7 +54,7 @@
                                                       VerticalOptions="Center"
                                                       x:Name="locationView"
                                                       Grid.Column="0" />
-
+                        
                         <Image WidthRequest="20"
                             HeightRequest="20"
                             VerticalOptions="Center" 
@@ -59,6 +71,8 @@
                                                   Size="50" />
                             </Image.Source>
                         </Image>
+                        
+                       
 
                         <Image WidthRequest="20"
                             HeightRequest="20"

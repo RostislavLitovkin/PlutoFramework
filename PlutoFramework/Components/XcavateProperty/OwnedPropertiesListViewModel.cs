@@ -77,7 +77,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
         private async Task<PropertyTokenOwnershipInfo> ToWrappedButUnwrappedAsync(PropertyTokenOwnershipInfo info, CancellationToken token)
         {
-            var wrapped = await XcavatePropertyModel.ToNftWrapperAsync((XcavatePaseoNftsPalletNft)info.NftBase, token);
+            var wrapped = await XcavatePropertyModel.ToXcavateNftWrapperAsync((XcavatePaseoNftsPalletNft)info.NftBase, token);
             return new PropertyTokenOwnershipInfo
             {
                 Amount = info.Amount,

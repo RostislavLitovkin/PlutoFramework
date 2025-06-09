@@ -3,6 +3,7 @@ using PlutoFramework.Constants;
 using PlutoFramework.Model;
 using PlutoFramework.Model.Currency;
 using PlutoFramework.Model.SQLite;
+using PlutoFramework.Model.Xcavate;
 using UniqueryPlus.Nfts;
 using PropertyModel = PlutoFramework.Model.Xcavate.XcavatePropertyModel;
 
@@ -107,6 +108,40 @@ public partial class PropertyThumbnailView : ContentView
         {
         });
 
+    public static readonly BindableProperty RegionProperty = BindableProperty.Create(
+        nameof(Region), typeof(XcavateRegion), typeof(PropertyThumbnailView),
+        defaultValue: null,
+        defaultBindingMode: BindingMode.TwoWay,
+        propertyChanging: (bindable, oldValue, newValue) =>
+        {
+            var control = (PropertyThumbnailView)bindable;
+            var region = (XcavateRegion)newValue;
+
+           
+
+            if (control.ShowHasExpired)
+            {
+                Console.WriteLine("(2) Region has expired: " + region.HasExpired);
+                control.expiredLabel.IsVisible = region.HasExpired;
+            }
+            
+        });
+
+    public static readonly BindableProperty ShowHasExpiredProperty = BindableProperty.Create(
+        nameof(ShowHasExpired), typeof(bool), typeof(PropertyThumbnailView),
+        defaultValue: false,
+        defaultBindingMode: BindingMode.TwoWay,
+        propertyChanging: (bindable, oldValue, newValue) =>
+        {
+            var control = (PropertyThumbnailView)bindable;
+            var showHasExpired = (bool)newValue;
+
+            if (showHasExpired && control.Region is not null)
+            {
+                Console.WriteLine("(1) Region has expired: " + control.Region.HasExpired);
+                control.expiredLabel.IsVisible = control.Region.HasExpired;
+            }
+        });
 
     public PropertyThumbnailView()
     {
@@ -138,6 +173,17 @@ public partial class PropertyThumbnailView : ContentView
         set => SetValue(EndpointProperty, value);
     }
 
+    public XcavateRegion Region
+    {
+        get => (XcavateRegion)GetValue(RegionProperty);
+        set => SetValue(RegionProperty, value);
+    }
+
+    public bool ShowHasExpired
+    {
+        get => (bool)GetValue(ShowHasExpiredProperty);
+        set => SetValue(ShowHasExpiredProperty, value);
+    }
     void OnFavouriteClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
         Favourite = !Favourite;

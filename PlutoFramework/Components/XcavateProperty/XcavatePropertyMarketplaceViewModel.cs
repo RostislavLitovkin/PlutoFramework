@@ -59,7 +59,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
                     if (uniqueryNftEnumerator != null && await uniqueryNftEnumerator.MoveNextAsync().ConfigureAwait(false))
                     {
-                        var newNft = await XcavatePropertyModel.ToNftWrapperAsync((INftXcavateBase)uniqueryNftEnumerator.Current, token);
+                        var newNft = await XcavatePropertyModel.ToXcavateNftWrapperAsync((INftXcavateBase)uniqueryNftEnumerator.Current, token);
 
                         if (newNft.Key is not null && !ItemsDict.ContainsKey((NftKey)newNft.Key))
                         {
