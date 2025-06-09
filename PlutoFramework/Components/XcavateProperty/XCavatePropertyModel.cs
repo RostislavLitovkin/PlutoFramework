@@ -68,7 +68,7 @@ namespace PlutoFramework.Components.XcavateProperty
             };
         }
 
-        public static async Task NavigateToPropertyDetailPageAsync(NftWrapper nft, CancellationToken token)
+        public static async Task NavigateToPropertyDetailPageAsync(XcavateNftWrapper nft, CancellationToken token)
         {
             if (nft.NftBase is SavedXcavatePropertyBase)
             {
@@ -89,6 +89,7 @@ namespace PlutoFramework.Components.XcavateProperty
                 NftBase = nft.NftBase,
                 Metadata = ((INftXcavateMetadata)nft.NftBase).XcavateMetadata,
                 NftMarketplaceDetails = ((INftXcavateNftMarketplace)nft.NftBase).NftMarketplaceDetails,
+                Region = nft.Region,
             };
 
             if (nft.Key is not null && XcavateOwnedPropertiesModel.ItemsDict.TryGetValue(nft.Key.Value, out PropertyTokenOwnershipInfo tokenInfo))

@@ -184,7 +184,12 @@
                                         IsVisible="{Binding RelistPropertyTokensButtonIsVisible}" />
                 
                 <buttons:ElevatedButton Text="Buy"
+                                        ButtonState="{Binding BuyButtonState}"
                                         Command="{Binding BuyCommand}" />
+
+                <Label Text="Listing has expired."
+                       HorizontalTextAlignment="Start"
+                       IsVisible="{Binding HasExpired}"/>
 
                 <StackLayout BackgroundColor="#22888888"
                              Padding="20,30,20,30"

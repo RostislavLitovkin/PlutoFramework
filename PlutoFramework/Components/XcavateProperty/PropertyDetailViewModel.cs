@@ -1,10 +1,12 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.Account;
+using PlutoFramework.Components.Buttons;
 using PlutoFramework.Constants;
 using PlutoFramework.Model;
 using PlutoFramework.Model.Currency;
 using PlutoFramework.Model.SQLite;
+using PlutoFramework.Model.Xcavate;
 using SocketIOClient.Messages;
 using UniqueryPlus.Metadata;
 using UniqueryPlus.Nfts;
@@ -21,6 +23,10 @@ namespace PlutoFramework.Components.XcavateProperty
         private INftBase nftBase;
 
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(BuyButtonState))]
+        private XcavateRegion region;
+
+        [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(AreaPricesPercentage))]
         [NotifyPropertyChangedFor(nameof(RentalDemandPercentage))]
         [NotifyPropertyChangedFor(nameof(LocationShortName))]
@@ -33,6 +39,7 @@ namespace PlutoFramework.Components.XcavateProperty
         private XcavateMetadata? metadata;
 
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(BuyButtonState))]
         private NftMarketplaceDetails? nftMarketplaceDetails;
 
         public double AreaPricesPercentage => PropertyModel.GetAreaPricesPercentage(Metadata?.PropertyPrice ?? 0);
@@ -80,6 +87,11 @@ namespace PlutoFramework.Components.XcavateProperty
         public bool OwnedPropertyTokensViewIsVisible => TokensOwned > 0;
 
         public bool RelistPropertyTokensButtonIsVisible => TokensOwned > 0;
+
+        public ButtonStateEnum BuyButtonState => Region.HasExpired ? ButtonStateEnum.Disabled :
+            NftMarketplaceDetails?.Listed > 0 ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
+
+        public bool HasExpired => Region.HasExpired;
 
         [RelayCommand]
         public void Buy()

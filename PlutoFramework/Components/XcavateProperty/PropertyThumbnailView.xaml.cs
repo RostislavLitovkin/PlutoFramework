@@ -204,11 +204,12 @@ public partial class PropertyThumbnailView : ContentView
 
         loadingViewModel.IsVisible = true;
 
-        await XcavatePropertyModel.NavigateToPropertyDetailPageAsync(new NftWrapper
+        await XcavatePropertyModel.NavigateToPropertyDetailPageAsync(new XcavateNftWrapper
         {
             NftBase = NftBase,
             Endpoint = Endpoint,
-            Favourite = Favourite
+            Favourite = Favourite,
+            Region = Region,
         }, CancellationToken.None);
 
         loadingViewModel.IsVisible = false;
