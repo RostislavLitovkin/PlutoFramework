@@ -114,6 +114,11 @@ public partial class PropertyThumbnailView : ContentView
         defaultBindingMode: BindingMode.TwoWay,
         propertyChanging: (bindable, oldValue, newValue) =>
         {
+            if (newValue is null)
+            {
+                return;
+            }
+
             var control = (PropertyThumbnailView)bindable;
             var region = (XcavateRegion)newValue;
 
