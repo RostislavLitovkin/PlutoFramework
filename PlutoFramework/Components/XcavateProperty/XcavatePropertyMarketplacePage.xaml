@@ -18,6 +18,7 @@
              xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
              xmlns:loading="clr-namespace:PlutoFramework.Components.Loading"
              xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
+             Shell.PresentationMode="ModalNotAnimated"
                 BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
@@ -68,7 +69,7 @@
         
         <extrinsic:ExtrinsicStatusStackLayout />
 
-        <navigationbar:NavigationBarView SelectedOption="Nfts" />
+        <xcavate:XcavateNavigationBarView />
 
         <transfer:TransferView />
 

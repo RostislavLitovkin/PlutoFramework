@@ -127,6 +127,8 @@ public partial class App : Application
 
         DependencyService.Register<RelistPropertyTokensViewModel>();
 
+        DependencyService.Register<XcavateNavigationBarViewModel>();
+
         if (Preferences.Get(PreferencesModel.SHOW_WELCOME_SCREEN, true))
         {
             MainPage = new OnboardingShell();
@@ -144,7 +146,7 @@ public partial class App : Application
 
             Console.WriteLine("Loading app shell");
 
-            MainPage = new AppShell();
+            MainPage = new XcavateAppShell();
         }
     }
 }

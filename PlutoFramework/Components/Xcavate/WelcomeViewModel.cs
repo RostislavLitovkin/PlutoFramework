@@ -27,7 +27,7 @@ namespace PlutoFramework.Components.Xcavate
         [RelayCommand]
         public void BrowseProperties()
         {
-            Application.Current.MainPage = new AppShell();
+            Application.Current.MainPage = new XcavateAppShell();
         }
 
         [RelayCommand]

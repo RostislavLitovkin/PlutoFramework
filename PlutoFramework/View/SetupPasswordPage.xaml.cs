@@ -1,5 +1,6 @@
 ﻿using Microsoft.Maui.Storage;
 using PlutoFramework.Components.Buttons;
+using PlutoFramework.Components.Xcavate;
 using PlutoFramework.Model;
 using Substrate.NET.Wallet;
 
@@ -26,7 +27,7 @@ public partial class SetupPasswordPage : ContentPage
 
         if (accountType == AccountType.Json && SecureStorage.GetAsync(PreferencesModel.PASSWORD) is not null)
         {
-            Application.Current.MainPage = new AppShell();
+            Application.Current.MainPage = new XcavateAppShell();
         }
     }
 

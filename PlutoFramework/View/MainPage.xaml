@@ -21,7 +21,9 @@
              xmlns:loading="clr-namespace:PlutoFramework.Components.Loading"
              xmlns:sumsub="clr-namespace:PlutoFramework.Components.Sumsub"
              xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
+             xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
              BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}"
+             Shell.PresentationMode="ModalNotAnimated"
              HideSoftInputOnTapped="True">
 
     <AbsoluteLayout
@@ -75,7 +77,7 @@
 
         <messagepopup:MessagePopupView />
 
-        <navigationbar:NavigationBarView SelectedOption="Home"/>
+        <xcavate:XcavateNavigationBarView />
 
         <addressview:AddressQrCodeView />
 

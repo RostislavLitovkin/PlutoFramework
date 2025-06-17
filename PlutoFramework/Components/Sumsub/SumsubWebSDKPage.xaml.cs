@@ -1,3 +1,4 @@
+using PlutoFramework.Components.Xcavate;
 using PlutoFramework.Model.Sumsub;
 using PlutoFramework.View;
 using System.Web;
@@ -119,7 +120,7 @@ namespace PlutoFramework.Components.Sumsub
 
                 navigated = true;
 
-                Application.Current.MainPage = new AppShell();
+                Application.Current.MainPage = new XcavateAppShell();
             }
         }
     }

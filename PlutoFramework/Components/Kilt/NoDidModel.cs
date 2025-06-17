@@ -28,7 +28,7 @@ namespace PlutoFramework.Components.Kilt
 
             if (applicantData is not null)
             {
-                Application.Current.MainPage = new AppShell();
+                Application.Current.MainPage = new XcavateAppShell();
                 return;
             }
 
