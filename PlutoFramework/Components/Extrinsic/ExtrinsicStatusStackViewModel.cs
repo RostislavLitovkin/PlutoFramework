@@ -28,6 +28,7 @@ namespace PlutoFramework.Components.Extrinsic
 
         public void Update()
         {
+            ExtrinsicInfos = new ObservableCollection<ExtrinsicInfo>();
             ExtrinsicInfos = new ObservableCollection<ExtrinsicInfo>(Extrinsics.Values);
             IsVisible = ExtrinsicInfos.Any();
 

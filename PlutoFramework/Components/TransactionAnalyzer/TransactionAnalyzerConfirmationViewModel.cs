@@ -102,7 +102,8 @@ namespace PlutoFramework.Components.TransactionAnalyzer
 
 
 
-            if (showDAppView) {
+            if (showDAppView)
+            {
                 DAppName = dAppConnectionViewModel.Name;
                 DAppIcon = dAppConnectionViewModel.Icon;
                 IsDAppViewVisible = dAppConnectionViewModel.IsVisible;
@@ -320,6 +321,9 @@ namespace PlutoFramework.Components.TransactionAnalyzer
             ConfirmButtonState = ButtonStateEnum.Enabled;
             ConfirmButtonText = "Confirm";
 
+            ExtrinsicEvents = new ObservableCollection<ExtrinsicEvent>();
+
+
             var analyzedOutcomeViewModel = DependencyService.Get<AnalyzedOutcomeViewModel>();
             analyzedOutcomeViewModel.SetToDefault();
         }
@@ -327,12 +331,18 @@ namespace PlutoFramework.Components.TransactionAnalyzer
         [RelayCommand]
         public async Task ExpandExtrinsicInfoAsync()
         {
+            if (Payload is null)
+            {
+                return;
+            }
+
             CancellationToken token = CancellationToken.None;
 
             Console.WriteLine("Clicked on expand extrinsic info");
             var methodUnified = PalletCallModel.GetMethodUnified(await SubstrateClientModel.GetOrAddSubstrateClientAsync(Endpoint.Key, token), Payload.Call);
 
-            var viewModel = new CallDetailViewModel {
+            var viewModel = new CallDetailViewModel
+            {
                 PalletCallName = methodUnified.PalletName + "." + methodUnified.EventName,
                 CallParameters = new ObservableCollection<EventParameter>(methodUnified.Parameters),
                 Endpoint = Endpoint,
