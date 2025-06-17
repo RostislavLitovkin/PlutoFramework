@@ -13,6 +13,7 @@ namespace PlutoFramework.Components.XcavateProperty
     public class XcavateNftWrapper : NftWrapper
     {
         public required XcavateRegion Region { get; set; }
+        public required bool ListingHasExpired { get; set; }
     }
 
     public class XcavatePropertyModel
@@ -58,12 +59,17 @@ namespace PlutoFramework.Components.XcavateProperty
                 Console.WriteLine("To Xcavate nft wrapper error:");
                 Console.WriteLine(ex);
             }
-            
+
+            var substrateClient = await SubstrateClientModel.GetOrAddSubstrateClientAsync(Model.NftModel.GetEndpointKey(nft.Type), token);
+
+            uint blockNumber = (uint)await BlockModel.GetCachedBlockNumberAsync(substrateClient, token).ConfigureAwait(false);
+
             return new XcavateNftWrapper
             {
                 Favourite = await XcavatePropertyDatabase.IsPropertyFavouriteAsync(nft.Type, nft.CollectionId, nft.Id).ConfigureAwait(false),
                 NftBase = nft,
-                Region = await RegionModel.GetCachedRegionAsync(await SubstrateClientModel.GetOrAddSubstrateClientAsync(Model.NftModel.GetEndpointKey(nft.Type), token), ((INftXcavateNftMarketplace)nft).NftMarketplaceDetails.Region, token),
+                Region = await RegionModel.GetCachedRegionAsync(substrateClient, ((INftXcavateNftMarketplace)nft).NftMarketplaceDetails.Region, token),
+                ListingHasExpired = blockNumber > ((INftXcavateOngoingObjectListing)nft).OngoingObjectListingDetails.ListingExpiry,
                 Endpoint = Endpoints.GetEndpointDictionary[Model.NftModel.GetEndpointKey(nft.Type)]
             };
         }
@@ -90,6 +96,7 @@ namespace PlutoFramework.Components.XcavateProperty
                 Metadata = ((INftXcavateMetadata)nft.NftBase).XcavateMetadata,
                 NftMarketplaceDetails = ((INftXcavateNftMarketplace)nft.NftBase).NftMarketplaceDetails,
                 Region = nft.Region,
+                ListingHasExpired = nft.ListingHasExpired,
             };
 
             if (nft.Key is not null && XcavateOwnedPropertiesModel.ItemsDict.TryGetValue(nft.Key.Value, out PropertyTokenOwnershipInfo tokenInfo))

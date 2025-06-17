@@ -125,6 +125,11 @@ namespace XcavatePaseo.NetApi.Generated
         public NftFractionalizationStorage NftFractionalizationStorage;
         
         /// <summary>
+        /// AssetTxPaymentStorage storage calls.
+        /// </summary>
+        public AssetTxPaymentStorage AssetTxPaymentStorage;
+        
+        /// <summary>
         /// AuthoritiesNotingStorage storage calls.
         /// </summary>
         public AuthoritiesNotingStorage AuthoritiesNotingStorage;
@@ -232,6 +237,7 @@ namespace XcavatePaseo.NetApi.Generated
             this.MultisigStorage = new MultisigStorage(this);
             this.NftsStorage = new NftsStorage(this);
             this.NftFractionalizationStorage = new NftFractionalizationStorage(this);
+            this.AssetTxPaymentStorage = new AssetTxPaymentStorage(this);
             this.AuthoritiesNotingStorage = new AuthoritiesNotingStorage(this);
             this.AuthorInherentStorage = new AuthorInherentStorage(this);
             this.XcmpQueueStorage = new XcmpQueueStorage(this);

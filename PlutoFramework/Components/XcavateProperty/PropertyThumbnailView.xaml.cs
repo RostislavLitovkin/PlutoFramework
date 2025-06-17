@@ -111,26 +111,7 @@ public partial class PropertyThumbnailView : ContentView
     public static readonly BindableProperty RegionProperty = BindableProperty.Create(
         nameof(Region), typeof(XcavateRegion), typeof(PropertyThumbnailView),
         defaultValue: null,
-        defaultBindingMode: BindingMode.TwoWay,
-        propertyChanging: (bindable, oldValue, newValue) =>
-        {
-            if (newValue is null)
-            {
-                return;
-            }
-
-            var control = (PropertyThumbnailView)bindable;
-            var region = (XcavateRegion)newValue;
-
-           
-
-            if (control.ShowHasExpired)
-            {
-                Console.WriteLine("(2) Region has expired: " + region.HasExpired);
-                control.expiredLabel.IsVisible = region.HasExpired;
-            }
-            
-        });
+        defaultBindingMode: BindingMode.TwoWay);
 
     public static readonly BindableProperty ShowHasExpiredProperty = BindableProperty.Create(
         nameof(ShowHasExpired), typeof(bool), typeof(PropertyThumbnailView),
@@ -141,10 +122,27 @@ public partial class PropertyThumbnailView : ContentView
             var control = (PropertyThumbnailView)bindable;
             var showHasExpired = (bool)newValue;
 
-            if (showHasExpired && control.Region is not null)
+            if (showHasExpired && control.ListingHasExpired)
             {
-                Console.WriteLine("(1) Region has expired: " + control.Region.HasExpired);
-                control.expiredLabel.IsVisible = control.Region.HasExpired;
+                Console.WriteLine("(1) Region has expired: " + control.ListingHasExpired);
+                control.expiredLabel.IsVisible = control.ListingHasExpired;
+            }
+        });
+
+    public static readonly BindableProperty ListingHasExpiredProperty = BindableProperty.Create(
+        nameof(ListingHasExpired), typeof(bool), typeof(PropertyThumbnailView),
+        defaultValue: false,
+        defaultBindingMode: BindingMode.TwoWay,
+        propertyChanging: (bindable, oldValue, newValue) =>
+        {
+            var control = (PropertyThumbnailView)bindable;
+            var istingHasExpired = (bool)newValue;
+
+
+            if (control.ShowHasExpired)
+            {
+                Console.WriteLine("(2) Region has expired: " + istingHasExpired);
+                control.expiredLabel.IsVisible = istingHasExpired;
             }
         });
 
@@ -189,6 +187,12 @@ public partial class PropertyThumbnailView : ContentView
         get => (bool)GetValue(ShowHasExpiredProperty);
         set => SetValue(ShowHasExpiredProperty, value);
     }
+
+    public bool ListingHasExpired
+    {
+        get => (bool)GetValue(ListingHasExpiredProperty);
+        set => SetValue(ListingHasExpiredProperty, value);
+    }
     void OnFavouriteClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
         Favourite = !Favourite;
@@ -214,6 +218,7 @@ public partial class PropertyThumbnailView : ContentView
             NftBase = NftBase,
             Endpoint = Endpoint,
             Favourite = Favourite,
+            ListingHasExpired = ListingHasExpired,
             Region = Region,
         }, CancellationToken.None);
 

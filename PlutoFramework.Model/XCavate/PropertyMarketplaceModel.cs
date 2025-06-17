@@ -10,7 +10,6 @@ using XcavatePaseo.NetApi.Generated.Model.sp_core.crypto;
 using Substrate.NetApi.Model.Types.Base;
 using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
 using System.ComponentModel;
-
 using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.AssetPallet, System.Numerics.BigInteger);
 using PlutoFramework.Constants;
 using PlutoFramework.Types;
@@ -196,8 +195,9 @@ namespace PlutoFramework.Model.Xcavate
                 {
                     Console.WriteLine("Error while processing property details: " + ex.Message);
                 }
-
             }
+
+            var listingIdKeys = fullKeys.Select(key => key.Substring(keyPrefixLength));
 
             return await XcavatePaseoNftModel.GetNftsNftsPalletAsync(client, nftIds, fullKeys.Last().ToString(), token).ConfigureAwait(false);
         }

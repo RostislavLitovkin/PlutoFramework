@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_message_queue
     
     
     /// <summary>
-    /// >> 481 - Composite[pallet_message_queue.BookState]
+    /// >> 482 - Composite[pallet_message_queue.BookState]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BookState : BaseType

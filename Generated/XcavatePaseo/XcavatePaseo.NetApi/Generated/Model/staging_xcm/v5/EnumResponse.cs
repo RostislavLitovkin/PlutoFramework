@@ -53,7 +53,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5
     }
     
     /// <summary>
-    /// >> 107 - Variant[staging_xcm.v5.Response]
+    /// >> 108 - Variant[staging_xcm.v5.Response]
     /// </summary>
     public sealed class EnumResponse : BaseEnumRust<Response>
     {

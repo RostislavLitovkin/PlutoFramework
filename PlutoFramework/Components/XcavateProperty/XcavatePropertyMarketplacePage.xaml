@@ -60,6 +60,8 @@
                                                                 NftBase="{Binding NftBase}"
                                                                 Padding="20, 5, 20, 10"
                                                                Region="{Binding Region}"
+                                                               ListingHasExpired="{Binding ListingHasExpired}"
+                                                               IsVisible="{Binding ListingHasExpired}"
                                                                ShowHasExpired="True" />
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

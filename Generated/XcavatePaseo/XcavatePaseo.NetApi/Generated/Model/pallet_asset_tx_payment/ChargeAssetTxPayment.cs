@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_asset_tx_payment
     
     
     /// <summary>
-    /// >> 510 - Composite[pallet_asset_tx_payment.ChargeAssetTxPayment]
+    /// >> 541 - Composite[pallet_asset_tx_payment.ChargeAssetTxPayment]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ChargeAssetTxPayment : BaseType

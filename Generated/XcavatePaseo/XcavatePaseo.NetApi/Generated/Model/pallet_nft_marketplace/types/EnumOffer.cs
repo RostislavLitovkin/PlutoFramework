@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types
     }
     
     /// <summary>
-    /// >> 360 - Variant[pallet_nft_marketplace.types.Offer]
+    /// >> 361 - Variant[pallet_nft_marketplace.types.Offer]
     /// </summary>
     public sealed class EnumOffer : BaseEnum<Offer>
     {

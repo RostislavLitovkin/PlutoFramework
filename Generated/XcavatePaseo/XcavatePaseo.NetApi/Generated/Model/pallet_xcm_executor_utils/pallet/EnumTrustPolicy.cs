@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcm_executor_utils.pallet
     }
     
     /// <summary>
-    /// >> 353 - Variant[pallet_xcm_executor_utils.pallet.TrustPolicy]
+    /// >> 354 - Variant[pallet_xcm_executor_utils.pallet.TrustPolicy]
     /// </summary>
     public sealed class EnumTrustPolicy : BaseEnumRust<TrustPolicy>
     {

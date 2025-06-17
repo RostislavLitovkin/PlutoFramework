@@ -38,7 +38,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types
     }
     
     /// <summary>
-    /// >> 509 - Variant[pallet_nft_marketplace.types.DocumentStatus]
+    /// >> 510 - Variant[pallet_nft_marketplace.types.DocumentStatus]
     /// </summary>
     public sealed class EnumDocumentStatus : BaseEnum<DocumentStatus>
     {

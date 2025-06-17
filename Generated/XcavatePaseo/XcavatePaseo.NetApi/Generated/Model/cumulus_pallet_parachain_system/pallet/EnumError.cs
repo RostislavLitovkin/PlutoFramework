@@ -73,7 +73,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.pa
     }
     
     /// <summary>
-    /// >> 245 - Variant[cumulus_pallet_parachain_system.pallet.Error]
+    /// >> 246 - Variant[cumulus_pallet_parachain_system.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

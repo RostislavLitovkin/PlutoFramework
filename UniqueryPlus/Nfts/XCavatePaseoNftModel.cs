@@ -12,7 +12,6 @@ using XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress;
 using UniqueryPlus.Metadata;
 using System.Text.Json;
 using XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet;
-using System.Collections;
 using Nethereum.Util;
 
 namespace UniqueryPlus.Nfts
@@ -38,7 +37,7 @@ namespace UniqueryPlus.Nfts
             return NftsCalls.BuyItem(new U32((uint)CollectionId), new U32((uint)Id), new U128(Price ?? 0));
         }
     }
-    public record XcavatePaseoNftsPalletNft : INftXcavateBase, INftBase, INftTransferable, INftBurnable, INftMarketPrice, INftFractionalization, INftXcavateMetadata, INftXcavateNftMarketplace
+    public record XcavatePaseoNftsPalletNft : INftXcavateBase, INftBase, INftTransferable, INftBurnable, INftMarketPrice, INftFractionalization, INftXcavateMetadata, INftXcavateNftMarketplace, INftXcavateOngoingObjectListing
     {
         private SubstrateClientExt client;
         public NftTypeEnum Type => NftTypeEnum.XcavatePaseo;
@@ -46,6 +45,8 @@ namespace UniqueryPlus.Nfts
         public BigInteger Id { get; set; }
         public required string Owner { get; set; }
         public NftMarketplaceDetails? NftMarketplaceDetails { get; set; }
+        
+        public XcavateOngoingObjectListingDetails? OngoingObjectListingDetails { get; set; }
         public MetadataBase? Metadata { get; set; }
         public XcavateMetadata? XcavateMetadata { get; set; }
         public XcavatePaseoNftsPalletNft(SubstrateClientExt client)
@@ -109,7 +110,9 @@ namespace UniqueryPlus.Nfts
 
         public static Task<RecursiveReturn<INftBase>> GetNftsNftsPalletAsync(SubstrateClientExt client, List<(U32, U32)> nftIds, string lastKey, CancellationToken token)
         {
-            var idKeys = nftIds.Select(id => NftsStorage.ItemParams(new BaseTuple<U32, U32>(id.Item1, id.Item2)).Substring(66));
+            var keyPrefixLength = 66;
+
+            var idKeys = nftIds.Select(id => NftsStorage.ItemParams(new BaseTuple<U32, U32>(id.Item1, id.Item2)).Substring(keyPrefixLength));
 
             return GetNftsNftsPalletByIdKeysAsync(client, idKeys, lastKey, token);
         }
@@ -220,15 +223,17 @@ namespace UniqueryPlus.Nfts
         {
             return GetNftsNftsPalletByIdKeysAsync(client, idKeys, Utils.HexToByteArray(lastKey), token);
         }
-        internal static async Task<RecursiveReturn<INftBase>> GetNftsNftsPalletByIdKeysAsync(SubstrateClientExt client, IEnumerable<string> idKeys, byte[] lastKey, CancellationToken token)
+        internal static async Task<RecursiveReturn<INftBase>> GetNftsNftsPalletByIdKeysAsync(SubstrateClientExt client, IEnumerable<string> nftIdKeys, byte[] lastKey, CancellationToken token)
         {
-            var ids = idKeys.Select(ids => (Helpers.GetBigIntegerFromBlake2_128Concat(ids.Substring(0, 40)), Helpers.GetBigIntegerFromBlake2_128Concat(ids.Substring(40, 40))));
+            var ids = nftIdKeys.Select(ids => (Helpers.GetBigIntegerFromBlake2_128Concat(ids.Substring(0, 40)), Helpers.GetBigIntegerFromBlake2_128Concat(ids.Substring(40, 40))));
 
-            var nftDetails = await GetNftDetailsNftsPalletByIdKeysAsync(client, idKeys, token).ConfigureAwait(false);
+            var nftDetails = await GetNftDetailsNftsPalletByIdKeysAsync(client, nftIdKeys, token).ConfigureAwait(false);
 
-            var nftMetadatas = await GetNftMetadataNftsPalletByIdKeysAsync(client, idKeys, token).ConfigureAwait(false);
+            var nftMetadatas = await GetNftMetadataNftsPalletByIdKeysAsync(client, nftIdKeys, token).ConfigureAwait(false);
 
-           var nftMarketplaceDetails = await GetNftMarketplaceDetailsAsync(client, idKeys, token).ConfigureAwait(false);
+            var nftMarketplaceDetails = await GetNftMarketplaceDetailsAsync(client, nftIdKeys, token).ConfigureAwait(false);
+
+            var ongoingObjectDetails = await GetOngoingObjectListingDetailsAsync(client, nftIdKeys, token).ConfigureAwait(false);
 
             return new RecursiveReturn<INftBase>
             {
@@ -259,6 +264,14 @@ namespace UniqueryPlus.Nfts
                 {
                     if (details is not null) {
                         nft.NftMarketplaceDetails = details;
+                    }
+
+                    return nft;
+                }).Zip(ongoingObjectDetails, (XcavatePaseoNftsPalletNft nft, XcavateOngoingObjectListingDetails? details) =>
+                {
+                    if (details is not null)
+                    {
+                        nft.OngoingObjectListingDetails = details;
                     }
 
                     return nft;
@@ -346,6 +359,40 @@ namespace UniqueryPlus.Nfts
                 {
                     detail.Listed = listed;
                 }
+            }
+
+            return details;
+        }
+
+        internal static async Task<List<XcavateOngoingObjectListingDetails?>> GetOngoingObjectListingDetailsAsync(SubstrateClientExt client, IEnumerable<string> idKeys, CancellationToken token)
+        {
+            // 0x + Twox64 pallet + Twox64 storage
+            var keyPrefixLength = 66;
+
+            var keyPrefix = NftMarketplaceStorage.OngoingObjectListingParams(new U32(0)).Substring(0, keyPrefixLength);
+
+            var nftKeys = idKeys.Select(idKey => Utils.HexToByteArray(keyPrefix + idKey.Substring(40, 40)));
+            var storageChangeSets = await client.State.GetQueryStorageAtAsync(nftKeys.ToList(), string.Empty, token).ConfigureAwait(false);
+
+            var details = new List<XcavateOngoingObjectListingDetails?>();
+
+            foreach (var change in storageChangeSets.First().Changes)
+            {
+                if (change[1] == null)
+                {
+                    details.Add(null);
+                    continue;
+                }
+
+                var nftDetails = new XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types.NftListingDetails();
+                nftDetails.Create(change[1]);
+
+                details.Add(new XcavateOngoingObjectListingDetails
+                {
+                    RealEstateDeveloper = Utils.GetAddressFrom(nftDetails.RealEstateDeveloper.Encode()),
+                    TaxPaidByDeveloper = nftDetails.TaxPaidByDeveloper,
+                    ListingExpiry = nftDetails.ListingExpiry.Value
+                });
             }
 
             return details;

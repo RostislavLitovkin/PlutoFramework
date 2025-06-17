@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_message_queue
     
     
     /// <summary>
-    /// >> 485 - Composite[pallet_message_queue.Page]
+    /// >> 486 - Composite[pallet_message_queue.Page]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Page : BaseType

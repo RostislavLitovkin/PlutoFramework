@@ -50,8 +50,6 @@ namespace PlutoFramework.Components.Xcavate
             Selected = XcavateNavigationBarSelection.Help;
 
             await Shell.Current.GoToAsync("//Help", animate: false);
-
-
         }
 
         [RelayCommand]

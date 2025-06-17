@@ -38,7 +38,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.traits
     }
     
     /// <summary>
-    /// >> 75 - Variant[staging_xcm.v5.traits.Outcome]
+    /// >> 76 - Variant[staging_xcm.v5.traits.Outcome]
     /// </summary>
     public sealed class EnumOutcome : BaseEnumRust<Outcome>
     {

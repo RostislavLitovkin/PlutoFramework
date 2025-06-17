@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.un
     
     
     /// <summary>
-    /// >> 207 - Composite[cumulus_pallet_parachain_system.unincluded_segment.Ancestor]
+    /// >> 208 - Composite[cumulus_pallet_parachain_system.unincluded_segment.Ancestor]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Ancestor : BaseType

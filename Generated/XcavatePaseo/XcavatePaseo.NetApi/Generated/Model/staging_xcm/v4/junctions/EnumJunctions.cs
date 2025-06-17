@@ -68,7 +68,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.junctions
     }
     
     /// <summary>
-    /// >> 149 - Variant[staging_xcm.v4.junctions.Junctions]
+    /// >> 150 - Variant[staging_xcm.v4.junctions.Junctions]
     /// </summary>
     public sealed class EnumJunctions : BaseEnumRust<Junctions>
     {

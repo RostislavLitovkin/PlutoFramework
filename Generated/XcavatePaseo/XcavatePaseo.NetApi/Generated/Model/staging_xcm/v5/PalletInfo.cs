@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5
     
     
     /// <summary>
-    /// >> 111 - Composite[staging_xcm.v5.PalletInfo]
+    /// >> 112 - Composite[staging_xcm.v5.PalletInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PalletInfo : BaseType

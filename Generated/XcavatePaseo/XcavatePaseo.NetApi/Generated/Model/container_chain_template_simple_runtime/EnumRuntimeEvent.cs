@@ -107,6 +107,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         NftFractionalization = 19,
         
         /// <summary>
+        /// >> AssetTxPayment
+        /// </summary>
+        AssetTxPayment = 20,
+        
+        /// <summary>
         /// >> AuthoritiesNoting
         /// </summary>
         AuthoritiesNoting = 50,
@@ -210,6 +215,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_multisig.pallet.EnumEvent>(RuntimeEvent.Multisig);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.pallet.EnumEvent>(RuntimeEvent.Nfts);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.pallet.EnumEvent>(RuntimeEvent.NftFractionalization);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_asset_tx_payment.pallet.EnumEvent>(RuntimeEvent.AssetTxPayment);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_cc_authorities_noting.pallet.EnumEvent>(RuntimeEvent.AuthoritiesNoting);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.pallet.EnumEvent>(RuntimeEvent.XcmpQueue);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcm.pallet.EnumEvent>(RuntimeEvent.CumulusXcm);

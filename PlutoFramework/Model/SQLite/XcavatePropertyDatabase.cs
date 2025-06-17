@@ -10,9 +10,10 @@ using UniqueryPlus.Nfts;
 
 namespace PlutoFramework.Model.SQLite
 {
-    public class SavedXcavatePropertyBase : INftXcavateBase
+    public class SavedXcavatePropertyBase : INftXcavateBase, INftXcavateOngoingObjectListing
     {
         public XcavateMetadata? XcavateMetadata { get; set; }
+        public XcavateOngoingObjectListingDetails? OngoingObjectListingDetails { get; set; }
         public NftTypeEnum Type { get; set; }
         public BigInteger CollectionId { get; set; }
         public BigInteger Id { get; set; }

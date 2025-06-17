@@ -38,7 +38,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_support.dispatch
     }
     
     /// <summary>
-    /// >> 253 - Variant[frame_support.dispatch.RawOrigin]
+    /// >> 254 - Variant[frame_support.dispatch.RawOrigin]
     /// </summary>
     public sealed class EnumRawOrigin : BaseEnumRust<RawOrigin>
     {

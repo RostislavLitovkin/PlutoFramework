@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.prim
     
     
     /// <summary>
-    /// >> 72 - Composite[polkadot_parachain_primitives.primitives.Id]
+    /// >> 73 - Composite[polkadot_parachain_primitives.primitives.Id]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Id : BaseType

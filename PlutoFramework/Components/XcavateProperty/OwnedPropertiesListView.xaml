@@ -14,6 +14,7 @@
                                                            TokensOwned="{Binding Amount}"
                                                            Favourite="{Binding Favourite}"
                                                            Region="{Binding Region}"
+                                                           ListingHasExpired="{Binding ListingHasExpired}"
                                                            ShowHasExpired="False"
                                                            />
 

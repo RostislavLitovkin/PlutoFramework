@@ -189,7 +189,7 @@
 
                 <Label Text="Listing has expired."
                        HorizontalTextAlignment="Start"
-                       IsVisible="{Binding HasExpired}"/>
+                       IsVisible="{Binding ListingHasExpired}"/>
 
                 <StackLayout BackgroundColor="#22888888"
                              Padding="20,30,20,30"

@@ -23,7 +23,6 @@ namespace PlutoFramework.Components.XcavateProperty
         private INftBase nftBase;
 
         [ObservableProperty]
-        [NotifyPropertyChangedFor(nameof(BuyButtonState))]
         private XcavateRegion region;
 
         [ObservableProperty]
@@ -88,10 +87,12 @@ namespace PlutoFramework.Components.XcavateProperty
 
         public bool RelistPropertyTokensButtonIsVisible => TokensOwned > 0;
 
-        public ButtonStateEnum BuyButtonState => Region.HasExpired ? ButtonStateEnum.Disabled :
+        public ButtonStateEnum BuyButtonState => ListingHasExpired ? ButtonStateEnum.Disabled :
             NftMarketplaceDetails?.Listed > 0 ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
 
-        public bool HasExpired => Region.HasExpired;
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(BuyButtonState))]
+        private bool listingHasExpired = false;
 
         [RelayCommand]
         public void Buy()

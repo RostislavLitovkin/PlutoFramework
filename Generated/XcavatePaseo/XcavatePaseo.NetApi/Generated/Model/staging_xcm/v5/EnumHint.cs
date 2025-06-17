@@ -28,7 +28,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5
     }
     
     /// <summary>
-    /// >> 130 - Variant[staging_xcm.v5.Hint]
+    /// >> 131 - Variant[staging_xcm.v5.Hint]
     /// </summary>
     public sealed class EnumHint : BaseEnumRust<Hint>
     {

@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
     
     
     /// <summary>
-    /// >> 520 - Composite[pallet_property_governance.pallet.SellProposal]
+    /// >> 521 - Composite[pallet_property_governance.pallet.SellProposal]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SellProposal : BaseType

@@ -31,7 +31,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_asset_tx_payment.pallet
     }
     
     /// <summary>
-    /// >> 52 - Variant[pallet_asset_tx_payment.pallet.Event]
+    /// >> 69 - Variant[pallet_asset_tx_payment.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

@@ -30,24 +30,31 @@ namespace PlutoFramework.Model.Xcavate
             return GetRegionAsync(client, regionId, token);
         }
 
-        public static async Task<XcavateRegion> GetRegionAsync(SubstrateClientExt client, uint regionId, CancellationToken token) =>
-            client.SubstrateClient switch
+        public static async Task<XcavateRegion> GetRegionAsync(SubstrateClientExt client, uint regionId, CancellationToken token)
+        {
+            uint blockNumber = (uint) await BlockModel.GetCachedBlockNumberAsync(client, token).ConfigureAwait(false);
+
+            return client.SubstrateClient switch
             {
-                XcavatePaseo.NetApi.Generated.SubstrateClientExt xcavateClient => ToXcavateRegion(await xcavateClient.NftMarketplaceStorage.Regions(new U32(regionId), null, token), EndpointEnum.XcavatePaseo),
+                XcavatePaseo.NetApi.Generated.SubstrateClientExt xcavateClient => ToXcavateRegion(await xcavateClient.NftMarketplaceStorage.Regions(new U32(regionId), null, token), blockNumber, EndpointEnum.XcavatePaseo),
                 _ => throw new NotSupportedException("GetRegionAsync: Unsupported client type")
             };
+        }
 
+        private static XcavateRegion ToXcavateRegion(XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types.RegionInfo regionInfo, uint blockNumber, EndpointEnum endpointKey)
+        {
+            Console.WriteLine($"{regionInfo.ListingDuration} > {blockNumber}");
 
-        private static XcavateRegion ToXcavateRegion(XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types.RegionInfo regionInfo, EndpointEnum endpointKey) =>
-            new XcavateRegion
+            return new XcavateRegion
             {
                 EndpointKey = endpointKey,
                 CollectionId = regionInfo.CollectionId,
                 ListingDuration = regionInfo.ListingDuration,
                 Owner = Utils.GetAddressFrom(regionInfo.Owner.Encode()),
                 Tax = (uint)regionInfo.Tax.Value,
-                HasExpired = regionInfo.ListingDuration != 0 || regionInfo.ListingDuration < (uint)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds // Assuming ListingDuration will get updated to timestamp
+                HasExpired = regionInfo.ListingDuration < blockNumber
             };
+        }
     }
 }
 
