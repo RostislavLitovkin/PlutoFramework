@@ -4,19 +4,22 @@
              x:Class="PlutoFramework.Components.Xcavate.HelpPage"
              xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
              Title="HelpPage"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
              Shell.PresentationMode="ModalNotAnimated"
              BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
         <VerticalStackLayout  AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                               AbsoluteLayout.LayoutFlags="All">
             <Label 
-            Text="Help page"
+                Text="Help page"
                 FontSize="30"
                 Margin="50"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
         </VerticalStackLayout>
         
         <xcavate:XcavateNavigationBarView />
+
+        <card:BottomPillBackgroundView />
     </AbsoluteLayout>
 </ContentPage>

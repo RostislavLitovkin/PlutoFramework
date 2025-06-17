@@ -19,6 +19,7 @@
              xmlns:loading="clr-namespace:PlutoFramework.Components.Loading"
              xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
              Shell.PresentationMode="ModalNotAnimated"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
                 BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
@@ -81,5 +82,7 @@
         <txanalyzer:TransactionAnalyzerConfirmationView />
 
         <loading:FullPageLoadingView />
+
+        <card:BottomPillBackgroundView />
     </AbsoluteLayout>
 </ContentPage>

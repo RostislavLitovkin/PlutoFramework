@@ -24,6 +24,7 @@
              xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
              BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}"
              Shell.PresentationMode="ModalNotAnimated"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
              HideSoftInputOnTapped="True">
 
     <AbsoluteLayout
@@ -102,6 +103,7 @@
         <password:EnterPasswordPopupView />
 
         <loading:FullPageLoadingView />
-        
+
+        <card:BottomPillBackgroundView />
     </AbsoluteLayout>
 </ContentPage>

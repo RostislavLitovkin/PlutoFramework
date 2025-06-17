@@ -16,6 +16,7 @@
              xmlns:sumsub="clr-namespace:PlutoFramework.Components.Sumsub"
              xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
              HideSoftInputOnTapped="True"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
              BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
         <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
@@ -255,6 +256,8 @@
         <txanalyzer:TransactionAnalyzerConfirmationView />
 
         <password:EnterPasswordPopupView />
+
+        <card:BottomPillBackgroundView />
     </AbsoluteLayout>
 
 </ContentPage>

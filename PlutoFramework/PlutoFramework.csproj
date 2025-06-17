@@ -514,6 +514,9 @@
 	  <MauiXaml Update="Components\Buttons\PlutoFrameworkElevatedButton.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Card\BottomPillBackgroundView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Card\ClickableCard.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
