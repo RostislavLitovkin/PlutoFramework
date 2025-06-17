@@ -7,6 +7,7 @@ using PlutoFramework.Constants;
 using Bifrost.NetApi.Generated.Model.orml_tokens;
 using Substrate.NetApi.Model.Types.Primitive;
 using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.AssetPallet, System.Numerics.BigInteger);
+using XcavatePaseo.NetApi.Generated.Storage;
 
 namespace PlutoFramework.Model
 {
@@ -154,14 +155,19 @@ namespace PlutoFramework.Model
                 {
                     foreach ((BigInteger, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetDetails, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetAccount) asset in await GetPolkadotAssetHubAssetsAsync(client.SubstrateClient, substrateAddress, 1000, palletName, CancellationToken.None))
                     {
+                        var frozenBalance = await GetFreezenBalanceForAssetIdAsync(client.SubstrateClient, substrateAddress, asset.Item1, token);
+
                         var symbol = Model.ToStringModel.VecU8ToString(asset.Item3.Symbol.Value);
                         double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(symbol);
 
                         double assetBalance = asset.Item4 != null ? (double)asset.Item4.Balance.Value / Math.Pow(10, asset.Item3.Decimals.Value) : 0.0;
+                       
+                        double assetFrozenBalance = endpoint.Key == EndpointEnum.XcavatePaseo ? (double)frozenBalance : (double)frozenBalance / Math.Pow(10, asset.Item3.Decimals.Value); 
+
 
                         AssetsDict[(endpoint.Key, AssetPallet.Assets, asset.Item1)] = new Asset
                         {
-                            Amount = assetBalance,
+                            Amount = assetBalance - assetFrozenBalance,
                             Symbol = symbol,
                             ChainIcon = endpoint.Icon,
                             DarkChainIcon = endpoint.DarkIcon,
@@ -171,6 +177,22 @@ namespace PlutoFramework.Model
                             UsdValue = assetBalance * spotPrice,
                             Decimals = asset.Item3.Decimals.Value,
                         };
+
+                        if (frozenBalance > 0)
+                        {
+                            AssetsDict[(endpoint.Key, AssetPallet.AssetsFrozen, asset.Item1)] = new Asset
+                            {
+                                Amount = assetFrozenBalance,
+                                Symbol = symbol,
+                                ChainIcon = endpoint.Icon,
+                                DarkChainIcon = endpoint.DarkIcon,
+                                Endpoint = endpoint,
+                                Pallet = AssetPallet.AssetsFrozen,
+                                AssetId = asset.Item1,
+                                UsdValue = assetFrozenBalance * spotPrice,
+                                Decimals = asset.Item3.Decimals.Value,
+                            };
+                        }
                     }
                 }
 
@@ -612,6 +634,22 @@ namespace PlutoFramework.Model
                 }
             }
             return resultList;
+        }
+
+        public static async Task<BigInteger> GetFreezenBalanceForAssetIdAsync(SubstrateClient client, string substrateAddress, System.Numerics.BigInteger assetId, CancellationToken token)
+        {
+            var accountId = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            accountId.Create(Utils.GetPublicKeyFrom(substrateAddress));
+
+            var parameters = AssetsFreezerStorage.FrozenBalancesParams(
+                                new Substrate.NetApi.Model.Types.Base.BaseTuple<U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(
+                                    new U32((uint)assetId),
+                                    accountId
+            ));
+
+            var result = await client.GetStorageAsync<U128>(parameters, null, token);
+
+            return result?.Value ?? 0;
         }
     }
     public class BifrostTokenData

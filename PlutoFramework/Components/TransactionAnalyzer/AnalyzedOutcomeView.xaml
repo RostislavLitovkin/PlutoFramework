@@ -52,7 +52,8 @@
                                                         UsdValue="{Binding UsdValue}"
                                                         ChainIcon="{Binding ChainIcon}"
                                                         UsdColor="{Binding UsdColor}"
-                                         />
+                                                         IsFrozen="{Binding IsFrozen}"
+                                                         IsReserved="{Binding IsRezerved}"/>
 
                             </DataTemplate>
 

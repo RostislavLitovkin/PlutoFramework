@@ -71,8 +71,8 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                         _ => Colors.Gray,
                     },
                     ChainIcon = Application.Current.UserAppTheme != AppTheme.Dark ? a.ChainIcon : a.DarkChainIcon,
-                    IsFrozen = false,
-                    IsReserved = false,
+                    IsFrozen =  a.Pallet == AssetPallet.NativeFrozen || a.Pallet == AssetPallet.AssetsFrozen || a.Pallet == AssetPallet.TokensFrozen,
+                    IsReserved = a.Pallet == AssetPallet.NativeReserved || a.Pallet == AssetPallet.AssetsReserved || a.Pallet == AssetPallet.TokensReserved,
                 });
 
             }

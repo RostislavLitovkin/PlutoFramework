@@ -1,5 +1,4 @@
-﻿
-using PlutoFramework.Constants;
+﻿using PlutoFramework.Constants;
 using PlutoFramework.Model.AjunaExt;
 using PlutoFramework.Model.Xcavate;
 using PlutoFramework.Types;
@@ -98,6 +97,7 @@ namespace PlutoFramework.Model
                     ],
                     ExtrinsicEvent { PalletName: "Assets", EventName: "Issued" } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.Assets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[2].Value))],
                     ExtrinsicEvent { PalletName: "Assets", EventName: "Burned" } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.Assets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[2].Value))],
+                    ExtrinsicEvent { PalletName: "AssetsFreezer", EventName: "Frozen" } => [(e.Parameters[0].Value, (endpoint.Key, AssetPallet.AssetsFrozen, BigInteger.Parse(e.Parameters[1].Value)), -BigInteger.Parse(e.Parameters[2].Value) * 1_0000_000)],// Has to be * 10^6 on Xcavate blockchain
 
                     // ForeignAssets
                     ExtrinsicEvent { PalletName: "ForeignAssets", EventName: "Transferred" } => [

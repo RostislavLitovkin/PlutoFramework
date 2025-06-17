@@ -78,10 +78,13 @@ namespace PlutoFramework.Components.XcavateProperty
                                 await XcavatePropertyDatabase.DropAsync().ConfigureAwait(false);
                             }
 
-                            MainThread.BeginInvokeOnMainThread(() =>
+                            if (!newNft.ListingHasExpired)
                             {
-                                Items.Add(newNft);
-                            });
+                                MainThread.BeginInvokeOnMainThread(() =>
+                                {
+                                    Items.Add(newNft);
+                                });
+                            }
                         }
                     }
                 }
