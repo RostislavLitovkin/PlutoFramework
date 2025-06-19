@@ -47,6 +47,7 @@ Learn more in the official developer documentation: https://plutolabs.gitbook.io
 - [✅] View opengov referenda
 - [🕔] Opengov voting
 - [✅] View your opengov delegations
+- [✅] View your vDOT liquid staking amount powered by Bifrost
 - [✅] Ensure that the user knows what they are signing thanks to [TransactionAnalyzer](https://plutolabs.gitbook.io/plutoframework/make-your-application/transaction-analyzer).
 - [✅] NftMarketplace pallet developed by Xcavate
 - [▶️] Messaging system powered by Kilt
