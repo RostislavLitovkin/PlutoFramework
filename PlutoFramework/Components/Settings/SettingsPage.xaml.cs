@@ -1,5 +1,6 @@
 using PlutoFramework.Components.CustomLayouts;
 using PlutoFramework.Components.Kilt;
+using PlutoFramework.Components.Credits;
 using PlutoFramework.Components.Xcavate;
 using PlutoFramework.Components.XcavateProperty;
 using PlutoFramework.Model;
@@ -180,5 +181,10 @@ public partial class SettingsPage : ContentPage
         };
 
         await Navigation.PushAsync(new ModifyPropertyPage(property));
+    }
+
+    async void OnCreditsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
+    {
+        await Navigation.PushAsync(new CreditsPage());
     }
 }
