@@ -273,7 +273,6 @@
 	  <None Remove="Resources\Images\PredefinedLayouts\aaabackground.png" />
 	  <None Remove="Components\AwesomeAjunaAvatars\" />
 	  <None Remove="Components\Nft\" />
-	  <None Remove="Resources\Images\dusan.jpg" />
 	  <None Remove="Resources\Images\NetworkIcons\basilisk.png" />
 	  <None Remove="Resources\Images\NetworkIcons\pba.png" />
 	  <None Remove="Components\Contract\" />

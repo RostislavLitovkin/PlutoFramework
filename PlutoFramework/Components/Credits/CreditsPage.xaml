@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.Credits.CreditsPage"
              Title="CreditsPage"
-            xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-         xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
-         xmlns:password="clr-namespace:PlutoFramework.Components.Password"
-         xmlns:card="clr-namespace:PlutoFramework.Components.Card"
-         BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
+             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+             xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
+             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
         <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
@@ -36,7 +36,7 @@
                             <VerticalStackLayout>
                                 <Label Text="- Alumnus at Polkadot Blockchain Academy 2023 in Berkeley"/>
                                 <Label Text="- Experienced .net MAUI developer, e.g.:"/>
-                                <Label Text="- Galaxy Logic Game (successful game for watches and mobiles, 50k+ downloads)"/>
+                                <Label Text="   - Galaxy Logic Game (successful game for watches and mobiles, 50k+ downloads)"/>
                                 <Label Text="- Frontend developer at Calamar explorer"/>
                                 <Label Text="- Successful student at Polkadot DevCamp #2"/>
                                 <Label Text="- Successful student at Solana Summer School"/>
@@ -54,7 +54,7 @@
                                 <Border StrokeShape="RoundRectangle 100" StrokeThickness="0"
                         BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}">
                                     <Image HeightRequest="100" WidthRequest="100" Aspect="AspectFill"
-                                           Source="dusan.jpg"/>
+                                           Source="credits_dusan_jansky.jpg"/>
                                 </Border>
                                 <Label Text="Dušan Jánsky" FontAttributes="Bold" FontSize="Large"/>
                             </HorizontalStackLayout>
