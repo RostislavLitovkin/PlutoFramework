@@ -8,6 +8,7 @@
              xmlns:password="clr-namespace:PlutoFramework.Components.Password"
              xmlns:card="clr-namespace:PlutoFramework.Components.Card"
              xmlns:link="clr-namespace:PlutoFramework.Components.Hyperlink"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
              BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
@@ -34,24 +35,38 @@
                                 </Border>
                                 <Label Text="Rostislav Litovkin" FontAttributes="Bold" FontSize="Large"/>
                             </HorizontalStackLayout>
-                            <VerticalStackLayout>
-                                <Label Text="- Alumnus at Polkadot Blockchain Academy 2023 in Berkeley"/>
-                                <Label Text="- Experienced .net MAUI developer, e.g.:"/>
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <Span Text="- "/>
-                                            <link:Link Text="Galaxy Logic Game" Url="https://github.com/RostislavLitovkin/galaxylogicgamemaui"/>
-                                            <Span Text=" (successful game for watches and mobiles, 50k+ downloads)"/>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <Label Text="- Frontend developer at Calamar explorer"/>
-                                <Label Text="- Successful student at Polkadot DevCamp #2"/>
-                                <Label Text="- Successful student at Solana Summer School"/>
-                                <Label Text="- Polkadot Global Series 2023 (Europe) - second place"/>
-                                <Label Text="- Audience choice prize at EthPrague 2023"/>
-                            </VerticalStackLayout>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="- Alumnus at Polkadot Blockchain Academy 2023 in Berkeley"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="- Experienced .net MAUI developer, e.g.:"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="    - "/>
+                                        <link:Link Text="Galaxy Logic Game" Url="https://github.com/RostislavLitovkin/galaxylogicgamemaui"/>
+                                        <Span Text=" (successful game for watches and mobiles, 50k+ downloads)"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="- Frontend developer at "/>
+                                        <link:Link Text="Calamar explorer" Url="https://calamar.app/"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="- Successful student at Polkadot DevCamp #2;"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="- Successful student at "/>
+                                        <link:Link Text="Solana Summer School" Url="https://ackeeblockchain.com/school-of-solana"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="- Polkadot Global Series 2023 (Europe) - second place"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="- Audience choice prize at EthPrague 2023"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                         </VerticalStackLayout>
                     </card:Card.View>
                 </card:Card>
@@ -67,19 +82,30 @@
                                 </Border>
                                 <Label Text="Dušan Jánsky" FontAttributes="Bold" FontSize="Large"/>
                             </HorizontalStackLayout>
-                            <VerticalStackLayout>
-                                <Label Text="- Alumnus at Polkadot Blockchain Academy 2023 in Berkeley"/>
-                                <Label Text="- Student at Faculty of Electrical Engineering Czech Technical University in Prague - Opens Informatics (specialization in computer games and computer graphics)"/>
-                                <Label Text="- Fullstack developer at Universal Scientific Technologies"/>
-                                <Label Text="- Polkadot Global Series 2023 (Europe) - second place"/>
-                            </VerticalStackLayout>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="- Alumnus at Polkadot Blockchain Academy 2023 in Berkeley"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="- Student at Faculty of Electrical Engineering Czech Technical University in Prague - Opens Informatics (specialization in computer games and computer graphics)"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="- Fullstack developer at "/>
+                                        <link:Link Text="Universal Scientific Technologies" Url="https://www.ust.cz/"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="- Polkadot Global Series 2023 (Europe) - second place"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                         </VerticalStackLayout>
                     </card:Card.View>
                 </card:Card>
 
             </VerticalStackLayout>
         </ScrollView>
-        
+
         <navigationbar:TopNavigationBar Title="Credits" />
 
         <txanalyzer:TransactionAnalyzerConfirmationView />
