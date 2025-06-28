@@ -554,6 +554,9 @@
 	  <MauiXaml Update="Components\Form\FormWideValueView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Hyperlink\Link.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Kilt\CreateNewDidPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

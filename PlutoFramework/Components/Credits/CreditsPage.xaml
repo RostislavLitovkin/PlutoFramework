@@ -7,6 +7,7 @@
              xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
              xmlns:password="clr-namespace:PlutoFramework.Components.Password"
              xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             xmlns:link="clr-namespace:PlutoFramework.Components.Hyperlink"
              BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
@@ -36,7 +37,15 @@
                             <VerticalStackLayout>
                                 <Label Text="- Alumnus at Polkadot Blockchain Academy 2023 in Berkeley"/>
                                 <Label Text="- Experienced .net MAUI developer, e.g.:"/>
-                                <Label Text="   - Galaxy Logic Game (successful game for watches and mobiles, 50k+ downloads)"/>
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="- "/>
+                                            <link:Link Text="Galaxy Logic Game" Url="https://github.com/RostislavLitovkin/galaxylogicgamemaui"/>
+                                            <Span Text=" (successful game for watches and mobiles, 50k+ downloads)"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
                                 <Label Text="- Frontend developer at Calamar explorer"/>
                                 <Label Text="- Successful student at Polkadot DevCamp #2"/>
                                 <Label Text="- Successful student at Solana Summer School"/>
