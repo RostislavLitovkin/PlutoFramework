@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      x:Class="PlutoFramework.Components.Xcavate.PageBottomBarView"
+      BackgroundColor="White">
+    <Grid.Shadow>
+        <Shadow Brush="Black"
+            Offset="0,0" 
+            Radius="5"
+            Opacity="0.5" />
+    </Grid.Shadow>
+</Grid>

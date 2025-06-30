@@ -13,7 +13,7 @@
                     Brush="Black"
                     Offset="0,2" 
                     Radius="3"
-                    Opacity="0.2" />
+                    Opacity="0.05" />
 
         </Border.Shadow>
         <Border.StrokeShape>

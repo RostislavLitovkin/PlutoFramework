@@ -66,8 +66,8 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                     },
                     UsdColor = a.UsdValue switch
                     {
-                        > 0 => Colors.Green,
-                        < 0 => Colors.Red,
+                        > 0 => (Color)Application.Current.Resources["GAIN-TOKENS"],
+                        < 0 => (Color)Application.Current.Resources["LOSE-TOKENS"],
                         _ => Colors.Gray,
                     },
                     ChainIcon = Application.Current.UserAppTheme != AppTheme.Dark ? a.ChainIcon : a.DarkChainIcon,
@@ -117,8 +117,8 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                         },
                         UsdColor = nft.Operation switch
                         {
-                            NftOperation.Received => Colors.Green,
-                            NftOperation.Sent => Colors.Red,
+                            NftOperation.Received => (Color)Application.Current.Resources["GAIN-TOKENS"],
+                            NftOperation.Sent => (Color)Application.Current.Resources["LOSE-TOKENS"],
                             _ => Colors.Gray,
                         },
                         ChainIcon = Application.Current.UserAppTheme != AppTheme.Dark ? nft.AssetPrice.ChainIcon : nft.AssetPrice.DarkChainIcon,

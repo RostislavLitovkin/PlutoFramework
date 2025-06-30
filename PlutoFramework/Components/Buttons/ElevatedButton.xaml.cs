@@ -25,7 +25,7 @@ public partial class ElevatedButton : Button
                         },
                     };*/
 
-                    control.BackgroundColor = Color.FromArgb("57a0c5");
+                    control.BackgroundColor = (Color)Application.Current.Resources["X-BLUE"];
 
                     control.TextColor = Colors.White;
 
@@ -44,7 +44,7 @@ public partial class ElevatedButton : Button
                         },
                     };*/
 
-                    control.BackgroundColor = Color.FromArgb("7fa3b5");
+                    control.BackgroundColor = (Color)Application.Current.Resources["X-BLUE-DISABLED"];
 
                     control.IsEnabled = false;
                     break;

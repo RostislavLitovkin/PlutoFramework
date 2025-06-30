@@ -14,8 +14,26 @@ using PropertyModel = PlutoFramework.Model.Xcavate.XcavatePropertyModel;
 
 namespace PlutoFramework.Components.XcavateProperty
 {
+    public enum MainActionStates
+    {
+        Buy,
+        Expired,
+        Refund,
+        SoldOut,
+        Unknown
+    }
+
     public partial class PropertyDetailViewModel : ObservableObject
     {
+        private MainActionStates getMainActionState => (ListingHasExpired, TokensOwned, NftMarketplaceDetails?.Listed) switch
+        {
+            (true, 0, _) => MainActionStates.Expired,
+            (true, _, _) => MainActionStates.Refund,
+            (false, _, > 0) => MainActionStates.Buy,
+            (false, _, null) => MainActionStates.SoldOut,
+            (false, _, _) => MainActionStates.Unknown,
+        };
+
         [ObservableProperty]
         private Endpoint endpoint;
 
@@ -38,7 +56,8 @@ namespace PlutoFramework.Components.XcavateProperty
         private XcavateMetadata? metadata;
 
         [ObservableProperty]
-        [NotifyPropertyChangedFor(nameof(BuyButtonState))]
+        [NotifyPropertyChangedFor(nameof(MainActionButtonState))]
+        [NotifyPropertyChangedFor(nameof(MainActionText))]
         private NftMarketplaceDetails? nftMarketplaceDetails;
 
         public double AreaPricesPercentage => PropertyModel.GetAreaPricesPercentage(Metadata?.PropertyPrice ?? 0);
@@ -87,14 +106,45 @@ namespace PlutoFramework.Components.XcavateProperty
 
         public bool RelistPropertyTokensButtonIsVisible => TokensOwned > 0;
 
-        public ButtonStateEnum BuyButtonState => ListingHasExpired ? ButtonStateEnum.Disabled :
-            NftMarketplaceDetails?.Listed > 0 ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
+        public string MainActionText => getMainActionState switch
+        {
+            MainActionStates.Buy => "Buy",
+            MainActionStates.Expired => "Expired",
+            MainActionStates.Refund => "Refund",
+            MainActionStates.SoldOut => "Sold Out",
+            MainActionStates.Unknown => "Unknown",
+            _ => "Unknown",
+        };
+        public ButtonStateEnum MainActionButtonState => getMainActionState switch
+        {
+            MainActionStates.Buy => ButtonStateEnum.Enabled,
+            MainActionStates.Expired => ButtonStateEnum.Disabled,
+            MainActionStates.Refund => ButtonStateEnum.Enabled,
+            MainActionStates.SoldOut => ButtonStateEnum.Disabled,
+            MainActionStates.Unknown => ButtonStateEnum.Disabled,
+            _ => ButtonStateEnum.Disabled,
+        };
 
         [ObservableProperty]
-        [NotifyPropertyChangedFor(nameof(BuyButtonState))]
+        [NotifyPropertyChangedFor(nameof(MainActionButtonState))]
+        [NotifyPropertyChangedFor(nameof(MainActionText))]
         private bool listingHasExpired = false;
 
         [RelayCommand]
+        public void MainAction()
+        {
+            switch (getMainActionState)
+            {
+                case MainActionStates.Buy:
+                    Buy();
+                    break;
+                case MainActionStates.Refund:
+                    // TODO refund here
+                    break;
+
+            }
+        }
+
         public void Buy()
         {
             if (!AccountModel.CheckRequirements())
@@ -128,7 +178,19 @@ namespace PlutoFramework.Components.XcavateProperty
         }
 
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(FavouriteImage))]
         private bool favourite = false;
+
+        public ImageSource FavouriteImage => new FontImageSource
+        {
+            Color = (Color)Application.Current.Resources["X-BLUE"],
+            FontFamily = "FontAwesome",
+            Size = 25,
+            Glyph = Favourite ? "\uf004" : "\uf08a",
+            FontAutoScalingEnabled = false
+        };
+
+
 
         [RelayCommand]
         public async Task MakeFavouriteAsync()

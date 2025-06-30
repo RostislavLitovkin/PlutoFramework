@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             AbsoluteLayout.LayoutBounds="0.5, 0, 1, 65"
+             AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+             xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
+             x:Class="PlutoFramework.Components.Xcavate.XcavateTopNavigationBarView">
+    <xcavate:PageBottomBarView
+        Padding="10"
+        ColumnSpacing="10">
+        <xcavate:PageBottomBarView.ColumnDefinitions>
+            <ColumnDefinition Width="35"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="35"/>
+            <ColumnDefinition Width="35"/>
+        </xcavate:PageBottomBarView.ColumnDefinitions>
+
+        <Border HeightRequest="35"
+                WidthRequest="35"
+                Grid.Column="0"
+                BackgroundColor="#1A4E4E4E"
+                StrokeThickness="0"
+                Padding="5"
+                >
+            <Image HeightRequest="25"
+                   WidthRequest="25"
+                    Source="xcavatebackarrow.png" />
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="17.5" />
+            </Border.StrokeShape>
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnBackClicked" />
+
+            </Border.GestureRecognizers>
+
+        </Border>
+
+        <Label FontSize="14"
+               Grid.Column="1"
+               HorizontalTextAlignment="Start"
+               VerticalTextAlignment="Center"
+               TextColor="#4E4E4E"
+               LineBreakMode="TailTruncation">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span FontAttributes="Bold"
+                          x:Name="titleText"/> 
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Border HeightRequest="35"
+                        WidthRequest="35"
+                         Grid.Column="2"
+                BackgroundColor="#1A4E4E4E"
+                StrokeThickness="0"
+                Padding="5"
+        >
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="17.5" />
+            </Border.StrokeShape>
+            <Image HeightRequest="25"
+                   WidthRequest="25"
+                    x:Name="extra2Image"
+                   IsVisible="False"/>
+
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer x:Name="extra2GestureRecognizer"/>
+
+            </Border.GestureRecognizers>
+
+        </Border>
+
+
+        <Border HeightRequest="35"
+                WidthRequest="35"
+                Grid.Column="3"
+                BackgroundColor="#1A4E4E4E"
+                StrokeThickness="0"
+                Padding="5"
+        >
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="17.5" />
+            </Border.StrokeShape>
+            <Image HeightRequest="25"
+                   WidthRequest="25"
+                    x:Name="extra1Image"
+                   IsVisible="False"/>
+
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer x:Name="extra1GestureRecognizer"/>
+
+            </Border.GestureRecognizers>
+
+        </Border>
+    </xcavate:PageBottomBarView>
+</ContentView>

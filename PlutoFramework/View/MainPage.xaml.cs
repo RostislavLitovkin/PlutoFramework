@@ -88,7 +88,7 @@ public partial class MainPage : ContentPage
         await Navigation.PushAsync(new SettingsPage());
     }
 
-    async void OnScanned(System.Object sender, ZXing.Net.Maui.BarcodeDetectionEventArgs e)
+    public static void OnScanned(System.Object sender, ZXing.Net.Maui.BarcodeDetectionEventArgs e)
     {
 #pragma warning disable VSTHRD101 // Avoid unsupported async delegates
         MainThread.BeginInvokeOnMainThread(async () =>
@@ -150,7 +150,7 @@ public partial class MainPage : ContentPage
                     messagePopup.IsVisible = true;
                 }
 
-                await Navigation.PopAsync();
+                await Application.Current.MainPage.Navigation.PopAsync();
             }
             catch (Exception ex)
             {

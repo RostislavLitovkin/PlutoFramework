@@ -171,12 +171,12 @@
                                 <Label HorizontalTextAlignment="Center">
                                     <Label.FormattedText>
                                         <FormattedString>
-                                            <Span Text="Loan Evaluator"
+                                            <Span Text="Lawyer"
                                   FontAttributes="Bold"></Span>
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
-                                <Label Text=""
+                                <Label Text="Facilitate transactions &amp; property management"
                        HeightRequest="70"
                         HorizontalTextAlignment="Center"/>
                             </VerticalStackLayout>

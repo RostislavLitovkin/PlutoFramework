@@ -5,5 +5,5 @@
                         xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
                         ImageSource="xcavatexwhite.png"
                         ContentLayout="left, 10"
-                        MaximumHeightRequest="40">
+                        MaximumHeightRequest="48">
 </buttons:ElevatedButton>

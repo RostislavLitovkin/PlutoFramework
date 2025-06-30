@@ -8,19 +8,12 @@
             Grid.Column="0"
             StrokeThickness="0"
             Stroke="{AppThemeBinding Light=White, Dark=Black}"
-            BackgroundColor="Black">
+            BackgroundColor="Gray"
+            Shadow="{StaticResource CARD-SHADOW}">
         <Border.StrokeShape>
-            <RoundRectangle CornerRadius="20" />
+            <RoundRectangle CornerRadius="{StaticResource CARD-CORNER-RADIUS}" />
 
         </Border.StrokeShape>
-        <Border.Shadow>
-            <Shadow Brush="Black"
-                    Offset="0,2" 
-                    Radius="20"
-                    Opacity="0.1" />
-
-        </Border.Shadow>
-
         <AbsoluteLayout>
             <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
                    x:Name="image" Aspect="AspectFill" />
@@ -31,7 +24,7 @@
                     x:Name="extraButtonsBorder"
                     >
                 <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="20, 0, 0, 20" />
+                    <RoundRectangle CornerRadius="{StaticResource BUTTON-CARD-CORNER-RADIUS}" />
                 </Border.StrokeShape>
                 <AbsoluteLayout>
                     <HorizontalStackLayout Spacing="0"

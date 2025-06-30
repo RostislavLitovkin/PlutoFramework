@@ -4,22 +4,16 @@
              xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
              x:Class="PlutoFramework.Components.Xcavate.XcavateNavigationBarView"
              AbsoluteLayout.LayoutBounds="0.5, 1, 1, 90"
-             AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
-             
-             >
+             AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
 
-    <Grid BackgroundColor="White">
-        <Grid.Shadow>
-            <Shadow Brush="Black"
-                    Offset="0,2" 
-                    Radius="5"
-                    Opacity="0.5" />
-        </Grid.Shadow>
-        <Grid.ColumnDefinitions>
+    <xcavate:PageBottomBarView>
+
+        <xcavate:PageBottomBarView.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+        </xcavate:PageBottomBarView.ColumnDefinitions>
+
 
         <xcavate:XcavateNavigationBarButtonView
             Grid.Column="0"
@@ -49,5 +43,5 @@
             Command="{Binding SelectMarketplaceCommand}"
             >
         </xcavate:XcavateNavigationBarButtonView>
-    </Grid>
+    </xcavate:PageBottomBarView>
 </ContentView>

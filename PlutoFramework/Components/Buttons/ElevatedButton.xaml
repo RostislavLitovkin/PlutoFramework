@@ -4,7 +4,8 @@
         x:Class="PlutoFramework.Components.Buttons.ElevatedButton"
         TextColor="White"
         FontAttributes="Bold"
-        BackgroundColor="#57a0c5"
-        CornerRadius="15"
+        BackgroundColor="{StaticResource X-BLUE}"
+        CornerRadius="40"
+        HeightRequest="48"
         >
 </Button>

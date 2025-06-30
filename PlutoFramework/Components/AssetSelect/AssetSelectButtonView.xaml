@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.AssetSelect.AssetSelectButtonView"
              WidthRequest="{Binding WidthRequest}">
-    <Border BackgroundColor="{x:StaticResource Primary}"
-            Stroke="{x:StaticResource Primary}">
+    <Border BackgroundColor="{StaticResource X-BLUE}"
+            StrokeThickness="0">
         <Border.StrokeShape>
-            <RoundRectangle CornerRadius="15" />
+            <RoundRectangle CornerRadius="{StaticResource CARD-CORNER-RADIUS}" />
 
         </Border.StrokeShape>
         <HorizontalStackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"

@@ -19,68 +19,14 @@
              xmlns:card="clr-namespace:PlutoFramework.Components.Card"
              BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
-        <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
-            <VerticalStackLayout Margin="0, 45, 0, 0"
-                            Spacing="15"
-                            Padding="20, 20, 20, 200">
+        <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                    Margin="0, 65, 0, 65">
+            <VerticalStackLayout Spacing="15"
+                                 Padding="20, 15, 20, 100">
                 <xcavate:RiskWarningView />
-                
+
                 <nft:NftMultiImageView ImageSources="{Binding Metadata.Images}" />
 
-                <Grid HorizontalOptions="Center"
-                      ColumnSpacing="10">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="20" />
-                        <ColumnDefinition Width="20" />
-                    </Grid.ColumnDefinitions>
-
-                    <Image WidthRequest="20"
-                            HeightRequest="20"
-                            VerticalOptions="Center" 
-                            HorizontalOptions="Center"
-                            Aspect="AspectFit"
-                            IsVisible="{Binding Favourite}"
-                            x:Name="filledFavouriteIcon"
-                            Grid.Column="0">
-
-                        <Image.Source>
-                            <FontImageSource Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
-                                              Glyph="&#xf004;"
-                                              FontFamily="FontAwesome"
-                                              Size="50" />
-                        </Image.Source>
-                    </Image>
-
-                    <Image WidthRequest="20"
-                            HeightRequest="20"
-                            VerticalOptions="Center" 
-                            HorizontalOptions="Center"
-                            Aspect="AspectFit"
-                            x:Name="favouriteIcon"
-                            Grid.Column="0">
-
-                        <Image.Source>
-                            <FontImageSource Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
-                                              Glyph="&#xf08a;"
-                                              FontFamily="FontAwesome"
-                                              Size="50" />
-                        </Image.Source>
-
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding MakeFavouriteCommand}" />
-                        </Image.GestureRecognizers>
-                    </Image>
-
-                    <Image Source="{AppThemeBinding Light=shareblack.png, Dark=sharewhite.png}"
-                           Grid.Column="1"
-                           HeightRequest="20"
-                           WidthRequest="20">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding ShareCommand}" />
-                        </Image.GestureRecognizers>
-                    </Image>
-                </Grid>
-                
                 <xcavateproperty:CompanyThumbnailView />
 
                 <xcavateproperty:LocationView LocationName="{Binding Metadata.LocationName}" />
@@ -96,8 +42,8 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-                       
-                       
+
+
 
                 <Label Text="Price per token"
                        Margin="0,10,0,-10"
@@ -183,10 +129,6 @@
                 <buttons:ElevatedButton Text="Re-list"
                                         Command="{Binding RelistCommand}"
                                         IsVisible="{Binding RelistPropertyTokensButtonIsVisible}" />
-                
-                <buttons:ElevatedButton Text="Buy"
-                                        ButtonState="{Binding BuyButtonState}"
-                                        Command="{Binding BuyCommand}" />
 
                 <Label Text="Listing has expired."
                        HorizontalTextAlignment="Start"
@@ -213,7 +155,7 @@
                            Text="Details"
                            HorizontalTextAlignment="Start" />
 
-                    
+
                     <nft:NftAttributeView AttributeName="Size"
                                           Value="{Binding Metadata.Area}"
                                            CardBackgroundColor="#11888888"/>
@@ -237,7 +179,21 @@
             </VerticalStackLayout>
         </ScrollView>
 
-        <navigationbar:TopNavigationBar Title="{Binding Metadata.PropertyName}"/>
+        <xcavate:XcavateTopNavigationBarView Title="{Binding Metadata.PropertyName}"
+                                             Extra1Image="xcavateshare.png"
+                                             Extra1Command="{Binding ShareCommand}"
+                                             Extra1ImageMargin="0,0,5,0"
+                                             Extra2Image="{Binding FavouriteImage}"
+                                             Extra2Command="{Binding MakeFavouriteCommand}"
+                                             Extra2ImageMargin="5, 6, 5, 4"
+                                             
+                                             Extra2ImageHeight="20"
+                                             Extra2ImageWidth="20"
+                                             />
+
+        <xcavate:PageBottomBarButtonView Text="{Binding MainActionText}"
+                                         ButtonState="{Binding MainActionButtonState}"
+                                         Command="{Binding MainActionCommand}" />
 
         <extrinsic:ExtrinsicStatusStackLayout />
 

@@ -6,7 +6,7 @@
     <Border BackgroundColor="{x:StaticResource PrimaryGray}"
         Stroke="{x:StaticResource PrimaryGray}">
         <Border.StrokeShape>
-            <RoundRectangle CornerRadius="15" />
+            <RoundRectangle CornerRadius="{StaticResource CARD-CORNER-RADIUS}" />
 
         </Border.StrokeShape>
         <HorizontalStackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
