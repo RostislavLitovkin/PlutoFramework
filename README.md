@@ -6,6 +6,8 @@ The app is currently under development and is available only for internal testin
 
 Built using [PlutoFramework](https://plutolabs.gitbook.io/plutoframework) by Pluto Labs.
 
+![realXmarket (1)](https://github.com/user-attachments/assets/26491fc7-4c09-4b91-8eb5-71dd2c4e12f0)
+
 ## App functionalities
 
 - [✅] Create a new seed-phrase based hot wallet right in the app (Easy on-boarding)
