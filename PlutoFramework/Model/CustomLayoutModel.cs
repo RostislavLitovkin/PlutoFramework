@@ -158,7 +158,11 @@ namespace PlutoFramework.Model
             {
                 Console.WriteLine("Component to parse: .." + component.Trim() + "..");
                 result.Add(GetComponentInfo((ComponentId)Enum.Parse(typeof(ComponentId), component.Trim())));
+               
+
             }
+
+            
 
             return result;
         }
@@ -573,6 +577,20 @@ namespace PlutoFramework.Model
                     {
                         Name = "Xcavate Risk Warning",
                         ComponentId = ComponentId.XcRiskWarning,
+                    };
+
+                case ComponentId.XcTableInvestmentSummary:
+                    return new ComponentInfo
+                    {
+                        Name = "Xcavate Investment Summary",
+                        ComponentId = ComponentId.XcTableInvestmentSummary,
+                    };
+
+                case ComponentId.XcTableROIActiveLoan:
+                    return new ComponentInfo
+                    {
+                        Name = "Xcavate ROI Active Loan",
+                        ComponentId = ComponentId.XcTableROIActiveLoan,
                     };
             }
 
