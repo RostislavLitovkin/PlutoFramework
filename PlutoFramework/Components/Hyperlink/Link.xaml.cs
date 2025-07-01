@@ -9,7 +9,7 @@ public partial class Link : Span
     public Link()
 	{
 #pragma warning disable VSTHRD101 // Avoid unsupported async delegates
-        OpenUrlCommand = new Command<string> (async (url) => { Console.WriteLine("here"); await Launcher.OpenAsync(url).ConfigureAwait(true);  });
+        OpenUrlCommand = new Command<string> (async (url) => await Launcher.OpenAsync(url).ConfigureAwait(true));
 #pragma warning restore VSTHRD101 // Avoid unsupported async delegates
 
         BindingContext = this;
