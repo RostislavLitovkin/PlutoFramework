@@ -76,7 +76,7 @@
                         <VerticalStackLayout Spacing="10" Margin="15">
                             <HorizontalStackLayout Spacing="10">
                                 <Border StrokeShape="RoundRectangle 100" StrokeThickness="0"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}">
+                                        BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}">
                                     <Image HeightRequest="100" WidthRequest="100" Aspect="AspectFill"
                                            Source="credits_dusan_jansky.jpg"/>
                                 </Border>
@@ -96,6 +96,33 @@
                                         <Span Text="{x:Static system:Environment.NewLine}"/>
 
                                         <Span Text="- Polkadot Global Series 2023 (Europe) - second place"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </VerticalStackLayout>
+                    </card:Card.View>
+                </card:Card>
+
+                <card:Card>
+                    <card:Card.View>
+                        <VerticalStackLayout Spacing="10" Margin="15">
+                            <HorizontalStackLayout Spacing="10">
+                                <Border StrokeShape="RoundRectangle 100" StrokeThickness="0"
+                                        BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}">
+                                    <Image HeightRequest="100" WidthRequest="100" Aspect="AspectFill"
+                           Source="credits_daniel_vaculik.jpg"/>
+                                </Border>
+                                <Label Text="Daniel Vaculík" FontAttributes="Bold" FontSize="Large"/>
+                            </HorizontalStackLayout>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="- PHD Student at "/>
+                                        <link:Link Text="Palacký University in Olomouc" Url="https://www.linkedin.com/school/univerzita-palack%C3%A9ho-v-olomouci/"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="- Head of the legal department at "/>
+                                        <link:Link Text="Digitální a informační agentura" Url="https://www.linkedin.com/company/digitalniainformacniagentura/"/>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
