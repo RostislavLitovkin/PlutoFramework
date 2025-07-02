@@ -84,6 +84,9 @@
 		<MauiImage Include="Resources\Images\NetworkIcons\*svg" />
 		<MauiImage Include="Resources\Images\NetworkIcons\*png" />
     <MauiImage Include="Resources\Images\NetworkIcons\*jpg" />
+    <MauiImage Include="Resources\Images\Assets\*svg" />
+    <MauiImage Include="Resources\Images\Assets\*png" />
+    <MauiImage Include="Resources\Images\Assets\*jpg" />
     <MauiImage Include="Resources\Images\PredefinedLayouts\*svg" />
 		<MauiImage Include="Resources\Images\PredefinedLayouts\*png" />
 		<MauiImage Include="Resources\Images\GalaxyLogicGame\*svg" />
@@ -505,6 +508,12 @@
 	  <MauiXaml Update="Components\AssetSelect\UsdButtonView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Balance\AssetView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Balance\BalancePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Buttons\BasicGrayButton.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -784,7 +793,10 @@
 	  <MauiXaml Update="Components\XcavateProperty\BuyPropertyTokensView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Components\XcavateProperty\Cells\ActiveLoadCellView.xaml">
+	  <MauiXaml Update="Components\XcavateProperty\Cells\ActiveLoanCellView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\XcavateProperty\Cells\BalanceCellView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\XcavateProperty\Cells\PropertyTokensBoughtCellView.xaml">
@@ -893,6 +905,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Xcavate\XcavateAppShell.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Xcavate\XcavateCell.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Xcavate\XcavateMainPageTopNavigationBarView.xaml">
@@ -1026,6 +1041,9 @@
 	  </Compile>
 	  <Compile Update="Components\PredefinedLayouts\HydrationOmnipoolLayoutItem.xaml.cs">
 	    <DependentUpon>HydrationOmnipoolLayoutItem.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Components\XcavateProperty\Cells\ActiveLoanCellView.xaml.cs">
+	    <DependentUpon>ActiveLoanCellView.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 	<!--<PropertyGroup Condition="$(TargetFramework.Contains('-ios')) and '$(Configuration)' == 'Release'">

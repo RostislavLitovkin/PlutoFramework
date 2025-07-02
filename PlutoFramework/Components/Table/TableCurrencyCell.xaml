@@ -19,7 +19,6 @@
                         HeightRequest="30"
                         VerticalTextAlignment="Center"
                         HorizontalTextAlignment="Center"
-                        
                         HorizontalOptions="Center"
                         >
                         <Label.FormattedText>
@@ -31,10 +30,10 @@
                     </Label>
 
                     <Label HeightRequest="30"
-                        VerticalTextAlignment="Center"
-                        HorizontalTextAlignment="Center"
-                        x:Name="valueLabel"
-                        HorizontalOptions="Center"
+                            VerticalTextAlignment="Center"
+                            HorizontalTextAlignment="Center"
+                            x:Name="valueLabel"
+                            HorizontalOptions="Center"
                         />
                 </StackLayout>
             </AbsoluteLayout>

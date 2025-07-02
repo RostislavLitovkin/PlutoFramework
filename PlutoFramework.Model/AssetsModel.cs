@@ -8,6 +8,7 @@ using Bifrost.NetApi.Generated.Model.orml_tokens;
 using Substrate.NetApi.Model.Types.Primitive;
 using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.AssetPallet, System.Numerics.BigInteger);
 using XcavatePaseo.NetApi.Generated.Storage;
+using PlutoFramework.Model.Currency;
 
 namespace PlutoFramework.Model
 {

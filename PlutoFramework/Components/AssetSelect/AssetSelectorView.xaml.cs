@@ -43,7 +43,7 @@ public partial class AssetSelectorView : ContentView
             var control = (AssetSelectorView)bindable;
 
             var usdValue = (double)newValue;
-            control.usdLabel.Text = ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location) + (usdValue > 0 ? String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * usdValue) : "~");
+            control.usdLabel.Text =usdValue > 0 ?  usdValue.ToCurrencyString() : "~";
         });
 
     public static readonly BindableProperty IsSelectedProperty = BindableProperty.Create(

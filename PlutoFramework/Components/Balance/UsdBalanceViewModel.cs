@@ -55,7 +55,7 @@ namespace PlutoFramework.Components.Balance
                     {
                         Amount = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, a.Amount),
                         Symbol = a.Symbol,
-                        UsdValue = ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location) + (a.UsdValue > 0 ? String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * a.UsdValue) : "~"),
+                        UsdValue = a.UsdValue > 0 ? a.UsdValue.ToCurrencyString() : "~",
                         ChainIcon = Application.Current.UserAppTheme != AppTheme.Dark ? a.ChainIcon : a.DarkChainIcon,
                         IsReserved = a.Pallet == AssetPallet.NativeReserved || a.Pallet == AssetPallet.AssetsReserved || a.Pallet == AssetPallet.TokensReserved,
                         IsFrozen = a.Pallet == AssetPallet.NativeFrozen || a.Pallet == AssetPallet.AssetsFrozen || a.Pallet == AssetPallet.TokensFrozen,
@@ -65,7 +65,7 @@ namespace PlutoFramework.Components.Balance
 
             Assets = tempAssets;
 
-            UsdSum = $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * Model.AssetsModel.UsdSum)}";
+            UsdSum = Model.AssetsModel.UsdSum.ToCurrencyString();
         }
     }
 

@@ -60,7 +60,7 @@ namespace PlutoFramework.Model
         mainDid,
         XcPaseoOwnedProperties,
         XcTableInvestmentSummary,
-        XcTableROIActiveLoan,
+        XcTableROIBalance,
         XcRiskWarning,
         None
 
@@ -68,7 +68,7 @@ namespace PlutoFramework.Model
 
     public class CustomLayoutModel
     {
-        public const string DEFAULT_PLUTO_LAYOUT = "plutolayout: [XcRiskWarning, dApp, UsdB, RnT, XcTableInvestmentSummary, XcTableROIActiveLoan, XcPaseoOwnedProperties];[XcavatePaseo]";
+        public const string DEFAULT_PLUTO_LAYOUT = "plutolayout: [XcRiskWarning, dApp, XcTableInvestmentSummary, XcTableROIBalance, XcPaseoOwnedProperties];[XcavatePaseo]";
 
         // This constant is used to fetch all components
         public static string AllComponentsString = $"plutolayout: [{string.Join(",", Enum.GetNames(typeof(ComponentId)))}];[";
@@ -391,10 +391,10 @@ namespace PlutoFramework.Model
                         new PropertyTokensBoughtCellView(),
                         new TotalInvestedCellView()
                     );
-                case ComponentId.XcTableROIActiveLoan:
+                case ComponentId.XcTableROIBalance:
                     return new TwoCellTableView(
                         new ROICellView(),
-                        new ActiveLoadCellView()
+                        new BalanceCellView()
                     );
                 case ComponentId.XcRiskWarning:
                     return new RiskWarningView
@@ -586,11 +586,11 @@ namespace PlutoFramework.Model
                         ComponentId = ComponentId.XcTableInvestmentSummary,
                     };
 
-                case ComponentId.XcTableROIActiveLoan:
+                case ComponentId.XcTableROIBalance:
                     return new ComponentInfo
                     {
-                        Name = "Xcavate ROI Active Loan",
-                        ComponentId = ComponentId.XcTableROIActiveLoan,
+                        Name = "Xcavate ROI & Balance",
+                        ComponentId = ComponentId.XcTableROIBalance,
                     };
             }
 

@@ -30,6 +30,7 @@ using PlutoFramework.View;
 using PlutoFramework.Model.SQLite;
 using PlutoFramework.Components.Loading;
 using PlutoFramework.Components.DAppConnection;
+using PlutoFramework.Components.Balance;
 
 namespace PlutoFramework;
 

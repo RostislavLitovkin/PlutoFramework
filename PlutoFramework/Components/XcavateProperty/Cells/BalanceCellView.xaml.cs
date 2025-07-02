@@ -1,29 +1,18 @@
-﻿
+using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Components.Balance;
 using PlutoFramework.Model;
 using PlutoFramework.Model.Currency;
 using PlutoFramework.Model.HydraDX;
-using Uniquery;
 
-namespace PlutoFramework.Components.Balance;
+namespace PlutoFramework.Components.XcavateProperty.Cells;
 
-public partial class UsdBalanceView : ContentView, ISubstrateClientLoadableAsyncView, ILocalLoadableView, ISetEmptyView
+public partial class BalanceCellView : ContentView, ISetEmptyView, ISubstrateClientLoadableAsyncView
 {
-	public UsdBalanceView()
-	{
-		InitializeComponent();
-
-        BindingContext = new UsdBalanceViewModel();
-    }
-    public void Load()
+    public BalanceCellView()
     {
-        if (KeysModel.HasSubstrateKey())
-        {
-            return;
-        }
+        InitializeComponent();
 
-        var viewModel = (UsdBalanceViewModel)BindingContext;
-        viewModel.ReloadIsVisible = false;
-        viewModel.UsdSum = 0.0.ToCurrencyString();
+        cell.Command = new AsyncRelayCommand( () => Application.Current.MainPage.Navigation.PushAsync(new BalancePage()));
     }
 
     public async Task LoadAsync(PlutoFrameworkSubstrateClient client, CancellationToken token)
@@ -49,19 +38,13 @@ public partial class UsdBalanceView : ContentView, ISubstrateClientLoadableAsync
 
         await Model.AssetsModel.GetBalanceAsync(client, KeysModel.GetSubstrateKey(), token, false);
 
-        var viewModel = (UsdBalanceViewModel)BindingContext;
-        viewModel.UpdateBalances();
+        cell.Value = Model.AssetsModel.UsdSum.ToCurrencyString();
     }
 
     public void SetEmpty()
     {
-        if (!KeysModel.HasSubstrateKey())
-        {
-            return;
-        }
+        AssetsModel.UpdateUsdBalance();
 
-        var viewModel = (UsdBalanceViewModel)BindingContext;
-        viewModel.ReloadIsVisible = true;
+        cell.Value = Model.AssetsModel.UsdSum.ToCurrencyString();
     }
 }
-

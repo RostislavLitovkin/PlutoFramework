@@ -41,8 +41,8 @@ namespace PlutoFramework.Components.XcavateProperty
                     return "-";
                 }
 
-                var usd = parsedTokens * Metadata?.PricePerToken ?? 0;
-                return $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * usd)}";
+                double usd = parsedTokens * Metadata?.PricePerToken ?? 0.0;
+                return usd.ToCurrencyString();
             }
         }
 
@@ -57,7 +57,7 @@ namespace PlutoFramework.Components.XcavateProperty
                 }
 
                 var usd = 0.01 * parsedTokens * Metadata?.PricePerToken ?? 0;
-                return $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * usd)}";
+                return usd.ToCurrencyString();
             }
         }
 
@@ -72,7 +72,7 @@ namespace PlutoFramework.Components.XcavateProperty
                 }
 
                 var usd = 1.01 * parsedTokens * Metadata?.PricePerToken ?? 0;
-                return $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * usd)}";
+                return usd.ToCurrencyString();
             }
         }
 

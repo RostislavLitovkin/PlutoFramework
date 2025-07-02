@@ -12,7 +12,7 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="70" />
+            <RowDefinition Height="80" />
         </Grid.RowDefinitions>
 
         <ContentView Grid.Column="0"

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:table="clr-namespace:PlutoFramework.Components.Table"
-             x:Class="PlutoFramework.Components.XcavateProperty.Cells.ActiveLoadCellView"
-             HeightRequest="70">
-    <table:TableCurrencyCell Title="Active loan"
+             xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
+             x:Class="PlutoFramework.Components.XcavateProperty.Cells.ActiveLoanCellView"
+             HeightRequest="80">
+    <xcavate:XcavateCell Title="Active loan"
                             x:Name="cell"
                             Value="Loading">
 
-    </table:TableCurrencyCell>
+    </xcavate:XcavateCell>
 </ContentView>

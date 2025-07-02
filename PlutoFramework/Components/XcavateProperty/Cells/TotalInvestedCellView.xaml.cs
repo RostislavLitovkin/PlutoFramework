@@ -26,13 +26,13 @@ public partial class TotalInvestedCellView : ContentView, ISetEmptyView, ISubstr
         await XcavateOwnedPropertiesModel.LoadAsync(client, KeysModel.GetSubstrateKey(), token);
 
         var usdInvested = XcavateOwnedPropertiesModel.GetTotalInvested();
-        cell.Value = $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format("{0:0}", ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * usdInvested)}";
+        cell.Value = ((double)usdInvested).ToCurrencyString();
     }
 
     public void SetEmpty()
     {
         var usdInvested = XcavateOwnedPropertiesModel.GetTotalInvested();
 
-        cell.Value = $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format("{0:0}", ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * usdInvested)}";
+        cell.Value = ((double)usdInvested).ToCurrencyString();
     }
 }

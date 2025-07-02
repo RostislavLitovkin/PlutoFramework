@@ -1,7 +1,18 @@
 ﻿namespace PlutoFramework.Model.Currency
 {
-    public class ExchangeRateModel
+    public static class ExchangeRateModel
     {
+        public static string ToCurrencyString(
+            this double usdValue,
+            string? location = null
+        )
+        {
+            location ??= AppConfigurationModel.Location;
+            var currency = GetCurrencyInLocation(location);
+
+            return $"{currency}{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", currency))}";
+        }
+
         public static double GetExchangeRate(string fromCurrency, string toCurrency)
         {
             if (fromCurrency == "USDT" && toCurrency == "£")

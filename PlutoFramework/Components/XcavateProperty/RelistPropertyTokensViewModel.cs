@@ -54,7 +54,7 @@ namespace PlutoFramework.Components.XcavateProperty
                 }
 
                 var usd = parsedTokens * parsedPrice;
-                return $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate(DependencyService.Get<AssetSelectButtonViewModel>().Symbol, ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * usd)}";
+                return ((double)usd).ToCurrencyString();
             }
         }
 

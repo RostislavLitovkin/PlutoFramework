@@ -65,13 +65,9 @@ namespace PlutoFramework.Components.XcavateProperty
 
         public string LocationShortName => $"{Metadata?.AddressStreet}, {Metadata?.AddressTownCity}";
 
-        public string ListingPrice=> $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{
-            String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * Metadata?.PropertyPrice)
-            }";
+        public string ListingPrice => (Metadata?.PropertyPrice ?? 0.0).ToCurrencyString();
 
-        public string PricePerTokenText => $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{
-            String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * Metadata?.PricePerToken)
-            } [{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, Metadata?.PricePerToken)} USDT]";
+        public string PricePerTokenText => $"{ (Metadata?.PricePerToken ?? 0.0).ToCurrencyString() } [{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, Metadata?.PricePerToken)} USDT]";
 
         public string Apy => PropertyModel.GetAPY(Metadata?.EstimatedRentalIncome ?? 1, Metadata?.PropertyPrice ?? 1);
 
@@ -81,9 +77,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
         public string TokensAvailable => $"{NftMarketplaceDetails?.Listed.ToString() ?? "-"} / {Metadata?.NumberOfTokens.ToString() ?? "-"}";
 
-        public string RentalIncome => $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{
-            String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * Metadata?.EstimatedRentalIncome)
-            }";
+        public string RentalIncome => (Metadata?.EstimatedRentalIncome ?? 0.0).ToCurrencyString();
 
         [ObservableProperty]
         private string companyName = "Needs to be filled";
@@ -100,7 +94,7 @@ namespace PlutoFramework.Components.XcavateProperty
         [NotifyPropertyChangedFor(nameof(RelistPropertyTokensButtonIsVisible))]
         private uint tokensOwned = 0;
 
-        public string TokensOwnedWorth => $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * (TokensOwned * Metadata?.PricePerToken ?? 0))}";
+        public string TokensOwnedWorth => (TokensOwned * Metadata?.PricePerToken ?? 0.0).ToCurrencyString();
 
         public bool OwnedPropertyTokensViewIsVisible => TokensOwned > 0;
 
@@ -213,6 +207,5 @@ namespace PlutoFramework.Components.XcavateProperty
                 Uri = $"https://realxmarket.xcavate.io/marketplace/{NftMarketplaceDetails?.AssetId}",
                 Title = $"Share {Metadata?.PropertyName}",
             });
-
     }
 }

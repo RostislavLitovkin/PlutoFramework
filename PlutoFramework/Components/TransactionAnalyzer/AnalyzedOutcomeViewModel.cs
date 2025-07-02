@@ -61,8 +61,8 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                     Symbol = a.Symbol,
                     UsdValue = a.UsdValue switch
                     {
-                        > 0 => $"+{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * a.UsdValue)}",
-                        _ => $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * a.UsdValue)}",
+                        > 0 => $"+{a.UsdValue.ToCurrencyString()}",
+                        _ => $"{a.UsdValue.ToCurrencyString()}",
                     },
                     UsdColor = a.UsdValue switch
                     {
@@ -112,8 +112,8 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                         Symbol = nft.AssetPrice.Symbol,
                         UsdValue = nft.AssetPrice.UsdValue switch
                         {
-                            > 0 => $"+{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * nft.AssetPrice.UsdValue)}",
-                            _ => $"{ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)}{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", ExchangeRateModel.GetCurrencyInLocation(AppConfigurationModel.Location)) * nft.AssetPrice.UsdValue)}",
+                            > 0 => $"+{nft.AssetPrice.UsdValue.ToCurrencyString()}",
+                            _ => $"{nft.AssetPrice.UsdValue.ToCurrencyString()}",
                         },
                         UsdColor = nft.Operation switch
                         {
