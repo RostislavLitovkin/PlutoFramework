@@ -273,7 +273,6 @@
 	  <None Remove="Resources\Images\PredefinedLayouts\aaabackground.png" />
 	  <None Remove="Components\AwesomeAjunaAvatars\" />
 	  <None Remove="Components\Nft\" />
-	  <None Remove="Resources\Images\dusan.jpg" />
 	  <None Remove="Resources\Images\NetworkIcons\basilisk.png" />
 	  <None Remove="Resources\Images\NetworkIcons\pba.png" />
 	  <None Remove="Components\Contract\" />
@@ -456,9 +455,9 @@
 	  <BundleResource Include="Resources\Images\GalaxyLogicGame\galaxylogo.png" />
 	</ItemGroup>
 	<ItemGroup>
-	  <EmbeddedResource Include="appsettings.json">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </EmbeddedResource>
+		<EmbeddedResource Include="appsettings.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiXaml Update="AppShell.xaml">
@@ -498,6 +497,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Card\ClickableCard.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Credits\CreditsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\CustomLayouts\CategoryHeaderView.xaml">
@@ -555,6 +557,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Form\FormWideValueView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Components\Hyperlink\Link.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Components\Kilt\CreateNewDidPage.xaml">
@@ -884,6 +889,7 @@
 	  <Folder Include="Components\Staking\" />
 	  <Folder Include="Components\Switch\" />
 	  <Folder Include="Components\NavigationBar\" />
+	  <Folder Include="Resources\Images\Credits\" />
 	  <Folder Include="Resources\Images\PredefinedLayouts\" />
 	  <Folder Include="Components\AwesomeAjunaAvatars\" />
 	  <Folder Include="Components\Contract\" />

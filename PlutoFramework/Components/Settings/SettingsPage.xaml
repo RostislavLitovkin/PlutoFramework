@@ -53,7 +53,7 @@
                     </settings:GenericButton.GestureRecognizers>
 
                 </settings:GenericButton>
-                
+
                 <settings:GenericButton Title="Log out (Delete private key)">
                     <settings:GenericButton.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnLogOutClicked" />
@@ -61,8 +61,16 @@
                     </settings:GenericButton.GestureRecognizers>
 
                 </settings:GenericButton>
-            </VerticalStackLayout>
 
+                <settings:GenericButton Title="Credits">
+                    <settings:GenericButton.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCreditsClicked" />
+
+                    </settings:GenericButton.GestureRecognizers>
+
+                </settings:GenericButton>
+            </VerticalStackLayout>
+            
         </ScrollView>
 
         <navigationbar:TopNavigationBar Title="Settings"

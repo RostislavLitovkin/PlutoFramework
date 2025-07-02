@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Credits.CreditsPage"
+             Title="CreditsPage"
+             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+             xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
+             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             xmlns:link="clr-namespace:PlutoFramework.Components.Hyperlink"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
+    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+
+        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+           Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
+           Opacity="{AppThemeBinding Light=0.96}"
+           Aspect="AspectFill"/>
+
+        <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    Padding="0, 55, 0, 0">
+            <VerticalStackLayout HorizontalOptions="Center"
+                                 Padding="20, 10, 20, 100"
+                                 Spacing="15">
+
+                <card:Card>
+                    <card:Card.View>
+                        <VerticalStackLayout Spacing="10" Margin="15">
+                            <HorizontalStackLayout Spacing="10">
+                                <Border StrokeShape="RoundRectangle 100" StrokeThickness="0"
+                                        BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}">
+                                    <Image HeightRequest="100" WidthRequest="100" Aspect="AspectFill"
+                                           Source="credits_rostislav_litovkin.jpg"/>
+                                </Border>
+                                <Label Text="Rostislav Litovkin" FontAttributes="Bold" FontSize="Large"/>
+                            </HorizontalStackLayout>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="- Alumnus at Polkadot Blockchain Academy 2023 in Berkeley"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="- Experienced .net MAUI developer, e.g.:"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="    - "/>
+                                        <link:Link Text="Galaxy Logic Game" Url="https://github.com/RostislavLitovkin/galaxylogicgamemaui"/>
+                                        <Span Text=" (successful game for watches and mobiles, 50k+ downloads)"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="- Frontend developer at "/>
+                                        <link:Link Text="Calamar explorer" Url="https://calamar.app/"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="- Successful student at Polkadot DevCamp #2;"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="- Successful student at "/>
+                                        <link:Link Text="Solana Summer School" Url="https://ackeeblockchain.com/school-of-solana"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="- Polkadot Global Series 2023 (Europe) - second place"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="- Audience choice prize at EthPrague 2023"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </VerticalStackLayout>
+                    </card:Card.View>
+                </card:Card>
+
+                <card:Card>
+                    <card:Card.View>
+                        <VerticalStackLayout Spacing="10" Margin="15">
+                            <HorizontalStackLayout Spacing="10">
+                                <Border StrokeShape="RoundRectangle 100" StrokeThickness="0"
+                                        BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}">
+                                    <Image HeightRequest="100" WidthRequest="100" Aspect="AspectFill"
+                                           Source="credits_dusan_jansky.jpg"/>
+                                </Border>
+                                <Label Text="Dušan Jánsky" FontAttributes="Bold" FontSize="Large"/>
+                            </HorizontalStackLayout>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="- Alumnus at Polkadot Blockchain Academy 2023 in Berkeley"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="- Student at Faculty of Electrical Engineering Czech Technical University in Prague - Opens Informatics (specialization in computer games and computer graphics)"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="- Fullstack developer at "/>
+                                        <link:Link Text="Universal Scientific Technologies" Url="https://www.ust.cz/"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="- Polkadot Global Series 2023 (Europe) - second place"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </VerticalStackLayout>
+                    </card:Card.View>
+                </card:Card>
+
+                <card:Card>
+                    <card:Card.View>
+                        <VerticalStackLayout Spacing="10" Margin="15">
+                            <HorizontalStackLayout Spacing="10">
+                                <Border StrokeShape="RoundRectangle 100" StrokeThickness="0"
+                                        BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}">
+                                    <Image HeightRequest="100" WidthRequest="100" Aspect="AspectFill"
+                           Source="credits_daniel_vaculik.jpg"/>
+                                </Border>
+                                <Label Text="Daniel Vaculík" FontAttributes="Bold" FontSize="Large"/>
+                            </HorizontalStackLayout>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="- PHD Student at "/>
+                                        <link:Link Text="Palacký University in Olomouc" Url="https://www.linkedin.com/school/univerzita-palack%C3%A9ho-v-olomouci/"/>
+                                        <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                                        <Span Text="- Head of the legal department at "/>
+                                        <link:Link Text="Digitální a informační agentura" Url="https://www.linkedin.com/company/digitalniainformacniagentura/"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </VerticalStackLayout>
+                    </card:Card.View>
+                </card:Card>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <navigationbar:TopNavigationBar Title="Credits" />
+
+        <txanalyzer:TransactionAnalyzerConfirmationView />
+
+        <password:EnterPasswordPopupView />
+    </AbsoluteLayout>
+</ContentPage>
