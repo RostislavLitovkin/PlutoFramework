@@ -26,11 +26,9 @@ using PlutoFramework.Components.XcavateProperty;
 using PlutoFramework.Components.Account;
 using PlutoFramework.Components.Kilt;
 using PlutoFramework.Components.Sumsub;
-using PlutoFramework.View;
 using PlutoFramework.Model.SQLite;
 using PlutoFramework.Components.Loading;
 using PlutoFramework.Components.DAppConnection;
-using PlutoFramework.Components.Balance;
 
 namespace PlutoFramework;
 
@@ -40,7 +38,10 @@ public partial class App : Application
     {
         InitializeComponent();
 
+        // Load configuration
         AppConfigurationLoader.Load();
+
+        AssetsModel.DatabaseSaver = new BalancesDatabaseSaver();
 
         DependencyService.Register<TransferViewModel>();
 

@@ -1,12 +1,11 @@
-﻿
-using PlutoFramework.Model;
+﻿using PlutoFramework.Model;
 using PlutoFramework.Model.Currency;
 using PlutoFramework.Model.HydraDX;
-using Uniquery;
+using PlutoFramework.Model.SQLite;
 
 namespace PlutoFramework.Components.Balance;
 
-public partial class UsdBalanceView : ContentView, ISubstrateClientLoadableAsyncView, ILocalLoadableView, ISetEmptyView
+public partial class UsdBalanceView : ContentView, ISubstrateClientLoadableAsyncView, ILocalLoadableAsyncView, ISetEmptyView
 {
 	public UsdBalanceView()
 	{
@@ -14,16 +13,18 @@ public partial class UsdBalanceView : ContentView, ISubstrateClientLoadableAsync
 
         BindingContext = new UsdBalanceViewModel();
     }
-    public void Load()
+    public async Task LoadAsync(CancellationToken token)
     {
         if (KeysModel.HasSubstrateKey())
         {
             return;
         }
 
+        AssetsModel.LoadAssets(await BalancesDatabase.GetBalancesAsync());
+
         var viewModel = (UsdBalanceViewModel)BindingContext;
         viewModel.ReloadIsVisible = false;
-        viewModel.UsdSum = 0.0.ToCurrencyString();
+        viewModel.UsdSum = AssetsModel.UsdSum.ToCurrencyString();
     }
 
     public async Task LoadAsync(PlutoFrameworkSubstrateClient client, CancellationToken token)

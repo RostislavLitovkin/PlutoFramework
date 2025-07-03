@@ -10,7 +10,7 @@
             location ??= AppConfigurationModel.Location;
             var currency = GetCurrencyInLocation(location);
 
-            return $"{currency}{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", currency))}";
+            return $"{currency}{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", currency) * usdValue)}";
         }
 
         public static double GetExchangeRate(string fromCurrency, string toCurrency)

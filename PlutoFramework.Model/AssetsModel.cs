@@ -8,12 +8,17 @@ using Bifrost.NetApi.Generated.Model.orml_tokens;
 using Substrate.NetApi.Model.Types.Primitive;
 using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.AssetPallet, System.Numerics.BigInteger);
 using XcavatePaseo.NetApi.Generated.Storage;
-using PlutoFramework.Model.Currency;
 
 namespace PlutoFramework.Model
 {
+    public interface IBalancesDatabaseSaver
+    {
+        public Task<int> SaveBalanceAsync(Asset asset);
+    }
     public class AssetsModel
     {
+        public static IBalancesDatabaseSaver? DatabaseSaver { get; set; } = null;
+
         private static bool doNotReload = false;
 
         public static double UsdSum = 0.0;
@@ -24,6 +29,21 @@ namespace PlutoFramework.Model
         {
             return AssetsDict.Values
                      .Where(asset => asset.Symbol.Equals(symbol, StringComparison.Ordinal));
+        }
+
+        public static void LoadAssets(IEnumerable<Asset> assets, bool overwrite = false)
+        {
+            foreach (var asset in assets)
+            {
+                var key = (asset.Endpoint.Key, asset.Pallet, asset.AssetId);
+
+                if (!AssetsDict.ContainsKey(key) || overwrite)
+                {
+                    AssetsDict[key] = asset;
+                }
+            }
+
+            CalculateTotalUsdBalance();
         }
 
         public static Asset? GetFirstOwnedAsset(IEnumerable<AssetKey> assetKeys)
@@ -47,6 +67,16 @@ namespace PlutoFramework.Model
 
         public static async Task GetBalanceAsync(SubstrateClientExt client, string substrateAddress, CancellationToken token, bool forceReload = false)
         {
+            async Task SaveAsync(Asset asset)
+            {
+                AssetsDict[(asset.Endpoint.Key, asset.Pallet, asset.AssetId)] = asset;
+
+                if (DatabaseSaver is not null)
+                {
+                    await DatabaseSaver.SaveBalanceAsync(asset);
+                }
+            }
+
             /*if (AssetsDict.ContainsKey((client.Endpoint.Key, AssetPallet.Native, 0)) && forceReload)
             {
                 return;
@@ -103,7 +133,9 @@ namespace PlutoFramework.Model
             {
                 double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(endpoint.Unit);
 
-                AssetsDict[(endpoint.Key, AssetPallet.Native, 0)] = new Asset
+                Console.WriteLine($"Spot price for {endpoint.Unit} is {spotPrice} USD");
+
+                await SaveAsync(new Asset
                 {
                     Amount = amount,
                     Symbol = endpoint.Unit,
@@ -114,11 +146,11 @@ namespace PlutoFramework.Model
                     AssetId = 0,
                     UsdValue = amount * spotPrice,
                     Decimals = endpoint.Decimals,
-                };
+                });
 
                 if (reservedAmount > 0)
                 {
-                    AssetsDict[(endpoint.Key, AssetPallet.NativeReserved, 0)] = new Asset
+                    await SaveAsync(new Asset
                     {
                         Amount = reservedAmount,
                         Symbol = endpoint.Unit,
@@ -129,12 +161,12 @@ namespace PlutoFramework.Model
                         AssetId = 0,
                         UsdValue = reservedAmount * spotPrice,
                         Decimals = endpoint.Decimals,
-                    };
+                    });
                 }
 
                 if (frozenAmount > 0)
                 {
-                    AssetsDict[(endpoint.Key, AssetPallet.NativeFrozen, 0)] = new Asset
+                    await SaveAsync(new Asset
                     {
                         Amount = frozenAmount,
                         Symbol = endpoint.Unit,
@@ -145,10 +177,9 @@ namespace PlutoFramework.Model
                         AssetId = 0,
                         UsdValue = frozenAmount * spotPrice,
                         Decimals = endpoint.Decimals,
-                    };
+                    });
                 }
             }
-
 
             foreach (string palletName in new string[] { "Assets" })
             {
@@ -163,10 +194,9 @@ namespace PlutoFramework.Model
 
                         double assetBalance = asset.Item4 != null ? (double)asset.Item4.Balance.Value / Math.Pow(10, asset.Item3.Decimals.Value) : 0.0;
                        
-                        double assetFrozenBalance = endpoint.Key == EndpointEnum.XcavatePaseo ? (double)frozenBalance : (double)frozenBalance / Math.Pow(10, asset.Item3.Decimals.Value); 
+                        double assetFrozenBalance = endpoint.Key == EndpointEnum.XcavatePaseo ? (double)frozenBalance : (double)frozenBalance / Math.Pow(10, asset.Item3.Decimals.Value);
 
-
-                        AssetsDict[(endpoint.Key, AssetPallet.Assets, asset.Item1)] = new Asset
+                        await SaveAsync(new Asset
                         {
                             Amount = assetBalance - assetFrozenBalance,
                             Symbol = symbol,
@@ -177,11 +207,11 @@ namespace PlutoFramework.Model
                             AssetId = asset.Item1,
                             UsdValue = assetBalance * spotPrice,
                             Decimals = asset.Item3.Decimals.Value,
-                        };
+                        });
 
                         if (frozenBalance > 0)
                         {
-                            AssetsDict[(endpoint.Key, AssetPallet.AssetsFrozen, asset.Item1)] = new Asset
+                            await SaveAsync(new Asset
                             {
                                 Amount = assetFrozenBalance,
                                 Symbol = symbol,
@@ -192,7 +222,7 @@ namespace PlutoFramework.Model
                                 AssetId = asset.Item1,
                                 UsdValue = assetFrozenBalance * spotPrice,
                                 Decimals = asset.Item3.Decimals.Value,
-                            };
+                            });
                         }
                     }
                 }
@@ -254,7 +284,7 @@ namespace PlutoFramework.Model
                         double assetReserved = (double)tokenData.AccountData.Reserved.Value / Math.Pow(10, tokenData.AssetMetadata.Decimals.Value);
                         double assetFrozen = (double)tokenData.AccountData.Frozen.Value / Math.Pow(10, tokenData.AssetMetadata.Decimals.Value);
 
-                        AssetsDict[(endpoint.Key, AssetPallet.Tokens, tokenData.AssetId)] = new Asset
+                        await SaveAsync(new Asset
                         {
                             Amount = assetBalance,
                             Symbol = symbol,
@@ -265,11 +295,11 @@ namespace PlutoFramework.Model
                             AssetId = tokenData.AssetId,
                             UsdValue = assetBalance * spotPrice,
                             Decimals = tokenData.AssetMetadata.Decimals.Value,
-                        };
+                        });
 
                         if (assetReserved > 0)
                         {
-                            AssetsDict[(endpoint.Key, AssetPallet.TokensReserved, tokenData.AssetId)] = new Asset
+                            await SaveAsync(new Asset
                             {
                                 Amount = assetReserved,
                                 Symbol = symbol,
@@ -280,12 +310,12 @@ namespace PlutoFramework.Model
                                 AssetId = tokenData.AssetId,
                                 UsdValue = assetReserved * spotPrice,
                                 Decimals = tokenData.AssetMetadata.Decimals.Value,
-                            };
+                            });
                         }
 
                         if (assetFrozen > 0)
                         {
-                            AssetsDict[(endpoint.Key, AssetPallet.TokensFrozen, tokenData.AssetId)] = new Asset
+                            await SaveAsync(new Asset
                             {
                                 Amount = assetFrozen,
                                 Symbol = symbol,
@@ -296,7 +326,7 @@ namespace PlutoFramework.Model
                                 AssetId = tokenData.AssetId,
                                 UsdValue = assetFrozen * spotPrice,
                                 Decimals = tokenData.AssetMetadata.Decimals.Value,
-                            };
+                            });
                         }
                     }
                 }
@@ -311,7 +341,7 @@ namespace PlutoFramework.Model
                         double assetReserved = (double)tokenData.AccountData.Reserved.Value / Math.Pow(10, tokenData.AssetMetadata.Decimals.Value);
                         double assetFrozen = (double)tokenData.AccountData.Frozen.Value / Math.Pow(10, tokenData.AssetMetadata.Decimals.Value);
 
-                        AssetsDict[(endpoint.Key, AssetPallet.Tokens, tokenData.AssetId)] = new Asset
+                        await SaveAsync(new Asset
                         {
                             Amount = assetBalance,
                             Symbol = symbol,
@@ -322,11 +352,11 @@ namespace PlutoFramework.Model
                             AssetId = tokenData.AssetId,
                             UsdValue = assetBalance * spotPrice,
                             Decimals = tokenData.AssetMetadata.Decimals.Value,
-                        };
+                        });
 
                         if (assetReserved > 0)
                         {
-                            AssetsDict[(endpoint.Key, AssetPallet.TokensReserved, tokenData.AssetId)] = new Asset
+                            await SaveAsync(new Asset
                             {
                                 Amount = assetReserved,
                                 Symbol = symbol,
@@ -337,12 +367,12 @@ namespace PlutoFramework.Model
                                 AssetId = tokenData.AssetId,
                                 UsdValue = assetReserved * spotPrice,
                                 Decimals = tokenData.AssetMetadata.Decimals.Value,
-                            };
+                            });
                         }
 
                         if (assetFrozen > 0)
                         {
-                            AssetsDict[(endpoint.Key, AssetPallet.TokensFrozen, tokenData.AssetId)] = new Asset
+                            await SaveAsync(new Asset
                             {
                                 Amount = assetFrozen,
                                 Symbol = symbol,
@@ -353,7 +383,7 @@ namespace PlutoFramework.Model
                                 AssetId = tokenData.AssetId,
                                 UsdValue = assetFrozen * spotPrice,
                                 Decimals = tokenData.AssetMetadata.Decimals.Value,
-                            };
+                            });
                         }
                     }
                 }
