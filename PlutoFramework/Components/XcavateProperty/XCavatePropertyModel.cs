@@ -12,7 +12,7 @@ namespace PlutoFramework.Components.XcavateProperty
 {
     public class XcavateNftWrapper : NftWrapper
     {
-        public required XcavateRegion Region { get; set; }
+        public required XcavateRegion? Region { get; set; }
         public required bool ListingHasExpired { get; set; }
     }
 
@@ -68,8 +68,8 @@ namespace PlutoFramework.Components.XcavateProperty
             {
                 Favourite = await XcavatePropertyDatabase.IsPropertyFavouriteAsync(nft.Type, nft.CollectionId, nft.Id).ConfigureAwait(false),
                 NftBase = nft,
-                Region = await RegionModel.GetCachedRegionAsync(substrateClient, ((INftXcavateNftMarketplace)nft).NftMarketplaceDetails.Region, token),
-                ListingHasExpired = blockNumber > ((INftXcavateOngoingObjectListing)nft).OngoingObjectListingDetails.ListingExpiry,
+                Region = ((INftXcavateNftMarketplace)nft).NftMarketplaceDetails != null ? await RegionModel.GetCachedRegionAsync(substrateClient, ((INftXcavateNftMarketplace)nft).NftMarketplaceDetails.Region, token) : null,
+                ListingHasExpired = blockNumber > (((INftXcavateOngoingObjectListing)nft).OngoingObjectListingDetails?.ListingExpiry ?? 0),
                 Endpoint = Endpoints.GetEndpointDictionary[Model.NftModel.GetEndpointKey(nft.Type)]
             };
         }
