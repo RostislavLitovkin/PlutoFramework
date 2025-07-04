@@ -36,7 +36,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_route_executor.pallet
     }
     
     /// <summary>
-    /// >> 426 - Variant[pallet_route_executor.pallet.Event]
+    /// >> 431 - Variant[pallet_route_executor.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

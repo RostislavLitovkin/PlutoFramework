@@ -43,7 +43,7 @@ namespace Hydration.NetApi.Generated.Model.staging_xcm_executor.traits.asset_tra
     }
     
     /// <summary>
-    /// >> 391 - Variant[staging_xcm_executor.traits.asset_transfer.TransferType]
+    /// >> 396 - Variant[staging_xcm_executor.traits.asset_transfer.TransferType]
     /// </summary>
     public sealed class EnumTransferType : BaseEnumRust<TransferType>
     {

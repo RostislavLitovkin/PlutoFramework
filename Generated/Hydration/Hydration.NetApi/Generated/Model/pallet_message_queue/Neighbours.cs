@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_message_queue
     
     
     /// <summary>
-    /// >> 801 - Composite[pallet_message_queue.Neighbours]
+    /// >> 812 - Composite[pallet_message_queue.Neighbours]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Neighbours : BaseType

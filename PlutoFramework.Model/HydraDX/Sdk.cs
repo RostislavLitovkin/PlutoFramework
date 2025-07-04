@@ -101,70 +101,77 @@ namespace PlutoFramework.Model.HydraDX
                 {
                     for (int i = 0; i < omnipoolAssetsStorageChangeSets.Length; i++)
                     {
-                        AssetState asset = new AssetState();
-                        asset.Create(omnipoolAssetsStorageChangeSets[i][1]);
-
-                        U32 assetId = Model.HashModel.GetU32FromBlake2_128Concat(omnipoolAssetsStorageChangeSets[i][0].Substring(66));
-
-                        if (assetId.Value != SYSTEM_ASSET_ID)
+                        try
                         {
-                            AccountData omnipoolTokens = new AccountData();
-                            omnipoolTokens.Create(tokenAccountsStorageChangeSets[i][1]);
+                            AssetState asset = new AssetState();
+                            asset.Create(omnipoolAssetsStorageChangeSets[i][1]);
 
-                            var assetMetadata = new Hydration.NetApi.Generated.Model.pallet_asset_registry.types.AssetDetails();
+                            U32 assetId = Model.HashModel.GetU32FromBlake2_128Concat(omnipoolAssetsStorageChangeSets[i][0].Substring(66));
 
-                            assetMetadata.Create(assetMetadataStorageChangeSets[i][1]);
-
-                            string symbol = Model.ToStringModel.VecU8ToString(assetMetadata.Symbol.Value.Value);
-
-                            if (Assets.ContainsKey((blocknumber, symbol)))
+                            if (assetId.Value != SYSTEM_ASSET_ID)
                             {
-                                continue;
+                                AccountData omnipoolTokens = new AccountData();
+                                omnipoolTokens.Create(tokenAccountsStorageChangeSets[i][1]);
+
+                                var assetMetadata = new Hydration.NetApi.Generated.Model.pallet_asset_registry.types.AssetDetails();
+
+                                assetMetadata.Create(assetMetadataStorageChangeSets[i][1]);
+
+                                string symbol = Model.ToStringModel.VecU8ToString(assetMetadata.Symbol.Value.Value);
+
+                                if (Assets.ContainsKey((blocknumber, symbol)))
+                                {
+                                    continue;
+                                }
+
+                                double poolBalance = (double)(omnipoolTokens.Free.Value - omnipoolTokens.Frozen.Value) / Math.Pow(10, assetMetadata.Decimals.Value);
+                                double hubReserveBalance = (double)(asset.HubReserve.Value) / Math.Pow(10, 12);
+
+                                var tokenInfo = new HydraDXTokenInfo
+                                {
+                                    Symbol = symbol,
+                                    PoolBalance = poolBalance,
+                                    HubReserve = hubReserveBalance,
+                                    Decimals = assetMetadata.Decimals.Value,
+
+                                };
+
+                                Assets.Add((blocknumber, symbol), tokenInfo);
+
+                                AssetsById.Add((blocknumber, assetId.Value), tokenInfo);
                             }
-
-                            double poolBalance = (double)(omnipoolTokens.Free.Value - omnipoolTokens.Frozen.Value) / Math.Pow(10, assetMetadata.Decimals.Value);
-                            double hubReserveBalance = (double)(asset.HubReserve.Value) / Math.Pow(10, 12);
-
-                            var tokenInfo = new HydraDXTokenInfo
+                            else
                             {
-                                Symbol = symbol,
-                                PoolBalance = poolBalance,
-                                HubReserve = hubReserveBalance,
-                                Decimals = assetMetadata.Decimals.Value,
+                                Endpoint endpoint = Endpoints.GetEndpointDictionary[EndpointEnum.Hydration];
 
-                            };
+                                var omnipoolTokens = await client.SystemStorage.Account(omnipoolAccount, null, token);
 
-                            Assets.Add((blocknumber, symbol), tokenInfo);
+                                string symbol = endpoint.Unit;
 
-                            AssetsById.Add((blocknumber, assetId.Value), tokenInfo);
+                                if (Assets.ContainsKey((blocknumber, symbol)))
+                                {
+                                    continue;
+                                }
+
+                                double poolBalance = (double)(omnipoolTokens.Data.Free.Value - omnipoolTokens.Data.Frozen.Value) / Math.Pow(10, endpoint.Decimals);
+                                double hubReserveBalance = (double)(asset.HubReserve.Value) / Math.Pow(10, 12);
+
+                                var tokenInfo = new HydraDXTokenInfo
+                                {
+                                    Symbol = symbol,
+                                    PoolBalance = poolBalance,
+                                    HubReserve = hubReserveBalance,
+                                    Decimals = endpoint.Decimals,
+                                };
+
+                                Assets.Add((blocknumber, symbol), tokenInfo);
+
+                                AssetsById.Add((blocknumber, assetId.Value), tokenInfo);
+                            }
                         }
-                        else
+                        catch(Exception ex)
                         {
-                            Endpoint endpoint = Endpoints.GetEndpointDictionary[EndpointEnum.Hydration];
-
-                            var omnipoolTokens = await client.SystemStorage.Account(omnipoolAccount, null, token);
-
-                            string symbol = endpoint.Unit;
-
-                            if (Assets.ContainsKey((blocknumber, symbol)))
-                            {
-                                continue;
-                            }
-
-                            double poolBalance = (double)(omnipoolTokens.Data.Free.Value - omnipoolTokens.Data.Frozen.Value) / Math.Pow(10, endpoint.Decimals);
-                            double hubReserveBalance = (double)(asset.HubReserve.Value) / Math.Pow(10, 12);
-
-                            var tokenInfo = new HydraDXTokenInfo
-                            {
-                                Symbol = symbol,
-                                PoolBalance = poolBalance,
-                                HubReserve = hubReserveBalance,
-                                Decimals = endpoint.Decimals,
-                            };
-
-                            Assets.Add((blocknumber, symbol), tokenInfo);
-
-                            AssetsById.Add((blocknumber, assetId.Value), tokenInfo);
+                            Console.WriteLine(ex);
                         }
                     }
                 }

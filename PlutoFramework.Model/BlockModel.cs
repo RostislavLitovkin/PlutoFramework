@@ -1,5 +1,4 @@
 ﻿using PlutoFramework.Constants;
-using System.Numerics;
 using PlutoFramework.Model.AjunaExt;
 
 namespace PlutoFramework.Model
@@ -55,9 +54,9 @@ namespace PlutoFramework.Model
 
         public static async Task<ulong> GetLatestBlockNumberAsync(SubstrateClientExt client, CancellationToken token)
         {
-            var block = await client.SubstrateClient.Chain.GetBlockAsync(token);
+            var blockHeader = await client.SubstrateClient.Chain.GetHeaderAsync(token);
 
-            var blockNumber = block.Block.Header.Number.Value;
+            var blockNumber = blockHeader.Number.Value;
 
             blockNumbers[client.Endpoint.Key] = blockNumber;
 

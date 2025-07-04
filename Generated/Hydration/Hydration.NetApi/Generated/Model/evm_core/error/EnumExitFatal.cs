@@ -43,7 +43,7 @@ namespace Hydration.NetApi.Generated.Model.evm_core.error
     }
     
     /// <summary>
-    /// >> 456 - Variant[evm_core.error.ExitFatal]
+    /// >> 462 - Variant[evm_core.error.ExitFatal]
     /// </summary>
     public sealed class EnumExitFatal : BaseEnumRust<ExitFatal>
     {

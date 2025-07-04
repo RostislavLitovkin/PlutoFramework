@@ -23,17 +23,21 @@ namespace Hydration.NetApi.Generated.Model.pallet_broadcast.pallet
     {
         
         /// <summary>
-        /// >> Swapped2
+        /// >> Swapped3
         /// Trade executed.
         /// 
-        /// Swapped2 is a fixed and renamed version of original Swapped,
+        /// Swapped3 is a fixed and renamed version of original Swapped,
         /// as Swapped contained wrong input/output amounts for XYK buy trade
+        /// 
+        /// Swapped3 is a fixed and renamed version of original Swapped3,
+        /// as Swapped contained wrong filler account on AAVE trades
+        /// 
         /// </summary>
-        Swapped2 = 0,
+        Swapped3 = 0,
     }
     
     /// <summary>
-    /// >> 477 - Variant[pallet_broadcast.pallet.Event]
+    /// >> 483 - Variant[pallet_broadcast.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -44,7 +48,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_broadcast.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.pallet_broadcast.types.EnumFiller, Hydration.NetApi.Generated.Model.pallet_broadcast.types.EnumTradeOperation, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.pallet_broadcast.types.Asset>, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.pallet_broadcast.types.Asset>, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.pallet_broadcast.types.Fee>, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.pallet_broadcast.types.EnumExecutionType>>>(Event.Swapped2);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.pallet_broadcast.types.EnumFiller, Hydration.NetApi.Generated.Model.pallet_broadcast.types.EnumTradeOperation, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.pallet_broadcast.types.Asset>, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.pallet_broadcast.types.Asset>, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.pallet_broadcast.types.Fee>, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.pallet_broadcast.types.EnumExecutionType>>>(Event.Swapped3);
         }
     }
 }

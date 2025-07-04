@@ -30,7 +30,7 @@ namespace Hydration.NetApi.Generated.Model.orml_xtokens.module
     }
     
     /// <summary>
-    /// >> 472 - Variant[orml_xtokens.module.Event]
+    /// >> 478 - Variant[orml_xtokens.module.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

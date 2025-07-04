@@ -59,148 +59,142 @@ namespace Hydration.NetApi.Generated.Model.pallet_liquidity_mining.pallet
         LiquidityMiningIsNotStopped = 5,
         
         /// <summary>
-        /// >> InvalidDepositAmount
-        /// LP shares amount is not valid.
-        /// </summary>
-        InvalidDepositAmount = 6,
-        
-        /// <summary>
         /// >> Forbidden
         /// Account is not allowed to perform action.
         /// </summary>
-        Forbidden = 7,
+        Forbidden = 6,
         
         /// <summary>
         /// >> InvalidMultiplier
         /// Yield farm multiplier can't be 0.
         /// </summary>
-        InvalidMultiplier = 8,
+        InvalidMultiplier = 7,
         
         /// <summary>
         /// >> YieldFarmAlreadyExists
         /// Yield farm with given `amm_pool_id` already exists in global farm.
         /// </summary>
-        YieldFarmAlreadyExists = 9,
+        YieldFarmAlreadyExists = 8,
         
         /// <summary>
         /// >> InvalidInitialRewardPercentage
         /// Loyalty curve's initial reward percentage is not valid. Valid range is: [0, 1).
         /// </summary>
-        InvalidInitialRewardPercentage = 10,
+        InvalidInitialRewardPercentage = 9,
         
         /// <summary>
         /// >> GlobalFarmIsNotEmpty
         /// One or more yield farms exist in global farm.
         /// </summary>
-        GlobalFarmIsNotEmpty = 11,
+        GlobalFarmIsNotEmpty = 10,
         
         /// <summary>
         /// >> MissingIncentivizedAsset
         /// Farm's `incentivized_asset` is missing in provided asset pair.
         /// </summary>
-        MissingIncentivizedAsset = 12,
+        MissingIncentivizedAsset = 11,
         
         /// <summary>
         /// >> InsufficientRewardCurrencyBalance
         /// Reward currency balance is not sufficient.
         /// </summary>
-        InsufficientRewardCurrencyBalance = 13,
+        InsufficientRewardCurrencyBalance = 12,
         
         /// <summary>
         /// >> InvalidBlocksPerPeriod
         /// Blocks per period can't be 0.
         /// </summary>
-        InvalidBlocksPerPeriod = 14,
+        InvalidBlocksPerPeriod = 13,
         
         /// <summary>
         /// >> InvalidYieldPerPeriod
         /// Yield per period can't be 0.
         /// </summary>
-        InvalidYieldPerPeriod = 15,
+        InvalidYieldPerPeriod = 14,
         
         /// <summary>
         /// >> InvalidTotalRewards
         /// Total rewards is less than `MinTotalFarmRewards`.
         /// </summary>
-        InvalidTotalRewards = 16,
+        InvalidTotalRewards = 15,
         
         /// <summary>
         /// >> InvalidPlannedYieldingPeriods
         /// Planned yielding periods is less than `MinPlannedYieldingPeriods`.
         /// </summary>
-        InvalidPlannedYieldingPeriods = 17,
+        InvalidPlannedYieldingPeriods = 16,
         
         /// <summary>
         /// >> MaxEntriesPerDeposit
         /// Maximum number of locks reached for deposit.
         /// </summary>
-        MaxEntriesPerDeposit = 18,
+        MaxEntriesPerDeposit = 17,
         
         /// <summary>
         /// >> DoubleLock
         /// Trying to lock LP shares into already locked yield farm.
         /// </summary>
-        DoubleLock = 19,
+        DoubleLock = 18,
         
         /// <summary>
         /// >> YieldFarmEntryNotFound
         /// Yield farm entry doesn't exist for given deposit.
         /// </summary>
-        YieldFarmEntryNotFound = 20,
+        YieldFarmEntryNotFound = 19,
         
         /// <summary>
         /// >> GlobalFarmIsFull
         /// Max number of yield farms in global farm was reached. Global farm can't accept new
         /// yield farms until some yield farm is not removed from storage.
         /// </summary>
-        GlobalFarmIsFull = 21,
+        GlobalFarmIsFull = 20,
         
         /// <summary>
         /// >> InvalidMinDeposit
         /// Invalid min. deposit was set for global farm.
         /// </summary>
-        InvalidMinDeposit = 22,
+        InvalidMinDeposit = 21,
         
         /// <summary>
         /// >> InvalidPriceAdjustment
         /// Price adjustment multiplier can't be 0.
         /// </summary>
-        InvalidPriceAdjustment = 23,
+        InvalidPriceAdjustment = 22,
         
         /// <summary>
         /// >> ErrorGetAccountId
         /// Account creation from id failed.
         /// </summary>
-        ErrorGetAccountId = 24,
+        ErrorGetAccountId = 23,
         
         /// <summary>
         /// >> IncorrectValuedShares
         /// Value of deposited shares amount in reward currency is bellow min. limit.
         /// </summary>
-        IncorrectValuedShares = 25,
+        IncorrectValuedShares = 24,
         
         /// <summary>
         /// >> RewardCurrencyNotRegistered
         /// `reward_currency` is not registered in asset registry.
         /// </summary>
-        RewardCurrencyNotRegistered = 26,
+        RewardCurrencyNotRegistered = 25,
         
         /// <summary>
         /// >> IncentivizedAssetNotRegistered
         /// `incentivized_asset` is not registered in asset registry.
         /// </summary>
-        IncentivizedAssetNotRegistered = 27,
+        IncentivizedAssetNotRegistered = 26,
         
         /// <summary>
         /// >> InconsistentState
         /// Action cannot be completed because unexpected error has occurred. This should be reported
         /// to protocol maintainers.
         /// </summary>
-        InconsistentState = 28,
+        InconsistentState = 27,
     }
     
     /// <summary>
-    /// >> 731 - Variant[pallet_liquidity_mining.pallet.Error]
+    /// >> 742 - Variant[pallet_liquidity_mining.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>
@@ -217,7 +211,6 @@ namespace Hydration.NetApi.Generated.Model.pallet_liquidity_mining.pallet
 				AddTypeDecoder<BaseVoid>(Error.LiquidityMiningCanceled);
 				AddTypeDecoder<BaseVoid>(Error.LiquidityMiningIsActive);
 				AddTypeDecoder<BaseVoid>(Error.LiquidityMiningIsNotStopped);
-				AddTypeDecoder<BaseVoid>(Error.InvalidDepositAmount);
 				AddTypeDecoder<BaseVoid>(Error.Forbidden);
 				AddTypeDecoder<BaseVoid>(Error.InvalidMultiplier);
 				AddTypeDecoder<BaseVoid>(Error.YieldFarmAlreadyExists);

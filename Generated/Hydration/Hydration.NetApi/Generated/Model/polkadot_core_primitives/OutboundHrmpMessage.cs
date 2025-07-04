@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.polkadot_core_primitives
     
     
     /// <summary>
-    /// >> 765 - Composite[polkadot_core_primitives.OutboundHrmpMessage]
+    /// >> 776 - Composite[polkadot_core_primitives.OutboundHrmpMessage]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OutboundHrmpMessage : BaseType

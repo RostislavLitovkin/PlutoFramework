@@ -173,16 +173,46 @@ namespace Hydration.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> remove_liquidity
+        /// >> add_liquidity_with_limits
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method RemoveLiquidity(Substrate.NetApi.Model.Types.Primitive.U32 asset_a, Substrate.NetApi.Model.Types.Primitive.U32 asset_b, Substrate.NetApi.Model.Types.Primitive.U128 liquidity_amount)
+        public static Method AddLiquidityWithLimits(Substrate.NetApi.Model.Types.Primitive.U32 asset_a, Substrate.NetApi.Model.Types.Primitive.U32 asset_b, Substrate.NetApi.Model.Types.Primitive.U128 amount_a, Substrate.NetApi.Model.Types.Primitive.U128 amount_b_max_limit, Substrate.NetApi.Model.Types.Primitive.U128 min_shares)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset_a.Encode());
             byteArray.AddRange(asset_b.Encode());
-            byteArray.AddRange(liquidity_amount.Encode());
+            byteArray.AddRange(amount_a.Encode());
+            byteArray.AddRange(amount_b_max_limit.Encode());
+            byteArray.AddRange(min_shares.Encode());
+            return new Method(74, "XYK", 5, "add_liquidity_with_limits", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> remove_liquidity
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method RemoveLiquidity(Substrate.NetApi.Model.Types.Primitive.U32 asset_a, Substrate.NetApi.Model.Types.Primitive.U32 asset_b, Substrate.NetApi.Model.Types.Primitive.U128 share_amount)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(asset_a.Encode());
+            byteArray.AddRange(asset_b.Encode());
+            byteArray.AddRange(share_amount.Encode());
             return new Method(74, "XYK", 2, "remove_liquidity", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> remove_liquidity_with_limits
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method RemoveLiquidityWithLimits(Substrate.NetApi.Model.Types.Primitive.U32 asset_a, Substrate.NetApi.Model.Types.Primitive.U32 asset_b, Substrate.NetApi.Model.Types.Primitive.U128 share_amount, Substrate.NetApi.Model.Types.Primitive.U128 min_amount_a, Substrate.NetApi.Model.Types.Primitive.U128 min_amount_b)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(asset_a.Encode());
+            byteArray.AddRange(asset_b.Encode());
+            byteArray.AddRange(share_amount.Encode());
+            byteArray.AddRange(min_amount_a.Encode());
+            byteArray.AddRange(min_amount_b.Encode());
+            return new Method(74, "XYK", 6, "remove_liquidity_with_limits", byteArray.ToArray());
         }
         
         /// <summary>
@@ -457,5 +487,11 @@ namespace Hydration.NetApi.Generated.Storage
         /// Pool cannot be created due to outside factors.
         /// </summary>
         CannotCreatePool,
+        
+        /// <summary>
+        /// >> SlippageLimit
+        /// Slippage protection.
+        /// </summary>
+        SlippageLimit,
     }
 }

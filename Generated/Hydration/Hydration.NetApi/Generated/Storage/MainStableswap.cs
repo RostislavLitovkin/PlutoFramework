@@ -43,6 +43,8 @@ namespace Hydration.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Stableswap", "AssetTradability"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Hydration.NetApi.Generated.Model.pallet_stableswap.types.Tradability)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Stableswap", "PoolSnapshots"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Hydration.NetApi.Generated.Model.pallet_stableswap.types.PoolSnapshot)));
         }
         
         /// <summary>
@@ -135,6 +137,37 @@ namespace Hydration.NetApi.Generated.Storage
         {
             string parameters = StableswapStorage.AssetTradabilityParams(key);
             var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.pallet_stableswap.types.Tradability>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> PoolSnapshotsParams
+        ///  Temporary pool state storage. Used to save a state of pool in a single block.
+        /// </summary>
+        public static string PoolSnapshotsParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        {
+            return RequestGenerator.GetStorage("Stableswap", "PoolSnapshots", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> PoolSnapshotsDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string PoolSnapshotsDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> PoolSnapshots
+        ///  Temporary pool state storage. Used to save a state of pool in a single block.
+        /// </summary>
+        public async Task<Hydration.NetApi.Generated.Model.pallet_stableswap.types.PoolSnapshot> PoolSnapshots(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        {
+            string parameters = StableswapStorage.PoolSnapshotsParams(key);
+            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.pallet_stableswap.types.PoolSnapshot>(parameters, blockhash, token);
             return result;
         }
     }

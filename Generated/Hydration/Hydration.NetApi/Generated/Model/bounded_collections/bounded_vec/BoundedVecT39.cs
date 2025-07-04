@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec
     
     
     /// <summary>
-    /// >> 586 - Composite[bounded_collections.bounded_vec.BoundedVecT39]
+    /// >> 592 - Composite[bounded_collections.bounded_vec.BoundedVecT39]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedVecT39 : BaseType

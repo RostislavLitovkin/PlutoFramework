@@ -42,7 +42,6 @@ namespace Hydration.NetApi.Generated.Model.pallet_dca.pallet
         
         /// <summary>
         /// >> TradeExecuted
-        /// Deprecated. Use pallet_amm::Event::Swapped instead.
         /// The DCA trade is successfully executed
         /// </summary>
         TradeExecuted = 3,
@@ -73,7 +72,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_dca.pallet
     }
     
     /// <summary>
-    /// >> 461 - Variant[pallet_dca.pallet.Event]
+    /// >> 467 - Variant[pallet_dca.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

@@ -45,6 +45,11 @@ namespace Hydration.NetApi.Generated.Model.hydradx_traits.router
         /// >> Aave
         /// </summary>
         Aave = 4,
+        
+        /// <summary>
+        /// >> HSM
+        /// </summary>
+        HSM = 5,
     }
     
     /// <summary>
@@ -63,6 +68,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_traits.router
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(PoolType.Stableswap);
 				AddTypeDecoder<BaseVoid>(PoolType.Omnipool);
 				AddTypeDecoder<BaseVoid>(PoolType.Aave);
+				AddTypeDecoder<BaseVoid>(PoolType.HSM);
         }
     }
 }

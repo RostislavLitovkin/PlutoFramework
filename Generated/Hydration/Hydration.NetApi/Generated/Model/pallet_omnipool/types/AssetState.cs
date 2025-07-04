@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool.types
     
     
     /// <summary>
-    /// >> 640 - Composite[pallet_omnipool.types.AssetState]
+    /// >> 645 - Composite[pallet_omnipool.types.AssetState]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetState : BaseType

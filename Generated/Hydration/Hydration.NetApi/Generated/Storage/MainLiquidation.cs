@@ -129,6 +129,17 @@ namespace Hydration.NetApi.Generated.Storage
             result.Create("0x6D6F646C70792F74727372790000000000000000000000000000000000000000");
             return result;
         }
+        
+        /// <summary>
+        /// >> HollarId
+        ///  Asset ID of Hollar
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 HollarId()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0xDE000000");
+            return result;
+        }
     }
     
     /// <summary>
@@ -160,5 +171,17 @@ namespace Hydration.NetApi.Generated.Storage
         /// Liquidation was not profitable enough to repay flash loan
         /// </summary>
         NotProfitable,
+        
+        /// <summary>
+        /// >> FlashMinterNotSet
+        /// Flash minter contract address not set. It is required for Hollar liquidations.
+        /// </summary>
+        FlashMinterNotSet,
+        
+        /// <summary>
+        /// >> InvalidLiquidationData
+        /// Invalid liquidation data provided
+        /// </summary>
+        InvalidLiquidationData,
     }
 }

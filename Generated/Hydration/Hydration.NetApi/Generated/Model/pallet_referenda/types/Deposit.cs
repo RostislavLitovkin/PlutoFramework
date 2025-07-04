@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_referenda.types
     
     
     /// <summary>
-    /// >> 618 - Composite[pallet_referenda.types.Deposit]
+    /// >> 624 - Composite[pallet_referenda.types.Deposit]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Deposit : BaseType

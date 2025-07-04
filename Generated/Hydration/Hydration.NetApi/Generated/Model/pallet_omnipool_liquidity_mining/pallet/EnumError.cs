@@ -67,7 +67,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool_liquidity_mining.pall
     }
     
     /// <summary>
-    /// >> 657 - Variant[pallet_omnipool_liquidity_mining.pallet.Error]
+    /// >> 662 - Variant[pallet_omnipool_liquidity_mining.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>

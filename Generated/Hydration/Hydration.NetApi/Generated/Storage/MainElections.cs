@@ -376,7 +376,7 @@ namespace Hydration.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 TermDuration()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0xE0C40000");
+            result.Create("0xC0890100");
             return result;
         }
         

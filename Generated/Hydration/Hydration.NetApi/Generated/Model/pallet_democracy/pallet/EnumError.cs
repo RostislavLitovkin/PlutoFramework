@@ -169,7 +169,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_democracy.pallet
     }
     
     /// <summary>
-    /// >> 568 - Variant[pallet_democracy.pallet.Error]
+    /// >> 574 - Variant[pallet_democracy.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

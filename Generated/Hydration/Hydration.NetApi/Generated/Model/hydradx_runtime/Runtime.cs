@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
     
     
     /// <summary>
-    /// >> 856 - Composite[hydradx_runtime.Runtime]
+    /// >> 868 - Composite[hydradx_runtime.Runtime]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Runtime : BaseType

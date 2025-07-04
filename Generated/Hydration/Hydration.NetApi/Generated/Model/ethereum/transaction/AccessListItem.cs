@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.ethereum.transaction
     
     
     /// <summary>
-    /// >> 277 - Composite[ethereum.transaction.AccessListItem]
+    /// >> 283 - Composite[ethereum.transaction.AccessListItem]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AccessListItem : BaseType

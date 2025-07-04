@@ -42,7 +42,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_duster.pallet
     }
     
     /// <summary>
-    /// >> 421 - Variant[pallet_duster.pallet.Event]
+    /// >> 426 - Variant[pallet_duster.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

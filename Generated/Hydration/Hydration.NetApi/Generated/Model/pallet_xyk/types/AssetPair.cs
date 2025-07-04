@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_xyk.types
     
     
     /// <summary>
-    /// >> 281 - Composite[pallet_xyk.types.AssetPair]
+    /// >> 287 - Composite[pallet_xyk.types.AssetPair]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetPair : BaseType

@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_otc
     
     
     /// <summary>
-    /// >> 659 - Composite[pallet_otc.Order]
+    /// >> 664 - Composite[pallet_otc.Order]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Order : BaseType
