@@ -544,6 +544,9 @@
 	  <MauiXaml Update="Components\Extrinsic\CallParametersView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Faucet\FaucetButtonView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Form\FormInputView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

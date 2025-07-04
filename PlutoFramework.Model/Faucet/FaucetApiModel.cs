@@ -1,4 +1,5 @@
-﻿using System.Net.Http.Headers;
+﻿using System.Net;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text.Json.Serialization;
 
@@ -11,17 +12,12 @@ public record FaucetInput
     [JsonPropertyName("websocketUrl")]
     public required string WebsocketUrl { get; set; }
 }
-public record WrongFaucetInput
-{
-    [JsonPropertyName("test")]
-    public required string Test;
-}
 public class FaucetApiModel
 {
-    public static async Task PostRequestAsync(string wsUrl, string dstAddr)
+    public static async Task<HttpStatusCode> PostRequestAsync(string wsUrl, string dstAddr)
     {
         const string url = Constants.PlutoExpress.PLUTO_EXPRESS_API_URL;
-        //const string url = "http://localhost:8000";
+        // const string url = "http://localhost:8000";
 
         var client = new HttpClient();
         using var content = JsonContent.Create(new FaucetInput {
@@ -32,7 +28,8 @@ public class FaucetApiModel
 
         using HttpResponseMessage response = await client.PostAsync($"{url}/faucet", content);
         
-        Console.WriteLine(response);
+        // Console.WriteLine(response);
+        return response.StatusCode;
     }
 }
 

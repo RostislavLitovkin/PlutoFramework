@@ -23,6 +23,7 @@ using PlutoFramework.Components.Xcm;
 using PlutoFramework.View;
 using PlutoFramework.Components.Kilt;
 using PlutoFramework.Components.OpenGov;
+using PlutoFramework.Components.Faucet;
 
 namespace PlutoFramework.Model
 {
@@ -56,12 +57,13 @@ namespace PlutoFramework.Model
         GLGPowerups,
         xTrnsfr,
         mainDid,
-        OpenGovDel
+        OpenGovDel,
+        XcavatePaseoFaucet
     }
 
     public class CustomLayoutModel
     {
-        public const string DEFAULT_PLUTO_LAYOUT = "plutolayout: [U, dApp, BMnR, ExSL, UsdB, RnT, SubK, ChaK];[Polkadot, Kusama]";
+        public const string DEFAULT_PLUTO_LAYOUT = "plutolayout: [U, dApp, BMnR, ExSL, XcavatePaseoFaucet, UsdB, RnT, SubK, ChaK];[Polkadot, Kusama, XcavatePaseo]";
 
         // This constant is used to fetch all components
         public static string AllComponentsString = $"plutolayout: [{string.Join(",", Enum.GetNames(typeof(ComponentId)))}];[";
@@ -369,6 +371,8 @@ namespace PlutoFramework.Model
                     return new MainDidView();
                 case ComponentId.OpenGovDel:
                     return new VotingDelegationView();
+                case ComponentId.XcavatePaseoFaucet:
+                    return new FaucetButtonView(EndpointEnum.XcavatePaseo);
             }
 
             throw new Exception("Could not parse the PlutoLayout");
@@ -545,6 +549,12 @@ namespace PlutoFramework.Model
                     {
                         Name = "OpenGov Voting Delegation",
                         ComponentId = ComponentId.OpenGovDel,
+                    };
+                case ComponentId.XcavatePaseoFaucet:
+                    return new ComponentInfo
+                    {
+                        Name = "Xcavate Paseo Faucet",
+                        ComponentId = ComponentId.XcavatePaseoFaucet
                     };
             }
 
