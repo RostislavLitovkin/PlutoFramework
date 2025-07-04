@@ -71,7 +71,7 @@ namespace PlutoFramework.Model
 
     public class ChopsticksModel
     {
-        private const string url = "https://express-byrr9.ondigitalocean.app";
+        private const string url = Constants.PlutoExpress.PLUTO_EXPRESS_API_URL;
         //private const string url = "http://localhost:8000";
 
         public static async Task<ChopsticksEventsOutput?> SimulateCallAsync(string endpoint, byte[] extrinsic, BigInteger blockNumber, string senderAddress)

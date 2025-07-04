@@ -14,7 +14,7 @@ namespace PlutoFramework.Model.HydrationModel
         {
             using (HttpClient client = new HttpClient())
             {
-                HttpResponseMessage response = await client.GetAsync(PlutoExpress.PLUTO_EXPRESS_API_URL);
+                HttpResponseMessage response = await client.GetAsync($"{PlutoExpress.PLUTO_EXPRESS_API_URL}/all-assets");
 
                 if (response.IsSuccessStatusCode)
                 {
