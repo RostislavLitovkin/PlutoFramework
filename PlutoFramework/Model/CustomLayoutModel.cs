@@ -158,11 +158,7 @@ namespace PlutoFramework.Model
             {
                 Console.WriteLine("Component to parse: .." + component.Trim() + "..");
                 result.Add(GetComponentInfo((ComponentId)Enum.Parse(typeof(ComponentId), component.Trim())));
-               
-
             }
-
-            
 
             return result;
         }

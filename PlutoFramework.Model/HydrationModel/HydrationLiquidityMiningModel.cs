@@ -64,10 +64,10 @@ namespace PlutoFramework.Model.HydrationModel
                 );
 
                 if(Sdk.AssetsById.Count() == 0) { 
-                    await Sdk.GetAssetsAsync(substrateClient, token);
+                    await Sdk.GetAssetsAsync(substrateClient, null, token);
                 }
 
-                var assetInfo = Sdk.AssetsById[globalFarmData.RewardCurrency.Value];
+                var assetInfo = Sdk.AssetsById[(null, globalFarmData.RewardCurrency.Value)];
 
                 var deltaStopped = yieldFarmData.TotalStopped - farmEntry.StoppedAtCreation;
 
