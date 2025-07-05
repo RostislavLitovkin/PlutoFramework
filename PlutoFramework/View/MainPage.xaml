@@ -44,8 +44,6 @@
             </VerticalStackLayout>
         </ScrollView>
 
-        <networkselect:MultiNetworkSelectView x:Name="networksView" />
-
         <xcavate:XcavateMainPageTopNavigationBarView />
 
         <extrinsic:ExtrinsicStatusStackLayout />
@@ -57,6 +55,8 @@
         <messagepopup:MessagePopupView />
 
         <xcavate:XcavateNavigationBarView />
+
+        <networkselect:MultiNetworkSelectView x:Name="networksView" />
 
         <addressview:AddressQrCodeView />
 

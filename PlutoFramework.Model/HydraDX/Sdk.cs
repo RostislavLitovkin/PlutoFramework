@@ -17,7 +17,7 @@ namespace PlutoFramework.Model.HydraDX
 
         public static Dictionary<(uint?, uint), HydraDXTokenInfo> AssetsById = new Dictionary<(uint?, uint), HydraDXTokenInfo>();
 
-        public static async Task<IEnumerable<(uint, double)>> GetRestrospectiveSpotPricesAsync(AjunaExt.SubstrateClientExt client, Interval interval, string symbol, CancellationToken token)
+        public static async Task<IEnumerable<(uint, double)>> GetRestrospectiveSpotPricesAsync(AjunaExt.SubstrateClientExt client, Interval interval, string symbol, uint steps, CancellationToken token)
         {
             if (client is null || client.Endpoint.Key != EndpointEnum.Hydration)
             {
@@ -28,7 +28,7 @@ namespace PlutoFramework.Model.HydraDX
 
             Console.WriteLine(blocknumber);
 
-            var blocks = BlockModel.GetBlocks(interval, (uint)blocknumber, 20);
+            var blocks = BlockModel.GetBlocks(interval, (uint)blocknumber, steps);
 
             // Can be optimised: check if it has been loaded
             await LoadRetrospectiveAssetsAsync(client, blocks, token);

@@ -38,7 +38,7 @@ public partial class UsdBalanceView : ContentView, ISubstrateClientLoadableAsync
         {
             try
             {
-                await Sdk.GetAssetsAsync((Hydration.NetApi.Generated.SubstrateClientExt)client.SubstrateClient, token);
+                await Sdk.GetAssetsAsync((Hydration.NetApi.Generated.SubstrateClientExt)client.SubstrateClient, null, token);
             }
             catch (Exception e)
             {

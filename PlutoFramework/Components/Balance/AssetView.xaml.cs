@@ -34,4 +34,16 @@ public partial class AssetView : ContentView
         get => (AssetInfo)GetValue(AssetInfoProperty);
         set => SetValue(AssetInfoProperty, value);
     }
+
+    private async void OnClicked(object sender, TappedEventArgs e)
+    {
+        var token = CancellationToken.None;
+        var viewModel = new AssetDetailViewModel();
+
+        viewModel.AssetInfo = AssetInfo;
+
+        await Navigation.PushAsync(new AssetDetailPage(viewModel));
+
+        await viewModel.LoadAsync(token);
+    }
 }

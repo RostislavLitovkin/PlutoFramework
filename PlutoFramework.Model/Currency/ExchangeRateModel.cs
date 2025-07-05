@@ -4,13 +4,14 @@
     {
         public static string ToCurrencyString(
             this double usdValue,
-            string? location = null
+            string? location = null,
+            string currencyFormat = DefaultAppConfiguration.CURRENCY_FORMAT
         )
         {
             location ??= AppConfigurationModel.Location;
             var currency = GetCurrencyInLocation(location);
 
-            return $"{currency}{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, ExchangeRateModel.GetExchangeRate("USDT", currency) * usdValue)}";
+            return $"{currency}{String.Format(currencyFormat, ExchangeRateModel.GetExchangeRate("USDT", currency) * usdValue)}";
         }
 
         public static double GetExchangeRate(string fromCurrency, string toCurrency)

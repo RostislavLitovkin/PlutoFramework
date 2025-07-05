@@ -41,7 +41,7 @@ public partial class BalanceCellView : ContentView, ISetEmptyView, ISubstrateCli
         {
             try
             {
-                await Sdk.GetAssetsAsync((Hydration.NetApi.Generated.SubstrateClientExt)client.SubstrateClient, token);
+                await Sdk.GetAssetsAsync((Hydration.NetApi.Generated.SubstrateClientExt)client.SubstrateClient,null, token);
             }
             catch (Exception e)
             {

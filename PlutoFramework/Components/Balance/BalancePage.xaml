@@ -8,6 +8,7 @@
              xmlns:account="clr-namespace:PlutoFramework.Components.Account"
              xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
              xmlns:balance="clr-namespace:PlutoFramework.Components.Balance"
+             xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
              xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
              xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
              xmlns:password="clr-namespace:PlutoFramework.Components.Password"
@@ -66,6 +67,8 @@
         <addressview:AddressQrCodeView />
 
         <transferview:TransferView />
+
+        <assetselect:AssetSelectView />
 
         <account:NoAccountPopup />
 

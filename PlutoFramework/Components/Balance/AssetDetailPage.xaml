@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Balance.AssetDetailPage"
+             Title="AssetDetailPage"
+             xmlns:microcharts="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+            xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+         xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
+         xmlns:password="clr-namespace:PlutoFramework.Components.Password"
+         BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
+    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+
+        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+           Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
+           Opacity="{AppThemeBinding Light=0.96}"
+           Aspect="AspectFill"/>
+
+        <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    Margin="0,65,0,0"
+                    Padding="0">
+
+            <VerticalStackLayout Spacing="15"
+                                 Padding="0"
+                                 Margin="0"
+                                 >
+
+                <AbsoluteLayout HorizontalOptions="Fill"
+                                HeightRequest="300">
+                    <microcharts:ChartView Chart="{Binding Chart}"
+                                           AbsoluteLayout.LayoutBounds="0,0,1,300"
+                                           AbsoluteLayout.LayoutFlags="WidthProportional"
+                                           Margin="-10, 0, -10, 0"
+                                           />
+
+                    <Label
+                           AbsoluteLayout.LayoutBounds="{Binding MinLayoutBounds}"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           TranslationY="-65"
+                           TextColor="{StaticResource Primary}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span FontAttributes="Bold"
+                                      Text="{Binding MinText}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label AbsoluteLayout.LayoutBounds="{Binding MaxLayoutBounds}"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           TranslationY="45"
+                           TextColor="{StaticResource Primary}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span FontAttributes="Bold"
+                                      Text="{Binding MaxText}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+
+                </AbsoluteLayout>
+                
+                
+                
+            </VerticalStackLayout>
+            
+        </ScrollView>
+        
+        <navigationbar:TopNavigationBar Title="{Binding AssetInfo.Symbol}" />
+
+        <txanalyzer:TransactionAnalyzerConfirmationView />
+
+        <password:EnterPasswordPopupView />
+    </AbsoluteLayout>
+</ContentPage>

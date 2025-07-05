@@ -63,12 +63,11 @@ namespace PlutoFramework.Model
         XcTableROIBalance,
         XcRiskWarning,
         None
-
     }
 
     public class CustomLayoutModel
     {
-        public const string DEFAULT_PLUTO_LAYOUT = "plutolayout: [XcRiskWarning, dApp, XcTableInvestmentSummary, XcTableROIBalance, XcPaseoOwnedProperties];[XcavatePaseo]";
+        public const string DEFAULT_PLUTO_LAYOUT = "plutolayout: [XcRiskWarning, dApp, UsdB, XcTableInvestmentSummary, XcTableROIBalance, XcPaseoOwnedProperties];[XcavatePaseo, Hydration, Polkadot]";
 
         // This constant is used to fetch all components
         public static string AllComponentsString = $"plutolayout: [{string.Join(",", Enum.GetNames(typeof(ComponentId)))}];[";
