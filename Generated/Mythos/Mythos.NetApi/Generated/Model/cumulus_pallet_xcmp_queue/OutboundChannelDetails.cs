@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.cumulus_pallet_xcmp_queue
     
     
     /// <summary>
-    /// >> 401 - Composite[cumulus_pallet_xcmp_queue.OutboundChannelDetails]
+    /// >> 499 - Composite[cumulus_pallet_xcmp_queue.OutboundChannelDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OutboundChannelDetails : BaseType

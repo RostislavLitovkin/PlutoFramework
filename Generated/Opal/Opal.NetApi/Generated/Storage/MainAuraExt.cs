@@ -36,7 +36,7 @@ namespace Opal.NetApi.Generated.Storage
         public AuraExtStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("AuraExt", "Authorities"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("AuraExt", "Authorities"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("AuraExt", "SlotInfo"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.sp_consensus_slots.Slot, Substrate.NetApi.Model.Types.Primitive.U32>)));
         }
         
@@ -70,10 +70,10 @@ namespace Opal.NetApi.Generated.Storage
         ///  but we require the old authorities to verify the seal when validating a PoV. This will
         ///  always be updated to the latest AuRa authorities in `on_finalize`.
         /// </summary>
-        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19> Authorities(string blockhash, CancellationToken token)
+        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24> Authorities(string blockhash, CancellationToken token)
         {
             string parameters = AuraExtStorage.AuthoritiesParams();
-            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24>(parameters, blockhash, token);
             return result;
         }
         

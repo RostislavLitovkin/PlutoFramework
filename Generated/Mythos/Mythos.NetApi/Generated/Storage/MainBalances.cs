@@ -41,13 +41,13 @@ namespace Mythos.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Account"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Mythos.NetApi.Generated.Model.account.AccountId20), typeof(Mythos.NetApi.Generated.Model.pallet_balances.types.AccountData)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Locks"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Mythos.NetApi.Generated.Model.account.AccountId20), typeof(Mythos.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Mythos.NetApi.Generated.Model.account.AccountId20), typeof(Mythos.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT1)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Reserves"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Mythos.NetApi.Generated.Model.account.AccountId20), typeof(Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Mythos.NetApi.Generated.Model.account.AccountId20), typeof(Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Holds"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Mythos.NetApi.Generated.Model.account.AccountId20), typeof(Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Mythos.NetApi.Generated.Model.account.AccountId20), typeof(Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT20)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Freezes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Mythos.NetApi.Generated.Model.account.AccountId20), typeof(Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Mythos.NetApi.Generated.Model.account.AccountId20), typeof(Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21)));
         }
         
         /// <summary>
@@ -216,10 +216,10 @@ namespace Mythos.NetApi.Generated.Storage
         /// 
         ///  Use of locks is deprecated in favour of freezes. See `https://github.com/paritytech/substrate/pull/12951/`
         /// </summary>
-        public async Task<Mythos.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2> Locks(Mythos.NetApi.Generated.Model.account.AccountId20 key, string blockhash, CancellationToken token)
+        public async Task<Mythos.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT1> Locks(Mythos.NetApi.Generated.Model.account.AccountId20 key, string blockhash, CancellationToken token)
         {
             string parameters = BalancesStorage.LocksParams(key);
-            var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT1>(parameters, blockhash, token);
             return result;
         }
         
@@ -251,10 +251,10 @@ namespace Mythos.NetApi.Generated.Storage
         /// 
         ///  Use of reserves is deprecated in favour of holds. See `https://github.com/paritytech/substrate/pull/12951/`
         /// </summary>
-        public async Task<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12> Reserves(Mythos.NetApi.Generated.Model.account.AccountId20 key, string blockhash, CancellationToken token)
+        public async Task<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19> Reserves(Mythos.NetApi.Generated.Model.account.AccountId20 key, string blockhash, CancellationToken token)
         {
             string parameters = BalancesStorage.ReservesParams(key);
-            var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19>(parameters, blockhash, token);
             return result;
         }
         
@@ -282,10 +282,10 @@ namespace Mythos.NetApi.Generated.Storage
         /// >> Holds
         ///  Holds on account balances.
         /// </summary>
-        public async Task<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13> Holds(Mythos.NetApi.Generated.Model.account.AccountId20 key, string blockhash, CancellationToken token)
+        public async Task<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT20> Holds(Mythos.NetApi.Generated.Model.account.AccountId20 key, string blockhash, CancellationToken token)
         {
             string parameters = BalancesStorage.HoldsParams(key);
-            var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT20>(parameters, blockhash, token);
             return result;
         }
         
@@ -313,10 +313,10 @@ namespace Mythos.NetApi.Generated.Storage
         /// >> Freezes
         ///  Freeze locks on account balances.
         /// </summary>
-        public async Task<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14> Freezes(Mythos.NetApi.Generated.Model.account.AccountId20 key, string blockhash, CancellationToken token)
+        public async Task<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21> Freezes(Mythos.NetApi.Generated.Model.account.AccountId20 key, string blockhash, CancellationToken token)
         {
             string parameters = BalancesStorage.FreezesParams(key);
-            var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21>(parameters, blockhash, token);
             return result;
         }
     }
@@ -494,7 +494,7 @@ namespace Mythos.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 MaxFreezes()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x00000000");
+            result.Create("0x32000000");
             return result;
         }
     }

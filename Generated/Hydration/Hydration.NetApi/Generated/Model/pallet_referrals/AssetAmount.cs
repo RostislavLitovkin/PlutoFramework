@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_referrals
     
     
     /// <summary>
-    /// >> 120 - Composite[pallet_referrals.AssetAmount]
+    /// >> 441 - Composite[pallet_referrals.AssetAmount]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetAmount : BaseType

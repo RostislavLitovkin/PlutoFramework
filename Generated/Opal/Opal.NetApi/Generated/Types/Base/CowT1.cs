@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 379 - Composite[CowT1]
+    /// >> 445 - Composite[CowT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CowT1 : BaseType

@@ -33,7 +33,7 @@ namespace Opal.NetApi.Generated.Model.frame_support.traits.schedule
     }
     
     /// <summary>
-    /// >> 217 - Variant[frame_support.traits.schedule.DispatchTime]
+    /// >> 243 - Variant[frame_support.traits.schedule.DispatchTime]
     /// </summary>
     public sealed class EnumDispatchTime : BaseEnumRust<DispatchTime>
     {

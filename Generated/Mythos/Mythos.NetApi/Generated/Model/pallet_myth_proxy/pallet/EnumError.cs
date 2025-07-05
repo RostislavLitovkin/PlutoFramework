@@ -60,7 +60,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_myth_proxy.pallet
     }
     
     /// <summary>
-    /// >> 453 - Variant[pallet_myth_proxy.pallet.Error]
+    /// >> 550 - Variant[pallet_myth_proxy.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

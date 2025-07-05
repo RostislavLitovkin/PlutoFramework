@@ -38,6 +38,8 @@ namespace Hydration.NetApi.Generated.Storage
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Stableswap", "Pools"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Hydration.NetApi.Generated.Model.pallet_stableswap.types.PoolInfo)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Stableswap", "PoolPegs"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Hydration.NetApi.Generated.Model.pallet_stableswap.types.PoolPegInfo)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Stableswap", "AssetTradability"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Hydration.NetApi.Generated.Model.pallet_stableswap.types.Tradability)));
@@ -71,6 +73,37 @@ namespace Hydration.NetApi.Generated.Storage
         {
             string parameters = StableswapStorage.PoolsParams(key);
             var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.pallet_stableswap.types.PoolInfo>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> PoolPegsParams
+        ///  Pool peg info.
+        /// </summary>
+        public static string PoolPegsParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        {
+            return RequestGenerator.GetStorage("Stableswap", "PoolPegs", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> PoolPegsDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string PoolPegsDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> PoolPegs
+        ///  Pool peg info.
+        /// </summary>
+        public async Task<Hydration.NetApi.Generated.Model.pallet_stableswap.types.PoolPegInfo> PoolPegs(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        {
+            string parameters = StableswapStorage.PoolPegsParams(key);
+            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.pallet_stableswap.types.PoolPegInfo>(parameters, blockhash, token);
             return result;
         }
         
@@ -116,7 +149,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> create_pool
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method CreatePool(Substrate.NetApi.Model.Types.Primitive.U32 share_asset, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U32> assets, Substrate.NetApi.Model.Types.Primitive.U16 amplification, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill fee)
+        public static Method CreatePool(Substrate.NetApi.Model.Types.Primitive.U32 share_asset, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12 assets, Substrate.NetApi.Model.Types.Primitive.U16 amplification, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill fee)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(share_asset.Encode());
@@ -156,7 +189,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> add_liquidity
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AddLiquidity(Substrate.NetApi.Model.Types.Primitive.U32 pool_id, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.pallet_stableswap.types.AssetAmount> assets)
+        public static Method AddLiquidity(Substrate.NetApi.Model.Types.Primitive.U32 pool_id, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10 assets)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(pool_id.Encode());
@@ -253,13 +286,42 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> remove_liquidity
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method RemoveLiquidity(Substrate.NetApi.Model.Types.Primitive.U32 pool_id, Substrate.NetApi.Model.Types.Primitive.U128 share_amount, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT20 min_amounts_out)
+        public static Method RemoveLiquidity(Substrate.NetApi.Model.Types.Primitive.U32 pool_id, Substrate.NetApi.Model.Types.Primitive.U128 share_amount, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10 min_amounts_out)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(pool_id.Encode());
             byteArray.AddRange(share_amount.Encode());
             byteArray.AddRange(min_amounts_out.Encode());
             return new Method(70, "Stableswap", 10, "remove_liquidity", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> create_pool_with_pegs
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method CreatePoolWithPegs(Substrate.NetApi.Model.Types.Primitive.U32 share_asset, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12 assets, Substrate.NetApi.Model.Types.Primitive.U16 amplification, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill fee, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13 peg_source, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill max_peg_update)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(share_asset.Encode());
+            byteArray.AddRange(assets.Encode());
+            byteArray.AddRange(amplification.Encode());
+            byteArray.AddRange(fee.Encode());
+            byteArray.AddRange(peg_source.Encode());
+            byteArray.AddRange(max_peg_update.Encode());
+            return new Method(70, "Stableswap", 11, "create_pool_with_pegs", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> add_assets_liquidity
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method AddAssetsLiquidity(Substrate.NetApi.Model.Types.Primitive.U32 pool_id, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10 assets, Substrate.NetApi.Model.Types.Primitive.U128 min_shares)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(pool_id.Encode());
+            byteArray.AddRange(assets.Encode());
+            byteArray.AddRange(min_shares.Encode());
+            return new Method(70, "Stableswap", 12, "add_assets_liquidity", byteArray.ToArray());
         }
     }
     
@@ -452,5 +514,23 @@ namespace Hydration.NetApi.Generated.Storage
         /// Failed to retrieve asset decimals.
         /// </summary>
         UnknownDecimals,
+        
+        /// <summary>
+        /// >> IncorrectInitialPegs
+        /// List of provided pegs is incorrect.
+        /// </summary>
+        IncorrectInitialPegs,
+        
+        /// <summary>
+        /// >> MissingTargetPegOracle
+        /// Failed to retrieve oracle entry.
+        /// </summary>
+        MissingTargetPegOracle,
+        
+        /// <summary>
+        /// >> IncorrectAssetDecimals
+        /// Creating pool with pegs is not allowed for asset with different decimals.
+        /// </summary>
+        IncorrectAssetDecimals,
     }
 }

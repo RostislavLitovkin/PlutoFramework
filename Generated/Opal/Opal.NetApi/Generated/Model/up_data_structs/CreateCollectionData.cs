@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
     
     
     /// <summary>
-    /// >> 272 - Composite[up_data_structs.CreateCollectionData]
+    /// >> 333 - Composite[up_data_structs.CreateCollectionData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CreateCollectionData : BaseType
@@ -35,15 +35,15 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
         /// <summary>
         /// >> name
         /// </summary>
-        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 Name { get; set; }
+        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13 Name { get; set; }
         /// <summary>
         /// >> description
         /// </summary>
-        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 Description { get; set; }
+        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14 Description { get; set; }
         /// <summary>
         /// >> token_prefix
         /// </summary>
-        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10 TokenPrefix { get; set; }
+        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15 TokenPrefix { get; set; }
         /// <summary>
         /// >> limits
         /// </summary>
@@ -55,11 +55,11 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
         /// <summary>
         /// >> token_property_permissions
         /// </summary>
-        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11 TokenPropertyPermissions { get; set; }
+        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16 TokenPropertyPermissions { get; set; }
         /// <summary>
         /// >> properties
         /// </summary>
-        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13 Properties { get; set; }
+        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18 Properties { get; set; }
         /// <summary>
         /// >> admin_list
         /// </summary>
@@ -106,19 +106,19 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
             Mode.Decode(byteArray, ref p);
             Access = new Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.up_data_structs.EnumAccessMode>();
             Access.Decode(byteArray, ref p);
-            Name = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8();
+            Name = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13();
             Name.Decode(byteArray, ref p);
-            Description = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9();
+            Description = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14();
             Description.Decode(byteArray, ref p);
-            TokenPrefix = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10();
+            TokenPrefix = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15();
             TokenPrefix.Decode(byteArray, ref p);
             Limits = new Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.up_data_structs.CollectionLimits>();
             Limits.Decode(byteArray, ref p);
             Permissions = new Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.up_data_structs.CollectionPermissions>();
             Permissions.Decode(byteArray, ref p);
-            TokenPropertyPermissions = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11();
+            TokenPropertyPermissions = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16();
             TokenPropertyPermissions.Decode(byteArray, ref p);
-            Properties = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13();
+            Properties = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18();
             Properties.Decode(byteArray, ref p);
             AdminList = new Substrate.NetApi.Model.Types.Base.BaseVec<Opal.NetApi.Generated.Model.pallet_evm.account.EnumBasicCrossAccountIdRepr>();
             AdminList.Decode(byteArray, ref p);

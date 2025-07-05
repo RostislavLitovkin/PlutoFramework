@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking
     
     
     /// <summary>
-    /// >> 568 - Composite[pallet_staking.Nominations]
+    /// >> 558 - Composite[pallet_staking.Nominations]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Nominations : BaseType

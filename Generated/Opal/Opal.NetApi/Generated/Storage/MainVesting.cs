@@ -37,7 +37,7 @@ namespace Opal.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Vesting", "VestingSchedules"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29)));
         }
         
         /// <summary>
@@ -68,10 +68,10 @@ namespace Opal.NetApi.Generated.Storage
         /// 
         ///  VestingSchedules: map AccountId => Vec<VestingSchedule>
         /// </summary>
-        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24> VestingSchedules(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29> VestingSchedules(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = VestingStorage.VestingSchedulesParams(key);
-            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29>(parameters, blockhash, token);
             return result;
         }
     }

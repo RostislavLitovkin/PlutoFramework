@@ -60,7 +60,7 @@ namespace Mythos.NetApi.Generated.Model.cumulus_pallet_parachain_system.pallet
     }
     
     /// <summary>
-    /// >> 32 - Variant[cumulus_pallet_parachain_system.pallet.Event]
+    /// >> 33 - Variant[cumulus_pallet_parachain_system.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

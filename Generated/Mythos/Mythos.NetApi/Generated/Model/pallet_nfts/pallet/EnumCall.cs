@@ -721,7 +721,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_nfts.pallet
     }
     
     /// <summary>
-    /// >> 226 - Variant[pallet_nfts.pallet.Call]
+    /// >> 253 - Variant[pallet_nfts.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -765,7 +765,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_nfts.pallet
 				AddTypeDecoder<BaseTuple<Mythos.NetApi.Generated.Model.runtime_common.IncrementableU256, Mythos.NetApi.Generated.Model.pallet_nfts.types.MintSettings>>(Call.update_mint_settings);
 				AddTypeDecoder<BaseTuple<Mythos.NetApi.Generated.Model.runtime_common.IncrementableU256, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128>, Substrate.NetApi.Model.Types.Base.BaseOpt<Mythos.NetApi.Generated.Model.account.AccountId20>>>(Call.set_price);
 				AddTypeDecoder<BaseTuple<Mythos.NetApi.Generated.Model.runtime_common.IncrementableU256, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.buy_item);
-				AddTypeDecoder<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6>(Call.pay_tips);
+				AddTypeDecoder<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7>(Call.pay_tips);
 				AddTypeDecoder<BaseTuple<Mythos.NetApi.Generated.Model.runtime_common.IncrementableU256, Substrate.NetApi.Model.Types.Primitive.U128, Mythos.NetApi.Generated.Model.runtime_common.IncrementableU256, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128>, Substrate.NetApi.Model.Types.Base.BaseOpt<Mythos.NetApi.Generated.Model.pallet_nfts.types.PriceWithDirection>, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.create_swap);
 				AddTypeDecoder<BaseTuple<Mythos.NetApi.Generated.Model.runtime_common.IncrementableU256, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.cancel_swap);
 				AddTypeDecoder<BaseTuple<Mythos.NetApi.Generated.Model.runtime_common.IncrementableU256, Substrate.NetApi.Model.Types.Primitive.U128, Mythos.NetApi.Generated.Model.runtime_common.IncrementableU256, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseOpt<Mythos.NetApi.Generated.Model.pallet_nfts.types.PriceWithDirection>>>(Call.claim_swap);

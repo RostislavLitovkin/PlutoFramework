@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.polkadot_parachain_primitives.primiti
     
     
     /// <summary>
-    /// >> 414 - Composite[polkadot_parachain_primitives.primitives.HeadData]
+    /// >> 294 - Composite[polkadot_parachain_primitives.primitives.HeadData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class HeadData : BaseType

@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 663 - Composite[BTreeMapT7]
+    /// >> 744 - Composite[BTreeMapT7]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BTreeMapT7 : BaseType

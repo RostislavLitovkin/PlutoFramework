@@ -39,7 +39,7 @@ namespace Opal.NetApi.Generated.Model.pallet_test_utils.pallet
     }
     
     /// <summary>
-    /// >> 387 - Variant[pallet_test_utils.pallet.Event]
+    /// >> 453 - Variant[pallet_test_utils.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnum<Event>

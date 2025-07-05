@@ -33,7 +33,7 @@ namespace Opal.NetApi.Generated.Model.pallet_democracy.vote
     }
     
     /// <summary>
-    /// >> 70 - Variant[pallet_democracy.vote.AccountVote]
+    /// >> 80 - Variant[pallet_democracy.vote.AccountVote]
     /// </summary>
     public sealed class EnumAccountVote : BaseEnumRust<AccountVote>
     {

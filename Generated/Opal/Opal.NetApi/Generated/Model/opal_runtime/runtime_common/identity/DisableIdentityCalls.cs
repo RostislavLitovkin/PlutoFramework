@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.opal_runtime.runtime_common.identity
     
     
     /// <summary>
-    /// >> 688 - Composite[opal_runtime.runtime_common.identity.DisableIdentityCalls]
+    /// >> 766 - Composite[opal_runtime.runtime_common.identity.DisableIdentityCalls]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DisableIdentityCalls : BaseType

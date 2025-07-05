@@ -38,7 +38,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_nfts.types
     }
     
     /// <summary>
-    /// >> 352 - Variant[pallet_nfts.types.CollectionRole]
+    /// >> 411 - Variant[pallet_nfts.types.CollectionRole]
     /// </summary>
     public sealed class EnumCollectionRole : BaseEnum<CollectionRole>
     {

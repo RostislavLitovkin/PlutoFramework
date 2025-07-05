@@ -1,13 +1,11 @@
-﻿using PlutoFramework.Components.ConnectionRequestView;
+﻿
 using PlutoFramework.Components.MessagePopup;
 using PlutoFramework.Components.NetworkSelect;
 using PlutoFramework.Components.TransactionRequest;
 using PlutoFramework.Components.TransferView;
-using PlutoFramework.Components.DAppConnectionView;
 using PlutoFramework.Components.AddressView;
 using PlutoFramework.Components.CalamarView;
 using PlutoFramework.Components.Extrinsic;
-using PlutoFramework.View;
 using PlutoFramework.Components.Staking;
 using PlutoFramework.Components.CustomLayouts;
 using PlutoFramework.Components.AzeroId;
@@ -25,6 +23,12 @@ using PlutoFramework.Model;
 using PlutoFramework.Components.Mnemonics;
 using PlutoFramework.Components.Xcavate;
 using PlutoFramework.Components.XcavateProperty;
+using PlutoFramework.Components.Account;
+using PlutoFramework.Components.Kilt;
+using PlutoFramework.Components.Sumsub;
+using PlutoFramework.Model.SQLite;
+using PlutoFramework.Components.Loading;
+using PlutoFramework.Components.DAppConnection;
 
 namespace PlutoFramework;
 
@@ -34,13 +38,16 @@ public partial class App : Application
     {
         InitializeComponent();
 
+        // Load configuration
+        AppConfigurationLoader.Load();
+
+        AssetsModel.DatabaseSaver = new BalancesDatabaseSaver();
+
         DependencyService.Register<TransferViewModel>();
 
-        DependencyService.Register<ConnectionRequestViewModel>();
+        DependencyService.Register<DAppConnectionRequestViewModel>();
 
         DependencyService.Register<MessagePopupViewModel>();
-
-        DependencyService.Register<TransactionRequestViewModel>();
 
         DependencyService.Register<AddressQrCodeViewModel>();
 
@@ -104,7 +111,25 @@ public partial class App : Application
 
         DependencyService.Register<SuccessfulImportPopupViewModel>();
 
-        DependencyService.Register<BuyPropertyTokensViewModel>();  
+        DependencyService.Register<BuyPropertyTokensViewModel>();
+
+        DependencyService.Register<NoAccountPopupModel>();
+
+        DependencyService.Register<NoDidPopupViewModel>();
+
+        DependencyService.Register<NoKYCPopupViewModel>();
+
+        DependencyService.Register<XcavatePropertyMarketplaceViewModel>();
+
+        DependencyService.Register<FullPageLoadingViewModel>();
+
+        DependencyService.Register<ModifyUserProfilePopupViewModel>();
+
+        DependencyService.Register<OwnedPropertiesListViewModel>();
+
+        DependencyService.Register<RelistPropertyTokensViewModel>();
+
+        DependencyService.Register<XcavateNavigationBarViewModel>();
 
         if (Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY))
         {

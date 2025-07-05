@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_message_queue
     
     
     /// <summary>
-    /// >> 342 - Composite[pallet_message_queue.Page]
+    /// >> 347 - Composite[pallet_message_queue.Page]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Page : BaseType

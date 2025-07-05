@@ -91,6 +91,16 @@ namespace Hydration.NetApi.Generated.Storage
     {
         
         /// <summary>
+        /// >> ReserveAccount
+        /// </summary>
+        public Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 ReserveAccount()
+        {
+            var result = new Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            result.Create("0x6D6F646C63757272657365720000000000000000000000000000000000000000");
+            return result;
+        }
+        
+        /// <summary>
         /// >> GetNativeCurrencyId
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 GetNativeCurrencyId()

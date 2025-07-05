@@ -75,10 +75,20 @@ namespace Opal.NetApi.Generated.Model.sp_runtime.transaction_validity
         /// >> BadSigner
         /// </summary>
         BadSigner = 10,
+        
+        /// <summary>
+        /// >> IndeterminateImplicit
+        /// </summary>
+        IndeterminateImplicit = 11,
+        
+        /// <summary>
+        /// >> UnknownOrigin
+        /// </summary>
+        UnknownOrigin = 12,
     }
     
     /// <summary>
-    /// >> 613 - Variant[sp_runtime.transaction_validity.InvalidTransaction]
+    /// >> 694 - Variant[sp_runtime.transaction_validity.InvalidTransaction]
     /// </summary>
     public sealed class EnumInvalidTransaction : BaseEnumRust<InvalidTransaction>
     {
@@ -99,6 +109,8 @@ namespace Opal.NetApi.Generated.Model.sp_runtime.transaction_validity
 				AddTypeDecoder<BaseVoid>(InvalidTransaction.BadMandatory);
 				AddTypeDecoder<BaseVoid>(InvalidTransaction.MandatoryValidation);
 				AddTypeDecoder<BaseVoid>(InvalidTransaction.BadSigner);
+				AddTypeDecoder<BaseVoid>(InvalidTransaction.IndeterminateImplicit);
+				AddTypeDecoder<BaseVoid>(InvalidTransaction.UnknownOrigin);
         }
     }
 }

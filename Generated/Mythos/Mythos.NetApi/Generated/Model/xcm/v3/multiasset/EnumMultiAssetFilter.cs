@@ -33,7 +33,7 @@ namespace Mythos.NetApi.Generated.Model.xcm.v3.multiasset
     }
     
     /// <summary>
-    /// >> 289 - Variant[xcm.v3.multiasset.MultiAssetFilter]
+    /// >> 316 - Variant[xcm.v3.multiasset.MultiAssetFilter]
     /// </summary>
     public sealed class EnumMultiAssetFilter : BaseEnumRust<MultiAssetFilter>
     {

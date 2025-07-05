@@ -96,7 +96,7 @@ namespace Opal.NetApi.Generated.Model.pallet_democracy.pallet
         
         /// <summary>
         /// >> Seconded
-        /// An account has secconded a proposal
+        /// An account has seconded a proposal
         /// </summary>
         Seconded = 12,
         
@@ -126,7 +126,7 @@ namespace Opal.NetApi.Generated.Model.pallet_democracy.pallet
     }
     
     /// <summary>
-    /// >> 68 - Variant[pallet_democracy.pallet.Event]
+    /// >> 78 - Variant[pallet_democracy.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.configurat
     
     
     /// <summary>
-    /// >> 705 - Composite[polkadot_runtime_parachains.configuration.HostConfiguration]
+    /// >> 698 - Composite[polkadot_runtime_parachains.configuration.HostConfiguration]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class HostConfiguration : BaseType
@@ -63,7 +63,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.configurat
         /// <summary>
         /// >> async_backing_params
         /// </summary>
-        public Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.async_backing.AsyncBackingParams AsyncBackingParams { get; set; }
+        public Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.async_backing.AsyncBackingParams AsyncBackingParams { get; set; }
         /// <summary>
         /// >> max_pov_size
         /// </summary>
@@ -103,7 +103,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.configurat
         /// <summary>
         /// >> executor_params
         /// </summary>
-        public Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.executor_params.ExecutorParams ExecutorParams { get; set; }
+        public Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.executor_params.ExecutorParams ExecutorParams { get; set; }
         /// <summary>
         /// >> code_retention_period
         /// </summary>
@@ -159,11 +159,11 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.configurat
         /// <summary>
         /// >> approval_voting_params
         /// </summary>
-        public Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.ApprovalVotingParams ApprovalVotingParams { get; set; }
+        public Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.ApprovalVotingParams ApprovalVotingParams { get; set; }
         /// <summary>
         /// >> scheduler_params
         /// </summary>
-        public Polkadot.NetApi.Generated.Model.polkadot_primitives.vstaging.SchedulerParams SchedulerParams { get; set; }
+        public Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.SchedulerParams SchedulerParams { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -235,7 +235,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.configurat
             ValidationUpgradeCooldown.Decode(byteArray, ref p);
             ValidationUpgradeDelay = new Substrate.NetApi.Model.Types.Primitive.U32();
             ValidationUpgradeDelay.Decode(byteArray, ref p);
-            AsyncBackingParams = new Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.async_backing.AsyncBackingParams();
+            AsyncBackingParams = new Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.async_backing.AsyncBackingParams();
             AsyncBackingParams.Decode(byteArray, ref p);
             MaxPovSize = new Substrate.NetApi.Model.Types.Primitive.U32();
             MaxPovSize.Decode(byteArray, ref p);
@@ -255,7 +255,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.configurat
             HrmpMaxParachainInboundChannels.Decode(byteArray, ref p);
             HrmpChannelMaxMessageSize = new Substrate.NetApi.Model.Types.Primitive.U32();
             HrmpChannelMaxMessageSize.Decode(byteArray, ref p);
-            ExecutorParams = new Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.executor_params.ExecutorParams();
+            ExecutorParams = new Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.executor_params.ExecutorParams();
             ExecutorParams.Decode(byteArray, ref p);
             CodeRetentionPeriod = new Substrate.NetApi.Model.Types.Primitive.U32();
             CodeRetentionPeriod.Decode(byteArray, ref p);
@@ -283,9 +283,9 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.configurat
             MinimumBackingVotes.Decode(byteArray, ref p);
             NodeFeatures = new Substrate.NetApi.Model.Types.Base.BaseBitSeq<Substrate.NetApi.Model.Types.Primitive.U8, Polkadot.NetApi.Generated.Model.bitvec.order.Lsb0>();
             NodeFeatures.Decode(byteArray, ref p);
-            ApprovalVotingParams = new Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.ApprovalVotingParams();
+            ApprovalVotingParams = new Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.ApprovalVotingParams();
             ApprovalVotingParams.Decode(byteArray, ref p);
-            SchedulerParams = new Polkadot.NetApi.Generated.Model.polkadot_primitives.vstaging.SchedulerParams();
+            SchedulerParams = new Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.SchedulerParams();
             SchedulerParams.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

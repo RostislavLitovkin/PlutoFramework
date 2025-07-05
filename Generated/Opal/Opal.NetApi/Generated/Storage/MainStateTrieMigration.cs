@@ -250,7 +250,7 @@ namespace Opal.NetApi.Generated.Storage
         ///  - [`frame_support::storage::StorageDoubleMap`]: 96 byte
         /// 
         ///  For more info see
-        ///  <https://www.shawntabrizi.com/substrate/querying-substrate-storage-via-rpc/>
+        ///  <https://www.shawntabrizi.com/blog/substrate/querying-substrate-storage-via-rpc/>
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 MaxKeyLen()
         {

@@ -48,7 +48,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_currencies.module
     }
     
     /// <summary>
-    /// >> 125 - Variant[pallet_currencies.module.Event]
+    /// >> 444 - Variant[pallet_currencies.module.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

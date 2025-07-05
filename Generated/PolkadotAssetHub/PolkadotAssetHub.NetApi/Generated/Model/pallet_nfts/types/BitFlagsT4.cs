@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 441 - Composite[pallet_nfts.types.BitFlagsT4]
+    /// >> 452 - Composite[pallet_nfts.types.BitFlagsT4]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BitFlagsT4 : BaseType

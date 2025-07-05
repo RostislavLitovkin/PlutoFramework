@@ -1317,6 +1317,12 @@ namespace Polkadot.NetApi.Generated.Storage
         NothingToSlash,
         
         /// <summary>
+        /// >> SlashTooLow
+        /// The slash amount is too low to be applied.
+        /// </summary>
+        SlashTooLow,
+        
+        /// <summary>
         /// >> AlreadyMigrated
         /// The pool or member delegation has already migrated to delegate stake.
         /// </summary>
@@ -1333,5 +1339,12 @@ namespace Polkadot.NetApi.Generated.Storage
         /// This call is not allowed in the current state of the pallet.
         /// </summary>
         NotSupported,
+        
+        /// <summary>
+        /// >> Restricted
+        /// Account is restricted from participation in pools. This may happen if the account is
+        /// staking in another way already.
+        /// </summary>
+        Restricted,
     }
 }

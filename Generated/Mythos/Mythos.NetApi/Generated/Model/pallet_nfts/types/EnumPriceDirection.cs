@@ -33,7 +33,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_nfts.types
     }
     
     /// <summary>
-    /// >> 56 - Variant[pallet_nfts.types.PriceDirection]
+    /// >> 60 - Variant[pallet_nfts.types.PriceDirection]
     /// </summary>
     public sealed class EnumPriceDirection : BaseEnum<PriceDirection>
     {

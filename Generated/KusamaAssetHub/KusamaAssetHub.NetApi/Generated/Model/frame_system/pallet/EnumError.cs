@@ -82,7 +82,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.frame_system.pallet
     }
     
     /// <summary>
-    /// >> 175 - Variant[frame_system.pallet.Error]
+    /// >> 180 - Variant[frame_system.pallet.Error]
     /// Error for the System pallet
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

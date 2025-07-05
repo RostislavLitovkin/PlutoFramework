@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.polkadot_core_primitives
     
     
     /// <summary>
-    /// >> 210 - Composite[polkadot_core_primitives.InboundDownwardMessage]
+    /// >> 234 - Composite[polkadot_core_primitives.InboundDownwardMessage]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class InboundDownwardMessage : BaseType

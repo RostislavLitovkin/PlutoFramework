@@ -44,9 +44,9 @@ namespace PlutoFramework.Components.HydraDX
 
                     Assets.Add(new AssetLiquidityInfo
                     {
-                        Amount = String.Format("{0:0.00}", omnipoolLiquidity.Amount),
+                        Amount = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, omnipoolLiquidity.Amount),
                         Symbol = omnipoolLiquidity.Symbol,
-                        UsdValue = String.Format("{0:0.00}", usdValue) + " USD",
+                        UsdValue = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, usdValue) + " USD",
                         LiquidityMiningInfos = []
                     });
                 }
@@ -61,19 +61,19 @@ namespace PlutoFramework.Components.HydraDX
 
                     Assets.Add(new AssetLiquidityInfo
                     {
-                        Amount = String.Format("{0:0.00}", omnipoolLiquidity.Amount),
+                        Amount = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, omnipoolLiquidity.Amount),
                         Symbol = omnipoolLiquidity.Symbol,
-                        UsdValue = String.Format("{0:0.00}", usdValue) + " USD",
+                        UsdValue = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, usdValue) + " USD",
                         LiquidityMiningInfos = omnipoolLiquidity.LiquidityMiningInfos.Select(lm => new LiquidityMiningInfo
                         {
-                            Amount = "+ " + String.Format("{0:0.00}", lm.RewardAmount),
+                            Amount = "+ " + String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, lm.RewardAmount),
                             Symbol = lm.RewardSymbol,
-                            UsdValue = "+ " + String.Format("{0:0.00}", lm.RewardAmount * Model.HydraDX.Sdk.GetSpotPrice(lm.RewardAssetId)) + " USD",
+                            UsdValue = "+ " + String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, lm.RewardAmount * Model.HydraDX.Sdk.GetSpotPrice(lm.RewardAssetId)) + " USD",
                         }).ToList(),
                     });
                 }
 
-                UsdSum = String.Format("{0:0.00}", tempUsdSum) + " USD";
+                UsdSum = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, tempUsdSum) + " USD";
 
                 if (Assets.Count() == 0)
                 {

@@ -35,7 +35,9 @@ public partial class ClickableCard : ContentView
         {
             if (value)
             {
-                roundRectangle.CornerRadius = 15;
+                roundRectangle.CornerRadius = (double)Application.Current.Resources["THIN-CARD-CORNER-RADIUS"];
+
+
                 border.Padding = new Thickness(20, 0, 20, 0);
             }
         }

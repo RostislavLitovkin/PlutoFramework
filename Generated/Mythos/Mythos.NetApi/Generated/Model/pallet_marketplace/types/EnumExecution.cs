@@ -33,7 +33,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_marketplace.types
     }
     
     /// <summary>
-    /// >> 249 - Variant[pallet_marketplace.types.Execution]
+    /// >> 276 - Variant[pallet_marketplace.types.Execution]
     /// </summary>
     public sealed class EnumExecution : BaseEnum<Execution>
     {

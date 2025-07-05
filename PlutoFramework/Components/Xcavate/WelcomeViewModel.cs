@@ -2,67 +2,68 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.Kilt;
-using PlutoFramework.Components.Mnemonics;
-using PlutoFramework.Model;
-using PlutoFramework.Model.Sumsub;
+using PlutoFramework.Components.WebView;
 using PlutoFramework.View;
+using PlutoFramework.ViewModel;
+using System.Collections.ObjectModel;
 
 namespace PlutoFramework.Components.Xcavate
 {
+    public class WelcomeSplash
+    {
+        public string Image { get; set; }
+        public string Description { get; set; }
+    }
+
     public partial class WelcomeViewModel : ObservableObject
     {
+        public ObservableCollection<WelcomeSplash> Splashes => new ObservableCollection<WelcomeSplash>
+        {
+            new WelcomeSplash{ Image = "xcavatelaunchbg1.jpg", Description = "Fractional real estate investment made simple and secure" },
+            new WelcomeSplash{ Image = "xcavatelaunchbg2.png", Description = "Browse the marketplace to find your ideal property investment" },
+            new WelcomeSplash{ Image = "xcavatelaunchbg3.png", Description = "Unlock the future of real estate with secure, tokenized ownership" },
+        };
+
         [RelayCommand]
-        public Task ContinueToNextPageAsync() => Application.Current.MainPage.Navigation.PushAsync(
-            new NoMnemonicsPage(
-                new NoMnemonicsViewModel
-                {
-                    Navigation = () => Application.Current.MainPage.Navigation.PushAsync(
-                        new NoDidPage(
-                            new NoDidViewModel
-                            {
-                                Navigation = DidNavigateToNextPageAsync
-                            }
-                        )
+        public void BrowseProperties()
+        {
+            Application.Current.MainPage = new XcavateAppShell();
+        }
+
+        [RelayCommand]
+        public Task ImportAccountAsync() => Application.Current.MainPage.Navigation.PushAsync(
+            new SetupPasswordPage()
+            {
+                Navigation = () => Application.Current.MainPage.Navigation.PushAsync(
+                    new EnterMnemonicsPage(
+                        new EnterMnemonicsViewModel
+                        {
+                            Navigation = () => Application.Current.MainPage.Navigation.PushAsync(
+                                new NoDidPage(
+                                    new NoDidViewModel
+                                    {
+                                        Navigation = NoDidModel.DidNavigateToNextPageAsync
+                                        // #PyramidCode
+                                    }
+                                )
+                            )
+                        }
                     )
-                }
-            )
+                )
+            }
         );
 
-        private static async Task DidNavigateToNextPageAsync()
+        [RelayCommand]
+        public Task CreateAccountAsync() => Application.Current.MainPage.Navigation.PushAsync(
+            new SetupPasswordPage() {
+                Navigation = CreateAccountNavigationAsync
+            }
+        );
+        public async Task CreateAccountNavigationAsync()
         {
-            Console.WriteLine("Navigate to next page");
+            await Model.KeysModel.GenerateNewAccountAsync(null, accountVariant: "");
 
-            CancellationToken token = CancellationToken.None;
-
-            // Check if the account already exists
-
-            if (!Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY + "kilt1"))
-            {
-                Console.WriteLine("No did");
-
-                return;
-            }
-
-            var did = Preferences.Get(PreferencesModel.PUBLIC_KEY + "kilt1", "");
-
-            Console.WriteLine(did);
-
-            var applicantData = await SumsubModel.GetApplicantDataAsync(did, token);
-
-            await Application.Current.MainPage.Navigation.PushAsync(
-                    new SetupPasswordPage()
-                );
-
-            return;
-
-            if (applicantData is not null)
-            {
-                await Application.Current.MainPage.Navigation.PushAsync(
-                    new SetupPasswordPage()    
-                );
-
-                return;
-            }
+            await Model.KeysModel.GenerateNewAccountAsync(null, accountVariant: "kilt1");
 
             await Application.Current.MainPage.Navigation.PushAsync(
                 new UserTypeSelectionPage()

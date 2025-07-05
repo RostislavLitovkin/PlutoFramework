@@ -22,6 +22,11 @@ namespace Opal.NetApi.Generated.Model.opal_runtime
     {
         
         /// <summary>
+        /// >> StateTrieMigration
+        /// </summary>
+        StateTrieMigration = 1,
+        
+        /// <summary>
         /// >> CollatorSelection
         /// </summary>
         CollatorSelection = 23,
@@ -30,10 +35,25 @@ namespace Opal.NetApi.Generated.Model.opal_runtime
         /// >> Preimage
         /// </summary>
         Preimage = 41,
+        
+        /// <summary>
+        /// >> Council
+        /// </summary>
+        Council = 43,
+        
+        /// <summary>
+        /// >> TechnicalCommittee
+        /// </summary>
+        TechnicalCommittee = 44,
+        
+        /// <summary>
+        /// >> FinancialCouncil
+        /// </summary>
+        FinancialCouncil = 97,
     }
     
     /// <summary>
-    /// >> 451 - Variant[opal_runtime.RuntimeHoldReason]
+    /// >> 516 - Variant[opal_runtime.RuntimeHoldReason]
     /// </summary>
     public sealed class EnumRuntimeHoldReason : BaseEnumRust<RuntimeHoldReason>
     {
@@ -43,8 +63,12 @@ namespace Opal.NetApi.Generated.Model.opal_runtime
         /// </summary>
         public EnumRuntimeHoldReason()
         {
+				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_state_trie_migration.pallet.EnumHoldReason>(RuntimeHoldReason.StateTrieMigration);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_collator_selection.pallet.EnumHoldReason>(RuntimeHoldReason.CollatorSelection);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_preimage.pallet.EnumHoldReason>(RuntimeHoldReason.Preimage);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_collective.pallet.EnumHoldReason>(RuntimeHoldReason.Council);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_collective.pallet.EnumHoldReason>(RuntimeHoldReason.TechnicalCommittee);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.pallet_collective.pallet.EnumHoldReason>(RuntimeHoldReason.FinancialCouncil);
         }
     }
 }

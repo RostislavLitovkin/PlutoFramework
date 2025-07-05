@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_identity.types
     
     
     /// <summary>
-    /// >> 503 - Composite[pallet_identity.types.RegistrarInfo]
+    /// >> 546 - Composite[pallet_identity.types.RegistrarInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RegistrarInfo : BaseType

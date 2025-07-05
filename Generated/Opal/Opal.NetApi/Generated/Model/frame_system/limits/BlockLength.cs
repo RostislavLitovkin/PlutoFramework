@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.frame_system.limits
     
     
     /// <summary>
-    /// >> 395 - Composite[frame_system.limits.BlockLength]
+    /// >> 461 - Composite[frame_system.limits.BlockLength]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BlockLength : BaseType

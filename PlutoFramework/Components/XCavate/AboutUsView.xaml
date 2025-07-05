@@ -60,8 +60,8 @@
                 </Grid>
 
                 <Image Source="realxmarket.png"
-                   Aspect="AspectFill"
-                   WidthRequest="150"
+                   Aspect="AspectFit"
+                   Margin="40, 0, 40, 0"
                    HorizontalOptions="Center" />
 
                 <Label TextColor="Gray"

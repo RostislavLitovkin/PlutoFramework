@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_multibatching.pallet
     
     
     /// <summary>
-    /// >> 252 - Composite[pallet_multibatching.pallet.BatchedCall]
+    /// >> 279 - Composite[pallet_multibatching.pallet.BatchedCall]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BatchedCall : BaseType

@@ -5,31 +5,20 @@ using PlutoFramework.Model.Xcavate;
 using PlutoFramework.Model;
 using UniqueryPlus.Nfts;
 using Amazon;
+using CommunityToolkit.Maui.Alerts;
+using PlutoFramework.Model.SQLite;
 
 namespace PlutoFramework.Components.XcavateProperty
 {
-    
+    public class XcavateNftWrapper : NftWrapper
+    {
+        public required XcavateRegion? Region { get; set; }
+        public required bool ListingHasExpired { get; set; }
+    }
+
     public class XcavatePropertyModel
     {
-        private static double GetAreaPricesPercentage(uint price)
-        {
-            // TODO
-            return 0.7;
-        }
-
-        private static double GetRentalDemand()
-        {
-            // TODO
-            return 0.3;
-        }
-
-        public static string GetAPY(uint rentalIncome, uint price)
-        {
-            var ari = rentalIncome * 12;
-            var apy = (double)ari / price;
-            return $"{String.Format("{0:0.00}", apy * 100.0)}%";
-        }
-        public static async Task<NftWrapper> ToNftWrapperAsync(XcavatePaseoNftsPalletNft nft)
+        public static async Task<XcavateNftWrapper> ToXcavateNftWrapperAsync(INftXcavateBase nft, CancellationToken token)
         {
             try
             {
@@ -41,8 +30,6 @@ namespace PlutoFramework.Components.XcavateProperty
                     configuration.GetValue<string>("DYNAMO_ACCESS_KEY"),
                     configuration.GetValue<string>("DYNAMO_SECRET_KEY"),
                     region);
-
-                Console.WriteLine("Property name: " + nft.Type + " " + nft.CollectionId + " - " + nft.Id);
 
                 // Handle S3
                 if (nft.XcavateMetadata is not null)
@@ -69,57 +56,53 @@ namespace PlutoFramework.Components.XcavateProperty
             }
             catch(Exception ex)
             {
-                Console.WriteLine("To wrapper error:");
+                Console.WriteLine("To Xcavate nft wrapper error:");
                 Console.WriteLine(ex);
             }
 
-            return new NftWrapper
+            var substrateClient = await SubstrateClientModel.GetOrAddSubstrateClientAsync(Model.NftModel.GetEndpointKey(nft.Type), token);
+
+            uint blockNumber = (uint)await BlockModel.GetCachedBlockNumberAsync(substrateClient, token).ConfigureAwait(false);
+
+            return new XcavateNftWrapper
             {
+                Favourite = await XcavatePropertyDatabase.IsPropertyFavouriteAsync(nft.Type, nft.CollectionId, nft.Id).ConfigureAwait(false),
                 NftBase = nft,
+                Region = ((INftXcavateNftMarketplace)nft).NftMarketplaceDetails != null ? await RegionModel.GetCachedRegionAsync(substrateClient, ((INftXcavateNftMarketplace)nft).NftMarketplaceDetails.Region, token) : null,
+                ListingHasExpired = blockNumber > (((INftXcavateOngoingObjectListing)nft).OngoingObjectListingDetails?.ListingExpiry ?? 0),
                 Endpoint = Endpoints.GetEndpointDictionary[Model.NftModel.GetEndpointKey(nft.Type)]
             };
         }
 
-        public static async Task NavigateToPropertyDetailPageAsync(XcavatePaseoNftsPalletNft nft, CancellationToken token)
+        public static async Task NavigateToPropertyDetailPageAsync(XcavateNftWrapper nft, CancellationToken token)
         {
-            if (nft.XcavateMetadata is null)
+            if (nft.NftBase is SavedXcavatePropertyBase)
             {
+                nft.NftBase = await nft.NftBase.GetFullAsync(token);
+            }
+            if (nft.NftBase is not INftXcavateMetadata || ((INftXcavateMetadata)nft.NftBase).XcavateMetadata is null || nft.NftBase is not INftXcavateNftMarketplace)
+            {
+                var toast = Toast.Make("Could not navigate.");
+                await toast.Show();
+
                 return;
             }
 
             var viewModel = new PropertyDetailViewModel
             {
-                AreaPricesPercentage = GetAreaPricesPercentage(nft.XcavateMetadata.PropertyPrice),
-                RentalDemandPercentage = GetRentalDemand(),
-
-                CompanyName = "Bob T builder",
-
-                CompanyImage = "xcavate.png",
-
-                LocationName = nft.XcavateMetadata.LocationName,
-
-                PropertyName = nft.XcavateMetadata.PropertyName,
-
-                ListingPrice = $"£{nft.XcavateMetadata.PropertyPrice}",
-                Apy = GetAPY(nft.XcavateMetadata.EstimatedRentalIncome, nft.XcavateMetadata.PropertyPrice),
-                Tokens = nft.NftMarketplaceDetails.Listed,
-                MaxTokens = nft.XcavateMetadata.NumberOfTokens,
-                PropertyType = nft.XcavateMetadata.PropertyType,
-
-                PropertyDescription = nft.XcavateMetadata.PropertyDescription,
-
-                Blocks = nft.XcavateMetadata.Area,
-                Bedrooms = nft.XcavateMetadata.NoOfBedrooms,
-                Bathrooms = nft.XcavateMetadata.NoOfBathrooms,
-                Type = nft.XcavateMetadata.PropertyType,
-                LocationShortName = $"{nft.XcavateMetadata.AddressStreet}, {nft.XcavateMetadata.AddressTownCity}",
-
-                UsdtPricePerToken = nft.XcavateMetadata.PricePerToken,
-
-                RentalIncome = $"£{nft.XcavateMetadata.EstimatedRentalIncome}",
-
-                Images = nft.XcavateMetadata.Images,
+                Endpoint = nft.Endpoint,
+                Favourite = nft.Favourite,
+                NftBase = nft.NftBase,
+                Metadata = ((INftXcavateMetadata)nft.NftBase).XcavateMetadata,
+                NftMarketplaceDetails = ((INftXcavateNftMarketplace)nft.NftBase).NftMarketplaceDetails,
+                Region = nft.Region,
+                ListingHasExpired = nft.ListingHasExpired,
             };
+
+            if (nft.Key is not null && XcavateOwnedPropertiesModel.ItemsDict.TryGetValue(nft.Key.Value, out PropertyTokenOwnershipInfo tokenInfo))
+            {
+                viewModel.TokensOwned = tokenInfo.Amount;
+            }
 
             await Application.Current.MainPage.Navigation.PushAsync(new PropertyDetailPage(viewModel));
         }

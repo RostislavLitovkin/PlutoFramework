@@ -38,7 +38,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.xcm
     }
     
     /// <summary>
-    /// >> 325 - Variant[xcm.VersionedXcm]
+    /// >> 329 - Variant[xcm.VersionedXcm]
     /// </summary>
     public sealed class EnumVersionedXcm : BaseEnumRust<VersionedXcm>
     {

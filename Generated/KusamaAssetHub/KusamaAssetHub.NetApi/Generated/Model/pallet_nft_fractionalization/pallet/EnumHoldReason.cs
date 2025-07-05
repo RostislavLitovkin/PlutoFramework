@@ -28,7 +28,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_nft_fractionalization.pal
     }
     
     /// <summary>
-    /// >> 229 - Variant[pallet_nft_fractionalization.pallet.HoldReason]
+    /// >> 233 - Variant[pallet_nft_fractionalization.pallet.HoldReason]
     /// </summary>
     public sealed class EnumHoldReason : BaseEnum<HoldReason>
     {

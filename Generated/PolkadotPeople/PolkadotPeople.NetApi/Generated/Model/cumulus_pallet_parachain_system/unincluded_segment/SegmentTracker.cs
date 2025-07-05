@@ -35,7 +35,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.cumulus_pallet_parachain_system.
         /// <summary>
         /// >> consumed_go_ahead_signal
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotPeople.NetApi.Generated.Model.polkadot_primitives.v7.EnumUpgradeGoAhead> ConsumedGoAheadSignal { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotPeople.NetApi.Generated.Model.polkadot_primitives.v8.EnumUpgradeGoAhead> ConsumedGoAheadSignal { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -61,7 +61,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.cumulus_pallet_parachain_system.
             UsedBandwidth.Decode(byteArray, ref p);
             HrmpWatermark = new Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>();
             HrmpWatermark.Decode(byteArray, ref p);
-            ConsumedGoAheadSignal = new Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotPeople.NetApi.Generated.Model.polkadot_primitives.v7.EnumUpgradeGoAhead>();
+            ConsumedGoAheadSignal = new Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotPeople.NetApi.Generated.Model.polkadot_primitives.v8.EnumUpgradeGoAhead>();
             ConsumedGoAheadSignal.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

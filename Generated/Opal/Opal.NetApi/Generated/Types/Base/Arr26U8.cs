@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 173 - Array
+    /// >> 199 - Array
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Array)]
     public sealed class Arr26U8 : BaseType

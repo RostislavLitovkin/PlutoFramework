@@ -171,7 +171,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 428 - Variant[pallet_xcm.pallet.Error]
+    /// >> 526 - Variant[pallet_xcm.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

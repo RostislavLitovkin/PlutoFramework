@@ -38,7 +38,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.frame_support.dispatch
     }
     
     /// <summary>
-    /// >> 388 - Variant[frame_support.dispatch.RawOrigin]
+    /// >> 400 - Variant[frame_support.dispatch.RawOrigin]
     /// </summary>
     public sealed class EnumRawOrigin : BaseEnumRust<RawOrigin>
     {

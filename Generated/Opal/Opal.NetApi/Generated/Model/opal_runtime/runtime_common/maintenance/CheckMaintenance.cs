@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.opal_runtime.runtime_common.maintenance
     
     
     /// <summary>
-    /// >> 687 - Composite[opal_runtime.runtime_common.maintenance.CheckMaintenance]
+    /// >> 765 - Composite[opal_runtime.runtime_common.maintenance.CheckMaintenance]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckMaintenance : BaseType

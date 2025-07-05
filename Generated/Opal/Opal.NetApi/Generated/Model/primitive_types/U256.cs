@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.primitive_types
     
     
     /// <summary>
-    /// >> 334 - Composite[primitive_types.U256]
+    /// >> 394 - Composite[primitive_types.U256]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class U256 : BaseType

@@ -30,7 +30,7 @@ namespace Mythos.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.pallet
     }
     
     /// <summary>
-    /// >> 66 - Variant[cumulus_pallet_xcmp_queue.pallet.Event]
+    /// >> 77 - Variant[cumulus_pallet_xcmp_queue.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

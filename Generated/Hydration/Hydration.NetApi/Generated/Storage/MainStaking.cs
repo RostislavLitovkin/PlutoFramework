@@ -40,6 +40,11 @@ namespace Hydration.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Staking", "Positions"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U128), typeof(Hydration.NetApi.Generated.Model.pallet_staking.types.Position)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Staking", "NextPositionId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Staking", "Votes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U128), typeof(Hydration.NetApi.Generated.Model.pallet_staking.types.Voting)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Staking", "VotesRewarded"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Hydration.NetApi.Generated.Model.pallet_staking.types.Vote)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Staking", "PositionVotes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U128), typeof(Hydration.NetApi.Generated.Model.pallet_staking.types.Voting)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Staking", "ProcessedVotes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -138,8 +143,70 @@ namespace Hydration.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> PositionVotesParams
+        /// >> VotesParams
         ///  List of position votes.
+        /// </summary>
+        public static string VotesParams(Substrate.NetApi.Model.Types.Primitive.U128 key)
+        {
+            return RequestGenerator.GetStorage("Staking", "Votes", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> VotesDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string VotesDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> Votes
+        ///  List of position votes.
+        /// </summary>
+        public async Task<Hydration.NetApi.Generated.Model.pallet_staking.types.Voting> Votes(Substrate.NetApi.Model.Types.Primitive.U128 key, string blockhash, CancellationToken token)
+        {
+            string parameters = StakingStorage.VotesParams(key);
+            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.pallet_staking.types.Voting>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> VotesRewardedParams
+        ///  List of processed vote. Used to determine if the vote should be locked in case of voting not in favor.
+        /// </summary>
+        public static string VotesRewardedParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32> key)
+        {
+            return RequestGenerator.GetStorage("Staking", "VotesRewarded", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, key.Value);
+        }
+        
+        /// <summary>
+        /// >> VotesRewardedDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string VotesRewardedDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> VotesRewarded
+        ///  List of processed vote. Used to determine if the vote should be locked in case of voting not in favor.
+        /// </summary>
+        public async Task<Hydration.NetApi.Generated.Model.pallet_staking.types.Vote> VotesRewarded(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
+        {
+            string parameters = StakingStorage.VotesRewardedParams(key);
+            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.pallet_staking.types.Vote>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> PositionVotesParams
+        ///  Legacy storage! - Used to handle democracy votes until democracy pallet is fully removed.
         /// </summary>
         public static string PositionVotesParams(Substrate.NetApi.Model.Types.Primitive.U128 key)
         {
@@ -159,7 +226,7 @@ namespace Hydration.NetApi.Generated.Storage
         
         /// <summary>
         /// >> PositionVotes
-        ///  List of position votes.
+        ///  Legacy storage! - Used to handle democracy votes until democracy pallet is fully removed.
         /// </summary>
         public async Task<Hydration.NetApi.Generated.Model.pallet_staking.types.Voting> PositionVotes(Substrate.NetApi.Model.Types.Primitive.U128 key, string blockhash, CancellationToken token)
         {
@@ -170,7 +237,7 @@ namespace Hydration.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ProcessedVotesParams
-        ///  List of processed vote. Used to determine if the vote should be locked in case of voting not in favor.
+        ///  Legacy storage! - Used to handle democracy processed votes until democracy pallet is fully removed.
         /// </summary>
         public static string ProcessedVotesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32> key)
         {
@@ -190,7 +257,7 @@ namespace Hydration.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ProcessedVotes
-        ///  List of processed vote. Used to determine if the vote should be locked in case of voting not in favor.
+        ///  Legacy storage! - Used to handle democracy processed votes until democracy pallet is fully removed.
         /// </summary>
         public async Task<Hydration.NetApi.Generated.Model.pallet_staking.types.Vote> ProcessedVotes(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
         {
@@ -375,7 +442,7 @@ namespace Hydration.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 MaxVotes()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x64000000");
+            result.Create("0x19000000");
             return result;
         }
         

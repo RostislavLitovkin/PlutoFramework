@@ -8,10 +8,10 @@
              x:Class="PlutoFramework.Components.TransferView.TransferView"
              IsVisible="{Binding IsVisible}"
              AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-             AbsoluteLayout.LayoutFlags="All"
-             BackgroundColor="#66000000">
+             AbsoluteLayout.LayoutFlags="All">
 
-    <card:BottomPopupCard Title="Transfer">
+    <card:BottomPopupCard Title="Transfer"
+                          IsShown="{Binding IsVisible}">
         <card:BottomPopupCard.View>
             <AbsoluteLayout>
 
@@ -29,6 +29,7 @@
 
                     <Label Text="{Binding Fee}"
                            TextColor="#888888"
+                           IsVisible="False"
                            FontAttributes="Bold"/>
 
                     <Label Text="" x:Name="errorLabel" TextColor="Red" />

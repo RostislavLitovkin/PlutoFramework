@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 375 - Composite[pallet_nfts.types.ItemTip]
+    /// >> 381 - Composite[pallet_nfts.types.ItemTip]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ItemTip : BaseType

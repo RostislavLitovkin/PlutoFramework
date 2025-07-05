@@ -73,13 +73,13 @@ namespace Opal.NetApi.Generated.Model.orml_xtokens.module
         
         /// <summary>
         /// >> InvalidAsset
-        /// The MultiAsset is invalid.
+        /// The Asset is invalid.
         /// </summary>
         InvalidAsset = 8,
         
         /// <summary>
         /// >> DestinationNotInvertible
-        /// The destination `MultiLocation` provided cannot be inverted.
+        /// The destination `Location` provided cannot be inverted.
         /// </summary>
         DestinationNotInvertible = 9,
         
@@ -117,7 +117,7 @@ namespace Opal.NetApi.Generated.Model.orml_xtokens.module
         
         /// <summary>
         /// >> AssetIndexNonExistent
-        /// The specified index does not exist in a MultiAssets struct.
+        /// The specified index does not exist in a Assets struct.
         /// </summary>
         AssetIndexNonExistent = 15,
         
@@ -128,20 +128,26 @@ namespace Opal.NetApi.Generated.Model.orml_xtokens.module
         FeeNotEnough = 16,
         
         /// <summary>
-        /// >> NotSupportedMultiLocation
-        /// Not supported MultiLocation
+        /// >> NotSupportedLocation
+        /// Not supported Location
         /// </summary>
-        NotSupportedMultiLocation = 17,
+        NotSupportedLocation = 17,
         
         /// <summary>
         /// >> MinXcmFeeNotDefined
         /// MinXcmFee not registered for certain reserve location
         /// </summary>
         MinXcmFeeNotDefined = 18,
+        
+        /// <summary>
+        /// >> RateLimited
+        /// Asset transfer is limited by RateLimiter.
+        /// </summary>
+        RateLimited = 19,
     }
     
     /// <summary>
-    /// >> 470 - Variant[orml_xtokens.module.Error]
+    /// >> 539 - Variant[orml_xtokens.module.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

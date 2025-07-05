@@ -48,7 +48,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_election_provider_multi_phase
     }
     
     /// <summary>
-    /// >> 468 - Variant[pallet_election_provider_multi_phase.ElectionCompute]
+    /// >> 456 - Variant[pallet_election_provider_multi_phase.ElectionCompute]
     /// </summary>
     public sealed class EnumElectionCompute : BaseEnum<ElectionCompute>
     {

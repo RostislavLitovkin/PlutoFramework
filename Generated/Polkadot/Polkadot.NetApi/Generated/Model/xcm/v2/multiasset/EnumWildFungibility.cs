@@ -33,7 +33,7 @@ namespace Polkadot.NetApi.Generated.Model.xcm.v2.multiasset
     }
     
     /// <summary>
-    /// >> 373 - Variant[xcm.v2.multiasset.WildFungibility]
+    /// >> 362 - Variant[xcm.v2.multiasset.WildFungibility]
     /// </summary>
     public sealed class EnumWildFungibility : BaseEnum<WildFungibility>
     {

@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_evm
     
     
     /// <summary>
-    /// >> 640 - Composite[pallet_evm.CodeMetadata]
+    /// >> 721 - Composite[pallet_evm.CodeMetadata]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CodeMetadata : BaseType

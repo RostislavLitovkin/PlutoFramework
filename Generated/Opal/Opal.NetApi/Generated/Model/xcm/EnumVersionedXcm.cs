@@ -22,18 +22,23 @@ namespace Opal.NetApi.Generated.Model.xcm
     {
         
         /// <summary>
-        /// >> V2
-        /// </summary>
-        V2 = 2,
-        
-        /// <summary>
         /// >> V3
         /// </summary>
         V3 = 3,
+        
+        /// <summary>
+        /// >> V4
+        /// </summary>
+        V4 = 4,
+        
+        /// <summary>
+        /// >> V5
+        /// </summary>
+        V5 = 5,
     }
     
     /// <summary>
-    /// >> 255 - Variant[xcm.VersionedXcm]
+    /// >> 309 - Variant[xcm.VersionedXcm]
     /// </summary>
     public sealed class EnumVersionedXcm : BaseEnumRust<VersionedXcm>
     {
@@ -43,8 +48,9 @@ namespace Opal.NetApi.Generated.Model.xcm
         /// </summary>
         public EnumVersionedXcm()
         {
-				AddTypeDecoder<Opal.NetApi.Generated.Model.xcm.v2.XcmT2>(VersionedXcm.V2);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.xcm.v3.XcmT2>(VersionedXcm.V3);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.staging_xcm.v4.XcmT2>(VersionedXcm.V4);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.staging_xcm.v5.XcmT2>(VersionedXcm.V5);
         }
     }
 }

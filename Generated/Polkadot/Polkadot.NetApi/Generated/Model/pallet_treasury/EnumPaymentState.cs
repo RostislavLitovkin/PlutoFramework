@@ -38,7 +38,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_treasury
     }
     
     /// <summary>
-    /// >> 606 - Variant[pallet_treasury.PaymentState]
+    /// >> 596 - Variant[pallet_treasury.PaymentState]
     /// </summary>
     public sealed class EnumPaymentState : BaseEnumRust<PaymentState>
     {

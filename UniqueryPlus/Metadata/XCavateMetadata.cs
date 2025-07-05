@@ -89,7 +89,7 @@ namespace UniqueryPlus.Metadata
         public string PropertyDescription { get; init; }
 
         [JsonPropertyName("property_price")]
-        public uint PropertyPrice { get; init; }
+        public long PropertyPrice { get; init; }
 
         [JsonPropertyName("fileUrls")]
         public List<string> FileUrls { get; init; }

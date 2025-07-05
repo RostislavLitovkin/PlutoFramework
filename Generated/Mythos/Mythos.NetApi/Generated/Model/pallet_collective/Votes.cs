@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_collective
     
     
     /// <summary>
-    /// >> 380 - Composite[pallet_collective.Votes]
+    /// >> 440 - Composite[pallet_collective.Votes]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Votes : BaseType

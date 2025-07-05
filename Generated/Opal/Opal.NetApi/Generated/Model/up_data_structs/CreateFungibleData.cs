@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
     
     
     /// <summary>
-    /// >> 303 - Composite[up_data_structs.CreateFungibleData]
+    /// >> 364 - Composite[up_data_structs.CreateFungibleData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CreateFungibleData : BaseType

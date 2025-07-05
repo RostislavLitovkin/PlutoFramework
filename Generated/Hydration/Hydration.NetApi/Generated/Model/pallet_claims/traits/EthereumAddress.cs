@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_claims.traits
     
     
     /// <summary>
-    /// >> 85 - Composite[pallet_claims.traits.EthereumAddress]
+    /// >> 417 - Composite[pallet_claims.traits.EthereumAddress]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class EthereumAddress : BaseType

@@ -60,20 +60,14 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool_liquidity_mining.pall
         PriceAdjustmentNotAvailable = 5,
         
         /// <summary>
-        /// >> Disabled
-        /// The extrinsic is disabled for now.
-        /// </summary>
-        Disabled = 6,
-        
-        /// <summary>
         /// >> NoFarmEntriesSpecified
         /// No farms specified to join
         /// </summary>
-        NoFarmEntriesSpecified = 7,
+        NoFarmEntriesSpecified = 6,
     }
     
     /// <summary>
-    /// >> 585 - Variant[pallet_omnipool_liquidity_mining.pallet.Error]
+    /// >> 657 - Variant[pallet_omnipool_liquidity_mining.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>
@@ -90,7 +84,6 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool_liquidity_mining.pall
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_omnipool_liquidity_mining.pallet.EnumInconsistentStateError>(Error.InconsistentState);
 				AddTypeDecoder<BaseVoid>(Error.OracleNotAvailable);
 				AddTypeDecoder<BaseVoid>(Error.PriceAdjustmentNotAvailable);
-				AddTypeDecoder<BaseVoid>(Error.Disabled);
 				AddTypeDecoder<BaseVoid>(Error.NoFarmEntriesSpecified);
         }
     }

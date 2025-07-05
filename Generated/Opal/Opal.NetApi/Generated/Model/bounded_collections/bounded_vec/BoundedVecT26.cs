@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.bounded_collections.bounded_vec
     
     
     /// <summary>
-    /// >> 473 - Composite[bounded_collections.bounded_vec.BoundedVecT26]
+    /// >> 514 - Composite[bounded_collections.bounded_vec.BoundedVecT26]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedVecT26 : BaseType
@@ -27,7 +27,7 @@ namespace Opal.NetApi.Generated.Model.bounded_collections.bounded_vec
         /// <summary>
         /// >> value
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.pallet_identity.types.RegistrarInfo>> Value { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Opal.NetApi.Generated.Model.frame_support.traits.tokens.misc.IdAmountT1> Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace Opal.NetApi.Generated.Model.bounded_collections.bounded_vec
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.pallet_identity.types.RegistrarInfo>>();
+            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Opal.NetApi.Generated.Model.frame_support.traits.tokens.misc.IdAmountT1>();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

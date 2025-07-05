@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_collator_selection.pallet
     
     
     /// <summary>
-    /// >> 249 - Composite[pallet_collator_selection.pallet.CandidateInfo]
+    /// >> 253 - Composite[pallet_collator_selection.pallet.CandidateInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CandidateInfo : BaseType

@@ -38,7 +38,6 @@ namespace Hydration.NetApi.Generated.Storage
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Omnipool", "Assets"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Hydration.NetApi.Generated.Model.pallet_omnipool.types.AssetState)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Omnipool", "HubAssetImbalance"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Hydration.NetApi.Generated.Model.pallet_omnipool.types.SimpleImbalance)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Omnipool", "HubAssetTradability"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Hydration.NetApi.Generated.Model.pallet_omnipool.types.Tradability)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Omnipool", "Positions"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U128), typeof(Hydration.NetApi.Generated.Model.pallet_omnipool.types.Position)));
@@ -73,35 +72,6 @@ namespace Hydration.NetApi.Generated.Storage
         {
             string parameters = OmnipoolStorage.AssetsParams(key);
             var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.pallet_omnipool.types.AssetState>(parameters, blockhash, token);
-            return result;
-        }
-        
-        /// <summary>
-        /// >> HubAssetImbalanceParams
-        ///  Imbalance of hub asset
-        /// </summary>
-        public static string HubAssetImbalanceParams()
-        {
-            return RequestGenerator.GetStorage("Omnipool", "HubAssetImbalance", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
-        }
-        
-        /// <summary>
-        /// >> HubAssetImbalanceDefault
-        /// Default value as hex string
-        /// </summary>
-        public static string HubAssetImbalanceDefault()
-        {
-            return "0x0000000000000000000000000000000001";
-        }
-        
-        /// <summary>
-        /// >> HubAssetImbalance
-        ///  Imbalance of hub asset
-        /// </summary>
-        public async Task<Hydration.NetApi.Generated.Model.pallet_omnipool.types.SimpleImbalance> HubAssetImbalance(string blockhash, CancellationToken token)
-        {
-            string parameters = OmnipoolStorage.HubAssetImbalanceParams();
-            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.pallet_omnipool.types.SimpleImbalance>(parameters, blockhash, token);
             return result;
         }
         
@@ -461,6 +431,16 @@ namespace Hydration.NetApi.Generated.Storage
             result.Create("0x39050000000000000000000000000000");
             return result;
         }
+        
+        /// <summary>
+        /// >> BurnProtocolFee
+        /// </summary>
+        public Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill BurnProtocolFee()
+        {
+            var result = new Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill();
+            result.Create("0x20A10700");
+            return result;
+        }
     }
     
     /// <summary>
@@ -572,12 +552,6 @@ namespace Hydration.NetApi.Generated.Storage
         HubAssetUpdateError,
         
         /// <summary>
-        /// >> PositiveImbalance
-        /// Imbalance results in positive value.
-        /// </summary>
-        PositiveImbalance,
-        
-        /// <summary>
         /// >> InvalidSharesAmount
         /// Amount of shares provided cannot be 0.
         /// </summary>
@@ -660,5 +634,11 @@ namespace Hydration.NetApi.Generated.Storage
         /// Slippage protection
         /// </summary>
         SlippageLimit,
+        
+        /// <summary>
+        /// >> ProtocolFeeNotConsumed
+        /// Extra protocol fee has not been consumed.
+        /// </summary>
+        ProtocolFeeNotConsumed,
     }
 }

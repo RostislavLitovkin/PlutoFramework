@@ -99,7 +99,16 @@ namespace PlutoFramework.Model
                 return;
             }
 
-            await ViewLocalLoadAsync(MainPage.Views, token);
+            try
+            {
+                await ViewLocalLoadAsync(MainPage.Views, token);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("ViewLocalLoadAsync exception:");
+                Console.WriteLine(e);
+            }
 
             var clientTasks = SubstrateClientModel.Clients.Values.ToList();
 
@@ -119,13 +128,38 @@ namespace PlutoFramework.Model
 
                 if (DependencyService.Get<MultiNetworkSelectViewModel>().SelectedKey == client.Endpoint.Key)
                 {
-                    await ViewMainSubstrateClientLoadAsync(MainPage.Views, client, token);
+                    try
+                    {
+                        await ViewMainSubstrateClientLoadAsync(MainPage.Views, client, token);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("ViewMainSubstrateClientLoadAsync exception:");
+                        Console.WriteLine(e);
+                    }
                 }
 
-                await ViewSubstrateClientLoadAsync(MainPage.Views, client, token);
+                try
+                {
+                    await ViewSubstrateClientLoadAsync(MainPage.Views, client, token);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("ViewSubstrateClientLoadAsync exception:");
+                    Console.WriteLine(e);
+                }
             }
 
-            ViewSetEmpty(MainPage.Views);
+            try
+            {
+                ViewSetEmpty(MainPage.Views);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("ViewSetEmpty exception:");
+                Console.WriteLine(e);
+
+            }
         }
 
         public static Task ViewLocalLoadAsync(IEnumerable<object> views, CancellationToken token)

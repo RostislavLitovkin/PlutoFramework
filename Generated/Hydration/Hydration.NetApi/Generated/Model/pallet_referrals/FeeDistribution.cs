@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_referrals
     
     
     /// <summary>
-    /// >> 122 - Composite[pallet_referrals.FeeDistribution]
+    /// >> 257 - Composite[pallet_referrals.FeeDistribution]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class FeeDistribution : BaseType

@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
     
     
     /// <summary>
-    /// >> 284 - Composite[up_data_structs.NestingPermissions]
+    /// >> 345 - Composite[up_data_structs.NestingPermissions]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class NestingPermissions : BaseType

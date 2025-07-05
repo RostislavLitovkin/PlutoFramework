@@ -1,0 +1,538 @@
+schema {
+  query: Query
+}
+
+"The root query type which gives access points into the data universe."
+type Query implements Node {
+  "Exposes the root query type nested one level down. This is helpful for Relay 1\nwhich can only query top level fields if they are in a particular form."
+  query: Query!
+  "The root query type must be a `Node` to work well with Relay 1 mutations. This just resolves to `query`."
+  nodeId: ID!
+  "Fetches an object given its globally unique `ID`."
+  node("The globally unique `ID`." nodeId: ID!): Node
+  "Reads and enables pagination through a set of `PropertyListing`."
+  propertyListings("Only read the first `n` values of the set." first: Int "Only read the last `n` values of the set." last: Int "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int "Read all values in the set before (above) this cursor." before: Cursor "Read all values in the set after (below) this cursor." after: Cursor "When specified, the query will return results as of this block height" blockHeight: String = "9223372036854775807" "The method to use when ordering `PropertyListing`." orderBy: [PropertyListingsOrderBy!] "Specify ordering of null values (NULLS_FIRST or NULLS_LAST)." orderByNull: NullOrder "A filter to be used in determining which values should be returned by the collection." filter: PropertyListingFilter "Fields to be distinct" distinct: [property_listings_distinct_enum]): PropertyListingsConnection
+  "Reads a single `PropertyListing` using its globally unique `ID`."
+  propertyListingByNodeId("The globally unique `ID` to be used in selecting a single `PropertyListing`." nodeId: ID! "Fields to be distinct" distinct: [property_listings_distinct_enum]): PropertyListing
+  _metadata(chainId: String): _Metadata
+  _metadatas(after: Cursor before: Cursor): _Metadatas
+  propertyListing(id: String! "When specified, the query will return results as of this block height" blockHeight: String = "9223372036854775807"): PropertyListing
+}
+
+"An object with a globally unique `ID`."
+interface Node {
+  "A globally unique identifier. Can be used in various places throughout the system to identify this single value."
+  nodeId: ID!
+}
+
+"A connection to a list of `PropertyListing` values."
+type PropertyListingsConnection {
+  "A list of `PropertyListing` objects."
+  nodes: [PropertyListing]!
+  "A list of edges which contains the `PropertyListing` and cursor to aid in pagination."
+  edges: [PropertyListingsEdge!]!
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  "The count of *all* `PropertyListing` you could get from the connection."
+  totalCount: Int!
+  "Aggregates across the matching connection (ignoring before\/after\/first\/last\/offset)"
+  aggregates: PropertyListingAggregates
+  "Grouped aggregates across the matching connection (ignoring before\/after\/first\/last\/offset)"
+  groupedAggregates("The method to use when grouping `PropertyListing` for these aggregates." groupBy: [PropertyListingsGroupBy!]! "Conditions on the grouped aggregates." having: PropertyListingsHavingInput): [PropertyListingAggregates!]
+}
+
+type PropertyListing implements Node {
+  "A globally unique identifier. Can be used in various places throughout the system to identify this single value."
+  nodeId: ID!
+  propertyListingId: Int!
+  nftCollectionId: Int!
+  nftItemId: Int!
+  assetId: Int!
+  id: String!
+  blockNumber: Int!
+  signer: String!
+  region: Int!
+  location: String!
+  tokenPrice: BigFloat!
+  tokenAmount: Int!
+  propertyId: BigFloat!
+  addressStreet: String!
+  addressTownCity: String!
+  area: String
+  constructionDate: String
+  estimatedRentalIncome: Int
+  files: String
+  localAuthority: String
+  map: String
+  noOfBathrooms: Int
+  noOfBedrooms: Int
+  numberOfTokens: Int
+  offStreetParking: String
+  outdoorSpace: String
+  planningPermissionCode: String
+  postCode: String
+  pricePerToken: BigFloat!
+  propertyDescription: String
+  propertyDevelopmentCode: String
+  propertyName: String
+  propertyNumber: String
+  propertyPrice: BigFloat!
+  propertyType: String
+  quality: String
+  titleDeedNumber: String
+}
+
+"A floating point number that requires more precision than IEEE 754 binary 64"
+scalar BigFloat
+
+"A `PropertyListing` edge in the connection."
+type PropertyListingsEdge {
+  "A cursor for use in pagination."
+  cursor: Cursor
+  "The `PropertyListing` at the end of the edge."
+  node: PropertyListing
+}
+
+"A location in a connection that can be used for resuming pagination."
+scalar Cursor
+
+"Information about pagination in a connection."
+type PageInfo {
+  "When paginating forwards, are there more items?"
+  hasNextPage: Boolean!
+  "When paginating backwards, are there more items?"
+  hasPreviousPage: Boolean!
+  "When paginating backwards, the cursor to continue."
+  startCursor: Cursor
+  "When paginating forwards, the cursor to continue."
+  endCursor: Cursor
+}
+
+type PropertyListingAggregates {
+  keys: [String!]
+}
+
+"Grouping methods for `PropertyListing` for usage during aggregation."
+enum PropertyListingsGroupBy {
+  PROPERTY_LISTING_ID
+  NFT_COLLECTION_ID
+  NFT_ITEM_ID
+  ASSET_ID
+  ID
+  BLOCK_NUMBER
+  SIGNER
+  REGION
+  LOCATION
+  TOKEN_PRICE
+  TOKEN_AMOUNT
+  PROPERTY_ID
+  ADDRESS_STREET
+  ADDRESS_TOWN_CITY
+  AREA
+  CONSTRUCTION_DATE
+  ESTIMATED_RENTAL_INCOME
+  FILES
+  LOCAL_AUTHORITY
+  MAP
+  NO_OF_BATHROOMS
+  NO_OF_BEDROOMS
+  NUMBER_OF_TOKENS
+  OFF_STREET_PARKING
+  OUTDOOR_SPACE
+  PLANNING_PERMISSION_CODE
+  POST_CODE
+  PRICE_PER_TOKEN
+  PROPERTY_DESCRIPTION
+  PROPERTY_DEVELOPMENT_CODE
+  PROPERTY_NAME
+  PROPERTY_NUMBER
+  PROPERTY_PRICE
+  PROPERTY_TYPE
+  QUALITY
+  TITLE_DEED_NUMBER
+}
+
+"Conditions for `PropertyListing` aggregates."
+input PropertyListingsHavingInput {
+  AND: [PropertyListingsHavingInput!]
+  OR: [PropertyListingsHavingInput!]
+}
+
+"Methods to use when ordering `PropertyListing`."
+enum PropertyListingsOrderBy {
+  NATURAL
+  PROPERTY_LISTING_ID_ASC
+  PROPERTY_LISTING_ID_DESC
+  NFT_COLLECTION_ID_ASC
+  NFT_COLLECTION_ID_DESC
+  NFT_ITEM_ID_ASC
+  NFT_ITEM_ID_DESC
+  ASSET_ID_ASC
+  ASSET_ID_DESC
+  ID_ASC
+  ID_DESC
+  BLOCK_NUMBER_ASC
+  BLOCK_NUMBER_DESC
+  SIGNER_ASC
+  SIGNER_DESC
+  REGION_ASC
+  REGION_DESC
+  LOCATION_ASC
+  LOCATION_DESC
+  TOKEN_PRICE_ASC
+  TOKEN_PRICE_DESC
+  TOKEN_AMOUNT_ASC
+  TOKEN_AMOUNT_DESC
+  PROPERTY_ID_ASC
+  PROPERTY_ID_DESC
+  ADDRESS_STREET_ASC
+  ADDRESS_STREET_DESC
+  ADDRESS_TOWN_CITY_ASC
+  ADDRESS_TOWN_CITY_DESC
+  AREA_ASC
+  AREA_DESC
+  CONSTRUCTION_DATE_ASC
+  CONSTRUCTION_DATE_DESC
+  ESTIMATED_RENTAL_INCOME_ASC
+  ESTIMATED_RENTAL_INCOME_DESC
+  FILES_ASC
+  FILES_DESC
+  LOCAL_AUTHORITY_ASC
+  LOCAL_AUTHORITY_DESC
+  MAP_ASC
+  MAP_DESC
+  NO_OF_BATHROOMS_ASC
+  NO_OF_BATHROOMS_DESC
+  NO_OF_BEDROOMS_ASC
+  NO_OF_BEDROOMS_DESC
+  NUMBER_OF_TOKENS_ASC
+  NUMBER_OF_TOKENS_DESC
+  OFF_STREET_PARKING_ASC
+  OFF_STREET_PARKING_DESC
+  OUTDOOR_SPACE_ASC
+  OUTDOOR_SPACE_DESC
+  PLANNING_PERMISSION_CODE_ASC
+  PLANNING_PERMISSION_CODE_DESC
+  POST_CODE_ASC
+  POST_CODE_DESC
+  PRICE_PER_TOKEN_ASC
+  PRICE_PER_TOKEN_DESC
+  PROPERTY_DESCRIPTION_ASC
+  PROPERTY_DESCRIPTION_DESC
+  PROPERTY_DEVELOPMENT_CODE_ASC
+  PROPERTY_DEVELOPMENT_CODE_DESC
+  PROPERTY_NAME_ASC
+  PROPERTY_NAME_DESC
+  PROPERTY_NUMBER_ASC
+  PROPERTY_NUMBER_DESC
+  PROPERTY_PRICE_ASC
+  PROPERTY_PRICE_DESC
+  PROPERTY_TYPE_ASC
+  PROPERTY_TYPE_DESC
+  QUALITY_ASC
+  QUALITY_DESC
+  TITLE_DEED_NUMBER_ASC
+  TITLE_DEED_NUMBER_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"Options for ordering null values in a specific direction."
+enum NullOrder {
+  "Order null values first."
+  NULLS_FIRST
+  "Order null values last."
+  NULLS_LAST
+}
+
+"A filter to be used against `PropertyListing` object types. All fields are combined with a logical ‘and.’"
+input PropertyListingFilter {
+  "Filter by the object’s `propertyListingId` field."
+  propertyListingId: IntFilter
+  "Filter by the object’s `nftCollectionId` field."
+  nftCollectionId: IntFilter
+  "Filter by the object’s `nftItemId` field."
+  nftItemId: IntFilter
+  "Filter by the object’s `assetId` field."
+  assetId: IntFilter
+  "Filter by the object’s `id` field."
+  id: StringFilter
+  "Filter by the object’s `blockNumber` field."
+  blockNumber: IntFilter
+  "Filter by the object’s `signer` field."
+  signer: StringFilter
+  "Filter by the object’s `region` field."
+  region: IntFilter
+  "Filter by the object’s `location` field."
+  location: StringFilter
+  "Filter by the object’s `tokenPrice` field."
+  tokenPrice: BigFloatFilter
+  "Filter by the object’s `tokenAmount` field."
+  tokenAmount: IntFilter
+  "Filter by the object’s `propertyId` field."
+  propertyId: BigFloatFilter
+  "Filter by the object’s `addressStreet` field."
+  addressStreet: StringFilter
+  "Filter by the object’s `addressTownCity` field."
+  addressTownCity: StringFilter
+  "Filter by the object’s `area` field."
+  area: StringFilter
+  "Filter by the object’s `constructionDate` field."
+  constructionDate: StringFilter
+  "Filter by the object’s `estimatedRentalIncome` field."
+  estimatedRentalIncome: IntFilter
+  "Filter by the object’s `files` field."
+  files: StringFilter
+  "Filter by the object’s `localAuthority` field."
+  localAuthority: StringFilter
+  "Filter by the object’s `map` field."
+  map: StringFilter
+  "Filter by the object’s `noOfBathrooms` field."
+  noOfBathrooms: IntFilter
+  "Filter by the object’s `noOfBedrooms` field."
+  noOfBedrooms: IntFilter
+  "Filter by the object’s `numberOfTokens` field."
+  numberOfTokens: IntFilter
+  "Filter by the object’s `offStreetParking` field."
+  offStreetParking: StringFilter
+  "Filter by the object’s `outdoorSpace` field."
+  outdoorSpace: StringFilter
+  "Filter by the object’s `planningPermissionCode` field."
+  planningPermissionCode: StringFilter
+  "Filter by the object’s `postCode` field."
+  postCode: StringFilter
+  "Filter by the object’s `pricePerToken` field."
+  pricePerToken: BigFloatFilter
+  "Filter by the object’s `propertyDescription` field."
+  propertyDescription: StringFilter
+  "Filter by the object’s `propertyDevelopmentCode` field."
+  propertyDevelopmentCode: StringFilter
+  "Filter by the object’s `propertyName` field."
+  propertyName: StringFilter
+  "Filter by the object’s `propertyNumber` field."
+  propertyNumber: StringFilter
+  "Filter by the object’s `propertyPrice` field."
+  propertyPrice: BigFloatFilter
+  "Filter by the object’s `propertyType` field."
+  propertyType: StringFilter
+  "Filter by the object’s `quality` field."
+  quality: StringFilter
+  "Filter by the object’s `titleDeedNumber` field."
+  titleDeedNumber: StringFilter
+  "Checks for all expressions in this list."
+  and: [PropertyListingFilter!]
+  "Checks for any expressions in this list."
+  or: [PropertyListingFilter!]
+  "Negates the expression."
+  not: PropertyListingFilter
+}
+
+"A filter to be used against Int fields. All fields are combined with a logical ‘and.’"
+input IntFilter {
+  "Is null (if `true` is specified) or is not null (if `false` is specified)."
+  isNull: Boolean
+  "Equal to the specified value."
+  equalTo: Int
+  "Not equal to the specified value."
+  notEqualTo: Int
+  "Not equal to the specified value, treating null like an ordinary value."
+  distinctFrom: Int
+  "Equal to the specified value, treating null like an ordinary value."
+  notDistinctFrom: Int
+  "Included in the specified list."
+  in: [Int!]
+  "Not included in the specified list."
+  notIn: [Int!]
+  "Less than the specified value."
+  lessThan: Int
+  "Less than or equal to the specified value."
+  lessThanOrEqualTo: Int
+  "Greater than the specified value."
+  greaterThan: Int
+  "Greater than or equal to the specified value."
+  greaterThanOrEqualTo: Int
+}
+
+"A filter to be used against String fields. All fields are combined with a logical ‘and.’"
+input StringFilter {
+  "Is null (if `true` is specified) or is not null (if `false` is specified)."
+  isNull: Boolean
+  "Equal to the specified value."
+  equalTo: String
+  "Not equal to the specified value."
+  notEqualTo: String
+  "Not equal to the specified value, treating null like an ordinary value."
+  distinctFrom: String
+  "Equal to the specified value, treating null like an ordinary value."
+  notDistinctFrom: String
+  "Included in the specified list."
+  in: [String!]
+  "Not included in the specified list."
+  notIn: [String!]
+  "Less than the specified value."
+  lessThan: String
+  "Less than or equal to the specified value."
+  lessThanOrEqualTo: String
+  "Greater than the specified value."
+  greaterThan: String
+  "Greater than or equal to the specified value."
+  greaterThanOrEqualTo: String
+  "Contains the specified string (case-sensitive)."
+  includes: String
+  "Does not contain the specified string (case-sensitive)."
+  notIncludes: String
+  "Contains the specified string (case-insensitive)."
+  includesInsensitive: String
+  "Does not contain the specified string (case-insensitive)."
+  notIncludesInsensitive: String
+  "Starts with the specified string (case-sensitive)."
+  startsWith: String
+  "Does not start with the specified string (case-sensitive)."
+  notStartsWith: String
+  "Starts with the specified string (case-insensitive)."
+  startsWithInsensitive: String
+  "Does not start with the specified string (case-insensitive)."
+  notStartsWithInsensitive: String
+  "Ends with the specified string (case-sensitive)."
+  endsWith: String
+  "Does not end with the specified string (case-sensitive)."
+  notEndsWith: String
+  "Ends with the specified string (case-insensitive)."
+  endsWithInsensitive: String
+  "Does not end with the specified string (case-insensitive)."
+  notEndsWithInsensitive: String
+  "Matches the specified pattern (case-sensitive). An underscore (_) matches any single character; a percent sign (%) matches any sequence of zero or more characters."
+  like: String
+  "Does not match the specified pattern (case-sensitive). An underscore (_) matches any single character; a percent sign (%) matches any sequence of zero or more characters."
+  notLike: String
+  "Matches the specified pattern (case-insensitive). An underscore (_) matches any single character; a percent sign (%) matches any sequence of zero or more characters."
+  likeInsensitive: String
+  "Does not match the specified pattern (case-insensitive). An underscore (_) matches any single character; a percent sign (%) matches any sequence of zero or more characters."
+  notLikeInsensitive: String
+  "Equal to the specified value (case-insensitive)."
+  equalToInsensitive: String
+  "Not equal to the specified value (case-insensitive)."
+  notEqualToInsensitive: String
+  "Not equal to the specified value, treating null like an ordinary value (case-insensitive)."
+  distinctFromInsensitive: String
+  "Equal to the specified value, treating null like an ordinary value (case-insensitive)."
+  notDistinctFromInsensitive: String
+  "Included in the specified list (case-insensitive)."
+  inInsensitive: [String!]
+  "Not included in the specified list (case-insensitive)."
+  notInInsensitive: [String!]
+  "Less than the specified value (case-insensitive)."
+  lessThanInsensitive: String
+  "Less than or equal to the specified value (case-insensitive)."
+  lessThanOrEqualToInsensitive: String
+  "Greater than the specified value (case-insensitive)."
+  greaterThanInsensitive: String
+  "Greater than or equal to the specified value (case-insensitive)."
+  greaterThanOrEqualToInsensitive: String
+}
+
+"A filter to be used against BigFloat fields. All fields are combined with a logical ‘and.’"
+input BigFloatFilter {
+  "Is null (if `true` is specified) or is not null (if `false` is specified)."
+  isNull: Boolean
+  "Equal to the specified value."
+  equalTo: BigFloat
+  "Not equal to the specified value."
+  notEqualTo: BigFloat
+  "Not equal to the specified value, treating null like an ordinary value."
+  distinctFrom: BigFloat
+  "Equal to the specified value, treating null like an ordinary value."
+  notDistinctFrom: BigFloat
+  "Included in the specified list."
+  in: [BigFloat!]
+  "Not included in the specified list."
+  notIn: [BigFloat!]
+  "Less than the specified value."
+  lessThan: BigFloat
+  "Less than or equal to the specified value."
+  lessThanOrEqualTo: BigFloat
+  "Greater than the specified value."
+  greaterThan: BigFloat
+  "Greater than or equal to the specified value."
+  greaterThanOrEqualTo: BigFloat
+}
+
+enum property_listings_distinct_enum {
+  PROPERTY_LISTING_ID
+  NFT_COLLECTION_ID
+  NFT_ITEM_ID
+  ASSET_ID
+  ID
+  BLOCK_NUMBER
+  SIGNER
+  REGION
+  LOCATION
+  TOKEN_PRICE
+  TOKEN_AMOUNT
+  PROPERTY_ID
+  ADDRESS_STREET
+  ADDRESS_TOWN_CITY
+  AREA
+  CONSTRUCTION_DATE
+  ESTIMATED_RENTAL_INCOME
+  FILES
+  LOCAL_AUTHORITY
+  MAP
+  NO_OF_BATHROOMS
+  NO_OF_BEDROOMS
+  NUMBER_OF_TOKENS
+  OFF_STREET_PARKING
+  OUTDOOR_SPACE
+  PLANNING_PERMISSION_CODE
+  POST_CODE
+  PRICE_PER_TOKEN
+  PROPERTY_DESCRIPTION
+  PROPERTY_DEVELOPMENT_CODE
+  PROPERTY_NAME
+  PROPERTY_NUMBER
+  PROPERTY_PRICE
+  PROPERTY_TYPE
+  QUALITY
+  TITLE_DEED_NUMBER
+}
+
+type _Metadata {
+  lastProcessedHeight: Int
+  lastProcessedTimestamp: Date
+  targetHeight: Int
+  chain: String
+  specName: String
+  genesisHash: String
+  startHeight: Int
+  indexerHealthy: Boolean
+  indexerNodeVersion: String
+  queryNodeVersion: String
+  rowCountEstimate: [TableEstimate]
+  dynamicDatasources: [JSON]
+  evmChainId: String
+  deployments: JSON
+  lastFinalizedVerifiedHeight: Int
+  unfinalizedBlocks: String
+  lastCreatedPoiHeight: Int
+  latestSyncedPoiHeight: Int
+  dbSize: BigInt
+}
+
+"The day, does not include a time."
+scalar Date
+
+type TableEstimate {
+  table: String
+  estimate: Int
+}
+
+"The `JSON` scalar type represents JSON values as specified by [ECMA-404](http:\/\/www.ecma-international.org\/publications\/files\/ECMA-ST\/ECMA-404.pdf)."
+scalar JSON
+
+"A signed eight-byte integer. The upper big integer values are greater than the\nmax value for a JavaScript number. Therefore all big integers will be output as\nstrings and not numbers."
+scalar BigInt
+
+type _Metadatas {
+  totalCount: Int!
+  nodes: [_Metadata]!
+}

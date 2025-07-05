@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_uniques.types
     
     
     /// <summary>
-    /// >> 420 - Composite[pallet_uniques.types.ItemDetails]
+    /// >> 435 - Composite[pallet_uniques.types.ItemDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ItemDetails : BaseType

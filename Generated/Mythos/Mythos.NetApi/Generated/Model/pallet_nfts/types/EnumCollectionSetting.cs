@@ -48,7 +48,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_nfts.types
     }
     
     /// <summary>
-    /// >> 229 - Variant[pallet_nfts.types.CollectionSetting]
+    /// >> 256 - Variant[pallet_nfts.types.CollectionSetting]
     /// </summary>
     public sealed class EnumCollectionSetting : BaseEnum<CollectionSetting>
     {

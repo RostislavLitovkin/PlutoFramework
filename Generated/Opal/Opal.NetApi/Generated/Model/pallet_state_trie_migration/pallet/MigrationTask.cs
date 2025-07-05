@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_state_trie_migration.pallet
     
     
     /// <summary>
-    /// >> 92 - Composite[pallet_state_trie_migration.pallet.MigrationTask]
+    /// >> 101 - Composite[pallet_state_trie_migration.pallet.MigrationTask]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MigrationTask : BaseType

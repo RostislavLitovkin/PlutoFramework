@@ -1,0 +1,42 @@
+query PropertyListings($first: Int = 10, $offset: Int = 0) {
+  propertyListings(first: $first, orderBy: BLOCK_NUMBER_DESC, offset: $offset) {
+    nodes {
+      id
+      blockNumber
+      signer
+      region
+      location
+      tokenPrice
+      tokenAmount
+      propertyId
+      addressStreet
+      addressTownCity
+      area
+      constructionDate
+      estimatedRentalIncome
+      files
+      localAuthority
+      map
+      noOfBathrooms
+      noOfBedrooms
+      numberOfTokens
+      offStreetParking
+      outdoorSpace
+      planningPermissionCode
+      postCode
+      pricePerToken
+      propertyDescription
+      propertyDevelopmentCode
+      propertyName
+      propertyNumber
+      propertyPrice
+      propertyType
+      quality
+      titleDeedNumber
+      propertyListingId
+      nftCollectionId
+      nftItemId
+      assetId
+    }
+  }
+}

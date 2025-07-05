@@ -28,7 +28,7 @@ namespace Opal.NetApi.Generated.Model.pallet_ethereum
     }
     
     /// <summary>
-    /// >> 214 - Variant[pallet_ethereum.RawOrigin]
+    /// >> 241 - Variant[pallet_ethereum.RawOrigin]
     /// </summary>
     public sealed class EnumRawOrigin : BaseEnumRust<RawOrigin>
     {

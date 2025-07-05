@@ -4,11 +4,14 @@
              xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
              x:Class="PlutoFramework.Components.WebView.WebViewPage"
              x:Name="page"
-             Title="WebViewPage">
+             Title="WebViewPage"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
         
         <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-               Source="space.png" Aspect="AspectFill"/>
+               Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
+               Opacity="{AppThemeBinding Light=0.96}"
+               Aspect="AspectFill"/>
 
         <ScrollView Orientation="Vertical"
                     x:Name="scrollView"

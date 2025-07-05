@@ -58,7 +58,7 @@ namespace Opal.NetApi.Generated.Storage
         /// </summary>
         public static string WeightToFeeCoefficientOverrideDefault()
         {
-            return "0x0198DE44373B0801";
+            return "0x93A26A9CA3020C01";
         }
         
         /// <summary>
@@ -85,7 +85,7 @@ namespace Opal.NetApi.Generated.Storage
         /// </summary>
         public static string MinGasPriceOverrideDefault()
         {
-            return "0x2BBC2938B4010000";
+            return "0xDA93A39EB1010000";
         }
         
         /// <summary>
@@ -193,7 +193,7 @@ namespace Opal.NetApi.Generated.Storage
         /// </summary>
         public static string CollatorSelectionKickThresholdOverrideDefault()
         {
-            return "0x2C010000";
+            return "0x58020000";
         }
         
         /// <summary>
@@ -292,7 +292,7 @@ namespace Opal.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U64 DefaultWeightToFeeCoefficient()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U64();
-            result.Create("0x0198DE44373B0801");
+            result.Create("0x93A26A9CA3020C01");
             return result;
         }
         
@@ -302,7 +302,7 @@ namespace Opal.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U64 DefaultMinGasPrice()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U64();
-            result.Create("0x2BBC2938B4010000");
+            result.Create("0xDA93A39EB1010000");
             return result;
         }
         
@@ -322,7 +322,7 @@ namespace Opal.NetApi.Generated.Storage
         public Opal.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill AppPromotionDailyRate()
         {
             var result = new Opal.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill();
-            result.Create("0x88EA0600");
+            result.Create("0xB8340600");
             return result;
         }
         
@@ -362,7 +362,7 @@ namespace Opal.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 DefaultCollatorSelectionKickThreshold()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x2C010000");
+            result.Create("0x58020000");
             return result;
         }
     }

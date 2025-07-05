@@ -28,7 +28,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_state_trie_migration.pall
     }
     
     /// <summary>
-    /// >> 230 - Variant[pallet_state_trie_migration.pallet.HoldReason]
+    /// >> 234 - Variant[pallet_state_trie_migration.pallet.HoldReason]
     /// </summary>
     public sealed class EnumHoldReason : BaseEnum<HoldReason>
     {

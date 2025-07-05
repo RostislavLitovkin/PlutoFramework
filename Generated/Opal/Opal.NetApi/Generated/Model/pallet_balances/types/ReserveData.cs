@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_balances.types
     
     
     /// <summary>
-    /// >> 447 - Composite[pallet_balances.types.ReserveData]
+    /// >> 512 - Composite[pallet_balances.types.ReserveData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ReserveData : BaseType

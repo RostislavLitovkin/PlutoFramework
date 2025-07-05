@@ -4,26 +4,22 @@
              x:Class="PlutoFramework.Components.Xcavate.WelcomePage"
              Title="WelcomePage"
              xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+             xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
          xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
          xmlns:password="clr-namespace:PlutoFramework.Components.Password"
          BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
-        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-           Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
-           Opacity="{AppThemeBinding Light=0.96}"
-           Aspect="AspectFill"/>
-
         <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-              Padding="20"
-              ColumnSpacing="15"
-              RowSpacing="15">
+           >
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="40" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
 
             </Grid.RowDefinitions>
 
@@ -31,28 +27,86 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Label Text="Welcome to XCavate"
-                     FontAttributes="Bold"
-                     FontSize="20"
-                     Grid.Column="0"
-                     Grid.Row="0"/>
-            <Label Text="Unlock the future of real estate with secure, tokenized ownership"
-                    TextColor="#888888"
-                     Grid.Column="0"
-                     Grid.Row="1"/>
+            <xcavate:RiskWarningView Margin="20,10,20,10"/>
+            
+            <CarouselView x:Name="carouselView"
+                      ItemsSource="{Binding Splashes}"
+                      IndicatorView="indicatorView"
+                      Grid.Row="2"
+                      PeekAreaInsets="0"
+                          HorizontalScrollBarVisibility="Never"
+                      IsBounceEnabled="True">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                              Padding="20, 20, 20, 0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Border Padding="0"
+                                    Grid.Row="0"
+                                    StrokeThickness="0"
+                                    AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                                    Stroke="{AppThemeBinding Light=White, Dark=Black}"
+                                    BackgroundColor="Black">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="{StaticResource CARD-CORNER-RADIUS}" />
+
+                                </Border.StrokeShape>
+
+                                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                                    <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                                           Source="{Binding Image}"
+                                           Aspect="AspectFill" />
+                                </AbsoluteLayout>
+                            </Border>
+
+                            <Label
+                                   FontSize="16" HorizontalTextAlignment="Center"
+                                   Grid.Row="1"
+                                   Margin="20">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding Description}"
+                                              FontAttributes="Bold"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </Grid>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <IndicatorView x:Name="indicatorView"
+                            IndicatorColor="Gray"
+                            SelectedIndicatorColor="{x:StaticResource X-BLUE}"
+                            HorizontalOptions="Center"
+                           Margin="0,0,0,30"
+                            Grid.Row="3"/>
+
+            <Label Text="Welcome to the realXmarket"
+                    FontAttributes="Bold"
+                    FontSize="25"
+                    Grid.Column="0"
+                   IsVisible="False"
+                    Grid.Row="1"/>
+
+            <VerticalStackLayout Grid.Row="5"
+                 Padding="20, 10, 20, 15"
+                 Spacing="{StaticResource GAP}">
+
+                <buttons:ElevatedButton Text="Create Account"
+                            ButtonState="Enabled"
+                            Command="{Binding CreateAccountCommand}" />
+                <buttons:ElevatedButton Text="Import Account"
+                            ButtonState="Enabled"
+                            Command="{Binding ImportAccountCommand}" />
+                <buttons:BasicGrayButton Text="Browse Properties"
+                             ButtonState="Enabled"
+                             Command="{Binding BrowsePropertiesCommand}" />
+            </VerticalStackLayout>
         </Grid>
-
-        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, AutoSize"
-                         AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
-                         Padding="20, 10, 20, 10"
-                         Spacing="15">
-            <buttons:ElevatedButton Text="Get Started"
-                                    ButtonState="Enabled"
-                                    Command="{Binding ContinueToNextPageCommand}" />
-        </VerticalStackLayout>
-
-        <txanalyzer:TransactionAnalyzerConfirmationView />
-
-        <password:EnterPasswordPopupView />
     </AbsoluteLayout>
 </ContentPage>

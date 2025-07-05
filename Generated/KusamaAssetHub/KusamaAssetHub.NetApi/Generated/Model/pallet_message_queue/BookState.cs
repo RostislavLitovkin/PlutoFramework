@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_message_queue
     
     
     /// <summary>
-    /// >> 341 - Composite[pallet_message_queue.BookState]
+    /// >> 345 - Composite[pallet_message_queue.BookState]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BookState : BaseType

@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.staging_xcm.v3.multilocation
     
     
     /// <summary>
-    /// >> 133 - Composite[staging_xcm.v3.multilocation.MultiLocation]
+    /// >> 139 - Composite[staging_xcm.v3.multilocation.MultiLocation]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MultiLocation : BaseType

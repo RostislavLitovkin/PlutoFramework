@@ -33,7 +33,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.xcm.v3.multiasset
     }
     
     /// <summary>
-    /// >> 322 - Variant[xcm.v3.multiasset.MultiAssetFilter]
+    /// >> 326 - Variant[xcm.v3.multiasset.MultiAssetFilter]
     /// </summary>
     public sealed class EnumMultiAssetFilter : BaseEnumRust<MultiAssetFilter>
     {

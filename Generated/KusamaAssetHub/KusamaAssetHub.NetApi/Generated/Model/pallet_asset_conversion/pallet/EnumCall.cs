@@ -46,7 +46,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_asset_conversion.pallet
         /// calls to render the liquidity withdrawable and rectify the exchange rate.
         /// 
         /// Once liquidity is added, someone may successfully call
-        /// [`Pallet::swap_exact_tokens_for_tokens`] successfully.
+        /// [`Pallet::swap_exact_tokens_for_tokens`].
         /// </summary>
         add_liquidity = 1,
         
@@ -98,7 +98,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_asset_conversion.pallet
     }
     
     /// <summary>
-    /// >> 385 - Variant[pallet_asset_conversion.pallet.Call]
+    /// >> 391 - Variant[pallet_asset_conversion.pallet.Call]
     /// Pallet's callable functions.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

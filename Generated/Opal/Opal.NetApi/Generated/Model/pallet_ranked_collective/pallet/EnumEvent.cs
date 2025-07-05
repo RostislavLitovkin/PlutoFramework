@@ -46,10 +46,16 @@ namespace Opal.NetApi.Generated.Model.pallet_ranked_collective.pallet
         /// `tally`.
         /// </summary>
         Voted = 3,
+        
+        /// <summary>
+        /// >> MemberExchanged
+        /// The member `who` had their `AccountId` changed to `new_who`.
+        /// </summary>
+        MemberExchanged = 4,
     }
     
     /// <summary>
-    /// >> 78 - Variant[pallet_ranked_collective.pallet.Event]
+    /// >> 87 - Variant[pallet_ranked_collective.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -64,6 +70,7 @@ namespace Opal.NetApi.Generated.Model.pallet_ranked_collective.pallet
 				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U16>>(Event.RankChanged);
 				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U16>>(Event.MemberRemoved);
 				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Opal.NetApi.Generated.Model.pallet_ranked_collective.EnumVoteRecord, Opal.NetApi.Generated.Model.pallet_ranked_collective.Tally>>(Event.Voted);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32, Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.MemberExchanged);
         }
     }
 }

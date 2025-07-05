@@ -54,7 +54,7 @@ namespace Opal.NetApi.Generated.Model.pallet_fungible.pallet
     }
     
     /// <summary>
-    /// >> 620 - Variant[pallet_fungible.pallet.Error]
+    /// >> 701 - Variant[pallet_fungible.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

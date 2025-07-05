@@ -72,7 +72,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_proxy.pallet
     }
     
     /// <summary>
-    /// >> 405 - Variant[pallet_proxy.pallet.Error]
+    /// >> 416 - Variant[pallet_proxy.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

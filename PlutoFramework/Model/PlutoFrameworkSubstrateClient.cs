@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using PlutoFramework.Components.NetworkSelect;
 using System.Net;
 using Substrate.NetApi.Model.Types;
+using PlutoFramework.View;
 
 namespace PlutoFramework.Model
 {
@@ -199,6 +200,16 @@ namespace PlutoFramework.Model
                             Console.WriteLine("failed to find events");
                             Console.WriteLine(e);
                             extrinsicStackViewModel.Extrinsics[extrinsicHashString].Status = ExtrinsicStatusEnum.InBlockSuccess;
+                        }
+
+                        try
+                        {
+                            var multiNetworkSelectViewModel = DependencyService.Get<MultiNetworkSelectViewModel>();
+                            multiNetworkSelectViewModel.SetupDefault();
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex);
                         }
                     });
                 }

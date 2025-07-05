@@ -42,6 +42,16 @@ namespace Mythos.NetApi.Generated.Model.mainnet_runtime
         Multisig = 5,
         
         /// <summary>
+        /// >> Preimage
+        /// </summary>
+        Preimage = 6,
+        
+        /// <summary>
+        /// >> Scheduler
+        /// </summary>
+        Scheduler = 7,
+        
+        /// <summary>
         /// >> Balances
         /// </summary>
         Balances = 10,
@@ -77,9 +87,19 @@ namespace Mythos.NetApi.Generated.Model.mainnet_runtime
         Council = 16,
         
         /// <summary>
-        /// >> CollatorSelection
+        /// >> Democracy
         /// </summary>
-        CollatorSelection = 21,
+        Democracy = 17,
+        
+        /// <summary>
+        /// >> Treasury
+        /// </summary>
+        Treasury = 18,
+        
+        /// <summary>
+        /// >> CollatorStaking
+        /// </summary>
+        CollatorStaking = 21,
         
         /// <summary>
         /// >> Session
@@ -147,6 +167,8 @@ namespace Mythos.NetApi.Generated.Model.mainnet_runtime
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.cumulus_pallet_parachain_system.pallet.EnumEvent>(RuntimeEvent.ParachainSystem);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_utility.pallet.EnumEvent>(RuntimeEvent.Utility);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_multisig.pallet.EnumEvent>(RuntimeEvent.Multisig);
+				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_preimage.pallet.EnumEvent>(RuntimeEvent.Preimage);
+				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_scheduler.pallet.EnumEvent>(RuntimeEvent.Scheduler);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_balances.pallet.EnumEvent>(RuntimeEvent.Balances);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_transaction_payment.pallet.EnumEvent>(RuntimeEvent.TransactionPayment);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_nfts.pallet.EnumEvent>(RuntimeEvent.Nfts);
@@ -154,7 +176,9 @@ namespace Mythos.NetApi.Generated.Model.mainnet_runtime
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_multibatching.pallet.EnumEvent>(RuntimeEvent.Multibatching);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_sudo.pallet.EnumEvent>(RuntimeEvent.Sudo);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_collective.pallet.EnumEvent>(RuntimeEvent.Council);
-				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_collator_selection.pallet.EnumEvent>(RuntimeEvent.CollatorSelection);
+				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_democracy.pallet.EnumEvent>(RuntimeEvent.Democracy);
+				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_treasury.pallet.EnumEvent>(RuntimeEvent.Treasury);
+				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_collator_staking.pallet.EnumEvent>(RuntimeEvent.CollatorStaking);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_session.pallet.EnumEvent>(RuntimeEvent.Session);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.pallet.EnumEvent>(RuntimeEvent.XcmpQueue);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_xcm.pallet.EnumEvent>(RuntimeEvent.PolkadotXcm);

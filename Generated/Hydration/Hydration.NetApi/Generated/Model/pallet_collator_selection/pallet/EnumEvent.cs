@@ -85,7 +85,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_collator_selection.pallet
     }
     
     /// <summary>
-    /// >> 229 - Variant[pallet_collator_selection.pallet.Event]
+    /// >> 474 - Variant[pallet_collator_selection.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

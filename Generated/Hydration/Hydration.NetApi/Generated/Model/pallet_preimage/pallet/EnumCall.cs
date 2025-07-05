@@ -69,7 +69,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_preimage.pallet
     }
     
     /// <summary>
-    /// >> 288 - Variant[pallet_preimage.pallet.Call]
+    /// >> 119 - Variant[pallet_preimage.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

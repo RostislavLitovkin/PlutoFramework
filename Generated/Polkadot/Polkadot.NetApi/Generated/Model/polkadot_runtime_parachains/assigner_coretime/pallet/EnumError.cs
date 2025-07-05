@@ -60,7 +60,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.assigner_c
     }
     
     /// <summary>
-    /// >> 795 - Variant[polkadot_runtime_parachains.assigner_coretime.pallet.Error]
+    /// >> 788 - Variant[polkadot_runtime_parachains.assigner_coretime.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

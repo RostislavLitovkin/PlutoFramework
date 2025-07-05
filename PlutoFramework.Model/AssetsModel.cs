@@ -7,11 +7,18 @@ using PlutoFramework.Constants;
 using Bifrost.NetApi.Generated.Model.orml_tokens;
 using Substrate.NetApi.Model.Types.Primitive;
 using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.AssetPallet, System.Numerics.BigInteger);
+using XcavatePaseo.NetApi.Generated.Storage;
 
 namespace PlutoFramework.Model
 {
+    public interface IBalancesDatabaseSaver
+    {
+        public Task<int> SaveBalanceAsync(Asset asset);
+    }
     public class AssetsModel
     {
+        public static IBalancesDatabaseSaver? DatabaseSaver { get; set; } = null;
+
         private static bool doNotReload = false;
 
         public static double UsdSum = 0.0;
@@ -24,8 +31,52 @@ namespace PlutoFramework.Model
                      .Where(asset => asset.Symbol.Equals(symbol, StringComparison.Ordinal));
         }
 
+        public static void LoadAssets(IEnumerable<Asset> assets, bool overwrite = false)
+        {
+            foreach (var asset in assets)
+            {
+                var key = (asset.Endpoint.Key, asset.Pallet, asset.AssetId);
+
+                if (!AssetsDict.ContainsKey(key) || overwrite)
+                {
+                    AssetsDict[key] = asset;
+                }
+            }
+
+            CalculateTotalUsdBalance();
+        }
+
+        public static Asset? GetFirstOwnedAsset(IEnumerable<AssetKey> assetKeys)
+        {
+            if (assetKeys.Count() == 0)
+            {
+                return null;
+            }
+
+            var filteredAssets = AssetsDict
+                .Where((pair) => pair.Value.Amount > 0)
+                .Where((pair) => assetKeys.Contains(pair.Key));
+
+            if (filteredAssets.Count() == 0 && AssetsDict.TryGetValue(assetKeys.First(), out Asset? value))
+            {
+                return value;
+            }
+
+            return filteredAssets.First().Value;
+        }
+
         public static async Task GetBalanceAsync(SubstrateClientExt client, string substrateAddress, CancellationToken token, bool forceReload = false)
         {
+            async Task SaveAsync(Asset asset)
+            {
+                AssetsDict[(asset.Endpoint.Key, asset.Pallet, asset.AssetId)] = asset;
+
+                if (DatabaseSaver is not null)
+                {
+                    await DatabaseSaver.SaveBalanceAsync(asset);
+                }
+            }
+
             /*if (AssetsDict.ContainsKey((client.Endpoint.Key, AssetPallet.Native, 0)) && forceReload)
             {
                 return;
@@ -82,7 +133,9 @@ namespace PlutoFramework.Model
             {
                 double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(endpoint.Unit);
 
-                AssetsDict[(endpoint.Key, AssetPallet.Native, 0)] = new Asset
+                Console.WriteLine($"Spot price for {endpoint.Unit} is {spotPrice} USD");
+
+                await SaveAsync(new Asset
                 {
                     Amount = amount,
                     Symbol = endpoint.Unit,
@@ -93,11 +146,11 @@ namespace PlutoFramework.Model
                     AssetId = 0,
                     UsdValue = amount * spotPrice,
                     Decimals = endpoint.Decimals,
-                };
+                });
 
                 if (reservedAmount > 0)
                 {
-                    AssetsDict[(endpoint.Key, AssetPallet.NativeReserved, 0)] = new Asset
+                    await SaveAsync(new Asset
                     {
                         Amount = reservedAmount,
                         Symbol = endpoint.Unit,
@@ -108,12 +161,12 @@ namespace PlutoFramework.Model
                         AssetId = 0,
                         UsdValue = reservedAmount * spotPrice,
                         Decimals = endpoint.Decimals,
-                    };
+                    });
                 }
 
                 if (frozenAmount > 0)
                 {
-                    AssetsDict[(endpoint.Key, AssetPallet.NativeFrozen, 0)] = new Asset
+                    await SaveAsync(new Asset
                     {
                         Amount = frozenAmount,
                         Symbol = endpoint.Unit,
@@ -124,38 +177,93 @@ namespace PlutoFramework.Model
                         AssetId = 0,
                         UsdValue = frozenAmount * spotPrice,
                         Decimals = endpoint.Decimals,
-                    };
+                    });
                 }
             }
 
-            try
+            foreach (string palletName in new string[] { "Assets" })
             {
-                foreach ((BigInteger, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetDetails, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetAccount) asset in await GetPolkadotAssetHubAssetsAsync(client.SubstrateClient, substrateAddress, 1000, CancellationToken.None))
+                try
                 {
-                    var symbol = Model.ToStringModel.VecU8ToString(asset.Item3.Symbol.Value);
-                    double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(symbol);
-
-                    double assetBalance = asset.Item4 != null ? (double)asset.Item4.Balance.Value / Math.Pow(10, asset.Item3.Decimals.Value) : 0.0;
-
-                    AssetsDict[(endpoint.Key, AssetPallet.Assets, asset.Item1)] = new Asset
+                    foreach ((BigInteger, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetDetails, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetAccount) asset in await GetPolkadotAssetHubAssetsAsync(client.SubstrateClient, substrateAddress, 1000, palletName, CancellationToken.None))
                     {
-                        Amount = assetBalance,
-                        Symbol = symbol,
-                        ChainIcon = endpoint.Icon,
-                        DarkChainIcon = endpoint.DarkIcon,
-                        Endpoint = endpoint,
-                        Pallet = AssetPallet.Assets,
-                        AssetId = asset.Item1,
-                        UsdValue = assetBalance * spotPrice,
-                        Decimals = asset.Item3.Decimals.Value,
-                    };
+                        var frozenBalance = await GetFreezenBalanceForAssetIdAsync(client.SubstrateClient, substrateAddress, asset.Item1, token);
+
+                        var symbol = Model.ToStringModel.VecU8ToString(asset.Item3.Symbol.Value);
+                        double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(symbol);
+
+                        double assetBalance = asset.Item4 != null ? (double)asset.Item4.Balance.Value / Math.Pow(10, asset.Item3.Decimals.Value) : 0.0;
+                       
+                        double assetFrozenBalance = endpoint.Key == EndpointEnum.XcavatePaseo ? (double)frozenBalance : (double)frozenBalance / Math.Pow(10, asset.Item3.Decimals.Value);
+
+                        await SaveAsync(new Asset
+                        {
+                            Amount = assetBalance - assetFrozenBalance,
+                            Symbol = symbol,
+                            ChainIcon = endpoint.Icon,
+                            DarkChainIcon = endpoint.DarkIcon,
+                            Endpoint = endpoint,
+                            Pallet = AssetPallet.Assets,
+                            AssetId = asset.Item1,
+                            UsdValue = assetBalance * spotPrice,
+                            Decimals = asset.Item3.Decimals.Value,
+                        });
+
+                        if (frozenBalance > 0)
+                        {
+                            await SaveAsync(new Asset
+                            {
+                                Amount = assetFrozenBalance,
+                                Symbol = symbol,
+                                ChainIcon = endpoint.Icon,
+                                DarkChainIcon = endpoint.DarkIcon,
+                                Endpoint = endpoint,
+                                Pallet = AssetPallet.AssetsFrozen,
+                                AssetId = asset.Item1,
+                                UsdValue = assetFrozenBalance * spotPrice,
+                                Decimals = asset.Item3.Decimals.Value,
+                            });
+                        }
+                    }
                 }
 
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
             }
-            catch (Exception ex)
+
+            /*foreach (string palletName in new string[] { "ForeignAssets" })
             {
-                Console.WriteLine(ex);
-            }
+                try
+                {
+                    foreach ((BigInteger, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetDetails, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetAccount) asset in await GetPolkadotAssetHubAssetsAsync(client.SubstrateClient, substrateAddress, 1000, palletName, CancellationToken.None))
+                    {
+                        var symbol = Model.ToStringModel.VecU8ToString(asset.Item3.Symbol.Value);
+                        double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(symbol);
+
+                        double assetBalance = asset.Item4 != null ? (double)asset.Item4.Balance.Value / Math.Pow(10, asset.Item3.Decimals.Value) : 0.0;
+
+                        AssetsDict[(endpoint.Key, AssetPallet.ForeignAssets, asset.Item1)] = new Asset
+                        {
+                            Amount = assetBalance,
+                            Symbol = symbol,
+                            ChainIcon = endpoint.Icon,
+                            DarkChainIcon = endpoint.DarkIcon,
+                            Endpoint = endpoint,
+                            Pallet = AssetPallet.ForeignAssets,
+                            AssetId = asset.Item1,
+                            UsdValue = assetBalance * spotPrice,
+                            Decimals = asset.Item3.Decimals.Value,
+                        };
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }*/
 
             try
             {
@@ -172,11 +280,11 @@ namespace PlutoFramework.Model
                         var symbol = tokenData.AssetMetadata.Symbol.OptionFlag ? Model.ToStringModel.VecU8ToString(tokenData.AssetMetadata.Symbol.Value.Value) : "";
                         double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(symbol);
 
-                        double assetBalance = (double)(tokenData.AccountData.Free.Value  - tokenData.AccountData.Frozen.Value) / Math.Pow(10, tokenData.AssetMetadata.Decimals.Value);
+                        double assetBalance = (double)(tokenData.AccountData.Free.Value - tokenData.AccountData.Frozen.Value) / Math.Pow(10, tokenData.AssetMetadata.Decimals.Value);
                         double assetReserved = (double)tokenData.AccountData.Reserved.Value / Math.Pow(10, tokenData.AssetMetadata.Decimals.Value);
                         double assetFrozen = (double)tokenData.AccountData.Frozen.Value / Math.Pow(10, tokenData.AssetMetadata.Decimals.Value);
 
-                        AssetsDict[(endpoint.Key, AssetPallet.Tokens, tokenData.AssetId)] = new Asset
+                        await SaveAsync(new Asset
                         {
                             Amount = assetBalance,
                             Symbol = symbol,
@@ -187,11 +295,11 @@ namespace PlutoFramework.Model
                             AssetId = tokenData.AssetId,
                             UsdValue = assetBalance * spotPrice,
                             Decimals = tokenData.AssetMetadata.Decimals.Value,
-                        };
+                        });
 
                         if (assetReserved > 0)
                         {
-                            AssetsDict[(endpoint.Key, AssetPallet.TokensReserved, tokenData.AssetId)] = new Asset
+                            await SaveAsync(new Asset
                             {
                                 Amount = assetReserved,
                                 Symbol = symbol,
@@ -202,12 +310,12 @@ namespace PlutoFramework.Model
                                 AssetId = tokenData.AssetId,
                                 UsdValue = assetReserved * spotPrice,
                                 Decimals = tokenData.AssetMetadata.Decimals.Value,
-                            };
+                            });
                         }
 
                         if (assetFrozen > 0)
                         {
-                            AssetsDict[(endpoint.Key, AssetPallet.TokensFrozen, tokenData.AssetId)] = new Asset
+                            await SaveAsync(new Asset
                             {
                                 Amount = assetFrozen,
                                 Symbol = symbol,
@@ -218,7 +326,7 @@ namespace PlutoFramework.Model
                                 AssetId = tokenData.AssetId,
                                 UsdValue = assetFrozen * spotPrice,
                                 Decimals = tokenData.AssetMetadata.Decimals.Value,
-                            };
+                            });
                         }
                     }
                 }
@@ -233,7 +341,7 @@ namespace PlutoFramework.Model
                         double assetReserved = (double)tokenData.AccountData.Reserved.Value / Math.Pow(10, tokenData.AssetMetadata.Decimals.Value);
                         double assetFrozen = (double)tokenData.AccountData.Frozen.Value / Math.Pow(10, tokenData.AssetMetadata.Decimals.Value);
 
-                        AssetsDict[(endpoint.Key, AssetPallet.Tokens, tokenData.AssetId)] = new Asset
+                        await SaveAsync(new Asset
                         {
                             Amount = assetBalance,
                             Symbol = symbol,
@@ -244,11 +352,11 @@ namespace PlutoFramework.Model
                             AssetId = tokenData.AssetId,
                             UsdValue = assetBalance * spotPrice,
                             Decimals = tokenData.AssetMetadata.Decimals.Value,
-                        };
+                        });
 
                         if (assetReserved > 0)
                         {
-                            AssetsDict[(endpoint.Key, AssetPallet.TokensReserved, tokenData.AssetId)] = new Asset
+                            await SaveAsync(new Asset
                             {
                                 Amount = assetReserved,
                                 Symbol = symbol,
@@ -259,12 +367,12 @@ namespace PlutoFramework.Model
                                 AssetId = tokenData.AssetId,
                                 UsdValue = assetReserved * spotPrice,
                                 Decimals = tokenData.AssetMetadata.Decimals.Value,
-                            };
+                            });
                         }
 
                         if (assetFrozen > 0)
                         {
-                            AssetsDict[(endpoint.Key, AssetPallet.TokensFrozen, tokenData.AssetId)] = new Asset
+                            await SaveAsync(new Asset
                             {
                                 Amount = assetFrozen,
                                 Symbol = symbol,
@@ -275,7 +383,7 @@ namespace PlutoFramework.Model
                                 AssetId = tokenData.AssetId,
                                 UsdValue = assetFrozen * spotPrice,
                                 Decimals = tokenData.AssetMetadata.Decimals.Value,
-                            };
+                            });
                         }
                     }
                 }
@@ -333,7 +441,7 @@ namespace PlutoFramework.Model
         /// This is a helper function for querying Tokens balance
         /// </summary>
         /// <returns></returns>
-        public static async Task<List<(BigInteger, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetDetails, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetAccount)>> GetPolkadotAssetHubAssetsAsync(SubstrateClient client, string substrateAddress, uint page, CancellationToken token)
+        public static async Task<List<(BigInteger, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetDetails, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetAccount)>> GetPolkadotAssetHubAssetsAsync(SubstrateClient client, string substrateAddress, uint page, string palletName = "Assets", CancellationToken token = default)
         {
             if (page < 2 || page > 1000)
             {
@@ -344,11 +452,11 @@ namespace PlutoFramework.Model
 
             var resultList = new List<(BigInteger, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetDetails, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1, PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types.AssetAccount)>();
 
-            var detailsKeyPrefixBytes = RequestGenerator.GetStorageKeyBytesHash("Assets", "Asset");
+            var detailsKeyPrefixBytes = RequestGenerator.GetStorageKeyBytesHash(palletName, "Asset");
 
             string detailsKeyPrefixBytesString = Utils.Bytes2HexString(detailsKeyPrefixBytes).ToLower();
-            string metadataKeyPrefixBytesString = Utils.Bytes2HexString(RequestGenerator.GetStorageKeyBytesHash("Assets", "Metadata")).ToLower();
-            string accountKeyPrefixBytesString = Utils.Bytes2HexString(RequestGenerator.GetStorageKeyBytesHash("Assets", "Account")).ToLower();
+            string metadataKeyPrefixBytesString = Utils.Bytes2HexString(RequestGenerator.GetStorageKeyBytesHash(palletName, "Metadata")).ToLower();
+            string accountKeyPrefixBytesString = Utils.Bytes2HexString(RequestGenerator.GetStorageKeyBytesHash(palletName, "Account")).ToLower();
 
             var storageKeys = (await client.State.GetKeysPagedAsync(detailsKeyPrefixBytes, page, null, string.Empty, token))
                 .Select(p => p.ToString().Replace(detailsKeyPrefixBytesString, ""));
@@ -557,6 +665,22 @@ namespace PlutoFramework.Model
                 }
             }
             return resultList;
+        }
+
+        public static async Task<BigInteger> GetFreezenBalanceForAssetIdAsync(SubstrateClient client, string substrateAddress, System.Numerics.BigInteger assetId, CancellationToken token)
+        {
+            var accountId = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            accountId.Create(Utils.GetPublicKeyFrom(substrateAddress));
+
+            var parameters = AssetsFreezerStorage.FrozenBalancesParams(
+                                new Substrate.NetApi.Model.Types.Base.BaseTuple<U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(
+                                    new U32((uint)assetId),
+                                    accountId
+            ));
+
+            var result = await client.GetStorageAsync<U128>(parameters, null, token);
+
+            return result?.Value ?? 0;
         }
     }
     public class BifrostTokenData

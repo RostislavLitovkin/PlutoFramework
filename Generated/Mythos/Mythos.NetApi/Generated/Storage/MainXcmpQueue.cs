@@ -36,13 +36,13 @@ namespace Mythos.NetApi.Generated.Storage
         public XcmpQueueStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "InboundXcmpSuspended"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Mythos.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT2)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "OutboundXcmpStatus"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT20)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "InboundXcmpSuspended"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Mythos.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT3)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "OutboundXcmpStatus"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "OutboundXcmpMessages"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Mythos.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, Substrate.NetApi.Model.Types.Primitive.U16>), typeof(Mythos.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT3)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Mythos.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, Substrate.NetApi.Model.Types.Primitive.U16>), typeof(Mythos.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "SignalMessages"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Mythos.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id), typeof(Mythos.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT3)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Mythos.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id), typeof(Mythos.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "QueueConfig"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Mythos.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.QueueConfigData)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "QueueSuspended"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "DeliveryFeeFactor"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -85,10 +85,10 @@ namespace Mythos.NetApi.Generated.Storage
         ///  NOTE: The PoV benchmarking cannot know this and will over-estimate, but the actual proof
         ///  will be smaller.
         /// </summary>
-        public async Task<Mythos.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT2> InboundXcmpSuspended(string blockhash, CancellationToken token)
+        public async Task<Mythos.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT3> InboundXcmpSuspended(string blockhash, CancellationToken token)
         {
             string parameters = XcmpQueueStorage.InboundXcmpSuspendedParams();
-            var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT2>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT3>(parameters, blockhash, token);
             return result;
         }
         
@@ -124,10 +124,10 @@ namespace Mythos.NetApi.Generated.Storage
         ///  case of the need to send a high-priority signal message this block.
         ///  The bool is true if there is a signal message waiting to be sent.
         /// </summary>
-        public async Task<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT20> OutboundXcmpStatus(string blockhash, CancellationToken token)
+        public async Task<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30> OutboundXcmpStatus(string blockhash, CancellationToken token)
         {
             string parameters = XcmpQueueStorage.OutboundXcmpStatusParams();
-            var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT20>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30>(parameters, blockhash, token);
             return result;
         }
         
@@ -155,10 +155,10 @@ namespace Mythos.NetApi.Generated.Storage
         /// >> OutboundXcmpMessages
         ///  The messages outbound in a given XCMP channel.
         /// </summary>
-        public async Task<Mythos.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT3> OutboundXcmpMessages(Substrate.NetApi.Model.Types.Base.BaseTuple<Mythos.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, Substrate.NetApi.Model.Types.Primitive.U16> key, string blockhash, CancellationToken token)
+        public async Task<Mythos.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2> OutboundXcmpMessages(Substrate.NetApi.Model.Types.Base.BaseTuple<Mythos.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, Substrate.NetApi.Model.Types.Primitive.U16> key, string blockhash, CancellationToken token)
         {
             string parameters = XcmpQueueStorage.OutboundXcmpMessagesParams(key);
-            var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT3>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2>(parameters, blockhash, token);
             return result;
         }
         
@@ -186,10 +186,10 @@ namespace Mythos.NetApi.Generated.Storage
         /// >> SignalMessages
         ///  Any signal messages waiting to be sent.
         /// </summary>
-        public async Task<Mythos.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT3> SignalMessages(Mythos.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id key, string blockhash, CancellationToken token)
+        public async Task<Mythos.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2> SignalMessages(Mythos.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id key, string blockhash, CancellationToken token)
         {
             string parameters = XcmpQueueStorage.SignalMessagesParams(key);
-            var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT3>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2>(parameters, blockhash, token);
             return result;
         }
         

@@ -36,7 +36,7 @@ namespace Opal.NetApi.Generated.Storage
         public TechnicalCommitteeMembershipStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("TechnicalCommitteeMembership", "Members"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("TechnicalCommitteeMembership", "Members"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("TechnicalCommitteeMembership", "Prime"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32)));
         }
         
@@ -62,10 +62,10 @@ namespace Opal.NetApi.Generated.Storage
         /// >> Members
         ///  The current membership, stored as an ordered Vec.
         /// </summary>
-        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34> Members(string blockhash, CancellationToken token)
+        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39> Members(string blockhash, CancellationToken token)
         {
             string parameters = TechnicalCommitteeMembershipStorage.MembersParams();
-            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39>(parameters, blockhash, token);
             return result;
         }
         

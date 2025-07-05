@@ -126,7 +126,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_collator_selection.pallet
     }
     
     /// <summary>
-    /// >> 252 - Variant[pallet_collator_selection.pallet.Error]
+    /// >> 256 - Variant[pallet_collator_selection.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

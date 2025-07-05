@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.opal_runtime.runtime_common
     
     
     /// <summary>
-    /// >> 112 - Composite[opal_runtime.runtime_common.SessionKeys]
+    /// >> 121 - Composite[opal_runtime.runtime_common.SessionKeys]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SessionKeys : BaseType

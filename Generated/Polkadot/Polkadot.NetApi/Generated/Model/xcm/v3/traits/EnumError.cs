@@ -223,7 +223,7 @@ namespace Polkadot.NetApi.Generated.Model.xcm.v3.traits
     }
     
     /// <summary>
-    /// >> 386 - Variant[xcm.v3.traits.Error]
+    /// >> 375 - Variant[xcm.v3.traits.Error]
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>
     {

@@ -18,6 +18,8 @@ public partial class SettingsPage : ContentPage
         Shell.SetNavBarIsVisible(this, false);
 
         InitializeComponent();
+
+        BindingContext = new SettingsViewModel();
     }
 
     async void OnPredefinedLayoutsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
@@ -40,13 +42,11 @@ public partial class SettingsPage : ContentPage
 
         SecureStorage.Default.Remove(PreferencesModel.PASSWORD);
         Preferences.Remove(PreferencesModel.BIOMETRICS_ENABLED);
+        Preferences.Remove(PreferencesModel.SHOW_WELCOME_SCREEN);
 
         await SQLiteModel.DeleteAllDatabasesAsync();
 
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
-        Application.Current.MainPage = new WelcomePage();
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
-
+        Application.Current.MainPage = new SetupPasswordPage();
     }
     async void OnDeveloperSettingsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
@@ -96,7 +96,7 @@ public partial class SettingsPage : ContentPage
 
     private async void OnPropertyClicked(object sender, TappedEventArgs e)
     {
-        var viewModel = new PropertyDetailViewModel
+        /*var viewModel = new PropertyDetailViewModel
         {
             AreaPricesPercentage = 0.7,
 
@@ -110,7 +110,7 @@ public partial class SettingsPage : ContentPage
 
             PropertyName = "Plot 1 - Plea Wharf",
 
-            ListingPrice = "£200,000",
+            ListingPrice = "ï¿½200,000",
             Apy = "5%",
             Tokens = 15,
             MaxTokens = 100,
@@ -126,7 +126,7 @@ public partial class SettingsPage : ContentPage
 
             UsdtPricePerToken = 2300.0,
 
-            RentalIncome = "£1,000 pcm",
+            RentalIncome = "ï¿½1,000 pcm",
 
             Images = [
                 "https://www.nintendo.com/eu/media/images/assets/nintendo_switch_games/xenobladechroniclesxdefinitiveedition/nswitch_xenobladechroniclesxdefinitiveedition/XenobladeChroniclesXDefinitiveEdition_27.png",
@@ -134,7 +134,7 @@ public partial class SettingsPage : ContentPage
                 "xcavatergb.png",
             ]
         };
-        await Navigation.PushAsync(new PropertyDetailPage(viewModel));
+        await Navigation.PushAsync(new PropertyDetailPage(viewModel));*/
     }
 
     async void OnShowMnemonicsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
@@ -174,13 +174,13 @@ public partial class SettingsPage : ContentPage
 
     private async void OnCreateNewPropertyClicked(object sender, TappedEventArgs e)
     {
-        var property = await XcavatePropertyDatabase.GetPropertyAsync() ?? new UniqueryPlus.Metadata.XcavateMetadata
+        /*var property = await XcavatePropertyDatabase.GetPropertyAsync() ?? new UniqueryPlus.Metadata.XcavateMetadata
         {
             Images = [],
             PropertyName = ""
         };
 
-        await Navigation.PushAsync(new ModifyPropertyPage(property));
+        await Navigation.PushAsync(new ModifyPropertyPage(property));*/
     }
 
     async void OnCreditsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)

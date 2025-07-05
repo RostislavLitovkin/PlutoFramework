@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.xcm.v2.multilocation
     
     
     /// <summary>
-    /// >> 204 - Composite[xcm.v2.multilocation.MultiLocation]
+    /// >> 307 - Composite[xcm.v2.multilocation.MultiLocation]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MultiLocation : BaseType

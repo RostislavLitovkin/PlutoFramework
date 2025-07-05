@@ -33,7 +33,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.asset_hub_kusama_runtime
     }
     
     /// <summary>
-    /// >> 228 - Variant[asset_hub_kusama_runtime.RuntimeHoldReason]
+    /// >> 232 - Variant[asset_hub_kusama_runtime.RuntimeHoldReason]
     /// </summary>
     public sealed class EnumRuntimeHoldReason : BaseEnumRust<RuntimeHoldReason>
     {

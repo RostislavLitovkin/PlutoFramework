@@ -263,7 +263,7 @@ namespace Hydration.NetApi.Generated.Model.xcm.v3
     }
     
     /// <summary>
-    /// >> 458 - Variant[xcm.v3.Instruction]
+    /// >> 387 - Variant[xcm.v3.Instruction]
     /// </summary>
     public sealed class EnumInstruction : BaseEnumRust<Instruction>
     {
@@ -279,7 +279,7 @@ namespace Hydration.NetApi.Generated.Model.xcm.v3
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64>, Hydration.NetApi.Generated.Model.xcm.v3.EnumResponse, Hydration.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation>>>(Instruction.QueryResponse);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.xcm.v3.multiasset.MultiAssets, Hydration.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation>>(Instruction.TransferAsset);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.xcm.v3.multiasset.MultiAssets, Hydration.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation, Hydration.NetApi.Generated.Model.xcm.v3.XcmT1>>(Instruction.TransferReserveAsset);
-				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.xcm.v2.EnumOriginKind, Hydration.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Hydration.NetApi.Generated.Model.xcm.double_encoded.DoubleEncodedT2>>(Instruction.Transact);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.xcm.v3.EnumOriginKind, Hydration.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Hydration.NetApi.Generated.Model.xcm.double_encoded.DoubleEncodedT2>>(Instruction.Transact);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>>(Instruction.HrmpNewChannelOpenRequest);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>(Instruction.HrmpChannelAccepted);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>>(Instruction.HrmpChannelClosing);

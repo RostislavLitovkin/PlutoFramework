@@ -33,7 +33,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_nfts.types
     }
     
     /// <summary>
-    /// >> 57 - Variant[pallet_nfts.types.PalletAttributes]
+    /// >> 61 - Variant[pallet_nfts.types.PalletAttributes]
     /// </summary>
     public sealed class EnumPalletAttributes : BaseEnumRust<PalletAttributes>
     {

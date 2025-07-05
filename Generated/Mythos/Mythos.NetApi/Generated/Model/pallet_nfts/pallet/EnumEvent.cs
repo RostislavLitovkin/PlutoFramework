@@ -255,7 +255,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_nfts.pallet
     }
     
     /// <summary>
-    /// >> 42 - Variant[pallet_nfts.pallet.Event]
+    /// >> 46 - Variant[pallet_nfts.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

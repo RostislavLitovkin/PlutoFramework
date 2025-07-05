@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_configuration
     
     
     /// <summary>
-    /// >> 322 - Composite[pallet_configuration.AppPromotionConfiguration]
+    /// >> 383 - Composite[pallet_configuration.AppPromotionConfiguration]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AppPromotionConfiguration : BaseType

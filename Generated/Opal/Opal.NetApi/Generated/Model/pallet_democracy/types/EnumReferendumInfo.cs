@@ -33,7 +33,7 @@ namespace Opal.NetApi.Generated.Model.pallet_democracy.types
     }
     
     /// <summary>
-    /// >> 493 - Variant[pallet_democracy.types.ReferendumInfo]
+    /// >> 562 - Variant[pallet_democracy.types.ReferendumInfo]
     /// </summary>
     public sealed class EnumReferendumInfo : BaseEnumRust<ReferendumInfo>
     {

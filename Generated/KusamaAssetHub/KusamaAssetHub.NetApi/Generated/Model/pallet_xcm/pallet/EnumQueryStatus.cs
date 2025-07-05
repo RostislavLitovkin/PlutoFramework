@@ -38,7 +38,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 277 - Variant[pallet_xcm.pallet.QueryStatus]
+    /// >> 281 - Variant[pallet_xcm.pallet.QueryStatus]
     /// </summary>
     public sealed class EnumQueryStatus : BaseEnumRust<QueryStatus>
     {

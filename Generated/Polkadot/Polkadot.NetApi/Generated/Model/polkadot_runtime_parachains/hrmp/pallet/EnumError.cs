@@ -144,7 +144,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.hrmp.palle
     }
     
     /// <summary>
-    /// >> 759 - Variant[polkadot_runtime_parachains.hrmp.pallet.Error]
+    /// >> 752 - Variant[polkadot_runtime_parachains.hrmp.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

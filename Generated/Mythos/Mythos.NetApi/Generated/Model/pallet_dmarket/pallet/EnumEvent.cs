@@ -30,13 +30,13 @@ namespace Mythos.NetApi.Generated.Model.pallet_dmarket.pallet
         
         /// <summary>
         /// >> Trade
-        /// 
+        /// A successful trade is executed.
         /// </summary>
         Trade = 1,
     }
     
     /// <summary>
-    /// >> 152 - Variant[pallet_dmarket.pallet.Event]
+    /// >> 177 - Variant[pallet_dmarket.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

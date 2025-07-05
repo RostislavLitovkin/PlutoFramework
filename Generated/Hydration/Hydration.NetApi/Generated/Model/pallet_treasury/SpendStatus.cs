@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_treasury
     
     
     /// <summary>
-    /// >> 280 - Composite[pallet_treasury.SpendStatus]
+    /// >> 522 - Composite[pallet_treasury.SpendStatus]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SpendStatus : BaseType

@@ -9,7 +9,8 @@
              AbsoluteLayout.LayoutFlags="All"
              BackgroundColor="#66000000">
 
-    <card:BottomPopupCard Title="">
+    <card:BottomPopupCard Title=""
+                          IsShown="{Binding IsVisible}">
         <card:BottomPopupCard.View>
             <AbsoluteLayout>
 

@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_treasury
     
     
     /// <summary>
-    /// >> 462 - Composite[pallet_treasury.SpendStatus]
+    /// >> 531 - Composite[pallet_treasury.SpendStatus]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SpendStatus : BaseType

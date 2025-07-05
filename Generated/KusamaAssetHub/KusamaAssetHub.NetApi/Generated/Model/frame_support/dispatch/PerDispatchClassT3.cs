@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.frame_support.dispatch
     
     
     /// <summary>
-    /// >> 169 - Composite[frame_support.dispatch.PerDispatchClassT3]
+    /// >> 174 - Composite[frame_support.dispatch.PerDispatchClassT3]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PerDispatchClassT3 : BaseType

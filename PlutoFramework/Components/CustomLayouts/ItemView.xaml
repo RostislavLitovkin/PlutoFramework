@@ -13,11 +13,16 @@
                    AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                    AbsoluteLayout.LayoutFlags="All"
                     FontSize="20"
-                    FontAttributes="Bold"
                     HorizontalTextAlignment="Center"
                     VerticalTextAlignment="Center"
-                    x:Name="label">
+                    >
 
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span x:Name="label"
+                                 FontAttributes="Bold"></Span>
+                        </FormattedString>
+                    </Label.FormattedText>
                 </Label>
 
                 <AbsoluteLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"

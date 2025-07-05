@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.frame_system.limits
     
     
     /// <summary>
-    /// >> 164 - Composite[frame_system.limits.BlockWeights]
+    /// >> 189 - Composite[frame_system.limits.BlockWeights]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BlockWeights : BaseType

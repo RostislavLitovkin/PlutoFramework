@@ -43,7 +43,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types
     }
     
     /// <summary>
-    /// >> 140 - Variant[pallet_nfts.types.AttributeNamespace]
+    /// >> 142 - Variant[pallet_nfts.types.AttributeNamespace]
     /// </summary>
     public sealed class EnumAttributeNamespace : BaseEnumRust<AttributeNamespace>
     {

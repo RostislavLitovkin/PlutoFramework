@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_liquidity_mining.types
     
     
     /// <summary>
-    /// >> 97 - Composite[pallet_liquidity_mining.types.LoyaltyCurve]
+    /// >> 219 - Composite[pallet_liquidity_mining.types.LoyaltyCurve]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class LoyaltyCurve : BaseType

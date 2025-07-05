@@ -38,7 +38,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.frame_system
     }
     
     /// <summary>
-    /// >> 152 - Variant[frame_system.Phase]
+    /// >> 157 - Variant[frame_system.Phase]
     /// </summary>
     public sealed class EnumPhase : BaseEnumRust<Phase>
     {

@@ -3,19 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSCameraUsageDescription</key>
-	<string>This app uses QR code scanning</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
+	<string>This app uses camera for QR code scanning and for KYC verification</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSExceptionDomains</key>
-	<array>
-		<integer>1</integer>
-		<integer>2</integer>
-	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>arm64</string>
@@ -23,8 +13,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -36,6 +24,19 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
 	<key>NSFaceIDUsageDescription</key>
-	<string>Biometric verification is required to further secure this crypto wallet.</string>
+	<string>Biometric verification is required to further secure your account.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>processing</string>
+	</array>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.rostislavlitovkin.plutowallet.plutonication</string>
+	</array>
+	<key>CFBundleIdentifier</key>
+  <string>com.rostislavlitovkin.plutowallet</string>
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>Some features may require location access due to third-party services used by the app.</string>
 </dict>
 </plist>

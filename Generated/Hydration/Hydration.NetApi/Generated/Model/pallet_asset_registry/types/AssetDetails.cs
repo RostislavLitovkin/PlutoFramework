@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_asset_registry.types
     
     
     /// <summary>
-    /// >> 560 - Composite[pallet_asset_registry.types.AssetDetails]
+    /// >> 634 - Composite[pallet_asset_registry.types.AssetDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetDetails : BaseType
@@ -27,7 +27,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_asset_registry.types
         /// <summary>
         /// >> name
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5> Name { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7> Name { get; set; }
         /// <summary>
         /// >> asset_type
         /// </summary>
@@ -39,7 +39,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_asset_registry.types
         /// <summary>
         /// >> symbol
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5> Symbol { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7> Symbol { get; set; }
         /// <summary>
         /// >> decimals
         /// </summary>
@@ -77,13 +77,13 @@ namespace Hydration.NetApi.Generated.Model.pallet_asset_registry.types
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Name = new Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5>();
+            Name = new Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7>();
             Name.Decode(byteArray, ref p);
             AssetType = new Hydration.NetApi.Generated.Model.pallet_asset_registry.types.EnumAssetType();
             AssetType.Decode(byteArray, ref p);
             ExistentialDeposit = new Substrate.NetApi.Model.Types.Primitive.U128();
             ExistentialDeposit.Decode(byteArray, ref p);
-            Symbol = new Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5>();
+            Symbol = new Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7>();
             Symbol.Decode(byteArray, ref p);
             Decimals = new Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U8>();
             Decimals.Decode(byteArray, ref p);

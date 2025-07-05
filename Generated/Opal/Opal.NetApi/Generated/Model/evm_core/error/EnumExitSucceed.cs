@@ -38,7 +38,7 @@ namespace Opal.NetApi.Generated.Model.evm_core.error
     }
     
     /// <summary>
-    /// >> 376 - Variant[evm_core.error.ExitSucceed]
+    /// >> 442 - Variant[evm_core.error.ExitSucceed]
     /// </summary>
     public sealed class EnumExitSucceed : BaseEnum<ExitSucceed>
     {

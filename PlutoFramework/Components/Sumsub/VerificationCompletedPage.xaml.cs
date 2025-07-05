@@ -1,3 +1,5 @@
+using PlutoFramework.View;
+
 namespace PlutoFramework.Components.Sumsub
 {
     public partial class VerificationCompletedPage : ContentPage
@@ -9,11 +11,10 @@ namespace PlutoFramework.Components.Sumsub
 
             InitializeComponent();
         }
-        private void ContinueToMainPageClicked(System.Object sender, System.EventArgs e)
+        private async void ContinueToMainPageClicked(System.Object sender, System.EventArgs e)
         {
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
-            Application.Current.MainPage = new AppShell();
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
+            // unused
+            //await Navigation.PushAsync(new SetupPasswordPage());
         }
     }
 }

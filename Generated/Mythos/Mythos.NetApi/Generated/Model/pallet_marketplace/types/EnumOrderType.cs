@@ -33,7 +33,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_marketplace.types
     }
     
     /// <summary>
-    /// >> 59 - Variant[pallet_marketplace.types.OrderType]
+    /// >> 63 - Variant[pallet_marketplace.types.OrderType]
     /// </summary>
     public sealed class EnumOrderType : BaseEnum<OrderType>
     {

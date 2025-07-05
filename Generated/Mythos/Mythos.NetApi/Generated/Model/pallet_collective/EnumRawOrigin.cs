@@ -38,7 +38,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_collective
     }
     
     /// <summary>
-    /// >> 318 - Variant[pallet_collective.RawOrigin]
+    /// >> 358 - Variant[pallet_collective.RawOrigin]
     /// </summary>
     public sealed class EnumRawOrigin : BaseEnumRust<RawOrigin>
     {

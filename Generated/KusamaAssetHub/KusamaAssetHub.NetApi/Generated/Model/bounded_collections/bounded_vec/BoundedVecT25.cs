@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec
     
     
     /// <summary>
-    /// >> 402 - Composite[bounded_collections.bounded_vec.BoundedVecT25]
+    /// >> 409 - Composite[bounded_collections.bounded_vec.BoundedVecT25]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedVecT25 : BaseType
@@ -27,7 +27,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec
         /// <summary>
         /// >> value
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<KusamaAssetHub.NetApi.Generated.Model.pallet_proxy.Announcement> Value { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<KusamaAssetHub.NetApi.Generated.Model.pallet_proxy.ProxyDefinition> Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<KusamaAssetHub.NetApi.Generated.Model.pallet_proxy.Announcement>();
+            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<KusamaAssetHub.NetApi.Generated.Model.pallet_proxy.ProxyDefinition>();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

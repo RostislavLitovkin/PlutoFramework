@@ -53,7 +53,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_asset_registry.types
     }
     
     /// <summary>
-    /// >> 71 - Variant[pallet_asset_registry.types.AssetType]
+    /// >> 195 - Variant[pallet_asset_registry.types.AssetType]
     /// </summary>
     public sealed class EnumAssetType : BaseEnum<AssetType>
     {

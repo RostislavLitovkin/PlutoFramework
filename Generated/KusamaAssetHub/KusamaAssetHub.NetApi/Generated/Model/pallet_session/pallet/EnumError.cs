@@ -54,7 +54,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_session.pallet
     }
     
     /// <summary>
-    /// >> 260 - Variant[pallet_session.pallet.Error]
+    /// >> 264 - Variant[pallet_session.pallet.Error]
     /// Error for the session pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

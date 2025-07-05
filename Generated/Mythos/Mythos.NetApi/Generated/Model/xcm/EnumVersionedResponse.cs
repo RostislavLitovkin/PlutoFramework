@@ -22,11 +22,6 @@ namespace Mythos.NetApi.Generated.Model.xcm
     {
         
         /// <summary>
-        /// >> V2
-        /// </summary>
-        V2 = 2,
-        
-        /// <summary>
         /// >> V3
         /// </summary>
         V3 = 3,
@@ -35,10 +30,15 @@ namespace Mythos.NetApi.Generated.Model.xcm
         /// >> V4
         /// </summary>
         V4 = 4,
+        
+        /// <summary>
+        /// >> V5
+        /// </summary>
+        V5 = 5,
     }
     
     /// <summary>
-    /// >> 412 - Variant[xcm.VersionedResponse]
+    /// >> 510 - Variant[xcm.VersionedResponse]
     /// </summary>
     public sealed class EnumVersionedResponse : BaseEnumRust<VersionedResponse>
     {
@@ -48,9 +48,9 @@ namespace Mythos.NetApi.Generated.Model.xcm
         /// </summary>
         public EnumVersionedResponse()
         {
-				AddTypeDecoder<Mythos.NetApi.Generated.Model.xcm.v2.EnumResponse>(VersionedResponse.V2);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.xcm.v3.EnumResponse>(VersionedResponse.V3);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.staging_xcm.v4.EnumResponse>(VersionedResponse.V4);
+				AddTypeDecoder<Mythos.NetApi.Generated.Model.staging_xcm.v5.EnumResponse>(VersionedResponse.V5);
         }
     }
 }

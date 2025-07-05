@@ -10,6 +10,9 @@ namespace PlutoFramework.ViewModel
         public required Func<Task> Navigation;
 
         [ObservableProperty]
+        private bool incorrectMnemonicsEntered = false;
+
+        [ObservableProperty]
         private string mnemonics = "";
 
         [ObservableProperty]
@@ -20,14 +23,22 @@ namespace PlutoFramework.ViewModel
         [RelayCommand]
         public async Task ContinueWithMnemonicsAsync()
         {
-            await Model.KeysModel.GenerateNewAccountAsync(
-                Mnemonics,
-                null
-            );
+            try
+            {
+                await Model.KeysModel.GenerateNewAccountAsync(
+                    Mnemonics,
+                    null,
+                    accountVariant: ""
+                );
 
-            MainPage.SetupLayout();
+                MainPage.SetupLayout();
 
-            await Navigation.Invoke();
+                await Navigation.Invoke();
+            }
+            catch
+            {
+                IncorrectMnemonicsEntered = true;
+            }
         }
 
         [RelayCommand]
@@ -46,16 +57,16 @@ namespace PlutoFramework.ViewModel
             var jsonType = new FilePickerFileType(
                 new Dictionary<DevicePlatform, IEnumerable<string>>
                 {
-                { DevicePlatform.iOS, new[] { "json" } }, // UTType values
+                { DevicePlatform.iOS, new[] { "public.json" } }, // UTType values
                 { DevicePlatform.Android, new[] { "application/json" } }, // MIME type
                 { DevicePlatform.WinUI, new[] { ".json" } }, // file extension
                 { DevicePlatform.Tizen, new[] { "*/*" } },
-                { DevicePlatform.macOS, new[] { "json" } }, // UTType values
+                { DevicePlatform.macOS, new[] { "public.json" } }, // UTType values
                 });
 
             var result = await FilePicker.PickAsync(new PickOptions
             {
-                PickerTitle = "Import json",
+                PickerTitle = "Import json account",
                 FileTypes = jsonType,
             });
 

@@ -4,19 +4,28 @@
              x:Class="PlutoFramework.View.MainPage"
              Title="MainPage"
              xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
-         xmlns:networkselect="clr-namespace:PlutoFramework.Components.NetworkSelect"
-         xmlns:transferview="clr-namespace:PlutoFramework.Components.TransferView"
-         xmlns:connectionrequestview="clr-namespace:PlutoFramework.Components.ConnectionRequestView"
-         xmlns:messagepopup="clr-namespace:PlutoFramework.Components.MessagePopup"
-         xmlns:transactionrequest="clr-namespace:PlutoFramework.Components.TransactionRequest"
-         xmlns:addressview="clr-namespace:PlutoFramework.Components.AddressView"
-         xmlns:staking="clr-namespace:PlutoFramework.Components.Staking"
-         xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-         xmlns:password="clr-namespace:PlutoFramework.Components.Password"
-         xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
-         xmlns:vault="clr-namespace:PlutoFramework.Components.Vault"
-         xmlns:changelayoutrequest="clr-namespace:PlutoFramework.Components.ChangeLayoutRequest"
-         BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
+             xmlns:networkselect="clr-namespace:PlutoFramework.Components.NetworkSelect"
+             xmlns:transferview="clr-namespace:PlutoFramework.Components.TransferView"
+             xmlns:dappconnection="clr-namespace:PlutoFramework.Components.DAppConnection"
+             xmlns:messagepopup="clr-namespace:PlutoFramework.Components.MessagePopup"
+             xmlns:transactionrequest="clr-namespace:PlutoFramework.Components.TransactionRequest"
+             xmlns:addressview="clr-namespace:PlutoFramework.Components.AddressView"
+             xmlns:staking="clr-namespace:PlutoFramework.Components.Staking"
+             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
+             xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
+             xmlns:vault="clr-namespace:PlutoFramework.Components.Vault"
+             xmlns:changelayoutrequest="clr-namespace:PlutoFramework.Components.ChangeLayoutRequest"
+             xmlns:account="clr-namespace:PlutoFramework.Components.Account"
+             xmlns:kilt="clr-namespace:PlutoFramework.Components.Kilt"
+             xmlns:loading="clr-namespace:PlutoFramework.Components.Loading"
+             xmlns:sumsub="clr-namespace:PlutoFramework.Components.Sumsub"
+             xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
+             xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}"
+             Shell.PresentationMode="ModalNotAnimated"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             HideSoftInputOnTapped="True">
 
     <AbsoluteLayout
                 AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
@@ -24,69 +33,55 @@
            Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}" Opacity="{AppThemeBinding Light=0.96}" Aspect="AspectFill"/>
         <ScrollView
                     AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                    Margin="0,65,0,65"
                     IsEnabled="{Binding scrollIsEnabled}">
 
             <VerticalStackLayout
                     x:Name="stackLayout"
                     Spacing="15"
-                    Padding="20, 65, 20, 200">
+                    Padding="20, 15, 20, 100">
 
             </VerticalStackLayout>
         </ScrollView>
 
         <networkselect:MultiNetworkSelectView x:Name="networksView" />
 
-        <!--QR code button-->
-        <Image WidthRequest="36" Margin="10, 10, 10, 10"
-            AbsoluteLayout.LayoutBounds="1, 0, AutoSize, AutoSize"
-            AbsoluteLayout.LayoutFlags="PositionProportional"
-            Source="{AppThemeBinding Light=qrcodeblack.png, Dark=qrcodewhite.png}"
-            >
+        <xcavate:XcavateMainPageTopNavigationBarView />
 
-            <Image.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnQRClicked" />
-
-            </Image.GestureRecognizers>
-        </Image>
-
-        <!--Settings button-->
-        <Image WidthRequest="36" Margin="10, 10, 10, 10"
-           AbsoluteLayout.LayoutBounds="0, 0, AutoSize, AutoSize"
-            AbsoluteLayout.LayoutFlags="PositionProportional"
-            Source="{AppThemeBinding Light=settingsblack.png, Dark=settingswhite.png}"
-           >
-            <Image.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnSettingsClicked" />
-
-            </Image.GestureRecognizers>
-        </Image>
-
-        <connectionrequestview:ConnectionRequestView />
+        <extrinsic:ExtrinsicStatusStackLayout />
 
         <vault:VaultSignView />
-
-        <transactionrequest:TransactionRequestView />
-
-        <transactionrequest:MessageSignRequestView />
 
         <staking:StakingRegistrationRequestView />
 
         <messagepopup:MessagePopupView />
 
-        <navigationbar:NavigationBarView SelectedOption="Home"/>
+        <xcavate:XcavateNavigationBarView />
 
         <addressview:AddressQrCodeView />
 
         <transferview:TransferView />
 
+        <transactionrequest:MessageSignRequestView />
+
+        <dappconnection:DAppConnectionRequestView />
+
+        <account:NoAccountPopup />
+
+        <kilt:NoDidPopupView />
+
+        <sumsub:NoKYCPopupView />
+
         <assetselect:AssetSelectView />
 
         <networkselect:NetworkSelectPopup />
 
-        <changelayoutrequest:ChangeLayoutRequestView />
-
         <txanalyzer:TransactionAnalyzerConfirmationView />
 
         <password:EnterPasswordPopupView />
+
+        <loading:FullPageLoadingView />
+
+        <card:BottomPillBackgroundView />
     </AbsoluteLayout>
 </ContentPage>

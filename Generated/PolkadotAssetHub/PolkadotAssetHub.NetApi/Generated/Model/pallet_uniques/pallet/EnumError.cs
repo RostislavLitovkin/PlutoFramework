@@ -132,7 +132,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_uniques.pallet
     }
     
     /// <summary>
-    /// >> 422 - Variant[pallet_uniques.pallet.Error]
+    /// >> 433 - Variant[pallet_uniques.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

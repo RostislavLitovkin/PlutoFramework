@@ -38,7 +38,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_nfts.types
     }
     
     /// <summary>
-    /// >> 231 - Variant[pallet_nfts.types.MintType]
+    /// >> 258 - Variant[pallet_nfts.types.MintType]
     /// </summary>
     public sealed class EnumMintType : BaseEnumRust<MintType>
     {

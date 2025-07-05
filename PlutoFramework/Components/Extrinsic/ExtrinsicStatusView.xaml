@@ -5,8 +5,8 @@
              x:Class="PlutoFramework.Components.Extrinsic.ExtrinsicStatusView"
              IsVisible="{Binding IsVisible}"
              HeightRequest="60">
-   <card:Card x:Name="card">
-        <card:Card.View>
+   <card:ClickableCard x:Name="card">
+        <card:ClickableCard.View>
             <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                             AbsoluteLayout.LayoutFlags="All"
                             Margin="0, 10, 0, 10">
@@ -38,21 +38,16 @@
                         HorizontalOptions="Start" />
                 </VerticalStackLayout>
 
-                <Image Source="{AppThemeBinding Light=closeblack.png, Dark=closewhite.png}"
+                <Image Source="{AppThemeBinding Light=expandblack.png, Dark=expandwhite.png}"
                        x:Name="closeButton"
                        Aspect="AspectFit"
                        AbsoluteLayout.LayoutBounds="1, 0.5, 50, 50"
                        Margin="10"
                        AbsoluteLayout.LayoutFlags="PositionProportional">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnCloseClicked" />
-
-                    </Image.GestureRecognizers>
-
                 </Image>
             </AbsoluteLayout>
-        </card:Card.View>
-    </card:Card>
+        </card:ClickableCard.View>
+    </card:ClickableCard>
 
     <ContentView.GestureRecognizers>
         <PanGestureRecognizer PanUpdated="OnPanUpdated" />

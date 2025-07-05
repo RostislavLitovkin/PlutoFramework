@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.sp_consensus_aura.sr25519.app_sr25519
     
     
     /// <summary>
-    /// >> 263 - Composite[sp_consensus_aura.sr25519.app_sr25519.Public]
+    /// >> 299 - Composite[sp_consensus_aura.sr25519.app_sr25519.Public]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Public : BaseType

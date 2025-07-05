@@ -33,7 +33,7 @@ namespace Opal.NetApi.Generated.Model.pallet_transaction_payment
     }
     
     /// <summary>
-    /// >> 459 - Variant[pallet_transaction_payment.Releases]
+    /// >> 528 - Variant[pallet_transaction_payment.Releases]
     /// </summary>
     public sealed class EnumReleases : BaseEnum<Releases>
     {

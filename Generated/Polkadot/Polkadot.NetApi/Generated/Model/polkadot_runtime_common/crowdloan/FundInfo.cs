@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_common.crowdloan
     
     
     /// <summary>
-    /// >> 805 - Composite[polkadot_runtime_common.crowdloan.FundInfo]
+    /// >> 799 - Composite[polkadot_runtime_common.crowdloan.FundInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class FundInfo : BaseType

@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_xcmp_queue
     
     
     /// <summary>
-    /// >> 266 - Composite[cumulus_pallet_xcmp_queue.OutboundChannelDetails]
+    /// >> 271 - Composite[cumulus_pallet_xcmp_queue.OutboundChannelDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OutboundChannelDetails : BaseType

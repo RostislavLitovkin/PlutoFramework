@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec
     
     
     /// <summary>
-    /// >> 293 - Composite[bounded_collections.bounded_vec.BoundedVecT18]
+    /// >> 297 - Composite[bounded_collections.bounded_vec.BoundedVecT18]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedVecT18 : BaseType

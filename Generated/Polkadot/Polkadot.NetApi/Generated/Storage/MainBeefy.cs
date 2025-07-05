@@ -221,27 +221,27 @@ namespace Polkadot.NetApi.Generated.Storage
     {
         
         /// <summary>
-        /// >> report_equivocation
+        /// >> report_double_voting
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ReportEquivocation(Polkadot.NetApi.Generated.Model.sp_consensus_beefy.DoubleVotingProof equivocation_proof, Polkadot.NetApi.Generated.Model.sp_session.MembershipProof key_owner_proof)
+        public static Method ReportDoubleVoting(Polkadot.NetApi.Generated.Model.sp_consensus_beefy.DoubleVotingProof equivocation_proof, Polkadot.NetApi.Generated.Model.sp_session.MembershipProof key_owner_proof)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(equivocation_proof.Encode());
             byteArray.AddRange(key_owner_proof.Encode());
-            return new Method(200, "Beefy", 0, "report_equivocation", byteArray.ToArray());
+            return new Method(200, "Beefy", 0, "report_double_voting", byteArray.ToArray());
         }
         
         /// <summary>
-        /// >> report_equivocation_unsigned
+        /// >> report_double_voting_unsigned
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ReportEquivocationUnsigned(Polkadot.NetApi.Generated.Model.sp_consensus_beefy.DoubleVotingProof equivocation_proof, Polkadot.NetApi.Generated.Model.sp_session.MembershipProof key_owner_proof)
+        public static Method ReportDoubleVotingUnsigned(Polkadot.NetApi.Generated.Model.sp_consensus_beefy.DoubleVotingProof equivocation_proof, Polkadot.NetApi.Generated.Model.sp_session.MembershipProof key_owner_proof)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(equivocation_proof.Encode());
             byteArray.AddRange(key_owner_proof.Encode());
-            return new Method(200, "Beefy", 1, "report_equivocation_unsigned", byteArray.ToArray());
+            return new Method(200, "Beefy", 1, "report_double_voting_unsigned", byteArray.ToArray());
         }
         
         /// <summary>
@@ -253,6 +253,54 @@ namespace Polkadot.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(delay_in_blocks.Encode());
             return new Method(200, "Beefy", 2, "set_new_genesis", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> report_fork_voting
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method ReportForkVoting(Polkadot.NetApi.Generated.Model.sp_consensus_beefy.ForkVotingProof equivocation_proof, Polkadot.NetApi.Generated.Model.sp_session.MembershipProof key_owner_proof)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(equivocation_proof.Encode());
+            byteArray.AddRange(key_owner_proof.Encode());
+            return new Method(200, "Beefy", 3, "report_fork_voting", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> report_fork_voting_unsigned
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method ReportForkVotingUnsigned(Polkadot.NetApi.Generated.Model.sp_consensus_beefy.ForkVotingProof equivocation_proof, Polkadot.NetApi.Generated.Model.sp_session.MembershipProof key_owner_proof)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(equivocation_proof.Encode());
+            byteArray.AddRange(key_owner_proof.Encode());
+            return new Method(200, "Beefy", 4, "report_fork_voting_unsigned", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> report_future_block_voting
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method ReportFutureBlockVoting(Polkadot.NetApi.Generated.Model.sp_consensus_beefy.FutureBlockVotingProof equivocation_proof, Polkadot.NetApi.Generated.Model.sp_session.MembershipProof key_owner_proof)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(equivocation_proof.Encode());
+            byteArray.AddRange(key_owner_proof.Encode());
+            return new Method(200, "Beefy", 5, "report_future_block_voting", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> report_future_block_voting_unsigned
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method ReportFutureBlockVotingUnsigned(Polkadot.NetApi.Generated.Model.sp_consensus_beefy.FutureBlockVotingProof equivocation_proof, Polkadot.NetApi.Generated.Model.sp_session.MembershipProof key_owner_proof)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(equivocation_proof.Encode());
+            byteArray.AddRange(key_owner_proof.Encode());
+            return new Method(200, "Beefy", 6, "report_future_block_voting_unsigned", byteArray.ToArray());
         }
     }
     
@@ -314,10 +362,28 @@ namespace Polkadot.NetApi.Generated.Storage
         InvalidKeyOwnershipProof,
         
         /// <summary>
-        /// >> InvalidEquivocationProof
-        /// An equivocation proof provided as part of an equivocation report is invalid.
+        /// >> InvalidDoubleVotingProof
+        /// A double voting proof provided as part of an equivocation report is invalid.
         /// </summary>
-        InvalidEquivocationProof,
+        InvalidDoubleVotingProof,
+        
+        /// <summary>
+        /// >> InvalidForkVotingProof
+        /// A fork voting proof provided as part of an equivocation report is invalid.
+        /// </summary>
+        InvalidForkVotingProof,
+        
+        /// <summary>
+        /// >> InvalidFutureBlockVotingProof
+        /// A future block voting proof provided as part of an equivocation report is invalid.
+        /// </summary>
+        InvalidFutureBlockVotingProof,
+        
+        /// <summary>
+        /// >> InvalidEquivocationProofSession
+        /// The session of the equivocation proof is invalid
+        /// </summary>
+        InvalidEquivocationProofSession,
         
         /// <summary>
         /// >> DuplicateOffenceReport

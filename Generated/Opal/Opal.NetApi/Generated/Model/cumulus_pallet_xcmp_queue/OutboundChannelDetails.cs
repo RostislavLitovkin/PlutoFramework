@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.cumulus_pallet_xcmp_queue
     
     
     /// <summary>
-    /// >> 549 - Composite[cumulus_pallet_xcmp_queue.OutboundChannelDetails]
+    /// >> 625 - Composite[cumulus_pallet_xcmp_queue.OutboundChannelDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OutboundChannelDetails : BaseType

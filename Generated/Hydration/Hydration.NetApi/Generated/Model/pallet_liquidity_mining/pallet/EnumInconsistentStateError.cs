@@ -108,7 +108,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_liquidity_mining.pallet
     }
     
     /// <summary>
-    /// >> 583 - Variant[pallet_liquidity_mining.pallet.InconsistentStateError]
+    /// >> 656 - Variant[pallet_liquidity_mining.pallet.InconsistentStateError]
     /// </summary>
     public sealed class EnumInconsistentStateError : BaseEnum<InconsistentStateError>
     {

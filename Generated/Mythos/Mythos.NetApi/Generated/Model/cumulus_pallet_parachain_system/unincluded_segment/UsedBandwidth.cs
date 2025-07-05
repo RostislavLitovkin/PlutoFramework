@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.cumulus_pallet_parachain_system.uninclud
     
     
     /// <summary>
-    /// >> 178 - Composite[cumulus_pallet_parachain_system.unincluded_segment.UsedBandwidth]
+    /// >> 202 - Composite[cumulus_pallet_parachain_system.unincluded_segment.UsedBandwidth]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UsedBandwidth : BaseType

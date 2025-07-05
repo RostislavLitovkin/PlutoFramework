@@ -85,57 +85,51 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.inclusion.
         InvalidBacking = 9,
         
         /// <summary>
-        /// >> NotCollatorSigned
-        /// Collator did not sign PoV.
-        /// </summary>
-        NotCollatorSigned = 10,
-        
-        /// <summary>
         /// >> ValidationDataHashMismatch
         /// The validation data hash does not match expected.
         /// </summary>
-        ValidationDataHashMismatch = 11,
+        ValidationDataHashMismatch = 10,
         
         /// <summary>
         /// >> IncorrectDownwardMessageHandling
         /// The downward message queue is not processed correctly.
         /// </summary>
-        IncorrectDownwardMessageHandling = 12,
+        IncorrectDownwardMessageHandling = 11,
         
         /// <summary>
         /// >> InvalidUpwardMessages
         /// At least one upward message sent does not pass the acceptance criteria.
         /// </summary>
-        InvalidUpwardMessages = 13,
+        InvalidUpwardMessages = 12,
         
         /// <summary>
         /// >> HrmpWatermarkMishandling
         /// The candidate didn't follow the rules of HRMP watermark advancement.
         /// </summary>
-        HrmpWatermarkMishandling = 14,
+        HrmpWatermarkMishandling = 13,
         
         /// <summary>
         /// >> InvalidOutboundHrmp
         /// The HRMP messages sent by the candidate is not valid.
         /// </summary>
-        InvalidOutboundHrmp = 15,
+        InvalidOutboundHrmp = 14,
         
         /// <summary>
         /// >> InvalidValidationCodeHash
         /// The validation code hash of the candidate is not valid.
         /// </summary>
-        InvalidValidationCodeHash = 16,
+        InvalidValidationCodeHash = 15,
         
         /// <summary>
         /// >> ParaHeadMismatch
         /// The `para_head` hash in the candidate descriptor doesn't match the hash of the actual
         /// para head in the commitments.
         /// </summary>
-        ParaHeadMismatch = 17,
+        ParaHeadMismatch = 16,
     }
     
     /// <summary>
-    /// >> 716 - Variant[polkadot_runtime_parachains.inclusion.pallet.Error]
+    /// >> 709 - Variant[polkadot_runtime_parachains.inclusion.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

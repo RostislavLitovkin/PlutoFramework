@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_uniques.types
     
     
     /// <summary>
-    /// >> 555 - Composite[pallet_uniques.types.ItemMetadata]
+    /// >> 598 - Composite[pallet_uniques.types.ItemMetadata]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ItemMetadata : BaseType

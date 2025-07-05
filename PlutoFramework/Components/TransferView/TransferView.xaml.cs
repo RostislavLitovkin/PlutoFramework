@@ -56,9 +56,9 @@ public partial class TransferView : ContentView
                 (EndpointEnum endpointKey, AssetPallet.Native, _) => TransferModel.NativeTransfer(clientExt, viewModel.Address, amount),
                 (EndpointEnum endpointKey, AssetPallet.Assets, BigInteger assetId) => TransferModel.AssetsTransfer(clientExt, viewModel.Address, assetId, amount),
                 (EndpointEnum endpointKey, AssetPallet.Tokens, BigInteger tokenId) => TransferModel.TokensTransfer(clientExt, viewModel.Address, tokenId, amount),
+                (EndpointEnum endpointKey, AssetPallet.ForeignAssets, BigInteger assetId) => TransferModel.ForeignAssetsTransfer(clientExt, viewModel.Address, assetId, amount),
                 _ => throw new Exception("Not implemented for this pallet")
             };
-
 
             // Hide this layout
             viewModel.SetToDefault();
@@ -69,7 +69,7 @@ public partial class TransferView : ContentView
         }
         catch (Exception ex)
         {
-            errorLabel.Text = ex.Message;
+            errorLabel.Text = "Exception: " + ex.Message;
             Console.WriteLine(ex);
         }
     }

@@ -3,9 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.XcavateProperty.SliderView">
     <VerticalStackLayout>
-        <Label x:Name="titleLabel"
+        <Label 
                FontAttributes="Bold"
-               HorizontalTextAlignment="Start" />
+               HorizontalTextAlignment="Start">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span x:Name="titleLabel"
+                          FontAttributes="Bold" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
 
         <AbsoluteLayout Margin="0, 10, 0, 10">
 

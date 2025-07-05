@@ -1,11 +1,12 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.Buttons;
-using PlutoFramework.Components.DAppConnectionView;
+using PlutoFramework.Components.DAppConnection;
 using PlutoFramework.Components.Extrinsic;
 using PlutoFramework.Constants;
 using PlutoFramework.Model;
 using PlutoFramework.Model.AjunaExt;
+using PlutoFramework.Model.Xcavate;
 using PlutoFramework.Types;
 using Substrate.NetApi.Model.Extrinsics;
 using Substrate.NetApi.Model.Rpc;
@@ -13,11 +14,15 @@ using Substrate.NetApi.Model.Types;
 using System.Collections.ObjectModel;
 using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.AssetPallet, System.Numerics.BigInteger);
 using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
+using XcavatePropertyKey = (PlutoFramework.Constants.EndpointEnum, uint);
 
 namespace PlutoFramework.Components.TransactionAnalyzer
 {
     public partial class TransactionAnalyzerConfirmationViewModel : ObservableObject, IPopup, ISetToDefault
     {
+        [ObservableProperty]
+        private ObservableCollection<ExtrinsicEvent> extrinsicEvents = new ObservableCollection<ExtrinsicEvent>();
+
         [ObservableProperty]
         private bool isVisible;
 
@@ -34,16 +39,30 @@ namespace PlutoFramework.Components.TransactionAnalyzer
         private Endpoint endpoint;
 
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(ProcessedPalletCallName))]
         private string palletCallName;
+
+        public string ProcessedPalletCallName => DefaultAppConfiguration.TRANSACTION_ANALYZER_PALLET_CALL_NAME_SUBSTITUTION ?? PalletCallName;
 
         [ObservableProperty]
         private TempPayload payload;
 
+
         [ObservableProperty]
-        private bool extrinsicFailedIsVisible = false;
+        [NotifyPropertyChangedFor(nameof(ExtrinsicFailedIsVisible))]
+        [NotifyPropertyChangedFor(nameof(ProcessedExtrinsicFailedMessage))]
+        private string extrinsicFailedMessage = "";
+
+        public string ProcessedExtrinsicFailedMessage => ExtrinsicFailedMessage.Substring(ExtrinsicFailedMessage.IndexOf(':') + 1);
+
+        public bool ExtrinsicFailedIsVisible => ExtrinsicFailedMessage != "";
+
 
         [ObservableProperty]
         private ButtonStateEnum confirmButtonState = ButtonStateEnum.Enabled;
+
+        [ObservableProperty]
+        private string confirmButtonText = "Confirm";
 
         [ObservableProperty]
         private string estimatedFee = "Estimated fee: Loading";
@@ -83,7 +102,8 @@ namespace PlutoFramework.Components.TransactionAnalyzer
 
 
 
-            if (showDAppView) {
+            if (showDAppView)
+            {
                 DAppName = dAppConnectionViewModel.Name;
                 DAppIcon = dAppConnectionViewModel.Icon;
                 IsDAppViewVisible = dAppConnectionViewModel.IsVisible;
@@ -121,6 +141,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
 
                 Dictionary<string, Dictionary<AssetKey, Asset>> currencyChanges = new Dictionary<string, Dictionary<AssetKey, Asset>>();
                 Dictionary<string, Dictionary<NftKey, NftAssetWrapper>> nftChanges = new Dictionary<string, Dictionary<NftKey, NftAssetWrapper>>();
+                Dictionary<string, Dictionary<XcavatePropertyKey, PropertyTokenOwnershipChangeInfo>> xcavatePropertyChanges = new();
 
                 if (xcmDestinationEndpointKey is null)
                 {
@@ -130,11 +151,13 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                     {
                         var extrinsicDetails = await EventsModel.GetExtrinsicEventsForClientAsync(client, extrinsicIndex: events.ExtrinsicIndex, events.Events, blockNumber: 0, CancellationToken.None);
 
+                        ExtrinsicEvents = new ObservableCollection<ExtrinsicEvent>(extrinsicDetails.Events);
+
                         var extrinsicResult = TransactionAnalyzerModel.GetExtrinsicResult(extrinsicDetails.Events);
 
                         if (extrinsicResult == ExtrinsicResult.Failed)
                         {
-                            ExtrinsicFailedIsVisible = true;
+                            ExtrinsicFailedMessage = TransactionAnalyzerModel.GetExtrinsicFailedMessage(extrinsicDetails.Events);
                             ConfirmButtonState = ButtonStateEnum.Warning;
                         }
 
@@ -142,6 +165,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
 
                         nftChanges = await TransactionAnalyzerModel.AnalyzeNftChangesInEventsAsync(client, extrinsicDetails.Events, client.Endpoint, CancellationToken.None);
 
+                        xcavatePropertyChanges = await TransactionAnalyzerModel.AnalyzeXcavatePropertyChangesInEventsAsync(client, extrinsicDetails.Events, client.Endpoint, CancellationToken.None);
                     }
                 }
                 else
@@ -169,11 +193,18 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                         var fromNftChanges = await TransactionAnalyzerModel.AnalyzeNftChangesInEventsAsync(client, fromExtrinsicDetails.Events, client.Endpoint, CancellationToken.None);
 
                         nftChanges = await TransactionAnalyzerModel.AnalyzeNftChangesInEventsAsync(destionationClient, toExtrinsicDetails.Events, destionationClient.Endpoint, CancellationToken.None, existingNftChanges: fromNftChanges);
+
+                        var fromXcavatePropertyChanges = await TransactionAnalyzerModel.AnalyzeXcavatePropertyChangesInEventsAsync(client, fromExtrinsicDetails.Events, client.Endpoint, CancellationToken.None);
+
+                        xcavatePropertyChanges = await TransactionAnalyzerModel.AnalyzeXcavatePropertyChangesInEventsAsync(client, toExtrinsicDetails.Events, client.Endpoint, CancellationToken.None, existingPropertyChanges: fromXcavatePropertyChanges);
+
                     }
-                };
+                }
+                ;
 
                 analyzedOutcomeViewModel.UpdateAssetChanges(currencyChanges);
                 analyzedOutcomeViewModel.UpdateNftChanges(nftChanges);
+                await analyzedOutcomeViewModel.UpdateXcavatePropertyChanges(xcavatePropertyChanges);
 
                 analyzedOutcomeViewModel.Loading = "";
 
@@ -183,7 +214,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
             {
                 Console.WriteLine(ex);
 
-                analyzedOutcomeViewModel.Loading = "Failed";
+                analyzedOutcomeViewModel.Loading = "Failed to simulate";
 
                 EstimatedFee = "Estimated fee: Unknown";
             }
@@ -200,6 +231,9 @@ namespace PlutoFramework.Components.TransactionAnalyzer
             }
 
             var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();
+
+            transactionAnalyzerConfirmationViewModel.ConfirmButtonState = ButtonStateEnum.Disabled;
+            transactionAnalyzerConfirmationViewModel.ConfirmButtonText = "Submitting";
 
             var clientExt = await Model.SubstrateClientModel.GetOrAddSubstrateClientAsync(transactionAnalyzerConfirmationViewModel.Endpoint.Key, CancellationToken.None);
 
@@ -283,6 +317,12 @@ namespace PlutoFramework.Components.TransactionAnalyzer
             EstimatedFee = "Estimated fee: Loading";
             EstimatedTime = "Estimated time: 6 sec";
             OnConfirm = null;
+            ExtrinsicFailedMessage = "";
+            ConfirmButtonState = ButtonStateEnum.Enabled;
+            ConfirmButtonText = "Confirm";
+
+            ExtrinsicEvents = new ObservableCollection<ExtrinsicEvent>();
+
 
             var analyzedOutcomeViewModel = DependencyService.Get<AnalyzedOutcomeViewModel>();
             analyzedOutcomeViewModel.SetToDefault();
@@ -291,15 +331,23 @@ namespace PlutoFramework.Components.TransactionAnalyzer
         [RelayCommand]
         public async Task ExpandExtrinsicInfoAsync()
         {
+            if (Payload is null)
+            {
+                return;
+            }
+
             CancellationToken token = CancellationToken.None;
 
             Console.WriteLine("Clicked on expand extrinsic info");
             var methodUnified = PalletCallModel.GetMethodUnified(await SubstrateClientModel.GetOrAddSubstrateClientAsync(Endpoint.Key, token), Payload.Call);
 
-            var viewModel = new CallDetailViewModel {
+            var viewModel = new CallDetailViewModel
+            {
                 PalletCallName = methodUnified.PalletName + "." + methodUnified.EventName,
                 CallParameters = new ObservableCollection<EventParameter>(methodUnified.Parameters),
                 Endpoint = Endpoint,
+                ExtrinsicEvents = ExtrinsicEvents,
+                EncodedCall = Payload.Call.Encode(),
             };
 
             await Application.Current.MainPage.Navigation.PushAsync(new CallDetailPage(viewModel));

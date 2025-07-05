@@ -25,7 +25,7 @@ namespace PlutoFramework.Platforms.Android
             var notificationBuilder = new NotificationCompat.Builder(context, foregroundChannelId)
                 .SetContentTitle(title)
                 .SetContentText(description)
-                .SetSmallIcon(CommunityToolkit.Maui.Core.Resource.Drawable.plutowalleticonwhite)
+                .SetSmallIcon(CommunityToolkit.Maui.Core.Resource.Drawable.resourceappicon)
                 .SetContentIntent(pendingIntent)
                 .SetOngoing(true);
 

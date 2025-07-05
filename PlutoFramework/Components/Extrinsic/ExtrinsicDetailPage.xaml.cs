@@ -19,6 +19,8 @@ public partial class ExtrinsicDetailPage : ContentPage
 
         this.endpoint  = endpoint;
         this.blockNumberExtrinsicIndex = blockNumberExtrinsicIndex;
+
+        subscanButton.IsVisible = endpoint.SubscanChainName != null;
     }
 
     private async void OnOpenSubscanClicked(object sender, TappedEventArgs e)

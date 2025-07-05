@@ -38,7 +38,7 @@ namespace Opal.NetApi.Generated.Model.pallet_evm_contract_helpers
     }
     
     /// <summary>
-    /// >> 661 - Variant[pallet_evm_contract_helpers.SponsoringModeT]
+    /// >> 742 - Variant[pallet_evm_contract_helpers.SponsoringModeT]
     /// </summary>
     public sealed class EnumSponsoringModeT : BaseEnum<SponsoringModeT>
     {

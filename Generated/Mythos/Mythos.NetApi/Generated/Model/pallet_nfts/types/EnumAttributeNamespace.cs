@@ -43,7 +43,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_nfts.types
     }
     
     /// <summary>
-    /// >> 52 - Variant[pallet_nfts.types.AttributeNamespace]
+    /// >> 56 - Variant[pallet_nfts.types.AttributeNamespace]
     /// </summary>
     public sealed class EnumAttributeNamespace : BaseEnumRust<AttributeNamespace>
     {

@@ -33,7 +33,7 @@ namespace Mythos.NetApi.Generated.Model.staging_xcm.v4.asset
     }
     
     /// <summary>
-    /// >> 94 - Variant[staging_xcm.v4.asset.Fungibility]
+    /// >> 163 - Variant[staging_xcm.v4.asset.Fungibility]
     /// </summary>
     public sealed class EnumFungibility : BaseEnumRust<Fungibility>
     {

@@ -43,7 +43,7 @@ namespace Opal.NetApi.Generated.Model.evm_core.error
     }
     
     /// <summary>
-    /// >> 382 - Variant[evm_core.error.ExitFatal]
+    /// >> 448 - Variant[evm_core.error.ExitFatal]
     /// </summary>
     public sealed class EnumExitFatal : BaseEnumRust<ExitFatal>
     {

@@ -108,7 +108,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_multisig.pallet
     }
     
     /// <summary>
-    /// >> 396 - Variant[pallet_multisig.pallet.Error]
+    /// >> 407 - Variant[pallet_multisig.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

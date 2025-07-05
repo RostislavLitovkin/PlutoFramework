@@ -24,8 +24,14 @@ namespace Polkadot.NetApi.Generated.Model.pallet_nomination_pools.pallet
         
         /// <summary>
         /// >> join
-        /// Stake funds with a pool. The amount to bond is transferred from the member to the
-        /// pools account and immediately increases the pools bond.
+        /// Stake funds with a pool. The amount to bond is delegated (or transferred based on
+        /// [`adapter::StakeStrategyType`]) from the member to the pool account and immediately
+        /// increases the pool's bond.
+        /// 
+        /// The method of transferring the amount to the pool account is determined by
+        /// [`adapter::StakeStrategyType`]. If the pool is configured to use
+        /// [`adapter::StakeStrategyType::Delegate`], the funds remain in the account of
+        /// the `origin`, while the pool gains the right to use these funds for staking.
         /// 
         /// # Note
         /// 
@@ -361,8 +367,10 @@ namespace Polkadot.NetApi.Generated.Model.pallet_nomination_pools.pallet
         /// Fails unless [`crate::pallet::Config::StakeAdapter`] is of strategy type:
         /// [`adapter::StakeStrategyType::Delegate`].
         /// 
-        /// This call can be dispatched permissionlessly (i.e. by any account). If the member has
-        /// slash to be applied, caller may be rewarded with the part of the slash.
+        /// The pending slash amount of the member must be equal or more than `ExistentialDeposit`.
+        /// This call can be dispatched permissionlessly (i.e. by any account). If the execution
+        /// is successful, fee is refunded and caller may be rewarded with a part of the slash
+        /// based on the [`crate::pallet::Config::StakeAdapter`] configuration.
         /// </summary>
         apply_slash = 23,
         
@@ -396,7 +404,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_nomination_pools.pallet
     }
     
     /// <summary>
-    /// >> 262 - Variant[pallet_nomination_pools.pallet.Call]
+    /// >> 251 - Variant[pallet_nomination_pools.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

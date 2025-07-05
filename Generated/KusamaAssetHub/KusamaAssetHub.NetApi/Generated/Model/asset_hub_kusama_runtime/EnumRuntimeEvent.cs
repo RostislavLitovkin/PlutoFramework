@@ -77,6 +77,11 @@ namespace KusamaAssetHub.NetApi.Generated.Model.asset_hub_kusama_runtime
         CumulusXcm = 32,
         
         /// <summary>
+        /// >> ToPolkadotXcmRouter
+        /// </summary>
+        ToPolkadotXcmRouter = 34,
+        
+        /// <summary>
         /// >> MessageQueue
         /// </summary>
         MessageQueue = 35,
@@ -130,6 +135,11 @@ namespace KusamaAssetHub.NetApi.Generated.Model.asset_hub_kusama_runtime
         /// >> AssetConversion
         /// </summary>
         AssetConversion = 56,
+        
+        /// <summary>
+        /// >> StateTrieMigration
+        /// </summary>
+        StateTrieMigration = 70,
     }
     
     /// <summary>
@@ -154,6 +164,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.asset_hub_kusama_runtime
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.pallet.EnumEvent>(RuntimeEvent.XcmpQueue);
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_xcm.pallet.EnumEvent>(RuntimeEvent.PolkadotXcm);
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.cumulus_pallet_xcm.pallet.EnumEvent>(RuntimeEvent.CumulusXcm);
+				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_xcm_bridge_hub_router.pallet.EnumEvent>(RuntimeEvent.ToPolkadotXcmRouter);
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_message_queue.pallet.EnumEvent>(RuntimeEvent.MessageQueue);
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_utility.pallet.EnumEvent>(RuntimeEvent.Utility);
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_multisig.pallet.EnumEvent>(RuntimeEvent.Multisig);
@@ -165,6 +176,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.asset_hub_kusama_runtime
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_nft_fractionalization.pallet.EnumEvent>(RuntimeEvent.NftFractionalization);
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_assets.pallet.EnumEvent>(RuntimeEvent.PoolAssets);
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_asset_conversion.pallet.EnumEvent>(RuntimeEvent.AssetConversion);
+				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_state_trie_migration.pallet.EnumEvent>(RuntimeEvent.StateTrieMigration);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_uniques.types
     
     
     /// <summary>
-    /// >> 421 - Composite[pallet_uniques.types.CollectionMetadata]
+    /// >> 436 - Composite[pallet_uniques.types.CollectionMetadata]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CollectionMetadata : BaseType

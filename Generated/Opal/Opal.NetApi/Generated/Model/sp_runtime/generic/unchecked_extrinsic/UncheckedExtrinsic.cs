@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.sp_runtime.generic.unchecked_extrinsic
     
     
     /// <summary>
-    /// >> 692 - Composite[sp_runtime.generic.unchecked_extrinsic.UncheckedExtrinsic]
+    /// >> 773 - Composite[sp_runtime.generic.unchecked_extrinsic.UncheckedExtrinsic]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UncheckedExtrinsic : BaseType

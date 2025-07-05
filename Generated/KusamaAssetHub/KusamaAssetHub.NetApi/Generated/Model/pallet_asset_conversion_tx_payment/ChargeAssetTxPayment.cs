@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_asset_conversion_tx_payme
     
     
     /// <summary>
-    /// >> 471 - Composite[pallet_asset_conversion_tx_payment.ChargeAssetTxPayment]
+    /// >> 486 - Composite[pallet_asset_conversion_tx_payment.ChargeAssetTxPayment]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ChargeAssetTxPayment : BaseType

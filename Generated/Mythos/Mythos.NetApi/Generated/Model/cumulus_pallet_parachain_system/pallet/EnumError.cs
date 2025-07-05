@@ -73,7 +73,7 @@ namespace Mythos.NetApi.Generated.Model.cumulus_pallet_parachain_system.pallet
     }
     
     /// <summary>
-    /// >> 216 - Variant[cumulus_pallet_parachain_system.pallet.Error]
+    /// >> 240 - Variant[cumulus_pallet_parachain_system.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

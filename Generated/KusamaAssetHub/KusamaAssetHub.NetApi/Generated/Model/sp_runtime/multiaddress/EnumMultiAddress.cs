@@ -48,7 +48,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.sp_runtime.multiaddress
     }
     
     /// <summary>
-    /// >> 236 - Variant[sp_runtime.multiaddress.MultiAddress]
+    /// >> 240 - Variant[sp_runtime.multiaddress.MultiAddress]
     /// </summary>
     public sealed class EnumMultiAddress : BaseEnumRust<MultiAddress>
     {

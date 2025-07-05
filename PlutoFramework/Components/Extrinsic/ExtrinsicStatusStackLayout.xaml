@@ -4,7 +4,11 @@
              xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
              x:Class="PlutoFramework.Components.Extrinsic.ExtrinsicStatusStackLayout"
              IsVisible="{Binding IsVisible}"
-             HeightRequest="{Binding HeightRequest}" >
+             HeightRequest="{Binding HeightRequest}" 
+             AbsoluteLayout.LayoutBounds="{Binding LayoutBounds}"
+             AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+             Margin="20, 20, 20, 20"
+             TranslationY="20">
     <VerticalStackLayout BindableLayout.ItemsSource="{Binding ExtrinsicInfos}"
                          Spacing="15">
         <BindableLayout.ItemTemplate>
@@ -17,9 +21,7 @@
                                                EventsListViewModel="{Binding EventsListViewModel}"
                                                BlockNumber="{Binding BlockNumber}"
                                                ExtrinsicIndex="{Binding ExtrinsicIndex}" />
-
             </DataTemplate>
-
         </BindableLayout.ItemTemplate>
     </VerticalStackLayout>
 </ContentView>

@@ -1,7 +1,6 @@
 ﻿using PlutoFramework.Components.Balance;
 using PlutoFramework.Components.AddressView;
-using PlutoFramework.Components.DAppConnectionView;
-using PlutoFramework.Components.Extrinsic;
+using PlutoFramework.Components.DAppConnection;
 using System.Collections.ObjectModel;
 using PlutoFramework.Components.MessagePopup;
 using PlutoFramework.Constants;
@@ -24,6 +23,10 @@ using PlutoFramework.View;
 using PlutoFramework.Components.Kilt;
 using PlutoFramework.Components.OpenGov;
 using PlutoFramework.Components.Faucet;
+using PlutoFramework.Components.XcavateProperty;
+using PlutoFramework.Components.Table;
+using PlutoFramework.Components.XcavateProperty.Cells;
+using PlutoFramework.Components.Xcavate;
 
 namespace PlutoFramework.Model
 {
@@ -35,9 +38,9 @@ namespace PlutoFramework.Model
 
     public enum ComponentId
     {
+        Default,
         U,
         dApp,
-        ExSL,
         UsdB,
         RnT,
         SubK,
@@ -58,12 +61,18 @@ namespace PlutoFramework.Model
         xTrnsfr,
         mainDid,
         OpenGovDel,
-        XcavatePaseoFaucet
+        XcavatePaseoFaucet,
+        XcPaseoOwnedProperties,
+        XcTableInvestmentSummary,
+        XcTableROIBalance,
+        XcRiskWarning,
+        None
+
     }
 
     public class CustomLayoutModel
     {
-        public const string DEFAULT_PLUTO_LAYOUT = "plutolayout: [U, dApp, BMnR, ExSL, XcavatePaseoFaucet, UsdB, RnT, SubK, ChaK];[Polkadot, Kusama, XcavatePaseo]";
+        public const string DEFAULT_PLUTO_LAYOUT = "plutolayout: [U, dApp, BMnR, ExSL, UsdB, RnT, SubK, ChaK];[Polkadot, Kusama]";
 
         // This constant is used to fetch all components
         public static string AllComponentsString = $"plutolayout: [{string.Join(",", Enum.GetNames(typeof(ComponentId)))}];[";
@@ -115,7 +124,15 @@ namespace PlutoFramework.Model
 
             foreach (string component in componentStrings)
             {
-                result.Add(GetView((ComponentId)Enum.Parse(typeof(ComponentId), component.Trim())));
+                try
+                {
+                    result.Add(GetView((ComponentId)Enum.Parse(typeof(ComponentId), component.Trim())));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error parsing component: " + component.Trim());
+                    Console.WriteLine(ex);
+                }
             }
 
             return result;
@@ -145,7 +162,11 @@ namespace PlutoFramework.Model
             {
                 Console.WriteLine("Component to parse: .." + component.Trim() + "..");
                 result.Add(GetComponentInfo((ComponentId)Enum.Parse(typeof(ComponentId), component.Trim())));
+               
+
             }
+
+            
 
             return result;
         }
@@ -314,8 +335,6 @@ namespace PlutoFramework.Model
                     return new UpdateView();
                 case ComponentId.dApp:
                     return new DAppConnectionView();
-                case ComponentId.ExSL:
-                    return new ExtrinsicStatusStackLayout();
                 case ComponentId.UsdB:
                     return new UsdBalanceView();
                 /*case ComponentId.PubK:
@@ -373,6 +392,23 @@ namespace PlutoFramework.Model
                     return new VotingDelegationView();
                 case ComponentId.XcavatePaseoFaucet:
                     return new FaucetButtonView(EndpointEnum.XcavatePaseo);
+                case ComponentId.XcPaseoOwnedProperties:
+                    return new OwnedPropertiesListView();
+                case ComponentId.XcTableInvestmentSummary:
+                    return new TwoCellTableView(
+                        new PropertyTokensBoughtCellView(),
+                        new TotalInvestedCellView()
+                    );
+                case ComponentId.XcTableROIBalance:
+                    return new TwoCellTableView(
+                        new ROICellView(),
+                        new BalanceCellView()
+                    );
+                case ComponentId.XcRiskWarning:
+                    return new RiskWarningView
+                    {
+                        HeightRequest = 90
+                    };
             }
 
             throw new Exception("Could not parse the PlutoLayout");
@@ -393,12 +429,6 @@ namespace PlutoFramework.Model
                     {
                         Name = "dApp connection",
                         ComponentId = ComponentId.dApp,
-                    };
-                case ComponentId.ExSL:
-                    return new ComponentInfo
-                    {
-                        Name = "Extrinsic status",
-                        ComponentId = ComponentId.ExSL,
                     };
                 case ComponentId.UsdB:
                     return new ComponentInfo
@@ -555,6 +585,32 @@ namespace PlutoFramework.Model
                     {
                         Name = "Xcavate Paseo Faucet",
                         ComponentId = ComponentId.XcavatePaseoFaucet
+                    };
+                case ComponentId.XcPaseoOwnedProperties:
+                    return new ComponentInfo
+                    {
+                        Name = "Xcavate Paseo Owned Properties",
+                        ComponentId = ComponentId.XcPaseoOwnedProperties,
+                    };
+                case ComponentId.XcRiskWarning:
+                    return new ComponentInfo
+                    {
+                        Name = "Xcavate Risk Warning",
+                        ComponentId = ComponentId.XcRiskWarning,
+                    };
+
+                case ComponentId.XcTableInvestmentSummary:
+                    return new ComponentInfo
+                    {
+                        Name = "Xcavate Investment Summary",
+                        ComponentId = ComponentId.XcTableInvestmentSummary,
+                    };
+
+                case ComponentId.XcTableROIBalance:
+                    return new ComponentInfo
+                    {
+                        Name = "Xcavate ROI & Balance",
+                        ComponentId = ComponentId.XcTableROIBalance,
                     };
             }
 

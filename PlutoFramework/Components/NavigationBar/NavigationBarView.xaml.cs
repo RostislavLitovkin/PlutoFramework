@@ -1,12 +1,12 @@
-﻿using PlutoFramework.ViewModel;
-using PlutoFramework.Components.TransferView;
-using PlutoFramework.Components.Nft;
+﻿using PlutoFramework.Components.TransferView;
+using PlutoFramework.Model;
+using PlutoFramework.Components.Account;
 
 namespace PlutoFramework.Components.NavigationBar;
 
 public enum NavigationBarSelectedOption
 {
-    // Has to exist doe to binding
+    // Has to exist due to binding
     None,
 
     Home,
@@ -68,6 +68,15 @@ public partial class NavigationBarView : ContentView
     
     async void OnTransferClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
+        if (!KeysModel.HasSubstrateKey())
+        {
+            var noAccountPopupViewModel = DependencyService.Get<NoAccountPopupModel>();
+
+            noAccountPopupViewModel.IsVisible = true;
+
+            return;
+        }
+
         var viewModel = DependencyService.Get<TransferViewModel>();
 
         viewModel.IsVisible = true;

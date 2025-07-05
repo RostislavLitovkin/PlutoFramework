@@ -50,7 +50,7 @@ namespace Opal.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.up_data_structs.TokenId, Opal.NetApi.Generated.Model.up_data_structs.EnumPropertyScope, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12>), typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.up_data_structs.TokenId, Opal.NetApi.Generated.Model.up_data_structs.EnumPropertyScope, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17>), typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT51)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Nonfungible", "Owned"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -207,7 +207,7 @@ namespace Opal.NetApi.Generated.Storage
         /// 
         ///  Currently unused.
         /// </summary>
-        public static string TokenAuxPropertiesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.up_data_structs.TokenId, Opal.NetApi.Generated.Model.up_data_structs.EnumPropertyScope, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12> key)
+        public static string TokenAuxPropertiesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.up_data_structs.TokenId, Opal.NetApi.Generated.Model.up_data_structs.EnumPropertyScope, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17> key)
         {
             return RequestGenerator.GetStorage("Nonfungible", "TokenAuxProperties", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
@@ -237,10 +237,10 @@ namespace Opal.NetApi.Generated.Storage
         /// 
         ///  Currently unused.
         /// </summary>
-        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41> TokenAuxProperties(Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.up_data_structs.TokenId, Opal.NetApi.Generated.Model.up_data_structs.EnumPropertyScope, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12> key, string blockhash, CancellationToken token)
+        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT51> TokenAuxProperties(Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.up_data_structs.CollectionId, Opal.NetApi.Generated.Model.up_data_structs.TokenId, Opal.NetApi.Generated.Model.up_data_structs.EnumPropertyScope, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17> key, string blockhash, CancellationToken token)
         {
             string parameters = NonfungibleStorage.TokenAuxPropertiesParams(key);
-            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT51>(parameters, blockhash, token);
             return result;
         }
         

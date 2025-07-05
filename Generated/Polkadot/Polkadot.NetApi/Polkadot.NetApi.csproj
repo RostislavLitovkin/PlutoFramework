@@ -12,9 +12,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-    <PackageReference Include="MessagePack" Version="3.1.2" />
-    <PackageReference Include="System.Net.Http" Version="4.3.4" />
-    <PackageReference Include="System.Text.Json" Version="9.0.1" />
 		<PackageReference Include="Substrate.NET.API" Version="0.9.24-rc6" />
 	</ItemGroup>
 

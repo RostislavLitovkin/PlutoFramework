@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.frame_system.extensions.check_spec_versi
     
     
     /// <summary>
-    /// >> 459 - Composite[frame_system.extensions.check_spec_version.CheckSpecVersion]
+    /// >> 556 - Composite[frame_system.extensions.check_spec_version.CheckSpecVersion]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckSpecVersion : BaseType

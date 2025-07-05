@@ -126,7 +126,7 @@ namespace Hydration.NetApi.Generated.Model.orml_tokens.module
     }
     
     /// <summary>
-    /// >> 123 - Variant[orml_tokens.module.Event]
+    /// >> 443 - Variant[orml_tokens.module.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

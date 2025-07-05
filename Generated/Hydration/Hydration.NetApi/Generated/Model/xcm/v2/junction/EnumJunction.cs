@@ -68,7 +68,7 @@ namespace Hydration.NetApi.Generated.Model.xcm.v2.junction
     }
     
     /// <summary>
-    /// >> 206 - Variant[xcm.v2.junction.Junction]
+    /// >> 309 - Variant[xcm.v2.junction.Junction]
     /// </summary>
     public sealed class EnumJunction : BaseEnumRust<Junction>
     {

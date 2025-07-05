@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
     
     
     /// <summary>
-    /// >> 319 - Composite[up_data_structs.CreateRefungibleExMultipleOwners]
+    /// >> 380 - Composite[up_data_structs.CreateRefungibleExMultipleOwners]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CreateRefungibleExMultipleOwners : BaseType
@@ -31,7 +31,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
         /// <summary>
         /// >> properties
         /// </summary>
-        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13 Properties { get; set; }
+        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18 Properties { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -54,7 +54,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
             var start = p;
             Users = new Opal.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             Users.Decode(byteArray, ref p);
-            Properties = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13();
+            Properties = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18();
             Properties.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

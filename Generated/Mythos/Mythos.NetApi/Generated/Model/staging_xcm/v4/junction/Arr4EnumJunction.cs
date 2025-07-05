@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.staging_xcm.v4.junction
     
     
     /// <summary>
-    /// >> 82 - Array
+    /// >> 158 - Array
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Array)]
     public sealed class Arr4EnumJunction : BaseType

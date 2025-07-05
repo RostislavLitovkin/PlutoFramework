@@ -38,7 +38,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_balances.types
     }
     
     /// <summary>
-    /// >> 329 - Variant[pallet_balances.types.Reasons]
+    /// >> 384 - Variant[pallet_balances.types.Reasons]
     /// </summary>
     public sealed class EnumReasons : BaseEnum<Reasons>
     {

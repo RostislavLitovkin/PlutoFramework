@@ -27,7 +27,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
         /// Create a stable pool with given list of assets.
         /// 
         /// All assets must be correctly registered in `T::AssetRegistry`.
-        /// Note that this does not seed the pool with liquidity. Use `add_liquidity` to provide
+        /// Note that this does not seed the pool with liquidity. Use `add_assets_liquidity` to provide
         /// initial liquidity.
         /// 
         /// Parameters:
@@ -63,8 +63,9 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
         /// Parameters:
         /// - `origin`: Must be T::AuthorityOrigin
         /// - `pool_id`: pool to update
-        /// - `future_amplification`: new desired pool amplification
-        /// - `future_block`: future block number when the amplification is updated
+        /// - `final_amplification`: new desired pool amplification
+        /// - `start_block`: block number when the amplification starts to move towards final_amplication
+        /// - `end_block`: block number when the amplification reaches final_amplification
         /// 
         /// Emits `AmplificationUpdated` event if successful.
         /// </summary>
@@ -73,6 +74,9 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
         /// <summary>
         /// >> add_liquidity
         /// Add liquidity to selected pool.
+        /// 
+        /// Use `add_assets_liquidity` instead.
+        /// This extrinsics will be removed in the future.
         /// 
         /// First call of `add_liquidity` must provide "initial liquidity" of all assets.
         /// 
@@ -88,6 +92,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
         /// - `assets`: asset id and liquidity amount provided
         /// 
         /// Emits `LiquidityAdded` event when successful.
+        /// Emits `pallet_broadcast::Swapped` event when successful.
         /// </summary>
         add_liquidity = 3,
         
@@ -107,6 +112,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
         /// - `max_asset_amount`: slippage limit. Max amount of asset.
         /// 
         /// Emits `LiquidityAdded` event when successful.
+        /// Emits `pallet_broadcast::Swapped` event when successful.
         /// </summary>
         add_liquidity_shares = 4,
         
@@ -128,6 +134,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
         /// - 'min_amount_out': minimum amount to receive
         /// 
         /// Emits `LiquidityRemoved` event when successful.
+        /// Emits `pallet_broadcast::Swapped` event when successful.
         /// </summary>
         remove_liquidity_one_asset = 5,
         
@@ -145,6 +152,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
         /// - 'max_share_amount': Slippage limit. Max amount of shares to burn.
         /// 
         /// Emits `LiquidityRemoved` event when successful.
+        /// Emits `pallet_broadcast::Swapped` event when successful.
         /// </summary>
         withdraw_asset_amount = 6,
         
@@ -160,14 +168,15 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
         /// - `amount_in`: Amount of asset to be sold to the pool
         /// - `min_buy_amount`: Minimum amount required to receive
         /// 
-        /// Emits `SellExecuted` event when successful.
+        /// Emits `SellExecuted` event when successful. Deprecated.
+        /// Emits `pallet_broadcast::Swapped` event when successful.
         /// 
         /// </summary>
         sell = 7,
         
         /// <summary>
         /// >> buy
-        /// Execute a swap of `asset_in` for `asset_out`.
+        /// Execute a swap of `asset_out` for `asset_in`.
         /// 
         /// Parameters:
         /// - `origin`:
@@ -177,24 +186,125 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
         /// - `amount_out`: Amount of asset to receive from the pool
         /// - `max_sell_amount`: Maximum amount allowed to be sold
         /// 
-        /// Emits `BuyExecuted` event when successful.
+        /// Emits `BuyExecuted` event when successful. Deprecated.
+        /// Emits `pallet_broadcast::Swapped` event when successful.
         /// 
         /// </summary>
         buy = 8,
         
         /// <summary>
         /// >> set_asset_tradable_state
+        /// Update the tradable state of a specific asset in a pool.
+        /// 
+        /// This function allows updating the tradability state of an asset within a pool. The tradability state determines whether the asset can be used for specific operations such as adding liquidity, removing liquidity, buying, or selling.
+        /// 
+        /// Parameters:
+        /// - `origin`: Must be `T::UpdateTradabilityOrigin`.
+        /// - `pool_id`: The ID of the pool containing the asset.
+        /// - `asset_id`: The ID of the asset whose tradability state is to be updated.
+        /// - `state`: The new tradability state of the asset.
+        /// 
+        /// Emits `TradableStateUpdated` event when successful.
+        /// 
+        /// # Errors
+        /// - `PoolNotFound`: If the specified pool does not exist.
+        /// - `AssetNotInPool`: If the specified asset is not part of the pool.
+        /// 
         /// </summary>
         set_asset_tradable_state = 9,
         
         /// <summary>
         /// >> remove_liquidity
+        /// Remove liquidity from a selected pool uniformly.
+        /// 
+        /// This function allows a liquidity provider to withdraw liquidity from a pool.
+        /// The provider specifies the amount of shares to burn and the minimum amounts of each asset to receive.
+        /// 
+        /// Parameters:
+        /// - `origin`: The liquidity provider.
+        /// - `pool_id`: The ID of the pool from which to remove liquidity.
+        /// - `share_amount`: The amount of shares to burn.
+        /// - `min_amounts_out`: A bounded vector specifying the minimum amounts of each asset to receive.
+        /// 
+        /// Emits `LiquidityRemoved` event when successful.
+        /// Emits `pallet_broadcast::Swapped` event when successful.
+        /// 
+        /// # Errors
+        /// - `InvalidAssetAmount`: If the `share_amount` is zero.
+        /// - `InsufficientShares`: If the provider does not have enough shares.
+        /// - `PoolNotFound`: If the specified pool does not exist.
+        /// - `UnknownDecimals`: If the asset decimals cannot be retrieved.
+        /// - `IncorrectAssets`: If the provided `min_amounts_out` does not match the pool assets.
+        /// - `NotAllowed`: If the asset is not allowed for the operation.
+        /// - `SlippageLimit`: If the amount received is less than the specified minimum amount.
+        /// - `InsufficientLiquidityRemaining`: If the remaining liquidity in the pool is below the minimum required.
+        /// 
+        /// # Invariants
+        /// - Ensures that the pool's reserves are updated correctly after liquidity removal.
+        /// - Ensures that the pool's invariant is maintained.
         /// </summary>
         remove_liquidity = 10,
+        
+        /// <summary>
+        /// >> create_pool_with_pegs
+        /// Create a stable pool with a given list of assets and pegs.
+        /// 
+        /// This function allows the creation of a new stable pool with specified assets, amplification, fee, and peg sources. The pool is identified by a share asset.
+        /// 
+        /// Peg target price is determined by retrieving the target peg from the oracle - it is the price of the asset from the peg sourcedenominated in the other pool assets.
+        /// 
+        /// Parameters:
+        /// - `origin`: Must be `T::AuthorityOrigin`.
+        /// - `share_asset`: Preregistered share asset identifier.
+        /// - `assets`: List of asset IDs to be included in the pool.
+        /// - `amplification`: Pool amplification parameter.
+        /// - `fee`: Fee to be applied on trade and liquidity operations.
+        /// - `peg_source`: Bounded vector specifying the source of the peg for each asset.
+        /// - `max_peg_update`: Maximum allowed peg update per block.
+        /// 
+        /// Emits `PoolCreated` event if successful.
+        /// Emits `AmplificationChanging` event if successful.
+        /// 
+        /// # Errors
+        /// - `IncorrectAssets`: If the assets are the same or less than 2 assets are provided.
+        /// - `MaxAssetsExceeded`: If the maximum number of assets is exceeded.
+        /// - `PoolExists`: If a pool with the given assets already exists.
+        /// - `ShareAssetInPoolAssets`: If the share asset is among the pool assets.
+        /// - `AssetNotRegistered`: If one or more assets are not registered in the AssetRegistry.
+        /// - `InvalidAmplification`: If the amplification parameter is invalid.
+        /// - `IncorrectInitialPegs`: If the initial pegs are incorrect.
+        /// - `MissingTargetPegOracle`: If the target peg oracle entry is missing.
+        /// - `IncorrectAssetDecimals`: If the assets have different decimals.
+        /// 
+        /// </summary>
+        create_pool_with_pegs = 11,
+        
+        /// <summary>
+        /// >> add_assets_liquidity
+        /// Add liquidity to selected pool.
+        /// 
+        /// First call of `add_assets_liquidity` must provide "initial liquidity" of all assets.
+        /// 
+        /// If there is liquidity already in the pool, LP can provide liquidity of any number of pool assets.
+        /// 
+        /// LP must have sufficient amount of each asset.
+        /// 
+        /// Origin is given corresponding amount of shares.
+        /// 
+        /// Parameters:
+        /// - `origin`: liquidity provider
+        /// - `pool_id`: Pool Id
+        /// - `assets`: asset id and liquidity amount provided
+        /// - `min_shares`: minimum amount of shares to receive
+        /// 
+        /// Emits `LiquidityAdded` event when successful.
+        /// Emits `pallet_broadcast::Swapped` event when successful.
+        /// </summary>
+        add_assets_liquidity = 12,
     }
     
     /// <summary>
-    /// >> 375 - Variant[pallet_stableswap.pallet.Call]
+    /// >> 240 - Variant[pallet_stableswap.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -205,17 +315,19 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Primitive.U16, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>>(Call.create_pool);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12, Substrate.NetApi.Model.Types.Primitive.U16, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>>(Call.create_pool);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>>(Call.update_pool_fee);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.update_amplification);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.pallet_stableswap.types.AssetAmount>>>(Call.add_liquidity);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10>>(Call.add_liquidity);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.add_liquidity_shares);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.remove_liquidity_one_asset);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.withdraw_asset_amount);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.sell);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.buy);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.pallet_stableswap.types.Tradability>>(Call.set_asset_tradable_state);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT20>>(Call.remove_liquidity);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10>>(Call.remove_liquidity);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12, Substrate.NetApi.Model.Types.Primitive.U16, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>>(Call.create_pool_with_pegs);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.add_assets_liquidity);
         }
     }
 }

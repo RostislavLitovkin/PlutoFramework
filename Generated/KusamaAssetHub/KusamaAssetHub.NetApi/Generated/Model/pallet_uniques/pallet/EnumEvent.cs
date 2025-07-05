@@ -188,7 +188,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_uniques.pallet
     }
     
     /// <summary>
-    /// >> 131 - Variant[pallet_uniques.pallet.Event]
+    /// >> 133 - Variant[pallet_uniques.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

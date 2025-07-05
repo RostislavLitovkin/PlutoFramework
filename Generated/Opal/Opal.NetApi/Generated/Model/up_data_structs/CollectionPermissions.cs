@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
     
     
     /// <summary>
-    /// >> 282 - Composite[up_data_structs.CollectionPermissions]
+    /// >> 343 - Composite[up_data_structs.CollectionPermissions]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CollectionPermissions : BaseType

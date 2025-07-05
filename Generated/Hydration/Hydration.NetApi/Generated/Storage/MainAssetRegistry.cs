@@ -40,7 +40,7 @@ namespace Hydration.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Hydration.NetApi.Generated.Model.pallet_asset_registry.types.AssetDetails)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("AssetRegistry", "NextAssetId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("AssetRegistry", "AssetIds"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("AssetRegistry", "AssetLocations"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Hydration.NetApi.Generated.Model.hydradx_runtime.xcm.AssetLocation)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("AssetRegistry", "BannedAssets"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -114,7 +114,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> AssetIdsParams
         ///  Mapping between asset name and asset id.
         /// </summary>
-        public static string AssetIdsParams(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 key)
+        public static string AssetIdsParams(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7 key)
         {
             return RequestGenerator.GetStorage("AssetRegistry", "AssetIds", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -134,7 +134,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> AssetIds
         ///  Mapping between asset name and asset id.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> AssetIds(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> AssetIds(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7 key, string blockhash, CancellationToken token)
         {
             string parameters = AssetRegistryStorage.AssetIdsParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
@@ -276,7 +276,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> register
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Register(Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> asset_id, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5> name, Hydration.NetApi.Generated.Model.pallet_asset_registry.types.EnumAssetType asset_type, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128> existential_deposit, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5> symbol, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U8> decimals, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.hydradx_runtime.xcm.AssetLocation> location, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128> xcm_rate_limit, Substrate.NetApi.Model.Types.Primitive.Bool is_sufficient)
+        public static Method Register(Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> asset_id, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7> name, Hydration.NetApi.Generated.Model.pallet_asset_registry.types.EnumAssetType asset_type, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128> existential_deposit, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7> symbol, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U8> decimals, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.hydradx_runtime.xcm.AssetLocation> location, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128> xcm_rate_limit, Substrate.NetApi.Model.Types.Primitive.Bool is_sufficient)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset_id.Encode());
@@ -295,7 +295,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> update
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Update(Substrate.NetApi.Model.Types.Primitive.U32 asset_id, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5> name, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.pallet_asset_registry.types.EnumAssetType> asset_type, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128> existential_deposit, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128> xcm_rate_limit, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.Bool> is_sufficient, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5> symbol, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U8> decimals, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.hydradx_runtime.xcm.AssetLocation> location)
+        public static Method Update(Substrate.NetApi.Model.Types.Primitive.U32 asset_id, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7> name, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.pallet_asset_registry.types.EnumAssetType> asset_type, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128> existential_deposit, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128> xcm_rate_limit, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.Bool> is_sufficient, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7> symbol, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U8> decimals, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.hydradx_runtime.xcm.AssetLocation> location)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset_id.Encode());

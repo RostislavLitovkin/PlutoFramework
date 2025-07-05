@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 380 - Array
+    /// >> 386 - Array
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Array)]
     public sealed class Arr65U8 : BaseType

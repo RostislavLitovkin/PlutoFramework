@@ -42,7 +42,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_escrow.pallet
     }
     
     /// <summary>
-    /// >> 150 - Variant[pallet_escrow.pallet.Event]
+    /// >> 175 - Variant[pallet_escrow.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

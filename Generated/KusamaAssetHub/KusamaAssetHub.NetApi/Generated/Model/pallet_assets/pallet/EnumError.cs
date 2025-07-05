@@ -153,7 +153,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_assets.pallet
     }
     
     /// <summary>
-    /// >> 458 - Variant[pallet_assets.pallet.Error]
+    /// >> 473 - Variant[pallet_assets.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

@@ -28,7 +28,7 @@ namespace Opal.NetApi.Generated.Model.pallet_collator_selection.pallet
     }
     
     /// <summary>
-    /// >> 452 - Variant[pallet_collator_selection.pallet.HoldReason]
+    /// >> 518 - Variant[pallet_collator_selection.pallet.HoldReason]
     /// </summary>
     public sealed class EnumHoldReason : BaseEnum<HoldReason>
     {

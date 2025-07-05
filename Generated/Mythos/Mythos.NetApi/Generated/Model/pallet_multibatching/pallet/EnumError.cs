@@ -69,7 +69,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_multibatching.pallet
     }
     
     /// <summary>
-    /// >> 377 - Variant[pallet_multibatching.pallet.Error]
+    /// >> 436 - Variant[pallet_multibatching.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>

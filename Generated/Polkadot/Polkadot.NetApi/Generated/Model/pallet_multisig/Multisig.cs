@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_multisig
     
     
     /// <summary>
-    /// >> 658 - Composite[pallet_multisig.Multisig]
+    /// >> 648 - Composite[pallet_multisig.Multisig]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Multisig : BaseType

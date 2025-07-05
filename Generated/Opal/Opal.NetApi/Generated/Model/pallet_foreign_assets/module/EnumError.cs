@@ -33,10 +33,16 @@ namespace Opal.NetApi.Generated.Model.pallet_foreign_assets.module
         /// The given asset ID could not be converted into the current XCM version.
         /// </summary>
         BadForeignAssetId = 1,
+        
+        /// <summary>
+        /// >> ForeignAssetNotFound
+        /// The specified foreign asset is not found.
+        /// </summary>
+        ForeignAssetNotFound = 2,
     }
     
     /// <summary>
-    /// >> 639 - Variant[pallet_foreign_assets.module.Error]
+    /// >> 720 - Variant[pallet_foreign_assets.module.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

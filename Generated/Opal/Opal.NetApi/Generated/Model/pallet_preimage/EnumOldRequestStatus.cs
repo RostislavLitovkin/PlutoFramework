@@ -33,7 +33,7 @@ namespace Opal.NetApi.Generated.Model.pallet_preimage
     }
     
     /// <summary>
-    /// >> 478 - Variant[pallet_preimage.OldRequestStatus]
+    /// >> 547 - Variant[pallet_preimage.OldRequestStatus]
     /// </summary>
     public sealed class EnumOldRequestStatus : BaseEnumRust<OldRequestStatus>
     {

@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.bounded_collections.bounded_vec
     
     
     /// <summary>
-    /// >> 316 - Composite[bounded_collections.bounded_vec.BoundedVecT16]
+    /// >> 351 - Composite[bounded_collections.bounded_vec.BoundedVecT16]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedVecT16 : BaseType
@@ -27,7 +27,7 @@ namespace Opal.NetApi.Generated.Model.bounded_collections.bounded_vec
         /// <summary>
         /// >> value
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<Opal.NetApi.Generated.Model.up_data_structs.CreateRefungibleExSingleOwner> Value { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Opal.NetApi.Generated.Model.up_data_structs.PropertyKeyPermission> Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace Opal.NetApi.Generated.Model.bounded_collections.bounded_vec
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Opal.NetApi.Generated.Model.up_data_structs.CreateRefungibleExSingleOwner>();
+            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Opal.NetApi.Generated.Model.up_data_structs.PropertyKeyPermission>();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

@@ -28,7 +28,7 @@ namespace Opal.NetApi.Generated.Model.pallet_gov_origins.pallet
     }
     
     /// <summary>
-    /// >> 211 - Variant[pallet_gov_origins.pallet.Origin]
+    /// >> 238 - Variant[pallet_gov_origins.pallet.Origin]
     /// </summary>
     public sealed class EnumOrigin : BaseEnum<Origin>
     {

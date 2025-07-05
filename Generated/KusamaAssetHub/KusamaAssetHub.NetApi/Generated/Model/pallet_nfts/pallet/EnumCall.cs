@@ -721,7 +721,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_nfts.pallet
     }
     
     /// <summary>
-    /// >> 361 - Variant[pallet_nfts.pallet.Call]
+    /// >> 367 - Variant[pallet_nfts.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

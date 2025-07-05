@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.sp_consensus_grandpa.app
     
     
     /// <summary>
-    /// >> 145 - Composite[sp_consensus_grandpa.app.Signature]
+    /// >> 147 - Composite[sp_consensus_grandpa.app.Signature]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Signature : BaseType

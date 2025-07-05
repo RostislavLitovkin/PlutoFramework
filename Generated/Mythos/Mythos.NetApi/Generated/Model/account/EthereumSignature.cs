@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.account
     
     
     /// <summary>
-    /// >> 243 - Composite[account.EthereumSignature]
+    /// >> 270 - Composite[account.EthereumSignature]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class EthereumSignature : BaseType

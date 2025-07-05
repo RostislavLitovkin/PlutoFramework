@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.sp_arithmetic.per_things
     
     
     /// <summary>
-    /// >> 536 - Composite[sp_arithmetic.per_things.Percent]
+    /// >> 579 - Composite[sp_arithmetic.per_things.Percent]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Percent : BaseType

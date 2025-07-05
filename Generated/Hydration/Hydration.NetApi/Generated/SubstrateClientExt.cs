@@ -120,6 +120,31 @@ namespace Hydration.NetApi.Generated
         public StateTrieMigrationStorage StateTrieMigrationStorage;
         
         /// <summary>
+        /// ConvictionVotingStorage storage calls.
+        /// </summary>
+        public ConvictionVotingStorage ConvictionVotingStorage;
+        
+        /// <summary>
+        /// ReferendaStorage storage calls.
+        /// </summary>
+        public ReferendaStorage ReferendaStorage;
+        
+        /// <summary>
+        /// OriginsStorage storage calls.
+        /// </summary>
+        public OriginsStorage OriginsStorage;
+        
+        /// <summary>
+        /// WhitelistStorage storage calls.
+        /// </summary>
+        public WhitelistStorage WhitelistStorage;
+        
+        /// <summary>
+        /// DispatcherStorage storage calls.
+        /// </summary>
+        public DispatcherStorage DispatcherStorage;
+        
+        /// <summary>
         /// AssetRegistryStorage storage calls.
         /// </summary>
         public AssetRegistryStorage AssetRegistryStorage;
@@ -218,6 +243,11 @@ namespace Hydration.NetApi.Generated
         /// ReferralsStorage storage calls.
         /// </summary>
         public ReferralsStorage ReferralsStorage;
+        
+        /// <summary>
+        /// LiquidationStorage storage calls.
+        /// </summary>
+        public LiquidationStorage LiquidationStorage;
         
         /// <summary>
         /// TokensStorage storage calls.
@@ -359,6 +389,11 @@ namespace Hydration.NetApi.Generated
         /// </summary>
         public EmaOracleStorage EmaOracleStorage;
         
+        /// <summary>
+        /// BroadcastStorage storage calls.
+        /// </summary>
+        public BroadcastStorage BroadcastStorage;
+        
         public SubstrateClientExt(System.Uri uri, Substrate.NetApi.Model.Extrinsics.ChargeType chargeType) : 
                 base(uri, chargeType)
         {
@@ -381,6 +416,11 @@ namespace Hydration.NetApi.Generated
             this.MultisigStorage = new MultisigStorage(this);
             this.UniquesStorage = new UniquesStorage(this);
             this.StateTrieMigrationStorage = new StateTrieMigrationStorage(this);
+            this.ConvictionVotingStorage = new ConvictionVotingStorage(this);
+            this.ReferendaStorage = new ReferendaStorage(this);
+            this.OriginsStorage = new OriginsStorage(this);
+            this.WhitelistStorage = new WhitelistStorage(this);
+            this.DispatcherStorage = new DispatcherStorage(this);
             this.AssetRegistryStorage = new AssetRegistryStorage(this);
             this.ClaimsStorage = new ClaimsStorage(this);
             this.GenesisHistoryStorage = new GenesisHistoryStorage(this);
@@ -401,6 +441,7 @@ namespace Hydration.NetApi.Generated
             this.LBPStorage = new LBPStorage(this);
             this.XYKStorage = new XYKStorage(this);
             this.ReferralsStorage = new ReferralsStorage(this);
+            this.LiquidationStorage = new LiquidationStorage(this);
             this.TokensStorage = new TokensStorage(this);
             this.CurrenciesStorage = new CurrenciesStorage(this);
             this.VestingStorage = new VestingStorage(this);
@@ -429,6 +470,7 @@ namespace Hydration.NetApi.Generated
             this.AuraStorage = new AuraStorage(this);
             this.AuraExtStorage = new AuraExtStorage(this);
             this.EmaOracleStorage = new EmaOracleStorage(this);
+            this.BroadcastStorage = new BroadcastStorage(this);
         }
     }
 }

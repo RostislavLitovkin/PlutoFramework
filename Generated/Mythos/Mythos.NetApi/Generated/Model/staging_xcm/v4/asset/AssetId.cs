@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.staging_xcm.v4.asset
     
     
     /// <summary>
-    /// >> 93 - Composite[staging_xcm.v4.asset.AssetId]
+    /// >> 149 - Composite[staging_xcm.v4.asset.AssetId]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetId : BaseType

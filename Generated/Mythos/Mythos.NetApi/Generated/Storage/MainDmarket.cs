@@ -200,43 +200,43 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> BidAlreadyExecuted
-        /// The bid with the provided parameters has already been executed
+        /// The bid with the provided parameters has already been executed.
         /// </summary>
         BidAlreadyExecuted,
         
         /// <summary>
         /// >> AskAlreadyExecuted
-        /// The ask with the provided parameters has already been executed
+        /// The ask with the provided parameters has already been executed.
         /// </summary>
         AskAlreadyExecuted,
         
         /// <summary>
         /// >> BuyerBalanceTooLow
-        /// Buyer balance is not enough to pay for trade costs
+        /// Buyer balance is not enough to pay for trade costs.
         /// </summary>
         BuyerBalanceTooLow,
         
         /// <summary>
         /// >> BidExpired
-        /// Bid expiration timestamp must be in the future
+        /// Bid expiration timestamp must be in the future.
         /// </summary>
         BidExpired,
         
         /// <summary>
         /// >> AskExpired
-        /// Ask expiration timestamp must be in the future
+        /// Ask expiration timestamp must be in the future.
         /// </summary>
         AskExpired,
         
         /// <summary>
         /// >> InvalidBuyerSignature
-        /// The signature provided by the buyer is invalid
+        /// The signature provided by the buyer is invalid.
         /// </summary>
         InvalidBuyerSignature,
         
         /// <summary>
         /// >> InvalidSellerSignature
-        /// The signature provided by the seller is invalid
+        /// The signature provided by the seller is invalid.
         /// </summary>
         InvalidSellerSignature,
         
@@ -248,7 +248,7 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> BadSignedMessage
-        /// Invalid Signed message
+        /// Invalid Signed message.
         /// </summary>
         BadSignedMessage,
         
@@ -260,13 +260,13 @@ namespace Mythos.NetApi.Generated.Storage
         
         /// <summary>
         /// >> CollectionNotSet
-        /// Dmarket collection has not been set
+        /// Dmarket collection has not been set.
         /// </summary>
         CollectionNotSet,
         
         /// <summary>
         /// >> CollectionNotFound
-        /// The provided Dmarket collect was not found
+        /// The provided Dmarket collect was not found.
         /// </summary>
         CollectionNotFound,
     }

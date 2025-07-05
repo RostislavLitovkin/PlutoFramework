@@ -258,11 +258,5 @@ namespace Polkadot.NetApi.Generated.Storage
         /// Too few hashes were requested to be upgraded (i.e. zero).
         /// </summary>
         TooFew,
-        
-        /// <summary>
-        /// >> NoCost
-        /// No ticket with a cost was returned by [`Config::Consideration`] to store the preimage.
-        /// </summary>
-        NoCost,
     }
 }

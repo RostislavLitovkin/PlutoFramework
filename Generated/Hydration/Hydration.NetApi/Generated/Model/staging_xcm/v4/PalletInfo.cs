@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.staging_xcm.v4
     
     
     /// <summary>
-    /// >> 186 - Composite[staging_xcm.v4.PalletInfo]
+    /// >> 371 - Composite[staging_xcm.v4.PalletInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PalletInfo : BaseType
@@ -31,11 +31,11 @@ namespace Hydration.NetApi.Generated.Model.staging_xcm.v4
         /// <summary>
         /// >> name
         /// </summary>
-        public Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 Name { get; set; }
+        public Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21 Name { get; set; }
         /// <summary>
         /// >> module_name
         /// </summary>
-        public Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 ModuleName { get; set; }
+        public Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21 ModuleName { get; set; }
         /// <summary>
         /// >> major
         /// </summary>
@@ -74,9 +74,9 @@ namespace Hydration.NetApi.Generated.Model.staging_xcm.v4
             var start = p;
             Index = new Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>();
             Index.Decode(byteArray, ref p);
-            Name = new Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9();
+            Name = new Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21();
             Name.Decode(byteArray, ref p);
-            ModuleName = new Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9();
+            ModuleName = new Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21();
             ModuleName.Decode(byteArray, ref p);
             Major = new Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>();
             Major.Decode(byteArray, ref p);

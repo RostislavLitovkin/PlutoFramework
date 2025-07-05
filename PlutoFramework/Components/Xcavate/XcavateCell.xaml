@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             x:Class="PlutoFramework.Components.Xcavate.XcavateCell"
+             HeightRequest="80"
+             Margin="0">
+    <card:ClickableCard Margin="0"
+                        CardPadding="0,0,0,0">
+        <card:ClickableCard.View>
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 80"
+                        AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
+                <Image Source="xcavatexgray.png"
+                       Opacity="0.2"
+                       AbsoluteLayout.LayoutBounds="1, 1, 60, 60"
+                       AbsoluteLayout.LayoutFlags="PositionProportional" />
+
+                <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 70"
+                    AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                             Margin="10,0,10,0"
+                    >
+                    <Label
+                        HeightRequest="30"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Start"
+                        HorizontalOptions="Start"
+                        TextColor="#4E4E4E"
+                        Margin="0, 5, 0, 0"
+                    >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span x:Name="titleText" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label HeightRequest="30"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Start"
+                           TextColor="{StaticResource X-BLUE}"
+                           HorizontalOptions="Start"
+                           Margin="10, 0, 0, 0"
+                           FontSize="20">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span x:Name="valueText"
+                                      FontAttributes="Bold"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+
+
+                <Image Source="xcavatecellarrow.png"
+                       TranslationY="15"
+                       TranslationX="-15"
+                       AbsoluteLayout.LayoutBounds="1, 0, 20, 20"
+                       AbsoluteLayout.LayoutFlags="PositionProportional"
+                       x:Name="arrow"
+                       IsVisible="False"/>
+            </AbsoluteLayout>
+        </card:ClickableCard.View>
+
+        <card:ClickableCard.GestureRecognizers>
+            <TapGestureRecognizer x:Name="tapGestureRecognizer" />
+        </card:ClickableCard.GestureRecognizers>
+    </card:ClickableCard>
+</ContentView>

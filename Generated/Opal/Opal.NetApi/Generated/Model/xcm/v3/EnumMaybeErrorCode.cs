@@ -38,7 +38,7 @@ namespace Opal.NetApi.Generated.Model.xcm.v3
     }
     
     /// <summary>
-    /// >> 248 - Variant[xcm.v3.MaybeErrorCode]
+    /// >> 263 - Variant[xcm.v3.MaybeErrorCode]
     /// </summary>
     public sealed class EnumMaybeErrorCode : BaseEnumRust<MaybeErrorCode>
     {

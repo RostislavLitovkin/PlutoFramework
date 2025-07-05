@@ -73,7 +73,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_parachain_syste
     }
     
     /// <summary>
-    /// >> 215 - Variant[cumulus_pallet_parachain_system.pallet.Error]
+    /// >> 219 - Variant[cumulus_pallet_parachain_system.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

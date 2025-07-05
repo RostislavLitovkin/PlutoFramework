@@ -48,7 +48,7 @@ namespace Mythos.NetApi.Generated.Model.xcm.v3.junction
     }
     
     /// <summary>
-    /// >> 79 - Variant[xcm.v3.junction.BodyPart]
+    /// >> 90 - Variant[xcm.v3.junction.BodyPart]
     /// </summary>
     public sealed class EnumBodyPart : BaseEnumRust<BodyPart>
     {

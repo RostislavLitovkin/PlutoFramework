@@ -88,7 +88,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_route_executor.pallet
         /// >> force_insert_route
         /// Force inserts the on-chain route for a given asset pair, so there is no any validation for the route
         /// 
-        /// Can only be called by technical origin
+        /// Can only be called by T::ForceInsertOrigin
         /// 
         /// The route is stored in an ordered manner, based on the oder of the ids in the asset pair.
         /// 
@@ -124,7 +124,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_route_executor.pallet
     }
     
     /// <summary>
-    /// >> 371 - Variant[pallet_route_executor.pallet.Call]
+    /// >> 232 - Variant[pallet_route_executor.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -135,11 +135,11 @@ namespace Hydration.NetApi.Generated.Model.pallet_route_executor.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.hydradx_traits.router.Trade>>>(Call.sell);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.hydradx_traits.router.Trade>>>(Call.buy);
-				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.hydradx_traits.router.AssetPair, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.hydradx_traits.router.Trade>>>(Call.set_route);
-				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.hydradx_traits.router.AssetPair, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.hydradx_traits.router.Trade>>>(Call.force_insert_route);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.hydradx_traits.router.Trade>>>(Call.sell_all);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>>(Call.sell);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>>(Call.buy);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.hydradx_traits.router.AssetPair, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>>(Call.set_route);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.hydradx_traits.router.AssetPair, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>>(Call.force_insert_route);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>>(Call.sell_all);
         }
     }
 }

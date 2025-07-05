@@ -93,7 +93,7 @@ namespace Hydration.NetApi.Generated.Storage
         public Hydration.NetApi.Generated.Model.pallet_dynamic_fees.types.FeeParams AssetFeeParameters()
         {
             var result = new Hydration.NetApi.Generated.Model.pallet_dynamic_fees.types.FeeParams();
-            result.Create("0xC409000050C3000000A0724E1809000000000000000000000000C84E676DC11B000000000000000" +
+            result.Create("0xDC05000050C3000000407A10F35A000000000000000000000000C84E676DC11B000000000000000" +
                     "0");
             return result;
         }
@@ -104,7 +104,7 @@ namespace Hydration.NetApi.Generated.Storage
         public Hydration.NetApi.Generated.Model.pallet_dynamic_fees.types.FeeParams ProtocolFeeParameters()
         {
             var result = new Hydration.NetApi.Generated.Model.pallet_dynamic_fees.types.FeeParams();
-            result.Create("0xF4010000E8030000005039278C0400000000000000000000000064A7B3B6E00D000000000000000" +
+            result.Create("0xF4010000C409000000203D88792D00000000000000000000000064A7B3B6E00D000000000000000" +
                     "0");
             return result;
         }

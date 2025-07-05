@@ -33,7 +33,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.cumulus_pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 390 - Variant[cumulus_pallet_xcm.pallet.Origin]
+    /// >> 402 - Variant[cumulus_pallet_xcm.pallet.Origin]
     /// </summary>
     public sealed class EnumOrigin : BaseEnumRust<Origin>
     {

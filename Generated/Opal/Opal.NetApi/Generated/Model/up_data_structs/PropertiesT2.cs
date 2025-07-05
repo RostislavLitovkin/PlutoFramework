@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
     
     
     /// <summary>
-    /// >> 621 - Composite[up_data_structs.PropertiesT2]
+    /// >> 702 - Composite[up_data_structs.PropertiesT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PropertiesT2 : BaseType

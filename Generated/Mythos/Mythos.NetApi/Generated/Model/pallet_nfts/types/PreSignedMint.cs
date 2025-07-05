@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 242 - Composite[pallet_nfts.types.PreSignedMint]
+    /// >> 269 - Composite[pallet_nfts.types.PreSignedMint]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PreSignedMint : BaseType

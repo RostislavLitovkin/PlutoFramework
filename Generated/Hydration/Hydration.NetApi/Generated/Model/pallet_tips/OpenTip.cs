@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_tips
     
     
     /// <summary>
-    /// >> 535 - Composite[pallet_tips.OpenTip]
+    /// >> 578 - Composite[pallet_tips.OpenTip]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OpenTip : BaseType

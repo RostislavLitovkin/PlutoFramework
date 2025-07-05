@@ -33,7 +33,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_transaction_payment
     }
     
     /// <summary>
-    /// >> 345 - Variant[pallet_transaction_payment.Releases]
+    /// >> 404 - Variant[pallet_transaction_payment.Releases]
     /// </summary>
     public sealed class EnumReleases : BaseEnum<Releases>
     {

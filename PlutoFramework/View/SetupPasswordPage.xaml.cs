@@ -1,4 +1,6 @@
-﻿using PlutoFramework.Components.Buttons;
+﻿using Microsoft.Maui.Storage;
+using PlutoFramework.Components.Buttons;
+using PlutoFramework.Components.Xcavate;
 using PlutoFramework.Model;
 using Substrate.NET.Wallet;
 
@@ -6,6 +8,8 @@ namespace PlutoFramework.View;
 
 public partial class SetupPasswordPage : ContentPage
 {
+    public required Func<Task>? Navigation = null; 
+
     private bool clicked = false;
     public SetupPasswordPage()
     {
@@ -36,9 +40,27 @@ public partial class SetupPasswordPage : ContentPage
 
         clicked = true;
 
-        await Model.KeysModel.GenerateNewAccountAsync(passwordEntry.Text != null ? passwordEntry.Text : "");
+        await SecureStorage.Default.SetAsync(
+            PreferencesModel.PASSWORD,
+            passwordEntry.Text
+        );
 
-        Application.Current.MainPage = new AppShell();
+       
+        Preferences.Set(PreferencesModel.SHOW_WELCOME_SCREEN, false);
+
+        await KeysModel.RegisterBiometricAuthenticationAsync();
+
+        if (Navigation is not null)
+        {
+            await Navigation.Invoke();
+
+        }
+        else
+        {
+            await Model.KeysModel.GenerateNewAccountAsync(passwordEntry.Text != null ? passwordEntry.Text : "");
+
+            Application.Current.MainPage = new AppShell();
+        }
 
         clicked = false;
     }

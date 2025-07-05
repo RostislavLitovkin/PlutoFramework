@@ -102,6 +102,11 @@ namespace KusamaAssetHub.NetApi.Generated.Model.asset_hub_kusama_runtime
         Proxy = 42,
         
         /// <summary>
+        /// >> RemoteProxyRelayChain
+        /// </summary>
+        RemoteProxyRelayChain = 43,
+        
+        /// <summary>
         /// >> Assets
         /// </summary>
         Assets = 50,
@@ -135,10 +140,15 @@ namespace KusamaAssetHub.NetApi.Generated.Model.asset_hub_kusama_runtime
         /// >> AssetConversion
         /// </summary>
         AssetConversion = 56,
+        
+        /// <summary>
+        /// >> StateTrieMigration
+        /// </summary>
+        StateTrieMigration = 70,
     }
     
     /// <summary>
-    /// >> 351 - Variant[asset_hub_kusama_runtime.RuntimeCall]
+    /// >> 355 - Variant[asset_hub_kusama_runtime.RuntimeCall]
     /// </summary>
     public sealed class EnumRuntimeCall : BaseEnumRust<RuntimeCall>
     {
@@ -164,6 +174,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.asset_hub_kusama_runtime
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_utility.pallet.EnumCall>(RuntimeCall.Utility);
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_multisig.pallet.EnumCall>(RuntimeCall.Multisig);
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_proxy.pallet.EnumCall>(RuntimeCall.Proxy);
+				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_remote_proxy.pallet.EnumCall>(RuntimeCall.RemoteProxyRelayChain);
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_assets.pallet.EnumCall>(RuntimeCall.Assets);
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_uniques.pallet.EnumCall>(RuntimeCall.Uniques);
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_nfts.pallet.EnumCall>(RuntimeCall.Nfts);
@@ -171,6 +182,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.asset_hub_kusama_runtime
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_nft_fractionalization.pallet.EnumCall>(RuntimeCall.NftFractionalization);
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_assets.pallet.EnumCall>(RuntimeCall.PoolAssets);
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_asset_conversion.pallet.EnumCall>(RuntimeCall.AssetConversion);
+				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.pallet_state_trie_migration.pallet.EnumCall>(RuntimeCall.StateTrieMigration);
         }
     }
 }

@@ -24,49 +24,63 @@ namespace Opal.NetApi.Generated.Model.pallet_collator_selection.pallet
         
         /// <summary>
         /// >> add_invulnerable
-        /// See [`Pallet::add_invulnerable`].
+        /// Add a collator to the list of invulnerable (fixed) collators.
         /// </summary>
         add_invulnerable = 0,
         
         /// <summary>
         /// >> remove_invulnerable
-        /// See [`Pallet::remove_invulnerable`].
+        /// Remove a collator from the list of invulnerable (fixed) collators.
         /// </summary>
         remove_invulnerable = 1,
         
         /// <summary>
         /// >> get_license
-        /// See [`Pallet::get_license`].
+        /// Purchase a license on block collation for this account.
+        /// It does not make it a collator candidate, use `onboard` afterward. The account must
+        /// (a) already have registered session keys and (b) be able to reserve the `LicenseBond`.
+        /// 
+        /// This call is not available to `Invulnerable` collators.
         /// </summary>
         get_license = 2,
         
         /// <summary>
         /// >> onboard
-        /// See [`Pallet::onboard`].
+        /// Register this account as a candidate for collators for next sessions.
+        /// The account must already hold a license, and cannot offboard immediately during a session.
+        /// 
+        /// This call is not available to `Invulnerable` collators.
         /// </summary>
         onboard = 3,
         
         /// <summary>
         /// >> offboard
-        /// See [`Pallet::offboard`].
+        /// Deregister `origin` as a collator candidate. Note that the collator can only leave on
+        /// session change. The license to `onboard` later at any other time will remain.
         /// </summary>
         offboard = 4,
         
         /// <summary>
         /// >> release_license
-        /// See [`Pallet::release_license`].
+        /// Forfeit `origin`'s own license. The `LicenseBond` will be unreserved immediately.
+        /// 
+        /// This call is not available to `Invulnerable` collators.
         /// </summary>
         release_license = 5,
         
         /// <summary>
         /// >> force_release_license
-        /// See [`Pallet::force_release_license`].
+        /// Force deregister `origin` as a collator candidate as a governing authority, and revoke its license.
+        /// Note that the collator can only leave on session change.
+        /// The `LicenseBond` will be unreserved and returned immediately.
+        /// 
+        /// This call is, of course, not applicable to `Invulnerable` collators.
         /// </summary>
         force_release_license = 6,
     }
     
     /// <summary>
-    /// >> 110 - Variant[pallet_collator_selection.pallet.Call]
+    /// >> 119 - Variant[pallet_collator_selection.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

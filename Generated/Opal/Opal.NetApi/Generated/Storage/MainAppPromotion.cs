@@ -44,7 +44,7 @@ namespace Opal.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("AppPromotion", "StakesPerAccount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Primitive.U8)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("AppPromotion", "PendingUnstake"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT42)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT52)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("AppPromotion", "PreviousCalculatedRecord"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>)));
         }
         
@@ -214,10 +214,10 @@ namespace Opal.NetApi.Generated.Storage
         ///  * **Key** - Staker account.
         ///  * **Value** - Amount of stakes.
         /// </summary>
-        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT42> PendingUnstake(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT52> PendingUnstake(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = AppPromotionStorage.PendingUnstakeParams(key);
-            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT42>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT52>(parameters, blockhash, token);
             return result;
         }
         
@@ -358,14 +358,14 @@ namespace Opal.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> force_unstake
+        /// >> resolve_skipped_blocks
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceUnstake(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U32> pending_blocks)
+        public static Method ResolveSkippedBlocks(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U32> pending_blocks)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(pending_blocks.Encode());
-            return new Method(73, "AppPromotion", 9, "force_unstake", byteArray.ToArray());
+            return new Method(73, "AppPromotion", 9, "resolve_skipped_blocks", byteArray.ToArray());
         }
     }
     
@@ -415,7 +415,7 @@ namespace Opal.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 PendingInterval()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0xE0C40000");
+            result.Create("0xC0890100");
             return result;
         }
         
@@ -426,7 +426,7 @@ namespace Opal.NetApi.Generated.Storage
         public Opal.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill IntervalIncome()
         {
             var result = new Opal.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill();
-            result.Create("0x88EA0600");
+            result.Create("0xB8340600");
             return result;
         }
         

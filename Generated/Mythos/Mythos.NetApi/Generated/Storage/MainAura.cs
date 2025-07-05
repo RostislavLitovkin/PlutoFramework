@@ -36,7 +36,7 @@ namespace Mythos.NetApi.Generated.Storage
         public AuraStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Aura", "Authorities"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Aura", "Authorities"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Aura", "CurrentSlot"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Mythos.NetApi.Generated.Model.sp_consensus_slots.Slot)));
         }
         
@@ -62,10 +62,10 @@ namespace Mythos.NetApi.Generated.Storage
         /// >> Authorities
         ///  The current authority set.
         /// </summary>
-        public async Task<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19> Authorities(string blockhash, CancellationToken token)
+        public async Task<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29> Authorities(string blockhash, CancellationToken token)
         {
             string parameters = AuraStorage.AuthoritiesParams();
-            var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29>(parameters, blockhash, token);
             return result;
         }
         

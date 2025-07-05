@@ -93,6 +93,8 @@ namespace PlutoFramework.Model
                     $"{url}/get-extrinsic-events",
                     jsonContent);
 
+                Console.WriteLine(await response.Content.ReadAsStringAsync());
+
                 var jsonResponse = await response.Content.ReadFromJsonAsync<ChopsticksEventsOutput>();
 
                 return jsonResponse;
@@ -127,12 +129,16 @@ namespace PlutoFramework.Model
                      $"{url}/get-xcm-extrinsic-events",
                     jsonContent);
 
+                Console.WriteLine(await response.Content.ReadAsStringAsync());
+
+
                 var jsonResponse = await response.Content.ReadFromJsonAsync<ChopsticksXcmEventsOutput>();
 
                 return jsonResponse;
             }
             catch (Exception e)
             {
+                Console.WriteLine("Invalid json read");
                 Console.WriteLine(e);
                 return null;
             }

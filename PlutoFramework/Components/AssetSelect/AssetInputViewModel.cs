@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using PlutoFramework.Model;
 using PlutoFramework.Model.HydraDX;
 
 namespace PlutoFramework.Components.AssetSelect
@@ -57,7 +58,7 @@ namespace PlutoFramework.Components.AssetSelect
                     UsdAmountEnabled = true;
                     UsdAmountPlaceholder = "USD amount";
 
-                    var usdAmount = String.Format("{0:0.00}", decimalAmount * (decimal)price);
+                    var usdAmount = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, decimalAmount * (decimal)price);
 
                     UsdAmount = usdAmount;
                 }

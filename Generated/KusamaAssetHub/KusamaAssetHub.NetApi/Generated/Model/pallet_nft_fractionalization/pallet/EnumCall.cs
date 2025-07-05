@@ -67,7 +67,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_nft_fractionalization.pal
     }
     
     /// <summary>
-    /// >> 383 - Variant[pallet_nft_fractionalization.pallet.Call]
+    /// >> 389 - Variant[pallet_nft_fractionalization.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

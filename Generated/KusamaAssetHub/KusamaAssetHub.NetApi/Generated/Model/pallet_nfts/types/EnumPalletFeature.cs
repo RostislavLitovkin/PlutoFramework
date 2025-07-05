@@ -43,7 +43,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_nfts.types
     }
     
     /// <summary>
-    /// >> 446 - Variant[pallet_nfts.types.PalletFeature]
+    /// >> 461 - Variant[pallet_nfts.types.PalletFeature]
     /// </summary>
     public sealed class EnumPalletFeature : BaseEnum<PalletFeature>
     {

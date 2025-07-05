@@ -4,9 +4,9 @@
              x:Class="PlutoFramework.Components.AssetSelect.AssetSelectButtonView"
              WidthRequest="{Binding WidthRequest}">
     <Border BackgroundColor="{x:StaticResource Primary}"
-            Stroke="{x:StaticResource Primary}">
+            StrokeThickness="0">
         <Border.StrokeShape>
-            <RoundRectangle CornerRadius="15" />
+            <RoundRectangle CornerRadius="{StaticResource CARD-CORNER-RADIUS}" />
 
         </Border.StrokeShape>
         <HorizontalStackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
@@ -30,10 +30,11 @@
                     WidthRequest="20" HeightRequest="20"
                     Source="{Binding ChainIcon}" />
 
+            <HorizontalStackLayout.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ChangeAssetCommand}"/>
+            </HorizontalStackLayout.GestureRecognizers>
         </HorizontalStackLayout>
-        <Border.GestureRecognizers>
-            <TapGestureRecognizer Tapped="OnChangeTokenClicked" />
-        </Border.GestureRecognizers>
+        
     </Border>
 </ContentView>
 

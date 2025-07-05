@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_parachain_syste
     
     
     /// <summary>
-    /// >> 177 - Composite[cumulus_pallet_parachain_system.unincluded_segment.UsedBandwidth]
+    /// >> 182 - Composite[cumulus_pallet_parachain_system.unincluded_segment.UsedBandwidth]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UsedBandwidth : BaseType

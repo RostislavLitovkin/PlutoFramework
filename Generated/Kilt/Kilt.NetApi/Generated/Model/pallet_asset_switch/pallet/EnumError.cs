@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace Kilt.NetApi.Generated.Model.pallet_asset_switch.pallet
+namespace Kilt.NetApi.Generated.Model.pallet_asset_switch.@pallet
 {
     
     

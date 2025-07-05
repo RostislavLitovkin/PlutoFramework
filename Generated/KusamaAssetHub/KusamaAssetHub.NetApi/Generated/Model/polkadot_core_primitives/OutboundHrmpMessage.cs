@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.polkadot_core_primitives
     
     
     /// <summary>
-    /// >> 205 - Composite[polkadot_core_primitives.OutboundHrmpMessage]
+    /// >> 210 - Composite[polkadot_core_primitives.OutboundHrmpMessage]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OutboundHrmpMessage : BaseType

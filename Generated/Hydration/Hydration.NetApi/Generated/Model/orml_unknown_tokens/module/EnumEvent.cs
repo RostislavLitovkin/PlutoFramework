@@ -36,7 +36,7 @@ namespace Hydration.NetApi.Generated.Model.orml_unknown_tokens.module
     }
     
     /// <summary>
-    /// >> 228 - Variant[orml_unknown_tokens.module.Event]
+    /// >> 473 - Variant[orml_unknown_tokens.module.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

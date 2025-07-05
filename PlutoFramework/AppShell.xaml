@@ -5,13 +5,14 @@
         Title="AppShell"
         xmlns:view="clr-namespace:PlutoFramework.View"
         xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
+       xmlns:xcavateproperty="clr-namespace:PlutoFramework.Components.XcavateProperty"
         Shell.FlyoutBehavior="Disabled"
         xmlns:settings="clr-namespace:PlutoFramework.Components.Settings">
 
     <ShellContent ContentTemplate="{DataTemplate view:MainPage}"
                   Route="MainPage" >
     </ShellContent>
-    <ShellContent ContentTemplate="{DataTemplate nft:NftMainPage}" 
+    <ShellContent ContentTemplate="{DataTemplate xcavateproperty:XcavatePropertyMarketplacePage}" 
                   Route="NftMainPage">
     </ShellContent>
 </Shell>

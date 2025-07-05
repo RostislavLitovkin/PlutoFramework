@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_referenda.types
     
     
     /// <summary>
-    /// >> 522 - Composite[pallet_referenda.types.Deposit]
+    /// >> 595 - Composite[pallet_referenda.types.Deposit]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Deposit : BaseType

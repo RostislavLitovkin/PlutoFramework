@@ -164,6 +164,11 @@ namespace PolkadotAssetHub.NetApi.Generated
         /// </summary>
         public AssetConversionStorage AssetConversionStorage;
         
+        /// <summary>
+        /// StateTrieMigrationStorage storage calls.
+        /// </summary>
+        public StateTrieMigrationStorage StateTrieMigrationStorage;
+        
         public SubstrateClientExt(System.Uri uri, Substrate.NetApi.Model.Extrinsics.ChargeType chargeType) : 
                 base(uri, chargeType)
         {
@@ -195,6 +200,7 @@ namespace PolkadotAssetHub.NetApi.Generated
             this.ForeignAssetsStorage = new ForeignAssetsStorage(this);
             this.PoolAssetsStorage = new PoolAssetsStorage(this);
             this.AssetConversionStorage = new AssetConversionStorage(this);
+            this.StateTrieMigrationStorage = new StateTrieMigrationStorage(this);
         }
     }
 }

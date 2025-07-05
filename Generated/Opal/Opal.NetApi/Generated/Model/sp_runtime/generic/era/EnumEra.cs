@@ -1303,7 +1303,7 @@ namespace Opal.NetApi.Generated.Model.sp_runtime.generic.era
     }
     
     /// <summary>
-    /// >> 684 - Variant[sp_runtime.generic.era.Era]
+    /// >> 762 - Variant[sp_runtime.generic.era.Era]
     /// </summary>
     public sealed class EnumEra : BaseEnumRust<Era>
     {

@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_identity.types
     
     
     /// <summary>
-    /// >> 147 - Composite[pallet_identity.types.IdentityInfo]
+    /// >> 173 - Composite[pallet_identity.types.IdentityInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class IdentityInfo : BaseType

@@ -38,7 +38,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_balances.types
     }
     
     /// <summary>
-    /// >> 221 - Variant[pallet_balances.types.Reasons]
+    /// >> 225 - Variant[pallet_balances.types.Reasons]
     /// </summary>
     public sealed class EnumReasons : BaseEnum<Reasons>
     {

@@ -223,7 +223,7 @@ namespace Mythos.NetApi.Generated.Model.xcm.v3.traits
     }
     
     /// <summary>
-    /// >> 69 - Variant[xcm.v3.traits.Error]
+    /// >> 309 - Variant[xcm.v3.traits.Error]
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>
     {

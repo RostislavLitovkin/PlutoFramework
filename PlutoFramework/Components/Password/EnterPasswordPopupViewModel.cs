@@ -18,7 +18,7 @@ namespace PlutoFramework.Components.Password
         /// <summary>
         /// returns null if the user decided to cancel
         /// </summary>
-        public TaskCompletionSource<string?> EnteredPassword = new();
+        public TaskCompletionSource<string?> EnteredPassword = new TaskCompletionSource<string?>();
 
         public EnterPasswordPopupViewModel()
         {
@@ -34,7 +34,14 @@ namespace PlutoFramework.Components.Password
         [RelayCommand]
         public void Cancel()
         {
-            EnteredPassword.SetResult(null);
+            try
+            {
+                EnteredPassword.SetResult(null);
+            }
+            catch
+            {
+
+            }
 
             SetToDefault();
         }
@@ -44,7 +51,7 @@ namespace PlutoFramework.Components.Password
             Password = "";
             IsVisible = false;
             ErrorIsVisible = false;
-            EnteredPassword = new ();
+            EnteredPassword = new TaskCompletionSource<string?>();
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_dmarket.types
     
     
     /// <summary>
-    /// >> 315 - Composite[pallet_dmarket.types.TradeSignatures]
+    /// >> 355 - Composite[pallet_dmarket.types.TradeSignatures]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class TradeSignatures : BaseType

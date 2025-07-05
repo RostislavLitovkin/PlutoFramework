@@ -33,7 +33,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.xcm.v2.multiasset
     }
     
     /// <summary>
-    /// >> 310 - Variant[xcm.v2.multiasset.MultiAssetFilter]
+    /// >> 315 - Variant[xcm.v2.multiasset.MultiAssetFilter]
     /// </summary>
     public sealed class EnumMultiAssetFilter : BaseEnumRust<MultiAssetFilter>
     {

@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_ethereum
     
     
     /// <summary>
-    /// >> 691 - Composite[pallet_ethereum.FakeTransactionFinalizer]
+    /// >> 769 - Composite[pallet_ethereum.FakeTransactionFinalizer]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class FakeTransactionFinalizer : BaseType

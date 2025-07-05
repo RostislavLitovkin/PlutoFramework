@@ -241,7 +241,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> join_farms
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method JoinFarms(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18 farm_entries, Substrate.NetApi.Model.Types.Primitive.U128 position_id)
+        public static Method JoinFarms(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 farm_entries, Substrate.NetApi.Model.Types.Primitive.U128 position_id)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(farm_entries.Encode());
@@ -253,12 +253,13 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> add_liquidity_and_join_farms
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AddLiquidityAndJoinFarms(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18 farm_entries, Substrate.NetApi.Model.Types.Primitive.U32 asset, Substrate.NetApi.Model.Types.Primitive.U128 amount)
+        public static Method AddLiquidityAndJoinFarms(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 farm_entries, Substrate.NetApi.Model.Types.Primitive.U32 asset, Substrate.NetApi.Model.Types.Primitive.U128 amount, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128> min_shares_limit)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(farm_entries.Encode());
             byteArray.AddRange(asset.Encode());
             byteArray.AddRange(amount.Encode());
+            byteArray.AddRange(min_shares_limit.Encode());
             return new Method(63, "OmnipoolLiquidityMining", 14, "add_liquidity_and_join_farms", byteArray.ToArray());
         }
         
@@ -266,12 +267,25 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> exit_farms
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ExitFarms(Substrate.NetApi.Model.Types.Primitive.U128 deposit_id, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19 yield_farm_ids)
+        public static Method ExitFarms(Substrate.NetApi.Model.Types.Primitive.U128 deposit_id, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 yield_farm_ids)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(deposit_id.Encode());
             byteArray.AddRange(yield_farm_ids.Encode());
             return new Method(63, "OmnipoolLiquidityMining", 15, "exit_farms", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> add_liquidity_stableswap_omnipool_and_join_farms
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method AddLiquidityStableswapOmnipoolAndJoinFarms(Substrate.NetApi.Model.Types.Primitive.U32 stable_pool_id, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10 stable_asset_amounts, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8> farm_entries)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(stable_pool_id.Encode());
+            byteArray.AddRange(stable_asset_amounts.Encode());
+            byteArray.AddRange(farm_entries.Encode());
+            return new Method(63, "OmnipoolLiquidityMining", 16, "add_liquidity_stableswap_omnipool_and_join_farms", byteArray.ToArray());
         }
     }
     
@@ -357,12 +371,6 @@ namespace Hydration.NetApi.Generated.Storage
         /// Oracle providing `price_adjustment` could not be found for requested assets.
         /// </summary>
         PriceAdjustmentNotAvailable,
-        
-        /// <summary>
-        /// >> Disabled
-        /// The extrinsic is disabled for now.
-        /// </summary>
-        Disabled,
         
         /// <summary>
         /// >> NoFarmEntriesSpecified

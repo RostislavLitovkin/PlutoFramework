@@ -33,7 +33,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.xcm.v3.multiasset
     }
     
     /// <summary>
-    /// >> 324 - Variant[xcm.v3.multiasset.WildFungibility]
+    /// >> 328 - Variant[xcm.v3.multiasset.WildFungibility]
     /// </summary>
     public sealed class EnumWildFungibility : BaseEnum<WildFungibility>
     {

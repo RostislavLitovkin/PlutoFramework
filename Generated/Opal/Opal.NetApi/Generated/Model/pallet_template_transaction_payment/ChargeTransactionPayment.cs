@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_template_transaction_payment
     
     
     /// <summary>
-    /// >> 689 - Composite[pallet_template_transaction_payment.ChargeTransactionPayment]
+    /// >> 767 - Composite[pallet_template_transaction_payment.ChargeTransactionPayment]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ChargeTransactionPayment : BaseType

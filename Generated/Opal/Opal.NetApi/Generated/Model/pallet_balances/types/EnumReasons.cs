@@ -38,7 +38,7 @@ namespace Opal.NetApi.Generated.Model.pallet_balances.types
     }
     
     /// <summary>
-    /// >> 444 - Variant[pallet_balances.types.Reasons]
+    /// >> 509 - Variant[pallet_balances.types.Reasons]
     /// </summary>
     public sealed class EnumReasons : BaseEnum<Reasons>
     {

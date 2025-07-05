@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 172 - Composite[Cow]
+    /// >> 177 - Composite[Cow]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Cow : BaseType

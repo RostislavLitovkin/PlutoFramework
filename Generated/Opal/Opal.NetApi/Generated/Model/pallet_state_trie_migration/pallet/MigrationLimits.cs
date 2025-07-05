@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_state_trie_migration.pallet
     
     
     /// <summary>
-    /// >> 91 - Composite[pallet_state_trie_migration.pallet.MigrationLimits]
+    /// >> 100 - Composite[pallet_state_trie_migration.pallet.MigrationLimits]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MigrationLimits : BaseType

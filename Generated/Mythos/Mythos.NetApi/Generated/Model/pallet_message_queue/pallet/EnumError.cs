@@ -84,7 +84,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_message_queue.pallet
     }
     
     /// <summary>
-    /// >> 435 - Variant[pallet_message_queue.pallet.Error]
+    /// >> 533 - Variant[pallet_message_queue.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

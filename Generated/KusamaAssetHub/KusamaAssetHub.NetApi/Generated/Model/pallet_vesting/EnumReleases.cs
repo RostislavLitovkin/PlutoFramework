@@ -33,7 +33,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_vesting
     }
     
     /// <summary>
-    /// >> 244 - Variant[pallet_vesting.Releases]
+    /// >> 248 - Variant[pallet_vesting.Releases]
     /// </summary>
     public sealed class EnumReleases : BaseEnum<Releases>
     {

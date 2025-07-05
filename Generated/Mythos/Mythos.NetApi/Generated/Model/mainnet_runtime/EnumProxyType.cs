@@ -45,10 +45,15 @@ namespace Mythos.NetApi.Generated.Model.mainnet_runtime
         /// >> RestrictProxyManagement
         /// </summary>
         RestrictProxyManagement = 4,
+        
+        /// <summary>
+        /// >> Staking
+        /// </summary>
+        Staking = 5,
     }
     
     /// <summary>
-    /// >> 147 - Variant[mainnet_runtime.ProxyType]
+    /// >> 172 - Variant[mainnet_runtime.ProxyType]
     /// </summary>
     public sealed class EnumProxyType : BaseEnum<ProxyType>
     {

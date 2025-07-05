@@ -59,10 +59,12 @@ namespace PlutoFramework.Components.TransferView
                 return;
             }
 
-            try
-            {
-                var assetSelectButtonViewModel = DependencyService.Get<AssetSelectButtonViewModel>();
+            var assetSelectButtonViewModel = DependencyService.Get<AssetSelectButtonViewModel>();
 
+            assetSelectButtonViewModel.ChangeAllowedAssets(null);
+
+            /*try
+            {
                 var feeAsset = assetSelectButtonViewModel.SelectedAssetKey switch
                 {
                     (EndpointEnum endpointKey, AssetPallet.Native, _) => await FeeModel.GetNativeTransferFeeAsync(mainClient),
@@ -78,7 +80,7 @@ namespace PlutoFramework.Components.TransferView
 
                 Console.WriteLine(ex);
                 Fee = "Estimated fee: Unsupported";
-            }
+            }*/
         }
 
         public void SetToDefault()

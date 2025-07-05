@@ -53,7 +53,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.frame_support.traits.messages
     }
     
     /// <summary>
-    /// >> 121 - Variant[frame_support.traits.messages.ProcessMessageError]
+    /// >> 123 - Variant[frame_support.traits.messages.ProcessMessageError]
     /// </summary>
     public sealed class EnumProcessMessageError : BaseEnumRust<ProcessMessageError>
     {

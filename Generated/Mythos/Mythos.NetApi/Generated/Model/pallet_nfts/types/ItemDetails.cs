@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 353 - Composite[pallet_nfts.types.ItemDetails]
+    /// >> 412 - Composite[pallet_nfts.types.ItemDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ItemDetails : BaseType
@@ -31,7 +31,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_nfts.types
         /// <summary>
         /// >> approvals
         /// </summary>
-        public Mythos.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMap Approvals { get; set; }
+        public Mythos.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 Approvals { get; set; }
         /// <summary>
         /// >> deposit
         /// </summary>
@@ -59,7 +59,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_nfts.types
             var start = p;
             Owner = new Mythos.NetApi.Generated.Model.account.AccountId20();
             Owner.Decode(byteArray, ref p);
-            Approvals = new Mythos.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMap();
+            Approvals = new Mythos.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             Approvals.Decode(byteArray, ref p);
             Deposit = new Mythos.NetApi.Generated.Model.pallet_nfts.types.ItemDeposit();
             Deposit.Decode(byteArray, ref p);

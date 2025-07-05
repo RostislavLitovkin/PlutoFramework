@@ -36,7 +36,7 @@ namespace Opal.NetApi.Generated.Model.pallet_ethereum.pallet
     }
     
     /// <summary>
-    /// >> 658 - Variant[pallet_ethereum.pallet.Error]
+    /// >> 739 - Variant[pallet_ethereum.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

@@ -30,10 +30,15 @@ namespace Mythos.NetApi.Generated.Model.xcm
         /// >> V4
         /// </summary>
         V4 = 4,
+        
+        /// <summary>
+        /// >> V5
+        /// </summary>
+        V5 = 5,
     }
     
     /// <summary>
-    /// >> 304 - Variant[xcm.VersionedAssetId]
+    /// >> 344 - Variant[xcm.VersionedAssetId]
     /// </summary>
     public sealed class EnumVersionedAssetId : BaseEnumRust<VersionedAssetId>
     {
@@ -45,6 +50,7 @@ namespace Mythos.NetApi.Generated.Model.xcm
         {
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.xcm.v3.multiasset.EnumAssetId>(VersionedAssetId.V3);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.staging_xcm.v4.asset.AssetId>(VersionedAssetId.V4);
+				AddTypeDecoder<Mythos.NetApi.Generated.Model.staging_xcm.v5.asset.AssetId>(VersionedAssetId.V5);
         }
     }
 }

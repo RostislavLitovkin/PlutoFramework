@@ -168,6 +168,19 @@ namespace Hydration.NetApi.Generated.Storage
             byteArray.AddRange(assets.Encode());
             return new Method(202, "EmaOracle", 1, "remove_oracle", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> update_bifrost_oracle
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method UpdateBifrostOracle(Hydration.NetApi.Generated.Model.xcm.EnumVersionedLocation asset_a, Hydration.NetApi.Generated.Model.xcm.EnumVersionedLocation asset_b, Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128> price)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(asset_a.Encode());
+            byteArray.AddRange(asset_b.Encode());
+            byteArray.AddRange(price.Encode());
+            return new Method(202, "EmaOracle", 2, "update_bifrost_oracle", byteArray.ToArray());
+        }
     }
     
     /// <summary>
@@ -175,6 +188,17 @@ namespace Hydration.NetApi.Generated.Storage
     /// </summary>
     public sealed class EmaOracleConstants
     {
+        
+        /// <summary>
+        /// >> MaxAllowedPriceDifference
+        ///  Maximum allowed percentage difference for bifrost oracle price update
+        /// </summary>
+        public Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill MaxAllowedPriceDifference()
+        {
+            var result = new Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill();
+            result.Create("0xA0860100");
+            return result;
+        }
         
         /// <summary>
         /// >> MaxUniqueEntries
@@ -208,5 +232,17 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> OracleNotFound
         /// </summary>
         OracleNotFound,
+        
+        /// <summary>
+        /// >> AssetNotFound
+        /// Asset not found
+        /// </summary>
+        AssetNotFound,
+        
+        /// <summary>
+        /// >> PriceOutsideAllowedRange
+        /// The new price is outside the max allowed range
+        /// </summary>
+        PriceOutsideAllowedRange,
     }
 }

@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.frame_support.dispatch
     
     
     /// <summary>
-    /// >> 165 - Composite[frame_support.dispatch.PerDispatchClassT2]
+    /// >> 190 - Composite[frame_support.dispatch.PerDispatchClassT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PerDispatchClassT2 : BaseType

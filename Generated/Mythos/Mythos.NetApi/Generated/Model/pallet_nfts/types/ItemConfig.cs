@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 237 - Composite[pallet_nfts.types.ItemConfig]
+    /// >> 264 - Composite[pallet_nfts.types.ItemConfig]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ItemConfig : BaseType

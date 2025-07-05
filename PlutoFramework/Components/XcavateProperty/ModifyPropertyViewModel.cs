@@ -47,11 +47,11 @@ namespace PlutoFramework.Components.XcavateProperty
         {
             var token = CancellationToken.None;
 
-            var result = await FilePicker.PickAsync(new PickOptions
+            var result = await MediaPicker.PickPhotoAsync(new MediaPickerOptions
             {
-                PickerTitle = ImageSources.Count() == 0 ? "Select main Property Image" : "Select a new Property image",
-                FileTypes = FilePickerFileType.Images,
+                Title = ImageSources.Count() == 0 ? "Select the main Property image" : "Select a new Property image",
             });
+
 
             if (result == null)
             {
@@ -76,7 +76,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
             LoadPropertyImages();
         }
-        private Task SaveAsync() => XcavatePropertyDatabase.SavePropertyAsync(Metadata);
+        private Task SaveAsync() => Task.FromResult(0);//XcavatePropertyDatabase.SavePropertyAsync(Metadata);
         public void LoadPropertyImages()
         {
             ImageSources = Metadata.Images
@@ -118,7 +118,7 @@ namespace PlutoFramework.Components.XcavateProperty
         [RelayCommand]
         public async Task DeleteAsync()
         {
-            await XcavatePropertyDatabase.DeletePropertyAsync();
+            //await XcavatePropertyDatabase.DeleteAllAsync();
 
             await Application.Current.MainPage.Navigation.PopAsync();
         }

@@ -22,9 +22,19 @@ namespace Mythos.NetApi.Generated.Model.mainnet_runtime
     {
         
         /// <summary>
+        /// >> Preimage
+        /// </summary>
+        Preimage = 6,
+        
+        /// <summary>
         /// >> Marketplace
         /// </summary>
         Marketplace = 13,
+        
+        /// <summary>
+        /// >> Council
+        /// </summary>
+        Council = 16,
         
         /// <summary>
         /// >> Escrow
@@ -38,7 +48,7 @@ namespace Mythos.NetApi.Generated.Model.mainnet_runtime
     }
     
     /// <summary>
-    /// >> 336 - Variant[mainnet_runtime.RuntimeHoldReason]
+    /// >> 391 - Variant[mainnet_runtime.RuntimeHoldReason]
     /// </summary>
     public sealed class EnumRuntimeHoldReason : BaseEnumRust<RuntimeHoldReason>
     {
@@ -48,7 +58,9 @@ namespace Mythos.NetApi.Generated.Model.mainnet_runtime
         /// </summary>
         public EnumRuntimeHoldReason()
         {
+				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_preimage.pallet.EnumHoldReason>(RuntimeHoldReason.Preimage);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_marketplace.pallet.EnumHoldReason>(RuntimeHoldReason.Marketplace);
+				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_collective.pallet.EnumHoldReason>(RuntimeHoldReason.Council);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_escrow.pallet.EnumHoldReason>(RuntimeHoldReason.Escrow);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.pallet_myth_proxy.pallet.EnumHoldReason>(RuntimeHoldReason.MythProxy);
         }

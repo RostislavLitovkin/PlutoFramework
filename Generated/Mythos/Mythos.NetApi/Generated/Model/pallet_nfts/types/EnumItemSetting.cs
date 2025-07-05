@@ -38,7 +38,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_nfts.types
     }
     
     /// <summary>
-    /// >> 233 - Variant[pallet_nfts.types.ItemSetting]
+    /// >> 260 - Variant[pallet_nfts.types.ItemSetting]
     /// </summary>
     public sealed class EnumItemSetting : BaseEnum<ItemSetting>
     {

@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.frame_system.extensions.check_tx
     
     
     /// <summary>
-    /// >> 465 - Composite[frame_system.extensions.check_tx_version.CheckTxVersion]
+    /// >> 480 - Composite[frame_system.extensions.check_tx_version.CheckTxVersion]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckTxVersion : BaseType

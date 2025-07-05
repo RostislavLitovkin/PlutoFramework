@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.sp_consensus_slots
     
     
     /// <summary>
-    /// >> 440 - Composite[sp_consensus_slots.Slot]
+    /// >> 505 - Composite[sp_consensus_slots.Slot]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Slot : BaseType

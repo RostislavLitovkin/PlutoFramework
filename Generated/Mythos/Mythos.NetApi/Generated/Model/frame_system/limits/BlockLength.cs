@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.frame_system.limits
     
     
     /// <summary>
-    /// >> 168 - Composite[frame_system.limits.BlockLength]
+    /// >> 192 - Composite[frame_system.limits.BlockLength]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BlockLength : BaseType

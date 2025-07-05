@@ -33,7 +33,7 @@ namespace Opal.NetApi.Generated.Model.pallet_evm.account
     }
     
     /// <summary>
-    /// >> 273 - Variant[pallet_evm.account.BasicCrossAccountIdRepr]
+    /// >> 334 - Variant[pallet_evm.account.BasicCrossAccountIdRepr]
     /// </summary>
     public sealed class EnumBasicCrossAccountIdRepr : BaseEnumRust<BasicCrossAccountIdRepr>
     {

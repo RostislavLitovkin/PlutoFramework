@@ -38,7 +38,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_assets.types
     }
     
     /// <summary>
-    /// >> 407 - Variant[pallet_assets.types.AssetStatus]
+    /// >> 422 - Variant[pallet_assets.types.AssetStatus]
     /// </summary>
     public sealed class EnumAssetStatus : BaseEnum<AssetStatus>
     {

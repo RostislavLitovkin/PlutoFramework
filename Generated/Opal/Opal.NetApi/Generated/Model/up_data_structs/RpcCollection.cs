@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
     
     
     /// <summary>
-    /// >> 607 - Composite[up_data_structs.RpcCollection]
+    /// >> 688 - Composite[up_data_structs.RpcCollection]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RpcCollection : BaseType

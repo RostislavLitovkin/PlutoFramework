@@ -39,6 +39,7 @@ namespace Opal.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "Account"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Opal.NetApi.Generated.Model.frame_system.AccountInfo)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "ExtrinsicCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "InherentsApplied"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "BlockWeight"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.frame_support.dispatch.PerDispatchClassT1)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "AllExtrinsicsLen"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "BlockHash"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -56,6 +57,7 @@ namespace Opal.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "UpgradedToU32RefCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "UpgradedToTripleRefCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "ExecutionPhase"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.frame_system.EnumPhase)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "AuthorizedUpgrade"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.frame_system.CodeUpgradeAuthorization)));
         }
         
         /// <summary>
@@ -117,6 +119,35 @@ namespace Opal.NetApi.Generated.Storage
         {
             string parameters = SystemStorage.ExtrinsicCountParams();
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> InherentsAppliedParams
+        ///  Whether all inherents have been applied.
+        /// </summary>
+        public static string InherentsAppliedParams()
+        {
+            return RequestGenerator.GetStorage("System", "InherentsApplied", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> InherentsAppliedDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string InherentsAppliedDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> InherentsApplied
+        ///  Whether all inherents have been applied.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.Bool> InherentsApplied(string blockhash, CancellationToken token)
+        {
+            string parameters = SystemStorage.InherentsAppliedParams();
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.Bool>(parameters, blockhash, token);
             return result;
         }
         
@@ -563,6 +594,35 @@ namespace Opal.NetApi.Generated.Storage
             var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.frame_system.EnumPhase>(parameters, blockhash, token);
             return result;
         }
+        
+        /// <summary>
+        /// >> AuthorizedUpgradeParams
+        ///  `Some` if a code upgrade has been authorized.
+        /// </summary>
+        public static string AuthorizedUpgradeParams()
+        {
+            return RequestGenerator.GetStorage("System", "AuthorizedUpgrade", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> AuthorizedUpgradeDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string AuthorizedUpgradeDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> AuthorizedUpgrade
+        ///  `Some` if a code upgrade has been authorized.
+        /// </summary>
+        public async Task<Opal.NetApi.Generated.Model.frame_system.CodeUpgradeAuthorization> AuthorizedUpgrade(string blockhash, CancellationToken token)
+        {
+            string parameters = SystemStorage.AuthorizedUpgradeParams();
+            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.frame_system.CodeUpgradeAuthorization>(parameters, blockhash, token);
+            return result;
+        }
     }
     
     /// <summary>
@@ -659,6 +719,39 @@ namespace Opal.NetApi.Generated.Storage
             byteArray.AddRange(remark.Encode());
             return new Method(0, "System", 7, "remark_with_event", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> authorize_upgrade
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method AuthorizeUpgrade(Opal.NetApi.Generated.Model.primitive_types.H256 code_hash)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(code_hash.Encode());
+            return new Method(0, "System", 9, "authorize_upgrade", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> authorize_upgrade_without_checks
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method AuthorizeUpgradeWithoutChecks(Opal.NetApi.Generated.Model.primitive_types.H256 code_hash)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(code_hash.Encode());
+            return new Method(0, "System", 10, "authorize_upgrade_without_checks", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> apply_authorized_upgrade
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method ApplyAuthorizedUpgrade(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> code)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(code.Encode());
+            return new Method(0, "System", 11, "apply_authorized_upgrade", byteArray.ToArray());
+        }
     }
     
     /// <summary>
@@ -674,9 +767,9 @@ namespace Opal.NetApi.Generated.Storage
         public Opal.NetApi.Generated.Model.frame_system.limits.BlockWeights BlockWeights()
         {
             var result = new Opal.NetApi.Generated.Model.frame_system.limits.BlockWeights();
-            result.Create("0x025B1F5D00070088526A7402004001C2A0A91D000107D00918A44B0200D000010700E6BD4F57020" +
-                    "0F000010000C2A0A91D000107D0ABACBE680200200101070088526A7402004001010700A2941A1D0" +
-                    "2005000C2A0A91D00000000");
+            result.Create("0xC2A0E76600070088526A74020040012261C919000107B81910A54B0200D000010700E6BD4F57020" +
+                    "0F0000100002261C919000107B8BBA4BF680200200101070088526A7402004001010700A2941A1D0" +
+                    "20050002261C91900000000");
             return result;
         }
         
@@ -715,12 +808,12 @@ namespace Opal.NetApi.Generated.Storage
         
         /// <summary>
         /// >> Version
-        ///  Get the chain's current version.
+        ///  Get the chain's in-code version.
         /// </summary>
         public Opal.NetApi.Generated.Model.sp_version.RuntimeVersion Version()
         {
             var result = new Opal.NetApi.Generated.Model.sp_version.RuntimeVersion();
-            result.Create(@"0x106F70616C106F70616C01000000F70B9900000000003C4FDC4D29738B36D503000000144F3C7616F5C8A102000000DF6ACB689907609B0400000037E397FC7C91F5E40200000040FE3AD401F8959A06000000D2BC9897EED08F1503000000F78B278BE53F454C02000000582211F65BB14B8905000000AB3C0572291FEB8B01000000DD718D5CC53262D401000000EA93E3F16F3D696202000000BC9D89904F5B923F0100000037C8BB1350A9A2A80400000032D67AE360CAE94401000000E65B00E46CEDD0AA020000000300000001");
+            result.Create(@"0x106F70616C106F70616C01000000E02E9B0000000000444FDC4D29738B36D503000000144F3C7616F5C8A102000000DF6ACB689907609B0500000037E397FC7C91F5E40200000040FE3AD401F8959A06000000D2BC9897EED08F1503000000F78B278BE53F454C02000000582211F65BB14B8905000000AB3C0572291FEB8B01000000DD718D5CC53262D401000000EA93E3F16F3D696202000000BC9D89904F5B923F0100000037C8BB1350A9A2A80400000032D67AE360CAE94401000000D7BDD8A272CA0D6501000000E65B00E46CEDD0AA02000000FBC577B9D747EFD6010000000300000001");
             return result;
         }
         
@@ -785,5 +878,23 @@ namespace Opal.NetApi.Generated.Storage
         /// The origin filter prevent the call to be dispatched.
         /// </summary>
         CallFiltered,
+        
+        /// <summary>
+        /// >> MultiBlockMigrationsOngoing
+        /// A multi-block migration is ongoing and prevents the current code from being replaced.
+        /// </summary>
+        MultiBlockMigrationsOngoing,
+        
+        /// <summary>
+        /// >> NothingAuthorized
+        /// No upgrade authorized.
+        /// </summary>
+        NothingAuthorized,
+        
+        /// <summary>
+        /// >> Unauthorized
+        /// The submitted code is not authorized.
+        /// </summary>
+        Unauthorized,
     }
 }

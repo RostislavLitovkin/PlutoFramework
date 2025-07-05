@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "net_api": "XcavatePaseo.NetApi",
+    "net_integration": "Substrate.Integration",
+    "rest_service": "Substrate.RestService",
+    "rest_client": "Substrate.RestClient"
+  },
+   "metadata": {
+      "websocket": "wss://fraa-flashbox-4654-rpc.a.stagenet.tanssi.network"
+   },
+  "rest_client_settings": {
+    "service_assembly": "Substrate.RestService.dll"
+  }
+}

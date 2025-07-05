@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_ranked_collective
     
     
     /// <summary>
-    /// >> 514 - Composite[pallet_ranked_collective.MemberRecord]
+    /// >> 587 - Composite[pallet_ranked_collective.MemberRecord]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MemberRecord : BaseType

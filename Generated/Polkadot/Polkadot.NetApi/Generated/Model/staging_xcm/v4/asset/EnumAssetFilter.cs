@@ -33,7 +33,7 @@ namespace Polkadot.NetApi.Generated.Model.staging_xcm.v4.asset
     }
     
     /// <summary>
-    /// >> 415 - Variant[staging_xcm.v4.asset.AssetFilter]
+    /// >> 404 - Variant[staging_xcm.v4.asset.AssetFilter]
     /// </summary>
     public sealed class EnumAssetFilter : BaseEnumRust<AssetFilter>
     {

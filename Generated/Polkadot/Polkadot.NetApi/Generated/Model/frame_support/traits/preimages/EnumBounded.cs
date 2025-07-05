@@ -38,7 +38,7 @@ namespace Polkadot.NetApi.Generated.Model.frame_support.traits.preimages
     }
     
     /// <summary>
-    /// >> 92 - Variant[frame_support.traits.preimages.Bounded]
+    /// >> 94 - Variant[frame_support.traits.preimages.Bounded]
     /// </summary>
     public sealed class EnumBounded : BaseEnumRust<Bounded>
     {

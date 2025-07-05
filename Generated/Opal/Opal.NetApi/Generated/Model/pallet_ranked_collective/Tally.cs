@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_ranked_collective
     
     
     /// <summary>
-    /// >> 81 - Composite[pallet_ranked_collective.Tally]
+    /// >> 90 - Composite[pallet_ranked_collective.Tally]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Tally : BaseType

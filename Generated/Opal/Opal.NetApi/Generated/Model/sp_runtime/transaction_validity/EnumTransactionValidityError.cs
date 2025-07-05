@@ -33,7 +33,7 @@ namespace Opal.NetApi.Generated.Model.sp_runtime.transaction_validity
     }
     
     /// <summary>
-    /// >> 612 - Variant[sp_runtime.transaction_validity.TransactionValidityError]
+    /// >> 693 - Variant[sp_runtime.transaction_validity.TransactionValidityError]
     /// </summary>
     public sealed class EnumTransactionValidityError : BaseEnumRust<TransactionValidityError>
     {

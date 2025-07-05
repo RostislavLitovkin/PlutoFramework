@@ -49,18 +49,20 @@ namespace Hydration.NetApi.Generated.Model.pallet_xyk.pallet
         /// <summary>
         /// >> SellExecuted
         /// Asset sale executed.
+        /// Deprecated. Replaced by pallet_broadcast::Swapped
         /// </summary>
         SellExecuted = 4,
         
         /// <summary>
         /// >> BuyExecuted
         /// Asset purchase executed.
+        /// Deprecated. Replaced by pallet_broadcast::Swapped
         /// </summary>
         BuyExecuted = 5,
     }
     
     /// <summary>
-    /// >> 117 - Variant[pallet_xyk.pallet.Event]
+    /// >> 439 - Variant[pallet_xyk.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

@@ -33,7 +33,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.xcm.v2
     }
     
     /// <summary>
-    /// >> 316 - Variant[xcm.v2.WeightLimit]
+    /// >> 320 - Variant[xcm.v2.WeightLimit]
     /// </summary>
     public sealed class EnumWeightLimit : BaseEnumRust<WeightLimit>
     {

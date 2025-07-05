@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_referenda.types
     
     
     /// <summary>
-    /// >> 636 - Composite[pallet_referenda.types.TrackInfo]
+    /// >> 626 - Composite[pallet_referenda.types.TrackInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class TrackInfo : BaseType

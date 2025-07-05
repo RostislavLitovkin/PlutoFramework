@@ -36,9 +36,11 @@ namespace Mythos.NetApi.Generated.Storage
         public CouncilStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Council", "Proposals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Council", "Proposals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Council", "ProposalOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(Mythos.NetApi.Generated.Model.primitive_types.H256), typeof(Mythos.NetApi.Generated.Model.mainnet_runtime.EnumRuntimeCall)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Council", "CostOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(Mythos.NetApi.Generated.Model.primitive_types.H256), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Mythos.NetApi.Generated.Model.account.AccountId20, Substrate.NetApi.Model.Types.Base.BaseTuple>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Council", "Voting"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(Mythos.NetApi.Generated.Model.primitive_types.H256), typeof(Mythos.NetApi.Generated.Model.pallet_collective.Votes)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Council", "ProposalCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
@@ -68,10 +70,10 @@ namespace Mythos.NetApi.Generated.Storage
         /// >> Proposals
         ///  The hashes of the active proposals.
         /// </summary>
-        public async Task<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16> Proposals(string blockhash, CancellationToken token)
+        public async Task<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23> Proposals(string blockhash, CancellationToken token)
         {
             string parameters = CouncilStorage.ProposalsParams();
-            var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23>(parameters, blockhash, token);
             return result;
         }
         
@@ -103,6 +105,43 @@ namespace Mythos.NetApi.Generated.Storage
         {
             string parameters = CouncilStorage.ProposalOfParams(key);
             var result = await _client.GetStorageAsync<Mythos.NetApi.Generated.Model.mainnet_runtime.EnumRuntimeCall>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> CostOfParams
+        ///  Consideration cost created for publishing and storing a proposal.
+        /// 
+        ///  Determined by [Config::Consideration] and may be not present for certain proposals (e.g. if
+        ///  the proposal count at the time of creation was below threshold N).
+        /// </summary>
+        public static string CostOfParams(Mythos.NetApi.Generated.Model.primitive_types.H256 key)
+        {
+            return RequestGenerator.GetStorage("Council", "CostOf", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.Identity}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> CostOfDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string CostOfDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> CostOf
+        ///  Consideration cost created for publishing and storing a proposal.
+        /// 
+        ///  Determined by [Config::Consideration] and may be not present for certain proposals (e.g. if
+        ///  the proposal count at the time of creation was below threshold N).
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Mythos.NetApi.Generated.Model.account.AccountId20, Substrate.NetApi.Model.Types.Base.BaseTuple>> CostOf(Mythos.NetApi.Generated.Model.primitive_types.H256 key, string blockhash, CancellationToken token)
+        {
+            string parameters = CouncilStorage.CostOfParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Mythos.NetApi.Generated.Model.account.AccountId20, Substrate.NetApi.Model.Types.Base.BaseTuple>>(parameters, blockhash, token);
             return result;
         }
         
@@ -306,6 +345,28 @@ namespace Mythos.NetApi.Generated.Storage
             byteArray.AddRange(length_bound.Encode());
             return new Method(16, "Council", 6, "close", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> kill
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method Kill(Mythos.NetApi.Generated.Model.primitive_types.H256 proposal_hash)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(proposal_hash.Encode());
+            return new Method(16, "Council", 7, "kill", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> release_proposal_cost
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method ReleaseProposalCost(Mythos.NetApi.Generated.Model.primitive_types.H256 proposal_hash)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(proposal_hash.Encode());
+            return new Method(16, "Council", 8, "release_proposal_cost", byteArray.ToArray());
+        }
     }
     
     /// <summary>
@@ -397,5 +458,11 @@ namespace Mythos.NetApi.Generated.Storage
         /// Prime account is not a member
         /// </summary>
         PrimeAccountNotMember,
+        
+        /// <summary>
+        /// >> ProposalActive
+        /// Proposal is still active.
+        /// </summary>
+        ProposalActive,
     }
 }

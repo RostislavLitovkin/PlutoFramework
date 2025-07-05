@@ -263,7 +263,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v4
     }
     
     /// <summary>
-    /// >> 332 - Variant[staging_xcm.v4.Instruction]
+    /// >> 337 - Variant[staging_xcm.v4.Instruction]
     /// </summary>
     public sealed class EnumInstruction : BaseEnumRust<Instruction>
     {

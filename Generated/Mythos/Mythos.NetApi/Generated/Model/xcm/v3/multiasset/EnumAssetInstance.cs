@@ -53,7 +53,7 @@ namespace Mythos.NetApi.Generated.Model.xcm.v3.multiasset
     }
     
     /// <summary>
-    /// >> 139 - Variant[xcm.v3.multiasset.AssetInstance]
+    /// >> 145 - Variant[xcm.v3.multiasset.AssetInstance]
     /// </summary>
     public sealed class EnumAssetInstance : BaseEnumRust<AssetInstance>
     {

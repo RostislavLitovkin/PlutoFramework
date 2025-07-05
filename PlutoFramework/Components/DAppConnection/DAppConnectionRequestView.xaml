@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.DAppConnection.DAppConnectionRequestView"
+                      xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+         xmlns:animations="clr-namespace:PlutoFramework.Components.Animations"
+         xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+         AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+         AbsoluteLayout.LayoutFlags="All"
+         IsVisible="{Binding IsVisible}"
+         >
+    <card:BottomPopupCard Title="Connect to this dApp?"
+                      IsShown="{Binding IsVisible}">
+        <card:BottomPopupCard.View>
+            <AbsoluteLayout>
+                <VerticalStackLayout Spacing="10"
+                                 x:Name="verticalStackLayout"
+                                 IsVisible="{Binding RequestViewIsVisible}"
+                                 AbsoluteLayout.LayoutBounds="0, 0, 1, AutoSize"
+                                 AbsoluteLayout.LayoutFlags="WidthProportional"
+                                 >
+                    <Frame CornerRadius="30"
+                       WidthRequest="100"
+                        HeightRequest="100"
+                        BorderColor="#00000000">
+                        <Image
+                           Source="{Binding Icon}"
+                           WidthRequest="100"
+                           HeightRequest="100" />
+                    </Frame>
+
+                    <Label 
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span FontAttributes="Bold" Text="{Binding Name}" />
+
+                            </FormattedString>
+
+                        </Label.FormattedText>
+
+                    </Label>
+                </VerticalStackLayout>
+
+
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 80"
+                            AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                            IsVisible="{Binding RequestViewIsVisible}">
+
+
+                    <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 50"
+                      AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                      ColumnSpacing="15"
+                      Margin="0, 0, 0, 10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+
+                        </Grid.ColumnDefinitions>
+
+                        <buttons:BasicGrayButton Text="Reject"
+                                             Grid.Column="0"
+                                             Command="{Binding RejectCommand}"/>
+
+                        <buttons:ElevatedButton Text="Accept"
+                                                          Grid.Column="1"
+                                                          Command="{Binding AcceptCommand}"
+                                                          ButtonState="Enabled" />
+                    </Grid>
+                </AbsoluteLayout>
+
+
+                <VerticalStackLayout Spacing="10"
+                                 x:Name="connectionStatusLayout"
+                                 IsVisible="{Binding ConnectionStatusIsVisible}"
+                                 HorizontalOptions="Center"
+                                 AbsoluteLayout.LayoutBounds="0, 0, 1, AutoSize"
+                                AbsoluteLayout.LayoutFlags="WidthProportional"
+                                 >
+                    <AbsoluteLayout WidthRequest="220"
+                                HeightRequest="40">
+
+                        <Image AbsoluteLayout.LayoutBounds="0, 0.5, 40, 40"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           Source="{AppThemeBinding Light=deviceblack.png, Dark=devicewhite.png}"
+                           />
+                        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 40, 40"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           Source="{AppThemeBinding Light=cloudblack.png, Dark=cloudwhite.png}"
+                           />
+
+                        <Image AbsoluteLayout.LayoutBounds="1, 0.5, 40, 40"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           Source="{AppThemeBinding Light=dappblack.png, Dark=dappwhite.png}"
+                           />
+
+
+
+                        <animations:LoadingView AbsoluteLayout.LayoutBounds=".25, 0.5, 40, 10"
+                                            AbsoluteLayout.LayoutFlags="PositionProportional"
+                                            Playing="{Binding Connecting}"/>
+
+                        <Image AbsoluteLayout.LayoutBounds="0.27, 0.5, 20, 20"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           Source="checkgreen.png"
+                           IsVisible="{Binding Connected}"
+                           />
+
+                        <animations:LoadingView AbsoluteLayout.LayoutBounds=".75, 0.5, 40, 10"
+                                            AbsoluteLayout.LayoutFlags="PositionProportional"
+                                            Playing="{Binding Confirming}"/>
+
+                        <Image AbsoluteLayout.LayoutBounds="0.72, 0.5, 20, 20"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           Source="checkgreen.png"
+                           IsVisible="{Binding Confirmed}"
+                           />
+                    </AbsoluteLayout>
+
+                    <Label
+                    Text="{Binding ConnectionStatusText}"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Start"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    MinimumHeightRequest="40"
+                    />
+
+                    <Label
+                    HorizontalTextAlignment="Center"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span  Text="Keep PlutoFramework open!"
+                                   FontAttributes="Bold" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </VerticalStackLayout>
+
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 80"
+                            AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                            IsVisible="{Binding ConnectionStatusIsVisible}">
+
+
+                    <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 50"
+                      AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                      ColumnSpacing="15"
+                      Margin="0, 0, 0, 10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+
+                        </Grid.ColumnDefinitions>
+
+                        <buttons:ElevatedButton Text="Dismiss"
+                                          Grid.Column="0"
+                                          Command="{Binding DismissCommand}"
+                                          ButtonState="Enabled" />
+                    </Grid>
+                </AbsoluteLayout>
+            </AbsoluteLayout>
+        </card:BottomPopupCard.View>
+    </card:BottomPopupCard>
+</ContentView>

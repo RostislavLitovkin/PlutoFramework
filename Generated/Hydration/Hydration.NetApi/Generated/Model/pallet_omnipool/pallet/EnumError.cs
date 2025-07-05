@@ -125,98 +125,98 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool.pallet
         HubAssetUpdateError = 16,
         
         /// <summary>
-        /// >> PositiveImbalance
-        /// Imbalance results in positive value.
-        /// </summary>
-        PositiveImbalance = 17,
-        
-        /// <summary>
         /// >> InvalidSharesAmount
         /// Amount of shares provided cannot be 0.
         /// </summary>
-        InvalidSharesAmount = 18,
+        InvalidSharesAmount = 17,
         
         /// <summary>
         /// >> InvalidHubAssetTradableState
         /// Hub asset is only allowed to be sold.
         /// </summary>
-        InvalidHubAssetTradableState = 19,
+        InvalidHubAssetTradableState = 18,
         
         /// <summary>
         /// >> AssetRefundNotAllowed
         /// Asset is not allowed to be refunded.
         /// </summary>
-        AssetRefundNotAllowed = 20,
+        AssetRefundNotAllowed = 19,
         
         /// <summary>
         /// >> MaxOutRatioExceeded
         /// Max fraction of asset to buy has been exceeded.
         /// </summary>
-        MaxOutRatioExceeded = 21,
+        MaxOutRatioExceeded = 20,
         
         /// <summary>
         /// >> MaxInRatioExceeded
         /// Max fraction of asset to sell has been exceeded.
         /// </summary>
-        MaxInRatioExceeded = 22,
+        MaxInRatioExceeded = 21,
         
         /// <summary>
         /// >> PriceDifferenceTooHigh
         /// Max allowed price difference has been exceeded.
         /// </summary>
-        PriceDifferenceTooHigh = 23,
+        PriceDifferenceTooHigh = 22,
         
         /// <summary>
         /// >> InvalidOraclePrice
         /// Invalid oracle price - division by zero.
         /// </summary>
-        InvalidOraclePrice = 24,
+        InvalidOraclePrice = 23,
         
         /// <summary>
         /// >> InvalidWithdrawalFee
         /// Failed to calculate withdrawal fee.
         /// </summary>
-        InvalidWithdrawalFee = 25,
+        InvalidWithdrawalFee = 24,
         
         /// <summary>
         /// >> FeeOverdraft
         /// More than allowed amount of fee has been transferred.
         /// </summary>
-        FeeOverdraft = 26,
+        FeeOverdraft = 25,
         
         /// <summary>
         /// >> SharesRemaining
         /// Token cannot be removed from Omnipool due to shares still owned by other users.
         /// </summary>
-        SharesRemaining = 27,
+        SharesRemaining = 26,
         
         /// <summary>
         /// >> AssetNotFrozen
         /// Token cannot be removed from Omnipool because asset is not frozen.
         /// </summary>
-        AssetNotFrozen = 28,
+        AssetNotFrozen = 27,
         
         /// <summary>
         /// >> ZeroAmountOut
         /// Calculated amount out from sell trade is zero.
         /// </summary>
-        ZeroAmountOut = 29,
+        ZeroAmountOut = 28,
         
         /// <summary>
         /// >> ExistentialDepositNotAvailable
         /// Existential deposit of asset is not available.
         /// </summary>
-        ExistentialDepositNotAvailable = 30,
+        ExistentialDepositNotAvailable = 29,
         
         /// <summary>
         /// >> SlippageLimit
         /// Slippage protection
         /// </summary>
-        SlippageLimit = 31,
+        SlippageLimit = 30,
+        
+        /// <summary>
+        /// >> ProtocolFeeNotConsumed
+        /// Extra protocol fee has not been consumed.
+        /// </summary>
+        ProtocolFeeNotConsumed = 31,
     }
     
     /// <summary>
-    /// >> 569 - Variant[pallet_omnipool.pallet.Error]
+    /// >> 642 - Variant[pallet_omnipool.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

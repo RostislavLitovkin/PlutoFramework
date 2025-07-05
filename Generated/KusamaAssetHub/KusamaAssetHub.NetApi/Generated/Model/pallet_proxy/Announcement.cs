@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_proxy
     
     
     /// <summary>
-    /// >> 403 - Composite[pallet_proxy.Announcement]
+    /// >> 414 - Composite[pallet_proxy.Announcement]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Announcement : BaseType

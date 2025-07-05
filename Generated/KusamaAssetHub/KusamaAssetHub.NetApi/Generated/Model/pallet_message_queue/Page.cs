@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_message_queue
     
     
     /// <summary>
-    /// >> 345 - Composite[pallet_message_queue.Page]
+    /// >> 349 - Composite[pallet_message_queue.Page]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Page : BaseType

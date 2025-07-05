@@ -120,6 +120,16 @@ namespace Opal.NetApi.Generated.Storage
             byteArray.AddRange(call.Encode());
             return new Method(35, "Sudo", 3, "sudo_as", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> remove_key
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method RemoveKey()
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            return new Method(35, "Sudo", 4, "remove_key", byteArray.ToArray());
+        }
     }
     
     /// <summary>
@@ -137,7 +147,7 @@ namespace Opal.NetApi.Generated.Storage
         
         /// <summary>
         /// >> RequireSudo
-        /// Sender must be the Sudo account
+        /// Sender must be the Sudo account.
         /// </summary>
         RequireSudo,
     }

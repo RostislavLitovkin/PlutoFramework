@@ -31,7 +31,9 @@
 
                 <extrinsic:CallParametersView />
 
-                <!--<events:EventsListView />-->
+                <events:EventsListView />
+
+                <extrinsic:EncodedCallView />
 
             </VerticalStackLayout>
 

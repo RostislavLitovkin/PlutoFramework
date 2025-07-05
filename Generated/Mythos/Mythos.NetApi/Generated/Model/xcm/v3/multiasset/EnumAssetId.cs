@@ -33,7 +33,7 @@ namespace Mythos.NetApi.Generated.Model.xcm.v3.multiasset
     }
     
     /// <summary>
-    /// >> 132 - Variant[xcm.v3.multiasset.AssetId]
+    /// >> 138 - Variant[xcm.v3.multiasset.AssetId]
     /// </summary>
     public sealed class EnumAssetId : BaseEnumRust<AssetId>
     {

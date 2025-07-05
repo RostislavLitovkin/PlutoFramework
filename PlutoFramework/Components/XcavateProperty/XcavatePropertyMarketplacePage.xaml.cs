@@ -11,7 +11,7 @@ public partial class XcavatePropertyMarketplacePage : ContentPage
 
         InitializeComponent();
 
-        var viewModel = new XcavatePropertyMarketplaceViewModel();
+        var viewModel = DependencyService.Get<XcavatePropertyMarketplaceViewModel>();
         BindingContext = viewModel;
 
         viewModel.InitialLoadAsync(CancellationToken.None);

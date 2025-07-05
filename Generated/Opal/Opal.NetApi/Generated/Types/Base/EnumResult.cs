@@ -33,7 +33,7 @@ namespace Opal.NetApi.Generated.Types.Base
     }
     
     /// <summary>
-    /// >> 611 - Variant[Result]
+    /// >> 692 - Variant[Result]
     /// </summary>
     public sealed class EnumResult : BaseEnumRust<Result>
     {

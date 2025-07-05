@@ -36,7 +36,7 @@ namespace Polkadot.NetApi.Generated.Storage
         public ParaSchedulerStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParaScheduler", "ValidatorGroups"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseVec<Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.ValidatorIndex>>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParaScheduler", "ValidatorGroups"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseVec<Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.ValidatorIndex>>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParaScheduler", "AvailabilityCores"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.scheduler.pallet.EnumCoreOccupied>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParaScheduler", "SessionStartBlock"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParaScheduler", "ClaimQueue"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Polkadot.NetApi.Generated.Types.Base.BTreeMapT4)));
@@ -76,10 +76,10 @@ namespace Polkadot.NetApi.Generated.Storage
         ///  multiplexers. Reasonably, 100-1000. The dominant factor is the number of validators: safe
         ///  upper bound at 10k.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseVec<Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.ValidatorIndex>>> ValidatorGroups(string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseVec<Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.ValidatorIndex>>> ValidatorGroups(string blockhash, CancellationToken token)
         {
             string parameters = ParaSchedulerStorage.ValidatorGroupsParams();
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseVec<Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.ValidatorIndex>>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseVec<Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.ValidatorIndex>>>(parameters, blockhash, token);
             return result;
         }
         

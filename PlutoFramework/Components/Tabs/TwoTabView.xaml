@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tabs="clr-namespace:PlutoFramework.Components.Tabs"
+             x:Class="PlutoFramework.Components.Tabs.TwoTabView">
+    <VerticalStackLayout HorizontalOptions="Fill">
+        <HorizontalStackLayout HorizontalOptions="Fill">
+            <tabs:TabView x:Name="tab1"
+                          SelectCommand="{Binding SelectTab1Command}"
+                          IsSelected="{Binding Tab1IsSelected}"/>
+            <tabs:TabView x:Name="tab2"
+                          SelectCommand="{Binding SelectTab2Command}"
+                          IsSelected="{Binding Tab2IsSelected}"/>
+        </HorizontalStackLayout>
+        <ContentView x:Name="contentView1"
+                     IsVisible="{Binding Tab1IsSelected}">
+            <!-- Content to be displayed -->
+        </ContentView>
+        <ContentView x:Name="contentView2"
+                     IsVisible="{Binding Tab2IsSelected}">
+            <!-- Content to be displayed -->
+        </ContentView>
+    </VerticalStackLayout>
+</ContentView>

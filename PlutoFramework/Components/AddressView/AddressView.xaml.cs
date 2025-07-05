@@ -73,6 +73,11 @@ public partial class AddressView : ContentView
 
     private async void OnTapped(System.Object sender, System.EventArgs e)
     {
+        if (QrAddress.IsNullOrEmpty())
+        {
+            return;
+        }
+
         await CopyAddress.CopyToClipboardAsync((string)GetValue(AddressProperty));
     }
 

@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
     
     
     /// <summary>
-    /// >> 291 - Composite[up_data_structs.PropertyKeyPermission]
+    /// >> 352 - Composite[up_data_structs.PropertyKeyPermission]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PropertyKeyPermission : BaseType
@@ -27,7 +27,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
         /// <summary>
         /// >> key
         /// </summary>
-        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12 Key { get; set; }
+        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17 Key { get; set; }
         /// <summary>
         /// >> permission
         /// </summary>
@@ -52,7 +52,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Key = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12();
+            Key = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17();
             Key.Decode(byteArray, ref p);
             Permission = new Opal.NetApi.Generated.Model.up_data_structs.PropertyPermission();
             Permission.Decode(byteArray, ref p);

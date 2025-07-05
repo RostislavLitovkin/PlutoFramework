@@ -191,10 +191,16 @@ namespace Opal.NetApi.Generated.Model.pallet_xcm.pallet
         /// Some assets have been claimed from an asset trap
         /// </summary>
         AssetsClaimed = 22,
+        
+        /// <summary>
+        /// >> VersionMigrationFinished
+        /// A XCM version migration finished.
+        /// </summary>
+        VersionMigrationFinished = 23,
     }
     
     /// <summary>
-    /// >> 364 - Variant[pallet_xcm.pallet.Event]
+    /// >> 426 - Variant[pallet_xcm.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -205,29 +211,30 @@ namespace Opal.NetApi.Generated.Model.pallet_xcm.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<Opal.NetApi.Generated.Model.xcm.v3.traits.EnumOutcome>(Event.Attempted);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation, Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation, Opal.NetApi.Generated.Model.xcm.v3.XcmT1, Opal.NetApi.Generated.Types.Base.Arr32U8>>(Event.Sent);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.UnexpectedResponse);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Opal.NetApi.Generated.Model.xcm.v3.EnumResponse>>(Event.ResponseReady);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.staging_xcm.v5.traits.EnumOutcome>(Event.Attempted);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location, Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location, Opal.NetApi.Generated.Model.staging_xcm.v5.XcmT1, Opal.NetApi.Generated.Types.Base.Arr32U8>>(Event.Sent);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.UnexpectedResponse);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Opal.NetApi.Generated.Model.staging_xcm.v5.EnumResponse>>(Event.ResponseReady);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U8, Substrate.NetApi.Model.Types.Primitive.U8>>(Event.Notified);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U8, Substrate.NetApi.Model.Types.Primitive.U8, Opal.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Opal.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Event.NotifyOverweight);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U8, Substrate.NetApi.Model.Types.Primitive.U8>>(Event.NotifyDispatchError);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U8, Substrate.NetApi.Model.Types.Primitive.U8>>(Event.NotifyDecodeFailed);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation, Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation>>>(Event.InvalidResponder);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.InvalidResponderVersion);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location>>>(Event.InvalidResponder);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.InvalidResponderVersion);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U64>(Event.ResponseTaken);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.primitive_types.H256, Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation, Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiAssets>>(Event.AssetsTrapped);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation, Substrate.NetApi.Model.Types.Primitive.U32, Opal.NetApi.Generated.Model.xcm.v3.multiasset.MultiAssets, Opal.NetApi.Generated.Types.Base.Arr32U8>>(Event.VersionChangeNotified);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.SupportedVersionChanged);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation, Substrate.NetApi.Model.Types.Primitive.U64, Opal.NetApi.Generated.Model.xcm.v3.traits.EnumError>>(Event.NotifyTargetSendFail);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiLocation, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.NotifyTargetMigrationFail);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.InvalidQuerierVersion);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation, Substrate.NetApi.Model.Types.Primitive.U64, Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation, Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation>>>(Event.InvalidQuerier);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation, Opal.NetApi.Generated.Model.xcm.v3.multiasset.MultiAssets, Opal.NetApi.Generated.Types.Base.Arr32U8>>(Event.VersionNotifyStarted);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation, Opal.NetApi.Generated.Model.xcm.v3.multiasset.MultiAssets, Opal.NetApi.Generated.Types.Base.Arr32U8>>(Event.VersionNotifyRequested);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation, Opal.NetApi.Generated.Model.xcm.v3.multiasset.MultiAssets, Opal.NetApi.Generated.Types.Base.Arr32U8>>(Event.VersionNotifyUnrequested);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation, Opal.NetApi.Generated.Model.xcm.v3.multiasset.MultiAssets>>(Event.FeesPaid);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.primitive_types.H256, Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation, Opal.NetApi.Generated.Model.xcm.EnumVersionedMultiAssets>>(Event.AssetsClaimed);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.primitive_types.H256, Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location, Opal.NetApi.Generated.Model.xcm.EnumVersionedAssets>>(Event.AssetsTrapped);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Primitive.U32, Opal.NetApi.Generated.Model.staging_xcm.v5.asset.Assets, Opal.NetApi.Generated.Types.Base.Arr32U8>>(Event.VersionChangeNotified);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.SupportedVersionChanged);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Primitive.U64, Opal.NetApi.Generated.Model.xcm.v5.traits.EnumError>>(Event.NotifyTargetSendFail);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.xcm.EnumVersionedLocation, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.NotifyTargetMigrationFail);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.InvalidQuerierVersion);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Primitive.U64, Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Base.BaseOpt<Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location>>>(Event.InvalidQuerier);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location, Opal.NetApi.Generated.Model.staging_xcm.v5.asset.Assets, Opal.NetApi.Generated.Types.Base.Arr32U8>>(Event.VersionNotifyStarted);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location, Opal.NetApi.Generated.Model.staging_xcm.v5.asset.Assets, Opal.NetApi.Generated.Types.Base.Arr32U8>>(Event.VersionNotifyRequested);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location, Opal.NetApi.Generated.Model.staging_xcm.v5.asset.Assets, Opal.NetApi.Generated.Types.Base.Arr32U8>>(Event.VersionNotifyUnrequested);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location, Opal.NetApi.Generated.Model.staging_xcm.v5.asset.Assets>>(Event.FeesPaid);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.primitive_types.H256, Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location, Opal.NetApi.Generated.Model.xcm.EnumVersionedAssets>>(Event.AssetsClaimed);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.VersionMigrationFinished);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec
     
     
     /// <summary>
-    /// >> 425 - Composite[bounded_collections.bounded_vec.BoundedVecT23]
+    /// >> 438 - Composite[bounded_collections.bounded_vec.BoundedVecT23]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedVecT23 : BaseType
@@ -27,7 +27,7 @@ namespace Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec
         /// <summary>
         /// >> value
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Mythos.NetApi.Generated.Model.xcm.EnumVersionedLocation>> Value { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Mythos.NetApi.Generated.Model.primitive_types.H256> Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Mythos.NetApi.Generated.Model.xcm.EnumVersionedLocation>>();
+            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Mythos.NetApi.Generated.Model.primitive_types.H256>();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

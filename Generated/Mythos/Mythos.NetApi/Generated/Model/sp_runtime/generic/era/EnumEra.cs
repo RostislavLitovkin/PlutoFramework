@@ -1303,7 +1303,7 @@ namespace Mythos.NetApi.Generated.Model.sp_runtime.generic.era
     }
     
     /// <summary>
-    /// >> 463 - Variant[sp_runtime.generic.era.Era]
+    /// >> 560 - Variant[sp_runtime.generic.era.Era]
     /// </summary>
     public sealed class EnumEra : BaseEnumRust<Era>
     {

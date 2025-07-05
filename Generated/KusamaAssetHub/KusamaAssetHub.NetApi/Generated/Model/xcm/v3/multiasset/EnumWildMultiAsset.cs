@@ -43,7 +43,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.xcm.v3.multiasset
     }
     
     /// <summary>
-    /// >> 323 - Variant[xcm.v3.multiasset.WildMultiAsset]
+    /// >> 327 - Variant[xcm.v3.multiasset.WildMultiAsset]
     /// </summary>
     public sealed class EnumWildMultiAsset : BaseEnumRust<WildMultiAsset>
     {

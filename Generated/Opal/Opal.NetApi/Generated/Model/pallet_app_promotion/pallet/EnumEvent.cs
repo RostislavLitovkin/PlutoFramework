@@ -64,7 +64,7 @@ namespace Opal.NetApi.Generated.Model.pallet_app_promotion.pallet
     }
     
     /// <summary>
-    /// >> 371 - Variant[pallet_app_promotion.pallet.Event]
+    /// >> 435 - Variant[pallet_app_promotion.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

@@ -80,7 +80,7 @@ namespace Mythos.NetApi.Generated.Storage
         /// >> batch
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Batch(Mythos.NetApi.Generated.Types.Base.Arr8U8 domain, Mythos.NetApi.Generated.Model.account.AccountId20 sender, Mythos.NetApi.Generated.Types.Base.Arr32U8 bias, Substrate.NetApi.Model.Types.Primitive.U64 expires_at, Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7 calls, Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 approvals)
+        public static Method Batch(Mythos.NetApi.Generated.Types.Base.Arr8U8 domain, Mythos.NetApi.Generated.Model.account.AccountId20 sender, Mythos.NetApi.Generated.Types.Base.Arr32U8 bias, Substrate.NetApi.Model.Types.Primitive.U64 expires_at, Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 calls, Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 approvals)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(domain.Encode());
@@ -96,7 +96,7 @@ namespace Mythos.NetApi.Generated.Storage
         /// >> batch_v2
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method BatchV2(Mythos.NetApi.Generated.Types.Base.Arr8U8 domain, Mythos.NetApi.Generated.Model.account.AccountId20 sender, Mythos.NetApi.Generated.Types.Base.Arr32U8 bias, Substrate.NetApi.Model.Types.Primitive.U64 expires_at, Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7 calls, Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 approvals)
+        public static Method BatchV2(Mythos.NetApi.Generated.Types.Base.Arr8U8 domain, Mythos.NetApi.Generated.Model.account.AccountId20 sender, Mythos.NetApi.Generated.Types.Base.Arr32U8 bias, Substrate.NetApi.Model.Types.Primitive.U64 expires_at, Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 calls, Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 approvals)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(domain.Encode());

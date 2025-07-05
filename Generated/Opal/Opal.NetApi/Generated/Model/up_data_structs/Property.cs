@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
     
     
     /// <summary>
-    /// >> 296 - Composite[up_data_structs.Property]
+    /// >> 357 - Composite[up_data_structs.Property]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Property : BaseType
@@ -27,11 +27,11 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
         /// <summary>
         /// >> key
         /// </summary>
-        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12 Key { get; set; }
+        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17 Key { get; set; }
         /// <summary>
         /// >> value
         /// </summary>
-        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14 Value { get; set; }
+        public Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19 Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -52,9 +52,9 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Key = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12();
+            Key = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17();
             Key.Decode(byteArray, ref p);
-            Value = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14();
+            Value = new Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

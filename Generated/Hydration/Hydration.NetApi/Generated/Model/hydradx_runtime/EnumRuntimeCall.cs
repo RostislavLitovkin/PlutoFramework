@@ -107,6 +107,26 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
         StateTrieMigration = 35,
         
         /// <summary>
+        /// >> ConvictionVoting
+        /// </summary>
+        ConvictionVoting = 36,
+        
+        /// <summary>
+        /// >> Referenda
+        /// </summary>
+        Referenda = 37,
+        
+        /// <summary>
+        /// >> Whitelist
+        /// </summary>
+        Whitelist = 39,
+        
+        /// <summary>
+        /// >> Dispatcher
+        /// </summary>
+        Dispatcher = 40,
+        
+        /// <summary>
         /// >> AssetRegistry
         /// </summary>
         AssetRegistry = 51,
@@ -200,6 +220,11 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
         /// >> Referrals
         /// </summary>
         Referrals = 75,
+        
+        /// <summary>
+        /// >> Liquidation
+        /// </summary>
+        Liquidation = 76,
         
         /// <summary>
         /// >> Tokens
@@ -305,10 +330,15 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
         /// >> EmaOracle
         /// </summary>
         EmaOracle = 202,
+        
+        /// <summary>
+        /// >> Broadcast
+        /// </summary>
+        Broadcast = 204,
     }
     
     /// <summary>
-    /// >> 287 - Variant[hydradx_runtime.RuntimeCall]
+    /// >> 73 - Variant[hydradx_runtime.RuntimeCall]
     /// </summary>
     public sealed class EnumRuntimeCall : BaseEnumRust<RuntimeCall>
     {
@@ -335,6 +365,10 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_multisig.pallet.EnumCall>(RuntimeCall.Multisig);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_uniques.pallet.EnumCall>(RuntimeCall.Uniques);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_state_trie_migration.pallet.EnumCall>(RuntimeCall.StateTrieMigration);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_conviction_voting.pallet.EnumCall>(RuntimeCall.ConvictionVoting);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_referenda.pallet.EnumCall>(RuntimeCall.Referenda);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_whitelist.pallet.EnumCall>(RuntimeCall.Whitelist);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_dispatcher.pallet.EnumCall>(RuntimeCall.Dispatcher);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_asset_registry.pallet.EnumCall>(RuntimeCall.AssetRegistry);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_claims.pallet.EnumCall>(RuntimeCall.Claims);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_genesis_history.pallet.EnumCall>(RuntimeCall.GenesisHistory);
@@ -354,6 +388,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_lbp.pallet.EnumCall>(RuntimeCall.LBP);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_xyk.pallet.EnumCall>(RuntimeCall.XYK);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_referrals.pallet.EnumCall>(RuntimeCall.Referrals);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_liquidation.pallet.EnumCall>(RuntimeCall.Liquidation);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.orml_tokens.module.EnumCall>(RuntimeCall.Tokens);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_currencies.module.EnumCall>(RuntimeCall.Currencies);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.orml_vesting.module.EnumCall>(RuntimeCall.Vesting);
@@ -375,6 +410,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_collator_selection.pallet.EnumCall>(RuntimeCall.CollatorSelection);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_session.pallet.EnumCall>(RuntimeCall.Session);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_ema_oracle.pallet.EnumCall>(RuntimeCall.EmaOracle);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_broadcast.pallet.EnumCall>(RuntimeCall.Broadcast);
         }
     }
 }

@@ -5,8 +5,9 @@
              x:Class="PlutoFramework.Components.Settings.SettingsPage"
              xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
              xmlns:password="clr-namespace:PlutoFramework.Components.Password"
+             xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
              Title="Settings"
-             BackgroundColor="Black">
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
         <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
@@ -30,15 +31,16 @@
 
                 </settings:GenericButton>
 
-                <settings:GenericButton Title="Show mnemonics">
+                <settings:GenericButton Title="Show mnemonics"
+                                        IsVisible="{Binding HasAccount}">
                     <settings:GenericButton.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnShowMnemonicsClicked" />
 
                     </settings:GenericButton.GestureRecognizers>
-
                 </settings:GenericButton>
 
-                <settings:GenericButton Title="Manage Kilt DID">
+                <settings:GenericButton Title="Manage Kilt DID"
+                                        IsVisible="{Binding HasAccount}">
                     <settings:GenericButton.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnManageKiltDidClicked" />
 
@@ -54,7 +56,8 @@
 
                 </settings:GenericButton>
 
-                <settings:GenericButton Title="Log out (Delete private key)">
+                <settings:GenericButton Title="Log out (Delete private key)"
+                                        IsVisible="{Binding HasAccount}">
                     <settings:GenericButton.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnLogOutClicked" />
 

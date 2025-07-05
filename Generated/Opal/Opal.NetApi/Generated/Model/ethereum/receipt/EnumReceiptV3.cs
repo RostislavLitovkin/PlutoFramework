@@ -38,7 +38,7 @@ namespace Opal.NetApi.Generated.Model.ethereum.receipt
     }
     
     /// <summary>
-    /// >> 649 - Variant[ethereum.receipt.ReceiptV3]
+    /// >> 730 - Variant[ethereum.receipt.ReceiptV3]
     /// </summary>
     public sealed class EnumReceiptV3 : BaseEnumRust<ReceiptV3>
     {

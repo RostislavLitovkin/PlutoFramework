@@ -34,7 +34,8 @@ namespace Hydration.NetApi.Generated.Model.pallet_dca.pallet
         /// The reservation currency will be the `amount_in` currency of the order.
         /// 
         /// Trades are executed as long as there is budget remaining
-        /// from the initial `total_amount` allocation.
+        /// from the initial `total_amount` allocation, unless `total_amount` is 0, then trades
+        /// are executed until schedule is terminated.
         /// 
         /// If a trade fails due to slippage limit or price stability errors, it will be retried.
         /// If the number of retries reaches the maximum allowed,
@@ -55,7 +56,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_dca.pallet
         /// >> terminate
         /// Terminates a DCA schedule and remove it completely from the chain.
         /// 
-        /// This can be called by both schedule owner or the configured `T::TechnicalOrigin`
+        /// This can be called by both schedule owner or the configured `T::TerminateOrigin`
         /// 
         /// Parameters:
         /// - `origin`: schedule owner
@@ -69,7 +70,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_dca.pallet
     }
     
     /// <summary>
-    /// >> 407 - Variant[pallet_dca.pallet.Call]
+    /// >> 286 - Variant[pallet_dca.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

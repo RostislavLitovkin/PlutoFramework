@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_message_queue
     
     
     /// <summary>
-    /// >> 343 - Composite[pallet_message_queue.Neighbours]
+    /// >> 347 - Composite[pallet_message_queue.Neighbours]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Neighbours : BaseType

@@ -103,7 +103,7 @@ namespace Opal.NetApi.Generated.Model.evm_core.error
     }
     
     /// <summary>
-    /// >> 377 - Variant[evm_core.error.ExitError]
+    /// >> 443 - Variant[evm_core.error.ExitError]
     /// </summary>
     public sealed class EnumExitError : BaseEnumRust<ExitError>
     {

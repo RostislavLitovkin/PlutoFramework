@@ -506,10 +506,21 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking.pallet.pallet
         /// be reset values from on-chain state.
         /// </summary>
         restore_ledger = 29,
+        
+        /// <summary>
+        /// >> withdraw_overstake
+        /// Adjusts the staking ledger by withdrawing any excess staked amount.
+        /// 
+        /// This function corrects cases where a user's recorded stake in the ledger
+        /// exceeds their actual staked funds. This situation can arise due to cases such as
+        /// external slashing by another pallet, leading to an inconsistency between the ledger
+        /// and the actual stake.
+        /// </summary>
+        withdraw_overstake = 32,
     }
     
     /// <summary>
-    /// >> 118 - Variant[pallet_staking.pallet.pallet.Call]
+    /// >> 120 - Variant[pallet_staking.pallet.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -550,6 +561,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking.pallet.pallet
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Call.update_payee);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1>(Call.deprecate_controller_batch);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128>, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2>>>(Call.restore_ledger);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Call.withdraw_overstake);
         }
     }
 }

@@ -48,7 +48,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_nft_fractionalization.pal
     }
     
     /// <summary>
-    /// >> 455 - Variant[pallet_nft_fractionalization.pallet.Error]
+    /// >> 470 - Variant[pallet_nft_fractionalization.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

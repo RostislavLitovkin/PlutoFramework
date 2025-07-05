@@ -24,67 +24,143 @@ namespace Opal.NetApi.Generated.Model.pallet_app_promotion.pallet
         
         /// <summary>
         /// >> set_admin_address
-        /// See [`Pallet::set_admin_address`].
+        /// Sets an address as the the admin.
+        /// 
+        /// # Permissions
+        /// 
+        /// * Sudo
+        /// 
+        /// # Arguments
+        /// 
+        /// * `admin`: account of the new admin.
         /// </summary>
         set_admin_address = 0,
         
         /// <summary>
         /// >> stake
-        /// See [`Pallet::stake`].
+        /// Stakes the amount of native tokens.
+        /// Sets `amount` to the locked state.
+        /// The maximum number of stakes for a staker is 10.
+        /// 
+        /// # Arguments
+        /// 
+        /// * `amount`: in native tokens.
         /// </summary>
         stake = 1,
         
         /// <summary>
         /// >> unstake_all
-        /// See [`Pallet::unstake_all`].
+        /// Unstakes all stakes.
+        /// After the end of `PendingInterval` this sum becomes completely
+        /// free for further use.
         /// </summary>
         unstake_all = 2,
         
         /// <summary>
         /// >> unstake_partial
-        /// See [`Pallet::unstake_partial`].
+        /// Unstakes the amount of balance for the staker.
+        /// After the end of `PendingInterval` this sum becomes completely
+        /// free for further use.
+        /// 
+        ///  # Arguments
+        /// 
+        /// * `staker`: staker account.
+        /// * `amount`: amount of unstaked funds.
         /// </summary>
         unstake_partial = 8,
         
         /// <summary>
         /// >> sponsor_collection
-        /// See [`Pallet::sponsor_collection`].
+        /// Sets the pallet to be the sponsor for the collection.
+        /// 
+        /// # Permissions
+        /// 
+        /// * Pallet admin
+        /// 
+        /// # Arguments
+        /// 
+        /// * `collection_id`: ID of the collection that will be sponsored by `pallet_id`
         /// </summary>
         sponsor_collection = 3,
         
         /// <summary>
         /// >> stop_sponsoring_collection
-        /// See [`Pallet::stop_sponsoring_collection`].
+        /// Removes the pallet as the sponsor for the collection.
+        /// Returns [`NoPermission`][`Error::NoPermission`]
+        /// if the pallet wasn't the sponsor.
+        /// 
+        /// # Permissions
+        /// 
+        /// * Pallet admin
+        /// 
+        /// # Arguments
+        /// 
+        /// * `collection_id`: ID of the collection that is sponsored by `pallet_id`
         /// </summary>
         stop_sponsoring_collection = 4,
         
         /// <summary>
         /// >> sponsor_contract
-        /// See [`Pallet::sponsor_contract`].
+        /// Sets the pallet to be the sponsor for the contract.
+        /// 
+        /// # Permissions
+        /// 
+        /// * Pallet admin
+        /// 
+        /// # Arguments
+        /// 
+        /// * `contract_id`: the contract address that will be sponsored by `pallet_id`
         /// </summary>
         sponsor_contract = 5,
         
         /// <summary>
         /// >> stop_sponsoring_contract
-        /// See [`Pallet::stop_sponsoring_contract`].
+        /// Removes the pallet as the sponsor for the contract.
+        /// Returns [`NoPermission`][`Error::NoPermission`]
+        /// if the pallet wasn't the sponsor.
+        /// 
+        /// # Permissions
+        /// 
+        /// * Pallet admin
+        /// 
+        /// # Arguments
+        /// 
+        /// * `contract_id`: the contract address that is sponsored by `pallet_id`
         /// </summary>
         stop_sponsoring_contract = 6,
         
         /// <summary>
         /// >> payout_stakers
-        /// See [`Pallet::payout_stakers`].
+        /// Recalculates interest for the specified number of stakers.
+        /// If all stakers are not recalculated, the next call of the extrinsic
+        /// will continue the recalculation, from those stakers for whom this
+        /// was not perform in last call.
+        /// 
+        /// # Permissions
+        /// 
+        /// * Pallet admin
+        /// 
+        /// # Arguments
+        /// 
+        /// * `stakers_number`: the number of stakers for which recalculation will be performed
         /// </summary>
         payout_stakers = 7,
         
         /// <summary>
-        /// >> force_unstake
-        /// See [`Pallet::force_unstake`].
+        /// >> resolve_skipped_blocks
+        /// Called for blocks that, for some reason, have not been unstacked
+        /// 
+        /// 
+        ///   # Arguments
+        /// 
+        /// * `origin`: Must be `Signed`.
+        /// * `pending_blocks`: Block numbers that will be processed.
         /// </summary>
-        force_unstake = 9,
+        resolve_skipped_blocks = 9,
     }
     
     /// <summary>
-    /// >> 328 - Variant[pallet_app_promotion.pallet.Call]
+    /// >> 389 - Variant[pallet_app_promotion.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -104,7 +180,7 @@ namespace Opal.NetApi.Generated.Model.pallet_app_promotion.pallet
 				AddTypeDecoder<Opal.NetApi.Generated.Model.primitive_types.H160>(Call.sponsor_contract);
 				AddTypeDecoder<Opal.NetApi.Generated.Model.primitive_types.H160>(Call.stop_sponsoring_contract);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U8>>(Call.payout_stakers);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U32>>(Call.force_unstake);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U32>>(Call.resolve_skipped_blocks);
         }
     }
 }

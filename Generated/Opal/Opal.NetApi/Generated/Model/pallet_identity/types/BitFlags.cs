@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_identity.types
     
     
     /// <summary>
-    /// >> 183 - Composite[pallet_identity.types.BitFlags]
+    /// >> 209 - Composite[pallet_identity.types.BitFlags]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BitFlags : BaseType

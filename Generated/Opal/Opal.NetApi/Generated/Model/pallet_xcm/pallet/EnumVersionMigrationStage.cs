@@ -43,7 +43,7 @@ namespace Opal.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 565 - Variant[pallet_xcm.pallet.VersionMigrationStage]
+    /// >> 642 - Variant[pallet_xcm.pallet.VersionMigrationStage]
     /// </summary>
     public sealed class EnumVersionMigrationStage : BaseEnumRust<VersionMigrationStage>
     {

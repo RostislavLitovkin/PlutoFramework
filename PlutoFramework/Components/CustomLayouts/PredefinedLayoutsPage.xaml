@@ -6,7 +6,7 @@
              xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
              x:Class="PlutoFramework.Components.CustomLayouts.PredefinedLayoutsPage"
              Title="PredefinedLayoutsPage"
-             BackgroundColor="Black">
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
 
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
         

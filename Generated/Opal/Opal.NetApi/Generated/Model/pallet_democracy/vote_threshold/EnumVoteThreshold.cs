@@ -38,7 +38,7 @@ namespace Opal.NetApi.Generated.Model.pallet_democracy.vote_threshold
     }
     
     /// <summary>
-    /// >> 69 - Variant[pallet_democracy.vote_threshold.VoteThreshold]
+    /// >> 79 - Variant[pallet_democracy.vote_threshold.VoteThreshold]
     /// </summary>
     public sealed class EnumVoteThreshold : BaseEnum<VoteThreshold>
     {

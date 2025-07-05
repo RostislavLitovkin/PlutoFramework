@@ -25,10 +25,20 @@ namespace Opal.NetApi.Generated.Model.xcm
         /// >> V3
         /// </summary>
         V3 = 3,
+        
+        /// <summary>
+        /// >> V4
+        /// </summary>
+        V4 = 4,
+        
+        /// <summary>
+        /// >> V5
+        /// </summary>
+        V5 = 5,
     }
     
     /// <summary>
-    /// >> 331 - Variant[xcm.VersionedAssetId]
+    /// >> 321 - Variant[xcm.VersionedAssetId]
     /// </summary>
     public sealed class EnumVersionedAssetId : BaseEnumRust<VersionedAssetId>
     {
@@ -39,6 +49,8 @@ namespace Opal.NetApi.Generated.Model.xcm
         public EnumVersionedAssetId()
         {
 				AddTypeDecoder<Opal.NetApi.Generated.Model.xcm.v3.multiasset.EnumAssetId>(VersionedAssetId.V3);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.staging_xcm.v4.asset.AssetId>(VersionedAssetId.V4);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.staging_xcm.v5.asset.AssetId>(VersionedAssetId.V5);
         }
     }
 }

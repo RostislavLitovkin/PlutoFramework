@@ -6,6 +6,18 @@
 
     <!-- custom styles are here -->
 
+    <x:Double x:Key="GAP">8</x:Double>
+    <x:Double x:Key="CARD-CORNER-RADIUS">15</x:Double>
+    <x:Double x:Key="THIN-CARD-CORNER-RADIUS">10</x:Double>
+    <CornerRadius x:Key="BUTTON-CARD-CORNER-RADIUS">15, 0, 0, 15</CornerRadius>
+
+    <Shadow x:Key="CARD-SHADOW"
+            Brush="Black"
+            Offset="0,2" 
+            Radius="20"
+            Opacity="0.1">
+    </Shadow>
+
     <Style x:Key="mnemonicLabel" TargetType="Label">
         <Setter Property="HorizontalOptions" Value="Center" />
         <Setter Property="VerticalOptions" Value="Center" />

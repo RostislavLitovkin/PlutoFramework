@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 211 - Composite[BTreeMapT3]
+    /// >> 215 - Composite[BTreeMapT3]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BTreeMapT3 : BaseType

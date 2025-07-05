@@ -1,10 +1,15 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using PlutoFramework.Components.Balance;
 using PlutoFramework.Model;
+using PlutoFramework.Model.Currency;
+using PlutoFramework.Model.Xcavate;
 using PlutoFramework.Types;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using UniqueryPlus.Nfts;
 using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.AssetPallet, System.Numerics.BigInteger);
 using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
+using XcavatePropertyKey = (PlutoFramework.Constants.EndpointEnum, uint);
 
 namespace PlutoFramework.Components.TransactionAnalyzer
 {
@@ -15,7 +20,16 @@ namespace PlutoFramework.Components.TransactionAnalyzer
         private ObservableCollection<AssetInfoExpanded> assets = new ObservableCollection<AssetInfoExpanded>();
 
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(NftsIsVisible))]
         private ObservableCollection<NftAssetWrapperExpanded> nfts = new ObservableCollection<NftAssetWrapperExpanded>();
+
+        public bool NftsIsVisible => Nfts.Count() > 0;
+
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(XcavatePropertiesIsVisible))]
+        private ObservableCollection<PropertyTokenOwnershipChangeInfo> xcavateProperties = new ObservableCollection<PropertyTokenOwnershipChangeInfo>();
+
+        public bool XcavatePropertiesIsVisible => XcavateProperties.Count() > 0;
 
         [ObservableProperty]
         private string loading = "Loading";
@@ -41,24 +55,24 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                 {
                     Amount = a.Amount switch
                     {
-                        > 0 => "+" + String.Format("{0:0.00}", a.Amount),
-                        _ => String.Format("{0:0.00}", a.Amount)
+                        > 0 => "+" + String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, a.Amount),
+                        _ => String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, a.Amount)
                     },
                     Symbol = a.Symbol,
                     UsdValue = a.UsdValue switch
                     {
-                        > 0 => "+" + String.Format("{0:0.00}", a.UsdValue) + " USD",
-                        _ => String.Format("{0:0.00}", a.UsdValue) + " USD",
+                        > 0 => $"+{a.UsdValue.ToCurrencyString()}",
+                        _ => $"{a.UsdValue.ToCurrencyString()}",
                     },
                     UsdColor = a.UsdValue switch
                     {
-                        > 0 => Colors.Green,
-                        < 0 => Colors.Red,
+                        > 0 => (Color)Application.Current.Resources["GAIN-TOKENS"],
+                        < 0 => (Color)Application.Current.Resources["LOSE-TOKENS"],
                         _ => Colors.Gray,
                     },
                     ChainIcon = Application.Current.UserAppTheme != AppTheme.Dark ? a.ChainIcon : a.DarkChainIcon,
-                    IsFrozen = false,
-                    IsReserved = false,
+                    IsFrozen =  a.Pallet == AssetPallet.NativeFrozen || a.Pallet == AssetPallet.AssetsFrozen || a.Pallet == AssetPallet.TokensFrozen,
+                    IsReserved = a.Pallet == AssetPallet.NativeReserved || a.Pallet == AssetPallet.AssetsReserved || a.Pallet == AssetPallet.TokensReserved,
                 });
 
             }
@@ -92,19 +106,19 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                         IsFrozen = false,
                         Amount = nft.AssetPrice.Amount switch
                         {
-                            > 0 => "+" + String.Format("{0:0.00}", nft.AssetPrice.Amount),
-                            _ => String.Format("{0:0.00}", nft.AssetPrice.Amount)
+                            > 0 => "+" + String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, nft.AssetPrice.Amount),
+                            _ => String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, nft.AssetPrice.Amount)
                         },
                         Symbol = nft.AssetPrice.Symbol,
                         UsdValue = nft.AssetPrice.UsdValue switch
                         {
-                            > 0 => "+" + String.Format("{0:0.00}", nft.AssetPrice.UsdValue) + " USD",
-                            _ => String.Format("{0:0.00}", nft.AssetPrice.UsdValue) + " USD",
+                            > 0 => $"+{nft.AssetPrice.UsdValue.ToCurrencyString()}",
+                            _ => $"{nft.AssetPrice.UsdValue.ToCurrencyString()}",
                         },
                         UsdColor = nft.Operation switch
                         {
-                            NftOperation.Received => Colors.Green,
-                            NftOperation.Sent => Colors.Red,
+                            NftOperation.Received => (Color)Application.Current.Resources["GAIN-TOKENS"],
+                            NftOperation.Sent => (Color)Application.Current.Resources["LOSE-TOKENS"],
                             _ => Colors.Gray,
                         },
                         ChainIcon = Application.Current.UserAppTheme != AppTheme.Dark ? nft.AssetPrice.ChainIcon : nft.AssetPrice.DarkChainIcon,
@@ -117,11 +131,37 @@ namespace PlutoFramework.Components.TransactionAnalyzer
             Nfts = tempNfts;
         }
 
+
+        public async Task UpdateXcavatePropertyChanges(Dictionary<string, Dictionary<XcavatePropertyKey, PropertyTokenOwnershipChangeInfo>> propertyChanges)
+        {
+            var tempProperties = new ObservableCollection<PropertyTokenOwnershipChangeInfo>();
+
+            var walletAddress = Model.KeysModel.GetSubstrateKey();
+
+            if (!propertyChanges.ContainsKey(walletAddress))
+            {
+                return;
+            }
+
+            foreach (var property in propertyChanges[walletAddress].Values)
+            {
+                tempProperties.Add(new PropertyTokenOwnershipChangeInfo
+                {
+                    NftBase = (await PlutoFramework.Components.XcavateProperty.XcavatePropertyModel.ToXcavateNftWrapperAsync((XcavatePaseoNftsPalletNft)property.NftBase, CancellationToken.None)).NftBase,
+                    Operation = property.Operation,
+                    Amount = property.Amount,
+                    Favourite = false // Does not matter
+                });
+            }
+
+            XcavateProperties = tempProperties;
+        }
         public void SetToDefault()
         {
             Loading = "Loading";
             Assets = new ObservableCollection<AssetInfoExpanded>();
             Nfts = new ObservableCollection<NftAssetWrapperExpanded>();
+            XcavateProperties = new();
         }
     }
 

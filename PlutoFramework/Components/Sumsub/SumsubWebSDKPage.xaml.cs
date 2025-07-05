@@ -1,4 +1,6 @@
+using PlutoFramework.Components.Xcavate;
 using PlutoFramework.Model.Sumsub;
+using PlutoFramework.View;
 using System.Web;
 
 namespace PlutoFramework.Components.Sumsub
@@ -18,6 +20,7 @@ namespace PlutoFramework.Components.Sumsub
 <html>
 
 <head>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'>
   <script src=""https://static.sumsub.com/idensic/static/sns-websdk-builder.js""></script>
 </head>
 
@@ -53,7 +56,12 @@ namespace PlutoFramework.Components.Sumsub
         })
         .on(""idCheck.onApplicantSubmitted"", (payload) => {
             console.log(""onApplicantSubmitted"", payload);
-            window.location.href = ""/someRandomPageDoesntMatter?operation=completed"";
+            
+            const temp = window.location.href;
+
+            window.location.href = ""https://google.com/?myoperation=completed"";
+
+            //window.location.href = temp + ""?myoperation=completed"";
         })
         .on(""idCheck.onError"", (error) => {
           console.log(""onError"", error);
@@ -69,6 +77,10 @@ namespace PlutoFramework.Components.Sumsub
       return Promise.resolve(""ahojky""); // get a new token from your backend
     }
 
+    function updateUrl() {
+        window.location.href = ""/someRandomPageDoesntMatter?myoperation=completed"";
+    }
+
     launchWebSdk(
         """ + accessToken + @""",
         """ + applicant.ApplicantIdentifiers.Email + @""",
@@ -80,19 +92,35 @@ namespace PlutoFramework.Components.Sumsub
 </html>
                 "
             };
+
+
+            Console.WriteLine("Access token: " + accessToken);
+
         }
 
-        private async void OnNavigated(object sender, WebNavigatedEventArgs e)
+        private bool navigated = false;
+        private async void OnNavigating(object sender, WebNavigatingEventArgs e)
         {
             Uri uri = new Uri(e.Url);
             var queryParams = HttpUtility.ParseQueryString(uri.Query);
 
             // Check if the 'registrationId' query parameter exists
-            string operation = queryParams.Get("operation");
+            string operation = queryParams.Get("myoperation");
+
+            Console.WriteLine("myoperation: " + operation);
 
             if (operation == "completed")
             {
-                await Navigation.PushAsync(new VerificationCompletedPage());
+                if (navigated)
+                {
+                    return;
+                }
+                //continueButton.IsVisible = true;
+                //await Navigation.PushAsync(new VerificationCompletedPage());
+
+                navigated = true;
+
+                Application.Current.MainPage = new XcavateAppShell();
             }
         }
     }

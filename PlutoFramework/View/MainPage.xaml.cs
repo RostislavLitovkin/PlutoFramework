@@ -6,7 +6,6 @@ using PlutoFramework.Components.TransferView;
 using PlutoFramework.Components.UniversalScannerView;
 using PlutoFramework.Components.Vault;
 using PlutoFramework.Model;
-using PlutoFramework.ViewModel;
 
 namespace PlutoFramework.View;
 
@@ -46,9 +45,7 @@ public partial class MainPage : ContentPage
         List<IView> views = [];
         try
         {
-            views = Model.CustomLayoutModel.ParsePlutoLayout(Preferences.Get(
-                "PlutoLayout",
-                Model.CustomLayoutModel.DEFAULT_PLUTO_LAYOUT));
+            views = Model.CustomLayoutModel.ParsePlutoLayout(Model.CustomLayoutModel.DEFAULT_PLUTO_LAYOUT);
         }
         catch
         {
@@ -62,12 +59,24 @@ public partial class MainPage : ContentPage
         }
 
         // Load
-        var multiNetworkSelectViewModel = DependencyService.Get<MultiNetworkSelectViewModel>();
-        multiNetworkSelectViewModel.SetupDefault();
+        try
+        {
+            var multiNetworkSelectViewModel = DependencyService.Get<MultiNetworkSelectViewModel>();
+            multiNetworkSelectViewModel.SetupDefault();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+        }
     }
 
     async void OnQRClicked(System.Object sender, System.EventArgs e)
     {
+        if(! AccountModel.CheckRequirements())
+        {
+            return;
+        }
+
         await Navigation.PushAsync(new UniversalScannerPage
         {
             OnScannedMethod = OnScanned
@@ -79,7 +88,7 @@ public partial class MainPage : ContentPage
         await Navigation.PushAsync(new SettingsPage());
     }
 
-    async void OnScanned(System.Object sender, ZXing.Net.Maui.BarcodeDetectionEventArgs e)
+    public static void OnScanned(System.Object sender, ZXing.Net.Maui.BarcodeDetectionEventArgs e)
     {
 #pragma warning disable VSTHRD101 // Avoid unsupported async delegates
         MainThread.BeginInvokeOnMainThread(async () =>
@@ -110,18 +119,20 @@ public partial class MainPage : ContentPage
                 {
                     var viewModel = DependencyService.Get<TransferViewModel>();
 
+                    viewModel.GetFeeAsync();
+
                     viewModel.IsVisible = true;
 
-                    if (scannedValue.Substring(10).IndexOf(":") != -1)
+                    var scannedAddress = e.Results[e.Results.Length - 1].Value;
+
+                    if (scannedAddress.Substring(10).IndexOf(":") != -1)
                     {
-                        viewModel.Address = scannedValue.Substring(10, scannedValue.Substring(10).IndexOf(":"));
+                        viewModel.Address = scannedAddress.Substring(10, scannedAddress.Substring(10).IndexOf(":"));
                     }
                     else
                     {
-                        viewModel.Address = scannedValue.Substring(10);
+                        viewModel.Address = scannedAddress.Substring(10);
                     }
-
-                    viewModel.GetFeeAsync();
                 }
                 else if (Substrate.NetApi.Utils.Bytes2HexString(e.Results[0].Raw).IndexOf("530102") != -1)
                 {
@@ -139,7 +150,7 @@ public partial class MainPage : ContentPage
                     messagePopup.IsVisible = true;
                 }
 
-                await Navigation.PopAsync();
+                await Application.Current.MainPage.Navigation.PopAsync();
             }
             catch (Exception ex)
             {

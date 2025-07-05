@@ -1303,7 +1303,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.sp_runtime.generic.era
     }
     
     /// <summary>
-    /// >> 468 - Variant[sp_runtime.generic.era.Era]
+    /// >> 483 - Variant[sp_runtime.generic.era.Era]
     /// </summary>
     public sealed class EnumEra : BaseEnumRust<Era>
     {

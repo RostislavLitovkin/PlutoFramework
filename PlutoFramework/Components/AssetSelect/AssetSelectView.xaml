@@ -7,15 +7,16 @@
              AbsoluteLayout.LayoutBounds=".5, .5, 1, 1"
              AbsoluteLayout.LayoutFlags="All"
              IsVisible="{Binding IsVisible}">
-    <card:BottomPopupCard Title="Select Asset">
+    <card:BottomPopupCard Title="Select Asset"
+                          IsShown="{Binding IsVisible}">
         <card:BottomPopupCard.View>
 
-            
-                <ScrollView AbsoluteLayout.LayoutBounds=".5, .5, 1, 1"
+
+            <ScrollView AbsoluteLayout.LayoutBounds=".5, .5, 1, 1"
                                        AbsoluteLayout.LayoutFlags="All"
                                        Orientation="Vertical">
 
-                    <VerticalStackLayout 
+                <VerticalStackLayout 
                                        BindableLayout.ItemsSource="{Binding Assets}"
                                        Padding="0, 0, 0, 20"
                                        Spacing="10">
@@ -30,14 +31,16 @@
                                                            Endpoint="{Binding Endpoint}"
                                                            Pallet="{Binding Pallet}"
                                                            AssetId="{Binding AssetId}"
-                                                           Decimals="{Binding Decimals}" />
+                                                           Decimals="{Binding Decimals}">
+                                <assetselect:AssetSelectorView.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnClicked" />
+                                </assetselect:AssetSelectorView.GestureRecognizers>
+                            </assetselect:AssetSelectorView>
                         </DataTemplate>
 
                     </BindableLayout.ItemTemplate>
                 </VerticalStackLayout>
-                </ScrollView>
-                
-
+            </ScrollView>
         </card:BottomPopupCard.View>
 
     </card:BottomPopupCard>

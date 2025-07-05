@@ -211,10 +211,17 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking.pallet.pallet
         /// Operation not allowed for virtual stakers.
         /// </summary>
         VirtualStakerNotAllowed = 30,
+        
+        /// <summary>
+        /// >> Restricted
+        /// Account is restricted from participation in staking. This may happen if the account is
+        /// staking in another way already, such as via pool.
+        /// </summary>
+        Restricted = 31,
     }
     
     /// <summary>
-    /// >> 588 - Variant[pallet_staking.pallet.pallet.Error]
+    /// >> 578 - Variant[pallet_staking.pallet.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

@@ -33,7 +33,7 @@ namespace Mythos.NetApi.Generated.Model.xcm.v3.multiasset
     }
     
     /// <summary>
-    /// >> 291 - Variant[xcm.v3.multiasset.WildFungibility]
+    /// >> 318 - Variant[xcm.v3.multiasset.WildFungibility]
     /// </summary>
     public sealed class EnumWildFungibility : BaseEnum<WildFungibility>
     {

@@ -33,7 +33,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_nfts.types
     }
     
     /// <summary>
-    /// >> 143 - Variant[pallet_nfts.types.PriceDirection]
+    /// >> 145 - Variant[pallet_nfts.types.PriceDirection]
     /// </summary>
     public sealed class EnumPriceDirection : BaseEnum<PriceDirection>
     {

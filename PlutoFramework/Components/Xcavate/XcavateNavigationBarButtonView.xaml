@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Xcavate.XcavateNavigationBarButtonView"
+             HorizontalOptions="Fill"
+             HeightRequest="90">
+    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5,0.5, 1, 90"
+                    AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
+
+        <Border BackgroundColor="#1757A0C5"
+                 AbsoluteLayout.LayoutBounds="0.5, 15, 60, 40"
+                StrokeThickness="0"
+                 AbsoluteLayout.LayoutFlags="XProportional"
+                x:Name="selectedHighlight"
+                IsVisible="False">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="25"/>
+            </Border.StrokeShape>
+
+        </Border>
+        <Image x:Name="iconUnselected"
+                AbsoluteLayout.LayoutBounds="0.5, 20, 30, 30"
+                AbsoluteLayout.LayoutFlags="XProportional" />
+        <Image x:Name="iconSelected"
+               IsVisible="False"
+                AbsoluteLayout.LayoutBounds="0.5, 20, 30, 30"
+                AbsoluteLayout.LayoutFlags="XProportional" />
+        <Label 
+            x:Name="titleLabel"
+            AbsoluteLayout.LayoutBounds="0.5, 1, 1, 40"
+            AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            TextColor="#3B4F74"/>
+        <AbsoluteLayout.GestureRecognizers>
+            <TapGestureRecognizer x:Name="tapGestureRecognizer" />
+        </AbsoluteLayout.GestureRecognizers>
+    </AbsoluteLayout>
+</ContentView>

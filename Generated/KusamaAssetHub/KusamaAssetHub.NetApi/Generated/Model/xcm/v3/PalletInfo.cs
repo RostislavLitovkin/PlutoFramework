@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.xcm.v3
     
     
     /// <summary>
-    /// >> 288 - Composite[xcm.v3.PalletInfo]
+    /// >> 292 - Composite[xcm.v3.PalletInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PalletInfo : BaseType

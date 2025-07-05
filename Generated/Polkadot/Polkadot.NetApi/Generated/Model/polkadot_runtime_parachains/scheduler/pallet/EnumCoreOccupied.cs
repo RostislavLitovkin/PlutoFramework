@@ -33,7 +33,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.scheduler.
     }
     
     /// <summary>
-    /// >> 725 - Variant[polkadot_runtime_parachains.scheduler.pallet.CoreOccupied]
+    /// >> 718 - Variant[polkadot_runtime_parachains.scheduler.pallet.CoreOccupied]
     /// </summary>
     public sealed class EnumCoreOccupied : BaseEnumRust<CoreOccupied>
     {

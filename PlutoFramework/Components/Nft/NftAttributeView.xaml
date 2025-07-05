@@ -29,11 +29,18 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <Label x:Name="attributeNameLabel"
+            <Label 
                    HorizontalTextAlignment="Start"
                    VerticalTextAlignment="Center" 
                    FontAttributes="Bold"
-                   Grid.Column="0"/>
+                   Grid.Column="0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span x:Name="attributeNameLabel"
+                              FontAttributes="Bold" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
             <Label x:Name="attributeValueLabel"
                    HorizontalTextAlignment="End"
                    VerticalTextAlignment="Center"

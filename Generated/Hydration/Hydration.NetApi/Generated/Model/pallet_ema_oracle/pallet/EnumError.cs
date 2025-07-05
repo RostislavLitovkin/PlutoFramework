@@ -36,10 +36,22 @@ namespace Hydration.NetApi.Generated.Model.pallet_ema_oracle.pallet
         /// >> OracleNotFound
         /// </summary>
         OracleNotFound = 2,
+        
+        /// <summary>
+        /// >> AssetNotFound
+        /// Asset not found
+        /// </summary>
+        AssetNotFound = 3,
+        
+        /// <summary>
+        /// >> PriceOutsideAllowedRange
+        /// The new price is outside the max allowed range
+        /// </summary>
+        PriceOutsideAllowedRange = 4,
     }
     
     /// <summary>
-    /// >> 766 - Variant[pallet_ema_oracle.pallet.Error]
+    /// >> 838 - Variant[pallet_ema_oracle.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

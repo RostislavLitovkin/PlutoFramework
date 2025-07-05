@@ -38,7 +38,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.frame_system
     }
     
     /// <summary>
-    /// >> 153 - Variant[frame_system.Phase]
+    /// >> 158 - Variant[frame_system.Phase]
     /// </summary>
     public sealed class EnumPhase : BaseEnumRust<Phase>
     {

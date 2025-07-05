@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec
     
     
     /// <summary>
-    /// >> 103 - Composite[bounded_collections.bounded_vec.BoundedVecT4]
+    /// >> 114 - Composite[bounded_collections.bounded_vec.BoundedVecT4]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedVecT4 : BaseType

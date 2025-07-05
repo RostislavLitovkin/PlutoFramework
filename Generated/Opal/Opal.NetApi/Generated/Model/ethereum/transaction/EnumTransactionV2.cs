@@ -38,7 +38,7 @@ namespace Opal.NetApi.Generated.Model.ethereum.transaction
     }
     
     /// <summary>
-    /// >> 340 - Variant[ethereum.transaction.TransactionV2]
+    /// >> 400 - Variant[ethereum.transaction.TransactionV2]
     /// </summary>
     public sealed class EnumTransactionV2 : BaseEnumRust<TransactionV2>
     {
@@ -48,9 +48,9 @@ namespace Opal.NetApi.Generated.Model.ethereum.transaction
         /// </summary>
         public EnumTransactionV2()
         {
-				AddTypeDecoder<Opal.NetApi.Generated.Model.ethereum.transaction.LegacyTransaction>(TransactionV2.Legacy);
-				AddTypeDecoder<Opal.NetApi.Generated.Model.ethereum.transaction.EIP2930Transaction>(TransactionV2.EIP2930);
-				AddTypeDecoder<Opal.NetApi.Generated.Model.ethereum.transaction.EIP1559Transaction>(TransactionV2.EIP1559);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.ethereum.transaction.legacy.LegacyTransaction>(TransactionV2.Legacy);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.ethereum.transaction.eip2930.EIP2930Transaction>(TransactionV2.EIP2930);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.ethereum.transaction.eip1559.EIP1559Transaction>(TransactionV2.EIP1559);
         }
     }
 }

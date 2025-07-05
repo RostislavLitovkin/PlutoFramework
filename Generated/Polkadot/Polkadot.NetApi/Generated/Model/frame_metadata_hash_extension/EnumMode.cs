@@ -33,7 +33,7 @@ namespace Polkadot.NetApi.Generated.Model.frame_metadata_hash_extension
     }
     
     /// <summary>
-    /// >> 855 - Variant[frame_metadata_hash_extension.Mode]
+    /// >> 849 - Variant[frame_metadata_hash_extension.Mode]
     /// </summary>
     public sealed class EnumMode : BaseEnum<Mode>
     {

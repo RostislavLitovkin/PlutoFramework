@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.ethereum_types.hash
     
     
     /// <summary>
-    /// >> 653 - Composite[ethereum_types.hash.H64]
+    /// >> 734 - Composite[ethereum_types.hash.H64]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class H64 : BaseType

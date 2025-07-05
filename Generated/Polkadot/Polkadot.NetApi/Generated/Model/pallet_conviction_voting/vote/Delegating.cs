@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_conviction_voting.vote
     
     
     /// <summary>
-    /// >> 618 - Composite[pallet_conviction_voting.vote.Delegating]
+    /// >> 608 - Composite[pallet_conviction_voting.vote.Delegating]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Delegating : BaseType

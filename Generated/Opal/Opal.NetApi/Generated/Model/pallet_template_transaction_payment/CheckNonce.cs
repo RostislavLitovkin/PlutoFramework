@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_template_transaction_payment
     
     
     /// <summary>
-    /// >> 685 - Composite[pallet_template_transaction_payment.CheckNonce]
+    /// >> 763 - Composite[pallet_template_transaction_payment.CheckNonce]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckNonce : BaseType

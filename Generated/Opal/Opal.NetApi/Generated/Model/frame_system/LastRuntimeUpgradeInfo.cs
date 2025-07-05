@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.frame_system
     
     
     /// <summary>
-    /// >> 390 - Composite[frame_system.LastRuntimeUpgradeInfo]
+    /// >> 456 - Composite[frame_system.LastRuntimeUpgradeInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class LastRuntimeUpgradeInfo : BaseType
@@ -31,7 +31,7 @@ namespace Opal.NetApi.Generated.Model.frame_system
         /// <summary>
         /// >> spec_name
         /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.Str SpecName { get; set; }
+        public Opal.NetApi.Generated.Types.Base.CowT1 SpecName { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -54,7 +54,7 @@ namespace Opal.NetApi.Generated.Model.frame_system
             var start = p;
             SpecVersion = new Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>();
             SpecVersion.Decode(byteArray, ref p);
-            SpecName = new Substrate.NetApi.Model.Types.Primitive.Str();
+            SpecName = new Opal.NetApi.Generated.Types.Base.CowT1();
             SpecName.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

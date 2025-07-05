@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
     
     
     /// <summary>
-    /// >> 606 - Composite[up_data_structs.TokenData]
+    /// >> 687 - Composite[up_data_structs.TokenData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class TokenData : BaseType

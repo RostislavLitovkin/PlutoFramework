@@ -213,7 +213,7 @@ namespace Opal.NetApi.Generated.Model.pallet_identity.types
     }
     
     /// <summary>
-    /// >> 150 - Variant[pallet_identity.types.Data]
+    /// >> 176 - Variant[pallet_identity.types.Data]
     /// </summary>
     public sealed class EnumData : BaseEnumRust<Data>
     {

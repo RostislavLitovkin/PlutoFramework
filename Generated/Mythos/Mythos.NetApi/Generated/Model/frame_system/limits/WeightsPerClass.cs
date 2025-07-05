@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.frame_system.limits
     
     
     /// <summary>
-    /// >> 166 - Composite[frame_system.limits.WeightsPerClass]
+    /// >> 191 - Composite[frame_system.limits.WeightsPerClass]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class WeightsPerClass : BaseType

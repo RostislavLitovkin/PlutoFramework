@@ -1,5 +1,11 @@
+using PlutoFramework.Components.Loading;
 using PlutoFramework.Constants;
+using PlutoFramework.Model;
+using PlutoFramework.Model.Currency;
+using PlutoFramework.Model.SQLite;
+using PlutoFramework.Model.Xcavate;
 using UniqueryPlus.Nfts;
+using PropertyModel = PlutoFramework.Model.Xcavate.XcavatePropertyModel;
 
 namespace PlutoFramework.Components.XcavateProperty;
 
@@ -12,14 +18,13 @@ public partial class PropertyThumbnailView : ContentView
         {
             var control = (PropertyThumbnailView)bindable;
 
-            if (newValue is not XcavatePaseoNftsPalletNft)
+            if (newValue is not INftXcavateBase)
             {
                 return;
             }
 
+            var nftBase = (INftXcavateBase)newValue;
 
-            var nftBase = (XcavatePaseoNftsPalletNft)newValue;
-            
             if (nftBase.XcavateMetadata is null)
             {
                 return;
@@ -27,11 +32,25 @@ public partial class PropertyThumbnailView : ContentView
 
             control.propertyNameLabel.Text = nftBase.XcavateMetadata.PropertyName;
 
-            control.apyLabel.Text = XcavatePropertyModel.GetAPY(nftBase.XcavateMetadata.EstimatedRentalIncome, nftBase.XcavateMetadata.PropertyPrice);
+            control.apyLabel.Text = PropertyModel.GetAPY(nftBase.XcavateMetadata.EstimatedRentalIncome, nftBase.XcavateMetadata.PropertyPrice);
 
-            control.tokensLabel.Text = nftBase.NftMarketplaceDetails?.Listed?.ToString() ?? "-";
+            if (control.TokensOwned == 0)
+            {
+                if (nftBase is INftXcavateNftMarketplace)
+                {
+                    control.tokensLabel.Text = ((INftXcavateNftMarketplace)nftBase).NftMarketplaceDetails?.Listed?.ToString() ?? "-";
+                }
+                else
+                {
+                    control.tokensLabel.Text = "-";
+                }
+            }
+            else
+            {
+                control.tokensLabel.Text = $"{control.TokensOwned} / {nftBase.XcavateMetadata.NumberOfTokens}";
+            }
 
-            control.priceLabel.Text = $"£{nftBase.XcavateMetadata.PropertyPrice}";
+            control.priceLabelText.Text = ((double)nftBase.XcavateMetadata.PropertyPrice).ToCurrencyString();
 
             control.locationView.LocationName = nftBase.XcavateMetadata.LocationName;
 
@@ -49,8 +68,6 @@ public partial class PropertyThumbnailView : ContentView
                     _ => nftBase.XcavateMetadata?.Images[0]
                 },
             };
-
-            Console.WriteLine("Done loading Xcavate property");
         });
 
     public static readonly BindableProperty FavouriteProperty = BindableProperty.Create(
@@ -63,13 +80,72 @@ public partial class PropertyThumbnailView : ContentView
             control.filledFavouriteIcon.IsVisible = (bool)newValue;
         });
 
+    public static readonly BindableProperty TokensOwnedProperty = BindableProperty.Create(
+        nameof(TokensOwned), typeof(uint), typeof(PropertyThumbnailView),
+        defaultBindingMode: BindingMode.TwoWay,
+        propertyChanging: (bindable, oldValue, newValue) =>
+        {
+            var control = (PropertyThumbnailView)bindable;
+
+            control.tokensTitleLabel.Text = "Tokens owned";
+
+            var tokensOwned = (uint)newValue;
+
+            if (control.NftBase is not null && ((XcavatePaseoNftsPalletNft)control.NftBase)?.XcavateMetadata is not null)
+            {
+                control.tokensLabel.Text = $"{tokensOwned} / {((XcavatePaseoNftsPalletNft)control.NftBase).XcavateMetadata?.NumberOfTokens}";
+            }
+            else
+            {
+                control.tokensLabel.Text = $"{tokensOwned}";
+            }
+        });
+
     public static readonly BindableProperty EndpointProperty = BindableProperty.Create(
         nameof(Endpoint), typeof(Endpoint), typeof(PropertyThumbnailView),
         defaultBindingMode: BindingMode.TwoWay,
         propertyChanging: (bindable, oldValue, newValue) =>
         {
-            var control = (PropertyThumbnailView)bindable;
         });
+
+    public static readonly BindableProperty RegionProperty = BindableProperty.Create(
+        nameof(Region), typeof(XcavateRegion), typeof(PropertyThumbnailView),
+        defaultValue: null,
+        defaultBindingMode: BindingMode.TwoWay);
+
+    public static readonly BindableProperty ShowHasExpiredProperty = BindableProperty.Create(
+        nameof(ShowHasExpired), typeof(bool), typeof(PropertyThumbnailView),
+        defaultValue: false,
+        defaultBindingMode: BindingMode.TwoWay,
+        propertyChanging: (bindable, oldValue, newValue) =>
+        {
+            var control = (PropertyThumbnailView)bindable;
+            var showHasExpired = (bool)newValue;
+
+            if (showHasExpired && control.ListingHasExpired)
+            {
+                Console.WriteLine("(1) Region has expired: " + control.ListingHasExpired);
+                control.expiredLabel.IsVisible = control.ListingHasExpired;
+            }
+        });
+
+    public static readonly BindableProperty ListingHasExpiredProperty = BindableProperty.Create(
+        nameof(ListingHasExpired), typeof(bool), typeof(PropertyThumbnailView),
+        defaultValue: false,
+        defaultBindingMode: BindingMode.TwoWay,
+        propertyChanging: (bindable, oldValue, newValue) =>
+        {
+            var control = (PropertyThumbnailView)bindable;
+            var istingHasExpired = (bool)newValue;
+
+
+            if (control.ShowHasExpired)
+            {
+                Console.WriteLine("(2) Region has expired: " + istingHasExpired);
+                control.expiredLabel.IsVisible = istingHasExpired;
+            }
+        });
+
     public PropertyThumbnailView()
     {
         InitializeComponent();
@@ -78,6 +154,12 @@ public partial class PropertyThumbnailView : ContentView
     {
         get => (INftBase)GetValue(NftBaseProperty);
         set => SetValue(NftBaseProperty, value);
+    }
+
+    public uint TokensOwned
+    {
+        get => (uint)GetValue(TokensOwnedProperty);
+        set => SetValue(TokensOwnedProperty, value);
     }
 
     public bool Favourite
@@ -94,19 +176,52 @@ public partial class PropertyThumbnailView : ContentView
         set => SetValue(EndpointProperty, value);
     }
 
+    public XcavateRegion Region
+    {
+        get => (XcavateRegion)GetValue(RegionProperty);
+        set => SetValue(RegionProperty, value);
+    }
+
+    public bool ShowHasExpired
+    {
+        get => (bool)GetValue(ShowHasExpiredProperty);
+        set => SetValue(ShowHasExpiredProperty, value);
+    }
+
+    public bool ListingHasExpired
+    {
+        get => (bool)GetValue(ListingHasExpiredProperty);
+        set => SetValue(ListingHasExpiredProperty, value);
+    }
     void OnFavouriteClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
         Favourite = !Favourite;
-        /*Task save = NftDatabase.SaveItemAsync(new NftWrapper
+
+        Task save = XcavatePropertyDatabase.SavePropertyAsync(new NftWrapper
         {
             Endpoint = Endpoint,
             NftBase = NftBase,
             Favourite = Favourite
-        });*/
+        });
+
+        UpdateFavouritePropertiesModel.UpdateFavourite(NftBase as INftXcavateBase, Favourite);
     }
 
     async void OnMoreClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
-        await XcavatePropertyModel.NavigateToPropertyDetailPageAsync((XcavatePaseoNftsPalletNft)NftBase, CancellationToken.None);
+        var loadingViewModel = DependencyService.Get<FullPageLoadingViewModel>();
+
+        loadingViewModel.IsVisible = true;
+
+        await XcavatePropertyModel.NavigateToPropertyDetailPageAsync(new XcavateNftWrapper
+        {
+            NftBase = NftBase,
+            Endpoint = Endpoint,
+            Favourite = Favourite,
+            ListingHasExpired = ListingHasExpired,
+            Region = Region,
+        }, CancellationToken.None);
+
+        loadingViewModel.IsVisible = false;
     }
 }

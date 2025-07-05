@@ -38,7 +38,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_state_trie_migration.pallet
     }
     
     /// <summary>
-    /// >> 352 - Variant[pallet_state_trie_migration.pallet.Progress]
+    /// >> 183 - Variant[pallet_state_trie_migration.pallet.Progress]
     /// </summary>
     public sealed class EnumProgress : BaseEnumRust<Progress>
     {
@@ -49,7 +49,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_state_trie_migration.pallet
         public EnumProgress()
         {
 				AddTypeDecoder<BaseVoid>(Progress.ToStart);
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17>(Progress.LastKey);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6>(Progress.LastKey);
 				AddTypeDecoder<BaseVoid>(Progress.Complete);
         }
     }

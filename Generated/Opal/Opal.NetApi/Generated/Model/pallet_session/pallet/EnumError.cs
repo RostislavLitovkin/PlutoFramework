@@ -54,7 +54,7 @@ namespace Opal.NetApi.Generated.Model.pallet_session.pallet
     }
     
     /// <summary>
-    /// >> 437 - Variant[pallet_session.pallet.Error]
+    /// >> 502 - Variant[pallet_session.pallet.Error]
     /// Error for the session pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

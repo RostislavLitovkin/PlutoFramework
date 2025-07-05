@@ -47,7 +47,7 @@ namespace PlutoFramework.Model.HydrationModel
         /// <returns></returns>
         public static async Task<OmnipoolLiquidityInfo> GetOmnipoolLiquidityAtPositionAsync(SubstrateClientExt client, U128 positionId, CancellationToken token)
         {
-            Position position = await client.OmnipoolStorage.Positions(positionId, null, token);
+            /*Position position = await client.OmnipoolStorage.Positions(positionId, null, token);
 
             U32 assetId = position.AssetId;
 
@@ -119,7 +119,9 @@ namespace PlutoFramework.Model.HydrationModel
                 AssetId = position.AssetId.Value,
                 Symbol = Model.ToStringModel.VecU8ToString(assetMetadata.Symbol.Value.Value),
                 InitialAmount = initialLiquidity,
-            };
+            };*/
+
+            return null;
         }
 
         /// <summary>

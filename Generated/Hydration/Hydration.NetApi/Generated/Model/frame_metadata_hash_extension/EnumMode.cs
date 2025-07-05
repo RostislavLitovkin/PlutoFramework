@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Model.frame_metadata_hash_extension
     }
     
     /// <summary>
-    /// >> 780 - Variant[frame_metadata_hash_extension.Mode]
+    /// >> 854 - Variant[frame_metadata_hash_extension.Mode]
     /// </summary>
     public sealed class EnumMode : BaseEnum<Mode>
     {

@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.frame_support.traits.tokens.misc
     
     
     /// <summary>
-    /// >> 227 - Composite[frame_support.traits.tokens.misc.IdAmountT1]
+    /// >> 231 - Composite[frame_support.traits.tokens.misc.IdAmountT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class IdAmountT1 : BaseType

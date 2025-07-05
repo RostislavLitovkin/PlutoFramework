@@ -45,7 +45,7 @@ namespace Opal.NetApi.Generated.Model.cumulus_pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 366 - Variant[cumulus_pallet_xcm.pallet.Event]
+    /// >> 428 - Variant[cumulus_pallet_xcm.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -58,7 +58,7 @@ namespace Opal.NetApi.Generated.Model.cumulus_pallet_xcm.pallet
         {
 				AddTypeDecoder<Opal.NetApi.Generated.Types.Base.Arr32U8>(Event.InvalidFormat);
 				AddTypeDecoder<Opal.NetApi.Generated.Types.Base.Arr32U8>(Event.UnsupportedVersion);
-				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Types.Base.Arr32U8, Opal.NetApi.Generated.Model.xcm.v3.traits.EnumOutcome>>(Event.ExecutedDownward);
+				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Types.Base.Arr32U8, Opal.NetApi.Generated.Model.staging_xcm.v5.traits.EnumOutcome>>(Event.ExecutedDownward);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.cumulus_pallet_xcmp_queue
     
     
     /// <summary>
-    /// >> 406 - Composite[cumulus_pallet_xcmp_queue.QueueConfigData]
+    /// >> 504 - Composite[cumulus_pallet_xcmp_queue.QueueConfigData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class QueueConfigData : BaseType

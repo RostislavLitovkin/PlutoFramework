@@ -36,38 +36,8 @@ namespace Hydration.NetApi.Generated.Storage
         public RouterStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Router", "SkipEd"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Hydration.NetApi.Generated.Model.pallet_route_executor.types.EnumSkipEd)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Router", "Routes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.hydradx_traits.router.AssetPair), typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7)));
-        }
-        
-        /// <summary>
-        /// >> SkipEdParams
-        /// Flag to indicate when to skip ED handling
-        /// </summary>
-        public static string SkipEdParams()
-        {
-            return RequestGenerator.GetStorage("Router", "SkipEd", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
-        }
-        
-        /// <summary>
-        /// >> SkipEdDefault
-        /// Default value as hex string
-        /// </summary>
-        public static string SkipEdDefault()
-        {
-            return "0x00";
-        }
-        
-        /// <summary>
-        /// >> SkipEd
-        /// Flag to indicate when to skip ED handling
-        /// </summary>
-        public async Task<Hydration.NetApi.Generated.Model.pallet_route_executor.types.EnumSkipEd> SkipEd(string blockhash, CancellationToken token)
-        {
-            string parameters = RouterStorage.SkipEdParams();
-            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.pallet_route_executor.types.EnumSkipEd>(parameters, blockhash, token);
-            return result;
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.hydradx_traits.router.AssetPair), typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11)));
         }
         
         /// <summary>
@@ -94,10 +64,10 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> Routes
         ///  Storing routes for asset pairs
         /// </summary>
-        public async Task<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7> Routes(Hydration.NetApi.Generated.Model.hydradx_traits.router.AssetPair key, string blockhash, CancellationToken token)
+        public async Task<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11> Routes(Hydration.NetApi.Generated.Model.hydradx_traits.router.AssetPair key, string blockhash, CancellationToken token)
         {
             string parameters = RouterStorage.RoutesParams(key);
-            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>(parameters, blockhash, token);
             return result;
         }
     }
@@ -112,7 +82,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> sell
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Sell(Substrate.NetApi.Model.Types.Primitive.U32 asset_in, Substrate.NetApi.Model.Types.Primitive.U32 asset_out, Substrate.NetApi.Model.Types.Primitive.U128 amount_in, Substrate.NetApi.Model.Types.Primitive.U128 min_amount_out, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.hydradx_traits.router.Trade> route)
+        public static Method Sell(Substrate.NetApi.Model.Types.Primitive.U32 asset_in, Substrate.NetApi.Model.Types.Primitive.U32 asset_out, Substrate.NetApi.Model.Types.Primitive.U128 amount_in, Substrate.NetApi.Model.Types.Primitive.U128 min_amount_out, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11 route)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset_in.Encode());
@@ -127,7 +97,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> buy
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Buy(Substrate.NetApi.Model.Types.Primitive.U32 asset_in, Substrate.NetApi.Model.Types.Primitive.U32 asset_out, Substrate.NetApi.Model.Types.Primitive.U128 amount_out, Substrate.NetApi.Model.Types.Primitive.U128 max_amount_in, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.hydradx_traits.router.Trade> route)
+        public static Method Buy(Substrate.NetApi.Model.Types.Primitive.U32 asset_in, Substrate.NetApi.Model.Types.Primitive.U32 asset_out, Substrate.NetApi.Model.Types.Primitive.U128 amount_out, Substrate.NetApi.Model.Types.Primitive.U128 max_amount_in, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11 route)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset_in.Encode());
@@ -142,7 +112,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> set_route
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetRoute(Hydration.NetApi.Generated.Model.hydradx_traits.router.AssetPair asset_pair, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.hydradx_traits.router.Trade> new_route)
+        public static Method SetRoute(Hydration.NetApi.Generated.Model.hydradx_traits.router.AssetPair asset_pair, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11 new_route)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset_pair.Encode());
@@ -154,7 +124,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> force_insert_route
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceInsertRoute(Hydration.NetApi.Generated.Model.hydradx_traits.router.AssetPair asset_pair, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.hydradx_traits.router.Trade> new_route)
+        public static Method ForceInsertRoute(Hydration.NetApi.Generated.Model.hydradx_traits.router.AssetPair asset_pair, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11 new_route)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset_pair.Encode());
@@ -166,7 +136,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> sell_all
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SellAll(Substrate.NetApi.Model.Types.Primitive.U32 asset_in, Substrate.NetApi.Model.Types.Primitive.U32 asset_out, Substrate.NetApi.Model.Types.Primitive.U128 min_amount_out, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.hydradx_traits.router.Trade> route)
+        public static Method SellAll(Substrate.NetApi.Model.Types.Primitive.U32 asset_in, Substrate.NetApi.Model.Types.Primitive.U32 asset_out, Substrate.NetApi.Model.Types.Primitive.U128 min_amount_out, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11 route)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset_in.Encode());

@@ -43,7 +43,7 @@ namespace Mythos.NetApi.Generated.Model.staging_xcm.v4.asset
     }
     
     /// <summary>
-    /// >> 112 - Variant[staging_xcm.v4.asset.WildAsset]
+    /// >> 330 - Variant[staging_xcm.v4.asset.WildAsset]
     /// </summary>
     public sealed class EnumWildAsset : BaseEnumRust<WildAsset>
     {

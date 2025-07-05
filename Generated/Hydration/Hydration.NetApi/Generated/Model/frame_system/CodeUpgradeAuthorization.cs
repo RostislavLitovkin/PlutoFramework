@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.frame_system
     
     
     /// <summary>
-    /// >> 236 - Composite[frame_system.CodeUpgradeAuthorization]
+    /// >> 489 - Composite[frame_system.CodeUpgradeAuthorization]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CodeUpgradeAuthorization : BaseType

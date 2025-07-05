@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.polkadot_core_primitives
     
     
     /// <summary>
-    /// >> 209 - Composite[polkadot_core_primitives.InboundDownwardMessage]
+    /// >> 213 - Composite[polkadot_core_primitives.InboundDownwardMessage]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class InboundDownwardMessage : BaseType

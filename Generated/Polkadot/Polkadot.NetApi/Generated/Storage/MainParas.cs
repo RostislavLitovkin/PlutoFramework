@@ -59,9 +59,9 @@ namespace Polkadot.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Paras", "FutureCodeHash"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id), typeof(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.ValidationCodeHash)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Paras", "UpgradeGoAheadSignal"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id), typeof(Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.EnumUpgradeGoAhead)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id), typeof(Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.EnumUpgradeGoAhead)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Paras", "UpgradeRestrictionSignal"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id), typeof(Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.EnumUpgradeRestriction)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id), typeof(Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.EnumUpgradeRestriction)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Paras", "UpgradeCooldowns"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, Substrate.NetApi.Model.Types.Primitive.U32>>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Paras", "UpcomingUpgrades"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, Substrate.NetApi.Model.Types.Primitive.U32>>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Paras", "ActionsQueue"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -571,10 +571,10 @@ namespace Polkadot.NetApi.Generated.Storage
         ///  NOTE that this field is used by parachains via merkle storage proofs, therefore changing
         ///  the format will require migration of parachains.
         /// </summary>
-        public async Task<Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.EnumUpgradeGoAhead> UpgradeGoAheadSignal(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id key, string blockhash, CancellationToken token)
+        public async Task<Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.EnumUpgradeGoAhead> UpgradeGoAheadSignal(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id key, string blockhash, CancellationToken token)
         {
             string parameters = ParasStorage.UpgradeGoAheadSignalParams(key);
-            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.EnumUpgradeGoAhead>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.EnumUpgradeGoAhead>(parameters, blockhash, token);
             return result;
         }
         
@@ -618,10 +618,10 @@ namespace Polkadot.NetApi.Generated.Storage
         ///  NOTE that this field is used by parachains via merkle storage proofs, therefore changing
         ///  the format will require migration of parachains.
         /// </summary>
-        public async Task<Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.EnumUpgradeRestriction> UpgradeRestrictionSignal(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id key, string blockhash, CancellationToken token)
+        public async Task<Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.EnumUpgradeRestriction> UpgradeRestrictionSignal(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id key, string blockhash, CancellationToken token)
         {
             string parameters = ParasStorage.UpgradeRestrictionSignalParams(key);
-            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.EnumUpgradeRestriction>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.EnumUpgradeRestriction>(parameters, blockhash, token);
             return result;
         }
         
@@ -926,7 +926,7 @@ namespace Polkadot.NetApi.Generated.Storage
         /// >> include_pvf_check_statement
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method IncludePvfCheckStatement(Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.PvfCheckStatement stmt, Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.validator_app.Signature signature)
+        public static Method IncludePvfCheckStatement(Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.PvfCheckStatement stmt, Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.validator_app.Signature signature)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(stmt.Encode());

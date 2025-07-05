@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.frame_system.extensions.check_mo
     
     
     /// <summary>
-    /// >> 467 - Composite[frame_system.extensions.check_mortality.CheckMortality]
+    /// >> 482 - Composite[frame_system.extensions.check_mortality.CheckMortality]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckMortality : BaseType

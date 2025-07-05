@@ -78,7 +78,7 @@ namespace Mythos.NetApi.Generated.Model.xcm.v3.junction
     }
     
     /// <summary>
-    /// >> 137 - Variant[xcm.v3.junction.NetworkId]
+    /// >> 143 - Variant[xcm.v3.junction.NetworkId]
     /// </summary>
     public sealed class EnumNetworkId : BaseEnumRust<NetworkId>
     {

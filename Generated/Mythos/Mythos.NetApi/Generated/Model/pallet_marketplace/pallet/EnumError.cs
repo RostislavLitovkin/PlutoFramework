@@ -24,7 +24,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_marketplace.pallet
         
         /// <summary>
         /// >> NotAuthority
-        /// The account is not the authority
+        /// The account is not the authority.
         /// </summary>
         NotAuthority = 0,
         
@@ -36,11 +36,13 @@ namespace Mythos.NetApi.Generated.Model.pallet_marketplace.pallet
         
         /// <summary>
         /// >> FeeSignerAddressNotSet
+        /// The fee signer address doesn't exist.
         /// </summary>
         FeeSignerAddressNotSet = 2,
         
         /// <summary>
         /// >> PayoutAddressNotSet
+        /// The payout address doesn't exist.
         /// </summary>
         PayoutAddressNotSet = 3,
         
@@ -76,7 +78,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_marketplace.pallet
         
         /// <summary>
         /// >> ValidMatchMustExist
-        /// A valid match must exist to execute the order
+        /// A valid match must exist to execute the order.
         /// </summary>
         ValidMatchMustExist = 9,
         
@@ -88,7 +90,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_marketplace.pallet
         
         /// <summary>
         /// >> BadSignedMessage
-        /// Invalid Signed message
+        /// Invalid Signed message.
         /// </summary>
         BadSignedMessage = 11,
         
@@ -100,7 +102,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_marketplace.pallet
         
         /// <summary>
         /// >> AlreadyUsedNonce
-        /// Nonce has already been used
+        /// Nonce has already been used.
         /// </summary>
         AlreadyUsedNonce = 13,
         
@@ -130,19 +132,19 @@ namespace Mythos.NetApi.Generated.Model.pallet_marketplace.pallet
         
         /// <summary>
         /// >> InsufficientFunds
-        /// User Balance is insufficient for the required action
+        /// User Balance is insufficient for the required action.
         /// </summary>
         InsufficientFunds = 18,
         
         /// <summary>
         /// >> NotOrderCreatorOrAdmin
-        /// The caller is not the orderc creator or the admin account of the pallet
+        /// The caller is not the order creator or the admin account of the pallet.
         /// </summary>
         NotOrderCreatorOrAdmin = 19,
         
         /// <summary>
         /// >> BadNonce
-        /// The provided nonce had an invalid size
+        /// The provided nonce had an invalid size.
         /// </summary>
         BadNonce = 20,
         
@@ -154,7 +156,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_marketplace.pallet
     }
     
     /// <summary>
-    /// >> 376 - Variant[pallet_marketplace.pallet.Error]
+    /// >> 435 - Variant[pallet_marketplace.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

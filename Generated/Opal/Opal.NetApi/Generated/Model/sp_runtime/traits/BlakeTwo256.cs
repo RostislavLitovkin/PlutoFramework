@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.sp_runtime.traits
     
     
     /// <summary>
-    /// >> 360 - Composite[sp_runtime.traits.BlakeTwo256]
+    /// >> 420 - Composite[sp_runtime.traits.BlakeTwo256]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BlakeTwo256 : BaseType

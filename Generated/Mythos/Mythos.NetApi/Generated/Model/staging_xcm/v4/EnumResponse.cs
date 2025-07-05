@@ -53,7 +53,7 @@ namespace Mythos.NetApi.Generated.Model.staging_xcm.v4
     }
     
     /// <summary>
-    /// >> 98 - Variant[staging_xcm.v4.Response]
+    /// >> 322 - Variant[staging_xcm.v4.Response]
     /// </summary>
     public sealed class EnumResponse : BaseEnumRust<Response>
     {
@@ -67,7 +67,7 @@ namespace Mythos.NetApi.Generated.Model.staging_xcm.v4
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.staging_xcm.v4.asset.Assets>(Response.Assets);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Mythos.NetApi.Generated.Model.xcm.v3.traits.EnumError>>>(Response.ExecutionResult);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Response.Version);
-				AddTypeDecoder<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT3>(Response.PalletsInfo);
+				AddTypeDecoder<Mythos.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14>(Response.PalletsInfo);
 				AddTypeDecoder<Mythos.NetApi.Generated.Model.xcm.v3.EnumMaybeErrorCode>(Response.DispatchResult);
         }
     }

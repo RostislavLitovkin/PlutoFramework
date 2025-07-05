@@ -28,7 +28,7 @@ namespace Opal.NetApi.Generated.Model.evm_core.error
     }
     
     /// <summary>
-    /// >> 381 - Variant[evm_core.error.ExitRevert]
+    /// >> 447 - Variant[evm_core.error.ExitRevert]
     /// </summary>
     public sealed class EnumExitRevert : BaseEnum<ExitRevert>
     {

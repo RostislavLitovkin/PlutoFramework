@@ -43,7 +43,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.xcm.v2
     }
     
     /// <summary>
-    /// >> 309 - Variant[xcm.v2.OriginKind]
+    /// >> 314 - Variant[xcm.v2.OriginKind]
     /// </summary>
     public sealed class EnumOriginKind : BaseEnum<OriginKind>
     {

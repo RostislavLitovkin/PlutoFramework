@@ -6,7 +6,9 @@
         {
             return Task.WhenAll(
                 NftDatabase.DeleteAllAsync(),
-                CollectionDatabase.DeleteAllAsync()
+                CollectionDatabase.DeleteAllAsync(),
+                XcavatePropertyDatabase.DeleteAllAsync(),
+                BalancesDatabase.DeleteAllAsync()
             );
         }
     }

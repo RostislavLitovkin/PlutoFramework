@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.xcm.v3
     
     
     /// <summary>
-    /// >> 245 - Composite[xcm.v3.PalletInfo]
+    /// >> 260 - Composite[xcm.v3.PalletInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PalletInfo : BaseType

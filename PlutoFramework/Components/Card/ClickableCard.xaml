@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PlutoFramework.Components.Card.ClickableCard"
-            ZIndex="10">
+             x:Class="PlutoFramework.Components.Card.ClickableCard">
     <Border
             HorizontalOptions="Fill"
             VerticalOptions="Fill"
@@ -10,19 +9,13 @@
             StrokeThickness="0"
             Padding="10, 0, 10, 0"
             x:Name="border"
+            Shadow="{StaticResource CARD-SHADOW}"
             >
         <Border.StrokeShape>
-            <RoundRectangle CornerRadius="20"
+            <RoundRectangle CornerRadius="{StaticResource CARD-CORNER-RADIUS}"
                                 x:Name="roundRectangle"/>
 
         </Border.StrokeShape>
-        <Border.Shadow>
-            <Shadow Brush="Black"
-                Offset="0,2" 
-                Radius="20"
-                Opacity="0.1" />
-
-        </Border.Shadow>
         <!--BorderColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"-->
         <ContentView x:Name="contentView"
                     HorizontalOptions="Fill"

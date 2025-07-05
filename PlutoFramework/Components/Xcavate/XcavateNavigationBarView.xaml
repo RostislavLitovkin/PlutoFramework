@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
+             x:Class="PlutoFramework.Components.Xcavate.XcavateNavigationBarView"
+             AbsoluteLayout.LayoutBounds="0.5, 1, 1, 90"
+             AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
+
+    <xcavate:PageBottomBarView>
+
+        <xcavate:PageBottomBarView.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </xcavate:PageBottomBarView.ColumnDefinitions>
+
+
+        <xcavate:XcavateNavigationBarButtonView
+            Grid.Column="0"
+             Title="My account"
+            IconUnselected="xcavateaccountunselected.png"
+            IconSelected="xcavateaccountselected.png"
+             IsSelected="{Binding AccountIsSelected}"
+             Command="{Binding SelectAccountCommand}"
+            >
+        </xcavate:XcavateNavigationBarButtonView>
+
+        <xcavate:XcavateNavigationBarButtonView
+            Grid.Column="1"
+            Title="Help"
+            IconUnselected="xcavatehelpunselected.png"
+            IconSelected="xcavatehelpselected.png"
+            IsSelected="{Binding HelpIsSelected}"
+            Command="{Binding SelectHelpCommand}"
+            >
+        </xcavate:XcavateNavigationBarButtonView>
+        <xcavate:XcavateNavigationBarButtonView
+            Grid.Column="2"
+            Title="Marketplace"
+            IconUnselected="xcavatemarketplaceunselected.png"
+            IconSelected="xcavatemarketplaceselected.png"
+            IsSelected="{Binding MarketplaceIsSelected}"
+            Command="{Binding SelectMarketplaceCommand}"
+            >
+        </xcavate:XcavateNavigationBarButtonView>
+    </xcavate:PageBottomBarView>
+</ContentView>

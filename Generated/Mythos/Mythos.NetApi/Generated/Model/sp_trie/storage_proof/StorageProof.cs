@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.sp_trie.storage_proof
     
     
     /// <summary>
-    /// >> 191 - Composite[sp_trie.storage_proof.StorageProof]
+    /// >> 215 - Composite[sp_trie.storage_proof.StorageProof]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class StorageProof : BaseType

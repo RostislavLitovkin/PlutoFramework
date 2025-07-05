@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.ethereum.header
     
     
     /// <summary>
-    /// >> 652 - Composite[ethereum.header.Header]
+    /// >> 733 - Composite[ethereum.header.Header]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Header : BaseType

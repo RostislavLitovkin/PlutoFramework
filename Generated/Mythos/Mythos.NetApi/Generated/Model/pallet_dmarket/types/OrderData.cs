@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_dmarket.types
     
     
     /// <summary>
-    /// >> 454 - Composite[pallet_dmarket.types.OrderData]
+    /// >> 551 - Composite[pallet_dmarket.types.OrderData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OrderData : BaseType

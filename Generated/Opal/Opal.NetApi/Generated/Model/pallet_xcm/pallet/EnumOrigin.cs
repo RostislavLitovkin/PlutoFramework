@@ -33,7 +33,7 @@ namespace Opal.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 212 - Variant[pallet_xcm.pallet.Origin]
+    /// >> 239 - Variant[pallet_xcm.pallet.Origin]
     /// </summary>
     public sealed class EnumOrigin : BaseEnumRust<Origin>
     {
@@ -43,8 +43,8 @@ namespace Opal.NetApi.Generated.Model.pallet_xcm.pallet
         /// </summary>
         public EnumOrigin()
         {
-				AddTypeDecoder<Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation>(Origin.Xcm);
-				AddTypeDecoder<Opal.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation>(Origin.Response);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location>(Origin.Xcm);
+				AddTypeDecoder<Opal.NetApi.Generated.Model.staging_xcm.v5.location.Location>(Origin.Response);
         }
     }
 }

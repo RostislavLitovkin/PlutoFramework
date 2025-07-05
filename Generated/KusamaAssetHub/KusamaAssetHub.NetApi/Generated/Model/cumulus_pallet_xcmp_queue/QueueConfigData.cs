@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.cumulus_pallet_xcmp_queue
     
     
     /// <summary>
-    /// >> 274 - Composite[cumulus_pallet_xcmp_queue.QueueConfigData]
+    /// >> 278 - Composite[cumulus_pallet_xcmp_queue.QueueConfigData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class QueueConfigData : BaseType

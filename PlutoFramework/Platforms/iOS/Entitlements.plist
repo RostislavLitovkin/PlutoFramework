@@ -7,7 +7,10 @@
 		<string>$(AppIdentifierPrefix)com.rostislavlitovkin.plutowallet</string>
 	</array>
 
+	<!--
+	ONLY FOR MAC. Used to read files and images
 	<key>com.apple.security.files.user-selected.read-only</key>
 	<true/>
+	-->
 </dict>
 </plist>

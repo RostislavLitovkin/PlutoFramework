@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.frame_system.limits
     
     
     /// <summary>
-    /// >> 393 - Composite[frame_system.limits.WeightsPerClass]
+    /// >> 460 - Composite[frame_system.limits.WeightsPerClass]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class WeightsPerClass : BaseType

@@ -40,37 +40,10 @@ namespace KusamaAssetHub.NetApi.Generated.Model.cumulus_pallet_parachain_system.
         /// >> sudo_send_upward_message
         /// </summary>
         sudo_send_upward_message = 1,
-        
-        /// <summary>
-        /// >> authorize_upgrade
-        /// Authorize an upgrade to a given `code_hash` for the runtime. The runtime can be supplied
-        /// later.
-        /// 
-        /// The `check_version` parameter sets a boolean flag for whether or not the runtime's spec
-        /// version and name should be verified on upgrade. Since the authorization only has a hash,
-        /// it cannot actually perform the verification.
-        /// 
-        /// This call requires Root origin.
-        /// </summary>
-        authorize_upgrade = 2,
-        
-        /// <summary>
-        /// >> enact_authorized_upgrade
-        /// Provide the preimage (runtime binary) `code` for an upgrade that has been authorized.
-        /// 
-        /// If the authorization required a version check, this call will ensure the spec name
-        /// remains unchanged and that the spec version has increased.
-        /// 
-        /// Note that this function will not apply the new `code`, but only attempt to schedule the
-        /// upgrade with the Relay Chain.
-        /// 
-        /// All origins are allowed.
-        /// </summary>
-        enact_authorized_upgrade = 3,
     }
     
     /// <summary>
-    /// >> 207 - Variant[cumulus_pallet_parachain_system.pallet.Call]
+    /// >> 211 - Variant[cumulus_pallet_parachain_system.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -83,8 +56,6 @@ namespace KusamaAssetHub.NetApi.Generated.Model.cumulus_pallet_parachain_system.
         {
 				AddTypeDecoder<KusamaAssetHub.NetApi.Generated.Model.cumulus_primitives_parachain_inherent.ParachainInherentData>(Call.set_validation_data);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>(Call.sudo_send_upward_message);
-				AddTypeDecoder<BaseTuple<KusamaAssetHub.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.authorize_upgrade);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>(Call.enact_authorized_upgrade);
         }
     }
 }

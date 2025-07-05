@@ -90,7 +90,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_identity.pallet
         /// - `max_fee`: The maximum fee that may be paid. This should just be auto-populated as:
         /// 
         /// ```nocompile
-        /// Self::registrars().get(reg_index).unwrap().fee
+        /// Registrars::<T>::get().get(reg_index).unwrap().fee
         /// ```
         /// 
         /// Emits `JudgementRequested` if successful.

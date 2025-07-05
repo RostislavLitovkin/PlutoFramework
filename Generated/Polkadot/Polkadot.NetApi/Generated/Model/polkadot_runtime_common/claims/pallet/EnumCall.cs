@@ -134,7 +134,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_common.claims.pallet
     }
     
     /// <summary>
-    /// >> 180 - Variant[polkadot_runtime_common.claims.pallet.Call]
+    /// >> 169 - Variant[polkadot_runtime_common.claims.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

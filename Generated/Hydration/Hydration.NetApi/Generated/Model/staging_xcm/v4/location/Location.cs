@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.staging_xcm.v4.location
     
     
     /// <summary>
-    /// >> 159 - Composite[staging_xcm.v4.location.Location]
+    /// >> 101 - Composite[staging_xcm.v4.location.Location]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Location : BaseType

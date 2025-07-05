@@ -18,11 +18,18 @@
                    Source="{Binding CompanyImage}" />
         </Border>
         <Label 
-            Text="{Binding CompanyName}"
+            
             FontAttributes="Bold"
             HorizontalTextAlignment="Start"
             VerticalOptions="Center"
             VerticalTextAlignment="Center"
-            />
+            >
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="{Binding CompanyName}"
+                FontAttributes="Bold" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
     </HorizontalStackLayout>
 </ContentView>

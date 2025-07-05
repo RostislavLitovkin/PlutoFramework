@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.ethereum.receipt
     
     
     /// <summary>
-    /// >> 643 - Composite[ethereum.receipt.EIP658ReceiptData]
+    /// >> 713 - Composite[ethereum.receipt.EIP658ReceiptData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class EIP658ReceiptData : BaseType

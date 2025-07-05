@@ -41,13 +41,13 @@ namespace Opal.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Account"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Opal.NetApi.Generated.Model.pallet_balances.types.AccountData)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Locks"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Opal.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Opal.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT1)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Reserves"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT20)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Holds"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT26)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Freezes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27)));
         }
         
         /// <summary>
@@ -190,6 +190,8 @@ namespace Opal.NetApi.Generated.Storage
         /// >> LocksParams
         ///  Any liquidity locks on some account balances.
         ///  NOTE: Should only be accessed when setting, changing and freeing a lock.
+        /// 
+        ///  Use of locks is deprecated in favour of freezes. See `https://github.com/paritytech/substrate/pull/12951/`
         /// </summary>
         public static string LocksParams(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
         {
@@ -211,17 +213,21 @@ namespace Opal.NetApi.Generated.Storage
         /// >> Locks
         ///  Any liquidity locks on some account balances.
         ///  NOTE: Should only be accessed when setting, changing and freeing a lock.
+        /// 
+        ///  Use of locks is deprecated in favour of freezes. See `https://github.com/paritytech/substrate/pull/12951/`
         /// </summary>
-        public async Task<Opal.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2> Locks(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Opal.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT1> Locks(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = BalancesStorage.LocksParams(key);
-            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT1>(parameters, blockhash, token);
             return result;
         }
         
         /// <summary>
         /// >> ReservesParams
         ///  Named reserves on some account balances.
+        /// 
+        ///  Use of reserves is deprecated in favour of holds. See `https://github.com/paritytech/substrate/pull/12951/`
         /// </summary>
         public static string ReservesParams(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
         {
@@ -242,11 +248,13 @@ namespace Opal.NetApi.Generated.Storage
         /// <summary>
         /// >> Reserves
         ///  Named reserves on some account balances.
+        /// 
+        ///  Use of reserves is deprecated in favour of holds. See `https://github.com/paritytech/substrate/pull/12951/`
         /// </summary>
-        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT20> Reserves(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25> Reserves(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = BalancesStorage.ReservesParams(key);
-            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT20>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25>(parameters, blockhash, token);
             return result;
         }
         
@@ -274,10 +282,10 @@ namespace Opal.NetApi.Generated.Storage
         /// >> Holds
         ///  Holds on account balances.
         /// </summary>
-        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21> Holds(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT26> Holds(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = BalancesStorage.HoldsParams(key);
-            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT26>(parameters, blockhash, token);
             return result;
         }
         
@@ -305,10 +313,10 @@ namespace Opal.NetApi.Generated.Storage
         /// >> Freezes
         ///  Freeze locks on account balances.
         /// </summary>
-        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22> Freezes(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27> Freezes(Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = BalancesStorage.FreezesParams(key);
-            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27>(parameters, blockhash, token);
             return result;
         }
     }
@@ -402,6 +410,30 @@ namespace Opal.NetApi.Generated.Storage
             byteArray.AddRange(new_free.Encode());
             return new Method(30, "Balances", 8, "force_set_balance", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> force_adjust_total_issuance
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method ForceAdjustTotalIssuance(Opal.NetApi.Generated.Model.pallet_balances.types.EnumAdjustmentDirection direction, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> delta)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(direction.Encode());
+            byteArray.AddRange(delta.Encode());
+            return new Method(30, "Balances", 9, "force_adjust_total_issuance", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> burn
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method Burn(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> value, Substrate.NetApi.Model.Types.Primitive.Bool keep_alive)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(value.Encode());
+            byteArray.AddRange(keep_alive.Encode());
+            return new Method(30, "Balances", 10, "burn", byteArray.ToArray());
+        }
     }
     
     /// <summary>
@@ -432,6 +464,8 @@ namespace Opal.NetApi.Generated.Storage
         /// >> MaxLocks
         ///  The maximum number of locks that should exist on an account.
         ///  Not strictly enforced, but used for weight estimation.
+        /// 
+        ///  Use of locks is deprecated in favour of freezes. See `https://github.com/paritytech/substrate/pull/12951/`
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 MaxLocks()
         {
@@ -443,22 +477,13 @@ namespace Opal.NetApi.Generated.Storage
         /// <summary>
         /// >> MaxReserves
         ///  The maximum number of named reserves that can exist on an account.
+        /// 
+        ///  Use of reserves is deprecated in favour of holds. See `https://github.com/paritytech/substrate/pull/12951/`
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 MaxReserves()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
             result.Create("0x32000000");
-            return result;
-        }
-        
-        /// <summary>
-        /// >> MaxHolds
-        ///  The maximum number of holds that can exist on an account at any time.
-        /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U32 MaxHolds()
-        {
-            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x0A000000");
             return result;
         }
         
@@ -530,7 +555,7 @@ namespace Opal.NetApi.Generated.Storage
         
         /// <summary>
         /// >> TooManyHolds
-        /// Number of holds exceed `MaxHolds`.
+        /// Number of holds exceed `VariantCountOf<T::RuntimeHoldReason>`.
         /// </summary>
         TooManyHolds,
         
@@ -539,5 +564,17 @@ namespace Opal.NetApi.Generated.Storage
         /// Number of freezes exceed `MaxFreezes`.
         /// </summary>
         TooManyFreezes,
+        
+        /// <summary>
+        /// >> IssuanceDeactivated
+        /// The issuance cannot be modified since it is already deactivated.
+        /// </summary>
+        IssuanceDeactivated,
+        
+        /// <summary>
+        /// >> DeltaZero
+        /// The delta cannot be zero.
+        /// </summary>
+        DeltaZero,
     }
 }

@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_nft_fractionalization.typ
     
     
     /// <summary>
-    /// >> 453 - Composite[pallet_nft_fractionalization.types.Details]
+    /// >> 468 - Composite[pallet_nft_fractionalization.types.Details]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Details : BaseType

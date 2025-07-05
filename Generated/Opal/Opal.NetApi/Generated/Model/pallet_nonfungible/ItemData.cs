@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_nonfungible
     
     
     /// <summary>
-    /// >> 626 - Composite[pallet_nonfungible.ItemData]
+    /// >> 707 - Composite[pallet_nonfungible.ItemData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ItemData : BaseType

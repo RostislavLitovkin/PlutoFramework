@@ -33,7 +33,7 @@ namespace Opal.NetApi.Generated.Model.up_data_structs
     }
     
     /// <summary>
-    /// >> 279 - Variant[up_data_structs.SponsoringRateLimit]
+    /// >> 340 - Variant[up_data_structs.SponsoringRateLimit]
     /// </summary>
     public sealed class EnumSponsoringRateLimit : BaseEnumRust<SponsoringRateLimit>
     {

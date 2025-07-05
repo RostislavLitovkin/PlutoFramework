@@ -60,7 +60,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_referrals.pallet
     }
     
     /// <summary>
-    /// >> 118 - Variant[pallet_referrals.pallet.Event]
+    /// >> 440 - Variant[pallet_referrals.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -71,8 +71,8 @@ namespace Hydration.NetApi.Generated.Model.pallet_referrals.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.CodeRegistered);
-				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.CodeLinked);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.CodeRegistered);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.CodeLinked);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.pallet_referrals.AssetAmount, Hydration.NetApi.Generated.Model.pallet_referrals.AssetAmount>>(Event.Converted);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Claimed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.pallet_referrals.EnumLevel, Hydration.NetApi.Generated.Model.pallet_referrals.FeeDistribution>>(Event.AssetRewardsUpdated);

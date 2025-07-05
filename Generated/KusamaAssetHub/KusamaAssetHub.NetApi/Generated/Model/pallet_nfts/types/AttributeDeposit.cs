@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 441 - Composite[pallet_nfts.types.AttributeDeposit]
+    /// >> 456 - Composite[pallet_nfts.types.AttributeDeposit]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AttributeDeposit : BaseType

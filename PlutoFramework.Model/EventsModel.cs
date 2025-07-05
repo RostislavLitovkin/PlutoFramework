@@ -1,4 +1,5 @@
-﻿using PlutoFramework.Constants;
+﻿using Newtonsoft.Json.Linq;
+using PlutoFramework.Constants;
 using PlutoFramework.Model.AjunaExt;
 using PlutoFramework.Model.Temp;
 using PlutoFramework.Types;
@@ -67,6 +68,96 @@ namespace PlutoFramework.Model
     }
     public static class EventsModel
     {
+
+        public static List<EventParameter> GetErrorParametersList(SubstrateClientExt client, object? parameters, TypeField[] eventTypeFields)
+        {
+            var parametersList = new List<EventParameter>();
+
+            var pValues = eventTypeFields.Length switch
+            {
+                0 => [],
+                1 => [(IType)parameters],
+                _ => (IType[])parameters.GetProperty("Value")
+            };
+
+            if (pValues.Length != 2)
+            {
+                throw new Exception("Errors shoudl have only 2 event parameters");
+            }
+
+            try
+            {
+                var parameter = pValues[0];
+                var eventTypeField = eventTypeFields[0];
+
+                Type type = parameter.GetType();
+
+                var error = client.CustomMetadata.NodeMetadata.Types[eventTypeField.TypeId.ToString()];
+
+                Console.WriteLine("Value:: " + parameter.GetProperty("Value").ToString());
+                var variant = error.Variants[(int)parameter.GetProperty("Value")];
+
+                switch (variant.Name) {
+                    case "Module":
+                        
+
+                        var module = client.CustomMetadata.NodeMetadata.Modules[((object)parameter.GetProperty("Value2")).GetProperty("Index").ToString()];
+                        var moduleName = module.Name;
+
+                        var errorIndex = new U32();
+                        var p = 0;
+                        errorIndex.Decode(((BaseType)parameter.GetProperty("Value2").GetProperty("Error")).Encode(), ref p);
+
+                        var errorDocs = String.Join("\n", client.CustomMetadata.NodeMetadata.Types[module.Errors.TypeId.ToString()].Variants[errorIndex].Docs);
+
+                        parametersList.Add(new EventParameter
+                        {
+                            Name = eventTypeField.Name,
+                            Value = $"Module {moduleName}: {errorDocs}",
+                            EncodedValue = parameter.Encode(),
+                        });
+
+                        break;
+                    default:
+
+                        parametersList.Add(new EventParameter
+                        {
+                            Name = eventTypeField.Name,
+                            Value = variant.Name,
+                            EncodedValue = parameter.Encode(),
+                        });
+
+                        break;
+                }
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            try
+            {
+                var parameter = pValues[1];
+                var eventTypeField = eventTypeFields[1];
+
+                Type type = parameter.GetType();
+
+                parametersList.Add(new EventParameter
+                {
+                    Name = eventTypeField.Name,
+                    Value = parameter.ToString(),
+                    EncodedValue = parameter.Encode(),
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            return parametersList;
+
+        }
         public static List<EventParameter> GetParametersList(object? parameters, TypeField[] eventTypeFields)
         {
             if (parameters == null)
@@ -190,14 +281,9 @@ namespace PlutoFramework.Model
 
             Console.WriteLine("Events bytes: " + eventsBytes);
 
-            Console.WriteLine("check metadata: " + substrateClient.CheckMetadata);
-
-            if (substrateClient.CheckMetadata)
+            try
             {
                 BlockData block = await substrateClient.SubstrateClient.Chain.GetBlockAsync(blockHash, CancellationToken.None);
-
-                var sblock = await substrateClient.SubstrateClient.InvokeAsync<object>("chain_getBlock", new object[1] { (string)blockHash.Value }, token);
-                Console.WriteLine(sblock);
 
                 Console.WriteLine("block number: " + block.Block.Header.Number.Value);
 
@@ -216,11 +302,10 @@ namespace PlutoFramework.Model
                 Console.WriteLine("Extrinsic index found: " + extrinsicIndex);
 
                 return await GetExtrinsicEventsForClientAsync(substrateClient, extrinsicIndex, eventsBytes, blockNumber: block.Block.Header.Number.Value, token);
-
             }
-            else
-            {
-                var block = await substrateClient.SubstrateClient.InvokeAsync<TempOldBlockData>("chain_getBlock", new object[1] { (string)blockHash.Value }, token);
+            catch {
+
+                var block = await substrateClient.SubstrateClient.InvokeAsync<TempOldBlockData>("chain_getBlock", new object[1] { blockHash?.Value }, token);
 
                 Console.WriteLine("block number: " + block.Block.Header.Number.Value);
 
@@ -228,7 +313,7 @@ namespace PlutoFramework.Model
                 for (uint i = 0; i < block.Block.Extrinsics.Count(); i++)
                 {
                     // Same extrinsic
-                    if (Utils.Bytes2HexString(HashExtension.Blake2(block.Block.Extrinsics[i].Encode(), 256)).Equals(Utils.Bytes2HexString(extrinsicHash)))
+                    if (Utils.Bytes2HexString(HashExtension.Blake2(Utils.HexToByteArray(block.Block.Extrinsics[i]), 256)).Equals(Utils.Bytes2HexString(extrinsicHash)))
                     {
                         extrinsicIndex = i;
 
@@ -284,11 +369,7 @@ namespace PlutoFramework.Model
         {
             if (eventsBytes == null || eventsBytes.Length == 0)
             {
-
                 Console.WriteLine("Something was null in events");
-                Console.WriteLine(extrinsicIndex is null);
-                Console.WriteLine(eventsBytes);
-                Console.WriteLine(eventsBytes.Length);
 
                 return new ExtrinsicDetails
                 {
@@ -327,6 +408,11 @@ namespace PlutoFramework.Model
                             eventTypeFields = variant.TypeFields;
                             break;
                         }
+                    }
+
+                    if (palletName == "System" && eventName == "ExtrinsicFailed")
+                    {
+                        return new ExtrinsicEvent(palletName, eventName, GetErrorParametersList(substrateClient, parameters, eventTypeFields ?? []));
                     }
 
                     return new ExtrinsicEvent(palletName, eventName, GetParametersList(parameters, eventTypeFields ?? []));

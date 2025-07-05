@@ -10,6 +10,7 @@ namespace PlutoFrameworkTests;
 public class EndpointsTests
 {
     [Test]
+    [Ignore("This test is very slow")]
     public async Task ConnectAndCheck()
     {
         foreach (Endpoint endpoint in PlutoFramework.Constants.Endpoints.GetAllEndpoints)

@@ -58,7 +58,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.asset_hub_kusama_runtime
     }
     
     /// <summary>
-    /// >> 128 - Variant[asset_hub_kusama_runtime.ProxyType]
+    /// >> 130 - Variant[asset_hub_kusama_runtime.ProxyType]
     /// </summary>
     public sealed class EnumProxyType : BaseEnum<ProxyType>
     {

@@ -322,7 +322,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.configurat
     }
     
     /// <summary>
-    /// >> 276 - Variant[polkadot_runtime_parachains.configuration.pallet.Call]
+    /// >> 265 - Variant[polkadot_runtime_parachains.configuration.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -370,8 +370,8 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.configurat
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.set_pvf_voting_ttl);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.set_minimum_validation_upgrade_delay);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.Bool>(Call.set_bypass_consistency_check);
-				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.async_backing.AsyncBackingParams>(Call.set_async_backing_params);
-				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.executor_params.ExecutorParams>(Call.set_executor_params);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.async_backing.AsyncBackingParams>(Call.set_async_backing_params);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.executor_params.ExecutorParams>(Call.set_executor_params);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U128>(Call.set_on_demand_base_fee);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill>(Call.set_on_demand_fee_variability);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.set_on_demand_queue_max_size);
@@ -379,8 +379,8 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.configurat
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.set_on_demand_ttl);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.set_minimum_backing_votes);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U8, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.set_node_feature);
-				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.ApprovalVotingParams>(Call.set_approval_voting_params);
-				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_primitives.vstaging.SchedulerParams>(Call.set_scheduler_params);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.ApprovalVotingParams>(Call.set_approval_voting_params);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.SchedulerParams>(Call.set_scheduler_params);
         }
     }
 }

@@ -1,13 +1,15 @@
-﻿
-using PlutoFramework.Constants;
+﻿using PlutoFramework.Constants;
 using PlutoFramework.Model.AjunaExt;
+using PlutoFramework.Model.Xcavate;
 using PlutoFramework.Types;
 using Substrate.NetApi.Model.Types.Base;
 using Substrate.NetApi.Model.Types.Primitive;
 using System.Numerics;
 using UniqueryPlus;
+using UniqueryPlus.Nfts;
 using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.AssetPallet, System.Numerics.BigInteger);
 using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
+using XcavatePropertyKey = (PlutoFramework.Constants.EndpointEnum, uint);
 
 namespace PlutoFramework.Model
 {
@@ -29,11 +31,22 @@ namespace PlutoFramework.Model
 
     public class TransactionAnalyzerModel
     {
-        public static ExtrinsicResult GetExtrinsicResult(IEnumerable<ExtrinsicEvent> events) => events.Last() switch
+        public static ExtrinsicResult GetExtrinsicResult(IEnumerable<ExtrinsicEvent> events) {
+            if (events.Count() == 0)
+                return ExtrinsicResult.Unknown;
+            else
+                return events.Last() switch
+                {
+                    ExtrinsicEvent { PalletName: "System", EventName: "ExtrinsicSuccess" } => ExtrinsicResult.Success,
+                    ExtrinsicEvent { PalletName: "System", EventName: "ExtrinsicFailed" } => ExtrinsicResult.Failed,
+                    _ => ExtrinsicResult.Unknown,
+                };
+        }
+
+        public static string GetExtrinsicFailedMessage(IEnumerable<ExtrinsicEvent> events) => events.Last() switch
         {
-            ExtrinsicEvent { PalletName: "System", EventName: "ExtrinsicSuccess" } => ExtrinsicResult.Success,
-            ExtrinsicEvent { PalletName: "System", EventName: "ExtrinsicFailed" } => ExtrinsicResult.Failed,
-            _ => ExtrinsicResult.Unknown,
+            ExtrinsicEvent { PalletName: "System", EventName: "ExtrinsicFailed" } => events.Last().Parameters[0].Value,
+            _ => string.Empty,
         };
 
         /// <summary>
@@ -53,7 +66,7 @@ namespace PlutoFramework.Model
             {
                 IEnumerable<(string, AssetKey, BigInteger)> evaluated = e switch
                 {
-                    /// Balances
+                    // Balances
                     ExtrinsicEvent { PalletName: "Balances", EventName: "Transfer" } => [
                         // From negative
                         (e.Parameters[0].Value, (endpoint.Key, AssetPallet.Native, 0), -BigInteger.Parse(e.Parameters[2].Value)),
@@ -76,8 +89,25 @@ namespace PlutoFramework.Model
                     ExtrinsicEvent { PalletName: "Tokens", EventName: "Withdrawn" } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.Tokens, BigInteger.Parse(e.Parameters[0].Value)), -BigInteger.Parse(e.Parameters[2].Value))],
 
                     // Assets
+                    ExtrinsicEvent { PalletName: "Assets", EventName: "Transferred" } => [
+                        // From negative
+                        (e.Parameters[1].Value, (endpoint.Key, AssetPallet.Assets, BigInteger.Parse(e.Parameters[0].Value)), -BigInteger.Parse(e.Parameters[3].Value)),
+                        // To positive
+                        (e.Parameters[2].Value, (endpoint.Key, AssetPallet.Assets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[3].Value))
+                    ],
                     ExtrinsicEvent { PalletName: "Assets", EventName: "Issued" } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.Assets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[2].Value))],
                     ExtrinsicEvent { PalletName: "Assets", EventName: "Burned" } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.Assets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[2].Value))],
+                    ExtrinsicEvent { PalletName: "AssetsFreezer", EventName: "Frozen" } => [(e.Parameters[0].Value, (endpoint.Key, AssetPallet.AssetsFrozen, BigInteger.Parse(e.Parameters[1].Value)), -BigInteger.Parse(e.Parameters[2].Value) * 1_000_000)],// Has to be * 10^6 on Xcavate blockchain
+
+                    // ForeignAssets
+                    ExtrinsicEvent { PalletName: "ForeignAssets", EventName: "Transferred" } => [
+                        // From negative
+                        (e.Parameters[1].Value, (endpoint.Key, AssetPallet.ForeignAssets, BigInteger.Parse(e.Parameters[0].Value)), -BigInteger.Parse(e.Parameters[3].Value)),
+                        // To positive
+                        (e.Parameters[2].Value, (endpoint.Key, AssetPallet.ForeignAssets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[3].Value))
+                    ],
+                    ExtrinsicEvent { PalletName: "ForeignAssets", EventName: "Issued" } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.ForeignAssets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[2].Value))],
+                    ExtrinsicEvent { PalletName: "ForeignAssets", EventName: "Burned" } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.ForeignAssets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[2].Value))],
 
                     // Fees
                     ExtrinsicEvent { PalletName: "TransactionPayment", EventName: "TransactionFeePaid" } => [("fee", (endpoint.Key, AssetPallet.Native, 0), -BigInteger.Parse(e.Parameters[1].Value) - BigInteger.Parse(e.Parameters[2].Value))],
@@ -117,7 +147,7 @@ namespace PlutoFramework.Model
                 }
             }
 
-            /// Remove emptry values
+            // Remove emptry values
             foreach (var address in result.Keys)
             {
                 foreach (var assetKey in result[address].Keys)
@@ -138,7 +168,7 @@ namespace PlutoFramework.Model
         }
 
         /// <summary>
-        /// Analyze the events and return the currency changes for each address
+        /// Analyze the events and return the nft changes for each address
         /// </summary>
         /// <returns></returns>
         public static async Task<Dictionary<string, Dictionary<NftKey, NftAssetWrapper>>> AnalyzeNftChangesInEventsAsync(
@@ -199,6 +229,69 @@ namespace PlutoFramework.Model
                             Endpoint = endpoint,
                             Decimals = endpoint.Decimals
                         },
+                    };
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Analyze the events and return the Xcavate property changes for each address
+        /// </summary>
+        /// <returns></returns>
+        public static async Task<Dictionary<string, Dictionary<XcavatePropertyKey, PropertyTokenOwnershipChangeInfo>>> AnalyzeXcavatePropertyChangesInEventsAsync(
+            SubstrateClientExt client,
+            IEnumerable<ExtrinsicEvent> events,
+            Endpoint endpoint,
+            CancellationToken token,
+            Dictionary<string, Dictionary<XcavatePropertyKey, PropertyTokenOwnershipChangeInfo>>? existingPropertyChanges = null)
+        {
+            var result = existingPropertyChanges ?? new Dictionary<string, Dictionary<XcavatePropertyKey, PropertyTokenOwnershipChangeInfo>>();
+
+            if (client.SubstrateClient is not XcavatePaseo.NetApi.Generated.SubstrateClientExt)
+            {
+                return result;
+            }
+
+            var cache = new Dictionary<XcavatePropertyKey, INftBase>();
+
+            foreach (var e in events)
+            {
+                IEnumerable<(string, XcavatePropertyKey, XcavatePropertyOperation, uint)> evaluated = e switch
+                {
+                    // Nfts
+                    ExtrinsicEvent { PalletName: "NftMarketplace", EventName: "TokenBoughtObject" } => [(e.Parameters[1].Value, (endpoint.Key, uint.Parse(e.Parameters[0].Value)), XcavatePropertyOperation.Buy, uint.Parse(e.Parameters[2].Value))],
+
+                    // Handle more events ...
+                    _ => []
+                };
+
+                foreach (var (address, key, operation, amount) in evaluated)
+                {
+                    if (!result.ContainsKey(address))
+                    {
+                        result[address] = new Dictionary<XcavatePropertyKey, PropertyTokenOwnershipChangeInfo>();
+                    }
+
+                    if (!cache.ContainsKey(key))
+                    {
+                        var nftBase = await PropertyMarketplaceModel.GetPropertyByIdAsync((XcavatePaseo.NetApi.Generated.SubstrateClientExt)client.SubstrateClient, key.Item2, token);
+
+                        if (nftBase is null)
+                        {
+                            continue;
+                        }
+
+                        cache[key] = nftBase;
+                    }
+
+                    result[address][key] = new PropertyTokenOwnershipChangeInfo
+                    {
+                        NftBase = cache[key],
+                        Operation = operation,
+                        Amount = amount,
+                        Favourite = false
                     };
                 }
             }

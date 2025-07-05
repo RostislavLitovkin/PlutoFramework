@@ -38,7 +38,7 @@ namespace Mythos.NetApi.Generated.Model.frame_support.dispatch
     }
     
     /// <summary>
-    /// >> 317 - Variant[frame_support.dispatch.RawOrigin]
+    /// >> 357 - Variant[frame_support.dispatch.RawOrigin]
     /// </summary>
     public sealed class EnumRawOrigin : BaseEnumRust<RawOrigin>
     {

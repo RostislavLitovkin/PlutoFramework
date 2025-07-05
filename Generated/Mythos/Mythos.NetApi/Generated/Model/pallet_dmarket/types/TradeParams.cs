@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_dmarket.types
     
     
     /// <summary>
-    /// >> 314 - Composite[pallet_dmarket.types.TradeParams]
+    /// >> 354 - Composite[pallet_dmarket.types.TradeParams]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class TradeParams : BaseType

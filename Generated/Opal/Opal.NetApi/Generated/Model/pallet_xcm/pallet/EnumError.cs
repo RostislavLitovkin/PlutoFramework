@@ -50,7 +50,7 @@ namespace Opal.NetApi.Generated.Model.pallet_xcm.pallet
         
         /// <summary>
         /// >> DestinationNotInvertible
-        /// The destination `MultiLocation` provided cannot be inverted.
+        /// The destination `Location` provided cannot be inverted.
         /// </summary>
         DestinationNotInvertible = 4,
         
@@ -104,10 +104,10 @@ namespace Opal.NetApi.Generated.Model.pallet_xcm.pallet
         AlreadySubscribed = 12,
         
         /// <summary>
-        /// >> InvalidAsset
-        /// Invalid asset for the operation.
+        /// >> CannotCheckOutTeleport
+        /// Could not check-out the assets for teleportation to the destination chain.
         /// </summary>
-        InvalidAsset = 13,
+        CannotCheckOutTeleport = 13,
         
         /// <summary>
         /// >> LowBalance
@@ -144,10 +144,34 @@ namespace Opal.NetApi.Generated.Model.pallet_xcm.pallet
         /// The unlock operation cannot succeed because there are still consumers of the lock.
         /// </summary>
         InUse = 19,
+        
+        /// <summary>
+        /// >> InvalidAssetUnknownReserve
+        /// Invalid asset, reserve chain could not be determined for it.
+        /// </summary>
+        InvalidAssetUnknownReserve = 21,
+        
+        /// <summary>
+        /// >> InvalidAssetUnsupportedReserve
+        /// Invalid asset, do not support remote asset reserves with different fees reserves.
+        /// </summary>
+        InvalidAssetUnsupportedReserve = 22,
+        
+        /// <summary>
+        /// >> TooManyReserves
+        /// Too many assets with different reserve locations have been attempted for transfer.
+        /// </summary>
+        TooManyReserves = 23,
+        
+        /// <summary>
+        /// >> LocalExecutionIncomplete
+        /// Local XCM execution incomplete.
+        /// </summary>
+        LocalExecutionIncomplete = 24,
     }
     
     /// <summary>
-    /// >> 575 - Variant[pallet_xcm.pallet.Error]
+    /// >> 652 - Variant[pallet_xcm.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

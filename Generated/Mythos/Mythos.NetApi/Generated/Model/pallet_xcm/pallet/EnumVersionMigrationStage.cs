@@ -43,7 +43,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 418 - Variant[pallet_xcm.pallet.VersionMigrationStage]
+    /// >> 516 - Variant[pallet_xcm.pallet.VersionMigrationStage]
     /// </summary>
     public sealed class EnumVersionMigrationStage : BaseEnumRust<VersionMigrationStage>
     {

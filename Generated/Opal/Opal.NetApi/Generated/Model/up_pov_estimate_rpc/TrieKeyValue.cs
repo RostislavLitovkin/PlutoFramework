@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.up_pov_estimate_rpc
     
     
     /// <summary>
-    /// >> 616 - Composite[up_pov_estimate_rpc.TrieKeyValue]
+    /// >> 697 - Composite[up_pov_estimate_rpc.TrieKeyValue]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class TrieKeyValue : BaseType

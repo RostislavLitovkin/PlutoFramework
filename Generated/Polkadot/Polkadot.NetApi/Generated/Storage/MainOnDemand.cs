@@ -37,11 +37,11 @@ namespace Polkadot.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("OnDemand", "ParaIdAffinity"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id), typeof(Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.assigner_on_demand.types.CoreAffinityCount)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("OnDemand", "QueueStatus"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.assigner_on_demand.types.QueueStatusType)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id), typeof(Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.on_demand.types.CoreAffinityCount)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("OnDemand", "QueueStatus"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.on_demand.types.QueueStatusType)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("OnDemand", "FreeEntries"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Polkadot.NetApi.Generated.Types.Base.BinaryHeapT2)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("OnDemand", "AffinityEntries"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.CoreIndex), typeof(Polkadot.NetApi.Generated.Types.Base.BinaryHeapT2)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.CoreIndex), typeof(Polkadot.NetApi.Generated.Types.Base.BinaryHeapT2)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("OnDemand", "Revenue"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35)));
         }
         
@@ -73,10 +73,10 @@ namespace Polkadot.NetApi.Generated.Storage
         ///  it's lookahead. Keeping track of this affinity prevents parallel execution of the same
         ///  `ParaId` on two or more `CoreIndex`es.
         /// </summary>
-        public async Task<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.assigner_on_demand.types.CoreAffinityCount> ParaIdAffinity(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id key, string blockhash, CancellationToken token)
+        public async Task<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.on_demand.types.CoreAffinityCount> ParaIdAffinity(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id key, string blockhash, CancellationToken token)
         {
             string parameters = OnDemandStorage.ParaIdAffinityParams(key);
-            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.assigner_on_demand.types.CoreAffinityCount>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.on_demand.types.CoreAffinityCount>(parameters, blockhash, token);
             return result;
         }
         
@@ -102,10 +102,10 @@ namespace Polkadot.NetApi.Generated.Storage
         /// >> QueueStatus
         ///  Overall status of queue (both free + affinity entries)
         /// </summary>
-        public async Task<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.assigner_on_demand.types.QueueStatusType> QueueStatus(string blockhash, CancellationToken token)
+        public async Task<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.on_demand.types.QueueStatusType> QueueStatus(string blockhash, CancellationToken token)
         {
             string parameters = OnDemandStorage.QueueStatusParams();
-            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.assigner_on_demand.types.QueueStatusType>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.on_demand.types.QueueStatusType>(parameters, blockhash, token);
             return result;
         }
         
@@ -142,7 +142,7 @@ namespace Polkadot.NetApi.Generated.Storage
         /// >> AffinityEntriesParams
         ///  Queue entries that are currently bound to a particular core due to core affinity.
         /// </summary>
-        public static string AffinityEntriesParams(Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.CoreIndex key)
+        public static string AffinityEntriesParams(Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.CoreIndex key)
         {
             return RequestGenerator.GetStorage("OnDemand", "AffinityEntries", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -162,7 +162,7 @@ namespace Polkadot.NetApi.Generated.Storage
         /// >> AffinityEntries
         ///  Queue entries that are currently bound to a particular core due to core affinity.
         /// </summary>
-        public async Task<Polkadot.NetApi.Generated.Types.Base.BinaryHeapT2> AffinityEntries(Polkadot.NetApi.Generated.Model.polkadot_primitives.v7.CoreIndex key, string blockhash, CancellationToken token)
+        public async Task<Polkadot.NetApi.Generated.Types.Base.BinaryHeapT2> AffinityEntries(Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.CoreIndex key, string blockhash, CancellationToken token)
         {
             string parameters = OnDemandStorage.AffinityEntriesParams(key);
             var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Types.Base.BinaryHeapT2>(parameters, blockhash, token);

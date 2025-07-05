@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_common.claims
     
     
     /// <summary>
-    /// >> 181 - Composite[polkadot_runtime_common.claims.EcdsaSignature]
+    /// >> 170 - Composite[polkadot_runtime_common.claims.EcdsaSignature]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class EcdsaSignature : BaseType

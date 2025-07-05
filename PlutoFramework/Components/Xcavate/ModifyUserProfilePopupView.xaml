@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Xcavate.ModifyUserProfilePopupView"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+             xmlns:form="clr-namespace:PlutoFramework.Components.Form"
+             IsVisible="{Binding IsVisible}"
+             AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+             AbsoluteLayout.LayoutFlags="All">
+
+    <card:BottomPopupCard Title="Enter your information"
+                          IsShown="{Binding IsVisible}">
+        <card:BottomPopupCard.View>
+            <AbsoluteLayout>
+                <VerticalStackLayout Spacing="15"
+                                     AbsoluteLayout.LayoutBounds="0, 0, 1, AutoSize"
+                                     AbsoluteLayout.LayoutFlags="WidthProportional"
+                                     x:Name="verticalStackLayout"
+                     >
+
+                    <form:FormInputView Placeholder="First name"
+                        CardWidth="{Binding Source={x:Reference verticalStackLayout}, Path=Width}"
+                        Text="{Binding FirstName}" />
+
+                    <form:FormInputView Placeholder="Last name"
+                        CardWidth="{Binding Source={x:Reference verticalStackLayout}, Path=Width}"
+                        Text="{Binding LastName}" />
+
+                    <form:FormInputView Placeholder="Email"
+                        CardWidth="{Binding Source={x:Reference verticalStackLayout}, Path=Width}"
+                        ValidateEmail="True"
+                        Text="{Binding Email}" />
+
+                    <form:FormInputView Placeholder="Phone Number"
+                        CardWidth="{Binding Source={x:Reference verticalStackLayout}, Path=Width}"
+                        Text="{Binding PhoneNumber}"/>
+                </VerticalStackLayout>
+                
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 80"
+                    AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
+
+                    <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 50"
+                      AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                      ColumnSpacing="15"
+                      Margin="0, 0, 0, 10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <buttons:ElevatedButton Text="Continue"
+                                                Grid.Column="0"
+                                                Command="{Binding ContinueCommand}"
+                                                ButtonState="{Binding SaveButtonState}"/>
+                    </Grid>
+                </AbsoluteLayout>
+
+            </AbsoluteLayout>
+
+        </card:BottomPopupCard.View>
+    </card:BottomPopupCard>
+</ContentView>

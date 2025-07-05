@@ -38,7 +38,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.pallet_nfts.types
     }
     
     /// <summary>
-    /// >> 429 - Variant[pallet_nfts.types.CollectionRole]
+    /// >> 444 - Variant[pallet_nfts.types.CollectionRole]
     /// </summary>
     public sealed class EnumCollectionRole : BaseEnum<CollectionRole>
     {

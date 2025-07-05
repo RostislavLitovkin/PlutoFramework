@@ -5,26 +5,26 @@
              xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
              xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
              xmlns:card="clr-namespace:PlutoFramework.Components.Card"
-             BackgroundColor="#88000000"
              AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
              AbsoluteLayout.LayoutFlags="All"
              IsVisible="{Binding IsVisible}">
-    <card:BottomPopupCard Title="Transaction request">
+    <card:BottomPopupCard Title="Transaction request"
+                          IsShown="{Binding IsVisible}">
         <card:BottomPopupCard.View>
             <AbsoluteLayout>
 
                 <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, AutoSize"
-                         AbsoluteLayout.LayoutFlags="WidthProportional"
-                             x:Name="verticalStackLayout"
-                         Spacing="20">
+                                    AbsoluteLayout.LayoutFlags="WidthProportional"
+                                    x:Name="verticalStackLayout"
+                                    Spacing="20">
 
                     <txanalyzer:DAppNetworkView Name="{Binding DAppName}"
-                                            Icon="{Binding DAppIcon}"
-                                                 Endpoint="{Binding Endpoint}"
+                                                Icon="{Binding DAppIcon}"
+                                                Endpoint="{Binding Endpoint}"
                                                 IsVisible="{Binding IsDAppViewVisible}"/>
 
-                    <txanalyzer:PalletCallView PalletCallName="{Binding PalletCallName}" 
-                                            Endpoint="{Binding Endpoint}"
+                    <txanalyzer:PalletCallView PalletCallName="{Binding ProcessedPalletCallName}" 
+                                               Endpoint="{Binding Endpoint}"
                                                ExpandIconIsVisible="True">
                         <txanalyzer:PalletCallView.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding ExpandExtrinsicInfoCommand}" />
@@ -33,7 +33,8 @@
 
                     <txanalyzer:AnalyzedOutcomeView />
 
-                    <txanalyzer:ExtrinsicErrorView IsVisible="{Binding ExtrinsicFailedIsVisible}"/>
+                    <txanalyzer:ExtrinsicErrorView IsVisible="{Binding ExtrinsicFailedIsVisible}"
+                                                   ErrorMessage="{Binding ProcessedExtrinsicFailedMessage}"/>
 
                     <Label TextColor="#888888"
                            FontAttributes="Bold"
@@ -68,7 +69,7 @@
                         <buttons:BasicGrayButton Text="Cancel" Grid.Column="0"
                                                 Clicked="OnCancelClicked"/>
 
-                        <buttons:PlutoFrameworkElevatedButton Text="Confirm" Grid.Column="1"
+                        <buttons:PlutoFrameworkElevatedButton Text="{Binding ConfirmButtonText}" Grid.Column="1"
                                                            Clicked="OnConfirmClicked"
                                                            ButtonState="{Binding ConfirmButtonState}"
                                                            />

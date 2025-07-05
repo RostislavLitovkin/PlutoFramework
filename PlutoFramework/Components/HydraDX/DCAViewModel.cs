@@ -35,7 +35,7 @@ namespace PlutoFramework.Components.HydraDX
             {
                 infos.Add(new DCAOrderInfo
                 {
-                    Amount = String.Format("{0:0.00}", position.Amount),
+                    Amount = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, position.Amount),
                     FromSymbol = position.FromSymbol,
                     ToSymbol = position.ToSymbol,
                     Time = position.RemainingDays > 0 ? position.RemainingDays + " Days" : position.RemainingHours + " Hours",

@@ -38,7 +38,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_elections_phragmen
     }
     
     /// <summary>
-    /// >> 338 - Variant[pallet_elections_phragmen.Renouncing]
+    /// >> 169 - Variant[pallet_elections_phragmen.Renouncing]
     /// </summary>
     public sealed class EnumRenouncing : BaseEnumRust<Renouncing>
     {

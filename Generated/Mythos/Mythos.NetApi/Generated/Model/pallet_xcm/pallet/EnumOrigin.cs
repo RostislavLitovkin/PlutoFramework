@@ -33,7 +33,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 319 - Variant[pallet_xcm.pallet.Origin]
+    /// >> 359 - Variant[pallet_xcm.pallet.Origin]
     /// </summary>
     public sealed class EnumOrigin : BaseEnumRust<Origin>
     {
@@ -43,8 +43,8 @@ namespace Mythos.NetApi.Generated.Model.pallet_xcm.pallet
         /// </summary>
         public EnumOrigin()
         {
-				AddTypeDecoder<Mythos.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Origin.Xcm);
-				AddTypeDecoder<Mythos.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Origin.Response);
+				AddTypeDecoder<Mythos.NetApi.Generated.Model.staging_xcm.v5.location.Location>(Origin.Xcm);
+				AddTypeDecoder<Mythos.NetApi.Generated.Model.staging_xcm.v5.location.Location>(Origin.Response);
         }
     }
 }

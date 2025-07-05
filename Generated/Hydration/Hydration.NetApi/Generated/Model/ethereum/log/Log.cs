@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.ethereum.log
     
     
     /// <summary>
-    /// >> 130 - Composite[ethereum.log.Log]
+    /// >> 447 - Composite[ethereum.log.Log]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Log : BaseType

@@ -255,7 +255,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.pallet
     }
     
     /// <summary>
-    /// >> 138 - Variant[pallet_nfts.pallet.Event]
+    /// >> 140 - Variant[pallet_nfts.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

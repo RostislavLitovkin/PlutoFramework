@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.up_pov_estimate_rpc
     
     
     /// <summary>
-    /// >> 609 - Composite[up_pov_estimate_rpc.PovInfo]
+    /// >> 690 - Composite[up_pov_estimate_rpc.PovInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PovInfo : BaseType

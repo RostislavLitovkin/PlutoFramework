@@ -54,7 +54,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_session.pallet
     }
     
     /// <summary>
-    /// >> 392 - Variant[pallet_session.pallet.Error]
+    /// >> 490 - Variant[pallet_session.pallet.Error]
     /// Error for the session pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

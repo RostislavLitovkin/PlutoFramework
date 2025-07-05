@@ -41,7 +41,10 @@ namespace Mythos.NetApi.Generated.Model.pallet_marketplace.pallet
         /// >> set_fee_signer_address
         /// Sets the fee signer address, allowing the designated account that signs fees.
         /// 
-        /// Only an account with the authority role can execute this function. /// - `fee_signer`: The account ID of the fee signer to be set.
+        /// Only an account with the authority role can execute this function.
+        /// 
+        /// Parameters:
+        /// - `fee_signer`: The account ID of the fee signer to be set.
         /// 
         /// Emits `FeeSignerAddressUpdate` event upon successful execution.
         /// 
@@ -96,7 +99,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_marketplace.pallet
         
         /// <summary>
         /// >> cancel_order
-        /// Cancelation of an Ask or Bid order.
+        /// Cancellation of an Ask or Bid order.
         /// 
         /// Callable by either the authority or the order creator.
         /// 
@@ -117,7 +120,7 @@ namespace Mythos.NetApi.Generated.Model.pallet_marketplace.pallet
     }
     
     /// <summary>
-    /// >> 246 - Variant[pallet_marketplace.pallet.Call]
+    /// >> 273 - Variant[pallet_marketplace.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

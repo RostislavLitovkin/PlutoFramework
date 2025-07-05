@@ -42,7 +42,7 @@ namespace Opal.NetApi.Generated.Model.pallet_evm_contract_helpers.pallet
     }
     
     /// <summary>
-    /// >> 383 - Variant[pallet_evm_contract_helpers.pallet.Event]
+    /// >> 449 - Variant[pallet_evm_contract_helpers.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

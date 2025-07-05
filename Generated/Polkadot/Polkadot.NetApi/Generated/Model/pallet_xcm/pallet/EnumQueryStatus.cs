@@ -38,7 +38,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 809 - Variant[pallet_xcm.pallet.QueryStatus]
+    /// >> 803 - Variant[pallet_xcm.pallet.QueryStatus]
     /// </summary>
     public sealed class EnumQueryStatus : BaseEnumRust<QueryStatus>
     {

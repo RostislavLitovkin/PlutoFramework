@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.shared
     
     
     /// <summary>
-    /// >> 711 - Composite[polkadot_runtime_parachains.shared.AllowedRelayParentsTracker]
+    /// >> 704 - Composite[polkadot_runtime_parachains.shared.AllowedRelayParentsTracker]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AllowedRelayParentsTracker : BaseType

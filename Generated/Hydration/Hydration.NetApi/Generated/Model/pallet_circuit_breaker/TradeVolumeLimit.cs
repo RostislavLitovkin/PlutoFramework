@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_circuit_breaker
     
     
     /// <summary>
-    /// >> 589 - Composite[pallet_circuit_breaker.TradeVolumeLimit]
+    /// >> 661 - Composite[pallet_circuit_breaker.TradeVolumeLimit]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class TradeVolumeLimit : BaseType

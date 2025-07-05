@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 592 - Composite[BTreeMapT5]
+    /// >> 673 - Composite[BTreeMapT5]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BTreeMapT5 : BaseType
@@ -27,7 +27,7 @@ namespace Opal.NetApi.Generated.Types.Base
         /// <summary>
         /// >> value
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14>> Value { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19>> Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace Opal.NetApi.Generated.Types.Base
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14>>();
+            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19>>();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

@@ -18,7 +18,7 @@ namespace Opal.NetApi.Generated.Model.pallet_referenda.types
     
     
     /// <summary>
-    /// >> 531 - Composite[pallet_referenda.types.TrackInfo]
+    /// >> 604 - Composite[pallet_referenda.types.TrackInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class TrackInfo : BaseType

@@ -18,7 +18,7 @@ namespace KusamaAssetHub.NetApi.Generated.Model.bounded_collections.weak_bounded
     
     
     /// <summary>
-    /// >> 273 - Composite[bounded_collections.weak_bounded_vec.WeakBoundedVecT3]
+    /// >> 277 - Composite[bounded_collections.weak_bounded_vec.WeakBoundedVecT3]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class WeakBoundedVecT3 : BaseType

@@ -219,6 +219,9 @@ namespace PlutoFramework.Types
 
         [JsonProperty("Index")]
         public long Index { get; set; }
+
+        [JsonProperty("Docs")]
+        public string[] Docs { get; set; } = [];
     }
 
     public enum Modifier { Default, Optional };

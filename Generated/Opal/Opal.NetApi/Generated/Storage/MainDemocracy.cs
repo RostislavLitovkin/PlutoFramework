@@ -37,9 +37,9 @@ namespace Opal.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "PublicPropCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "PublicProps"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "PublicProps"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT33)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "DepositOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29, Substrate.NetApi.Model.Types.Primitive.U128>)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34, Substrate.NetApi.Model.Types.Primitive.U128>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "ReferendumCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "LowestUnbaked"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "ReferendumInfoOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -49,7 +49,7 @@ namespace Opal.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "LastTabledWasExternal"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "NextExternal"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.frame_support.traits.preimages.EnumBounded, Opal.NetApi.Generated.Model.pallet_democracy.vote_threshold.EnumVoteThreshold>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "Blacklist"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(Opal.NetApi.Generated.Model.primitive_types.H256), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29>)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(Opal.NetApi.Generated.Model.primitive_types.H256), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "Cancellations"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(Opal.NetApi.Generated.Model.primitive_types.H256), typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Democracy", "MetadataOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -107,10 +107,10 @@ namespace Opal.NetApi.Generated.Storage
         /// >> PublicProps
         ///  The public proposals. Unsorted. The second item is the proposal.
         /// </summary>
-        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28> PublicProps(string blockhash, CancellationToken token)
+        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT33> PublicProps(string blockhash, CancellationToken token)
         {
             string parameters = DemocracyStorage.PublicPropsParams();
-            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT33>(parameters, blockhash, token);
             return result;
         }
         
@@ -142,10 +142,10 @@ namespace Opal.NetApi.Generated.Storage
         /// 
         ///  TWOX-NOTE: Safe, as increasing integer keys are safe.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29, Substrate.NetApi.Model.Types.Primitive.U128>> DepositOf(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34, Substrate.NetApi.Model.Types.Primitive.U128>> DepositOf(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = DemocracyStorage.DepositOfParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29, Substrate.NetApi.Model.Types.Primitive.U128>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34, Substrate.NetApi.Model.Types.Primitive.U128>>(parameters, blockhash, token);
             return result;
         }
         
@@ -374,10 +374,10 @@ namespace Opal.NetApi.Generated.Storage
         ///  A record of who vetoed what. Maps proposal hash to a possible existent block number
         ///  (until when it may not be resubmitted) and who vetoed it.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29>> Blacklist(Opal.NetApi.Generated.Model.primitive_types.H256 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34>> Blacklist(Opal.NetApi.Generated.Model.primitive_types.H256 key, string blockhash, CancellationToken token)
         {
             string parameters = DemocracyStorage.BlacklistParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34>>(parameters, blockhash, token);
             return result;
         }
         
@@ -694,7 +694,7 @@ namespace Opal.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 EnactmentPeriod()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x19000000");
+            result.Create("0x32000000");
             return result;
         }
         
@@ -705,7 +705,7 @@ namespace Opal.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 LaunchPeriod()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x2C010000");
+            result.Create("0x58020000");
             return result;
         }
         
@@ -716,7 +716,7 @@ namespace Opal.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 VotingPeriod()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x2C010000");
+            result.Create("0x58020000");
             return result;
         }
         
@@ -730,7 +730,7 @@ namespace Opal.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 VoteLockingPeriod()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x19000000");
+            result.Create("0x32000000");
             return result;
         }
         
@@ -765,7 +765,7 @@ namespace Opal.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 FastTrackVotingPeriod()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x32000000");
+            result.Create("0x64000000");
             return result;
         }
         
@@ -776,7 +776,7 @@ namespace Opal.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 CooloffPeriod()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x2C010000");
+            result.Create("0x58020000");
             return result;
         }
         

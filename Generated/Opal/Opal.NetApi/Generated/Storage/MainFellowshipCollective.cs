@@ -50,7 +50,7 @@ namespace Opal.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(Opal.NetApi.Generated.Model.pallet_ranked_collective.EnumVoteRecord)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("FellowshipCollective", "VotingCleanup"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40)));
         }
         
         /// <summary>
@@ -234,10 +234,10 @@ namespace Opal.NetApi.Generated.Storage
         /// <summary>
         /// >> VotingCleanup
         /// </summary>
-        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35> VotingCleanup(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40> VotingCleanup(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = FellowshipCollectiveStorage.VotingCleanupParams(key);
-            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Opal.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40>(parameters, blockhash, token);
             return result;
         }
     }
@@ -316,6 +316,18 @@ namespace Opal.NetApi.Generated.Storage
             byteArray.AddRange(max.Encode());
             return new Method(47, "FellowshipCollective", 5, "cleanup_poll", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> exchange_member
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method ExchangeMember(Opal.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who, Opal.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress new_who)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(who.Encode());
+            byteArray.AddRange(new_who.Encode());
+            return new Method(47, "FellowshipCollective", 6, "exchange_member", byteArray.ToArray());
+        }
     }
     
     /// <summary>
@@ -384,5 +396,17 @@ namespace Opal.NetApi.Generated.Storage
         /// The origin is not sufficiently privileged to do the operation.
         /// </summary>
         NoPermission,
+        
+        /// <summary>
+        /// >> SameMember
+        /// The new member to exchange is the same as the old member
+        /// </summary>
+        SameMember,
+        
+        /// <summary>
+        /// >> TooManyMembers
+        /// The max member count for the rank has been reached.
+        /// </summary>
+        TooManyMembers,
     }
 }

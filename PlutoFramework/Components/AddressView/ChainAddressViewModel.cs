@@ -18,7 +18,6 @@ namespace PlutoFramework.Components.AddressView
 
         public ChainAddressViewModel()
         {
-            qrAddress = "Loading";
             address = "Loading";
             chainAddressName = "";
             isVisible = true;

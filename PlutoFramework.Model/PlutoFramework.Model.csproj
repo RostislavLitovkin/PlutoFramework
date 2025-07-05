@@ -68,5 +68,6 @@
     <ProjectReference Include="..\Generated\Polkadot\Polkadot.NetApi\Polkadot.NetApi.csproj" />
     <ProjectReference Include="..\Generated\Unique\Unique.NetApi\Unique.NetApi.csproj" />
     <ProjectReference Include="..\UniqueryPlus\UniqueryPlus.csproj" />
+    <ProjectReference Include="..\XcavateSubquery\XcavateSubquery.csproj" />
   </ItemGroup>
 </Project>

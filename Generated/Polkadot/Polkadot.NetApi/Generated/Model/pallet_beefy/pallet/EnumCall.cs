@@ -23,16 +23,16 @@ namespace Polkadot.NetApi.Generated.Model.pallet_beefy.pallet
     {
         
         /// <summary>
-        /// >> report_equivocation
+        /// >> report_double_voting
         /// Report voter equivocation/misbehavior. This method will verify the
         /// equivocation proof and validate the given key ownership proof
         /// against the extracted offender. If both are valid, the offence
         /// will be reported.
         /// </summary>
-        report_equivocation = 0,
+        report_double_voting = 0,
         
         /// <summary>
-        /// >> report_equivocation_unsigned
+        /// >> report_double_voting_unsigned
         /// Report voter equivocation/misbehavior. This method will verify the
         /// equivocation proof and validate the given key ownership proof
         /// against the extracted offender. If both are valid, the offence
@@ -43,7 +43,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_beefy.pallet
         /// if the block author is defined it will be defined as the equivocation
         /// reporter.
         /// </summary>
-        report_equivocation_unsigned = 1,
+        report_double_voting_unsigned = 1,
         
         /// <summary>
         /// >> set_new_genesis
@@ -53,10 +53,52 @@ namespace Polkadot.NetApi.Generated.Model.pallet_beefy.pallet
         /// Note: `delay_in_blocks` has to be at least 1.
         /// </summary>
         set_new_genesis = 2,
+        
+        /// <summary>
+        /// >> report_fork_voting
+        /// Report fork voting equivocation. This method will verify the equivocation proof
+        /// and validate the given key ownership proof against the extracted offender.
+        /// If both are valid, the offence will be reported.
+        /// </summary>
+        report_fork_voting = 3,
+        
+        /// <summary>
+        /// >> report_fork_voting_unsigned
+        /// Report fork voting equivocation. This method will verify the equivocation proof
+        /// and validate the given key ownership proof against the extracted offender.
+        /// If both are valid, the offence will be reported.
+        /// 
+        /// This extrinsic must be called unsigned and it is expected that only
+        /// block authors will call it (validated in `ValidateUnsigned`), as such
+        /// if the block author is defined it will be defined as the equivocation
+        /// reporter.
+        /// </summary>
+        report_fork_voting_unsigned = 4,
+        
+        /// <summary>
+        /// >> report_future_block_voting
+        /// Report future block voting equivocation. This method will verify the equivocation proof
+        /// and validate the given key ownership proof against the extracted offender.
+        /// If both are valid, the offence will be reported.
+        /// </summary>
+        report_future_block_voting = 5,
+        
+        /// <summary>
+        /// >> report_future_block_voting_unsigned
+        /// Report future block voting equivocation. This method will verify the equivocation proof
+        /// and validate the given key ownership proof against the extracted offender.
+        /// If both are valid, the offence will be reported.
+        /// 
+        /// This extrinsic must be called unsigned and it is expected that only
+        /// block authors will call it (validated in `ValidateUnsigned`), as such
+        /// if the block author is defined it will be defined as the equivocation
+        /// reporter.
+        /// </summary>
+        report_future_block_voting_unsigned = 6,
     }
     
     /// <summary>
-    /// >> 437 - Variant[pallet_beefy.pallet.Call]
+    /// >> 426 - Variant[pallet_beefy.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -67,9 +109,13 @@ namespace Polkadot.NetApi.Generated.Model.pallet_beefy.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_consensus_beefy.DoubleVotingProof, Polkadot.NetApi.Generated.Model.sp_session.MembershipProof>>(Call.report_equivocation);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_consensus_beefy.DoubleVotingProof, Polkadot.NetApi.Generated.Model.sp_session.MembershipProof>>(Call.report_equivocation_unsigned);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_consensus_beefy.DoubleVotingProof, Polkadot.NetApi.Generated.Model.sp_session.MembershipProof>>(Call.report_double_voting);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_consensus_beefy.DoubleVotingProof, Polkadot.NetApi.Generated.Model.sp_session.MembershipProof>>(Call.report_double_voting_unsigned);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.set_new_genesis);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_consensus_beefy.ForkVotingProof, Polkadot.NetApi.Generated.Model.sp_session.MembershipProof>>(Call.report_fork_voting);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_consensus_beefy.ForkVotingProof, Polkadot.NetApi.Generated.Model.sp_session.MembershipProof>>(Call.report_fork_voting_unsigned);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_consensus_beefy.FutureBlockVotingProof, Polkadot.NetApi.Generated.Model.sp_session.MembershipProof>>(Call.report_future_block_voting);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_consensus_beefy.FutureBlockVotingProof, Polkadot.NetApi.Generated.Model.sp_session.MembershipProof>>(Call.report_future_block_voting_unsigned);
         }
     }
 }

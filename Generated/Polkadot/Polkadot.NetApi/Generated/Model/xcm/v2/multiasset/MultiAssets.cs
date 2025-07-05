@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.xcm.v2.multiasset
     
     
     /// <summary>
-    /// >> 358 - Composite[xcm.v2.multiasset.MultiAssets]
+    /// >> 347 - Composite[xcm.v2.multiasset.MultiAssets]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MultiAssets : BaseType

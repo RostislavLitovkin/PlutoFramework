@@ -60,6 +60,16 @@ namespace Mythos.NetApi.Generated
         public MultisigStorage MultisigStorage;
         
         /// <summary>
+        /// PreimageStorage storage calls.
+        /// </summary>
+        public PreimageStorage PreimageStorage;
+        
+        /// <summary>
+        /// SchedulerStorage storage calls.
+        /// </summary>
+        public SchedulerStorage SchedulerStorage;
+        
+        /// <summary>
         /// BalancesStorage storage calls.
         /// </summary>
         public BalancesStorage BalancesStorage;
@@ -95,14 +105,24 @@ namespace Mythos.NetApi.Generated
         public CouncilStorage CouncilStorage;
         
         /// <summary>
+        /// DemocracyStorage storage calls.
+        /// </summary>
+        public DemocracyStorage DemocracyStorage;
+        
+        /// <summary>
+        /// TreasuryStorage storage calls.
+        /// </summary>
+        public TreasuryStorage TreasuryStorage;
+        
+        /// <summary>
         /// AuthorshipStorage storage calls.
         /// </summary>
         public AuthorshipStorage AuthorshipStorage;
         
         /// <summary>
-        /// CollatorSelectionStorage storage calls.
+        /// CollatorStakingStorage storage calls.
         /// </summary>
-        public CollatorSelectionStorage CollatorSelectionStorage;
+        public CollatorStakingStorage CollatorStakingStorage;
         
         /// <summary>
         /// SessionStorage storage calls.
@@ -174,6 +194,8 @@ namespace Mythos.NetApi.Generated
             this.ParachainInfoStorage = new ParachainInfoStorage(this);
             this.UtilityStorage = new UtilityStorage(this);
             this.MultisigStorage = new MultisigStorage(this);
+            this.PreimageStorage = new PreimageStorage(this);
+            this.SchedulerStorage = new SchedulerStorage(this);
             this.BalancesStorage = new BalancesStorage(this);
             this.TransactionPaymentStorage = new TransactionPaymentStorage(this);
             this.NftsStorage = new NftsStorage(this);
@@ -181,8 +203,10 @@ namespace Mythos.NetApi.Generated
             this.MultibatchingStorage = new MultibatchingStorage(this);
             this.SudoStorage = new SudoStorage(this);
             this.CouncilStorage = new CouncilStorage(this);
+            this.DemocracyStorage = new DemocracyStorage(this);
+            this.TreasuryStorage = new TreasuryStorage(this);
             this.AuthorshipStorage = new AuthorshipStorage(this);
-            this.CollatorSelectionStorage = new CollatorSelectionStorage(this);
+            this.CollatorStakingStorage = new CollatorStakingStorage(this);
             this.SessionStorage = new SessionStorage(this);
             this.AuraStorage = new AuraStorage(this);
             this.AuraExtStorage = new AuraExtStorage(this);

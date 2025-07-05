@@ -38,7 +38,7 @@ namespace Opal.NetApi.Generated.Model.pallet_referenda.types
     }
     
     /// <summary>
-    /// >> 532 - Variant[pallet_referenda.types.Curve]
+    /// >> 605 - Variant[pallet_referenda.types.Curve]
     /// </summary>
     public sealed class EnumCurve : BaseEnumRust<Curve>
     {

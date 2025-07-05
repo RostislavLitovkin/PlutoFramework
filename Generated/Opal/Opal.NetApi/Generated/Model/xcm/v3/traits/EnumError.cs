@@ -223,7 +223,7 @@ namespace Opal.NetApi.Generated.Model.xcm.v3.traits
     }
     
     /// <summary>
-    /// >> 243 - Variant[xcm.v3.traits.Error]
+    /// >> 258 - Variant[xcm.v3.traits.Error]
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>
     {

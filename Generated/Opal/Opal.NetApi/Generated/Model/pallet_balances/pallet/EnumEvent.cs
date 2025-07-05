@@ -149,10 +149,16 @@ namespace Opal.NetApi.Generated.Model.pallet_balances.pallet
         /// Some balance was thawed.
         /// </summary>
         Thawed = 20,
+        
+        /// <summary>
+        /// >> TotalIssuanceForced
+        /// The `TotalIssuance` was forcefully changed.
+        /// </summary>
+        TotalIssuanceForced = 21,
     }
     
     /// <summary>
-    /// >> 37 - Variant[pallet_balances.pallet.Event]
+    /// >> 39 - Variant[pallet_balances.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -184,6 +190,7 @@ namespace Opal.NetApi.Generated.Model.pallet_balances.pallet
 				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Unlocked);
 				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Frozen);
 				AddTypeDecoder<BaseTuple<Opal.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Thawed);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.TotalIssuanceForced);
         }
     }
 }

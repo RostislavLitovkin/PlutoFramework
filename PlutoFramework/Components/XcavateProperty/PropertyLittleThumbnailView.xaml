@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.XcavateProperty.PropertyLittleThumbnailView"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             xmlns:networkselect="clr-namespace:PlutoFramework.Components.NetworkSelect"
+             xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
+             xmlns:xcavateproperty="clr-namespace:PlutoFramework.Components.XcavateProperty"
+             HeightRequest="70">
+    <card:ClickableCard CardPadding="0, 0, 0, 0"
+                        x:Name="card">
+        <card:ClickableCard.View>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="120" />
+                </Grid.ColumnDefinitions>
+
+                <Border Margin="5"
+                         Padding="0"
+                         HeightRequest="60"
+                         Grid.Column="0"
+                         StrokeThickness="0"
+                         BackgroundColor="Black">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="{StaticResource CARD-CORNER-RADIUS}" />
+
+                    </Border.StrokeShape>
+
+                    <AbsoluteLayout>
+
+                        <Image x:Name="image"
+                               Aspect="AspectFill"
+                               BackgroundColor="{AppThemeBinding Light=#dddddd, Dark=#222222}"
+                               Source="xcavateloading.gif"
+                               IsAnimationPlaying="True"
+                               HeightRequest="60"
+                               WidthRequest="60"
+                               AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                           />
+                    </AbsoluteLayout>
+                </Border>
+
+                <AbsoluteLayout HeightRequest="60"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="2"
+                                x:Name="infoLayout">
+                    <Label Padding="5, 0, 0, 0"
+                              AbsoluteLayout.LayoutBounds="0.5, 0, 1, 30"
+                              AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                               LineBreakMode="TailTruncation"
+                               VerticalTextAlignment="Center"
+                               FontSize="16">
+
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span FontAttributes="Bold"
+                                  x:Name="nameLabelText" />
+
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <xcavateproperty:LocationView AbsoluteLayout.LayoutBounds="0.5, 30, 1, 30"
+                                                  AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                                                  x:Name="locationView" />
+                </AbsoluteLayout>
+
+                <AbsoluteLayout HeightRequest="60"
+                             Grid.Column="2">
+                    <Label
+                       HorizontalTextAlignment="End"
+                       VerticalTextAlignment="Center"
+                       FontAttributes="Bold"
+                       AbsoluteLayout.LayoutBounds="0,0,110,30">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span  x:Name="operationLabel"
+                                        FontAttributes="Bold" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label 
+                       HorizontalTextAlignment="End"
+                       VerticalTextAlignment="Center"
+                       TextColor="#888888"
+                       FontAttributes="Bold"
+                       AbsoluteLayout.LayoutBounds="0,30,110,30">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span x:Name="amountLabel"
+                                         FontAttributes="Bold" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </AbsoluteLayout>
+               
+            </Grid>
+
+        </card:ClickableCard.View>
+    </card:ClickableCard>
+</ContentView>

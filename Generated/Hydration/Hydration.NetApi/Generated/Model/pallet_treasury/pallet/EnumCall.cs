@@ -23,69 +23,6 @@ namespace Hydration.NetApi.Generated.Model.pallet_treasury.pallet
     {
         
         /// <summary>
-        /// >> propose_spend
-        /// Put forward a suggestion for spending.
-        /// 
-        /// ## Dispatch Origin
-        /// 
-        /// Must be signed.
-        /// 
-        /// ## Details
-        /// A deposit proportional to the value is reserved and slashed if the proposal is rejected.
-        /// It is returned once the proposal is awarded.
-        /// 
-        /// ### Complexity
-        /// - O(1)
-        /// 
-        /// ## Events
-        /// 
-        /// Emits [`Event::Proposed`] if successful.
-        /// </summary>
-        propose_spend = 0,
-        
-        /// <summary>
-        /// >> reject_proposal
-        /// Reject a proposed spend.
-        /// 
-        /// ## Dispatch Origin
-        /// 
-        /// Must be [`Config::RejectOrigin`].
-        /// 
-        /// ## Details
-        /// The original deposit will be slashed.
-        /// 
-        /// ### Complexity
-        /// - O(1)
-        /// 
-        /// ## Events
-        /// 
-        /// Emits [`Event::Rejected`] if successful.
-        /// </summary>
-        reject_proposal = 1,
-        
-        /// <summary>
-        /// >> approve_proposal
-        /// Approve a proposal.
-        /// 
-        /// ## Dispatch Origin
-        /// 
-        /// Must be [`Config::ApproveOrigin`].
-        /// 
-        /// ## Details
-        /// 
-        /// At a later time, the proposal will be allocated to the beneficiary and the original
-        /// deposit will be returned.
-        /// 
-        /// ### Complexity
-        ///  - O(1).
-        /// 
-        /// ## Events
-        /// 
-        /// No events are emitted from this dispatch.
-        /// </summary>
-        approve_proposal = 2,
-        
-        /// <summary>
         /// >> spend_local
         /// Propose and approve a spend of treasury funds.
         /// 
@@ -170,7 +107,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_treasury.pallet
         /// 
         /// ## Dispatch Origin
         /// 
-        /// Must be signed.
+        /// Must be signed
         /// 
         /// ## Details
         /// 
@@ -235,7 +172,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_treasury.pallet
     }
     
     /// <summary>
-    /// >> 282 - Variant[pallet_treasury.pallet.Call]
+    /// >> 89 - Variant[pallet_treasury.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -246,9 +183,6 @@ namespace Hydration.NetApi.Generated.Model.pallet_treasury.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.propose_spend);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>(Call.reject_proposal);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>(Call.approve_proposal);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.spend_local);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>(Call.remove_approval);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseTuple, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>>>(Call.spend);

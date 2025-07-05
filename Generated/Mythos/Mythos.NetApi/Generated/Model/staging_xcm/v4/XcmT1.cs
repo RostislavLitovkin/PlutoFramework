@@ -18,7 +18,7 @@ namespace Mythos.NetApi.Generated.Model.staging_xcm.v4
     
     
     /// <summary>
-    /// >> 87 - Composite[staging_xcm.v4.XcmT1]
+    /// >> 319 - Composite[staging_xcm.v4.XcmT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class XcmT1 : BaseType
