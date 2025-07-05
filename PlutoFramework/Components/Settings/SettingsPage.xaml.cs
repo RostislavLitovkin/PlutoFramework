@@ -7,16 +7,14 @@ using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
 using PlutoFramework.Model.Xcavate;
 using PlutoFramework.View;
+using PlutoFramework.Templates.PageTemplate;
 
 namespace PlutoFramework.Components.Settings;
 
-public partial class SettingsPage : ContentPage
+public partial class SettingsPage : PageTemplate
 {
     public SettingsPage()
     {
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 
         BindingContext = new SettingsViewModel();
