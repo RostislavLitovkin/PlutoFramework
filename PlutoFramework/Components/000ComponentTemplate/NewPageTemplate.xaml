@@ -3,6 +3,6 @@
                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                        xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
                        x:Class="PlutoFramework.Components._000ComponentTemplate.NewPageTemplate"
-                       Title="NewPageItem">
+                       Title="$itemname$">
     
 </template:PageTemplate>
