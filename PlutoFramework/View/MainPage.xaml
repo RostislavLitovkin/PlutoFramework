@@ -31,18 +31,25 @@
                 AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
         <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
            Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}" Opacity="{AppThemeBinding Light=0.96}" Aspect="AspectFill"/>
-        <ScrollView
+
+        <RefreshView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                     Margin="0,65,0,65"
+                        Command="{Binding RefreshCommand}" 
+                        IsRefreshing="{Binding IsRefreshing}">
+            <ScrollView
                     AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-                    Margin="0,65,0,65"
+                    
                     IsEnabled="{Binding scrollIsEnabled}">
 
-            <VerticalStackLayout
+
+                <VerticalStackLayout
                     x:Name="stackLayout"
                     Spacing="15"
                     Padding="20, 15, 20, 100">
 
-            </VerticalStackLayout>
-        </ScrollView>
+                </VerticalStackLayout>
+            </ScrollView>
+        </RefreshView>
 
         <xcavate:XcavateMainPageTopNavigationBarView />
 

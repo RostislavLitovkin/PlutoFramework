@@ -29,6 +29,7 @@ using PlutoFramework.Components.Sumsub;
 using PlutoFramework.Model.SQLite;
 using PlutoFramework.Components.Loading;
 using PlutoFramework.Components.DAppConnection;
+using PlutoFramework.ViewModel;
 
 namespace PlutoFramework;
 
@@ -42,6 +43,8 @@ public partial class App : Application
         AppConfigurationLoader.Load();
 
         AssetsModel.DatabaseSaver = new BalancesDatabaseSaver();
+
+        DependencyService.Register<MainPageViewModel>();
 
         DependencyService.Register<TransferViewModel>();
 

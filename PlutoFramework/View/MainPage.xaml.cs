@@ -6,6 +6,7 @@ using PlutoFramework.Components.TransferView;
 using PlutoFramework.Components.UniversalScannerView;
 using PlutoFramework.Components.Vault;
 using PlutoFramework.Model;
+using PlutoFramework.ViewModel;
 
 namespace PlutoFramework.View;
 
@@ -20,6 +21,9 @@ public partial class MainPage : ContentPage
         Shell.SetNavBarIsVisible(this, false);
 
         InitializeComponent();
+
+        var viewModel = DependencyService.Get<MainPageViewModel>();
+        BindingContext = viewModel;
 
         networksView.IsVisible = Preferences.Get(PreferencesModel.SETTINGS_DISPLAY_NETWORKS, DefaultAppConfiguration.DISPLAY_NETWORKS);
         NetworksView = networksView;
