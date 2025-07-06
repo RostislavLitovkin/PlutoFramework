@@ -71,7 +71,7 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
-    <MauiIcon Include="Resources\AppIcon\appicon.png" Color="#FFFFFF" ForegroundScale="0.65" />
+    <MauiIcon Include="Resources\AppIcon\appicon.png" Color="#3B4F74" ForegroundScale="0.65" />
 
 		<!-- Splash Screen -->
     <MauiSplashScreen Include="Resources\Splash\realxmarketsplash.png" Color="#FFFFFF" BaseSize="128,128" />
