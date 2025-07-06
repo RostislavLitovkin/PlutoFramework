@@ -17,7 +17,7 @@ namespace PlutoFramework.Model.HydraDX
 
         public static Dictionary<(uint?, uint), HydraDXTokenInfo> AssetsById = new Dictionary<(uint?, uint), HydraDXTokenInfo>();
 
-        public static async Task<IEnumerable<(uint, double)>> GetRestrospectiveSpotPricesAsync(AjunaExt.SubstrateClientExt client, Interval interval, string symbol, uint steps, CancellationToken token)
+        public static async Task<IEnumerable<(uint, double?)>> GetRestrospectiveSpotPricesAsync(AjunaExt.SubstrateClientExt client, Interval interval, string symbol, uint steps, CancellationToken token)
         {
             if (client is null || client.Endpoint.Key != EndpointEnum.Hydration)
             {
@@ -183,7 +183,7 @@ namespace PlutoFramework.Model.HydraDX
             }
         }
 
-        public static double GetSpotPrice(string tokenSymbol, uint? blocknumber = null)
+        public static double? GetSpotPrice(string tokenSymbol, uint? blocknumber = null)
         {
             if (tokenSymbol.Equals("USDC", StringComparison.CurrentCultureIgnoreCase))
             {
@@ -207,12 +207,12 @@ namespace PlutoFramework.Model.HydraDX
 
             if (!Assets.ContainsKey((blocknumber, tokenSymbol)))
             {
-                return 0;
+                return null;
             }
 
             if (!Assets.ContainsKey((blocknumber, PlutoFramework.Constants.HydraDX.STABLE_TOKEN)))
             {
-                return 0;
+                return null;
             }
 
             HydraDXTokenInfo token = Assets[(blocknumber, tokenSymbol)];

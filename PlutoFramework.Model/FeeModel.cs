@@ -45,7 +45,7 @@ namespace PlutoFramework.Model
 
             var amount = (double)(feeDetail.InclusionFee.BaseFee.Value + feeDetail.InclusionFee.AdjustedWeightFee.Value + feeDetail.InclusionFee.LenFee.Value) / Math.Pow(10, client.Endpoint.Decimals); ;
 
-            var usdValue = Sdk.GetSpotPrice(client.Endpoint.Unit);
+            var usdValue = Sdk.GetSpotPrice(client.Endpoint.Unit) ?? 0;
 
             var asset = new Asset
             {

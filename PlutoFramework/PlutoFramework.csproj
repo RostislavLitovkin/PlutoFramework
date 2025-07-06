@@ -521,6 +521,9 @@
 	  <MauiXaml Update="Components\Buttons\BasicGrayButton.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Components\Buttons\ChoiceTextButton.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Components\Buttons\ElevatedButton.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

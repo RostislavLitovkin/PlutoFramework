@@ -10,7 +10,9 @@ namespace PlutoFramework.Components.Balance
 {
     public partial class AssetDetailViewModel : ObservableObject
     {
-        private const uint CHART_STEPS = 20;
+        public bool MinMaxIsVisible => MinText != MaxText;
+
+        private const uint CHART_STEPS = 24;
 
         [ObservableProperty]
         private AssetInfo assetInfo;
@@ -28,7 +30,18 @@ namespace PlutoFramework.Components.Balance
         private string time4Text;
 
         [ObservableProperty]
+        public string pricePerTokenText = "Loading";
+
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(HourlyIsSelected))]
+        [NotifyPropertyChangedFor(nameof(DailyIsSelected))]
+        [NotifyPropertyChangedFor(nameof(WeeklyIsSelected))]
         private Interval chartInterval = Interval.Daily;
+
+        public bool HourlyIsSelected => ChartInterval == Interval.Hourly;
+        public bool DailyIsSelected => ChartInterval == Interval.Daily;
+        public bool WeeklyIsSelected => ChartInterval == Interval.Weekly;
+
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(MinLayoutBounds))]
@@ -44,6 +57,7 @@ namespace PlutoFramework.Components.Balance
         };
 
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(MinMaxIsVisible))]
         private string minText = "";
 
 
@@ -62,6 +76,7 @@ namespace PlutoFramework.Components.Balance
         };
 
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(MinMaxIsVisible))]
         private string maxText = "";
 
 
@@ -72,7 +87,18 @@ namespace PlutoFramework.Components.Balance
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(Chart))]
-        private IEnumerable<(uint, double)> prices = [];
+        private IEnumerable<(uint, double?)> prices = [];
+
+        private IEnumerable<ChartEntry> GetDefaultEntries() {
+            var color = SKColor.Parse(((Color)Application.Current.Resources["Primary"]).ToHex());
+            
+            return Enumerable.Range(0, (int)CHART_STEPS).Select(_ =>
+                new ChartEntry(1)
+                {
+                    Color = color,
+                    ValueLabelColor = color,
+                });
+        }
 
         public LineChart Chart
         {
@@ -80,7 +106,7 @@ namespace PlutoFramework.Components.Balance
             {
                 if (!Prices.Any())
                 {
-                    var color = SKColor.Parse(((Color)Application.Current.Resources["Primary"]).ToHex());
+
 
                     return new LineChart
                     {
@@ -90,12 +116,7 @@ namespace PlutoFramework.Components.Balance
                         LineSize = 20,
                         MinValue = 0,
                         MaxValue = 2,
-                        Entries = Enumerable.Range(0, (int)CHART_STEPS).Select(_ =>
-                            new ChartEntry(1)
-                            {
-                                Color = color,
-                                ValueLabelColor = color,
-                            }),
+                        Entries = GetDefaultEntries(),
                         ValueLabelOrientation = Orientation.Vertical,
                         ValueLabelOption = ValueLabelOption.TopOfElement,
                         ValueLabelTextSize = 32,
@@ -105,6 +126,10 @@ namespace PlutoFramework.Components.Balance
                 }
 
                 var entries = GetChartEntries();
+
+                if (entries == null || entries.Count() < CHART_STEPS) {
+                    entries = GetDefaultEntries();
+                }
 
                 var min = entries.Min(e => e.Value);
                 var max = entries.Max(e => e.Value);
@@ -149,6 +174,8 @@ namespace PlutoFramework.Components.Balance
             var hydrationClient = await SubstrateClientModel.GetOrAddSubstrateClientAsync(Constants.EndpointEnum.Hydration, token);
 
             Prices = await Sdk.GetRestrospectiveSpotPricesAsync(hydrationClient, ChartInterval, AssetInfo.Symbol, CHART_STEPS, token);
+
+            PricePerTokenText = ((double)Sdk.GetSpotPrice(AssetInfo.Symbol)).ToCurrencyString(currencyFormat: "{0:0.00}");
         }
 
         private IEnumerable<ChartEntry> GetChartEntries()
@@ -157,8 +184,18 @@ namespace PlutoFramework.Components.Balance
 
             return Prices.Select((blocknumberPrice, index) =>
             {
-                (var blocknumber, var price) = blocknumberPrice;
+                (var blocknumber, double? price) = blocknumberPrice;
 
+                if (price is null)
+                {
+                    var spotPrice = Sdk.GetSpotPrice(AssetInfo.Symbol);
+
+                    return new ChartEntry((float)spotPrice)
+                    {
+                        Color = color,
+                        ValueLabelColor = color,
+                    };
+                }
                 return new ChartEntry((float)price)
                 {
                     Color = color,
@@ -192,6 +229,18 @@ namespace PlutoFramework.Components.Balance
             }
 
             ChartInterval = interval;
+        }
+
+        [RelayCommand]
+        public void Receive()
+        {
+            ReceiveAndTransferModel.Receive();
+        }
+
+        [RelayCommand]
+        public void Transfer()
+        {
+            ReceiveAndTransferModel.Transfer();
         }
     }
 }

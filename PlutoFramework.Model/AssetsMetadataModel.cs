@@ -41,7 +41,7 @@ namespace PlutoFramework.Model
             var meta = await client.AssetRegistryStorage.Assets((U32)(uint)assetId, null, token);
 
             var symbol = Model.ToStringModel.VecU8ToString(meta.Symbol.Value.Value);
-            double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(symbol);
+            double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(symbol) ?? 0;
 
             AssetsMetadataDict[(endpoint.Key, pallet, assetId)] = new AssetMetadata
             {
@@ -62,7 +62,7 @@ namespace PlutoFramework.Model
             var meta = await client.AssetsStorage.Metadata((U32)(uint)assetId, null, token);
 
             var symbol = Model.ToStringModel.VecU8ToString(meta.Symbol.Value.Value);
-            double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(symbol);
+            double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(symbol) ?? 0;
 
             AssetsMetadataDict[(endpoint.Key, pallet, assetId)] = new AssetMetadata
             {

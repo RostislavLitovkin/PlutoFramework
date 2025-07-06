@@ -131,7 +131,7 @@ namespace PlutoFramework.Model
 
             // Calculate a real USD value
             {
-                double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(endpoint.Unit);
+                double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(endpoint.Unit) ?? 0;
 
                 Console.WriteLine($"Spot price for {endpoint.Unit} is {spotPrice} USD");
 
@@ -190,7 +190,7 @@ namespace PlutoFramework.Model
                         var frozenBalance = await GetFreezenBalanceForAssetIdAsync(client.SubstrateClient, substrateAddress, asset.Item1, token);
 
                         var symbol = Model.ToStringModel.VecU8ToString(asset.Item3.Symbol.Value);
-                        double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(symbol);
+                        double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(symbol) ?? 0;
 
                         double assetBalance = asset.Item4 != null ? (double)asset.Item4.Balance.Value / Math.Pow(10, asset.Item3.Decimals.Value) : 0.0;
                        
@@ -278,7 +278,7 @@ namespace PlutoFramework.Model
                         }
 
                         var symbol = tokenData.AssetMetadata.Symbol.OptionFlag ? Model.ToStringModel.VecU8ToString(tokenData.AssetMetadata.Symbol.Value.Value) : "";
-                        double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(symbol);
+                        double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(symbol) ?? 0;
 
                         double assetBalance = (double)(tokenData.AccountData.Free.Value - tokenData.AccountData.Frozen.Value) / Math.Pow(10, tokenData.AssetMetadata.Decimals.Value);
                         double assetReserved = (double)tokenData.AccountData.Reserved.Value / Math.Pow(10, tokenData.AssetMetadata.Decimals.Value);
@@ -335,7 +335,7 @@ namespace PlutoFramework.Model
                     foreach (BifrostTokenData tokenData in await GetBifrostTokensBalance(client.SubstrateClient, substrateAddress, CancellationToken.None))
                     {
                         var symbol = Model.ToStringModel.VecU8ToString(tokenData.AssetMetadata.Symbol.Value);
-                        double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(symbol);
+                        double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(symbol) ?? 0;
 
                         double assetBalance = (double)(tokenData.AccountData.Free.Value - tokenData.AccountData.Frozen.Value) / Math.Pow(10, tokenData.AssetMetadata.Decimals.Value);
                         double assetReserved = (double)tokenData.AccountData.Reserved.Value / Math.Pow(10, tokenData.AssetMetadata.Decimals.Value);
@@ -402,7 +402,7 @@ namespace PlutoFramework.Model
 
             foreach (var asset in AssetsDict.Values)
             {
-                double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(asset.Symbol);
+                double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(asset.Symbol) ?? 0;
                 asset.UsdValue = asset.Amount * spotPrice;
                 usdSumValue += asset.UsdValue;
             }
