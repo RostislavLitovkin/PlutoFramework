@@ -77,9 +77,9 @@
                             <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,1,AutoSize"
                                  AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
                                 <Image WidthRequest="80"
-                       HeightRequest="80"
-                       Margin="0,40,0,0"
-                       Source="xcavatedeveloper.png" />
+                                       HeightRequest="80"
+                                       Margin="0,40,0,0"
+                                       Source="xcavatedeveloper.png" />
                                 <Label HorizontalTextAlignment="Center">
                                     <Label.FormattedText>
                                         <FormattedString>
@@ -89,8 +89,8 @@
                                     </Label.FormattedText>
                                 </Label>
                                 <Label Text="List and manage properties"
-                       HeightRequest="70"
-                       HorizontalTextAlignment="Center"/>
+                                       HeightRequest="70"
+                                       HorizontalTextAlignment="Center"/>
                             </VerticalStackLayout>
                         </AbsoluteLayout>
 
@@ -120,8 +120,8 @@
                                     </Label.FormattedText>
                                 </Label>
                                 <Label Text="Buy &amp; sell tokenized real estate"
-                       HeightRequest="70"
-                       HorizontalTextAlignment="Center"/>
+                                       HeightRequest="70"
+                                       HorizontalTextAlignment="Center"/>
                             </VerticalStackLayout>
                         </AbsoluteLayout>
 
@@ -131,16 +131,16 @@
                     Grid.Row="1">
                     <card:ClickableCard.View>
                         <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
-                AbsoluteLayout.LayoutFlags="All">
+                                        AbsoluteLayout.LayoutFlags="All">
                             <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,1,AutoSize"
                                  AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
                                 <Image WidthRequest="80"
-                       HeightRequest="80"
-                       Margin="0,40,0,0"
-                       Source="xcavatelettingagent.png" />
+                                       HeightRequest="80"
+                                       Margin="0,40,0,0"
+                                       Source="xcavatelettingagent.png" />
                                 <Label 
-                       HorizontalTextAlignment="Center"
-                       >
+                                       HorizontalTextAlignment="Center"
+                                       >
                                     <Label.FormattedText>
                                         <FormattedString>
                                             <Span Text="Letting Agent"
@@ -149,8 +149,8 @@
                                     </Label.FormattedText>
                                 </Label>
                                 <Label Text="Facilitate transactions &amp; property management"
-                       HorizontalTextAlignment="Center"
-                       HeightRequest="70"/>
+                                   HorizontalTextAlignment="Center"
+                                   HeightRequest="70"/>
                             </VerticalStackLayout>
                         </AbsoluteLayout>
 
@@ -162,12 +162,12 @@
                     <card:ClickableCard.View>
                         <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
                 AbsoluteLayout.LayoutFlags="All">
-                            <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
-                                 AbsoluteLayout.LayoutFlags="PositionProportional">
+                            <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,1,AutoSize"
+                                 AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
                                 <Image WidthRequest="80"
-                       HeightRequest="80"
-                       Margin="0,40,0,0"
-                       Source="xcavateloanevaluator.png" />
+                                       HeightRequest="80"
+                                       Margin="0,40,0,0"
+                                       Source="xcavateloanevaluator.png" />
                                 <Label HorizontalTextAlignment="Center">
                                     <Label.FormattedText>
                                         <FormattedString>
@@ -177,8 +177,8 @@
                                     </Label.FormattedText>
                                 </Label>
                                 <Label Text="Facilitate transactions &amp; property management"
-                       HeightRequest="70"
-                        HorizontalTextAlignment="Center"/>
+                                       HeightRequest="70"
+                                        HorizontalTextAlignment="Center"/>
                             </VerticalStackLayout>
                         </AbsoluteLayout>
 

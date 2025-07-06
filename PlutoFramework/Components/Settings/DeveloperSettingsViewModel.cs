@@ -8,7 +8,7 @@ namespace PlutoFramework.Components.Settings
     public partial class DeveloperSettingsViewModel : ObservableObject
     {
         [ObservableProperty]
-        private bool displayNetworks = Preferences.Get(PreferencesModel.SETTINGS_DISPLAY_NETWORKS, false);
+        private bool displayNetworks = Preferences.Get(PreferencesModel.SETTINGS_DISPLAY_NETWORKS, DefaultAppConfiguration.DISPLAY_NETWORKS);
 
         [RelayCommand]
         public void ToggleDislayNetworks()

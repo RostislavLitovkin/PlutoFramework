@@ -74,23 +74,23 @@
                     </Grid.ColumnDefinitions>
 
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="90" />
                         <RowDefinition Height="80" />
-                        <RowDefinition Height="70" />
                     </Grid.RowDefinitions>
 
-                    <table:TableCurrencyCell Grid.Column="0"
+                    <xcavate:XcavateCell Grid.Column="0"
                                          Grid.Row="0"
                                          Title="Listing price"
                                          Value="{Binding ListingPrice}" />
-                    <table:TableCurrencyCell Grid.Column="1"
+                    <xcavate:XcavateCell Grid.Column="1"
                                          Grid.Row="0"
                                       Title="Rental yield"
                                       Value="{Binding Apy}" />
-                    <table:TableCurrencyCell Grid.Column="0"
+                    <xcavate:XcavateCell Grid.Column="0"
                                          Grid.Row="1"
                                       Title="Tokens available"
                                       Value="{Binding TokensAvailable}" />
-                    <table:TableCurrencyCell Grid.Column="1"
+                    <xcavate:XcavateCell Grid.Column="1"
                                          Grid.Row="1"
                                       Title="Property time"
                                       Value="{Binding Metadata.PropertyType}" />

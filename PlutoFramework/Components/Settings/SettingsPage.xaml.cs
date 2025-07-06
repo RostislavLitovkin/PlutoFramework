@@ -159,7 +159,6 @@ public partial class SettingsPage : ContentPage
 
             return;
         }
-
         try
         {
             var secret = await Model.KeysModel.GetMnemonicsOrPrivateKeyAsync(accountVariant: "kilt1");

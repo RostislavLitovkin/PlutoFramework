@@ -21,8 +21,7 @@ public partial class MainPage : ContentPage
 
         InitializeComponent();
 
-        networksView.IsVisible = Preferences.Get(PreferencesModel.SETTINGS_DISPLAY_NETWORKS, true);
-
+        networksView.IsVisible = Preferences.Get(PreferencesModel.SETTINGS_DISPLAY_NETWORKS, DefaultAppConfiguration.DISPLAY_NETWORKS);
         NetworksView = networksView;
 
         StackLayout = stackLayout;

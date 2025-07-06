@@ -20,6 +20,8 @@ namespace PlutoFramework.Model
         public const string CURRENCY_FORMAT = "{0:0}";
 
         public const string? TRANSACTION_ANALYZER_PALLET_CALL_NAME_SUBSTITUTION = "Transaction detail";
+
+        public const bool DISPLAY_NETWORKS = false;
     }
 
     public static class AppConfigurationModel
