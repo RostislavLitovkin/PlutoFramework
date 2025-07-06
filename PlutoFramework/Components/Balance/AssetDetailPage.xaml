@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.Balance.AssetDetailPage"
              Title="AssetDetailPage"
+             xmlns:model="clr-namespace:PlutoFramework.Model;assembly=PlutoFramework.Model"
              xmlns:microcharts="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
          xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
@@ -25,48 +26,116 @@
                                  Margin="0"
                                  >
 
-                <AbsoluteLayout HorizontalOptions="Fill"
-                                HeightRequest="300">
-                    <microcharts:ChartView Chart="{Binding Chart}"
+                <VerticalStackLayout Spacing="5"
+                     Padding="0"
+                                     Margin="-10, 0, -10, 0"
+                     >
+                    <AbsoluteLayout HorizontalOptions="Fill"
+                                    HeightRequest="300">
+                        <microcharts:ChartView Chart="{Binding Chart}"
+                                               
+                                               
                                            AbsoluteLayout.LayoutBounds="0,0,1,300"
-                                           AbsoluteLayout.LayoutFlags="WidthProportional"
-                                           Margin="-10, 0, -10, 0"
-                                           />
-
-                    <Label
+                                           AbsoluteLayout.LayoutFlags="WidthProportional" />
+                        <Label
                            AbsoluteLayout.LayoutBounds="{Binding MinLayoutBounds}"
                            AbsoluteLayout.LayoutFlags="PositionProportional"
-                           TranslationY="-65"
-                           TextColor="{StaticResource Primary}">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span FontAttributes="Bold"
+                           TranslationY="0"
+                           TextColor="{StaticResource Primary}"
+                            Margin="{Binding MinMargin}">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span FontAttributes="Bold"
                                       Text="{Binding MinText}" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
 
-                    <Label AbsoluteLayout.LayoutBounds="{Binding MaxLayoutBounds}"
+                        <Label AbsoluteLayout.LayoutBounds="{Binding MaxLayoutBounds}"
                            AbsoluteLayout.LayoutFlags="PositionProportional"
-                           TranslationY="45"
-                           TextColor="{StaticResource Primary}">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span FontAttributes="Bold"
+                           TranslationY="0"
+                           TextColor="{StaticResource Primary}"
+                               Margin="{Binding MaxMargin}">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span FontAttributes="Bold"
                                       Text="{Binding MaxText}" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
 
+                    </AbsoluteLayout>
 
-                </AbsoluteLayout>
-                
-                
-                
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           TextColor="Gray"
+                           Text="{Binding Time1Text}" />
+                        <Label Grid.Column="1"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           TextColor="Gray"
+                           Text="{Binding Time2Text}" />
+                        <Label Grid.Column="2"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           TextColor="Gray"
+                           Text="{Binding Time3Text}" />
+                        <Label Grid.Column="3"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           TextColor="Gray"
+                           Text="{Binding Time4Text}" />
+                    </Grid>
+
+                    <Grid ColumnSpacing="10"
+                      HorizontalOptions="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           TextColor="{StaticResource Primary}"
+                           Text="20h">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ChangeChartIntervalCommand}" CommandParameter="{x:Static model:Interval.Hourly}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label Grid.Column="1"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           TextColor="{StaticResource Primary}"
+                           Text="3w">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ChangeChartIntervalCommand}" CommandParameter="{x:Static model:Interval.Daily}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label Grid.Column="2"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           TextColor="{StaticResource Primary}"
+                           Text="5m">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ChangeChartIntervalCommand}" CommandParameter="{x:Static model:Interval.Weekly}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                </VerticalStackLayout>
+
             </VerticalStackLayout>
-            
+
         </ScrollView>
-        
+
         <navigationbar:TopNavigationBar Title="{Binding AssetInfo.Symbol}" />
 
         <txanalyzer:TransactionAnalyzerConfirmationView />

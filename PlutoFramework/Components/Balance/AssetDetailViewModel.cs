@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using Microcharts;
 using PlutoFramework.Model;
 using PlutoFramework.Model.Currency;
@@ -15,25 +16,54 @@ namespace PlutoFramework.Components.Balance
         private AssetInfo assetInfo;
 
         [ObservableProperty]
+        private string time1Text;
+
+        [ObservableProperty]
+        private string time2Text;
+
+        [ObservableProperty]
+        private string time3Text;
+
+        [ObservableProperty]
+        private string time4Text;
+
+        [ObservableProperty]
         private Interval chartInterval = Interval.Daily;
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(MinLayoutBounds))]
+        [NotifyPropertyChangedFor(nameof(MinMargin))]
         private double minXPosition = 0;
 
         public Rect MinLayoutBounds => new Rect(MinXPosition, 1, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize);
+        public Thickness MinMargin => MinXPosition switch
+        {
+            0 => new Thickness(15, 0, 0, 0),
+            1 => new Thickness(0, 0, 15, 0),
+            _ => new Thickness(0)
+        };
 
         [ObservableProperty]
         private string minText = "";
 
+
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(MaxLayoutBounds))]
+        [NotifyPropertyChangedFor(nameof(MaxMargin))]
         private double maxXPosition = 0;
-
+        
         public Rect MaxLayoutBounds => new Rect(MaxXPosition, 0, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize);
+
+        public Thickness MaxMargin => MaxXPosition switch
+        {
+            0 => new Thickness(15, 0, 0, 0),
+            1 => new Thickness(0, 0, 15, 0),
+            _ => new Thickness(0)
+        };
 
         [ObservableProperty]
         private string maxText = "";
+
 
         partial void OnChartIntervalChanged(Interval value)
         {
@@ -44,11 +74,34 @@ namespace PlutoFramework.Components.Balance
         [NotifyPropertyChangedFor(nameof(Chart))]
         private IEnumerable<(uint, double)> prices = [];
 
-        public LineChart Chart {
-            get {
+        public LineChart Chart
+        {
+            get
+            {
                 if (!Prices.Any())
                 {
-                    return null;
+                    var color = SKColor.Parse(((Color)Application.Current.Resources["Primary"]).ToHex());
+
+                    return new LineChart
+                    {
+                        Margin = 0,
+                        LabelTextSize = 32,
+                        LabelOrientation = Orientation.Vertical,
+                        LineSize = 20,
+                        MinValue = 0,
+                        MaxValue = 2,
+                        Entries = Enumerable.Range(0, (int)CHART_STEPS).Select(_ =>
+                            new ChartEntry(1)
+                            {
+                                Color = color,
+                                ValueLabelColor = color,
+                            }),
+                        ValueLabelOrientation = Orientation.Vertical,
+                        ValueLabelOption = ValueLabelOption.TopOfElement,
+                        ValueLabelTextSize = 32,
+                        PointMode = PointMode.None,
+                        Typeface = SKTypeface.FromFamilyName("XcavateFont"),
+                    };
                 }
 
                 var entries = GetChartEntries();
@@ -59,11 +112,19 @@ namespace PlutoFramework.Components.Balance
                 var minIndex = entries.ToList().FindIndex(e => e.Value == min);
                 var maxIndex = entries.ToList().FindIndex(e => e.Value == max);
 
+                var tenPercentDifference = (max.Value - min.Value) * 0.1;
+
                 MinText = ((double)min.Value).ToCurrencyString(currencyFormat: "{0:0.00}");
                 MaxText = ((double)max.Value).ToCurrencyString(currencyFormat: "{0:0.00}");
 
-                MinXPosition = (double)minIndex / CHART_STEPS;
-                MaxXPosition = (double)maxIndex / CHART_STEPS;
+                MinXPosition = (double)minIndex / (CHART_STEPS - 1);
+                MaxXPosition = (double)maxIndex / (CHART_STEPS - 1);
+
+                uint midStep = CHART_STEPS / 8;
+                Time1Text = GetDateString((CHART_STEPS * 4) / 4 + midStep, ChartInterval);
+                Time2Text = GetDateString((CHART_STEPS * 3) / 4 + midStep, ChartInterval);
+                Time3Text = GetDateString((CHART_STEPS * 2) / 4 + midStep, ChartInterval);
+                Time4Text = GetDateString((CHART_STEPS * 1) / 4 + midStep, ChartInterval);
 
                 return new LineChart
                 {
@@ -71,8 +132,8 @@ namespace PlutoFramework.Components.Balance
                     LabelTextSize = 32,
                     LabelOrientation = Orientation.Vertical,
                     LineSize = 20,
-                    MinValue = min.Value * 0.9f,
-                    MaxValue = max.Value * 1.1f,
+                    MinValue = (float)(min.Value - tenPercentDifference),
+                    MaxValue = (float)(max.Value + tenPercentDifference),
                     Entries = entries,
                     ValueLabelOrientation = Orientation.Vertical,
                     ValueLabelOption = ValueLabelOption.TopOfElement,
@@ -92,17 +153,16 @@ namespace PlutoFramework.Components.Balance
 
         private IEnumerable<ChartEntry> GetChartEntries()
         {
+            var color = SKColor.Parse(((Color)Application.Current.Resources["Primary"]).ToHex());
+
             return Prices.Select((blocknumberPrice, index) =>
             {
                 (var blocknumber, var price) = blocknumberPrice;
-
-                var color = SKColor.Parse(((Color)Application.Current.Resources["Primary"]).ToHex());
 
                 return new ChartEntry((float)price)
                 {
                     Color = color,
                     ValueLabelColor = color,
-                    Label = (index + 3) % 5 == 0 ? GetDateString(CHART_STEPS - (uint)index, ChartInterval) : null,
                 };
             });
         }
@@ -119,8 +179,19 @@ namespace PlutoFramework.Components.Balance
                 _ => throw new ArgumentOutOfRangeException(nameof(interval), interval, null)
             };
 
-            return $"  {timeString}  ";
+            return $"{timeString}";
         }
 
+
+        [RelayCommand]
+        public void ChangeChartInterval(Interval interval)
+        {
+            if (ChartInterval == interval)
+            {
+                return;
+            }
+
+            ChartInterval = interval;
+        }
     }
 }
