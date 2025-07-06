@@ -8,7 +8,7 @@ namespace PlutoFramework.View;
 
 public partial class SetupPasswordPage : ContentPage
 {
-    public required Func<Task> Navigation;
+    public required Func<Task>? Navigation = null; 
 
     private bool clicked = false;
     public SetupPasswordPage()
@@ -27,7 +27,7 @@ public partial class SetupPasswordPage : ContentPage
 
         if (accountType == AccountType.Json && SecureStorage.GetAsync(PreferencesModel.PASSWORD) is not null)
         {
-            Application.Current.MainPage = new XcavateAppShell();
+            Application.Current.MainPage = new AppShell();
         }
     }
 
@@ -45,11 +45,22 @@ public partial class SetupPasswordPage : ContentPage
             passwordEntry.Text
         );
 
+       
         Preferences.Set(PreferencesModel.SHOW_WELCOME_SCREEN, false);
 
         await KeysModel.RegisterBiometricAuthenticationAsync();
 
-        await Navigation.Invoke();
+        if (Navigation is not null)
+        {
+            await Navigation.Invoke();
+
+        }
+        else
+        {
+            await Model.KeysModel.GenerateNewAccountAsync(passwordEntry.Text != null ? passwordEntry.Text : "");
+
+            Application.Current.MainPage = new AppShell();
+        }
 
         clicked = false;
     }

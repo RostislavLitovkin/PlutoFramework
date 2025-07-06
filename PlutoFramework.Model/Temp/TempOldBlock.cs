@@ -8,7 +8,7 @@ namespace PlutoFramework.Model.Temp
         //
         // Summary:
         //     Extrinsics
-        public string[] Extrinsics { get; set; }
+        public TempOldExtrinsic[] Extrinsics { get; set; }
 
         //
         // Summary:

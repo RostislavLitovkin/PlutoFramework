@@ -21,6 +21,8 @@ using PlutoFramework.Components.PredefinedLayouts;
 using PlutoFramework.Components.Xcm;
 using PlutoFramework.View;
 using PlutoFramework.Components.Kilt;
+using PlutoFramework.Components.OpenGov;
+using PlutoFramework.Components.Faucet;
 using PlutoFramework.Components.XcavateProperty;
 using PlutoFramework.Components.Table;
 using PlutoFramework.Components.XcavateProperty.Cells;
@@ -58,6 +60,8 @@ namespace PlutoFramework.Model
         GLGPowerups,
         xTrnsfr,
         mainDid,
+        OpenGovDel,
+        XcavatePaseoFaucet,
         XcPaseoOwnedProperties,
         XcTableInvestmentSummary,
         XcTableROIBalance,
@@ -68,7 +72,7 @@ namespace PlutoFramework.Model
 
     public class CustomLayoutModel
     {
-        public const string DEFAULT_PLUTO_LAYOUT = "plutolayout: [XcRiskWarning, dApp, XcTableInvestmentSummary, XcTableROIBalance, XcPaseoOwnedProperties];[XcavatePaseo]";
+        public const string DEFAULT_PLUTO_LAYOUT = "plutolayout: [U, dApp, BMnR, ExSL, UsdB, RnT, SubK, ChaK];[Polkadot, Kusama]";
 
         // This constant is used to fetch all components
         public static string AllComponentsString = $"plutolayout: [{string.Join(",", Enum.GetNames(typeof(ComponentId)))}];[";
@@ -384,6 +388,10 @@ namespace PlutoFramework.Model
                     return new XcmTransferView();
                 case ComponentId.mainDid:
                     return new MainDidView();
+                case ComponentId.OpenGovDel:
+                    return new VotingDelegationView();
+                case ComponentId.XcavatePaseoFaucet:
+                    return new FaucetButtonView(EndpointEnum.XcavatePaseo);
                 case ComponentId.XcPaseoOwnedProperties:
                     return new OwnedPropertiesListView();
                 case ComponentId.XcTableInvestmentSummary:
@@ -565,6 +573,18 @@ namespace PlutoFramework.Model
                     {
                         Name = "Main Kilt DID",
                         ComponentId = ComponentId.mainDid,
+                    };
+                case ComponentId.OpenGovDel:
+                    return new ComponentInfo
+                    {
+                        Name = "OpenGov Voting Delegation",
+                        ComponentId = ComponentId.OpenGovDel,
+                    };
+                case ComponentId.XcavatePaseoFaucet:
+                    return new ComponentInfo
+                    {
+                        Name = "Xcavate Paseo Faucet",
+                        ComponentId = ComponentId.XcavatePaseoFaucet
                     };
                 case ComponentId.XcPaseoOwnedProperties:
                     return new ComponentInfo

@@ -4,19 +4,6 @@
              x:Class="PlutoFramework.App">
     <Application.Resources>
         <ResourceDictionary>
-            <Style TargetType="Label">
-                <Setter Property="FontFamily" Value="XcavateFont" />
-            </Style>
-            <Style TargetType="Entry">
-                <Setter Property="FontFamily" Value="XcavateFont" />
-            </Style>
-            <Style TargetType="Button">
-                <Setter Property="FontFamily" Value="XcavateFont" />
-            </Style>
-            <Style TargetType="Editor">
-                <Setter Property="FontFamily" Value="XcavateFont" />
-            </Style>
-            
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />

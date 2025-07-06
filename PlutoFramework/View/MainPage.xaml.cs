@@ -21,7 +21,7 @@ public partial class MainPage : ContentPage
 
         InitializeComponent();
 
-        networksView.IsVisible = Preferences.Get(PreferencesModel.SETTINGS_DISPLAY_NETWORKS, false);
+        networksView.IsVisible = Preferences.Get(PreferencesModel.SETTINGS_DISPLAY_NETWORKS, true);
 
         NetworksView = networksView;
 

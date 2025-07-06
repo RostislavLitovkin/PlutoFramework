@@ -1,5 +1,6 @@
 using PlutoFramework.Components.CustomLayouts;
 using PlutoFramework.Components.Kilt;
+using PlutoFramework.Components.Credits;
 using PlutoFramework.Components.Xcavate;
 using PlutoFramework.Components.XcavateProperty;
 using PlutoFramework.Model;
@@ -39,12 +40,13 @@ public partial class SettingsPage : ContentPage
         KeysModel.RemoveAccount();
         KeysModel.RemoveAccount("kilt1");
 
+        SecureStorage.Default.Remove(PreferencesModel.PASSWORD);
         Preferences.Remove(PreferencesModel.BIOMETRICS_ENABLED);
         Preferences.Remove(PreferencesModel.SHOW_WELCOME_SCREEN);
 
         await SQLiteModel.DeleteAllDatabasesAsync();
 
-        Application.Current.MainPage = new OnboardingShell();
+        Application.Current.MainPage = new SetupPasswordPage();
     }
     async void OnDeveloperSettingsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
@@ -108,7 +110,7 @@ public partial class SettingsPage : ContentPage
 
             PropertyName = "Plot 1 - Plea Wharf",
 
-            ListingPrice = "£200,000",
+            ListingPrice = "ï¿½200,000",
             Apy = "5%",
             Tokens = 15,
             MaxTokens = 100,
@@ -124,7 +126,7 @@ public partial class SettingsPage : ContentPage
 
             UsdtPricePerToken = 2300.0,
 
-            RentalIncome = "£1,000 pcm",
+            RentalIncome = "ï¿½1,000 pcm",
 
             Images = [
                 "https://www.nintendo.com/eu/media/images/assets/nintendo_switch_games/xenobladechroniclesxdefinitiveedition/nswitch_xenobladechroniclesxdefinitiveedition/XenobladeChroniclesXDefinitiveEdition_27.png",
@@ -179,5 +181,10 @@ public partial class SettingsPage : ContentPage
         };
 
         await Navigation.PushAsync(new ModifyPropertyPage(property));*/
+    }
+
+    async void OnCreditsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
+    {
+        await Navigation.PushAsync(new CreditsPage());
     }
 }
