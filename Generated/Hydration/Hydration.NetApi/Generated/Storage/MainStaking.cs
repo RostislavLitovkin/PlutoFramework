@@ -50,6 +50,7 @@ namespace Hydration.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Staking", "ProcessedVotes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Hydration.NetApi.Generated.Model.pallet_staking.types.Vote)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Staking", "SixSecBlocksSince"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
         }
         
         /// <summary>
@@ -263,6 +264,35 @@ namespace Hydration.NetApi.Generated.Storage
         {
             string parameters = StakingStorage.ProcessedVotesParams(key);
             var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.pallet_staking.types.Vote>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> SixSecBlocksSinceParams
+        ///  Block number when we switched to 6 sec. blocks.
+        /// </summary>
+        public static string SixSecBlocksSinceParams()
+        {
+            return RequestGenerator.GetStorage("Staking", "SixSecBlocksSince", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> SixSecBlocksSinceDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string SixSecBlocksSinceDefault()
+        {
+            return "0xFFFFFFFF";
+        }
+        
+        /// <summary>
+        /// >> SixSecBlocksSince
+        ///  Block number when we switched to 6 sec. blocks.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> SixSecBlocksSince(string blockhash, CancellationToken token)
+        {
+            string parameters = StakingStorage.SixSecBlocksSinceParams();
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
             return result;
         }
     }

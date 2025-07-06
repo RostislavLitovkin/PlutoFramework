@@ -39,7 +39,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_ema_oracle.pallet
     }
     
     /// <summary>
-    /// >> 404 - Variant[pallet_ema_oracle.pallet.Call]
+    /// >> 409 - Variant[pallet_ema_oracle.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

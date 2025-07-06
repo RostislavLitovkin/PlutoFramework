@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_referenda.types
     
     
     /// <summary>
-    /// >> 621 - Composite[pallet_referenda.types.DecidingStatus]
+    /// >> 627 - Composite[pallet_referenda.types.DecidingStatus]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DecidingStatus : BaseType

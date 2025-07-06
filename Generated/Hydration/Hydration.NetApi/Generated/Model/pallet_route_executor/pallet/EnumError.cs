@@ -84,7 +84,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_route_executor.pallet
     }
     
     /// <summary>
-    /// >> 664 - Variant[pallet_route_executor.pallet.Error]
+    /// >> 669 - Variant[pallet_route_executor.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

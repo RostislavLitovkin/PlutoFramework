@@ -263,7 +263,7 @@ namespace Hydration.NetApi.Generated.Model.staging_xcm.v4
     }
     
     /// <summary>
-    /// >> 390 - Variant[staging_xcm.v4.Instruction]
+    /// >> 395 - Variant[staging_xcm.v4.Instruction]
     /// </summary>
     public sealed class EnumInstruction : BaseEnumRust<Instruction>
     {

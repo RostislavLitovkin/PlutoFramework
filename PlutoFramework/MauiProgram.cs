@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Maui;
+using Microcharts.Maui;
 using Microsoft.Extensions.Configuration;
 using System.Globalization;
 using System.Reflection;
@@ -18,8 +19,6 @@ public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
     {
-        
-
         // Set InvariantCulture globally
         CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
         CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
@@ -27,6 +26,7 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .UseMicrocharts()
             .UseBarcodeReader()
             .UseMauiCommunityToolkit()
             .ConfigureFonts(fonts =>

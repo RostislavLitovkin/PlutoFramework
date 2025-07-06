@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_scheduler
     
     
     /// <summary>
-    /// >> 739 - Composite[pallet_scheduler.RetryConfig]
+    /// >> 750 - Composite[pallet_scheduler.RetryConfig]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RetryConfig : BaseType

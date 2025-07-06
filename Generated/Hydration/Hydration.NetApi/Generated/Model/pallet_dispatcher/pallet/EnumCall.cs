@@ -42,6 +42,15 @@ namespace Hydration.NetApi.Generated.Model.pallet_dispatcher.pallet
         /// can be different.
         /// </summary>
         note_aave_manager = 2,
+        
+        /// <summary>
+        /// >> dispatch_with_extra_gas
+        /// Dispatch a call with extra gas.
+        /// 
+        /// This allows executing calls with additional weight (gas) limit.
+        /// The extra gas is not refunded, even if not used.
+        /// </summary>
+        dispatch_with_extra_gas = 3,
     }
     
     /// <summary>
@@ -59,6 +68,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_dispatcher.pallet
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.hydradx_runtime.EnumRuntimeCall>(Call.dispatch_as_treasury);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.hydradx_runtime.EnumRuntimeCall>(Call.dispatch_as_aave_manager);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Call.note_aave_manager);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.hydradx_runtime.EnumRuntimeCall, Substrate.NetApi.Model.Types.Primitive.U64>>(Call.dispatch_with_extra_gas);
         }
     }
 }

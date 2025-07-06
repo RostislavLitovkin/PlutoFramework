@@ -321,7 +321,7 @@ namespace Hydration.NetApi.Generated.Storage
         public Hydration.NetApi.Generated.Model.sp_weights.weight_v2.Weight MaxProposalWeight()
         {
             var result = new Hydration.NetApi.Generated.Model.sp_weights.weight_v2.Weight();
-            result.Create("0x07004429353A0200A000");
+            result.Create("0x070010A5D4E80200A000");
             return result;
         }
     }

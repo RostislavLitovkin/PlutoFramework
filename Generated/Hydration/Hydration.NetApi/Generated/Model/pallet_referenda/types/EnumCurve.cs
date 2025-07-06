@@ -38,7 +38,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_referenda.types
     }
     
     /// <summary>
-    /// >> 628 - Variant[pallet_referenda.types.Curve]
+    /// >> 634 - Variant[pallet_referenda.types.Curve]
     /// </summary>
     public sealed class EnumCurve : BaseEnumRust<Curve>
     {

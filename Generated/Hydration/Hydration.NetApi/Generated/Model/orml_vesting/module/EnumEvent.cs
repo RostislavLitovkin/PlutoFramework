@@ -42,7 +42,7 @@ namespace Hydration.NetApi.Generated.Model.orml_vesting.module
     }
     
     /// <summary>
-    /// >> 445 - Variant[orml_vesting.module.Event]
+    /// >> 451 - Variant[orml_vesting.module.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

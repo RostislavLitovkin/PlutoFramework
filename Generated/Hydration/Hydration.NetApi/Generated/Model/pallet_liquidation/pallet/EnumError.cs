@@ -45,10 +45,22 @@ namespace Hydration.NetApi.Generated.Model.pallet_liquidation.pallet
         /// Liquidation was not profitable enough to repay flash loan
         /// </summary>
         NotProfitable = 3,
+        
+        /// <summary>
+        /// >> FlashMinterNotSet
+        /// Flash minter contract address not set. It is required for Hollar liquidations.
+        /// </summary>
+        FlashMinterNotSet = 4,
+        
+        /// <summary>
+        /// >> InvalidLiquidationData
+        /// Invalid liquidation data provided
+        /// </summary>
+        InvalidLiquidationData = 5,
     }
     
     /// <summary>
-    /// >> 690 - Variant[pallet_liquidation.pallet.Error]
+    /// >> 699 - Variant[pallet_liquidation.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

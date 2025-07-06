@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.frame_support.traits.tokens.misc
     
     
     /// <summary>
-    /// >> 515 - Composite[frame_support.traits.tokens.misc.IdAmountT2]
+    /// >> 521 - Composite[frame_support.traits.tokens.misc.IdAmountT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class IdAmountT2 : BaseType

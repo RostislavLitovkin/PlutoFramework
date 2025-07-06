@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_multisig
     
     
     /// <summary>
-    /// >> 591 - Composite[pallet_multisig.Multisig]
+    /// >> 597 - Composite[pallet_multisig.Multisig]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Multisig : BaseType

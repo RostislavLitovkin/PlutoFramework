@@ -37,7 +37,7 @@ namespace Hydration.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Broadcast", "IncrementalId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Broadcast", "ExecutionContext"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT61)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Broadcast", "ExecutionContext"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT62)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Broadcast", "Swapper"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32)));
         }
         
@@ -92,10 +92,10 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> ExecutionContext
         ///  Execution context to figure out where the trade is originated from
         /// </summary>
-        public async Task<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT61> ExecutionContext(string blockhash, CancellationToken token)
+        public async Task<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT62> ExecutionContext(string blockhash, CancellationToken token)
         {
             string parameters = BroadcastStorage.ExecutionContextParams();
-            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT61>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT62>(parameters, blockhash, token);
             return result;
         }
         

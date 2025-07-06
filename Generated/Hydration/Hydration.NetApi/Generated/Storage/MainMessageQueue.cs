@@ -215,7 +215,7 @@ namespace Hydration.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.sp_weights.weight_v2.Weight> ServiceWeight()
         {
             var result = new Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.sp_weights.weight_v2.Weight>();
-            result.Create("0x010700E876481702004000");
+            result.Create("0x010700A0DB215D02004000");
             return result;
         }
         

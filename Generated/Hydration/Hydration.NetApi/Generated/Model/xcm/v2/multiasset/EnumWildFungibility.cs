@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Model.xcm.v2.multiasset
     }
     
     /// <summary>
-    /// >> 332 - Variant[xcm.v2.multiasset.WildFungibility]
+    /// >> 337 - Variant[xcm.v2.multiasset.WildFungibility]
     /// </summary>
     public sealed class EnumWildFungibility : BaseEnum<WildFungibility>
     {

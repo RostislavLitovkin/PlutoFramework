@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_scheduler
     
     
     /// <summary>
-    /// >> 737 - Composite[pallet_scheduler.Scheduled]
+    /// >> 748 - Composite[pallet_scheduler.Scheduled]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Scheduled : BaseType

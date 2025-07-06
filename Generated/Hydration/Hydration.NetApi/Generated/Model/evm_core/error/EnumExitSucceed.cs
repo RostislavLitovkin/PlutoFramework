@@ -38,7 +38,7 @@ namespace Hydration.NetApi.Generated.Model.evm_core.error
     }
     
     /// <summary>
-    /// >> 450 - Variant[evm_core.error.ExitSucceed]
+    /// >> 456 - Variant[evm_core.error.ExitSucceed]
     /// </summary>
     public sealed class EnumExitSucceed : BaseEnum<ExitSucceed>
     {

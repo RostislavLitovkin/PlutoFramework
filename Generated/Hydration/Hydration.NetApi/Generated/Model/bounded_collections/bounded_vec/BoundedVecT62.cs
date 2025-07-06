@@ -13,26 +13,26 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace Hydration.NetApi.Generated.Model.sp_core.ed25519
+namespace Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec
 {
     
     
     /// <summary>
-    /// >> 329 - Composite[sp_core.ed25519.Signature]
+    /// >> 850 - Composite[bounded_collections.bounded_vec.BoundedVecT62]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
-    public sealed class Signature : BaseType
+    public sealed class BoundedVecT62 : BaseType
     {
         
         /// <summary>
         /// >> value
         /// </summary>
-        public Hydration.NetApi.Generated.Types.Base.Arr64U8 Value { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.pallet_broadcast.types.EnumExecutionType> Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
         {
-            return "Signature";
+            return "BoundedVecT62";
         }
         
         /// <inheritdoc/>
@@ -47,7 +47,7 @@ namespace Hydration.NetApi.Generated.Model.sp_core.ed25519
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Hydration.NetApi.Generated.Types.Base.Arr64U8();
+            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.pallet_broadcast.types.EnumExecutionType>();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

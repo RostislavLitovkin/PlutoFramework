@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_circuit_breaker
     
     
     /// <summary>
-    /// >> 662 - Composite[pallet_circuit_breaker.LiquidityLimit]
+    /// >> 667 - Composite[pallet_circuit_breaker.LiquidityLimit]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class LiquidityLimit : BaseType

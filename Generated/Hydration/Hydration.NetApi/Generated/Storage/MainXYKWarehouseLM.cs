@@ -356,12 +356,6 @@ namespace Hydration.NetApi.Generated.Storage
         LiquidityMiningIsNotStopped,
         
         /// <summary>
-        /// >> InvalidDepositAmount
-        /// LP shares amount is not valid.
-        /// </summary>
-        InvalidDepositAmount,
-        
-        /// <summary>
         /// >> Forbidden
         /// Account is not allowed to perform action.
         /// </summary>

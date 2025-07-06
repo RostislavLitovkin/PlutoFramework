@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_dca.types
     }
     
     /// <summary>
-    /// >> 289 - Variant[pallet_dca.types.Order]
+    /// >> 294 - Variant[pallet_dca.types.Order]
     /// </summary>
     public sealed class EnumOrder : BaseEnumRust<Order>
     {

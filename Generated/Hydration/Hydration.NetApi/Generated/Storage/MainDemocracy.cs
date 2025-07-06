@@ -706,7 +706,7 @@ namespace Hydration.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 EnactmentPeriod()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x201C0000");
+            result.Create("0x40380000");
             return result;
         }
         
@@ -717,7 +717,7 @@ namespace Hydration.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 LaunchPeriod()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x60540000");
+            result.Create("0xC0A80000");
             return result;
         }
         
@@ -728,7 +728,7 @@ namespace Hydration.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 VotingPeriod()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x60540000");
+            result.Create("0xC0A80000");
             return result;
         }
         
@@ -742,7 +742,7 @@ namespace Hydration.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 VoteLockingPeriod()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0xC0A80000");
+            result.Create("0x80510100");
             return result;
         }
         
@@ -777,7 +777,7 @@ namespace Hydration.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 FastTrackVotingPeriod()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x84030000");
+            result.Create("0x08070000");
             return result;
         }
         
@@ -788,7 +788,7 @@ namespace Hydration.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 CooloffPeriod()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0xE0C40000");
+            result.Create("0xC0890100");
             return result;
         }
         

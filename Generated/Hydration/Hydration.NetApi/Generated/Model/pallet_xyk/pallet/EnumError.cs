@@ -173,10 +173,16 @@ namespace Hydration.NetApi.Generated.Model.pallet_xyk.pallet
         /// Pool cannot be created due to outside factors.
         /// </summary>
         CannotCreatePool = 24,
+        
+        /// <summary>
+        /// >> SlippageLimit
+        /// Slippage protection.
+        /// </summary>
+        SlippageLimit = 25,
     }
     
     /// <summary>
-    /// >> 685 - Variant[pallet_xyk.pallet.Error]
+    /// >> 694 - Variant[pallet_xyk.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

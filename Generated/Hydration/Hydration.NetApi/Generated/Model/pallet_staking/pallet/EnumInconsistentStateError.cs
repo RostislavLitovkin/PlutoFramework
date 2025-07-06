@@ -48,7 +48,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_staking.pallet
     }
     
     /// <summary>
-    /// >> 677 - Variant[pallet_staking.pallet.InconsistentStateError]
+    /// >> 682 - Variant[pallet_staking.pallet.InconsistentStateError]
     /// </summary>
     public sealed class EnumInconsistentStateError : BaseEnum<InconsistentStateError>
     {

@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.ethbloom
     
     
     /// <summary>
-    /// >> 710 - Composite[ethbloom.Bloom]
+    /// >> 721 - Composite[ethbloom.Bloom]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Bloom : BaseType

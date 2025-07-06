@@ -5,6 +5,7 @@ using Hydration.NetApi.Generated.Model.pallet_omnipool.types;
 using Hydration.NetApi.Generated.Model.orml_tokens;
 using PlutoFramework.Constants;
 using Hydration.NetApi.Generated;
+using Substrate.NetApi.Model.Types.Base;
 
 namespace PlutoFramework.Model.HydraDX
 {
@@ -12,141 +13,177 @@ namespace PlutoFramework.Model.HydraDX
     {
         const int SYSTEM_ASSET_ID = 0;
 
-        public static Dictionary<string, HydraDXTokenInfo> Assets = new Dictionary<string, HydraDXTokenInfo>();
+        public static Dictionary<(uint?, string), HydraDXTokenInfo> Assets = new Dictionary<(uint?, string), HydraDXTokenInfo>();
 
-        public static Dictionary<uint, HydraDXTokenInfo> AssetsById = new Dictionary<uint, HydraDXTokenInfo>();
+        public static Dictionary<(uint?, uint), HydraDXTokenInfo> AssetsById = new Dictionary<(uint?, uint), HydraDXTokenInfo>();
 
-
-        public static async Task<Dictionary<string, HydraDXTokenInfo>> GetAssetsAsync(SubstrateClientExt client, CancellationToken token)
+        public static async Task<IEnumerable<(uint, double)>> GetRestrospectiveSpotPricesAsync(AjunaExt.SubstrateClientExt client, Interval interval, string symbol, uint steps, CancellationToken token)
         {
-            if (client is null)
+            if (client is null || client.Endpoint.Key != EndpointEnum.Hydration)
             {
-                return new Dictionary<string, HydraDXTokenInfo>();
+                return [];
             }
 
-            var omnipoolAccount = new AccountId32();
-            omnipoolAccount.Create(Utils.GetPublicKeyFrom(PlutoFramework.Constants.HydraDX.OMNIPOOL_ADDRESS));
+            var blocknumber = await BlockModel.GetCachedBlockNumberAsync(client, token);
 
-            var omnipoolAssetsKeyBytes = RequestGenerator.GetStorageKeyBytesHash("Omnipool", "Assets");
+            Console.WriteLine(blocknumber);
 
-            string omnipoolAssetsKeyBytesString = Utils.Bytes2HexString(omnipoolAssetsKeyBytes);
-            string tokenAccountsKeyBytesString = Utils.Bytes2HexString(RequestGenerator.GetStorageKeyBytesHash("Tokens", "Accounts"));
-            string assetMetadataKeyBytesString = Utils.Bytes2HexString(RequestGenerator.GetStorageKeyBytesHash("AssetRegistry", "Assets"));
+            var blocks = BlockModel.GetBlocks(interval, (uint)blocknumber, steps);
 
-            byte[] prefix = omnipoolAssetsKeyBytes;
+            // Can be optimised: check if it has been loaded
+            await LoadRetrospectiveAssetsAsync(client, blocks, token);
 
-            byte[] startKey = null;
+            Console.WriteLine("Loaded");
 
-            var storageKeys = (await client.State.GetKeysPagedAsync(prefix, 1000, startKey, string.Empty, token))
-               .Select(p => p.ToString().ToLower().Replace(Utils.Bytes2HexString(prefix).ToLower(), ""));
+            return blocks.Select(blocknumber => (blocknumber, GetSpotPrice(symbol, blocknumber)));
+        }
 
-            Dictionary<string, HydraDXTokenInfo> result = new Dictionary<string, HydraDXTokenInfo>();
-            Dictionary<uint, HydraDXTokenInfo> assetsById = new Dictionary<uint, HydraDXTokenInfo>();
+        public static async Task LoadRetrospectiveAssetsAsync(AjunaExt.SubstrateClientExt client, IEnumerable<uint> blocks, CancellationToken token)
+        {
+            var tasks = blocks.Select(block => GetAssetsAsync((SubstrateClientExt)client.SubstrateClient, block, token));
 
+            await Task.WhenAll(tasks);
+        }
 
-            if (storageKeys == null || !storageKeys.Any())
+        public static async Task GetAssetsAsync(SubstrateClientExt client, uint? blocknumber, CancellationToken token)
+        {
+            try
             {
-                return result;
-            }
-
-            var omnipoolAssetsKeys = storageKeys.Select(p => Utils.HexToByteArray(omnipoolAssetsKeyBytesString + p.ToString())).ToList();
-
-            var tokenAccountsKeys = storageKeys.Select(p => Utils.HexToByteArray(tokenAccountsKeyBytesString +
-                "12649b1d88771b22c15810b80fb0a1a96d6f646c6f6d6e69706f6f6c0000000000000000000000000000000000000000"
-                + Utils.Bytes2HexString(HashExtension.Hash(
-                    Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
-                    Model.HashModel.GetU32FromBlake2_128Concat(p.ToString()).Bytes
-                 ), Utils.HexStringFormat.Pure))).ToList();
-
-            var assetMetadataKeys = storageKeys.Select(p => Utils.HexToByteArray(assetMetadataKeyBytesString
-                + Utils.Bytes2HexString(HashExtension.Hash(
-                    Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                    Model.HashModel.GetU32FromBlake2_128Concat(p.ToString()).Bytes
-                 ), Utils.HexStringFormat.Pure))).ToList();
-
-            var omnipoolAssetsStorageChangeSets = (await client.State.GetQueryStorageAtAsync(omnipoolAssetsKeys, string.Empty, token)).ElementAt(0).Changes;
-            var tokenAccountsStorageChangeSets = (await client.State.GetQueryStorageAtAsync(tokenAccountsKeys, string.Empty, token)).ElementAt(0).Changes;
-            var assetMetadataStorageChangeSets = (await client.State.GetQueryStorageAtAsync(assetMetadataKeys, string.Empty, token)).ElementAt(0).Changes;
-
-            if (omnipoolAssetsStorageChangeSets != null)
-            {
-                for (int i = 0; i < omnipoolAssetsStorageChangeSets.Length; i++)
+                Console.WriteLine("GetAssetsAsync");
+                if (client is null)
                 {
-                    AssetState asset = new AssetState();
-                    asset.Create(omnipoolAssetsStorageChangeSets[i][1]);
+                    return;
+                }
 
-                    U32 assetId = Model.HashModel.GetU32FromBlake2_128Concat(omnipoolAssetsStorageChangeSets[i][0].Substring(66));
+                var blockhash = blocknumber.HasValue ? (await client.Chain.GetBlockHashAsync(new BlockNumber(blocknumber.Value), token)).Value : string.Empty;
 
-                    if (assetId.Value != SYSTEM_ASSET_ID)
+                var omnipoolAccount = new AccountId32();
+                omnipoolAccount.Create(Utils.GetPublicKeyFrom(PlutoFramework.Constants.HydraDX.OMNIPOOL_ADDRESS));
+
+                var omnipoolAssetsKeyBytes = RequestGenerator.GetStorageKeyBytesHash("Omnipool", "Assets");
+
+                string omnipoolAssetsKeyBytesString = Utils.Bytes2HexString(omnipoolAssetsKeyBytes);
+                string tokenAccountsKeyBytesString = Utils.Bytes2HexString(RequestGenerator.GetStorageKeyBytesHash("Tokens", "Accounts"));
+                string assetMetadataKeyBytesString = Utils.Bytes2HexString(RequestGenerator.GetStorageKeyBytesHash("AssetRegistry", "Assets"));
+
+                byte[] prefix = omnipoolAssetsKeyBytes;
+
+                byte[] startKey = null;
+
+                var storageKeys = (await client.State.GetKeysPagedAsync(prefix, 1000, startKey, string.Empty, token))
+                   .Select(p => p.ToString().ToLower().Replace(Utils.Bytes2HexString(prefix).ToLower(), ""));
+
+                if (storageKeys == null || !storageKeys.Any())
+                {
+                    return;
+                }
+
+                var omnipoolAssetsKeys = storageKeys.Select(p => Utils.HexToByteArray(omnipoolAssetsKeyBytesString + p.ToString())).ToList();
+
+                var tokenAccountsKeys = storageKeys.Select(p => Utils.HexToByteArray(tokenAccountsKeyBytesString +
+                    "12649b1d88771b22c15810b80fb0a1a96d6f646c6f6d6e69706f6f6c0000000000000000000000000000000000000000"
+                    + Utils.Bytes2HexString(HashExtension.Hash(
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
+                        Model.HashModel.GetU32FromBlake2_128Concat(p.ToString()).Bytes
+                     ), Utils.HexStringFormat.Pure))).ToList();
+
+                var assetMetadataKeys = storageKeys.Select(p => Utils.HexToByteArray(assetMetadataKeyBytesString
+                    + Utils.Bytes2HexString(HashExtension.Hash(
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                        Model.HashModel.GetU32FromBlake2_128Concat(p.ToString()).Bytes
+                     ), Utils.HexStringFormat.Pure))).ToList();
+
+                var omnipoolAssetsStorageChangeSets = (await client.State.GetQueryStorageAtAsync(omnipoolAssetsKeys, blockhash, token)).ElementAt(0).Changes;
+                var tokenAccountsStorageChangeSets = (await client.State.GetQueryStorageAtAsync(tokenAccountsKeys, blockhash, token)).ElementAt(0).Changes;
+                var assetMetadataStorageChangeSets = (await client.State.GetQueryStorageAtAsync(assetMetadataKeys, blockhash, token)).ElementAt(0).Changes;
+
+                if (omnipoolAssetsStorageChangeSets != null)
+                {
+                    for (int i = 0; i < omnipoolAssetsStorageChangeSets.Length; i++)
                     {
-                        AccountData omnipoolTokens = new AccountData();
-                        omnipoolTokens.Create(tokenAccountsStorageChangeSets[i][1]);
-
-                        var assetMetadata = new Hydration.NetApi.Generated.Model.pallet_asset_registry.types.AssetDetails();
-
-                        assetMetadata.Create(assetMetadataStorageChangeSets[i][1]);
-
-                        string symbol = Model.ToStringModel.VecU8ToString(assetMetadata.Symbol.Value.Value);
-
-                        if (result.ContainsKey(symbol))
+                        try
                         {
-                            continue;
+                            AssetState asset = new AssetState();
+                            asset.Create(omnipoolAssetsStorageChangeSets[i][1]);
+
+                            U32 assetId = Model.HashModel.GetU32FromBlake2_128Concat(omnipoolAssetsStorageChangeSets[i][0].Substring(66));
+
+                            if (assetId.Value != SYSTEM_ASSET_ID)
+                            {
+                                AccountData omnipoolTokens = new AccountData();
+                                omnipoolTokens.Create(tokenAccountsStorageChangeSets[i][1]);
+
+                                var assetMetadata = new Hydration.NetApi.Generated.Model.pallet_asset_registry.types.AssetDetails();
+
+                                assetMetadata.Create(assetMetadataStorageChangeSets[i][1]);
+
+                                string symbol = Model.ToStringModel.VecU8ToString(assetMetadata.Symbol.Value.Value);
+
+                                if (Assets.ContainsKey((blocknumber, symbol)))
+                                {
+                                    continue;
+                                }
+
+                                double poolBalance = (double)(omnipoolTokens.Free.Value - omnipoolTokens.Frozen.Value) / Math.Pow(10, assetMetadata.Decimals.Value);
+                                double hubReserveBalance = (double)(asset.HubReserve.Value) / Math.Pow(10, 12);
+
+                                var tokenInfo = new HydraDXTokenInfo
+                                {
+                                    Symbol = symbol,
+                                    PoolBalance = poolBalance,
+                                    HubReserve = hubReserveBalance,
+                                    Decimals = assetMetadata.Decimals.Value,
+
+                                };
+
+                                Assets.Add((blocknumber, symbol), tokenInfo);
+
+                                AssetsById.Add((blocknumber, assetId.Value), tokenInfo);
+                            }
+                            else
+                            {
+                                Endpoint endpoint = Endpoints.GetEndpointDictionary[EndpointEnum.Hydration];
+
+                                var omnipoolTokens = await client.SystemStorage.Account(omnipoolAccount, null, token);
+
+                                string symbol = endpoint.Unit;
+
+                                if (Assets.ContainsKey((blocknumber, symbol)))
+                                {
+                                    continue;
+                                }
+
+                                double poolBalance = (double)(omnipoolTokens.Data.Free.Value - omnipoolTokens.Data.Frozen.Value) / Math.Pow(10, endpoint.Decimals);
+                                double hubReserveBalance = (double)(asset.HubReserve.Value) / Math.Pow(10, 12);
+
+                                var tokenInfo = new HydraDXTokenInfo
+                                {
+                                    Symbol = symbol,
+                                    PoolBalance = poolBalance,
+                                    HubReserve = hubReserveBalance,
+                                    Decimals = endpoint.Decimals,
+                                };
+
+                                Assets.Add((blocknumber, symbol), tokenInfo);
+
+                                AssetsById.Add((blocknumber, assetId.Value), tokenInfo);
+                            }
                         }
-
-                        double poolBalance = (double)(omnipoolTokens.Free.Value - omnipoolTokens.Frozen.Value) / Math.Pow(10, assetMetadata.Decimals.Value);
-                        double hubReserveBalance = (double)(asset.HubReserve.Value) / Math.Pow(10, 12);
-
-                        var tokenInfo = new HydraDXTokenInfo
+                        catch(Exception ex)
                         {
-                            Symbol = symbol,
-                            PoolBalance = poolBalance,
-                            HubReserve = hubReserveBalance,
-                            Decimals = assetMetadata.Decimals.Value,
-
-                        };
-
-                        result.Add(symbol, tokenInfo);
-
-                        assetsById.Add(assetId.Value, tokenInfo);
-                    }
-                    else
-                    {
-                        Endpoint endpoint = Endpoints.GetEndpointDictionary[EndpointEnum.Hydration];
-
-                        var omnipoolTokens = await client.SystemStorage.Account(omnipoolAccount, null, token);
-
-                        string symbol = endpoint.Unit;
-
-                        if (result.ContainsKey(symbol))
-                        {
-                            continue;
+                            Console.WriteLine(ex);
                         }
-
-                        double poolBalance = (double)(omnipoolTokens.Data.Free.Value - omnipoolTokens.Data.Frozen.Value) / Math.Pow(10, endpoint.Decimals);
-                        double hubReserveBalance = (double)(asset.HubReserve.Value) / Math.Pow(10, 12);
-
-                        var tokenInfo = new HydraDXTokenInfo
-                        {
-                            Symbol = symbol,
-                            PoolBalance = poolBalance,
-                            HubReserve = hubReserveBalance,
-                            Decimals = endpoint.Decimals,
-                        };
-
-                        result.Add(symbol, tokenInfo);
-
-                        assetsById.Add(assetId.Value, tokenInfo);
                     }
                 }
             }
-
-            Assets = result;
-            AssetsById = assetsById;
-
-            return result;
+            catch(Exception ex)
+            {
+                Console.WriteLine("Ex:");
+                Console.WriteLine(ex);
+            }
         }
 
-        public static double GetSpotPrice(string tokenSymbol)
+        public static double GetSpotPrice(string tokenSymbol, uint? blocknumber = null)
         {
             if (tokenSymbol.Equals("USDC", StringComparison.CurrentCultureIgnoreCase))
             {
@@ -168,18 +205,18 @@ namespace PlutoFramework.Model.HydraDX
                 return 0.1;
             }
 
-            if (!Assets.ContainsKey(tokenSymbol))
+            if (!Assets.ContainsKey((blocknumber, tokenSymbol)))
             {
                 return 0;
             }
 
-            if (!Assets.ContainsKey(PlutoFramework.Constants.HydraDX.STABLE_TOKEN))
+            if (!Assets.ContainsKey((blocknumber, PlutoFramework.Constants.HydraDX.STABLE_TOKEN)))
             {
                 return 0;
             }
 
-            HydraDXTokenInfo token = Assets[tokenSymbol];
-            HydraDXTokenInfo usdToken = Assets[PlutoFramework.Constants.HydraDX.STABLE_TOKEN];
+            HydraDXTokenInfo token = Assets[(blocknumber, tokenSymbol)];
+            HydraDXTokenInfo usdToken = Assets[(blocknumber, PlutoFramework.Constants.HydraDX.STABLE_TOKEN)];
 
             double price_a = token.HubReserve / token.PoolBalance;
             double price_b = usdToken.PoolBalance / usdToken.HubReserve;
@@ -189,21 +226,21 @@ namespace PlutoFramework.Model.HydraDX
             return result;
         }
 
-        public static double GetSpotPrice(uint assetId)
+        public static double GetSpotPrice(uint assetId, uint? blocknumber = null)
         {
-            if (!AssetsById.ContainsKey(assetId))
+            if (!AssetsById.ContainsKey((blocknumber, assetId)))
             {
                 return 2;
             }
 
-            if (!Assets.ContainsKey(PlutoFramework.Constants.HydraDX.STABLE_TOKEN))
+            if (!Assets.ContainsKey((blocknumber, PlutoFramework.Constants.HydraDX.STABLE_TOKEN)))
             {
 
                 return 5;
             }
 
-            HydraDXTokenInfo token = AssetsById[assetId];
-            HydraDXTokenInfo usdToken = Assets[PlutoFramework.Constants.HydraDX.STABLE_TOKEN];
+            HydraDXTokenInfo token = AssetsById[(blocknumber, assetId)];
+            HydraDXTokenInfo usdToken = Assets[(blocknumber, PlutoFramework.Constants.HydraDX.STABLE_TOKEN)];
 
             double price_a = token.HubReserve / token.PoolBalance;
             double price_b = usdToken.PoolBalance / usdToken.HubReserve;

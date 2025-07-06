@@ -28,7 +28,7 @@ namespace Hydration.NetApi.Generated.Model.polkadot_primitives.v8
     }
     
     /// <summary>
-    /// >> 752 - Variant[polkadot_primitives.v8.UpgradeRestriction]
+    /// >> 763 - Variant[polkadot_primitives.v8.UpgradeRestriction]
     /// </summary>
     public sealed class EnumUpgradeRestriction : BaseEnum<UpgradeRestriction>
     {

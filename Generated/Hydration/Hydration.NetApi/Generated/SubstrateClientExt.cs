@@ -250,6 +250,11 @@ namespace Hydration.NetApi.Generated
         public LiquidationStorage LiquidationStorage;
         
         /// <summary>
+        /// HSMStorage storage calls.
+        /// </summary>
+        public HSMStorage HSMStorage;
+        
+        /// <summary>
         /// TokensStorage storage calls.
         /// </summary>
         public TokensStorage TokensStorage;
@@ -442,6 +447,7 @@ namespace Hydration.NetApi.Generated
             this.XYKStorage = new XYKStorage(this);
             this.ReferralsStorage = new ReferralsStorage(this);
             this.LiquidationStorage = new LiquidationStorage(this);
+            this.HSMStorage = new HSMStorage(this);
             this.TokensStorage = new TokensStorage(this);
             this.CurrenciesStorage = new CurrenciesStorage(this);
             this.VestingStorage = new VestingStorage(this);

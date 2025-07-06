@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.sp_runtime.generic.unchecked_extrinsi
     
     
     /// <summary>
-    /// >> 855 - Composite[sp_runtime.generic.unchecked_extrinsic.UncheckedExtrinsic]
+    /// >> 867 - Composite[sp_runtime.generic.unchecked_extrinsic.UncheckedExtrinsic]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UncheckedExtrinsic : BaseType

@@ -43,7 +43,7 @@ namespace Hydration.NetApi.Generated.Model.xcm.v2
     }
     
     /// <summary>
-    /// >> 310 - Variant[xcm.v2.NetworkId]
+    /// >> 315 - Variant[xcm.v2.NetworkId]
     /// </summary>
     public sealed class EnumNetworkId : BaseEnumRust<NetworkId>
     {

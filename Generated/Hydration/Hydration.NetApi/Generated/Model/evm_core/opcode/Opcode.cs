@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.evm_core.opcode
     
     
     /// <summary>
-    /// >> 452 - Composite[evm_core.opcode.Opcode]
+    /// >> 458 - Composite[evm_core.opcode.Opcode]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Opcode : BaseType

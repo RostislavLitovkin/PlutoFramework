@@ -50,10 +50,15 @@ namespace Hydration.NetApi.Generated.Model.pallet_broadcast.types
         /// >> AAVE
         /// </summary>
         AAVE = 5,
+        
+        /// <summary>
+        /// >> HSM
+        /// </summary>
+        HSM = 6,
     }
     
     /// <summary>
-    /// >> 478 - Variant[pallet_broadcast.types.Filler]
+    /// >> 484 - Variant[pallet_broadcast.types.Filler]
     /// </summary>
     public sealed class EnumFiller : BaseEnumRust<Filler>
     {
@@ -69,6 +74,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_broadcast.types
 				AddTypeDecoder<BaseVoid>(Filler.LBP);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Filler.OTC);
 				AddTypeDecoder<BaseVoid>(Filler.AAVE);
+				AddTypeDecoder<BaseVoid>(Filler.HSM);
         }
     }
 }

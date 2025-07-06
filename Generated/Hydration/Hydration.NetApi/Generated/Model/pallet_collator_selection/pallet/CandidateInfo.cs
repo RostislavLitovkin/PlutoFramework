@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_collator_selection.pallet
     
     
     /// <summary>
-    /// >> 812 - Composite[pallet_collator_selection.pallet.CandidateInfo]
+    /// >> 823 - Composite[pallet_collator_selection.pallet.CandidateInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CandidateInfo : BaseType

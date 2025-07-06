@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.cumulus_pallet_parachain_system.uninc
     
     
     /// <summary>
-    /// >> 750 - Composite[cumulus_pallet_parachain_system.unincluded_segment.SegmentTracker]
+    /// >> 761 - Composite[cumulus_pallet_parachain_system.unincluded_segment.SegmentTracker]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SegmentTracker : BaseType

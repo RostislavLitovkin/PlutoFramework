@@ -13,38 +13,38 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace Hydration.NetApi.Generated.Model.pallet_stableswap.types
+namespace Hydration.NetApi.Generated.Model.hydra_dx_math.stableswap.types
 {
     
     
     /// <summary>
-    /// >> 109 - Composite[pallet_stableswap.types.AssetAmount]
+    /// >> 686 - Composite[hydra_dx_math.stableswap.types.AssetReserve]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
-    public sealed class AssetAmount : BaseType
+    public sealed class AssetReserve : BaseType
     {
         
-        /// <summary>
-        /// >> asset_id
-        /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U32 AssetId { get; set; }
         /// <summary>
         /// >> amount
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U128 Amount { get; set; }
+        /// <summary>
+        /// >> decimals
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U8 Decimals { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
         {
-            return "AssetAmount";
+            return "AssetReserve";
         }
         
         /// <inheritdoc/>
         public override byte[] Encode()
         {
             var result = new List<byte>();
-            result.AddRange(AssetId.Encode());
             result.AddRange(Amount.Encode());
+            result.AddRange(Decimals.Encode());
             return result.ToArray();
         }
         
@@ -52,10 +52,10 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.types
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            AssetId = new Substrate.NetApi.Model.Types.Primitive.U32();
-            AssetId.Decode(byteArray, ref p);
             Amount = new Substrate.NetApi.Model.Types.Primitive.U128();
             Amount.Decode(byteArray, ref p);
+            Decimals = new Substrate.NetApi.Model.Types.Primitive.U8();
+            Decimals.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;
             Bytes = new byte[bytesLength];

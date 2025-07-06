@@ -97,7 +97,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_conviction_voting.pallet
     }
     
     /// <summary>
-    /// >> 615 - Variant[pallet_conviction_voting.pallet.Error]
+    /// >> 621 - Variant[pallet_conviction_voting.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

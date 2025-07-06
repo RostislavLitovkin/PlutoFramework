@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_treasury
     
     
     /// <summary>
-    /// >> 520 - Composite[pallet_treasury.Proposal]
+    /// >> 526 - Composite[pallet_treasury.Proposal]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Proposal : BaseType

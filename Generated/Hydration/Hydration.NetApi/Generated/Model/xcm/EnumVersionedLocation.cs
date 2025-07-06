@@ -38,7 +38,7 @@ namespace Hydration.NetApi.Generated.Model.xcm
     }
     
     /// <summary>
-    /// >> 306 - Variant[xcm.VersionedLocation]
+    /// >> 311 - Variant[xcm.VersionedLocation]
     /// </summary>
     public sealed class EnumVersionedLocation : BaseEnumRust<VersionedLocation>
     {
