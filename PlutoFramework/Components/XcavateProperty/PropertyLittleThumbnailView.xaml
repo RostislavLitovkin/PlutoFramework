@@ -6,6 +6,7 @@
              xmlns:networkselect="clr-namespace:PlutoFramework.Components.NetworkSelect"
              xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
              xmlns:xcavateproperty="clr-namespace:PlutoFramework.Components.XcavateProperty"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui"
              HeightRequest="70">
     <card:ClickableCard CardPadding="0, 0, 0, 0"
                         x:Name="card">
@@ -30,11 +31,10 @@
 
                     <AbsoluteLayout>
 
-                        <Image x:Name="image"
+                        <ffimageloading:CachedImage x:Name="image"
                                Aspect="AspectFill"
                                BackgroundColor="{AppThemeBinding Light=#dddddd, Dark=#222222}"
                                Source="xcavateloading.gif"
-                               IsAnimationPlaying="True"
                                HeightRequest="60"
                                WidthRequest="60"
                                AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"

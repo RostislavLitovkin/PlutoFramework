@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Maui;
+using FFImageLoading.Maui;
 using Microcharts.Maui;
 using Microsoft.Extensions.Configuration;
 using System.Globalization;
@@ -26,6 +27,7 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .UseFFImageLoading()
             .UseMicrocharts()
             .UseBarcodeReader()
             .UseMauiCommunityToolkit()

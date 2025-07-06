@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui"
              x:Class="PlutoFramework.Components.Nft.NftImageView">
     <Border Padding="0"
             HeightRequest="{Binding Source={x:Reference border}, Path=Width}"
@@ -15,8 +16,8 @@
 
         </Border.StrokeShape>
         <AbsoluteLayout>
-            <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-                   x:Name="image" Aspect="AspectFill" />
+            <ffimageloading:CachedImage AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                                        x:Name="image" Aspect="AspectFill" />
             <Border BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"
                     StrokeThickness="0"
                     AbsoluteLayout.LayoutBounds="1, 1, 90, 50"

@@ -105,6 +105,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+		<PackageReference Include="FFImageLoading.Maui" Version="1.2.9" />
 		<PackageReference Include="Microcharts.Maui" Version="1.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.1" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.1" />
