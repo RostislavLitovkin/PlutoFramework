@@ -119,9 +119,9 @@ public class HydrationTests
     [Test]
     public static async Task GetRetrospectiveSpotPricesAsync()
     {
-        var prices = await Sdk.GetRestrospectiveSpotPricesAsync(client, PlutoFramework.Model.Interval.Weekly, "DOT", CancellationToken.None);
+        var prices = await Sdk.GetRestrospectiveSpotPricesAsync(client, PlutoFramework.Model.Interval.Weekly, "DOT",  24, CancellationToken.None);
 
-        foreach((var blocknumber, var price) in prices)
+        foreach((uint blocknumber, double? price) in prices)
         {
             Console.WriteLine($"{blocknumber}: {price}");
         }
