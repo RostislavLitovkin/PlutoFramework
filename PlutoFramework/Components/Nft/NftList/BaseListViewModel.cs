@@ -6,7 +6,7 @@ namespace PlutoFramework.Components.Nft
 {
     public abstract partial class BaseListViewModel<Key, Item> : ObservableObject
     {
-        public const uint LIMIT = 4;
+        public const uint LIMIT = 10;
         public abstract string Title { get; }
 
         public Dictionary<Key, Item> ItemsDict = new Dictionary<Key, Item>();
