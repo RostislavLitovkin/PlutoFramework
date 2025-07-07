@@ -8,6 +8,7 @@ using PlutoFramework.Model.SQLite;
 using PlutoFramework.Model.Xcavate;
 using PlutoFramework.View;
 using PlutoFramework.Templates.PageTemplate;
+using PlutoFramework.Components.Account;
 
 namespace PlutoFramework.Components.Settings;
 
@@ -137,10 +138,18 @@ public partial class SettingsPage : PageTemplate
 
     async void OnShowMnemonicsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
-        try
+        if (!KeysModel.HasSubstrateKey())
         {
-            var secret = await Model.KeysModel.GetMnemonicsOrPrivateKeyAsync();
+            var noAccountPopupViewModel = DependencyService.Get<NoAccountPopupModel>();
 
+            noAccountPopupViewModel.IsVisible = true;
+
+            return;
+        }
+
+        try {
+            var secret = await Model.KeysModel.GetMnemonicsOrPrivateKeyAsync();
+        
             await Navigation.PushAsync(new MnemonicsPage(secret));
         }
         catch

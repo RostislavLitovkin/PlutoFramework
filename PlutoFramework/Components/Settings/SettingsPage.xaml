@@ -4,25 +4,21 @@
                        xmlns:settings="clr-namespace:PlutoFramework.Components.Settings"
                        xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
                        xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
+                       xmlns:accounts="clr-namespace:PlutoFramework.Components.Account"
                        x:Class="PlutoFramework.Components.Settings.SettingsPage"
                        Title="Settings">
     <VerticalStackLayout HorizontalOptions="Center"
                          Padding="20, 10, 20, 100"
                          Spacing="15">
-
-        <settings:GenericButton Title="Predefined layouts">
-            <settings:GenericButton.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnPredefinedLayoutsClicked" />
-            </settings:GenericButton.GestureRecognizers>
-        </settings:GenericButton>
-
-        <settings:GenericButton Title="Show mnemonics">
+        <settings:GenericButton Title="Show mnemonics"
+                                 IsVisible="{Binding HasAccount}">
             <settings:GenericButton.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnShowMnemonicsClicked" />
             </settings:GenericButton.GestureRecognizers>
         </settings:GenericButton>
 
-        <settings:GenericButton Title="Manage Kilt DID">
+        <settings:GenericButton Title="Manage Kilt DID"
+                                 IsVisible="{Binding HasAccount}">
             <settings:GenericButton.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnManageKiltDidClicked" />
             </settings:GenericButton.GestureRecognizers>
@@ -40,7 +36,8 @@
             </settings:GenericButton.GestureRecognizers>
         </settings:GenericButton>
 
-        <settings:GenericButton Title="Log out (Delete private key)">
+        <settings:GenericButton Title="Log out (Delete private key)"
+                                 IsVisible="{Binding HasAccount}">
             <settings:GenericButton.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnLogOutClicked" />
             </settings:GenericButton.GestureRecognizers>
@@ -48,5 +45,9 @@
 
         <xcavate:AboutUsView />
     </VerticalStackLayout>
+
+    <template:PageTemplate.PopupContent>
+        <accounts:NoAccountPopup />
+    </template:PageTemplate.PopupContent>
 </template:PageTemplate>
 

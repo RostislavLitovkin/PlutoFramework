@@ -29,7 +29,9 @@
             <txanalyzer:TransactionAnalyzerConfirmationView />
 
             <!-- Popups block -->
-            <ContentPresenter Content="{TemplateBinding PopupContent}" />
+            <ContentPresenter Content="{TemplateBinding PopupContent}"
+                              AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                              AbsoluteLayout.LayoutFlags="SizeProportional"/>
 
             <password:EnterPasswordPopupView />
         </AbsoluteLayout>

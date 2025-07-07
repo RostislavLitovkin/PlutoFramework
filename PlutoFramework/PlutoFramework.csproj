@@ -945,6 +945,9 @@
 	  <MauiXaml Update="Components\Xcavate\XcavateTopNavigationBarView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Templates\TopNavigationBarTemplate\TopNavigationBar.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\BlankPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

@@ -140,6 +140,8 @@ namespace PlutoFramework.Model
             {
                 var password = await viewModel.EnteredPassword.Task;
 
+                viewModel.EnteredPassword = new();
+
                 if (password is null)
                 {
                     return;
@@ -158,8 +160,6 @@ namespace PlutoFramework.Model
                 }
 
                 viewModel.ErrorIsVisible = true;
-
-                viewModel.EnteredPassword = new();
 
                 if (i == 4)
                 {
@@ -212,7 +212,6 @@ namespace PlutoFramework.Model
 
         public static async Task<string?> GetMnemonicsOrPrivateKeyAsync(string accountVariant = "")
         {
-            Console.WriteLine("Getting mnemonics");
             var accountType = (AccountType)Enum.Parse(typeof(AccountType), Preferences.Get(PreferencesModel.ACCOUNT_TYPE + accountVariant, AccountType.None.ToString()));
 
             var biometricsEnabled = Preferences.Get(PreferencesModel.BIOMETRICS_ENABLED, false);
@@ -234,23 +233,17 @@ namespace PlutoFramework.Model
 
             if (!result.Authenticated || result.Status == FingerprintAuthenticationResultStatus.Denied)
             {
-                Console.WriteLine("Trying password");
-
                 var viewModel = DependencyService.Get<EnterPasswordPopupViewModel>();
 
                 viewModel.IsVisible = true;
 
                 var correctPassword = await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD + accountVariant).ConfigureAwait(false) ?? throw new ArgumentNullException("Password was not setup");
 
-                Console.WriteLine("correctPassword: " + correctPassword);
-
                 for (int i = 0; i < 5; i++)
                 {
-                    Console.WriteLine("Waiting for password to be entered");
-
                     var password = await viewModel.EnteredPassword.Task;
 
-                    Console.WriteLine($"Password entered: {password} - {correctPassword}");
+                    viewModel.EnteredPassword = new();
 
                     if (password is null)
                     {
@@ -266,8 +259,6 @@ namespace PlutoFramework.Model
                     }
 
                     viewModel.ErrorIsVisible = true;
-
-                    viewModel.EnteredPassword = new();
 
                     if (i == 4)
                     {
