@@ -34,7 +34,7 @@ public static class MauiProgram
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("xcavatefont.ttf", "XcavateFont");
-                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                fonts.AddFont("OpenSans-Regular.ttf", "XcavateFont");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 fonts.AddFont("fontawesome-webfont.ttf", "FontAwesome");
                 fonts.AddFont("Exodar-Outline.ttf", "Exodar");
