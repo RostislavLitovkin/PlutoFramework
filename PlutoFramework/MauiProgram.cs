@@ -5,6 +5,8 @@ using Microsoft.Extensions.Configuration;
 using System.Globalization;
 using System.Reflection;
 using ZXing.Net.Maui.Controls;
+using Xe.AcrylicView;
+
 
 
 
@@ -27,7 +29,8 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
-            .UseFFImageLoading()
+			.UseAcrylicView()
+			.UseFFImageLoading()
             .UseMicrocharts()
             .UseBarcodeReader()
             .UseMauiCommunityToolkit()

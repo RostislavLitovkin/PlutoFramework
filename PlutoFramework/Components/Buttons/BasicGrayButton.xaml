@@ -5,8 +5,9 @@
         BackgroundColor="{StaticResource GRAY}"
         TextColor="{StaticResource GRAY-TEXT-COLOR}"
         BorderColor="{StaticResource GRAY-TEXT-COLOR}"
+        BorderWidth="2"
         FontAttributes="Bold"
-        CornerRadius="40"
+        CornerRadius="24"
         HeightRequest="48"
         >
 </Button>

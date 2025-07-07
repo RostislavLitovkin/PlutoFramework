@@ -23,13 +23,13 @@
             <VerticalStackLayout HorizontalOptions="Center"
                              Padding="20, 10, 20, 100"
                              Spacing="15">
-                <settings:GenericButton Title="Predefined layouts">
+                <!--<settings:GenericButton Title="Predefined layouts">
                     <settings:GenericButton.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnPredefinedLayoutsClicked" />
 
                     </settings:GenericButton.GestureRecognizers>
 
-                </settings:GenericButton>
+                </settings:GenericButton>-->
 
                 <settings:GenericButton Title="Show mnemonics"
                                         IsVisible="{Binding HasAccount}">
@@ -56,7 +56,7 @@
 
                 </settings:GenericButton>
 
-                <settings:GenericButton Title="Create new property">
+                <!--<settings:GenericButton Title="Create new property">
                     <settings:GenericButton.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnCreateNewPropertyClicked" />
                     </settings:GenericButton.GestureRecognizers>
@@ -82,7 +82,7 @@
                         <TapGestureRecognizer Tapped="OnXcavateCompanyClicked" />
                     </settings:GenericButton.GestureRecognizers>
 
-                </settings:GenericButton>
+                </settings:GenericButton>-->
 
                 <settings:GenericButton Title="Log out (Delete private key)"
                                          IsVisible="{Binding HasAccount}">

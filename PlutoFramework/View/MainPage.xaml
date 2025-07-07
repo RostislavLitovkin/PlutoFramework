@@ -90,5 +90,7 @@
         <loading:FullPageLoadingView />
 
         <card:BottomPillBackgroundView />
+
+        <card:TopPillBackgroundView />
     </AbsoluteLayout>
 </ContentPage>

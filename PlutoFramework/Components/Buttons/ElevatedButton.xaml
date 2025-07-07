@@ -5,7 +5,7 @@
         BackgroundColor="{StaticResource Primary}"
         TextColor="White"
         FontAttributes="Bold"
-        CornerRadius="40"
+        CornerRadius="24"
         HeightRequest="48"
         >
 </Button>
