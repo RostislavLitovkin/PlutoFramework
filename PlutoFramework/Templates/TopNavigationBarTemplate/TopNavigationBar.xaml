@@ -24,16 +24,33 @@
             </AbsoluteLayout>
 
             <Label TextColor="White"
-                    AbsoluteLayout.LayoutBounds="0.5, 0.5, AutoSize, AutoSize"
-                    AbsoluteLayout.LayoutFlags="PositionProportional"
-                    HorizontalTextAlignment="Center"
-                    VerticalTextAlignment="Center">
+                   AbsoluteLayout.LayoutBounds="0.5, 0.5, AutoSize, AutoSize"
+                   AbsoluteLayout.LayoutFlags="PositionProportional"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span FontAttributes="Bold" x:Name="titleText"/>
+                        <Span FontAttributes="Bold" Text="{TemplateBinding Title}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label AbsoluteLayout.LayoutBounds="1, 0.5, AutoSize, 1"
+                    AbsoluteLayout.LayoutFlags="PositionProportional, HeightProportional"
+                    TextColor="White"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    Padding="0, 0, 10, 0">
+
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{TemplateBinding Extra1Text}" />
                     </FormattedString>
                 </Label.FormattedText>
 
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{TemplateBinding Extra1Command}" />
+                </Label.GestureRecognizers>
             </Label>
         </AbsoluteLayout>
     </ControlTemplate>
