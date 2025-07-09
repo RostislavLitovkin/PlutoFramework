@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                    xmlns:local="clr-namespace:PlutoFramework.Templates.PageTemplate"
                     xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                     xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
                     xmlns:password="clr-namespace:PlutoFramework.Components.Password"
