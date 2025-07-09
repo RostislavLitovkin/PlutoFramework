@@ -5,21 +5,23 @@ namespace PlutoFramework.Templates.PageTemplate
     [ContentProperty(nameof(MainContent))]
     public class PageTemplate : ContentPage
     {
-        public static readonly BindableProperty MainContentProperty =
-            BindableProperty.Create(nameof(MainContent), typeof(MauiView), typeof(PageTemplate), default(MauiView));
         public MauiView MainContent
         {
             get => (MauiView)GetValue(MainContentProperty);
             set => SetValue(MainContentProperty, value);
         }
-
-        public static readonly BindableProperty PopupContentProperty =
-            BindableProperty.Create(nameof(PopupContent), typeof(MauiView), typeof(PageTemplate), default(MauiView));
         public MauiView PopupContent
         {
             get => (MauiView)GetValue(PopupContentProperty);
             set => SetValue(PopupContentProperty, value);
         }
+
+        public static readonly BindableProperty MainContentProperty =
+            BindableProperty.Create(nameof(MainContent), typeof(MauiView), typeof(PageTemplate), default(MauiView));
+
+        public static readonly BindableProperty PopupContentProperty =
+            BindableProperty.Create(nameof(PopupContent), typeof(MauiView), typeof(PageTemplate), default(MauiView));
+        
 
         public PageTemplate()
         {

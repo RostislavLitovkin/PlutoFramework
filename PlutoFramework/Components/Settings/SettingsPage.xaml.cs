@@ -44,7 +44,7 @@ public partial class SettingsPage : PageTemplate
 
         await SQLiteModel.DeleteAllDatabasesAsync();
 
-        Application.Current.MainPage = new SetupPasswordPage();
+        Application.Current.MainPage = new SetupPasswordPage { Navigation = null };
     }
     async void OnDeveloperSettingsClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
