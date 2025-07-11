@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlutoFrameworkTests", "PlutoFrameworkTests\PlutoFrameworkTests.csproj", "{DF6A5884-857F-420F-9855-E579A18E9F3D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlutoFramework.Model", "PlutoFramework.Model\PlutoFramework.Model.csproj", "{BC959E4C-7D25-4D96-87BD-FA52FD573836}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generated", "Generated", "{DE803AF8-673E-41FD-8FC0-F81DEEEBE554}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Opal.NetApi", "Generated\Opal\Opal.NetApi\Opal.NetApi.csproj", "{AA2A8C67-053B-4630-BEA1-BB12768A59F2}"
@@ -51,8 +49,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XcavateSubquery", "XcavateS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlutoFramework", "PlutoFramework\PlutoFramework.csproj", "{7094BC38-D8E7-1A9E-A224-C8B3F3BDC163}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlutoFrameworkTemp", "PlutoFrameworkTemp\PlutoFrameworkTemp.csproj", "{A3E86C1B-E425-DADA-8614-CFFD71072EF5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,10 +59,6 @@ Global
 		{DF6A5884-857F-420F-9855-E579A18E9F3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF6A5884-857F-420F-9855-E579A18E9F3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF6A5884-857F-420F-9855-E579A18E9F3D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BC959E4C-7D25-4D96-87BD-FA52FD573836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BC959E4C-7D25-4D96-87BD-FA52FD573836}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BC959E4C-7D25-4D96-87BD-FA52FD573836}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BC959E4C-7D25-4D96-87BD-FA52FD573836}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AA2A8C67-053B-4630-BEA1-BB12768A59F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AA2A8C67-053B-4630-BEA1-BB12768A59F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA2A8C67-053B-4630-BEA1-BB12768A59F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -151,12 +143,6 @@ Global
 		{7094BC38-D8E7-1A9E-A224-C8B3F3BDC163}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7094BC38-D8E7-1A9E-A224-C8B3F3BDC163}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7094BC38-D8E7-1A9E-A224-C8B3F3BDC163}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A3E86C1B-E425-DADA-8614-CFFD71072EF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3E86C1B-E425-DADA-8614-CFFD71072EF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3E86C1B-E425-DADA-8614-CFFD71072EF5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{A3E86C1B-E425-DADA-8614-CFFD71072EF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3E86C1B-E425-DADA-8614-CFFD71072EF5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A3E86C1B-E425-DADA-8614-CFFD71072EF5}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
