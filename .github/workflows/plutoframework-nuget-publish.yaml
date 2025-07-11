@@ -24,9 +24,6 @@ jobs:
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.5
 
-    - name: Restore dependencies
-      run: nuget restore PlutoFramework.sln
-
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
@@ -34,6 +31,9 @@ jobs:
 
     - name: Restore dependencies
       run: dotnet restore PlutoFramework.sln
+
+    - name: Restore .NET Workloads
+      run: dotnet workload restore PlutoFramework.sln
 
     - name: Build
       run: dotnet build PlutoFramework.sln --configuration Release --no-restore
