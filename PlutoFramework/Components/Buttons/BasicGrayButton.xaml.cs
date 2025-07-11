@@ -12,27 +12,28 @@ public partial class BasicGrayButton : Button
             switch ((ButtonStateEnum)newValue)
             {
                 case ButtonStateEnum.Enabled:
-                    if (Application.Current.Resources.TryGetValue("PrimaryGray", out object primaryGrayColor))
-                    {
-                        control.BackgroundColor = (Color)primaryGrayColor;
-                    }
+                    control.BackgroundColor = (Color)Application.Current.Resources["GrayButtonBackground"];
 
-                    control.TextColor = Colors.White;
+                    control.TextColor = (Color)Application.Current.Resources["GrayButtonText"];
+                    control.BorderColor = (Color)Application.Current.Resources["GrayButtonBorder"];
 
                     control.IsEnabled = true;
                     break;
                 case ButtonStateEnum.Disabled:
-                    if (Application.Current.Resources.TryGetValue("PrimaryGrayUnimportant", out object primaryGrayUnimportantColor))
-                    {
-                        control.BackgroundColor = (Color)primaryGrayUnimportantColor;
-                    }
+                    control.BackgroundColor = (Color)Application.Current.Resources["GrayButtonDisabledBackground"];
+
+                    control.TextColor = (Color)Application.Current.Resources["GrayButtonDisabledText"];
+                    control.BorderColor = (Color)Application.Current.Resources["GrayButtonDisabledBorder"];
 
                     control.IsEnabled = false;
                     break;
                 case ButtonStateEnum.Warning:
+                    control.BackgroundColor = (Color)Application.Current.Resources["GrayButtonWarningBackground"];
+
+                    control.TextColor = (Color)Application.Current.Resources["GrayButtonWarningText"];
+                    control.BorderColor = (Color)Application.Current.Resources["GrayButtonWarningBorder"];
+
                     control.IsEnabled = true;
-                    control.BackgroundColor = Colors.Red;
-                    control.TextColor = Colors.White;
                     break;
                 case ButtonStateEnum.Invisible:
                     control.IsVisible = false;

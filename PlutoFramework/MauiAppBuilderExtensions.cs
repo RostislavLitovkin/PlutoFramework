@@ -30,7 +30,6 @@ using PlutoFramework.Components.XcavateProperty;
 using PlutoFramework.Components.Xcm;
 using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
-using PlutoFramework.Services;
 using Xe.AcrylicView;
 using ZXing.Net.Maui.Controls;
 
@@ -46,10 +45,9 @@ namespace PlutoFramework
         public static IServiceProvider Services { get; set; }
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
 
-        public static MauiAppBuilder UsePlutoFramework(this MauiAppBuilder builder, string appNamespace)
+        public static MauiAppBuilder UsePlutoFramework(this MauiAppBuilder builder)
         {
             builder
-                .AddAppSettings(appNamespace)
                 .UseAcrylicView()
                 .UseFFImageLoading()
                 .UseMicrocharts()
@@ -65,8 +63,6 @@ namespace PlutoFramework
                     fonts.AddFont("sourcecode.ttf", "SourceCode");
                     fonts.AddFont("samsungone700.ttf", "SamsungOne");
                 });
-
-            Services = builder.Services.BuildServiceProvider();
 
             //https://stackoverflow.com/questions/76547461/how-to-remove-the-outline-of-entry-control-in-maui-ios
             Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping("SetUpEntry", (handler, view) =>
@@ -170,7 +166,6 @@ namespace PlutoFramework
 
             DependencyService.Register<XcavateNavigationBarViewModel>();
 
-            // Return the modified builder
             return builder;
         }
     }

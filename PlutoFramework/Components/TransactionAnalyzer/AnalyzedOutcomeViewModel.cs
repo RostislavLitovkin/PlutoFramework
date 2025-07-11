@@ -5,7 +5,6 @@ using PlutoFramework.Model.Currency;
 using PlutoFramework.Model.Xcavate;
 using PlutoFramework.Types;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 using UniqueryPlus.Nfts;
 using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.AssetPallet, System.Numerics.BigInteger);
 using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
@@ -66,12 +65,12 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                     },
                     UsdColor = a.UsdValue switch
                     {
-                        > 0 => (Color)Application.Current.Resources["GAIN-TOKENS"],
-                        < 0 => (Color)Application.Current.Resources["LOSE-TOKENS"],
+                        > 0 => (Color)Application.Current.Resources["Positive"],
+                        < 0 => (Color)Application.Current.Resources["Negative"],
                         _ => Colors.Gray,
                     },
                     ChainIcon = Application.Current.UserAppTheme != AppTheme.Dark ? a.ChainIcon : a.DarkChainIcon,
-                    IsFrozen =  a.Pallet == AssetPallet.NativeFrozen || a.Pallet == AssetPallet.AssetsFrozen || a.Pallet == AssetPallet.TokensFrozen,
+                    IsFrozen = a.Pallet == AssetPallet.NativeFrozen || a.Pallet == AssetPallet.AssetsFrozen || a.Pallet == AssetPallet.TokensFrozen,
                     IsReserved = a.Pallet == AssetPallet.NativeReserved || a.Pallet == AssetPallet.AssetsReserved || a.Pallet == AssetPallet.TokensReserved,
                 });
 
@@ -117,8 +116,8 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                         },
                         UsdColor = nft.Operation switch
                         {
-                            NftOperation.Received => (Color)Application.Current.Resources["GAIN-TOKENS"],
-                            NftOperation.Sent => (Color)Application.Current.Resources["LOSE-TOKENS"],
+                            NftOperation.Received => (Color)Application.Current.Resources["Positive"],
+                            NftOperation.Sent => (Color)Application.Current.Resources["Negative"],
                             _ => Colors.Gray,
                         },
                         ChainIcon = Application.Current.UserAppTheme != AppTheme.Dark ? nft.AssetPrice.ChainIcon : nft.AssetPrice.DarkChainIcon,

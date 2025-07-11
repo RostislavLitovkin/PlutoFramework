@@ -33,7 +33,6 @@
                         </Label>
                         <Label x:Name="mnemonicLabel">
 
-
                         </Label>
                     </VerticalStackLayout>
                 
