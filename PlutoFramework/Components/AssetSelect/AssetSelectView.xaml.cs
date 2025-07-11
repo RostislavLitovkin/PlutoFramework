@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.NetworkSelect;
+using PlutoFramework.Model;
 
 namespace PlutoFramework.Components.AssetSelect;
 
@@ -36,9 +37,7 @@ public partial class AssetSelectView : ContentView
         {
             if (info.Name == assetSelector.Endpoint.Name && !info.ShowName)
             {
-                // Change the network if not selected
-                // This line also updates the fee
-                networkingViewModel.Select(assetSelector.Endpoint.Key);
+                _ = SubstrateClientModel.ChangeMainSubstrateClientAsync(info.EndpointKey, CancellationToken.None);
             }
         }
 

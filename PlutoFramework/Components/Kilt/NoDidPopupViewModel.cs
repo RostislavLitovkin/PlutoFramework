@@ -29,9 +29,10 @@ namespace PlutoFramework.Components.Kilt
 
             await Model.KeysModel.GenerateNewAccountAsync(null, accountVariant: "kilt1");
 
-            await Application.Current.MainPage.Navigation.PushAsync(
+            // TODO
+            /*await Application.Current.MainPage.Navigation.PushAsync(
                 new UserTypeSelectionPage()
-            );
+            );*/
         }
 
         [RelayCommand]
@@ -43,7 +44,13 @@ namespace PlutoFramework.Components.Kilt
                 new ImportDidPage(
                     new ImportDidViewModel
                     {
-                        Navigation = NoDidModel.DidNavigateToNextPageAsync
+                        Navigation = () =>
+                        {
+                            // TODO
+                            //NoDidModel.DidNavigateToNextPageAsync
+
+                            return Task.FromResult(0);
+                        }
                         // #PyramidCode
                     }
                 )

@@ -12,7 +12,7 @@ public partial class BasicGrayButton : Button
             switch ((ButtonStateEnum)newValue)
             {
                 case ButtonStateEnum.Enabled:
-                    if (App.Current.Resources.TryGetValue("PrimaryGray", out object primaryGrayColor))
+                    if (Application.Current.Resources.TryGetValue("PrimaryGray", out object primaryGrayColor))
                     {
                         control.BackgroundColor = (Color)primaryGrayColor;
                     }
@@ -22,7 +22,7 @@ public partial class BasicGrayButton : Button
                     control.IsEnabled = true;
                     break;
                 case ButtonStateEnum.Disabled:
-                    if (App.Current.Resources.TryGetValue("PrimaryGrayUnimportant", out object primaryGrayUnimportantColor))
+                    if (Application.Current.Resources.TryGetValue("PrimaryGrayUnimportant", out object primaryGrayUnimportantColor))
                     {
                         control.BackgroundColor = (Color)primaryGrayUnimportantColor;
                     }

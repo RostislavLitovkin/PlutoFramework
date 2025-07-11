@@ -10,10 +10,11 @@ public partial class ElevatedButton : Button
             var control = (ElevatedButton)bindable;
 
             control.IsVisible = (ButtonStateEnum)newValue != ButtonStateEnum.Invisible;
+
             switch ((ButtonStateEnum)newValue)
             {
                 case ButtonStateEnum.Enabled:
-                    if (App.Current.Resources.TryGetValue("Primary", out object primaryColor))
+                    if (Application.Current.Resources.TryGetValue("Primary", out object primaryColor))
                     {
                         control.BackgroundColor = (Color)primaryColor;
                     }
@@ -23,7 +24,7 @@ public partial class ElevatedButton : Button
                     control.IsEnabled = true;
                     break;
                 case ButtonStateEnum.Disabled:
-                    if (App.Current.Resources.TryGetValue("PrimaryUnimportant", out object primaryUnimportantColor))
+                    if (Application.Current.Resources.TryGetValue("PrimaryUnimportant", out object primaryUnimportantColor))
                     {
                         control.BackgroundColor = (Color)primaryUnimportantColor;
                     }
@@ -32,7 +33,7 @@ public partial class ElevatedButton : Button
                     break;
                 case ButtonStateEnum.Warning:
                     control.IsEnabled = true;
-                    control.BackgroundColor = Colors.Red;
+                    control.BackgroundColor = (Color)Application.Current.Resources["DangerousRed"];
                     control.TextColor = Colors.White;
                     break;
             }

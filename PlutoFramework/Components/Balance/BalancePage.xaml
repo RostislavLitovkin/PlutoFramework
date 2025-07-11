@@ -32,7 +32,7 @@
                        VerticalTextAlignment="Center"
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
-                       TextColor="{StaticResource X-BLUE}"
+                       TextColor="{StaticResource Primary}"
                        FontSize="25">
                     <Label.FormattedText>
                         <FormattedString>

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.Balance.AssetDetailPage"
              Title="AssetDetailPage"
-             xmlns:model="clr-namespace:PlutoFramework.Model;assembly=PlutoFramework.Model"
+             xmlns:model="clr-namespace:PlutoFramework.Model"
              xmlns:microcharts="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
          xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"

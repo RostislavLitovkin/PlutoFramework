@@ -1,6 +1,4 @@
-﻿using System;
-using PlutoFramework.Components.NetworkSelect;
-using PlutoFramework.Constants;
+﻿using PlutoFramework.Constants;
 
 namespace PlutoFramework.Model
 {
@@ -74,13 +72,9 @@ namespace PlutoFramework.Model
 
             Preferences.Set("PlutoLayout", plutoLayoutResult);
 
-            Console.WriteLine("Other Save Endpoint -> Calling MultiNetworkSelectViewModel.SetupDefault()");
-
             if (setupMultiNetworkSelect)
             {
-                var viewModel = DependencyService.Get<MultiNetworkSelectViewModel>();
-
-                viewModel.SetupDefault();
+                _ = SubstrateClientModel.ChangeConnectedClientsAsync(keys, CancellationToken.None);
             }
         }
 

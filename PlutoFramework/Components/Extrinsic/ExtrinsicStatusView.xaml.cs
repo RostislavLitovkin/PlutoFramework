@@ -1,6 +1,5 @@
 ﻿using PlutoFramework.Constants;
 using Substrate.NetApi.Model.Types.Base;
-using PlutoFramework.ViewModel;
 using PlutoFramework.Components.Events;
 using System.Numerics;
 
