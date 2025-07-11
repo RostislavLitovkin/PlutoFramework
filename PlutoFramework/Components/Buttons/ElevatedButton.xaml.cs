@@ -10,6 +10,7 @@ public partial class ElevatedButton : Button
             var control = (ElevatedButton)bindable;
 
             control.IsVisible = (ButtonStateEnum)newValue != ButtonStateEnum.Invisible;
+
             switch ((ButtonStateEnum)newValue)
             {
                 case ButtonStateEnum.Enabled:
@@ -32,7 +33,7 @@ public partial class ElevatedButton : Button
                     break;
                 case ButtonStateEnum.Warning:
                     control.IsEnabled = true;
-                    control.BackgroundColor = Colors.Red;
+                    control.BackgroundColor = (Color)Application.Current.Resources["DangerousRed"];
                     control.TextColor = Colors.White;
                     break;
             }
