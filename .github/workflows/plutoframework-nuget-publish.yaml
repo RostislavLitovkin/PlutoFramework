@@ -9,7 +9,7 @@ on:
     - master
     
 jobs:
-  publish-uniquery-plus:
+  publish-plutoframework:
     env:
       BUILD_CONFIG: 'Release'
       SOLUTION: 'PlutoFramework.sln'
