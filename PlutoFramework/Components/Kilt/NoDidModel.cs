@@ -1,16 +1,13 @@
 ﻿using PlutoFramework.Components.Xcavate;
 using PlutoFramework.Model;
 using PlutoFramework.Model.Sumsub;
-using PlutoFramework.View;
 
 namespace PlutoFramework.Components.Kilt
 {
     public class NoDidModel
     {
-        public static async Task DidNavigateToNextPageAsync()
+        public static async Task DidNavigateToNextPageAsync(Func<Task> verifiedNavigation, Func<Task> unverifiedNavigation)
         {
-            Console.WriteLine("Navigate to next page");
-
             CancellationToken token = CancellationToken.None;
 
             // Check if the account already exists
@@ -28,13 +25,15 @@ namespace PlutoFramework.Components.Kilt
 
             if (applicantData is not null)
             {
-                Application.Current.MainPage = new XcavateAppShell();
+                await verifiedNavigation.Invoke();
+                //Application.Current.MainPage = new XcavateAppShell();
                 return;
             }
 
-            await Application.Current.MainPage.Navigation.PushAsync(
+            await unverifiedNavigation.Invoke();
+            /*await Application.Current.MainPage.Navigation.PushAsync(
                 new UserTypeSelectionPage()
-            );
+            );*/
         }
     }
 }

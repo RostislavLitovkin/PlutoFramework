@@ -1,12 +1,10 @@
-﻿using System;
-using PlutoFramework.Components.NetworkSelect;
-using PlutoFramework.Constants;
+﻿using PlutoFramework.Constants;
 
 namespace PlutoFramework.Model
 {
     public static class EndpointsModel
     {
-        public static string DefaultEndpoints = "[Polkadot, Kusama]";
+        public static string DefaultEndpoints = "[XcavatePaseo]";
 
         public static IEnumerable<EndpointEnum> GetSelectedEndpointKeys()
         {
@@ -74,13 +72,9 @@ namespace PlutoFramework.Model
 
             Preferences.Set("PlutoLayout", plutoLayoutResult);
 
-            Console.WriteLine("Other Save Endpoint -> Calling MultiNetworkSelectViewModel.SetupDefault()");
-
             if (setupMultiNetworkSelect)
             {
-                var viewModel = DependencyService.Get<MultiNetworkSelectViewModel>();
-
-                viewModel.SetupDefault();
+                _ = SubstrateClientModel.ChangeConnectedClientsAsync(keys, CancellationToken.None);
             }
         }
 

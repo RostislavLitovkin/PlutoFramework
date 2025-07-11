@@ -1,12 +1,12 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Components.Mnemonics;
 using PlutoFramework.Model;
-using PlutoFramework.ViewModel;
 using WebSocketSharp;
 
 namespace PlutoFramework.Components.Kilt
 {
-    public partial class CreateNewDidViewModel : MnemonicsViewModel
+    public partial class CreateNewDidViewModel : MnemonicsPageViewModel
     {
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(TitleIsVisible))]
@@ -23,7 +23,7 @@ namespace PlutoFramework.Components.Kilt
         public async Task ContinueToNextPageAsync()
         {
             await KeysModel.GenerateNewAccountAsync(
-                Mnemonics,
+                this.Mnemonics,
                 null,
                 accountVariant: "kilt1"
             );

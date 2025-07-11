@@ -111,6 +111,6 @@ public partial class NftThumbnailView : ContentView
     }
     async void OnMoreClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
-        await NftModel.NavigateToNftDetailPageAsync(NftBase, Endpoint, Favourite, CancellationToken.None);
+        await Model.NftModel.NavigateToNftDetailPageAsync(NftBase, Endpoint, Favourite, CancellationToken.None);
     }
 }

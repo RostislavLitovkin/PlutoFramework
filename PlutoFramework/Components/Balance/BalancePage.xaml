@@ -8,10 +8,13 @@
              xmlns:account="clr-namespace:PlutoFramework.Components.Account"
              xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
              xmlns:balance="clr-namespace:PlutoFramework.Components.Balance"
+             xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
              xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
              xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
              xmlns:password="clr-namespace:PlutoFramework.Components.Password"
-             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
+             xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}"
+             HideSoftInputOnTapped="True">
     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
 
         <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
@@ -29,7 +32,7 @@
                        VerticalTextAlignment="Center"
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
-                       TextColor="{StaticResource X-BLUE}"
+                       TextColor="{StaticResource Primary}"
                        FontSize="25">
                     <Label.FormattedText>
                         <FormattedString>
@@ -60,12 +63,16 @@
             </VerticalStackLayout>
             
         </ScrollView>
-        
+
         <navigationbar:TopNavigationBar Title="Balance" />
 
+        <extrinsic:ExtrinsicStatusStackLayout />
+        
         <addressview:AddressQrCodeView />
 
         <transferview:TransferView />
+
+        <assetselect:AssetSelectView />
 
         <account:NoAccountPopup />
 

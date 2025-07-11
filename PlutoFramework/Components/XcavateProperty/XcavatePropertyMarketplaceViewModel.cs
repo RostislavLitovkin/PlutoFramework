@@ -85,6 +85,10 @@ namespace PlutoFramework.Components.XcavateProperty
                                     Items.Add(newNft);
                                 });
                             }
+                            else
+                            {
+                                i--;
+                            }
                         }
                     }
                 }

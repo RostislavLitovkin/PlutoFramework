@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_conviction_voting.vote
     }
     
     /// <summary>
-    /// >> 604 - Variant[pallet_conviction_voting.vote.Voting]
+    /// >> 610 - Variant[pallet_conviction_voting.vote.Voting]
     /// </summary>
     public sealed class EnumVoting : BaseEnumRust<Voting>
     {

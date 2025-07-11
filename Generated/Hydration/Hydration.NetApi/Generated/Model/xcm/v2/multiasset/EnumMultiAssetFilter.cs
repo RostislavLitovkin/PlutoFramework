@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Model.xcm.v2.multiasset
     }
     
     /// <summary>
-    /// >> 330 - Variant[xcm.v2.multiasset.MultiAssetFilter]
+    /// >> 335 - Variant[xcm.v2.multiasset.MultiAssetFilter]
     /// </summary>
     public sealed class EnumMultiAssetFilter : BaseEnumRust<MultiAssetFilter>
     {

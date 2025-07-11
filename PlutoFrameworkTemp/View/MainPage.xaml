@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.View.MainPage"
+             Title="MainPage"
+             xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
+             xmlns:networkselect="clr-namespace:PlutoFramework.Components.NetworkSelect"
+             xmlns:transferview="clr-namespace:PlutoFramework.Components.TransferView"
+             xmlns:dappconnection="clr-namespace:PlutoFramework.Components.DAppConnection"
+             xmlns:messagepopup="clr-namespace:PlutoFramework.Components.MessagePopup"
+             xmlns:transactionrequest="clr-namespace:PlutoFramework.Components.TransactionRequest"
+             xmlns:addressview="clr-namespace:PlutoFramework.Components.AddressView"
+             xmlns:staking="clr-namespace:PlutoFramework.Components.Staking"
+             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
+             xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
+             xmlns:vault="clr-namespace:PlutoFramework.Components.Vault"
+             xmlns:changelayoutrequest="clr-namespace:PlutoFramework.Components.ChangeLayoutRequest"
+             xmlns:account="clr-namespace:PlutoFramework.Components.Account"
+             xmlns:kilt="clr-namespace:PlutoFramework.Components.Kilt"
+             xmlns:loading="clr-namespace:PlutoFramework.Components.Loading"
+             xmlns:sumsub="clr-namespace:PlutoFramework.Components.Sumsub"
+             xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
+             xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}"
+             Shell.PresentationMode="ModalNotAnimated"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             HideSoftInputOnTapped="True">
+
+    <AbsoluteLayout
+                AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+           Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}" Opacity="{AppThemeBinding Light=0.96}" Aspect="AspectFill"/>
+
+        <RefreshView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                     Margin="0,65,0,65"
+                        Command="{Binding RefreshCommand}" 
+                        IsRefreshing="{Binding IsRefreshing}">
+            <ScrollView
+                    AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                    
+                    IsEnabled="{Binding scrollIsEnabled}">
+
+
+                <VerticalStackLayout
+                    x:Name="stackLayout"
+                    Spacing="15"
+                    Padding="20, 15, 20, 100">
+
+                </VerticalStackLayout>
+            </ScrollView>
+        </RefreshView>
+
+        <xcavate:XcavateMainPageTopNavigationBarView />
+
+        <extrinsic:ExtrinsicStatusStackLayout />
+
+        <vault:VaultSignView />
+
+        <staking:StakingRegistrationRequestView />
+
+        <messagepopup:MessagePopupView />
+
+        <xcavate:XcavateNavigationBarView />
+
+        <networkselect:MultiNetworkSelectView x:Name="networksView" />
+
+        <addressview:AddressQrCodeView />
+
+        <transferview:TransferView />
+
+        <transactionrequest:MessageSignRequestView />
+
+        <dappconnection:DAppConnectionRequestView />
+
+        <account:NoAccountPopup />
+
+        <kilt:NoDidPopupView />
+
+        <sumsub:NoKYCPopupView />
+
+        <assetselect:AssetSelectView />
+
+        <networkselect:NetworkSelectPopup />
+
+        <txanalyzer:TransactionAnalyzerConfirmationView />
+
+        <password:EnterPasswordPopupView />
+
+        <loading:FullPageLoadingView />
+
+        <card:BottomPillBackgroundView />
+
+        <card:TopPillBackgroundView />
+    </AbsoluteLayout>
+</ContentPage>

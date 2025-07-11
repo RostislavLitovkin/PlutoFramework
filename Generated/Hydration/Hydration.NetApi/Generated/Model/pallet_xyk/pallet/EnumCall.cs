@@ -47,6 +47,11 @@ namespace Hydration.NetApi.Generated.Model.pallet_xyk.pallet
         add_liquidity = 1,
         
         /// <summary>
+        /// >> add_liquidity_with_limits
+        /// </summary>
+        add_liquidity_with_limits = 5,
+        
+        /// <summary>
         /// >> remove_liquidity
         /// Remove liquidity from specific liquidity pool in the form of burning shares.
         /// 
@@ -56,6 +61,11 @@ namespace Hydration.NetApi.Generated.Model.pallet_xyk.pallet
         /// Emits 'PoolDestroyed' when pool is destroyed.
         /// </summary>
         remove_liquidity = 2,
+        
+        /// <summary>
+        /// >> remove_liquidity_with_limits
+        /// </summary>
+        remove_liquidity_with_limits = 6,
         
         /// <summary>
         /// >> sell
@@ -97,7 +107,9 @@ namespace Hydration.NetApi.Generated.Model.pallet_xyk.pallet
         {
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.create_pool);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.add_liquidity);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.add_liquidity_with_limits);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.remove_liquidity);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.remove_liquidity_with_limits);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.sell);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.buy);
         }

@@ -1,14 +1,13 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Model;
-using PlutoFramework.View;
 
 namespace PlutoFramework.Components.Settings
 {
     public partial class DeveloperSettingsViewModel : ObservableObject
     {
         [ObservableProperty]
-        private bool displayNetworks = Preferences.Get(PreferencesModel.SETTINGS_DISPLAY_NETWORKS, true);
+        private bool displayNetworks = Preferences.Get(PreferencesModel.SETTINGS_DISPLAY_NETWORKS, DefaultAppConfiguration.DISPLAY_NETWORKS);
 
         [RelayCommand]
         public void ToggleDislayNetworks()
@@ -17,7 +16,7 @@ namespace PlutoFramework.Components.Settings
 
             Preferences.Set(PreferencesModel.SETTINGS_DISPLAY_NETWORKS, DisplayNetworks);
 
-            MainPage.NetworksView.IsVisible = DisplayNetworks;
+            //MainPage.NetworksView.IsVisible = DisplayNetworks;
         }
 
         [ObservableProperty]

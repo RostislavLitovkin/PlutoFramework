@@ -2,8 +2,12 @@
 <Button xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.Buttons.BasicGrayButton"
-        BackgroundColor="{x:StaticResource PrimaryGray}"
-        TextColor="Black"
+        BackgroundColor="{StaticResource GRAY}"
+        TextColor="{StaticResource GRAY-TEXT-COLOR}"
+        BorderColor="{StaticResource GRAY-TEXT-COLOR}"
+        BorderWidth="{StaticResource GRAY-BUTTON-BORDER-WIDTH}"
         FontAttributes="Bold"
-        CornerRadius="15">
+        CornerRadius="{StaticResource ButtonCornerRadius}"
+        HeightRequest="{StaticResource ButtonHeight}"
+        >
 </Button>

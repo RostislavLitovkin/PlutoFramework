@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.staging_xcm.v4
     
     
     /// <summary>
-    /// >> 371 - Composite[staging_xcm.v4.PalletInfo]
+    /// >> 376 - Composite[staging_xcm.v4.PalletInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PalletInfo : BaseType

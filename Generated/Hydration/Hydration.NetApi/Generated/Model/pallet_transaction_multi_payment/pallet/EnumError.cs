@@ -96,7 +96,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_transaction_multi_payment.pall
     }
     
     /// <summary>
-    /// >> 519 - Variant[pallet_transaction_multi_payment.pallet.Error]
+    /// >> 525 - Variant[pallet_transaction_multi_payment.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

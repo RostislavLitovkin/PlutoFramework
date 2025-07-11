@@ -26,11 +26,11 @@ namespace PlutoFrameworkTests
         public async Task GetPropertiesAsync()
         {
             var token = CancellationToken.None;
-            uint LIMIT = 4;
+            uint LIMIT = 20;
             var uniqueryNftEnumerable = PropertyMarketplaceModel.GetPropertiesAsync(
                            (XcavatePaseo.NetApi.Generated.SubstrateClientExt)client.SubstrateClient,
-                            limit: LIMIT
-                        );
+                           limit: LIMIT
+                           );
 
             var uniqueryNftEnumerator = uniqueryNftEnumerable.GetAsyncEnumerator(token);
 

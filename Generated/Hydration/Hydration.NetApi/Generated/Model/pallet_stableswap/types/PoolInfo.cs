@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.types
     
     
     /// <summary>
-    /// >> 678 - Composite[pallet_stableswap.types.PoolInfo]
+    /// >> 683 - Composite[pallet_stableswap.types.PoolInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PoolInfo : BaseType

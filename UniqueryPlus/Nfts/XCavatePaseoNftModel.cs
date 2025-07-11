@@ -434,8 +434,6 @@ namespace UniqueryPlus.Nfts
                         PropertyNameCaseInsensitive = true
                     };
 
-                    Console.WriteLine(metadataJson);
-
                     XcavateMetadata? xCavateMetadata = JsonSerializer.Deserialize<XcavateMetadata>(metadataJson, options);
 
                     if (xCavateMetadata == null)

@@ -5,13 +5,6 @@
         BackgroundColor="{StaticResource Primary}"
         TextColor="White"
         FontAttributes="Bold"
-        CornerRadius="15"
-        >
-    <Button.Shadow>
-        <Shadow Brush="Black"
-                Offset="0,10" 
-                Radius="40"
-                Opacity="0.6" />
-    
-    </Button.Shadow>
+        CornerRadius="{StaticResource ButtonCornerRadius}"
+        HeightRequest="{StaticResource ButtonHeight}">
 </Button>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- ID Card Base -->
+  <rect x="40" y="60" width="120" height="80" rx="8" fill="#E0E0E0" stroke="#4A4A4A" stroke-width="3"/>
+  
+  <!-- Card Details (Photo and Text Areas) -->
+  <rect x="55" y="80" width="40" height="40" rx="4" fill="#9E9E9E"/>
+  <rect x="105" y="85" width="40" height="8" rx="2" fill="#9E9E9E"/>
+  <rect x="105" y="100" width="30" height="8" rx="2" fill="#9E9E9E"/>
+  
+  <!-- Circle with Arrow -->
+  <circle cx="160" cy="40" r="15" fill="#4CAF50"/>
+  <path d="M160 32 L160 48 M153 41 L160 48 L167 41" stroke="white" stroke-width="2" fill="none"/>
+</svg>

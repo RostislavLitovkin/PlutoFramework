@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Buttons.ChoiceTextButton">
+    <AbsoluteLayout>
+        <Border BackgroundColor="#1757A0C5"
+                AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                AbsoluteLayout.LayoutFlags="SizeProportional"
+                StrokeThickness="0"
+                IsVisible="False"
+                Grid.Column="0"
+                x:Name="selectedBackground">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="25"/>
+            </Border.StrokeShape>
+        </Border>
+        <Label Grid.Column="0"
+               AbsoluteLayout.LayoutBounds="0.5, 0.5, AutoSize, AutoSize"
+               Margin="15, 5, 15, 5"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               TextColor="{StaticResource Primary}"
+               x:Name="label">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer x:Name="gestureRecognizer" />
+            </Label.GestureRecognizers>
+        </Label>
+    </AbsoluteLayout>
+</ContentView>

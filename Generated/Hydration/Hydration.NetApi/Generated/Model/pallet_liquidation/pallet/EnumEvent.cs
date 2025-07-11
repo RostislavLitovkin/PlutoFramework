@@ -30,7 +30,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_liquidation.pallet
     }
     
     /// <summary>
-    /// >> 442 - Variant[pallet_liquidation.pallet.Event]
+    /// >> 447 - Variant[pallet_liquidation.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -41,7 +41,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_liquidation.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.primitive_types.H160, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Liquidated);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.primitive_types.H160, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Liquidated);
         }
     }
 }

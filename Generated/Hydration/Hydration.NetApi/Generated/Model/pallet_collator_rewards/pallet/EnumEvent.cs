@@ -30,7 +30,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_collator_rewards.pallet
     }
     
     /// <summary>
-    /// >> 418 - Variant[pallet_collator_rewards.pallet.Event]
+    /// >> 423 - Variant[pallet_collator_rewards.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

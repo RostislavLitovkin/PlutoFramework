@@ -126,5 +126,9 @@
             </Grid>
 
         </card:ClickableCard.View>
+
+        <card:ClickableCard.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnClicked" />
+        </card:ClickableCard.GestureRecognizers>
     </card:ClickableCard>
 </ContentView>

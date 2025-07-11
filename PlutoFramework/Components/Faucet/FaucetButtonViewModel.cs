@@ -1,16 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Microsoft.Maui.Controls.Compatibility.Platform.Android;
 using PlutoFramework.Components.Buttons;
 using PlutoFramework.Model;
 using PlutoFramework.Model.Faucet;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace PlutoFramework.Components.Faucet
 {

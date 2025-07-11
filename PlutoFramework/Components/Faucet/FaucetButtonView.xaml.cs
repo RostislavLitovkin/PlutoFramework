@@ -18,6 +18,8 @@ public partial class FaucetButtonView : ContentView, ISetEmptyView
 
 	public void SetEmpty()
 	{
+
+
         var viewModel = (FaucetButtonViewModel)BindingContext;
 		var assetsDict = AssetsModel.AssetsDict;
 

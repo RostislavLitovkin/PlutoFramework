@@ -4,6 +4,7 @@
              AbsoluteLayout.LayoutBounds="0.5, 0, 1, 65"
              AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
              xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
              x:Class="PlutoFramework.Components.Xcavate.XcavateTopNavigationBarView">
     <xcavate:PageBottomBarView
         Padding="10"
@@ -94,5 +95,7 @@
             </Border.GestureRecognizers>
 
         </Border>
+
+        <card:TopPillBackgroundView Grid.ColumnSpan="4" HeightRequest="65" TranslationY="-65" Margin="-10" />
     </xcavate:PageBottomBarView>
 </ContentView>

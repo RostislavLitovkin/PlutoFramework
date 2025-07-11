@@ -53,7 +53,7 @@ public class HydrationTests
     [Test]
     public static async Task GetAssetsAsync()
     {
-        await PlutoFramework.Model.HydraDX.Sdk.GetAssetsAsync((Hydration.NetApi.Generated.SubstrateClientExt)client.SubstrateClient, CancellationToken.None);
+        await PlutoFramework.Model.HydraDX.Sdk.GetAssetsAsync((Hydration.NetApi.Generated.SubstrateClientExt)client.SubstrateClient, null, CancellationToken.None);
 
         Assert.That(PlutoFramework.Model.HydraDX.Sdk.Assets.Any());
 
@@ -114,5 +114,17 @@ public class HydrationTests
         var hash = new Hash("0x8C98202680EC28CC6B92F81ABF152A8A3528A4D2C7BACA569455D24F74476B46");
         var block = await client.SubstrateClient.Chain.GetBlockAsync(hash);
         Assert.That(block.Block.Header.Number.Value == 5883239);
+    }
+
+    [Test]
+    public static async Task GetRetrospectiveSpotPricesAsync()
+    {
+        var prices = await Sdk.GetRestrospectiveSpotPricesAsync(client, PlutoFramework.Model.Interval.Weekly, "DOT",  24, CancellationToken.None);
+
+        foreach((uint blocknumber, double? price) in prices)
+        {
+            Console.WriteLine($"{blocknumber}: {price}");
+        }
+
     }
 }

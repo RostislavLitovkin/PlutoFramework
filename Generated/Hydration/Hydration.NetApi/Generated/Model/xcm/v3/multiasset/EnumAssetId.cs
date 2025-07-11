@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Model.xcm.v3.multiasset
     }
     
     /// <summary>
-    /// >> 340 - Variant[xcm.v3.multiasset.AssetId]
+    /// >> 345 - Variant[xcm.v3.multiasset.AssetId]
     /// </summary>
     public sealed class EnumAssetId : BaseEnumRust<AssetId>
     {

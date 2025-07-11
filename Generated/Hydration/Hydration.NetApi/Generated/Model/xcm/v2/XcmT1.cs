@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.xcm.v2
     
     
     /// <summary>
-    /// >> 315 - Composite[xcm.v2.XcmT1]
+    /// >> 320 - Composite[xcm.v2.XcmT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class XcmT1 : BaseType

@@ -1,7 +1,5 @@
-﻿using System.Collections.ObjectModel;
-using PlutoFramework.Components.MessagePopup;
-using PlutoFramework.Constants;
-using PlutoFramework.View;
+﻿using PlutoFramework.Components.MessagePopup;
+using PlutoFramework.Model;
 
 namespace PlutoFramework.Components.NetworkSelect;
 
@@ -26,12 +24,9 @@ public partial class MultiNetworkSelectView : ContentView
             }
             else
             {
-                var viewModel = DependencyService.Get<MultiNetworkSelectViewModel>();
-
                 var senderBubble = ((NetworkBubbleView)((HorizontalStackLayout)sender).Parent.Parent.Parent);
 
-                Console.WriteLine("Selecting " + senderBubble.EndpointKey);    
-                viewModel.Select(senderBubble.EndpointKey);
+                _ = SubstrateClientModel.ChangeMainSubstrateClientAsync(senderBubble.EndpointKey, CancellationToken.None);
             }
         }
         catch (Exception ex)

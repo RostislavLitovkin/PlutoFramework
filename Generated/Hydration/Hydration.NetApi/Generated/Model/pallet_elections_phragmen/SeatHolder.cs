@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_elections_phragmen
     
     
     /// <summary>
-    /// >> 570 - Composite[pallet_elections_phragmen.SeatHolder]
+    /// >> 576 - Composite[pallet_elections_phragmen.SeatHolder]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SeatHolder : BaseType

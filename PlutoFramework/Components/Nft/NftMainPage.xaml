@@ -11,7 +11,7 @@
              xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
              xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
              xmlns:password="clr-namespace:PlutoFramework.Components.Password"
-             xmlns:model="clr-namespace:PlutoFramework.Model;assembly=PlutoFramework.Model"
+             xmlns:model="clr-namespace:PlutoFramework.Model"
              xmlns:searchBar="clr-namespace:PlutoFramework.Components.SearchBar"
              HideSoftInputOnTapped="true"
              BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">

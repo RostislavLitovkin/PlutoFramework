@@ -2,8 +2,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using System.Collections.ObjectModel;
 using PlutoFramework.Model;
-using Substrate.NET.Wallet.Derivation;
-using PlutoFramework.ViewModel;
 
 namespace PlutoFramework.Components.NetworkSelect
 {
@@ -19,18 +17,11 @@ namespace PlutoFramework.Components.NetworkSelect
         [ObservableProperty]
         private bool clicked;
 
-        public MultiNetworkSelectViewModel()
-        {
-            Console.WriteLine("MultiNetworkSelectViewMode Constructor");
-        }
-
         /// <summary>
         /// Also called in the BasePageViewModel
         /// </summary>
-        public void SetupDefault()
+        public void ChangeSelectedEndpoints(IEnumerable<EndpointEnum> selectedEndpointKeys)
         {
-            var selectedEndpointKeys = EndpointsModel.GetSelectedEndpointKeys().ToArray();
-
             foreach (var key in selectedEndpointKeys)
             {
                 if (NetworkInfoDict.ContainsKey(key))
@@ -58,9 +49,6 @@ namespace PlutoFramework.Components.NetworkSelect
             }
 
             UpdateNetworkInfos();
-
-            // Update other views
-            Task changeChain = Model.SubstrateClientModel.ChangeClientGroupAsync(selectedEndpointKeys, CancellationToken.None);
         }
 
         public EndpointEnum SelectFirst()
@@ -75,10 +63,13 @@ namespace PlutoFramework.Components.NetworkSelect
             return firstNetwork.Key;
         }
 
-        public void Select(EndpointEnum selectedEndpointKey)
+        public void SelectEndpoint(EndpointEnum selectedEndpointKey)
         {
-            NetworkInfoDict[SelectedKey.Value].ShowName = false;
-            NetworkInfoDict[SelectedKey.Value].IsSelected = false;
+            if (SelectedKey is not null)
+            {
+                NetworkInfoDict[SelectedKey.Value].ShowName = false;
+                NetworkInfoDict[SelectedKey.Value].IsSelected = false;
+            }
 
             SelectedKey = selectedEndpointKey;
 
@@ -86,8 +77,6 @@ namespace PlutoFramework.Components.NetworkSelect
             NetworkInfoDict[selectedEndpointKey].IsSelected = true;
 
             UpdateNetworkInfos();
-
-            Task change = Model.SubstrateClientModel.ChangeMainSubstrateClientAsync(selectedEndpointKey, CancellationToken.None);
         }
 
         public void UpdateNetworkInfos()

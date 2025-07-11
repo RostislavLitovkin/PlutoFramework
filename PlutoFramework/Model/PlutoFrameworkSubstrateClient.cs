@@ -1,15 +1,13 @@
-﻿using Substrate.NetApi;
+﻿using PlutoFramework.Components.Extrinsic;
+using PlutoFramework.Components.NetworkSelect;
+using PlutoFramework.Constants;
+using PlutoFramework.Model.AjunaExt;
+using Substrate.NetApi;
 using Substrate.NetApi.Model.Extrinsics;
 using Substrate.NetApi.Model.Rpc;
-using PlutoFramework.Components.Extrinsic;
-using PlutoFramework.Constants;
-using Substrate.NetApi.Model.Types.Base;
-using PlutoFramework.Model.AjunaExt;
-using System.Collections.ObjectModel;
-using PlutoFramework.Components.NetworkSelect;
-using System.Net;
 using Substrate.NetApi.Model.Types;
-using PlutoFramework.View;
+using Substrate.NetApi.Model.Types.Base;
+using System.Collections.ObjectModel;
 
 namespace PlutoFramework.Model
 {
@@ -38,7 +36,7 @@ namespace PlutoFramework.Model
                     var selectedEndpointKey = multiNetworkSelectViewModel.SelectFirst();
 
                     multiNetworkSelectViewModel.UpdateNetworkInfos();
-                    
+
                     Task change = Model.SubstrateClientModel.ChangeMainSubstrateClientAsync(selectedEndpointKey, CancellationToken.None);
                 }
             }
@@ -195,7 +193,8 @@ namespace PlutoFramework.Model
                             }
 
                             extrinsicStackViewModel.Update();
-                        } catch (Exception e)
+                        }
+                        catch (Exception e)
                         {
                             Console.WriteLine("failed to find events");
                             Console.WriteLine(e);
@@ -204,8 +203,7 @@ namespace PlutoFramework.Model
 
                         try
                         {
-                            var multiNetworkSelectViewModel = DependencyService.Get<MultiNetworkSelectViewModel>();
-                            multiNetworkSelectViewModel.SetupDefault();
+                            await MainPageLayoutUpdater.ReloadAsync(token);
                         }
                         catch (Exception ex)
                         {
@@ -225,7 +223,8 @@ namespace PlutoFramework.Model
                             return;
                         }
 
-                        extrinsicStackViewModel.Extrinsics[extrinsicHashString].Status = TransactionAnalyzerModel.GetExtrinsicResult(allEvents) switch {
+                        extrinsicStackViewModel.Extrinsics[extrinsicHashString].Status = TransactionAnalyzerModel.GetExtrinsicResult(allEvents) switch
+                        {
                             ExtrinsicResult.Success => ExtrinsicStatusEnum.FinalizedSuccess,
                             ExtrinsicResult.Failed => ExtrinsicStatusEnum.FinalizedFailed,
                             ExtrinsicResult.Unknown => ExtrinsicStatusEnum.Unknown,

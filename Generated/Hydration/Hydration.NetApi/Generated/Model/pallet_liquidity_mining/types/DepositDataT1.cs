@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_liquidity_mining.types
     
     
     /// <summary>
-    /// >> 651 - Composite[pallet_liquidity_mining.types.DepositDataT1]
+    /// >> 656 - Composite[pallet_liquidity_mining.types.DepositDataT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DepositDataT1 : BaseType

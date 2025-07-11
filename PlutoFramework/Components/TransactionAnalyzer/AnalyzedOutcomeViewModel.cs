@@ -49,7 +49,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
             {
                 Console.WriteLine(a.Symbol);
 
-                double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(a.Symbol);
+                double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(a.Symbol) ?? 0;
                 a.UsdValue = a.Amount * spotPrice;
                 tempAssets.Add(new AssetInfoExpanded
                 {
@@ -93,7 +93,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
 
             foreach (var nft in nftChanges[walletAddress].Values)
             {
-                double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(nft.AssetPrice.Symbol);
+                double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(nft.AssetPrice.Symbol) ?? 0;
                 nft.AssetPrice.UsdValue = nft.AssetPrice.Amount * spotPrice;
                 tempNfts.Add(new NftAssetWrapperExpanded
                 {

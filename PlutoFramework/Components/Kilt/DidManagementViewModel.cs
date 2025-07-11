@@ -1,11 +1,11 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Components.Mnemonics;
 using PlutoFramework.Model;
-using PlutoFramework.ViewModel;
 
 namespace PlutoFramework.Components.Kilt
 {
-    public partial class DidManagementViewModel : MnemonicsViewModel
+    public partial class DidManagementViewModel : MnemonicsPageViewModel
     {
         [ObservableProperty]
         private string did = "";

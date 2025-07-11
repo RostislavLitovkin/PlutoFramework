@@ -23,10 +23,11 @@ public partial class TeamMemberView : ContentView
 
     private async void OnClicked(object sender, TappedEventArgs e)
     {
-        await Navigation.PushAsync(new UserProfilePage(new UserProfileViewModel
+        // TODO
+        /*await Navigation.PushAsync(new UserProfilePage(new UserProfileViewModel
         {
             CanEdit = false,
             User = User
-        }));
+        }));*/
     }
 }

@@ -30,6 +30,11 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.types
         /// >> Oracle
         /// </summary>
         Oracle = 1,
+        
+        /// <summary>
+        /// >> MMOracle
+        /// </summary>
+        MMOracle = 2,
     }
     
     /// <summary>
@@ -45,6 +50,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.types
         {
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(PegSource.Value);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Types.Base.Arr8U8, Hydration.NetApi.Generated.Model.hydradx_traits.oracle.EnumOraclePeriod, Substrate.NetApi.Model.Types.Primitive.U32>>(PegSource.Oracle);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.primitive_types.H160>(PegSource.MMOracle);
         }
     }
 }

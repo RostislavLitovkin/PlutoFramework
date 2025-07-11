@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_broadcast.types
     }
     
     /// <summary>
-    /// >> 484 - Variant[pallet_broadcast.types.Destination]
+    /// >> 490 - Variant[pallet_broadcast.types.Destination]
     /// </summary>
     public sealed class EnumDestination : BaseEnumRust<Destination>
     {

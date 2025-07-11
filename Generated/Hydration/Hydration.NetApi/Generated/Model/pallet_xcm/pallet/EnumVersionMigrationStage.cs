@@ -43,7 +43,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 777 - Variant[pallet_xcm.pallet.VersionMigrationStage]
+    /// >> 788 - Variant[pallet_xcm.pallet.VersionMigrationStage]
     /// </summary>
     public sealed class EnumVersionMigrationStage : BaseEnumRust<VersionMigrationStage>
     {

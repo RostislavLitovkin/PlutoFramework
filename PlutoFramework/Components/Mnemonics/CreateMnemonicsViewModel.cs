@@ -1,12 +1,11 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Model;
-using PlutoFramework.ViewModel;
 using WebSocketSharp;
 
 namespace PlutoFramework.Components.Mnemonics
 {
-    public partial  class CreateMnemonicsViewModel : MnemonicsViewModel
+    public partial class CreateMnemonicsViewModel : MnemonicsPageViewModel
     {
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(TitleIsVisible))]

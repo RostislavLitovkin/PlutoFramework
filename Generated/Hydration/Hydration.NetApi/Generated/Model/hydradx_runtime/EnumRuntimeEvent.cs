@@ -227,6 +227,11 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
         Liquidation = 76,
         
         /// <summary>
+        /// >> HSM
+        /// </summary>
+        HSM = 82,
+        
+        /// <summary>
         /// >> Tokens
         /// </summary>
         Tokens = 77,
@@ -394,6 +399,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_xyk.pallet.EnumEvent>(RuntimeEvent.XYK);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_referrals.pallet.EnumEvent>(RuntimeEvent.Referrals);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_liquidation.pallet.EnumEvent>(RuntimeEvent.Liquidation);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_hsm.pallet.EnumEvent>(RuntimeEvent.HSM);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.orml_tokens.module.EnumEvent>(RuntimeEvent.Tokens);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_currencies.module.EnumEvent>(RuntimeEvent.Currencies);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.orml_vesting.module.EnumEvent>(RuntimeEvent.Vesting);

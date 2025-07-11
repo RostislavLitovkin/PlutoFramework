@@ -315,7 +315,7 @@ namespace Hydration.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 SpendPeriod()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x201C0000");
+            result.Create("0x40380000");
             return result;
         }
         
@@ -361,7 +361,7 @@ namespace Hydration.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 PayoutPeriod()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0xC04B0300");
+            result.Create("0x80970600");
             return result;
         }
     }

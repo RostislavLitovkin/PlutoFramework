@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec
     
     
     /// <summary>
-    /// >> 695 - Composite[bounded_collections.bounded_vec.BoundedVecT49]
+    /// >> 702 - Composite[bounded_collections.bounded_vec.BoundedVecT49]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedVecT49 : BaseType
@@ -27,7 +27,7 @@ namespace Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec
         /// <summary>
         /// >> value
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.orml_tokens.ReserveData> Value { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.orml_tokens.BalanceLock> Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.orml_tokens.ReserveData>();
+            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.orml_tokens.BalanceLock>();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

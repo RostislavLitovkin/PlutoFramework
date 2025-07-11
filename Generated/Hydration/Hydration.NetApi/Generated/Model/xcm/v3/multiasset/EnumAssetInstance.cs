@@ -53,7 +53,7 @@ namespace Hydration.NetApi.Generated.Model.xcm.v3.multiasset
     }
     
     /// <summary>
-    /// >> 342 - Variant[xcm.v3.multiasset.AssetInstance]
+    /// >> 347 - Variant[xcm.v3.multiasset.AssetInstance]
     /// </summary>
     public sealed class EnumAssetInstance : BaseEnumRust<AssetInstance>
     {

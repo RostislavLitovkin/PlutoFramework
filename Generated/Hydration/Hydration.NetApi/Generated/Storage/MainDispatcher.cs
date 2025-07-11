@@ -37,6 +37,7 @@ namespace Hydration.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Dispatcher", "AaveManagerAccount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Dispatcher", "ExtraGas"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
         }
         
         /// <summary>
@@ -63,6 +64,33 @@ namespace Hydration.NetApi.Generated.Storage
         {
             string parameters = DispatcherStorage.AaveManagerAccountParams();
             var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> ExtraGasParams
+        /// </summary>
+        public static string ExtraGasParams()
+        {
+            return RequestGenerator.GetStorage("Dispatcher", "ExtraGas", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> ExtraGasDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string ExtraGasDefault()
+        {
+            return "0x0000000000000000";
+        }
+        
+        /// <summary>
+        /// >> ExtraGas
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U64> ExtraGas(string blockhash, CancellationToken token)
+        {
+            string parameters = DispatcherStorage.ExtraGasParams();
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U64>(parameters, blockhash, token);
             return result;
         }
     }
@@ -104,6 +132,18 @@ namespace Hydration.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(account.Encode());
             return new Method(40, "Dispatcher", 2, "note_aave_manager", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> dispatch_with_extra_gas
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method DispatchWithExtraGas(Hydration.NetApi.Generated.Model.hydradx_runtime.EnumRuntimeCall call, Substrate.NetApi.Model.Types.Primitive.U64 extra_gas)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(call.Encode());
+            byteArray.AddRange(extra_gas.Encode());
+            return new Method(40, "Dispatcher", 3, "dispatch_with_extra_gas", byteArray.ToArray());
         }
     }
     

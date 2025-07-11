@@ -2,9 +2,11 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.XcavateProperty.PropertyThumbnailView"
-             HorizontalOptions="Fill"
              xmlns:xcavateproperty="clr-namespace:PlutoFramework.Components.XcavateProperty"
-             xmlns:card="clr-namespace:PlutoFramework.Components.Card">
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             HorizontalOptions="Fill"
+             >
     <ContentView.Resources>
         <xcavateproperty:WidthToHeightConverter x:Key="widthToHeight" />
     </ContentView.Resources>
@@ -25,10 +27,9 @@
                     <AbsoluteLayout 
                         HorizontalOptions="Fill"
                            HeightRequest="200">
-                        <Image Aspect="AspectFill"
+                        <ffimageloading:CachedImage Aspect="AspectFill"
                                BackgroundColor="{AppThemeBinding Light=#dddddd, Dark=#222222}"
                                Source="xcavateloading.gif"
-                               IsAnimationPlaying="True"
                                x:Name="image"
                                AbsoluteLayout.LayoutBounds="0.5,0.5 ,1,1"
                                AbsoluteLayout.LayoutFlags="All"

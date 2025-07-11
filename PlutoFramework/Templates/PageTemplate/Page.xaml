@@ -5,6 +5,7 @@
                     xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                     xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
                     xmlns:password="clr-namespace:PlutoFramework.Components.Password"
+                    xmlns:topnavigationbartemplate="clr-namespace:PlutoFramework.Templates.TopNavigationBarTemplate"
                     x:Class="PlutoFramework.Templates.PageTemplate.Page">
 
     <ControlTemplate x:Key="PageTemplate">
@@ -25,11 +26,16 @@
                 <ContentPresenter Content="{TemplateBinding MainContent}" />
             </ScrollView>
 
-            <navigationbar:TopNavigationBar Title="{TemplateBinding Title}" />
+            <topnavigationbartemplate:TopNavigationBarTemplate Title="{TemplateBinding Title}"
+                                                               Extra1Text="{TemplateBinding NavigationBarExtra1Text}"
+                                                               Extra1Command="{TemplateBinding NavigationBarExtra1Command}"/>
+            
             <txanalyzer:TransactionAnalyzerConfirmationView />
 
             <!-- Popups block -->
-            <ContentPresenter Content="{TemplateBinding PopupContent}" />
+            <ContentPresenter Content="{TemplateBinding PopupContent}"
+                              AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                              AbsoluteLayout.LayoutFlags="SizeProportional"/>
 
             <password:EnterPasswordPopupView />
         </AbsoluteLayout>

@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_asset_registry.types
     
     
     /// <summary>
-    /// >> 634 - Composite[pallet_asset_registry.types.AssetDetails]
+    /// >> 639 - Composite[pallet_asset_registry.types.AssetDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetDetails : BaseType

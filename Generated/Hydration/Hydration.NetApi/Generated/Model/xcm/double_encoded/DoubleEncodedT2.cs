@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.xcm.double_encoded
     
     
     /// <summary>
-    /// >> 384 - Composite[xcm.double_encoded.DoubleEncodedT2]
+    /// >> 389 - Composite[xcm.double_encoded.DoubleEncodedT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DoubleEncodedT2 : BaseType

@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_conviction_voting.types
     
     
     /// <summary>
-    /// >> 609 - Composite[pallet_conviction_voting.types.Delegations]
+    /// >> 615 - Composite[pallet_conviction_voting.types.Delegations]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Delegations : BaseType

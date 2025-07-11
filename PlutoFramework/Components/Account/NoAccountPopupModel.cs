@@ -1,16 +1,18 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using PlutoFramework.Components.Buttons;
-using PlutoFramework.Components.Kilt;
-using PlutoFramework.Components.Xcavate;
+using PlutoFramework.Components.Mnemonics;
+using PlutoFramework.Components.Password;
 using PlutoFramework.Model;
-using PlutoFramework.View;
-using PlutoFramework.ViewModel;
 
 namespace PlutoFramework.Components.Account;
 
-public partial class NoAccountPopupModel : ObservableObject, IPopup, ISetToDefault
+public partial class NoAccountPopupViewModel : ObservableObject, IPopup, ISetToDefault
 {
+    // TODO: Temporary fix
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
+    public Func<Task> AfterCreateAccountNavigation { get; set; }
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
+
     [ObservableProperty]
     private bool isVisible = false;
 
@@ -37,9 +39,7 @@ public partial class NoAccountPopupModel : ObservableObject, IPopup, ISetToDefau
 
         await Model.KeysModel.GenerateNewAccountAsync(null, accountVariant: "kilt1");
 
-        await Application.Current.MainPage.Navigation.PushAsync(
-            new UserTypeSelectionPage()
-        );
+        await AfterCreateAccountNavigation.Invoke();
     }
 
     [RelayCommand]
@@ -53,15 +53,7 @@ public partial class NoAccountPopupModel : ObservableObject, IPopup, ISetToDefau
                new EnterMnemonicsPage(
                    new EnterMnemonicsViewModel
                    {
-                       Navigation = () => Application.Current.MainPage.Navigation.PushAsync(
-                           new NoDidPage(
-                               new NoDidViewModel
-                               {
-                                   Navigation = NoDidModel.DidNavigateToNextPageAsync
-                                   // #PyramidCode
-                               }
-                           )
-                       )
+                       Navigation = () => Shell.Current.Navigation.PopToRootAsync()
                    }
                )
             )

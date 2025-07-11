@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.sp_consensus_slots
     
     
     /// <summary>
-    /// >> 822 - Composite[sp_consensus_slots.Slot]
+    /// >> 833 - Composite[sp_consensus_slots.Slot]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Slot : BaseType

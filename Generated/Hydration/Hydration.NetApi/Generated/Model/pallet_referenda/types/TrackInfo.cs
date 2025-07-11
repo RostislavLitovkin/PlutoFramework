@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_referenda.types
     
     
     /// <summary>
-    /// >> 627 - Composite[pallet_referenda.types.TrackInfo]
+    /// >> 633 - Composite[pallet_referenda.types.TrackInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class TrackInfo : BaseType

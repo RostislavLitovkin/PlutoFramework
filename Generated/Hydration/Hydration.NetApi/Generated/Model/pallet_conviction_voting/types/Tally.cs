@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_conviction_voting.types
     
     
     /// <summary>
-    /// >> 408 - Composite[pallet_conviction_voting.types.Tally]
+    /// >> 413 - Composite[pallet_conviction_voting.types.Tally]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Tally : BaseType

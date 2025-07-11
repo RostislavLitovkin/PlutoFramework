@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_broadcast.types
     
     
     /// <summary>
-    /// >> 483 - Composite[pallet_broadcast.types.Fee]
+    /// >> 489 - Composite[pallet_broadcast.types.Fee]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Fee : BaseType
