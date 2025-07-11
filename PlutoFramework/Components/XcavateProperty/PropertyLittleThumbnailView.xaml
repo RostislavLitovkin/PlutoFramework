@@ -25,7 +25,7 @@
                          StrokeThickness="0"
                          BackgroundColor="Black">
                     <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="{StaticResource CARD-CORNER-RADIUS}" />
+                        <RoundRectangle CornerRadius="{StaticResource CardCornerRadius}" />
 
                     </Border.StrokeShape>
 

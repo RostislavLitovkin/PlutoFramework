@@ -2457,6 +2457,12 @@
     <MauiXaml Update="Components\Xcavate\XcavateTopNavigationBarView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="DefaultResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Resources\Styles\DefaultStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Templates\PageTemplate\Page.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
