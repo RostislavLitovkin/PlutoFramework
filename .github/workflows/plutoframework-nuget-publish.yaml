@@ -1,0 +1,46 @@
+name: PlutoFramework NuGet publish
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+    
+jobs:
+  publish-uniquery-plus:
+    env:
+      BUILD_CONFIG: 'Release'
+      SOLUTION: 'PlutoFramework.sln'
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install .NET MAUI Workload
+      run: dotnet workload install maui
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.5
+
+    - name: Restore dependencies
+      run: nuget restore $SOLUTION
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 9.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore $SOLUTION
+
+    - name: Build
+      run: dotnet build $SOLUTION --configuration Release --no-restore
+    
+    - name: Publish PlutoFramework
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+       PROJECT_FILE_PATH: ./PlutoFramework/PlutoFramework.csproj
+       NUGET_KEY: ${{secrets.NUGET_API_KEY}} 

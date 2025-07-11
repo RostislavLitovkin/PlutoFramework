@@ -8,7 +8,7 @@
 
 	<!--Set this to true if you want to generate all necessary/dependent DLLs in order to use them in Unity Project for example-->
 	<PropertyGroup>
-		<CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 	</PropertyGroup>
 
 	<ItemGroup>
