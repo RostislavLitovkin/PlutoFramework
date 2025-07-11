@@ -10,25 +10,27 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
+  <!--
   <ItemGroup>
     <None Include="./readme.md" Pack="true" PackagePath="\" />
   </ItemGroup>
+  -->
 
   <ItemGroup>
-    <PackageReference Include="KusamaAssetHub.NetApi" Version="0.1.4" />
-    <PackageReference Include="Microsoft.VisualStudio.VsixColorCompiler" Version="17.0.31709.430" />
     <PackageReference Include="Nethereum.Web3" Version="4.26.0" />
-    <PackageReference Include="PolkadotAssetHub.NetApi" Version="0.1.4" />
-    <PackageReference Include="Unique.NetApi" Version="0.1.4" />
-    <PackageReference Include="UniqueryPlus.Stick" Version="0.1.4" />
-    <PackageReference Include="UniqueryPlus.UniqueSubquery" Version="0.1.4" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Generated\KusamaAssetHub\KusamaAssetHub.NetApi\KusamaAssetHub.NetApi.csproj" />
     <ProjectReference Include="..\Generated\Mythos\Mythos.NetApi\Mythos.NetApi.csproj" />
     <ProjectReference Include="..\Generated\Opal\Opal.NetApi\Opal.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\PolkadotAssetHub\PolkadotAssetHub.NetApi\PolkadotAssetHub.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\Unique\Unique.NetApi\Unique.NetApi.csproj" />
     <ProjectReference Include="..\Generated\XcavatePaseo\XcavatePaseo.NetApi\XcavatePaseo.NetApi.csproj" />
-    <ProjectReference Include="..\OpalSubquery\OpalSubquery.csproj" />
-    <ProjectReference Include="..\Speck\UniqueryPlus.Speck.csproj" />
+    <ProjectReference Include="..\Indexers\Speck\UniqueryPlus.Speck.csproj" />
+    <ProjectReference Include="..\Indexers\Stick\UniqueryPlus.Stick.csproj" />
+    <ProjectReference Include="..\Indexers\UniqueryPlus.OpalSubquery\UniqueryPlus.OpalSubquery.csproj" />
+    <ProjectReference Include="..\Indexers\UniqueryPlus.UniqueSubquery\UniqueryPlus.UniqueSubquery.csproj" />
+    <ProjectReference Include="..\Indexers\XcavateSubquery\XcavateSubquery.csproj" />
   </ItemGroup>
 </Project>

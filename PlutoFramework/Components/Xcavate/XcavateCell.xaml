@@ -37,7 +37,7 @@
                     <Label HeightRequest="30"
                            VerticalTextAlignment="Center"
                            HorizontalTextAlignment="Start"
-                           TextColor="{StaticResource X-BLUE}"
+                           TextColor="{StaticResource Primary}"
                            HorizontalOptions="Start"
                            Margin="10, 0, 0, 0"
                            FontSize="20">

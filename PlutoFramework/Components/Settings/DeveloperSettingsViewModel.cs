@@ -1,7 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Model;
-using PlutoFramework.View;
 
 namespace PlutoFramework.Components.Settings
 {
@@ -17,7 +16,7 @@ namespace PlutoFramework.Components.Settings
 
             Preferences.Set(PreferencesModel.SETTINGS_DISPLAY_NETWORKS, DisplayNetworks);
 
-            MainPage.NetworksView.IsVisible = DisplayNetworks;
+            //MainPage.NetworksView.IsVisible = DisplayNetworks;
         }
 
         [ObservableProperty]

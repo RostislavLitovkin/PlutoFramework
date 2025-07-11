@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlutoFramework", "PlutoFramework\PlutoFramework.csproj", "{9B40071C-F49B-408A-895C-01711075CC52}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlutoFrameworkTests", "PlutoFrameworkTests\PlutoFrameworkTests.csproj", "{DF6A5884-857F-420F-9855-E579A18E9F3D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlutoFramework.Model", "PlutoFramework.Model\PlutoFramework.Model.csproj", "{BC959E4C-7D25-4D96-87BD-FA52FD573836}"
@@ -51,18 +49,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XcavatePaseo.NetApi", "Gene
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XcavateSubquery", "XcavateSubquery\XcavateSubquery.csproj", "{972090B3-72A7-430D-BF6F-69EBD07A769D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlutoFramework", "PlutoFramework\PlutoFramework.csproj", "{7094BC38-D8E7-1A9E-A224-C8B3F3BDC163}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlutoFrameworkTemp", "PlutoFrameworkTemp\PlutoFrameworkTemp.csproj", "{A3E86C1B-E425-DADA-8614-CFFD71072EF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9B40071C-F49B-408A-895C-01711075CC52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9B40071C-F49B-408A-895C-01711075CC52}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9B40071C-F49B-408A-895C-01711075CC52}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{9B40071C-F49B-408A-895C-01711075CC52}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9B40071C-F49B-408A-895C-01711075CC52}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9B40071C-F49B-408A-895C-01711075CC52}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{DF6A5884-857F-420F-9855-E579A18E9F3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DF6A5884-857F-420F-9855-E579A18E9F3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF6A5884-857F-420F-9855-E579A18E9F3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -151,6 +147,16 @@ Global
 		{972090B3-72A7-430D-BF6F-69EBD07A769D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{972090B3-72A7-430D-BF6F-69EBD07A769D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{972090B3-72A7-430D-BF6F-69EBD07A769D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7094BC38-D8E7-1A9E-A224-C8B3F3BDC163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7094BC38-D8E7-1A9E-A224-C8B3F3BDC163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7094BC38-D8E7-1A9E-A224-C8B3F3BDC163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7094BC38-D8E7-1A9E-A224-C8B3F3BDC163}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3E86C1B-E425-DADA-8614-CFFD71072EF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3E86C1B-E425-DADA-8614-CFFD71072EF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3E86C1B-E425-DADA-8614-CFFD71072EF5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A3E86C1B-E425-DADA-8614-CFFD71072EF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3E86C1B-E425-DADA-8614-CFFD71072EF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3E86C1B-E425-DADA-8614-CFFD71072EF5}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

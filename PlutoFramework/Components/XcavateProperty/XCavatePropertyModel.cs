@@ -22,7 +22,7 @@ namespace PlutoFramework.Components.XcavateProperty
         {
             try
             {
-                var configuration = MauiProgram.Services.GetService<IConfiguration>();
+                var configuration = MauiAppBuilderExtensions.Services.GetService<IConfiguration>();
 
                 RegionEndpoint region = RegionEndpoint.EUWest1;
 

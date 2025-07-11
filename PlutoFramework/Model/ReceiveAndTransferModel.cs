@@ -26,7 +26,7 @@ namespace PlutoFramework.Model
 
             if (!KeysModel.HasSubstrateKey())
             {
-                var noAccountPopupViewModel = DependencyService.Get<NoAccountPopupModel>();
+                var noAccountPopupViewModel = DependencyService.Get<NoAccountPopupViewModel>();
 
                 noAccountPopupViewModel.IsVisible = true;
 
@@ -61,7 +61,7 @@ namespace PlutoFramework.Model
         {
             if (!KeysModel.HasSubstrateKey())
             {
-                var noAccountPopupViewModel = DependencyService.Get<NoAccountPopupModel>();
+                var noAccountPopupViewModel = DependencyService.Get<NoAccountPopupViewModel>();
 
                 noAccountPopupViewModel.IsVisible = true;
 

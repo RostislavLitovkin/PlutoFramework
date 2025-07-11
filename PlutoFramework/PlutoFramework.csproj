@@ -1,1102 +1,2470 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		 <!--<TargetFrameworks>net8.0-ios;net8.0-maccatalyst;net8.0-android34.0</TargetFrameworks>-->
+  <PropertyGroup>
     <TargetFrameworks>net9.0-ios;net9.0-android35.0</TargetFrameworks>
-
-    <!--<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>-->
-		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
-		<!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
-		<OutputType>Exe</OutputType>
-		<RootNamespace>PlutoFramework</RootNamespace>
-		<UseMaui>true</UseMaui>
-		<SingleProject>true</SingleProject>
-		<ImplicitUsings>enable</ImplicitUsings>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-
-		<!-- Display name -->
-	  <ApplicationTitle>realXmarket</ApplicationTitle>
-
-		<!-- App Identifier -->
-		<ApplicationId>com.xcavate.realxmarket</ApplicationId>
-		<ApplicationIdGuid>3ba8b589-69cd-429f-866f-94877f789515</ApplicationIdGuid>
-
-		<!-- Versions -->
-		<ApplicationDisplayVersion>0.1</ApplicationDisplayVersion>
-    <PackageVersion>0.1</PackageVersion>
-    <ApplicationVersion>20</ApplicationVersion>
-		
-		<!-- Increases performance, but disables hot-reload -->
-    <UseInterpreter>false</UseInterpreter>
-    <MauiStrictXamlCompilation>true</MauiStrictXamlCompilation>
+    <SingleProject>true</SingleProject>
+    <UseMaui>true</UseMaui>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
 
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">29.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
-		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
-		<AndroidSigningKeyStore />
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">29.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+    <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
-	  <CreatePackage>false</CreatePackage>
-	  <CodesignEntitlements>Platforms\iOS\Entitlements.plist</CodesignEntitlements>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
-	  <CreatePackage>false</CreatePackage>
-	  <BuildIpa>true</BuildIpa>
-	  <IpaPackageName>plutowallet</IpaPackageName>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
-	  <AndroidSigningKeyStore>/Users/rostislavlitovkin/certificates/Keystore/RostislavLitovkin/RostislavLitovkin.keystore</AndroidSigningKeyStore>
-	  <AndroidKeyStore>True</AndroidKeyStore>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
-	  <AndroidSigningKeyStore>/Users/rostislavlitovkin/certificates/Keystore/RostislavLitovkin/RostislavLitovkin.keystore</AndroidSigningKeyStore>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(TargetFramework)'=='net9.0-ios'">
-	  <ProvisioningType>automatic</ProvisioningType>
-	  <CodesignKey>Apple Development: Created via API (3XMFUNSZ92)</CodesignKey>
-	  <CodesignProvision>VS: com.xcavate.realxmarket Development</CodesignProvision>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-android35.0|AnyCPU'">
-	  <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
-	  <Debugger>Xamarin</Debugger>
-	  <JavaMaximumHeapSize>2G</JavaMaximumHeapSize>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-android35.0|AnyCPU'">
-	  <Debugger>Xamarin</Debugger>
-	  <JavaMaximumHeapSize>2G</JavaMaximumHeapSize>
-	</PropertyGroup>
-	<ItemGroup>
-		<!-- App Icon -->
-    <MauiIcon Include="Resources\AppIcon\appicon.png" Color="#3B4F74" ForegroundScale="0.65" />
+  </PropertyGroup>
 
-		<!-- Splash Screen -->
-    <MauiSplashScreen Include="Resources\Splash\realxmarketsplash.png" Color="#FFFFFF" BaseSize="128,128" />
-
+  <ItemGroup>
     <!-- Images -->
-
-		<MauiImage Include="Resources\Images\*svg" />
-		<MauiImage Include="Resources\Images\*png" />
-		<MauiImage Include="Resources\Images\*jpg" />
-		<MauiImage Include="Resources\Images\NetworkIcons\*svg" />
-		<MauiImage Include="Resources\Images\NetworkIcons\*png" />
+    <MauiImage Include="Resources\Images\*svg" />
+    <MauiImage Include="Resources\Images\*png" />
+    <MauiImage Include="Resources\Images\*jpg" />
+    <MauiImage Include="Resources\Images\NetworkIcons\*svg" />
+    <MauiImage Include="Resources\Images\NetworkIcons\*png" />
     <MauiImage Include="Resources\Images\NetworkIcons\*jpg" />
     <MauiImage Include="Resources\Images\Assets\*svg" />
     <MauiImage Include="Resources\Images\Assets\*png" />
     <MauiImage Include="Resources\Images\Assets\*jpg" />
     <MauiImage Include="Resources\Images\PredefinedLayouts\*svg" />
-		<MauiImage Include="Resources\Images\PredefinedLayouts\*png" />
-		<MauiImage Include="Resources\Images\GalaxyLogicGame\*svg" />
-		<MauiImage Include="Resources\Images\GalaxyLogicGame\*png" />
-		<MauiImage Include="Resources\Images\FatCat\*png" />
+    <MauiImage Include="Resources\Images\PredefinedLayouts\*png" />
+    <MauiImage Include="Resources\Images\GalaxyLogicGame\*svg" />
+    <MauiImage Include="Resources\Images\GalaxyLogicGame\*png" />
+    <MauiImage Include="Resources\Images\FatCat\*png" />
 
-		<!-- fonts -->
-		<MauiFont Include="Resources\Fonts\*" />
+    <!-- fonts -->
+    <MauiFont Include="Resources\Fonts\*" />
 
-		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
-		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
-	</ItemGroup>
-	<ItemGroup>
-	  <AndroidResource Remove="Platforms\Android\Resources\drawable\maui_splash.xml" />
-	</ItemGroup>
+    <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+    <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
 
-	<ItemGroup>
-		<PackageReference Include="AcrylicView.Maui" Version="2.1.3" />
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-		<PackageReference Include="FFImageLoading.Maui" Version="1.2.9" />
-		<PackageReference Include="Microcharts.Maui" Version="1.0.0" />
-		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.1" />
-		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.1" />
-		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="9.0.81" />
-		<PackageReference Include="Microsoft.VisualStudio.VsixColorCompiler" Version="17.0.31709.430" />
-		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="3.119.0" />
-		<PackageReference Include="System.Private.Uri" Version="4.3.2" />
-		<PackageReference Include="System.Security.Cryptography.X509Certificates" Version="4.3.2" />
-		<PackageReference Include="websocketsharp.core" Version="1.0.0" />
-		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.2" />
-		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.4.0" />
-		<PackageReference Include="ZXing.Net.Maui" Version="0.4.0" />
-		<PackageReference Include="Markdig" Version="0.41.3" />
-		<PackageReference Include="Uniquery" Version="1.0.1" />
-		<PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
-		<PackageReference Include="AzeroIdResolver" Version="1.0.2" />
-		<PackageReference Include="Substrate.NET.Wallet" Version="1.0.8" />
-		<PackageReference Include="System.Collections" Version="4.3.0" />
-		<PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
-		<PackageReference Include="System.IO.FileSystem.Primitives" Version="4.3.0" />
-		<PackageReference Include="Microsoft.Win32.Primitives" Version="4.3.0" />
-		<PackageReference Include="System.Net.Primitives" Version="4.3.1" />
-		<PackageReference Include="Plutonication" Version="2.5.0" />
-	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.S3" Version="3.7.412.1" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+    <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.10" />
+    <PackageReference Include="Substrate.NET.API" Version="0.9.24-rc6" />
+    <PackageReference Include="Uniquery" Version="1.0.1" />
+    <PackageReference Include="Plutonication" Version="2.5.0" />
+    <PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
+    <PackageReference Include="AzeroIdResolver" Version="1.0.2" />
+    <PackageReference Include="Substrate.NET.Wallet" Version="1.0.8" />
+    <PackageReference Include="System.Runtime.InteropServices" Version="4.3.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
+    <PackageReference Include="AcrylicView.Maui" Version="2.1.3" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="FFImageLoading.Maui" Version="1.2.9" />
+    <PackageReference Include="Microcharts.Maui" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.VsixColorCompiler" Version="17.0.31709.430" />
+    <PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="3.119.0" />
+    <PackageReference Include="System.Private.Uri" Version="4.3.2" />
+    <PackageReference Include="System.Security.Cryptography.X509Certificates" Version="4.3.2" />
+    <PackageReference Include="websocketsharp.core" Version="1.0.0" />
+    <PackageReference Include="CommunityToolkit.Maui" Version="9.0.2" />
+    <PackageReference Include="ZXing.Net.Maui.Controls" Version="0.4.0" />
+    <PackageReference Include="ZXing.Net.Maui" Version="0.4.0" />
+    <PackageReference Include="Markdig" Version="0.41.3" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
+    <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
+    <PackageReference Include="System.IO.FileSystem.Primitives" Version="4.3.0" />
+    <PackageReference Include="Microsoft.Win32.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Net.Primitives" Version="4.3.1" />
+    <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="9.0.81" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="9.0.81" />
+    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="9.0.81" />
 
-	<ItemGroup>
-	  <None Remove="Ajuna.NetApi" />
-	  <None Remove="Ajuna.NetWallet" />
-	  <None Remove="appsettings.json" />
-	  <None Remove="Components\" />
-	  <None Remove="Components\NetworkSelect\" />
-	  <None Remove="Components\AddressView\" />
-	  <None Remove="CommunityToolkit.Maui" />
-	  <None Remove="Resources\Images\chaingreen.svg" />
-	  <None Remove="Resources\Images\cloudblack.svg" />
-	  <None Remove="Resources\Images\cloudwhite.svg" />
-	  <None Remove="Resources\Images\collectionblack.svg" />
-	  <None Remove="Resources\Images\collectionwhite.svg" />
-	  <None Remove="Resources\Images\copyblack.svg" />
-	  <None Remove="Resources\Images\copywhite.svg" />
-	  <None Remove="Resources\Images\createmnemonicsblack.svg" />
-	  <None Remove="Resources\Images\createmnemonicswhite.svg" />
-	  <None Remove="Resources\Images\dappblack.svg" />
-	  <None Remove="Resources\Images\dappwhite.svg" />
-	  <None Remove="Resources\Images\deviceblack.svg" />
-	  <None Remove="Resources\Images\devicewhite.svg" />
-	  <None Remove="Resources\Images\didcreate.svg" />
-	  <None Remove="Resources\Images\didimport.svg" />
-	  <None Remove="Resources\Images\discordblack.svg" />
-	  <None Remove="Resources\Images\discordwhite.svg" />
-	  <None Remove="Resources\Images\expandblack.svg" />
-	  <None Remove="Resources\Images\expandwhite.svg" />
-	  <None Remove="Resources\Images\facebookblack.png" />
-	  <None Remove="Resources\Images\facebookwhite.png" />
-	  <None Remove="Resources\Images\featherblack.svg" />
-	  <None Remove="Resources\Images\featherwhite.svg" />
-	  <None Remove="Resources\Images\githubblack.svg" />
-	  <None Remove="Resources\Images\githubwhite.svg" />
-	  <None Remove="Resources\Images\hotblack.svg" />
-	  <None Remove="Resources\Images\hotwhite.svg" />
-	  <None Remove="Resources\Images\imageloading.png" />
-	  <None Remove="Resources\Images\importmnemonicsblack.svg" />
-	  <None Remove="Resources\Images\importmnemonicswhite.svg" />
-	  <None Remove="Resources\Images\kodablack.svg" />
-	  <None Remove="Resources\Images\kodawhite.svg" />
-	  <None Remove="Resources\Images\kyccompleted.svg" />
-	  <None Remove="Resources\Images\linkedinblack.png" />
-	  <None Remove="Resources\Images\linkedinwhite.png" />
-	  <None Remove="Resources\Images\liquidityfinderblack.png" />
-	  <None Remove="Resources\Images\liquidityfinderwhite.png" />
-	  <None Remove="Resources\Images\moredotsgray.svg" />
-	  <None Remove="Resources\Images\NetworkIcons\hydration.svg" />
-	  <None Remove="Resources\Images\NetworkIcons\kilt.png" />
-	  <None Remove="Resources\Images\NetworkIcons\kiltblack.svg" />
-	  <None Remove="Resources\Images\NetworkIcons\kiltwhite.svg" />
-	  <None Remove="Resources\Images\NetworkIcons\kusamaassethub.svg" />
-	  <None Remove="Resources\Images\NetworkIcons\mythos.png" />
-	  <None Remove="Resources\Images\NetworkIcons\polkadotassethub.svg" />
-	  <None Remove="Resources\Images\nftblack.svg" />
-	  <None Remove="Resources\Images\nftwhite.svg" />
-	  <None Remove="Resources\Images\plutowalletclearwhite.png" />
-	  <None Remove="Resources\Images\plutowalleticonwhite.png" />
-	  <None Remove="Resources\Images\realxmarket.png" />
-	  <None Remove="Resources\Images\shareblack.svg" />
-	  <None Remove="Resources\Images\sharewhite.svg" />
-	  <None Remove="Resources\Images\subscan.png" />
-	  <None Remove="Resources\Images\subscanicon.png" />
-	  <None Remove="Resources\Images\uniqueblack.svg" />
-	  <None Remove="Resources\Images\uniquewhite.svg" />
-	  <None Remove="Resources\Images\xblack.png" />
-	  <None Remove="Resources\Images\xcavatedeveloper.png" />
-	  <None Remove="Resources\Images\xcavateinvestor.png" />
-	  <None Remove="Resources\Images\xcavatelettingagent.png" />
-	  <None Remove="Resources\Images\xcavateloanevaluator.png" />
-	  <None Remove="Resources\Images\xcavatemappin.png" />
-	  <None Remove="Resources\Images\xcavatergb.png" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Update="Components\000ComponentTemplate\NewPageTemplate.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\000ComponentTemplate\NewPopupViewTemplate.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Account\CreateAccountPopup.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Account\NoAccountPopup.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\AddressView\AddressQrCodeView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\AddressView\AddressView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\AddressView\ChainAddressView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\AddressView\SubstrateAddressView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Animations\LoadingView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\AssetSelect\AssetInputView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\AssetSelect\AssetSelectButtonView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\AssetSelect\AssetSelectorView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\AssetSelect\AssetSelectView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\AssetSelect\NativeAssetInputView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\AssetSelect\UsdButtonView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\AwesomeAjunaAvatars\AAALeaderboard.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\AwesomeAjunaAvatars\SeasonCountdownView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\AzeroId\AzeroPrimaryNameView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Balance\AssetAmountView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Balance\AssetDetailPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Balance\AssetView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Balance\BalancePage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Balance\UsdBalanceView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Buttons\BasicGrayButton.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Buttons\ChoiceTextButton.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Buttons\ElevatedButton.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Buttons\PlutoWalletElevatedButton.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Buttons\ReceiveAndTransferView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\CalamarView\CalamarView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Card\BottomPillBackgroundView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Card\BottomPopupCard.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Card\Card.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Card\ClickableCard.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Card\TopPillBackgroundView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\ChangeLayoutRequest\ChangeLayoutRequestView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Contract\ContractView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Credits\CreditsPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\CustomLayouts\AddCustomItemPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\CustomLayouts\CategoryHeaderView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\CustomLayouts\CustomItemView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\CustomLayouts\CustomLayoutItemAddView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\CustomLayouts\CustomLayoutItemDragger.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\CustomLayouts\CustomLayoutsPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\CustomLayouts\DeleteItemView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\CustomLayouts\ErrorItemView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\CustomLayouts\ExportPlutoLayoutQRView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\CustomLayouts\ItemView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\CustomLayouts\LoadingItemView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\CustomLayouts\PlusItemView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\CustomLayouts\PredefinedLayoutsPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\CustomLayouts\TransparentItemView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\DAppConnection\DAppConnectionRequestView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\DAppConnection\DAppConnectionView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Date\DateView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Error\BadInternetConnectionPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Events\EventItemView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Events\EventParameterView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Events\EventsListView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Extrinsic\CallDetailPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Extrinsic\CallParametersView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Extrinsic\CallParameterView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Extrinsic\EncodedCallView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Extrinsic\ExtrinsicDetailPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Extrinsic\ExtrinsicStatusStackLayout.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Extrinsic\ExtrinsicStatusView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Faucet\FaucetButtonView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Fee\FeeAssetView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Form\FormAssetInputView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Form\FormInputView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Form\FormLargeInputView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Form\FormLargeValueView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Form\FormValueView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Form\FormWideValueView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\GalaxyLogicGame\GLGPowerupsView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\GalaxyLogicGame\PowerupView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\HydraDX\AssetLiquidityView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\HydraDX\DCAOrderView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\HydraDX\DCAView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\HydraDX\OmnipoolLiquidityView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Hyperlink\Link.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Identity\IdentityAddressView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Identity\IdentityView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Kilt\CreateNewDidPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Kilt\DidExplanationPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Kilt\DidListView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Kilt\DidManagementPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Kilt\DidView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Kilt\ImportDidPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Kilt\MainDidView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Kilt\NoDidPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Kilt\NoDidPopupView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Kilt\NoDidReminderView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Koda\OpenKodaButton.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Loading\FullPageLoadingView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\MessagePopup\MessagePopupView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Messaging\MessagingOverviewPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Mnemonics\BackupMnemonicsReminderView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Mnemonics\CreateMnemonicsPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Mnemonics\MnemonicsExplanationPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Mnemonics\MnemonicsView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Mnemonics\NoMnemonicsPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Mnemonics\SuccessfulImportPopupView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\NavigationBar\NavigationBarView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\NavigationBar\TopNavigationBar.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\NetworkSelect\MultiNetworkSelectView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\NetworkSelect\NetworkBubbleView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\NetworkSelect\NetworkSelectorView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\NetworkSelect\NetworkSelectPopup.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\CollectionDetailPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\CollectionListPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\CollectionMintConfigView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\CollectionStatsView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\CollectionThumbnailView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NestNftSelectView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftAttributesView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftAttributeView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftBuyView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftDescriptionView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftDetailPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftFavouriteGalleryView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftGalleryView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftIdView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftImageFullScreenPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftImageView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftListPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftLittleThumbnailView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftLoadingView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftMainPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftModifyImageView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftModifyMultiImageView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftMultiImageView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftNestedNftsView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftNestedParentNftView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftOwnedGalleryView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftOwnerView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftPictureView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftSellView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftSoldForView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftThumbnailView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftTitleView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftTradingStats.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftTransferView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\OpenGov\VotingDelegationView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Password\EnterPasswordPopupView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\PredefinedLayouts\AwesomaAjunaAvatarsLayoutItem.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\PredefinedLayouts\GalaxyLogicGameLayoutItem.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\PredefinedLayouts\GenericPredefinedLayoutItem.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\PredefinedLayouts\HydrationOmnipoolLayoutItem.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Referenda\ReferendaView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Referenda\ReferendumInfoView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\SearchBar\SearchBarView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Settings\DeveloperSettingsPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Settings\GenericButton.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Settings\GenericSwitch.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Settings\QuestionAnswerView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Settings\ShowMnemonic.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Staking\EzStakingOverviewView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Staking\StakingDashboardView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Staking\StakingEntryView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Staking\StakingRegistrationRequestView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Subscan\OpenSubscanButton.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Sumsub\NoKYCPopupView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Sumsub\SumsubWebSDKPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Sumsub\VerificationCompletedPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Switch\DualSwitch.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Switch\MiniDualSwitch.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Table\TableCurrencyCell.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Table\TwoCellTableView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Tabs\TabsView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Tabs\TabView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Tabs\TwoTabView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\TransactionAnalyzer\AnalyzedOutcomeView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\TransactionAnalyzer\DAppNetworkView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\TransactionAnalyzer\ExtrinsicErrorView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\TransactionAnalyzer\PalletCallView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\TransactionAnalyzer\TransactionAnalyzerConfirmationView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\TransactionRequest\MessageSignRequestView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\TransferView\TransferView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Unique\OpenUniqueButton.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\UniversalScannerView\UniversalScannerPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\UpdateView\UpdateView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Vault\VaultSignView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\VTokens\VDotTokenView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\WebView\AdvancedWebView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\WebView\WebViewPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\XcavateProperty\BuyPropertyTokensView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\XcavateProperty\Cells\ActiveLoanCellView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\XcavateProperty\Cells\BalanceCellView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\XcavateProperty\Cells\PropertyTokensBoughtCellView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\XcavateProperty\Cells\ROICellView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\XcavateProperty\Cells\TotalInvestedCellView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\XcavateProperty\CompanyThumbnailView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\XcavateProperty\LocationView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\XcavateProperty\ModifyPropertyPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\XcavateProperty\OwnedPropertiesListView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\XcavateProperty\OwnedPropertyTokensView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\XcavateProperty\PropertyDetailPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\XcavateProperty\PropertyLittleThumbnailView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\XcavateProperty\PropertyThumbnailView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\XcavateProperty\RelistPropertyTokensView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\XcavateProperty\SliderView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\XcavateProperty\XcavatePropertyMarketplacePage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\AboutUsView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\CompanyPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\CompanyUserStatusBadgeView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\DeveloperStatsView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\DocumentVerificationView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\FrequentlyAskedQuestionsPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\HelpPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\ModifyCompanyPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\PageBottomBarButtonView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\PageBottomBarView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\RiskWarningView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\TeamMemberView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\UserProfileHeaderView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\UserTypeBadgeView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\VerificationBadgeView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\XcavateCell.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\XcavateNavigationBarButtonView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\XcavateNavigationBarView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\XcavateTopNavigationBarView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcm\XcmNetworkSelectButton.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcm\XcmNetworkSelectorView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcm\XcmNetworkSelectPopup.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcm\XcmNetworkSelectView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcm\XcmTransferPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcm\XcmTransferView.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Components\000ComponentTemplate\NewPageTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\000ComponentTemplate\NewPopupViewTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Account\CreateAccountPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Account\NoAccountPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\AddressView\AddressQrCodeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\AddressView\AddressView.xaml">
+      <SubType></SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\AddressView\ChainAddressView.xaml">
+      <SubType></SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\AddressView\SubstrateAddressView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Animations\LoadingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\AssetSelect\AssetInputView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\AssetSelect\AssetSelectButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\AssetSelect\AssetSelectorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\AssetSelect\AssetSelectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\AssetSelect\NativeAssetInputView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\AssetSelect\UsdButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\AwesomeAjunaAvatars\AAALeaderboard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\AwesomeAjunaAvatars\SeasonCountdownView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\AzeroId\AzeroPrimaryNameView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Balance\AssetAmountView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Balance\AssetDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Balance\AssetView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Balance\BalancePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Balance\UsdBalanceView.xaml">
+      <SubType></SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Buttons\BasicGrayButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Buttons\ChoiceTextButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Buttons\ElevatedButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Buttons\PlutoWalletElevatedButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Buttons\ReceiveAndTransferView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\CalamarView\CalamarView.xaml">
+      <SubType></SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Card\BottomPillBackgroundView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Card\BottomPopupCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Card\Card.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Card\ClickableCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Card\TopPillBackgroundView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\ChangeLayoutRequest\ChangeLayoutRequestView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Contract\ContractView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Credits\CreditsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\CustomLayouts\AddCustomItemPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\CustomLayouts\CategoryHeaderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\CustomLayouts\CustomItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\CustomLayouts\CustomLayoutItemAddView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\CustomLayouts\CustomLayoutItemDragger.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\CustomLayouts\CustomLayoutsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\CustomLayouts\DeleteItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\CustomLayouts\ErrorItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\CustomLayouts\ExportPlutoLayoutQRView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\CustomLayouts\ItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\CustomLayouts\LoadingItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\CustomLayouts\PlusItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\CustomLayouts\PredefinedLayoutsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\CustomLayouts\TransparentItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\DAppConnection\DAppConnectionRequestView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\DAppConnection\DAppConnectionView.xaml">
+      <SubType></SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Date\DateView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Error\BadInternetConnectionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Events\EventItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Events\EventParameterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Events\EventsListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Extrinsic\CallDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Extrinsic\CallParametersView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Extrinsic\CallParameterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Extrinsic\EncodedCallView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Extrinsic\ExtrinsicDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Extrinsic\ExtrinsicStatusStackLayout.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Extrinsic\ExtrinsicStatusView.xaml">
+      <SubType></SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Faucet\FaucetButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Fee\FeeAssetView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Form\FormAssetInputView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Form\FormInputView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Form\FormLargeInputView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Form\FormLargeValueView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Form\FormValueView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Form\FormWideValueView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\GalaxyLogicGame\GLGPowerupsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\GalaxyLogicGame\PowerupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\HydraDX\AssetLiquidityView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\HydraDX\DCAOrderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\HydraDX\DCAView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\HydraDX\OmnipoolLiquidityView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Hyperlink\Link.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Identity\IdentityAddressView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Identity\IdentityView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Kilt\CreateNewDidPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Kilt\DidExplanationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Kilt\DidListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Kilt\DidManagementPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Kilt\DidView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Kilt\ImportDidPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Kilt\MainDidView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Kilt\NoDidPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Kilt\NoDidPopupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Kilt\NoDidReminderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Koda\OpenKodaButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Loading\FullPageLoadingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\MessagePopup\MessagePopupView.xaml">
+      <SubType></SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Messaging\MessagingOverviewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Mnemonics\BackupMnemonicsReminderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Mnemonics\CreateMnemonicsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Mnemonics\MnemonicsExplanationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Mnemonics\MnemonicsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Mnemonics\NoMnemonicsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Mnemonics\SuccessfulImportPopupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\NavigationBar\NavigationBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\NavigationBar\TopNavigationBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\NetworkSelect\MultiNetworkSelectView.xaml">
+      <SubType></SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\NetworkSelect\NetworkBubbleView.xaml">
+      <SubType></SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\NetworkSelect\NetworkSelectorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\NetworkSelect\NetworkSelectPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\CollectionDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\CollectionListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\CollectionMintConfigView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\CollectionStatsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\CollectionThumbnailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NestNftSelectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftAttributesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftAttributeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftBuyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftDescriptionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftFavouriteGalleryView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftGalleryView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftIdView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftImageFullScreenPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftImageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftLittleThumbnailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftLoadingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftMainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftModifyImageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftModifyMultiImageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftMultiImageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftNestedNftsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftNestedParentNftView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftOwnedGalleryView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftOwnerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftPictureView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftSellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftSoldForView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftThumbnailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftTitleView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftTradingStats.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Nft\NftTransferView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\OpenGov\VotingDelegationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Password\EnterPasswordPopupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\PredefinedLayouts\AwesomaAjunaAvatarsLayoutItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\PredefinedLayouts\GalaxyLogicGameLayoutItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\PredefinedLayouts\GenericPredefinedLayoutItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\PredefinedLayouts\HydrationOmnipoolLayoutItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Referenda\ReferendaView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Referenda\ReferendumInfoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\SearchBar\SearchBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Settings\DeveloperSettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Settings\GenericButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Settings\GenericSwitch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Settings\QuestionAnswerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Settings\SettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Settings\ShowMnemonic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Staking\EzStakingOverviewView.xaml">
+      <SubType></SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Staking\StakingDashboardView.xaml">
+      <SubType></SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Staking\StakingEntryView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Staking\StakingRegistrationRequestView.xaml">
+      <SubType></SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Subscan\OpenSubscanButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Sumsub\NoKYCPopupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Sumsub\SumsubWebSDKPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Sumsub\VerificationCompletedPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Switch\DualSwitch.xaml">
+      <SubType></SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Switch\MiniDualSwitch.xaml">
+      <SubType></SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Table\TableCurrencyCell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Table\TwoCellTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Tabs\TabsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Tabs\TabView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Tabs\TwoTabView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\TransactionAnalyzer\AnalyzedOutcomeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\TransactionAnalyzer\DAppNetworkView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\TransactionAnalyzer\ExtrinsicErrorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\TransactionAnalyzer\PalletCallView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\TransactionAnalyzer\TransactionAnalyzerConfirmationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\TransactionRequest\MessageSignRequestView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\TransferView\TransferView.xaml">
+      <SubType></SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Unique\OpenUniqueButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\UniversalScannerView\UniversalScannerPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\UpdateView\UpdateView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Vault\VaultSignView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\VTokens\VDotTokenView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\WebView\AdvancedWebView.xaml">
+      <SubType></SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\WebView\WebViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XcavateProperty\BuyPropertyTokensView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XcavateProperty\Cells\ActiveLoanCellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XcavateProperty\Cells\BalanceCellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XcavateProperty\Cells\PropertyTokensBoughtCellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XcavateProperty\Cells\ROICellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XcavateProperty\Cells\TotalInvestedCellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XcavateProperty\CompanyThumbnailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XcavateProperty\LocationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XcavateProperty\ModifyPropertyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XcavateProperty\OwnedPropertiesListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XcavateProperty\OwnedPropertyTokensView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XcavateProperty\PropertyDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XcavateProperty\PropertyLittleThumbnailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XcavateProperty\PropertyThumbnailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XcavateProperty\RelistPropertyTokensView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XcavateProperty\SliderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XcavateProperty\XcavatePropertyMarketplacePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\AboutUsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\CompanyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\CompanyUserStatusBadgeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\DeveloperStatsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\DocumentVerificationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\FrequentlyAskedQuestionsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\HelpPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\ModifyCompanyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\ModifyUserProfilePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\ModifyUserProfilePopupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\OnboardingShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\PageBottomBarButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\PageBottomBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\RiskWarningView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\TeamMemberView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\UserProfileHeaderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\UserProfilePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\UserTypeBadgeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\UserTypeSelectionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\VerificationBadgeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\WelcomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\XcavateAppShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\XcavateCell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\XcavateMainPageTopNavigationBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\XcavateNavigationBarButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\XcavateNavigationBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XCavate\XcavateTopNavigationBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Xcm\XcmNetworkSelectButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Xcm\XcmNetworkSelectorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Xcm\XcmNetworkSelectPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Xcm\XcmNetworkSelectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Xcm\XcmTransferPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\Xcm\XcmTransferView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Templates\PageTemplate\Page.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Templates\TemplateDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Templates\TopNavigationBarTemplate\TopNavigationBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Model\Types\Bifrost\" />
+    <Folder Include="Model\Types\Hydration\" />
+    <Folder Include="Model\Types\Polkadot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="AjunaExt\" />
+    <None Remove="AzeroId\" />
+    <None Remove="HydraDX\" />
+    <None Remove="Kodadot\" />
+    <None Remove="Resources\Fonts\OpenSans-Regular.ttf" />
+    <None Remove="Resources\Fonts\OpenSans-Semibold.ttf" />
+    <None Remove="Resources\Fonts\xcavatefont.ttf" />
+    <None Remove="Resources\Images\alertblack.svg" />
+    <None Remove="Resources\Images\alertwhite.svg" />
+    <None Remove="Resources\Images\arrowbackblack.svg" />
+    <None Remove="Resources\Images\Assets\unknown.png" />
+    <None Remove="Resources\Images\Assets\usdc.png" />
+    <None Remove="Resources\Images\Assets\usdt.png" />
+    <None Remove="Resources\Images\backwhite.svg" />
+    <None Remove="Resources\Images\chaingreen.svg" />
+    <None Remove="Resources\Images\closeblack.svg" />
+    <None Remove="Resources\Images\closewhite.svg" />
+    <None Remove="Resources\Images\cloudblack.svg" />
+    <None Remove="Resources\Images\cloudwhite.svg" />
+    <None Remove="Resources\Images\collectionblack.svg" />
+    <None Remove="Resources\Images\collectionwhite.svg" />
+    <None Remove="Resources\Images\connectedblack.svg" />
+    <None Remove="Resources\Images\connectedwhite.svg" />
+    <None Remove="Resources\Images\copyblack.svg" />
+    <None Remove="Resources\Images\copywhite.svg" />
+    <None Remove="Resources\Images\createmnemonicsblack.svg" />
+    <None Remove="Resources\Images\createmnemonicswhite.svg" />
+    <None Remove="Resources\Images\credits_daniel_vaculik.jpg" />
+    <None Remove="Resources\Images\credits_dusan_jansky.jpg" />
+    <None Remove="Resources\Images\credits_rostislav_litovkin.jpg" />
+    <None Remove="Resources\Images\dappblack.svg" />
+    <None Remove="Resources\Images\dappwhite.svg" />
+    <None Remove="Resources\Images\deviceblack.svg" />
+    <None Remove="Resources\Images\devicewhite.svg" />
+    <None Remove="Resources\Images\didcreate.svg" />
+    <None Remove="Resources\Images\didimport.svg" />
+    <None Remove="Resources\Images\discordblack.svg" />
+    <None Remove="Resources\Images\discordwhite.svg" />
+    <None Remove="Resources\Images\downloadblack.svg" />
+    <None Remove="Resources\Images\downloadwhite.svg" />
+    <None Remove="Resources\Images\expandblack.svg" />
+    <None Remove="Resources\Images\expandwhite.svg" />
+    <None Remove="Resources\Images\facebookblack.png" />
+    <None Remove="Resources\Images\facebookwhite.png" />
+    <None Remove="Resources\Images\featherblack.svg" />
+    <None Remove="Resources\Images\featherwhite.svg" />
+    <None Remove="Resources\Images\githubblack.svg" />
+    <None Remove="Resources\Images\githubwhite.svg" />
+    <None Remove="Resources\Images\hotblack.svg" />
+    <None Remove="Resources\Images\hotwhite.svg" />
+    <None Remove="Resources\Images\imageloading.png" />
+    <None Remove="Resources\Images\importmnemonicsblack.svg" />
+    <None Remove="Resources\Images\importmnemonicswhite.svg" />
+    <None Remove="Resources\Images\infoblack.svg" />
+    <None Remove="Resources\Images\infowhite.svg" />
+    <None Remove="Resources\Images\keyblack.svg" />
+    <None Remove="Resources\Images\keywhite.svg" />
+    <None Remove="Resources\Images\kodablack.svg" />
+    <None Remove="Resources\Images\kodawhite.svg" />
+    <None Remove="Resources\Images\kyccompleted.svg" />
+    <None Remove="Resources\Images\linkedinblack.png" />
+    <None Remove="Resources\Images\linkedinwhite.png" />
+    <None Remove="Resources\Images\liquidityfinderblack.png" />
+    <None Remove="Resources\Images\liquidityfinderwhite.png" />
+    <None Remove="Resources\Images\moredotsgray.svg" />
+    <None Remove="Resources\Images\NetworkIcons\hydration.svg" />
+    <None Remove="Resources\Images\NetworkIcons\kilt.png" />
+    <None Remove="Resources\Images\NetworkIcons\kiltblack.svg" />
+    <None Remove="Resources\Images\NetworkIcons\kiltwhite.svg" />
+    <None Remove="Resources\Images\NetworkIcons\kusamaassethub.svg" />
+    <None Remove="Resources\Images\NetworkIcons\mythos.png" />
+    <None Remove="Resources\Images\NetworkIcons\polkadotassethub.svg" />
+    <None Remove="Resources\Images\nftblack.svg" />
+    <None Remove="Resources\Images\nftwhite.svg" />
+    <None Remove="Resources\Images\noimage.png" />
+    <None Remove="Resources\Images\plutowalletclearwhite.png" />
+    <None Remove="Resources\Images\plutowalleticon.svg" />
+    <None Remove="Resources\Images\plutowalleticonwhite.png" />
+    <None Remove="Resources\Images\qrcodeblack.svg" />
+    <None Remove="Resources\Images\qrcodewhite.svg" />
+    <None Remove="Resources\Images\realxmarket.png" />
+    <None Remove="Resources\Images\resourceappicon.png" />
+    <None Remove="Resources\Images\settingsblack.svg" />
+    <None Remove="Resources\Images\settingswhite.svg" />
+    <None Remove="Resources\Images\shareblack.svg" />
+    <None Remove="Resources\Images\sharewhite.svg" />
+    <None Remove="Resources\Images\signblack.svg" />
+    <None Remove="Resources\Images\signwhite.svg" />
+    <None Remove="Resources\Images\subscan.png" />
+    <None Remove="Resources\Images\subscanicon.png" />
+    <None Remove="Resources\Images\successblack.svg" />
+    <None Remove="Resources\Images\successwhite.svg" />
+    <None Remove="Resources\Images\uniqueblack.svg" />
+    <None Remove="Resources\Images\uniquewhite.svg" />
+    <None Remove="Resources\Images\xblack.png" />
+    <None Remove="Resources\Images\xcavateaccountselected.png" />
+    <None Remove="Resources\Images\xcavateaccountunselected.png" />
+    <None Remove="Resources\Images\xcavatebackarrow.png" />
+    <None Remove="Resources\Images\xcavatecellarrow.png" />
+    <None Remove="Resources\Images\xcavatedeveloper.png" />
+    <None Remove="Resources\Images\xcavateemail.png" />
+    <None Remove="Resources\Images\xcavatehelpselected.png" />
+    <None Remove="Resources\Images\xcavatehelpunselected.png" />
+    <None Remove="Resources\Images\xcavateiconwhite.png" />
+    <None Remove="Resources\Images\xcavateinvestor.png" />
     <None Remove="Resources\Images\xcavatelaunchbg1.jpg" />
     <None Remove="Resources\Images\xcavatelaunchbg2.png" />
     <None Remove="Resources\Images\xcavatelaunchbg3.png" />
+    <None Remove="Resources\Images\xcavatelettingagent.png" />
+    <None Remove="Resources\Images\xcavateloanevaluator.png" />
+    <None Remove="Resources\Images\xcavatemappin.png" />
+    <None Remove="Resources\Images\xcavatemarketplace.png" />
+    <None Remove="Resources\Images\xcavatemarketplaceselected.png" />
+    <None Remove="Resources\Images\xcavatemarketplaceunselected.png" />
+    <None Remove="Resources\Images\xcavatemenu.png" />
+    <None Remove="Resources\Images\xcavateqr.png" />
+    <None Remove="Resources\Images\xcavatergb.png" />
+    <None Remove="Resources\Images\xcavateshare.png" />
+    <None Remove="Resources\Images\xcavatexgray.png" />
+    <None Remove="Resources\Images\xcavatexwhite.png" />
     <None Remove="Resources\Images\xwhite.png" />
-	  <None Remove="Resources\Images\youtubeblack.png" />
-	  <None Remove="Resources\Images\youtubewhite.png" />
-	  <None Remove="Resources\Raw\SumsubWebSDK\index.html" />
-	  <None Remove="Resources\Raw\SumsubWebSDK\scripts\HybridWebView.js" />
-	  <None Remove="SubstrateNetApi" />
-	  <None Remove="Components\TransferView\" />
-	  <None Remove="ZXing.Net.Maui" />
-	  <None Remove="Components\ConnectionRequestView\" />
-	  <None Remove="ZXing.Net.Maui.Controls" />
-	  <None Remove="Components\UniversalScannerView\" />
-	  <None Remove="Components\MessagePopup\" />
-	  <None Remove="Components\TransactionRequest\" />
-	  <None Remove="Components\CalamarView\" />
-	  <None Remove="Resources\Fonts\fontawesome-webfont.ttf" />
-	  <None Remove="Components\ArgumentsView\" />
-	  <None Remove="Components\PublicKeyQRCodeView\" />
-	  <None Remove="Resources\Splash\" />
-	  <None Remove="Resources\AppIcon\" />
-	  <None Remove="Resources\Fonts\Exodar-Outline.ttf" />
-	  <None Remove="Components\DAppConnectionView\" />
-	  <None Remove="Substrate.NET.API" />
-	  <None Remove="Components\Staking\" />
-	  <None Remove="Components\Switch\" />
-	  <None Remove="Components\WebView\" />
-	  <None Remove="Components\Extrinsic\" />
-	  <None Remove="Resources\Images\NetworkIcons\" />
-	  <None Remove="Resources\Images\NetworkIcons\unique.png" />
-	  <None Remove="Resources\Images\NetworkIcons\t0rn.png" />
-	  <None Remove="Resources\Images\NetworkIcons\subsocial.png" />
-	  <None Remove="Resources\Images\NetworkIcons\statemint.png" />
-	  <None Remove="Resources\Images\NetworkIcons\statemine.png" />
-	  <None Remove="Resources\Images\NetworkIcons\quartz.png" />
-	  <None Remove="Resources\Images\NetworkIcons\opal.png" />
-	  <None Remove="Resources\Images\NetworkIcons\moonriver.png" />
-	  <None Remove="Resources\Images\NetworkIcons\moonbase.png" />
-	  <None Remove="Resources\Images\NetworkIcons\moonbeam.png" />
-	  <None Remove="Resources\Images\NetworkIcons\gmordie.png" />
-	  <None Remove="Resources\Images\NetworkIcons\calamari.png" />
-	  <None Remove="Resources\Images\NetworkIcons\elysiumtestnet.png" />
-	  <None Remove="Resources\Images\NetworkIcons\elysium.png" />
-	  <None Remove="Resources\Images\NetworkIcons\equilibrium.png" />
-	  <None Remove="Resources\Images\NetworkIcons\geartestnet.png" />
-	  <None Remove="Resources\Images\NetworkIcons\bajun.png" />
-	  <None Remove="Resources\Images\NetworkIcons\astar.png" />
-	  <None Remove="Resources\Images\NetworkIcons\alephzerotestnet.png" />
-	  <None Remove="Resources\Images\NetworkIcons\litmus.png" />
-	  <None Remove="Resources\Images\NetworkIcons\shibuya.png" />
-    <None Remove="Resources\Images\menuwhite.svg" />
-	  <None Remove="Resources\Images\menublack.svg" />
-	  <None Remove="Resources\Images\NetworkIcons\kusamawhite.png" />
-	  <None Remove="Resources\Images\NetworkIcons\acala.png" />
-	  <None Remove="Resources\Images\NetworkIcons\amplitude.png" />
-	  <None Remove="Resources\Images\NetworkIcons\bifrost.png" />
-	  <None Remove="Resources\Images\NetworkIcons\crust.png" />
-	  <None Remove="Resources\Images\NetworkIcons\efinity.png" />
-	  <None Remove="Resources\Images\NetworkIcons\gemini2atestnet.png" />
-	  <None Remove="Resources\Images\NetworkIcons\hydradx.png" />
-	  <None Remove="Resources\Images\NetworkIcons\interlay.png" />
-	  <None Remove="Resources\Images\NetworkIcons\invarchtinkernet.png" />
-	  <None Remove="Resources\Images\NetworkIcons\joystream.png" />
-	  <None Remove="Resources\Images\NetworkIcons\karura.png" />
-	  <None Remove="Resources\Images\NetworkIcons\khala.png" />
-	  <None Remove="Resources\Images\NetworkIcons\kintsugi.png" />
-	  <None Remove="Resources\Images\NetworkIcons\litentry.png" />
-	  <None Remove="Resources\Images\NetworkIcons\peaq.png" />
-	  <None Remove="Resources\Images\NetworkIcons\pendulum.png" />
-	  <None Remove="Resources\Images\NetworkIcons\phala.png" />
-	  <None Remove="Resources\Images\NetworkIcons\polkadot.png" />
-	  <None Remove="Resources\Images\NetworkIcons\reef.png" />
-	  <None Remove="Resources\Images\NetworkIcons\reeftestnet.png" />
-	  <None Remove="Resources\Images\NetworkIcons\robonomics.png" />
-	  <None Remove="Resources\Images\NetworkIcons\rococo.png" />
-	  <None Remove="Resources\Images\NetworkIcons\snow.png" />
-	  <None Remove="Resources\Images\NetworkIcons\vara.png" />
-	  <None Remove="Resources\Images\NetworkIcons\xxnetwork.png" />
-	  <None Remove="Components\NavigationBar\" />
-	  <None Remove="Components\Card\" />
-	  <None Remove="Resources\Images\NetworkIcons\manta.png" />
-	  <None Remove="Resources\Images\NetworkIcons\substrate.png" />
-	  <None Remove="Resources\Images\NetworkIcons\westend.png" />
-	  <None Remove="Resources\Images\NetworkIcons\ajuna.png" />
-	  <None Remove="Resources\Images\NetworkIcons\kusama.png" />
-	  <None Remove="Components\CustomLayouts\" />
-	  <None Remove="Components\PredefinedLayouts\" />
-	  <None Remove="Resources\Images\PredefinedLayouts\" />
-	  <None Remove="Resources\Images\PredefinedLayouts\aaabackground.png" />
-	  <None Remove="Components\AwesomeAjunaAvatars\" />
-	  <None Remove="Components\Nft\" />
-	  <None Remove="Resources\Images\NetworkIcons\basilisk.png" />
-	  <None Remove="Resources\Images\NetworkIcons\pba.png" />
-	  <None Remove="Components\Contract\" />
-	  <None Remove="Components\Settings\" />
-	  <None Remove="Resources\Images\fingerprintblack.svg" />
-	  <None Remove="Resources\Images\fingerprintwhite.svg" />
-	  <None Remove="Resources\Images\transferblack.svg" />
-	  <None Remove="Resources\Images\transferwhite.svg" />
-	  <None Remove="Components\ConfirmTransaction\" />
-	  <None Remove="Resources\Images\space.png" />
-	  <None Remove="Components\AzeroId\" />
-	  <None Remove="Resources\Images\azeroid.svg" />
-	  <None Remove="Resources\Images\azeroiddarkbg.png" />
-	  <None Remove="Components\AssetSelect\" />
-	  <None Remove="Resources\Images\dropdownwhite.svg" />
-	  <None Remove="Resources\Images\dropdownblack.svg" />
-	  <None Remove="Components\HydraDX\" />
-	  <None Remove="Resources\Images\hydradxomnipool.png" />
-	  <None Remove="Resources\Fonts\FontOver.ttf" />
-	  <None Remove="Resources\Images\FatCat\" />
-	  <None Remove="Resources\Images\FatCat\fatcat.png" />
-	  <None Remove="Resources\Images\FatCat\tail5.png" />
-	  <None Remove="Resources\Images\FatCat\tail4.png" />
-	  <None Remove="Resources\Images\FatCat\tail3.png" />
-	  <None Remove="Resources\Images\FatCat\tail2.png" />
-	  <None Remove="Resources\Images\FatCat\tail1.png" />
-	  <None Remove="Resources\Images\azeroidtext.png" />
-	  <None Remove="Resources\Images\whitebackground.png" />
-    <None Remove="Resources\Images\darkbackground.png" />
-    <None Remove="Resources\Images\rightarrowblack.svg" />
-	  <None Remove="Resources\Images\rightarrowwhite.svg" />
-	  <None Remove="Components\Identity\" />
-	  <None Remove="Resources\Images\unknownwhite.svg" />
-	  <None Remove="Resources\Images\unknownblack.svg" />
-	  <None Remove="Resources\Images\redallert.svg" />
-	  <None Remove="Resources\Images\greentick.svg" />
-	  <None Remove="Components\Vault\" />
-	  <None Remove="Components\Referenda\" />
-	  <None Remove="Resources\Images\subsquarelogo.svg" />
-	  <None Remove="Resources\Images\NetworkIcons\xcavate.png" />
-	  <None Remove="Resources\Images\PredefinedLayouts\hydradxgods.png" />
-	  <None Remove="Components\ChangeLayoutRequest\" />
-	  <None Remove="Resources\Images\calamar.png" />
-	  <None Remove="Resources\Images\logotransparentwhite.svg" />
-	  <None Remove="Resources\Images\logotransparentblack.svg" />
-	  <None Remove="Components\Mnemonics\" />
-	  <None Remove="Components\Buttons\" />
-	  <None Remove="Model\" />
-	  <None Remove="Components\Fee\" />
-	  <None Remove="Components\VTokens\" />
-	  <None Remove="Resources\Images\disconnectedblack.svg" />
-	  <None Remove="Resources\Images\disconnectedwhite.svg" />
-	  <None Remove="Resources\Images\loadingdotswhite.svg" />
-	  <None Remove="Resources\Images\emptycirclewhite.svg" />
-	  <None Remove="Resources\Images\emptycircleblack.svg" />
-	  <None Remove="Resources\Images\checkgreen.svg" />
-	  <None Remove="Resources\Fonts\sourcecode.ttf" />
-	  <None Remove="Components\UpdateView\" />
-	  <None Remove="Components\GalaxyLogicGame\" />
-	  <None Remove="Resources\Images\GalaxyLogicGame\" />
-	  <None Remove="Resources\Images\GalaxyLogicGame\extraplusshiny.png" />
-	  <None Remove="Resources\Images\GalaxyLogicGame\atomicbombshiny.png" />
-	  <None Remove="Resources\Images\lockwhite.svg" />
-	  <None Remove="Resources\Images\lockblack.svg" />
-	  <None Remove="Resources\Images\GalaxyLogicGame\glgwatch.png" />
-	  <None Remove="Resources\Fonts\samsungone700.ttf" />
-	  <None Remove="Resources\Images\GalaxyLogicGame\galaxylogo.png" />
-	  <None Remove="Components\Xcm\" />
-	</ItemGroup>
-	<ItemGroup>
-	  <BundleResource Include="Resources\Images\dotnet_bot.svg" />
-	  <BundleResource Include="Resources\Fonts\fontawesome-webfont.ttf" />
-	  <BundleResource Include="Resources\Fonts\Exodar-Outline.ttf" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\unique.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\t0rn.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\subsocial.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\statemint.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\statemine.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\quartz.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\opal.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\moonriver.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\moonbase.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\moonbeam.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\gmordie.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\calamari.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\elysiumtestnet.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\elysium.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\equilibrium.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\geartestnet.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\bajun.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\astar.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\alephzerotestnet.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\litmus.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\shibuya.png" />
-    <BundleResource Include="Resources\Images\menuwhite.svg" />
-	  <BundleResource Include="Resources\Images\menublack.svg" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\kusamawhite.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\acala.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\acala.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\acala.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\amplitude.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\bifrost.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\crust.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\efinity.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\gemini2atestnet.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\interlay.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\invarchtinkernet.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\joystream.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\karura.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\khala.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\kintsugi.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\litentry.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\peaq.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\pendulum.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\phala.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\polkadot.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\reef.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\reeftestnet.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\robonomics.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\rococo.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\snow.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\vara.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\xxnetwork.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\manta.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\substrate.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\westend.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\ajuna.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\kusama.png" />
-	  <BundleResource Include="Resources\Images\PredefinedLayouts\aaabackground.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\basilisk.png" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\pba.png" />
-	  <BundleResource Include="Resources\Images\fingerprintblack.svg" />
-	  <BundleResource Include="Resources\Images\fingerprintwhite.svg" />
-	  <BundleResource Include="Resources\Images\transferblack.svg" />
-	  <BundleResource Include="Resources\Images\transferwhite.svg" />
-	  <BundleResource Include="Resources\Images\space.png" />
-	  <BundleResource Include="Resources\Images\azeroid.svg" />
-	  <BundleResource Include="Resources\Images\azeroiddarkbg.png" />
-	  <BundleResource Include="Resources\Images\dropdownwhite.svg" />
-	  <BundleResource Include="Resources\Images\dropdownblack.svg" />
-	  <BundleResource Include="Resources\Images\hydradxomnipool.png" />
-	  <BundleResource Include="Resources\Fonts\FontOver.ttf" />
-	  <BundleResource Include="Resources\Images\FatCat\fatcat.png" />
-	  <BundleResource Include="Resources\Images\FatCat\tail5.png" />
-	  <BundleResource Include="Resources\Images\FatCat\tail4.png" />
-	  <BundleResource Include="Resources\Images\FatCat\tail3.png" />
-	  <BundleResource Include="Resources\Images\FatCat\tail2.png" />
-	  <BundleResource Include="Resources\Images\FatCat\tail1.png" />
-	  <BundleResource Include="Resources\Images\azeroidtext.png" />
-    <BundleResource Include="Resources\Images\rightarrowblack.svg" />
-	  <BundleResource Include="Resources\Images\rightarrowwhite.svg" />
-	  <BundleResource Include="Resources\Images\unknownwhite.svg" />
-	  <BundleResource Include="Resources\Images\unknownblack.svg" />
-	  <BundleResource Include="Resources\Images\redallert.svg" />
-	  <BundleResource Include="Resources\Images\greentick.svg" />
-	  <BundleResource Include="Resources\Images\subsquarelogo.svg" />
-	  <BundleResource Include="Resources\Images\NetworkIcons\xcavate.png" />
-	  <BundleResource Include="Resources\Images\PredefinedLayouts\hydradxgods.png" />
-	  <BundleResource Include="Resources\Images\calamar.png" />
-	  <BundleResource Include="Resources\Images\logotransparentwhite.svg" />
-	  <BundleResource Include="Resources\Images\logotransparentblack.svg" />
-	  <BundleResource Include="Resources\Images\disconnectedblack.svg" />
-	  <BundleResource Include="Resources\Images\disconnectedwhite.svg" />
-	  <BundleResource Include="Resources\Images\loadingdotswhite.svg" />
-	  <BundleResource Include="Resources\Images\emptycirclewhite.svg" />
-	  <BundleResource Include="Resources\Images\emptycircleblack.svg" />
-	  <BundleResource Include="Resources\Images\checkgreen.svg" />
-	  <BundleResource Include="Resources\Fonts\sourcecode.ttf" />
-	  <BundleResource Include="Resources\Images\GalaxyLogicGame\extraplusshiny.png" />
-	  <BundleResource Include="Resources\Images\GalaxyLogicGame\atomicbombshiny.png" />
-	  <BundleResource Include="Resources\Images\GalaxyLogicGame\glgwatch.png" />
-	  <BundleResource Include="Resources\Images\lockwhite.svg" />
-	  <BundleResource Include="Resources\Images\lockblack.svg" />
-	  <BundleResource Include="Resources\Fonts\samsungone700.ttf" />
-	  <BundleResource Include="Resources\Images\GalaxyLogicGame\galaxylogo.png" />
-	</ItemGroup>
-	<ItemGroup>
-		<EmbeddedResource Include="appsettings.json">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</EmbeddedResource>
-	</ItemGroup>
-	<ItemGroup>
-	  <MauiXaml Update="AppShell.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\000ComponentTemplate\NewPageTemplate.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\000ComponentTemplate\NewPopupViewTemplate.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Account\CreateAccountPopup.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Account\NoAccountPopup.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\AddressView\AddressQrCodeView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\AddressView\SubstrateAddressView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Animations\LoadingView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\AssetSelect\AssetInputView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\AssetSelect\NativeAssetInputView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\AssetSelect\UsdButtonView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Balance\AssetDetailPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Balance\AssetView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Balance\BalancePage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Buttons\BasicGrayButton.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Buttons\ChoiceTextButton.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Buttons\ElevatedButton.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Buttons\PlutoFrameworkElevatedButton.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Card\BottomPillBackgroundView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Card\ClickableCard.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Card\TopPillBackgroundView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Credits\CreditsPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\CustomLayouts\CategoryHeaderView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\CustomLayouts\ErrorItemView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\CustomLayouts\ItemView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\CustomLayouts\LoadingItemView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\CustomLayouts\TransparentItemView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\DAppConnection\DAppConnectionRequestView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Date\DateView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Error\BadInternetConnectionPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Events\EventItemView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Events\EventParameterView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Events\EventsListView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Extrinsic\CallDetailPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Extrinsic\CallParameterView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Extrinsic\EncodedCallView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Extrinsic\ExtrinsicDetailPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Extrinsic\CallParametersView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Faucet\FaucetButtonView.xaml">
-			<Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Form\FormAssetInputView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Form\FormInputView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Form\FormLargeInputView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Form\FormLargeValueView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Form\FormValueView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Form\FormWideValueView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Hyperlink\Link.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Kilt\CreateNewDidPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Kilt\DidExplanationPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Kilt\DidListView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Kilt\DidManagementPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Kilt\DidView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Kilt\ImportDidPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Kilt\MainDidView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Kilt\NoDidPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Kilt\NoDidPopupView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Kilt\NoDidReminderView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Koda\OpenKodaButton.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Loading\FullPageLoadingView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Messaging\MessagingOverviewPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Mnemonics\CreateMnemonicsPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Mnemonics\NoMnemonicsPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Mnemonics\MnemonicsView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Mnemonics\SuccessfulImportPopupView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\CollectionDetailPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\CollectionListPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\CollectionMintConfigView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\CollectionStatsView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\CollectionThumbnailView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NestNftSelectView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftAttributeView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftBuyView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftDetailPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftFavouriteGalleryView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftIdView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftImageFullScreenPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftImageView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftListPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftLittleThumbnailView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftMainPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftModifyImageView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftModifyMultiImageView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftMultiImageView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftNestedNftsView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftNestedParentNftView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftOwnedGalleryView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftOwnerView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftSellView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftSoldForView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftTradingStats.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Nft\NftTransferView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\OpenGov\VotingDelegationView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Password\EnterPasswordPopupView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\SearchBar\SearchBarView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Settings\DeveloperSettingsPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Settings\GenericSwitch.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Settings\QuestionAnswerView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Settings\SettingsPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Subscan\OpenSubscanButton.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Sumsub\NoKYCPopupView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Sumsub\SumsubWebSDKPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Sumsub\VerificationCompletedPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Table\TableCurrencyCell.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Table\TwoCellTableView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Tabs\TabsView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Tabs\TabView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Tabs\TwoTabView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\TransactionAnalyzer\AnalyzedOutcomeView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\TransactionAnalyzer\DAppNetworkView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\TransactionAnalyzer\ExtrinsicErrorView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\TransactionAnalyzer\PalletCallView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\TransactionAnalyzer\TransactionAnalyzerConfirmationView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Unique\OpenUniqueButton.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\XcavateProperty\BuyPropertyTokensView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\XcavateProperty\Cells\ActiveLoanCellView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\XcavateProperty\Cells\BalanceCellView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\XcavateProperty\Cells\PropertyTokensBoughtCellView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\XcavateProperty\Cells\ROICellView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\XcavateProperty\Cells\TotalInvestedCellView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\XcavateProperty\CompanyThumbnailView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\XcavateProperty\LocationView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\XcavateProperty\ModifyPropertyPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\XcavateProperty\OwnedPropertiesListView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\XcavateProperty\OwnedPropertyTokensView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\XcavateProperty\PropertyDetailPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\XcavateProperty\PropertyLittleThumbnailView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\XcavateProperty\PropertyThumbnailView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\XcavateProperty\RelistPropertyTokensView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\XcavateProperty\SliderView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\XcavateProperty\XcavatePropertyMarketplacePage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\AboutUsView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\CompanyPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\CompanyUserStatusBadgeView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\DeveloperStatsView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\DocumentVerificationView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\FrequentlyAskedQuestionsPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\HelpPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\ModifyCompanyPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\ModifyUserProfilePage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\ModifyUserProfilePopupView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\OnboardingShell.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\PageBottomBarButtonView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\PageBottomBarView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\RiskWarningView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\TeamMemberView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\UserProfileHeaderView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\UserProfilePage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\UserTypeBadgeView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\UserTypeSelectionPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\VerificationBadgeView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\WelcomePage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\XcavateAppShell.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\XcavateCell.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\XcavateMainPageTopNavigationBarView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\XcavateNavigationBarButtonView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\XcavateNavigationBarView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Xcavate\XcavateTopNavigationBarView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Templates\TopNavigationBarTemplate\TopNavigationBar.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="View\BlankPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Templates\PageTemplate\Page.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Templates\TemplateDictionary.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="View\MainPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="View\MnemonicsPage.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="View\EnterMnemonics.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\AddressView\AddressView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\TransferView\TransferView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\MessagePopup\MessagePopupView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\CalamarView\CalamarView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\BalanceView\BalanceView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\DAppConnection\DAppConnectionView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Staking\EzStakingEntryView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Staking\StakingDashboardView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Staking\EzStakingOverviewView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Staking\StakingRegistrationRequestView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Switch\DualSwitch.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Switch\MiniDualSwitch.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\WebView\AdvancedWebView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Extrinsic\ExtrinsicStatusView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\Balance\UsdBalanceView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\NetworkSelect\MultiNetworkSelectView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\NetworkSelect\NetworkBubbleView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	  <MauiXaml Update="Components\AddressView\ChainAddressView.xaml">
-	    <SubType></SubType>
-	  </MauiXaml>
-	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Components\NetworkSelect\" />
-	  <Folder Include="Components\TransferView\" />
-	  <Folder Include="Components\UniversalScannerView\" />
-	  <Folder Include="Components\MessagePopup\" />
-	  <Folder Include="Components\TransactionRequest\" />
-	  <Folder Include="Components\CalamarView\" />
-	  <Folder Include="Components\Staking\" />
-	  <Folder Include="Components\Switch\" />
-	  <Folder Include="Components\NavigationBar\" />
-	  <Folder Include="Resources\Images\Credits\" />
-	  <Folder Include="Resources\Images\PredefinedLayouts\" />
-	  <Folder Include="Components\AwesomeAjunaAvatars\" />
-	  <Folder Include="Components\Contract\" />
-	  <Folder Include="Components\AzeroId\" />
-	  <Folder Include="Resources\Images\FatCat\" />
-	  <Folder Include="Components\Identity\" />
-	  <Folder Include="Components\Vault\" />
-	  <Folder Include="Components\Referenda\" />
-	  <Folder Include="Components\ChangeLayoutRequest\" />
-	  <Folder Include="Components\Fee\" />
-	  <Folder Include="Components\VTokens\" />
-	  <Folder Include="Components\UpdateView\" />
-	  <Folder Include="Components\GalaxyLogicGame\" />
-	  <Folder Include="Resources\Images\GalaxyLogicGame\" />
-	  <Folder Include="Components\Xcm\" />
-	</ItemGroup>
+    <None Remove="Resources\Images\youtubeblack.png" />
+    <None Remove="Resources\Images\youtubewhite.png" />
+    <None Remove="Resources\Raw\AboutAssets.txt" />
+    <None Remove="Resources\Raw\SumsubWebSDK\index.html" />
+    <None Remove="Resources\Raw\SumsubWebSDK\scripts\HybridWebView.js" />
+    <None Remove="SubSquare\" />
+    <None Remove="Constants\" />
+    <None Remove="Types\" />
+    <None Remove="Bifrost\" />
+  </ItemGroup>
 
-	<ItemGroup>
-	  <ProjectReference Include="..\PlutoFramework.Model\PlutoFramework.Model.csproj" />
-	</ItemGroup>
+  <ItemGroup>
+    <MauiAsset Include="Resources\Raw\AboutAssets.txt">
+      <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
+    </MauiAsset>
+    <MauiAsset Include="Resources\Raw\SumsubWebSDK\index.html">
+      <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
+    </MauiAsset>
+    <MauiAsset Include="Resources\Raw\SumsubWebSDK\scripts\HybridWebView.js">
+      <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
+    </MauiAsset>
+  </ItemGroup>
 
-	<ItemGroup>
-	  <Compile Update="Components\Animations\LoadingView.xaml.cs">
-	    <DependentUpon>LoadingView.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Components\AssetSelect\NativeAssetInputView.xaml.cs">
-	    <DependentUpon>NativeAssetInputView.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Components\Extrinsic\CallParametersView.xaml.cs">
-	    <DependentUpon>CallParametersView.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Components\Mnemonics\NoMnemonicsPage.xaml.cs">
-	    <DependentUpon>NoMnemonicsPage.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Components\Nft\CollectionStatsView.xaml.cs">
-	    <DependentUpon>CollectionStatsView.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Components\Nft\NftGalleryView.xaml.cs">
-	    <DependentUpon>NftGalleryView.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Components\PredefinedLayouts\HydrationOmnipoolLayoutItem.xaml.cs">
-	    <DependentUpon>HydrationOmnipoolLayoutItem.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Components\XcavateProperty\Cells\ActiveLoanCellView.xaml.cs">
-	    <DependentUpon>ActiveLoanCellView.xaml</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-	<!--<PropertyGroup Condition="$(TargetFramework.Contains('-ios')) and '$(Configuration)' == 'Release'">
-		<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
-		<CodesignEntitlement>Entitlements.plist</CodesignEntitlement>
-		<CodesignKey>Apple Distribution: Rostislav Litovkin (M38VV8KHX5)</CodesignKey>
-		<CodesignProvision>PlutoFrameworkDistribution</CodesignProvision>
-		<ArchiveOnBuild>true</ArchiveOnBuild>
-		<TcpPort>58181</TcpPort>
-	</PropertyGroup>
+  <ItemGroup>
+    <MauiFont Include="Resources\Fonts\OpenSans-Regular.ttf" />
+    <MauiFont Include="Resources\Fonts\OpenSans-Semibold.ttf" />
+    <MauiFont Include="Resources\Fonts\xcavatefont.ttf" />
+  </ItemGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-maccatalyst|AnyCPU'">
-		<CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-	</PropertyGroup>
-	-->
-	<ItemGroup>
-	  <PackageReference Update="Microsoft.Maui.Controls" Version="9.0.81" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.83" />
-	</ItemGroup>
+  <ItemGroup>
+    <MauiImage Include="Resources\Images\alertblack.svg" />
+    <MauiImage Include="Resources\Images\alertwhite.svg" />
+    <MauiImage Include="Resources\Images\arrowbackblack.svg" />
+    <MauiImage Include="Resources\Images\Assets\unknown.png" />
+    <MauiImage Include="Resources\Images\Assets\usdc.png" />
+    <MauiImage Include="Resources\Images\Assets\usdt.png" />
+    <MauiImage Include="Resources\Images\backwhite.svg" />
+    <MauiImage Include="Resources\Images\chaingreen.svg" />
+    <MauiImage Include="Resources\Images\closeblack.svg" />
+    <MauiImage Include="Resources\Images\closewhite.svg" />
+    <MauiImage Include="Resources\Images\cloudblack.svg" />
+    <MauiImage Include="Resources\Images\cloudwhite.svg" />
+    <MauiImage Include="Resources\Images\collectionblack.svg" />
+    <MauiImage Include="Resources\Images\collectionwhite.svg" />
+    <MauiImage Include="Resources\Images\connectedblack.svg" />
+    <MauiImage Include="Resources\Images\connectedwhite.svg" />
+    <MauiImage Include="Resources\Images\copyblack.svg" />
+    <MauiImage Include="Resources\Images\copywhite.svg" />
+    <MauiImage Include="Resources\Images\createmnemonicsblack.svg" />
+    <MauiImage Include="Resources\Images\createmnemonicswhite.svg" />
+    <MauiImage Include="Resources\Images\credits_daniel_vaculik.jpg" />
+    <MauiImage Include="Resources\Images\credits_dusan_jansky.jpg" />
+    <MauiImage Include="Resources\Images\credits_rostislav_litovkin.jpg" />
+    <MauiImage Include="Resources\Images\dappblack.svg" />
+    <MauiImage Include="Resources\Images\dappwhite.svg" />
+    <MauiImage Include="Resources\Images\deviceblack.svg" />
+    <MauiImage Include="Resources\Images\devicewhite.svg" />
+    <MauiImage Include="Resources\Images\didcreate.svg" />
+    <MauiImage Include="Resources\Images\didimport.svg" />
+    <MauiImage Include="Resources\Images\discordblack.svg" />
+    <MauiImage Include="Resources\Images\discordwhite.svg" />
+    <MauiImage Include="Resources\Images\downloadblack.svg" />
+    <MauiImage Include="Resources\Images\downloadwhite.svg" />
+    <MauiImage Include="Resources\Images\expandblack.svg" />
+    <MauiImage Include="Resources\Images\expandwhite.svg" />
+    <MauiImage Include="Resources\Images\facebookblack.png" />
+    <MauiImage Include="Resources\Images\facebookwhite.png" />
+    <MauiImage Include="Resources\Images\featherblack.svg" />
+    <MauiImage Include="Resources\Images\featherwhite.svg" />
+    <MauiImage Include="Resources\Images\githubblack.svg" />
+    <MauiImage Include="Resources\Images\githubwhite.svg" />
+    <MauiImage Include="Resources\Images\hotblack.svg" />
+    <MauiImage Include="Resources\Images\hotwhite.svg" />
+    <MauiImage Include="Resources\Images\imageloading.png" />
+    <MauiImage Include="Resources\Images\importmnemonicsblack.svg" />
+    <MauiImage Include="Resources\Images\importmnemonicswhite.svg" />
+    <MauiImage Include="Resources\Images\infoblack.svg" />
+    <MauiImage Include="Resources\Images\infowhite.svg" />
+    <MauiImage Include="Resources\Images\keyblack.svg" />
+    <MauiImage Include="Resources\Images\keywhite.svg" />
+    <MauiImage Include="Resources\Images\kodablack.svg" />
+    <MauiImage Include="Resources\Images\kodawhite.svg" />
+    <MauiImage Include="Resources\Images\kyccompleted.svg" />
+    <MauiImage Include="Resources\Images\linkedinblack.png" />
+    <MauiImage Include="Resources\Images\linkedinwhite.png" />
+    <MauiImage Include="Resources\Images\liquidityfinderblack.png" />
+    <MauiImage Include="Resources\Images\liquidityfinderwhite.png" />
+    <MauiImage Include="Resources\Images\moredotsgray.svg" />
+    <MauiImage Include="Resources\Images\NetworkIcons\hydration.svg" />
+    <MauiImage Include="Resources\Images\NetworkIcons\kilt.png" />
+    <MauiImage Include="Resources\Images\NetworkIcons\kiltblack.svg" />
+    <MauiImage Include="Resources\Images\NetworkIcons\kiltwhite.svg" />
+    <MauiImage Include="Resources\Images\NetworkIcons\kusamaassethub.svg" />
+    <MauiImage Include="Resources\Images\NetworkIcons\mythos.png" />
+    <MauiImage Include="Resources\Images\NetworkIcons\polkadotassethub.svg" />
+    <MauiImage Include="Resources\Images\nftblack.svg" />
+    <MauiImage Include="Resources\Images\nftwhite.svg" />
+    <MauiImage Include="Resources\Images\noimage.png" />
+    <MauiImage Include="Resources\Images\plutowalletclearwhite.png" />
+    <MauiImage Include="Resources\Images\plutowalleticon.svg" />
+    <MauiImage Include="Resources\Images\plutowalleticonwhite.png" />
+    <MauiImage Include="Resources\Images\qrcodeblack.svg" />
+    <MauiImage Include="Resources\Images\qrcodewhite.svg" />
+    <MauiImage Include="Resources\Images\realxmarket.png" />
+    <MauiImage Include="Resources\Images\resourceappicon.png" />
+    <MauiImage Include="Resources\Images\settingsblack.svg" />
+    <MauiImage Include="Resources\Images\settingswhite.svg" />
+    <MauiImage Include="Resources\Images\shareblack.svg" />
+    <MauiImage Include="Resources\Images\sharewhite.svg" />
+    <MauiImage Include="Resources\Images\signblack.svg" />
+    <MauiImage Include="Resources\Images\signwhite.svg" />
+    <MauiImage Include="Resources\Images\subscan.png" />
+    <MauiImage Include="Resources\Images\subscanicon.png" />
+    <MauiImage Include="Resources\Images\successblack.svg" />
+    <MauiImage Include="Resources\Images\successwhite.svg" />
+    <MauiImage Include="Resources\Images\uniqueblack.svg" />
+    <MauiImage Include="Resources\Images\uniquewhite.svg" />
+    <MauiImage Include="Resources\Images\xblack.png" />
+    <MauiImage Include="Resources\Images\xcavateaccountselected.png" />
+    <MauiImage Include="Resources\Images\xcavateaccountunselected.png" />
+    <MauiImage Include="Resources\Images\xcavatebackarrow.png" />
+    <MauiImage Include="Resources\Images\xcavatecellarrow.png" />
+    <MauiImage Include="Resources\Images\xcavatedeveloper.png" />
+    <MauiImage Include="Resources\Images\xcavateemail.png" />
+    <MauiImage Include="Resources\Images\xcavatehelpselected.png" />
+    <MauiImage Include="Resources\Images\xcavatehelpunselected.png" />
+    <MauiImage Include="Resources\Images\xcavateiconwhite.png" />
+    <MauiImage Include="Resources\Images\xcavateinvestor.png" />
+    <MauiImage Include="Resources\Images\xcavatelaunchbg1.jpg" />
+    <MauiImage Include="Resources\Images\xcavatelaunchbg2.png" />
+    <MauiImage Include="Resources\Images\xcavatelaunchbg3.png" />
+    <MauiImage Include="Resources\Images\xcavatelettingagent.png" />
+    <MauiImage Include="Resources\Images\xcavateloanevaluator.png" />
+    <MauiImage Include="Resources\Images\xcavatemappin.png" />
+    <MauiImage Include="Resources\Images\xcavatemarketplace.png" />
+    <MauiImage Include="Resources\Images\xcavatemarketplaceselected.png" />
+    <MauiImage Include="Resources\Images\xcavatemarketplaceunselected.png" />
+    <MauiImage Include="Resources\Images\xcavatemenu.png" />
+    <MauiImage Include="Resources\Images\xcavateqr.png" />
+    <MauiImage Include="Resources\Images\xcavatergb.png" />
+    <MauiImage Include="Resources\Images\xcavateshare.png" />
+    <MauiImage Include="Resources\Images\xcavatexgray.png" />
+    <MauiImage Include="Resources\Images\xcavatexwhite.png" />
+    <MauiImage Include="Resources\Images\xwhite.png" />
+    <MauiImage Include="Resources\Images\youtubeblack.png" />
+    <MauiImage Include="Resources\Images\youtubewhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Generated\Bajun\Bajun.NetApi\Bajun.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\Bifrost\Bifrost.NetApi\Bifrost.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\Hydration\Hydration.NetApi\Hydration.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\InvArch\InvArch.NetApi\InvArch.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\Kilt\Kilt.NetApi\Kilt.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\PolkadotPeople\PolkadotPeople.NetApi\PolkadotPeople.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\Polkadot\Polkadot.NetApi\Polkadot.NetApi.csproj" />
+    <ProjectReference Include="..\UniqueryPlus\UniqueryPlus.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <MauiXaml Update="Components\000ComponentTemplate\NewPageTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\000ComponentTemplate\NewPopupViewTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Account\CreateAccountPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Account\NoAccountPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\AddressView\AddressQrCodeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\AddressView\SubstrateAddressView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Animations\LoadingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\AssetSelect\AssetInputView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\AssetSelect\NativeAssetInputView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\AssetSelect\UsdButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Balance\AssetDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Balance\AssetView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Balance\BalancePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Buttons\BasicGrayButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Buttons\ChoiceTextButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Buttons\ElevatedButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Card\BottomPillBackgroundView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Card\ClickableCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Card\TopPillBackgroundView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Credits\CreditsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\CustomLayouts\CategoryHeaderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\CustomLayouts\ErrorItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\CustomLayouts\ItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\CustomLayouts\LoadingItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\CustomLayouts\TransparentItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\DAppConnection\DAppConnectionRequestView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Date\DateView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Error\BadInternetConnectionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Events\EventItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Events\EventParameterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Events\EventsListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Extrinsic\CallDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Extrinsic\CallParametersView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Extrinsic\CallParameterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Extrinsic\EncodedCallView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Extrinsic\ExtrinsicDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Faucet\FaucetButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Form\FormAssetInputView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Form\FormInputView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Form\FormLargeInputView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Form\FormLargeValueView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Form\FormValueView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Form\FormWideValueView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Hyperlink\Link.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Kilt\CreateNewDidPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Kilt\DidExplanationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Kilt\DidListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Kilt\DidManagementPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Kilt\DidView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Kilt\ImportDidPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Kilt\MainDidView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Kilt\NoDidPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Kilt\NoDidPopupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Kilt\NoDidReminderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Koda\OpenKodaButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Loading\FullPageLoadingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Messaging\MessagingOverviewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Mnemonics\CreateMnemonicsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Mnemonics\EnterMnemonicsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Mnemonics\MnemonicsPage.xaml">
+      <SubType></SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Mnemonics\MnemonicsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Mnemonics\NoMnemonicsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Mnemonics\SuccessfulImportPopupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\CollectionDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\CollectionListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\CollectionMintConfigView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\CollectionStatsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\CollectionThumbnailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NestNftSelectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftAttributeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftBuyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftFavouriteGalleryView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftIdView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftImageFullScreenPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftImageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftLittleThumbnailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftMainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftModifyImageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftModifyMultiImageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftMultiImageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftNestedNftsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftNestedParentNftView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftOwnedGalleryView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftOwnerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftSellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftSoldForView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftTradingStats.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftTransferView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\OpenGov\VotingDelegationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Password\EnterPasswordPopupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Password\SetupPasswordPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\SearchBar\SearchBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Settings\DeveloperSettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Settings\GenericSwitch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Settings\QuestionAnswerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Subscan\OpenSubscanButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Sumsub\NoKYCPopupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Sumsub\SumsubWebSDKPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Sumsub\VerificationCompletedPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Table\TableCurrencyCell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Table\TwoCellTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Tabs\TabsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Tabs\TabView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Tabs\TwoTabView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\TransactionAnalyzer\AnalyzedOutcomeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\TransactionAnalyzer\DAppNetworkView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\TransactionAnalyzer\ExtrinsicErrorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\TransactionAnalyzer\PalletCallView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\TransactionAnalyzer\TransactionAnalyzerConfirmationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Unique\OpenUniqueButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\BuyPropertyTokensView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\Cells\ActiveLoanCellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\Cells\BalanceCellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\Cells\PropertyTokensBoughtCellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\Cells\ROICellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\Cells\TotalInvestedCellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\CompanyThumbnailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\LocationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\ModifyPropertyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\OwnedPropertiesListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\OwnedPropertyTokensView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\PropertyDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\PropertyLittleThumbnailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\PropertyThumbnailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\RelistPropertyTokensView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\SliderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\XcavatePropertyMarketplacePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\AboutUsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\CompanyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\CompanyUserStatusBadgeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\DeveloperStatsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\DocumentVerificationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\FrequentlyAskedQuestionsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\HelpPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\ModifyCompanyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\PageBottomBarButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\PageBottomBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\RiskWarningView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\TeamMemberView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\UserProfileHeaderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\UserTypeBadgeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\VerificationBadgeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\XcavateCell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\XcavateNavigationBarButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\XcavateNavigationBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\XcavateTopNavigationBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Templates\PageTemplate\Page.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Templates\TemplateDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Templates\TopNavigationBarTemplate\TopNavigationBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+  </ItemGroup>
 </Project>

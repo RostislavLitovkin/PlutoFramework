@@ -1,5 +1,4 @@
 using Kilt.NetApi.Generated;
-using Nethereum.JsonRpc.Client;
 using PlutoFramework.Model;
 
 namespace PlutoFramework.Components.Kilt;

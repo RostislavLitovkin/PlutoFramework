@@ -1,6 +1,5 @@
 ﻿using PlutoFramework.Components.Account;
 using PlutoFramework.Components.Kilt;
-using PlutoFramework.Model.Sumsub;
 
 namespace PlutoFramework.Model
 {
@@ -10,7 +9,7 @@ namespace PlutoFramework.Model
         {
             if (!KeysModel.HasSubstrateKey())
             {
-                var noAccountPopupViewModel = DependencyService.Get<NoAccountPopupModel>();
+                var noAccountPopupViewModel = DependencyService.Get<NoAccountPopupViewModel>();
 
                 noAccountPopupViewModel.IsVisible = true;
 

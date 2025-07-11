@@ -1,32 +1,31 @@
-﻿using PlutoFramework.Components.Balance;
-using PlutoFramework.Components.AddressView;
-using PlutoFramework.Components.DAppConnection;
-using System.Collections.ObjectModel;
-using PlutoFramework.Components.MessagePopup;
-using PlutoFramework.Constants;
-using PlutoFramework.Components.NetworkSelect;
+﻿using PlutoFramework.Components.AddressView;
 using PlutoFramework.Components.AwesomeAjunaAvatars;
-using PlutoFramework.Components.Contract;
 using PlutoFramework.Components.AzeroId;
+using PlutoFramework.Components.Balance;
+using PlutoFramework.Components.Buttons;
+using PlutoFramework.Components.Contract;
+using PlutoFramework.Components.DAppConnection;
+using PlutoFramework.Components.Faucet;
+using PlutoFramework.Components.GalaxyLogicGame;
 using PlutoFramework.Components.HydraDX;
 using PlutoFramework.Components.Identity;
-using PlutoFramework.Components.Referenda;
-using PlutoFramework.Components.Mnemonics;
-using PlutoFramework.Components.Buttons;
-using PlutoFramework.Components.Nft;
-using PlutoFramework.Components.VTokens;
-using PlutoFramework.Components.UpdateView;
-using PlutoFramework.Components.GalaxyLogicGame;
-using PlutoFramework.Components.PredefinedLayouts;
-using PlutoFramework.Components.Xcm;
-using PlutoFramework.View;
 using PlutoFramework.Components.Kilt;
+using PlutoFramework.Components.MessagePopup;
+using PlutoFramework.Components.Mnemonics;
+using PlutoFramework.Components.NetworkSelect;
+using PlutoFramework.Components.Nft;
 using PlutoFramework.Components.OpenGov;
-using PlutoFramework.Components.Faucet;
-using PlutoFramework.Components.XcavateProperty;
+using PlutoFramework.Components.PredefinedLayouts;
+using PlutoFramework.Components.Referenda;
 using PlutoFramework.Components.Table;
-using PlutoFramework.Components.XcavateProperty.Cells;
+using PlutoFramework.Components.UpdateView;
+using PlutoFramework.Components.VTokens;
 using PlutoFramework.Components.Xcavate;
+using PlutoFramework.Components.XcavateProperty;
+using PlutoFramework.Components.XcavateProperty.Cells;
+using PlutoFramework.Components.Xcm;
+using PlutoFramework.Constants;
+using System.Collections.ObjectModel;
 
 namespace PlutoFramework.Model
 {
@@ -177,7 +176,7 @@ namespace PlutoFramework.Model
             // Save
             Preferences.Set("PlutoLayout", result);
 
-            MainPage.SetupLayout();
+            //await MainPageLayoutUpdater.ReloadAsync();
         }
 
         public static void SaveLayout(string componentInfos)
@@ -186,7 +185,7 @@ namespace PlutoFramework.Model
 
             SaveEndpoints(componentInfos);
 
-            MainPage.SetupLayout();
+            // await MainPageLayoutUpdater.ReloadAsync();
         }
 
         /**
@@ -289,10 +288,9 @@ namespace PlutoFramework.Model
             // Save Selected Networks
             Preferences.Set("SelectedNetworks", componentsAndNetworksStrings[1]);
 
-            Console.WriteLine("Save Endpoint -> Calling MultiNetworkSelectViewModel.SetupDefault()");
+            var endpointKeys = EndpointsModel.GetSelectedEndpointKeys();
 
-            var multiNetworkSelectViewModel = DependencyService.Get<MultiNetworkSelectViewModel>();
-            multiNetworkSelectViewModel.SetupDefault();
+            _ = SubstrateClientModel.ChangeConnectedClientsAsync(endpointKeys, CancellationToken.None); // TODO
         }
 
         private static void ShowRestartNeededMessage()

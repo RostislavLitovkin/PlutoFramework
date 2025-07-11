@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using OpalSubquery;
+using UniqueryPlus.OpalSubquery;
 using StrawberryShake.Serialization;
 using UniqueryPlus.Speck;
 using UniqueryPlus.Stick;

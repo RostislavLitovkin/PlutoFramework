@@ -70,7 +70,7 @@ public partial class NavigationBarView : ContentView
     {
         if (!KeysModel.HasSubstrateKey())
         {
-            var noAccountPopupViewModel = DependencyService.Get<NoAccountPopupModel>();
+            var noAccountPopupViewModel = DependencyService.Get<NoAccountPopupViewModel>();
 
             noAccountPopupViewModel.IsVisible = true;
 

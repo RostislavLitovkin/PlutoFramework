@@ -1,5 +1,3 @@
-using PlutoFramework.View;
-
 namespace PlutoFramework.Components.Sumsub
 {
     public partial class VerificationCompletedPage : ContentPage

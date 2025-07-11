@@ -177,7 +177,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
         public ImageSource FavouriteImage => new FontImageSource
         {
-            Color = (Color)Application.Current.Resources["X-BLUE"],
+            Color = (Color)Application.Current.Resources["Primary"],
             FontFamily = "FontAwesome",
             Size = 25,
             Glyph = Favourite ? "\uf004" : "\uf08a",

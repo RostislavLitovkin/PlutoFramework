@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content;
 using AndroidX.Core.App;
+using AndroidX.Core.Graphics.Drawable;
 
 namespace PlutoFramework.Platforms.Android
 {
@@ -8,15 +9,22 @@ namespace PlutoFramework.Platforms.Android
     /// <summary>
     /// Source: https://www.youtube.com/watch?v=Q_renpfnbk4
     /// </summary>
-    internal class AndroidNotificationHelper
+    public class AndroidNotificationHelper
     {
+        public static int AppIcon { get; set; } /* CommunityToolkit.Maui.Core.Resource.Drawable.resourceappicon */
+
+        public static Type MainActivityType { get; set; } /* typeof(MainActivity); */
+
         private static string foregroundChannelId = "96062"; // Random id
 
         private static readonly Context context = global::Android.App.Application.Context;
-        public Notification GetNotification(string title, string description)
+        public Notification GetNotification(
+            string title,
+            string description
+              
+        )
         {
-
-            var intent = new Intent(context, typeof(MainActivity));
+            var intent = new Intent(context, MainActivityType);
             intent.AddFlags(ActivityFlags.SingleTop);
             intent.PutExtra(title, description);
 
@@ -25,7 +33,7 @@ namespace PlutoFramework.Platforms.Android
             var notificationBuilder = new NotificationCompat.Builder(context, foregroundChannelId)
                 .SetContentTitle(title)
                 .SetContentText(description)
-                .SetSmallIcon(CommunityToolkit.Maui.Core.Resource.Drawable.resourceappicon)
+                .SetSmallIcon(AppIcon)
                 .SetContentIntent(pendingIntent)
                 .SetOngoing(true);
 

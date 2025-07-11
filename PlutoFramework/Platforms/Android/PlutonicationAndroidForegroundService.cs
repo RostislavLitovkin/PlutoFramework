@@ -18,7 +18,7 @@ namespace PlutoFramework.Platforms.Android
     {
         CancellationTokenSource _cts;
         public const int SERVICE_RUNNING_NOTIFICATION_ID = 96063; // Random id
-        
+
         public override IBinder OnBind(Intent intent)
         {
             return null;

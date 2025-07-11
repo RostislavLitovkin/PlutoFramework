@@ -1,8 +1,7 @@
-﻿using System;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Plutonication;
 using PlutoFramework.Model;
+using Plutonication;
 
 #if ANDROID26_0_OR_GREATER
 using PlutoFramework.Platforms.Android;

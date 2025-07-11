@@ -1,13 +1,12 @@
-using PlutoFramework.Components.Xcavate;
 using PlutoFramework.Model.Sumsub;
-using PlutoFramework.View;
 using System.Web;
 
 namespace PlutoFramework.Components.Sumsub
 {
     public partial class SumsubWebSDKPage : ContentPage
     {
-        public SumsubWebSDKPage(string accessToken, Applicant applicant)
+        private Func<Task> navigation;
+        public SumsubWebSDKPage(string accessToken, Applicant applicant, Func<Task> navigation)
         {
             NavigationPage.SetHasNavigationBar(this, false);
             Shell.SetNavBarIsVisible(this, false);
@@ -93,9 +92,7 @@ namespace PlutoFramework.Components.Sumsub
                 "
             };
 
-
-            Console.WriteLine("Access token: " + accessToken);
-
+            this.navigation = navigation;
         }
 
         private bool navigated = false;
@@ -115,12 +112,11 @@ namespace PlutoFramework.Components.Sumsub
                 {
                     return;
                 }
-                //continueButton.IsVisible = true;
-                //await Navigation.PushAsync(new VerificationCompletedPage());
 
                 navigated = true;
 
-                Application.Current.MainPage = new XcavateAppShell();
+                await navigation.Invoke();
+                //Application.Current.MainPage = new XcavateAppShell();
             }
         }
     }

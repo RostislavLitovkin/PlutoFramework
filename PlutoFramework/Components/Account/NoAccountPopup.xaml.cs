@@ -6,6 +6,6 @@ public partial class NoAccountPopup : ContentView
 	{
 		InitializeComponent();
 
-		BindingContext = DependencyService.Get<NoAccountPopupModel>();
+		BindingContext = DependencyService.Get<NoAccountPopupViewModel>();
   }
 }
