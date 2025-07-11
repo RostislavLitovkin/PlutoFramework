@@ -12,7 +12,6 @@ jobs:
   publish-plutoframework:
     env:
       BUILD_CONFIG: 'Release'
-      SOLUTION: 'PlutoFramework.sln'
 
     runs-on: windows-latest
 
@@ -26,7 +25,7 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.5
 
     - name: Restore dependencies
-      run: nuget restore $SOLUTION
+      run: nuget restore PlutoFramework.sln
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
@@ -34,10 +33,10 @@ jobs:
         dotnet-version: 9.0.x
 
     - name: Restore dependencies
-      run: dotnet restore $SOLUTION
+      run: dotnet restore PlutoFramework.sln
 
     - name: Build
-      run: dotnet build $SOLUTION --configuration Release --no-restore
+      run: dotnet build PlutoFramework.sln --configuration Release --no-restore
     
     - name: Publish PlutoFramework
       uses: brandedoutcast/publish-nuget@v2.5.2
