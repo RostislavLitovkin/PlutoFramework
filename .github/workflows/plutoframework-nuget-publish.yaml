@@ -18,8 +18,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Install .NET MAUI Workload
-      run: dotnet workload install maui
+    - name: Install .NET MAUI Workloads (iOS and Android)
+      run: dotnet workload install maui maui-ios maui-android
 
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.5
