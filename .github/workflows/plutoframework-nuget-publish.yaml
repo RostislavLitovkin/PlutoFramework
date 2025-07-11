@@ -29,6 +29,16 @@ jobs:
     - name: Install .NET MAUI Workloads (iOS and Android)
       run: dotnet workload install maui maui-ios maui-android
 
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+
     - name: Restore dependencies
       run: dotnet restore PlutoFramework.sln
 
