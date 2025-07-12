@@ -52,3 +52,46 @@ jobs:
       with:
        PROJECT_FILE_PATH: ./PlutoFramework/PlutoFramework.csproj
        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
+
+    # publish generated
+    - name: Publish PolkadotAssetHub
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+        PACKAGE_NAME: UniqueryPlus.PolkadotAssetHub
+        PROJECT_FILE_PATH: ./Generated/PolkadotAssetHub/PolkadotAssetHub.NetApi/PolkadotAssetHub.NetApi.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
+    
+    - name: Publish KusamaAssetHub
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+        PACKAGE_NAME: UniqueryPlus.KusamaAssetHub
+        PROJECT_FILE_PATH: ./Generated/KusamaAssetHub/KusamaAssetHub.NetApi/KusamaAssetHub.NetApi.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
+
+    - name: Publish Unique
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+        PACKAGE_NAME: UniqueryPlus.Unique
+        PROJECT_FILE_PATH: ./Generated/Unique/Unique.NetApi/Unique.NetApi.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
+
+    - name: Publish Stick
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+        PACKAGE_NAME: UniqueryPlus.Stick
+        PROJECT_FILE_PATH: ./Stick/UniqueryPlus.Stick.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
+        
+    - name: Publish Speck
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+        PACKAGE_NAME: UniqueryPlus.Speck
+        PROJECT_FILE_PATH: ./Speck/UniqueryPlus.Speck.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
+
+    - name: Publish UniqueSubquery
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+        PACKAGE_NAME: UniqueryPlus.UniqueSubquery
+        PROJECT_FILE_PATH: ./UniqueryPlus.UniqueSubquery/UniqueryPlus.UniqueSubquery.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 

@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>0.1.5</Version>
+    <Version>0.1.6</Version>
     <Authors>Rostislav Litovkin</Authors>
     <Product>UniqueryPlus</Product>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -34,10 +34,4 @@
     <ProjectReference Include="..\Indexers\XcavateSubquery\XcavateSubquery.csproj" />
   </ItemGroup>
 
-
-  <ItemGroup>
-    <None Include="..\Generated\**\*.NetApi\bin\$(Configuration)\net6.0\*.dll" Pack="true" PackagePath="lib\net9.0-$(TargetPlatformIdentifier)" />
-
-    <None Include="..\Indexers\**\bin\$(Configuration)\net8.0\*.dll" Pack="true" PackagePath="lib\net9.0-$(TargetPlatformIdentifier)" />
-  </ItemGroup>
 </Project>

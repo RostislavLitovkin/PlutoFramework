@@ -22,7 +22,7 @@
   <PropertyGroup>
     <AssemblyName>PlutoFramework</AssemblyName>
     <PackageId>PlutoFramework</PackageId>
-    <Version>0.0.2</Version>
+    <Version>0.1.6</Version>
     <Authors>Rostislav Litovkin</Authors>
     <Company>Pluto Labs</Company>
     <Description>All in one framework for creating web3 mobile applications.</Description>
@@ -101,27 +101,6 @@
     <ProjectReference Include="..\Generated\PolkadotPeople\PolkadotPeople.NetApi\PolkadotPeople.NetApi.csproj" />
     <ProjectReference Include="..\Generated\Polkadot\Polkadot.NetApi\Polkadot.NetApi.csproj" />
     <ProjectReference Include="..\UniqueryPlus\UniqueryPlus.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <!-- This grabs the main UniqueryPlus.dll -->
-    <None Include="..\UniqueryPlus\bin\$(Configuration)\net8.0\UniqueryPlus.dll"
-          Pack="true"
-          PackagePath="lib\net9.0-$(TargetFramework)\" />
-
-    <!-- Grab all referenced .dlls (non-framework) from the output directory -->
-    <None Include="..\UniqueryPlus\bin\$(Configuration)\net8.0\*.dll"
-          Exclude="..\UniqueryPlus\bin\$(Configuration)\net8.0\UniqueryPlus.dll"
-          Pack="true"
-          PackagePath="lib\net9.0-$(TargetFramework)\" />
-
-    <None Include="..\Generated\**\*.NetApi\bin\$(Configuration)\net6.0\*.dll"
-          Pack="true"
-          PackagePath="lib\net9.0-$(TargetPlatformIdentifier)" />
-
-    <None Include="..\Indexers\**\bin\$(Configuration)\net8.0\*.dll"
-          Pack="true"
-          PackagePath="lib\net9.0-$(TargetPlatformIdentifier)" />
   </ItemGroup>
 
   <ItemGroup>
