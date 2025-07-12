@@ -13,15 +13,10 @@ jobs:
     env:
       BUILD_CONFIG: 'Release'
 
-    runs-on: macos-15
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
-    
-    - name: Set up Xcode 16.4
-      uses: maxim-lobanov/setup-xcode@v1
-      with:
-        xcode-version: '16.4'
 
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.5
@@ -34,6 +29,9 @@ jobs:
           8.0.x
           9.0.302
 
+    - name: Add MSBuild to PATH (Windows)
+      uses: microsoft/setup-msbuild@v1.1.3
+      
     - name: Install .NET MAUI Workloads (Android)
       run: dotnet workload install maui-android --version 9.0.100
 
