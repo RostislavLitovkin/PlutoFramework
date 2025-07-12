@@ -4,7 +4,7 @@
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
-		<Product>Bifrost.NetApi</Product>
+		<Product>PolkadotBifrost.NetApi</Product>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>0.1.7</Version>
 	</PropertyGroup>

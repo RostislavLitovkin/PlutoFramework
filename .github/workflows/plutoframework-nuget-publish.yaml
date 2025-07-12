@@ -62,10 +62,10 @@ jobs:
         PROJECT_FILE_PATH: ./Generated/Bajun/Bajun.NetApi/Bajun.NetApi.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
     
-    - name: Publish Bifrost
+    - name: Publish PolkadotBifrost
       uses: brandedoutcast/publish-nuget@v2.5.2
       with:
-        PACKAGE_NAME: PlutoFramework.Bifrost
+        PACKAGE_NAME: PlutoFramework.PolkadotBifrost
         PROJECT_FILE_PATH: ./Generated/Bifrost/Bifrost.NetApi/Bifrost.NetApi.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
 
