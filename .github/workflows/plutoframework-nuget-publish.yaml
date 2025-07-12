@@ -55,6 +55,12 @@ jobs:
 
     # publish generated
     
+    - name: Publish Bajun
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+        PACKAGE_NAME: PlutoFramework.Bajun
+        PROJECT_FILE_PATH: ./Generated/Bajun/Bajun.NetApi/Bajun.NetApi.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
     
     - name: Publish Bifrost
       uses: brandedoutcast/publish-nuget@v2.5.2

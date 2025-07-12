@@ -6,7 +6,7 @@
 		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
 		<Product>Opal.NetApi</Product>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.1.6</Version>
+    <Version>0.1.7</Version>
 	</PropertyGroup>
 
 	<!--Set this to true if you want to generate all necessary/dependent DLLs in order to use them in Unity Project for example-->
