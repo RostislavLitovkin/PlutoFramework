@@ -22,7 +22,7 @@ jobs:
       uses: maxim-lobanov/setup-xcode@v1
       with:
         xcode-version: '16.4'
-        
+
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.5
 
@@ -47,7 +47,7 @@ jobs:
       run: dotnet restore PlutoFramework.sln
 
     - name: Build
-      run: dotnet build PlutoFramework.sln --configuration Release --no-restore
+      run: msbuild /t:build,pack /p:Configuration=Release PlutoFramework.PlutoFramework.csproj
     
     - name: Publish PlutoFramework
       uses: brandedoutcast/publish-nuget@v2.5.2
