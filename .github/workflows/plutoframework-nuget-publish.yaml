@@ -25,15 +25,15 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: |
-          9.0.x
           6.0.x
           8.0.x
+          9.0.302
 
     - name: Install .NET MAUI Workloads (Android)
-      run: dotnet workload install android --version 9.0.100
+      run: dotnet workload install maui-android --version 9.0.100
 
-    - name: Install .NET MAUI Workloads (Android)
-      run: dotnet workload install ios --version 9.0.100
+    - name: Install .NET MAUI Workloads (iOS)
+      run: dotnet workload install maui-ios --version 9.0.100
       
     - name: Restore .NET Workloads
       run: dotnet workload restore PlutoFramework.sln
