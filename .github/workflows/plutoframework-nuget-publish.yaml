@@ -47,7 +47,7 @@ jobs:
       run: dotnet restore PlutoFramework.sln
 
     - name: Build
-      run: msbuild /t:build,pack /p:Configuration=Release PlutoFramework.PlutoFramework.csproj
+      run: msbuild /t:build,pack /p:Configuration=Release PlutoFramework/PlutoFramework.csproj
     
     - name: Publish PlutoFramework
       uses: brandedoutcast/publish-nuget@v2.5.2
