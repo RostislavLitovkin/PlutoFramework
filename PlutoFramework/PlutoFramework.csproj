@@ -1640,85 +1640,85 @@
     <None Update="Components\XcavateProperty\XcavatePropertyMarketplacePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\AboutUsView.xaml">
+    <None Update="Components\Xcavate\AboutUsView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\CompanyPage.xaml">
+    <None Update="Components\Xcavate\CompanyPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\CompanyUserStatusBadgeView.xaml">
+    <None Update="Components\Xcavate\CompanyUserStatusBadgeView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\DeveloperStatsView.xaml">
+    <None Update="Components\Xcavate\DeveloperStatsView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\DocumentVerificationView.xaml">
+    <None Update="Components\Xcavate\DocumentVerificationView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\FrequentlyAskedQuestionsPage.xaml">
+    <None Update="Components\Xcavate\FrequentlyAskedQuestionsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\HelpPage.xaml">
+    <None Update="Components\Xcavate\HelpPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\ModifyCompanyPage.xaml">
+    <None Update="Components\Xcavate\ModifyCompanyPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\ModifyUserProfilePage.xaml">
+    <None Update="Components\Xcavate\ModifyUserProfilePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\ModifyUserProfilePopupView.xaml">
+    <None Update="Components\Xcavate\ModifyUserProfilePopupView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\OnboardingShell.xaml">
+    <None Update="Components\Xcavate\OnboardingShell.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\PageBottomBarButtonView.xaml">
+    <None Update="Components\Xcavate\PageBottomBarButtonView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\PageBottomBarView.xaml">
+    <None Update="Components\Xcavate\PageBottomBarView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\RiskWarningView.xaml">
+    <None Update="Components\Xcavate\RiskWarningView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\TeamMemberView.xaml">
+    <None Update="Components\Xcavate\TeamMemberView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\UserProfileHeaderView.xaml">
+    <None Update="Components\Xcavate\UserProfileHeaderView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\UserProfilePage.xaml">
+    <None Update="Components\Xcavate\UserProfilePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\UserTypeBadgeView.xaml">
+    <None Update="Components\Xcavate\UserTypeBadgeView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\UserTypeSelectionPage.xaml">
+    <None Update="Components\Xcavate\UserTypeSelectionPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\VerificationBadgeView.xaml">
+    <None Update="Components\Xcavate\VerificationBadgeView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\WelcomePage.xaml">
+    <None Update="Components\Xcavate\WelcomePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\XcavateAppShell.xaml">
+    <None Update="Components\Xcavate\XcavateAppShell.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\XcavateCell.xaml">
+    <None Update="Components\Xcavate\XcavateCell.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\XcavateMainPageTopNavigationBarView.xaml">
+    <None Update="Components\Xcavate\XcavateMainPageTopNavigationBarView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\XcavateNavigationBarButtonView.xaml">
+    <None Update="Components\Xcavate\XcavateNavigationBarButtonView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\XcavateNavigationBarView.xaml">
+    <None Update="Components\Xcavate\XcavateNavigationBarView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\XcavateTopNavigationBarView.xaml">
+    <None Update="Components\Xcavate\XcavateTopNavigationBarView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Components\Xcm\XcmNetworkSelectButton.xaml">

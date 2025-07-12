@@ -54,44 +54,130 @@ jobs:
        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
 
     # publish generated
-    - name: Publish PolkadotAssetHub
+    
+    
+    - name: Publish Bifrost
       uses: brandedoutcast/publish-nuget@v2.5.2
       with:
-        PACKAGE_NAME: UniqueryPlus.PolkadotAssetHub
-        PROJECT_FILE_PATH: ./Generated/PolkadotAssetHub/PolkadotAssetHub.NetApi/PolkadotAssetHub.NetApi.csproj
+        PACKAGE_NAME: PlutoFramework.Bifrost
+        PROJECT_FILE_PATH: ./Generated/Bifrost/Bifrost.NetApi/Bifrost.NetApi.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
-    
+
+    - name: Publish Hydration
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+        PACKAGE_NAME: PlutoFramework.Hydration
+        PROJECT_FILE_PATH: ./Generated/Hydration/Hydration.NetApi/Hydration.NetApi.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
+
+    - name: Publish InvArch
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+        PACKAGE_NAME: PlutoFramework.InvArch
+        PROJECT_FILE_PATH: ./Generated/InvArch/InvArch.NetApi/InvArch.NetApi.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
+
+    - name: Publish Kilt
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+        PACKAGE_NAME: PlutoFramework.Kilt
+        PROJECT_FILE_PATH: ./Generated/Kilt/Kilt.NetApi/Kilt.NetApi.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
+
     - name: Publish KusamaAssetHub
       uses: brandedoutcast/publish-nuget@v2.5.2
       with:
-        PACKAGE_NAME: UniqueryPlus.KusamaAssetHub
+        PACKAGE_NAME: PlutoFramework.KusamaAssetHub
         PROJECT_FILE_PATH: ./Generated/KusamaAssetHub/KusamaAssetHub.NetApi/KusamaAssetHub.NetApi.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
+
+    - name: Publish Mythos
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+        PACKAGE_NAME: PlutoFramework.Mythos
+        PROJECT_FILE_PATH: ./Generated/Mythos/Mythos.NetApi/Mythos.NetApi.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
+
+    - name: Publish Opal
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+        PACKAGE_NAME: PlutoFramework.Opal
+        PROJECT_FILE_PATH: ./Generated/Opal/Opal.NetApi/Opal.NetApi.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
+
+    - name: Publish Polkadot
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+        PACKAGE_NAME: PlutoFramework.Polkadot
+        PROJECT_FILE_PATH: ./Generated/Polkadot/Polkadot.NetApi/Polkadot.NetApi.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
+
+    - name: Publish PolkadotAssetHub
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+        PACKAGE_NAME: PlutoFramework.PolkadotAssetHub
+        PROJECT_FILE_PATH: ./Generated/PolkadotAssetHub/PolkadotAssetHub.NetApi/PolkadotAssetHub.NetApi.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
+
+    - name: Publish PolkadotPeople
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+        PACKAGE_NAME: PlutoFramework.PolkadotPeople
+        PROJECT_FILE_PATH: ./Generated/PolkadotPeople/PolkadotPeople.NetApi/PolkadotPeople.NetApi.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
 
     - name: Publish Unique
       uses: brandedoutcast/publish-nuget@v2.5.2
       with:
-        PACKAGE_NAME: UniqueryPlus.Unique
+        PACKAGE_NAME: PlutoFramework.Unique
         PROJECT_FILE_PATH: ./Generated/Unique/Unique.NetApi/Unique.NetApi.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
-
-    - name: Publish Stick
+    
+    - name: Publish XcavatePaseo
       uses: brandedoutcast/publish-nuget@v2.5.2
       with:
-        PACKAGE_NAME: UniqueryPlus.Stick
-        PROJECT_FILE_PATH: ./Stick/UniqueryPlus.Stick.csproj
+        PACKAGE_NAME: PlutoFramework.XcavatePaseo
+        PROJECT_FILE_PATH: ./Generated/XcavatePaseo/XcavatePaseo.NetApi/XcavatePaseo.NetApi.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
-        
+    
     - name: Publish Speck
       uses: brandedoutcast/publish-nuget@v2.5.2
       with:
-        PACKAGE_NAME: UniqueryPlus.Speck
-        PROJECT_FILE_PATH: ./Speck/UniqueryPlus.Speck.csproj
+        PACKAGE_NAME: PlutoFramework.Speck
+        PROJECT_FILE_PATH: ./Indexers/Speck/UniqueryPlus.Speck.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
+    
+    - name: Publish Stick
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+        PACKAGE_NAME: PlutoFramework.Stick
+        PROJECT_FILE_PATH: ./Indexers/Stick/UniqueryPlus.Stick.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
+    
+    - name: Publish OpalSubquery
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+        PACKAGE_NAME: PlutoFramework.OpalSubquery
+        PROJECT_FILE_PATH: ./Indexers/UniqueryPlus.OpalSubquery/UniqueryPlus.OpalSubquery.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
 
     - name: Publish UniqueSubquery
       uses: brandedoutcast/publish-nuget@v2.5.2
       with:
-        PACKAGE_NAME: UniqueryPlus.UniqueSubquery
-        PROJECT_FILE_PATH: ./UniqueryPlus.UniqueSubquery/UniqueryPlus.UniqueSubquery.csproj
+        PACKAGE_NAME: PlutoFramework.UniqueSubquery
+        PROJECT_FILE_PATH: ./Indexers/UniqueryPlus.UniqueSubquery/UniqueryPlus.UniqueSubquery.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
+
+    - name: Publish XcavateSubquery
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+        PACKAGE_NAME: XcavateSubquery
+        PROJECT_FILE_PATH: ./Indexers/XcavateSubquery/XcavateSubquery.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
+    
+    - name: Publish UniqueryPlus
+      uses: brandedoutcast/publish-nuget@v2.5.2
+      with:
+        PACKAGE_NAME: UniqueryPlus
+        PROJECT_FILE_PATH: ./UniqueryPlus/UniqueryPlus.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
