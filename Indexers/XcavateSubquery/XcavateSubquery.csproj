@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <Product>XcavateSubquery</Product>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.1.7</Version>
+    <Version>0.1.8</Version>
   </PropertyGroup>
 
   <ItemGroup>

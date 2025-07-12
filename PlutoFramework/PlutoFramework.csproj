@@ -22,7 +22,7 @@
   <PropertyGroup>
     <AssemblyName>PlutoFramework</AssemblyName>
     <PackageId>PlutoFramework</PackageId>
-    <Version>0.1.7</Version>
+    <Version>0.1.8</Version>
     <Authors>Rostislav Litovkin</Authors>
     <Company>Pluto Labs</Company>
     <Description>All in one framework for creating web3 mobile applications.</Description>
