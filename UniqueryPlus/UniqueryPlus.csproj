@@ -33,4 +33,11 @@
     <ProjectReference Include="..\Indexers\UniqueryPlus.UniqueSubquery\UniqueryPlus.UniqueSubquery.csproj" />
     <ProjectReference Include="..\Indexers\XcavateSubquery\XcavateSubquery.csproj" />
   </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="..\Generated\**\*.NetApi\bin\$(Configuration)\net6.0\*.dll" Pack="true" PackagePath="lib\net9.0-$(TargetPlatformIdentifier)" />
+
+    <None Include="..\Indexers\**\bin\$(Configuration)\net8.0\*.dll" Pack="true" PackagePath="lib\net9.0-$(TargetPlatformIdentifier)" />
+  </ItemGroup>
 </Project>

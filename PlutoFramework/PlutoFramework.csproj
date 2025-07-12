@@ -22,7 +22,7 @@
   <PropertyGroup>
     <AssemblyName>PlutoFramework</AssemblyName>
     <PackageId>PlutoFramework</PackageId>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <Authors>Rostislav Litovkin</Authors>
     <Company>Pluto Labs</Company>
     <Description>All in one framework for creating web3 mobile applications.</Description>
@@ -92,6 +92,37 @@
 
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Generated\Bajun\Bajun.NetApi\Bajun.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\Bifrost\Bifrost.NetApi\Bifrost.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\Hydration\Hydration.NetApi\Hydration.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\InvArch\InvArch.NetApi\InvArch.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\Kilt\Kilt.NetApi\Kilt.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\PolkadotPeople\PolkadotPeople.NetApi\PolkadotPeople.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\Polkadot\Polkadot.NetApi\Polkadot.NetApi.csproj" />
+    <ProjectReference Include="..\UniqueryPlus\UniqueryPlus.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- This grabs the main UniqueryPlus.dll -->
+    <None Include="..\UniqueryPlus\bin\$(Configuration)\net8.0\UniqueryPlus.dll"
+          Pack="true"
+          PackagePath="lib\net9.0-$(TargetFramework)\" />
+
+    <!-- Grab all referenced .dlls (non-framework) from the output directory -->
+    <None Include="..\UniqueryPlus\bin\$(Configuration)\net8.0\*.dll"
+          Exclude="..\UniqueryPlus\bin\$(Configuration)\net8.0\UniqueryPlus.dll"
+          Pack="true"
+          PackagePath="lib\net9.0-$(TargetFramework)\" />
+
+    <None Include="..\Generated\**\*.NetApi\bin\$(Configuration)\net6.0\*.dll"
+          Pack="true"
+          PackagePath="lib\net9.0-$(TargetPlatformIdentifier)" />
+
+    <None Include="..\Indexers\**\bin\$(Configuration)\net8.0\*.dll"
+          Pack="true"
+          PackagePath="lib\net9.0-$(TargetPlatformIdentifier)" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Components\000ComponentTemplate\NewPageTemplate.xaml.cs">
@@ -1747,6 +1778,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="..\Generated\%2a%2a\%2a%2a.NetApi\bin\Debug\net9.0\%2a.dll" />
+    <None Remove="..\UniqueryPlus\bin\Debug\net9.0-ios\UniqueryPlus.dll" />
     <None Remove="AjunaExt\" />
     <None Remove="AzeroId\" />
     <None Remove="HydraDX\" />
@@ -2014,16 +2047,6 @@
     <MauiImage Include="Resources\Images\xwhite.png" />
     <MauiImage Include="Resources\Images\youtubeblack.png" />
     <MauiImage Include="Resources\Images\youtubewhite.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Generated\Bajun\Bajun.NetApi\Bajun.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\Bifrost\Bifrost.NetApi\Bifrost.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\Hydration\Hydration.NetApi\Hydration.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\InvArch\InvArch.NetApi\InvArch.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\Kilt\Kilt.NetApi\Kilt.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\PolkadotPeople\PolkadotPeople.NetApi\PolkadotPeople.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\Polkadot\Polkadot.NetApi\Polkadot.NetApi.csproj" />
-    <ProjectReference Include="..\UniqueryPlus\UniqueryPlus.csproj" />
   </ItemGroup>
   <ItemGroup>
     <MauiXaml Update="Components\000ComponentTemplate\NewPageTemplate.xaml">
