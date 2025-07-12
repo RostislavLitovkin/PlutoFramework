@@ -13,11 +13,16 @@ jobs:
     env:
       BUILD_CONFIG: 'Release'
 
-    runs-on: macos-15-xlarge
+    runs-on: macos-15
 
     steps:
     - uses: actions/checkout@v2
-
+    
+    - name: Set up Xcode 16.4
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: '16.4'
+        
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.5
 
