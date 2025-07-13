@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "net_api": "BifrostPolkadot.NetApi",
+    "net_integration": "Substrate.Integration",
+    "rest_service": "Substrate.RestService",
+    "rest_client": "Substrate.RestClient"
+  },
+   "metadata": {
+      "websocket": "wss://bifrost-polkadot.ibp.network"
+   },
+  "rest_client_settings": {
+    "service_assembly": "Substrate.RestService.dll"
+  }
+}

@@ -22,7 +22,7 @@
   <PropertyGroup>
     <AssemblyName>PlutoFramework</AssemblyName>
     <PackageId>PlutoFramework</PackageId>
-    <Version>0.1.8</Version>
+    <Version>0.1.9</Version>
     <Authors>Rostislav Litovkin</Authors>
     <Company>Pluto Labs</Company>
     <Description>All in one framework for creating web3 mobile applications.</Description>
@@ -94,7 +94,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Generated\Bajun\Bajun.NetApi\Bajun.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\Bifrost\Bifrost.NetApi\Bifrost.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\BifrostPolkadot\BifrostPolkadot.NetApi\BifrostPolkadot.NetApi.csproj" />
     <ProjectReference Include="..\Generated\Hydration\Hydration.NetApi\Hydration.NetApi.csproj" />
     <ProjectReference Include="..\Generated\InvArch\InvArch.NetApi\InvArch.NetApi.csproj" />
     <ProjectReference Include="..\Generated\Kilt\Kilt.NetApi\Kilt.NetApi.csproj" />

@@ -168,7 +168,7 @@ namespace PlutoFramework.Model.AjunaExt
                 EndpointEnum.Polkadot => new Polkadot.NetApi.Generated.SubstrateClientExt(websocket, ChargeTransactionPayment.Default()),
                 EndpointEnum.PolkadotAssetHub => new PolkadotAssetHub.NetApi.Generated.SubstrateClientExt(websocket, ChargeTransactionPayment.Default()),
                 EndpointEnum.Hydration => new Hydration.NetApi.Generated.SubstrateClientExt(websocket, ChargeTransactionPayment.Default()),
-                EndpointEnum.Bifrost => new Bifrost.NetApi.Generated.SubstrateClientExt(websocket, ChargeTransactionPayment.Default()),
+                EndpointEnum.Bifrost => new BifrostPolkadot.NetApi.Generated.SubstrateClientExt(websocket, ChargeTransactionPayment.Default()),
                 EndpointEnum.Opal => new Opal.NetApi.Generated.SubstrateClientExt(websocket, ChargeTransactionPayment.Default()),
                 EndpointEnum.Bajun => new Bajun.NetApi.Generated.SubstrateClientExt(websocket, ChargeTransactionPayment.Default()),
                 EndpointEnum.PolkadotPeople => new PolkadotPeople.NetApi.Generated.SubstrateClientExt(websocket, ChargeTransactionPayment.Default()),

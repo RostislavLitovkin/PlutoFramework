@@ -13,7 +13,7 @@ namespace PlutoFramework.Components.VTokens
         [ObservableProperty]
         private string from;
 
-        private Bifrost.NetApi.Generated.SubstrateClientExt bifrostClient = null;
+        private BifrostPolkadot.NetApi.Generated.SubstrateClientExt bifrostClient = null;
 
         public VDotTokenViewModel()
         {
@@ -26,7 +26,7 @@ namespace PlutoFramework.Components.VTokens
         {
             if (client.Endpoint.Key == Constants.EndpointEnum.Bifrost)
             {
-                bifrostClient = (Bifrost.NetApi.Generated.SubstrateClientExt)client.SubstrateClient;
+                bifrostClient = (BifrostPolkadot.NetApi.Generated.SubstrateClientExt)client.SubstrateClient;
             }
 
             if (bifrostClient is null)
