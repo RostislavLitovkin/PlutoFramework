@@ -2043,6 +2043,9 @@
     <MauiXaml Update="Components\AddressView\AddressQrCodeView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\AddressView\PolkadotAddressView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\AddressView\SubstrateAddressView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>

@@ -157,7 +157,7 @@ namespace PlutoFramework.Components.Nft
                     UsdAmountEnabled = true;
                     UsdAmountPlaceholder = "USD amount";
 
-                    var usdAmount = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, decimalAmount * (decimal)price);
+                    var usdAmount = String.Format((string)Application.Current.Resources["CurrencyFormat"], decimalAmount * (decimal)price);
 
                     UsdAmount = usdAmount;
                 }

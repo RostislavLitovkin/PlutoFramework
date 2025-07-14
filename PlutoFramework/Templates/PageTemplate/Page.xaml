@@ -22,7 +22,7 @@
                         AbsoluteLayout.LayoutFlags="All"
                         Padding="0, 55, 0, 0">
                 <!-- Content block -->
-                <ContentPresenter Content="{TemplateBinding MainContent}" />
+                <ContentPresenter Content="{TemplateBinding MainContent}"/>
             </ScrollView>
 
             <topnavigationbartemplate:TopNavigationBarTemplate Title="{TemplateBinding Title}"

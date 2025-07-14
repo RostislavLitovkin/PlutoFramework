@@ -5,9 +5,11 @@
         public static string ToCurrencyString(
             this double usdValue,
             string? location = null,
-            string currencyFormat = DefaultAppConfiguration.CURRENCY_FORMAT
+            string? currencyFormat = null
         )
         {
+            currencyFormat ??= (string)Application.Current.Resources["CurrencyFormat"];
+
             location ??= AppConfigurationModel.Location;
             var currency = GetCurrencyInLocation(location);
 
@@ -18,7 +20,7 @@
         {
             if (fromCurrency == "USDT" && toCurrency == "£")
             {
-                return DefaultAppConfiguration.POUNDS_TO_USD;
+                return (double)Application.Current.Resources["UsdToGbp"];
             }
             if (fromCurrency == "USDT" && toCurrency == "$")
             {

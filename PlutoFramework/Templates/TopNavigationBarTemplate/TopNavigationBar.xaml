@@ -30,7 +30,8 @@
                    VerticalTextAlignment="Center">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span FontAttributes="Bold" Text="{TemplateBinding Title}"/>
+                        <Span FontAttributes="Bold" Text="{TemplateBinding Title}"
+                              TextColor="White"/>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
@@ -44,7 +45,8 @@
 
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="{TemplateBinding Extra1Text}" />
+                        <Span Text="{TemplateBinding Extra1Text}"
+                              TextColor="White"/>
                     </FormattedString>
                 </Label.FormattedText>
 

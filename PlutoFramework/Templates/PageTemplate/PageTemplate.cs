@@ -7,7 +7,14 @@ namespace PlutoFramework.Templates.PageTemplate
     public class PageTemplate : ContentPage
     {
         public static readonly BindableProperty MainContentProperty =
-            BindableProperty.Create(nameof(MainContent), typeof(MauiView), typeof(PageTemplate), default(MauiView));
+            BindableProperty.Create(nameof(MainContent), typeof(MauiView), typeof(PageTemplate), default(MauiView),
+                propertyChanged: (bindable, oldValue, newValue) =>
+                {
+                    if (bindable is PageTemplate page && newValue is View view)
+                    {
+                        view.BindingContext = page.BindingContext;
+                    }
+                });
         public MauiView MainContent
         {
             get => (MauiView)GetValue(MainContentProperty);
@@ -15,7 +22,15 @@ namespace PlutoFramework.Templates.PageTemplate
         }
 
         public static readonly BindableProperty PopupContentProperty =
-            BindableProperty.Create(nameof(PopupContent), typeof(MauiView), typeof(PageTemplate), default(MauiView));
+            BindableProperty.Create(nameof(PopupContent), typeof(MauiView), typeof(PageTemplate), default(MauiView),
+                propertyChanged: (bindable, oldValue, newValue) =>
+            {
+                if (bindable is PageTemplate page && newValue is View view)
+                {
+                    view.BindingContext = page.BindingContext;
+                }
+            });
+
         public MauiView PopupContent
         {
             get => (MauiView)GetValue(PopupContentProperty);
@@ -32,17 +47,17 @@ namespace PlutoFramework.Templates.PageTemplate
 
         public static readonly BindableProperty NavigationBarExtra1CommandProperty =
             BindableProperty.Create(nameof(NavigationBarExtra1Command), typeof(IAsyncRelayCommand), typeof(PageTemplate));
-        public string NavigationBarExtra1Command
+        public IAsyncRelayCommand NavigationBarExtra1Command
         {
-            get => (string)GetValue(NavigationBarExtra1CommandProperty);
+            get => (IAsyncRelayCommand)GetValue(NavigationBarExtra1CommandProperty);
             set => SetValue(NavigationBarExtra1CommandProperty, value);
         }
 
         public static readonly BindableProperty NavigationBarExtra1ImageProperty =
-            BindableProperty.Create(nameof(NavigationBarExtra1Image), typeof(string), typeof(PageTemplate));
-        public string NavigationBarExtra1Image
+            BindableProperty.Create(nameof(NavigationBarExtra1Image), typeof(ImageSource), typeof(PageTemplate));
+        public ImageSource NavigationBarExtra1Image
         {
-            get => (string)GetValue(NavigationBarExtra1ImageProperty);
+            get => (ImageSource)GetValue(NavigationBarExtra1ImageProperty);
             set => SetValue(NavigationBarExtra1ImageProperty, value);
         }
 
@@ -56,19 +71,19 @@ namespace PlutoFramework.Templates.PageTemplate
 
         public static readonly BindableProperty NavigationBarExtra2CommandProperty =
             BindableProperty.Create(nameof(NavigationBarExtra2Command), typeof(IAsyncRelayCommand), typeof(PageTemplate));
-        public string NavigationBarExtra2Command
+        public IAsyncRelayCommand NavigationBarExtra2Command
         {
-            get => (string)GetValue(NavigationBarExtra2CommandProperty);
+            get => (IAsyncRelayCommand)GetValue(NavigationBarExtra2CommandProperty);
             set => SetValue(NavigationBarExtra2CommandProperty, value);
         }
 
         public static readonly BindableProperty NavigationBarExtra2ImageProperty =
-            BindableProperty.Create(nameof(NavigationBarExtra2Image), typeof(string), typeof(PageTemplate));
-        public string NavigationBarExtra2Image
+            BindableProperty.Create(nameof(NavigationBarExtra2Image), typeof(ImageSource), typeof(PageTemplate));
+        public ImageSource NavigationBarExtra2Image
         {
-            get => (string)GetValue(NavigationBarExtra2ImageProperty);
+            get => (ImageSource)GetValue(NavigationBarExtra2ImageProperty);
             set => SetValue(NavigationBarExtra2ImageProperty, value);
-        }        
+        }
 
         public PageTemplate()
         {
@@ -76,6 +91,12 @@ namespace PlutoFramework.Templates.PageTemplate
 
             NavigationPage.SetHasNavigationBar(this, false);
             Shell.SetNavBarIsVisible(this, false);
+        }
+
+        protected override void OnBindingContextChanged()
+        {
+            base.OnBindingContextChanged();
+            // Add your custom logic here
         }
     }
 }

@@ -42,7 +42,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
         [NotifyPropertyChangedFor(nameof(ProcessedPalletCallName))]
         private string palletCallName;
 
-        public string ProcessedPalletCallName => DefaultAppConfiguration.TRANSACTION_ANALYZER_PALLET_CALL_NAME_SUBSTITUTION ?? PalletCallName;
+        public string ProcessedPalletCallName => (string)Application.Current.Resources["TransactionAnalyzerPalletCallNameSubstitution"] ?? PalletCallName;
 
         [ObservableProperty]
         private TempPayload payload;

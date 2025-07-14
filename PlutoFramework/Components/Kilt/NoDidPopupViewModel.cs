@@ -1,7 +1,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.Buttons;
-using PlutoFramework.Components.Xcavate;
 using PlutoFramework.Model;
 
 namespace PlutoFramework.Components.Kilt
@@ -27,7 +26,7 @@ namespace PlutoFramework.Components.Kilt
         {
             SetToDefault();
 
-            await Model.KeysModel.GenerateNewAccountAsync(null, accountVariant: "kilt1");
+            await Model.KeysModel.GenerateNewAccountAsync(accountVariant: "kilt1");
 
             // TODO
             /*await Application.Current.MainPage.Navigation.PushAsync(

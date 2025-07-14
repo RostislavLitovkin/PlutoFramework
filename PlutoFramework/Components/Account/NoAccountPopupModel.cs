@@ -35,9 +35,9 @@ public partial class NoAccountPopupViewModel : ObservableObject, IPopup, ISetToD
     {
         SetToDefault();
 
-        await Model.KeysModel.GenerateNewAccountAsync(null, accountVariant: "");
+        await Model.KeysModel.GenerateNewAccountAsync(accountVariant: "");
 
-        await Model.KeysModel.GenerateNewAccountAsync(null, accountVariant: "kilt1");
+        await Model.KeysModel.GenerateNewAccountAsync(accountVariant: "kilt1");
 
         await AfterCreateAccountNavigation.Invoke();
     }

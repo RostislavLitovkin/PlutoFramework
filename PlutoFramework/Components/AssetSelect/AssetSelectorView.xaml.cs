@@ -14,7 +14,7 @@ public partial class AssetSelectorView : ContentView
         propertyChanging: (bindable, oldValue, newValue) => {
             var control = (AssetSelectorView)bindable;
 
-            control.amountLabel.Text = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, (double)newValue);
+            control.amountLabel.Text = String.Format((string)Application.Current.Resources["CurrencyFormat"], (double)newValue);
         });
 
     public static readonly BindableProperty SymbolProperty = BindableProperty.Create(

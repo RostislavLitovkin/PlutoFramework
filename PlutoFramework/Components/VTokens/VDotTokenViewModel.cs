@@ -44,20 +44,20 @@ namespace PlutoFramework.Components.VTokens
 
             if (vDotsSum == 0)
             {
-                Conversion = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, 0) + " DOT";
-                From = "From " + String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, 0) + " vDOT";
+                Conversion = String.Format((string)Application.Current.Resources["CurrencyFormat"], 0) + " DOT";
+                From = "From " + String.Format((string)Application.Current.Resources["CurrencyFormat"], 0) + " vDOT";
                 return;
             }
 
             BigInteger dotsEquivalent = await VTokenModel.VDotToDot(bifrostClient, vDotsSum, token);
 
-            Conversion = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, (double)dotsEquivalent / Math.Pow(10, vdots[0].Decimals)) + " DOT";
+            Conversion = String.Format((string)Application.Current.Resources["CurrencyFormat"], (double)dotsEquivalent / Math.Pow(10, vdots[0].Decimals)) + " DOT";
 
             //BigInteger singleVDot = (BigInteger)Math.Pow(10, vdots[0].Decimals);
 
             //BigInteger dotsEquivalentSingle = await VTokenModel.VDotToDot(bifrostClient, singleVDot, token);
 
-            From = "From " + String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, (double)vDotsSum / Math.Pow(10, vdots[0].Decimals)) + " vDOT";
+            From = "From " + String.Format((string)Application.Current.Resources["CurrencyFormat"], (double)vDotsSum / Math.Pow(10, vdots[0].Decimals)) + " vDOT";
         }
 
         public void SetEmpty()

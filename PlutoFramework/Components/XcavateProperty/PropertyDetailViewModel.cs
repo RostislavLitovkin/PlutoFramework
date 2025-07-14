@@ -67,7 +67,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
         public string ListingPrice => (Metadata?.PropertyPrice ?? 0.0).ToCurrencyString();
 
-        public string PricePerTokenText => $"{ (Metadata?.PricePerToken ?? 0.0).ToCurrencyString() } [{String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, Metadata?.PricePerToken)} USDT]";
+        public string PricePerTokenText => $"{ (Metadata?.PricePerToken ?? 0.0).ToCurrencyString() } [{String.Format((string)Application.Current.Resources["CurrencyFormat"], Metadata?.PricePerToken)} USDT]";
 
         public string Apy => PropertyModel.GetAPY(Metadata?.EstimatedRentalIncome ?? 1, Metadata?.PropertyPrice ?? 1);
 

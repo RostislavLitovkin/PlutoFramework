@@ -4,7 +4,7 @@
     {
         public static void Load()
         {
-            AppConfigurationModel.Location = Preferences.Get("Location", DefaultAppConfiguration.LOCATION);
+            AppConfigurationModel.Location = Preferences.Get("Location", (string)Application.Current.Resources["Location"]);
         }
     }
 }

@@ -54,8 +54,8 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                 {
                     Amount = a.Amount switch
                     {
-                        > 0 => "+" + String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, a.Amount),
-                        _ => String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, a.Amount)
+                        > 0 => "+" + String.Format((string)Application.Current.Resources["CurrencyFormat"], a.Amount),
+                        _ => String.Format((string)Application.Current.Resources["CurrencyFormat"], a.Amount)
                     },
                     Symbol = a.Symbol,
                     UsdValue = a.UsdValue switch
@@ -105,8 +105,8 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                         IsFrozen = false,
                         Amount = nft.AssetPrice.Amount switch
                         {
-                            > 0 => "+" + String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, nft.AssetPrice.Amount),
-                            _ => String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, nft.AssetPrice.Amount)
+                            > 0 => "+" + String.Format((string)Application.Current.Resources["CurrencyFormat"], nft.AssetPrice.Amount),
+                            _ => String.Format((string)Application.Current.Resources["CurrencyFormat"], nft.AssetPrice.Amount)
                         },
                         Symbol = nft.AssetPrice.Symbol,
                         UsdValue = nft.AssetPrice.UsdValue switch
