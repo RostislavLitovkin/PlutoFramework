@@ -2296,6 +2296,9 @@
     <MauiXaml Update="Components\Nft\NftSoldForView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftsOwnedListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\Nft\NftTradingStats.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>

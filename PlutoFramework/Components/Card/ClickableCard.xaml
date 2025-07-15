@@ -6,8 +6,10 @@
             HorizontalOptions="Fill"
             VerticalOptions="Fill"
             BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
-            StrokeThickness="0"
+            StrokeThickness="{StaticResource CardBorderThickness}"
+            Stroke="{StaticResource CardBorderColor}"
             Padding="10, 0, 10, 0"
+        
             x:Name="border"
             Shadow="{StaticResource CardShadow}"
             >

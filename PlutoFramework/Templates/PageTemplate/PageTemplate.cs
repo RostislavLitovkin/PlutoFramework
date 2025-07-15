@@ -92,11 +92,5 @@ namespace PlutoFramework.Templates.PageTemplate
             NavigationPage.SetHasNavigationBar(this, false);
             Shell.SetNavBarIsVisible(this, false);
         }
-
-        protected override void OnBindingContextChanged()
-        {
-            base.OnBindingContextChanged();
-            // Add your custom logic here
-        }
     }
 }

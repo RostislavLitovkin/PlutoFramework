@@ -10,6 +10,15 @@
     <x:String x:Key="TransactionAnalyzerPalletCallNameSubstitution"></x:String>
     <x:Boolean x:Key="DisplayNetworks">false</x:Boolean>
     <x:String x:Key="DefaultEndpoints">[Polkadot, Kusama]</x:String>
+
+    <x:Double x:Key="CardBorderThickness">0</x:Double>
+    <Color x:Key="CardBorderColor">Black</Color>
+
+    <Color x:Key="PrimaryButtonTextColor">White</Color>
+    <Color x:Key="PrimaryButtonBorderColor">Black</Color>
+    <x:Double x:Key="PrimaryButtonBorderThickness">0</x:Double>
+
+    <x:String x:Key="PrimaryButtonIcon">plutowalletclearwhite.png</x:String>
     
     <!-- -->
     
