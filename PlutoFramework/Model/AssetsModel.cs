@@ -67,14 +67,16 @@ namespace PlutoFramework.Model
 
         public static async Task GetBalanceAsync(SubstrateClientExt client, string substrateAddress, CancellationToken token, bool forceReload = false)
         {
+            Console.WriteLine("Getting balance");
+
             async Task SaveAsync(Asset asset)
             {
                 AssetsDict[(asset.Endpoint.Key, asset.Pallet, asset.AssetId)] = asset;
 
-                if (DatabaseSaver is not null)
+                /*if (DatabaseSaver is not null)
                 {
                     await DatabaseSaver.SaveBalanceAsync(asset);
-                }
+                }*/
             }
 
             /*if (AssetsDict.ContainsKey((client.Endpoint.Key, AssetPallet.Native, 0)) && forceReload)
@@ -193,8 +195,8 @@ namespace PlutoFramework.Model
                         double spotPrice = Model.HydraDX.Sdk.GetSpotPrice(symbol) ?? 0;
 
                         double assetBalance = asset.Item4 != null ? (double)asset.Item4.Balance.Value / Math.Pow(10, asset.Item3.Decimals.Value) : 0.0;
-                       
-                        double assetFrozenBalance = endpoint.Key == EndpointEnum.XcavatePaseo ? (double)frozenBalance : (double)frozenBalance / Math.Pow(10, asset.Item3.Decimals.Value);
+
+                        double assetFrozenBalance = 0;// endpoint.Key == EndpointEnum.XcavatePaseo ? (double)frozenBalance : (double)frozenBalance / Math.Pow(10, asset.Item3.Decimals.Value);
 
                         await SaveAsync(new Asset
                         {
@@ -416,7 +418,15 @@ namespace PlutoFramework.Model
 
             foreach (var asset in AssetsDict.Values)
             {
-                usdSumValue += asset.UsdValue;
+                try
+                {
+                    usdSumValue += asset.UsdValue;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Calculate total usd exception: ");
+                    Console.WriteLine(ex);
+                }
             }
 
             UsdSum = usdSumValue;
