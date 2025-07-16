@@ -7,14 +7,7 @@ namespace PlutoFramework.Templates.PageTemplate
     public class PageTemplate : ContentPage
     {
         public static readonly BindableProperty MainContentProperty =
-            BindableProperty.Create(nameof(MainContent), typeof(MauiView), typeof(PageTemplate), default(MauiView),
-                propertyChanged: (bindable, oldValue, newValue) =>
-                {
-                    if (bindable is PageTemplate page && newValue is View view)
-                    {
-                        view.BindingContext = page.BindingContext;
-                    }
-                });
+            BindableProperty.Create(nameof(MainContent), typeof(MauiView), typeof(PageTemplate), default(MauiView));
         public MauiView MainContent
         {
             get => (MauiView)GetValue(MainContentProperty);
@@ -22,14 +15,7 @@ namespace PlutoFramework.Templates.PageTemplate
         }
 
         public static readonly BindableProperty PopupContentProperty =
-            BindableProperty.Create(nameof(PopupContent), typeof(MauiView), typeof(PageTemplate), default(MauiView),
-                propertyChanged: (bindable, oldValue, newValue) =>
-            {
-                if (bindable is PageTemplate page && newValue is View view)
-                {
-                    view.BindingContext = page.BindingContext;
-                }
-            });
+            BindableProperty.Create(nameof(PopupContent), typeof(MauiView), typeof(PageTemplate), default(MauiView));
 
         public MauiView PopupContent
         {
@@ -91,6 +77,14 @@ namespace PlutoFramework.Templates.PageTemplate
 
             NavigationPage.SetHasNavigationBar(this, false);
             Shell.SetNavBarIsVisible(this, false);
+        }
+
+        protected override void OnBindingContextChanged()
+        {
+            base.OnBindingContextChanged();
+
+            if (MainContent != null)
+                MainContent.BindingContext = BindingContext;
         }
     }
 }
