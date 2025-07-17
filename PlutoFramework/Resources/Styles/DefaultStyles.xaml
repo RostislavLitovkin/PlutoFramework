@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Resources.Styles.DefaultStyles">
 
+    <x:String x:Key="ButtonFontFamily">OpenSansRegular</x:String>
+    
     <x:Double x:Key="UsdToGbp">0.74</x:Double>
     <x:String x:Key="Location">US</x:String>
     <x:Int32 x:Key="BottomCardPopupAnimationDuration">500</x:Int32>

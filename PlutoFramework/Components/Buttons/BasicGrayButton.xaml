@@ -7,6 +7,7 @@
         BorderColor="{StaticResource GrayButtonBorder}"
         BorderWidth="{StaticResource GrayButtonBorderWidth}"
         FontAttributes="Bold"
+        FontFamily="{StaticResource ButtonFontFamily}"
         CornerRadius="{StaticResource ButtonCornerRadius}"
         HeightRequest="{StaticResource ButtonHeight}">
 </Button>
