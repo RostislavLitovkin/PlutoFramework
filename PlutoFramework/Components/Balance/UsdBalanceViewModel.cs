@@ -50,7 +50,6 @@ namespace PlutoFramework.Components.Balance
 
             foreach (Asset a in Model.AssetsModel.AssetsDict.Values)
             {
-                Console.WriteLine(a.AssetId);
                 if ((EndpointEnum.PolkadotAssetHub == a.Endpoint.Key && AssetPallet.Native == a.Pallet) ||
                     (EndpointEnum.PolkadotAssetHub == a.Endpoint.Key && AssetPallet.Assets == a.Pallet && 1984 == a.AssetId) ||
                     (EndpointEnum.PolkadotAssetHub == a.Endpoint.Key && AssetPallet.Assets == a.Pallet && 31337 == a.AssetId))
