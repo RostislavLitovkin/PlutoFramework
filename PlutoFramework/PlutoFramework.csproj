@@ -2073,6 +2073,9 @@
     <MauiXaml Update="Components\Bohemia\BohemiaNftOwnedListView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\Bohemia\BohemiaWelcomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\Bohemia\ToJoinDaoView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>

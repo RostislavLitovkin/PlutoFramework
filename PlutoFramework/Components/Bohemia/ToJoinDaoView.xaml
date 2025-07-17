@@ -4,14 +4,14 @@
              x:Class="PlutoFramework.Components.Bohemia.ToJoinDaoView">
     <Grid ColumnSpacing="15">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="60" />
+            <ColumnDefinition Width="90" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
         <Border BackgroundColor="{StaticResource Primary}"
                 StrokeThickness="0"
-                HeightRequest="60"
-                WidthRequest="60">
+                HeightRequest="90"
+                WidthRequest="90">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="30" />
             </Border.StrokeShape>
@@ -20,9 +20,9 @@
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
                    VerticalTextAlignment="Center"
-                   FontSize="10"
-                   HeightRequest="60"
-                   WidthRequest="60"
+                   FontSize="16"
+                   HeightRequest="90"
+                   WidthRequest="90"
                    >
                 <Label.FormattedText>
                     <FormattedString>
