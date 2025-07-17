@@ -13,7 +13,7 @@
                 HeightRequest="90"
                 WidthRequest="90">
             <Border.StrokeShape>
-                <RoundRectangle CornerRadius="30" />
+                <RoundRectangle CornerRadius="45" />
             </Border.StrokeShape>
 
             <Label HorizontalTextAlignment="Center"

@@ -8,6 +8,7 @@
         BorderWidth="{StaticResource PrimaryButtonBorderThickness}"
         FontAttributes="Bold"
         CornerRadius="{StaticResource ButtonCornerRadius}"
-        HeightRequest="{StaticResource ButtonHeight}">
+        HeightRequest="{StaticResource ButtonHeight}"
+        FontFamily="{StaticResource ButtonFontFamily}">
     
 </Button>
