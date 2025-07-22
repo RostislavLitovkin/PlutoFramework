@@ -1,12 +1,11 @@
+using PlutoFramework.Templates.PageTemplate;
+
 namespace PlutoFramework.Components.Xcavate;
 
-public partial class CompanyPage : ContentPage
+public partial class CompanyPage : PageTemplate
 {
     public CompanyPage(CompanyViewModel viewModel)
 	{
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 
         BindingContext = viewModel;

@@ -1,49 +1,38 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PlutoFramework.Components.Kilt.DidManagementPage"
-             Title="DidManagementPage"
-             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
-             xmlns:kilt="clr-namespace:PlutoFramework.Components.Kilt"
-             xmlns:mnemonics="clr-namespace:PlutoFramework.Components.Mnemonics"
-            xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-         xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
-         xmlns:password="clr-namespace:PlutoFramework.Components.Password"
-         BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
-    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                       xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+                       xmlns:kilt="clr-namespace:PlutoFramework.Components.Kilt"
+                       xmlns:mnemonics="clr-namespace:PlutoFramework.Components.Mnemonics"
+                       xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+                       x:Class="PlutoFramework.Components.Kilt.DidManagementPage"
+                       Title="DidManagementPage">
+    <template:PageTemplate.MainContent>
+        <VerticalStackLayout HorizontalOptions="Center"
+                             Padding="20, 10, 20, 100"
+                             Spacing="15">
+            <kilt:DidView Did="{Binding Did}"
+                          Verification="{Binding DidVerification}" />
 
-        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-           Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
-           Opacity="{AppThemeBinding Light=0.96}"
-           Aspect="AspectFill"/>
+            <mnemonics:MnemonicsView Title="DID Mnemonics:"
+                                     Mnemonics="{Binding Mnemonics}" />
 
-        <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                    AbsoluteLayout.LayoutFlags="All"
-                    Padding="0, 55, 0, 0">
-            <VerticalStackLayout HorizontalOptions="Center"
-                     Padding="20, 10, 20, 100"
-                     Spacing="15">
-                <kilt:DidView Did="{Binding Did}"
-                              Verification="{Binding DidVerification}"
-                              />
+            <buttons:ElevatedButton ButtonState="Enabled"
+                                    Text="What are mnemonics?"
+                                    Command="{Binding GoToMnemonicsExplanationCommand}" />
 
-                <mnemonics:MnemonicsView Title="DID Mnemonics:"
-                                         Mnemonics="{Binding Mnemonics}" />
+            <buttons:ElevatedButton ButtonState="Enabled"
+                                    Text="What are DIDs"
+                                    Command="{Binding GoToDidExplanationPageCommand}" />
 
-                <buttons:ElevatedButton ButtonState="Enabled" Text="What are mnemonics?" Command="{Binding GoToMnemonicsExplanationCommand}" />
+            <buttons:ElevatedButton ButtonState="Warning"
+                                    Text="Delete DID"
+                                    Command="{Binding DeleteDIDCommand}" />
+        </VerticalStackLayout>
+    </template:PageTemplate.MainContent>
 
-                <buttons:ElevatedButton ButtonState="Enabled" Text="What are DIDs" Command="{Binding GoToDidExplanationPageCommand}" />
-
-                <buttons:ElevatedButton ButtonState="Warning" Text="Delete DID" Command="{Binding DeleteDIDCommand}" />
-
-            </VerticalStackLayout>
-
-        </ScrollView>
-
+    <template:PageTemplate.PopupContent>
         <navigationbar:TopNavigationBar Title="Manage Kilt DID" />
-
-        <txanalyzer:TransactionAnalyzerConfirmationView />
-
-        <password:EnterPasswordPopupView />
-    </AbsoluteLayout>
-</ContentPage>
+    </template:PageTemplate.PopupContent>
+</template:PageTemplate>

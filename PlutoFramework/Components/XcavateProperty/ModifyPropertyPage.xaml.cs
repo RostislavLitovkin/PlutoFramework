@@ -1,14 +1,12 @@
+using PlutoFramework.Templates.PageTemplate;
 using UniqueryPlus.Metadata;
 
 namespace PlutoFramework.Components.XcavateProperty
 {
-    public partial class ModifyPropertyPage : ContentPage
+    public partial class ModifyPropertyPage : PageTemplate
     {
         public ModifyPropertyPage(XcavateMetadata property)
         {
-            NavigationPage.SetHasNavigationBar(this, false);
-            Shell.SetNavBarIsVisible(this, false);
-
             InitializeComponent();
 
             BindingContext = new ModifyPropertyViewModel {

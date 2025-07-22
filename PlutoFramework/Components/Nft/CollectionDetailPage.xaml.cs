@@ -1,16 +1,14 @@
 using PlutoFramework.Components.WebView;
+using PlutoFramework.Templates.PageTemplate;
 using UniqueryPlus.External;
 
 namespace PlutoFramework.Components.Nft;
 
-public partial class CollectionDetailPage : ContentPage
+public partial class CollectionDetailPage : PageTemplate
 {
     private CollectionDetailViewModel viewModel;
     public CollectionDetailPage(CollectionDetailViewModel viewModel)
     {
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 
         this.viewModel = viewModel;

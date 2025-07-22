@@ -1,49 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-             xmlns:predefinedlayouts="clr-namespace:PlutoFramework.Components.PredefinedLayouts"
-             xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
-             x:Class="PlutoFramework.Components.CustomLayouts.PredefinedLayoutsPage"
-             Title="PredefinedLayoutsPage"
-             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
+<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                       xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+                       xmlns:predefinedlayouts="clr-namespace:PlutoFramework.Components.PredefinedLayouts"
+                       x:Class="PlutoFramework.Components.CustomLayouts.PredefinedLayoutsPage"
+                       Title="PredefinedLayoutsPage">
+    <template:PageTemplate.MainContent>
+        <VerticalStackLayout HorizontalOptions="Center"
+                             Padding="20, 10, 20, 100"
+                             Spacing="5">
+            <predefinedlayouts:GenericPredefinedLayoutItem Title="Just Crypto"
+                                                           PlutoLayout="plutolayout: [U, dApp, ExSL, UsdB, RnT, ChaK];[Polkadot, Kusama]"/>
 
-    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
-        
-        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-               Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
-               Opacity="{AppThemeBinding Light=0.96}"
-               Aspect="AspectFill"/>
+            <!--<predefinedlayouts:GenericPredefinedLayoutItem Title="Default"
+                                                        PlutoLayout="plutolayout: [U, dApp, ExSL, UsdB, RnT, PubK, SubK, ChaK, CalEx];[polkadot, moonbeam, astar]"/>-->
 
-        <ScrollView Orientation="Vertical"
-                    x:Name="scrollView"
-                    AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                    AbsoluteLayout.LayoutFlags="All"
-                    Padding="0, 55, 0, 0">
-            <VerticalStackLayout HorizontalOptions="Center"
-                                 Padding="20, 10, 20, 100"
-                                 Spacing="5">
-                <predefinedlayouts:GenericPredefinedLayoutItem Title="Just Crypto"
-                                                               PlutoLayout="plutolayout: [U, dApp, ExSL, UsdB, RnT, ChaK];[Polkadot, Kusama]"/>
+            <predefinedlayouts:GalaxyLogicGameLayoutItem />
 
-                <!--<predefinedlayouts:GenericPredefinedLayoutItem Title="Default"
-                                                               PlutoLayout="plutolayout: [U, dApp, ExSL, UsdB, RnT, PubK, SubK, ChaK, CalEx];[polkadot, moonbeam, astar]"/>-->
+            <predefinedlayouts:AwesomaAjunaAvatarsLayoutItem />
 
-                <predefinedlayouts:GalaxyLogicGameLayoutItem />
+            <predefinedlayouts:HydrationOmnipoolLayoutItem />
 
-                <predefinedlayouts:AwesomaAjunaAvatarsLayoutItem />
+            <predefinedlayouts:GenericPredefinedLayoutItem Title="Azero Testnet"
+                                                           PlutoLayout="plutolayout: [U, dApp, contract, ExSL, AZEROPrimaryName, UsdB, RnT, SubK, ChaK];[AzeroTestnet]"/>
 
-                <predefinedlayouts:HydrationOmnipoolLayoutItem />
+        </VerticalStackLayout>
+    </template:PageTemplate.MainContent>
 
-                <predefinedlayouts:GenericPredefinedLayoutItem Title="Azero Testnet"
-                                                               PlutoLayout="plutolayout: [U, dApp, contract, ExSL, AZEROPrimaryName, UsdB, RnT, SubK, ChaK];[AzeroTestnet]"/>
-
-            </VerticalStackLayout>
-            
-        </ScrollView>
-
+    <template:PageTemplate.PopupContent>
         <navigationbar:TopNavigationBar Title="Predefined layouts"
                                         x:Name="topNavigationBar" />
-
-    </AbsoluteLayout>
-</ContentPage>
+    </template:PageTemplate.PopupContent>
+</template:PageTemplate>

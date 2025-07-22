@@ -1,15 +1,13 @@
 using PlutoFramework.Model;
+using PlutoFramework.Templates.PageTemplate;
 using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
 
 namespace PlutoFramework.Components.Nft;
 
-public partial class NftListPage : ContentPage
+public partial class NftListPage : PageTemplate
 {
 	public NftListPage(BaseListViewModel<NftKey, NftWrapper> bindingContext)
 	{
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 
         BindingContext = bindingContext;

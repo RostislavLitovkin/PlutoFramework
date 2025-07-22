@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PlutoFramework.Components.Mnemonics.NoMnemonicsPage"
-             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
-            xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-         xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
-         xmlns:password="clr-namespace:PlutoFramework.Components.Password"
-         BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
-    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
-
-        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-           Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
-           Opacity="{AppThemeBinding Light=0.96}"
-           Aspect="AspectFill"/>
-        <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                       xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+                       xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+                       x:Class="PlutoFramework.Components.Mnemonics.NoMnemonicsPage"
+                       Title="NoMnemonicsPage">
+    <template:PageTemplate.MainContent>
+        <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+              AbsoluteLayout.LayoutFlags="All"
               Padding="20"
               ColumnSpacing="15"
               RowSpacing="15">
@@ -22,7 +17,6 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="40" />
-
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -31,26 +25,26 @@
 
             <Label Text="Do you have an Account?"
                    VerticalTextAlignment="End"
-                     FontAttributes="Bold"
-                     FontSize="20"
-                     Grid.Column="0"
-                     Grid.Row="0" />
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   Grid.Column="0"
+                   Grid.Row="0" />
 
             <card:ClickableCard Grid.Column="0"
                                 Grid.Row="1"
                                 HorizontalOptions="Fill">
                 <card:ClickableCard.View>
                     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
-                      AbsoluteLayout.LayoutFlags="All">
+                                    AbsoluteLayout.LayoutFlags="All">
                         <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
-                               AbsoluteLayout.LayoutFlags="PositionProportional"
+                                             AbsoluteLayout.LayoutFlags="PositionProportional"
                                              Spacing="20">
                             <Image WidthRequest="80"
-                                     HeightRequest="80"
-                                     Source="{AppThemeBinding Light=createmnemonicsblack.png, Dark=createmnemonicswhite.png}" />
+                                   HeightRequest="80"
+                                   Source="{AppThemeBinding Light=createmnemonicsblack.png, Dark=createmnemonicswhite.png}" />
                             <Label Text="Create Account"
-                                     FontAttributes="Bold"
-                                     HorizontalTextAlignment="Center"/>
+                                   FontAttributes="Bold"
+                                   HorizontalTextAlignment="Center"/>
                         </VerticalStackLayout>
                     </AbsoluteLayout>
 
@@ -62,22 +56,21 @@
             </card:ClickableCard>
 
             <card:ClickableCard Grid.Column="0"
-                      Grid.Row="2">
+                                Grid.Row="2">
                 <card:ClickableCard.View>
                     <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
-                              AbsoluteLayout.LayoutFlags="All">
+                                    AbsoluteLayout.LayoutFlags="All">
                         <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
-                                            AbsoluteLayout.LayoutFlags="PositionProportional"
+                                             AbsoluteLayout.LayoutFlags="PositionProportional"
                                              Spacing="20">
                             <Image WidthRequest="80"
-                             HeightRequest="80"
-                             Source="{AppThemeBinding Light=importmnemonicsblack.png, Dark=importmnemonicswhite.png}" />
+                                   HeightRequest="80"
+                                   Source="{AppThemeBinding Light=importmnemonicsblack.png, Dark=importmnemonicswhite.png}" />
                             <Label Text="Import Account"
-                             FontAttributes="Bold"
-                             HorizontalTextAlignment="Center"/>
+                                   FontAttributes="Bold"
+                                   HorizontalTextAlignment="Center"/>
                         </VerticalStackLayout>
                     </AbsoluteLayout>
-
                 </card:ClickableCard.View>
 
                 <card:ClickableCard.GestureRecognizers>
@@ -85,11 +78,9 @@
                 </card:ClickableCard.GestureRecognizers>
             </card:ClickableCard>
         </Grid>
-        
+    </template:PageTemplate.MainContent>
+
+    <template:PageTemplate.PopupContent>
         <navigationbar:TopNavigationBar Title="Account" />
-
-        <txanalyzer:TransactionAnalyzerConfirmationView />
-
-        <password:EnterPasswordPopupView />
-    </AbsoluteLayout>
-</ContentPage>
+    </template:PageTemplate.PopupContent>
+</template:PageTemplate>

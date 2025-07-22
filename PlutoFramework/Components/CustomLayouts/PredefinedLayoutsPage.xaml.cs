@@ -1,12 +1,11 @@
-﻿namespace PlutoFramework.Components.CustomLayouts;
+﻿using PlutoFramework.Templates.PageTemplate;
 
-public partial class PredefinedLayoutsPage : ContentPage
+namespace PlutoFramework.Components.CustomLayouts;
+
+public partial class PredefinedLayoutsPage : PageTemplate
 {
 	public PredefinedLayoutsPage()
 	{
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 	}
 }

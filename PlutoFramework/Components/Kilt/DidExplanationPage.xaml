@@ -1,60 +1,46 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PlutoFramework.Components.Kilt.DidExplanationPage"
-             Title="DidExplanationPage"
-             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
-            xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-         xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
-         xmlns:password="clr-namespace:PlutoFramework.Components.Password"
-         BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
-    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                       xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+                       xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+                       x:Class="PlutoFramework.Components.Kilt.DidExplanationPage"
+                       Title="DidExplanationPage">
+    <template:PageTemplate.MainContent>
+        <VerticalStackLayout Spacing="20" Padding="20">
+            <card:Card>
+                <card:Card.View>
+                    <VerticalStackLayout Padding="20" Spacing="20">
+                        <!-- What are Mnemonics section -->
+                        <Label Text="What are Decentralized Identifiers?"
+                               FontSize="24"
+                               FontAttributes="Bold"/>
+                        <Label Text="A decentralized identifier (DID) is a string of letters and numbers uniquely identifying each user."
+                               TextType="Text"/>
 
-        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-           Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
-           Opacity="{AppThemeBinding Light=0.96}"
-           Aspect="AspectFill"/>
+                        <Label Text="The simplest type of KILT DID is a light DID, because you can generate and use it offline and no connection with the KILT blockchain. Although cheap, light DIDs aren't flexible and are only suitable for low-security use cases. In more complex use cases, you need an on-chain full DID, which allow the subject to store different keys and key types and replace them over time by using the KILT blockchain"
+                               TextType="Text"/>
 
-        <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-                    Padding="0, 55, 0, 0">
-            <VerticalStackLayout Spacing="20" Padding="20">
-                <card:Card>
-                    <card:Card.View>
-                        <VerticalStackLayout Padding="20" Spacing="20">
-                            <!-- What are Mnemonics section -->
-                            <Label Text="What are Decentralized Identifiers?"
-                                   FontSize="24"
-                                   FontAttributes="Bold"/>
-                            <Label Text="A decentralized identifier (DID) is a string of letters and numbers uniquely identifying each user."
-                                   TextType="Text"/>
+                        <Label Text="Storing a DID on the KILT blockchain requires a deposit, consisting of a base deposit and an additional fee. The base deposit is a fixed amount of 2 KILT, while the additional fee is 0.05 KILT.  In addition to the base deposit and fee, the total deposit increases based on the storage space used by the DID. Each byte of storage occupied by the DID requires a deposit of 50 micro KILT (0.000005 KILT)."
+                               TextType="Text"/>
 
-                            <Label Text="The simplest type of KILT DID is a light DID, because you can generate and use it offline and no connection with the KILT blockchain. Although cheap, light DIDs aren't flexible and are only suitable for low-security use cases. In more complex use cases, you need an on-chain full DID, which allow the subject to store different keys and key types and replace them over time by using the KILT blockchain"
-                                    TextType="Text"/>
+                        <Label Text="Source: https://docs.kilt.io/docs/concepts/did"
+                               FontSize="12"
+                               TextColor="Gray"
+                               TextDecorations="Underline"
+                               Margin="0,10,0,0">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OpenUrlCommand}"
+                                                      CommandParameter="https://docs.kilt.io/docs/concepts/did"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </VerticalStackLayout>
+                </card:Card.View>
+            </card:Card>
+        </VerticalStackLayout>
+    </template:PageTemplate.MainContent>
 
-                            <Label Text="Storing a DID on the KILT blockchain requires a deposit, consisting of a base deposit and an additional fee. The base deposit is a fixed amount of 2 KILT, while the additional fee is 0.05 KILT.  In addition to the base deposit and fee, the total deposit increases based on the storage space used by the DID. Each byte of storage occupied by the DID requires a deposit of 50 micro KILT (0.000005 KILT)."
-                                   TextType="Text"/>
-
-                            <Label Text="Source: https://docs.kilt.io/docs/concepts/did"
-                                    FontSize="12"
-                                    TextColor="Gray"
-                                    TextDecorations="Underline"
-                                    Margin="0,10,0,0">
-                                <Label.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding OpenUrlCommand}"
-                                                          CommandParameter="https://docs.kilt.io/docs/concepts/did"/>
-                                </Label.GestureRecognizers>
-                            </Label>
-
-                        </VerticalStackLayout>
-                    </card:Card.View>
-                </card:Card>
-            </VerticalStackLayout>
-        </ScrollView>
-        
+    <template:PageTemplate.PopupContent>
         <navigationbar:TopNavigationBar Title="DidExplanationPage" />
-
-        <txanalyzer:TransactionAnalyzerConfirmationView />
-
-        <password:EnterPasswordPopupView />
-    </AbsoluteLayout>
-</ContentPage>
+    </template:PageTemplate.PopupContent>
+</template:PageTemplate>
