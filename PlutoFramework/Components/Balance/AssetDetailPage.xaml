@@ -12,6 +12,7 @@
                        xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
                        xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
                        xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+                        xmlns:model="clr-namespace:PlutoFramework.Model"
                        x:Class="PlutoFramework.Components.Balance.AssetDetailPage"
                        Title="AssetDetailPage">
 
