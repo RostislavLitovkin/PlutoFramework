@@ -7,25 +7,22 @@
                        x:Class="PlutoFramework.Components.Sumsub.VerificationCompletedPage"
                        Title="VerificationCompletedPage">
     <template:PageTemplate.MainContent>
-        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-               Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
-               Opacity="{AppThemeBinding Light=0.96}"
-               Aspect="AspectFill" />
-
-        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.8, 0.8"
+        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+            <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.8, 0.8"
                AbsoluteLayout.LayoutFlags="All"
                Aspect="AspectFit"
                Source="kyccompleted.png" />
 
-        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, AutoSize"
+            <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, AutoSize"
                              AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
                              Padding="20, 10, 20, 10"
                              Spacing="15">
-            <buttons:ElevatedButton Text="Continue"
+                <buttons:ElevatedButton Text="Continue"
                                     x:Name="continueButton"
                                     ButtonState="Enabled"
                                     Clicked="ContinueToMainPageClicked" />
-        </VerticalStackLayout>
+            </VerticalStackLayout>
+        </AbsoluteLayout>
     </template:PageTemplate.MainContent>
 
     <template:PageTemplate.PopupContent>

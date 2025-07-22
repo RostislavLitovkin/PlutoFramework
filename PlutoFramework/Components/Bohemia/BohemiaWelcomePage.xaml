@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Bohemia.BohemiaWelcomePage"
+             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+             Title="BohemiaWelcomePage">
+    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="All">
+        <VerticalStackLayout>
+            <Label HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Welcome"
+                              FontSize="30"
+                              FontFamily="UnboundedBold" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="to"
+                   FontSize="30"
+                   FontFamily="UnboundedBold" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Web3"
+                               FontSize="30"
+                               FontFamily="UnboundedBold" />        
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Image Source="polkadotrootslogotransparent.png"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     HeightRequest="200"
+                     WidthRequest="200" />
+
+            <buttons:ElevatedButton HorizontalOptions="Fill"
+                                    Margin="20"
+                                    Text="Join" />
+        </VerticalStackLayout>
+    </AbsoluteLayout>
+</ContentPage>

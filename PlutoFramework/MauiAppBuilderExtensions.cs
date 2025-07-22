@@ -62,6 +62,7 @@ namespace PlutoFramework
                     fonts.AddFont("FontOver.ttf", "FontOver");
                     fonts.AddFont("sourcecode.ttf", "SourceCode");
                     fonts.AddFont("samsungone700.ttf", "SamsungOne");
+                    fonts.AddFont("unboundedbold.ttf", "UnboundedBold");
                 });
 
             //https://stackoverflow.com/questions/76547461/how-to-remove-the-outline-of-entry-control-in-maui-ios

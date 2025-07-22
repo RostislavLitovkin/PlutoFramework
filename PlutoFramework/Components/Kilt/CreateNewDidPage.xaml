@@ -7,7 +7,7 @@
                        xmlns:mnemonics="clr-namespace:PlutoFramework.Components.Mnemonics"
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        x:Class="PlutoFramework.Components.Kilt.CreateNewDidPage"
-                       Title="CreateNewDidPage">
+                       Title="New DID">
     <template:PageTemplate.MainContent>
         <VerticalStackLayout Spacing="15"
                              Padding="20, 10, 20, 100">
@@ -30,18 +30,18 @@
                                     Command="{Binding GoToMnemonicsExplanationCommand}" />
         </VerticalStackLayout>
     
-        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, AutoSize"
-             AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
-             Padding="20, 10, 20, 10"
-             Spacing="15">
-            <buttons:ElevatedButton Text="Continue"
-                x:Name="continueButton"
-                ButtonState="Enabled"
-                Command="{Binding ContinueToNextPageCommand}" />
-        </VerticalStackLayout>
+        
     </template:PageTemplate.MainContent>
 
     <template:PageTemplate.PopupContent>
-        <navigationbar:TopNavigationBar Title="New DID" />
+        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, AutoSize"
+                             AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                             Padding="20, 10, 20, 10"
+                             Spacing="15">
+            <buttons:ElevatedButton Text="Continue"
+                                    x:Name="continueButton"
+                                    ButtonState="Enabled"
+                                    Command="{Binding ContinueToNextPageCommand}" />
+        </VerticalStackLayout>
     </template:PageTemplate.PopupContent>
 </template:PageTemplate>
