@@ -44,8 +44,8 @@ public partial class CustomLayoutsPage : PageTemplate
 
             selectedDragger.TranslationY = _positions.Average(item => item.y);
 
-            if (selectedDragger.Y + selectedDragger.TranslationY + selectedDragger.Height - scrollView.ScrollY + 65 > deleteView.Y &&
-                selectedDragger.Y + selectedDragger.TranslationY - scrollView.ScrollY + 65 < deleteView.Y + deleteView.Height)
+            if (selectedDragger.Y + selectedDragger.TranslationY + selectedDragger.Height - ScrollView.ScrollY + 65 > deleteView.Y &&
+                selectedDragger.Y + selectedDragger.TranslationY - ScrollView.ScrollY + 65 < deleteView.Y + deleteView.Height)
             {
                 deleteView.Hovered = true;
 
@@ -101,8 +101,8 @@ public partial class CustomLayoutsPage : PageTemplate
             int selectedIndex = verticalStackLayout.Children.IndexOf(selectedDragger);
 
             // DeleteView hovered -> Delete the item
-            if (selectedDragger.Y + selectedDragger.TranslationY + selectedDragger.Height - scrollView.ScrollY + 65 > deleteView.Y &&
-                selectedDragger.Y + selectedDragger.TranslationY - scrollView.ScrollY + 65 < deleteView.Y + deleteView.Height)
+            if (selectedDragger.Y + selectedDragger.TranslationY + selectedDragger.Height - ScrollView.ScrollY + 65 > deleteView.Y &&
+                selectedDragger.Y + selectedDragger.TranslationY - ScrollView.ScrollY + 65 < deleteView.Y + deleteView.Height)
             {
                 await selectedDragger.FadeTo(0, 250);
 

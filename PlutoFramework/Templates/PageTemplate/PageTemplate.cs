@@ -14,12 +14,26 @@ namespace PlutoFramework.Templates.PageTemplate
             set => SetValue(MainContentProperty, value);
         }
 
-        public static readonly BindableProperty PopupContentProperty =
+        /*public static readonly BindableProperty PopupContentProperty =
             BindableProperty.Create(nameof(PopupContent), typeof(MauiView), typeof(PageTemplate), default(MauiView));
 
         public MauiView PopupContent
         {
             get => (MauiView)GetValue(PopupContentProperty);
+            set => SetValue(PopupContentProperty, value);
+        }*/
+
+
+        public static readonly BindableProperty PopupContentProperty =
+            BindableProperty.Create(
+                nameof(PopupContent),
+                typeof(IList<MauiView>),
+                typeof(PageTemplate),
+                defaultValue: new List<MauiView>());
+
+        public IList<MauiView> PopupContent
+        {
+            get => (IList<MauiView>)GetValue(PopupContentProperty);
             set => SetValue(PopupContentProperty, value);
         }
 
@@ -70,6 +84,8 @@ namespace PlutoFramework.Templates.PageTemplate
             get => (ImageSource)GetValue(NavigationBarExtra2ImageProperty);
             set => SetValue(NavigationBarExtra2ImageProperty, value);
         }
+
+        public ScrollView ScrollView { get => this.FindByName<ScrollView>("ScrollView"); }
 
         public PageTemplate()
         {
