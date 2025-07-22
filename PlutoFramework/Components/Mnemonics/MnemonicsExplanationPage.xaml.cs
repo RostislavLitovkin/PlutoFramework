@@ -1,12 +1,11 @@
+using PlutoFramework.Templates.PageTemplate;
+
 namespace PlutoFramework.Components.Mnemonics;
 
-public partial class MnemonicsExplanationPage : ContentPage
+public partial class MnemonicsExplanationPage : PageTemplate
 {
     public MnemonicsExplanationPage()
     {
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
     }
 }

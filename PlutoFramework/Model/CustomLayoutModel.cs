@@ -171,7 +171,7 @@ namespace PlutoFramework.Model
             string result = $"plutolayout: [{componentIds}];";
 
             // save Endpoints
-            result += Preferences.Get("SelectedNetworks", EndpointsModel.DefaultEndpoints);
+            result += Preferences.Get("SelectedNetworks", (string)Application.Current.Resources["DefaultEndpoints"]);
 
             // Save
             Preferences.Set("PlutoLayout", result);
@@ -200,7 +200,7 @@ namespace PlutoFramework.Model
             string result = plutoLayoutStrings[0] + ";";
 
             // save Endpoints
-            result += Preferences.Get("SelectedNetworks", EndpointsModel.DefaultEndpoints);
+            result += Preferences.Get("SelectedNetworks", (string)Application.Current.Resources["DefaultEndpoints"]);
 
             result = result.Substring(0, result.Length - 2) + "]";
 

@@ -3,8 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
         x:Class="PlutoFramework.Components.Buttons.ElevatedButton"
         BackgroundColor="{StaticResource Primary}"
-        TextColor="White"
+        TextColor="{StaticResource PrimaryButtonTextColor}"
+        BorderColor="{StaticResource PrimaryButtonBorderColor}"
+        BorderWidth="{StaticResource PrimaryButtonBorderThickness}"
         FontAttributes="Bold"
         CornerRadius="{StaticResource ButtonCornerRadius}"
-        HeightRequest="{StaticResource ButtonHeight}">
+        HeightRequest="{StaticResource ButtonHeight}"
+        FontFamily="{StaticResource ButtonFontFamily}">
+    
 </Button>

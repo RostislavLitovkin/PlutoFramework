@@ -21,7 +21,7 @@ namespace PlutoFrameworkTests
 
             await client.ConnectAndLoadMetadataAsync();
 
-            BigInteger redeemAmount = await VTokenModel.VDotToDot((Bifrost.NetApi.Generated.SubstrateClientExt)client.SubstrateClient, new BigInteger(10000000000), CancellationToken.None);
+            BigInteger redeemAmount = await VTokenModel.VDotToDot((BifrostPolkadot.NetApi.Generated.SubstrateClientExt)client.SubstrateClient, new BigInteger(10000000000), CancellationToken.None);
 
             Console.WriteLine((double)redeemAmount / 10000000000);
         }

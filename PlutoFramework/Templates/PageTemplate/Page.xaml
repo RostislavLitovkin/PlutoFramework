@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                    xmlns:local="clr-namespace:PlutoFramework.Templates.PageTemplate"
                     xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                     xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
                     xmlns:password="clr-namespace:PlutoFramework.Components.Password"
@@ -15,7 +14,6 @@
 
             <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                    AbsoluteLayout.LayoutFlags="All"
-                   Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
                    Opacity="{AppThemeBinding Light=0.96}"
                    Aspect="AspectFill"/>
 
@@ -23,7 +21,7 @@
                         AbsoluteLayout.LayoutFlags="All"
                         Padding="0, 55, 0, 0">
                 <!-- Content block -->
-                <ContentPresenter Content="{TemplateBinding MainContent}" />
+                <ContentPresenter Content="{TemplateBinding MainContent}"/>
             </ScrollView>
 
             <topnavigationbartemplate:TopNavigationBarTemplate Title="{TemplateBinding Title}"

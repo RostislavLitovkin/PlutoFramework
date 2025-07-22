@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Numerics;
-using Bifrost.NetApi.Generated;
-using Bifrost.NetApi.Generated.Model.bifrost_primitives.currency;
-using Bifrost.NetApi.Generated.Model.sp_arithmetic.per_things;
+using BifrostPolkadot.NetApi.Generated;
+using BifrostPolkadot.NetApi.Generated.Model.bifrost_primitives.currency;
+using BifrostPolkadot.NetApi.Generated.Model.sp_arithmetic.per_things;
 using Substrate.NetApi;
 using Substrate.NetApi.Model.Types.Primitive;
 

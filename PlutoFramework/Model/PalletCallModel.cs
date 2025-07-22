@@ -132,7 +132,7 @@ namespace PlutoFramework.Model
                 EndpointEnum.Polkadot => new Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumRuntimeCall(),
                 EndpointEnum.PolkadotAssetHub => new PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime.EnumRuntimeCall(),
                 EndpointEnum.Hydration => new Hydration.NetApi.Generated.Model.hydradx_runtime.EnumRuntimeCall(),
-                EndpointEnum.Bifrost => new Bifrost.NetApi.Generated.Model.bifrost_polkadot_runtime.EnumRuntimeCall(),
+                EndpointEnum.Bifrost => new BifrostPolkadot.NetApi.Generated.Model.bifrost_polkadot_runtime.EnumRuntimeCall(),
                 EndpointEnum.Bajun => new Bajun.NetApi.Generated.Model.bajun_runtime.EnumRuntimeCall(),
                 EndpointEnum.PolkadotPeople => new PolkadotPeople.NetApi.Generated.Model.people_polkadot_runtime.EnumRuntimeCall(),
                 EndpointEnum.KusamaAssetHub => new KusamaAssetHub.NetApi.Generated.Model.asset_hub_kusama_runtime.EnumRuntimeCall(),

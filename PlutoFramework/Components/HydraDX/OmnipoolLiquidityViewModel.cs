@@ -44,9 +44,9 @@ namespace PlutoFramework.Components.HydraDX
 
                     Assets.Add(new AssetLiquidityInfo
                     {
-                        Amount = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, omnipoolLiquidity.Amount),
+                        Amount = String.Format((string)Application.Current.Resources["CurrencyFormat"], omnipoolLiquidity.Amount),
                         Symbol = omnipoolLiquidity.Symbol,
-                        UsdValue = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, usdValue) + " USD",
+                        UsdValue = String.Format((string)Application.Current.Resources["CurrencyFormat"], usdValue) + " USD",
                         LiquidityMiningInfos = []
                     });
                 }
@@ -61,19 +61,19 @@ namespace PlutoFramework.Components.HydraDX
 
                     Assets.Add(new AssetLiquidityInfo
                     {
-                        Amount = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, omnipoolLiquidity.Amount),
+                        Amount = String.Format((string)Application.Current.Resources["CurrencyFormat"], omnipoolLiquidity.Amount),
                         Symbol = omnipoolLiquidity.Symbol,
-                        UsdValue = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, usdValue) + " USD",
+                        UsdValue = String.Format((string)Application.Current.Resources["CurrencyFormat"], usdValue) + " USD",
                         LiquidityMiningInfos = omnipoolLiquidity.LiquidityMiningInfos.Select(lm => new LiquidityMiningInfo
                         {
-                            Amount = "+ " + String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, lm.RewardAmount),
+                            Amount = "+ " + String.Format((string)Application.Current.Resources["CurrencyFormat"], lm.RewardAmount),
                             Symbol = lm.RewardSymbol,
-                            UsdValue = "+ " + String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, lm.RewardAmount * Model.HydraDX.Sdk.GetSpotPrice(lm.RewardAssetId)) + " USD",
+                            UsdValue = "+ " + String.Format((string)Application.Current.Resources["CurrencyFormat"], lm.RewardAmount * Model.HydraDX.Sdk.GetSpotPrice(lm.RewardAssetId)) + " USD",
                         }).ToList(),
                     });
                 }
 
-                UsdSum = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, tempUsdSum) + " USD";
+                UsdSum = String.Format((string)Application.Current.Resources["CurrencyFormat"], tempUsdSum) + " USD";
 
                 if (Assets.Count() == 0)
                 {

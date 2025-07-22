@@ -53,7 +53,7 @@ namespace PlutoFramework.Components.Balance
                 {
                     tempAssets.Add(new AssetInfo
                     {
-                        Amount = String.Format(DefaultAppConfiguration.CURRENCY_FORMAT, a.Amount),
+                        Amount = String.Format((string)Application.Current.Resources["CurrencyFormat"], a.Amount),
                         Symbol = a.Symbol,
                         UsdValue = a.UsdValue > 0 ? a.UsdValue.ToCurrencyString() : "~",
                         ChainIcon = Application.Current.UserAppTheme != AppTheme.Dark ? a.ChainIcon : a.DarkChainIcon,

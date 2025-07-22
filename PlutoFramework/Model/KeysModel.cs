@@ -20,11 +20,11 @@ namespace PlutoFramework.Model
     {
         // Can change with future updates to substrate
         private const ExpandMode DEFAULT_EXPAND_MODE = ExpandMode.Ed25519;
-        public static async Task GenerateNewAccountAsync(string? password, string accountVariant = "")
+        public static async Task GenerateNewAccountAsync(string accountVariant = "")
         {
             string mnemonics = MnemonicsModel.GenerateMnemonics();
 
-            await GenerateNewAccountAsync(mnemonics, password, accountVariant);
+            await GenerateNewAccountAsync(mnemonics, accountVariant);
         }
 
         public static async Task RegisterBiometricAuthenticationAsync()

@@ -4,10 +4,9 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Authors>Rostislav Litovkin</Authors>
     <Product>UniqueryPlus.Speck</Product>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.1.4</Version>
+    <Version>0.1.9</Version>
   </PropertyGroup>
 
   <ItemGroup>

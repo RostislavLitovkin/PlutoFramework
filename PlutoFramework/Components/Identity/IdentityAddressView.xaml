@@ -4,19 +4,16 @@
              x:Class="PlutoFramework.Components.Identity.IdentityAddressView"
              HeightRequest="90"
              x:Name="view">
-    <Border StrokeThickness="0"
-            BackgroundColor="{AppThemeBinding Light=#fdfdfd, Dark=#0a0a0a}"
+    <Border
+            BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
+            StrokeThickness="{StaticResource CardBorderThickness}"
+            Stroke="{StaticResource CardBorderColor}"
             x:Name="border"
+            Shadow="{StaticResource CardShadow}"
             Padding="0, 0, 0, 0">
-        <Border.Shadow>
-            <Shadow Brush="Black"
-                    Offset="0,2" 
-                    Radius="20"
-                    Opacity="0.1" />
 
-        </Border.Shadow>
         <Border.StrokeShape>
-            <RoundRectangle CornerRadius="15" />
+            <RoundRectangle CornerRadius="{StaticResource CardCornerRadius}"/>
 
         </Border.StrokeShape>
         <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"

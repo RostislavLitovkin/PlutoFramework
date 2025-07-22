@@ -4,11 +4,9 @@ namespace PlutoFramework.Model
 {
     public static class EndpointsModel
     {
-        public static string DefaultEndpoints = "[XcavatePaseo]";
-
         public static IEnumerable<EndpointEnum> GetSelectedEndpointKeys()
         {
-            return Preferences.Get("SelectedNetworks", DefaultEndpoints)
+            return Preferences.Get("SelectedNetworks", (string)Application.Current.Resources["DefaultEndpoints"])
                 .ToEndpointEnums();
         }
 

@@ -1,14 +1,11 @@
+using PlutoFramework.Templates.PageTemplate;
+
 namespace PlutoFramework.Components.XcavateProperty;
 
-using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
-
-public partial class XcavatePropertyMarketplacePage : ContentPage
+public partial class XcavatePropertyMarketplacePage : PageTemplate
 {
     public XcavatePropertyMarketplacePage()
     {
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 
         var viewModel = DependencyService.Get<XcavatePropertyMarketplaceViewModel>();

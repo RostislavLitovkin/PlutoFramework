@@ -1,12 +1,11 @@
+using PlutoFramework.Templates.PageTemplate;
+
 namespace PlutoFramework.Components.Credits
 {
-    public partial class CreditsPage : ContentPage
+    public partial class CreditsPage : PageTemplate
     {
         public CreditsPage()
         {
-            NavigationPage.SetHasNavigationBar(this, false);
-            Shell.SetNavBarIsVisible(this, false);
-
             InitializeComponent();
         }
     }

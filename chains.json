@@ -13,8 +13,8 @@
       "websocket": "wss://polkadot-people-rpc.polkadot.io"
     },
     {
-      "name": "Bifrost",
-      "websocket": "wss://bifrost-polkadot.api.onfinality.io/public-ws"
+      "name": "BifrostPolkadot",
+      "websocket": "wss://bifrost-polkadot.ibp.network"
     },
     {
       "name": "Hydration",

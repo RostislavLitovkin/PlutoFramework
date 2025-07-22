@@ -1,19 +1,15 @@
 ﻿using System.Numerics;
-using Microsoft.Maui.Controls.Shapes;
 using PlutoFramework.Constants;
 using PlutoFramework.Model;
-using Substrate.NetApi;
+using PlutoFramework.Templates.PageTemplate;
 using Substrate.NetApi.Model.Extrinsics;
 
 namespace PlutoFramework.Components.Xcm;
 
-public partial class XcmTransferPage : ContentPage
+public partial class XcmTransferPage : PageTemplate
 {
     public XcmTransferPage()
     {
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         var viewModel = DependencyService.Get<XcmTransferViewModel>();
 
         BindingContext = viewModel;

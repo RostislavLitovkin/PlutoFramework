@@ -1,15 +1,13 @@
 using Kilt.NetApi.Generated;
 using PlutoFramework.Model;
+using PlutoFramework.Templates.PageTemplate;
 
 namespace PlutoFramework.Components.Kilt;
 
-public partial class DidManagementPage : ContentPage
+public partial class DidManagementPage : PageTemplate
 {
 	public DidManagementPage(string? secret)
 	{
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 
         BindingContext = new DidManagementViewModel

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
+             xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
+             x:Class="PlutoFramework.Components.Nft.NftsOwnedListView"
+            MinimumHeightRequest="80">
+    <VerticalStackLayout Spacing="5">
+        <VerticalStackLayout BindableLayout.ItemsSource="{Binding Items}"
+                         Spacing="15">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <nft:NftThumbnailView Endpoint="{Binding Endpoint}"
+                              Favourite="{Binding Favourite}"
+                              NftBase="{Binding NftBase}" />
+
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </VerticalStackLayout>
+
+        <customlayouts:LoadingItemView HeightRequest="80" 
+                           Margin="0, 0, 0, 0"
+                            IsVisible="{Binding Loading}"/>
+
+        <customlayouts:TransparentItemView Text="No NFTs"
+                                       HeightRequest="80" 
+                                        IsVisible="{Binding NoItems}" 
+                                        Margin="0, 0, 0, 0"/>
+    </VerticalStackLayout>
+</ContentView>

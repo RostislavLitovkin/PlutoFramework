@@ -1,64 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewmodel="clr-namespace:PlutoFramework.ViewModel"
-             xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
-             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-             xmlns:networkselect="clr-namespace:PlutoFramework.Components.NetworkSelect"
-             x:Class="PlutoFramework.Components.CustomLayouts.CustomLayoutsPage"
-             Title="CustomLayoutsPage"
-             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}"
-             >
-
-    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
-        
-        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-               Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
-               Opacity="{AppThemeBinding Light=0.96}"
-               Aspect="AspectFill"/>
-
-        <ScrollView Orientation="Vertical"
-                    x:Name="scrollView"
-                    AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                    AbsoluteLayout.LayoutFlags="All"
-                    Scrolled="OnScrolled"
-                    Padding="0, 55, 0, 0">
-            <VerticalStackLayout HorizontalOptions="Center"
-                                 Padding="20, 10, 20, 100"
-                                 Spacing="5">
-
-                <VerticalStackLayout x:Name="verticalStackLayout"
+<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                       xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
+                       xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+                       xmlns:networkselect="clr-namespace:PlutoFramework.Components.NetworkSelect"
+                       x:Class="PlutoFramework.Components.CustomLayouts.CustomLayoutsPage"
+                       Title="CustomLayoutsPage">
+    <template:PageTemplate.MainContent>
+        <VerticalStackLayout HorizontalOptions="Center"
+                             Padding="20, 10, 20, 100"
+                             Spacing="5">
+            <VerticalStackLayout x:Name="verticalStackLayout"
                                  HorizontalOptions="Center"
                                  Spacing="5"
                                  ZIndex="10"
                                  BindableLayout.ItemsSource="{Binding ComponentInfos}">
-                    <BindableLayout.ItemTemplate>
-                        <DataTemplate>
-                            <customlayouts:CustomLayoutItemDragger ItemName="{Binding Name}"
-                                                                   ComponentId="{Binding ComponentId}"/>
-
-                        </DataTemplate>
-
-                    </BindableLayout.ItemTemplate>
-                </VerticalStackLayout>
-
-                <customlayouts:PlusItemView x:Name="plusView">
-                    <customlayouts:PlusItemView.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnPlusClicked" />
-
-                    </customlayouts:PlusItemView.GestureRecognizers>
-
-                </customlayouts:PlusItemView>
-
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <customlayouts:CustomLayoutItemDragger ItemName="{Binding Name}"
+                                                               ComponentId="{Binding ComponentId}"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
             </VerticalStackLayout>
-            
-        </ScrollView>
+
+            <customlayouts:PlusItemView x:Name="plusView">
+                <customlayouts:PlusItemView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPlusClicked" />
+                </customlayouts:PlusItemView.GestureRecognizers>
+            </customlayouts:PlusItemView>
+        </VerticalStackLayout>
 
         <AbsoluteLayout AbsoluteLayout.LayoutBounds="1, 0, 80, 1"
                         AbsoluteLayout.LayoutFlags="XProportional, HeightProportional"
                         Margin="0, 0, 30, 0"
-                        Padding="0, 55, 0, 0"
-                        >
+                        Padding="0, 55, 0, 0">
             <VerticalStackLayout HorizontalOptions="Center"
                                  Margin="0, 10, 0, 100"
                                  Spacing="5"
@@ -69,40 +45,35 @@
                         <AbsoluteLayout HeightRequest="60" WidthRequest="50">
                             <AbsoluteLayout.GestureRecognizers>
                                 <PanGestureRecognizer PanUpdated="PanGestureRecognizer_PanUpdated" />
-
                             </AbsoluteLayout.GestureRecognizers>
-
                         </AbsoluteLayout>
-
                     </DataTemplate>
-
                 </BindableLayout.ItemTemplate>
-
-            
             </VerticalStackLayout>
-
-            
-
         </AbsoluteLayout>
-
+    </template:PageTemplate.MainContent>
+    
+    <template:PageTemplate.PopupContent>
         <customlayouts:CustomItemView Padding="10, 65, 10, 20" />
-
+        
         <customlayouts:ExportPlutoLayoutQRView Padding="20, 65, 20, 20" />
-
+        
         <navigationbar:TopNavigationBar Title="Custom layout"
                                         ExtraTitle="Export"
                                         x:Name="topNavigationBar" />
-
+        
         <customlayouts:DeleteItemView AbsoluteLayout.LayoutBounds="0.5, 1, 1, 100"
                                       AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
-                                      Margin="20"
                                       x:Name="deleteView"
-                                      IsVisible="False" Opacity="0" />
-
+                                      IsVisible="False"
+                                      Margin="20"
+                                      Opacity="0" />
+        
         <networkselect:NetworkSelectPopup />
 
-        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-                        x:Name="protectiveLayout" IsVisible="False"/>
-
-    </AbsoluteLayout>
-</ContentPage>
+        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                        AbsoluteLayout.LayoutFlags="All"
+                        x:Name="protectiveLayout"
+                        IsVisible="False"/>
+    </template:PageTemplate.PopupContent>
+</template:PageTemplate>

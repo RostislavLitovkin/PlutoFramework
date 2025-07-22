@@ -7,6 +7,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
+    <OutputType>Library</OutputType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">29.0</SupportedOSPlatformVersion>
@@ -14,6 +17,17 @@
     <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AssemblyName>PlutoFramework</AssemblyName>
+    <PackageId>PlutoFramework</PackageId>
+    <Version>0.1.9</Version>
+    <Authors>Rostislav Litovkin</Authors>
+    <Company>Pluto Labs</Company>
+    <Description>All in one framework for creating web3 mobile applications.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/rostislavlitovkin/PlutoFramework</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
@@ -78,6 +92,16 @@
 
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Generated\Bajun\Bajun.NetApi\Bajun.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\BifrostPolkadot\BifrostPolkadot.NetApi\BifrostPolkadot.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\Hydration\Hydration.NetApi\Hydration.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\InvArch\InvArch.NetApi\InvArch.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\Kilt\Kilt.NetApi\Kilt.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\PolkadotPeople\PolkadotPeople.NetApi\PolkadotPeople.NetApi.csproj" />
+    <ProjectReference Include="..\Generated\Polkadot\Polkadot.NetApi\Polkadot.NetApi.csproj" />
+    <ProjectReference Include="..\UniqueryPlus\UniqueryPlus.csproj" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Components\000ComponentTemplate\NewPageTemplate.xaml.cs">
@@ -1616,85 +1640,85 @@
     <None Update="Components\XcavateProperty\XcavatePropertyMarketplacePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\AboutUsView.xaml">
+    <None Update="Components\Xcavate\AboutUsView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\CompanyPage.xaml">
+    <None Update="Components\Xcavate\CompanyPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\CompanyUserStatusBadgeView.xaml">
+    <None Update="Components\Xcavate\CompanyUserStatusBadgeView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\DeveloperStatsView.xaml">
+    <None Update="Components\Xcavate\DeveloperStatsView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\DocumentVerificationView.xaml">
+    <None Update="Components\Xcavate\DocumentVerificationView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\FrequentlyAskedQuestionsPage.xaml">
+    <None Update="Components\Xcavate\FrequentlyAskedQuestionsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\HelpPage.xaml">
+    <None Update="Components\Xcavate\HelpPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\ModifyCompanyPage.xaml">
+    <None Update="Components\Xcavate\ModifyCompanyPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\ModifyUserProfilePage.xaml">
+    <None Update="Components\Xcavate\ModifyUserProfilePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\ModifyUserProfilePopupView.xaml">
+    <None Update="Components\Xcavate\ModifyUserProfilePopupView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\OnboardingShell.xaml">
+    <None Update="Components\Xcavate\OnboardingShell.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\PageBottomBarButtonView.xaml">
+    <None Update="Components\Xcavate\PageBottomBarButtonView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\PageBottomBarView.xaml">
+    <None Update="Components\Xcavate\PageBottomBarView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\RiskWarningView.xaml">
+    <None Update="Components\Xcavate\RiskWarningView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\TeamMemberView.xaml">
+    <None Update="Components\Xcavate\TeamMemberView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\UserProfileHeaderView.xaml">
+    <None Update="Components\Xcavate\UserProfileHeaderView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\UserProfilePage.xaml">
+    <None Update="Components\Xcavate\UserProfilePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\UserTypeBadgeView.xaml">
+    <None Update="Components\Xcavate\UserTypeBadgeView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\UserTypeSelectionPage.xaml">
+    <None Update="Components\Xcavate\UserTypeSelectionPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\VerificationBadgeView.xaml">
+    <None Update="Components\Xcavate\VerificationBadgeView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\WelcomePage.xaml">
+    <None Update="Components\Xcavate\WelcomePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\XcavateAppShell.xaml">
+    <None Update="Components\Xcavate\XcavateAppShell.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\XcavateCell.xaml">
+    <None Update="Components\Xcavate\XcavateCell.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\XcavateMainPageTopNavigationBarView.xaml">
+    <None Update="Components\Xcavate\XcavateMainPageTopNavigationBarView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\XcavateNavigationBarButtonView.xaml">
+    <None Update="Components\Xcavate\XcavateNavigationBarButtonView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\XcavateNavigationBarView.xaml">
+    <None Update="Components\Xcavate\XcavateNavigationBarView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Components\XCavate\XcavateTopNavigationBarView.xaml">
+    <None Update="Components\Xcavate\XcavateTopNavigationBarView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Components\Xcm\XcmNetworkSelectButton.xaml">
@@ -1733,6 +1757,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="..\Generated\%2a%2a\%2a%2a.NetApi\bin\Debug\net9.0\%2a.dll" />
+    <None Remove="..\UniqueryPlus\bin\Debug\net9.0-ios\UniqueryPlus.dll" />
     <None Remove="AjunaExt\" />
     <None Remove="AzeroId\" />
     <None Remove="HydraDX\" />
@@ -2002,16 +2028,6 @@
     <MauiImage Include="Resources\Images\youtubewhite.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Generated\Bajun\Bajun.NetApi\Bajun.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\Bifrost\Bifrost.NetApi\Bifrost.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\Hydration\Hydration.NetApi\Hydration.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\InvArch\InvArch.NetApi\InvArch.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\Kilt\Kilt.NetApi\Kilt.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\PolkadotPeople\PolkadotPeople.NetApi\PolkadotPeople.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\Polkadot\Polkadot.NetApi\Polkadot.NetApi.csproj" />
-    <ProjectReference Include="..\UniqueryPlus\UniqueryPlus.csproj" />
-  </ItemGroup>
-  <ItemGroup>
     <MauiXaml Update="Components\000ComponentTemplate\NewPageTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
@@ -2025,6 +2041,9 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\AddressView\AddressQrCodeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\AddressView\PolkadotAddressView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\AddressView\SubstrateAddressView.xaml">
@@ -2049,6 +2068,15 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Balance\BalancePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Bohemia\BohemiaNftOwnedListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Bohemia\BohemiaWelcomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Bohemia\ToJoinDaoView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Buttons\BasicGrayButton.xaml">
@@ -2275,6 +2303,9 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Nft\NftSoldForView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nft\NftsOwnedListView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Nft\NftTradingStats.xaml">

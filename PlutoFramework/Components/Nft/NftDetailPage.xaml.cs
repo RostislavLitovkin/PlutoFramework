@@ -1,12 +1,11 @@
+using PlutoFramework.Templates.PageTemplate;
+
 namespace PlutoFramework.Components.Nft;
 
-public partial class NftDetailPage : ContentPage
+public partial class NftDetailPage : PageTemplate
 {
     public NftDetailPage(NftDetailViewModel viewModel)
     {
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 
         BindingContext = viewModel;

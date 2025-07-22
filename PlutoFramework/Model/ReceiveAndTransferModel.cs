@@ -11,18 +11,6 @@ namespace PlutoFramework.Model
     {
         public static void Receive()
         {
-            var qrViewModel = DependencyService.Get<AddressQrCodeViewModel>();
-
-            var selectedEndpointKey = DependencyService.Get<MultiNetworkSelectViewModel>().SelectedKey ?? EndpointEnum.None;
-
-            if (selectedEndpointKey == EndpointEnum.None)
-            {
-                return;
-            }
-
-            var endpoint = EndpointsModel.GetEndpoint(selectedEndpointKey);
-
-            var keyToGenesisHash = Endpoints.HashToKey.ToDictionary(x => x.Value, x => x.Key);
 
             if (!KeysModel.HasSubstrateKey())
             {
@@ -33,6 +21,25 @@ namespace PlutoFramework.Model
                 return;
             }
 
+            var qrViewModel = DependencyService.Get<AddressQrCodeViewModel>();
+
+            var selectedEndpointKey = DependencyService.Get<MultiNetworkSelectViewModel>().SelectedKey ?? EndpointEnum.None;
+
+            if (selectedEndpointKey == EndpointEnum.None)
+            {
+                var polkadotEndpoint = Endpoints.GetEndpointDictionary[EndpointEnum.Polkadot];
+
+                qrViewModel.Address = Utils.GetAddressFrom(KeysModel.GetPublicKeyBytes(), polkadotEndpoint.SS58Prefix);
+                qrViewModel.QrAddress = $"substrate:{qrViewModel.Address}:0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3";
+
+                qrViewModel.IsVisible = true;
+
+                return;
+            }
+
+            var endpoint = EndpointsModel.GetEndpoint(selectedEndpointKey);
+
+            var keyToGenesisHash = Endpoints.HashToKey.ToDictionary(x => x.Value, x => x.Key);
 
             if (endpoint.ChainType == ChainType.Substrate)
             {

@@ -1,12 +1,11 @@
+using PlutoFramework.Templates.PageTemplate;
+
 namespace PlutoFramework.Components.Messaging;
 
-public partial class MessagingOverviewPage : ContentPage
+public partial class MessagingOverviewPage : PageTemplate
 {
 	public MessagingOverviewPage()
 	{
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 	}
 }
