@@ -1,15 +1,13 @@
 using PlutoFramework.Model;
+using PlutoFramework.Templates.PageTemplate;
 using CollectionKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger);
 
 namespace PlutoFramework.Components.Nft;
 
-public partial class CollectionListPage : ContentPage
+public partial class CollectionListPage : PageTemplate
 {
     public CollectionListPage(BaseListViewModel<CollectionKey, CollectionWrapper> bindingContext)
     {
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 
         BindingContext = bindingContext;

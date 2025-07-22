@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PlutoFramework.Components.Nft.NftImageFullScreenPage"
-             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-             Title="NftImageFullScreenPage"
-             BackgroundColor="Black">
-    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                       xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+                       x:Class="PlutoFramework.Components.Nft.NftImageFullScreenPage"
+                       Title="NftImageFullScreenPage">
+    <template:PageTemplate.MainContent>
+        <Image Margin="0, 45, 0, 0"
+               AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+               AbsoluteLayout.LayoutFlags="All"
+               x:Name="image"
+               Aspect="AspectFit"/>
+    </template:PageTemplate.MainContent>
 
-        <Image
-            Margin="0, 45, 0, 0"
-            AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-            AbsoluteLayout.LayoutFlags="All"
-            x:Name="image"
-            Aspect="AspectFit"/>
-        
+    <template:PageTemplate.PopupContent>
         <navigationbar:TopNavigationBar Title="Full image" />
-    </AbsoluteLayout>
-</ContentPage>
+    </template:PageTemplate.PopupContent>
+</template:PageTemplate>

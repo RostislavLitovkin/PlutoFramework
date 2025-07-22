@@ -1,12 +1,11 @@
+using PlutoFramework.Templates.PageTemplate;
+
 namespace PlutoFramework.Components.Xcavate;
 
-public partial class FrequentlyAskedQuestionsPage : ContentPage
+public partial class FrequentlyAskedQuestionsPage : PageTemplate
 {
 	public FrequentlyAskedQuestionsPage()
 	{
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 	}
 }

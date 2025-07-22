@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PlutoFramework.Components.Nft.NftListPage"
-         xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-         xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
-         xmlns:unique="clr-namespace:PlutoFramework.Components.Unique"
-         xmlns:koda="clr-namespace:PlutoFramework.Components.Koda"
-         xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
-         xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
-         xmlns:model="clr-namespace:PlutoFramework.Model;assembly=PlutoFramework.Model"
-             xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
-         BackgroundColor="Black">
-    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
-
-        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-               Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
-               Opacity="{AppThemeBinding Light=0.96}"
-               Aspect="AspectFill"/>
-
-        <CollectionView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                       xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+                       xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
+                       xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
+                       x:Class="PlutoFramework.Components.Nft.NftListPage"
+                       Title="NftListPage">
+    <template:PageTemplate.MainContent>
+        <CollectionView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                        AbsoluteLayout.LayoutFlags="All"
                         ItemSizingStrategy="MeasureAllItems"
                         ItemsSource="{Binding Items}"
                         RemainingItemsThreshold="1"
@@ -27,14 +18,14 @@
                 <AbsoluteLayout HeightRequest="45"
                                 WidthRequest="10">
 
-                </AbsoluteLayout>   
+                </AbsoluteLayout>
             </CollectionView.Header>
             <CollectionView.Footer>
                 <StackLayout HeightRequest="200">
                     <customlayouts:LoadingItemView HeightRequest="80" 
                                                    Margin="20, 0, 20, 0"
-                                                    IsVisible="{Binding Loading}"/>
-                    
+                                                   IsVisible="{Binding Loading}"/>
+
                     <customlayouts:TransparentItemView Text="No NFTs"
                                                        HeightRequest="80" 
                                                        Margin="20, 0, 20, 0"
@@ -54,9 +45,9 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+    </template:PageTemplate.MainContent>
 
-        <txanalyzer:TransactionAnalyzerConfirmationView />
-
+    <template:PageTemplate.PopupContent>
         <navigationbar:TopNavigationBar Title="{Binding Title}" />
-    </AbsoluteLayout>
-</ContentPage>
+    </template:PageTemplate.PopupContent>
+</template:PageTemplate>

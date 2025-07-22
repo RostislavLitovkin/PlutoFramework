@@ -1,12 +1,11 @@
-﻿namespace PlutoFramework.Components.WebView;
+﻿using PlutoFramework.Templates.PageTemplate;
 
-public partial class WebViewPage : ContentPage
+namespace PlutoFramework.Components.WebView;
+
+public partial class WebViewPage : PageTemplate
 {
 	public WebViewPage(string url)
 	{
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 
         webView.Source = url;

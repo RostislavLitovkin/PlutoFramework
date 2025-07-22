@@ -1,6 +1,8 @@
-﻿namespace PlutoFramework.Components.CustomLayouts;
+﻿using PlutoFramework.Templates.PageTemplate;
 
-public partial class CustomLayoutsPage : ContentPage
+namespace PlutoFramework.Components.CustomLayouts;
+
+public partial class CustomLayoutsPage : PageTemplate
 {
     private CustomLayoutItemDragger selectedDragger;
 
@@ -8,9 +10,6 @@ public partial class CustomLayoutsPage : ContentPage
 
     public CustomLayoutsPage()
 	{
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 
         BindingContext = new CustomLayoutsViewModel();
