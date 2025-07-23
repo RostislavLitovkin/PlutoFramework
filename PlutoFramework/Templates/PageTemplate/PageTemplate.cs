@@ -87,6 +87,26 @@ namespace PlutoFramework.Templates.PageTemplate
 
         public ScrollView ScrollView { get => this.FindByName<ScrollView>("ScrollView"); }
 
+        public Thickness ScrollPadding => IsNavbarVisible ? new Thickness(0, 55, 0, 0) : new Thickness(0);
+
+        public static readonly BindableProperty IsNavbarVisibleProperty =
+            BindableProperty.Create(nameof(IsNavbarVisible), typeof(bool), typeof(PageTemplate));
+
+        private bool _isNavbarVisible = true;
+        public bool IsNavbarVisible
+        {
+            get => _isNavbarVisible;
+            set
+            {
+                if (_isNavbarVisible != value)
+                {
+                    _isNavbarVisible = value;
+                    OnPropertyChanged();
+                    OnPropertyChanged(nameof(ScrollPadding)); // Also update padding
+                }
+            }
+        }
+
         public PageTemplate()
         {
             ControlTemplate = (ControlTemplate)Application.Current.Resources["PageTemplate"];
