@@ -28,7 +28,8 @@
             <topnavigationbartemplate:TopNavigationBarTemplate Title="{TemplateBinding Title}"
                                                                Extra1Text="{TemplateBinding NavigationBarExtra1Text}"
                                                                Extra1Command="{TemplateBinding NavigationBarExtra1Command}"
-                                                               IsVisible="{TemplateBinding IsNavbarVisible}"/>
+                                                               IsVisible="{TemplateBinding IsNavbarVisible}"
+                                                               x:Name="TopNavigationBar" />
 
             <txanalyzer:TransactionAnalyzerConfirmationView />
 

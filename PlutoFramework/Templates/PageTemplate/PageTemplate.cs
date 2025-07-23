@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Components.NavigationBar;
 using MauiView = Microsoft.Maui.Controls.View;
 
 namespace PlutoFramework.Templates.PageTemplate
@@ -85,8 +86,6 @@ namespace PlutoFramework.Templates.PageTemplate
             set => SetValue(NavigationBarExtra2ImageProperty, value);
         }
 
-        public ScrollView ScrollView { get => this.FindByName<ScrollView>("ScrollView"); }
-
         public static readonly BindableProperty IsNavbarVisibleProperty =
             BindableProperty.Create(nameof(IsNavbarVisible), typeof(bool), typeof(PageTemplate), true,
                 propertyChanged: (BindableObject bindable, object oldValue, object newValue) => {
@@ -108,6 +107,9 @@ namespace PlutoFramework.Templates.PageTemplate
             get => (Thickness)GetValue(ScrollPaddingProperty);
             set => SetValue(ScrollPaddingProperty, value);
         }
+
+        public ScrollView ScrollView { get => this.FindByName<ScrollView>("ScrollView"); }
+        public TopNavigationBar TopNavigationBar { get => this.FindByName<TopNavigationBar>("TopNavigationBar"); }
 
         public PageTemplate()
         {

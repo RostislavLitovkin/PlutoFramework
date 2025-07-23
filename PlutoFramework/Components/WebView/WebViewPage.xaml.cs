@@ -9,6 +9,6 @@ public partial class WebViewPage : PageTemplate
         InitializeComponent();
 
         webView.Source = url;
-        topNavigationBar.Title = url;
+        TopNavigationBar.Title = url;
     }
 }
