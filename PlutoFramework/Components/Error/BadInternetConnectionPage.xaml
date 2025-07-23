@@ -5,24 +5,18 @@
                        xmlns:card="clr-namespace:PlutoFramework.Components.Card"
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        x:Class="PlutoFramework.Components.Error.BadInternetConnectionPage"
-                       Title="BadInternetConnectionPage">
-    <template:PageTemplate.MainContent>
-        <card:ClickableCard AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, AutoSize"
-                            AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
-                            Margin="20">
-            <card:ClickableCard.View>
-                <Label TextColor="{StaticResource DangerousRed}"
-                       HorizontalTextAlignment="Center"
-                       VerticalTextAlignment="Center"
-                       HorizontalOptions="Fill"
-                       VerticalOptions="Fill"
-                       Margin="20"
-                       Text="Bad Internet Connection" />
-            </card:ClickableCard.View>
-        </card:ClickableCard>
-    </template:PageTemplate.MainContent>
-    
-    <template:PageTemplate.PopupContent>
-        <navigationbar:TopNavigationBar Title="Bad Internet Connection" />
-    </template:PageTemplate.PopupContent>
+                       Title="Bad Internet Connection">
+    <card:ClickableCard AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, AutoSize"
+                        AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                        Margin="20">
+        <card:ClickableCard.View>
+            <Label TextColor="{StaticResource DangerousRed}"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="Fill"
+                   VerticalOptions="Fill"
+                   Margin="20"
+                   Text="Bad Internet Connection" />
+        </card:ClickableCard.View>
+    </card:ClickableCard>
 </template:PageTemplate>

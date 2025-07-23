@@ -5,23 +5,17 @@
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
                        x:Class="PlutoFramework.Components.UniversalScannerView.UniversalScannerPage"
-                       Title="UniversalScannerPage">
-    <template:PageTemplate.MainContent>
-        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                             AbsoluteLayout.LayoutFlags="All"
-                             x:Name="stackLayout">
-            <zxing:CameraBarcodeReaderView WidthRequest="{Binding Source={x:Reference stackLayout}, Path=Width}"
-                                           HeightRequest="{Binding Source={x:Reference stackLayout}, Path=Height}"
-                                           HorizontalOptions="Center"
-                                           VerticalOptions="Center"
-                                           x:Name="scanner"
-                                           IsDetecting="True"
-                                           Margin="0, 30, 0, 30"
-                                           BarcodesDetected="OnDetected"/>
-        </VerticalStackLayout>
-    </template:PageTemplate.MainContent>
-
-    <template:PageTemplate.PopupContent>
-        <navigationbar:TopNavigationBar Title="QR Scanner" />
-    </template:PageTemplate.PopupContent>
+                       Title="QR Scanner">
+    <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                         AbsoluteLayout.LayoutFlags="All"
+                         x:Name="stackLayout">
+        <zxing:CameraBarcodeReaderView WidthRequest="{Binding Source={x:Reference stackLayout}, Path=Width}"
+                                       HeightRequest="{Binding Source={x:Reference stackLayout}, Path=Height}"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       x:Name="scanner"
+                                       IsDetecting="True"
+                                       Margin="0, 30, 0, 30"
+                                       BarcodesDetected="OnDetected" />
+    </VerticalStackLayout>
 </template:PageTemplate>

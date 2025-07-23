@@ -5,28 +5,22 @@
                        xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        x:Class="PlutoFramework.Components.CustomLayouts.AddCustomItemPage"
-                       Title="AddCustomItemPage">
-    <template:PageTemplate.MainContent>
-        <VerticalStackLayout x:Name="verticalStackLayout"
-                             HorizontalOptions="Center"
-                             Padding="20, 10, 20, 100"
-                             Spacing="5"
-                             ZIndex="10"
-                             BindableLayout.ItemsSource="{Binding ComponentInfos}">
-            <BindableLayout.ItemTemplate>
-                <DataTemplate>
-                    <customlayouts:CustomLayoutItemAddView ItemName="{Binding Name}"
-                                                           ComponentId="{Binding ComponentId}">
-                        <customlayouts:CustomLayoutItemAddView.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnClicked" />
-                        </customlayouts:CustomLayoutItemAddView.GestureRecognizers>
-                    </customlayouts:CustomLayoutItemAddView>
-                </DataTemplate>
-            </BindableLayout.ItemTemplate>
-        </VerticalStackLayout>
-    </template:PageTemplate.MainContent>
-
-    <template:PageTemplate.PopupContent>
-        <navigationbar:TopNavigationBar Title="Add item" />
-    </template:PageTemplate.PopupContent>
+                       Title="Add item">
+    <VerticalStackLayout x:Name="verticalStackLayout"
+                         HorizontalOptions="Center"
+                         Padding="20, 10, 20, 100"
+                         Spacing="5"
+                         ZIndex="10"
+                         BindableLayout.ItemsSource="{Binding ComponentInfos}">
+        <BindableLayout.ItemTemplate>
+            <DataTemplate>
+                <customlayouts:CustomLayoutItemAddView ItemName="{Binding Name}"
+                                                       ComponentId="{Binding ComponentId}">
+                    <customlayouts:CustomLayoutItemAddView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnClicked" />
+                    </customlayouts:CustomLayoutItemAddView.GestureRecognizers>
+                </customlayouts:CustomLayoutItemAddView>
+            </DataTemplate>
+        </BindableLayout.ItemTemplate>
+    </VerticalStackLayout>
 </template:PageTemplate>

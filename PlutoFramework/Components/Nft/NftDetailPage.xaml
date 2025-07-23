@@ -9,7 +9,7 @@
                        xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
                        xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
                        x:Class="PlutoFramework.Components.Nft.NftDetailPage"
-                       Title="NftDetailPage">
+                       Title="{Binding Name}">
     <template:PageTemplate.MainContent>
         <VerticalStackLayout Margin="0, 45, 0, 0"
                              Spacing="15"
@@ -101,8 +101,6 @@
     </template:PageTemplate.MainContent>
 
     <template:PageTemplate.PopupContent>
-        <navigationbar:TopNavigationBar Title="{Binding Name}" />
-
         <nft:NftTransferView />
 
         <nft:NftSellView />

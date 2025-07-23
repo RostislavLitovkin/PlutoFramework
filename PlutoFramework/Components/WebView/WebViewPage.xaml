@@ -6,21 +6,13 @@
                        x:Class="PlutoFramework.Components.WebView.WebViewPage"
                        Title="WebViewPage"
                        x:Name="page">
-    <template:PageTemplate.MainContent>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-            <WebView WidthRequest="{Binding Source={x:Reference page}, Path=Width}"
-                     BackgroundColor="White"
-                     x:Name="webView" />
-        </Grid>
-    </template:PageTemplate.MainContent>
-
-    <template:PageTemplate.PopupContent>
-        <navigationbar:TopNavigationBar Title=""
-                                        x:Name="topNavigationBar" />
-
-    </template:PageTemplate.PopupContent>
+        <WebView WidthRequest="{Binding Source={x:Reference page}, Path=Width}"
+                 BackgroundColor="White"
+                 x:Name="webView" />
+    </Grid>
 </template:PageTemplate>

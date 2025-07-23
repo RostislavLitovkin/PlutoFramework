@@ -9,7 +9,8 @@
                        xmlns:model="clr-namespace:PlutoFramework.Model"
                        xmlns:searchBar="clr-namespace:PlutoFramework.Components.SearchBar"
                        x:Class="PlutoFramework.Components.Nft.NftMainPage"
-                       Title="NftMainPage">
+                       Title="NftMainPage"
+                       IsNavbarVisible="False">
     <template:PageTemplate.MainContent>
         <VerticalStackLayout Margin="0, 45, 0, 0"
                              Spacing="15"

@@ -6,7 +6,7 @@
                        xmlns:form="clr-namespace:PlutoFramework.Components.Form"
                        xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
                        x:Class="PlutoFramework.Components.Xcavate.ModifyCompanyPage"
-                       Title="ModifyUserProfilePage">
+                       Title="{Binding Title}">
     <template:PageTemplate.MainContent>
         <VerticalStackLayout Margin="0, 45, 0, 0"
                              Spacing="15"
@@ -71,7 +71,5 @@
                                         ButtonState="{Binding SaveButtonState}" />
             </Grid>
         </AbsoluteLayout>
-
-        <navigationbar:TopNavigationBar Title="{Binding Title}" />
     </template:PageTemplate.PopupContent>
 </template:PageTemplate>

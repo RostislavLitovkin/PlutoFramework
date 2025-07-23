@@ -7,7 +7,9 @@
                        xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        x:Class="PlutoFramework.Components.XcavateProperty.ModifyPropertyPage"
-                       Title="ModifyPropertyPage">
+                       Title="{Binding Title}"
+                       NavigationBarExtra1Text="Delete"
+                       NavigationBarExtra1Command="{Binding DeleteCommand}">
     <template:PageTemplate.MainContent>
         <VerticalStackLayout Margin="0, 45, 0, 0"
                              Spacing="15"
@@ -44,9 +46,11 @@
             </Grid>
         </AbsoluteLayout>
 
-        <navigationbar:TopNavigationBar Title="{Binding Title}"
-                                        ExtraIsVisible="{Binding CanBeDeleted}"
-                                        ExtraTitle="Delete"
-                                        ExtraCommand="{Binding DeleteCommand}"/>
+        <!--
+        <navigationbar:TopNavigationBar Title=""
+                                        ExtraIsVisible="{Binding CanBeDeleted}" << TODO
+                                        ExtraTitle=""
+                                        ExtraCommand=""/>
+        -->
     </template:PageTemplate.PopupContent>
 </template:PageTemplate>

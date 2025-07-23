@@ -14,7 +14,8 @@
                        xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
                        xmlns:card="clr-namespace:PlutoFramework.Components.Card"
                        x:Class="PlutoFramework.Components.XcavateProperty.XcavatePropertyMarketplacePage"
-                       Title="XcavatePropertyMarketplacePage">
+                       Title="XcavatePropertyMarketplacePage"
+                       IsNavbarVisible="False">
     <template:PageTemplate.MainContent>
         <RefreshView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
                      Command="{Binding RefreshCommand}" 
