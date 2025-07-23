@@ -11,7 +11,7 @@
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
                        x:Class="PlutoFramework.Components.Balance.BalancePage"
-                       Title="BalancePage">
+                       Title="Balance">
     <template:PageTemplate.MainContent>
         <VerticalStackLayout Spacing="15">
             <Label HeightRequest="100"
@@ -44,8 +44,6 @@
     </template:PageTemplate.MainContent>
 
     <template:PageTemplate.PopupContent>
-        <navigationbar:TopNavigationBar Title="Balance" />
-        
         <extrinsic:ExtrinsicStatusStackLayout />
         
         <addressview:AddressQrCodeView />

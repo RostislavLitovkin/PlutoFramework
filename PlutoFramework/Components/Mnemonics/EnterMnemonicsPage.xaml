@@ -7,7 +7,7 @@
                        xmlns:card="clr-namespace:PlutoFramework.Components.Card"
                        xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
                        x:Class="PlutoFramework.Components.Mnemonics.EnterMnemonicsPage"
-                       Title="EnterMnemonicsPage">
+                       Title="Enter mnemonics">
     <template:PageTemplate.BindingContext>
         <mnemonics:EnterMnemonicsViewModel x:Name="viewModel" />
     </template:PageTemplate.BindingContext>
@@ -98,9 +98,4 @@
                                     Command="{Binding ImportJsonCommand}"/>
         </VerticalStackLayout>
     </template:PageTemplate.MainContent>
-
-    <template:PageTemplate.PopupContent>
-        <navigationbar:TopNavigationBar Title="Enter mnemonics"
-                                    x:Name="topNavigationBar" />
-    </template:PageTemplate.PopupContent>
 </template:PageTemplate>

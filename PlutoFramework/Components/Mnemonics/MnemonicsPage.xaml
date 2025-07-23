@@ -33,9 +33,4 @@
                                     Command="{Binding GoToMnemonicsExplanationCommand}" />
         </VerticalStackLayout>
     </template:PageTemplate.MainContent>
-
-    <template:PageTemplate.PopupContent>
-        <navigationbar:TopNavigationBar Title="New mnemonics"
-                                        x:Name="topNavigationBar" />
-    </template:PageTemplate.PopupContent>
 </template:PageTemplate>

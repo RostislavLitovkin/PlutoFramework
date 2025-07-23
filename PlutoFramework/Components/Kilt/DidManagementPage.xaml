@@ -7,32 +7,26 @@
                        xmlns:mnemonics="clr-namespace:PlutoFramework.Components.Mnemonics"
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        x:Class="PlutoFramework.Components.Kilt.DidManagementPage"
-                       Title="DidManagementPage">
-    <template:PageTemplate.MainContent>
-        <VerticalStackLayout HorizontalOptions="Center"
-                             Padding="20, 10, 20, 100"
-                             Spacing="15">
-            <kilt:DidView Did="{Binding Did}"
-                          Verification="{Binding DidVerification}" />
+                       Title="Manage Kilt DID">
+    <VerticalStackLayout HorizontalOptions="Center"
+                         Padding="20, 10, 20, 100"
+                         Spacing="15">
+        <kilt:DidView Did="{Binding Did}"
+                      Verification="{Binding DidVerification}" />
 
-            <mnemonics:MnemonicsView Title="DID Mnemonics:"
-                                     Mnemonics="{Binding Mnemonics}" />
+        <mnemonics:MnemonicsView Title="DID Mnemonics:"
+                                 Mnemonics="{Binding Mnemonics}" />
 
-            <buttons:ElevatedButton ButtonState="Enabled"
-                                    Text="What are mnemonics?"
-                                    Command="{Binding GoToMnemonicsExplanationCommand}" />
+        <buttons:ElevatedButton ButtonState="Enabled"
+                                Text="What are mnemonics?"
+                                Command="{Binding GoToMnemonicsExplanationCommand}" />
 
-            <buttons:ElevatedButton ButtonState="Enabled"
-                                    Text="What are DIDs"
-                                    Command="{Binding GoToDidExplanationPageCommand}" />
+        <buttons:ElevatedButton ButtonState="Enabled"
+                                Text="What are DIDs"
+                                Command="{Binding GoToDidExplanationPageCommand}" />
 
-            <buttons:ElevatedButton ButtonState="Warning"
-                                    Text="Delete DID"
-                                    Command="{Binding DeleteDIDCommand}" />
-        </VerticalStackLayout>
-    </template:PageTemplate.MainContent>
-
-    <template:PageTemplate.PopupContent>
-        <navigationbar:TopNavigationBar Title="Manage Kilt DID" />
-    </template:PageTemplate.PopupContent>
+        <buttons:ElevatedButton ButtonState="Warning"
+                                Text="Delete DID"
+                                Command="{Binding DeleteDIDCommand}" />
+    </VerticalStackLayout>
 </template:PageTemplate>

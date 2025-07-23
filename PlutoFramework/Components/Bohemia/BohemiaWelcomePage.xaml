@@ -22,8 +22,8 @@
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="to"
-                   FontSize="30"
-                   FontFamily="UnboundedBold" />
+                              FontSize="30"
+                              FontFamily="UnboundedBold" />
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
@@ -32,17 +32,17 @@
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="Web3"
-                               FontSize="30"
-                               FontFamily="UnboundedBold" />        
+                              FontSize="30"
+                              FontFamily="UnboundedBold" />        
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
 
             <Image Source="polkadotrootslogotransparent.png"
-                     HorizontalOptions="Center"
-                     VerticalOptions="Center"
-                     HeightRequest="200"
-                     WidthRequest="200" />
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   HeightRequest="200"
+                   WidthRequest="200" />
 
             <buttons:ElevatedButton HorizontalOptions="Fill"
                                     Margin="20"

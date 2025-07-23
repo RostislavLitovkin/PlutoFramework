@@ -7,7 +7,8 @@
                        xmlns:mnemonics="clr-namespace:PlutoFramework.Components.Mnemonics"
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        x:Class="PlutoFramework.Components.Kilt.CreateNewDidPage"
-                       Title="New DID">
+                       Title="New DID"
+                       IsNavbarVisible="False">
     <template:PageTemplate.MainContent>
         <VerticalStackLayout Spacing="15"
                              Padding="20, 10, 20, 100">

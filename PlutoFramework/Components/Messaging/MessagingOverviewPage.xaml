@@ -4,12 +4,6 @@
                        xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        x:Class="PlutoFramework.Components.Messaging.MessagingOverviewPage"
-                       Title="MessagingOverviewPage">
-    <template:PageTemplate.MainContent>
-        <Label Text="Messaging here" />
-    </template:PageTemplate.MainContent>
-
-    <template:PageTemplate.PopupContent>
-        <navigationbar:TopNavigationBar Title="MessagingOverviewPage" />
-    </template:PageTemplate.PopupContent>
+                       Title="Messaging Overview">
+    <Label Text="Messaging here" />
 </template:PageTemplate>

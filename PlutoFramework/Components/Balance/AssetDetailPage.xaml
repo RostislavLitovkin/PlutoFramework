@@ -12,9 +12,9 @@
                        xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
                        xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
                        xmlns:card="clr-namespace:PlutoFramework.Components.Card"
-                        xmlns:model="clr-namespace:PlutoFramework.Model"
+                       xmlns:model="clr-namespace:PlutoFramework.Model"
                        x:Class="PlutoFramework.Components.Balance.AssetDetailPage"
-                       Title="AssetDetailPage">
+                       Title="{Binding AssetInfo.Symbol}">
 
     <template:PageTemplate.MainContent>
         <VerticalStackLayout Spacing="15"
@@ -149,8 +149,6 @@
     </template:PageTemplate.MainContent>
 
     <template:PageTemplate.PopupContent>
-        <navigationbar:TopNavigationBar Title="{Binding AssetInfo.Symbol}" />
-
         <xcavate:PageBottomBarView AbsoluteLayout.LayoutBounds="0.5, 1, 1, 90"
                                    AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
                                    ColumnSpacing="10">

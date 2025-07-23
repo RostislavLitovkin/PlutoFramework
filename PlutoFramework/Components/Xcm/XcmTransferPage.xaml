@@ -8,7 +8,7 @@
                        xmlns:card="clr-namespace:PlutoFramework.Components.Card"
                        xmlns:xcm="clr-namespace:PlutoFramework.Components.Xcm"
                        x:Class="PlutoFramework.Components.Xcm.XcmTransferPage"
-                       Title="XcmTransferPage">
+                       Title="XCM Transfer">
     <template:PageTemplate.MainContent>
         <VerticalStackLayout HorizontalOptions="Center"
                              Padding="20, 10, 20, 100"
@@ -55,9 +55,6 @@
     </template:PageTemplate.MainContent>
 
     <template:PageTemplate.PopupContent>
-        <navigationbar:TopNavigationBar Title="XCM Transfer"
-                                        x:Name="topNavigationBar" />
-
         <xcm:XcmNetworkSelectPopup />
     </template:PageTemplate.PopupContent>
 </template:PageTemplate>

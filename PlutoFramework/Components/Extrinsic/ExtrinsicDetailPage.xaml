@@ -6,23 +6,16 @@
                        xmlns:events="clr-namespace:PlutoFramework.Components.Events"
                        xmlns:subscan="clr-namespace:PlutoFramework.Components.Subscan"
                        x:Class="PlutoFramework.Components.Extrinsic.ExtrinsicDetailPage"
-                       Title="ExtrinsicDetailPage">
-    <template:PageTemplate.MainContent>
-        <VerticalStackLayout HorizontalOptions="Center"
-                             Padding="20, 10, 20, 100"
-                             Spacing="15">
-            <events:EventsListView x:Name="eventsListView" />
+                       Title="Extrinsic detail">
+    <VerticalStackLayout HorizontalOptions="Center"
+                         Padding="20, 10, 20, 100"
+                         Spacing="15">
+        <events:EventsListView x:Name="eventsListView" />
 
-            <subscan:OpenSubscanButton x:Name="subscanButton">
-                <subscan:OpenSubscanButton.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnOpenSubscanClicked" />
-                </subscan:OpenSubscanButton.GestureRecognizers>
-            </subscan:OpenSubscanButton>
-        </VerticalStackLayout>
-    </template:PageTemplate.MainContent>
-
-    <template:PageTemplate.PopupContent>
-        <navigationbar:TopNavigationBar Title="Extrinsic detail"
-                                        x:Name="topNavigationBar" />
-    </template:PageTemplate.PopupContent>
+        <subscan:OpenSubscanButton x:Name="subscanButton">
+            <subscan:OpenSubscanButton.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnOpenSubscanClicked" />
+            </subscan:OpenSubscanButton.GestureRecognizers>
+        </subscan:OpenSubscanButton>
+    </VerticalStackLayout>
 </template:PageTemplate>

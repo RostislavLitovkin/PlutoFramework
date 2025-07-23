@@ -5,7 +5,8 @@
                        xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
                        xmlns:card="clr-namespace:PlutoFramework.Components.Card"
                        x:Class="PlutoFramework.Components.Xcavate.HelpPage"
-                       Title="HelpPage">
+                       Title="HelpPage"
+                       IsNavbarVisible="False">
     <template:PageTemplate.MainContent>
         <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                              AbsoluteLayout.LayoutFlags="All">

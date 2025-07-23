@@ -2,85 +2,80 @@
 <template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                        xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
-                       x:Class="PlutoFramework.Components.Xcavate.CompanyPage"
                        xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        xmlns:form="clr-namespace:PlutoFramework.Components.Form"
-                       xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts">
-    <template:PageTemplate.MainContent>
-        <CollectionView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                        AbsoluteLayout.LayoutFlags="All"
-                        ItemSizingStrategy="MeasureAllItems"
-                        ItemsSource="{Binding Items}"
-                        RemainingItemsThreshold="1"
-                        RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}">
-            <CollectionView.Header>
-                <VerticalStackLayout Margin="0, 45, 0, 0"
-                     Spacing="15"
-                     Padding="20, 20, 20, 5">
+                       xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
+                       x:Class="PlutoFramework.Components.Xcavate.CompanyPage"
+                       Title="Company"
+                       NavigationBarExtra1Text="Edit"
+                       NavigationBarExtra1Command="{Binding EditCommand}">
+    <CollectionView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    ItemSizingStrategy="MeasureAllItems"
+                    ItemsSource="{Binding Items}"
+                    RemainingItemsThreshold="1"
+                    RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}">
+        <CollectionView.Header>
+            <VerticalStackLayout Margin="0, 45, 0, 0"
+                                 Spacing="15"
+                                 Padding="20, 20, 20, 5">
 
-                    <form:FormWideValueView Title="Company name"
-                                            Value="{Binding CompanyName}"/>
+                <form:FormWideValueView Title="Company name"
+                                        Value="{Binding CompanyName}"/>
 
-                    <form:FormWideValueView Title="Registration number"
-                                            Value="{Binding RegistrationNumber}"/>
+                <form:FormWideValueView Title="Registration number"
+                                        Value="{Binding RegistrationNumber}"/>
 
-                    <form:FormWideValueView Title="Phone number"
-                                            Value="{Binding PhoneNumber}"/>
+                <form:FormWideValueView Title="Phone number"
+                                        Value="{Binding PhoneNumber}"/>
 
-                    <form:FormWideValueView Title="Email"
-                                            Value="{Binding Email}"/>
+                <form:FormWideValueView Title="Email"
+                                        Value="{Binding Email}"/>
 
-                    <form:FormLargeValueView Title="Address"
-                                             Value="{Binding Address}"/>
+                <form:FormLargeValueView Title="Address"
+                                         Value="{Binding Address}"/>
 
-                    <form:FormWideValueView Title="Associated website"
-                                            Value="{Binding Website}"/>
+                <form:FormWideValueView Title="Associated website"
+                                        Value="{Binding Website}"/>
 
-                    <form:FormWideValueView Title="Associated membership number"
-                                            Value="{Binding AssociatedMembershipNumber}"/>
+                <form:FormWideValueView Title="Associated membership number"
+                                        Value="{Binding AssociatedMembershipNumber}"/>
 
-                    <xcavate:DocumentVerificationView Title="Passport/Drivers license"
-                                                      Value="{Binding PassportOrDriversLicenseVerified}"
-                                                      ViewCommand="{Binding ViewDocumentCommand}" />
+                <xcavate:DocumentVerificationView Title="Passport/Drivers license"
+                                                  Value="{Binding PassportOrDriversLicenseVerified}"
+                                                  ViewCommand="{Binding ViewDocumentCommand}" />
 
-                    <Line Stroke="#888888"
-                          X2="{Binding Width, Source={RelativeSource Self}}"
-                          HorizontalOptions="Fill"
-                          StrokeThickness="1" />
+                <Line Stroke="#888888"
+                      X2="{Binding Width, Source={RelativeSource Self}}"
+                      HorizontalOptions="Fill"
+                      StrokeThickness="1" />
 
-                    <Label FontAttributes="Bold"
-                           Text="Team members"
-                           HorizontalTextAlignment="Start" />
-                </VerticalStackLayout>
-            </CollectionView.Header>
-            <CollectionView.Footer>
-                <StackLayout HeightRequest="200">
-                    <customlayouts:LoadingItemView HeightRequest="80" 
+                <Label FontAttributes="Bold"
+                       Text="Team members"
+                       HorizontalTextAlignment="Start" />
+            </VerticalStackLayout>
+        </CollectionView.Header>
+        <CollectionView.Footer>
+            <StackLayout HeightRequest="200">
+                <customlayouts:LoadingItemView HeightRequest="80" 
+                                               Margin="20, 0, 20, 0"
+                                               IsVisible="{Binding Loading}"/>
+                <customlayouts:TransparentItemView Text="No team members"
+                                                   HeightRequest="70"
                                                    Margin="20, 0, 20, 0"
-                                                   IsVisible="{Binding Loading}"/>
-                    <customlayouts:TransparentItemView Text="No team members"
-                                                       HeightRequest="70"
-                                                       Margin="20, 0, 20, 0"
-                                                       IsVisible="{Binding NoItems}" />
-                </StackLayout>
-            </CollectionView.Footer>
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Vertical" 
-                                   ItemSpacing="0"/>
-            </CollectionView.ItemsLayout>
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <xcavate:TeamMemberView Padding="20, 5, 20, 10"
-                                            User="{Binding .}"/>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </template:PageTemplate.MainContent>
-
-    <template:PageTemplate.PopupContent>
-        <navigationbar:TopNavigationBar Title="Company"
-                                        ExtraTitle="Edit"
-                                        ExtraCommand="{Binding EditCommand}" />
-    </template:PageTemplate.PopupContent>
+                                                   IsVisible="{Binding NoItems}" />
+            </StackLayout>
+        </CollectionView.Footer>
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Vertical" 
+                               ItemSpacing="0"/>
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <xcavate:TeamMemberView Padding="20, 5, 20, 10"
+                                        User="{Binding .}"/>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 </template:PageTemplate>

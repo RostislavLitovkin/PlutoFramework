@@ -10,7 +10,7 @@
                        xmlns:model="clr-namespace:PlutoFramework.Model"
                        xmlns:date="clr-namespace:PlutoFramework.Components.Date"
                        x:Class="PlutoFramework.Components.Nft.CollectionDetailPage"
-                       Title="CollectionDetailPage">
+                       Title="{Binding Name}">
     <template:PageTemplate.MainContent>
         <VerticalStackLayout Margin="0, 45, 0, 0"
                              Spacing="15"
@@ -95,8 +95,6 @@
     </template:PageTemplate.MainContent>
 
     <template:PageTemplate.PopupContent>
-        <navigationbar:TopNavigationBar Title="{Binding Name}" />
-
         <nft:NftTransferView />
 
         <nft:NftSellView />
