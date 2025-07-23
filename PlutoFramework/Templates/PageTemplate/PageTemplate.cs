@@ -88,11 +88,25 @@ namespace PlutoFramework.Templates.PageTemplate
         public ScrollView ScrollView { get => this.FindByName<ScrollView>("ScrollView"); }
 
         public static readonly BindableProperty IsNavbarVisibleProperty =
-            BindableProperty.Create(nameof(IsNavbarVisible), typeof(bool), typeof(PageTemplate));
+            BindableProperty.Create(nameof(IsNavbarVisible), typeof(bool), typeof(PageTemplate), true,
+                propertyChanged: (BindableObject bindable, object oldValue, object newValue) => {
+                    if (bindable is PageTemplate page)
+                    {
+                        page.ScrollPadding = (bool)newValue ? new Thickness(0, 55, 0, 0) : new Thickness(0);
+                    }
+                });
         public bool IsNavbarVisible
         {
             get => (bool)GetValue(IsNavbarVisibleProperty);
             set => SetValue(IsNavbarVisibleProperty, value);
+        }
+
+        public static readonly BindableProperty ScrollPaddingProperty =
+            BindableProperty.Create(nameof(ScrollPadding), typeof(Thickness), typeof(PageTemplate), new Thickness(0));
+        public Thickness ScrollPadding
+        {
+            get => (Thickness)GetValue(ScrollPaddingProperty);
+            set => SetValue(ScrollPaddingProperty, value);
         }
 
         public PageTemplate()
@@ -102,11 +116,7 @@ namespace PlutoFramework.Templates.PageTemplate
             NavigationPage.SetHasNavigationBar(this, false);
             Shell.SetNavBarIsVisible(this, false);
 
-            var padding = IsNavbarVisible ? new Thickness(0, 55, 0, 0) : new Thickness(0);
-
-            var scrollContainer = this.FindByName<ContentView>("ScrollContainer");
-            if (scrollContainer != null)
-                scrollContainer.Padding = padding;
+            ScrollPadding = IsNavbarVisible ? new Thickness(0, 55, 0, 0) : new Thickness(0);
         }
 
         protected override void OnBindingContextChanged()

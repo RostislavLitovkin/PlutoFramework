@@ -19,7 +19,7 @@
 
             <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                         AbsoluteLayout.LayoutFlags="All"
-                        Padding="{Binding ScrollPadding}"
+                        Padding="{TemplateBinding ScrollPadding}"
                         x:Name="ScrollView">
                 <!-- Content block -->
                 <ContentPresenter Content="{TemplateBinding MainContent}"/>
@@ -29,7 +29,7 @@
                                                                Extra1Text="{TemplateBinding NavigationBarExtra1Text}"
                                                                Extra1Command="{TemplateBinding NavigationBarExtra1Command}"
                                                                IsVisible="{TemplateBinding IsNavbarVisible}"/>
-            
+
             <txanalyzer:TransactionAnalyzerConfirmationView />
 
             <!-- Popups block -->
