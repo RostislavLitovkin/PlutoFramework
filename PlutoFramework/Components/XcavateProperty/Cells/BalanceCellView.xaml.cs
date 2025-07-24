@@ -13,7 +13,18 @@ public partial class BalanceCellView : ContentView, ISetEmptyView, ISubstrateCli
     {
         InitializeComponent();
 
-        cell.Command = new AsyncRelayCommand( () => Application.Current.MainPage.Navigation.PushAsync(new BalancePage()));
+        cell.Command = new AsyncRelayCommand( () => {
+            try
+            {
+                return Application.Current.MainPage.Navigation.PushAsync(new BalancePage());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error navigating to Balance page");
+                Console.WriteLine(e);
+                return Task.CompletedTask;
+            }
+        });
     }
 
     public async Task LoadAsync(CancellationToken token)

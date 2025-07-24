@@ -14,29 +14,11 @@ namespace PlutoFramework.Templates.PageTemplate
             get => (MauiView)GetValue(MainContentProperty);
             set => SetValue(MainContentProperty, value);
         }
+        public IList<MauiView> PopupContent => new PopupContentCollection(this);
 
-        /*public static readonly BindableProperty PopupContentProperty =
-            BindableProperty.Create(nameof(PopupContent), typeof(MauiView), typeof(PageTemplate), default(MauiView));
+        private AbsoluteLayout? _popupLayoutRef = null;
 
-        public MauiView PopupContent
-        {
-            get => (MauiView)GetValue(PopupContentProperty);
-            set => SetValue(PopupContentProperty, value);
-        }*/
-
-
-        public static readonly BindableProperty PopupContentProperty =
-            BindableProperty.Create(
-                nameof(PopupContent),
-                typeof(IList<MauiView>),
-                typeof(PageTemplate),
-                defaultValue: new List<MauiView>());
-
-        public IList<MauiView> PopupContent
-        {
-            get => (IList<MauiView>)GetValue(PopupContentProperty);
-            set => SetValue(PopupContentProperty, value);
-        }
+        private readonly List<MauiView> _pendingPopupContent = new();
 
         public static readonly BindableProperty NavigationBarExtra1TextProperty =
             BindableProperty.Create(nameof(NavigationBarExtra1Text), typeof(string), typeof(PageTemplate));
@@ -88,7 +70,8 @@ namespace PlutoFramework.Templates.PageTemplate
 
         public static readonly BindableProperty IsNavbarVisibleProperty =
             BindableProperty.Create(nameof(IsNavbarVisible), typeof(bool), typeof(PageTemplate), true,
-                propertyChanged: (BindableObject bindable, object oldValue, object newValue) => {
+                propertyChanged: (BindableObject bindable, object oldValue, object newValue) =>
+                {
                     if (bindable is PageTemplate page)
                     {
                         page.ScrollPadding = (bool)newValue ? new Thickness(0, 55, 0, 0) : new Thickness(0);
@@ -121,12 +104,139 @@ namespace PlutoFramework.Templates.PageTemplate
             ScrollPadding = IsNavbarVisible ? new Thickness(0, 55, 0, 0) : new Thickness(0);
         }
 
+        protected override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+
+            _popupLayoutRef = (AbsoluteLayout)GetTemplateChild("PopupsLayout");
+
+            if (_popupLayoutRef == null)
+            {
+                Console.WriteLine("PopupsLayout not found in template.");
+                return;
+            }
+
+            // Add any previously set views into the layout
+            foreach (var view in _pendingPopupContent)
+            {
+                _popupLayoutRef.Children.Add(view);
+            }
+
+            if (this.BindingContext != null)
+            {
+                _popupLayoutRef.BindingContext = this.BindingContext;
+            }
+
+            _pendingPopupContent.Clear();
+        }
+
         protected override void OnBindingContextChanged()
         {
             base.OnBindingContextChanged();
 
             if (MainContent != null)
-                MainContent.BindingContext = BindingContext;
+            {
+                MainContent.BindingContext = this.BindingContext;
+            }
+
+            if (_popupLayoutRef != null)
+            {
+                _popupLayoutRef.BindingContext = this.BindingContext;
+            }
+
+            /*try
+            {
+                foreach (var popup in PopupContent)
+                {
+                    try
+                    {
+                        popup.BindingContext = this.BindingContext;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error setting BindingContext for PopupContent item: {ex}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error setting BindingContext for PopupContent: {ex}");
+            }
+            */
+        }
+
+        private class PopupContentCollection : IList<MauiView>
+        {
+            private readonly PageTemplate _owner;
+
+            private IList<MauiView> getMauiViews => _owner._popupLayoutRef != null ? _owner._popupLayoutRef.Children.Where(item => item is MauiView).Select(item => (MauiView)item).ToList() : _owner._pendingPopupContent;
+
+            public PopupContentCollection(PageTemplate owner) => _owner = owner;
+
+            public void Add(MauiView item)
+            {
+                if (_owner.BindingContext != null)
+                {
+                    // item.BindingContext = _owner.BindingContext;
+                }
+
+                if (_owner._popupLayoutRef != null)
+                {
+                    _owner._popupLayoutRef.Children.Add(item);
+                }
+                else
+                {
+                    _owner._pendingPopupContent.Add(item);
+                }
+            }
+
+            public void Clear()
+            {
+                _owner._popupLayoutRef?.Children.Clear();
+                _owner._pendingPopupContent.Clear();
+            }
+
+            public bool Contains(MauiView item) =>
+                _owner._popupLayoutRef?.Children.Contains(item) ?? _owner._pendingPopupContent.Contains(item);
+
+            public void CopyTo(MauiView[] array, int arrayIndex) =>
+                getMauiViews.CopyTo(array, arrayIndex);
+
+            public bool Remove(MauiView item)
+            {
+                if (_owner._popupLayoutRef != null)
+                    return _owner._popupLayoutRef.Children.Remove(item);
+
+                return _owner._pendingPopupContent.Remove(item);
+            }
+
+            public int Count => _owner._popupLayoutRef?.Children.Count ?? _owner._pendingPopupContent.Count;
+            public bool IsReadOnly => false;
+            public IEnumerator<MauiView> GetEnumerator() =>
+                getMauiViews.GetEnumerator();
+
+            System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() => GetEnumerator();
+            public int IndexOf(MauiView item) =>
+                getMauiViews.IndexOf(item);
+
+            public void Insert(int index, MauiView item)
+            {
+                if (_owner.BindingContext != null)
+                {
+                    // item.BindingContext = _owner.BindingContext;
+                }
+
+                getMauiViews.Insert(index, item);
+            }
+
+            public void RemoveAt(int index) =>
+                getMauiViews.RemoveAt(index);
+
+            public MauiView this[int index]
+            {
+                get => getMauiViews[index];
+                set => getMauiViews[index] = value;
+            }
         }
     }
 }

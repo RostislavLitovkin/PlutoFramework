@@ -209,19 +209,28 @@ public partial class PropertyThumbnailView : ContentView
 
     async void OnMoreClicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
-        var loadingViewModel = DependencyService.Get<FullPageLoadingViewModel>();
-
-        loadingViewModel.IsVisible = true;
-
-        await XcavatePropertyModel.NavigateToPropertyDetailPageAsync(new XcavateNftWrapper
+        try
         {
-            NftBase = NftBase,
-            Endpoint = Endpoint,
-            Favourite = Favourite,
-            ListingHasExpired = ListingHasExpired,
-            Region = Region,
-        }, CancellationToken.None);
+            var loadingViewModel = DependencyService.Get<FullPageLoadingViewModel>();
 
-        loadingViewModel.IsVisible = false;
+            loadingViewModel.IsVisible = true;
+
+            await XcavatePropertyModel.NavigateToPropertyDetailPageAsync(new XcavateNftWrapper
+            {
+                NftBase = NftBase,
+                Endpoint = Endpoint,
+                Favourite = Favourite,
+                ListingHasExpired = ListingHasExpired,
+                Region = Region,
+            }, CancellationToken.None);
+
+            loadingViewModel.IsVisible = false;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error navigating to property detail page: " + ex);
+
+            throw;
+        }
     }
 }

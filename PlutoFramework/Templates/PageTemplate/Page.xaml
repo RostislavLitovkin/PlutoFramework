@@ -10,7 +10,8 @@
     <ControlTemplate x:Key="PageTemplate">
         <!-- BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}" -->
         <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                        AbsoluteLayout.LayoutFlags="All">
+                        AbsoluteLayout.LayoutFlags="All"
+                        x:Name="PopupsLayout">
 
             <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                    AbsoluteLayout.LayoutFlags="All"
@@ -33,12 +34,7 @@
 
             <txanalyzer:TransactionAnalyzerConfirmationView />
 
-            <!-- Popups block -->
-            <ContentPresenter Content="{TemplateBinding PopupContent}"
-                              AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
-                              AbsoluteLayout.LayoutFlags="SizeProportional"/>
-
-            <password:EnterPasswordPopupView />
+            <password:EnterPasswordPopupView ZIndex="10"/>
         </AbsoluteLayout>
     </ControlTemplate>
 </ResourceDictionary>
