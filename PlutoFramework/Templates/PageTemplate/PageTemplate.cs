@@ -91,6 +91,28 @@ namespace PlutoFramework.Templates.PageTemplate
             set => SetValue(ScrollPaddingProperty, value);
         }
 
+        public static readonly BindableProperty IsScrollEnabledProperty =
+            BindableProperty.Create(nameof(IsScrollEnabled), typeof(bool), typeof(PageTemplate), true,
+                propertyChanged: (BindableObject bindable, object oldValue, object newValue) => {
+                    if (bindable is PageTemplate page)
+                    {
+                        page.ScrollViewOrientation = (bool)newValue ? ScrollOrientation.Vertical : ScrollOrientation.Neither;
+                    }
+                });
+        public bool IsScrollEnabled
+        {
+            get => (bool)GetValue(IsNavbarVisibleProperty);
+            set => SetValue(IsNavbarVisibleProperty, value);
+        }
+
+        public static readonly BindableProperty ScrollViewOrientationProperty =
+            BindableProperty.Create(nameof(ScrollViewOrientation), typeof(ScrollOrientation), typeof(PageTemplate), ScrollOrientation.Vertical);
+        public ScrollOrientation ScrollViewOrientation
+        {
+            get => (ScrollOrientation)GetValue(ScrollViewOrientationProperty);
+            set => SetValue(ScrollViewOrientationProperty, value);
+        }
+
         public ScrollView ScrollView { get => this.FindByName<ScrollView>("ScrollView"); }
         public TopNavigationBar TopNavigationBar { get => this.FindByName<TopNavigationBar>("TopNavigationBar"); }
 
@@ -102,6 +124,7 @@ namespace PlutoFramework.Templates.PageTemplate
             Shell.SetNavBarIsVisible(this, false);
 
             ScrollPadding = IsNavbarVisible ? new Thickness(0, 55, 0, 0) : new Thickness(0);
+            ScrollViewOrientation = IsScrollEnabled ? ScrollOrientation.Vertical : ScrollOrientation.Neither;
         }
 
         protected override void OnApplyTemplate()
