@@ -1,12 +1,14 @@
-﻿using PlutoFramework.Templates.PageTemplate;
-using ZXing.Net.Maui;
+﻿using ZXing.Net.Maui;
 
 namespace PlutoFramework.Components.UniversalScannerView;
 
-public partial class UniversalScannerPage : PageTemplate
+public partial class UniversalScannerPage : ContentPage
 {
-	public UniversalScannerPage()
-	{
+    public UniversalScannerPage()
+    {
+        NavigationPage.SetHasNavigationBar(this, false);
+        Shell.SetNavBarIsVisible(this, false);
+
         InitializeComponent();
 
         scanner.Options = new BarcodeReaderOptions
