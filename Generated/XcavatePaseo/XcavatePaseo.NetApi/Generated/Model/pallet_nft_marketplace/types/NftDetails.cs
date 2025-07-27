@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types
     
     
     /// <summary>
-    /// >> 498 - Composite[pallet_nft_marketplace.types.NftDetails]
+    /// >> 510 - Composite[pallet_nft_marketplace.types.NftDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class NftDetails : BaseType

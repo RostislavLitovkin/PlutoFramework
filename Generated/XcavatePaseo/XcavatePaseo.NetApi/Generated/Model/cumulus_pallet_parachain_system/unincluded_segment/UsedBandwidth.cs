@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.un
     
     
     /// <summary>
-    /// >> 209 - Composite[cumulus_pallet_parachain_system.unincluded_segment.UsedBandwidth]
+    /// >> 217 - Composite[cumulus_pallet_parachain_system.unincluded_segment.UsedBandwidth]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UsedBandwidth : BaseType
@@ -35,7 +35,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.un
         /// <summary>
         /// >> hrmp_outgoing
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT1 HrmpOutgoing { get; set; }
+        public XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT2 HrmpOutgoing { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -61,7 +61,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.un
             UmpMsgCount.Decode(byteArray, ref p);
             UmpTotalBytes = new Substrate.NetApi.Model.Types.Primitive.U32();
             UmpTotalBytes.Decode(byteArray, ref p);
-            HrmpOutgoing = new XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT1();
+            HrmpOutgoing = new XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT2();
             HrmpOutgoing.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

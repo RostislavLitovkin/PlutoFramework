@@ -3,8 +3,17 @@ using PlutoFramework.Components.TransferView;
 
 namespace PlutoFramework.Components.AssetSelect;
 
+public enum EntrySelectedEnum
+{
+    None,
+    Amount,
+    Usd
+}
+
 public partial class AssetInputView : ContentView
 {
+    private EntrySelectedEnum entrySelected = EntrySelectedEnum.None;
+
     public static readonly BindableProperty CardWidthProperty = BindableProperty.Create(
         nameof(CardWidth), typeof(int), typeof(AssetInputView),
         defaultBindingMode: BindingMode.TwoWay,
@@ -40,13 +49,13 @@ public partial class AssetInputView : ContentView
         set => SetValue(AmountProperty, value);
     }
 
-    /// <summary>
-    /// Prevents from gettng stuck in a recursive loop due to inacurate USD conversions
-    /// </summary>
-    private bool duplicateBlocker = false;
-
     private void AmountEntryChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
     {
+        if (entrySelected != EntrySelectedEnum.Amount)
+        {
+            return;
+        }
+
         if (e.PropertyName != "Text")
         {
             return;
@@ -59,16 +68,6 @@ public partial class AssetInputView : ContentView
             transferViewModel.Amount = ((Entry)sender).Text;
         }
 
-        Console.WriteLine("amount change: " + duplicateBlocker);
-
-        if (duplicateBlocker)
-        {
-            duplicateBlocker = false;
-            return;
-        }
-
-        duplicateBlocker = true;
-
         var viewModel = DependencyService.Get<AssetInputViewModel>();
 
         viewModel.CalculateUsdValue();
@@ -80,23 +79,28 @@ public partial class AssetInputView : ContentView
 
     private void UsdAmountEntryChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
     {
+        if (entrySelected != EntrySelectedEnum.Usd)
+        {
+            return;
+        }
+
         if (e.PropertyName != "Text")
         {
             return;
         }
 
-        Console.WriteLine("USD change: " + duplicateBlocker);
-
-        if (duplicateBlocker)
-        {
-            duplicateBlocker = false;
-            return;
-        }
-
-        duplicateBlocker = true;
-
         var viewModel = DependencyService.Get<AssetInputViewModel>();
 
         viewModel.CalculateCurrencyAmount();
+    }
+
+    private void OnAmountEntryFocused(object sender, FocusEventArgs e)
+    {
+        entrySelected = EntrySelectedEnum.Amount;
+    }
+
+    private void OnUsdEntryFocused(object sender, FocusEventArgs e)
+    {
+        entrySelected = EntrySelectedEnum.Usd;
     }
 }

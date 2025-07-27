@@ -18,7 +18,7 @@
                        IsNavbarVisible="False">
     <template:PageTemplate.MainContent>
         <VerticalStackLayout Spacing="15"
-                             Padding="20, 15, 20, 100">
+                             Padding="20, 80, 20, 100">
             <xcavate:RiskWarningView />
 
             <nft:NftMultiImageView ImageSources="{Binding Metadata.Images}" />

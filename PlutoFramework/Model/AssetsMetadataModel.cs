@@ -15,14 +15,30 @@ namespace PlutoFramework.Model
 
         public static async Task<AssetMetadata> GetAssetMetadataAsync(SubstrateClientExt client, AssetPallet pallet, BigInteger id, CancellationToken token)
         {
-            if (AssetsMetadataDict.ContainsKey((client.Endpoint.Key, pallet, id)))
+            Console.WriteLine("Here is what I got:");
+            Console.WriteLine(client.Endpoint.Key);
+            Console.WriteLine(pallet);
+            Console.WriteLine(id);
+
+
+            var basePallet = pallet.ToBaseAssetPallet();
+
+            if (AssetsMetadataDict.ContainsKey((client.Endpoint.Key, basePallet, id)))
             {
-                return AssetsMetadataDict[(client.Endpoint.Key, pallet, id)];
+                var asset = (AssetMetadata)AssetsMetadataDict[(client.Endpoint.Key, basePallet, id)].Clone();
+
+                asset.Pallet = pallet;
+
+                return asset;
             }
 
-            if (AssetsModel.AssetsDict.ContainsKey((client.Endpoint.Key, pallet, id)))
+            if (AssetsModel.AssetsDict.ContainsKey((client.Endpoint.Key, basePallet, id)))
             {
-                return AssetsModel.AssetsDict[(client.Endpoint.Key, pallet, id)];
+                var asset = (AssetMetadata)AssetsModel.AssetsDict[(client.Endpoint.Key, basePallet, id)].Clone();
+
+                asset.Pallet = pallet;
+
+                return asset;
             }
 
             return client.Endpoint.Key switch

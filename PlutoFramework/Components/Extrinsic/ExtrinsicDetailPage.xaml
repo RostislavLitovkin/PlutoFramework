@@ -8,7 +8,7 @@
                        x:Class="PlutoFramework.Components.Extrinsic.ExtrinsicDetailPage"
                        Title="Extrinsic detail">
     <VerticalStackLayout HorizontalOptions="Center"
-                         Padding="20, 10, 20, 100"
+                         Padding="20, 20, 20, 100"
                          Spacing="15">
         <events:EventsListView x:Name="eventsListView" />
 

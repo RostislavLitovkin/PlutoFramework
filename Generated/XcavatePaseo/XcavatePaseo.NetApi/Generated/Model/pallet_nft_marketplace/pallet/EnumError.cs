@@ -297,7 +297,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
     }
     
     /// <summary>
-    /// >> 514 - Variant[pallet_nft_marketplace.pallet.Error]
+    /// >> 520 - Variant[pallet_nft_marketplace.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

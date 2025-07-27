@@ -30,7 +30,10 @@ namespace PlutoFramework.Templates.TopNavigationBarTemplate
         }
 
         public static readonly BindableProperty Extra1CommandProperty =
-           BindableProperty.Create(nameof(Extra1Command), typeof(IAsyncRelayCommand), typeof(TopNavigationBarTemplate));
+           BindableProperty.Create(nameof(Extra1Command), typeof(IAsyncRelayCommand), typeof(TopNavigationBarTemplate),
+               propertyChanged: (BindableObject bindable, object oldValue, object newValue) => {
+                   ((TopNavigationBarViewModel)bindable.BindingContext).Extra1IsVisible = newValue is not null;
+               });
         public string Extra1Command
         {
             get => (string)GetValue(Extra1CommandProperty);
@@ -54,7 +57,10 @@ namespace PlutoFramework.Templates.TopNavigationBarTemplate
         }
 
         public static readonly BindableProperty Extra2CommandProperty =
-           BindableProperty.Create(nameof(Extra2Command), typeof(IAsyncRelayCommand), typeof(TopNavigationBarTemplate));
+           BindableProperty.Create(nameof(Extra2Command), typeof(IAsyncRelayCommand), typeof(TopNavigationBarTemplate),
+               propertyChanged: (BindableObject bindable, object oldValue, object newValue) => {
+                   ((TopNavigationBarViewModel)bindable.BindingContext).Extra1IsVisible = newValue is not null;
+               });
         public string Extra2Command
         {
             get => (string)GetValue(Extra2CommandProperty);

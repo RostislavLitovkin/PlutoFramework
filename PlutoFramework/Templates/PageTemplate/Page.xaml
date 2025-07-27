@@ -33,7 +33,7 @@
                                                                IsVisible="{TemplateBinding IsNavbarVisible}"
                                                                x:Name="TopNavigationBar" />
 
-            <txanalyzer:TransactionAnalyzerConfirmationView />
+            <txanalyzer:TransactionAnalyzerConfirmationView ZIndex="{TemplateBinding TransactionAnalyzerZIndex}" />
 
             <password:EnterPasswordPopupView ZIndex="10"/>
         </AbsoluteLayout>

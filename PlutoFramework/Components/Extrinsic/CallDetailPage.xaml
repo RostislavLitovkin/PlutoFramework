@@ -6,10 +6,12 @@
                        xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
+                       TransactionAnalyzerZIndex="-10"
                        x:Class="PlutoFramework.Components.Extrinsic.CallDetailPage"
-                       Title="Call detail">
+                       
+                       Title="Call details">
     <VerticalStackLayout HorizontalOptions="Center"
-                         Padding="20, 10, 20, 100"
+                         Padding="20, 20, 20, 100"
                          Spacing="15">
         <txanalyzer:PalletCallView PalletCallName="{Binding PalletCallName}"
                                    Endpoint="{Binding Endpoint}"

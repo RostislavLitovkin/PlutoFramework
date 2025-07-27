@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcmp_queue
     
     
     /// <summary>
-    /// >> 455 - Composite[cumulus_pallet_xcmp_queue.OutboundChannelDetails]
+    /// >> 467 - Composite[cumulus_pallet_xcmp_queue.OutboundChannelDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OutboundChannelDetails : BaseType

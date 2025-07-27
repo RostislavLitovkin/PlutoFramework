@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
-                       xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
-                       xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-                       x:Class="PlutoFramework.Components.Sumsub.SumsubWebSDKPage"
-                       Title="Sumsub Verification">
-    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                    AbsoluteLayout.LayoutFlags="All">
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Sumsub.SumsubWebSDKPage"
+             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+             xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
+             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
+             xmlns:topnavigationbar="clr-namespace:PlutoFramework.Templates.TopNavigationBarTemplate"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
+    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+
+        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
+               Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
+               Opacity="{AppThemeBinding Light=0.96}"
+               Aspect="AspectFill"/>
+
         <WebView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                  AbsoluteLayout.LayoutFlags="All"
-                 Margin="0,45,0,0"
                  x:Name="webView"
-                 Navigating="OnNavigating">
+                 Navigating="OnNavigating"
+                 >
 
             <!-- Add your content here -->
 
@@ -22,6 +29,7 @@
                         AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
                         x:Name="continueButton"
                         IsVisible="False">
+
             <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 50"
                   AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
                   ColumnSpacing="15"
@@ -31,8 +39,14 @@
                 </Grid.ColumnDefinitions>
                 <buttons:PlutoFrameworkElevatedButton Text="Continue"
                                                       Grid.Column="0"
-                                                      ButtonState="Enabled" />
+                                                      ButtonState="Enabled"/>
             </Grid>
         </AbsoluteLayout>
+
+        <topnavigationbar:TopNavigationBarTemplate Title="Sumsub Verification" />
+
+        <txanalyzer:TransactionAnalyzerConfirmationView />
+
+        <password:EnterPasswordPopupView />
     </AbsoluteLayout>
-</template:PageTemplate>
+</ContentPage>

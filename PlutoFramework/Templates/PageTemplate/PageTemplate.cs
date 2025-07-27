@@ -8,12 +8,21 @@ namespace PlutoFramework.Templates.PageTemplate
     public class PageTemplate : ContentPage
     {
         public static readonly BindableProperty MainContentProperty =
-            BindableProperty.Create(nameof(MainContent), typeof(MauiView), typeof(PageTemplate), default(MauiView));
+            BindableProperty.Create(nameof(MainContent), typeof(MauiView), typeof(PageTemplate), defaultValue: default(MauiView));
         public MauiView MainContent
         {
             get => (MauiView)GetValue(MainContentProperty);
             set => SetValue(MainContentProperty, value);
         }
+
+        public static readonly BindableProperty TransactionAnalyzerZIndexProperty =
+            BindableProperty.Create(nameof(TransactionAnalyzerZIndex), typeof(int), typeof(PageTemplate), defaultValue: 10);
+        public int TransactionAnalyzerZIndex
+        {
+            get => (int)GetValue(TransactionAnalyzerZIndexProperty);
+            set => SetValue(TransactionAnalyzerZIndexProperty, value);
+        }
+
         public IList<MauiView> PopupContent => new PopupContentCollection(this);
 
         private AbsoluteLayout? _popupLayoutRef = null;
@@ -123,7 +132,11 @@ namespace PlutoFramework.Templates.PageTemplate
             NavigationPage.SetHasNavigationBar(this, false);
             Shell.SetNavBarIsVisible(this, false);
 
-            ScrollPadding = IsNavbarVisible ? new Thickness(0, 55, 0, 0) : new Thickness(0);
+            HideSoftInputOnTapped = true;
+
+            var topNavigationBarHeight = (double)Application.Current.Resources["TopNavigationBarHeight"];
+
+            ScrollPadding = IsNavbarVisible ? new Thickness(0, topNavigationBarHeight, 0, 0) : new Thickness(0);
             ScrollViewOrientation = IsScrollEnabled ? ScrollOrientation.Vertical : ScrollOrientation.Neither;
         }
 
@@ -145,10 +158,7 @@ namespace PlutoFramework.Templates.PageTemplate
                 _popupLayoutRef.Children.Add(view);
             }
 
-            if (this.BindingContext != null)
-            {
-                _popupLayoutRef.BindingContext = this.BindingContext;
-            }
+            SetBindingContextForContents();
 
             _pendingPopupContent.Clear();
         }
@@ -156,6 +166,16 @@ namespace PlutoFramework.Templates.PageTemplate
         protected override void OnBindingContextChanged()
         {
             base.OnBindingContextChanged();
+
+            SetBindingContextForContents();
+        }
+
+        private void SetBindingContextForContents()
+        {
+            if (this.BindingContext == null)
+            {
+                return;
+            }
 
             if (MainContent != null)
             {
@@ -166,26 +186,6 @@ namespace PlutoFramework.Templates.PageTemplate
             {
                 _popupLayoutRef.BindingContext = this.BindingContext;
             }
-
-            /*try
-            {
-                foreach (var popup in PopupContent)
-                {
-                    try
-                    {
-                        popup.BindingContext = this.BindingContext;
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"Error setting BindingContext for PopupContent item: {ex}");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error setting BindingContext for PopupContent: {ex}");
-            }
-            */
         }
 
         private class PopupContentCollection : IList<MauiView>
@@ -198,11 +198,6 @@ namespace PlutoFramework.Templates.PageTemplate
 
             public void Add(MauiView item)
             {
-                if (_owner.BindingContext != null)
-                {
-                    // item.BindingContext = _owner.BindingContext;
-                }
-
                 if (_owner._popupLayoutRef != null)
                 {
                     _owner._popupLayoutRef.Children.Add(item);
@@ -244,11 +239,6 @@ namespace PlutoFramework.Templates.PageTemplate
 
             public void Insert(int index, MauiView item)
             {
-                if (_owner.BindingContext != null)
-                {
-                    // item.BindingContext = _owner.BindingContext;
-                }
-
                 getMauiViews.Insert(index, item);
             }
 

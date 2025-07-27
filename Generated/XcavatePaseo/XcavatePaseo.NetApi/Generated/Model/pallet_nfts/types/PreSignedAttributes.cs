@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 300 - Composite[pallet_nfts.types.PreSignedAttributes]
+    /// >> 308 - Composite[pallet_nfts.types.PreSignedAttributes]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PreSignedAttributes : BaseType

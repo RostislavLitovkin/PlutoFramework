@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_message_queue
     
     
     /// <summary>
-    /// >> 486 - Composite[pallet_message_queue.Page]
+    /// >> 498 - Composite[pallet_message_queue.Page]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Page : BaseType
@@ -47,7 +47,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_message_queue
         /// <summary>
         /// >> heap
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28 Heap { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29 Heap { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -82,7 +82,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_message_queue
             First.Decode(byteArray, ref p);
             Last = new Substrate.NetApi.Model.Types.Primitive.U32();
             Last.Decode(byteArray, ref p);
-            Heap = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28();
+            Heap = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29();
             Heap.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

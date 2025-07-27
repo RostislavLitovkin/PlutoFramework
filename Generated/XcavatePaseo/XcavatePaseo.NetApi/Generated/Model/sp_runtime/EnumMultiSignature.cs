@@ -38,7 +38,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.sp_runtime
     }
     
     /// <summary>
-    /// >> 297 - Variant[sp_runtime.MultiSignature]
+    /// >> 305 - Variant[sp_runtime.MultiSignature]
     /// </summary>
     public sealed class EnumMultiSignature : BaseEnumRust<MultiSignature>
     {

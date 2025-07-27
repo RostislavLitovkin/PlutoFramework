@@ -28,7 +28,14 @@ namespace PlutoFramework.Components.Password
         [RelayCommand]
         public void Enter()
         {
-            EnteredPassword.SetResult(Password);
+            try
+            {
+                EnteredPassword.SetResult(Password);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         [RelayCommand]

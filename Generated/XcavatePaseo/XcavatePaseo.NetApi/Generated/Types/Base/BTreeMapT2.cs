@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 232 - Composite[BTreeMapT2]
+    /// >> 218 - Composite[BTreeMapT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BTreeMapT2 : BaseType
@@ -27,7 +27,7 @@ namespace XcavatePaseo.NetApi.Generated.Types.Base
         /// <summary>
         /// >> value
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inherent.MessageQueueChain>> Value { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded_segment.HrmpChannelUpdate>> Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace XcavatePaseo.NetApi.Generated.Types.Base
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inherent.MessageQueueChain>>();
+            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded_segment.HrmpChannelUpdate>>();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

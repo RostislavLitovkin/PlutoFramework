@@ -166,7 +166,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
     }
     
     /// <summary>
-    /// >> 519 - Variant[pallet_property_management.pallet.Error]
+    /// >> 529 - Variant[pallet_property_management.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

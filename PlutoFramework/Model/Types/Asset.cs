@@ -4,7 +4,7 @@ using PlutoFramework.Constants;
 
 namespace PlutoFramework.Types
 {
-    public class AssetMetadata
+    public class AssetMetadata : ICloneable
     {
         public string Symbol { get; set; }
         public string ChainIcon { get; set; }
@@ -13,6 +13,20 @@ namespace PlutoFramework.Types
         public AssetPallet Pallet { get; set; }
         public BigInteger AssetId { get; set; }
         public int Decimals { get; set; }
+
+        public object Clone()
+        {
+            return new AssetMetadata
+            {
+                Symbol = Symbol,
+                ChainIcon = ChainIcon,
+                DarkChainIcon = DarkChainIcon,
+                Endpoint = Endpoint,
+                Pallet = Pallet,
+                AssetId = AssetId,
+                Decimals = Decimals
+            };
+        }
 
         public Asset ToAsset()
         {
@@ -46,10 +60,34 @@ namespace PlutoFramework.Types
         AssetsFrozen,
         ForeignAssets,
         ForeignAssetsReserved,
-        ForeachAssetsFrozen,
+        ForeignAssetsFrozen,
         Tokens,
         TokensReserved,
         TokensFrozen,
+    }
+
+    public static class AssetPalletModel
+    {
+        public static AssetPallet ToBaseAssetPallet(this AssetPallet pallet) => pallet switch
+        {
+            AssetPallet.Native => AssetPallet.Native,
+            AssetPallet.NativeReserved => AssetPallet.Native,
+            AssetPallet.NativeFrozen => AssetPallet.Native,
+
+            AssetPallet.Assets => AssetPallet.Assets,
+            AssetPallet.AssetsReserved => AssetPallet.Assets,
+            AssetPallet.AssetsFrozen => AssetPallet.Assets,
+
+            AssetPallet.ForeignAssets => AssetPallet.ForeignAssets,
+            AssetPallet.ForeignAssetsReserved => AssetPallet.ForeignAssets,
+            AssetPallet.ForeignAssetsFrozen => AssetPallet.ForeignAssets,
+
+            AssetPallet.Tokens => AssetPallet.Tokens,
+            AssetPallet.TokensReserved => AssetPallet.Tokens,
+            AssetPallet.TokensFrozen => AssetPallet.Tokens,
+
+            _ => throw new ArgumentOutOfRangeException(nameof(pallet), pallet, "Unknown AssetPallet")
+        };
     }
 }
 

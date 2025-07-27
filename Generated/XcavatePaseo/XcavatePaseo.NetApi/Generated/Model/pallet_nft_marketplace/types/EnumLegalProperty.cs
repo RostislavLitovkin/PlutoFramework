@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types
     }
     
     /// <summary>
-    /// >> 176 - Variant[pallet_nft_marketplace.types.LegalProperty]
+    /// >> 182 - Variant[pallet_nft_marketplace.types.LegalProperty]
     /// </summary>
     public sealed class EnumLegalProperty : BaseEnum<LegalProperty>
     {

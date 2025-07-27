@@ -104,7 +104,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// - `amount`: The amount of token that the investor wants to buy.
         /// - `payment_asset`: Asset in which the investor wants to pay.
         /// 
-        /// Emits `TokenBoughtObject` event when succesfful.
+        /// Emits `PropertyTokenBought` event when succesfful.
         /// </summary>
         buy_token = 3,
         
@@ -121,7 +121,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// - `token_price`: The price of a single token.
         /// - `amount`: The amount of token of the real estate object that should be listed.
         /// 
-        /// Emits `TokenListed` event when succesfful
+        /// Emits `TokenRelisted` event when succesfful
         /// </summary>
         relist_token = 4,
         
@@ -136,7 +136,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// - `amount`: The amount of token the investor wants to buy.
         /// - `payment_asset`: Asset in which the investor wants to pay.
         /// 
-        /// Emits `TokenBought` event when succesfful.
+        /// Emits `RelistedTokenBought` event when succesfful.
         /// </summary>
         buy_relisted_token = 5,
         
@@ -207,7 +207,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// Parameters:
         /// - `listing_id`: The listing that the investor wants to buy from.
         /// 
-        /// Emits `FundsWithdrawn` event when succesfful.
+        /// Emits `RejectedFundsWithdrawn` event when succesfful.
         /// </summary>
         withdraw_funds = 10,
         
@@ -220,7 +220,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
         /// Parameters:
         /// - `listing_id`: The listing that the investor wants to buy from.
         /// 
-        /// Emits `FundsRefunded` event when succesfful.
+        /// Emits `ExpiredFundsWithdrawn` event when succesfful.
         /// </summary>
         refund_expired = 11,
         
@@ -343,7 +343,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet
     }
     
     /// <summary>
-    /// >> 359 - Variant[pallet_nft_marketplace.pallet.Call]
+    /// >> 367 - Variant[pallet_nft_marketplace.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

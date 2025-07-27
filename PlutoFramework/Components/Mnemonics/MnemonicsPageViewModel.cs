@@ -91,7 +91,7 @@ public partial class MnemonicsPageViewModel : ObservableObject
     private static async Task SaveJsonAsync(string json, CancellationToken token)
     {
         using var stream = new MemoryStream(System.Text.Encoding.Default.GetBytes(json));
-        var fileSaverResult = await FileSaver.Default.SaveAsync($"{AppInfo.Current.Name}.json", stream, token);
+        var fileSaverResult = await FileSaver.Default.SaveAsync($"{AppInfo.Current.Name.ToLower()}.json", stream, token);
 
         if (fileSaverResult.IsSuccessful)
         {

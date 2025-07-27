@@ -8,9 +8,6 @@
                        xmlns:mnemonics="clr-namespace:PlutoFramework.Components.Mnemonics"
                        x:Class="PlutoFramework.Components.Mnemonics.MnemonicsPage"
                        Title="Mnemonics">
-    <template:PageTemplate.BindingContext>
-        <mnemonics:MnemonicsPageViewModel x:Name="viewModel" />
-    </template:PageTemplate.BindingContext>
 
     <template:PageTemplate.MainContent>
         <VerticalStackLayout HorizontalOptions="Center"

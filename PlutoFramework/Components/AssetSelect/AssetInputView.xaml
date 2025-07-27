@@ -28,7 +28,8 @@
                             Grid.Column="0"
                             IsSpellCheckEnabled="false"
                             IsTextPredictionEnabled="false"
-                           PropertyChanged="AmountEntryChanged"/>
+                           PropertyChanged="AmountEntryChanged"
+                           Focused="OnAmountEntryFocused"/>
                     <assetselect:AssetSelectButtonView HeightRequest="40"
                                                        Grid.Column="1" />
                 </Grid>
@@ -52,13 +53,14 @@
                     <Entry Placeholder="{Binding UsdAmountPlaceholder}"
                            Text="{Binding UsdAmount}"
                            IsEnabled="{Binding UsdAmountEnabled}"
-                               Keyboard="Numeric"
-                               HeightRequest="40"
-                               FontAttributes="Bold"
-                               Grid.Column="0"
-                               IsSpellCheckEnabled="false"
-                                IsTextPredictionEnabled="false"
+                           Keyboard="Numeric"
+                           HeightRequest="40"
+                           FontAttributes="Bold"
+                           Grid.Column="0"
+                           IsSpellCheckEnabled="false"
+                           IsTextPredictionEnabled="false"
                            PropertyChanged="UsdAmountEntryChanged"
+                           Focused="OnUsdEntryFocused"
                            />
                     <assetselect:UsdButtonView HeightRequest="40"
                                                Grid.Column="1" />

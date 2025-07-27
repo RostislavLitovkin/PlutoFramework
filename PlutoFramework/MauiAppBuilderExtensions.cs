@@ -33,8 +33,11 @@ using PlutoFramework.Model.SQLite;
 using Xe.AcrylicView;
 using ZXing.Net.Maui.Controls;
 
+
+
 #if ANDROID26_0_OR_GREATER
 using Microsoft.Maui.Controls.Compatibility.Platform.Android;
+using PlutoFramework.Platforms.Android;
 #endif
 
 namespace PlutoFramework
@@ -80,6 +83,8 @@ namespace PlutoFramework
             });
 
             AssetsModel.DatabaseSaver = new BalancesDatabaseSaver();
+
+            CustomizeWebViewHandler();
 
             DependencyService.Register<TransferViewModel>();
 
@@ -169,5 +174,19 @@ namespace PlutoFramework
 
             return builder;
         }
+
+        /// <summary>
+        /// https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/webview?view=net-maui-9.0&pivots=devices-android#handle-permissions-on-android
+        /// </summary>
+        private static void CustomizeWebViewHandler()
+        {
+#if ANDROID26_0_OR_GREATER
+        Microsoft.Maui.Handlers.WebViewHandler.Mapper.ModifyMapping(
+            nameof(Android.Webkit.WebView.WebChromeClient),
+            (handler, view, args) => handler.PlatformView.SetWebChromeClient(new WebChromeClientWithPermissions(handler)));
+#endif
+        }
     }
+
+
 }
