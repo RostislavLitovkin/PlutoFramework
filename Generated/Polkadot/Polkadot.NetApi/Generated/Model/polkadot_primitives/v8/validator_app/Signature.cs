@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.validator_app
     
     
     /// <summary>
-    /// >> 284 - Composite[polkadot_primitives.v8.validator_app.Signature]
+    /// >> 291 - Composite[polkadot_primitives.v8.validator_app.Signature]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Signature : BaseType

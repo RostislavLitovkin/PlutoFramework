@@ -35,15 +35,10 @@ namespace PolkadotPeople.NetApi.Generated.Model.people_polkadot_runtime
         /// >> CumulusXcm
         /// </summary>
         CumulusXcm = 32,
-        
-        /// <summary>
-        /// >> Void
-        /// </summary>
-        Void = 3,
     }
     
     /// <summary>
-    /// >> 364 - Variant[people_polkadot_runtime.OriginCaller]
+    /// >> 395 - Variant[people_polkadot_runtime.OriginCaller]
     /// </summary>
     public sealed class EnumOriginCaller : BaseEnumRust<OriginCaller>
     {
@@ -56,7 +51,6 @@ namespace PolkadotPeople.NetApi.Generated.Model.people_polkadot_runtime
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.frame_support.dispatch.EnumRawOrigin>(OriginCaller.system);
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.pallet_xcm.pallet.EnumOrigin>(OriginCaller.PolkadotXcm);
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.cumulus_pallet_xcm.pallet.EnumOrigin>(OriginCaller.CumulusXcm);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVoid>(OriginCaller.Void);
         }
     }
 }

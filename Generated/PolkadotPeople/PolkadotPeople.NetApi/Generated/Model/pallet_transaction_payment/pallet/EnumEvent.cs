@@ -31,7 +31,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_transaction_payment.palle
     }
     
     /// <summary>
-    /// >> 35 - Variant[pallet_transaction_payment.pallet.Event]
+    /// >> 38 - Variant[pallet_transaction_payment.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

@@ -1,5 +1,4 @@
 ﻿using PolkadotPeople.NetApi.Generated.Model.sp_core.crypto;
-using PlutoFramework.Constants;
 using Substrate.NetApi;
 
 namespace PlutoFramework.Model
@@ -27,9 +26,7 @@ namespace PlutoFramework.Model
 
 				Judgement finalJudgement = Judgement.Unknown;
 
-				var registration = ((PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.Registration)identity.Value[0]);
-
-                foreach (Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.EnumJudgement> thing in registration.Judgements.Value.Value)
+                foreach (Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.EnumJudgement> thing in identity.Judgements.Value.Value)
 				{
 					switch (((PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.EnumJudgement)thing.Value[1]).Value)
 					{
@@ -62,7 +59,7 @@ namespace PlutoFramework.Model
 
 				return new OnChainIdentity
 				{
-					DisplayName = System.Text.Encoding.UTF8.GetString(registration.Info.Display.Value2.Encode()),
+					DisplayName = System.Text.Encoding.UTF8.GetString(identity.Info.Display.Value2.Encode()),
 					FinalJudgement = finalJudgement,
 				};
 			}

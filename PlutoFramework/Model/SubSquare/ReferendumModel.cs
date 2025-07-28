@@ -26,11 +26,6 @@ namespace PlutoFramework.Model.SubSquare
                 return;
             }
 
-            if (!await clientExt.IsConnectedAsync())
-            {
-                return;
-            }
-
             var client = clientExt.SubstrateClient;
 
             var account32 = new AccountId32();
@@ -147,8 +142,8 @@ namespace PlutoFramework.Model.SubSquare
         public static async Task<Root?> GetReferendumInfoAsync(Endpoint endpoint, uint id)
         {
             HttpClient client = new HttpClient();
-
-            string data = await client.GetStringAsync("https://" + endpoint.SubSquareChainName + ".subsquare.io/api/gov2/referendums/" + id);
+        
+            string data = await client.GetStringAsync($"https://{endpoint.SubSquareChainName}-api.subsquare.io/polkassembly-comments?post_id={id}&post_type=ReferendumV2");
 
             return JsonConvert.DeserializeObject<Root>(data);
         }

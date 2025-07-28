@@ -28,7 +28,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.origin.pal
     }
     
     /// <summary>
-    /// >> 162 - Variant[polkadot_runtime_parachains.origin.pallet.Origin]
+    /// >> 170 - Variant[polkadot_runtime_parachains.origin.pallet.Origin]
     /// </summary>
     public sealed class EnumOrigin : BaseEnumRust<Origin>
     {

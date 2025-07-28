@@ -58,6 +58,7 @@ namespace Polkadot.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "UpgradedToTripleRefCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "ExecutionPhase"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Polkadot.NetApi.Generated.Model.frame_system.EnumPhase)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "AuthorizedUpgrade"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Polkadot.NetApi.Generated.Model.frame_system.CodeUpgradeAuthorization)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "ExtrinsicWeightReclaimed"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Polkadot.NetApi.Generated.Model.sp_weights.weight_v2.Weight)));
         }
         
         /// <summary>
@@ -623,6 +624,47 @@ namespace Polkadot.NetApi.Generated.Storage
             var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.frame_system.CodeUpgradeAuthorization>(parameters, blockhash, token);
             return result;
         }
+        
+        /// <summary>
+        /// >> ExtrinsicWeightReclaimedParams
+        ///  The weight reclaimed for the extrinsic.
+        /// 
+        ///  This information is available until the end of the extrinsic execution.
+        ///  More precisely this information is removed in `note_applied_extrinsic`.
+        /// 
+        ///  Logic doing some post dispatch weight reduction must update this storage to avoid duplicate
+        ///  reduction.
+        /// </summary>
+        public static string ExtrinsicWeightReclaimedParams()
+        {
+            return RequestGenerator.GetStorage("System", "ExtrinsicWeightReclaimed", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> ExtrinsicWeightReclaimedDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string ExtrinsicWeightReclaimedDefault()
+        {
+            return "0x0000";
+        }
+        
+        /// <summary>
+        /// >> ExtrinsicWeightReclaimed
+        ///  The weight reclaimed for the extrinsic.
+        /// 
+        ///  This information is available until the end of the extrinsic execution.
+        ///  More precisely this information is removed in `note_applied_extrinsic`.
+        /// 
+        ///  Logic doing some post dispatch weight reduction must update this storage to avoid duplicate
+        ///  reduction.
+        /// </summary>
+        public async Task<Polkadot.NetApi.Generated.Model.sp_weights.weight_v2.Weight> ExtrinsicWeightReclaimed(string blockhash, CancellationToken token)
+        {
+            string parameters = SystemStorage.ExtrinsicWeightReclaimedParams();
+            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.sp_weights.weight_v2.Weight>(parameters, blockhash, token);
+            return result;
+        }
     }
     
     /// <summary>
@@ -811,7 +853,7 @@ namespace Polkadot.NetApi.Generated.Storage
         public Polkadot.NetApi.Generated.Model.sp_version.RuntimeVersion Version()
         {
             var result = new Polkadot.NetApi.Generated.Model.sp_version.RuntimeVersion();
-            result.Create(@"0x20706F6C6B61646F743C7061726974792D706F6C6B61646F7400000000E1510F00000000005CC51FF1FA3F5D0CCA01000000DF6ACB689907609B0500000037E397FC7C91F5E40200000040FE3AD401F8959A0600000017A6BC0D0062AEB30100000018EF58A3B67BA77001000000D2BC9897EED08F1503000000F78B278BE53F454C02000000AF2C0297A23E6D3D0B00000049EAAF1B548A0CB00500000091D5DF18B0D2CF58020000002A5E924655399E6001000000ED99C5ACB25EEDF503000000CBCA25E39F14238702000000687AD44AD37F03C201000000AB3C0572291FEB8B01000000BC9D89904F5B923F0100000037C8BB1350A9A2A804000000F3FF14D5AB527059030000006FF52EE858E6C5BD0100000091B1C8B16328EB92010000009FFB505AA738D69C01000000FBC577B9D747EFD6010000001A00000001");
+            result.Create(@"0x20706F6C6B61646F743C7061726974792D706F6C6B61646F7400000000B1590F00000000005CC51FF1FA3F5D0CCA01000000DF6ACB689907609B0500000037E397FC7C91F5E40200000040FE3AD401F8959A0600000017A6BC0D0062AEB30100000018EF58A3B67BA77001000000D2BC9897EED08F1503000000F78B278BE53F454C02000000AF2C0297A23E6D3D0D00000049EAAF1B548A0CB00500000091D5DF18B0D2CF58020000002A5E924655399E6001000000ED99C5ACB25EEDF503000000CBCA25E39F14238702000000687AD44AD37F03C201000000AB3C0572291FEB8B01000000BC9D89904F5B923F0100000037C8BB1350A9A2A804000000F3FF14D5AB527059030000006FF52EE858E6C5BD0100000091B1C8B16328EB92020000009FFB505AA738D69C01000000FBC577B9D747EFD6010000001A00000001");
             return result;
         }
         

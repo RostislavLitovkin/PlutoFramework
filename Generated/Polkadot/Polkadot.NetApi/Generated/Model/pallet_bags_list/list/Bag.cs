@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_bags_list.list
     
     
     /// <summary>
-    /// >> 669 - Composite[pallet_bags_list.list.Bag]
+    /// >> 696 - Composite[pallet_bags_list.list.Bag]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Bag : BaseType

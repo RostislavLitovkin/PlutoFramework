@@ -213,15 +213,27 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking.pallet.pallet
         VirtualStakerNotAllowed = 30,
         
         /// <summary>
+        /// >> CannotReapStash
+        /// Stash could not be reaped as other pallet might depend on it.
+        /// </summary>
+        CannotReapStash = 31,
+        
+        /// <summary>
+        /// >> AlreadyMigrated
+        /// The stake of this account is already migrated to `Fungible` holds.
+        /// </summary>
+        AlreadyMigrated = 32,
+        
+        /// <summary>
         /// >> Restricted
         /// Account is restricted from participation in staking. This may happen if the account is
         /// staking in another way already, such as via pool.
         /// </summary>
-        Restricted = 31,
+        Restricted = 33,
     }
     
     /// <summary>
-    /// >> 578 - Variant[pallet_staking.pallet.pallet.Error]
+    /// >> 602 - Variant[pallet_staking.pallet.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

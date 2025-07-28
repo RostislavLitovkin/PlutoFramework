@@ -64,7 +64,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_grandpa.pallet
     }
     
     /// <summary>
-    /// >> 142 - Variant[pallet_grandpa.pallet.Call]
+    /// >> 151 - Variant[pallet_grandpa.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

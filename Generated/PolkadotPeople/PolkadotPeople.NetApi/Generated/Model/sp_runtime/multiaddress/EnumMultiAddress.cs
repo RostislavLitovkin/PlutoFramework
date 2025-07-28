@@ -48,7 +48,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.sp_runtime.multiaddress
     }
     
     /// <summary>
-    /// >> 212 - Variant[sp_runtime.multiaddress.MultiAddress]
+    /// >> 240 - Variant[sp_runtime.multiaddress.MultiAddress]
     /// </summary>
     public sealed class EnumMultiAddress : BaseEnumRust<MultiAddress>
     {

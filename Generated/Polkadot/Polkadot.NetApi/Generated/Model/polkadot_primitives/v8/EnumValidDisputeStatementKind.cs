@@ -48,7 +48,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8
     }
     
     /// <summary>
-    /// >> 308 - Variant[polkadot_primitives.v8.ValidDisputeStatementKind]
+    /// >> 315 - Variant[polkadot_primitives.v8.ValidDisputeStatementKind]
     /// </summary>
     public sealed class EnumValidDisputeStatementKind : BaseEnumRust<ValidDisputeStatementKind>
     {

@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.sp_consensus_grandpa.app
     
     
     /// <summary>
-    /// >> 53 - Composite[sp_consensus_grandpa.app.Public]
+    /// >> 55 - Composite[sp_consensus_grandpa.app.Public]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Public : BaseType

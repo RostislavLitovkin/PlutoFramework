@@ -63,7 +63,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_common.auctions.palle
     }
     
     /// <summary>
-    /// >> 324 - Variant[polkadot_runtime_common.auctions.pallet.Call]
+    /// >> 331 - Variant[polkadot_runtime_common.auctions.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

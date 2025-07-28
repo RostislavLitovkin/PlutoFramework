@@ -42,7 +42,7 @@ namespace Polkadot.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.polkadot_core_primitives.CandidateHash>), typeof(Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.DisputeState)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParasDisputes", "BackersOnDisputes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.polkadot_core_primitives.CandidateHash>), typeof(Polkadot.NetApi.Generated.Types.Base.BTreeSet)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.polkadot_core_primitives.CandidateHash>), typeof(Polkadot.NetApi.Generated.Types.Base.BTreeSetT2)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParasDisputes", "Included"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.polkadot_core_primitives.CandidateHash>), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
@@ -137,10 +137,10 @@ namespace Polkadot.NetApi.Generated.Storage
         ///  Backing votes stored for each dispute.
         ///  This storage is used for slashing.
         /// </summary>
-        public async Task<Polkadot.NetApi.Generated.Types.Base.BTreeSet> BackersOnDisputes(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.polkadot_core_primitives.CandidateHash> key, string blockhash, CancellationToken token)
+        public async Task<Polkadot.NetApi.Generated.Types.Base.BTreeSetT2> BackersOnDisputes(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.polkadot_core_primitives.CandidateHash> key, string blockhash, CancellationToken token)
         {
             string parameters = ParasDisputesStorage.BackersOnDisputesParams(key);
-            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Types.Base.BTreeSet>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Types.Base.BTreeSetT2>(parameters, blockhash, token);
             return result;
         }
         

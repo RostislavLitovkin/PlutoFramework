@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.sp_core.sr25519.vrf
     
     
     /// <summary>
-    /// >> 525 - Composite[sp_core.sr25519.vrf.VrfSignature]
+    /// >> 548 - Composite[sp_core.sr25519.vrf.VrfSignature]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class VrfSignature : BaseType

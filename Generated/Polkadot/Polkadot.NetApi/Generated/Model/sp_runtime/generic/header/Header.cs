@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.sp_runtime.generic.header
     
     
     /// <summary>
-    /// >> 106 - Composite[sp_runtime.generic.header.Header]
+    /// >> 115 - Composite[sp_runtime.generic.header.Header]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Header : BaseType

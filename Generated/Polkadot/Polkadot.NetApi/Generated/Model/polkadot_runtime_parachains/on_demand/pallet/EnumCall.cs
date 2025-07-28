@@ -61,10 +61,32 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.on_demand.
         /// - `OnDemandOrderPlaced`
         /// </summary>
         place_order_keep_alive = 1,
+        
+        /// <summary>
+        /// >> place_order_with_credits
+        /// Create a single on demand core order with credits.
+        /// Will charge the owner's on-demand credit account the spot price for the current block.
+        /// 
+        /// Parameters:
+        /// - `origin`: The sender of the call, on-demand credits will be withdrawn from this
+        ///   account.
+        /// - `max_amount`: The maximum number of credits to spend from the origin to place an
+        ///   order.
+        /// - `para_id`: A `ParaId` the origin wants to provide blockspace for.
+        /// 
+        /// Errors:
+        /// - `InsufficientCredits`
+        /// - `QueueFull`
+        /// - `SpotPriceHigherThanMaxAmount`
+        /// 
+        /// Events:
+        /// - `OnDemandOrderPlaced`
+        /// </summary>
+        place_order_with_credits = 2,
     }
     
     /// <summary>
-    /// >> 321 - Variant[polkadot_runtime_parachains.on_demand.pallet.Call]
+    /// >> 328 - Variant[polkadot_runtime_parachains.on_demand.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -77,6 +99,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.on_demand.
         {
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>>(Call.place_order_allow_death);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>>(Call.place_order_keep_alive);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>>(Call.place_order_with_credits);
         }
     }
 }

@@ -103,7 +103,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking.pallet.pallet
         
         /// <summary>
         /// >> PayoutStarted
-        /// The stakers' rewards are getting paid.
+        /// A Page of stakers rewards are getting paid. `next` is `None` if all pages are claimed.
         /// </summary>
         PayoutStarted = 12,
         
@@ -136,10 +136,17 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking.pallet.pallet
         /// Report of a controller batch deprecation.
         /// </summary>
         ControllerBatchDeprecated = 17,
+        
+        /// <summary>
+        /// >> CurrencyMigrated
+        /// Staking balance migrated from locks to holds, with any balance that could not be held
+        /// is force withdrawn.
+        /// </summary>
+        CurrencyMigrated = 18,
     }
     
     /// <summary>
-    /// >> 41 - Variant[pallet_staking.pallet.pallet.Event]
+    /// >> 42 - Variant[pallet_staking.pallet.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -162,12 +169,13 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking.pallet.pallet
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.Kicked);
 				AddTypeDecoder<BaseVoid>(Event.StakingElectionFailed);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.Chilled);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.PayoutStarted);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>>>(Event.PayoutStarted);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.pallet_staking.ValidatorPrefs>>(Event.ValidatorPrefsSet);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.SnapshotVotersSizeExceeded);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.SnapshotTargetsSizeExceeded);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_staking.EnumForcing>(Event.ForceEra);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.ControllerBatchDeprecated);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.CurrencyMigrated);
         }
     }
 }

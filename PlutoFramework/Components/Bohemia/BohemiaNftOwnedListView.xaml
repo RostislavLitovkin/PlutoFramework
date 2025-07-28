@@ -7,6 +7,6 @@
     <VerticalStackLayout Spacing="15">
         <bohemia:ToJoinDaoView x:Name="toJoinDaoView" />
 
-        <nft:NftsOwnedListView x:Name="nftsOwnedListView" />
+        <nft:NftOwnedListView x:Name="nftOwnedListView" />
     </VerticalStackLayout>
 </ContentView>

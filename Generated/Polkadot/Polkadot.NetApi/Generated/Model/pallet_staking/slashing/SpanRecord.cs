@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking.slashing
     
     
     /// <summary>
-    /// >> 577 - Composite[pallet_staking.slashing.SpanRecord]
+    /// >> 601 - Composite[pallet_staking.slashing.SpanRecord]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SpanRecord : BaseType

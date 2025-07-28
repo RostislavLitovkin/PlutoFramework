@@ -38,7 +38,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.cumulus_primitives_core
     }
     
     /// <summary>
-    /// >> 117 - Variant[cumulus_primitives_core.AggregateMessageOrigin]
+    /// >> 135 - Variant[cumulus_primitives_core.AggregateMessageOrigin]
     /// </summary>
     public sealed class EnumAggregateMessageOrigin : BaseEnumRust<AggregateMessageOrigin>
     {

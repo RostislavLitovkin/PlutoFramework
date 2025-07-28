@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.on_demand.
     
     
     /// <summary>
-    /// >> 767 - Composite[polkadot_runtime_parachains.on_demand.types.QueueStatusType]
+    /// >> 798 - Composite[polkadot_runtime_parachains.on_demand.types.QueueStatusType]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class QueueStatusType : BaseType

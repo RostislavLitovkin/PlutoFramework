@@ -38,7 +38,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.sp_runtime
     }
     
     /// <summary>
-    /// >> 361 - Variant[sp_runtime.MultiSignature]
+    /// >> 392 - Variant[sp_runtime.MultiSignature]
     /// </summary>
     public sealed class EnumMultiSignature : BaseEnumRust<MultiSignature>
     {

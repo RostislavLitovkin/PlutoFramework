@@ -54,7 +54,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_session.pallet
     }
     
     /// <summary>
-    /// >> 231 - Variant[pallet_session.pallet.Error]
+    /// >> 259 - Variant[pallet_session.pallet.Error]
     /// Error for the session pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

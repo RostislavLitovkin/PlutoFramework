@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.on_demand.
     
     
     /// <summary>
-    /// >> 768 - Composite[polkadot_runtime_parachains.on_demand.types.QueueIndex]
+    /// >> 799 - Composite[polkadot_runtime_parachains.on_demand.types.QueueIndex]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class QueueIndex : BaseType

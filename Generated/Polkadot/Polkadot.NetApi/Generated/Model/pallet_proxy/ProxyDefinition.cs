@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_proxy
     
     
     /// <summary>
-    /// >> 640 - Composite[pallet_proxy.ProxyDefinition]
+    /// >> 667 - Composite[pallet_proxy.ProxyDefinition]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ProxyDefinition : BaseType
@@ -31,7 +31,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_proxy
         /// <summary>
         /// >> proxy_type
         /// </summary>
-        public Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumProxyType ProxyType { get; set; }
+        public Polkadot.NetApi.Generated.Model.polkadot_runtime_constants.proxy.EnumProxyType ProxyType { get; set; }
         /// <summary>
         /// >> delay
         /// </summary>
@@ -59,7 +59,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_proxy
             var start = p;
             Delegate = new Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Delegate.Decode(byteArray, ref p);
-            ProxyType = new Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumProxyType();
+            ProxyType = new Polkadot.NetApi.Generated.Model.polkadot_runtime_constants.proxy.EnumProxyType();
             ProxyType.Decode(byteArray, ref p);
             Delay = new Substrate.NetApi.Model.Types.Primitive.U32();
             Delay.Decode(byteArray, ref p);

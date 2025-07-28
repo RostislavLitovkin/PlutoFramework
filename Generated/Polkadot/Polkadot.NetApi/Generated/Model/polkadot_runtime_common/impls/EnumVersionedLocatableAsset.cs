@@ -30,10 +30,15 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_common.impls
         /// >> V4
         /// </summary>
         V4 = 4,
+        
+        /// <summary>
+        /// >> V5
+        /// </summary>
+        V5 = 5,
     }
     
     /// <summary>
-    /// >> 55 - Variant[polkadot_runtime_common.impls.VersionedLocatableAsset]
+    /// >> 57 - Variant[polkadot_runtime_common.impls.VersionedLocatableAsset]
     /// </summary>
     public sealed class EnumVersionedLocatableAsset : BaseEnumRust<VersionedLocatableAsset>
     {
@@ -45,6 +50,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_common.impls
         {
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation, Polkadot.NetApi.Generated.Model.xcm.v3.multiasset.EnumAssetId>>(VersionedLocatableAsset.V3);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v4.location.Location, Polkadot.NetApi.Generated.Model.staging_xcm.v4.asset.AssetId>>(VersionedLocatableAsset.V4);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Polkadot.NetApi.Generated.Model.staging_xcm.v5.asset.AssetId>>(VersionedLocatableAsset.V5);
         }
     }
 }

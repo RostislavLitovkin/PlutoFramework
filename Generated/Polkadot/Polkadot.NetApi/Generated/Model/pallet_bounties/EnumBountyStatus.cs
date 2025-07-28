@@ -50,10 +50,15 @@ namespace Polkadot.NetApi.Generated.Model.pallet_bounties
         /// >> PendingPayout
         /// </summary>
         PendingPayout = 5,
+        
+        /// <summary>
+        /// >> ApprovedWithCurator
+        /// </summary>
+        ApprovedWithCurator = 6,
     }
     
     /// <summary>
-    /// >> 652 - Variant[pallet_bounties.BountyStatus]
+    /// >> 679 - Variant[pallet_bounties.BountyStatus]
     /// </summary>
     public sealed class EnumBountyStatus : BaseEnumRust<BountyStatus>
     {
@@ -69,6 +74,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_bounties
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>(BountyStatus.CuratorProposed);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(BountyStatus.Active);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(BountyStatus.PendingPayout);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>(BountyStatus.ApprovedWithCurator);
         }
     }
 }
