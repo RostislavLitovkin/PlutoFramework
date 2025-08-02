@@ -15,6 +15,16 @@
 
     <x:Double x:Key="CardBorderThickness">0</x:Double>
     <Color x:Key="CardBorderColor">Black</Color>
+    <Color x:Key="CardBackgroundColorDark">Black</Color>
+    <Color x:Key="CardBackgroundColorLight">White</Color>
+    <Color x:Key="TextCardBackgroundColorDark">Black</Color>
+    <Color x:Key="TextCardBackgroundColorLight">White</Color>
+    <Shadow x:Key="TextCardShadow"
+            Brush="Black"
+            Offset="0,0" 
+            Radius="0"
+            Opacity="0"></Shadow>     
+
 
     <Color x:Key="PrimaryButtonTextColor">White</Color>
     <Color x:Key="PrimaryButtonBorderColor">Black</Color>

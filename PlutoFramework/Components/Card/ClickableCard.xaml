@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PlutoFramework.Components.Card.ClickableCard">
-    <Border
+<Border xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        x:Class="PlutoFramework.Components.Card.ClickableCard"
             HorizontalOptions="Fill"
             VerticalOptions="Fill"
-            BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
+            BackgroundColor="{AppThemeBinding Light={StaticResource CardBackgroundColorLight}, Dark={StaticResource CardBackgroundColorDark}}"
             StrokeThickness="{StaticResource CardBorderThickness}"
             Stroke="{StaticResource CardBorderColor}"
             Padding="10, 0, 10, 0"
-        
             x:Name="border"
             Shadow="{StaticResource CardShadow}"
             >
-        <Border.StrokeShape>
-            <RoundRectangle CornerRadius="{StaticResource CardCornerRadius}"
+    <Border.StrokeShape>
+        <RoundRectangle CornerRadius="{StaticResource CardCornerRadius}"
                                 x:Name="roundRectangle"/>
 
-        </Border.StrokeShape>
+    </Border.StrokeShape>
         <!--BorderColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"-->
-        <ContentView x:Name="contentView"
+    <ContentView x:Name="contentView"
                     HorizontalOptions="Fill"
                     VerticalOptions="Fill">
-        </ContentView>
-    </Border>
-
-</ContentView>
+    </ContentView>
+</Border>

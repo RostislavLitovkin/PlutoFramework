@@ -2094,6 +2094,9 @@
     <MauiXaml Update="Components\Card\ClickableCard.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\Card\TextCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\Card\TopPillBackgroundView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>

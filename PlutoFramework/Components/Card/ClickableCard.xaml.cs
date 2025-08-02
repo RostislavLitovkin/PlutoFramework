@@ -1,6 +1,6 @@
 namespace PlutoFramework.Components.Card;
 
-public partial class ClickableCard : ContentView
+public partial class ClickableCard : Border
 {
     public ClickableCard()
     {
