@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8
     
     
     /// <summary>
-    /// >> 754 - Composite[polkadot_primitives.v8.SessionInfo]
+    /// >> 785 - Composite[polkadot_primitives.v8.SessionInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SessionInfo : BaseType

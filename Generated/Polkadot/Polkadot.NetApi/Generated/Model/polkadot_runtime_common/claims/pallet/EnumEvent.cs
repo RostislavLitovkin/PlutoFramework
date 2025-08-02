@@ -30,7 +30,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_common.claims.pallet
     }
     
     /// <summary>
-    /// >> 448 - Variant[polkadot_runtime_common.claims.pallet.Event]
+    /// >> 467 - Variant[polkadot_runtime_common.claims.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

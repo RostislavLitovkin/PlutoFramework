@@ -43,6 +43,11 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.coretime.p
         request_revenue_at = 2,
         
         /// <summary>
+        /// >> credit_account
+        /// </summary>
+        credit_account = 3,
+        
+        /// <summary>
         /// >> assign_core
         /// Receive instructions from the `ExternalBrokerOrigin`, detailing how a specific core is
         /// to be used.
@@ -58,7 +63,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.coretime.p
     }
     
     /// <summary>
-    /// >> 331 - Variant[polkadot_runtime_parachains.coretime.pallet.Call]
+    /// >> 338 - Variant[polkadot_runtime_parachains.coretime.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -71,6 +76,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.coretime.p
         {
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U16>(Call.request_core_count);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.request_revenue_at);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.credit_account);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.pallet_broker.coretime_interface.EnumCoreAssignment, Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.assigner_coretime.PartsOf57600>>, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>>>(Call.assign_core);
         }
     }

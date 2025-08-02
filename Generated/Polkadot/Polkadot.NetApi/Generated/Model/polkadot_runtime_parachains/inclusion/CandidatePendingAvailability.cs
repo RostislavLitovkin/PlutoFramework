@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.inclusion
     
     
     /// <summary>
-    /// >> 708 - Composite[polkadot_runtime_parachains.inclusion.CandidatePendingAvailability]
+    /// >> 742 - Composite[polkadot_runtime_parachains.inclusion.CandidatePendingAvailability]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CandidatePendingAvailability : BaseType
@@ -35,7 +35,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.inclusion
         /// <summary>
         /// >> descriptor
         /// </summary>
-        public Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.CandidateDescriptor Descriptor { get; set; }
+        public Polkadot.NetApi.Generated.Model.polkadot_primitives.vstaging.CandidateDescriptorV2 Descriptor { get; set; }
         /// <summary>
         /// >> commitments
         /// </summary>
@@ -91,7 +91,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.inclusion
             Core.Decode(byteArray, ref p);
             Hash = new Polkadot.NetApi.Generated.Model.polkadot_core_primitives.CandidateHash();
             Hash.Decode(byteArray, ref p);
-            Descriptor = new Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.CandidateDescriptor();
+            Descriptor = new Polkadot.NetApi.Generated.Model.polkadot_primitives.vstaging.CandidateDescriptorV2();
             Descriptor.Decode(byteArray, ref p);
             Commitments = new Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.CandidateCommitments();
             Commitments.Decode(byteArray, ref p);

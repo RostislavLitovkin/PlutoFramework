@@ -40,15 +40,10 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
         /// >> XcmPallet
         /// </summary>
         XcmPallet = 99,
-        
-        /// <summary>
-        /// >> Void
-        /// </summary>
-        Void = 4,
     }
     
     /// <summary>
-    /// >> 159 - Variant[polkadot_runtime.OriginCaller]
+    /// >> 167 - Variant[polkadot_runtime.OriginCaller]
     /// </summary>
     public sealed class EnumOriginCaller : BaseEnumRust<OriginCaller>
     {
@@ -62,7 +57,6 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_runtime.governance.origins.pallet_custom_origins.EnumOrigin>(OriginCaller.Origins);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.origin.pallet.EnumOrigin>(OriginCaller.ParachainsOrigin);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_xcm.pallet.EnumOrigin>(OriginCaller.XcmPallet);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVoid>(OriginCaller.Void);
         }
     }
 }

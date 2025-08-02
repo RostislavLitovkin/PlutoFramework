@@ -48,7 +48,7 @@ namespace Polkadot.NetApi.Generated.Model.xcm.v3.junction
     }
     
     /// <summary>
-    /// >> 65 - Variant[xcm.v3.junction.BodyPart]
+    /// >> 67 - Variant[xcm.v3.junction.BodyPart]
     /// </summary>
     public sealed class EnumBodyPart : BaseEnumRust<BodyPart>
     {

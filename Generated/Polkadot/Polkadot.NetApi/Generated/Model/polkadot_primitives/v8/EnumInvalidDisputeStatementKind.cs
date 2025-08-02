@@ -28,7 +28,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8
     }
     
     /// <summary>
-    /// >> 310 - Variant[polkadot_primitives.v8.InvalidDisputeStatementKind]
+    /// >> 317 - Variant[polkadot_primitives.v8.InvalidDisputeStatementKind]
     /// </summary>
     public sealed class EnumInvalidDisputeStatementKind : BaseEnum<InvalidDisputeStatementKind>
     {

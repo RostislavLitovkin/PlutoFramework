@@ -37,9 +37,9 @@ namespace Polkadot.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Proxy", "Proxies"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT26, Substrate.NetApi.Model.Types.Primitive.U128>)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30, Substrate.NetApi.Model.Types.Primitive.U128>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Proxy", "Announcements"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27, Substrate.NetApi.Model.Types.Primitive.U128>)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT31, Substrate.NetApi.Model.Types.Primitive.U128>)));
         }
         
         /// <summary>
@@ -68,10 +68,10 @@ namespace Polkadot.NetApi.Generated.Storage
         ///  The set of account proxies. Maps the account which has delegated to the accounts
         ///  which are being delegated to, together with the amount held on deposit.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT26, Substrate.NetApi.Model.Types.Primitive.U128>> Proxies(Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30, Substrate.NetApi.Model.Types.Primitive.U128>> Proxies(Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = ProxyStorage.ProxiesParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT26, Substrate.NetApi.Model.Types.Primitive.U128>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30, Substrate.NetApi.Model.Types.Primitive.U128>>(parameters, blockhash, token);
             return result;
         }
         
@@ -99,10 +99,10 @@ namespace Polkadot.NetApi.Generated.Storage
         /// >> Announcements
         ///  The announcements made by the proxy (key).
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27, Substrate.NetApi.Model.Types.Primitive.U128>> Announcements(Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT31, Substrate.NetApi.Model.Types.Primitive.U128>> Announcements(Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = ProxyStorage.AnnouncementsParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27, Substrate.NetApi.Model.Types.Primitive.U128>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT31, Substrate.NetApi.Model.Types.Primitive.U128>>(parameters, blockhash, token);
             return result;
         }
     }
@@ -117,7 +117,7 @@ namespace Polkadot.NetApi.Generated.Storage
         /// >> proxy
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Proxy(Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress real, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumProxyType> force_proxy_type, Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumRuntimeCall call)
+        public static Method Proxy(Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress real, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.polkadot_runtime_constants.proxy.EnumProxyType> force_proxy_type, Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(real.Encode());
@@ -130,7 +130,7 @@ namespace Polkadot.NetApi.Generated.Storage
         /// >> add_proxy
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AddProxy(Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U32 delay)
+        public static Method AddProxy(Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, Polkadot.NetApi.Generated.Model.polkadot_runtime_constants.proxy.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U32 delay)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@delegate.Encode());
@@ -143,7 +143,7 @@ namespace Polkadot.NetApi.Generated.Storage
         /// >> remove_proxy
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method RemoveProxy(Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U32 delay)
+        public static Method RemoveProxy(Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, Polkadot.NetApi.Generated.Model.polkadot_runtime_constants.proxy.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U32 delay)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@delegate.Encode());
@@ -166,7 +166,7 @@ namespace Polkadot.NetApi.Generated.Storage
         /// >> create_pure
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method CreatePure(Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U32 delay, Substrate.NetApi.Model.Types.Primitive.U16 index)
+        public static Method CreatePure(Polkadot.NetApi.Generated.Model.polkadot_runtime_constants.proxy.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U32 delay, Substrate.NetApi.Model.Types.Primitive.U16 index)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(proxy_type.Encode());
@@ -179,7 +179,7 @@ namespace Polkadot.NetApi.Generated.Storage
         /// >> kill_pure
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method KillPure(Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress spawner, Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U16 index, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> height, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> ext_index)
+        public static Method KillPure(Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress spawner, Polkadot.NetApi.Generated.Model.polkadot_runtime_constants.proxy.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U16 index, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> height, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> ext_index)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(spawner.Encode());
@@ -230,7 +230,7 @@ namespace Polkadot.NetApi.Generated.Storage
         /// >> proxy_announced
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ProxyAnnounced(Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress real, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumProxyType> force_proxy_type, Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumRuntimeCall call)
+        public static Method ProxyAnnounced(Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress real, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.polkadot_runtime_constants.proxy.EnumProxyType> force_proxy_type, Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@delegate.Encode());
@@ -238,6 +238,16 @@ namespace Polkadot.NetApi.Generated.Storage
             byteArray.AddRange(force_proxy_type.Encode());
             byteArray.AddRange(call.Encode());
             return new Method(29, "Proxy", 9, "proxy_announced", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> poke_deposit
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method PokeDeposit()
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            return new Method(29, "Proxy", 10, "poke_deposit", byteArray.ToArray());
         }
     }
     

@@ -237,8 +237,9 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_identity.pallet
         /// >> add_username_authority
         /// Add an `AccountId` with permission to grant usernames with a given `suffix` appended.
         /// 
-        /// The authority can grant up to `allocation` usernames. To top up their allocation, they
-        /// should just issue (or request via governance) a new `add_username_authority` call.
+        /// The authority can grant up to `allocation` usernames. To top up the allocation or
+        /// change the account used to grant usernames, this call can be used with the updated
+        /// parameters to overwrite the existing configuration.
         /// </summary>
         add_username_authority = 15,
         
@@ -252,7 +253,11 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_identity.pallet
         /// >> set_username_for
         /// Set the username for `who`. Must be called by a username authority.
         /// 
-        /// The authority must have an `allocation`. Users can either pre-sign their usernames or
+        /// If `use_allocation` is set, the authority must have a username allocation available to
+        /// spend. Otherwise, the authority will need to put up a deposit for registering the
+        /// username.
+        /// 
+        /// Users can either pre-sign their usernames or
         /// accept them later.
         /// 
         /// Usernames must:
@@ -284,15 +289,30 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_identity.pallet
         set_primary_username = 20,
         
         /// <summary>
-        /// >> remove_dangling_username
-        /// Remove a username that corresponds to an account with no identity. Exists when a user
-        /// gets a username but then calls `clear_identity`.
+        /// >> unbind_username
+        /// Start the process of removing a username by placing it in the unbinding usernames map.
+        /// Once the grace period has passed, the username can be deleted by calling
+        /// [remove_username](crate::Call::remove_username).
         /// </summary>
-        remove_dangling_username = 21,
+        unbind_username = 21,
+        
+        /// <summary>
+        /// >> remove_username
+        /// Permanently delete a username which has been unbinding for longer than the grace period.
+        /// Caller is refunded the fee if the username expired and the removal was successful.
+        /// </summary>
+        remove_username = 22,
+        
+        /// <summary>
+        /// >> kill_username
+        /// Call with [ForceOrigin](crate::Config::ForceOrigin) privileges which deletes a username
+        /// and slashes any deposit associated with it.
+        /// </summary>
+        kill_username = 23,
     }
     
     /// <summary>
-    /// >> 325 - Variant[pallet_identity.pallet.Call]
+    /// >> 356 - Variant[pallet_identity.pallet.Call]
     /// Identity pallet declaration.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -319,12 +339,14 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_identity.pallet
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>(Call.remove_sub);
 				AddTypeDecoder<BaseVoid>(Call.quit_sub);
 				AddTypeDecoder<BaseTuple<PolkadotPeople.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.add_username_authority);
-				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>(Call.remove_username_authority);
-				AddTypeDecoder<BaseTuple<PolkadotPeople.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotPeople.NetApi.Generated.Model.sp_runtime.EnumMultiSignature>>>(Call.set_username_for);
-				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4>(Call.accept_username);
-				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4>(Call.remove_expired_approval);
-				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4>(Call.set_primary_username);
-				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4>(Call.remove_dangling_username);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, PolkadotPeople.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.remove_username_authority);
+				AddTypeDecoder<BaseTuple<PolkadotPeople.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotPeople.NetApi.Generated.Model.sp_runtime.EnumMultiSignature>, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.set_username_for);
+				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6>(Call.accept_username);
+				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6>(Call.remove_expired_approval);
+				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6>(Call.set_primary_username);
+				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6>(Call.unbind_username);
+				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6>(Call.remove_username);
+				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6>(Call.kill_username);
         }
     }
 }

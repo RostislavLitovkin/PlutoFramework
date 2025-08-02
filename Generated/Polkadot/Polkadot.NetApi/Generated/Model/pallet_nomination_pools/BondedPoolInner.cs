@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_nomination_pools
     
     
     /// <summary>
-    /// >> 676 - Composite[pallet_nomination_pools.BondedPoolInner]
+    /// >> 703 - Composite[pallet_nomination_pools.BondedPoolInner]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BondedPoolInner : BaseType

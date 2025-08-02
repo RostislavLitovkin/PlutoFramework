@@ -168,10 +168,28 @@ namespace Polkadot.NetApi.Generated.Model.pallet_xcm.pallet
         /// Local XCM execution incomplete.
         /// </summary>
         LocalExecutionIncomplete = 24,
+        
+        /// <summary>
+        /// >> TooManyAuthorizedAliases
+        /// Too many locations authorized to alias origin.
+        /// </summary>
+        TooManyAuthorizedAliases = 25,
+        
+        /// <summary>
+        /// >> ExpiresInPast
+        /// Expiry block number is in the past.
+        /// </summary>
+        ExpiresInPast = 26,
+        
+        /// <summary>
+        /// >> AliasNotFound
+        /// The alias to remove authorization for was not found.
+        /// </summary>
+        AliasNotFound = 27,
     }
     
     /// <summary>
-    /// >> 823 - Variant[pallet_xcm.pallet.Error]
+    /// >> 860 - Variant[pallet_xcm.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

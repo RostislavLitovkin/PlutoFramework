@@ -28,39 +28,15 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.assigner_c
         AssignmentsEmpty = 0,
         
         /// <summary>
-        /// >> OverScheduled
-        /// Assignments together exceeded 57600.
-        /// </summary>
-        OverScheduled = 1,
-        
-        /// <summary>
-        /// >> UnderScheduled
-        /// Assignments together less than 57600
-        /// </summary>
-        UnderScheduled = 2,
-        
-        /// <summary>
         /// >> DisallowedInsert
         /// assign_core is only allowed to append new assignments at the end of already existing
-        /// ones.
+        /// ones or update the last entry.
         /// </summary>
-        DisallowedInsert = 3,
-        
-        /// <summary>
-        /// >> DuplicateInsert
-        /// Tried to insert a schedule for the same core and block number as an existing schedule
-        /// </summary>
-        DuplicateInsert = 4,
-        
-        /// <summary>
-        /// >> AssignmentsNotSorted
-        /// Tried to add an unsorted set of assignments
-        /// </summary>
-        AssignmentsNotSorted = 5,
+        DisallowedInsert = 1,
     }
     
     /// <summary>
-    /// >> 788 - Variant[polkadot_runtime_parachains.assigner_coretime.pallet.Error]
+    /// >> 819 - Variant[polkadot_runtime_parachains.assigner_coretime.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

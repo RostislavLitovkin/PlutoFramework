@@ -129,7 +129,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.inclusion.
     }
     
     /// <summary>
-    /// >> 709 - Variant[polkadot_runtime_parachains.inclusion.pallet.Error]
+    /// >> 743 - Variant[polkadot_runtime_parachains.inclusion.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

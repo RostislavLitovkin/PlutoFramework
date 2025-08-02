@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.sp_consensus_beefy
     
     
     /// <summary>
-    /// >> 427 - Composite[sp_consensus_beefy.DoubleVotingProof]
+    /// >> 447 - Composite[sp_consensus_beefy.DoubleVotingProof]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DoubleVotingProof : BaseType

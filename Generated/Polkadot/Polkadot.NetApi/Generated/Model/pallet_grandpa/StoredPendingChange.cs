@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_grandpa
     
     
     /// <summary>
-    /// >> 588 - Composite[pallet_grandpa.StoredPendingChange]
+    /// >> 615 - Composite[pallet_grandpa.StoredPendingChange]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class StoredPendingChange : BaseType
@@ -35,7 +35,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_grandpa
         /// <summary>
         /// >> next_authorities
         /// </summary>
-        public Polkadot.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT4 NextAuthorities { get; set; }
+        public Polkadot.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT3 NextAuthorities { get; set; }
         /// <summary>
         /// >> forced
         /// </summary>
@@ -66,7 +66,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_grandpa
             ScheduledAt.Decode(byteArray, ref p);
             Delay = new Substrate.NetApi.Model.Types.Primitive.U32();
             Delay.Decode(byteArray, ref p);
-            NextAuthorities = new Polkadot.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT4();
+            NextAuthorities = new Polkadot.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT3();
             NextAuthorities.Decode(byteArray, ref p);
             Forced = new Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>();
             Forced.Decode(byteArray, ref p);

@@ -37,9 +37,8 @@ namespace Polkadot.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParaScheduler", "ValidatorGroups"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseVec<Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.ValidatorIndex>>)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParaScheduler", "AvailabilityCores"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.scheduler.pallet.EnumCoreOccupied>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParaScheduler", "SessionStartBlock"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParaScheduler", "ClaimQueue"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Polkadot.NetApi.Generated.Types.Base.BTreeMapT4)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParaScheduler", "ClaimQueue"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Polkadot.NetApi.Generated.Types.Base.BTreeMapT6)));
         }
         
         /// <summary>
@@ -80,45 +79,6 @@ namespace Polkadot.NetApi.Generated.Storage
         {
             string parameters = ParaSchedulerStorage.ValidatorGroupsParams();
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseVec<Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.ValidatorIndex>>>(parameters, blockhash, token);
-            return result;
-        }
-        
-        /// <summary>
-        /// >> AvailabilityCoresParams
-        ///  One entry for each availability core. The i'th parachain belongs to the i'th core, with the
-        ///  remaining cores all being on demand parachain multiplexers.
-        /// 
-        ///  Bounded by the maximum of either of these two values:
-        ///    * The number of parachains and parathread multiplexers
-        ///    * The number of validators divided by `configuration.max_validators_per_core`.
-        /// </summary>
-        public static string AvailabilityCoresParams()
-        {
-            return RequestGenerator.GetStorage("ParaScheduler", "AvailabilityCores", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
-        }
-        
-        /// <summary>
-        /// >> AvailabilityCoresDefault
-        /// Default value as hex string
-        /// </summary>
-        public static string AvailabilityCoresDefault()
-        {
-            return "0x00";
-        }
-        
-        /// <summary>
-        /// >> AvailabilityCores
-        ///  One entry for each availability core. The i'th parachain belongs to the i'th core, with the
-        ///  remaining cores all being on demand parachain multiplexers.
-        /// 
-        ///  Bounded by the maximum of either of these two values:
-        ///    * The number of parachains and parathread multiplexers
-        ///    * The number of validators divided by `configuration.max_validators_per_core`.
-        /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseVec<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.scheduler.pallet.EnumCoreOccupied>> AvailabilityCores(string blockhash, CancellationToken token)
-        {
-            string parameters = ParaSchedulerStorage.AvailabilityCoresParams();
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseVec<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.scheduler.pallet.EnumCoreOccupied>>(parameters, blockhash, token);
             return result;
         }
         
@@ -166,8 +126,7 @@ namespace Polkadot.NetApi.Generated.Storage
         /// <summary>
         /// >> ClaimQueueParams
         ///  One entry for each availability core. The `VecDeque` represents the assignments to be
-        ///  scheduled on that core. The value contained here will not be valid after the end of
-        ///  a block. Runtime APIs should be used to determine scheduled cores for the upcoming block.
+        ///  scheduled on that core.
         /// </summary>
         public static string ClaimQueueParams()
         {
@@ -186,13 +145,12 @@ namespace Polkadot.NetApi.Generated.Storage
         /// <summary>
         /// >> ClaimQueue
         ///  One entry for each availability core. The `VecDeque` represents the assignments to be
-        ///  scheduled on that core. The value contained here will not be valid after the end of
-        ///  a block. Runtime APIs should be used to determine scheduled cores for the upcoming block.
+        ///  scheduled on that core.
         /// </summary>
-        public async Task<Polkadot.NetApi.Generated.Types.Base.BTreeMapT4> ClaimQueue(string blockhash, CancellationToken token)
+        public async Task<Polkadot.NetApi.Generated.Types.Base.BTreeMapT6> ClaimQueue(string blockhash, CancellationToken token)
         {
             string parameters = ParaSchedulerStorage.ClaimQueueParams();
-            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Types.Base.BTreeMapT4>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Types.Base.BTreeMapT6>(parameters, blockhash, token);
             return result;
         }
     }

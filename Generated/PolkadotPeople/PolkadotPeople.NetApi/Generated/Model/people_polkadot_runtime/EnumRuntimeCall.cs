@@ -42,6 +42,11 @@ namespace PolkadotPeople.NetApi.Generated.Model.people_polkadot_runtime
         ParachainInfo = 3,
         
         /// <summary>
+        /// >> MultiBlockMigrations
+        /// </summary>
+        MultiBlockMigrations = 4,
+        
+        /// <summary>
         /// >> Balances
         /// </summary>
         Balances = 10,
@@ -98,7 +103,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.people_polkadot_runtime
     }
     
     /// <summary>
-    /// >> 320 - Variant[people_polkadot_runtime.RuntimeCall]
+    /// >> 351 - Variant[people_polkadot_runtime.RuntimeCall]
     /// </summary>
     public sealed class EnumRuntimeCall : BaseEnumRust<RuntimeCall>
     {
@@ -112,6 +117,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.people_polkadot_runtime
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.cumulus_pallet_parachain_system.pallet.EnumCall>(RuntimeCall.ParachainSystem);
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.pallet_timestamp.pallet.EnumCall>(RuntimeCall.Timestamp);
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.staging_parachain_info.pallet.EnumCall>(RuntimeCall.ParachainInfo);
+				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.pallet_migrations.pallet.EnumCall>(RuntimeCall.MultiBlockMigrations);
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.pallet_balances.pallet.EnumCall>(RuntimeCall.Balances);
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.pallet_collator_selection.pallet.EnumCall>(RuntimeCall.CollatorSelection);
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.pallet_session.pallet.EnumCall>(RuntimeCall.Session);

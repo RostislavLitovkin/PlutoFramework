@@ -227,17 +227,6 @@ namespace Polkadot.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> set_max_availability_timeouts
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method SetMaxAvailabilityTimeouts(Substrate.NetApi.Model.Types.Primitive.U32 @new)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(@new.Encode());
-            return new Method(51, "Configuration", 7, "set_max_availability_timeouts", byteArray.ToArray());
-        }
-        
-        /// <summary>
         /// >> set_group_rotation_frequency
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
@@ -620,17 +609,6 @@ namespace Polkadot.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@new.Encode());
             return new Method(51, "Configuration", 50, "set_on_demand_target_queue_utilization", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> set_on_demand_ttl
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method SetOnDemandTtl(Substrate.NetApi.Model.Types.Primitive.U32 @new)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(@new.Encode());
-            return new Method(51, "Configuration", 51, "set_on_demand_ttl", byteArray.ToArray());
         }
         
         /// <summary>

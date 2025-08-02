@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_vesting.vesting_info
     
     
     /// <summary>
-    /// >> 178 - Composite[pallet_vesting.vesting_info.VestingInfo]
+    /// >> 185 - Composite[pallet_vesting.vesting_info.VestingInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class VestingInfo : BaseType

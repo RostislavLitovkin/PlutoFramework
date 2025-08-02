@@ -85,7 +85,7 @@ namespace Polkadot.NetApi.Generated.Storage
         
         /// <summary>
         /// >> BufferedSessionChangesParams
-        ///  Buffered session changes along with the block number at which they should be applied.
+        ///  Buffered session changes.
         /// 
         ///  Typically this will be empty or one element long. Apart from that this item never hits
         ///  the storage.
@@ -109,7 +109,7 @@ namespace Polkadot.NetApi.Generated.Storage
         
         /// <summary>
         /// >> BufferedSessionChanges
-        ///  Buffered session changes along with the block number at which they should be applied.
+        ///  Buffered session changes.
         /// 
         ///  Typically this will be empty or one element long. Apart from that this item never hits
         ///  the storage.

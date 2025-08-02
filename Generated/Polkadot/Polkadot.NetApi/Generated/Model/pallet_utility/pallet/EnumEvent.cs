@@ -58,10 +58,22 @@ namespace Polkadot.NetApi.Generated.Model.pallet_utility.pallet
         /// A call was dispatched.
         /// </summary>
         DispatchedAs = 5,
+        
+        /// <summary>
+        /// >> IfElseMainSuccess
+        /// Main call was dispatched.
+        /// </summary>
+        IfElseMainSuccess = 6,
+        
+        /// <summary>
+        /// >> IfElseFallbackCalled
+        /// The fallback call was dispatched.
+        /// </summary>
+        IfElseFallbackCalled = 7,
     }
     
     /// <summary>
-    /// >> 450 - Variant[pallet_utility.pallet.Event]
+    /// >> 469 - Variant[pallet_utility.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -78,6 +90,8 @@ namespace Polkadot.NetApi.Generated.Model.pallet_utility.pallet
 				AddTypeDecoder<BaseVoid>(Event.ItemCompleted);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Event.ItemFailed);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Types.Base.EnumResult>(Event.DispatchedAs);
+				AddTypeDecoder<BaseVoid>(Event.IfElseMainSuccess);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Event.IfElseFallbackCalled);
         }
     }
 }

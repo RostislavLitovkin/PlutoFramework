@@ -40,14 +40,18 @@ namespace Polkadot.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Treasury", "Proposals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Polkadot.NetApi.Generated.Model.pallet_treasury.Proposal)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Treasury", "Deactivated"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Treasury", "Approvals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Treasury", "Approvals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Treasury", "SpendCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Treasury", "Spends"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Polkadot.NetApi.Generated.Model.pallet_treasury.SpendStatus)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Treasury", "LastSpendPeriod"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
         }
         
         /// <summary>
         /// >> ProposalCountParams
+        ///  DEPRECATED: associated with `spend_local` call and will be removed in May 2025.
+        ///  Refer to <https://github.com/paritytech/polkadot-sdk/pull/5961> for migration to `spend`.
+        /// 
         ///  Number of proposals that have been made.
         /// </summary>
         public static string ProposalCountParams()
@@ -66,6 +70,9 @@ namespace Polkadot.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ProposalCount
+        ///  DEPRECATED: associated with `spend_local` call and will be removed in May 2025.
+        ///  Refer to <https://github.com/paritytech/polkadot-sdk/pull/5961> for migration to `spend`.
+        /// 
         ///  Number of proposals that have been made.
         /// </summary>
         public async Task<Substrate.NetApi.Model.Types.Primitive.U32> ProposalCount(string blockhash, CancellationToken token)
@@ -77,6 +84,9 @@ namespace Polkadot.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ProposalsParams
+        ///  DEPRECATED: associated with `spend_local` call and will be removed in May 2025.
+        ///  Refer to <https://github.com/paritytech/polkadot-sdk/pull/5961> for migration to `spend`.
+        /// 
         ///  Proposals that have been made.
         /// </summary>
         public static string ProposalsParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
@@ -97,6 +107,9 @@ namespace Polkadot.NetApi.Generated.Storage
         
         /// <summary>
         /// >> Proposals
+        ///  DEPRECATED: associated with `spend_local` call and will be removed in May 2025.
+        ///  Refer to <https://github.com/paritytech/polkadot-sdk/pull/5961> for migration to `spend`.
+        /// 
         ///  Proposals that have been made.
         /// </summary>
         public async Task<Polkadot.NetApi.Generated.Model.pallet_treasury.Proposal> Proposals(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
@@ -137,6 +150,9 @@ namespace Polkadot.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ApprovalsParams
+        ///  DEPRECATED: associated with `spend_local` call and will be removed in May 2025.
+        ///  Refer to <https://github.com/paritytech/polkadot-sdk/pull/5961> for migration to `spend`.
+        /// 
         ///  Proposal indices that have been approved but not yet awarded.
         /// </summary>
         public static string ApprovalsParams()
@@ -155,12 +171,15 @@ namespace Polkadot.NetApi.Generated.Storage
         
         /// <summary>
         /// >> Approvals
+        ///  DEPRECATED: associated with `spend_local` call and will be removed in May 2025.
+        ///  Refer to <https://github.com/paritytech/polkadot-sdk/pull/5961> for migration to `spend`.
+        /// 
         ///  Proposal indices that have been approved but not yet awarded.
         /// </summary>
-        public async Task<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21> Approvals(string blockhash, CancellationToken token)
+        public async Task<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25> Approvals(string blockhash, CancellationToken token)
         {
             string parameters = TreasuryStorage.ApprovalsParams();
-            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25>(parameters, blockhash, token);
             return result;
         }
         
@@ -221,6 +240,35 @@ namespace Polkadot.NetApi.Generated.Storage
         {
             string parameters = TreasuryStorage.SpendsParams(key);
             var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.pallet_treasury.SpendStatus>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> LastSpendPeriodParams
+        ///  The blocknumber for the last triggered spend period.
+        /// </summary>
+        public static string LastSpendPeriodParams()
+        {
+            return RequestGenerator.GetStorage("Treasury", "LastSpendPeriod", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> LastSpendPeriodDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string LastSpendPeriodDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> LastSpendPeriod
+        ///  The blocknumber for the last triggered spend period.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> LastSpendPeriod(string blockhash, CancellationToken token)
+        {
+            string parameters = TreasuryStorage.LastSpendPeriodParams();
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
             return result;
         }
     }
@@ -343,6 +391,9 @@ namespace Polkadot.NetApi.Generated.Storage
         
         /// <summary>
         /// >> MaxApprovals
+        ///  DEPRECATED: associated with `spend_local` call and will be removed in May 2025.
+        ///  Refer to <https://github.com/paritytech/polkadot-sdk/pull/5961> for migration to `spend`.
+        /// 
         ///  The maximum number of approvals that can wait in the spending queue.
         /// 
         ///  NOTE: This parameter is also used within the Bounties Pallet extension if enabled.
@@ -361,7 +412,18 @@ namespace Polkadot.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 PayoutPeriod()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x80970600");
+            result.Create("0x80C61300");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> pot_account
+        ///  Gets this pallet's derived pot account.
+        /// </summary>
+        public Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32 pot_account()
+        {
+            var result = new Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            result.Create("0x6D6F646C70792F74727372790000000000000000000000000000000000000000");
             return result;
         }
     }

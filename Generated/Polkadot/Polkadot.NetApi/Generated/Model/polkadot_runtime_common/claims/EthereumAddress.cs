@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_common.claims
     
     
     /// <summary>
-    /// >> 172 - Composite[polkadot_runtime_common.claims.EthereumAddress]
+    /// >> 179 - Composite[polkadot_runtime_common.claims.EthereumAddress]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class EthereumAddress : BaseType

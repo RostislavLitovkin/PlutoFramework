@@ -48,7 +48,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking
     }
     
     /// <summary>
-    /// >> 42 - Variant[pallet_staking.RewardDestination]
+    /// >> 43 - Variant[pallet_staking.RewardDestination]
     /// </summary>
     public sealed class EnumRewardDestination : BaseEnumRust<RewardDestination>
     {

@@ -39,18 +39,24 @@ namespace Polkadot.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ChildBounties", "ChildBountyCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ChildBounties", "ParentChildBounties"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ChildBounties", "ParentTotalChildBounties"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ChildBounties", "ChildBounties"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Polkadot.NetApi.Generated.Model.pallet_child_bounties.ChildBounty)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ChildBounties", "ChildBountyDescriptions"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ChildBounties", "ChildBountyDescriptionsV1"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT33)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ChildBounties", "V0ToV1ChildBountyIds"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ChildBounties", "ChildrenCuratorFees"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
         }
         
         /// <summary>
         /// >> ChildBountyCountParams
-        ///  Number of total child bounties.
+        ///  DEPRECATED: Replaced with `ParentTotalChildBounties` storage item keeping dedicated counts
+        ///  for each parent bounty. Number of total child bounties. Will be removed in May 2025.
         /// </summary>
         public static string ChildBountyCountParams()
         {
@@ -68,7 +74,8 @@ namespace Polkadot.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ChildBountyCount
-        ///  Number of total child bounties.
+        ///  DEPRECATED: Replaced with `ParentTotalChildBounties` storage item keeping dedicated counts
+        ///  for each parent bounty. Number of total child bounties. Will be removed in May 2025.
         /// </summary>
         public async Task<Substrate.NetApi.Model.Types.Primitive.U32> ChildBountyCount(string blockhash, CancellationToken token)
         {
@@ -79,7 +86,7 @@ namespace Polkadot.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ParentChildBountiesParams
-        ///  Number of child bounties per parent bounty.
+        ///  Number of active child bounties per parent bounty.
         ///  Map of parent bounty index to number of child bounties.
         /// </summary>
         public static string ParentChildBountiesParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
@@ -100,12 +107,43 @@ namespace Polkadot.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ParentChildBounties
-        ///  Number of child bounties per parent bounty.
+        ///  Number of active child bounties per parent bounty.
         ///  Map of parent bounty index to number of child bounties.
         /// </summary>
         public async Task<Substrate.NetApi.Model.Types.Primitive.U32> ParentChildBounties(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = ChildBountiesStorage.ParentChildBountiesParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> ParentTotalChildBountiesParams
+        ///  Number of total child bounties per parent bounty, including completed bounties.
+        /// </summary>
+        public static string ParentTotalChildBountiesParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        {
+            return RequestGenerator.GetStorage("ChildBounties", "ParentTotalChildBounties", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> ParentTotalChildBountiesDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string ParentTotalChildBountiesDefault()
+        {
+            return "0x00000000";
+        }
+        
+        /// <summary>
+        /// >> ParentTotalChildBounties
+        ///  Number of total child bounties per parent bounty, including completed bounties.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> ParentTotalChildBounties(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        {
+            string parameters = ChildBountiesStorage.ParentTotalChildBountiesParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
             return result;
         }
@@ -142,33 +180,76 @@ namespace Polkadot.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> ChildBountyDescriptionsParams
-        ///  The description of each child-bounty.
+        /// >> ChildBountyDescriptionsV1Params
+        ///  The description of each child-bounty. Indexed by `(parent_id, child_id)`.
+        /// 
+        ///  This item replaces the `ChildBountyDescriptions` storage item from the V0 storage version.
         /// </summary>
-        public static string ChildBountyDescriptionsParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        public static string ChildBountyDescriptionsV1Params(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key)
         {
-            return RequestGenerator.GetStorage("ChildBounties", "ChildBountyDescriptions", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, new Substrate.NetApi.Model.Types.IType[] {
-                        key});
+            return RequestGenerator.GetStorage("ChildBounties", "ChildBountyDescriptionsV1", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, key.Value);
         }
         
         /// <summary>
-        /// >> ChildBountyDescriptionsDefault
+        /// >> ChildBountyDescriptionsV1Default
         /// Default value as hex string
         /// </summary>
-        public static string ChildBountyDescriptionsDefault()
+        public static string ChildBountyDescriptionsV1Default()
         {
             return "0x00";
         }
         
         /// <summary>
-        /// >> ChildBountyDescriptions
-        ///  The description of each child-bounty.
+        /// >> ChildBountyDescriptionsV1
+        ///  The description of each child-bounty. Indexed by `(parent_id, child_id)`.
+        /// 
+        ///  This item replaces the `ChildBountyDescriptions` storage item from the V0 storage version.
         /// </summary>
-        public async Task<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29> ChildBountyDescriptions(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT33> ChildBountyDescriptionsV1(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
         {
-            string parameters = ChildBountiesStorage.ChildBountyDescriptionsParams(key);
-            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29>(parameters, blockhash, token);
+            string parameters = ChildBountiesStorage.ChildBountyDescriptionsV1Params(key);
+            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT33>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> V0ToV1ChildBountyIdsParams
+        ///  The mapping of the child bounty ids from storage version `V0` to the new `V1` version.
+        /// 
+        ///  The `V0` ids based on total child bounty count [`ChildBountyCount`]`. The `V1` version ids
+        ///  based on the child bounty count per parent bounty [`ParentTotalChildBounties`].
+        ///  The item intended solely for client convenience and not used in the pallet's core logic.
+        /// </summary>
+        public static string V0ToV1ChildBountyIdsParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        {
+            return RequestGenerator.GetStorage("ChildBounties", "V0ToV1ChildBountyIds", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> V0ToV1ChildBountyIdsDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string V0ToV1ChildBountyIdsDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> V0ToV1ChildBountyIds
+        ///  The mapping of the child bounty ids from storage version `V0` to the new `V1` version.
+        /// 
+        ///  The `V0` ids based on total child bounty count [`ChildBountyCount`]`. The `V1` version ids
+        ///  based on the child bounty count per parent bounty [`ParentTotalChildBounties`].
+        ///  The item intended solely for client convenience and not used in the pallet's core logic.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>> V0ToV1ChildBountyIds(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        {
+            string parameters = ChildBountiesStorage.V0ToV1ChildBountyIdsParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(parameters, blockhash, token);
             return result;
         }
         

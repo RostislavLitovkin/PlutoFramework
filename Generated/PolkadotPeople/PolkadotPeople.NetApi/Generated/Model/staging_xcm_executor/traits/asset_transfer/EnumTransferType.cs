@@ -43,7 +43,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.staging_xcm_executor.traits.asse
     }
     
     /// <summary>
-    /// >> 307 - Variant[staging_xcm_executor.traits.asset_transfer.TransferType]
+    /// >> 338 - Variant[staging_xcm_executor.traits.asset_transfer.TransferType]
     /// </summary>
     public sealed class EnumTransferType : BaseEnumRust<TransferType>
     {

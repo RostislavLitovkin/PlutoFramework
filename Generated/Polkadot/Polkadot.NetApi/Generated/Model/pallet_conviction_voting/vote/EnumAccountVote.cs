@@ -38,7 +38,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_conviction_voting.vote
     }
     
     /// <summary>
-    /// >> 90 - Variant[pallet_conviction_voting.vote.AccountVote]
+    /// >> 99 - Variant[pallet_conviction_voting.vote.AccountVote]
     /// </summary>
     public sealed class EnumAccountVote : BaseEnumRust<AccountVote>
     {

@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.sp_session
     
     
     /// <summary>
-    /// >> 109 - Composite[sp_session.MembershipProof]
+    /// >> 118 - Composite[sp_session.MembershipProof]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MembershipProof : BaseType

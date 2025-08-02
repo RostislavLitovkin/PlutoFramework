@@ -107,7 +107,6 @@ namespace Polkadot.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Staking", "SpanSlash"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Polkadot.NetApi.Generated.Model.pallet_staking.slashing.SpanRecord)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Staking", "CurrentPlannedSession"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Staking", "DisabledValidators"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U32>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Staking", "ChillThreshold"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Polkadot.NetApi.Generated.Model.sp_arithmetic.per_things.Percent)));
         }
         
@@ -1568,47 +1567,6 @@ namespace Polkadot.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> DisabledValidatorsParams
-        ///  Indices of validators that have offended in the active era. The offenders are disabled for a
-        ///  whole era. For this reason they are kept here - only staking pallet knows about eras. The
-        ///  implementor of [`DisablingStrategy`] defines if a validator should be disabled which
-        ///  implicitly means that the implementor also controls the max number of disabled validators.
-        /// 
-        ///  The vec is always kept sorted so that we can find whether a given validator has previously
-        ///  offended using binary search.
-        /// </summary>
-        public static string DisabledValidatorsParams()
-        {
-            return RequestGenerator.GetStorage("Staking", "DisabledValidators", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
-        }
-        
-        /// <summary>
-        /// >> DisabledValidatorsDefault
-        /// Default value as hex string
-        /// </summary>
-        public static string DisabledValidatorsDefault()
-        {
-            return "0x00";
-        }
-        
-        /// <summary>
-        /// >> DisabledValidators
-        ///  Indices of validators that have offended in the active era. The offenders are disabled for a
-        ///  whole era. For this reason they are kept here - only staking pallet knows about eras. The
-        ///  implementor of [`DisablingStrategy`] defines if a validator should be disabled which
-        ///  implicitly means that the implementor also controls the max number of disabled validators.
-        /// 
-        ///  The vec is always kept sorted so that we can find whether a given validator has previously
-        ///  offended using binary search.
-        /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U32>> DisabledValidators(string blockhash, CancellationToken token)
-        {
-            string parameters = StakingStorage.DisabledValidatorsParams();
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U32>>(parameters, blockhash, token);
-            return result;
-        }
-        
-        /// <summary>
         /// >> ChillThresholdParams
         ///  The threshold for when users can start calling `chill_other` for other validators /
         ///  nominators. The threshold is compared to the actual number of validators / nominators
@@ -1990,14 +1948,27 @@ namespace Polkadot.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> withdraw_overstake
+        /// >> migrate_currency
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method WithdrawOverstake(Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32 stash)
+        public static Method MigrateCurrency(Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32 stash)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(stash.Encode());
-            return new Method(7, "Staking", 32, "withdraw_overstake", byteArray.ToArray());
+            return new Method(7, "Staking", 30, "migrate_currency", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> manual_slash
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method ManualSlash(Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32 validator_stash, Substrate.NetApi.Model.Types.Primitive.U32 era, Polkadot.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill slash_fraction)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(validator_stash.Encode());
+            byteArray.AddRange(era.Encode());
+            byteArray.AddRange(slash_fraction.Encode());
+            return new Method(7, "Staking", 33, "manual_slash", byteArray.ToArray());
         }
     }
     
@@ -2310,6 +2281,18 @@ namespace Polkadot.NetApi.Generated.Storage
         /// Operation not allowed for virtual stakers.
         /// </summary>
         VirtualStakerNotAllowed,
+        
+        /// <summary>
+        /// >> CannotReapStash
+        /// Stash could not be reaped as other pallet might depend on it.
+        /// </summary>
+        CannotReapStash,
+        
+        /// <summary>
+        /// >> AlreadyMigrated
+        /// The stake of this account is already migrated to `Fungible` holds.
+        /// </summary>
+        AlreadyMigrated,
         
         /// <summary>
         /// >> Restricted

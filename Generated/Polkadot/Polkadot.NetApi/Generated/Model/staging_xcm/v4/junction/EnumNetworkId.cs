@@ -78,7 +78,7 @@ namespace Polkadot.NetApi.Generated.Model.staging_xcm.v4.junction
     }
     
     /// <summary>
-    /// >> 72 - Variant[staging_xcm.v4.junction.NetworkId]
+    /// >> 74 - Variant[staging_xcm.v4.junction.NetworkId]
     /// </summary>
     public sealed class EnumNetworkId : BaseEnumRust<NetworkId>
     {
