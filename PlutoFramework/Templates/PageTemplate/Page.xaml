@@ -31,6 +31,7 @@
                                                                Extra1Text="{TemplateBinding NavigationBarExtra1Text}"
                                                                Extra1Command="{TemplateBinding NavigationBarExtra1Command}"
                                                                IsVisible="{TemplateBinding IsNavbarVisible}"
+                                                               HasShadow="{TemplateBinding NavigationBarHasShadow}"
                                                                x:Name="TopNavigationBar" />
 
             <txanalyzer:TransactionAnalyzerConfirmationView ZIndex="{TemplateBinding TransactionAnalyzerZIndex}" />

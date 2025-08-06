@@ -92,6 +92,16 @@ namespace PlutoFramework.Templates.PageTemplate
             set => SetValue(IsNavbarVisibleProperty, value);
         }
 
+        public static readonly BindableProperty NavigationBarHasShadowProperty =
+           BindableProperty.Create(nameof(NavigationBarHasShadow), typeof(bool), typeof(PageTemplate), defaultValue: true);
+
+        public bool NavigationBarHasShadow
+        {
+            get => (bool)GetValue(NavigationBarHasShadowProperty);
+            set => SetValue(NavigationBarHasShadowProperty, value);
+        }
+
+
         public static readonly BindableProperty ScrollPaddingProperty =
             BindableProperty.Create(nameof(ScrollPadding), typeof(Thickness), typeof(PageTemplate), new Thickness(0));
         public Thickness ScrollPadding

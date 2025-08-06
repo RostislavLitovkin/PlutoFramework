@@ -67,6 +67,15 @@ namespace PlutoFramework.Templates.TopNavigationBarTemplate
             set => SetValue(Extra2CommandProperty, value);
         }
 
+        public static readonly BindableProperty HasShadowProperty =
+           BindableProperty.Create(nameof(HasShadow), typeof(bool), typeof(TopNavigationBarTemplate), defaultValue: true);
+
+        public bool HasShadow
+        {
+            get => (bool)GetValue(HasShadowProperty);
+            set => SetValue(HasShadowProperty, value);
+        }
+
         public TopNavigationBarTemplate()
         {
             BindingContext = new TopNavigationBarViewModel();

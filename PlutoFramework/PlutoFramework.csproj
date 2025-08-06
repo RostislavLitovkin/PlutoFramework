@@ -1910,6 +1910,7 @@
     <MauiFont Include="Resources\Fonts\OpenSans-Regular.ttf" />
     <MauiFont Include="Resources\Fonts\OpenSans-Semibold.ttf" />
     <MauiFont Include="Resources\Fonts\xcavatefont.ttf" />
+    <MauiFont Include="Resources\Fonts\dmsans.ttf" Alias="XcavateFont" />
   </ItemGroup>
 
   <ItemGroup>
@@ -2329,6 +2330,9 @@
     <MauiXaml Update="Components\Password\SetupPasswordPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\Progress\ProgressStepperView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\SearchBar\SearchBarView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
@@ -2465,6 +2469,9 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Xcavate\PageBottomBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\QuestionairePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Xcavate\RiskWarningView.xaml">
