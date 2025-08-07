@@ -85,7 +85,7 @@
 
                 <xcavate:XcavateCell Grid.Column="1"
                                      Grid.Row="1"
-                                     Title="Property time"
+                                     Title="Property type"
                                      Value="{Binding Metadata.PropertyType}" />
             </Grid>
 
