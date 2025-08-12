@@ -2215,6 +2215,15 @@
     <MauiXaml Update="Components\Loading\FullPageLoadingView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\Menu\MainMenuPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Menu\QuickActionItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Menu\UserView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\Messaging\MessagingOverviewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>

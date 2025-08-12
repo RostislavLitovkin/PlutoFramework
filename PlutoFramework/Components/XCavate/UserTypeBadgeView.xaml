@@ -8,7 +8,7 @@
                 x:Name="border"
                 BackgroundColor="#88888888">
             <Border.StrokeShape>
-                <RoundRectangle CornerRadius="10" />
+                <RoundRectangle CornerRadius="4" />
 
             </Border.StrokeShape>
 
