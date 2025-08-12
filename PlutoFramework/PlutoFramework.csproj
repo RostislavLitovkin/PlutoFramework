@@ -2071,6 +2071,9 @@
     <MauiXaml Update="Components\Balance\AssetView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\Balance\BalanceOverviewView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\Balance\BalancePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>

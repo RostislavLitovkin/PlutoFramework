@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+             x:Class="PlutoFramework.Components.Balance.BalanceOverviewView">
+    <card:Card Padding="20">
+        <card:Card.View>
+            <VerticalStackLayout Spacing="10">
+                <HorizontalStackLayout HorizontalOptions="Start">
+                    <Image Source="walletgray.png"
+                            HeightRequest="20"
+                            WidthRequest="20"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Start"
+                           />
+                    <Label Text="Wallet balance"
+                           HorizontalTextAlignment="Start"
+                           />
+                </HorizontalStackLayout>
+
+                <Label VerticalTextAlignment="Center"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Start"
+                       HorizontalTextAlignment="Start"
+                       TextColor="{StaticResource Primary}"
+                       FontSize="25">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span FontAttributes="Bold"
+                                  Text="{Binding UsdSum}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <buttons:ReceiveAndTransferView Margin="0" />
+            </VerticalStackLayout>
+        </card:Card.View>
+    </card:Card>
+</ContentView>

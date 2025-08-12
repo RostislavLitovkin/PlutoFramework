@@ -14,23 +14,41 @@
                        Title="Balance">
     <template:PageTemplate.MainContent>
         <VerticalStackLayout Spacing="15">
-            <Label HeightRequest="100"
-                   VerticalTextAlignment="Center"
-                   FontAttributes="Bold"
-                   HorizontalTextAlignment="Center"
-                   TextColor="{StaticResource Primary}"
-                   FontSize="25">
+
+            <Label HorizontalOptions="Start"
+                   HorizontalTextAlignment="Start"
+                   FontSize="25"
+                   Margin="20, 20, 20, 0"
+                   >
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span FontAttributes="Bold"
-                              Text="{Binding UsdSum}" />
-                    </FormattedString>
+                        <Span Text="Hey, "
+                              FontAttributes="Bold" />
 
+                        <Span Text="{Binding FirstName}"
+                              FontAttributes="Bold" />
+
+                        <Span Text=" 👋"
+                              FontAttributes="Bold" />
+                    </FormattedString>
                 </Label.FormattedText>
             </Label>
 
-            <buttons:ReceiveAndTransferView Margin="20, 0, 20, 0" />
+            <balance:BalanceOverviewView Margin="20, 0, 20, 0" />
 
+            <Label HorizontalOptions="Start"
+                   HorizontalTextAlignment="Start"
+                   FontSize="20"
+                   Margin="20, 0, 20, 0"
+                   >
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Assets"
+                              FontAttributes="Bold"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            
             <VerticalStackLayout Margin="20, 0, 20, 100"
                                  BindableLayout.ItemsSource="{Binding Assets}"
                                  Spacing="15">
