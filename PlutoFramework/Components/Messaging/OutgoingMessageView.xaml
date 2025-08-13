@@ -1,30 +1,23 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PlutoFramework.Components.Messaging.IncomingMessageView">
-    <Grid ColumnDefinitions="2,3*,*">
-        <Border Grid.Column="0"
-                StrokeThickness="0"
-                VerticalOptions="Fill"
-                HorizontalOptions="Fill"
-                BackgroundColor="{Binding MsgColor}"/>
+             x:Class="PlutoFramework.Components.Messaging.OutgoingMessageView">
+    <Grid ColumnDefinitions="*,3*">
         <Border Grid.Column="1"
                 StrokeThickness="0"
                 Padding="10"
-                HorizontalOptions="Start"
-                VerticalOptions="Start">
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                BackgroundColor="{StaticResource LightGrayBackground}"
+                StrokeShape="RoundRectangle 4,4">
             <VerticalStackLayout Spacing="8">
-                <Label Text="{Binding Sender}"
-                       LineBreakMode="NoWrap"
-                       TextColor="{Binding MsgColor}"
-                       FontSize="15"/>
-                
                 <Label Text="{Binding Message}"
                        LineBreakMode="WordWrap"/>
                 
                 <Label LineBreakMode="NoWrap"
                        FontSize="11"
-                       TextColor="{StaticResource LightGrayText}">
+                       TextColor="{StaticResource LightGrayText}"
+                       HorizontalOptions="End">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="Sent "/>
