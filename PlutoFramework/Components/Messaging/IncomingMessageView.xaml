@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Messaging.IncomingMessageView">
+    <Grid ColumnDefinitions="2,3*,*">
+        <Line VerticalOptions="Fill"
+              BackgroundColor="{Binding MsgColor}"/>
+        <Border Grid.Column="0"
+                Padding="10"
+                HorizontalOptions="Start"
+                VerticalOptions="Start">
+            <VerticalStackLayout Spacing="15">
+                <Label Text="{Binding Sender}"
+                       LineBreakMode="WordWrap"
+                       TextColor="{Binding MsgColor}"/>
+                <Label Text="{Binding Text}"
+                       LineBreakMode="WordWrap" />
+                <Label LineBreakMode="WordWrap">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Sent " />
+                            <Span Text="{Binding Timestamp}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </VerticalStackLayout>
+        </Border>
+    </Grid>
+</ContentView>

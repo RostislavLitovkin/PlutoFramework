@@ -2214,6 +2214,9 @@
     <MauiXaml Update="Components\Loading\FullPageLoadingView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\Messaging\IncomingMessageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\Messaging\MessagingOverviewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
