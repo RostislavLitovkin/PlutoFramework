@@ -132,7 +132,7 @@ namespace PlutoFramework.Templates.PageTemplate
             set => SetValue(ScrollViewOrientationProperty, value);
         }
 
-        public ScrollView ScrollView { get => this.FindByName<ScrollView>("ScrollView"); }
+        public ScrollView ScrollView { get => (ScrollView)GetTemplateChild("scrollView"); }
         public TopNavigationBar TopNavigationBar { get => this.FindByName<TopNavigationBar>("TopNavigationBar"); }
 
         public PageTemplate()
