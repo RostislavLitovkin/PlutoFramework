@@ -11,7 +11,7 @@
                 BackgroundColor="{StaticResource LightGrayBackground}"
                 StrokeShape="RoundRectangle 4,4">
             <VerticalStackLayout Spacing="8">
-                <Label Text="{Binding Message}"
+                <Label Text="{Binding Text}"
                        LineBreakMode="WordWrap"/>
                 
                 <Label LineBreakMode="NoWrap"

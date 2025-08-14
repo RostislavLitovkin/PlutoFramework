@@ -19,7 +19,7 @@
                        TextColor="{Binding MsgColor}"
                        FontSize="15"/>
                 
-                <Label Text="{Binding Message}"
+                <Label Text="{Binding Text}"
                        LineBreakMode="WordWrap"/>
                 
                 <Label LineBreakMode="NoWrap"

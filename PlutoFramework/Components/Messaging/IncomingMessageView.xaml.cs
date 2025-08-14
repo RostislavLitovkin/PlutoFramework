@@ -20,13 +20,13 @@ namespace PlutoFramework.Components.Messaging
             set => SetValue(SenderProperty, value);
         }
         
-        public static readonly BindableProperty MessageProperty = BindableProperty.Create(nameof(Message), 
+        public static readonly BindableProperty TextProperty = BindableProperty.Create(nameof(Text), 
             typeof(string), typeof(IncomingMessageView));
 
-        public string Message
+        public string Text
         {
-            get => (string)GetValue(MessageProperty);
-            set => SetValue(MessageProperty, value);
+            get => (string)GetValue(TextProperty);
+            set => SetValue(TextProperty, value);
         }
         
         public static readonly BindableProperty TimestampProperty = BindableProperty.Create(nameof(Timestamp), 

@@ -5,20 +5,34 @@
                        xmlns:messaging="clr-namespace:PlutoFramework.Components.Messaging"
                        x:Class="PlutoFramework.Components.Messaging.MessagingOverviewPage"
                        Title="Messaging Overview">
-    <VerticalStackLayout Padding="10"
-                         Spacing="5">
-        <messaging:IncomingMessageView Sender="Lorem ipsum"
-                                       Message="dolor sit amet, consectetur adipiscing elit. Donec luctus ligula eu erat malesuada, vitae scelerisque libero fermentum. Nunc pellentesque ac enim a semper. Ut malesuada, eros quis malesuada efficitur, lectus ante euismod neque, eget ultricies augue augue in nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque eleifend turpis sit amet mi sollicitudin sagittis ac eget nisi. Sed lectus augue, iaculis id congue eleifend, vulputate quis eros. Nunc porttitor diam congue, rutrum odio a, vehicula felis. Suspendisse commodo congue enim. Phasellus auctor neque vitae lorem ornare, vitae consequat sem convallis. Vestibulum in erat sit amet tortor condimentum mattis id quis ex. Donec vel rhoncus odio. Aenean nunc ex, iaculis sed nunc at, scelerisque imperdiet ex. Pellentesque sed augue viverra, fermentum arcu eu, placerat orci. Pellentesque ullamcorper auctor tortor a tristique." 
-                                       Timestamp="Aug 5, 2025, 10:16 AM"/>
-        <messaging:OutgoingMessageView Message="qwdadwa awdawd aa dw gaawfd awd dawrfaw"
-                                       Timestamp="Aug 5, 2025, 12:34 PM"/>
-        <messaging:IncomingMessageView Sender="Short"
-                                       Message="in" 
-                                       Timestamp="Aug 5, 2025, 10:16 AM"/>
-        <messaging:OutgoingMessageView Message="out"
-                                       Timestamp="Aug 5, 2025, 12:34 PM"/>
-        <messaging:IncomingMessageView Sender="Lorem ipsum"
-                                       Message="dolor sit amet, consectetur adipiscing elit. Donec luctus ligula eu erat malesuada, vitae scelerisque libero fermentum. Nunc pellentesque ac enim a semper. Ut malesuada, eros quis malesuada efficitur, lectus ante euismod neque, eget ultricies augue augue in nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque eleifend turpis sit amet mi sollicitudin sagittis ac eget nisi. Sed lectus augue, iaculis id congue eleifend, vulputate quis eros. Nunc porttitor diam congue, rutrum odio a, vehicula felis. Suspendisse commodo congue enim. Phasellus auctor neque vitae lorem ornare, vitae consequat sem convallis. Vestibulum in erat sit amet tortor condimentum mattis id quis ex. Donec vel rhoncus odio. Aenean nunc ex, iaculis sed nunc at, scelerisque imperdiet ex. Pellentesque sed augue viverra, fermentum arcu eu, placerat orci. Pellentesque ullamcorper auctor tortor a tristique." 
-                                       Timestamp="Aug 5, 2025, 10:16 AM"/>
-    </VerticalStackLayout>
+    <ContentPage.Resources>
+        <DataTemplate x:Key="IncomingMessageTemplate">
+            <messaging:IncomingMessageView Sender="{Binding Sender}"
+                                           Text="{Binding Message}" 
+                                           Timestamp="{Binding Timestamp}"
+                                           MsgColor="{Binding MsgColor}"
+                                           Rotation="180"/>
+        </DataTemplate>
+
+        <DataTemplate x:Key="OutgoingMessageTemplate">
+            <messaging:OutgoingMessageView Text="{Binding Message}" 
+                                           Timestamp="{Binding Timestamp}"
+                                           Rotation="180"/>
+        </DataTemplate>
+        
+        <DataTemplate x:Key="StatusMessageTemplate">
+            <messaging:StatusMessageView Text="{Binding Message}"
+                                         Rotation="180"/>
+        </DataTemplate>
+
+        <messaging:MessageTemplateSelector x:Key="MessageSelector"
+                                           IncomingTemplate="{StaticResource IncomingMessageTemplate}"
+                                           OutgoingTemplate="{StaticResource OutgoingMessageTemplate}" 
+                                           StatusTemplate="{StaticResource StatusMessageTemplate}"/>
+    </ContentPage.Resources>
+    
+    <VerticalStackLayout BindableLayout.ItemsSource="{Binding Messages}"
+                         BindableLayout.ItemTemplateSelector="{StaticResource MessageSelector}"
+                         Padding="10"
+                         Spacing="5"/>
 </template:PageTemplate>
