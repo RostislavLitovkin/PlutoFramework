@@ -67,51 +67,41 @@ namespace PlutoFramework.Model
                 IEnumerable<(string, AssetKey, BigInteger)> evaluated = e switch
                 {
                     // Balances
-                    ExtrinsicEvent { PalletName: "Balances", EventName: "Transfer" } => [
+                    ExtrinsicEvent { PalletName: "Balances", EventName: nameof(Polkadot.NetApi.Generated.Model.pallet_balances.pallet.Event.Transfer) } => [
                         // From negative
                         (e.Parameters[0].Value, (endpoint.Key, AssetPallet.Native, 0), -BigInteger.Parse(e.Parameters[2].Value)),
                         // To positive
                         (e.Parameters[1].Value, (endpoint.Key, AssetPallet.Native, 0), BigInteger.Parse(e.Parameters[2].Value))
                     ],
-                    ExtrinsicEvent { PalletName: "Balances", EventName: "Deposit" } => [(e.Parameters[0].Value, (endpoint.Key, AssetPallet.Native, 0), BigInteger.Parse(e.Parameters[1].Value))],
-                    ExtrinsicEvent { PalletName: "Balances", EventName: "Withdraw" } => [(e.Parameters[0].Value, (endpoint.Key, AssetPallet.Native, 0), -BigInteger.Parse(e.Parameters[1].Value))],
-                    ExtrinsicEvent { PalletName: "Balances", EventName: "Minted" } => [(e.Parameters[0].Value, (endpoint.Key, AssetPallet.Native, 0), BigInteger.Parse(e.Parameters[1].Value))],
-                    ExtrinsicEvent { PalletName: "Balances", EventName: "Burned" } => [(e.Parameters[0].Value, (endpoint.Key, AssetPallet.Native, 0), -BigInteger.Parse(e.Parameters[1].Value))],
+                    ExtrinsicEvent { PalletName: "Balances", EventName: nameof(Polkadot.NetApi.Generated.Model.pallet_balances.pallet.Event.Deposit) } => [(e.Parameters[0].Value, (endpoint.Key, AssetPallet.Native, 0), BigInteger.Parse(e.Parameters[1].Value))],
+                    ExtrinsicEvent { PalletName: "Balances", EventName: nameof(Polkadot.NetApi.Generated.Model.pallet_balances.pallet.Event.Withdraw) } => [(e.Parameters[0].Value, (endpoint.Key, AssetPallet.Native, 0), -BigInteger.Parse(e.Parameters[1].Value))],
+                    ExtrinsicEvent { PalletName: "Balances", EventName: nameof(Polkadot.NetApi.Generated.Model.pallet_balances.pallet.Event.Minted) } => [(e.Parameters[0].Value, (endpoint.Key, AssetPallet.Native, 0), BigInteger.Parse(e.Parameters[1].Value))],
+                    ExtrinsicEvent { PalletName: "Balances", EventName: nameof(Polkadot.NetApi.Generated.Model.pallet_balances.pallet.Event.Burned) } => [(e.Parameters[0].Value, (endpoint.Key, AssetPallet.Native, 0), -BigInteger.Parse(e.Parameters[1].Value))],
 
                     // Tokens
-                    ExtrinsicEvent { PalletName: "Tokens", EventName: "Transfer" } => [
+                    ExtrinsicEvent { PalletName: "Tokens", EventName: nameof(Hydration.NetApi.Generated.Model.orml_tokens.module.Event.Transfer) } => [
                         // From negative
                         (e.Parameters[1].Value, (endpoint.Key, AssetPallet.Tokens, BigInteger.Parse(e.Parameters[0].Value)), -BigInteger.Parse(e.Parameters[3].Value)),
                         // To positive
                         (e.Parameters[2].Value, (endpoint.Key, AssetPallet.Tokens, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[3].Value))
                     ],
-                    ExtrinsicEvent { PalletName: "Tokens", EventName: "Deposited" } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.Tokens, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[2].Value))],
-                    ExtrinsicEvent { PalletName: "Tokens", EventName: "Withdrawn" } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.Tokens, BigInteger.Parse(e.Parameters[0].Value)), -BigInteger.Parse(e.Parameters[2].Value))],
+                    ExtrinsicEvent { PalletName: "Tokens", EventName: nameof(Hydration.NetApi.Generated.Model.orml_tokens.module.Event.Deposited) } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.Tokens, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[2].Value))],
+                    ExtrinsicEvent { PalletName: "Tokens", EventName: nameof(Hydration.NetApi.Generated.Model.orml_tokens.module.Event.Withdrawn) } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.Tokens, BigInteger.Parse(e.Parameters[0].Value)), -BigInteger.Parse(e.Parameters[2].Value))],
 
                     // Assets
-                    ExtrinsicEvent { PalletName: "Assets", EventName: "Transferred" } => [
+                    ExtrinsicEvent { PalletName: "Assets", EventName: nameof(PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet.Event.Transferred) } => [
                         // From negative
                         (e.Parameters[1].Value, (endpoint.Key, AssetPallet.Assets, BigInteger.Parse(e.Parameters[0].Value)), -BigInteger.Parse(e.Parameters[3].Value)),
                         // To positive
                         (e.Parameters[2].Value, (endpoint.Key, AssetPallet.Assets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[3].Value))
                     ],
-                    ExtrinsicEvent { PalletName: "Assets", EventName: "Issued" } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.Assets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[2].Value))],
-                    ExtrinsicEvent { PalletName: "Assets", EventName: "Burned" } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.Assets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[2].Value))],
-                    ExtrinsicEvent { PalletName: "AssetsFreezer", EventName: "Frozen" } => [(e.Parameters[0].Value, (endpoint.Key, AssetPallet.AssetsFrozen, BigInteger.Parse(e.Parameters[1].Value)), -BigInteger.Parse(e.Parameters[2].Value) * 1_000_000)],// Has to be * 10^6 on Xcavate blockchain
-
-                    // ForeignAssets
-                    ExtrinsicEvent { PalletName: "ForeignAssets", EventName: "Transferred" } => [
-                        // From negative
-                        (e.Parameters[1].Value, (endpoint.Key, AssetPallet.ForeignAssets, BigInteger.Parse(e.Parameters[0].Value)), -BigInteger.Parse(e.Parameters[3].Value)),
-                        // To positive
-                        (e.Parameters[2].Value, (endpoint.Key, AssetPallet.ForeignAssets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[3].Value))
-                    ],
-                    ExtrinsicEvent { PalletName: "ForeignAssets", EventName: "Issued" } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.ForeignAssets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[2].Value))],
-                    ExtrinsicEvent { PalletName: "ForeignAssets", EventName: "Burned" } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.ForeignAssets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[2].Value))],
+                    ExtrinsicEvent { PalletName: "Assets", EventName: nameof(PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet.Event.Issued) } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.Assets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[2].Value))],
+                    ExtrinsicEvent { PalletName: "Assets", EventName: nameof(PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet.Event.Burned) } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.Assets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[2].Value))],
+                    ExtrinsicEvent { PalletName: "AssetsFreezer", EventName: nameof(PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet.Event.Frozen) } => [(e.Parameters[0].Value, (endpoint.Key, AssetPallet.AssetsFrozen, BigInteger.Parse(e.Parameters[1].Value)), -BigInteger.Parse(e.Parameters[2].Value) * 1_000_000)],// Has to be * 10^6 on Xcavate blockchain
 
                     // Fees
-                    ExtrinsicEvent { PalletName: "TransactionPayment", EventName: "TransactionFeePaid" } => [("fee", (endpoint.Key, AssetPallet.Native, 0), -BigInteger.Parse(e.Parameters[1].Value) - BigInteger.Parse(e.Parameters[2].Value))],
-                    ExtrinsicEvent { PalletName: "XcmPallet", EventName: "FeesPaid" } => EvaluateXcmPalletFeesPaid(e, endpoint),
+                    ExtrinsicEvent { PalletName: "TransactionPayment", EventName: nameof(Polkadot.NetApi.Generated.Model.pallet_transaction_payment.pallet.Event.TransactionFeePaid) } => [("fee", (endpoint.Key, AssetPallet.Native, 0), -BigInteger.Parse(e.Parameters[1].Value) - BigInteger.Parse(e.Parameters[2].Value))],
+                    ExtrinsicEvent { PalletName: "XcmPallet", EventName: nameof(PolkadotAssetHub.NetApi.Generated.Model.pallet_xcm.pallet.Event.FeesPaid) } => EvaluateXcmPalletFeesPaid(e, endpoint),
 
                     // Handle more events ...
                     _ => []
@@ -187,8 +177,10 @@ namespace PlutoFramework.Model
                 IEnumerable<(string, NftKey, NftOperation)> evaluated = e switch
                 {
                     // Nfts
-                    ExtrinsicEvent { PalletName: "Nfts", EventName: "Transferred" } => [(e.Parameters[2].Value, (GetNftTypeEnumNftsPalletForEndpoint(endpoint.Key), BigInteger.Parse(e.Parameters[0].Value), BigInteger.Parse(e.Parameters[1].Value)), NftOperation.Sent),
-                                                                                        (e.Parameters[3].Value, (GetNftTypeEnumNftsPalletForEndpoint(endpoint.Key), BigInteger.Parse(e.Parameters[0].Value), BigInteger.Parse(e.Parameters[1].Value)), NftOperation.Received)],
+                    ExtrinsicEvent { PalletName: "Nfts", EventName: nameof(PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.pallet.Event.Transferred) } => [
+                        (e.Parameters[2].Value, (GetNftTypeEnumNftsPalletForEndpoint(endpoint.Key), BigInteger.Parse(e.Parameters[0].Value), BigInteger.Parse(e.Parameters[1].Value)), NftOperation.Sent),
+                        (e.Parameters[3].Value, (GetNftTypeEnumNftsPalletForEndpoint(endpoint.Key), BigInteger.Parse(e.Parameters[0].Value), BigInteger.Parse(e.Parameters[1].Value)), NftOperation.Received)
+                    ],
 
                     // Handle more events ...
                     _ => []
@@ -261,7 +253,7 @@ namespace PlutoFramework.Model
                 IEnumerable<(string, XcavatePropertyKey, XcavatePropertyOperation, uint)> evaluated = e switch
                 {
                     // Nfts
-                    ExtrinsicEvent { PalletName: "NftMarketplace", EventName: "PropertyTokenBought" } => [(e.Parameters[2].Value, (endpoint.Key, uint.Parse(e.Parameters[0].Value)), XcavatePropertyOperation.Buy, uint.Parse(e.Parameters[3].Value))],
+                    ExtrinsicEvent { PalletName: "NftMarketplace", EventName: nameof(XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.Event.PropertyTokenBought) } => [(e.Parameters[2].Value, (endpoint.Key, uint.Parse(e.Parameters[0].Value)), XcavatePropertyOperation.Buy, uint.Parse(e.Parameters[3].Value))],
 
                     // Handle more events ...
                     _ => []
