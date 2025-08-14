@@ -2333,6 +2333,18 @@
     <MauiXaml Update="Components\Nft\NftTransferView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\Notifications\DateView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Notifications\NotificationsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Notifications\NotificationTypeBadgeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Notifications\NotificationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\OpenGov\VotingDelegationView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
@@ -2373,6 +2385,9 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Table\TwoCellTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Tabs\MultiTabView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Tabs\TabsView.xaml">

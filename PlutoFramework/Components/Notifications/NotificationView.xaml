@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:notifications="clr-namespace:PlutoFramework.Components.Notifications"
+             x:Class="PlutoFramework.Components.Notifications.NotificationView">
+    <Grid Padding="10" RowSpacing="4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Dot Icon -->
+        <Ellipse WidthRequest="5" HeightRequest="5" 
+                 Fill="{StaticResource Primary}" 
+                 VerticalOptions="Start"
+                 Margin="5"
+                 IsVisible="{Binding WasNotRead}"/>
+
+        <!-- Text Content -->
+        <VerticalStackLayout Grid.Column="1" Spacing="5">
+            <Label FontAttributes="Bold"
+                   TextColor="Black">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding Title}"
+                              FontAttributes="Bold" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label Text="{Binding Message}"
+                   TextColor="Gray"
+                   MaxLines="2"
+                   LineBreakMode="TailTruncation"
+                   />
+
+            <HorizontalStackLayout Spacing="10">
+                <notifications:DateView Date="{Binding Date}" />
+                
+                <notifications:NotificationTypeBadgeView NotificationType="{Binding Type}" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </Grid>
+</ContentView>
