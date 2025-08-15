@@ -40,5 +40,9 @@
                 <notifications:NotificationTypeBadgeView NotificationType="{Binding Type}" />
             </HorizontalStackLayout>
         </VerticalStackLayout>
+
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+        </Grid.GestureRecognizers>
     </Grid>
 </ContentView>
