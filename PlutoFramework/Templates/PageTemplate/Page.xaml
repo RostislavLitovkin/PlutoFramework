@@ -22,7 +22,7 @@
                         AbsoluteLayout.LayoutFlags="All"
                         Padding="{TemplateBinding ScrollPadding}"
                         Orientation="{TemplateBinding ScrollViewOrientation}"
-                        x:Name="ScrollView">
+                        x:Name="scrollView">
                 <!-- Content block -->
                 <ContentPresenter Content="{TemplateBinding MainContent}"/>
             </ScrollView>

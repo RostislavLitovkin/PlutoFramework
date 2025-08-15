@@ -35,14 +35,14 @@
 
     <template:PageTemplate.PopupContent>
         <AbsoluteLayout AbsoluteLayout.LayoutBounds="1, 0, 80, 1"
-                        AbsoluteLayout.LayoutFlags="XProportional, HeightProportional"
-                        Margin="0, 0, 30, 0"
-                        Padding="0, 55, 0, 0">
+                AbsoluteLayout.LayoutFlags="XProportional, HeightProportional"
+                Margin="0, 0, 30, 0"
+                Padding="0, 55, 0, 0">
             <VerticalStackLayout HorizontalOptions="Center"
-                                 Margin="0, 10, 0, 100"
-                                 Spacing="5"
-                                 BindableLayout.ItemsSource="{Binding ComponentInfos}"
-                                 x:Name="draggerStackLayout">
+                         Margin="0, 10, 0, 100"
+                         Spacing="5"
+                         BindableLayout.ItemsSource="{Binding ComponentInfos}"
+                         x:Name="draggerStackLayout">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <AbsoluteLayout HeightRequest="60"
@@ -55,6 +55,8 @@
                 </BindableLayout.ItemTemplate>
             </VerticalStackLayout>
         </AbsoluteLayout>
+        
+        <customlayouts:CustomItemView Padding="10, 65, 10, 20" />
         
         <customlayouts:CustomItemView Padding="10, 65, 10, 20" />
 
