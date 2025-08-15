@@ -22,6 +22,29 @@ namespace PlutoFramework.Templates.PageTemplate
             get => (int)GetValue(TransactionAnalyzerZIndexProperty);
             set => SetValue(TransactionAnalyzerZIndexProperty, value);
         }
+        
+        /*public static readonly BindableProperty PopupContentProperty =
+            BindableProperty.Create(nameof(PopupContent), typeof(MauiView), typeof(PageTemplate), default(MauiView));
+
+        public MauiView PopupContent
+        {
+            get => (MauiView)GetValue(PopupContentProperty);
+            set => SetValue(PopupContentProperty, value);
+        }*/
+
+
+        public static readonly BindableProperty PopupContentProperty =
+            BindableProperty.Create(
+                nameof(PopupContent),
+                typeof(IList<MauiView>),
+                typeof(PageTemplate),
+                defaultValue: new List<MauiView>());
+
+        public IList<MauiView> PopupContent
+        {
+            get => (IList<MauiView>)GetValue(PopupContentProperty);
+            set => SetValue(PopupContentProperty, value);
+        }
 
         public IList<MauiView> PopupContent => new PopupContentCollection(this);
 
