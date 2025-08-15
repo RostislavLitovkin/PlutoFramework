@@ -61,7 +61,7 @@ public partial class MessagingOverviewPage : PageTemplate
 			Type = type,
 			Sender = sender,
 			Timestamp = timestamp,
-			MsgColor = msgColor ?? Application.Current.Resources["X-LEAFGREEN"] as Color
+			MsgColor = msgColor ?? Application.Current.Resources["Primary"] as Color
 		});
 	}
 

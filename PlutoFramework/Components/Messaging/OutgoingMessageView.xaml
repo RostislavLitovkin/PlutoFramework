@@ -8,7 +8,7 @@
                 Padding="10"
                 HorizontalOptions="End"
                 VerticalOptions="Start"
-                BackgroundColor="{StaticResource LightGrayBackground}"
+                BackgroundColor="{AppThemeBinding Light={StaticResource Gray50}, Dark={StaticResource Gray950}}"
                 StrokeShape="RoundRectangle 4,4">
             <VerticalStackLayout Spacing="8">
                 <Label Text="{Binding Text}"

@@ -3,7 +3,7 @@ namespace PlutoFramework.Components.Messaging
     public partial class IncomingMessageView: ContentView
     {
         public static readonly BindableProperty MsgColorProperty = BindableProperty.Create(nameof(MsgColor), 
-            typeof(Color), typeof(IncomingMessageView), Application.Current.Resources["X-LEAFGREEN"] as Color);
+            typeof(Color), typeof(IncomingMessageView), Application.Current.Resources["Primary"] as Color);
 
         public Color MsgColor
         {

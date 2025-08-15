@@ -31,8 +31,17 @@
                                            StatusTemplate="{StaticResource StatusMessageTemplate}"/>
     </ContentPage.Resources>
     
-    <VerticalStackLayout BindableLayout.ItemsSource="{Binding Messages}"
-                         BindableLayout.ItemTemplateSelector="{StaticResource MessageSelector}"
-                         Padding="10"
-                         Spacing="5"/>
+    <template:PageTemplate.MainContent>
+        <VerticalStackLayout BindableLayout.ItemsSource="{Binding Messages}"
+                             BindableLayout.ItemTemplateSelector="{StaticResource MessageSelector}"
+                             Padding="10"
+                             Spacing="5"
+                             Margin="0, 60,0,0"/>
+    </template:PageTemplate.MainContent>
+    
+    <template:PageTemplate.PopupContent>
+        <messaging:MessageInputBarView AbsoluteLayout.LayoutBounds="0,1,1,65"
+                                       AbsoluteLayout.LayoutFlags="WidthProportional, YProportional"
+                                       Margin="10"/>
+    </template:PageTemplate.PopupContent>
 </template:PageTemplate>
