@@ -44,6 +44,12 @@ namespace XcavatePaseo.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyManagement", "LettingInfo"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.LettingAgentInfo)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyManagement", "LettingAgentProposal"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.ProposedLettingAgent)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyManagement", "OngoingLettingAgentVoting"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.VoteStats)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyManagement", "UserLettingAgentVote"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT7)));
         }
         
         /// <summary>
@@ -139,6 +145,99 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.LettingAgentInfo>(parameters, blockhash, token);
             return result;
         }
+        
+        /// <summary>
+        /// >> LettingAgentProposalParams
+        ///  Mapping of asset id to the ongoing letting agent proposal.
+        /// </summary>
+        public static string LettingAgentProposalParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        {
+            return RequestGenerator.GetStorage("PropertyManagement", "LettingAgentProposal", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> LettingAgentProposalDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string LettingAgentProposalDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> LettingAgentProposal
+        ///  Mapping of asset id to the ongoing letting agent proposal.
+        /// </summary>
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.ProposedLettingAgent> LettingAgentProposal(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        {
+            string parameters = PropertyManagementStorage.LettingAgentProposalParams(key);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.ProposedLettingAgent>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> OngoingLettingAgentVotingParams
+        ///  Mapping of ongoing letting agent vote.
+        /// </summary>
+        public static string OngoingLettingAgentVotingParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        {
+            return RequestGenerator.GetStorage("PropertyManagement", "OngoingLettingAgentVoting", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> OngoingLettingAgentVotingDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string OngoingLettingAgentVotingDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> OngoingLettingAgentVoting
+        ///  Mapping of ongoing letting agent vote.
+        /// </summary>
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.VoteStats> OngoingLettingAgentVoting(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        {
+            string parameters = PropertyManagementStorage.OngoingLettingAgentVotingParams(key);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.VoteStats>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> UserLettingAgentVoteParams
+        ///  Mapping of a asset id and account id to the vote of a user.
+        /// </summary>
+        public static string UserLettingAgentVoteParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        {
+            return RequestGenerator.GetStorage("PropertyManagement", "UserLettingAgentVote", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> UserLettingAgentVoteDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string UserLettingAgentVoteDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> UserLettingAgentVote
+        ///  Mapping of a asset id and account id to the vote of a user.
+        /// </summary>
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT7> UserLettingAgentVote(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        {
+            string parameters = PropertyManagementStorage.UserLettingAgentVoteParams(key);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT7>(parameters, blockhash, token);
+            return result;
+        }
     }
     
     /// <summary>
@@ -151,46 +250,46 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> add_letting_agent
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AddLettingAgent(Substrate.NetApi.Model.Types.Primitive.U32 region, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 location, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 letting_agent)
+        public static Method AddLettingAgent(Substrate.NetApi.Model.Types.Primitive.U16 region, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10 location)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(region.Encode());
             byteArray.AddRange(location.Encode());
-            byteArray.AddRange(letting_agent.Encode());
-            return new Method(82, "PropertyManagement", 0, "add_letting_agent", byteArray.ToArray());
+            return new Method(94, "PropertyManagement", 0, "add_letting_agent", byteArray.ToArray());
         }
         
         /// <summary>
-        /// >> letting_agent_deposit
+        /// >> letting_agent_propose
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method LettingAgentDeposit()
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            return new Method(82, "PropertyManagement", 1, "letting_agent_deposit", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> add_letting_agent_to_location
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method AddLettingAgentToLocation(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 location, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 letting_agent)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(location.Encode());
-            byteArray.AddRange(letting_agent.Encode());
-            return new Method(82, "PropertyManagement", 2, "add_letting_agent_to_location", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> set_letting_agent
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method SetLettingAgent(Substrate.NetApi.Model.Types.Primitive.U32 asset_id)
+        public static Method LettingAgentPropose(Substrate.NetApi.Model.Types.Primitive.U32 asset_id)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset_id.Encode());
-            return new Method(82, "PropertyManagement", 3, "set_letting_agent", byteArray.ToArray());
+            return new Method(94, "PropertyManagement", 3, "letting_agent_propose", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> vote_on_letting_agent
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method VoteOnLettingAgent(Substrate.NetApi.Model.Types.Primitive.U32 asset_id, XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.EnumVote vote)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(asset_id.Encode());
+            byteArray.AddRange(vote.Encode());
+            return new Method(94, "PropertyManagement", 4, "vote_on_letting_agent", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> finalize_letting_agent
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method FinalizeLettingAgent(Substrate.NetApi.Model.Types.Primitive.U32 asset_id)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(asset_id.Encode());
+            return new Method(94, "PropertyManagement", 5, "finalize_letting_agent", byteArray.ToArray());
         }
         
         /// <summary>
@@ -203,19 +302,19 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(asset_id.Encode());
             byteArray.AddRange(amount.Encode());
             byteArray.AddRange(payment_asset.Encode());
-            return new Method(82, "PropertyManagement", 4, "distribute_income", byteArray.ToArray());
+            return new Method(94, "PropertyManagement", 6, "distribute_income", byteArray.ToArray());
         }
         
         /// <summary>
-        /// >> withdraw_funds
+        /// >> claim_income
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method WithdrawFunds(Substrate.NetApi.Model.Types.Primitive.U32 asset_id, Substrate.NetApi.Model.Types.Primitive.U32 payment_asset)
+        public static Method ClaimIncome(Substrate.NetApi.Model.Types.Primitive.U32 asset_id, Substrate.NetApi.Model.Types.Primitive.U32 payment_asset)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset_id.Encode());
             byteArray.AddRange(payment_asset.Encode());
-            return new Method(82, "PropertyManagement", 5, "withdraw_funds", byteArray.ToArray());
+            return new Method(94, "PropertyManagement", 7, "claim_income", byteArray.ToArray());
         }
     }
     
@@ -233,6 +332,17 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             var result = new XcavatePaseo.NetApi.Generated.Model.frame_support.PalletId();
             result.Create("0x70792F6E66747863");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> LettingAgentDeposit
+        ///  The minimum amount of a letting agent that has to be deposited.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U128 LettingAgentDeposit()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U128();
+            result.Create("0x0080C6A47E8D03000000000000000000");
             return result;
         }
         
@@ -263,6 +373,27 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         ///  The maximum amount of locations a letting agent can be assigned to.
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 MaxLocations()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x64000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> AcceptedAssets
+        /// </summary>
+        public XcavatePaseo.NetApi.Generated.Types.Base.Arr2U32 AcceptedAssets()
+        {
+            var result = new XcavatePaseo.NetApi.Generated.Types.Base.Arr2U32();
+            result.Create("0x39050000C0070000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> LettingAgentVotingTime
+        ///  The amount of time given to vote for a lawyer proposal.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 LettingAgentVotingTime()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
             result.Create("0x64000000");
@@ -348,7 +479,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> NoPermission
-        /// The user is not a property owner and has no permission to deposit.
+        /// The caller is not authorized to call this extrinsic.
         /// </summary>
         NoPermission,
         
@@ -371,12 +502,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         AgentNotFound,
         
         /// <summary>
-        /// >> AlreadyDeposited
-        /// The letting already deposited the necessary amount.
-        /// </summary>
-        AlreadyDeposited,
-        
-        /// <summary>
         /// >> LocationUnknown
         /// The location is not registered.
         /// </summary>
@@ -387,12 +512,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// The letting agent is already assigned to this location.
         /// </summary>
         LettingAgentInLocation,
-        
-        /// <summary>
-        /// >> NotDeposited
-        /// The letting agent has no funds deposited.
-        /// </summary>
-        NotDeposited,
         
         /// <summary>
         /// >> LettingAgentExists
@@ -407,15 +526,51 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         AssetNotFound,
         
         /// <summary>
-        /// >> NoLoactions
-        /// This letting agent has no location.
-        /// </summary>
-        NoLoactions,
-        
-        /// <summary>
         /// >> PaymentAssetNotSupported
         /// This Asset is not supported for payment.
         /// </summary>
         PaymentAssetNotSupported,
+        
+        /// <summary>
+        /// >> NoLettingAgentProposed
+        /// No letting agent has been proposed for this property.
+        /// </summary>
+        NoLettingAgentProposed,
+        
+        /// <summary>
+        /// >> VotingExpired
+        /// The propal has expired.
+        /// </summary>
+        VotingExpired,
+        
+        /// <summary>
+        /// >> UserNotWhitelisted
+        /// User did not pass the kyc.
+        /// </summary>
+        UserNotWhitelisted,
+        
+        /// <summary>
+        /// >> VotingStillOngoing
+        /// The voting is still ongoing.
+        /// </summary>
+        VotingStillOngoing,
+        
+        /// <summary>
+        /// >> LettingAgentProposalOngoing
+        /// There is already a letting agent proposal ongoing.
+        /// </summary>
+        LettingAgentProposalOngoing,
+        
+        /// <summary>
+        /// >> TooManyVoters
+        /// There are already too many voters for this voting.
+        /// </summary>
+        TooManyVoters,
+        
+        /// <summary>
+        /// >> AccountIsNotLettingAgent
+        /// The account has not the role of a letting agent.
+        /// </summary>
+        AccountIsNotLettingAgent,
     }
 }

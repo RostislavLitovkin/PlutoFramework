@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_multisig
     
     
     /// <summary>
-    /// >> 431 - Composite[pallet_multisig.Multisig]
+    /// >> 434 - Composite[pallet_multisig.Multisig]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Multisig : BaseType
@@ -39,7 +39,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_multisig
         /// <summary>
         /// >> approvals
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24 Approvals { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25 Approvals { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -68,7 +68,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_multisig
             Deposit.Decode(byteArray, ref p);
             Depositor = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Depositor.Decode(byteArray, ref p);
-            Approvals = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24();
+            Approvals = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25();
             Approvals.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

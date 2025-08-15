@@ -72,6 +72,6 @@ namespace PlutoFramework.Model.Xcavate
 
         public static long GetTotalPropertiesOwned() => ItemsDict.Values.Sum(x => x.Amount);
 
-        public static long GetTotalInvested() => ItemsDict.Values.Sum(x => x.Amount * ((INftXcavateMetadata)x.NftBase).XcavateMetadata?.PricePerToken ?? 0);
+        public static long GetTotalInvested() => ItemsDict.Values.Sum(x => (long)(x.Amount * ((INftXcavateMetadata)x.NftBase).XcavateMetadata?.PricePerToken ?? 0));
     }
 }

@@ -94,7 +94,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         
         /// <summary>
         /// >> NoPermission
-        /// The user is not a property owner and has no permission to deposit.
+        /// The caller is not authorized to call this extrinsic.
         /// </summary>
         NoPermission = 12,
         
@@ -117,56 +117,80 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         AgentNotFound = 15,
         
         /// <summary>
-        /// >> AlreadyDeposited
-        /// The letting already deposited the necessary amount.
-        /// </summary>
-        AlreadyDeposited = 16,
-        
-        /// <summary>
         /// >> LocationUnknown
         /// The location is not registered.
         /// </summary>
-        LocationUnknown = 17,
+        LocationUnknown = 16,
         
         /// <summary>
         /// >> LettingAgentInLocation
         /// The letting agent is already assigned to this location.
         /// </summary>
-        LettingAgentInLocation = 18,
-        
-        /// <summary>
-        /// >> NotDeposited
-        /// The letting agent has no funds deposited.
-        /// </summary>
-        NotDeposited = 19,
+        LettingAgentInLocation = 17,
         
         /// <summary>
         /// >> LettingAgentExists
         /// The letting agent is already registered.
         /// </summary>
-        LettingAgentExists = 20,
+        LettingAgentExists = 18,
         
         /// <summary>
         /// >> AssetNotFound
         /// This asset has no token.
         /// </summary>
-        AssetNotFound = 21,
-        
-        /// <summary>
-        /// >> NoLoactions
-        /// This letting agent has no location.
-        /// </summary>
-        NoLoactions = 22,
+        AssetNotFound = 19,
         
         /// <summary>
         /// >> PaymentAssetNotSupported
         /// This Asset is not supported for payment.
         /// </summary>
-        PaymentAssetNotSupported = 23,
+        PaymentAssetNotSupported = 20,
+        
+        /// <summary>
+        /// >> NoLettingAgentProposed
+        /// No letting agent has been proposed for this property.
+        /// </summary>
+        NoLettingAgentProposed = 21,
+        
+        /// <summary>
+        /// >> VotingExpired
+        /// The propal has expired.
+        /// </summary>
+        VotingExpired = 22,
+        
+        /// <summary>
+        /// >> UserNotWhitelisted
+        /// User did not pass the kyc.
+        /// </summary>
+        UserNotWhitelisted = 23,
+        
+        /// <summary>
+        /// >> VotingStillOngoing
+        /// The voting is still ongoing.
+        /// </summary>
+        VotingStillOngoing = 24,
+        
+        /// <summary>
+        /// >> LettingAgentProposalOngoing
+        /// There is already a letting agent proposal ongoing.
+        /// </summary>
+        LettingAgentProposalOngoing = 25,
+        
+        /// <summary>
+        /// >> TooManyVoters
+        /// There are already too many voters for this voting.
+        /// </summary>
+        TooManyVoters = 26,
+        
+        /// <summary>
+        /// >> AccountIsNotLettingAgent
+        /// The account has not the role of a letting agent.
+        /// </summary>
+        AccountIsNotLettingAgent = 27,
     }
     
     /// <summary>
-    /// >> 529 - Variant[pallet_property_management.pallet.Error]
+    /// >> 575 - Variant[pallet_property_management.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

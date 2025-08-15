@@ -67,7 +67,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.palle
     }
     
     /// <summary>
-    /// >> 309 - Variant[pallet_nft_fractionalization.pallet.Call]
+    /// >> 312 - Variant[pallet_nft_fractionalization.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

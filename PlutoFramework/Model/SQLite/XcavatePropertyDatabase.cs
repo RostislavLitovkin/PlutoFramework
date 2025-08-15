@@ -12,7 +12,7 @@ namespace PlutoFramework.Model.SQLite
 {
     public class SavedXcavatePropertyBase : INftXcavateBase, INftXcavateOngoingObjectListing
     {
-        public XcavateMetadata? XcavateMetadata { get; set; }
+        public PropertyMetadata? XcavateMetadata { get; set; }
         public XcavateOngoingObjectListingDetails? OngoingObjectListingDetails { get; set; }
         public NftTypeEnum Type { get; set; }
         public BigInteger CollectionId { get; set; }

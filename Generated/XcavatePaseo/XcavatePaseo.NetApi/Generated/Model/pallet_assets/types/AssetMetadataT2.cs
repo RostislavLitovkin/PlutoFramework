@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_assets.types
     
     
     /// <summary>
-    /// >> 501 - Composite[pallet_assets.types.AssetMetadataT2]
+    /// >> 510 - Composite[pallet_assets.types.AssetMetadataT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetMetadataT2 : BaseType
@@ -31,11 +31,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_assets.types
         /// <summary>
         /// >> name
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30 Name { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32 Name { get; set; }
         /// <summary>
         /// >> symbol
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30 Symbol { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32 Symbol { get; set; }
         /// <summary>
         /// >> decimals
         /// </summary>
@@ -69,9 +69,9 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_assets.types
             var start = p;
             Deposit = new Substrate.NetApi.Model.Types.Primitive.U128();
             Deposit.Decode(byteArray, ref p);
-            Name = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30();
+            Name = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32();
             Name.Decode(byteArray, ref p);
-            Symbol = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30();
+            Symbol = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32();
             Symbol.Decode(byteArray, ref p);
             Decimals = new Substrate.NetApi.Model.Types.Primitive.U8();
             Decimals.Decode(byteArray, ref p);

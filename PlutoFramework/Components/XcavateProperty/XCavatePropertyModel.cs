@@ -32,12 +32,12 @@ namespace PlutoFramework.Components.XcavateProperty
                     region);
 
                 // Handle S3
-                if (nft.XcavateMetadata is not null)
+                if (nft?.XcavateMetadata?.Files is not null)
                 {
                     var images = new List<string>();
 
                     foreach (var file in nft.XcavateMetadata.Files.Where(file =>
-                        (file.Contains(".jpg") || file.Contains(".jpeg") || file.Contains(".png")) && file[0] == '5'
+                        file != null && file.Length > 5 && (file.Contains(".jpg") || file.Contains(".jpeg") || file.Contains(".png")) && file[0] == '5'
                     ))
                     {
                         const string bucketName = "real-marketplace-properties";
@@ -48,11 +48,19 @@ namespace PlutoFramework.Components.XcavateProperty
                     }
                     nft.XcavateMetadata.Images = images;
                 }
+                else
+                {
+                    Console.WriteLine("Nft was null: " + nft is null);
+                }
 
-                /*if (nft.Metadata is not null && nft.Metadata.Image is null)
+                Console.WriteLine("Nft: ");
+
+                Console.WriteLine(nft);
+
+                if (nft.Metadata is not null && nft.Metadata.Image is null)
                 {
                     nft.Metadata.Image = "noimage.png";
-                }*/
+                }
             }
             catch(Exception ex)
             {

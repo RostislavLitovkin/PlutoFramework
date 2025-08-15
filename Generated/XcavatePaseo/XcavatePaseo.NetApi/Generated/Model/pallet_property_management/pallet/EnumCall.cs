@@ -38,41 +38,45 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         add_letting_agent = 0,
         
         /// <summary>
-        /// >> letting_agent_deposit
-        /// Lets the letting agent deposit the required amount, to be able to operate as a letting agent.
-        /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
-        /// 
-        /// Emits `Deposited` event when succesfful.
-        /// </summary>
-        letting_agent_deposit = 1,
-        
-        /// <summary>
-        /// >> add_letting_agent_to_location
-        /// Adds a letting agent to a location.
-        /// 
-        /// The origin must be the AgentOrigin.
-        /// 
-        /// Parameters:
-        /// - `location`: The location number where the letting agent should be added to.
-        /// - `letting_agent`: The account of the letting_agent.
-        /// 
-        /// Emits `LettingAgentAddedToLocation` event when succesfful.
-        /// </summary>
-        add_letting_agent_to_location = 2,
-        
-        /// <summary>
-        /// >> set_letting_agent
-        /// Sets a letting agent for a property.
+        /// >> letting_agent_propose
+        /// Propose a letting agent for a property.
         /// 
         /// The origin must be Signed and the sender must have sufficient funds free.
         /// 
         /// Parameters:
-        /// - `asset_id`: The asset id of the real estate object.
+        /// - `asset_id`: The asset id of the property.
         /// 
-        /// Emits `LettingAgentSet` event when succesfful.
+        /// Emits `LettingAgentProposed` event when succesfful.
         /// </summary>
-        set_letting_agent = 3,
+        letting_agent_propose = 3,
+        
+        /// <summary>
+        /// >> vote_on_letting_agent
+        /// Vote for a letting agent.
+        /// 
+        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// 
+        /// Parameters:
+        /// - `asset_id`: The asset id of the property.
+        /// - `vote`: Must be either a Yes vote or a No vote.
+        /// 
+        /// Emits `VotedOnLettingAgent` event when succesfful.
+        /// </summary>
+        vote_on_letting_agent = 4,
+        
+        /// <summary>
+        /// >> finalize_letting_agent
+        /// Lets someone finalize the letting agent process.
+        /// 
+        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// 
+        /// Parameters:
+        /// - `asset_id`: The asset id of the property.
+        /// 
+        /// Emits `LettingAgentSet` event when vote successful.
+        /// Emits `LettingAgentRejected` event when vote unsuccessful.
+        /// </summary>
+        finalize_letting_agent = 5,
         
         /// <summary>
         /// >> distribute_income
@@ -86,21 +90,21 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         /// 
         /// Emits `IncomeDistributed` event when succesfful.
         /// </summary>
-        distribute_income = 4,
+        distribute_income = 6,
         
         /// <summary>
-        /// >> withdraw_funds
+        /// >> claim_income
         /// Lets a property owner withdraw the distributed funds.
         /// 
         /// The origin must be Signed and the sender must have sufficient funds free.
         /// 
         /// Emits `WithdrawFunds` event when succesfful.
         /// </summary>
-        withdraw_funds = 5,
+        claim_income = 7,
     }
     
     /// <summary>
-    /// >> 370 - Variant[pallet_property_management.pallet.Call]
+    /// >> 374 - Variant[pallet_property_management.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -111,12 +115,12 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.add_letting_agent);
-				AddTypeDecoder<BaseVoid>(Call.letting_agent_deposit);
-				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.add_letting_agent_to_location);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.set_letting_agent);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10>>(Call.add_letting_agent);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.letting_agent_propose);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.EnumVote>>(Call.vote_on_letting_agent);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.finalize_letting_agent);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.distribute_income);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.withdraw_funds);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.claim_income);
         }
     }
 }

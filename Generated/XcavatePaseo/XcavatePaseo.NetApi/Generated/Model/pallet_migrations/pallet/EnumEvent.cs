@@ -80,7 +80,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_migrations.pallet
     }
     
     /// <summary>
-    /// >> 43 - Variant[pallet_migrations.pallet.Event]
+    /// >> 44 - Variant[pallet_migrations.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

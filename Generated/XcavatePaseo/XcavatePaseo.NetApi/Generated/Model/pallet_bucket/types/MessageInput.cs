@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
     
     
     /// <summary>
-    /// >> 374 - Composite[pallet_bucket.types.MessageInput]
+    /// >> 378 - Composite[pallet_bucket.types.MessageInput]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MessageInput : BaseType
@@ -27,11 +27,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
         /// <summary>
         /// >> reference
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10 Reference { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11 Reference { get; set; }
         /// <summary>
         /// >> tag
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10> Tag { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11> Tag { get; set; }
         /// <summary>
         /// >> metadata_input
         /// </summary>
@@ -57,9 +57,9 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Reference = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10();
+            Reference = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11();
             Reference.Decode(byteArray, ref p);
-            Tag = new Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10>();
+            Tag = new Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>();
             Tag.Decode(byteArray, ref p);
             MetadataInput = new XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.MetadataInputMock();
             MetadataInput.Decode(byteArray, ref p);

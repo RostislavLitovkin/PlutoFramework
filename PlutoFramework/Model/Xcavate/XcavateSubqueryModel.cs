@@ -39,7 +39,9 @@ namespace PlutoFramework.Model.Xcavate
                 return [];
             }
 
-            return result.Data.PropertyListings.Nodes.Select(property =>
+            return [];
+            
+            /*result.Data.PropertyListings.Nodes.Select(property =>
             {
                 var fileUrls = JsonSerializer.Deserialize<List<string>>(property.Files);
 
@@ -53,7 +55,7 @@ namespace PlutoFramework.Model.Xcavate
                         Description = property.PropertyDescription ?? "",
                         Image = IpfsModel.ToIpfsLink(fileUrls?.ElementAtOrDefault(0) ?? "")
                     },
-                    XcavateMetadata = new XcavateMetadata
+                    XcavateMetadata = new PropertyMetadata
                     {
                         PropertyName = property.PropertyName ?? "Unknown",
                         PropertyDescription = property.PropertyDescription ?? "",
@@ -77,6 +79,7 @@ namespace PlutoFramework.Model.Xcavate
                     }
                 };
             });
+            */
         }
     }
 }

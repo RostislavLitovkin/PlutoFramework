@@ -30,7 +30,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_migrations.pallet
     }
     
     /// <summary>
-    /// >> 391 - Variant[pallet_migrations.pallet.Error]
+    /// >> 395 - Variant[pallet_migrations.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

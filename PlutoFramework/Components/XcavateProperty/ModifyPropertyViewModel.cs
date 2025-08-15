@@ -24,11 +24,11 @@ namespace PlutoFramework.Components.XcavateProperty
         private List<ImageSourceWithName> imageSources = new List<ImageSourceWithName>();
 
         [ObservableProperty]
-        private XcavateMetadata metadata = new XcavateMetadata
+        private PropertyMetadata metadata; /*= new PropertyMetadata
         {
             Images = [],
             PropertyName = ""
-        };
+        };*/
 
         [ObservableProperty]
         private ButtonStateEnum submitButtonState = ButtonStateEnum.Enabled;
@@ -71,7 +71,8 @@ namespace PlutoFramework.Components.XcavateProperty
                 inputStream.Close();
             }
 
-            Metadata.Images.Add(fileName);
+            //Metadata.Images.Add(fileName);
+
             await SaveAsync();
 
             LoadPropertyImages();
@@ -79,6 +80,7 @@ namespace PlutoFramework.Components.XcavateProperty
         private Task SaveAsync() => Task.FromResult(0);//XcavatePropertyDatabase.SavePropertyAsync(Metadata);
         public void LoadPropertyImages()
         {
+            /*
             ImageSources = Metadata.Images
                     .Where(fileName => File.Exists(Path.Combine(FileSystem.Current.AppDataDirectory, fileName)))
                     .Select(fileName => new ImageSourceWithName
@@ -89,6 +91,7 @@ namespace PlutoFramework.Components.XcavateProperty
                         }),
                         FileName = fileName
                     }).ToList();
+            */
         }
 
         [RelayCommand]
@@ -99,7 +102,7 @@ namespace PlutoFramework.Components.XcavateProperty
                 return;
             }
 
-            Metadata.Images.Remove(image.ImageSourceWithName.FileName);
+            //Metadata.Images.Remove(image.ImageSourceWithName.FileName);
 
             ImageSources.Remove(image.ImageSourceWithName);
 

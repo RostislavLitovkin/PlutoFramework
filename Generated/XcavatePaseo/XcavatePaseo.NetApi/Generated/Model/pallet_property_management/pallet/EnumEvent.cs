@@ -29,38 +29,44 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         LettingAgentAdded = 0,
         
         /// <summary>
-        /// >> Deposited
-        /// A letting agent deposited the necessary funds.
-        /// </summary>
-        Deposited = 1,
-        
-        /// <summary>
-        /// >> LettingAgentAddedToLocation
-        /// A letting agent has been added to a location.
-        /// </summary>
-        LettingAgentAddedToLocation = 2,
-        
-        /// <summary>
         /// >> LettingAgentSet
         /// A letting agent has been added to a property.
         /// </summary>
-        LettingAgentSet = 3,
+        LettingAgentSet = 1,
         
         /// <summary>
         /// >> IncomeDistributed
         /// The rental income has been distributed.
         /// </summary>
-        IncomeDistributed = 4,
+        IncomeDistributed = 2,
         
         /// <summary>
         /// >> WithdrawFunds
         /// A user withdrew funds.
         /// </summary>
-        WithdrawFunds = 5,
+        WithdrawFunds = 3,
+        
+        /// <summary>
+        /// >> LettingAgentProposed
+        /// A letting agent has been proposed for a property.
+        /// </summary>
+        LettingAgentProposed = 4,
+        
+        /// <summary>
+        /// >> VotedOnLettingAgent
+        /// Someone has voted on a letting agent.
+        /// </summary>
+        VotedOnLettingAgent = 5,
+        
+        /// <summary>
+        /// >> LettingAgentRejected
+        /// A letting agent has been rejected.
+        /// </summary>
+        LettingAgentRejected = 6,
     }
     
     /// <summary>
-    /// >> 183 - Variant[pallet_property_management.pallet.Event]
+    /// >> 186 - Variant[pallet_property_management.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -71,12 +77,13 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.LettingAgentAdded);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.Deposited);
-				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9>>(Event.LettingAgentAddedToLocation);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.LettingAgentAdded);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.LettingAgentSet);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.IncomeDistributed);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.WithdrawFunds);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.LettingAgentProposed);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.EnumVote>>(Event.VotedOnLettingAgent);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.LettingAgentRejected);
         }
     }
 }

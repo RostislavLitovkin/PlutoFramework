@@ -23,7 +23,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
     }
     
     /// <summary>
-    /// >> 410 - Variant[container_chain_template_simple_runtime.RuntimeFreezeReason]
+    /// >> 415 - Variant[container_chain_template_simple_runtime.RuntimeFreezeReason]
     /// </summary>
     public sealed class EnumRuntimeFreezeReason : BaseEnum<RuntimeFreezeReason>
     {

@@ -35,15 +35,10 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         /// >> PolkadotXcm
         /// </summary>
         PolkadotXcm = 73,
-        
-        /// <summary>
-        /// >> Void
-        /// </summary>
-        Void = 3,
     }
     
     /// <summary>
-    /// >> 261 - Variant[container_chain_template_simple_runtime.OriginCaller]
+    /// >> 265 - Variant[container_chain_template_simple_runtime.OriginCaller]
     /// </summary>
     public sealed class EnumOriginCaller : BaseEnumRust<OriginCaller>
     {
@@ -56,7 +51,6 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.frame_support.dispatch.EnumRawOrigin>(OriginCaller.system);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcm.pallet.EnumOrigin>(OriginCaller.CumulusXcm);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.EnumOrigin>(OriginCaller.PolkadotXcm);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVoid>(OriginCaller.Void);
         }
     }
 }

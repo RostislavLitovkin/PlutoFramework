@@ -3,6 +3,7 @@ using PlutoFramework.Constants;
 using PlutoFramework.Model.AjunaExt;
 using Substrate.NetApi;
 using Substrate.NetApi.Model.Types.Primitive;
+using XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet;
 
 namespace PlutoFramework.Model.Xcavate
 {
@@ -36,12 +37,12 @@ namespace PlutoFramework.Model.Xcavate
 
             return client.SubstrateClient switch
             {
-                XcavatePaseo.NetApi.Generated.SubstrateClientExt xcavateClient => ToXcavateRegion(await xcavateClient.NftMarketplaceStorage.Regions(new U32(regionId), null, token), blockNumber, EndpointEnum.XcavatePaseo),
+                XcavatePaseo.NetApi.Generated.SubstrateClientExt xcavateClient => ToXcavateRegion(await xcavateClient.RegionsStorage.RegionDetails(new U16((ushort)regionId), null, token), blockNumber, EndpointEnum.XcavatePaseo),
                 _ => throw new NotSupportedException("GetRegionAsync: Unsupported client type")
             };
         }
 
-        private static XcavateRegion ToXcavateRegion(XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types.RegionInfo regionInfo, uint blockNumber, EndpointEnum endpointKey)
+        private static XcavateRegion ToXcavateRegion(RegionInfo regionInfo, uint blockNumber, EndpointEnum endpointKey)
         {
             Console.WriteLine($"{regionInfo.ListingDuration} > {blockNumber}");
 

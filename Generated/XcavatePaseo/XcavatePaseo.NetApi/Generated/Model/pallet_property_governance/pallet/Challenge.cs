@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
     
     
     /// <summary>
-    /// >> 532 - Composite[pallet_property_governance.pallet.Challenge]
+    /// >> 578 - Composite[pallet_property_governance.pallet.Challenge]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Challenge : BaseType

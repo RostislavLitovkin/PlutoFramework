@@ -1,4 +1,6 @@
-﻿namespace PlutoFramework.Model.Xcavate
+﻿using XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet;
+
+namespace PlutoFramework.Model.Xcavate
 {
     public enum UserRoleEnum
     {
@@ -8,7 +10,21 @@
         Developer,
         Investor,
         LettingAgent,
-        Lawyer,
+        Lawyer
+    }
+
+    public static class UserRoleEnumExtensions
+    {
+        public static Role ToWhitelistRole(this UserRoleEnum role)
+        {
+            return role switch
+            {
+                UserRoleEnum.Developer => Role.RealEstateDeveloper,
+                UserRoleEnum.Investor => Role.RealEstateInvestor,
+                UserRoleEnum.LettingAgent => Role.LettingAgent,
+                UserRoleEnum.Lawyer => Role.Lawyer
+            };
+        }
     }
     public record DeveloperStats
     {

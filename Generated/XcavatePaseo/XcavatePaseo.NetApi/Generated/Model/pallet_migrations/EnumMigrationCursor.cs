@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_migrations
     }
     
     /// <summary>
-    /// >> 272 - Variant[pallet_migrations.MigrationCursor]
+    /// >> 275 - Variant[pallet_migrations.MigrationCursor]
     /// </summary>
     public sealed class EnumMigrationCursor : BaseEnumRust<MigrationCursor>
     {

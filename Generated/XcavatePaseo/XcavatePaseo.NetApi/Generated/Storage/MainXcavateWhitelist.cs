@@ -36,38 +36,72 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public XcavateWhitelistStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcavateWhitelist", "WhitelistedAccounts"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcavateWhitelist", "AdminAccounts"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcavateWhitelist", "AccountRoles"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumRole>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
         }
         
         /// <summary>
-        /// >> WhitelistedAccountsParams
-        ///  Mapping of an account to a bool.
+        /// >> AdminAccountsParams
+        ///  Mapping of the admin accounts.
         /// </summary>
-        public static string WhitelistedAccountsParams(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+        public static string AdminAccountsParams(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
         {
-            return RequestGenerator.GetStorage("XcavateWhitelist", "WhitelistedAccounts", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+            return RequestGenerator.GetStorage("XcavateWhitelist", "AdminAccounts", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
                         key});
         }
         
         /// <summary>
-        /// >> WhitelistedAccountsDefault
+        /// >> AdminAccountsDefault
         /// Default value as hex string
         /// </summary>
-        public static string WhitelistedAccountsDefault()
+        public static string AdminAccountsDefault()
         {
             return "0x00";
         }
         
         /// <summary>
-        /// >> WhitelistedAccounts
-        ///  Mapping of an account to a bool.
+        /// >> AdminAccounts
+        ///  Mapping of the admin accounts.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.Bool> WhitelistedAccounts(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> AdminAccounts(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
-            string parameters = XcavateWhitelistStorage.WhitelistedAccountsParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.Bool>(parameters, blockhash, token);
+            string parameters = XcavateWhitelistStorage.AdminAccountsParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> AccountRolesParams
+        ///  Mapping of the accounts to the assigned roles.
+        /// </summary>
+        public static string AccountRolesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumRole> key)
+        {
+            return RequestGenerator.GetStorage("XcavateWhitelist", "AccountRoles", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, key.Value);
+        }
+        
+        /// <summary>
+        /// >> AccountRolesDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string AccountRolesDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> AccountRoles
+        ///  Mapping of the accounts to the assigned roles.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> AccountRoles(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumRole> key, string blockhash, CancellationToken token)
+        {
+            string parameters = XcavateWhitelistStorage.AccountRolesParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple>(parameters, blockhash, token);
             return result;
         }
     }
@@ -79,25 +113,49 @@ namespace XcavatePaseo.NetApi.Generated.Storage
     {
         
         /// <summary>
-        /// >> add_to_whitelist
+        /// >> add_admin
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AddToWhitelist(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 user)
+        public static Method AddAdmin(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 admin)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(user.Encode());
-            return new Method(80, "XcavateWhitelist", 0, "add_to_whitelist", byteArray.ToArray());
+            byteArray.AddRange(admin.Encode());
+            return new Method(90, "XcavateWhitelist", 0, "add_admin", byteArray.ToArray());
         }
         
         /// <summary>
-        /// >> remove_from_whitelist
+        /// >> remove_admin
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method RemoveFromWhitelist(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 user)
+        public static Method RemoveAdmin(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 admin)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(admin.Encode());
+            return new Method(90, "XcavateWhitelist", 1, "remove_admin", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> assign_role
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method AssignRole(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 user, XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumRole role)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(user.Encode());
-            return new Method(80, "XcavateWhitelist", 1, "remove_from_whitelist", byteArray.ToArray());
+            byteArray.AddRange(role.Encode());
+            return new Method(90, "XcavateWhitelist", 2, "assign_role", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> remove_role
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method RemoveRole(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 user, XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumRole role)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(user.Encode());
+            byteArray.AddRange(role.Encode());
+            return new Method(90, "XcavateWhitelist", 3, "remove_role", byteArray.ToArray());
         }
     }
     
@@ -106,6 +164,17 @@ namespace XcavatePaseo.NetApi.Generated.Storage
     /// </summary>
     public sealed class XcavateWhitelistConstants
     {
+        
+        /// <summary>
+        /// >> MaxUsersInWhitelist
+        ///  Max users allowed in the whitelist.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 MaxUsersInWhitelist()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0xE8030000");
+            return result;
+        }
     }
     
     /// <summary>
@@ -115,21 +184,27 @@ namespace XcavatePaseo.NetApi.Generated.Storage
     {
         
         /// <summary>
-        /// >> AccountAlreadyWhitelisted
-        /// The user is already registered in the whitelist.
+        /// >> RoleAlreadyAssigned
+        /// The role has already been assigned to the usser.
         /// </summary>
-        AccountAlreadyWhitelisted,
+        RoleAlreadyAssigned,
         
         /// <summary>
-        /// >> UserNotInWhitelist
-        /// The user has not been registered in the whitelist.
+        /// >> RoleNotAssigned
+        /// The role has not been assigned to the user.
         /// </summary>
-        UserNotInWhitelist,
+        RoleNotAssigned,
         
         /// <summary>
-        /// >> TooManyUsers
-        /// Too many users are already in the whitelist.
+        /// >> AlreadyAdmin
+        /// The acount is already registered as an admin.
         /// </summary>
-        TooManyUsers,
+        AlreadyAdmin,
+        
+        /// <summary>
+        /// >> AccountNotAdmin
+        /// The acount is not registered as an admin.
+        /// </summary>
+        AccountNotAdmin,
     }
 }

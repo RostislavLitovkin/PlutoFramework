@@ -58,6 +58,18 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_utility.pallet
         /// A call was dispatched.
         /// </summary>
         DispatchedAs = 5,
+        
+        /// <summary>
+        /// >> IfElseMainSuccess
+        /// Main call was dispatched.
+        /// </summary>
+        IfElseMainSuccess = 6,
+        
+        /// <summary>
+        /// >> IfElseFallbackCalled
+        /// The fallback call was dispatched.
+        /// </summary>
+        IfElseFallbackCalled = 7,
     }
     
     /// <summary>
@@ -78,6 +90,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_utility.pallet
 				AddTypeDecoder<BaseVoid>(Event.ItemCompleted);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Event.ItemFailed);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.EnumResult>(Event.DispatchedAs);
+				AddTypeDecoder<BaseVoid>(Event.IfElseMainSuccess);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Event.IfElseFallbackCalled);
         }
     }
 }

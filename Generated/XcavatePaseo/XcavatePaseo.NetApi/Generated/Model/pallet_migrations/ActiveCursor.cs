@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_migrations
     
     
     /// <summary>
-    /// >> 274 - Composite[pallet_migrations.ActiveCursor]
+    /// >> 277 - Composite[pallet_migrations.ActiveCursor]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ActiveCursor : BaseType
@@ -31,7 +31,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_migrations
         /// <summary>
         /// >> inner_cursor
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11> InnerCursor { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12> InnerCursor { get; set; }
         /// <summary>
         /// >> started_at
         /// </summary>
@@ -59,7 +59,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_migrations
             var start = p;
             Index = new Substrate.NetApi.Model.Types.Primitive.U32();
             Index.Decode(byteArray, ref p);
-            InnerCursor = new Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>();
+            InnerCursor = new Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12>();
             InnerCursor.Decode(byteArray, ref p);
             StartedAt = new Substrate.NetApi.Model.Types.Primitive.U32();
             StartedAt.Decode(byteArray, ref p);

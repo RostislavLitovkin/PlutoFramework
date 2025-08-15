@@ -44,7 +44,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_maintenance_mode.pallet
     }
     
     /// <summary>
-    /// >> 278 - Variant[pallet_maintenance_mode.pallet.Call]
+    /// >> 281 - Variant[pallet_maintenance_mode.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnum<Call>

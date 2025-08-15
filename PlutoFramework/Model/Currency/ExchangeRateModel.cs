@@ -8,12 +8,21 @@
             string? currencyFormat = null
         )
         {
+            return ToCurrencyString((decimal)usdValue, location, currencyFormat);
+        }
+
+        public static string ToCurrencyString(
+            this decimal usdValue,
+            string? location = null,
+            string? currencyFormat = null
+        )
+        {
             currencyFormat ??= (string)Application.Current.Resources["CurrencyFormat"];
 
             location ??= AppConfigurationModel.Location;
             var currency = GetCurrencyInLocation(location);
 
-            return $"{currency}{String.Format(currencyFormat, ExchangeRateModel.GetExchangeRate("USDT", currency) * usdValue)}";
+            return $"{currency}{String.Format(currencyFormat, (decimal)ExchangeRateModel.GetExchangeRate("USDT", currency) * usdValue)}";
         }
 
         public static double GetExchangeRate(string fromCurrency, string toCurrency)

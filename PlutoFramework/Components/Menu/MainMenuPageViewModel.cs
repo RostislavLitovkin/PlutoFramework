@@ -30,26 +30,24 @@ namespace PlutoFramework.Components.Menu
         {
             address = Preferences.Get(PreferencesModel.PUBLIC_KEY, "None");
 
-            _ = LoadUserAsync();
-
-            _ = LoadVerificationAsync();
+            _ = LoadAsync();
         }
 
-        private async Task LoadUserAsync()
+        private async Task LoadAsync()
         {
             User = await XcavateUserDatabase.GetUserInformationAsync();
-        }
 
-        private async Task LoadVerificationAsync()
-        {
-            if (!Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY))
+            if (!Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY)
+                || User is null)
             {
                 Verification = VerificationEnum.None;
+
+                return;
             }
 
             var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(EndpointEnum.XcavatePaseo, CancellationToken.None);
 
-            var verification = await WhitelistModel.IsWhitelistedAsync((SubstrateClientExt)client.SubstrateClient, PreferencesModel.PUBLIC_KEY, CancellationToken.None);
+            var verification = await WhitelistModel.IsWhitelistedAsync((SubstrateClientExt)client.SubstrateClient, User.Role.ToWhitelistRole(), PreferencesModel.PUBLIC_KEY, CancellationToken.None);
 
             Verification = verification;
         }

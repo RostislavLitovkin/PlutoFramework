@@ -3,7 +3,7 @@ using XcavatePaseo.NetApi.Generated;
 using UniqueryPlus;
 using Substrate.NetApi;
 using XcavatePaseo.NetApi.Generated.Storage;
-using XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet;
+using XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet;
 using UniqueryPlus.Nfts;
 using Substrate.NetApi.Model.Extrinsics;
 using XcavatePaseo.NetApi.Generated.Model.sp_core.crypto;
@@ -14,7 +14,8 @@ using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.As
 using PlutoFramework.Constants;
 using PlutoFramework.Types;
 using System.Numerics;
-using XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types;
+using XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types;
+using XcavatePaseo.NetApi.Generated.Model.pallet_real_estate_asset.pallet;
 
 namespace PlutoFramework.Model.Xcavate
 {
@@ -62,19 +63,19 @@ namespace PlutoFramework.Model.Xcavate
     {
         public static IEnumerable<AssetKey> GetAcceptedAssets(EndpointEnum endpointKey) => endpointKey switch
         {
-            EndpointEnum.XcavatePaseo => new NftMarketplaceConstants().AcceptedAssets().Value.Select(u32 => (EndpointEnum.XcavatePaseo, AssetPallet.Assets, new BigInteger(u32.Value))),
+            EndpointEnum.XcavatePaseo => new MarketplaceConstants().AcceptedAssets().Value.Select(u32 => (EndpointEnum.XcavatePaseo, AssetPallet.Assets, new BigInteger(u32.Value))),
             _ => [],
         };
 
         public static Method BuyPropertyTokens(EndpointEnum endpointKey, uint listingId, uint amount, AssetKey paymentAsset) => endpointKey switch
         {
-            EndpointEnum.XcavatePaseo => NftMarketplaceCalls.BuyToken(new U32(listingId), new U32(amount), new U32((uint)paymentAsset.Item3)),
+            EndpointEnum.XcavatePaseo => MarketplaceCalls.BuyPropertyToken(new U32(listingId), new U32(amount), new U32((uint)paymentAsset.Item3)),
             _ => throw new NotImplementedException($"BuyPropertyTokens not implemented for {endpointKey}"),
         };
 
-        public static Method RelistPropertyTokens(EndpointEnum endpointKey, uint regionId, uint assetId, uint amount, BigInteger pricePerToken, AssetKey paymentAsset) => endpointKey switch
+        public static Method RelistPropertyTokens(EndpointEnum endpointKey, uint assetId, uint amount, BigInteger pricePerToken, AssetKey paymentAsset) => endpointKey switch
         {
-            EndpointEnum.XcavatePaseo => NftMarketplaceCalls.RelistToken(new U32(regionId), new U32(assetId), new U128(pricePerToken), new U32(amount)),
+            EndpointEnum.XcavatePaseo => MarketplaceCalls.RelistToken(new U32(assetId), new U128(pricePerToken), new U32(amount)),
             _ => throw new NotImplementedException($"RelistPropertyTokens not implemented for {endpointKey}"),
         };
 
@@ -88,7 +89,7 @@ namespace PlutoFramework.Model.Xcavate
             var accountId = new AccountId32();
             accountId.Create(Utils.GetPublicKeyFrom(address));
 
-            var keyPrefix = Utils.HexToByteArray(NftMarketplaceStorage.TokenOwnerParams(new BaseTuple<AccountId32, U32>(accountId, new U32(0))).Substring(0, keyPrefixLength));
+            var keyPrefix = Utils.HexToByteArray(MarketplaceStorage.TokenOwnerParams(new BaseTuple<AccountId32, U32>(accountId, new U32(0))).Substring(0, keyPrefixLength));
 
             var fullKeys = await client.State.GetKeysPagedAsync(keyPrefix, limit, lastKey, string.Empty, token).ConfigureAwait(false);
 
@@ -132,7 +133,6 @@ namespace PlutoFramework.Model.Xcavate
                     Amount = ownerDetails.TokenAmount,
                     NftBase = propertyDetails,
                     Favourite = false, // Is filled later
-
                 }),
                 LastKey = Utils.HexToByteArray(fullKeys.Last().ToString())
             };
@@ -143,7 +143,7 @@ namespace PlutoFramework.Model.Xcavate
             // 0x + Twox64 pallet + Twox64 storage + Blake2_128Concat U32
             var keyPrefixLength = 66;
 
-            var keyPrefix = Utils.HexToByteArray(NftMarketplaceStorage.AssetIdDetailsParams(new U32(0)).Substring(0, keyPrefixLength));
+            var keyPrefix = Utils.HexToByteArray(MarketplaceStorage.OngoingObjectListingParams(new U32(0)).Substring(0, keyPrefixLength));
 
             var fullKeys = await client.State.GetKeysPagedAsync(keyPrefix, limit, lastKey, string.Empty, token).ConfigureAwait(false);
 
@@ -168,7 +168,7 @@ namespace PlutoFramework.Model.Xcavate
         {
             var keyPrefixLength = 66;
 
-            var keyPrefix = NftMarketplaceStorage.AssetIdDetailsParams(new U32(0)).Substring(0, keyPrefixLength);
+            var keyPrefix = RealEstateAssetStorage.PropertyAssetInfoParams(new U32(0)).Substring(0, keyPrefixLength);
 
             var fullKeys = propertyIds.Select(id => keyPrefix + id);
 
@@ -185,7 +185,7 @@ namespace PlutoFramework.Model.Xcavate
                         continue;
                     }
 
-                    var details = new AssetDetails();
+                    var details = new PropertyAssetDetails();
                     details.Create(change[1]);
 
                     var propertyId = change[0];
@@ -208,7 +208,7 @@ namespace PlutoFramework.Model.Xcavate
             // 0x + Twox64 pallet + Twox64 storage + Blake2_128Concat U32
             var keyPrefixLength = 66;
 
-            string[] idKeys = [NftMarketplaceStorage.AssetIdDetailsParams(new U32(propertyId)).Substring(keyPrefixLength)];
+            string[] idKeys = [RealEstateAssetStorage.PropertyAssetInfoParams(new U32(propertyId)).Substring(keyPrefixLength)];
 
             var propertyDetails = await GetPropertyAssetDetailsAsync(client, idKeys, null, token);
 

@@ -283,7 +283,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5
     }
     
     /// <summary>
-    /// >> 354 - Variant[staging_xcm.v5.Instruction]
+    /// >> 357 - Variant[staging_xcm.v5.Instruction]
     /// </summary>
     public sealed class EnumInstruction : BaseEnumRust<Instruction>
     {
@@ -342,9 +342,9 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.location.Location>(Instruction.AliasOrigin);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcm.v3.EnumWeightLimit, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.location.Location>>>(Instruction.UnpaidExecution);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.asset.Asset>(Instruction.PayFees);
-				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.asset.EnumAssetTransferFilter>, Substrate.NetApi.Model.Types.Primitive.Bool, Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.asset.EnumAssetTransferFilter>, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.XcmT1>>(Instruction.InitiateTransfer);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.asset.EnumAssetTransferFilter>, Substrate.NetApi.Model.Types.Primitive.Bool, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.XcmT1>>(Instruction.InitiateTransfer);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.junctions.EnumJunctions>, XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.XcmT2>>(Instruction.ExecuteWithOrigin);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8>(Instruction.SetHints);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9>(Instruction.SetHints);
         }
     }
 }

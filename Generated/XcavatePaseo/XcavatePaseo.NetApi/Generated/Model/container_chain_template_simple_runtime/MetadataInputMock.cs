@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
     
     
     /// <summary>
-    /// >> 373 - Composite[container_chain_template_simple_runtime.MetadataInputMock]
+    /// >> 377 - Composite[container_chain_template_simple_runtime.MetadataInputMock]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MetadataInputMock : BaseType

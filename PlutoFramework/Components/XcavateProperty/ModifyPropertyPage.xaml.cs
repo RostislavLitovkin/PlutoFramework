@@ -5,7 +5,7 @@ namespace PlutoFramework.Components.XcavateProperty
 {
     public partial class ModifyPropertyPage : PageTemplate
     {
-        public ModifyPropertyPage(XcavateMetadata property)
+        public ModifyPropertyPage(PropertyMetadata property)
         {
             InitializeComponent();
 

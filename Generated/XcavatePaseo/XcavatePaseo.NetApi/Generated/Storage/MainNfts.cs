@@ -987,7 +987,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> pay_tips
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method PayTips(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12 tips)
+        public static Method PayTips(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13 tips)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(tips.Encode());

@@ -129,116 +129,116 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         ArithmeticUnderflow = 17,
         
         /// <summary>
-        /// >> SpvNotCreated
-        /// Spv has not yet been created.
-        /// </summary>
-        SpvNotCreated = 18,
-        
-        /// <summary>
         /// >> SaleAlreadyConfirmed
         /// The lawyer already confirmed the sale.
         /// </summary>
-        SaleAlreadyConfirmed = 19,
+        SaleAlreadyConfirmed = 18,
         
         /// <summary>
         /// >> NoFundsToClaim
         /// There are no funds to claim for the caller.
         /// </summary>
-        NoFundsToClaim = 20,
+        NoFundsToClaim = 19,
         
         /// <summary>
         /// >> CostsTooHigh
         /// Costs for the lawyer are too high.
         /// </summary>
-        CostsTooHigh = 21,
+        CostsTooHigh = 20,
         
         /// <summary>
         /// >> LawyerJobTaken
         /// The lawyer job has already been taken.
         /// </summary>
-        LawyerJobTaken = 22,
+        LawyerJobTaken = 21,
         
         /// <summary>
         /// >> PriceNotSet
         /// Price for a property sale has not been set yet.
         /// </summary>
-        PriceNotSet = 23,
+        PriceNotSet = 22,
         
         /// <summary>
         /// >> SpvLawyerNotSet
         /// The Spv lawyer is not set.
         /// </summary>
-        SpvLawyerNotSet = 24,
+        SpvLawyerNotSet = 23,
         
         /// <summary>
         /// >> NoPriceSet
         /// No price has been set.
         /// </summary>
-        NoPriceSet = 25,
+        NoPriceSet = 24,
         
         /// <summary>
         /// >> NoOngoingAuction
         /// There is no auction to bid on.
         /// </summary>
-        NoOngoingAuction = 26,
+        NoOngoingAuction = 25,
         
         /// <summary>
         /// >> UserNotWhitelisted
         /// User did not pass the kyc.
         /// </summary>
-        UserNotWhitelisted = 27,
+        UserNotWhitelisted = 26,
         
         /// <summary>
         /// >> BidTooLow
         /// The bid is lower than the current highest bid.
         /// </summary>
-        BidTooLow = 28,
+        BidTooLow = 27,
         
         /// <summary>
         /// >> SaleOngoing
         /// There is already a sale ongoing.
         /// </summary>
-        SaleOngoing = 29,
+        SaleOngoing = 28,
         
         /// <summary>
         /// >> PropertySaleProposalOngoing
         /// There is already a sale proposal ongoing.
         /// </summary>
-        PropertySaleProposalOngoing = 30,
+        PropertySaleProposalOngoing = 29,
         
         /// <summary>
         /// >> BuyerNotSet
         /// No buyer has been set.
         /// </summary>
-        BuyerNotSet = 31,
+        BuyerNotSet = 30,
         
         /// <summary>
         /// >> NoReserve
         /// No reserve has been set for the sale.
         /// </summary>
-        NoReserve = 32,
+        NoReserve = 31,
         
         /// <summary>
         /// >> ZeroTokenAmount
         /// Token amount is zero.
         /// </summary>
-        ZeroTokenAmount = 33,
+        ZeroTokenAmount = 32,
         
         /// <summary>
         /// >> TooManyAssignedProperties
         /// The letting agent has already too many assigned properties.
         /// </summary>
-        TooManyAssignedProperties = 34,
+        TooManyAssignedProperties = 33,
         
         /// <summary>
         /// >> ChallengeAlreadyOngoing
         /// A challenge against a letting agent is already ongoing.
         /// </summary>
-        ChallengeAlreadyOngoing = 35,
+        ChallengeAlreadyOngoing = 34,
+        
+        /// <summary>
+        /// >> TooManyVoters
+        /// There are already too many voters for this voting.
+        /// </summary>
+        TooManyVoters = 35,
     }
     
     /// <summary>
-    /// >> 540 - Variant[pallet_property_governance.pallet.Error]
+    /// >> 590 - Variant[pallet_property_governance.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

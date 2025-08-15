@@ -52,6 +52,12 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_proxy.pallet
         /// A proxy was removed.
         /// </summary>
         ProxyRemoved = 4,
+        
+        /// <summary>
+        /// >> DepositPoked
+        /// A deposit stored for proxies or announcements was poked / updated.
+        /// </summary>
+        DepositPoked = 5,
     }
     
     /// <summary>
@@ -71,6 +77,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_proxy.pallet
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.primitive_types.H256>>(Event.Announced);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.ProxyAdded);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.ProxyRemoved);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_proxy.EnumDepositKind, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.DepositPoked);
         }
     }
 }

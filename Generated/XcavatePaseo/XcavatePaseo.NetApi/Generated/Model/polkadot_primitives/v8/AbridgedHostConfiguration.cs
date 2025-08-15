@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v8
     
     
     /// <summary>
-    /// >> 237 - Composite[polkadot_primitives.v8.AbridgedHostConfiguration]
+    /// >> 241 - Composite[polkadot_primitives.v8.AbridgedHostConfiguration]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AbridgedHostConfiguration : BaseType

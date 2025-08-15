@@ -182,10 +182,23 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_proxy.pallet
         /// - `call`: The call to be made by the `real` account.
         /// </summary>
         proxy_announced = 9,
+        
+        /// <summary>
+        /// >> poke_deposit
+        /// Poke / Adjust deposits made for proxies and announcements based on current values.
+        /// This can be used by accounts to possibly lower their locked amount.
+        /// 
+        /// The dispatch origin for this call must be _Signed_.
+        /// 
+        /// The transaction fee is waived if the deposit amount has changed.
+        /// 
+        /// Emits `DepositPoked` if successful.
+        /// </summary>
+        poke_deposit = 10,
     }
     
     /// <summary>
-    /// >> 266 - Variant[pallet_proxy.pallet.Call]
+    /// >> 269 - Variant[pallet_proxy.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -206,6 +219,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_proxy.pallet
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, XcavatePaseo.NetApi.Generated.Model.primitive_types.H256>>(Call.remove_announcement);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, XcavatePaseo.NetApi.Generated.Model.primitive_types.H256>>(Call.reject_announcement);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType>, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>>(Call.proxy_announced);
+				AddTypeDecoder<BaseVoid>(Call.poke_deposit);
         }
     }
 }

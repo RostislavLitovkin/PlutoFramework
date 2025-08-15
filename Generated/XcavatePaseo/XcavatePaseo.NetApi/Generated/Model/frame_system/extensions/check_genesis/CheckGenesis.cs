@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_gene
     
     
     /// <summary>
-    /// >> 557 - Composite[frame_system.extensions.check_genesis.CheckGenesis]
+    /// >> 608 - Composite[frame_system.extensions.check_genesis.CheckGenesis]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckGenesis : BaseType

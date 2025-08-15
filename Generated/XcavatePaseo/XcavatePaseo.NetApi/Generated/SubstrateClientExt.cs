@@ -100,14 +100,9 @@ namespace XcavatePaseo.NetApi.Generated
         public RealEstateAssetsStorage RealEstateAssetsStorage;
         
         /// <summary>
-        /// RealEstateAssetsFreezerStorage storage calls.
+        /// AssetsHolderStorage storage calls.
         /// </summary>
-        public RealEstateAssetsFreezerStorage RealEstateAssetsFreezerStorage;
-        
-        /// <summary>
-        /// AssetsFreezerStorage storage calls.
-        /// </summary>
-        public AssetsFreezerStorage AssetsFreezerStorage;
+        public AssetsHolderStorage AssetsHolderStorage;
         
         /// <summary>
         /// MultisigStorage storage calls.
@@ -123,11 +118,6 @@ namespace XcavatePaseo.NetApi.Generated
         /// NftFractionalizationStorage storage calls.
         /// </summary>
         public NftFractionalizationStorage NftFractionalizationStorage;
-        
-        /// <summary>
-        /// AssetTxPaymentStorage storage calls.
-        /// </summary>
-        public AssetTxPaymentStorage AssetTxPaymentStorage;
         
         /// <summary>
         /// AuthoritiesNotingStorage storage calls.
@@ -180,14 +170,29 @@ namespace XcavatePaseo.NetApi.Generated
         public XcmExecutorUtilsStorage XcmExecutorUtilsStorage;
         
         /// <summary>
+        /// WeightReclaimStorage storage calls.
+        /// </summary>
+        public WeightReclaimStorage WeightReclaimStorage;
+        
+        /// <summary>
         /// XcavateWhitelistStorage storage calls.
         /// </summary>
         public XcavateWhitelistStorage XcavateWhitelistStorage;
         
         /// <summary>
-        /// NftMarketplaceStorage storage calls.
+        /// RegionsStorage storage calls.
         /// </summary>
-        public NftMarketplaceStorage NftMarketplaceStorage;
+        public RegionsStorage RegionsStorage;
+        
+        /// <summary>
+        /// RealEstateAssetStorage storage calls.
+        /// </summary>
+        public RealEstateAssetStorage RealEstateAssetStorage;
+        
+        /// <summary>
+        /// MarketplaceStorage storage calls.
+        /// </summary>
+        public MarketplaceStorage MarketplaceStorage;
         
         /// <summary>
         /// PropertyManagementStorage storage calls.
@@ -237,12 +242,10 @@ namespace XcavatePaseo.NetApi.Generated
             this.BalancesStorage = new BalancesStorage(this);
             this.TransactionPaymentStorage = new TransactionPaymentStorage(this);
             this.RealEstateAssetsStorage = new RealEstateAssetsStorage(this);
-            this.RealEstateAssetsFreezerStorage = new RealEstateAssetsFreezerStorage(this);
-            this.AssetsFreezerStorage = new AssetsFreezerStorage(this);
+            this.AssetsHolderStorage = new AssetsHolderStorage(this);
             this.MultisigStorage = new MultisigStorage(this);
             this.NftsStorage = new NftsStorage(this);
             this.NftFractionalizationStorage = new NftFractionalizationStorage(this);
-            this.AssetTxPaymentStorage = new AssetTxPaymentStorage(this);
             this.AuthoritiesNotingStorage = new AuthoritiesNotingStorage(this);
             this.AuthorInherentStorage = new AuthorInherentStorage(this);
             this.XcmpQueueStorage = new XcmpQueueStorage(this);
@@ -253,8 +256,11 @@ namespace XcavatePaseo.NetApi.Generated
             this.ForeignAssetsCreatorStorage = new ForeignAssetsCreatorStorage(this);
             this.AssetRateStorage = new AssetRateStorage(this);
             this.XcmExecutorUtilsStorage = new XcmExecutorUtilsStorage(this);
+            this.WeightReclaimStorage = new WeightReclaimStorage(this);
             this.XcavateWhitelistStorage = new XcavateWhitelistStorage(this);
-            this.NftMarketplaceStorage = new NftMarketplaceStorage(this);
+            this.RegionsStorage = new RegionsStorage(this);
+            this.RealEstateAssetStorage = new RealEstateAssetStorage(this);
+            this.MarketplaceStorage = new MarketplaceStorage(this);
             this.PropertyManagementStorage = new PropertyManagementStorage(this);
             this.PropertyGovernanceStorage = new PropertyGovernanceStorage(this);
             this.BucketsStorage = new BucketsStorage(this);

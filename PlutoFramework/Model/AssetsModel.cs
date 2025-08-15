@@ -8,6 +8,7 @@ using BifrostPolkadot.NetApi.Generated.Model.orml_tokens;
 using Substrate.NetApi.Model.Types.Primitive;
 using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.AssetPallet, System.Numerics.BigInteger);
 using XcavatePaseo.NetApi.Generated.Storage;
+using XcavatePaseo.NetApi.Generated.Model.pallet_assets.types;
 
 namespace PlutoFramework.Model
 {
@@ -680,7 +681,7 @@ namespace PlutoFramework.Model
             var accountId = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             accountId.Create(Utils.GetPublicKeyFrom(substrateAddress));
 
-            var parameters = AssetsFreezerStorage.FrozenBalancesParams(
+            var parameters = AssetsHolderStorage.BalancesOnHoldParams(
                                 new Substrate.NetApi.Model.Types.Base.BaseTuple<U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(
                                     new U32((uint)assetId),
                                     accountId

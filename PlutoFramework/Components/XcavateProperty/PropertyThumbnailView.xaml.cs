@@ -38,7 +38,7 @@ public partial class PropertyThumbnailView : ContentView
             {
                 if (nftBase is INftXcavateNftMarketplace)
                 {
-                    control.tokensLabel.Text = ((INftXcavateNftMarketplace)nftBase).NftMarketplaceDetails?.Listed?.ToString() ?? "-";
+                    control.tokensLabel.Text = ((INftXcavateNftMarketplace)nftBase).NftMarketplaceDetails?.Listed.ToString() ?? "-";
                 }
                 else
                 {
