@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.executor_params
     
     
     /// <summary>
-    /// >> 267 - Composite[polkadot_primitives.v8.executor_params.ExecutorParams]
+    /// >> 274 - Composite[polkadot_primitives.v8.executor_params.ExecutorParams]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ExecutorParams : BaseType

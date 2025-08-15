@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_spec
     
     
     /// <summary>
-    /// >> 534 - Composite[frame_system.extensions.check_spec_version.CheckSpecVersion]
+    /// >> 555 - Composite[frame_system.extensions.check_spec_version.CheckSpecVersion]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckSpecVersion : BaseType

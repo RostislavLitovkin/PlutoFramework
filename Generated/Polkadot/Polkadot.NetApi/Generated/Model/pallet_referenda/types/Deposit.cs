@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_referenda.types
     
     
     /// <summary>
-    /// >> 615 - Composite[pallet_referenda.types.Deposit]
+    /// >> 642 - Composite[pallet_referenda.types.Deposit]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Deposit : BaseType

@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.frame_support.traits.tokens.misc
     
     
     /// <summary>
-    /// >> 543 - Composite[frame_support.traits.tokens.misc.IdAmountT1]
+    /// >> 566 - Composite[frame_support.traits.tokens.misc.IdAmountT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class IdAmountT1 : BaseType

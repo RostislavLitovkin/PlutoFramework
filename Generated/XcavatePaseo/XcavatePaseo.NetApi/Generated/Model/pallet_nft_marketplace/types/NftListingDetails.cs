@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types
     
     
     /// <summary>
-    /// >> 499 - Composite[pallet_nft_marketplace.types.NftListingDetails]
+    /// >> 511 - Composite[pallet_nft_marketplace.types.NftListingDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class NftListingDetails : BaseType
@@ -35,15 +35,15 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types
         /// <summary>
         /// >> collected_funds
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT2 CollectedFunds { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 CollectedFunds { get; set; }
         /// <summary>
         /// >> collected_tax
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT2 CollectedTax { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 CollectedTax { get; set; }
         /// <summary>
         /// >> collected_fees
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT2 CollectedFees { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 CollectedFees { get; set; }
         /// <summary>
         /// >> asset_id
         /// </summary>
@@ -101,11 +101,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types
             RealEstateDeveloper.Decode(byteArray, ref p);
             TokenPrice = new Substrate.NetApi.Model.Types.Primitive.U128();
             TokenPrice.Decode(byteArray, ref p);
-            CollectedFunds = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT2();
+            CollectedFunds = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             CollectedFunds.Decode(byteArray, ref p);
-            CollectedTax = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT2();
+            CollectedTax = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             CollectedTax.Decode(byteArray, ref p);
-            CollectedFees = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT2();
+            CollectedFees = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             CollectedFees.Decode(byteArray, ref p);
             AssetId = new Substrate.NetApi.Model.Types.Primitive.U32();
             AssetId.Decode(byteArray, ref p);

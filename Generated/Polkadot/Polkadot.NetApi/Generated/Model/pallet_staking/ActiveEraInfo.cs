@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking
     
     
     /// <summary>
-    /// >> 560 - Composite[pallet_staking.ActiveEraInfo]
+    /// >> 585 - Composite[pallet_staking.ActiveEraInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ActiveEraInfo : BaseType

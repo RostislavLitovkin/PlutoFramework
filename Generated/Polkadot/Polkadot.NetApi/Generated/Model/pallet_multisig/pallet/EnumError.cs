@@ -66,13 +66,14 @@ namespace Polkadot.NetApi.Generated.Model.pallet_multisig.pallet
         
         /// <summary>
         /// >> NotFound
-        /// Multisig operation not found when attempting to cancel.
+        /// Multisig operation not found in storage.
         /// </summary>
         NotFound = 7,
         
         /// <summary>
         /// >> NotOwner
-        /// Only the account that originally created the multisig is able to cancel it.
+        /// Only the account that originally created the multisig is able to cancel it or update
+        /// its deposits.
         /// </summary>
         NotOwner = 8,
         
@@ -108,7 +109,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_multisig.pallet
     }
     
     /// <summary>
-    /// >> 650 - Variant[pallet_multisig.pallet.Error]
+    /// >> 677 - Variant[pallet_multisig.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

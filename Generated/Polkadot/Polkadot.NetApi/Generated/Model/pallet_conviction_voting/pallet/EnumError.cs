@@ -97,7 +97,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_conviction_voting.pallet
     }
     
     /// <summary>
-    /// >> 612 - Variant[pallet_conviction_voting.pallet.Error]
+    /// >> 639 - Variant[pallet_conviction_voting.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

@@ -21,6 +21,7 @@ namespace PlutoFramework.Model.HydraDX
         {
             if (client is null || client.Endpoint.Key != EndpointEnum.Hydration)
             {
+                Console.WriteLine("This should not have happened");
                 return [];
             }
 
@@ -33,7 +34,7 @@ namespace PlutoFramework.Model.HydraDX
             // Can be optimised: check if it has been loaded
             await LoadRetrospectiveAssetsAsync(client, blocks, token);
 
-            Console.WriteLine("Loaded");
+            Console.WriteLine("Loaded retrospective spot prices");
 
             return blocks.Select(blocknumber => (blocknumber, GetSpotPrice(symbol, blocknumber)));
         }

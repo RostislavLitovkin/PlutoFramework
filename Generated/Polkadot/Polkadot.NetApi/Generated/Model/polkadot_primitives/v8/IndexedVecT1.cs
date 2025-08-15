@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8
     
     
     /// <summary>
-    /// >> 755 - Composite[polkadot_primitives.v8.IndexedVecT1]
+    /// >> 786 - Composite[polkadot_primitives.v8.IndexedVecT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class IndexedVecT1 : BaseType

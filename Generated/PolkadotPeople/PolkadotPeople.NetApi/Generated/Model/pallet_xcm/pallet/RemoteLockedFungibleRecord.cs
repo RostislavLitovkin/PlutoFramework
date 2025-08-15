@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_xcm.pallet
     
     
     /// <summary>
-    /// >> 271 - Composite[pallet_xcm.pallet.RemoteLockedFungibleRecord]
+    /// >> 302 - Composite[pallet_xcm.pallet.RemoteLockedFungibleRecord]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RemoteLockedFungibleRecord : BaseType
@@ -39,7 +39,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_xcm.pallet
         /// <summary>
         /// >> consumers
         /// </summary>
-        public PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15 Consumers { get; set; }
+        public PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21 Consumers { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -68,7 +68,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_xcm.pallet
             Owner.Decode(byteArray, ref p);
             Locker = new PolkadotPeople.NetApi.Generated.Model.xcm.EnumVersionedLocation();
             Locker.Decode(byteArray, ref p);
-            Consumers = new PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15();
+            Consumers = new PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21();
             Consumers.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

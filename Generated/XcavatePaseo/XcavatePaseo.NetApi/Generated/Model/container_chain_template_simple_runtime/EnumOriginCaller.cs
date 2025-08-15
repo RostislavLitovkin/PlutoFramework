@@ -43,7 +43,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
     }
     
     /// <summary>
-    /// >> 253 - Variant[container_chain_template_simple_runtime.OriginCaller]
+    /// >> 261 - Variant[container_chain_template_simple_runtime.OriginCaller]
     /// </summary>
     public sealed class EnumOriginCaller : BaseEnumRust<OriginCaller>
     {

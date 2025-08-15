@@ -1,15 +1,21 @@
 using PlutoFramework.Model.Sumsub;
-using PlutoFramework.Templates.PageTemplate;
 using System.Web;
 
 namespace PlutoFramework.Components.Sumsub
 {
-    public partial class SumsubWebSDKPage : PageTemplate
+    public partial class SumsubWebSDKPage : ContentPage
     {
         private Func<Task> navigation;
         public SumsubWebSDKPage(string accessToken, Applicant applicant, Func<Task> navigation)
         {
+            NavigationPage.SetHasNavigationBar(this, false);
+            Shell.SetNavBarIsVisible(this, false);
+
             InitializeComponent();
+
+            var topNavigationBarHeight = (double)Application.Current.Resources["TopNavigationBarHeight"];
+
+            webView.Margin = new Thickness(0, topNavigationBarHeight, 0, 0);
 
             webView.Source = new HtmlWebViewSource
             {

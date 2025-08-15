@@ -13,6 +13,8 @@ public partial class MnemonicsPage : PageTemplate
 	{
         InitializeComponent();
 
+        var viewModel = new MnemonicsPageViewModel();
+
         viewModel.AccountType = (AccountType)Enum.Parse(typeof(AccountType), Preferences.Get(PreferencesModel.ACCOUNT_TYPE, AccountType.None.ToString()));
 
         viewModel.Mnemonics = secret ?? "Mnemonics are not available for your account.";
@@ -21,5 +23,7 @@ public partial class MnemonicsPage : PageTemplate
         {
             viewModel.Mnemonics = "Mnemonics are not available for your account.";
         }
-	}
+
+        BindingContext = viewModel;
+    }
 }

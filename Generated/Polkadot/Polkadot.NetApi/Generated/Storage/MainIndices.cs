@@ -135,6 +135,17 @@ namespace Polkadot.NetApi.Generated.Storage
             byteArray.AddRange(index.Encode());
             return new Method(4, "Indices", 4, "freeze", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> poke_deposit
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method PokeDeposit(Substrate.NetApi.Model.Types.Primitive.U32 index)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(index.Encode());
+            return new Method(4, "Indices", 5, "poke_deposit", byteArray.ToArray());
+        }
     }
     
     /// <summary>

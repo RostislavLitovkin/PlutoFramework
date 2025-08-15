@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 287 - Composite[pallet_nfts.types.DestroyWitness]
+    /// >> 295 - Composite[pallet_nfts.types.DestroyWitness]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DestroyWitness : BaseType

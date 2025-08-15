@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_support.traits.tokens.misc
     
     
     /// <summary>
-    /// >> 390 - Composite[frame_support.traits.tokens.misc.IdAmountT1]
+    /// >> 402 - Composite[frame_support.traits.tokens.misc.IdAmountT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class IdAmountT1 : BaseType

@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types
     
     
     /// <summary>
-    /// >> 497 - Composite[pallet_nft_marketplace.types.RegionInfo]
+    /// >> 509 - Composite[pallet_nft_marketplace.types.RegionInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RegionInfo : BaseType

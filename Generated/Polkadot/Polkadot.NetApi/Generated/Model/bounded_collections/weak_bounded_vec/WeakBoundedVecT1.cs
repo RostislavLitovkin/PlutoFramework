@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.bounded_collections.weak_bounded_vec
     
     
     /// <summary>
-    /// >> 86 - Composite[bounded_collections.weak_bounded_vec.WeakBoundedVecT1]
+    /// >> 540 - Composite[bounded_collections.weak_bounded_vec.WeakBoundedVecT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class WeakBoundedVecT1 : BaseType
@@ -27,7 +27,7 @@ namespace Polkadot.NetApi.Generated.Model.bounded_collections.weak_bounded_vec
         /// <summary>
         /// >> value
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> Value { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.sp_consensus_babe.app.Public, Substrate.NetApi.Model.Types.Primitive.U64>> Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace Polkadot.NetApi.Generated.Model.bounded_collections.weak_bounded_vec
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>();
+            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.sp_consensus_babe.app.Public, Substrate.NetApi.Model.Types.Primitive.U64>>();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

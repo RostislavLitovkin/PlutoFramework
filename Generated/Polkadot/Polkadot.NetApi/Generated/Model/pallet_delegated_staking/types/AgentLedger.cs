@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_delegated_staking.types
     
     
     /// <summary>
-    /// >> 696 - Composite[pallet_delegated_staking.types.AgentLedger]
+    /// >> 722 - Composite[pallet_delegated_staking.types.AgentLedger]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AgentLedger : BaseType

@@ -53,7 +53,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.staging_xcm.v4
     }
     
     /// <summary>
-    /// >> 72 - Variant[staging_xcm.v4.Response]
+    /// >> 289 - Variant[staging_xcm.v4.Response]
     /// </summary>
     public sealed class EnumResponse : BaseEnumRust<Response>
     {
@@ -67,7 +67,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.staging_xcm.v4
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.staging_xcm.v4.asset.Assets>(Response.Assets);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, PolkadotPeople.NetApi.Generated.Model.xcm.v3.traits.EnumError>>>(Response.ExecutionResult);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Response.Version);
-				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1>(Response.PalletsInfo);
+				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18>(Response.PalletsInfo);
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.xcm.v3.EnumMaybeErrorCode>(Response.DispatchResult);
         }
     }

@@ -27,6 +27,11 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
         Preimage = 10,
         
         /// <summary>
+        /// >> Staking
+        /// </summary>
+        Staking = 7,
+        
+        /// <summary>
         /// >> DelegatedStaking
         /// </summary>
         DelegatedStaking = 41,
@@ -35,10 +40,15 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
         /// >> StateTrieMigration
         /// </summary>
         StateTrieMigration = 98,
+        
+        /// <summary>
+        /// >> XcmPallet
+        /// </summary>
+        XcmPallet = 99,
     }
     
     /// <summary>
-    /// >> 544 - Variant[polkadot_runtime.RuntimeHoldReason]
+    /// >> 567 - Variant[polkadot_runtime.RuntimeHoldReason]
     /// </summary>
     public sealed class EnumRuntimeHoldReason : BaseEnumRust<RuntimeHoldReason>
     {
@@ -49,8 +59,10 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
         public EnumRuntimeHoldReason()
         {
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_preimage.pallet.EnumHoldReason>(RuntimeHoldReason.Preimage);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_staking.pallet.pallet.EnumHoldReason>(RuntimeHoldReason.Staking);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_delegated_staking.pallet.EnumHoldReason>(RuntimeHoldReason.DelegatedStaking);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_state_trie_migration.pallet.EnumHoldReason>(RuntimeHoldReason.StateTrieMigration);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_xcm.pallet.EnumHoldReason>(RuntimeHoldReason.XcmPallet);
         }
     }
 }

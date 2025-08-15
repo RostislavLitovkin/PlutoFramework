@@ -1,11 +1,12 @@
-using PlutoFramework.Templates.PageTemplate;
-
 namespace PlutoFramework.Components.XcavateProperty;
 
-public partial class XcavatePropertyMarketplacePage : PageTemplate
+public partial class XcavatePropertyMarketplacePage : ContentPage
 {
     public XcavatePropertyMarketplacePage()
     {
+        NavigationPage.SetHasNavigationBar(this, false);
+        Shell.SetNavBarIsVisible(this, false);
+
         InitializeComponent();
 
         var viewModel = DependencyService.Get<XcavatePropertyMarketplaceViewModel>();

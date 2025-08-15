@@ -26,7 +26,6 @@ namespace PlutoFramework.Components.Mnemonics
             {
                 await Model.KeysModel.GenerateNewAccountAsync(
                     Mnemonics,
-                    null,
                     accountVariant: ""
                 );
 

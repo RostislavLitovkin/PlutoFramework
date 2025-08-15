@@ -23,11 +23,11 @@ public partial class ReferendaView : ContentView, ISubstrateClientLoadableAsyncV
     {
         await ReferendumModel.GetReferendaAsync(client, KeysModel.GetSubstrateKey(), token).ConfigureAwait(false);
 
-        (BindingContext as ReferendaViewModel).UpdateReferenda();
+        ((ReferendaViewModel)BindingContext).UpdateReferenda();
     }
 
     public void SetEmpty()
     {
-        (BindingContext as ReferendaViewModel).NoReferenda();
+        ((ReferendaViewModel)BindingContext).NoReferenda();
     }
 }

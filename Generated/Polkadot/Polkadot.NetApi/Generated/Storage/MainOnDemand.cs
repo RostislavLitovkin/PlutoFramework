@@ -42,7 +42,9 @@ namespace Polkadot.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("OnDemand", "FreeEntries"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Polkadot.NetApi.Generated.Types.Base.BinaryHeapT2)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("OnDemand", "AffinityEntries"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.CoreIndex), typeof(Polkadot.NetApi.Generated.Types.Base.BinaryHeapT2)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("OnDemand", "Revenue"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("OnDemand", "Revenue"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("OnDemand", "Credits"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
         }
         
         /// <summary>
@@ -191,10 +193,41 @@ namespace Polkadot.NetApi.Generated.Storage
         /// >> Revenue
         ///  Keeps track of accumulated revenue from on demand order sales.
         /// </summary>
-        public async Task<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35> Revenue(string blockhash, CancellationToken token)
+        public async Task<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39> Revenue(string blockhash, CancellationToken token)
         {
             string parameters = OnDemandStorage.RevenueParams();
-            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> CreditsParams
+        ///  Keeps track of credits owned by each account.
+        /// </summary>
+        public static string CreditsParams(Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+        {
+            return RequestGenerator.GetStorage("OnDemand", "Credits", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> CreditsDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string CreditsDefault()
+        {
+            return "0x00000000000000000000000000000000";
+        }
+        
+        /// <summary>
+        /// >> Credits
+        ///  Keeps track of credits owned by each account.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U128> Credits(Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        {
+            string parameters = OnDemandStorage.CreditsParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U128>(parameters, blockhash, token);
             return result;
         }
     }
@@ -227,6 +260,18 @@ namespace Polkadot.NetApi.Generated.Storage
             byteArray.AddRange(max_amount.Encode());
             byteArray.AddRange(para_id.Encode());
             return new Method(64, "OnDemand", 1, "place_order_keep_alive", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> place_order_with_credits
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method PlaceOrderWithCredits(Substrate.NetApi.Model.Types.Primitive.U128 max_amount, Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id para_id)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(max_amount.Encode());
+            byteArray.AddRange(para_id.Encode());
+            return new Method(64, "OnDemand", 2, "place_order_with_credits", byteArray.ToArray());
         }
     }
     
@@ -289,5 +334,11 @@ namespace Polkadot.NetApi.Generated.Storage
         /// call, making it invalid.
         /// </summary>
         SpotPriceHigherThanMaxAmount,
+        
+        /// <summary>
+        /// >> InsufficientCredits
+        /// The account doesn't have enough credits to purchase on-demand coretime.
+        /// </summary>
+        InsufficientCredits,
     }
 }

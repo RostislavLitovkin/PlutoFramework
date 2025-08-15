@@ -13,6 +13,7 @@ using UniqueryPlus.Metadata;
 using System.Text.Json;
 using XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet;
 using Nethereum.Util;
+using XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types;
 
 namespace UniqueryPlus.Nfts
 {

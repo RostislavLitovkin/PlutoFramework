@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 282 - Composite[pallet_nfts.types.MintSettings]
+    /// >> 290 - Composite[pallet_nfts.types.MintSettings]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MintSettings : BaseType

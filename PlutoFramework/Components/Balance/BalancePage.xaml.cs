@@ -8,8 +8,8 @@ public partial class BalancePage : PageTemplate
 	{
         InitializeComponent();
 
-        BindingContext = new UsdBalanceViewModel();
+        BindingContext = new BalancePageViewModel();
 
-        ((UsdBalanceViewModel)BindingContext).UpdateBalances();
+        _ = ((BalancePageViewModel)BindingContext).UpdateAsync();
     }
 }

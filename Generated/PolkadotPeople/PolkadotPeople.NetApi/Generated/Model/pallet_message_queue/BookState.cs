@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_message_queue
     
     
     /// <summary>
-    /// >> 310 - Composite[pallet_message_queue.BookState]
+    /// >> 341 - Composite[pallet_message_queue.BookState]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BookState : BaseType

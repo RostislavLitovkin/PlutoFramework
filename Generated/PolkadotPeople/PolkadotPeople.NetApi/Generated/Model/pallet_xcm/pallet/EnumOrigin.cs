@@ -33,7 +33,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 366 - Variant[pallet_xcm.pallet.Origin]
+    /// >> 397 - Variant[pallet_xcm.pallet.Origin]
     /// </summary>
     public sealed class EnumOrigin : BaseEnumRust<Origin>
     {
@@ -43,8 +43,8 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_xcm.pallet
         /// </summary>
         public EnumOrigin()
         {
-				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Origin.Xcm);
-				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Origin.Response);
+				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.staging_xcm.v5.location.Location>(Origin.Xcm);
+				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.staging_xcm.v5.location.Location>(Origin.Response);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types
     
     
     /// <summary>
-    /// >> 505 - Composite[pallet_nft_marketplace.types.TokenOwnerDetails]
+    /// >> 513 - Composite[pallet_nft_marketplace.types.TokenOwnerDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class TokenOwnerDetails : BaseType
@@ -31,11 +31,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types
         /// <summary>
         /// >> paid_funds
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT2 PaidFunds { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 PaidFunds { get; set; }
         /// <summary>
         /// >> paid_tax
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT2 PaidTax { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 PaidTax { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -59,9 +59,9 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types
             var start = p;
             TokenAmount = new Substrate.NetApi.Model.Types.Primitive.U32();
             TokenAmount.Decode(byteArray, ref p);
-            PaidFunds = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT2();
+            PaidFunds = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             PaidFunds.Decode(byteArray, ref p);
-            PaidTax = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT2();
+            PaidTax = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             PaidTax.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

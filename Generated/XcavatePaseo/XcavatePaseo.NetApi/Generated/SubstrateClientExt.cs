@@ -200,6 +200,11 @@ namespace XcavatePaseo.NetApi.Generated
         public PropertyGovernanceStorage PropertyGovernanceStorage;
         
         /// <summary>
+        /// BucketsStorage storage calls.
+        /// </summary>
+        public BucketsStorage BucketsStorage;
+        
+        /// <summary>
         /// RootTestingStorage storage calls.
         /// </summary>
         public RootTestingStorage RootTestingStorage;
@@ -252,6 +257,7 @@ namespace XcavatePaseo.NetApi.Generated
             this.NftMarketplaceStorage = new NftMarketplaceStorage(this);
             this.PropertyManagementStorage = new PropertyManagementStorage(this);
             this.PropertyGovernanceStorage = new PropertyGovernanceStorage(this);
+            this.BucketsStorage = new BucketsStorage(this);
             this.RootTestingStorage = new RootTestingStorage(this);
             this.AsyncBackingStorage = new AsyncBackingStorage(this);
             this.OffchainWorkerStorage = new OffchainWorkerStorage(this);

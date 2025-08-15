@@ -182,13 +182,13 @@ namespace Polkadot.NetApi.Generated.Model.pallet_nomination_pools.pallet
         /// The dispatch origin of this call must be signed by the pool nominator or the pool
         /// root role.
         /// 
-        /// This directly forward the call to the staking pallet, on behalf of the pool bonded
-        /// account.
+        /// This directly forwards the call to an implementation of `StakingInterface` (e.g.,
+        /// `pallet-staking`) through [`Config::StakeAdapter`], on behalf of the bonded pool.
         /// 
         /// # Note
         /// 
-        /// In addition to a `root` or `nominator` role of `origin`, pool's depositor needs to have
-        /// at least `depositor_min_bond` in the pool to start nominating.
+        /// In addition to a `root` or `nominator` role of `origin`, the pool's depositor needs to
+        /// have at least `depositor_min_bond` in the pool to start nominating.
         /// </summary>
         nominate = 8,
         
@@ -251,17 +251,18 @@ namespace Polkadot.NetApi.Generated.Model.pallet_nomination_pools.pallet
         /// The dispatch origin of this call can be signed by the pool nominator or the pool
         /// root role, same as [`Pallet::nominate`].
         /// 
+        /// This directly forwards the call to an implementation of `StakingInterface` (e.g.,
+        /// `pallet-staking`) through [`Config::StakeAdapter`], on behalf of the bonded pool.
+        /// 
         /// Under certain conditions, this call can be dispatched permissionlessly (i.e. by any
         /// account).
         /// 
         /// # Conditions for a permissionless dispatch:
-        /// * When pool depositor has less than `MinNominatorBond` staked, otherwise  pool members
+        /// * When pool depositor has less than `MinNominatorBond` staked, otherwise pool members
         ///   are unable to unbond.
         /// 
         /// # Conditions for permissioned dispatch:
-        /// * The caller has a nominator or root role of the pool.
-        /// This directly forward the call to the staking pallet, on behalf of the pool bonded
-        /// account.
+        /// * The caller is the pool's nominator or root.
         /// </summary>
         chill = 13,
         
@@ -333,9 +334,20 @@ namespace Polkadot.NetApi.Generated.Model.pallet_nomination_pools.pallet
         /// >> claim_commission
         /// Claim pending commission.
         /// 
-        /// The dispatch origin of this call must be signed by the `root` role of the pool. Pending
-        /// commission is paid out and added to total claimed commission`. Total pending commission
-        /// is reset to zero. the current.
+        /// The `root` role of the pool is _always_ allowed to claim the pool's commission.
+        /// 
+        /// If the pool has set `CommissionClaimPermission::Permissionless`, then any account can
+        /// trigger the process of claiming the pool's commission.
+        /// 
+        /// If the pool has set its `CommissionClaimPermission` to `Account(acc)`, then only
+        /// accounts
+        /// * `acc`, and
+        /// * the pool's root account
+        /// 
+        /// may call this extrinsic on behalf of the pool.
+        /// 
+        /// Pending commissions are paid out and added to the total claimed commission.
+        /// The total pending commission is reset to zero.
         /// </summary>
         claim_commission = 20,
         
@@ -404,7 +416,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_nomination_pools.pallet
     }
     
     /// <summary>
-    /// >> 251 - Variant[pallet_nomination_pools.pallet.Call]
+    /// >> 258 - Variant[pallet_nomination_pools.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

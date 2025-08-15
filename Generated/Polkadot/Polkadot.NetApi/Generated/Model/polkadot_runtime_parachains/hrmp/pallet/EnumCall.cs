@@ -163,7 +163,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.hrmp.palle
     }
     
     /// <summary>
-    /// >> 314 - Variant[polkadot_runtime_parachains.hrmp.pallet.Call]
+    /// >> 321 - Variant[polkadot_runtime_parachains.hrmp.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

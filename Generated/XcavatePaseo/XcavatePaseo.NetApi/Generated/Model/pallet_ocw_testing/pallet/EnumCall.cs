@@ -41,7 +41,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_ocw_testing.pallet
     }
     
     /// <summary>
-    /// >> 366 - Variant[pallet_ocw_testing.pallet.Call]
+    /// >> 378 - Variant[pallet_ocw_testing.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

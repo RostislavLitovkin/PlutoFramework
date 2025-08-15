@@ -2,11 +2,11 @@
 <Grid xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
       x:Class="PlutoFramework.Components.Xcavate.PageBottomBarView"
-      BackgroundColor="White">
+      BackgroundColor="{AppThemeBinding Light=White, Dark=Black}">
     <Grid.Shadow>
         <Shadow Brush="Black"
-            Offset="0,0" 
-            Radius="5"
-            Opacity="0.5" />
+                Offset="0,0" 
+                Radius="2"
+                Opacity="0.16" />
     </Grid.Shadow>
 </Grid>

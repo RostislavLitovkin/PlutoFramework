@@ -68,12 +68,6 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.configurat
         set_coretime_cores = 6,
         
         /// <summary>
-        /// >> set_max_availability_timeouts
-        /// Set the max number of times a claim may timeout on a core before it is abandoned
-        /// </summary>
-        set_max_availability_timeouts = 7,
-        
-        /// <summary>
         /// >> set_group_rotation_frequency
         /// Set the parachain validator-group rotation frequency
         /// </summary>
@@ -291,12 +285,6 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.configurat
         set_on_demand_target_queue_utilization = 50,
         
         /// <summary>
-        /// >> set_on_demand_ttl
-        /// Set the on demand (parathreads) ttl in the claimqueue.
-        /// </summary>
-        set_on_demand_ttl = 51,
-        
-        /// <summary>
         /// >> set_minimum_backing_votes
         /// Set the minimum backing votes threshold.
         /// </summary>
@@ -322,7 +310,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.configurat
     }
     
     /// <summary>
-    /// >> 265 - Variant[polkadot_runtime_parachains.configuration.pallet.Call]
+    /// >> 272 - Variant[polkadot_runtime_parachains.configuration.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -340,7 +328,6 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.configurat
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.set_max_pov_size);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.set_max_head_data_size);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.set_coretime_cores);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.set_max_availability_timeouts);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.set_group_rotation_frequency);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.set_paras_availability_period);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.set_scheduling_lookahead);
@@ -376,7 +363,6 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.configurat
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill>(Call.set_on_demand_fee_variability);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.set_on_demand_queue_max_size);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill>(Call.set_on_demand_target_queue_utilization);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.set_on_demand_ttl);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.set_minimum_backing_votes);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U8, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.set_node_feature);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.ApprovalVotingParams>(Call.set_approval_voting_params);

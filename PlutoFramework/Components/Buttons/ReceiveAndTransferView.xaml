@@ -13,7 +13,7 @@
 
         <buttons:ElevatedButton
             ButtonState="Enabled"
-                Text="Receive"
+                Text="Add funds"
                 Grid.Column="0"
                 Clicked="OnReceiveClicked"/>
 

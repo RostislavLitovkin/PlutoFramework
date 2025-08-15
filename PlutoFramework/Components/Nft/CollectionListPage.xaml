@@ -6,50 +6,42 @@
                        xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
                        xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
                        x:Class="PlutoFramework.Components.Nft.CollectionListPage"
-                       Title="CollectionListPage">
-    <template:PageTemplate.MainContent>
-        <CollectionView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                        AbsoluteLayout.LayoutFlags="All"
-                        ItemSizingStrategy="MeasureAllItems"
-                        ItemsSource="{Binding Items}"
-                        RemainingItemsThreshold="1"
-                        RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}">
-            <CollectionView.Header>
-                <AbsoluteLayout HeightRequest="45"
-                                WidthRequest="10">
+                       Title="{Binding Title}">
+    <CollectionView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    ItemSizingStrategy="MeasureAllItems"
+                    ItemsSource="{Binding Items}"
+                    RemainingItemsThreshold="1"
+                    RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}">
+        <CollectionView.Header>
+            <AbsoluteLayout HeightRequest="45"
+                            WidthRequest="10" />
+        </CollectionView.Header>
 
-                </AbsoluteLayout>
-            </CollectionView.Header>
-            
-            <CollectionView.Footer>
-                <StackLayout HeightRequest="200">
-                    <customlayouts:LoadingItemView HeightRequest="80" 
-                                                   Margin="20, 0, 20, 0"
-                                                   IsVisible="{Binding Loading}"/>
-                    <customlayouts:TransparentItemView Text="No Collections"
-                                                       HeightRequest="80" 
-                                                       IsVisible="{Binding NoItems}" 
-                                                       Margin="20, 0, 20, 0"/>
-                </StackLayout>
-            </CollectionView.Footer>
-            
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Vertical" 
-                                   ItemSpacing="15"/>
-            </CollectionView.ItemsLayout>
-            
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <nft:CollectionThumbnailView Endpoint="{Binding Endpoint}"
-                                                 Favourite="{Binding Favourite}"
-                                                 CollectionBase="{Binding CollectionBase}"
-                                                 Margin="20, 0, 20, 0" />
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </template:PageTemplate.MainContent>
+        <CollectionView.Footer>
+            <StackLayout HeightRequest="200">
+                <customlayouts:LoadingItemView HeightRequest="80" 
+                                               Margin="20, 0, 20, 0"
+                                               IsVisible="{Binding Loading}" />
+                <customlayouts:TransparentItemView Text="No Collections"
+                                                   HeightRequest="80" 
+                                                   IsVisible="{Binding NoItems}" 
+                                                   Margin="20, 0, 20, 0" />
+            </StackLayout>
+        </CollectionView.Footer>
 
-    <template:PageTemplate.PopupContent>
-        <navigationbar:TopNavigationBar Title="{Binding Title}" />
-    </template:PageTemplate.PopupContent>
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Vertical" 
+                               ItemSpacing="15" />
+        </CollectionView.ItemsLayout>
+
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <nft:CollectionThumbnailView Endpoint="{Binding Endpoint}"
+                                             Favourite="{Binding Favourite}"
+                                             CollectionBase="{Binding CollectionBase}"
+                                             Margin="20, 0, 20, 0" />
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 </template:PageTemplate>

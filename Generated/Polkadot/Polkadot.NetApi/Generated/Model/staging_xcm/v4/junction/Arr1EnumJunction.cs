@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.staging_xcm.v4.junction
     
     
     /// <summary>
-    /// >> 69 - Array
+    /// >> 71 - Array
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Array)]
     public sealed class Arr1EnumJunction : BaseType

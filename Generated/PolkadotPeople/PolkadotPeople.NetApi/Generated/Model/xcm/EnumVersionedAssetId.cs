@@ -30,10 +30,15 @@ namespace PolkadotPeople.NetApi.Generated.Model.xcm
         /// >> V4
         /// </summary>
         V4 = 4,
+        
+        /// <summary>
+        /// >> V5
+        /// </summary>
+        V5 = 5,
     }
     
     /// <summary>
-    /// >> 270 - Variant[xcm.VersionedAssetId]
+    /// >> 301 - Variant[xcm.VersionedAssetId]
     /// </summary>
     public sealed class EnumVersionedAssetId : BaseEnumRust<VersionedAssetId>
     {
@@ -45,6 +50,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.xcm
         {
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.xcm.v3.multiasset.EnumAssetId>(VersionedAssetId.V3);
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.staging_xcm.v4.asset.AssetId>(VersionedAssetId.V4);
+				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.staging_xcm.v5.asset.AssetId>(VersionedAssetId.V5);
         }
     }
 }

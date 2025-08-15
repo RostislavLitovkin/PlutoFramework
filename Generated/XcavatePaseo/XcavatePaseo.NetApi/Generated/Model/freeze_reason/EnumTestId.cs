@@ -25,10 +25,20 @@ namespace XcavatePaseo.NetApi.Generated.Model.freeze_reason
         /// >> Marketplace
         /// </summary>
         Marketplace = 0,
+        
+        /// <summary>
+        /// >> Listing
+        /// </summary>
+        Listing = 1,
+        
+        /// <summary>
+        /// >> Auction
+        /// </summary>
+        Auction = 2,
     }
     
     /// <summary>
-    /// >> 414 - Variant[freeze_reason.TestId]
+    /// >> 426 - Variant[freeze_reason.TestId]
     /// </summary>
     public sealed class EnumTestId : BaseEnum<TestId>
     {

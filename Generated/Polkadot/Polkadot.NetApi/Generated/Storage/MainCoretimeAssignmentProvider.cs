@@ -143,34 +143,10 @@ namespace Polkadot.NetApi.Generated.Storage
         AssignmentsEmpty,
         
         /// <summary>
-        /// >> OverScheduled
-        /// Assignments together exceeded 57600.
-        /// </summary>
-        OverScheduled,
-        
-        /// <summary>
-        /// >> UnderScheduled
-        /// Assignments together less than 57600
-        /// </summary>
-        UnderScheduled,
-        
-        /// <summary>
         /// >> DisallowedInsert
         /// assign_core is only allowed to append new assignments at the end of already existing
-        /// ones.
+        /// ones or update the last entry.
         /// </summary>
         DisallowedInsert,
-        
-        /// <summary>
-        /// >> DuplicateInsert
-        /// Tried to insert a schedule for the same core and block number as an existing schedule
-        /// </summary>
-        DuplicateInsert,
-        
-        /// <summary>
-        /// >> AssignmentsNotSorted
-        /// Tried to add an unsorted set of assignments
-        /// </summary>
-        AssignmentsNotSorted,
     }
 }

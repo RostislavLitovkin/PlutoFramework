@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.sp_consensus_beefy
     
     
     /// <summary>
-    /// >> 435 - Composite[sp_consensus_beefy.ForkVotingProof]
+    /// >> 455 - Composite[sp_consensus_beefy.ForkVotingProof]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ForkVotingProof : BaseType

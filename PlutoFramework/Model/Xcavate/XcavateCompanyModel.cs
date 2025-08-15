@@ -7,10 +7,12 @@ namespace PlutoFramework.Model.Xcavate
         // Has to be here due to binding
         None,
 
+        Loading,
         Pending,
         Verified,
-        Rejected
+        Rejected,
     }
+
     public record PassportOrDriversLicense
     {
         public required VerificationEnum VerificationStatus { get; set; }

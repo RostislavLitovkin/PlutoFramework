@@ -43,7 +43,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_election_provider_multi_phase
     }
     
     /// <summary>
-    /// >> 457 - Variant[pallet_election_provider_multi_phase.Phase]
+    /// >> 477 - Variant[pallet_election_provider_multi_phase.Phase]
     /// </summary>
     public sealed class EnumPhase : BaseEnumRust<Phase>
     {

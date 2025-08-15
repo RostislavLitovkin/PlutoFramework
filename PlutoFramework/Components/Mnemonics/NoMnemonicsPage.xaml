@@ -5,82 +5,76 @@
                        xmlns:card="clr-namespace:PlutoFramework.Components.Card"
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        x:Class="PlutoFramework.Components.Mnemonics.NoMnemonicsPage"
-                       Title="NoMnemonicsPage">
-    <template:PageTemplate.MainContent>
-        <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-              AbsoluteLayout.LayoutFlags="All"
-              Padding="20"
-              ColumnSpacing="15"
-              RowSpacing="15">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="40" />
-            </Grid.RowDefinitions>
+                       Title="Account">
+    <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+          AbsoluteLayout.LayoutFlags="All"
+          Padding="20"
+          ColumnSpacing="15"
+          RowSpacing="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-            <Label Text="Do you have an Account?"
-                   VerticalTextAlignment="End"
-                   FontAttributes="Bold"
-                   FontSize="20"
-                   Grid.Column="0"
-                   Grid.Row="0" />
+        <Label Text="Do you have an Account?"
+               VerticalTextAlignment="End"
+               FontAttributes="Bold"
+               FontSize="20"
+               Grid.Column="0"
+               Grid.Row="0" />
 
-            <card:ClickableCard Grid.Column="0"
-                                Grid.Row="1"
-                                HorizontalOptions="Fill">
-                <card:ClickableCard.View>
-                    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
-                                    AbsoluteLayout.LayoutFlags="All">
-                        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
-                                             AbsoluteLayout.LayoutFlags="PositionProportional"
-                                             Spacing="20">
-                            <Image WidthRequest="80"
-                                   HeightRequest="80"
-                                   Source="{AppThemeBinding Light=createmnemonicsblack.png, Dark=createmnemonicswhite.png}" />
-                            <Label Text="Create Account"
-                                   FontAttributes="Bold"
-                                   HorizontalTextAlignment="Center"/>
-                        </VerticalStackLayout>
-                    </AbsoluteLayout>
+        <card:ClickableCard Grid.Column="0"
+                            Grid.Row="1"
+                            HorizontalOptions="Fill">
+            <card:ClickableCard.View>
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                AbsoluteLayout.LayoutFlags="All">
+                    <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
+                                         AbsoluteLayout.LayoutFlags="PositionProportional"
+                                         Spacing="20">
+                        <Image WidthRequest="80"
+                               HeightRequest="80"
+                               Source="{AppThemeBinding Light=createmnemonicsblack.png, Dark=createmnemonicswhite.png}" />
+                        <Label Text="Create Account"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                </AbsoluteLayout>
 
-                </card:ClickableCard.View>
+            </card:ClickableCard.View>
 
-                <card:ClickableCard.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding CreateAccountCommand}" />
-                </card:ClickableCard.GestureRecognizers>
-            </card:ClickableCard>
+            <card:ClickableCard.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CreateAccountCommand}" />
+            </card:ClickableCard.GestureRecognizers>
+        </card:ClickableCard>
 
-            <card:ClickableCard Grid.Column="0"
-                                Grid.Row="2">
-                <card:ClickableCard.View>
-                    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
-                                    AbsoluteLayout.LayoutFlags="All">
-                        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
-                                             AbsoluteLayout.LayoutFlags="PositionProportional"
-                                             Spacing="20">
-                            <Image WidthRequest="80"
-                                   HeightRequest="80"
-                                   Source="{AppThemeBinding Light=importmnemonicsblack.png, Dark=importmnemonicswhite.png}" />
-                            <Label Text="Import Account"
-                                   FontAttributes="Bold"
-                                   HorizontalTextAlignment="Center"/>
-                        </VerticalStackLayout>
-                    </AbsoluteLayout>
-                </card:ClickableCard.View>
+        <card:ClickableCard Grid.Column="0"
+                            Grid.Row="2">
+            <card:ClickableCard.View>
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                AbsoluteLayout.LayoutFlags="All">
+                    <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
+                                         AbsoluteLayout.LayoutFlags="PositionProportional"
+                                         Spacing="20">
+                        <Image WidthRequest="80"
+                               HeightRequest="80"
+                               Source="{AppThemeBinding Light=importmnemonicsblack.png, Dark=importmnemonicswhite.png}" />
+                        <Label Text="Import Account"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                </AbsoluteLayout>
+            </card:ClickableCard.View>
 
-                <card:ClickableCard.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding ImportAccountCommand}" />
-                </card:ClickableCard.GestureRecognizers>
-            </card:ClickableCard>
-        </Grid>
-    </template:PageTemplate.MainContent>
-
-    <template:PageTemplate.PopupContent>
-        <navigationbar:TopNavigationBar Title="Account" />
-    </template:PageTemplate.PopupContent>
+            <card:ClickableCard.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ImportAccountCommand}" />
+            </card:ClickableCard.GestureRecognizers>
+        </card:ClickableCard>
+    </Grid>
 </template:PageTemplate>

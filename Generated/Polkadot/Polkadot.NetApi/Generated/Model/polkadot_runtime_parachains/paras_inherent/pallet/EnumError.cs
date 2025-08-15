@@ -36,27 +36,21 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.paras_inhe
         InvalidParentHeader = 1,
         
         /// <summary>
-        /// >> InherentOverweight
-        /// The data given to the inherent will result in an overweight block.
-        /// </summary>
-        InherentOverweight = 2,
-        
-        /// <summary>
-        /// >> CandidatesFilteredDuringExecution
-        /// A candidate was filtered during inherent execution. This should have only been done
+        /// >> InherentDataFilteredDuringExecution
+        /// Inherent data was filtered during execution. This should have only been done
         /// during creation.
         /// </summary>
-        CandidatesFilteredDuringExecution = 3,
+        InherentDataFilteredDuringExecution = 2,
         
         /// <summary>
         /// >> UnscheduledCandidate
         /// Too many candidates supplied.
         /// </summary>
-        UnscheduledCandidate = 4,
+        UnscheduledCandidate = 3,
     }
     
     /// <summary>
-    /// >> 715 - Variant[polkadot_runtime_parachains.paras_inherent.pallet.Error]
+    /// >> 749 - Variant[polkadot_runtime_parachains.paras_inherent.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

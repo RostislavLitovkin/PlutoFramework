@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
     
     
     /// <summary>
-    /// >> 520 - Composite[pallet_property_governance.pallet.Proposal]
+    /// >> 530 - Composite[pallet_property_governance.pallet.Proposal]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Proposal : BaseType
@@ -41,9 +41,9 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 CreatedAt { get; set; }
         /// <summary>
-        /// >> proposal_info
+        /// >> metadata
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2 ProposalInfo { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2 Metadata { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -59,7 +59,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
             result.AddRange(AssetId.Encode());
             result.AddRange(Amount.Encode());
             result.AddRange(CreatedAt.Encode());
-            result.AddRange(ProposalInfo.Encode());
+            result.AddRange(Metadata.Encode());
             return result.ToArray();
         }
         
@@ -75,8 +75,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
             Amount.Decode(byteArray, ref p);
             CreatedAt = new Substrate.NetApi.Model.Types.Primitive.U32();
             CreatedAt.Decode(byteArray, ref p);
-            ProposalInfo = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2();
-            ProposalInfo.Decode(byteArray, ref p);
+            Metadata = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2();
+            Metadata.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;
             Bytes = new byte[bytesLength];

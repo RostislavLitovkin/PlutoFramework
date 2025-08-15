@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8
     
     
     /// <summary>
-    /// >> 292 - Composite[polkadot_primitives.v8.CandidateCommitments]
+    /// >> 299 - Composite[polkadot_primitives.v8.CandidateCommitments]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CandidateCommitments : BaseType

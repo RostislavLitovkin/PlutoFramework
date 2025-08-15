@@ -261,7 +261,7 @@ namespace PlutoFramework.Model
                 IEnumerable<(string, XcavatePropertyKey, XcavatePropertyOperation, uint)> evaluated = e switch
                 {
                     // Nfts
-                    ExtrinsicEvent { PalletName: "NftMarketplace", EventName: "TokenBoughtObject" } => [(e.Parameters[1].Value, (endpoint.Key, uint.Parse(e.Parameters[0].Value)), XcavatePropertyOperation.Buy, uint.Parse(e.Parameters[2].Value))],
+                    ExtrinsicEvent { PalletName: "NftMarketplace", EventName: "PropertyTokenBought" } => [(e.Parameters[2].Value, (endpoint.Key, uint.Parse(e.Parameters[0].Value)), XcavatePropertyOperation.Buy, uint.Parse(e.Parameters[3].Value))],
 
                     // Handle more events ...
                     _ => []

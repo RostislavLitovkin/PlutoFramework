@@ -6,49 +6,43 @@
                        xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        x:Class="PlutoFramework.Components.Kilt.ImportDidPage"
-                       Title="ImportDidPage">
-    <template:PageTemplate.MainContent>
-        <VerticalStackLayout HorizontalOptions="Center"
+                       Title="Import DID">
+    <VerticalStackLayout HorizontalOptions="Center"
                          Padding="20, 10, 20, 100"
                          Spacing="15">
-            <ContentView HeightRequest="160">
-                <card:Card>
-                    <card:Card.View>
-                        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                                        AbsoluteLayout.LayoutFlags="All"
-                                        Margin="0, 10, 0, 10">
-                            <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
-                                                 AbsoluteLayout.LayoutFlags="SizeProportional">
-                                <VerticalStackLayout>
-                                    <Label FontAttributes="Bold"
-                                           HorizontalOptions="Center"
-                                           VerticalTextAlignment="End">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span FontAttributes="Bold"
-                                                      Text="Your existing mnemonics: "/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
-                                    
-                                    <Editor HeightRequest="120"
-                                            x:Name="mnemonicsEntry"
-                                            Placeholder="Start entering here.."
-                                            Text="{Binding Mnemonics}">
-                                    </Editor>
-                                </VerticalStackLayout>
-                            </VerticalStackLayout>
-                        </AbsoluteLayout>
-                    </card:Card.View>
-                </card:Card>
-            </ContentView>
+        <ContentView HeightRequest="160">
+            <card:Card>
+                <card:Card.View>
+                    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                                    AbsoluteLayout.LayoutFlags="All"
+                                    Margin="0, 10, 0, 10">
+                        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                                             AbsoluteLayout.LayoutFlags="SizeProportional">
+                            <VerticalStackLayout>
+                                <Label FontAttributes="Bold"
+                                       HorizontalOptions="Center"
+                                       VerticalTextAlignment="End">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span FontAttributes="Bold"
+                                                  Text="Your existing mnemonics: "/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
 
-            <buttons:ElevatedButton Text="Continue"
-                                    Command="{Binding ContinueToNextPageCommand}" />
-        </VerticalStackLayout>
-    </template:PageTemplate.MainContent>
-    
-    <template:PageTemplate.PopupContent>
-        <navigationbar:TopNavigationBar Title="Import DID" />
-    </template:PageTemplate.PopupContent>
+                                <Editor HeightRequest="120"
+                                        x:Name="mnemonicsEntry"
+                                        Placeholder="Start entering here.."
+                                        Text="{Binding Mnemonics}">
+                                </Editor>
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </AbsoluteLayout>
+                </card:Card.View>
+            </card:Card>
+        </ContentView>
+
+        <buttons:ElevatedButton Text="Continue"
+                                Command="{Binding ContinueToNextPageCommand}" />
+    </VerticalStackLayout>
 </template:PageTemplate>

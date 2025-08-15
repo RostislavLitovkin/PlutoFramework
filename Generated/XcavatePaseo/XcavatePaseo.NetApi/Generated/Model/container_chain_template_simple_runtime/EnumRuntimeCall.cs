@@ -157,6 +157,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         PropertyGovernance = 83,
         
         /// <summary>
+        /// >> Buckets
+        /// </summary>
+        Buckets = 84,
+        
+        /// <summary>
         /// >> RootTesting
         /// </summary>
         RootTesting = 100,
@@ -168,7 +173,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
     }
     
     /// <summary>
-    /// >> 250 - Variant[container_chain_template_simple_runtime.RuntimeCall]
+    /// >> 258 - Variant[container_chain_template_simple_runtime.RuntimeCall]
     /// </summary>
     public sealed class EnumRuntimeCall : BaseEnumRust<RuntimeCall>
     {
@@ -205,6 +210,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.EnumCall>(RuntimeCall.NftMarketplace);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.EnumCall>(RuntimeCall.PropertyManagement);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumCall>(RuntimeCall.PropertyGovernance);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_bucket.pallet.EnumCall>(RuntimeCall.Buckets);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_root_testing.pallet.EnumCall>(RuntimeCall.RootTesting);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_ocw_testing.pallet.EnumCall>(RuntimeCall.OffchainWorker);
         }

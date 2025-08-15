@@ -43,7 +43,7 @@ namespace Polkadot.NetApi.Generated.Model.xcm.v3.multiasset
     }
     
     /// <summary>
-    /// >> 386 - Variant[xcm.v3.multiasset.WildMultiAsset]
+    /// >> 375 - Variant[xcm.v3.multiasset.WildMultiAsset]
     /// </summary>
     public sealed class EnumWildMultiAsset : BaseEnumRust<WildMultiAsset>
     {

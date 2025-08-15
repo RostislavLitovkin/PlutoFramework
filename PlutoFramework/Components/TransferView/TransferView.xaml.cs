@@ -5,8 +5,6 @@ using System.Numerics;
 using PlutoFramework.Types;
 using PlutoFramework.Constants;
 using PlutoFramework.Components.TransactionAnalyzer;
-using Microsoft.Maui.Controls.PlatformConfiguration;
-using PlutoFramework.Components.NetworkSelect;
 
 namespace PlutoFramework.Components.TransferView;
 
@@ -27,16 +25,16 @@ public partial class TransferView : ContentView
 
         var viewModel = DependencyService.Get<TransferViewModel>();
 
+        var assetSelectButtonViewModel = DependencyService.Get<AssetSelectButtonViewModel>();
+
         errorLabel.Text = "";
 
-        var clientExt = await Model.SubstrateClientModel.GetMainSubstrateClientAsync(CancellationToken.None);
+        var clientExt = await Model.SubstrateClientModel.GetOrAddSubstrateClientAsync(assetSelectButtonViewModel.SelectedAssetKey.Item1, CancellationToken.None);
 
         var client = clientExt.SubstrateClient;
 
         try
         {
-            var assetSelectButtonViewModel = DependencyService.Get<AssetSelectButtonViewModel>();
-
             decimal tempAmount;
             BigInteger amount;
             if (decimal.TryParse(viewModel.Amount, out tempAmount))

@@ -106,8 +106,6 @@ namespace PlutoFramework.Components.Balance
             {
                 if (!Prices.Any())
                 {
-
-
                     return new LineChart
                     {
                         Margin = 0,
@@ -138,6 +136,11 @@ namespace PlutoFramework.Components.Balance
                 var maxIndex = entries.ToList().FindIndex(e => e.Value == max);
 
                 var tenPercentDifference = (max.Value - min.Value) * 0.1;
+
+                if (tenPercentDifference == 0)
+                {
+                    tenPercentDifference = max.Value * 0.1;
+                }
 
                 MinText = ((double)min.Value).ToCurrencyString(currencyFormat: "{0:0.00}");
                 MaxText = ((double)max.Value).ToCurrencyString(currencyFormat: "{0:0.00}");
@@ -175,6 +178,8 @@ namespace PlutoFramework.Components.Balance
 
             Prices = await Sdk.GetRestrospectiveSpotPricesAsync(hydrationClient, ChartInterval, AssetInfo.Symbol, CHART_STEPS, token);
 
+            Console.WriteLine("Prices: " + Prices.Count());
+
             PricePerTokenText = ((double)Sdk.GetSpotPrice(AssetInfo.Symbol)).ToCurrencyString(currencyFormat: "{0:0.00}");
         }
 
@@ -211,8 +216,8 @@ namespace PlutoFramework.Components.Balance
             var timeString = interval switch
             {
                 Interval.Hourly => now.AddHours(-minus).ToString("hh:mm"),
-                Interval.Daily => now.AddDays(-minus).ToString("MMMM d"),
-                Interval.Weekly => now.AddDays(-7 * minus).ToString("MMMM d"),
+                Interval.Daily => now.AddDays(-minus).ToString("MMM d"),
+                Interval.Weekly => now.AddDays(-7 * minus).ToString("MMM d"),
                 _ => throw new ArgumentOutOfRangeException(nameof(interval), interval, null)
             };
 

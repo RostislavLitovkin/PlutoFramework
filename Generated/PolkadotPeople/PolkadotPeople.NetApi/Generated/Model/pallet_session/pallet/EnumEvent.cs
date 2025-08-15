@@ -31,7 +31,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_session.pallet
     }
     
     /// <summary>
-    /// >> 38 - Variant[pallet_session.pallet.Event]
+    /// >> 41 - Variant[pallet_session.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

@@ -14,6 +14,7 @@ using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.As
 using PlutoFramework.Constants;
 using PlutoFramework.Types;
 using System.Numerics;
+using XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types;
 
 namespace PlutoFramework.Model.Xcavate
 {

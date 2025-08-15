@@ -32,6 +32,11 @@ namespace PolkadotPeople.NetApi.Generated.Model.people_polkadot_runtime
         ParachainSystem = 1,
         
         /// <summary>
+        /// >> MultiBlockMigrations
+        /// </summary>
+        MultiBlockMigrations = 4,
+        
+        /// <summary>
         /// >> Balances
         /// </summary>
         Balances = 10,
@@ -105,6 +110,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.people_polkadot_runtime
         {
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.frame_system.pallet.EnumEvent>(RuntimeEvent.System);
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.cumulus_pallet_parachain_system.pallet.EnumEvent>(RuntimeEvent.ParachainSystem);
+				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.pallet_migrations.pallet.EnumEvent>(RuntimeEvent.MultiBlockMigrations);
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.pallet_balances.pallet.EnumEvent>(RuntimeEvent.Balances);
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.pallet_transaction_payment.pallet.EnumEvent>(RuntimeEvent.TransactionPayment);
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.pallet_collator_selection.pallet.EnumEvent>(RuntimeEvent.CollatorSelection);

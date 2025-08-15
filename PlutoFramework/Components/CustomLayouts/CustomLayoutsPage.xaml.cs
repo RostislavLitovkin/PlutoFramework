@@ -14,7 +14,7 @@ public partial class CustomLayoutsPage : PageTemplate
 
         BindingContext = new CustomLayoutsViewModel();
 
-        topNavigationBar.ExtraFunc = OnExtraClicked;
+        TopNavigationBar.ExtraFunc = OnExtraClicked;
     }
 
     async void PanGestureRecognizer_PanUpdated(System.Object sender, Microsoft.Maui.Controls.PanUpdatedEventArgs e)

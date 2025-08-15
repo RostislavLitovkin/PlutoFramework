@@ -108,7 +108,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_common.claims.pallet
         /// Attest to a statement, needed to finalize the claims process.
         /// 
         /// WARNING: Insecure unless your chain includes `PrevalidateAttests` as a
-        /// `SignedExtension`.
+        /// `TransactionExtension`.
         /// 
         /// Unsigned Validation:
         /// A call to attest is deemed valid if the sender has a `Preclaim` registered
@@ -134,7 +134,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_common.claims.pallet
     }
     
     /// <summary>
-    /// >> 169 - Variant[polkadot_runtime_common.claims.pallet.Call]
+    /// >> 176 - Variant[polkadot_runtime_common.claims.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

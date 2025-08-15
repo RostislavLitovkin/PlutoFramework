@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_system
     
     
     /// <summary>
-    /// >> 188 - Composite[frame_system.LastRuntimeUpgradeInfo]
+    /// >> 196 - Composite[frame_system.LastRuntimeUpgradeInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class LastRuntimeUpgradeInfo : BaseType

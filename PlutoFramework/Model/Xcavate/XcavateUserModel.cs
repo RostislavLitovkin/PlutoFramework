@@ -7,7 +7,8 @@
 
         Developer,
         Investor,
-        LettingAgent
+        LettingAgent,
+        Lawyer,
     }
     public record DeveloperStats
     {
