@@ -4,7 +4,8 @@ public partial class PageBottomBarView : Grid
 {
     public static readonly BindableProperty HasShadowProperty =
        BindableProperty.Create(nameof(HasShadow), typeof(bool), typeof(PageBottomBarView),
-           propertyChanged: (BindableObject bindable, object oldValue, object newValue) => {
+           propertyChanged: (BindableObject bindable, object oldValue, object newValue) =>
+           {
                if ((bool)newValue)
                {
                    return;
@@ -19,12 +20,11 @@ public partial class PageBottomBarView : Grid
                    Offset = new Point(0, 0),
                    Opacity = 0
                };
-
            });
     public PageBottomBarView()
-	{
-		InitializeComponent();
-	}
+    {
+        InitializeComponent();
+    }
 
     public bool HasShadow
     {

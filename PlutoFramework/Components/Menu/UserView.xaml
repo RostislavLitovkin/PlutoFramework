@@ -4,8 +4,7 @@
              xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
              x:Class="PlutoFramework.Components.Menu.UserView"
              >
-    <xcavate:PageBottomBarView Shadow=""
-                               Padding="20">
+    <xcavate:PageBottomBarView Padding="20">
         <xcavate:PageBottomBarView.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="30" />

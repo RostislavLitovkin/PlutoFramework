@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.Menu.MainMenuPage"
                    xmlns:menu="clr-namespace:PlutoFramework.Components.Menu"
+                   xmlns:account="clr-namespace:PlutoFramework.Components.Account"
                    xmlns:page="clr-namespace:PlutoFramework.Templates.PageTemplate"
                    Title="Menu"
                    NavigationBarExtra1Command="{Binding OpenSettingsCommand}"
@@ -59,4 +60,8 @@
                                       />
         </Grid>
     </VerticalStackLayout>
+
+    <page:PageTemplate.PopupContent>
+        <account:NoAccountPopup />
+    </page:PageTemplate.PopupContent>
 </page:PageTemplate>

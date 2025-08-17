@@ -15,7 +15,6 @@
                  Navigating="OnNavigating">
 
                 <!-- Add your content here -->
-
             </WebView>
 
             <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 80"
@@ -37,8 +36,4 @@
             </AbsoluteLayout>
         </AbsoluteLayout>
     </template:PageTemplate.MainContent>
-
-    <template:PageTemplate.PopupContent>
-        <navigationbar:TopNavigationBar Title="Sumsub Verification" />
-    </template:PageTemplate.PopupContent>
 </template:PageTemplate>
