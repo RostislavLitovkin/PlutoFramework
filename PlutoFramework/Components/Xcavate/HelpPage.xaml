@@ -8,14 +8,13 @@
                        Title="HelpPage"
                        IsNavbarVisible="False">
     <template:PageTemplate.MainContent>
-        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                             AbsoluteLayout.LayoutFlags="All">
-            <Label Text="Help page"
-                   FontSize="30"
-                   Margin="50"
+        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                             AbsoluteLayout.LayoutFlags="All"
+               
                    VerticalOptions="Center" 
-                   HorizontalOptions="Center" />
-        </VerticalStackLayout>
+                   HorizontalOptions="Center"
+               Aspect="AspectFit"
+               Source="aiscreenshot.png" />
     </template:PageTemplate.MainContent>
 
     <template:PageTemplate.PopupContent>
