@@ -12,15 +12,9 @@ using UniqueryPlus.Collections;
 using UniqueryPlus.External;
 using UniqueryPlus.Metadata;
 using UniqueryPlus.Nfts;
-using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
 
 namespace PlutoFramework.Model
 {
-    public class NftAssetWrapper : NftWrapper
-    {
-        public required Asset? AssetPrice { get; set; }
-        public required NftOperation Operation { get; set; }
-    }
     public class MockNft : INftBase, IKodaLink
     {
         public NftTypeEnum Type => NftTypeEnum.PolkadotAssetHub_NftsPallet;
@@ -37,51 +31,6 @@ namespace PlutoFramework.Model
         public async Task<INftBase> GetFullAsync(CancellationToken token)
         {
             return this;
-        }
-    }
-
-    public class NftWrapper : INotifyPropertyChanged
-    {
-        public NftKey? Key => NftBase is not null ? (NftBase.Type, NftBase.CollectionId, NftBase.Id) : null;
-        public INftBase? NftBase { get; set; }
-        public Endpoint? Endpoint { get; set; }
-
-        private bool favourite = false;
-        public bool Favourite
-        {
-            get => favourite;
-            set
-            {
-                if (favourite != value)
-                {
-                    favourite = value;
-                    OnPropertyChanged(nameof(Favourite));
-                }
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(string propertyName) =>
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
-
-        public override bool Equals(object? obj)
-        {
-            return obj is NftWrapper objNft &&
-                    objNft.NftBase?.Metadata?.Name == this.NftBase?.Metadata?.Name &&
-                    objNft.NftBase?.Metadata?.Description == this.NftBase?.Metadata?.Description &&
-                    objNft.NftBase?.Metadata?.Image == this.NftBase?.Metadata?.Image &&
-                    objNft.Endpoint?.Key == this.Endpoint?.Key;
-        }
-
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(NftBase?.Metadata?.Name, NftBase?.Metadata?.Description, NftBase?.Metadata?.Image, Endpoint?.Key);
-        }
-
-        public override string ToString()
-        {
-            return this.NftBase?.Metadata?.Name + " - " + this.NftBase?.Metadata?.Image;
         }
     }
     public class NftModel
@@ -108,56 +57,6 @@ namespace PlutoFramework.Model
                 Owner = "5EU6EyEq6RhqYed1gCYyQRVttdy6FC9yAtUUGzPe3gfpFX8y"
             };
         }
-
-        public static NftWrapper ToNftWrapper(INftBase nft)
-        {
-            if (nft.Metadata is not null && nft.Metadata.Image is null)
-            {
-                nft.Metadata.Image = "noimage.png";
-            }
-            return new NftWrapper
-            {
-                NftBase = nft,
-                Endpoint = Endpoints.GetEndpointDictionary[GetEndpointKey(nft.Type)]
-            };
-        }
-
-        public static async Task<NftAssetWrapper> ToNftNativeAssetWrapperAsync(INftBase nft, Endpoint endpoint, CancellationToken token)
-        {
-            var nftWrapper = ToNftWrapper(nft);
-
-            BigInteger? price = nft is INftMarketPrice ?
-                    await ((INftMarketPrice)nft).GetMarketPriceAsync(token) : null;
-
-            return new NftAssetWrapper
-            {
-                NftBase = nft,
-                Endpoint = Endpoints.GetEndpointDictionary[GetEndpointKey(nft.Type)],
-                AssetPrice = (price is not null || price != 0) ? new Asset
-                {
-                    Amount = (double)(price ?? 1) / Math.Pow(10, endpoint.Decimals),
-                    Pallet = AssetPallet.Native,
-                    Symbol = endpoint.Unit,
-                    ChainIcon = endpoint.Icon,
-                    DarkChainIcon = endpoint.DarkIcon,
-                    AssetId = 0,
-                    Endpoint = endpoint,
-                    Decimals = endpoint.Decimals
-                } : null,
-                Operation = NftOperation.None,
-            };
-        }
-
-        public static EndpointEnum GetEndpointKey(NftTypeEnum nftType) => nftType switch
-        {
-            NftTypeEnum.PolkadotAssetHub_NftsPallet => EndpointEnum.PolkadotAssetHub,
-            NftTypeEnum.KusamaAssetHub_NftsPallet => EndpointEnum.KusamaAssetHub,
-            NftTypeEnum.Unique => EndpointEnum.Unique,
-            NftTypeEnum.Opal => EndpointEnum.Opal,
-            NftTypeEnum.Mythos => EndpointEnum.Mythos,
-            NftTypeEnum.XcavatePaseo => EndpointEnum.XcavatePaseo,
-            _ => throw new NotImplementedException(),
-        };
 
         public static async Task NavigateToNftDetailPageAsync(INftBase nftBase, Endpoint endpoint, bool favourite, CancellationToken token)
         {
@@ -229,7 +128,7 @@ namespace PlutoFramework.Model
                 if (fullNft is INftNestable)
                 {
                     viewModel.IsNestable = true;
-                    viewModel.NestedNfts = new ObservableCollection<NftWrapper>((await ((INftNestable)fullNft).GetNestedNftsAsync(token).ConfigureAwait(false)).Select(nestedNftWrapper => Model.NftModel.ToNftWrapper(nestedNftWrapper.NftBase)));
+                    viewModel.NestedNfts = new ObservableCollection<NftWrapper>((await ((INftNestable)fullNft).GetNestedNftsAsync(token).ConfigureAwait(false)).Select(nestedNftWrapper => PlutoFrameworkCore.NftModel.ToNftWrapper(nestedNftWrapper.NftBase)));
                 }
 
                 if (fullNft is INftNestable && (fullNft as INftNestable).HasParentNft)
@@ -305,7 +204,7 @@ namespace PlutoFramework.Model
 
                 await UpdateViewModelAsync(viewModel, fullCollection, token);
 
-                viewModel.Nfts = new ObservableCollection<NftWrapper>((await fullCollection.GetNftsAsync(25, null, token)).Select(Model.NftModel.ToNftWrapper));
+                viewModel.Nfts = new ObservableCollection<NftWrapper>((await fullCollection.GetNftsAsync(25, null, token)).Select(PlutoFrameworkCore.NftModel.ToNftWrapper));
             }
             catch (Exception ex)
             {

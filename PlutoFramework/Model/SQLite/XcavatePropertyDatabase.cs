@@ -21,7 +21,7 @@ namespace PlutoFramework.Model.SQLite
         public MetadataBase Metadata { get; set; }
         public async Task<ICollectionBase> GetCollectionAsync(CancellationToken token)
         {
-            var endpointKey = NftModel.GetEndpointKey(Type);
+            var endpointKey = PlutoFrameworkCore.NftModel.GetEndpointKey(Type);
 
             var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(endpointKey, token);
 
@@ -29,7 +29,7 @@ namespace PlutoFramework.Model.SQLite
         }
         public async Task<INftBase> GetFullAsync(CancellationToken token)
         {
-            var endpointKey = NftModel.GetEndpointKey(Type);
+            var endpointKey = PlutoFrameworkCore.NftModel.GetEndpointKey(Type);
 
             var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(endpointKey, token);
 

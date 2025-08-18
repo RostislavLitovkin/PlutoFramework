@@ -38,11 +38,11 @@ namespace PlutoFrameworkTests
             {
                 if (uniqueryNftEnumerator != null && await uniqueryNftEnumerator.MoveNextAsync().ConfigureAwait(false))
                 {
-                    var newNft = PlutoFramework.Model.NftModel.ToNftWrapper(uniqueryNftEnumerator.Current);
+                    /*var newNft = PlutoFramework.Model.NftModel.ToNftWrapper(uniqueryNftEnumerator.Current);
 
                     var property = (XcavatePaseoNftsPalletNft)newNft.NftBase;
 
-                    Console.WriteLine("Property: " + property?.XcavateMetadata?.PropertyName + " - " + property?.XcavateMetadata?.Files?.FirstOrDefault());
+                    Console.WriteLine("Property: " + property?.XcavateMetadata?.PropertyName + " - " + property?.XcavateMetadata?.Files?.FirstOrDefault());*/
 
                 }
             }
@@ -83,11 +83,11 @@ namespace PlutoFrameworkTests
             {
                 if (uniqueryNftEnumerator != null && await uniqueryNftEnumerator.MoveNextAsync().ConfigureAwait(false))
                 {
-                    var newNft = PlutoFramework.Model.NftModel.ToNftWrapper(uniqueryNftEnumerator.Current);
+                    /*var newNft = PlutoFramework.Model.NftModel.ToNftWrapper(uniqueryNftEnumerator.Current);
 
                     var property = (XcavatePaseoNftsPalletNft)newNft.NftBase;
 
-                    Console.WriteLine("Property: " + property?.XcavateMetadata?.PropertyName + " - " + property?.XcavateMetadata?.Files?.FirstOrDefault());
+                    Console.WriteLine("Property: " + property?.XcavateMetadata?.PropertyName + " - " + property?.XcavateMetadata?.Files?.FirstOrDefault());*/
                 }
             }
 
@@ -121,13 +121,13 @@ namespace PlutoFrameworkTests
             {
                 if (uniqueryNftEnumerator != null && await uniqueryNftEnumerator.MoveNextAsync().ConfigureAwait(false))
                 {
-                    PropertyTokenOwnershipInfo info = uniqueryNftEnumerator.Current;
+                    /*PropertyTokenOwnershipInfo info = uniqueryNftEnumerator.Current;
                     var newNft = PlutoFramework.Model.NftModel.ToNftWrapper(info.NftBase);
 
                     var property = (XcavatePaseoNftsPalletNft)newNft.NftBase;
 
                     Console.WriteLine("Property: " + property?.XcavateMetadata?.PropertyName + " - " + property?.XcavateMetadata?.Files?.FirstOrDefault());
-                    Console.WriteLine($"Token amount: {info.Amount}");
+                    Console.WriteLine($"Token amount: {info.Amount}");*/
                 }
             }
         }

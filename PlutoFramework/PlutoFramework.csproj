@@ -54,15 +54,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PlutoFrameworkCore\PlutoFrameworkCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AWSSDK.S3" Version="3.7.412.1" />
     <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
     <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.10" />
-    <PackageReference Include="Substrate.NET.API" Version="0.9.24-rc6" />
-    <PackageReference Include="Uniquery" Version="1.0.1" />
-    <PackageReference Include="Plutonication" Version="2.5.0" />
     <PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
-    <PackageReference Include="AzeroIdResolver" Version="1.0.2" />
-    <PackageReference Include="Substrate.NET.Wallet" Version="1.0.8" />
     <PackageReference Include="System.Runtime.InteropServices" Version="4.3.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
     <PackageReference Include="AcrylicView.Maui" Version="2.1.3" />
@@ -89,17 +88,6 @@
     <PackageReference Include="Microsoft.Maui.Controls" Version="9.0.81" />
     <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="9.0.81" />
 
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Generated\Bajun\Bajun.NetApi\Bajun.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\BifrostPolkadot\BifrostPolkadot.NetApi\BifrostPolkadot.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\Hydration\Hydration.NetApi\Hydration.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\InvArch\InvArch.NetApi\InvArch.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\Kilt\Kilt.NetApi\Kilt.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\PolkadotPeople\PolkadotPeople.NetApi\PolkadotPeople.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\Polkadot\Polkadot.NetApi\Polkadot.NetApi.csproj" />
-    <ProjectReference Include="..\UniqueryPlus\UniqueryPlus.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -1756,12 +1744,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Model\Types\Bifrost\" />
-    <Folder Include="Model\Types\Hydration\" />
-    <Folder Include="Model\Types\Polkadot\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="..\Generated\%2a%2a\%2a%2a.NetApi\bin\Debug\net9.0\%2a.dll" />
     <None Remove="..\UniqueryPlus\bin\Debug\net9.0-ios\UniqueryPlus.dll" />
     <None Remove="AjunaExt\" />
@@ -2033,6 +2015,7 @@
     <MauiImage Include="Resources\Images\youtubeblack.png" />
     <MauiImage Include="Resources\Images\youtubewhite.png" />
   </ItemGroup>
+
   <ItemGroup>
     <MauiXaml Update="Components\000ComponentTemplate\NewPageTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>

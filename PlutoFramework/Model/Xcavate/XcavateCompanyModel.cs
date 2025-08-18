@@ -1,18 +1,8 @@
-﻿using UniqueryPlus;
+﻿using PlutoFrameworkCore.Xcavate;
+using UniqueryPlus;
 
 namespace PlutoFramework.Model.Xcavate
 {
-    public enum VerificationEnum
-    {
-        // Has to be here due to binding
-        None,
-
-        Loading,
-        Pending,
-        Verified,
-        Rejected,
-    }
-
     public record PassportOrDriversLicense
     {
         public required VerificationEnum VerificationStatus { get; set; }

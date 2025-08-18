@@ -149,7 +149,7 @@ namespace PlutoFramework.Components.XcavateProperty
             viewModel.NftMarketplaceDetails = NftMarketplaceDetails;
             viewModel.Metadata = Metadata;
             viewModel.IsVisible = true;
-            viewModel.EndpointKey = Model.NftModel.GetEndpointKey(NftBase.Type);   
+            viewModel.EndpointKey = PlutoFrameworkCore.NftModel.GetEndpointKey(NftBase.Type);   
         }
 
         [RelayCommand]
@@ -165,7 +165,7 @@ namespace PlutoFramework.Components.XcavateProperty
             viewModel.NftMarketplaceDetails = NftMarketplaceDetails;
             viewModel.Metadata = Metadata;
             viewModel.IsVisible = true;
-            viewModel.EndpointKey = Model.NftModel.GetEndpointKey(NftBase.Type);
+            viewModel.EndpointKey = PlutoFrameworkCore.NftModel.GetEndpointKey(NftBase.Type);
             viewModel.TokensOwned = TokensOwned;
         }
 

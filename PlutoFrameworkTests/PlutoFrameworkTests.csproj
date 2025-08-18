@@ -17,6 +17,6 @@
 </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PlutoFramework\PlutoFramework.csproj" />
+    <ProjectReference Include="..\PlutoFrameworkCore\PlutoFrameworkCore.csproj" />
   </ItemGroup>
 </Project>

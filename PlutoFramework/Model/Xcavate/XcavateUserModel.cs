@@ -1,4 +1,5 @@
-﻿using XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet;
+﻿using PlutoFrameworkCore.Xcavate;
+using XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet;
 
 namespace PlutoFramework.Model.Xcavate
 {

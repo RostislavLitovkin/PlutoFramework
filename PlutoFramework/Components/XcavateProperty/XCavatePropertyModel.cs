@@ -68,7 +68,7 @@ namespace PlutoFramework.Components.XcavateProperty
                 Console.WriteLine(ex);
             }
 
-            var substrateClient = await SubstrateClientModel.GetOrAddSubstrateClientAsync(Model.NftModel.GetEndpointKey(nft.Type), token);
+            var substrateClient = await SubstrateClientModel.GetOrAddSubstrateClientAsync(PlutoFrameworkCore.NftModel.GetEndpointKey(nft.Type), token);
 
             uint blockNumber = (uint)await BlockModel.GetCachedBlockNumberAsync(substrateClient, token).ConfigureAwait(false);
 
@@ -78,7 +78,7 @@ namespace PlutoFramework.Components.XcavateProperty
                 NftBase = nft,
                 Region = ((INftXcavateNftMarketplace)nft).NftMarketplaceDetails != null ? await RegionModel.GetCachedRegionAsync(substrateClient, ((INftXcavateNftMarketplace)nft).NftMarketplaceDetails.Region, token) : null,
                 ListingHasExpired = blockNumber > (((INftXcavateOngoingObjectListing)nft).OngoingObjectListingDetails?.ListingExpiry ?? 0),
-                Endpoint = Endpoints.GetEndpointDictionary[Model.NftModel.GetEndpointKey(nft.Type)]
+                Endpoint = Endpoints.GetEndpointDictionary[PlutoFrameworkCore.NftModel.GetEndpointKey(nft.Type)]
             };
         }
 

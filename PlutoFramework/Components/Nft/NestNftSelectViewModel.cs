@@ -69,7 +69,7 @@ namespace PlutoFramework.Components.Nft
 
                     if (uniqueryNftEnumerator != null && await uniqueryNftEnumerator.MoveNextAsync().ConfigureAwait(false))
                     {
-                        var newNft = Model.NftModel.ToNftWrapper(uniqueryNftEnumerator.Current);
+                        var newNft = PlutoFrameworkCore.NftModel.ToNftWrapper(uniqueryNftEnumerator.Current);
 
                         if (newNft.Key is not null && !ItemsDict.ContainsKey((NftKey)newNft.Key) && newNft.NftBase?.Id != nftIdToIgnore)
                         {

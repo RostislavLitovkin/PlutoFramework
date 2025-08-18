@@ -21,7 +21,7 @@ namespace PlutoFramework.Model.SQLite
         public async Task<IEnumerable<INftBase>> GetNftsAsync(uint limit, byte[]? lastKey, CancellationToken token)
 #pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
         {
-            var endpointKey = NftModel.GetEndpointKey(Type);
+            var endpointKey = PlutoFrameworkCore.NftModel.GetEndpointKey(Type);
 
             var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(endpointKey, token);
 
@@ -36,7 +36,7 @@ namespace PlutoFramework.Model.SQLite
         }
         public async Task<IEnumerable<INftBase>> GetNftsOwnedByAsync(string owner, uint limit, byte[]? lastKey, CancellationToken token)
         {
-            var endpointKey = NftModel.GetEndpointKey(Type);
+            var endpointKey = PlutoFrameworkCore.NftModel.GetEndpointKey(Type);
 
             var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(endpointKey, token);
 
@@ -51,7 +51,7 @@ namespace PlutoFramework.Model.SQLite
         }
         public async Task<ICollectionBase> GetFullAsync(CancellationToken token)
         {
-            var endpointKey = NftModel.GetEndpointKey(Type);
+            var endpointKey = PlutoFrameworkCore.NftModel.GetEndpointKey(Type);
 
             var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(endpointKey, token);
 

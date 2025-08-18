@@ -164,7 +164,7 @@ namespace PlutoFramework.Components.Nft
                     {
                         foreach (var nftId in featuredNftsToQuery[nftType])
                         {
-                            var newNft = Model.NftModel.ToNftWrapper(await UniqueryPlus.Nfts.NftModel.GetNftByIdAsync(client.SubstrateClient, nftId.NftType, nftId.CollectionId, nftId.Id, token).ConfigureAwait(false));
+                            var newNft = PlutoFrameworkCore.NftModel.ToNftWrapper(await UniqueryPlus.Nfts.NftModel.GetNftByIdAsync(client.SubstrateClient, nftId.NftType, nftId.CollectionId, nftId.Id, token).ConfigureAwait(false));
 
                             if (newNft.Key is not null && !featuredNftsDict.ContainsKey((NftKey)newNft.Key))
                             {
@@ -202,7 +202,7 @@ namespace PlutoFramework.Components.Nft
 
             while (uniqueryNftEnumerator != null && await uniqueryNftEnumerator.MoveNextAsync().ConfigureAwait(false))
             {
-                var newNft = Model.NftModel.ToNftWrapper(uniqueryNftEnumerator.Current);
+                var newNft = PlutoFrameworkCore.NftModel.ToNftWrapper(uniqueryNftEnumerator.Current);
 
                 if (newNft.Key is not null && !ownedNftsDict.ContainsKey((NftKey)newNft.Key) && !favouriteNftsDict.ContainsKey((NftKey)newNft.Key))
                 {

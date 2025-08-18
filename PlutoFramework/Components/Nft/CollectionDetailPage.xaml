@@ -84,7 +84,7 @@
                                  Spacing="15"
                                  BindableLayout.ItemsSource="{Binding Nfts}">
                 <BindableLayout.ItemTemplate>
-                    <DataTemplate x:DataType="model:NftWrapper">
+                    <DataTemplate>
                         <nft:NftLittleThumbnailView Endpoint="{Binding Endpoint}"
                                                     Favourite="{Binding Favourite}"
                                                     NftBase="{Binding NftBase}" />

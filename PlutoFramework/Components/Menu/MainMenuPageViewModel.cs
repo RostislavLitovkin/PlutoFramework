@@ -6,6 +6,7 @@ using PlutoFramework.Constants;
 using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
 using PlutoFramework.Model.Xcavate;
+using PlutoFrameworkCore.Xcavate;
 
 namespace PlutoFramework.Components.Menu
 {
