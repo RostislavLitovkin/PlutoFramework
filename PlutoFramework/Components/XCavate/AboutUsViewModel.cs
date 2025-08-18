@@ -6,16 +6,16 @@ namespace PlutoFramework.Components.Xcavate
     public partial class AboutUsViewModel : ObservableObject
     {
         [RelayCommand]
-        public Task FAQAsync() => Application.Current.MainPage.Navigation.PushAsync(new FrequentlyAskedQuestionsPage());
+        public Task OpenPrivacyPolicyAsync() => Browser.Default.OpenAsync("https://realxmarket.xcavate.io/privacy", BrowserLaunchMode.SystemPreferred);
 
         [RelayCommand]
-        public Task OpenTeamAsync() => Browser.Default.OpenAsync("https://xcavate.io/team/", BrowserLaunchMode.SystemPreferred);
+        public Task OpenTermsAsync() => Browser.Default.OpenAsync("https://realxmarket.xcavate.io/terms", BrowserLaunchMode.SystemPreferred);
 
         [RelayCommand]
-        public Task OpenBlogAsync() => Browser.Default.OpenAsync("https://xcavate.io/blog/", BrowserLaunchMode.SystemPreferred);
+        public Task OpenAgreementAsync() => Browser.Default.OpenAsync("https://realxmarket.xcavate.io/agreement", BrowserLaunchMode.SystemPreferred);
 
         [RelayCommand]
-        public Task OpenWhitepaperAsync() => Browser.Default.OpenAsync("https://xcavate.io/XcavateWhitepaper.pdf", BrowserLaunchMode.SystemPreferred);
+        public Task OpenFeesAsync() => Browser.Default.OpenAsync("https://realxmarket.xcacvate.io/property-info-fees", BrowserLaunchMode.SystemPreferred);
 
         [RelayCommand]
         public Task OpenXAsync() => Browser.Default.OpenAsync("https://x.com/xcavateofficial", BrowserLaunchMode.SystemPreferred);

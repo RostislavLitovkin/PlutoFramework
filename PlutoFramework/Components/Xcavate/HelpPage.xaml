@@ -10,7 +10,7 @@
     <template:PageTemplate.MainContent>
         <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                              AbsoluteLayout.LayoutFlags="All"
-               
+        
                    VerticalOptions="Center" 
                    HorizontalOptions="Center"
                Aspect="AspectFit"

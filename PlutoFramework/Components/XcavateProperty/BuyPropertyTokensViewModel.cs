@@ -80,7 +80,10 @@ namespace PlutoFramework.Components.XcavateProperty
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(ContinueButtonState))]
+        [NotifyPropertyChangedFor(nameof(ErrorIsVisible))]
         private string errorMessage = "";
+
+        public bool ErrorIsVisible => ErrorMessage != "";
 
         public ButtonStateEnum ContinueButtonState => ErrorMessage == "" && Tokens != "" ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
 
