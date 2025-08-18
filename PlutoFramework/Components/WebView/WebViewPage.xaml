@@ -4,8 +4,7 @@
                        xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        x:Class="PlutoFramework.Components.WebView.WebViewPage"
-                       Title="WebViewPage"
-                       x:Name="page">
+                       Title="Web page">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

@@ -6,7 +6,6 @@
     <UseMaui>true</UseMaui>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-
     <OutputType>Library</OutputType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
@@ -1632,6 +1631,9 @@
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Components\XcavateProperty\PropertyThumbnailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Components\XcavateProperty\PropertyTitleWithInfoView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Components\XcavateProperty\RelistPropertyTokensView.xaml">

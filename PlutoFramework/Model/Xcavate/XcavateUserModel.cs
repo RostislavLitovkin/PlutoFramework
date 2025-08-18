@@ -25,6 +25,18 @@ namespace PlutoFramework.Model.Xcavate
                 UserRoleEnum.Lawyer => Role.Lawyer
             };
         }
+
+        public static string ToSumsubVerificationLevel(this UserRoleEnum role)
+        {
+            return role switch
+            {
+                UserRoleEnum.Developer => "csharp-verification-developer",
+                UserRoleEnum.Investor => "csharp-verification-investor",
+                UserRoleEnum.LettingAgent => "csharp-verification-letting-agent",
+                UserRoleEnum.Lawyer => "csharp-verification-lawyer",
+                _ => throw new ArgumentOutOfRangeException(nameof(role), role, null)
+            };
+        }
     }
     public record DeveloperStats
     {

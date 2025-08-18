@@ -124,14 +124,6 @@
 
             <xcavateproperty:OwnedPropertyTokensView IsVisible="{Binding OwnedPropertyTokensViewIsVisible}" />
 
-            <buttons:ElevatedButton Text="Re-list"
-                                    Command="{Binding RelistCommand}"
-                                    IsVisible="{Binding RelistPropertyTokensButtonIsVisible}" />
-
-            <Label Text="Listing has expired."
-                   HorizontalTextAlignment="Start"
-                   IsVisible="{Binding ListingHasExpired}" />
-
             <StackLayout BackgroundColor="#22888888"
                             Padding="20,30,20,30"
                             Margin="-20,20,-20,20"

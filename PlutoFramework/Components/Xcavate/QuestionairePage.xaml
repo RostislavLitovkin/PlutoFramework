@@ -5,6 +5,7 @@
                    xmlns:progress="clr-namespace:PlutoFramework.Components.Progress"
                    xmlns:page="clr-namespace:PlutoFramework.Templates.PageTemplate"
                    xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+                   xmlns:hyperlink="clr-namespace:PlutoFramework.Components.Hyperlink"
                    Title=""
                    NavigationBarHasShadow="False">
     <VerticalStackLayout>
@@ -35,8 +36,20 @@
         <Label HorizontalOptions="Center"
                HorizontalTextAlignment="Center"
                LineBreakMode="WordWrap"
-               Margin="30, 50, 30, 20"
+               Margin="30, 50, 30, 10"
                FontSize="20">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span FontAttributes="Bold"
+                  Text="{Binding Question.Heading}"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Label HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"
+               LineBreakMode="WordWrap"
+               Margin="30, 10, 30, 20">
             <Label.FormattedText>
                 <FormattedString>
                     <Span FontAttributes="Bold"
@@ -123,10 +136,17 @@
         </Label>
 
 
-        <card:TextCard Margin="20, 50, 20, 20">
+        <card:TextCard Margin="20, 20, 20, 20">
             <card:TextCard.FormattedText>
                 <FormattedString>
-                    <Span Text="This questionnaire is designed to assess whether you, as a property developer, possess the necessary experience, knowledge, and financial capacity to engage responsibly with the tokenized real estate ecosystem on the Xcavate platform. Your responses help us determine if the investment and development opportunities available on Xcavate are appropriate for you and aligned with your business profile." />
+                    <Span Text="This questionnaire is designed to assess whether you, as a property developer, possess the necessary experience, knowledge, and financial capacity to engage responsibly with the tokenized real estate ecosystem on the Xcavate platform. Your responses help us determine if the investment and development opportunities available on Xcavate are appropriate for you and aligned with your business profile. "
+                          FontAttributes="Bold" />
+                    <Span Text="Don’t invest unless you’re prepared to lose all the money you invest. This is a high-risk investment and you are unlikely to be protected if something goes wrong. "
+                          FontAttributes="Bold" />
+                    <hyperlink:Link Text="Take 2 mins to learn more."
+                                    Url="https://realxmarket.xcavate.io/risk-warning"
+                                    TextColor="{StaticResource Primary}"
+                                    FontAttributes="Bold"/>
                 </FormattedString>
             </card:TextCard.FormattedText>
         </card:TextCard>
