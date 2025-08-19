@@ -2,6 +2,8 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Components.Error;
+using PlutoFramework.Model;
 using PlutoFramework.Model.Xcavate;
 
 namespace PlutoFramework.Components.Xcavate
@@ -63,10 +65,10 @@ namespace PlutoFramework.Components.Xcavate
 
             const int DELAY = 500;
 
-            await Task.Delay(DELAY);
-
             if (Info.QuestionId < Info.Questions.Count())
             {
+                await Task.Delay(DELAY);
+
                 await Shell.Current.Navigation.PushAsync(
                     new QuestionairePage(
                         Info
@@ -75,10 +77,47 @@ namespace PlutoFramework.Components.Xcavate
             }
             else
             {
-                await Info.Navigation();
+                var address = KeysModel.GetPublicKey();
+                var answers = new QuestionaireAnswers {
+                    AccountAddress = address,
+                    UserId = "User_TODO",
+                    Questions = Info.Questions
+                };
+
+                await QuestionaireModel.PostAnswersAsync(answers);
+
+                await Task.Delay(DELAY);
+
+                var evaluation = await QuestionaireModel.EvaluateAnswersAsync(address);
+
+                if (evaluation is null)
+                {
+                    await Shell.Current.Navigation.PushAsync(
+                        new BadInternetConnectionPage()
+                    );
+                    return;
+                }
+
+                if (evaluation?.Evaluation?.Result == "Fail")
+                {
+                    await Shell.Current.Navigation.PushAsync(
+                        new QuestionaireFailedPage(
+                            evaluation.Evaluation
+                        )
+                    );
+                }
+                else
+                {
+                    await Shell.Current.Navigation.PushAsync(
+                        new QuestionairePassPage(
+                            evaluation?.Evaluation,
+                            Info.Navigation
+                        )
+                    );
+                }
             }
 
-            SelectedAnswer = 0;
+            SelectedAnswer = null;
         }
     }
 }

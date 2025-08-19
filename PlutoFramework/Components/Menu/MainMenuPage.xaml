@@ -55,8 +55,8 @@
             <menu:QuickActionItemView Grid.Column="3"
                                       Grid.Row="0"
                                       Icon="infogray.png"
-                                      Title="Support"
-                                      Command="{Binding InfoActionCommand}"
+                                      Title="Important links"
+                                      Command="{Binding SupportActionCommand}"
                                       />
         </Grid>
     </VerticalStackLayout>

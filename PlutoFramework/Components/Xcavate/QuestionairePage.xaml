@@ -134,21 +134,5 @@
                 <TapGestureRecognizer Command="{Binding SelectAnswerCommand}" CommandParameter="3" />
             </Label.GestureRecognizers>
         </Label>
-
-
-        <card:TextCard Margin="20, 20, 20, 20">
-            <card:TextCard.FormattedText>
-                <FormattedString>
-                    <Span Text="This questionnaire is designed to assess whether you, as a property developer, possess the necessary experience, knowledge, and financial capacity to engage responsibly with the tokenized real estate ecosystem on the Xcavate platform. Your responses help us determine if the investment and development opportunities available on Xcavate are appropriate for you and aligned with your business profile. "
-                          FontAttributes="Bold" />
-                    <Span Text="Don’t invest unless you’re prepared to lose all the money you invest. This is a high-risk investment and you are unlikely to be protected if something goes wrong. "
-                          FontAttributes="Bold" />
-                    <hyperlink:Link Text="Take 2 mins to learn more."
-                                    Url="https://realxmarket.xcavate.io/risk-warning"
-                                    TextColor="{StaticResource Primary}"
-                                    FontAttributes="Bold"/>
-                </FormattedString>
-            </card:TextCard.FormattedText>
-        </card:TextCard>
     </VerticalStackLayout>
 </page:PageTemplate>

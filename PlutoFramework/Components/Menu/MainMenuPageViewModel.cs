@@ -7,6 +7,7 @@ using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
 using PlutoFramework.Model.Xcavate;
 using PlutoFrameworkCore.Xcavate;
+using PlutoFramework.Components.Xcavate;
 
 namespace PlutoFramework.Components.Menu
 {
@@ -78,9 +79,6 @@ namespace PlutoFramework.Components.Menu
         }
 
         [RelayCommand]
-        public Task SupportActionAsync()
-        {
-            return Task.FromResult(0);
-        }
+        public Task SupportActionAsync() => Shell.Current.Navigation.PushAsync(new ImportantLinksPage());
     }
 }

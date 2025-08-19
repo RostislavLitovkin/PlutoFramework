@@ -2469,6 +2469,9 @@
     <MauiXaml Update="Components\Xcavate\HelpPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\ImportantLinksPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\Xcavate\ModifyCompanyPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
@@ -2478,7 +2481,13 @@
     <MauiXaml Update="Components\Xcavate\PageBottomBarView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\QuestionaireFailedPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\Xcavate\QuestionairePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\QuestionairePassPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Xcavate\RiskWarningView.xaml">

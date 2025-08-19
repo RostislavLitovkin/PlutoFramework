@@ -76,7 +76,7 @@
 
                 <xcavate:XcavateCell Grid.Column="1"
                                      Grid.Row="0"
-                                     Title="Rental yield"
+                                     Title="Gross yield"
                                      InfoCommand="{Binding NavigateToFeesCommand}"
                                      Value="{Binding Apy}" />
 
@@ -93,7 +93,7 @@
                                      Value="{Binding Metadata.PropertyType}" />
             </Grid>
 
-            <xcavateproperty:SliderView Title="Area prices"
+            <xcavateproperty:SliderView Title="Similar property prices in area"
                                         Percentage="{Binding AreaPricesPercentage}"
                                         MinimumTitle="£200,000"
                                         MaximumTitle="£270,000"
@@ -104,7 +104,7 @@
                   HorizontalOptions="Fill"
                   StrokeThickness="1" />
 
-            <xcavateproperty:PropertyTitleWithInfoView Title="Rental income"
+            <xcavateproperty:PropertyTitleWithInfoView Title="Rental income pcm"
                                                        Command="{Binding NavigateToFeesCommand}"/>
 
             <Label Text="{Binding RentalIncome}"
@@ -115,7 +115,7 @@
                   HorizontalOptions="Fill"
                   StrokeThickness="1" />
 
-            <xcavateproperty:SliderView Title="Rental demand"
+            <xcavateproperty:SliderView Title="Rental demand in the area"
                                         Percentage="{Binding RentalDemandPercentage}"
                                         MinimumTitle="Low"
                                         MaximumTitle="High"

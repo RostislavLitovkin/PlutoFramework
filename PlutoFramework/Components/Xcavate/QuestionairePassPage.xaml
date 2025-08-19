@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<page:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                     x:Class="PlutoFramework.Components.Xcavate.QuestionairePassPage"
+                     xmlns:page="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                   xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
+                     xmlns:hyperlink="clr-namespace:PlutoFramework.Components.Hyperlink"
+                     Title="Questionaire passed">
+    <VerticalStackLayout>
+        <Label HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                LineBreakMode="WordWrap"
+                Margin="30, 50, 30, 10"
+                FontSize="20">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span FontAttributes="Bold"
+                          Text="{Binding Text}"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Label HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                LineBreakMode="WordWrap"
+                Margin="20, 50, 20, 20"
+                TextColor="{StaticResource Primary}">
+            <Label.FormattedText>
+                <FormattedString>
+                    <hyperlink:Link Text="Terms and Conditions"
+                                    Url="https://realxmarket.xcavate.io/terms"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Label HorizontalOptions="Center"
+        HorizontalTextAlignment="Center"
+        LineBreakMode="WordWrap"
+        Margin="20, 0, 20, 20"
+        TextColor="{StaticResource Primary}">
+            <Label.FormattedText>
+                <FormattedString>
+                    <hyperlink:Link Text="Agreement"
+                    Url="https://realxmarket.xcavate.io/agreement"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        
+        <Label HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                LineBreakMode="WordWrap"
+                Margin="20, 0, 20, 20"
+                TextColor="{StaticResource Primary}">
+            <Label.FormattedText>
+                <FormattedString>
+                    <hyperlink:Link Text="Privacy policy"
+                            Url="https://realxmarket.xcavate.io/privacy"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        
+        
+    </VerticalStackLayout>
+
+    <page:PageTemplate.PopupContent>
+        <xcavate:PageBottomBarButtonView Text="Agree and Continue"
+                                         ButtonState="Enabled"
+                                         Command="{Binding NavigateCommand}" />
+    </page:PageTemplate.PopupContent>
+</page:PageTemplate>

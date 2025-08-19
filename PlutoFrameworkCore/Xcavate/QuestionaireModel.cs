@@ -25,7 +25,7 @@ namespace PlutoFramework.Model.Xcavate
         public required Func<Task> Navigation { get; set; }
     }
 
-    public record QuestionaireApiResponse
+    public record QuestionaireApiResponse<ResultT>
     {
         [JsonPropertyName("error")]
         public required bool Error { get; set; }
@@ -37,7 +37,7 @@ namespace PlutoFramework.Model.Xcavate
         public required int Code { get; set; }
 
         [JsonPropertyName("result")]
-        public required List<Question> Result { get; set; }
+        public required ResultT Result { get; set; }
     }
 
     public record QuestionaireAnswers
@@ -50,6 +50,28 @@ namespace PlutoFramework.Model.Xcavate
 
         [JsonPropertyName("questions")]
         public required List<Question> Questions { get; set; }
+    }
+
+
+    public record QuestionaireAcceptTerms
+    {
+        [JsonPropertyName("hasAgreedToTerms")]
+        public required bool HasAgreedToTerms { get; set; }
+    }
+
+    public record QuestionaireEvaluationDetail
+    {
+        [JsonPropertyName("result")]
+        public string? Result { get; set; }
+
+        [JsonPropertyName("message")]
+        public string? Message { get; set; }
+    }
+
+    public record QuestionaireEvaluation
+    {
+        [JsonPropertyName("evaluation")]
+        public QuestionaireEvaluationDetail? Evaluation { get; set; }
     }
 
     public class QuestionaireModel
@@ -67,7 +89,7 @@ namespace PlutoFramework.Model.Xcavate
 
             Console.WriteLine(apiResponseJson);
 
-            var apiResponse = JsonSerializer.Deserialize<QuestionaireApiResponse>(apiResponseJson);
+            var apiResponse = JsonSerializer.Deserialize<QuestionaireApiResponse<List<Question>>>(apiResponseJson);
 
             return apiResponse?.Result ?? throw new Exception();
         }
@@ -77,6 +99,41 @@ namespace PlutoFramework.Model.Xcavate
             var client = new HttpClient();
 
             var response = await client.PostAsJsonAsync($"{API_URL}/api/questionnaire/post", answers);
+
+            response.EnsureSuccessStatusCode();
+
+            var apiResponse = await response.Content.ReadAsStringAsync();
+
+            return apiResponse;
+        }
+
+        public static async Task<QuestionaireEvaluation> EvaluateAnswersAsync(string address)
+        {
+            var client = new HttpClient();
+
+            var response = await client.PutAsync($"{API_URL}/api/questionnaire/evaluate/{address}", null);
+            
+            response.EnsureSuccessStatusCode();
+
+            var apiResponseJson = await response.Content.ReadAsStringAsync();
+
+            Console.WriteLine(apiResponseJson);
+
+            var apiResponse = JsonSerializer.Deserialize<QuestionaireApiResponse<QuestionaireEvaluation>>(apiResponseJson);
+
+            return apiResponse?.Result ?? throw new Exception();
+        }
+
+        public static async Task<string> AcceptTermsAsync(string address)
+        {
+            var accept = new QuestionaireAcceptTerms
+            {
+                HasAgreedToTerms = true
+            };
+
+            var client = new HttpClient();
+
+            var response = await client.PutAsJsonAsync($"{API_URL}/api/questionnaire/terms/{address}", accept);
 
             response.EnsureSuccessStatusCode();
 
