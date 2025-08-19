@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.Buttons;
+using PlutoFramework.Components.WebView;
 using PlutoFramework.Constants;
 using PlutoFramework.Model;
 using PlutoFramework.Model.Currency;
@@ -205,5 +206,8 @@ namespace PlutoFramework.Components.XcavateProperty
                 Uri = $"https://realxmarket.xcavate.io/marketplace/{NftMarketplaceDetails?.AssetId}",
                 Title = $"Share {Metadata?.PropertyName}",
             });
+
+        [RelayCommand]
+        public Task NavigateToFeesAsync() => Shell.Current.Navigation.PushAsync(new WebViewPage("https://realxmarket.xcavate.io/property-info-fees"));
     }
 }

@@ -1,3 +1,5 @@
+using CommunityToolkit.Mvvm.Input;
+
 namespace PlutoFramework.Components.XcavateProperty;
 
 public partial class SliderView : ContentView
@@ -20,7 +22,7 @@ public partial class SliderView : ContentView
        propertyChanging: (bindable, oldValue, newValue) => {
            var control = (SliderView)bindable;
 
-           control.titleLabel.Text = (string)newValue;
+           control.titleView.Title = (string)newValue;
        });
 
     public static readonly BindableProperty MinimumTitleProperty = BindableProperty.Create(
@@ -40,6 +42,14 @@ public partial class SliderView : ContentView
 
           control.maximumLabel.Text = (string)newValue;
       });
+
+    public static readonly BindableProperty InfoCommandProperty = BindableProperty.Create(
+       nameof(InfoCommand), typeof(IAsyncRelayCommand), typeof(SliderView),
+       defaultBindingMode: BindingMode.TwoWay,
+       propertyChanging: (bindable, oldValue, newValue) => {
+           var control = (SliderView)bindable;
+           control.titleView.Command = (IAsyncRelayCommand)newValue;
+       });
     public SliderView()
 	{
 		InitializeComponent();
@@ -67,5 +77,10 @@ public partial class SliderView : ContentView
     {
         get => (string)GetValue(MaximumTitleProperty);
         set => SetValue(MaximumTitleProperty, value);
+    }
+    public IAsyncRelayCommand InfoCommand
+    {
+        get => (IAsyncRelayCommand)GetValue(InfoCommandProperty);
+        set => SetValue(InfoCommandProperty, value);
     }
 }
