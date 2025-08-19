@@ -82,13 +82,13 @@
 
                 <xcavate:XcavateCell Grid.Column="0"
                                      Grid.Row="1"
-                                     Title="Tokens available"
+                                     Title="Tokens"
                                      InfoCommand="{Binding NavigateToFeesCommand}"
                                      Value="{Binding TokensAvailable}" />
 
                 <xcavate:XcavateCell Grid.Column="1"
                                      Grid.Row="1"
-                                     Title="Property type"
+                                     Title="Property"
                                      InfoCommand="{Binding NavigateToFeesCommand}"
                                      Value="{Binding Metadata.PropertyType}" />
             </Grid>
