@@ -19,7 +19,7 @@
                    FontAttributes="Bold"
                    TextColor="Black" />
 
-        <Grid ColumnSpacing="30"
+        <Grid ColumnSpacing="10"
                   RowSpacing="20"
                   HorizontalOptions="Fill"
                   VerticalOptions="Start"
@@ -55,7 +55,7 @@
             <menu:QuickActionItemView Grid.Column="3"
                                       Grid.Row="0"
                                       Icon="infogray.png"
-                                      Title="Important links"
+                                      Title="Documents"
                                       Command="{Binding SupportActionCommand}"
                                       />
         </Grid>

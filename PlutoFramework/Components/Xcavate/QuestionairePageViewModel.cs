@@ -57,21 +57,30 @@ namespace PlutoFramework.Components.Xcavate
             if (Info is null || Question is null || selected >= Question.Answers.Length)
                 return;
 
-            Question.SelectedAnswer = selected;
-
-            Info.QuestionId++;
+            var infoCopy = new QuestionaireInfo
+            {
+                QuestionId = Info.QuestionId + 1,
+                Navigation = Info.Navigation,
+                Questions = Info.Questions.Select((q, index) => new Question
+                {
+                    Heading = q.Heading,
+                    QuestionText = q.QuestionText,
+                    Answers = q.Answers,
+                    SelectedAnswer = Info.QuestionId == index ? selected : q.SelectedAnswer
+                }).ToList()
+            };
 
             SelectedAnswer = selected;
 
             const int DELAY = 500;
 
-            if (Info.QuestionId < Info.Questions.Count())
+            if (infoCopy.QuestionId < infoCopy.Questions.Count())
             {
                 await Task.Delay(DELAY);
 
                 await Shell.Current.Navigation.PushAsync(
                     new QuestionairePage(
-                        Info
+                        infoCopy
                     )
                 );
             }
