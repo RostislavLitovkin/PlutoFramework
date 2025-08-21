@@ -10,17 +10,24 @@ namespace PlutoFramework.Model.Sumsub
     {
         [JsonPropertyName("email")]
         public required string Email { get; set; }
+
         [JsonPropertyName("phone")]
         public required string Phone { get; set; }
+
+        [JsonPropertyName("externalUserId")]
+        public required string ExternalUserId { get; set; }
     }
     public record Applicant
     {
         [JsonPropertyName("applicantIdentifiers")]
         public required ApplicantIdentifiers ApplicantIdentifiers { get; set; }
+
         [JsonPropertyName("ttlInSecs")]
         public required uint totalInSeconds { get; set; }
+
         [JsonPropertyName("userId")]
         public required string UserId { get; set; }
+
         [JsonPropertyName("levelName")]
         public required string LevelName { get; set; }
     }
