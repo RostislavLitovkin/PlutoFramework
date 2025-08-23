@@ -5,12 +5,12 @@
                        xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        x:Class="PlutoFramework.Components.Sumsub.SumsubWebSDKPage"
-                       Title="KYC verification">
+                       Title="KYC verification"
+                       IsScrollEnabled="False">
     <template:PageTemplate.MainContent>
         <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
             <WebView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                  AbsoluteLayout.LayoutFlags="All"
-                 Margin="0,45,0,0"
                  x:Name="webView"
                  Navigating="OnNavigating">
 

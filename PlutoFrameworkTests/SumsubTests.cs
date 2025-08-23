@@ -1,14 +1,13 @@
 ﻿using PlutoFramework.Model.Sumsub;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PlutoFrameworkTests
 {
     internal class SumsubTests
     {
+
+        private static readonly string SUMSUB_SECRET_KEY = "1SiTD0DH50SB71Qlk2Omp07LGD0Dtk4M"; // Example: Hej2ch71kG2kTd1iIUDZFNsO5C1lh5Gq - Please don't forget to change when switching to production
+        private static readonly string SUMSUB_APP_TOKEN = "sbx:3OcGQFD4j812xUoAhPBvOew3.02kIimwmfz6aj34wAcRVX6hrMVn6kjZm";  // Example: sbx:uY0CgwELmgUAEyl4hNWxLngb.0WSeQeiYny4WEqmAALEAiK2qTC96fBad - Please don't forget to change when switching to production
+
         [Test]
         public void CreateApplicantTest()
         {
@@ -23,7 +22,7 @@ namespace PlutoFrameworkTests
             // Create an applicant
             string externalUserId = $"USER_{DateTimeOffset.UtcNow.ToUnixTimeSeconds()}";
             string levelName = "csharp-verification-test";
-            string applicantId = SumsubModel.CreateApplicant(externalUserId, levelName).Result;
+            string applicantId = SumsubModel.CreateApplicant(externalUserId, levelName, SUMSUB_SECRET_KEY, SUMSUB_APP_TOKEN).Result;
 
             // Add a document to the applicant
             /*var addDocumentResult = SumsubModel.AddDocument(applicantId).Result;
@@ -47,13 +46,14 @@ namespace PlutoFrameworkTests
                 ApplicantIdentifiers = new ApplicantIdentifiers {
                     Email = "ahojky email",
                     Phone = "ahojky phone",
+                    ExternalUserId = "",
                 },
                 totalInSeconds = 600,
                 UserId = $"USER_{DateTimeOffset.UtcNow.ToUnixTimeSeconds()}",
                 LevelName = "csharp-verification-test"
             };
 
-            var result = await SumsubModel.GenerateWebSDKAccessTokenAsync(applicant, CancellationToken.None);
+            var result = await SumsubModel.GenerateWebSDKAccessTokenAsync(applicant, SUMSUB_SECRET_KEY, SUMSUB_APP_TOKEN, CancellationToken.None);
 
             Console.WriteLine("Access token Result: " + result);
         }
@@ -65,9 +65,7 @@ namespace PlutoFrameworkTests
         {
             CancellationToken token = CancellationToken.None;
 
-            var result = await SumsubModel.GetApplicantDataAsync(externalUserId, token);
+            var result = await SumsubModel.GetApplicantDataAsync(externalUserId, SUMSUB_SECRET_KEY, SUMSUB_APP_TOKEN, token);
         }
-
-
     }
 }
