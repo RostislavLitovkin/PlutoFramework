@@ -23,14 +23,19 @@ namespace PlutoFramework.Components.Menu
         public UserRoleEnum UserRole => User is not null ? User.Role : UserRoleEnum.None;
 
         [ObservableProperty]
-        private string address;
+        [NotifyPropertyChangedFor(nameof(IsLoggedIn))]
+        private string? address = null;
+        public bool IsLoggedIn => Address is not null;
 
         [ObservableProperty]
         private VerificationEnum verification = VerificationEnum.Loading;
         
         public MainMenuPageViewModel()
         {
-            address = Preferences.Get(PreferencesModel.PUBLIC_KEY, "None");
+            if (Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY))
+            {
+                Address = Preferences.Get(PreferencesModel.PUBLIC_KEY, "None");
+            }
 
             _ = LoadAsync();
         }
