@@ -19,7 +19,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(MaxValue))]
-        private NftMarketplaceDetails? nftMarketplaceDetails;
+        private XcavateOngoingObjectListingDetails? listingDetails;
 
         [ObservableProperty]
         private bool isVisible = false;
@@ -36,7 +36,7 @@ namespace PlutoFramework.Components.XcavateProperty
             get
             {
                 int parsedTokens;
-                if (!int.TryParse(Tokens, out parsedTokens) || parsedTokens < 1 || parsedTokens > NftMarketplaceDetails?.Listed)
+                if (!int.TryParse(Tokens, out parsedTokens) || parsedTokens < 1 || parsedTokens > ListingDetails?.ListedTokens)
                 {
                     return "-";
                 }
@@ -51,7 +51,7 @@ namespace PlutoFramework.Components.XcavateProperty
             get
             {
                 int parsedTokens;
-                if (!int.TryParse(Tokens, out parsedTokens) || parsedTokens < 1 || parsedTokens > NftMarketplaceDetails?.Listed)
+                if (!int.TryParse(Tokens, out parsedTokens) || parsedTokens < 1 || parsedTokens > ListingDetails?.ListedTokens)
                 {
                     return "-";
                 }
@@ -66,7 +66,7 @@ namespace PlutoFramework.Components.XcavateProperty
             get
             {
                 int parsedTokens;
-                if (!int.TryParse(Tokens, out parsedTokens) || parsedTokens < 1 || parsedTokens > NftMarketplaceDetails?.Listed)
+                if (!int.TryParse(Tokens, out parsedTokens) || parsedTokens < 1 || parsedTokens > ListingDetails?.ListedTokens)
                 {
                     return "-";
                 }
@@ -76,7 +76,7 @@ namespace PlutoFramework.Components.XcavateProperty
             }
         }
 
-        public string MaxValue => NftMarketplaceDetails?.Listed.ToString() ?? "";
+        public string MaxValue => ListingDetails?.ListedTokens.ToString() ?? "";
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(ContinueButtonState))]
@@ -107,7 +107,7 @@ namespace PlutoFramework.Components.XcavateProperty
             Tokens = "";
             ErrorMessage = "";
             Metadata = null;
-            NftMarketplaceDetails = null;
+            ListingDetails = null;
             EndpointKey = EndpointEnum.None;
         }
 
@@ -119,7 +119,7 @@ namespace PlutoFramework.Components.XcavateProperty
         {
             var token = CancellationToken.None;
 
-            if (NftMarketplaceDetails is null)
+            if (ListingDetails is null)
             {
                 return;
             }
@@ -134,7 +134,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
             var assetSelectButtonViewModel = DependencyService.Get<AssetSelectButtonViewModel>();
 
-            var method = PropertyMarketplaceModel.BuyPropertyTokens(EndpointKey, NftMarketplaceDetails.AssetId, parsedTokens, assetSelectButtonViewModel.SelectedAssetKey);
+            var method = PropertyMarketplaceModel.BuyPropertyTokens(EndpointKey, ListingDetails.AssetId, parsedTokens, assetSelectButtonViewModel.SelectedAssetKey);
 
             // Submitting the extrinsic
             var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();
@@ -175,9 +175,9 @@ namespace PlutoFramework.Components.XcavateProperty
                 return;
             }
 
-            if (parsedTokens > NftMarketplaceDetails?.Listed)
+            if (parsedTokens > ListingDetails?.ListedTokens)
             {
-                ErrorMessage = $"Tokens must be less than {NftMarketplaceDetails.Listed}";
+                ErrorMessage = $"Tokens must be less than {ListingDetails.ListedTokens}";
 
                 return;
             }

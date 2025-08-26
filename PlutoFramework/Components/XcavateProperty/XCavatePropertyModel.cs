@@ -102,7 +102,7 @@ namespace PlutoFramework.Components.XcavateProperty
                 Favourite = nft.Favourite,
                 NftBase = nft.NftBase,
                 Metadata = ((INftXcavateMetadata)nft.NftBase).XcavateMetadata,
-                NftMarketplaceDetails = ((INftXcavateNftMarketplace)nft.NftBase).NftMarketplaceDetails,
+                ListingDetails = ((INftXcavateOngoingObjectListing)nft.NftBase).OngoingObjectListingDetails,
                 Region = nft.Region,
                 ListingHasExpired = nft.ListingHasExpired,
             };

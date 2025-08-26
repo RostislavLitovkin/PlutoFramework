@@ -1,4 +1,6 @@
-﻿namespace UniqueryPlus.Nfts
+﻿using Substrate.NetApi.Model.Types.Primitive;
+
+namespace UniqueryPlus.Nfts
 {
     public record XcavateOngoingObjectListingDetails
     {
@@ -9,6 +11,14 @@
         /// Listing expiry in Block numbers
         /// </summary>
         public required uint ListingExpiry { get; set; } 
+
+        public required uint ListedTokens { get; set; }
+
+        public required U32 AssetId { get; set; }
+
+        public required U32 CollectionId { get; set; }
+
+        public required U32 ItemId { get; set; }
     }
 
     public interface INftXcavateOngoingObjectListing

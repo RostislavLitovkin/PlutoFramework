@@ -24,7 +24,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
     public partial class PropertyDetailViewModel : ObservableObject
     {
-        private MainActionStates getMainActionState => (ListingHasExpired, TokensOwned, NftMarketplaceDetails?.Listed) switch
+        private MainActionStates getMainActionState => (ListingHasExpired, TokensOwned, ListingDetails?.ListedTokens) switch
         {
             (true, 0, _) => MainActionStates.Expired,
             (true, _, _) => MainActionStates.Refund,
@@ -57,7 +57,7 @@ namespace PlutoFramework.Components.XcavateProperty
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(MainActionButtonState))]
         [NotifyPropertyChangedFor(nameof(MainActionText))]
-        private NftMarketplaceDetails? nftMarketplaceDetails;
+        private XcavateOngoingObjectListingDetails? listingDetails;
 
         public double AreaPricesPercentage => PropertyModel.GetAreaPricesPercentage(Metadata?.PropertyPrice ?? 0);
         public double RentalDemandPercentage => PropertyModel.GetRentalDemand();
@@ -74,7 +74,7 @@ namespace PlutoFramework.Components.XcavateProperty
         [NotifyPropertyChangedFor(nameof(TokensAvailable))]
         private uint tokensListed;
 
-        public string TokensAvailable => $"{NftMarketplaceDetails?.Listed.ToString() ?? "-"} / {Metadata?.NumberOfTokens.ToString() ?? "-"}";
+        public string TokensAvailable => $"{ListingDetails?.ListedTokens.ToString() ?? "-"} / {Metadata?.NumberOfTokens.ToString() ?? "-"}";
 
         public string RentalIncome => ((decimal)(Metadata?.EstimatedRentalIncome ?? 0)).ToCurrencyString();
 
@@ -147,7 +147,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
             var viewModel = DependencyService.Get<BuyPropertyTokensViewModel>();
 
-            viewModel.NftMarketplaceDetails = NftMarketplaceDetails;
+            viewModel.ListingDetails = ListingDetails;
             viewModel.Metadata = Metadata;
             viewModel.IsVisible = true;
             viewModel.EndpointKey = PlutoFrameworkCore.NftModel.GetEndpointKey(NftBase.Type);   
@@ -163,7 +163,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
             var viewModel = DependencyService.Get<RelistPropertyTokensViewModel>();
 
-            viewModel.NftMarketplaceDetails = NftMarketplaceDetails;
+            viewModel.ListingDetails = ListingDetails;
             viewModel.Metadata = Metadata;
             viewModel.IsVisible = true;
             viewModel.EndpointKey = PlutoFrameworkCore.NftModel.GetEndpointKey(NftBase.Type);
@@ -203,7 +203,7 @@ namespace PlutoFramework.Components.XcavateProperty
         [RelayCommand]
         public Task ShareAsync() => Share.RequestAsync(new ShareTextRequest
             {
-                Uri = $"https://realxmarket.xcavate.io/marketplace/{NftMarketplaceDetails?.AssetId}",
+                Uri = $"https://realxmarket.xcavate.io/marketplace/{ListingDetails?.AssetId}",
                 Title = $"Share {Metadata?.PropertyName}",
             });
 
