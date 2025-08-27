@@ -18,14 +18,14 @@ namespace PlutoFramework.Model.Xcavate
         public uint? SelectedAnswer { get; set; } = null;
     }
 
-    public record QuestionaireInfo
+    public record QuestionnaireInfo
     {
         public required int QuestionId { get; set; } = 0;
         public required List<Question> Questions { get; set; }
         public required Func<Task> Navigation { get; set; }
     }
 
-    public record QuestionaireApiResponse<ResultT>
+    public record QuestionnaireApiResponse<ResultT>
     {
         [JsonPropertyName("error")]
         public required bool Error { get; set; }
@@ -40,7 +40,7 @@ namespace PlutoFramework.Model.Xcavate
         public required ResultT Result { get; set; }
     }
 
-    public record QuestionaireAnswers
+    public record QuestionnaireAnswers
     {
         [JsonPropertyName("userId")]
         public required string UserId { get; set; }
@@ -53,13 +53,13 @@ namespace PlutoFramework.Model.Xcavate
     }
 
 
-    public record QuestionaireAcceptTerms
+    public record QuestionnaireAcceptTerms
     {
         [JsonPropertyName("hasAgreedToTerms")]
         public required bool HasAgreedToTerms { get; set; }
     }
 
-    public record QuestionaireEvaluationDetail
+    public record QuestionnaireEvaluationDetail
     {
         [JsonPropertyName("result")]
         public string? Result { get; set; }
@@ -68,13 +68,13 @@ namespace PlutoFramework.Model.Xcavate
         public string? Message { get; set; }
     }
 
-    public record QuestionaireEvaluation
+    public record QuestionnaireEvaluation
     {
         [JsonPropertyName("evaluation")]
-        public QuestionaireEvaluationDetail? Evaluation { get; set; }
+        public QuestionnaireEvaluationDetail? Evaluation { get; set; }
     }
 
-    public class QuestionaireModel
+    public class QuestionnaireModel
     {
         private const string API_URL = "https://realxmarket.xcavate.io";
         public static async Task<List<Question>> GetXcavateQuestionsAsync()
@@ -89,12 +89,12 @@ namespace PlutoFramework.Model.Xcavate
 
             Console.WriteLine(apiResponseJson);
 
-            var apiResponse = JsonSerializer.Deserialize<QuestionaireApiResponse<List<Question>>>(apiResponseJson);
+            var apiResponse = JsonSerializer.Deserialize<QuestionnaireApiResponse<List<Question>>>(apiResponseJson);
 
             return apiResponse?.Result ?? throw new Exception();
         }
 
-        public static async Task<string> PostAnswersAsync(QuestionaireAnswers answers)
+        public static async Task<string> PostAnswersAsync(QuestionnaireAnswers answers)
         {
             var client = new HttpClient();
 
@@ -107,7 +107,7 @@ namespace PlutoFramework.Model.Xcavate
             return apiResponse;
         }
 
-        public static async Task<QuestionaireEvaluation> EvaluateAnswersAsync(string address)
+        public static async Task<QuestionnaireEvaluation> EvaluateAnswersAsync(string address)
         {
             var client = new HttpClient();
 
@@ -119,14 +119,14 @@ namespace PlutoFramework.Model.Xcavate
 
             Console.WriteLine(apiResponseJson);
 
-            var apiResponse = JsonSerializer.Deserialize<QuestionaireApiResponse<QuestionaireEvaluation>>(apiResponseJson);
+            var apiResponse = JsonSerializer.Deserialize<QuestionnaireApiResponse<QuestionnaireEvaluation>>(apiResponseJson);
 
             return apiResponse?.Result ?? throw new Exception();
         }
 
         public static async Task<string> AcceptTermsAsync(string address)
         {
-            var accept = new QuestionaireAcceptTerms
+            var accept = new QuestionnaireAcceptTerms
             {
                 HasAgreedToTerms = true
             };

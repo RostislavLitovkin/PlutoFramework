@@ -2,13 +2,13 @@
 
 namespace PlutoFrameworkTests
 {
-    public class QuestionaireModelTests
+    public class QuestionnaireModelTests
     {
         private string address = "5EU6EyEq6RhqYed1gCYyQRVttdy6FC9yAtUUGzPe3gfpFX8o";
         [Test]
         public async Task GetQuestionsAsync()
         {
-            var questions = await QuestionaireModel.GetXcavateQuestionsAsync();
+            var questions = await QuestionnaireModel.GetXcavateQuestionsAsync();
 
             foreach (var question in questions)
             {
@@ -23,7 +23,7 @@ namespace PlutoFrameworkTests
         [Test]
             public async Task PostAnswersPassAsync()
         {
-            var answers = new QuestionaireAnswers
+            var answers = new QuestionnaireAnswers
             {
                 UserId = "user_12345",
                 AccountAddress = address,
@@ -89,7 +89,7 @@ namespace PlutoFrameworkTests
                 ]
             };
 
-            var response = await QuestionaireModel.PostAnswersAsync(answers);
+            var response = await QuestionnaireModel.PostAnswersAsync(answers);
 
             Console.WriteLine(response);
         }
@@ -97,7 +97,7 @@ namespace PlutoFrameworkTests
         [Test]
         public async Task PostAnswersMidAsync()
         {
-            var answers = new QuestionaireAnswers
+            var answers = new QuestionnaireAnswers
             {
                 UserId = "user_12345",
                 AccountAddress = address,
@@ -164,7 +164,7 @@ namespace PlutoFrameworkTests
                 ]
             };
 
-            var response = await QuestionaireModel.PostAnswersAsync(answers);
+            var response = await QuestionnaireModel.PostAnswersAsync(answers);
 
             Console.WriteLine(response);
         }
@@ -172,7 +172,7 @@ namespace PlutoFrameworkTests
         [Test]
         public async Task PostAnswersFailAsync()
         {
-            var answers = new QuestionaireAnswers
+            var answers = new QuestionnaireAnswers
             {
                 UserId = "user_12345",
                 AccountAddress = address,
@@ -238,7 +238,7 @@ namespace PlutoFrameworkTests
                 ]
             };
 
-            var response = await QuestionaireModel.PostAnswersAsync(answers);
+            var response = await QuestionnaireModel.PostAnswersAsync(answers);
 
             Console.WriteLine(response);
         }
@@ -246,7 +246,7 @@ namespace PlutoFrameworkTests
         [Test]
         public async Task EvaluateAnswersAsync()
         {
-            var response = await QuestionaireModel.EvaluateAnswersAsync(address);
+            var response = await QuestionnaireModel.EvaluateAnswersAsync(address);
 
             Console.WriteLine(response?.Evaluation?.Result);
 
@@ -256,7 +256,7 @@ namespace PlutoFrameworkTests
         [Test]
         public async Task AcceptTermsAsync()
         {
-            var response = await QuestionaireModel.AcceptTermsAsync(address);
+            var response = await QuestionnaireModel.AcceptTermsAsync(address);
 
             Console.WriteLine(response);
         }

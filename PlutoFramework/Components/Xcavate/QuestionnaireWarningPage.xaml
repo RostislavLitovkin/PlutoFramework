@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<page:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   x:Class="PlutoFramework.Components.Xcavate.QuestionnaireWarningPage"
+                   xmlns:page="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                   xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+                   xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
+                   xmlns:hyperlink="clr-namespace:PlutoFramework.Components.Hyperlink"
+                   Title="Risk warning">
+    <VerticalStackLayout>
+        <Label HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            LineBreakMode="WordWrap"
+            Margin="30, 50, 30, 10"
+            FontSize="20">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span FontAttributes="Bold"
+                          Text="{Binding Text}"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+    </VerticalStackLayout>
+
+    <page:PageTemplate.PopupContent>
+
+        <xcavate:PageBottomBarView AbsoluteLayout.LayoutBounds="0.5, 1, 1, 160"
+                                   AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                                   RowSpacing="10"
+                                   >
+                
+            <xcavate:PageBottomBarView.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </xcavate:PageBottomBarView.ColumnDefinitions>
+
+            <xcavate:PageBottomBarView.RowDefinitions>
+                <RowDefinition Height="70" />
+                <RowDefinition Height="70" />
+            </xcavate:PageBottomBarView.RowDefinitions>
+
+            <buttons:ElevatedButton Text="Yes, I still wish to proceed"
+                                    Margin="10, 10, 10, 0"
+                                    Grid.Row="0"
+                                    Command="{Binding ContinueCommand}"/>
+
+            <buttons:BasicGrayButton Text="No, take me back"
+                                     Margin="10, 0, 10, 10"
+                                     Grid.Row="1"
+                                     Command="{Binding CancelCommand}"/>
+        </xcavate:PageBottomBarView>
+    </page:PageTemplate.PopupContent>
+</page:PageTemplate>

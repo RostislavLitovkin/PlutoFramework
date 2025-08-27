@@ -8,7 +8,7 @@ using PlutoFramework.Model.Xcavate;
 
 namespace PlutoFramework.Components.Xcavate
 {
-    public partial class QuestionairePageViewModel : ObservableObject
+    public partial class QuestionnairePageViewModel : ObservableObject
     {
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(Steps))]
@@ -18,7 +18,7 @@ namespace PlutoFramework.Components.Xcavate
         [NotifyPropertyChangedFor(nameof(Answer1))]
         [NotifyPropertyChangedFor(nameof(Answer2))]
         [NotifyPropertyChangedFor(nameof(Answer3))]
-        private QuestionaireInfo? info;
+        private QuestionnaireInfo? info;
 
         public Question? Question => Info?.Questions[Info?.QuestionId ?? 0];
 
@@ -57,7 +57,7 @@ namespace PlutoFramework.Components.Xcavate
             if (Info is null || Question is null || selected >= Question.Answers.Length)
                 return;
 
-            var infoCopy = new QuestionaireInfo
+            var infoCopy = new QuestionnaireInfo
             {
                 QuestionId = Info.QuestionId + 1,
                 Navigation = Info.Navigation,
@@ -79,7 +79,7 @@ namespace PlutoFramework.Components.Xcavate
                 await Task.Delay(DELAY);
 
                 await Shell.Current.Navigation.PushAsync(
-                    new QuestionairePage(
+                    new QuestionnairePage(
                         infoCopy
                     )
                 );
@@ -87,43 +87,45 @@ namespace PlutoFramework.Components.Xcavate
             else
             {
                 var address = KeysModel.GetPublicKey();
-                var answers = new QuestionaireAnswers {
+                var answers = new QuestionnaireAnswers {
                     AccountAddress = address,
                     UserId = "User_TODO",
                     Questions = Info.Questions
                 };
 
-                await QuestionaireModel.PostAnswersAsync(answers);
+                await QuestionnaireModel.PostAnswersAsync(answers);
 
                 await Task.Delay(DELAY);
 
-                var evaluation = await QuestionaireModel.EvaluateAnswersAsync(address);
+                var evaluation = await QuestionnaireModel.EvaluateAnswersAsync(address);
 
-                if (evaluation is null)
+                Page nextPage = evaluation?.Evaluation?.Result switch
                 {
-                    await Shell.Current.Navigation.PushAsync(
-                        new BadInternetConnectionPage()
-                    );
-                    return;
-                }
-
-                if (evaluation?.Evaluation?.Result == "Fail")
-                {
-                    await Shell.Current.Navigation.PushAsync(
-                        new QuestionaireFailedPage(
+                    "Fail" => 
+                        new QuestionnaireFailedPage(
                             evaluation.Evaluation
-                        )
-                    );
-                }
-                else
-                {
-                    await Shell.Current.Navigation.PushAsync(
-                        new QuestionairePassPage(
-                            evaluation?.Evaluation,
-                            Info.Navigation
-                        )
-                    );
-                }
+                        ),
+                    "Warning" => new QuestionnaireWarningPage(
+                        new QuestionnaireWarningPageViewModel
+                        {
+                            Text = evaluation?.Evaluation?.Message ?? "",
+                            Navigation = Info.Navigation
+                        }
+                    ),
+                    "Pass" => new QuestionnairePassPage(
+                        new QuestionnairePassPageViewModel
+                        {
+                            Text = evaluation?.Evaluation?.Message ?? "",
+                            Navigation = Info.Navigation
+                        }
+                    ),
+                    _ => new BadInternetConnectionPage()
+                };
+                
+                await Shell.Current.Navigation.PushAsync(
+                    nextPage
+                );
+                
             }
 
             SelectedAnswer = null;

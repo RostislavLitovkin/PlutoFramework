@@ -3,13 +3,13 @@ using PlutoFramework.Templates.PageTemplate;
 
 namespace PlutoFramework.Components.Xcavate;
 
-public partial class QuestionairePage : PageTemplate
+public partial class QuestionnairePage : PageTemplate
 {
-	public QuestionairePage(QuestionaireInfo info)
+	public QuestionnairePage(QuestionnaireInfo info)
 	{
 		InitializeComponent();
 
-		BindingContext = new QuestionairePageViewModel
+		BindingContext = new QuestionnairePageViewModel
 		{
 			Info = info
 		};

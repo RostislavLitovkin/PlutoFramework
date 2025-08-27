@@ -1,17 +1,20 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Components.Buttons;
 using PlutoFramework.Model;
 using PlutoFramework.Model.Xcavate;
 
 namespace PlutoFramework.Components.Xcavate
 {
-    public partial class QuestionairePassPageViewModel : ObservableObject
+    public partial class QuestionnairePassPageViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string text = "";
+        private bool agreed = false;
+
+        public ButtonStateEnum ContinueButtonState => Agreed ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
 
         [ObservableProperty]
-        private string title = "";
+        private string text = "";
 
         [ObservableProperty]
         private Func<Task> navigation = () => Task.FromResult(0);
@@ -19,7 +22,7 @@ namespace PlutoFramework.Components.Xcavate
         [RelayCommand]
         public async Task NavigateAsync()
         {
-            await QuestionaireModel.AcceptTermsAsync(KeysModel.GetPublicKey());
+            await QuestionnaireModel.AcceptTermsAsync(KeysModel.GetPublicKey());
 
             await Navigation.Invoke();
         }

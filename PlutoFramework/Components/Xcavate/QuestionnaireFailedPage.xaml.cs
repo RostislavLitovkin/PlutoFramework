@@ -3,13 +3,13 @@ using PlutoFramework.Templates.PageTemplate;
 
 namespace PlutoFramework.Components.Xcavate;
 
-public partial class QuestionaireFailedPage : PageTemplate
+public partial class QuestionnaireFailedPage : PageTemplate
 {
-	public QuestionaireFailedPage(QuestionaireEvaluationDetail evaluation)
+	public QuestionnaireFailedPage(QuestionnaireEvaluationDetail evaluation)
 	{
 		InitializeComponent();
 
-		BindingContext = new QuestionaireFailedPageViewModel
+		BindingContext = new QuestionnaireFailedPageViewModel
 		{
 			Text = evaluation?.Message ?? "",
         };

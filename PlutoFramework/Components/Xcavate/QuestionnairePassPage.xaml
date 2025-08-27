@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <page:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                     x:Class="PlutoFramework.Components.Xcavate.QuestionairePassPage"
+                     x:Class="PlutoFramework.Components.Xcavate.QuestionnairePassPage"
                      xmlns:page="clr-namespace:PlutoFramework.Templates.PageTemplate"
                    xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
                      xmlns:hyperlink="clr-namespace:PlutoFramework.Components.Hyperlink"
-                     Title="Questionaire passed">
+                     Title="Questionnaire passed">
     <VerticalStackLayout>
         <Label HorizontalOptions="Center"
                 HorizontalTextAlignment="Center"
@@ -23,8 +23,7 @@
         <Label HorizontalOptions="Center"
                 HorizontalTextAlignment="Center"
                 LineBreakMode="WordWrap"
-                Margin="20, 50, 20, 20"
-                TextColor="{StaticResource Primary}">
+                Margin="20, 50, 20, 20">
             <Label.FormattedText>
                 <FormattedString>
                     <hyperlink:Link Text="Terms and Conditions"
@@ -34,10 +33,9 @@
         </Label>
 
         <Label HorizontalOptions="Center"
-        HorizontalTextAlignment="Center"
-        LineBreakMode="WordWrap"
-        Margin="20, 0, 20, 20"
-        TextColor="{StaticResource Primary}">
+                HorizontalTextAlignment="Center"
+                LineBreakMode="WordWrap"
+                Margin="20, 0, 20, 20">
             <Label.FormattedText>
                 <FormattedString>
                     <hyperlink:Link Text="Agreement"
@@ -45,12 +43,11 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
-        
+
         <Label HorizontalOptions="Center"
                 HorizontalTextAlignment="Center"
                 LineBreakMode="WordWrap"
-                Margin="20, 0, 20, 20"
-                TextColor="{StaticResource Primary}">
+                Margin="20, 0, 20, 20">
             <Label.FormattedText>
                 <FormattedString>
                     <hyperlink:Link Text="Privacy policy"
@@ -58,13 +55,24 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
-        
-        
+
+        <HorizontalStackLayout HorizontalOptions="Center"
+                               Spacing="5"
+                               Margin="30, 0, 30, 20">
+            
+            <CheckBox IsChecked="{Binding Agreed}"
+                      VerticalOptions="Center" />
+            
+            <Label Text="I accept the privacy, terms and agreement"
+                   TextColor="Gray"
+                   VerticalOptions="Center"/>
+            
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 
     <page:PageTemplate.PopupContent>
-        <xcavate:PageBottomBarButtonView Text="Agree and Continue"
-                                         ButtonState="Enabled"
+        <xcavate:PageBottomBarButtonView Text="Continue"
+                                         ButtonState="{Binding ContinueButtonState}"
                                          Command="{Binding NavigateCommand}" />
     </page:PageTemplate.PopupContent>
 </page:PageTemplate>

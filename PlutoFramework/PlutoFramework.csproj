@@ -937,6 +937,18 @@
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
+    <Compile Update="Components\Xcavate\QuestionnaireFailedPage.xaml.cs">
+      <DependentUpon>QuestionnaireFailedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\QuestionnairePage.xaml.cs">
+      <DependentUpon>QuestionnairePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\QuestionnaireWarningPage.xaml.cs">
+      <DependentUpon>QuestionnaireWarningPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\QuestionnairePassPage.xaml.cs">
+      <DependentUpon>QuestionnairePassPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Components\Xcavate\RiskWarningView.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
@@ -2484,13 +2496,16 @@
     <MauiXaml Update="Components\Xcavate\PageBottomBarView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
-    <MauiXaml Update="Components\Xcavate\QuestionaireFailedPage.xaml">
+    <MauiXaml Update="Components\Xcavate\QuestionnaireFailedPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
-    <MauiXaml Update="Components\Xcavate\QuestionairePage.xaml">
+    <MauiXaml Update="Components\Xcavate\QuestionnairePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
-    <MauiXaml Update="Components\Xcavate\QuestionairePassPage.xaml">
+    <MauiXaml Update="Components\Xcavate\QuestionnairePassPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\QuestionnaireWarningPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Xcavate\RiskWarningView.xaml">
