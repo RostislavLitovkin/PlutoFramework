@@ -1,5 +1,6 @@
 ﻿using PlutoFramework.Constants;
 using PlutoFramework.Model.AjunaExt;
+using PlutoFrameworkCore;
 
 namespace PlutoFramework.Model
 {

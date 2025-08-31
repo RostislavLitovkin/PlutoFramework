@@ -17,6 +17,12 @@ namespace PlutoFramework.Model
     }
     public class AssetsModel
     {
+        public static void Clear()
+        {
+            AssetsDict.Clear();
+            UsdSum = 0.0;
+            doNotReload = false;
+        }
         public static IBalancesDatabaseSaver? DatabaseSaver { get; set; } = null;
 
         private static bool doNotReload = false;
