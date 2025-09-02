@@ -76,7 +76,7 @@ namespace PlutoFramework.Model.Xcavate
 
     public class QuestionnaireModel
     {
-        private const string API_URL = "https://realxmarket.xcavate.io";
+        private const string API_URL = "https://app.realxmarket.io";
         public static async Task<List<Question>> GetXcavateQuestionsAsync()
         {
             var client = new HttpClient();
