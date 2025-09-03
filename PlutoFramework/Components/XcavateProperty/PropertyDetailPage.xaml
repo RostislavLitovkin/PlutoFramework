@@ -190,12 +190,6 @@
 
         <assetselect:AssetSelectView />
 
-        <account:NoAccountPopup />
-
-        <kilt:NoDidPopupView />
-
-        <sumsub:NoKYCPopupView />
-
         <card:BottomPillBackgroundView />
     </template:PageTemplate.PopupContent>
 </template:PageTemplate>

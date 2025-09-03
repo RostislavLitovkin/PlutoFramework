@@ -4,6 +4,10 @@
                     xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                     xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
                     xmlns:password="clr-namespace:PlutoFramework.Components.Password"
+                    xmlns:account="clr-namespace:PlutoFramework.Components.Account"
+                    xmlns:loading="clr-namespace:PlutoFramework.Components.Loading"
+                    xmlns:kilt="clr-namespace:PlutoFramework.Components.Kilt"
+                    xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
                     xmlns:topnavigationbartemplate="clr-namespace:PlutoFramework.Templates.TopNavigationBarTemplate"
                     x:Class="PlutoFramework.Templates.PageTemplate.Page">
 
@@ -40,7 +44,15 @@
 
             <txanalyzer:TransactionAnalyzerConfirmationView ZIndex="{TemplateBinding TransactionAnalyzerZIndex}" />
 
+            <account:NoAccountPopup ZIndex="10" />
+
+            <kilt:NoDidPopupView ZIndex="10" />
+
+            <xcavate:NotWhitelistedPopupView ZIndex="10" />
+
             <password:EnterPasswordPopupView ZIndex="10"/>
+
+            <loading:FullPageLoadingView ZIndex="20" />
         </AbsoluteLayout>
     </ControlTemplate>
 </ResourceDictionary>

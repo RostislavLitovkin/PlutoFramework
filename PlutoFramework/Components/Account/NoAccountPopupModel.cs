@@ -50,9 +50,7 @@ public partial class NoAccountPopupViewModel : ObservableObject, IPopup, ISetToD
                    new EnterMnemonicsViewModel
                    {
                        Navigation = () => Shell.Current.Navigation.PushAsync(
-                           new NoDidPage(
-                               new NoDidViewModel()
-                           )
+                           new NoDidPage()
                        )
                    }
                )

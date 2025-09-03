@@ -78,13 +78,13 @@ namespace PlutoFramework.Model.Sumsub
         }
 
         /// <summary>
-        /// https://docs.sumsub.com/reference/get-applicant-data-via-externaluserid
+        /// https://docs.sumsub.com/reference/get-applicant-data
         /// </summary>
-        /// <param name="externalUserId">Unique applicant identifier as registered on your side.</param>
+        /// <param name="address">Wallet address</param>
         /// <returns>Applicant data</returns>
-        public static async Task<SumsubApplicant?> GetApplicantDataAsync(string externalUserId, string secretKey, string appToken, CancellationToken token)
+        public static async Task<SumsubApplicant?> GetApplicantDataAsync(string address, string secretKey, string appToken, CancellationToken token)
         {
-            var response = await SendGetAsync($"/resources/applicants/-;externalUserId={externalUserId}/one", secretKey, appToken, token);
+            var response = await SendGetAsync($"/resources/applicants/{address}/one", secretKey, appToken, token);
 
             Console.WriteLine(ContentToString(response.Content));
 
@@ -98,12 +98,7 @@ namespace PlutoFramework.Model.Sumsub
             return applicant;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="externalUserId">Unique applicant identifier as registered on your side.</param>
-        /// <returns>Applicant data</returns>
-        public static async Task<bool?> GetApplicantVerificationStatusAsync(string externalUserId, CancellationToken token)
+        public static async Task<bool?> GetApplicantVerificationStatusAsync(string address, string secretKey, string appToken, CancellationToken token)
         {
             // TODO
 

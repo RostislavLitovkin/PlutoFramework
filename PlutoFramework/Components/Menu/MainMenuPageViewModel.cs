@@ -54,7 +54,9 @@ namespace PlutoFramework.Components.Menu
 
             var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(EndpointEnum.XcavatePaseo, CancellationToken.None);
 
-            var verification = await WhitelistModel.IsWhitelistedAsync((SubstrateClientExt)client.SubstrateClient, User.Role.ToWhitelistRole(), PreferencesModel.PUBLIC_KEY, CancellationToken.None);
+            var address = KeysModel.GetSubstrateKey();
+
+            var verification = await WhitelistModel.IsWhitelistedAsync((SubstrateClientExt)client.SubstrateClient, User.Role.ToWhitelistRole(), address, CancellationToken.None);
 
             Verification = verification;
         }

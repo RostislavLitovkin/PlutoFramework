@@ -76,12 +76,6 @@
 
         <assetselect:AssetSelectView />
 
-        <account:NoAccountPopup />
-
-        <txanalyzer:TransactionAnalyzerConfirmationView />
-
-        <loading:FullPageLoadingView />
-
         <card:BottomPillBackgroundView />
     </AbsoluteLayout>
 </ContentPage>

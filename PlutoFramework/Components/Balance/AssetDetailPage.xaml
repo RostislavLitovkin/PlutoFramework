@@ -174,11 +174,9 @@
         <addressview:AddressQrCodeView />
         
         <transferview:TransferView />
-        
+
         <assetselect:AssetSelectView />
-        
-        <account:NoAccountPopup />
-        
+
         <card:BottomPillBackgroundView />
     </template:PageTemplate.PopupContent>
 </template:PageTemplate>

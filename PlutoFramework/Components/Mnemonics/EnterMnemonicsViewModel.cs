@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Model;
+using PlutoFramework.Model.Sumsub;
 
 namespace PlutoFramework.Components.Mnemonics
 {
@@ -29,6 +30,8 @@ namespace PlutoFramework.Components.Mnemonics
                     accountVariant: ""
                 );
 
+                await SumsubUserModel.LoadAndSaveUserInfoAsync(CancellationToken.None);
+
                 await Navigation.Invoke();
             }
             catch
@@ -41,6 +44,8 @@ namespace PlutoFramework.Components.Mnemonics
         public async Task ContinueWithPrivateKeyAsync()
         {
             await Model.KeysModel.GenerateNewAccountFromPrivateKeyAsync(PrivateKey);
+
+            await SumsubUserModel.LoadAndSaveUserInfoAsync(CancellationToken.None);
 
             await Navigation.Invoke();
         }
@@ -79,6 +84,8 @@ namespace PlutoFramework.Components.Mnemonics
             {
                 return;
             }
+
+            await SumsubUserModel.LoadAndSaveUserInfoAsync(CancellationToken.None);
 
             await Navigation.Invoke();
         }

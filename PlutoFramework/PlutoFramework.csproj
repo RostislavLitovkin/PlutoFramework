@@ -2490,6 +2490,9 @@
     <MauiXaml Update="Components\Xcavate\ModifyCompanyPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\NotWhitelistedPopupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\Xcavate\PageBottomBarButtonView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>

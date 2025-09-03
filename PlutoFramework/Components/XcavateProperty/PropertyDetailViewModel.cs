@@ -124,23 +124,24 @@ namespace PlutoFramework.Components.XcavateProperty
         private bool listingHasExpired = false;
 
         [RelayCommand]
-        public void MainAction()
+        public Task MainActionAsync()
         {
             switch (getMainActionState)
             {
                 case MainActionStates.Buy:
-                    Buy();
-                    break;
+                    return BuyAsync();
                 case MainActionStates.Refund:
                     // TODO refund here
-                    break;
+                    return Task.FromResult(0);
 
             }
+
+            return Task.FromResult(0);
         }
 
-        public void Buy()
+        public async Task BuyAsync()
         {
-            if (!AccountModel.CheckRequirements())
+            if (!await RequirementsModel.CheckRequirementsAsync())
             {
                 return;
             }
@@ -154,9 +155,9 @@ namespace PlutoFramework.Components.XcavateProperty
         }
 
         [RelayCommand]
-        public void Relist()
+        public async Task RelistAsync()
         {
-            if (!AccountModel.CheckRequirements())
+            if (!await RequirementsModel.CheckRequirementsAsync())
             {
                 return;
             }

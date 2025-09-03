@@ -172,6 +172,8 @@ namespace PlutoFramework
 
             DependencyService.Register<XcavateNavigationBarViewModel>();
 
+            DependencyService.Register<NotWhitelistedPopupViewModel>();
+
             return builder;
         }
 

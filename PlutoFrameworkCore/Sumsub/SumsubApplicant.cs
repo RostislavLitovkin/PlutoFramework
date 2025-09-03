@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Globalization;
+using System.Text.Json.Serialization;
 
 namespace PlutoFramework.Model.Sumsub
 {
@@ -6,6 +7,13 @@ namespace PlutoFramework.Model.Sumsub
     {
         [JsonPropertyName("id")] public required string Id { get; init; }
         [JsonPropertyName("createdAt")] public required string CreatedAt { get; init; }
+        public DateTime CreatedAtDateTime => DateTime.ParseExact(
+            CreatedAt,
+            "yyyy-MM-dd HH:mm:ss",
+            CultureInfo.InvariantCulture,
+            DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal
+        );
+
         [JsonPropertyName("createdBy")] public required string CreatedBy { get; init; }
         [JsonPropertyName("key")] public required string Key { get; init; }
         [JsonPropertyName("clientId")] public required string ClientId { get; init; }

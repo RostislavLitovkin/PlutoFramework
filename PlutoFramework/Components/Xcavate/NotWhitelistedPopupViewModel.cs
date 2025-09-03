@@ -1,12 +1,11 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.Buttons;
-using PlutoFramework.Components.Kilt;
 using PlutoFramework.Model;
 
-namespace PlutoFramework.Components.Sumsub
+namespace PlutoFramework.Components.Xcavate
 {
-    public partial class NoKYCPopupViewModel : ObservableObject, IPopup, ISetToDefault
+    public partial class NotWhitelistedPopupViewModel : ObservableObject, IPopup, ISetToDefault
     {
         [ObservableProperty]
         private bool isVisible = false;
@@ -17,19 +16,12 @@ namespace PlutoFramework.Components.Sumsub
         public void SetToDefault()
         {
             IsVisible = false;
-
-            // Set more things to default
         }
 
         [RelayCommand]
-        public void Cancel() => SetToDefault();
-
-        [RelayCommand]
-        public async Task ContinueAsync()
+        public void Continue()
         {
             SetToDefault();
-
-            await NavigationModel.NavigateToKYC.Invoke();
         }
     }
 }

@@ -60,8 +60,4 @@
                                       />
         </Grid>
     </VerticalStackLayout>
-
-    <page:PageTemplate.PopupContent>
-        <account:NoAccountPopup />
-    </page:PageTemplate.PopupContent>
 </page:PageTemplate>

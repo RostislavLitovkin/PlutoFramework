@@ -1,4 +1,6 @@
-﻿namespace PlutoFramework.Model
+﻿using PlutoFramework.Model.Xcavate;
+
+namespace PlutoFramework.Model
 {
     public class ClearStateModel
     {
@@ -16,7 +18,8 @@
             // Models
             AssetsModel.Clear();
 
-
+            // Files
+            XcavateFileModel.DeleteAll();
         }
     }
 }

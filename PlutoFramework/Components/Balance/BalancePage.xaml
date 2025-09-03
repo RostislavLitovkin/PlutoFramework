@@ -67,9 +67,7 @@
         <addressview:AddressQrCodeView />
         
         <transferview:TransferView />
-        
+
         <assetselect:AssetSelectView />
-        
-        <account:NoAccountPopup />
     </template:PageTemplate.PopupContent>
 </template:PageTemplate>
