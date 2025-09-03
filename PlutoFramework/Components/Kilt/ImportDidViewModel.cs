@@ -1,6 +1,7 @@
 ﻿
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Model;
 
 namespace PlutoFramework.Components.Kilt
 {
@@ -8,8 +9,6 @@ namespace PlutoFramework.Components.Kilt
     {
         [ObservableProperty]
         private string mnemonics = "";
-
-        public required Func<Task> Navigation;
 
         [RelayCommand]
         public async Task ContinueToNextPageAsync()
@@ -19,7 +18,7 @@ namespace PlutoFramework.Components.Kilt
                 accountVariant: "kilt1"
             );
 
-            await Navigation.Invoke();
+            await NavigationModel.NavigateAfterAccountCreation.Invoke();
         }
     }
 }

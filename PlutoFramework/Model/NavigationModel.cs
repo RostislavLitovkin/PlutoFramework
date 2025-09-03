@@ -13,6 +13,7 @@ namespace PlutoFramework.Model
 {
     public class NavigationModel
     {
+        public static Func<Task> NavigateAfterAccountCreation { get; set; } = () => Task.FromResult(0);
         public static Func<Task> NavigateToUserPageAsync { get; set; } = () => Task.FromResult(0);
         public static async Task NavigateToMnemonicsPageAsync()
         {

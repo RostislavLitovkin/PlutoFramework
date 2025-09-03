@@ -4,11 +4,10 @@ namespace PlutoFramework.Components.Kilt;
 
 public partial class ImportDidPage : PageTemplate
 {
-    public ImportDidPage(ImportDidViewModel viewModel)
+    public ImportDidPage()
 	{
         InitializeComponent();
 
-        BindingContext = viewModel;
-
+        BindingContext = new ImportDidViewModel();
     }
 }

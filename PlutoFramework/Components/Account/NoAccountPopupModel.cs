@@ -1,5 +1,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Components.Kilt;
 using PlutoFramework.Components.Mnemonics;
 using PlutoFramework.Components.Password;
 using PlutoFramework.Model;
@@ -8,11 +9,6 @@ namespace PlutoFramework.Components.Account;
 
 public partial class NoAccountPopupViewModel : ObservableObject, IPopup, ISetToDefault
 {
-    // TODO: Temporary fix
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
-    public Func<Task> AfterCreateAccountNavigation { get; set; }
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
-
     [ObservableProperty]
     private bool isVisible = false;
 
@@ -39,7 +35,7 @@ public partial class NoAccountPopupViewModel : ObservableObject, IPopup, ISetToD
 
         await Model.KeysModel.GenerateNewAccountAsync(accountVariant: "kilt1");
 
-        await AfterCreateAccountNavigation.Invoke();
+        await NavigationModel.NavigateAfterAccountCreation.Invoke();
     }
 
     [RelayCommand]
@@ -47,13 +43,17 @@ public partial class NoAccountPopupViewModel : ObservableObject, IPopup, ISetToD
     {
         SetToDefault();
 
-        await Application.Current.MainPage.Navigation.PushAsync(new SetupPasswordPage()
+        await Shell.Current.Navigation.PushAsync(new SetupPasswordPage()
         {
-            Navigation = () => Application.Current.MainPage.Navigation.PushAsync(
+            Navigation = () => Shell.Current.Navigation.PushAsync(
                new EnterMnemonicsPage(
                    new EnterMnemonicsViewModel
                    {
-                       Navigation = () => Shell.Current.Navigation.PopToRootAsync()
+                       Navigation = () => Shell.Current.Navigation.PushAsync(
+                           new NoDidPage(
+                               new NoDidViewModel()
+                           )
+                       )
                    }
                )
             )
