@@ -30,7 +30,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_assets_holder.pallet
     }
     
     /// <summary>
-    /// >> 432 - Variant[pallet_assets_holder.pallet.Error]
+    /// >> 447 - Variant[pallet_assets_holder.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

@@ -38,7 +38,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
     }
     
     /// <summary>
-    /// >> 586 - Variant[pallet_property_governance.pallet.DocumentStatus]
+    /// >> 601 - Variant[pallet_property_governance.pallet.DocumentStatus]
     /// </summary>
     public sealed class EnumDocumentStatus : BaseEnum<DocumentStatus>
     {

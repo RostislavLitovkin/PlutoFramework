@@ -13,33 +13,33 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime
+namespace XcavatePaseo.NetApi.Generated.Types.Base
 {
     
     
     /// <summary>
-    /// >> 377 - Composite[container_chain_template_simple_runtime.MetadataInputMock]
+    /// >> 596 - Composite[BTreeMapT12]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
-    public sealed class MetadataInputMock : BaseType
+    public sealed class BTreeMapT12 : BaseType
     {
         
         /// <summary>
-        /// >> unique
+        /// >> value
         /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U32 Unique { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote>> Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
         {
-            return "MetadataInputMock";
+            return "BTreeMapT12";
         }
         
         /// <inheritdoc/>
         public override byte[] Encode()
         {
             var result = new List<byte>();
-            result.AddRange(Unique.Encode());
+            result.AddRange(Value.Encode());
             return result.ToArray();
         }
         
@@ -47,8 +47,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Unique = new Substrate.NetApi.Model.Types.Primitive.U32();
-            Unique.Decode(byteArray, ref p);
+            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote>>();
+            Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;
             Bytes = new byte[bytesLength];

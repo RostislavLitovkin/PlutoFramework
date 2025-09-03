@@ -37,7 +37,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Buckets", "Namespaces"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U128), typeof(XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.MetadataMock)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U128), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.NamespaceMetadata)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Buckets", "Buckets"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.Bucket)));
@@ -87,10 +87,10 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// 
         ///  It maps from any entity id (called namespace id) to the metadata of the namespace.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.MetadataMock> Namespaces(Substrate.NetApi.Model.Types.Primitive.U128 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.NamespaceMetadata> Namespaces(Substrate.NetApi.Model.Types.Primitive.U128 key, string blockhash, CancellationToken token)
         {
             string parameters = BucketsStorage.NamespacesParams(key);
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.MetadataMock>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.NamespaceMetadata>(parameters, blockhash, token);
             return result;
         }
         
@@ -362,7 +362,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> create_namespace
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method CreateNamespace(Substrate.NetApi.Model.Types.Primitive.U128 namespace_id, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.MetadataInputMock metadata_input)
+        public static Method CreateNamespace(Substrate.NetApi.Model.Types.Primitive.U128 namespace_id, XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.NamespaceMetadataInput metadata_input)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(namespace_id.Encode());
@@ -450,7 +450,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> create_bucket
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method CreateBucket(Substrate.NetApi.Model.Types.Primitive.U128 namespace_id, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.MetadataInputMock metadata_input)
+        public static Method CreateBucket(Substrate.NetApi.Model.Types.Primitive.U128 namespace_id, XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.BucketMetadataInput metadata_input)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(namespace_id.Encode());
@@ -474,7 +474,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> resume_writing
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ResumeWriting(Substrate.NetApi.Model.Types.Primitive.U128 namespace_id, Substrate.NetApi.Model.Types.Primitive.U128 bucket_id, Substrate.NetApi.Model.Types.Primitive.U128 new_encryption_key)
+        public static Method ResumeWriting(Substrate.NetApi.Model.Types.Primitive.U128 namespace_id, Substrate.NetApi.Model.Types.Primitive.U128 bucket_id, XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.BucketPublicKey new_encryption_key)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(namespace_id.Encode());
@@ -499,7 +499,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> rotate_key
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method RotateKey(Substrate.NetApi.Model.Types.Primitive.U128 namespace_id, Substrate.NetApi.Model.Types.Primitive.U128 bucket_id, Substrate.NetApi.Model.Types.Primitive.U128 new_encryption_key)
+        public static Method RotateKey(Substrate.NetApi.Model.Types.Primitive.U128 namespace_id, Substrate.NetApi.Model.Types.Primitive.U128 bucket_id, XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.BucketPublicKey new_encryption_key)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(namespace_id.Encode());
@@ -624,6 +624,72 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         ///  The max length of the string input. Used for Tags.
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 MaxStringInputLengthTag()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0xC8000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MaxNameLen
+        ///  The maximum length for a human-readable name or description string.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 MaxNameLen()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x64000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MaxUriLen
+        ///  The maximum length for a URI string (e.g., for a schema link).
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 MaxUriLen()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x00010000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MaxCategoryLen
+        ///  The maximum length for a category or content-type string.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 MaxCategoryLen()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x32000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MaxProperties
+        ///  The maximum number of key-value pairs in the properties map.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 MaxProperties()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x0A000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MaxPropertyKeyLen
+        ///  The maximum length for a key in the properties map.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 MaxPropertyKeyLen()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x32000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MaxPropertyValueLen
+        ///  The maximum length for a value in the properties map.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 MaxPropertyValueLen()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
             result.Create("0xC8000000");

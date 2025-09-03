@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
     
     
     /// <summary>
-    /// >> 528 - Composite[pallet_regions.pallet.RemoveRegionOwnerProposal]
+    /// >> 543 - Composite[pallet_regions.pallet.RemoveRegionOwnerProposal]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RemoveRegionOwnerProposal : BaseType

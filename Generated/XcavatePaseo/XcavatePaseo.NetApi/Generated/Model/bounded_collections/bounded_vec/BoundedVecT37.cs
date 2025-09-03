@@ -13,33 +13,33 @@ using Substrate.NetApi.Model.Types.Metadata.Base;
 using System.Collections.Generic;
 
 
-namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime
+namespace XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec
 {
     
     
     /// <summary>
-    /// >> 591 - Composite[container_chain_template_simple_runtime.MetadataMock]
+    /// >> 526 - Composite[bounded_collections.bounded_vec.BoundedVecT37]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
-    public sealed class MetadataMock : BaseType
+    public sealed class BoundedVecT37 : BaseType
     {
         
         /// <summary>
-        /// >> unique_plus_1
+        /// >> value
         /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U32 UniquePlus1 { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
         {
-            return "MetadataMock";
+            return "BoundedVecT37";
         }
         
         /// <inheritdoc/>
         public override byte[] Encode()
         {
             var result = new List<byte>();
-            result.AddRange(UniquePlus1.Encode());
+            result.AddRange(Value.Encode());
             return result.ToArray();
         }
         
@@ -47,8 +47,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            UniquePlus1 = new Substrate.NetApi.Model.Types.Primitive.U32();
-            UniquePlus1.Decode(byteArray, ref p);
+            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>();
+            Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;
             Bytes = new byte[bytesLength];
