@@ -9,6 +9,7 @@ namespace PlutoFramework.Components.Xcavate
     public partial class QuestionnairePassPageViewModel : ObservableObject
     {
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(ContinueButtonState))]
         private bool agreed = false;
 
         public ButtonStateEnum ContinueButtonState => Agreed ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
