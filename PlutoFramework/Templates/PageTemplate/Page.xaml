@@ -48,6 +48,8 @@
 
             <kilt:NoDidPopupView ZIndex="10" />
 
+            <xcavate:UserProfileNotCreatedPopupView ZIndex="10" />
+
             <xcavate:NotWhitelistedPopupView ZIndex="10" />
 
             <password:EnterPasswordPopupView ZIndex="10"/>
