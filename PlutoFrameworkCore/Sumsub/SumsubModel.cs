@@ -74,17 +74,20 @@ namespace PlutoFramework.Model.Sumsub
 
             var accessToken = JsonSerializer.Deserialize<AccessTokenResponse>(ContentToString(response.Content));
 
+            Console.WriteLine("UserId: " + accessToken?.UserId);
+
             return accessToken?.Token;
         }
 
         /// <summary>
         /// https://docs.sumsub.com/reference/get-applicant-data
+        /// https://docs.sumsub.com/reference/get-applicant-data-via-externaluserid
         /// </summary>
         /// <param name="address">Wallet address</param>
         /// <returns>Applicant data</returns>
         public static async Task<SumsubApplicant?> GetApplicantDataAsync(string address, string secretKey, string appToken, CancellationToken token)
         {
-            var response = await SendGetAsync($"/resources/applicants/{address}/one", secretKey, appToken, token);
+            var response = await SendGetAsync($"/resources/applicants/-;externalUserId={address}/one", secretKey, appToken, token);
 
             Console.WriteLine(ContentToString(response.Content));
 

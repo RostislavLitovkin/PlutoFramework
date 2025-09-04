@@ -14,7 +14,7 @@ namespace PlutoFramework.Model
     public class NavigationModel
     {
         public static Func<Task> NavigateToKYC { get; set; } = () => Task.FromResult(0);
-        public static Func<Task> NavigateAfterAccountCreation { get; set; } = RequirementsModel.CheckRequirementsAsync;
+        public static Func<Task> NavigateAfterAccountCreation { get; set; } = NavigateToKYC;
         public static Func<Task> NavigateToUserPageAsync { get; set; } = () => Task.FromResult(0);
         public static async Task NavigateToMnemonicsPageAsync()
         {

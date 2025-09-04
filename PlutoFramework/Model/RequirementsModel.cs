@@ -43,7 +43,9 @@ namespace PlutoFramework.Model
 
             if (applicantData is null)
             {
-                await NavigationModel.NavigateToKYC.Invoke();
+                var userProfileNotCreatedPopupViewModel = DependencyService.Get<UserProfileNotCreatedPopupViewModel>();
+
+                userProfileNotCreatedPopupViewModel.IsVisible = true;
 
                 return false;
             }

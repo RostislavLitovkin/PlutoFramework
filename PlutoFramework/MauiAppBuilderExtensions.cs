@@ -174,6 +174,8 @@ namespace PlutoFramework
 
             DependencyService.Register<NotWhitelistedPopupViewModel>();
 
+            DependencyService.Register<UserProfileNotCreatedPopupViewModel>();
+
             return builder;
         }
 

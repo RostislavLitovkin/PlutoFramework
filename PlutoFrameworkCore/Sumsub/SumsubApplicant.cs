@@ -14,7 +14,7 @@ namespace PlutoFramework.Model.Sumsub
             DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal
         );
 
-        [JsonPropertyName("createdBy")] public required string CreatedBy { get; init; }
+        [JsonPropertyName("createdBy")] public string? CreatedBy { get; init; }
         [JsonPropertyName("key")] public required string Key { get; init; }
         [JsonPropertyName("clientId")] public required string ClientId { get; init; }
         [JsonPropertyName("inspectionId")] public required string InspectionId { get; init; }
@@ -35,9 +35,9 @@ namespace PlutoFramework.Model.Sumsub
 
     public record DocSet
     {
-        [JsonPropertyName("idDocSetType")] public required string IdDocSetType { get; init; }
-        [JsonPropertyName("types")] public required List<string> Types { get; init; }
-        [JsonPropertyName("videoRequired")] public required string VideoRequired { get; init; }
+        [JsonPropertyName("idDocSetType")] public string? IdDocSetType { get; init; }
+        [JsonPropertyName("types")] public List<string>? Types { get; init; }
+        [JsonPropertyName("videoRequired")] public string? VideoRequired { get; init; }
     }
 
     public record Review

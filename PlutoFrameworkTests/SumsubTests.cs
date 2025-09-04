@@ -49,8 +49,8 @@ namespace PlutoFrameworkTests
                     ExternalUserId = "",
                 },
                 totalInSeconds = 600,
-                UserId = $"USER_{DateTimeOffset.UtcNow.ToUnixTimeSeconds()}",
-                LevelName = "csharp-verification-test"
+                UserId = $"15CHtW16fJaradrt3TUrSMBygqFuMfwqXWRGRBE3M14Pt2EF",
+                LevelName = "csharp-verification-investor"
             };
 
             var result = await SumsubModel.GenerateWebSDKAccessTokenAsync(applicant, SUMSUB_SECRET_KEY, SUMSUB_APP_TOKEN, CancellationToken.None);
@@ -61,6 +61,7 @@ namespace PlutoFrameworkTests
         [TestCase("USER_1739731212")] // Verified user
         [TestCase("USER_1739728710")] // Unverified user
         [TestCase("USER_NONE")] // None existant user user
+        [TestCase("15CHtW16fJaradrt3TUrSMBygqFuMfwqXWRGRBE3M14Pt2EF")]
         public async Task GetApplicantDataAsync(string externalUserId)
         {
             CancellationToken token = CancellationToken.None;
