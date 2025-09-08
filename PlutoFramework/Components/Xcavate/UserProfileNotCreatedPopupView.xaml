@@ -9,7 +9,8 @@
              AbsoluteLayout.LayoutFlags="All"
              BackgroundColor="#66000000">
 
-    <card:BottomPopupCard Title="User profile not created">
+    <card:BottomPopupCard Title="User profile not created"
+                          IsShown="{Binding IsVisible}">
         <card:BottomPopupCard.View>
             <AbsoluteLayout>
 

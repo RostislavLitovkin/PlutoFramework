@@ -23,7 +23,8 @@ namespace PlutoFramework.Model.Xcavate
                 UserRoleEnum.Developer => Role.RealEstateDeveloper,
                 UserRoleEnum.Investor => Role.RealEstateInvestor,
                 UserRoleEnum.LettingAgent => Role.LettingAgent,
-                UserRoleEnum.Lawyer => Role.Lawyer
+                UserRoleEnum.Lawyer => Role.Lawyer,
+                _ => Role.RealEstateInvestor
             };
         }
 

@@ -17,19 +17,23 @@
                         AbsoluteLayout.LayoutFlags="All"
                         x:Name="PopupsLayout">
 
-            <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="{AppThemeBinding Light=#ffffff, Dark=#000000}">
+                <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                    AbsoluteLayout.LayoutFlags="All"
                    Opacity="{AppThemeBinding Light=0.96}"
                    Aspect="AspectFill"/>
 
-            <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                         AbsoluteLayout.LayoutFlags="All"
                         Padding="{TemplateBinding ScrollPadding}"
                         Orientation="{TemplateBinding ScrollViewOrientation}"
                         x:Name="scrollView">
-                <!-- Content block -->
-                <ContentPresenter Content="{TemplateBinding MainContent}"/>
-            </ScrollView>
+                    <!-- Content block -->
+                    <ContentPresenter Content="{TemplateBinding MainContent}"/>
+                </ScrollView>
+            </AbsoluteLayout>
 
             <topnavigationbartemplate:TopNavigationBarTemplate Title="{TemplateBinding Title}"
                                                                Extra1Text="{TemplateBinding NavigationBarExtra1Text}"
@@ -42,7 +46,7 @@
                                                                HasShadow="{TemplateBinding NavigationBarHasShadow}"
                                                                x:Name="TopNavigationBar" />
 
-            <txanalyzer:TransactionAnalyzerConfirmationView ZIndex="{TemplateBinding TransactionAnalyzerZIndex}" />
+            <txanalyzer:TransactionAnalyzerConfirmationView ZIndex="{TemplateBinding TransactionAnalyzerZIndex}"/>
 
             <account:NoAccountPopup ZIndex="10" />
 
