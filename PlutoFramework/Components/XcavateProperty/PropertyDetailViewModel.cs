@@ -30,7 +30,8 @@ namespace PlutoFramework.Components.XcavateProperty
             (true, _, _) => MainActionStates.Refund,
             (false, _, > 0) => MainActionStates.Buy,
             (false, _, null) => MainActionStates.SoldOut,
-            (false, _, _) => MainActionStates.Unknown,
+            (false, _, 0) => MainActionStates.SoldOut,
+            //_ => MainActionStates.Unknown,
         };
 
         [ObservableProperty]
