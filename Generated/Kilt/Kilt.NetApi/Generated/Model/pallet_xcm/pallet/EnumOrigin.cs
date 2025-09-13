@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 319 - Variant[pallet_xcm.pallet.Origin]
+    /// >> 342 - Variant[pallet_xcm.pallet.Origin]
     /// </summary>
     public sealed class EnumOrigin : BaseEnumRust<Origin>
     {

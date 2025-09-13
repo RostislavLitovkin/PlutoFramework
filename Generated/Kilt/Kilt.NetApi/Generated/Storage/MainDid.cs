@@ -40,7 +40,7 @@ namespace Kilt.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Kilt.NetApi.Generated.Model.did.did_details.DidDetails)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Did", "ServiceEndpoints"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22>), typeof(Kilt.NetApi.Generated.Model.did.service_endpoints.DidEndpoint)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23>), typeof(Kilt.NetApi.Generated.Model.did.service_endpoints.DidEndpoint)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Did", "DidEndpointsCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Did", "DidBlacklist"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -88,7 +88,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// 
         ///  It maps from (DID identifier, service ID) to the service details.
         /// </summary>
-        public static string ServiceEndpointsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22> key)
+        public static string ServiceEndpointsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23> key)
         {
             return RequestGenerator.GetStorage("Did", "ServiceEndpoints", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
@@ -110,7 +110,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// 
         ///  It maps from (DID identifier, service ID) to the service details.
         /// </summary>
-        public async Task<Kilt.NetApi.Generated.Model.did.service_endpoints.DidEndpoint> ServiceEndpoints(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22> key, string blockhash, CancellationToken token)
+        public async Task<Kilt.NetApi.Generated.Model.did.service_endpoints.DidEndpoint> ServiceEndpoints(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23> key, string blockhash, CancellationToken token)
         {
             string parameters = DidStorage.ServiceEndpointsParams(key);
             var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.did.service_endpoints.DidEndpoint>(parameters, blockhash, token);
@@ -300,7 +300,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> remove_service_endpoint
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method RemoveServiceEndpoint(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22 service_id)
+        public static Method RemoveServiceEndpoint(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23 service_id)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(service_id.Encode());
@@ -403,7 +403,7 @@ namespace Kilt.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 BaseDeposit()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00008D49FD1A07000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         
@@ -417,7 +417,7 @@ namespace Kilt.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 ServiceEndpointDeposit()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00F024EEBDED00000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         
@@ -429,7 +429,7 @@ namespace Kilt.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 KeyDeposit()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00DC2074970100000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         
@@ -442,7 +442,7 @@ namespace Kilt.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 Fee()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00203D88792D00000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         
@@ -736,6 +736,13 @@ namespace Kilt.NetApi.Generated.Storage
         /// the number of endpoints to delete.
         /// </summary>
         MaxStoredEndpointsCountExceeded,
+        
+        /// <summary>
+        /// >> CannotDelete
+        /// The DID cannot be deleted because the runtime logic returned an
+        /// error.
+        /// </summary>
+        CannotDelete,
         
         /// <summary>
         /// >> Internal

@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_collective
     }
     
     /// <summary>
-    /// >> 317 - Variant[pallet_collective.RawOrigin]
+    /// >> 340 - Variant[pallet_collective.RawOrigin]
     /// </summary>
     public sealed class EnumRawOrigin : BaseEnumRust<RawOrigin>
     {

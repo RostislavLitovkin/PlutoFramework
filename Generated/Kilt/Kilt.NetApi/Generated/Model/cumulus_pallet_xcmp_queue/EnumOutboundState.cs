@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.cumulus_pallet_xcmp_queue
     }
     
     /// <summary>
-    /// >> 586 - Variant[cumulus_pallet_xcmp_queue.OutboundState]
+    /// >> 660 - Variant[cumulus_pallet_xcmp_queue.OutboundState]
     /// </summary>
     public sealed class EnumOutboundState : BaseEnum<OutboundState>
     {

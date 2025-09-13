@@ -45,10 +45,15 @@ namespace Kilt.NetApi.Generated.Model.frame_support.traits.messages
         /// >> Yield
         /// </summary>
         Yield = 4,
+        
+        /// <summary>
+        /// >> StackLimitReached
+        /// </summary>
+        StackLimitReached = 5,
     }
     
     /// <summary>
-    /// >> 216 - Variant[frame_support.traits.messages.ProcessMessageError]
+    /// >> 218 - Variant[frame_support.traits.messages.ProcessMessageError]
     /// </summary>
     public sealed class EnumProcessMessageError : BaseEnumRust<ProcessMessageError>
     {
@@ -63,6 +68,7 @@ namespace Kilt.NetApi.Generated.Model.frame_support.traits.messages
 				AddTypeDecoder<BaseVoid>(ProcessMessageError.Unsupported);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.sp_weights.weight_v2.Weight>(ProcessMessageError.Overweight);
 				AddTypeDecoder<BaseVoid>(ProcessMessageError.Yield);
+				AddTypeDecoder<BaseVoid>(ProcessMessageError.StackLimitReached);
         }
     }
 }

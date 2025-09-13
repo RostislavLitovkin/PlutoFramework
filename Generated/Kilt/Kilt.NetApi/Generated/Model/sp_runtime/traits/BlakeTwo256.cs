@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.sp_runtime.traits
     
     
     /// <summary>
-    /// >> 436 - Composite[sp_runtime.traits.BlakeTwo256]
+    /// >> 511 - Composite[sp_runtime.traits.BlakeTwo256]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BlakeTwo256 : BaseType

@@ -25,10 +25,15 @@ namespace Kilt.NetApi.Generated.Model.pallet_deposit_storage.pallet
         /// >> Deposit
         /// </summary>
         Deposit = 0,
+        
+        /// <summary>
+        /// >> FungibleImpl
+        /// </summary>
+        FungibleImpl = 1,
     }
     
     /// <summary>
-    /// >> 178 - Variant[pallet_deposit_storage.pallet.HoldReason]
+    /// >> 180 - Variant[pallet_deposit_storage.pallet.HoldReason]
     /// </summary>
     public sealed class EnumHoldReason : BaseEnum<HoldReason>
     {

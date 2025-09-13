@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.cumulus_primitives_parachain_inherent
     
     
     /// <summary>
-    /// >> 574 - Composite[cumulus_primitives_parachain_inherent.MessageQueueChain]
+    /// >> 648 - Composite[cumulus_primitives_parachain_inherent.MessageQueueChain]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MessageQueueChain : BaseType

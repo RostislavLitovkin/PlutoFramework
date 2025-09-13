@@ -60,7 +60,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_membership.pallet
     }
     
     /// <summary>
-    /// >> 58 - Variant[pallet_membership.pallet.Event]
+    /// >> 59 - Variant[pallet_membership.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnum<Event>

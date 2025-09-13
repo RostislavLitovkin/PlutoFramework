@@ -24,49 +24,121 @@ namespace Kilt.NetApi.Generated.Model.pallet_web3_names.pallet
         
         /// <summary>
         /// >> claim
-        /// See [`Pallet::claim`].
+        /// Assign the specified name to the owner as specified in the
+        /// origin.
+        /// 
+        /// The name must not have already been claimed by someone else and the
+        /// owner must not already own another name.
+        /// 
+        /// Emits `Web3NameClaimed` if the operation is carried out
+        /// successfully.
+        /// 
+        /// # <weight>
+        /// Weight: O(1)
+        /// - Reads: Names, Owner, Banned storage entries + available currency
+        ///   check + origin check
+        /// - Writes: Names, Owner storage entries + currency deposit reserve
+        /// # </weight>
         /// </summary>
         claim = 0,
         
         /// <summary>
         /// >> release_by_owner
-        /// See [`Pallet::release_by_owner`].
+        /// Release the provided name from its owner.
+        /// 
+        /// The origin must be the owner of the specified name.
+        /// 
+        /// Emits `Web3NameReleased` if the operation is carried out
+        /// successfully.
+        /// 
+        /// # <weight>
+        /// Weight: O(1)
+        /// - Reads: Names storage entry + origin check
+        /// - Writes: Names, Owner storage entries + currency deposit release
+        /// # </weight>
         /// </summary>
         release_by_owner = 1,
         
         /// <summary>
         /// >> reclaim_deposit
-        /// See [`Pallet::reclaim_deposit`].
+        /// Release the provided name from its owner.
+        /// 
+        /// The origin must be the account that paid for the name's deposit.
+        /// 
+        /// Emits `Web3NameReleased` if the operation is carried out
+        /// successfully.
+        /// 
+        /// # <weight>
+        /// Weight: O(1)
+        /// - Reads: Owner storage entry + origin check
+        /// - Writes: Names, Owner storage entries + currency deposit release
+        /// # </weight>
         /// </summary>
         reclaim_deposit = 2,
         
         /// <summary>
         /// >> ban
-        /// See [`Pallet::ban`].
+        /// Ban a name.
+        /// 
+        /// A banned name cannot be claimed by anyone. The name's deposit
+        /// is returned to the original payer.
+        /// 
+        /// The origin must be the ban origin.
+        /// 
+        /// Emits `Web3NameBanned` if the operation is carried out
+        /// successfully.
+        /// 
+        /// # <weight>
+        /// Weight: O(1)
+        /// - Reads: Banned, Owner, Names storage entries + origin check
+        /// - Writes: Names, Owner, Banned storage entries + currency deposit
+        ///   release
+        /// # </weight>
         /// </summary>
         ban = 3,
         
         /// <summary>
         /// >> unban
-        /// See [`Pallet::unban`].
+        /// Unban a name.
+        /// 
+        /// Make a name claimable again.
+        /// 
+        /// The origin must be the ban origin.
+        /// 
+        /// Emits `Web3NameUnbanned` if the operation is carried out
+        /// successfully.
+        /// 
+        /// # <weight>
+        /// Weight: O(1)
+        /// - Reads: Banned storage entry + origin check
+        /// - Writes: Banned storage entry deposit release
+        /// # </weight>
         /// </summary>
         unban = 4,
         
         /// <summary>
         /// >> change_deposit_owner
-        /// See [`Pallet::change_deposit_owner`].
+        /// Changes the deposit owner.
+        /// 
+        /// The balance that is reserved by the current deposit owner will be
+        /// freed and balance of the new deposit owner will get reserved.
+        /// 
+        /// The subject of the call must be the owner of the web3name.
+        /// The sender of the call will be the new deposit owner.
         /// </summary>
         change_deposit_owner = 5,
         
         /// <summary>
         /// >> update_deposit
-        /// See [`Pallet::update_deposit`].
+        /// Updates the deposit amount to the current deposit rate.
+        /// 
+        /// The sender must be the deposit owner.
         /// </summary>
         update_deposit = 6,
     }
     
     /// <summary>
-    /// >> 373 - Variant[pallet_web3_names.pallet.Call]
+    /// >> 390 - Variant[pallet_web3_names.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -77,13 +149,13 @@ namespace Kilt.NetApi.Generated.Model.pallet_web3_names.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1>(Call.claim);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28>(Call.claim);
 				AddTypeDecoder<BaseVoid>(Call.release_by_owner);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1>(Call.reclaim_deposit);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1>(Call.ban);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1>(Call.unban);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28>(Call.reclaim_deposit);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28>(Call.ban);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28>(Call.unban);
 				AddTypeDecoder<BaseVoid>(Call.change_deposit_owner);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1>(Call.update_deposit);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28>(Call.update_deposit);
         }
     }
 }

@@ -39,6 +39,7 @@ namespace Kilt.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "Account"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Kilt.NetApi.Generated.Model.frame_system.AccountInfo)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "ExtrinsicCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "InherentsApplied"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "BlockWeight"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Kilt.NetApi.Generated.Model.frame_support.dispatch.PerDispatchClassT1)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "AllExtrinsicsLen"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "BlockHash"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -118,6 +119,35 @@ namespace Kilt.NetApi.Generated.Storage
         {
             string parameters = SystemStorage.ExtrinsicCountParams();
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> InherentsAppliedParams
+        ///  Whether all inherents have been applied.
+        /// </summary>
+        public static string InherentsAppliedParams()
+        {
+            return RequestGenerator.GetStorage("System", "InherentsApplied", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> InherentsAppliedDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string InherentsAppliedDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> InherentsApplied
+        ///  Whether all inherents have been applied.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.Bool> InherentsApplied(string blockhash, CancellationToken token)
+        {
+            string parameters = SystemStorage.InherentsAppliedParams();
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.Bool>(parameters, blockhash, token);
             return result;
         }
         
@@ -737,9 +767,9 @@ namespace Kilt.NetApi.Generated.Storage
         public Kilt.NetApi.Generated.Model.frame_system.limits.BlockWeights BlockWeights()
         {
             var result = new Kilt.NetApi.Generated.Model.frame_system.limits.BlockWeights();
-            result.Create("0x025B1F5D00070088526A7402004001C2A0A91D000107D00918A44B0200D000010700E6BD4F57020" +
-                    "0F000010000C2A0A91D000107D0ABACBE680200200101070088526A7402004001010700A2941A1D0" +
-                    "2005000C2A0A91D00000000");
+            result.Create("0x624D186C00070088526A74020040014247871900010730A020A54B0200D000010700E6BD4F57020" +
+                    "0F000010000424787190001073042B5BF680200200101070088526A7402004001010700A2941A1D0" +
+                    "20050004247871900000000");
             return result;
         }
         
@@ -778,12 +808,12 @@ namespace Kilt.NetApi.Generated.Storage
         
         /// <summary>
         /// >> Version
-        ///  Get the chain's current version.
+        ///  Get the chain's in-code version.
         /// </summary>
         public Kilt.NetApi.Generated.Model.sp_version.RuntimeVersion Version()
         {
             var result = new Kilt.NetApi.Generated.Model.sp_version.RuntimeVersion();
-            result.Create(@"0x386B696C742D7370697269746E6574386B696C742D7370697269746E6574010000008D2C00000000000048DF6ACB689907609B0400000037E397FC7C91F5E402000000BC9D89904F5B923F0100000037C8BB1350A9A2A804000000F3FF14D5AB5270590300000040FE3AD401F8959A06000000D2BC9897EED08F1503000000F78B278BE53F454C02000000AB3C0572291FEB8B01000000DD718D5CC53262D401000000D7BDD8A272CA0D6501000000EA93E3F16F3D69620200000026609555C065660302000000A47B7D544994C99B0100000045BFBA51A310B22301000000C3B3E8D33273990D01000000A3FD5536EEA70E7401000000FBC577B9D747EFD6010000000A00000000");
+            result.Create(@"0x386B696C742D7370697269746E6574386B696C742D7370697269746E657401000000532D00000000000050DF6ACB689907609B0500000037E397FC7C91F5E402000000BC9D89904F5B923F0100000037C8BB1350A9A2A804000000F3FF14D5AB5270590300000040FE3AD401F8959A06000000D2BC9897EED08F1503000000F78B278BE53F454C02000000AB3C0572291FEB8B01000000DD718D5CC53262D401000000D7BDD8A272CA0D6501000000EA93E3F16F3D696202000000FBC577B9D747EFD60100000026609555C065660304000000A47B7D544994C99B0100000045BFBA51A310B22301000000C3B3E8D33273990D01000000A3FD5536EEA70E74020000000EBC8FD84AE20ADA010000005D1DF2FE7D4F6BC8010000000C00000000");
             return result;
         }
         
@@ -848,6 +878,12 @@ namespace Kilt.NetApi.Generated.Storage
         /// The origin filter prevent the call to be dispatched.
         /// </summary>
         CallFiltered,
+        
+        /// <summary>
+        /// >> MultiBlockMigrationsOngoing
+        /// A multi-block migration is ongoing and prevents the current code from being replaced.
+        /// </summary>
+        MultiBlockMigrationsOngoing,
         
         /// <summary>
         /// >> NothingAuthorized

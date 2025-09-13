@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.xcm
     }
     
     /// <summary>
-    /// >> 97 - Variant[xcm.VersionedAsset]
+    /// >> 98 - Variant[xcm.VersionedAsset]
     /// </summary>
     public sealed class EnumVersionedAsset : BaseEnumRust<VersionedAsset>
     {

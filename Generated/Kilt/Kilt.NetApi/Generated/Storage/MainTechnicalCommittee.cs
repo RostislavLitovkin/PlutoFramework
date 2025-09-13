@@ -36,7 +36,7 @@ namespace Kilt.NetApi.Generated.Storage
         public TechnicalCommitteeStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("TechnicalCommittee", "Proposals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("TechnicalCommittee", "Proposals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("TechnicalCommittee", "ProposalOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(Kilt.NetApi.Generated.Model.primitive_types.H256), typeof(Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("TechnicalCommittee", "Voting"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -68,10 +68,10 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> Proposals
         ///  The hashes of the active proposals.
         /// </summary>
-        public async Task<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34> Proposals(string blockhash, CancellationToken token)
+        public async Task<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40> Proposals(string blockhash, CancellationToken token)
         {
             string parameters = TechnicalCommitteeStorage.ProposalsParams();
-            var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40>(parameters, blockhash, token);
             return result;
         }
         
@@ -197,7 +197,7 @@ namespace Kilt.NetApi.Generated.Storage
         
         /// <summary>
         /// >> PrimeParams
-        ///  The prime member that helps determine the default vote behavior in case of absentations.
+        ///  The prime member that helps determine the default vote behavior in case of abstentions.
         /// </summary>
         public static string PrimeParams()
         {
@@ -215,7 +215,7 @@ namespace Kilt.NetApi.Generated.Storage
         
         /// <summary>
         /// >> Prime
-        ///  The prime member that helps determine the default vote behavior in case of absentations.
+        ///  The prime member that helps determine the default vote behavior in case of abstentions.
         /// </summary>
         public async Task<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32> Prime(string blockhash, CancellationToken token)
         {
@@ -321,7 +321,7 @@ namespace Kilt.NetApi.Generated.Storage
         public Kilt.NetApi.Generated.Model.sp_weights.weight_v2.Weight MaxProposalWeight()
         {
             var result = new Kilt.NetApi.Generated.Model.sp_weights.weight_v2.Weight();
-            result.Create("0x07004429353A0200A000");
+            result.Create("0x0700A0DB215D02000001");
             return result;
         }
     }

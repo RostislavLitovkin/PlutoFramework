@@ -24,19 +24,32 @@ namespace Kilt.NetApi.Generated.Model.ctype.pallet
         
         /// <summary>
         /// >> add
-        /// See [`Pallet::add`].
+        /// Create a new CType from the given unique CType hash and associates
+        /// it with its creator.
+        /// 
+        /// A CType with the same hash must not be stored on chain.
+        /// 
+        /// Emits `CTypeCreated`.
+        /// 
+        /// # <weight>
+        /// Weight: O(1)
+        /// - Reads: Ctypes, Balance
+        /// - Writes: Ctypes, Balance
+        /// # </weight>
         /// </summary>
         add = 0,
         
         /// <summary>
         /// >> set_block_number
-        /// See [`Pallet::set_block_number`].
+        /// Set the creation block number for a given CType, if found.
+        /// 
+        /// Emits `CTypeUpdated`.
         /// </summary>
         set_block_number = 1,
     }
     
     /// <summary>
-    /// >> 335 - Variant[ctype.pallet.Call]
+    /// >> 357 - Variant[ctype.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

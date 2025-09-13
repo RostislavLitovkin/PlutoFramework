@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_did_lookup.account
     
     
     /// <summary>
-    /// >> 372 - Composite[pallet_did_lookup.account.EthereumSignature]
+    /// >> 389 - Composite[pallet_did_lookup.account.EthereumSignature]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class EthereumSignature : BaseType
@@ -27,7 +27,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_did_lookup.account
         /// <summary>
         /// >> value
         /// </summary>
-        public Kilt.NetApi.Generated.Model.sp_core.ecdsa.Signature Value { get; set; }
+        public Kilt.NetApi.Generated.Types.Base.Arr65U8 Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_did_lookup.account
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Kilt.NetApi.Generated.Model.sp_core.ecdsa.Signature();
+            Value = new Kilt.NetApi.Generated.Types.Base.Arr65U8();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

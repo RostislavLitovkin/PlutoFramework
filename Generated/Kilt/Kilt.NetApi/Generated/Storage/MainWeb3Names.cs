@@ -37,18 +37,18 @@ namespace Kilt.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Web3Names", "Owner"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Kilt.NetApi.Generated.Model.pallet_web3_names.web3_name.AsciiWeb3Name), typeof(Kilt.NetApi.Generated.Model.pallet_web3_names.web3_name.Web3NameOwnership)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Kilt.NetApi.Generated.Model.runtime_common.web3_names.Web3Name), typeof(Kilt.NetApi.Generated.Model.pallet_web3_names.web3_name.Web3NameOwnership)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Web3Names", "Names"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Kilt.NetApi.Generated.Model.pallet_web3_names.web3_name.AsciiWeb3Name)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Kilt.NetApi.Generated.Model.runtime_common.web3_names.Web3Name)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Web3Names", "Banned"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Kilt.NetApi.Generated.Model.pallet_web3_names.web3_name.AsciiWeb3Name), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Kilt.NetApi.Generated.Model.runtime_common.web3_names.Web3Name), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
         }
         
         /// <summary>
         /// >> OwnerParams
         ///  Map of name -> ownership details.
         /// </summary>
-        public static string OwnerParams(Kilt.NetApi.Generated.Model.pallet_web3_names.web3_name.AsciiWeb3Name key)
+        public static string OwnerParams(Kilt.NetApi.Generated.Model.runtime_common.web3_names.Web3Name key)
         {
             return RequestGenerator.GetStorage("Web3Names", "Owner", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -68,7 +68,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> Owner
         ///  Map of name -> ownership details.
         /// </summary>
-        public async Task<Kilt.NetApi.Generated.Model.pallet_web3_names.web3_name.Web3NameOwnership> Owner(Kilt.NetApi.Generated.Model.pallet_web3_names.web3_name.AsciiWeb3Name key, string blockhash, CancellationToken token)
+        public async Task<Kilt.NetApi.Generated.Model.pallet_web3_names.web3_name.Web3NameOwnership> Owner(Kilt.NetApi.Generated.Model.runtime_common.web3_names.Web3Name key, string blockhash, CancellationToken token)
         {
             string parameters = Web3NamesStorage.OwnerParams(key);
             var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.pallet_web3_names.web3_name.Web3NameOwnership>(parameters, blockhash, token);
@@ -99,10 +99,10 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> Names
         ///  Map of owner -> name.
         /// </summary>
-        public async Task<Kilt.NetApi.Generated.Model.pallet_web3_names.web3_name.AsciiWeb3Name> Names(Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Kilt.NetApi.Generated.Model.runtime_common.web3_names.Web3Name> Names(Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = Web3NamesStorage.NamesParams(key);
-            var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.pallet_web3_names.web3_name.AsciiWeb3Name>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.runtime_common.web3_names.Web3Name>(parameters, blockhash, token);
             return result;
         }
         
@@ -112,7 +112,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// 
         ///  If a name key is present, the name is currently banned.
         /// </summary>
-        public static string BannedParams(Kilt.NetApi.Generated.Model.pallet_web3_names.web3_name.AsciiWeb3Name key)
+        public static string BannedParams(Kilt.NetApi.Generated.Model.runtime_common.web3_names.Web3Name key)
         {
             return RequestGenerator.GetStorage("Web3Names", "Banned", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -134,7 +134,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// 
         ///  If a name key is present, the name is currently banned.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> Banned(Kilt.NetApi.Generated.Model.pallet_web3_names.web3_name.AsciiWeb3Name key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> Banned(Kilt.NetApi.Generated.Model.runtime_common.web3_names.Web3Name key, string blockhash, CancellationToken token)
         {
             string parameters = Web3NamesStorage.BannedParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple>(parameters, blockhash, token);
@@ -152,7 +152,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> claim
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Claim(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1 name)
+        public static Method Claim(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28 name)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(name.Encode());
@@ -173,7 +173,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> reclaim_deposit
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ReclaimDeposit(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1 name)
+        public static Method ReclaimDeposit(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28 name)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(name.Encode());
@@ -184,7 +184,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> ban
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Ban(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1 name)
+        public static Method Ban(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28 name)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(name.Encode());
@@ -195,7 +195,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> unban
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Unban(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1 name)
+        public static Method Unban(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28 name)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(name.Encode());
@@ -216,7 +216,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> update_deposit
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method UpdateDeposit(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1 name_input)
+        public static Method UpdateDeposit(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28 name_input)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(name_input.Encode());
@@ -237,7 +237,7 @@ namespace Kilt.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 Deposit()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00D450A85D6B00000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         

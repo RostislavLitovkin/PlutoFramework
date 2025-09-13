@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_deposit_storage.deposit
     
     
     /// <summary>
-    /// >> 169 - Composite[pallet_deposit_storage.deposit.DepositEntry]
+    /// >> 171 - Composite[pallet_deposit_storage.deposit.DepositEntry]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DepositEntry : BaseType

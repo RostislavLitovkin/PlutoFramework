@@ -166,10 +166,22 @@ namespace Kilt.NetApi.Generated.Model.pallet_assets.pallet
         /// Some account `who` was blocked.
         /// </summary>
         Blocked = 23,
+        
+        /// <summary>
+        /// >> Deposited
+        /// Some assets were deposited (e.g. for transaction fees).
+        /// </summary>
+        Deposited = 24,
+        
+        /// <summary>
+        /// >> Withdrawn
+        /// Some assets were withdrawn from the account (e.g. for transaction fees).
+        /// </summary>
+        Withdrawn = 25,
     }
     
     /// <summary>
-    /// >> 110 - Variant[pallet_assets.pallet.Event]
+    /// >> 111 - Variant[pallet_assets.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -204,6 +216,8 @@ namespace Kilt.NetApi.Generated.Model.pallet_assets.pallet
 				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.AssetMinBalanceChanged);
 				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.Touched);
 				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.Blocked);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Deposited);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Withdrawn);
         }
     }
 }

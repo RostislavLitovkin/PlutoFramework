@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.kilt_asset_dids.asset.v1
     
     
     /// <summary>
-    /// >> 150 - Composite[kilt_asset_dids.asset.v1.GenericAssetIdentifier]
+    /// >> 152 - Composite[kilt_asset_dids.asset.v1.GenericAssetIdentifier]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class GenericAssetIdentifier : BaseType
@@ -27,7 +27,7 @@ namespace Kilt.NetApi.Generated.Model.kilt_asset_dids.asset.v1
         /// <summary>
         /// >> value
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4 Value { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT3 Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace Kilt.NetApi.Generated.Model.kilt_asset_dids.asset.v1
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4();
+            Value = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT3();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

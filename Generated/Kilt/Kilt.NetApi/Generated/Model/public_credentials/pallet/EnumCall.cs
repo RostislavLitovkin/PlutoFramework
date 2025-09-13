@@ -24,49 +24,110 @@ namespace Kilt.NetApi.Generated.Model.public_credentials.pallet
         
         /// <summary>
         /// >> add
-        /// See [`Pallet::add`].
+        /// Register a new public credential on chain.
+        /// 
+        /// This function fails if a credential with the same identifier already
+        /// exists for the specified subject.
+        /// 
+        /// Emits `CredentialStored`.
         /// </summary>
         add = 0,
         
         /// <summary>
         /// >> revoke
-        /// See [`Pallet::revoke`].
+        /// Revokes a public credential.
+        /// 
+        /// If a credential was already revoked, this function does not fail but
+        /// simply results in a noop.
+        /// 
+        /// The dispatch origin must be authorized to revoke the credential.
+        /// 
+        /// Emits `CredentialRevoked`.
         /// </summary>
         revoke = 1,
         
         /// <summary>
         /// >> unrevoke
-        /// See [`Pallet::unrevoke`].
+        /// Unrevokes a public credential.
+        /// 
+        /// If a credential was not revoked, this function does not fail but
+        /// simply results in a noop.
+        /// 
+        /// The dispatch origin must be authorized to unrevoke the
+        /// credential.
+        /// 
+        /// Emits `CredentialUnrevoked`.
         /// </summary>
         unrevoke = 2,
         
         /// <summary>
         /// >> remove
-        /// See [`Pallet::remove`].
+        /// Removes the information pertaining a public credential from the
+        /// chain.
+        /// 
+        /// The removal of the credential does not delete it entirely from the
+        /// blockchain history, but only its link *from* the blockchain state
+        /// *to* the blockchain history is removed.
+        /// 
+        /// Clients parsing public credentials should interpret
+        /// the lack of such a link as the fact that the credential has been
+        /// removed by its attester some time in the past.
+        /// 
+        /// This function fails if a credential already exists for the specified
+        /// subject.
+        /// 
+        /// The dispatch origin must be authorized to remove the credential.
+        /// 
+        /// Emits `CredentialRemoved`.
         /// </summary>
         remove = 3,
         
         /// <summary>
         /// >> reclaim_deposit
-        /// See [`Pallet::reclaim_deposit`].
+        /// Removes the information pertaining a public credential from the
+        /// chain and returns the deposit to its payer.
+        /// 
+        /// The removal of the credential does not delete it entirely from the
+        /// blockchain history, but only its link *from* the blockchain state
+        /// *to* the blockchain history is removed.
+        /// 
+        /// Clients parsing public credentials should interpret
+        /// the lack of such a link as the fact that the credential has been
+        /// removed by its attester some time in the past.
+        /// 
+        /// This function fails if a credential already exists for the specified
+        /// subject.
+        /// 
+        /// The dispatch origin must be the owner of the deposit, hence not the
+        /// credential's attester.
+        /// 
+        /// Emits `CredentialRemoved`.
         /// </summary>
         reclaim_deposit = 4,
         
         /// <summary>
         /// >> change_deposit_owner
-        /// See [`Pallet::change_deposit_owner`].
+        /// Changes the deposit owner.
+        /// 
+        /// The balance that is reserved by the current deposit owner will be
+        /// freed and balance of the new deposit owner will get reserved.
+        /// 
+        /// The subject of the call must be the owner of the credential.
+        /// The sender of the call will be the new deposit owner.
         /// </summary>
         change_deposit_owner = 5,
         
         /// <summary>
         /// >> update_deposit
-        /// See [`Pallet::update_deposit`].
+        /// Updates the deposit amount to the current deposit rate.
+        /// 
+        /// The sender must be the deposit owner.
         /// </summary>
         update_deposit = 6,
     }
     
     /// <summary>
-    /// >> 374 - Variant[public_credentials.pallet.Call]
+    /// >> 392 - Variant[public_credentials.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

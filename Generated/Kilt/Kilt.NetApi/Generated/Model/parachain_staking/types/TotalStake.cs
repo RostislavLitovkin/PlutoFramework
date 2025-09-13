@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.parachain_staking.types
     
     
     /// <summary>
-    /// >> 285 - Composite[parachain_staking.types.TotalStake]
+    /// >> 305 - Composite[parachain_staking.types.TotalStake]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class TotalStake : BaseType

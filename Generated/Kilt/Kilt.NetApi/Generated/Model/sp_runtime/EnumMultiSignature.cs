@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.sp_runtime
     }
     
     /// <summary>
-    /// >> 371 - Variant[sp_runtime.MultiSignature]
+    /// >> 388 - Variant[sp_runtime.MultiSignature]
     /// </summary>
     public sealed class EnumMultiSignature : BaseEnumRust<MultiSignature>
     {
@@ -48,9 +48,9 @@ namespace Kilt.NetApi.Generated.Model.sp_runtime
         /// </summary>
         public EnumMultiSignature()
         {
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.sp_core.ed25519.Signature>(MultiSignature.Ed25519);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.sp_core.sr25519.Signature>(MultiSignature.Sr25519);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.sp_core.ecdsa.Signature>(MultiSignature.Ecdsa);
+				AddTypeDecoder<Kilt.NetApi.Generated.Types.Base.Arr64U8>(MultiSignature.Ed25519);
+				AddTypeDecoder<Kilt.NetApi.Generated.Types.Base.Arr64U8>(MultiSignature.Sr25519);
+				AddTypeDecoder<Kilt.NetApi.Generated.Types.Base.Arr65U8>(MultiSignature.Ecdsa);
         }
     }
 }

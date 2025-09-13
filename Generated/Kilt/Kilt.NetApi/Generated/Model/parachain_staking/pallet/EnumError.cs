@@ -245,7 +245,7 @@ namespace Kilt.NetApi.Generated.Model.parachain_staking.pallet
     }
     
     /// <summary>
-    /// >> 296 - Variant[parachain_staking.pallet.Error]
+    /// >> 316 - Variant[parachain_staking.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

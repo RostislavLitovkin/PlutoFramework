@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.did.did_details
     }
     
     /// <summary>
-    /// >> 537 - Variant[did.did_details.DidPublicKey]
+    /// >> 612 - Variant[did.did_details.DidPublicKey]
     /// </summary>
     public sealed class EnumDidPublicKey : BaseEnumRust<DidPublicKey>
     {

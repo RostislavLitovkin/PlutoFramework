@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_scheduler
     
     
     /// <summary>
-    /// >> 474 - Composite[pallet_scheduler.Scheduled]
+    /// >> 548 - Composite[pallet_scheduler.Scheduled]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Scheduled : BaseType

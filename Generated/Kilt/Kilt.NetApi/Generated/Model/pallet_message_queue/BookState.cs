@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_message_queue
     
     
     /// <summary>
-    /// >> 611 - Composite[pallet_message_queue.BookState]
+    /// >> 686 - Composite[pallet_message_queue.BookState]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BookState : BaseType

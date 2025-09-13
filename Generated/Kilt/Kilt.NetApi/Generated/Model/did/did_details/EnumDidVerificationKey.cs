@@ -43,7 +43,7 @@ namespace Kilt.NetApi.Generated.Model.did.did_details
     }
     
     /// <summary>
-    /// >> 363 - Variant[did.did_details.DidVerificationKey]
+    /// >> 382 - Variant[did.did_details.DidVerificationKey]
     /// </summary>
     public sealed class EnumDidVerificationKey : BaseEnumRust<DidVerificationKey>
     {
@@ -53,9 +53,9 @@ namespace Kilt.NetApi.Generated.Model.did.did_details
         /// </summary>
         public EnumDidVerificationKey()
         {
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.sp_core.ed25519.Public>(DidVerificationKey.Ed25519);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.sp_core.sr25519.Public>(DidVerificationKey.Sr25519);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.sp_core.ecdsa.Public>(DidVerificationKey.Ecdsa);
+				AddTypeDecoder<Kilt.NetApi.Generated.Types.Base.Arr32U8>(DidVerificationKey.Ed25519);
+				AddTypeDecoder<Kilt.NetApi.Generated.Types.Base.Arr32U8>(DidVerificationKey.Sr25519);
+				AddTypeDecoder<Kilt.NetApi.Generated.Types.Base.Arr33U8>(DidVerificationKey.Ecdsa);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>(DidVerificationKey.Account);
         }
     }

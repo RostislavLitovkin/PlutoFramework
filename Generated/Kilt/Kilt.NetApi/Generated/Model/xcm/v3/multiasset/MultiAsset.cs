@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.xcm.v3.multiasset
     
     
     /// <summary>
-    /// >> 104 - Composite[xcm.v3.multiasset.MultiAsset]
+    /// >> 105 - Composite[xcm.v3.multiasset.MultiAsset]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MultiAsset : BaseType

@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.kilt_asset_dids.asset.v1
     
     
     /// <summary>
-    /// >> 141 - Composite[kilt_asset_dids.asset.v1.EvmSmartContractNonFungibleReference]
+    /// >> 143 - Composite[kilt_asset_dids.asset.v1.EvmSmartContractNonFungibleReference]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class EvmSmartContractNonFungibleReference : BaseType

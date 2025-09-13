@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.frame_system
     }
     
     /// <summary>
-    /// >> 217 - Variant[frame_system.Phase]
+    /// >> 239 - Variant[frame_system.Phase]
     /// </summary>
     public sealed class EnumPhase : BaseEnumRust<Phase>
     {

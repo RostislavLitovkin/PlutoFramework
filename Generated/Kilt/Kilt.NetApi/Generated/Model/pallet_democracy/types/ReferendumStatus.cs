@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_democracy.types
     
     
     /// <summary>
-    /// >> 441 - Composite[pallet_democracy.types.ReferendumStatus]
+    /// >> 516 - Composite[pallet_democracy.types.ReferendumStatus]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ReferendumStatus : BaseType

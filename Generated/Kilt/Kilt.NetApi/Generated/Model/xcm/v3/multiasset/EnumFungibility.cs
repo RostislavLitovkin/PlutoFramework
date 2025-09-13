@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.xcm.v3.multiasset
     }
     
     /// <summary>
-    /// >> 105 - Variant[xcm.v3.multiasset.Fungibility]
+    /// >> 106 - Variant[xcm.v3.multiasset.Fungibility]
     /// </summary>
     public sealed class EnumFungibility : BaseEnumRust<Fungibility>
     {

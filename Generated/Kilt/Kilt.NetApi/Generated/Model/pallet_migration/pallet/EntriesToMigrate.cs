@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_migration.pallet
     
     
     /// <summary>
-    /// >> 152 - Composite[pallet_migration.pallet.EntriesToMigrate]
+    /// >> 154 - Composite[pallet_migration.pallet.EntriesToMigrate]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class EntriesToMigrate : BaseType
@@ -27,27 +27,27 @@ namespace Kilt.NetApi.Generated.Model.pallet_migration.pallet
         /// <summary>
         /// >> attestation
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 Attestation { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 Attestation { get; set; }
         /// <summary>
         /// >> delegation
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 Delegation { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5 Delegation { get; set; }
         /// <summary>
         /// >> did
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7 Did { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 Did { get; set; }
         /// <summary>
         /// >> lookup
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 Lookup { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7 Lookup { get; set; }
         /// <summary>
         /// >> w3n
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 W3n { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 W3n { get; set; }
         /// <summary>
         /// >> public_credentials
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10 PublicCredentials { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 PublicCredentials { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -72,17 +72,17 @@ namespace Kilt.NetApi.Generated.Model.pallet_migration.pallet
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Attestation = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6();
+            Attestation = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5();
             Attestation.Decode(byteArray, ref p);
-            Delegation = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6();
+            Delegation = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5();
             Delegation.Decode(byteArray, ref p);
-            Did = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7();
+            Did = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6();
             Did.Decode(byteArray, ref p);
-            Lookup = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8();
+            Lookup = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7();
             Lookup.Decode(byteArray, ref p);
-            W3n = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9();
+            W3n = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8();
             W3n.Decode(byteArray, ref p);
-            PublicCredentials = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10();
+            PublicCredentials = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9();
             PublicCredentials.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

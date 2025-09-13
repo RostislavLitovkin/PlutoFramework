@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.staging_xcm.v4
     
     
     /// <summary>
-    /// >> 194 - Composite[staging_xcm.v4.PalletInfo]
+    /// >> 196 - Composite[staging_xcm.v4.PalletInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PalletInfo : BaseType
@@ -31,11 +31,11 @@ namespace Kilt.NetApi.Generated.Model.staging_xcm.v4
         /// <summary>
         /// >> name
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13 Name { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12 Name { get; set; }
         /// <summary>
         /// >> module_name
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13 ModuleName { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12 ModuleName { get; set; }
         /// <summary>
         /// >> major
         /// </summary>
@@ -74,9 +74,9 @@ namespace Kilt.NetApi.Generated.Model.staging_xcm.v4
             var start = p;
             Index = new Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>();
             Index.Decode(byteArray, ref p);
-            Name = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13();
+            Name = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12();
             Name.Decode(byteArray, ref p);
-            ModuleName = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13();
+            ModuleName = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12();
             ModuleName.Decode(byteArray, ref p);
             Major = new Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>();
             Major.Decode(byteArray, ref p);

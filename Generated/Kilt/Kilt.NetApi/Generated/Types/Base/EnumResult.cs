@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Types.Base
     }
     
     /// <summary>
-    /// >> 44 - Variant[Result]
+    /// >> 45 - Variant[Result]
     /// </summary>
     public sealed class EnumResult : BaseEnumRust<Result>
     {
