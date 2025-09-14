@@ -22,11 +22,18 @@ namespace PlutoFrameworkCore.AssetDidComm
             byte[] sk = key.Export(KeyBlobFormat.RawPrivateKey);
             byte[] pk = key.PublicKey.Export(KeyBlobFormat.RawPublicKey);
 
-            return new X25519KeyPair {
+            return new X25519KeyPair
+            {
                 PublicKey = pk,
                 PrivateKey = sk
             };
         }
+
+        public static Key ToKey(byte[] privateKey) => Key.Import(KeyAgreementAlgorithm.X25519, privateKey, KeyBlobFormat.RawPrivateKey, new KeyCreationParameters
+        {
+            ExportPolicy = KeyExportPolicies.AllowPlaintextExport
+        });
+
 
         public static byte[] Encrypt(ReadOnlySpan<byte> recipientPublicKeyRaw, ReadOnlySpan<byte> plaintext, ReadOnlySpan<byte> aad = default)
         {
@@ -69,6 +76,11 @@ namespace PlutoFrameworkCore.AssetDidComm
             Buffer.BlockCopy(nonce, 0, result, o, nonce.Length); o += nonce.Length;
             Buffer.BlockCopy(ciphertext, 0, result, o, ciphertext.Length);
             return result;
+        }
+
+        public static byte[] Decrypt(byte[] recipientSk, ReadOnlySpan<byte> blob, ReadOnlySpan<byte> aad = default)
+        {
+            return Decrypt(ToKey(recipientSk), blob, aad);
         }
 
         // Decrypts with recipient's X25519 private key (Key) from blob created above

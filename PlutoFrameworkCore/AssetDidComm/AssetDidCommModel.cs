@@ -1,4 +1,5 @@
 ﻿using PlutoFramework.Model;
+using PlutoFramework.Model.Xcavate;
 using Substrate.NetApi;
 using Substrate.NetApi.Extensions;
 using Substrate.NetApi.Model.Extrinsics;
@@ -7,6 +8,8 @@ using Substrate.NetApi.Model.Types.Primitive;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using UniqueryPlus;
+using XcavatePaseo.NetApi.Generated;
 using XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map;
 using XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec;
 using XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types;
@@ -64,10 +67,17 @@ namespace PlutoFrameworkCore.AssetDidComm
         }
     }
 
+    
     public record AssetDidCommNamespace : AssetDidCommNamespaceInput
     {
         [JsonPropertyName("createdAt")]
         public required uint CreatedAt { get; set; }
+    }
+
+    public record AssetDidCommBucket : AssetDidCommBucketInput
+    {
+        public required U128 BucketId { get; set; }
+        public required U128 NamespaceId { get; set; }
     }
 
     public record StorageUploadRequest
@@ -145,7 +155,7 @@ namespace PlutoFrameworkCore.AssetDidComm
     public class AssetDidCommModel
     {
         private const string API_URL = "https://gr4wnsrwnk.execute-api.eu-west-1.amazonaws.com/prod";
-        public static Method CreateNamespace(AssetDidCommNamespaceInput name)
+        public static (Method, U128) CreateNamespace(AssetDidCommNamespaceInput name)
         {
             var namespaceId = new U128();
             namespaceId.Create(new byte[16].Populate());
@@ -165,10 +175,12 @@ namespace PlutoFrameworkCore.AssetDidComm
                 }
             };
 
-            return BucketsCalls.CreateNamespace(
+            var createNamespaceMethod =  BucketsCalls.CreateNamespace(
                 namespaceId,
                 metadata
             );
+
+            return (createNamespaceMethod, namespaceId);
         }
 
         public static Method CreateBucket(U128 namespaceId, AssetDidCommBucketInput bucket)
@@ -401,6 +413,67 @@ namespace PlutoFrameworkCore.AssetDidComm
 
             // TODO
             return [];
+        }
+
+        public static async Task<RecursiveReturn<AssetDidCommBucket>> GetAllBucketsInNamespaceAsync(SubstrateClientExt client, U128 namespaceId, uint limit, byte[]? lastKey, CancellationToken token)
+        {
+            // 0x + Twox64 pallet + Twox64 storage + Blake2_128Concat U128
+            var keyPrefixLength = 130;
+
+            var keyPrefix = Utils.HexToByteArray(BucketsStorage.BucketsParams(new BaseTuple<U128, U128>(namespaceId, new U128(0))).Substring(0, keyPrefixLength));
+
+            var fullKeys = await client.State.GetKeysPagedAsync(keyPrefix, limit, lastKey, string.Empty, token).ConfigureAwait(false);
+
+            // No more nfts found
+            if (fullKeys == null || !fullKeys.Any())
+            {
+                return new RecursiveReturn<AssetDidCommBucket>
+                {
+                    Items = [],
+                    LastKey = lastKey,
+                };
+            }
+
+            var idKeys = fullKeys.Select(p => p.ToString().Substring(keyPrefixLength));
+
+            var storageChangeSets = await client.State.GetQueryStorageAtAsync(fullKeys.Select(p => Utils.HexToByteArray(p.ToString())).ToList(), string.Empty, token).ConfigureAwait(false);
+
+            var buckets = new List<AssetDidCommBucket>();
+
+            foreach (var change in storageChangeSets.First().Changes)
+            {
+                if (change[1] == null)
+                {
+                    continue;
+                }
+
+                var bucket = new Bucket();
+                bucket.Create(change[1]);
+
+
+                int p = 32 + 16;
+                var namespaceIdDecoded = new U128();
+                namespaceIdDecoded.Decode(Utils.HexToByteArray(change[0]), ref p);
+
+                p = 32 + 48;
+                var bucketIdDecoded = new U128();
+                bucketIdDecoded.Decode(Utils.HexToByteArray(change[0]), ref p);
+
+                Console.WriteLine(change[0]);
+
+                buckets.Add(new AssetDidCommBucket
+                {
+                    Name = Encoding.UTF8.GetString(bucket.Metadata.Name.Value.Value.Select(u8 => u8.Value).ToArray()),
+                    NamespaceId = namespaceIdDecoded,
+                    BucketId = bucketIdDecoded,
+                });
+            }
+
+            return new RecursiveReturn<AssetDidCommBucket>
+            {
+                Items = buckets,
+                LastKey = Utils.HexToByteArray(fullKeys.Last().ToString())
+            };
         }
     }
 }
