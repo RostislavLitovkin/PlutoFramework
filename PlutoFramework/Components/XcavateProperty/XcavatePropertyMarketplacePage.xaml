@@ -17,6 +17,7 @@
              xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
              xmlns:loading="clr-namespace:PlutoFramework.Components.Loading"
              xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
+             xmlns:transactionrequest="clr-namespace:PlutoFramework.Components.TransactionRequest"
              Shell.PresentationMode="ModalNotAnimated"
              xmlns:card="clr-namespace:PlutoFramework.Components.Card"
                 BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
@@ -73,6 +74,10 @@
         <xcavate:XcavateNavigationBarView />
 
         <transfer:TransferView />
+
+        <txanalyzer:TransactionAnalyzerConfirmationView />
+
+        <transactionrequest:MessageSignRequestView />
 
         <assetselect:AssetSelectView />
 

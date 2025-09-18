@@ -10,7 +10,7 @@
   <ItemGroup>
       <PackageReference Include="Substrate.NET.API" Version="0.9.24-rc6" />
       <PackageReference Include="Uniquery" Version="1.0.1" />
-      <PackageReference Include="Plutonication" Version="2.5.0" />
+      <PackageReference Include="Plutonication" Version="2.6.0" />
       <PackageReference Include="AzeroIdResolver" Version="1.0.2" />
       <PackageReference Include="Substrate.NET.Wallet" Version="1.0.8" />
       <PackageReference Include="System.Collections" Version="4.3.0" />

@@ -90,7 +90,7 @@ namespace PlutoFramework.Components.XcavateProperty
             }
             if (nft.NftBase is not INftXcavateMetadata || ((INftXcavateMetadata)nft.NftBase).XcavateMetadata is null || nft.NftBase is not INftXcavateNftMarketplace)
             {
-                var toast = Toast.Make("Could not navigate.");
+                var toast = Toast.Make($"Could not navigate to property id: {nft.Key?.Item3.ToString() ?? "Unknown"}");
                 await toast.Show();
 
                 return;
