@@ -120,7 +120,7 @@
                             </Label.FormattedText>
                         </Label>
 
-                        <Label Text="APY"
+                        <Label Text="Gross yield"
                             HorizontalTextAlignment="End"
                             VerticalOptions="Center"
                             VerticalTextAlignment="Center"
