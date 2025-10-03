@@ -4,14 +4,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.Messaging.ChatItemView">
         <Border StrokeThickness="0"
-                Padding="8 6"
+                Padding="8,6"
                 BackgroundColor="{AppThemeBinding Light={StaticResource Gray50}, Dark={StaticResource Gray950}}"
                 StrokeShape="RoundRectangle 4,4">
             <VerticalStackLayout Spacing="8">
                 <Grid ColumnDefinitions="*,*">
                     <Border Grid.Column="0"
                             StrokeThickness="0"
-                            Padding="8 6"
+                            Padding="8,6"
                             BackgroundColor="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray900}}"
                             StrokeShape="RoundRectangle 4,4">
                         <Label LineBreakMode="NoWrap"
@@ -32,7 +32,7 @@
                        LineBreakMode="WordWrap"/>
                 
                 <Border StrokeThickness="0"
-                        Padding="8 6"
+                        Padding="8,6"
                         BackgroundColor="{Binding IsApprovedColor}"
                         StrokeShape="RoundRectangle 4,4"
                         Opacity="0.5">
