@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.kilt_support.deposit
     
     
     /// <summary>
-    /// >> 179 - Composite[kilt_support.deposit.Deposit]
+    /// >> 181 - Composite[kilt_support.deposit.Deposit]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Deposit : BaseType

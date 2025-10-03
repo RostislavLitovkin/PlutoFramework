@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.frame_system
     
     
     /// <summary>
-    /// >> 219 - Composite[frame_system.LastRuntimeUpgradeInfo]
+    /// >> 241 - Composite[frame_system.LastRuntimeUpgradeInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class LastRuntimeUpgradeInfo : BaseType

@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_asset_switch.@switch
     
     
     /// <summary>
-    /// >> 508 - Composite[pallet_asset_switch.switch.UnconfirmedSwitchInfo]
+    /// >> 583 - Composite[pallet_asset_switch.switch.UnconfirmedSwitchInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UnconfirmedSwitchInfo : BaseType

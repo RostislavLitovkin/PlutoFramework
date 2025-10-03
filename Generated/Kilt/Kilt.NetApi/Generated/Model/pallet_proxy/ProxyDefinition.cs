@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_proxy
     
     
     /// <summary>
-    /// >> 479 - Composite[pallet_proxy.ProxyDefinition]
+    /// >> 554 - Composite[pallet_proxy.ProxyDefinition]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ProxyDefinition : BaseType
@@ -31,7 +31,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_proxy
         /// <summary>
         /// >> proxy_type
         /// </summary>
-        public Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumProxyType ProxyType { get; set; }
+        public Kilt.NetApi.Generated.Model.spiritnet_runtime.system.proxy.EnumProxyType ProxyType { get; set; }
         /// <summary>
         /// >> delay
         /// </summary>
@@ -59,7 +59,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_proxy
             var start = p;
             Delegate = new Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Delegate.Decode(byteArray, ref p);
-            ProxyType = new Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumProxyType();
+            ProxyType = new Kilt.NetApi.Generated.Model.spiritnet_runtime.system.proxy.EnumProxyType();
             ProxyType.Decode(byteArray, ref p);
             Delay = new Substrate.NetApi.Model.Types.Primitive.U64();
             Delay.Decode(byteArray, ref p);

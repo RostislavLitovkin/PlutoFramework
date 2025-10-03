@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_proxy
     
     
     /// <summary>
-    /// >> 483 - Composite[pallet_proxy.Announcement]
+    /// >> 558 - Composite[pallet_proxy.Announcement]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Announcement : BaseType

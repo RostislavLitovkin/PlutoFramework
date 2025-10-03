@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.parachain_staking.set
     
     
     /// <summary>
-    /// >> 286 - Composite[parachain_staking.set.OrderedSetT2]
+    /// >> 306 - Composite[parachain_staking.set.OrderedSetT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OrderedSetT2 : BaseType

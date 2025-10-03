@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.xcm.v3
     }
     
     /// <summary>
-    /// >> 206 - Variant[xcm.v3.WeightLimit]
+    /// >> 208 - Variant[xcm.v3.WeightLimit]
     /// </summary>
     public sealed class EnumWeightLimit : BaseEnumRust<WeightLimit>
     {

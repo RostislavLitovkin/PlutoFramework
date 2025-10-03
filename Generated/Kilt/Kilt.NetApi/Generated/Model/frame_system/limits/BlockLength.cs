@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.frame_system.limits
     
     
     /// <summary>
-    /// >> 230 - Composite[frame_system.limits.BlockLength]
+    /// >> 252 - Composite[frame_system.limits.BlockLength]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BlockLength : BaseType

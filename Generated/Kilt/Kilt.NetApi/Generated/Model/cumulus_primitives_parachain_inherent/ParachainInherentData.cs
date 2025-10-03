@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.cumulus_primitives_parachain_inherent
     
     
     /// <summary>
-    /// >> 383 - Composite[cumulus_primitives_parachain_inherent.ParachainInherentData]
+    /// >> 401 - Composite[cumulus_primitives_parachain_inherent.ParachainInherentData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ParachainInherentData : BaseType
@@ -27,7 +27,7 @@ namespace Kilt.NetApi.Generated.Model.cumulus_primitives_parachain_inherent
         /// <summary>
         /// >> validation_data
         /// </summary>
-        public Kilt.NetApi.Generated.Model.polkadot_primitives.v6.PersistedValidationData ValidationData { get; set; }
+        public Kilt.NetApi.Generated.Model.polkadot_primitives.v8.PersistedValidationData ValidationData { get; set; }
         /// <summary>
         /// >> relay_chain_state
         /// </summary>
@@ -39,7 +39,7 @@ namespace Kilt.NetApi.Generated.Model.cumulus_primitives_parachain_inherent
         /// <summary>
         /// >> horizontal_messages
         /// </summary>
-        public Kilt.NetApi.Generated.Types.Base.BTreeMapT2 HorizontalMessages { get; set; }
+        public Kilt.NetApi.Generated.Types.Base.BTreeMapT3 HorizontalMessages { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -62,13 +62,13 @@ namespace Kilt.NetApi.Generated.Model.cumulus_primitives_parachain_inherent
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            ValidationData = new Kilt.NetApi.Generated.Model.polkadot_primitives.v6.PersistedValidationData();
+            ValidationData = new Kilt.NetApi.Generated.Model.polkadot_primitives.v8.PersistedValidationData();
             ValidationData.Decode(byteArray, ref p);
             RelayChainState = new Kilt.NetApi.Generated.Model.sp_trie.storage_proof.StorageProof();
             RelayChainState.Decode(byteArray, ref p);
             DownwardMessages = new Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.polkadot_core_primitives.InboundDownwardMessage>();
             DownwardMessages.Decode(byteArray, ref p);
-            HorizontalMessages = new Kilt.NetApi.Generated.Types.Base.BTreeMapT2();
+            HorizontalMessages = new Kilt.NetApi.Generated.Types.Base.BTreeMapT3();
             HorizontalMessages.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

@@ -45,10 +45,16 @@ namespace Kilt.NetApi.Generated.Model.pallet_did_lookup.pallet
         /// All AccountIds have been migrated to LinkableAccountId.
         /// </summary>
         MigrationCompleted = 3,
+        
+        /// <summary>
+        /// >> DepositOwnerChanged
+        /// The deposit for an linked account has changed owner.
+        /// </summary>
+        DepositOwnerChanged = 4,
     }
     
     /// <summary>
-    /// >> 118 - Variant[pallet_did_lookup.pallet.Event]
+    /// >> 120 - Variant[pallet_did_lookup.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -63,6 +69,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_did_lookup.pallet
 				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.pallet_did_lookup.linkable_account.EnumLinkableAccountId, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.AssociationRemoved);
 				AddTypeDecoder<BaseVoid>(Event.MigrationProgress);
 				AddTypeDecoder<BaseVoid>(Event.MigrationCompleted);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.pallet_did_lookup.linkable_account.EnumLinkableAccountId>, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.DepositOwnerChanged);
         }
     }
 }

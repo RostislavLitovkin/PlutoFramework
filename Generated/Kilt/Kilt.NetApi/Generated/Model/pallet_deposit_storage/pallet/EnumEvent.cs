@@ -36,7 +36,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_deposit_storage.pallet
     }
     
     /// <summary>
-    /// >> 166 - Variant[pallet_deposit_storage.pallet.Event]
+    /// >> 168 - Variant[pallet_deposit_storage.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -47,8 +47,8 @@ namespace Kilt.NetApi.Generated.Model.pallet_deposit_storage.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.runtime_common.dip.deposit.EnumDepositNamespace, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11, Kilt.NetApi.Generated.Model.pallet_deposit_storage.deposit.DepositEntry>>(Event.DepositAdded);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.runtime_common.dip.deposit.EnumDepositNamespace, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11, Kilt.NetApi.Generated.Model.pallet_deposit_storage.deposit.DepositEntry>>(Event.DepositReclaimed);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.runtime_common.deposits.EnumDepositNamespace, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10, Kilt.NetApi.Generated.Model.pallet_deposit_storage.deposit.DepositEntry>>(Event.DepositAdded);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.runtime_common.deposits.EnumDepositNamespace, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10, Kilt.NetApi.Generated.Model.pallet_deposit_storage.deposit.DepositEntry>>(Event.DepositReclaimed);
         }
     }
 }

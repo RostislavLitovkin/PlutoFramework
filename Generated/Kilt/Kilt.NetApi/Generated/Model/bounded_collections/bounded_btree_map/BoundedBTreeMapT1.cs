@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.bounded_collections.bounded_btree_map
     
     
     /// <summary>
-    /// >> 291 - Composite[bounded_collections.bounded_btree_map.BoundedBTreeMapT1]
+    /// >> 311 - Composite[bounded_collections.bounded_btree_map.BoundedBTreeMapT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedBTreeMapT1 : BaseType
@@ -27,7 +27,7 @@ namespace Kilt.NetApi.Generated.Model.bounded_collections.bounded_btree_map
         /// <summary>
         /// >> value
         /// </summary>
-        public Kilt.NetApi.Generated.Types.Base.BTreeMapT1 Value { get; set; }
+        public Kilt.NetApi.Generated.Types.Base.BTreeMapT2 Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace Kilt.NetApi.Generated.Model.bounded_collections.bounded_btree_map
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Kilt.NetApi.Generated.Types.Base.BTreeMapT1();
+            Value = new Kilt.NetApi.Generated.Types.Base.BTreeMapT2();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

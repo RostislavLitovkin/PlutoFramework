@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.sp_arithmetic.per_things
     
     
     /// <summary>
-    /// >> 500 - Composite[sp_arithmetic.per_things.Percent]
+    /// >> 575 - Composite[sp_arithmetic.per_things.Percent]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Percent : BaseType

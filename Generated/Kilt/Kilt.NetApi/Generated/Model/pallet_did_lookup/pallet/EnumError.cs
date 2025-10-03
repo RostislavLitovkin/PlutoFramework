@@ -55,10 +55,17 @@ namespace Kilt.NetApi.Generated.Model.pallet_did_lookup.pallet
         /// NOTE: this will only be returned if the storage has inconsistencies.
         /// </summary>
         Migration = 4,
+        
+        /// <summary>
+        /// >> LinkExisting
+        /// The deployed pallet supports a single account <-> link, which has
+        /// already been previously created for the provided DID.
+        /// </summary>
+        LinkExisting = 5,
     }
     
     /// <summary>
-    /// >> 545 - Variant[pallet_did_lookup.pallet.Error]
+    /// >> 619 - Variant[pallet_did_lookup.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

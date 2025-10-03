@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "net_api": "KiltPeregrine.NetApi",
+    "net_integration": "Substrate.Integration",
+    "rest_service": "Substrate.RestService",
+    "rest_client": "Substrate.RestClient"
+  },
+   "metadata": {
+      "websocket": "wss://peregrine.kilt.io"
+   },
+  "rest_client_settings": {
+    "service_assembly": "Substrate.RestService.dll"
+  }
+}

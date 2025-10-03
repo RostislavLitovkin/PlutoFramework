@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.parachain_staking.inflation
     
     
     /// <summary>
-    /// >> 289 - Composite[parachain_staking.inflation.StakingInfo]
+    /// >> 309 - Composite[parachain_staking.inflation.StakingInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class StakingInfo : BaseType

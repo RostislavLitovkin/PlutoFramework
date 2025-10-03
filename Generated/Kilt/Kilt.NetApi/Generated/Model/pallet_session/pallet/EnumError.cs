@@ -54,7 +54,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_session.pallet
     }
     
     /// <summary>
-    /// >> 276 - Variant[pallet_session.pallet.Error]
+    /// >> 296 - Variant[pallet_session.pallet.Error]
     /// Error for the session pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

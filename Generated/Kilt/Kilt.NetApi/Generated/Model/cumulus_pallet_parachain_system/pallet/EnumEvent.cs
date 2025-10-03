@@ -60,7 +60,7 @@ namespace Kilt.NetApi.Generated.Model.cumulus_pallet_parachain_system.pallet
     }
     
     /// <summary>
-    /// >> 180 - Variant[cumulus_pallet_parachain_system.pallet.Event]
+    /// >> 182 - Variant[cumulus_pallet_parachain_system.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

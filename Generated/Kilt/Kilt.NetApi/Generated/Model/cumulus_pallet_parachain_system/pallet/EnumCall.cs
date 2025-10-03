@@ -24,31 +24,26 @@ namespace Kilt.NetApi.Generated.Model.cumulus_pallet_parachain_system.pallet
         
         /// <summary>
         /// >> set_validation_data
-        /// See [`Pallet::set_validation_data`].
+        /// Set the current validation data.
+        /// 
+        /// This should be invoked exactly once per block. It will panic at the finalization
+        /// phase if the call was not invoked.
+        /// 
+        /// The dispatch origin for this call must be `Inherent`
+        /// 
+        /// As a side effect, this function upgrades the current validation function
+        /// if the appropriate time has come.
         /// </summary>
         set_validation_data = 0,
         
         /// <summary>
         /// >> sudo_send_upward_message
-        /// See [`Pallet::sudo_send_upward_message`].
         /// </summary>
         sudo_send_upward_message = 1,
-        
-        /// <summary>
-        /// >> authorize_upgrade
-        /// See [`Pallet::authorize_upgrade`].
-        /// </summary>
-        authorize_upgrade = 2,
-        
-        /// <summary>
-        /// >> enact_authorized_upgrade
-        /// See [`Pallet::enact_authorized_upgrade`].
-        /// </summary>
-        enact_authorized_upgrade = 3,
     }
     
     /// <summary>
-    /// >> 382 - Variant[cumulus_pallet_parachain_system.pallet.Call]
+    /// >> 400 - Variant[cumulus_pallet_parachain_system.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -61,8 +56,6 @@ namespace Kilt.NetApi.Generated.Model.cumulus_pallet_parachain_system.pallet
         {
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.cumulus_primitives_parachain_inherent.ParachainInherentData>(Call.set_validation_data);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>(Call.sudo_send_upward_message);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.authorize_upgrade);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>(Call.enact_authorized_upgrade);
         }
     }
 }

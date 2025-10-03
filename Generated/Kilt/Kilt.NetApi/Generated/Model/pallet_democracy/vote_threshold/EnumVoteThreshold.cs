@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_democracy.vote_threshold
     }
     
     /// <summary>
-    /// >> 39 - Variant[pallet_democracy.vote_threshold.VoteThreshold]
+    /// >> 40 - Variant[pallet_democracy.vote_threshold.VoteThreshold]
     /// </summary>
     public sealed class EnumVoteThreshold : BaseEnum<VoteThreshold>
     {

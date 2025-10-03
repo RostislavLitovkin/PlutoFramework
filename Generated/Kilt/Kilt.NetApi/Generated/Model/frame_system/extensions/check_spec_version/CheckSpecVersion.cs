@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.frame_system.extensions.check_spec_version
     
     
     /// <summary>
-    /// >> 621 - Composite[frame_system.extensions.check_spec_version.CheckSpecVersion]
+    /// >> 700 - Composite[frame_system.extensions.check_spec_version.CheckSpecVersion]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckSpecVersion : BaseType

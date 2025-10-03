@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_balances.types
     }
     
     /// <summary>
-    /// >> 246 - Variant[pallet_balances.types.Reasons]
+    /// >> 268 - Variant[pallet_balances.types.Reasons]
     /// </summary>
     public sealed class EnumReasons : BaseEnum<Reasons>
     {

@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.did.did_details
     
     
     /// <summary>
-    /// >> 368 - Composite[did.did_details.DidAuthorizedCallOperation]
+    /// >> 385 - Composite[did.did_details.DidAuthorizedCallOperation]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DidAuthorizedCallOperation : BaseType

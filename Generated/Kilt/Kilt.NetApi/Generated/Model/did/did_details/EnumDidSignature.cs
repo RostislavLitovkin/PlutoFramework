@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.did.did_details
     }
     
     /// <summary>
-    /// >> 341 - Variant[did.did_details.DidSignature]
+    /// >> 363 - Variant[did.did_details.DidSignature]
     /// </summary>
     public sealed class EnumDidSignature : BaseEnumRust<DidSignature>
     {
@@ -48,9 +48,9 @@ namespace Kilt.NetApi.Generated.Model.did.did_details
         /// </summary>
         public EnumDidSignature()
         {
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.sp_core.ed25519.Signature>(DidSignature.Ed25519);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.sp_core.sr25519.Signature>(DidSignature.Sr25519);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.sp_core.ecdsa.Signature>(DidSignature.Ecdsa);
+				AddTypeDecoder<Kilt.NetApi.Generated.Types.Base.Arr64U8>(DidSignature.Ed25519);
+				AddTypeDecoder<Kilt.NetApi.Generated.Types.Base.Arr64U8>(DidSignature.Sr25519);
+				AddTypeDecoder<Kilt.NetApi.Generated.Types.Base.Arr65U8>(DidSignature.Ecdsa);
         }
     }
 }

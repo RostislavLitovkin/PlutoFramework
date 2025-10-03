@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.staging_xcm.v4.junction
     
     
     /// <summary>
-    /// >> 82 - Array
+    /// >> 83 - Array
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Array)]
     public sealed class Arr2EnumJunction : BaseType

@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 346 - Array
+    /// >> 365 - Array
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Array)]
     public sealed class Arr65U8 : BaseType

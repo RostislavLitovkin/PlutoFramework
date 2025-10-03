@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_democracy.vote
     }
     
     /// <summary>
-    /// >> 443 - Variant[pallet_democracy.vote.Voting]
+    /// >> 518 - Variant[pallet_democracy.vote.Voting]
     /// </summary>
     public sealed class EnumVoting : BaseEnumRust<Voting>
     {
@@ -43,7 +43,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_democracy.vote
         /// </summary>
         public EnumVoting()
         {
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32, Kilt.NetApi.Generated.Model.pallet_democracy.types.Delegations, Kilt.NetApi.Generated.Model.pallet_democracy.vote.PriorLock>>(Voting.Direct);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT38, Kilt.NetApi.Generated.Model.pallet_democracy.types.Delegations, Kilt.NetApi.Generated.Model.pallet_democracy.vote.PriorLock>>(Voting.Direct);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.pallet_democracy.conviction.EnumConviction, Kilt.NetApi.Generated.Model.pallet_democracy.types.Delegations, Kilt.NetApi.Generated.Model.pallet_democracy.vote.PriorLock>>(Voting.Delegating);
         }
     }

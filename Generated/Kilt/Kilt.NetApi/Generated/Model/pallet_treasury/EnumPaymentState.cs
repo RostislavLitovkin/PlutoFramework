@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_treasury
     }
     
     /// <summary>
-    /// >> 462 - Variant[pallet_treasury.PaymentState]
+    /// >> 537 - Variant[pallet_treasury.PaymentState]
     /// </summary>
     public sealed class EnumPaymentState : BaseEnumRust<PaymentState>
     {

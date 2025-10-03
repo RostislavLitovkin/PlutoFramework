@@ -154,7 +154,7 @@ namespace Kilt.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 DepositBase()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00801B84EE3200000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         
@@ -167,7 +167,7 @@ namespace Kilt.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 DepositFactor()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00743BA40B0000000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         

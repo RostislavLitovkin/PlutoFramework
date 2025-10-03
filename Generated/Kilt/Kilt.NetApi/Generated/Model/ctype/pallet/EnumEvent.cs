@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.ctype.pallet
     }
     
     /// <summary>
-    /// >> 111 - Variant[ctype.pallet.Event]
+    /// >> 112 - Variant[ctype.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

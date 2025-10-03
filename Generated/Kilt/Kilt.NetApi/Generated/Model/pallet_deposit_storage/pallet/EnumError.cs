@@ -60,10 +60,16 @@ namespace Kilt.NetApi.Generated.Model.pallet_deposit_storage.pallet
         /// The external hook failed.
         /// </summary>
         Hook = 5,
+        
+        /// <summary>
+        /// >> Internal
+        /// Internal error.
+        /// </summary>
+        Internal = 6,
     }
     
     /// <summary>
-    /// >> 554 - Variant[pallet_deposit_storage.pallet.Error]
+    /// >> 628 - Variant[pallet_deposit_storage.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>
@@ -80,6 +86,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_deposit_storage.pallet
 				AddTypeDecoder<BaseVoid>(Error.FailedToHold);
 				AddTypeDecoder<BaseVoid>(Error.FailedToRelease);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U16>(Error.Hook);
+				AddTypeDecoder<BaseVoid>(Error.Internal);
         }
     }
 }

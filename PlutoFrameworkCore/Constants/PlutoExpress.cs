@@ -2,6 +2,6 @@
 {
     public class PlutoExpress
     {
-        public const string PLUTO_EXPRESS_API_URL = "https://express-byrr9.ondigitalocean.app";
+        public const string PLUTO_EXPRESS_API_URL = "https://express.plutolabs.app";
     }
 }

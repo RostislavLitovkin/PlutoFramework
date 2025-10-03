@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_democracy.types
     }
     
     /// <summary>
-    /// >> 440 - Variant[pallet_democracy.types.ReferendumInfo]
+    /// >> 515 - Variant[pallet_democracy.types.ReferendumInfo]
     /// </summary>
     public sealed class EnumReferendumInfo : BaseEnumRust<ReferendumInfo>
     {

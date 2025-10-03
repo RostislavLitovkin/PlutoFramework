@@ -43,7 +43,7 @@ namespace Kilt.NetApi.Generated.Model.xcm.v3.multiasset
     }
     
     /// <summary>
-    /// >> 421 - Variant[xcm.v3.multiasset.WildMultiAsset]
+    /// >> 440 - Variant[xcm.v3.multiasset.WildMultiAsset]
     /// </summary>
     public sealed class EnumWildMultiAsset : BaseEnumRust<WildMultiAsset>
     {

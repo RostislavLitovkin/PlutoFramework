@@ -28,7 +28,7 @@ namespace Kilt.NetApi.Generated.Model.did.did_details
     }
     
     /// <summary>
-    /// >> 359 - Variant[did.did_details.DidEncryptionKey]
+    /// >> 378 - Variant[did.did_details.DidEncryptionKey]
     /// </summary>
     public sealed class EnumDidEncryptionKey : BaseEnumRust<DidEncryptionKey>
     {

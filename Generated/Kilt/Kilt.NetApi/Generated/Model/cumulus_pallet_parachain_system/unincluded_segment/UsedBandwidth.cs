@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded
     
     
     /// <summary>
-    /// >> 557 - Composite[cumulus_pallet_parachain_system.unincluded_segment.UsedBandwidth]
+    /// >> 631 - Composite[cumulus_pallet_parachain_system.unincluded_segment.UsedBandwidth]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UsedBandwidth : BaseType
@@ -35,7 +35,7 @@ namespace Kilt.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded
         /// <summary>
         /// >> hrmp_outgoing
         /// </summary>
-        public Kilt.NetApi.Generated.Types.Base.BTreeMapT4 HrmpOutgoing { get; set; }
+        public Kilt.NetApi.Generated.Types.Base.BTreeMapT8 HrmpOutgoing { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -61,7 +61,7 @@ namespace Kilt.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded
             UmpMsgCount.Decode(byteArray, ref p);
             UmpTotalBytes = new Substrate.NetApi.Model.Types.Primitive.U32();
             UmpTotalBytes.Decode(byteArray, ref p);
-            HrmpOutgoing = new Kilt.NetApi.Generated.Types.Base.BTreeMapT4();
+            HrmpOutgoing = new Kilt.NetApi.Generated.Types.Base.BTreeMapT8();
             HrmpOutgoing.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

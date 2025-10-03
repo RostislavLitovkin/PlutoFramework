@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.frame_support.dispatch
     
     
     /// <summary>
-    /// >> 9 - Composite[frame_support.dispatch.PerDispatchClassT1]
+    /// >> 10 - Composite[frame_support.dispatch.PerDispatchClassT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PerDispatchClassT1 : BaseType
