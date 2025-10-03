@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                       xmlns:messaging="clr-namespace:PlutoFramework.Components.Messaging"
+                       x:Class="PlutoFramework.Components.Messaging.ChatsOverviewPage"
+                       Title="Messaging Overview">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="ChatItem">
+            <messaging:ChatItemView Title="{Binding Title}"
+                                    State="{Binding State}" 
+                                    Time="{Binding Time}"
+                                    IsApproved="{Binding IsApproved}"
+                                    IsApprovedColor="{Binding IsApprovedColor}"/>
+        </DataTemplate>
+    </ContentPage.Resources>
+    
+    <template:PageTemplate.MainContent>
+        <VerticalStackLayout BindableLayout.ItemsSource="{Binding Chats}"
+                             Padding="10"
+                             Spacing="5"
+                             Margin="0,60,0,0"/>
+    </template:PageTemplate.MainContent>
+</template:PageTemplate>

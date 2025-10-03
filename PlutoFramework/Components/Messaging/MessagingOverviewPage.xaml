@@ -36,7 +36,7 @@
                              BindableLayout.ItemTemplateSelector="{StaticResource MessageSelector}"
                              Padding="10"
                              Spacing="5"
-                             Margin="0, 60,0,0"/>
+                             Margin="0,60,0,0"/>
     </template:PageTemplate.MainContent>
     
     <template:PageTemplate.PopupContent>
