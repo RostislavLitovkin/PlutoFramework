@@ -1,16 +1,13 @@
-﻿using System;
-using System.Security.Cryptography;
-using Substrate.NET.Wallet;
+﻿using Substrate.NET.Wallet;
 using Substrate.NET.Wallet.Keyring;
-using Substrate.NetApi;
 using Substrate.NetApi.Extensions;
 using Substrate.NetApi.Model.Types;
 using static Substrate.NetApi.Mnemonic;
 
 namespace PlutoFramework.Model
 {
-	public class MnemonicsModel
-	{
+    public class MnemonicsModel
+    {
         private static readonly Meta META = new Meta() { Name = "PlutoFramework" };
 
         public static string[] GenerateMnemonicsArray()
@@ -68,13 +65,17 @@ namespace PlutoFramework.Model
         /// </summary>
         /// <param name="password"></param>
         /// <returns></returns>
-        public static Wallet ImportJson(string json, string password)
+        public static Wallet? ImportJson(string json, string password)
         {
             var keyring = new Substrate.NET.Wallet.Keyring.Keyring();
 
             // Later remove .Replace(..)
             Wallet wallet = keyring.AddFromJson(json.Replace("\"3\"", "3"));
-            wallet.Unlock(password);
+
+            if (!wallet.Unlock(password))
+            {
+                throw new Exception("Wrong password");
+            }
 
             return wallet;
         }

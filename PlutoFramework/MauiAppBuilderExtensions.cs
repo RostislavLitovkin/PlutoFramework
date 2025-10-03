@@ -30,6 +30,7 @@ using PlutoFramework.Components.XcavateProperty;
 using PlutoFramework.Components.Xcm;
 using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
+using PlutoFrameworkCore;
 using Xe.AcrylicView;
 using ZXing.Net.Maui.Controls;
 
@@ -83,6 +84,8 @@ namespace PlutoFramework
             });
 
             AssetsModel.DatabaseSaver = new BalancesDatabaseSaver();
+
+            PlutoConfigurationModel.SecureStorage = new PlutoSecureStorage();
 
             CustomizeWebViewHandler();
 
@@ -191,6 +194,4 @@ namespace PlutoFramework
 #endif
         }
     }
-
-
 }

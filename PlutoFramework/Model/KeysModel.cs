@@ -1,11 +1,15 @@
-﻿using Substrate.NetApi;
-using Substrate.NetApi.Model.Types;
-using Polkadot.NetApi.Generated.Model.sp_core.crypto;
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Storage;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
-using Substrate.NET.Wallet;
-using Substrate.NET.Schnorrkel.Keys;
 using PlutoFramework.Components.Password;
+using PlutoFramework.Model.SQLite;
+using PlutoFrameworkCore.Keys;
+using Polkadot.NetApi.Generated.Model.sp_core.crypto;
+using Substrate.NET.Schnorrkel.Keys;
+using Substrate.NET.Wallet;
+using Substrate.NetApi;
+using Substrate.NetApi.Model.Types;
 
 namespace PlutoFramework.Model
 {
@@ -20,11 +24,11 @@ namespace PlutoFramework.Model
     {
         // Can change with future updates to substrate
         private const ExpandMode DEFAULT_EXPAND_MODE = ExpandMode.Ed25519;
-        public static async Task GenerateNewAccountAsync(string accountVariant = "")
+        public static async Task GenerateNewAccountAsync()
         {
             string mnemonics = MnemonicsModel.GenerateMnemonics();
 
-            await GenerateNewAccountAsync(mnemonics, accountVariant);
+            await SaveSr25519KeyAsync(mnemonics);
         }
 
         public static async Task RegisterBiometricAuthenticationAsync()
@@ -60,35 +64,70 @@ namespace PlutoFramework.Model
             }
         }
 
-        public static async Task GenerateNewAccountAsync(string mnemonics, string accountVariant = "")
+        public static async Task SaveSr25519KeyAsync(string mnemonics)
         {
             Account account = MnemonicsModel.GetAccountFromMnemonics(mnemonics);
-
-            if (accountVariant.StartsWith("kilt"))
-            {
-                Preferences.Set(
-                     PreferencesModel.PUBLIC_KEY + accountVariant,
-                     account.ToDidAddress()
-                );
-            }
-            else
-            {
-                Preferences.Set(
-                     PreferencesModel.PUBLIC_KEY + accountVariant,
-                     account.Value
-                );
-            }
+            
+            Preferences.Set(
+                PreferencesModel.PUBLIC_KEY,
+                account.Value
+            );
 
             await SecureStorage.Default.SetAsync(
-                 PreferencesModel.MNEMONICS + accountVariant,
+                 PreferencesModel.MNEMONICS,
                  mnemonics
             );
 
-            Preferences.Set(PreferencesModel.PRIVATE_KEY_EXPAND_MODE + accountVariant, (int)DEFAULT_EXPAND_MODE);
+            Preferences.Set(PreferencesModel.PRIVATE_KEY_EXPAND_MODE, (int)DEFAULT_EXPAND_MODE);
 
-            Preferences.Set(PreferencesModel.ACCOUNT_TYPE + accountVariant, AccountType.Mnemonic.ToString());
+            Preferences.Set(PreferencesModel.ACCOUNT_TYPE, AccountType.Mnemonic.ToString());
+
+            // Just get and use the same main password without asking the user again
+            var password = await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD);
+
+            await KeysModel.SaveKeyAsync(
+                publicKey: account.Value,
+                secret: mnemonics,
+                password: password!,
+                type: KeyTypeEnum.Sr25519
+            );
         }
 
+        public static async Task SaveDidKeyAsync(string mnemonics)
+        {
+            Account account = MnemonicsModel.GetAccountFromMnemonics(mnemonics);
+
+            Preferences.Set(
+                PreferencesModel.PUBLIC_KEY,
+                account.ToDidAddress()
+            );
+
+            await SecureStorage.Default.SetAsync(
+                 PreferencesModel.MNEMONICS,
+                 mnemonics
+            );
+
+            Preferences.Set(PreferencesModel.PRIVATE_KEY_EXPAND_MODE, (int)DEFAULT_EXPAND_MODE);
+
+            Preferences.Set(PreferencesModel.ACCOUNT_TYPE, AccountType.Mnemonic.ToString());
+
+            // Just get and use the same main password without asking the user again
+            var password = await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD);
+
+            await KeysModel.SaveKeyAsync(
+                publicKey: account.Value,
+                secret: mnemonics,
+                password: password!,
+                type: KeyTypeEnum.Did
+            );
+        }
+
+        public static async Task SaveEncryptionX25519KeyAsync()
+        {
+
+        }
+
+        [Obsolete("For migration purposes only")]
         public static async Task GenerateNewAccountFromPrivateKeyAsync(string privateKey, string accountVariant = "")
         {
             var miniSecret = new MiniSecret(Utils.HexToByteArray(privateKey), ExpandMode.Ed25519);
@@ -114,7 +153,7 @@ namespace PlutoFramework.Model
             Preferences.Set(PreferencesModel.ACCOUNT_TYPE + accountVariant, AccountType.PrivateKey.ToString());
         }
 
-        public static async Task GenerateNewAccountFromJsonAsync(string json, string accountVariant = "")
+        public static async Task SaveJsonKeyAsync(string json)
         {
             var viewModel = DependencyService.Get<EnterPasswordPopupViewModel>();
 
@@ -156,21 +195,28 @@ namespace PlutoFramework.Model
             }
 
             Preferences.Set(
-                 PreferencesModel.PUBLIC_KEY + accountVariant,
+                 PreferencesModel.PUBLIC_KEY,
                  publicKey
             );
 
             await SecureStorage.Default.SetAsync(
-                PreferencesModel.PASSWORD + accountVariant,
+                PreferencesModel.PASSWORD,
                 correctPassword
             );
 
             await SecureStorage.Default.SetAsync(
-                 PreferencesModel.JSON_ACCOUNT + accountVariant,
+                 PreferencesModel.JSON_ACCOUNT,
                  json
             );
 
-            Preferences.Set(PreferencesModel.ACCOUNT_TYPE + accountVariant, AccountType.Json.ToString());
+            Preferences.Set(PreferencesModel.ACCOUNT_TYPE, AccountType.Json.ToString());
+
+            await KeysModel.SaveKeyAsync(
+                publicKey: publicKey,
+                secret: json,
+                password: correctPassword,
+                type: KeyTypeEnum.PolkadotJson
+            );
         }
 
         public static bool HasSubstrateKey(string accountVariant = "")
@@ -225,8 +271,6 @@ namespace PlutoFramework.Model
                 viewModel.IsVisible = true;
 
                 var correctPassword = await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD + accountVariant).ConfigureAwait(false) ?? throw new ArgumentNullException("Password was not setup");
-
-                Console.WriteLine("Password: " + correctPassword);
 
                 for (int i = 0; i < 5; i++)
                 {
@@ -329,6 +373,24 @@ namespace PlutoFramework.Model
             return accountId;
         }
 
+        /// <summary>
+        /// Source: https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/essentials/file-saver?tabs=macos 
+        /// </summary>
+        public static async Task ExportJsonFileAsync(string json, CancellationToken token)
+        {
+            using var stream = new MemoryStream(System.Text.Encoding.Default.GetBytes(json));
+            var fileSaverResult = await FileSaver.Default.SaveAsync($"{AppInfo.Current.Name.ToLower()}.json", stream, token);
+
+            if (fileSaverResult.IsSuccessful)
+            {
+                await Toast.Make($"Mnemonics successfully exported.").Show(token);
+            }
+            else
+            {
+                await Toast.Make($"Failed to export.").Show(token);
+            }
+        }
+
         public static void RemoveAccount(string accountVariant = "")
         {
             Preferences.Remove(PreferencesModel.PUBLIC_KEY + accountVariant);
@@ -338,6 +400,87 @@ namespace PlutoFramework.Model
             SecureStorage.Default.Remove(PreferencesModel.JSON_ACCOUNT + accountVariant);
             Preferences.Remove(PreferencesModel.ACCOUNT_TYPE + accountVariant);
             SecureStorage.Default.Remove(PreferencesModel.PASSWORD + accountVariant);
+        }
+
+        public static Task SaveKeyAsync(
+            string publicKey,
+            string secret,
+            string password,
+            KeyTypeEnum type
+        )
+        {
+            var secretStorageKey = $"secret-{publicKey}";
+            var passwordStorageKey = $"secret-{publicKey}";
+
+            var lockedKey = new GenericLockedKey
+            {
+                Type = type,
+                PublicKey = publicKey,
+                SecretStorageKey = secretStorageKey,
+                PasswordStorageKey = passwordStorageKey,
+            };
+
+            return Task.WhenAll(
+                SecureStorage.SetAsync(secretStorageKey, secret),
+                SecureStorage.SetAsync(passwordStorageKey, password),
+                KeysDatabase.SaveKeyAsync(lockedKey)
+            );
+        }
+
+        public static async Task TempConvertMainKeysIntoDbAsync()
+        {
+            // Keys are saved in DB, no need to convert them twice
+            if ((await KeysDatabase.GetAllKeysAsync()).Any())
+            {
+                return;
+            }
+
+            if (HasSubstrateKey())
+            {
+                var accountType = (AccountType)Enum.Parse(typeof(AccountType), Preferences.Get(PreferencesModel.ACCOUNT_TYPE, AccountType.None.ToString()));
+
+                if (accountType == AccountType.Mnemonic)
+                {
+                    var substrateKey = KeysModel.GetSubstrateKey();
+                    var mnemonics = await SecureStorage.Default.GetAsync(PreferencesModel.MNEMONICS);
+                    var password = await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD);
+
+                    await SaveKeyAsync(
+                        publicKey: substrateKey,
+                        secret: mnemonics!,
+                        password: password!,
+                        type: KeyTypeEnum.Sr25519
+                    );
+                }
+
+                if (accountType == AccountType.Json)
+                {
+                    var substrateKey = KeysModel.GetSubstrateKey();
+                    var json = await SecureStorage.Default.GetAsync(PreferencesModel.JSON_ACCOUNT);
+                    var password = await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD);
+
+                    await SaveKeyAsync(
+                        publicKey: substrateKey,
+                        secret: json!,
+                        password: password!,
+                        type: KeyTypeEnum.PolkadotJson
+                    );
+                }
+
+                if (HasSubstrateKey(accountVariant: "kilt1"))
+                {
+                    var substrateKey = KeysModel.GetSubstrateKey("kilt1");
+                    var mnemonics = await SecureStorage.Default.GetAsync(PreferencesModel.MNEMONICS + "kilt1");
+                    var password = await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD);
+
+                    await SaveKeyAsync(
+                        publicKey: substrateKey,
+                        secret: mnemonics!,
+                        password: password!,
+                        type: KeyTypeEnum.Did
+                    );
+                }
+            }
         }
     }
 }
