@@ -3,6 +3,7 @@
                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                        xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
                        xmlns:messaging="clr-namespace:PlutoFramework.Components.Messaging"
+                       xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate;assembly=PlutoFramework"
                        x:Class="PlutoFramework.Components.Messaging.ChatsOverviewPage"
                        Title="Messaging Overview">
     <ContentPage.Resources>
@@ -11,14 +12,19 @@
                                     State="{Binding State}" 
                                     Time="{Binding Time}"
                                     IsApproved="{Binding IsApproved}"
-                                    IsApprovedColor="{Binding IsApprovedColor}"/>
+                                    IsApprovedColor="{Binding IsApprovedColor}"
+                                    IsApprovedBgColor="{Binding IsApprovedBgColor}"/>
         </DataTemplate>
     </ContentPage.Resources>
     
     <template:PageTemplate.MainContent>
         <VerticalStackLayout BindableLayout.ItemsSource="{Binding Chats}"
-                             Padding="10"
-                             Spacing="5"
-                             Margin="0,60,0,0"/>
+                             BindableLayout.ItemTemplate="{StaticResource ChatItem}"
+                             Padding="20, 20, 20, 110"
+                             Spacing="20"/>
     </template:PageTemplate.MainContent>
+    
+    <template:PageTemplate.PopupContent>
+        <xcavate:XcavatePropertyNavigationBarView />
+    </template:PageTemplate.PopupContent>
 </template:PageTemplate>

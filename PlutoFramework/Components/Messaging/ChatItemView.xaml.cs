@@ -16,6 +16,15 @@ public partial class ChatItemView : ContentView
         get => (Color)GetValue(IsApprovedColorProperty);
         set => SetValue(IsApprovedColorProperty, value);
     }
+    
+    public static readonly BindableProperty IsApprovedBgColorProperty = BindableProperty.Create(nameof(IsApprovedBgColor), 
+        typeof(Color), typeof(ChatItemView));
+
+    public Color IsApprovedBgColor
+    {
+        get => (Color)GetValue(IsApprovedBgColorProperty);
+        set => SetValue(IsApprovedBgColorProperty, value);
+    }
         
     public static readonly BindableProperty StateProperty = BindableProperty.Create(nameof(State), typeof(string),
         typeof(ChatItemView));
@@ -56,7 +65,5 @@ public partial class ChatItemView : ContentView
     public ChatItemView()
     {
         InitializeComponent();
-        
-        BindingContext = this;
     }
 }

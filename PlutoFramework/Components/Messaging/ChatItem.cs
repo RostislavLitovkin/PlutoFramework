@@ -7,4 +7,5 @@ public record ChatItem
     public required string Time { get; set; }
     public required string IsApproved { get; set; }
     public required Color IsApprovedColor { get; set; }
+    public required Color IsApprovedBgColor { get; set; }
 }

@@ -2,17 +2,18 @@
 
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PlutoFramework.Components.Messaging.ChatItemView">
+             x:Class="PlutoFramework.Components.Messaging.ChatItemView"
+             xmlns:messaging="clr-namespace:PlutoFramework.Components.Messaging">
         <Border StrokeThickness="0"
                 Padding="8,6"
                 BackgroundColor="{AppThemeBinding Light={StaticResource Gray50}, Dark={StaticResource Gray950}}"
                 StrokeShape="RoundRectangle 4,4">
             <VerticalStackLayout Spacing="8">
-                <Grid ColumnDefinitions="*,*">
+                <Grid ColumnDefinitions="Auto,*">
                     <Border Grid.Column="0"
                             StrokeThickness="0"
                             Padding="8,6"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray900}}"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray900}}"
                             StrokeShape="RoundRectangle 4,4">
                         <Label LineBreakMode="NoWrap"
                                FontSize="11"
@@ -29,13 +30,14 @@
                 </Grid>
                 
                 <Label Text="{Binding Title}"
-                       LineBreakMode="WordWrap"/>
+                       LineBreakMode="WordWrap"
+                       FontAttributes="Bold"/>
                 
                 <Border StrokeThickness="0"
                         Padding="8,6"
-                        BackgroundColor="{Binding IsApprovedColor}"
                         StrokeShape="RoundRectangle 4,4"
-                        Opacity="0.5">
+                        HorizontalOptions="End"
+                        BackgroundColor="{Binding IsApprovedBgColor}">
                     <Label LineBreakMode="NoWrap"
                            FontSize="11"
                            TextColor="{Binding IsApprovedColor}"
