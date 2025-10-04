@@ -1,6 +1,9 @@
-﻿using CommunityToolkit.Maui.Alerts;
+﻿extern alias bc26;
+
+using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Storage;
-using NSec.Cryptography;
+
+using bc26::Org.BouncyCastle.Crypto.Parameters;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
 using PlutoFramework.Components.Password;
@@ -232,15 +235,15 @@ namespace PlutoFramework.Model
 
         public static async Task SaveEncryptionX25519KeyAsync(byte[] privateKey)
         {
-            var key = X25519Model.ToKey(privateKey);
+            var key = new X25519PrivateKeyParameters(privateKey);
 
-            var publicKey = key.PublicKey.Export(KeyBlobFormat.RawPublicKey);
+            var publicKey = key.GeneratePublicKey();
 
             // Just get and use the same main password without asking the user again
             var password = await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD);
 
             await KeysModel.SaveKeyAsync(
-                publicKey: Convert.ToBase64String(publicKey),
+                publicKey: Convert.ToBase64String(publicKey.GetEncoded()),
                 secret: Convert.ToBase64String(privateKey),
                 password: password!,
                 type: KeyTypeEnum.EncryptionX25519

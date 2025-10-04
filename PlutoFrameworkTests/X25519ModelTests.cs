@@ -1,5 +1,8 @@
-﻿using NSec.Cryptography;
+﻿extern alias bc26; 
+
+using bc26::Org.BouncyCastle.Crypto.Parameters;
 using PlutoFrameworkCore.AssetDidComm;
+using Substrate.NetApi.Extensions;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -7,6 +10,20 @@ namespace PlutoFrameworkTests
 {
     internal class X25519ModelTests
     {
+        [Test]
+        public void X25519SecretKeyToPublicKey()
+        {
+            var rng = new byte[32].Populate();
+
+            var sk = new X25519PrivateKeyParameters(rng);
+            var pk = sk.GeneratePublicKey();
+
+            var sk2 = new X25519PrivateKeyParameters(sk.GetEncoded());
+            var pk2 = sk2.GeneratePublicKey();
+
+            Assert.Equals(pk.GetEncoded(), pk2.GetEncoded());
+        }
+
         [Test]
         public void EncryptDecrypt_RoundTrip_Works()
         {
@@ -94,23 +111,6 @@ namespace PlutoFrameworkTests
         }
 
         [Test]
-        public void WrongVersion_Throws()
-        {
-            var recipientKeypair = X25519Model.GenerateX25519KeyPair();
-            var blob = X25519Model.Encrypt(recipientKeypair.PublicKey, new byte[] { 1, 2, 3 });
-
-            var bad = (byte[])blob.Clone();
-            bad[0] = 0x02; // unsupported version
-
-            var ex = Assert.Throws<CryptographicException>(() =>
-            {
-                _ = X25519Model.Decrypt(recipientKeypair.PrivateKey, bad);
-            });
-
-            StringAssert.Contains("Unsupported version", ex!.Message);
-        }
-
-        [Test]
         public void EmptyPlaintext_RoundTrip_Works()
         {
             var recipientKeypair = X25519Model.GenerateX25519KeyPair();
@@ -124,21 +124,25 @@ namespace PlutoFrameworkTests
         public void BlobLayout_IsAsExpected()
         {
             var recipientKeypair = X25519Model.GenerateX25519KeyPair();
-            var blob = X25519Model.Encrypt(recipientKeypair.PublicKey, Encoding.UTF8.GetBytes("layout"));
+            var plaintext = Encoding.UTF8.GetBytes("layout"); // n = 6
+            var blob = X25519Model.Encrypt(recipientKeypair.PublicKey, plaintext);
 
-            // version(1) + ephPK(32) + salt(16) + nonce(24) + rest
-            Assert.That(blob.Length, Is.GreaterThan(1 + 32 + 16 + 24));
+            // Layout: ephPk(32) | nonce(12) | ciphertext+tag(n + 16)
+            int n = plaintext.Length;
+            int expectedLen = 32 + 12 + (n + 16); // 60 + n
+            Assert.That(blob.Length, Is.EqualTo(expectedLen));
 
             int o = 0;
-            Assert.That(blob[o++], Is.EqualTo(0x01), "Version mismatch");
-            // Basic sanity checks: not all zeros for ephPk, salt, nonce
             var ephPk = blob.Skip(o).Take(32).ToArray(); o += 32;
-            var salt = blob.Skip(o).Take(16).ToArray(); o += 16;
-            var nonce = blob.Skip(o).Take(24).ToArray(); o += 24;
+            var nonce = blob.Skip(o).Take(12).ToArray(); o += 12;
+            var ctTag = blob.Skip(o).ToArray();
 
+            // Basic sanity: not all zeros
             Assert.That(ephPk.Any(b => b != 0), "Ephemeral public key looks zeroed");
-            Assert.That(salt.Any(b => b != 0), "Salt looks zeroed");
             Assert.That(nonce.Any(b => b != 0), "Nonce looks zeroed");
+
+            // ct+tag length must be n + 16 and tag present
+            Assert.That(ctTag.Length, Is.EqualTo(n + 16));
         }
     }
 }

@@ -1,6 +1,15 @@
-﻿using NSec.Cryptography;
+﻿extern alias bc26;
+using bc26::Org.BouncyCastle.Crypto;
+using bc26::Org.BouncyCastle.Crypto.Digests;
+using bc26::Org.BouncyCastle.Crypto.Engines;
+using bc26::Org.BouncyCastle.Crypto.Generators;
+using bc26::Org.BouncyCastle.Crypto.Modes;
+using bc26::Org.BouncyCastle.Crypto.Parameters;
+using bc26::Org.BouncyCastle.Crypto.Prng;
+using bc26::Org.BouncyCastle.Math.EC.Rfc7748;
+using bc26::Org.BouncyCastle.Security;
+using Substrate.NetApi.Extensions;
 using System.Security.Cryptography;
-using System.Text;
 
 namespace PlutoFrameworkCore.AssetDidComm
 {
@@ -14,112 +23,168 @@ namespace PlutoFrameworkCore.AssetDidComm
     {
         public static X25519KeyPair GenerateX25519KeyPair()
         {
-            var key = new Key(KeyAgreementAlgorithm.X25519, new KeyCreationParameters
-            {
-                ExportPolicy = KeyExportPolicies.AllowPlaintextExport
-            });
+            var rng = new byte[32].Populate();
 
-            byte[] sk = key.Export(KeyBlobFormat.RawPrivateKey);
-            byte[] pk = key.PublicKey.Export(KeyBlobFormat.RawPublicKey);
+            var sk = new X25519PrivateKeyParameters(rng);
+            var pk = sk.GeneratePublicKey();
 
             return new X25519KeyPair
             {
-                PublicKey = pk,
-                PrivateKey = sk
+                PublicKey = pk.GetEncoded(),
+                PrivateKey = sk.GetEncoded(),
             };
         }
 
-        public static Key ToKey(byte[] privateKey) => Key.Import(KeyAgreementAlgorithm.X25519, privateKey, KeyBlobFormat.RawPrivateKey, new KeyCreationParameters
+        /*public static Key ToKey(byte[] privateKey) => Key.Import(KeyAgreementAlgorithm.X25519, privateKey, KeyBlobFormat.RawPrivateKey, new KeyCreationParameters
         {
             ExportPolicy = KeyExportPolicies.AllowPlaintextExport
         });
+        */
 
-
-        public static byte[] Encrypt(ReadOnlySpan<byte> recipientPublicKeyRaw, ReadOnlySpan<byte> plaintext, ReadOnlySpan<byte> aad = default)
+        public static byte[] Encrypt(ReadOnlySpan<byte> recipientPublicKeyRaw,
+                                 ReadOnlySpan<byte> plaintext,
+                                 ReadOnlySpan<byte> aad = default)
         {
-            var kem = KeyAgreementAlgorithm.X25519;
-            var aead = AeadAlgorithm.XChaCha20Poly1305;
+            if (recipientPublicKeyRaw.Length != 32)
+                throw new ArgumentException("recipientPublicKeyRaw must be 32 bytes.", nameof(recipientPublicKeyRaw));
 
-            // 1) Import recipient public key (raw 32-byte)
-            var recipientPk = PublicKey.Import(kem, recipientPublicKeyRaw, KeyBlobFormat.RawPublicKey);
+            var rng = new SecureRandom(new CryptoApiRandomGenerator());
 
-            // 2) Create ephemeral X25519 key pair
-            using var ephSk = Key.Create(kem);
+            // 1) Ephemeral keypair
+            var ephSk = new byte[32];
+            X25519.GeneratePrivateKey(rng, ephSk);
+            var ephPk = new byte[32];
+            X25519.GeneratePublicKey(ephSk, 0, ephPk, 0);
 
-            // 3) ECDH -> SharedSecret
-            using var shared = kem.Agree(ephSk, recipientPk);
+            // 2) ECDH shared secret
+            var shared = new byte[32];
+            X25519.ScalarMult(ephSk, 0, recipientPublicKeyRaw.ToArray(), 0, shared, 0);
 
-            // 4) Derive an AEAD key from the shared secret with HKDF
-            //    We include both public keys as "info" to bind context.
-            var info = BuildInfo(ephSk.PublicKey, recipientPk);
-            Span<byte> salt = stackalloc byte[16];
-            RandomNumberGenerator.Fill(salt); // include salt in message
-            using var encKey = KeyDerivationAlgorithm.HkdfSha256.DeriveKey(
-                shared,
-                salt,           // salt
-                info,           // info/context
-                aead            // derives a Key usable by this AEAD
-            );
+            // 3) HKDF-SHA256 -> AES-256 key (32 bytes)
+            var info = KdfInfo(ephPk, recipientPublicKeyRaw.ToArray()); // domain sep + sorted pubs
+            var key = HkdfSha256(shared, salt: null, info: info, len: 32);
 
-            // 5) Nonce and encrypt
-            var nonce = new byte[aead.NonceSize];          // 24 bytes for XChaCha20-Poly1305
-            RandomNumberGenerator.Fill(nonce);
-            var ciphertext = aead.Encrypt(encKey, nonce, aad, plaintext);
+            // 4) AEAD encrypt (AES-GCM, 12-byte nonce)
+            var nonce = new byte[12].Populate();
+            var ctTag = AesGcmEncrypt(key, nonce, plaintext.ToArray(), aad);
 
-            // 6) Build output blob
-            var ephPkRaw = ephSk.PublicKey.Export(KeyBlobFormat.RawPublicKey);
-            var result = new byte[1 + ephPkRaw.Length + salt.Length + nonce.Length + ciphertext.Length];
-            int o = 0;
-            result[o++] = 0x01; // version
-            Buffer.BlockCopy(ephPkRaw, 0, result, o, ephPkRaw.Length); o += ephPkRaw.Length;
-            Buffer.BlockCopy(salt.ToArray(), 0, result, o, salt.Length); o += salt.Length;
-            Buffer.BlockCopy(nonce, 0, result, o, nonce.Length); o += nonce.Length;
-            Buffer.BlockCopy(ciphertext, 0, result, o, ciphertext.Length);
-            return result;
+            // 5) Assemble blob
+            var blob = new byte[32 + 12 + ctTag.Length];
+            Buffer.BlockCopy(ephPk, 0, blob, 0, 32);
+            Buffer.BlockCopy(nonce, 0, blob, 32, 12);
+            Buffer.BlockCopy(ctTag, 0, blob, 44, ctTag.Length);
+
+            CryptoZero(shared);
+            CryptoZero(ephSk);
+            return blob;
         }
 
         public static byte[] Decrypt(byte[] recipientSk, ReadOnlySpan<byte> blob, ReadOnlySpan<byte> aad = default)
         {
-            return Decrypt(ToKey(recipientSk), blob, aad);
+            if (recipientSk == null || recipientSk.Length != 32)
+                throw new ArgumentException("recipientSk must be 32 bytes.", nameof(recipientSk));
+            if (blob.Length < 32 + 12 + 16)
+                throw new ArgumentException("blob too short.", nameof(blob));
+
+            // Parse blob
+            var ephPub = blob.Slice(0, 32).ToArray();
+            var nonce = blob.Slice(32, 12).ToArray();
+            var ctTag = blob.Slice(44).ToArray();
+
+            // ECDH shared secret
+            var shared = new byte[32];
+            X25519.ScalarMult(recipientSk, 0, ephPub, 0, shared, 0);
+
+            // KDF to AES-256 key
+            var selfPub = new byte[32];
+            X25519.GeneratePublicKey(recipientSk, 0, selfPub, 0);
+            var key = HkdfSha256(shared, salt: null, info: KdfInfo(ephPub, selfPub), len: 32);
+
+            // AEAD decrypt
+            try
+            {
+                var pt = AesGcmDecrypt(key, nonce, ctTag, aad);
+                CryptoZero(shared);
+                return pt;
+            }
+            catch (InvalidCipherTextException ex)
+            {
+                CryptoZero(shared);
+                throw new CryptographicException("Authentication failed (bad key/nonce/AAD or corrupted blob).", ex);
+            }
         }
 
-        // Decrypts with recipient's X25519 private key (Key) from blob created above
-        public static byte[] Decrypt(Key recipientSk, ReadOnlySpan<byte> blob, ReadOnlySpan<byte> aad = default)
+        private static byte[] HkdfSha256(byte[] ikm, byte[]? salt, byte[] info, int len)
         {
-            var kem = KeyAgreementAlgorithm.X25519;
-            var aead = AeadAlgorithm.XChaCha20Poly1305;
-
-            int o = 0;
-            if (blob[o++] != 0x01) throw new CryptographicException("Unsupported version.");
-
-            // parse eph pk, salt, nonce, ciphertext
-            var ephPkRaw = blob.Slice(o, 32).ToArray(); o += 32;
-            var salt = blob.Slice(o, 16).ToArray(); o += 16;
-            var nonce = blob.Slice(o, aead.NonceSize).ToArray(); o += aead.NonceSize;
-            var ciphertext = blob.Slice(o).ToArray();
-
-            var ephPk = PublicKey.Import(kem, ephPkRaw, KeyBlobFormat.RawPublicKey);
-
-            // ECDH -> SharedSecret
-            using var shared = kem.Agree(recipientSk, ephPk);
-
-            // Rebuild the same HKDF "info"
-            var info = BuildInfo(ephPk, recipientSk.PublicKey);
-
-            using var decKey = KeyDerivationAlgorithm.HkdfSha256.DeriveKey(shared, salt, info, aead);
-            return aead.Decrypt(decKey, nonce, aad, ciphertext) ?? throw new CryptographicException("Decryption failed.");
+            var hkdf = new HkdfBytesGenerator(new Sha256Digest());
+            hkdf.Init(new HkdfParameters(ikm, salt, info));
+            var okm = new byte[len];
+            hkdf.GenerateBytes(okm, 0, len);
+            return okm;
         }
 
-        private static byte[] BuildInfo(PublicKey ephPk, PublicKey recPk)
+        private static byte[] AesGcmEncrypt(byte[] key, byte[] nonce, byte[] plaintext, ReadOnlySpan<byte> aad)
         {
-            var label = Encoding.ASCII.GetBytes("NSec-X25519-SealedBox-v1");
-            var e = ephPk.Export(KeyBlobFormat.RawPublicKey);
-            var r = recPk.Export(KeyBlobFormat.RawPublicKey);
-            var info = new byte[label.Length + e.Length + r.Length];
+            var gcm = new GcmBlockCipher(new AesEngine());
+            var parameters = new AeadParameters(new KeyParameter(key), 128, nonce, aad.ToArray());
+            gcm.Init(true, parameters);
+
+            var outBuf = new byte[gcm.GetOutputSize(plaintext.Length)];
+            var off = gcm.ProcessBytes(plaintext, 0, plaintext.Length, outBuf, 0);
+            off += gcm.DoFinal(outBuf, off);
+            return Trim(outBuf, off);
+        }
+
+        private static byte[] AesGcmDecrypt(byte[] key, byte[] nonce, byte[] ciphertextAndTag, ReadOnlySpan<byte> aad)
+        {
+            var gcm = new GcmBlockCipher(new AesEngine());
+            var parameters = new AeadParameters(new KeyParameter(key), 128, nonce, aad.ToArray());
+            gcm.Init(false, parameters);
+
+            var outBuf = new byte[gcm.GetOutputSize(ciphertextAndTag.Length)];
+            var off = gcm.ProcessBytes(ciphertextAndTag, 0, ciphertextAndTag.Length, outBuf, 0);
+            off += gcm.DoFinal(outBuf, off);
+            return Trim(outBuf, off);
+        }
+
+        private static byte[] KdfInfo(byte[] pubA, byte[] pubB)
+        {
+            // Domain separation and symmetric ordering of pubkeys
+            var label = System.Text.Encoding.ASCII.GetBytes("X25519Box|AES-GCM|HKDF-SHA256|v1");
+            bool aFirst = ByteArrayCompare(pubA, pubB) <= 0;
+            var min = aFirst ? pubA : pubB;
+            var max = aFirst ? pubB : pubA;
+
+            var info = new byte[label.Length + min.Length + max.Length];
             Buffer.BlockCopy(label, 0, info, 0, label.Length);
-            Buffer.BlockCopy(e, 0, info, label.Length, e.Length);
-            Buffer.BlockCopy(r, 0, info, label.Length + e.Length, r.Length);
+            Buffer.BlockCopy(min, 0, info, label.Length, min.Length);
+            Buffer.BlockCopy(max, 0, info, label.Length + min.Length, max.Length);
             return info;
+        }
+
+        private static int ByteArrayCompare(byte[] a, byte[] b)
+        {
+            int len = Math.Min(a.Length, b.Length);
+            for (int i = 0; i < len; i++)
+            {
+                int d = a[i].CompareTo(b[i]);
+                if (d != 0) return d;
+            }
+            return a.Length.CompareTo(b.Length);
+        }
+
+        private static byte[] Trim(byte[] buf, int len)
+        {
+            if (len == buf.Length) return buf;
+            var outBuf = new byte[len];
+            Buffer.BlockCopy(buf, 0, outBuf, 0, len);
+            return outBuf;
+        }
+
+        private static void CryptoZero(byte[] b)
+        {
+            if (b == null) return;
+            for (int i = 0; i < b.Length; i++) b[i] = 0;
         }
     }
 }
