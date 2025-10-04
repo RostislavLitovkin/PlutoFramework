@@ -7,7 +7,12 @@ public partial class KeyListPage : PageTemplate
 	public KeyListPage()
 	{
 		InitializeComponent();
+    }
 
-		BindingContext = new KeyListPageViewModel();
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        BindingContext = new KeyListPageViewModel();
     }
 }

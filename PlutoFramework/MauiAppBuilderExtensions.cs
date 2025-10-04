@@ -86,6 +86,8 @@ namespace PlutoFramework
             AssetsModel.DatabaseSaver = new BalancesDatabaseSaver();
 
             PlutoConfigurationModel.SecureStorage = new PlutoSecureStorage();
+            PlutoConfigurationModel.GenerateNewAccountAsync = KeysModel.GenerateNewAccountAsync;
+            PlutoConfigurationModel.AfterAccountImportAsync = () => Task.FromResult(0);
 
             CustomizeWebViewHandler();
 

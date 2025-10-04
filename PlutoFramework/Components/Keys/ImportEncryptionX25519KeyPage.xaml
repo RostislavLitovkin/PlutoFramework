@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<page:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:page="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                   xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+                   xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+             x:Class="PlutoFramework.Components.Keys.ImportEncryptionX25519KeyPage"
+             Title="Import Encryption X25519 key">
+    <page:PageTemplate.MainContent>
+        <VerticalStackLayout HorizontalOptions="Center"
+                     Padding="20, 10, 20, 100"
+                     Spacing="15">
+            <ContentView HeightRequest="160">
+                <card:Card>
+                    <card:Card.View>
+                        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                                AbsoluteLayout.LayoutFlags="All"
+                                Margin="0, 10, 0, 10">
+                            <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                                         AbsoluteLayout.LayoutFlags="SizeProportional">
+                                <VerticalStackLayout>
+                                    <Label FontAttributes="Bold"
+                                   HorizontalOptions="Center"
+                                   VerticalTextAlignment="End">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span FontAttributes="Bold"
+                                              Text="Your existing secret key: "/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Editor HeightRequest="120"
+                                            x:Name="mnemonicsEntry"
+                                            Placeholder="Start entering here.."
+                                            Text="{Binding SecretKey}">
+                                    </Editor>
+                                </VerticalStackLayout>
+                            </VerticalStackLayout>
+                        </AbsoluteLayout>
+                    </card:Card.View>
+                </card:Card>
+            </ContentView>
+
+            <Label Text="The entered secret key was not correct." 
+                   IsVisible="{Binding IncorrectSecretKeyEntered}"/>
+
+            <buttons:ElevatedButton Text="Continue"
+                                    Command="{Binding ContinueCommand}" />
+        </VerticalStackLayout>
+    </page:PageTemplate.MainContent>
+</page:PageTemplate>

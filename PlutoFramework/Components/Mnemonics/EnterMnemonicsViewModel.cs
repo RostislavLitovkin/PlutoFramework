@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Model;
 using PlutoFramework.Model.Sumsub;
+using PlutoFrameworkCore;
 
 namespace PlutoFramework.Components.Mnemonics
 {
@@ -25,12 +26,11 @@ namespace PlutoFramework.Components.Mnemonics
         {
             try
             {
-                await Model.KeysModel.GenerateNewAccountAsync(
-                    Mnemonics,
-                    accountVariant: ""
+                await Model.KeysModel.SaveSr25519KeyAsync(
+                    Mnemonics
                 );
 
-                await SumsubUserModel.LoadAndSaveUserInfoAsync(CancellationToken.None);
+                await PlutoConfigurationModel.AfterAccountImportAsync();
 
                 await Navigation.Invoke();
             }
@@ -45,7 +45,7 @@ namespace PlutoFramework.Components.Mnemonics
         {
             await Model.KeysModel.GenerateNewAccountFromPrivateKeyAsync(PrivateKey);
 
-            await SumsubUserModel.LoadAndSaveUserInfoAsync(CancellationToken.None);
+            await PlutoConfigurationModel.AfterAccountImportAsync();
 
             await Navigation.Invoke();
         }
@@ -53,50 +53,9 @@ namespace PlutoFramework.Components.Mnemonics
         [RelayCommand]
         public async Task ImportJsonAsync()
         {
-            var jsonType = new FilePickerFileType(
-                new Dictionary<DevicePlatform, IEnumerable<string>>
-                {
-                { DevicePlatform.iOS, new[] { "public.json" } }, // UTType values
-                { DevicePlatform.Android, new[] { "application/json" } }, // MIME type
-                { DevicePlatform.WinUI, new[] { ".json" } }, // file extension
-                { DevicePlatform.Tizen, new[] { "*/*" } },
-                { DevicePlatform.macOS, new[] { "public.json" } }, // UTType values
-                });
-
-            var result = await FilePicker.PickAsync(new PickOptions
-            {
-                PickerTitle = "Import json account",
-                FileTypes = jsonType,
-            });
-
-            if (result is null || !result.FileName.Contains(".json"))
-                return;
-
-            using var jsonStream = await result.OpenReadAsync();
-
-            string json = StreamToString(jsonStream);
-
-            try
-            {
-                await KeysModel.GenerateNewAccountFromJsonAsync(json);
-            }
-            catch
-            {
-                return;
-            }
-
-            await SumsubUserModel.LoadAndSaveUserInfoAsync(CancellationToken.None);
+            await KeysModel.ImportJsonKeyAsync();
 
             await Navigation.Invoke();
-        }
-
-        public static string StreamToString(Stream stream)
-        {
-            stream.Position = 0;
-            using (StreamReader reader = new StreamReader(stream))
-            {
-                return reader.ReadToEnd();
-            }
         }
     }
 }

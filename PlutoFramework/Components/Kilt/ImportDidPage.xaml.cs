@@ -10,4 +10,11 @@ public partial class ImportDidPage : PageTemplate
 
         BindingContext = new ImportDidViewModel();
     }
+
+    public ImportDidPage(ImportDidViewModel viewModel)
+    {
+        InitializeComponent();
+
+        BindingContext = viewModel;
+    }
 }

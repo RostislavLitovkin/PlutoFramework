@@ -11,6 +11,9 @@
     <VerticalStackLayout HorizontalOptions="Center"
                          Padding="20, 10, 20, 100"
                          Spacing="15">
+        <mnemonics:MnemonicsView Title="Secret key:"
+                         Mnemonics="{Binding SecretKey}" />
+        
         <buttons:ElevatedButton ButtonState="Warning"
                                 Text="Delete"
                                 Command="{Binding DeleteKeyCommand}" />

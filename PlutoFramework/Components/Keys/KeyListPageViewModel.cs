@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Model.SQLite;
 using PlutoFrameworkCore.Keys;
 using System.Collections.ObjectModel;
@@ -22,5 +23,8 @@ namespace PlutoFramework.Components.Keys
 
             Keys = new ObservableCollection<GenericLockedKey>(keys);
         }
+
+        [RelayCommand]
+        public Task Extra1Async() => Shell.Current.Navigation.PushAsync(new CreateNewKeyPage());
     }
 }

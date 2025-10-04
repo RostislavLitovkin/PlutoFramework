@@ -8,6 +8,7 @@ using PlutoFramework.Model.SQLite;
 using PlutoFramework.Model.Xcavate;
 using PlutoFrameworkCore.Xcavate;
 using PlutoFramework.Components.Xcavate;
+using PlutoFramework.Components.Keys;
 
 namespace PlutoFramework.Components.Menu
 {
@@ -74,10 +75,7 @@ namespace PlutoFramework.Components.Menu
         public Task WalletActionAsync() => NavigationModel.NavigateToBalancesPageAsync();
 
         [RelayCommand]
-        public Task SecurityActionAsync()
-        {
-            return Task.FromResult(0);
-        }
+        public Task SecurityActionAsync() => Shell.Current.Navigation.PushAsync(new KeyListPage());
 
         [RelayCommand]
         public Task KYCActionAsync()

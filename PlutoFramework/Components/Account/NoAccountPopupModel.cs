@@ -4,6 +4,7 @@ using PlutoFramework.Components.Kilt;
 using PlutoFramework.Components.Mnemonics;
 using PlutoFramework.Components.Password;
 using PlutoFramework.Model;
+using PlutoFrameworkCore;
 
 namespace PlutoFramework.Components.Account;
 
@@ -31,9 +32,7 @@ public partial class NoAccountPopupViewModel : ObservableObject, IPopup, ISetToD
     {
         SetToDefault();
 
-        await Model.KeysModel.GenerateNewAccountAsync(accountVariant: "");
-
-        await Model.KeysModel.GenerateNewAccountAsync(accountVariant: "kilt1");
+        await PlutoConfigurationModel.GenerateNewAccountAsync();
 
         await NavigationModel.NavigateAfterAccountCreation.Invoke();
     }

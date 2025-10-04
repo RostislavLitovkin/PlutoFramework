@@ -1,4 +1,5 @@
-﻿using PlutoFramework.Model;
+﻿using NSec.Cryptography;
+using PlutoFramework.Model;
 
 namespace PlutoFrameworkCore.Keys
 {
@@ -11,6 +12,19 @@ namespace PlutoFrameworkCore.Keys
         Did,
         EncryptionX25519,
     }
+
+    public static class KeyTypeEnumExtensions
+    {
+        public static string GetName(this KeyTypeEnum type) => type switch
+        {
+            KeyTypeEnum.EncryptionX25519 => "X25519 key",
+            KeyTypeEnum.PolkadotJson => "Json key",
+            KeyTypeEnum.Sr25519 => "Sr25519 key",
+            KeyTypeEnum.Did => "DID key",
+            _ => "Key",
+        };
+    }
+
     public record GenericLockedKey
     {
         public required KeyTypeEnum Type { get; set; }
@@ -101,7 +115,6 @@ namespace PlutoFrameworkCore.Keys
             return new EncryptionX25519Key
             {
                 SecretKey = Convert.FromBase64String(secretKey),
-
             };
         }
     }

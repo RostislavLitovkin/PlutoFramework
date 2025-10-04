@@ -13,24 +13,37 @@
                 </Grid.ColumnDefinitions>
 
                 <AbsoluteLayout HeightRequest="60"
-                        Grid.Column="0"
-                        Grid.ColumnSpan="2"
-                        x:Name="infoLayout">
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                x:Name="infoLayout">
                     <HorizontalStackLayout AbsoluteLayout.LayoutBounds="0.5, 0, 1, 30"
                                         AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
                                        HorizontalOptions="Start">
-                        <Label Padding="5, 0, 0, 0"
-                      AbsoluteLayout.LayoutBounds="0.5, 0, 1, 30"
-                      AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
-                       LineBreakMode="TailTruncation"
-                       VerticalTextAlignment="Center"
-                       FontSize="16">
+                        <Label Margin="10, 0, 0, 0"
+                               LineBreakMode="TailTruncation"
+                               VerticalTextAlignment="Center"
+                               FontSize="16">
 
                             <Label.FormattedText>
                                 <FormattedString>
                                     <Span FontAttributes="Bold"
                                           x:Name="nameLabel" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
 
+                        <Label Margin="10, 0, 0, 0"
+                               WidthRequest="200"
+                               LineBreakMode="TailTruncation"
+                               VerticalTextAlignment="End"
+                               TextColor="{AppThemeBinding Dark=#fdfdfd, Light=#0a0a0a}"
+                               FontFamily="SourceCode"
+                               FontSize="16">
+
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span FontFamily="SourceCode"
+                                          x:Name="publicKeyLabel" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
@@ -45,8 +58,19 @@
 
                     <HorizontalStackLayout AbsoluteLayout.LayoutBounds="0.5, 30, 1, 30"
                                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
-                                       HorizontalOptions="Start">
-                        <!-- empty space for now -->
+                                       HorizontalOptions="Start"
+                                           >
+                        <Label Margin="10, 0, 0, 0"
+                               LineBreakMode="TailTruncation"
+                               VerticalTextAlignment="Center"
+                               FontSize="12">
+
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span x:Name="descriptionLabel" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
                     </HorizontalStackLayout>
                 </AbsoluteLayout>
 

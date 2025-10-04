@@ -1,9 +1,12 @@
 ﻿using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Storage;
+using NSec.Cryptography;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
 using PlutoFramework.Components.Password;
 using PlutoFramework.Model.SQLite;
+using PlutoFrameworkCore;
+using PlutoFrameworkCore.AssetDidComm;
 using PlutoFrameworkCore.Keys;
 using Polkadot.NetApi.Generated.Model.sp_core.crypto;
 using Substrate.NET.Schnorrkel.Keys;
@@ -24,11 +27,24 @@ namespace PlutoFramework.Model
     {
         // Can change with future updates to substrate
         private const ExpandMode DEFAULT_EXPAND_MODE = ExpandMode.Ed25519;
-        public static async Task GenerateNewAccountAsync()
+        public static Task GenerateNewAccountAsync()
         {
             string mnemonics = MnemonicsModel.GenerateMnemonics();
 
-            await SaveSr25519KeyAsync(mnemonics);
+            return SaveSr25519KeyAsync(mnemonics);
+        }
+
+        public static Task GenerateNewDidAsync()
+        {
+            string mnemonics = MnemonicsModel.GenerateMnemonics();
+
+            return SaveDidKeyAsync(mnemonics);
+        }
+        public static Task GenerateNewEncryptionX25519KeyAsync()
+        {
+            var keyPair = X25519Model.GenerateX25519KeyPair();
+
+            return SaveEncryptionX25519KeyAsync(keyPair.PrivateKey);
         }
 
         public static async Task RegisterBiometricAuthenticationAsync()
@@ -120,11 +136,6 @@ namespace PlutoFramework.Model
                 password: password!,
                 type: KeyTypeEnum.Did
             );
-        }
-
-        public static async Task SaveEncryptionX25519KeyAsync()
-        {
-
         }
 
         [Obsolete("For migration purposes only")]
@@ -219,6 +230,72 @@ namespace PlutoFramework.Model
             );
         }
 
+        public static async Task SaveEncryptionX25519KeyAsync(byte[] privateKey)
+        {
+            var key = X25519Model.ToKey(privateKey);
+
+            var publicKey = key.PublicKey.Export(KeyBlobFormat.RawPublicKey);
+
+            // Just get and use the same main password without asking the user again
+            var password = await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD);
+
+            await KeysModel.SaveKeyAsync(
+                publicKey: Convert.ToBase64String(publicKey),
+                secret: Convert.ToBase64String(privateKey),
+                password: password!,
+                type: KeyTypeEnum.EncryptionX25519
+            );
+        }
+
+        public static async Task ImportJsonKeyAsync()
+        {
+            var jsonType = new FilePickerFileType(
+                new Dictionary<DevicePlatform, IEnumerable<string>>
+                {
+                { DevicePlatform.iOS, new[] { "public.json" } }, // UTType values
+                { DevicePlatform.Android, new[] { "application/json" } }, // MIME type
+                { DevicePlatform.WinUI, new[] { ".json" } }, // file extension
+                { DevicePlatform.Tizen, new[] { "*/*" } },
+                { DevicePlatform.macOS, new[] { "public.json" } }, // UTType values
+                });
+
+            var result = await FilePicker.PickAsync(new PickOptions
+            {
+                PickerTitle = "Import json account",
+                FileTypes = jsonType,
+            });
+
+            if (result is null || !result.FileName.Contains(".json"))
+                return;
+
+            using var jsonStream = await result.OpenReadAsync();
+
+            string json = StreamToString(jsonStream);
+
+            try
+            {
+                await KeysModel.SaveJsonKeyAsync(json);
+
+                await PlutoConfigurationModel.AfterAccountImportAsync();
+
+                var toast = Toast.Make($"JSON key imported successfully.");
+                await toast.Show();
+            }
+            catch
+            {
+                var toast = Toast.Make($"Failed to import JSON key.");
+                await toast.Show();
+            }
+        }
+
+        private static string StreamToString(Stream stream)
+        {
+            stream.Position = 0;
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                return reader.ReadToEnd();
+            }
+        }
         public static bool HasSubstrateKey(string accountVariant = "")
         {
             return Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY + accountVariant);
@@ -410,7 +487,7 @@ namespace PlutoFramework.Model
         )
         {
             var secretStorageKey = $"secret-{publicKey}";
-            var passwordStorageKey = $"secret-{publicKey}";
+            var passwordStorageKey = $"password-{publicKey}";
 
             var lockedKey = new GenericLockedKey
             {
