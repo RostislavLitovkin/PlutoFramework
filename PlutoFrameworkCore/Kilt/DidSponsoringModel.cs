@@ -21,7 +21,7 @@ namespace PlutoFrameworkCore
 
             var requestBody = new RequestBody
             {
-                TxHex = Utils.Bytes2HexString(method.Encode()),
+                TxHex = Utils.Bytes2HexString(method.Encode()).ToLower(),
             };
 
             var jsonContent = new StringContent(System.Text.Json.JsonSerializer.Serialize(requestBody), System.Text.Encoding.UTF8, "application/json");

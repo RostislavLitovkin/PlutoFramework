@@ -9,6 +9,7 @@ using Substrate.NetApi.Model.Types;
 using Substrate.NetApi.Model.Types.Base;
 using Kilt.NetApi.Generated.Model.primitive_types;
 using Substrate.NetApi.Model.Types.Primitive;
+using Kilt.NetApi.Generated.Storage;
 
 namespace PlutoFramework.Model
 {
@@ -128,6 +129,17 @@ namespace PlutoFramework.Model
             );
 
             return Kilt.NetApi.Generated.Storage.DidCalls.Create(details, signature);
+        }
+
+        public static Method AddEncryptionKey(byte[] x25519PublicKey)
+        {
+            var encryptionKey = new EnumDidEncryptionKey();
+            encryptionKey.Create(DidEncryptionKey.X25519, new Arr32U8
+            {
+                Value = x25519PublicKey.Select(b => new U8(b)).ToArray()
+            });
+
+            return DidCalls.AddKeyAgreementKey(encryptionKey);
         }
 
         public static string DidAddressToSs58Address(string didAddress)
