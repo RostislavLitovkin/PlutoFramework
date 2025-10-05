@@ -8,7 +8,9 @@
                 NftDatabase.DeleteAllAsync(),
                 CollectionDatabase.DeleteAllAsync(),
                 XcavatePropertyDatabase.DeleteAllAsync(),
-                BalancesDatabase.DeleteAllAsync()
+                BalancesDatabase.DeleteAllAsync(),
+                XcavateUserDatabase.DeleteAllAsync(),
+                KeysDatabase.DeleteAllAsync()
             );
         }
     }

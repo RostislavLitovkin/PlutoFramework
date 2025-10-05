@@ -93,5 +93,13 @@ namespace PlutoFramework.Model.SQLite
                 return await Database.InsertAsync(databaseItem).ConfigureAwait(false);
             }
         }
+
+        public static async Task DeleteAllAsync()
+        {
+            await InitAsync().ConfigureAwait(false);
+
+            await Database.DeleteAllAsync<XcavateUserDatabaseItem>();
+        }
+
     }
 }
