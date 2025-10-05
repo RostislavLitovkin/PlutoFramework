@@ -8,7 +8,6 @@
                 xmlns:koda="clr-namespace:PlutoFramework.Components.Koda"
                 xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
                 xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
-                xmlns:model="clr-namespace:PlutoFramework.Model;assembly=PlutoFramework.Model"
                 xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
              xmlns:xcavateproperty="clr-namespace:PlutoFramework.Components.XcavateProperty"
              xmlns:transfer="clr-namespace:PlutoFramework.Components.TransferView"
@@ -68,7 +67,7 @@
             </CollectionView>
 
         </RefreshView>
-        
+
         <extrinsic:ExtrinsicStatusStackLayout />
 
         <xcavate:XcavateNavigationBarView />

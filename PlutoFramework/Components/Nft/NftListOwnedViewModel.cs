@@ -41,7 +41,7 @@ namespace PlutoFramework.Components.Nft
 
                 if (uniqueryNftEnumerator != null && await uniqueryNftEnumerator.MoveNextAsync().ConfigureAwait(false))
                 {
-                    Nfts.Add(Model.NftModel.ToNftWrapper(uniqueryNftEnumerator.Current));
+                    Nfts.Add(PlutoFrameworkCore.NftModel.ToNftWrapper(uniqueryNftEnumerator.Current));
                 }
 
                 else

@@ -23,20 +23,32 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet
     {
         
         /// <summary>
-        /// >> NewUserWhitelisted
-        /// A new user has been successfully whitelisted.
+        /// >> RoleAssigned
+        /// A new role has been assigned to a user.
         /// </summary>
-        NewUserWhitelisted = 0,
+        RoleAssigned = 0,
         
         /// <summary>
-        /// >> UserRemoved
-        /// A new user has been successfully removed.
+        /// >> RoleRemoved
+        /// A role has been removed from a user.
         /// </summary>
-        UserRemoved = 1,
+        RoleRemoved = 1,
+        
+        /// <summary>
+        /// >> AdminRegistered
+        /// A new admin has been registered.
+        /// </summary>
+        AdminRegistered = 2,
+        
+        /// <summary>
+        /// >> AdminRemoved
+        /// An admin has been removed.
+        /// </summary>
+        AdminRemoved = 3,
     }
     
     /// <summary>
-    /// >> 173 - Variant[pallet_xcavate_whitelist.pallet.Event]
+    /// >> 176 - Variant[pallet_xcavate_whitelist.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -47,8 +59,10 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.NewUserWhitelisted);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.UserRemoved);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumRole>>(Event.RoleAssigned);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumRole>>(Event.RoleRemoved);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.AdminRegistered);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.AdminRemoved);
         }
     }
 }

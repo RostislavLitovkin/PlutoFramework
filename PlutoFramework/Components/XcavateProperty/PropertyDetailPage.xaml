@@ -1,182 +1,174 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PlutoFramework.Components.XcavateProperty.PropertyDetailPage"
-             xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
-             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-             xmlns:table="clr-namespace:PlutoFramework.Components.Table"
-             xmlns:xcavateproperty="clr-namespace:PlutoFramework.Components.XcavateProperty"
-             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
-             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
-             xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
-             xmlns:account="clr-namespace:PlutoFramework.Components.Account"
-             xmlns:kilt="clr-namespace:PlutoFramework.Components.Kilt"
-             xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
-             xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
-             xmlns:sumsub="clr-namespace:PlutoFramework.Components.Sumsub"
-             xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
-             HideSoftInputOnTapped="True"
-             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
-             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
-    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
-        <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-                    Margin="0, 65, 0, 65">
-            <VerticalStackLayout Spacing="15"
-                                 Padding="20, 15, 20, 100">
-                <xcavate:RiskWarningView />
+<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                       xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
+                       xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+                       xmlns:xcavateproperty="clr-namespace:PlutoFramework.Components.XcavateProperty"
+                       xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+                       xmlns:account="clr-namespace:PlutoFramework.Components.Account"
+                       xmlns:kilt="clr-namespace:PlutoFramework.Components.Kilt"
+                       xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
+                       xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
+                       xmlns:sumsub="clr-namespace:PlutoFramework.Components.Sumsub"
+                       xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
+                       xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+                       x:Class="PlutoFramework.Components.XcavateProperty.PropertyDetailPage"
+                       Title="PropertyDetailPage"
+                       IsNavbarVisible="False">
+    <template:PageTemplate.MainContent>
+        <VerticalStackLayout Spacing="15"
+                             Padding="20, 80, 20, 100">
+            <xcavate:RiskWarningView />
 
-                <nft:NftMultiImageView ImageSources="{Binding Metadata.Images}" />
+            <nft:NftMultiImageView ImageSources="{Binding Metadata.Images}" />
 
-                <xcavateproperty:CompanyThumbnailView />
+            <xcavateproperty:CompanyThumbnailView />
 
-                <xcavateproperty:LocationView LocationName="{Binding Metadata.LocationName}" />
+            <xcavateproperty:LocationView LocationName="{Binding Metadata.LocationName}" />
 
-                <Label
-                       FontSize="20"
-                       FontAttributes="Bold"
-                       HorizontalTextAlignment="Start">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="{Binding Metadata.PropertyName}"
-                                  FontAttributes="Bold" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+            <Label FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding Metadata.PropertyName}"
+                              FontAttributes="Bold" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
-                <Label Text="Price per token"
-                       Margin="0,10,0,-10"
-                       HorizontalTextAlignment="Start" />
+            <Label Text="Price per token"
+                   Margin="0,10,0,-10"
+                   HorizontalTextAlignment="Start" />
 
-                <Label 
-                       FontSize="20"
-                       FontAttributes="Bold"
-                       HorizontalTextAlignment="Start"
-                       >
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="{Binding PricePerTokenText}"
-                                  FontAttributes="Bold" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+            <Label FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding PricePerTokenText}"
+                              FontAttributes="Bold" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
-                <Grid AbsoluteLayout.LayoutBounds="0.5, 25, 1, 185"
-                      AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
-                      ColumnSpacing="15"
-                      RowSpacing="5"
-                       Margin="0,10,0,10"
-                      >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+            <Grid AbsoluteLayout.LayoutBounds="0.5, 25, 1, 185"
+                  AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                  ColumnSpacing="15"
+                  RowSpacing="5"
+                  Margin="0,10,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="90" />
-                        <RowDefinition Height="80" />
-                    </Grid.RowDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90" />
+                    <RowDefinition Height="80" />
+                </Grid.RowDefinitions>
 
-                    <xcavate:XcavateCell Grid.Column="0"
-                                         Grid.Row="0"
-                                         Title="Listing price"
-                                         Value="{Binding ListingPrice}" />
-                    <xcavate:XcavateCell Grid.Column="1"
-                                         Grid.Row="0"
-                                      Title="Rental yield"
-                                      Value="{Binding Apy}" />
-                    <xcavate:XcavateCell Grid.Column="0"
-                                         Grid.Row="1"
-                                      Title="Tokens available"
-                                      Value="{Binding TokensAvailable}" />
-                    <xcavate:XcavateCell Grid.Column="1"
-                                         Grid.Row="1"
-                                      Title="Property time"
-                                      Value="{Binding Metadata.PropertyType}" />
-                </Grid>
+                <xcavate:XcavateCell Grid.Column="0"
+                                     Grid.Row="0"
+                                     Title="Listing price"
+                                     Value="{Binding ListingPrice}" />
 
-                <xcavateproperty:SliderView Title="Area prices"
-                                            Percentage="{Binding AreaPricesPercentage}"
-                                            MinimumTitle="£200,000"
-                                            MaximumTitle="£270,000" />
+                <xcavate:XcavateCell Grid.Column="1"
+                                     Grid.Row="0"
+                                     Title="Rental yield"
+                                     Value="{Binding Apy}" />
 
-                <Line Stroke="#888888" X2="{Binding Width, Source={RelativeSource Self}}" HorizontalOptions="Fill" StrokeThickness="1" />
+                <xcavate:XcavateCell Grid.Column="0"
+                                     Grid.Row="1"
+                                     Title="Tokens available"
+                                     Value="{Binding TokensAvailable}" />
 
+                <xcavate:XcavateCell Grid.Column="1"
+                                     Grid.Row="1"
+                                     Title="Property type"
+                                     Value="{Binding Metadata.PropertyType}" />
+            </Grid>
+
+            <xcavateproperty:SliderView Title="Area prices"
+                                        Percentage="{Binding AreaPricesPercentage}"
+                                        MinimumTitle="£200,000"
+                                        MaximumTitle="£270,000" />
+
+            <Line Stroke="#888888"
+                  X2="{Binding Width, Source={RelativeSource Self}}"
+                  HorizontalOptions="Fill"
+                  StrokeThickness="1" />
+
+            <Label FontAttributes="Bold"
+                   HorizontalTextAlignment="Start">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Rental income"
+                              FontAttributes="Bold" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label Text="{Binding RentalIncome}"
+                   HorizontalTextAlignment="Start" />
+
+            <Line Stroke="#888888"
+                  X2="{Binding Width, Source={RelativeSource Self}}"
+                  HorizontalOptions="Fill"
+                  StrokeThickness="1" />
+
+            <xcavateproperty:SliderView Title="Rental demand"
+                                        Percentage="{Binding RentalDemandPercentage}"
+                                        MinimumTitle="Low"
+                                        MaximumTitle="High" />
+
+            <xcavateproperty:OwnedPropertyTokensView IsVisible="{Binding OwnedPropertyTokensViewIsVisible}" />
+
+            <StackLayout BackgroundColor="#22888888"
+                            Padding="20,30,20,30"
+                            Margin="-20,20,-20,20"
+                            Spacing="15">
                 <Label FontAttributes="Bold"
-                       
-                       HorizontalTextAlignment="Start" >
+                        HorizontalTextAlignment="Start">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="Rental income"
+                            <Span Text="Property description"
                                     FontAttributes="Bold" />
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
 
-                <Label Text="{Binding RentalIncome}"
+                <Label Text="{Binding Metadata.PropertyDescription}"
+                        HorizontalTextAlignment="Start" />
+
+                <Label FontAttributes="Bold"
+                       Text="Details"
                        HorizontalTextAlignment="Start" />
 
-                <Line Stroke="#888888" X2="{Binding Width, Source={RelativeSource Self}}" HorizontalOptions="Fill" StrokeThickness="1" />
+                <nft:NftAttributeView AttributeName="Size"
+                                      Value="{Binding Metadata.Area}"
+                                      CardBackgroundColor="#11888888" />
 
-                <xcavateproperty:SliderView Title="Rental demand"
-                                            Percentage="{Binding RentalDemandPercentage}"
-                                            MinimumTitle="Low"
-                                            MaximumTitle="High" />
+                <nft:NftAttributeView AttributeName="Bedrooms"
+                                      Value="{Binding Metadata.NoOfBedrooms}"
+                                      CardBackgroundColor="#11888888" />
 
-                <xcavateproperty:OwnedPropertyTokensView IsVisible="{Binding OwnedPropertyTokensViewIsVisible}"/>
+                <nft:NftAttributeView AttributeName="Bathrooms"
+                                      Value="{Binding Metadata.NoOfBathrooms}"
+                                      CardBackgroundColor="#11888888" />
 
-                <buttons:ElevatedButton Text="Re-list"
-                                        Command="{Binding RelistCommand}"
-                                        IsVisible="{Binding RelistPropertyTokensButtonIsVisible}" />
+                <nft:NftAttributeView AttributeName="Type"
+                                      Value="{Binding Metadata.PropertyType}"
+                                      CardBackgroundColor="#11888888" />
 
-                <Label Text="Listing has expired."
-                       HorizontalTextAlignment="Start"
-                       IsVisible="{Binding ListingHasExpired}"/>
+                <nft:NftAttributeView AttributeName="Location"
+                                      Value="{Binding LocationShortName}"
+                                      CardBackgroundColor="#11888888" />
+            </StackLayout>
+        </VerticalStackLayout>
+    </template:PageTemplate.MainContent>
 
-                <StackLayout BackgroundColor="#22888888"
-                             Padding="20,30,20,30"
-                             Margin="-20,20,-20,20"
-                             Spacing="15">
-                    <Label FontAttributes="Bold"
-                           HorizontalTextAlignment="Start" >
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="Property description"
-                                      FontAttributes="Bold" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                    <Label Text="{Binding Metadata.PropertyDescription}"
-                           HorizontalTextAlignment="Start" />
-
-
-                    <Label FontAttributes="Bold"
-                           Text="Details"
-                           HorizontalTextAlignment="Start" />
-
-
-                    <nft:NftAttributeView AttributeName="Size"
-                                          Value="{Binding Metadata.Area}"
-                                           CardBackgroundColor="#11888888"/>
-
-                    <nft:NftAttributeView AttributeName="Bedrooms"
-                                          Value="{Binding Metadata.NoOfBedrooms}"
-                                          CardBackgroundColor="#11888888"/>
-
-                    <nft:NftAttributeView AttributeName="Bathrooms"
-                                          Value="{Binding Metadata.NoOfBathrooms}"
-                                          CardBackgroundColor="#11888888"/>
-
-                    <nft:NftAttributeView AttributeName="Type"
-                                          Value="{Binding Metadata.PropertyType}"
-                                          CardBackgroundColor="#11888888"/>
-
-                    <nft:NftAttributeView AttributeName="Location"
-                                          Value="{Binding LocationShortName}"
-                                          CardBackgroundColor="#11888888" />
-                </StackLayout>
-            </VerticalStackLayout>
-        </ScrollView>
-
+    <template:PageTemplate.PopupContent>
         <xcavate:XcavateTopNavigationBarView Title="{Binding Metadata.PropertyName}"
                                              Extra1Image="xcavateshare.png"
                                              Extra1Command="{Binding ShareCommand}"
@@ -185,8 +177,7 @@
                                              Extra2Command="{Binding MakeFavouriteCommand}"
                                              Extra2ImageMargin="5, 6, 5, 4"
                                              Extra2ImageHeight="20"
-                                             Extra2ImageWidth="20"
-                                             />
+                                             Extra2ImageWidth="20" />
 
         <xcavate:PageBottomBarButtonView Text="{Binding MainActionText}"
                                          ButtonState="{Binding MainActionButtonState}"
@@ -206,11 +197,6 @@
 
         <sumsub:NoKYCPopupView />
 
-        <txanalyzer:TransactionAnalyzerConfirmationView />
-
-        <password:EnterPasswordPopupView />
-
         <card:BottomPillBackgroundView />
-    </AbsoluteLayout>
-
-</ContentPage>
+    </template:PageTemplate.PopupContent>
+</template:PageTemplate>

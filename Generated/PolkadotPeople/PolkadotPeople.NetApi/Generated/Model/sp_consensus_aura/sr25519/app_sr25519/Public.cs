@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.sp_consensus_aura.sr25519.app_sr
     
     
     /// <summary>
-    /// >> 226 - Composite[sp_consensus_aura.sr25519.app_sr25519.Public]
+    /// >> 254 - Composite[sp_consensus_aura.sr25519.app_sr25519.Public]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Public : BaseType

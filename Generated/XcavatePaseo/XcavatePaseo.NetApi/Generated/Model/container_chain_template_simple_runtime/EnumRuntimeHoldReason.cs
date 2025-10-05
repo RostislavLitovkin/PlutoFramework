@@ -24,21 +24,26 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         /// <summary>
         /// >> NftFractionalization
         /// </summary>
-        NftFractionalization = 19,
+        NftFractionalization = 18,
         
         /// <summary>
-        /// >> NftMarketplace
+        /// >> Regions
         /// </summary>
-        NftMarketplace = 81,
+        Regions = 91,
+        
+        /// <summary>
+        /// >> Marketplace
+        /// </summary>
+        Marketplace = 93,
         
         /// <summary>
         /// >> PropertyManagement
         /// </summary>
-        PropertyManagement = 82,
+        PropertyManagement = 94,
     }
     
     /// <summary>
-    /// >> 391 - Variant[container_chain_template_simple_runtime.RuntimeHoldReason]
+    /// >> 407 - Variant[container_chain_template_simple_runtime.RuntimeHoldReason]
     /// </summary>
     public sealed class EnumRuntimeHoldReason : BaseEnumRust<RuntimeHoldReason>
     {
@@ -49,7 +54,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         public EnumRuntimeHoldReason()
         {
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.pallet.EnumHoldReason>(RuntimeHoldReason.NftFractionalization);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet.EnumHoldReason>(RuntimeHoldReason.NftMarketplace);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumHoldReason>(RuntimeHoldReason.Regions);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet.EnumHoldReason>(RuntimeHoldReason.Marketplace);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.EnumHoldReason>(RuntimeHoldReason.PropertyManagement);
         }
     }

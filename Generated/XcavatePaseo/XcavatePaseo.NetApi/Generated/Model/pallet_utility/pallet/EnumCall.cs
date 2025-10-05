@@ -120,10 +120,48 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_utility.pallet
         /// The dispatch origin for this call must be _Root_.
         /// </summary>
         with_weight = 5,
+        
+        /// <summary>
+        /// >> if_else
+        /// Dispatch a fallback call in the event the main call fails to execute.
+        /// May be called from any origin except `None`.
+        /// 
+        /// This function first attempts to dispatch the `main` call.
+        /// If the `main` call fails, the `fallback` is attemted.
+        /// if the fallback is successfully dispatched, the weights of both calls
+        /// are accumulated and an event containing the main call error is deposited.
+        /// 
+        /// In the event of a fallback failure the whole call fails
+        /// with the weights returned.
+        /// 
+        /// - `main`: The main call to be dispatched. This is the primary action to execute.
+        /// - `fallback`: The fallback call to be dispatched in case the `main` call fails.
+        /// 
+        /// ## Dispatch Logic
+        /// - If the origin is `root`, both the main and fallback calls are executed without
+        ///   applying any origin filters.
+        /// - If the origin is not `root`, the origin filter is applied to both the `main` and
+        ///   `fallback` calls.
+        /// 
+        /// ## Use Case
+        /// - Some use cases might involve submitting a `batch` type call in either main, fallback
+        ///   or both.
+        /// </summary>
+        if_else = 6,
+        
+        /// <summary>
+        /// >> dispatch_as_fallible
+        /// Dispatches a function call with a provided origin.
+        /// 
+        /// Almost the same as [`Pallet::dispatch_as`] but forwards any error of the inner call.
+        /// 
+        /// The dispatch origin for this call must be _Root_.
+        /// </summary>
+        dispatch_as_fallible = 7,
     }
     
     /// <summary>
-    /// >> 251 - Variant[pallet_utility.pallet.Call]
+    /// >> 263 - Variant[pallet_utility.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -140,6 +178,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_utility.pallet
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumOriginCaller, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>>(Call.dispatch_as);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>>(Call.force_batch);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Call.with_weight);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>>(Call.if_else);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumOriginCaller, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>>(Call.dispatch_as_fallible);
         }
     }
 }

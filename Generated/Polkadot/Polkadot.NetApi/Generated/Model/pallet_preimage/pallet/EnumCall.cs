@@ -61,7 +61,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_preimage.pallet
         
         /// <summary>
         /// >> ensure_updated
-        /// Ensure that the a bulk of pre-images is upgraded.
+        /// Ensure that the bulk of pre-images is upgraded.
         /// 
         /// The caller pays no fee if at least 90% of pre-images were successfully updated.
         /// </summary>
@@ -69,7 +69,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_preimage.pallet
     }
     
     /// <summary>
-    /// >> 102 - Variant[pallet_preimage.pallet.Call]
+    /// >> 111 - Variant[pallet_preimage.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

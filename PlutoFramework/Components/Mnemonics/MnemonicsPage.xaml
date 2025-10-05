@@ -1,51 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
-             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
-             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
-             xmlns:mnemonics="clr-namespace:PlutoFramework.Components.Mnemonics"
-             x:Class="PlutoFramework.Components.Mnemonics.MnemonicsPage"
-             Title="Mnemonics"
-             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
-    <ContentPage.BindingContext>
-        <mnemonics:MnemonicsPageViewModel x:Name="viewModel" />
-    </ContentPage.BindingContext>
-    
-   <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
-        
-        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-               Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
-               Opacity="{AppThemeBinding Light=0.96}"
-               Aspect="AspectFill"/>
+<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                       xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+                       xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+                       xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+                       xmlns:mnemonics="clr-namespace:PlutoFramework.Components.Mnemonics"
+                       x:Class="PlutoFramework.Components.Mnemonics.MnemonicsPage"
+                       Title="Mnemonics">
 
-        <ScrollView Orientation="Vertical"
-                    x:Name="scrollView"
-                    AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                    AbsoluteLayout.LayoutFlags="All"
-                    Padding="0, 55, 0, 0">
-            <VerticalStackLayout HorizontalOptions="Center"
-                                 Padding="20, 10, 20, 100"
-                                 Spacing="15">
-                <mnemonics:MnemonicsView Title="{Binding MnemonicsTitle}"
-                                         Mnemonics="{Binding Mnemonics}" />
+    <template:PageTemplate.MainContent>
+        <VerticalStackLayout HorizontalOptions="Center"
+                             Padding="20, 10, 20, 100"
+                             Spacing="15">
+            <mnemonics:MnemonicsView Title="{Binding MnemonicsTitle}"
+                                     Mnemonics="{Binding Mnemonics}" />
 
-                <buttons:ElevatedButton ButtonState="{Binding ExportJsonButtonState}" Text="Export json" Command="{Binding ExportJsonCommand}"
-                                        x:Name="exportJsonButton" />
+            <buttons:ElevatedButton ButtonState="{Binding ExportJsonButtonState}"
+                                    Text="Export json"
+                                    Command="{Binding ExportJsonCommand}"
+                                    x:Name="exportJsonButton" />
 
-                <buttons:ElevatedButton ButtonState="Enabled" Text="Use existing mnemonics" Command="{Binding GoToEnterMnemonicsCommand}" />
+            <buttons:ElevatedButton ButtonState="Enabled"
+                                    Text="Use existing mnemonics"
+                                    Command="{Binding GoToEnterMnemonicsCommand}" />
 
-                <buttons:ElevatedButton ButtonState="Enabled" Text="What are mnemonics?" Command="{Binding GoToMnemonicsExplanationCommand}" />
-
-            </VerticalStackLayout>
-            
-        </ScrollView>
-
-        <navigationbar:TopNavigationBar Title="New mnemonics"
-                                        x:Name="topNavigationBar" />
-
-        <password:EnterPasswordPopupView />
-       
-    </AbsoluteLayout>
-</ContentPage>
+            <buttons:ElevatedButton ButtonState="Enabled"
+                                    Text="What are mnemonics?"
+                                    Command="{Binding GoToMnemonicsExplanationCommand}" />
+        </VerticalStackLayout>
+    </template:PageTemplate.MainContent>
+</template:PageTemplate>

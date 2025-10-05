@@ -1,14 +1,12 @@
 using PlutoFramework.Model;
+using PlutoFramework.Templates.PageTemplate;
 
 namespace PlutoFramework.Components.Mnemonics;
 
-public partial class CreateMnemonicsPage : ContentPage
+public partial class CreateMnemonicsPage : PageTemplate
 {
     public CreateMnemonicsPage(CreateMnemonicsViewModel viewModel)
     {
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 
         string mnemonics = MnemonicsModel.GenerateMnemonics();

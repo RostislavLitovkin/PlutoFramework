@@ -1,17 +1,13 @@
 using PlutoFramework.Model;
-using System.Collections;
-using System.Collections.ObjectModel;
+using PlutoFramework.Templates.PageTemplate;
 using UniqueryPlus;
 
 namespace PlutoFramework.Components.Nft;
 
-public partial class NftMainPage : ContentPage
+public partial class NftMainPage : PageTemplate
 {
     public NftMainPage()
     {
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 
         var viewModel = new NftMainViewModel();

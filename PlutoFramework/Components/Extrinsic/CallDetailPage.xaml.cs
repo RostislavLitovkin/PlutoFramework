@@ -1,12 +1,11 @@
+using PlutoFramework.Templates.PageTemplate;
+
 namespace PlutoFramework.Components.Extrinsic;
 
-public partial class CallDetailPage : ContentPage
+public partial class CallDetailPage : PageTemplate
 {
 	public CallDetailPage(CallDetailViewModel viewModel)
 	{
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 
 		BindingContext = viewModel;

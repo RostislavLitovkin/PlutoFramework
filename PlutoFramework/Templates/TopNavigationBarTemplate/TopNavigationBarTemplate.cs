@@ -22,18 +22,21 @@ namespace PlutoFramework.Templates.TopNavigationBarTemplate
         }
 
         public static readonly BindableProperty Extra1ImageProperty =
-           BindableProperty.Create(nameof(Extra1Image), typeof(string), typeof(TopNavigationBarTemplate));
-        public string Extra1Image
+           BindableProperty.Create(nameof(Extra1Image), typeof(ImageSource), typeof(TopNavigationBarTemplate));
+        public ImageSource Extra1Image
         {
-            get => (string)GetValue(Extra1ImageProperty);
+            get => (ImageSource)GetValue(Extra1ImageProperty);
             set => SetValue(Extra1ImageProperty, value);
         }
 
         public static readonly BindableProperty Extra1CommandProperty =
-           BindableProperty.Create(nameof(Extra1Command), typeof(IAsyncRelayCommand), typeof(TopNavigationBarTemplate));
-        public string Extra1Command
+           BindableProperty.Create(nameof(Extra1Command), typeof(IAsyncRelayCommand), typeof(TopNavigationBarTemplate),
+               propertyChanged: (BindableObject bindable, object oldValue, object newValue) => {
+                   ((TopNavigationBarViewModel)bindable.BindingContext).Extra1IsVisible = newValue is not null;
+               });
+        public IAsyncRelayCommand Extra1Command
         {
-            get => (string)GetValue(Extra1CommandProperty);
+            get => (IAsyncRelayCommand)GetValue(Extra1CommandProperty);
             set => SetValue(Extra1CommandProperty, value);
         }
 
@@ -46,19 +49,31 @@ namespace PlutoFramework.Templates.TopNavigationBarTemplate
         }
 
         public static readonly BindableProperty Extra2ImageProperty =
-           BindableProperty.Create(nameof(Extra2Image), typeof(string), typeof(TopNavigationBarTemplate));
-        public string Extra2Image
+           BindableProperty.Create(nameof(Extra2Image), typeof(ImageSource), typeof(TopNavigationBarTemplate));
+        public ImageSource Extra2Image
         {
-            get => (string)GetValue(Extra2ImageProperty);
+            get => (ImageSource)GetValue(Extra2ImageProperty);
             set => SetValue(Extra2ImageProperty, value);
         }
 
         public static readonly BindableProperty Extra2CommandProperty =
-           BindableProperty.Create(nameof(Extra2Command), typeof(IAsyncRelayCommand), typeof(TopNavigationBarTemplate));
-        public string Extra2Command
+           BindableProperty.Create(nameof(Extra2Command), typeof(IAsyncRelayCommand), typeof(TopNavigationBarTemplate),
+               propertyChanged: (BindableObject bindable, object oldValue, object newValue) => {
+                   ((TopNavigationBarViewModel)bindable.BindingContext).Extra2IsVisible = newValue is not null;
+               });
+        public IAsyncRelayCommand Extra2Command
         {
-            get => (string)GetValue(Extra2CommandProperty);
+            get => (IAsyncRelayCommand)GetValue(Extra2CommandProperty);
             set => SetValue(Extra2CommandProperty, value);
+        }
+
+        public static readonly BindableProperty HasShadowProperty =
+           BindableProperty.Create(nameof(HasShadow), typeof(bool), typeof(TopNavigationBarTemplate), defaultValue: true);
+
+        public bool HasShadow
+        {
+            get => (bool)GetValue(HasShadowProperty);
+            set => SetValue(HasShadowProperty, value);
         }
 
         public TopNavigationBarTemplate()

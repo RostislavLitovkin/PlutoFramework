@@ -23,34 +23,62 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet
     {
         
         /// <summary>
-        /// >> add_to_whitelist
-        /// Adds a user to the whitelist.
+        /// >> add_admin
+        /// Adds an whitelisst admin.
         /// 
         /// The origin must be the sudo.
         /// 
         /// Parameters:
-        /// - `user`: The address of the new account added to the whitelist.
+        /// - `user`: The address of the accounts that is added as an admin.
         /// 
-        /// Emits `NewUserWhitelisted` event when succesfful
+        /// Emits `RoleAssigned` event when succesfful
         /// </summary>
-        add_to_whitelist = 0,
+        add_admin = 0,
         
         /// <summary>
-        /// >> remove_from_whitelist
-        /// Removes a user from the whitelist.
+        /// >> remove_admin
+        /// Adds an whitelisst admin.
         /// 
         /// The origin must be the sudo.
         /// 
         /// Parameters:
-        /// - `user`: The address of the new account removed from the whitelist.
+        /// - `user`: The address of the accounts that is added as an admin.
+        /// 
+        /// Emits `RoleAssigned` event when succesfful
+        /// </summary>
+        remove_admin = 1,
+        
+        /// <summary>
+        /// >> assign_role
+        /// Adds a role to a user.
+        /// 
+        /// The origin must be the sudo.
+        /// 
+        /// Parameters:
+        /// - `user`: The address of the accounts that gets a new role.
+        /// - `role`: The role that is getting assigned to the user.
+        /// 
+        /// Emits `RoleAssigned` event when succesfful
+        /// </summary>
+        assign_role = 2,
+        
+        /// <summary>
+        /// >> remove_role
+        /// Removes a role from a user.
+        /// 
+        /// The origin must be the sudo.
+        /// 
+        /// Parameters:
+        /// - `user`: The address of the accounts that gets a role removed.
+        /// - `role`: The role that is getting removed from the user.
         /// 
         /// Emits `UserRemoved` event when succesfful
         /// </summary>
-        remove_from_whitelist = 1,
+        remove_role = 3,
     }
     
     /// <summary>
-    /// >> 358 - Variant[pallet_xcavate_whitelist.pallet.Call]
+    /// >> 369 - Variant[pallet_xcavate_whitelist.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -61,8 +89,10 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Call.add_to_whitelist);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Call.remove_from_whitelist);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Call.add_admin);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Call.remove_admin);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumRole>>(Call.assign_role);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumRole>>(Call.remove_role);
         }
     }
 }

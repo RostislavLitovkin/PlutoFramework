@@ -36,19 +36,25 @@ namespace Polkadot.NetApi.Generated.Model.pallet_conviction_voting.pallet
         
         /// <summary>
         /// >> Voted
-        /// An account that has voted
+        /// An account has voted
         /// </summary>
         Voted = 2,
         
         /// <summary>
         /// >> VoteRemoved
-        /// A vote that been removed
+        /// A vote has been removed
         /// </summary>
         VoteRemoved = 3,
+        
+        /// <summary>
+        /// >> VoteUnlocked
+        /// The lockup period of a conviction vote expired, and the funds have been unlocked.
+        /// </summary>
+        VoteUnlocked = 4,
     }
     
     /// <summary>
-    /// >> 89 - Variant[pallet_conviction_voting.pallet.Event]
+    /// >> 98 - Variant[pallet_conviction_voting.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -63,6 +69,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_conviction_voting.pallet
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.Undelegated);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumAccountVote>>(Event.Voted);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumAccountVote>>(Event.VoteRemoved);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U16>>(Event.VoteUnlocked);
         }
     }
 }

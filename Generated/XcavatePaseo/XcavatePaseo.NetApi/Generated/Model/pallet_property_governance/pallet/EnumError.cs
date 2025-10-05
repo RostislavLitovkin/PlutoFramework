@@ -23,56 +23,222 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
     {
         
         /// <summary>
-        /// >> NoPermission
-        /// The user is not a property owner and has no permission to propose.
-        /// </summary>
-        NoPermission = 0,
-        
-        /// <summary>
         /// >> TooManyProposals
         /// There are already too many proposals in the ending block.
         /// </summary>
-        TooManyProposals = 1,
+        TooManyProposals = 0,
         
         /// <summary>
         /// >> NotOngoing
         /// The proposal is not ongoing.
         /// </summary>
-        NotOngoing = 2,
-        
-        /// <summary>
-        /// >> TooManyVotes
-        /// Too many user voted already.
-        /// </summary>
-        TooManyVotes = 3,
-        
-        /// <summary>
-        /// >> NoAssetFound
-        /// The assets details could not be found.
-        /// </summary>
-        NoAssetFound = 4,
+        NotOngoing = 1,
         
         /// <summary>
         /// >> NoLettingAgentFound
         /// There is no letting agent for this property.
         /// </summary>
-        NoLettingAgentFound = 5,
+        NoLettingAgentFound = 2,
         
         /// <summary>
         /// >> NotEnoughFunds
         /// The pallet has not enough funds.
         /// </summary>
-        NotEnoughFunds = 6,
+        NotEnoughFunds = 3,
         
         /// <summary>
-        /// >> ConversionError
-        /// Error during converting types.
+        /// >> RegionUnknown
+        /// The region is not registered.
         /// </summary>
-        ConversionError = 7,
+        RegionUnknown = 4,
+        
+        /// <summary>
+        /// >> NoPermission
+        /// The caller is not authorized to call this extrinsic.
+        /// </summary>
+        NoPermission = 5,
+        
+        /// <summary>
+        /// >> AssetNotFound
+        /// Real estate asset does not exist.
+        /// </summary>
+        AssetNotFound = 6,
+        
+        /// <summary>
+        /// >> NoPermissionInRegion
+        /// This Agent has no authorization in the region.
+        /// </summary>
+        NoPermissionInRegion = 7,
+        
+        /// <summary>
+        /// >> NotForSale
+        /// The property is not for sale.
+        /// </summary>
+        NotForSale = 8,
+        
+        /// <summary>
+        /// >> SaleHasNotBeenApproved
+        /// The sale has not been approved yet by a lawyer.
+        /// </summary>
+        SaleHasNotBeenApproved = 9,
+        
+        /// <summary>
+        /// >> NoObjectFound
+        /// The real estate object could not be found.
+        /// </summary>
+        NoObjectFound = 10,
+        
+        /// <summary>
+        /// >> DivisionError
+        /// Error by dividing a number.
+        /// </summary>
+        DivisionError = 11,
+        
+        /// <summary>
+        /// >> MultiplyError
+        /// Error by multiplying a number.
+        /// </summary>
+        MultiplyError = 12,
+        
+        /// <summary>
+        /// >> PaymentAssetNotSupported
+        /// This Asset is not supported for payment.
+        /// </summary>
+        PaymentAssetNotSupported = 13,
+        
+        /// <summary>
+        /// >> AlreadyFinalized
+        /// The property sale has already been finalized.
+        /// </summary>
+        AlreadyFinalized = 14,
+        
+        /// <summary>
+        /// >> SaleNotFinalized
+        /// Sale has not been finalized.
+        /// </summary>
+        SaleNotFinalized = 15,
+        
+        /// <summary>
+        /// >> ArithmeticOverflow
+        /// </summary>
+        ArithmeticOverflow = 16,
+        
+        /// <summary>
+        /// >> ArithmeticUnderflow
+        /// </summary>
+        ArithmeticUnderflow = 17,
+        
+        /// <summary>
+        /// >> SaleAlreadyConfirmed
+        /// The lawyer already confirmed the sale.
+        /// </summary>
+        SaleAlreadyConfirmed = 18,
+        
+        /// <summary>
+        /// >> NoFundsToClaim
+        /// There are no funds to claim for the caller.
+        /// </summary>
+        NoFundsToClaim = 19,
+        
+        /// <summary>
+        /// >> CostsTooHigh
+        /// Costs for the lawyer are too high.
+        /// </summary>
+        CostsTooHigh = 20,
+        
+        /// <summary>
+        /// >> LawyerJobTaken
+        /// The lawyer job has already been taken.
+        /// </summary>
+        LawyerJobTaken = 21,
+        
+        /// <summary>
+        /// >> PriceNotSet
+        /// Price for a property sale has not been set yet.
+        /// </summary>
+        PriceNotSet = 22,
+        
+        /// <summary>
+        /// >> SpvLawyerNotSet
+        /// The Spv lawyer is not set.
+        /// </summary>
+        SpvLawyerNotSet = 23,
+        
+        /// <summary>
+        /// >> NoPriceSet
+        /// No price has been set.
+        /// </summary>
+        NoPriceSet = 24,
+        
+        /// <summary>
+        /// >> NoOngoingAuction
+        /// There is no auction to bid on.
+        /// </summary>
+        NoOngoingAuction = 25,
+        
+        /// <summary>
+        /// >> UserNotWhitelisted
+        /// User did not pass the kyc.
+        /// </summary>
+        UserNotWhitelisted = 26,
+        
+        /// <summary>
+        /// >> BidTooLow
+        /// The bid is lower than the current highest bid.
+        /// </summary>
+        BidTooLow = 27,
+        
+        /// <summary>
+        /// >> SaleOngoing
+        /// There is already a sale ongoing.
+        /// </summary>
+        SaleOngoing = 28,
+        
+        /// <summary>
+        /// >> PropertySaleProposalOngoing
+        /// There is already a sale proposal ongoing.
+        /// </summary>
+        PropertySaleProposalOngoing = 29,
+        
+        /// <summary>
+        /// >> BuyerNotSet
+        /// No buyer has been set.
+        /// </summary>
+        BuyerNotSet = 30,
+        
+        /// <summary>
+        /// >> NoReserve
+        /// No reserve has been set for the sale.
+        /// </summary>
+        NoReserve = 31,
+        
+        /// <summary>
+        /// >> ZeroTokenAmount
+        /// Token amount is zero.
+        /// </summary>
+        ZeroTokenAmount = 32,
+        
+        /// <summary>
+        /// >> TooManyAssignedProperties
+        /// The letting agent has already too many assigned properties.
+        /// </summary>
+        TooManyAssignedProperties = 33,
+        
+        /// <summary>
+        /// >> ChallengeAlreadyOngoing
+        /// A challenge against a letting agent is already ongoing.
+        /// </summary>
+        ChallengeAlreadyOngoing = 34,
+        
+        /// <summary>
+        /// >> TooManyVoters
+        /// There are already too many voters for this voting.
+        /// </summary>
+        TooManyVoters = 35,
     }
     
     /// <summary>
-    /// >> 527 - Variant[pallet_property_governance.pallet.Error]
+    /// >> 590 - Variant[pallet_property_governance.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

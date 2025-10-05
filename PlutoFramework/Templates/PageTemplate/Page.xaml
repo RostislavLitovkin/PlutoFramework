@@ -10,7 +10,8 @@
     <ControlTemplate x:Key="PageTemplate">
         <!-- BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}" -->
         <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                        AbsoluteLayout.LayoutFlags="All">
+                        AbsoluteLayout.LayoutFlags="All"
+                        x:Name="PopupsLayout">
 
             <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                    AbsoluteLayout.LayoutFlags="All"
@@ -19,23 +20,27 @@
 
             <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                         AbsoluteLayout.LayoutFlags="All"
-                        Padding="0, 55, 0, 0">
+                        Padding="{TemplateBinding ScrollPadding}"
+                        Orientation="{TemplateBinding ScrollViewOrientation}"
+                        x:Name="scrollView">
                 <!-- Content block -->
                 <ContentPresenter Content="{TemplateBinding MainContent}"/>
             </ScrollView>
 
             <topnavigationbartemplate:TopNavigationBarTemplate Title="{TemplateBinding Title}"
                                                                Extra1Text="{TemplateBinding NavigationBarExtra1Text}"
-                                                               Extra1Command="{TemplateBinding NavigationBarExtra1Command}"/>
-            
-            <txanalyzer:TransactionAnalyzerConfirmationView />
+                                                               Extra1Command="{TemplateBinding NavigationBarExtra1Command}"
+                                                               Extra1Image="{TemplateBinding NavigationBarExtra1Image}"
+                                                               Extra2Text="{TemplateBinding NavigationBarExtra2Text}"
+                                                               Extra2Command="{TemplateBinding NavigationBarExtra2Command}"
+                                                               Extra2Image="{TemplateBinding NavigationBarExtra2Image}"
+                                                               IsVisible="{TemplateBinding IsNavbarVisible}"
+                                                               HasShadow="{TemplateBinding NavigationBarHasShadow}"
+                                                               x:Name="TopNavigationBar" />
 
-            <!-- Popups block -->
-            <ContentPresenter Content="{TemplateBinding PopupContent}"
-                              AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
-                              AbsoluteLayout.LayoutFlags="SizeProportional"/>
+            <txanalyzer:TransactionAnalyzerConfirmationView ZIndex="{TemplateBinding TransactionAnalyzerZIndex}" />
 
-            <password:EnterPasswordPopupView />
+            <password:EnterPasswordPopupView ZIndex="10"/>
         </AbsoluteLayout>
     </ControlTemplate>
 </ResourceDictionary>

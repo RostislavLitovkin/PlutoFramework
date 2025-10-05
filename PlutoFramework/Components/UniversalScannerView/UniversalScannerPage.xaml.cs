@@ -4,8 +4,8 @@ namespace PlutoFramework.Components.UniversalScannerView;
 
 public partial class UniversalScannerPage : ContentPage
 {
-	public UniversalScannerPage()
-	{
+    public UniversalScannerPage()
+    {
         NavigationPage.SetHasNavigationBar(this, false);
         Shell.SetNavBarIsVisible(this, false);
 

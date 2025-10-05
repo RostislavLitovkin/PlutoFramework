@@ -113,6 +113,30 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(weight.Encode());
             return new Method(5, "Utility", 5, "with_weight", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> if_else
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method IfElse(XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall main, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall fallback)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(main.Encode());
+            byteArray.AddRange(fallback.Encode());
+            return new Method(5, "Utility", 6, "if_else", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> dispatch_as_fallible
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method DispatchAsFallible(XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumOriginCaller as_origin, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall call)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(as_origin.Encode());
+            byteArray.AddRange(call.Encode());
+            return new Method(5, "Utility", 7, "dispatch_as_fallible", byteArray.ToArray());
+        }
     }
     
     /// <summary>

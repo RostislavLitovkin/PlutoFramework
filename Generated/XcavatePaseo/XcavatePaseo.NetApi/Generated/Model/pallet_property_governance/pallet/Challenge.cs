@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
     
     
     /// <summary>
-    /// >> 522 - Composite[pallet_property_governance.pallet.Challenge]
+    /// >> 578 - Composite[pallet_property_governance.pallet.Challenge]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Challenge : BaseType
@@ -29,17 +29,9 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         /// </summary>
         public XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Proposer { get; set; }
         /// <summary>
-        /// >> asset_id
-        /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U32 AssetId { get; set; }
-        /// <summary>
         /// >> created_at
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 CreatedAt { get; set; }
-        /// <summary>
-        /// >> state
-        /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumChallengeState State { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -52,9 +44,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         {
             var result = new List<byte>();
             result.AddRange(Proposer.Encode());
-            result.AddRange(AssetId.Encode());
             result.AddRange(CreatedAt.Encode());
-            result.AddRange(State.Encode());
             return result.ToArray();
         }
         
@@ -64,12 +54,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
             var start = p;
             Proposer = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Proposer.Decode(byteArray, ref p);
-            AssetId = new Substrate.NetApi.Model.Types.Primitive.U32();
-            AssetId.Decode(byteArray, ref p);
             CreatedAt = new Substrate.NetApi.Model.Types.Primitive.U32();
             CreatedAt.Decode(byteArray, ref p);
-            State = new XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumChallengeState();
-            State.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;
             Bytes = new byte[bytesLength];

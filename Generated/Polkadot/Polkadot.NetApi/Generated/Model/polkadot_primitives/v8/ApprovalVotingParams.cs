@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8
     
     
     /// <summary>
-    /// >> 272 - Composite[polkadot_primitives.v8.ApprovalVotingParams]
+    /// >> 279 - Composite[polkadot_primitives.v8.ApprovalVotingParams]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ApprovalVotingParams : BaseType

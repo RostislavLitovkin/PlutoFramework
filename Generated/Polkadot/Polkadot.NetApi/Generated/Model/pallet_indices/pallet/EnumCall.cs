@@ -107,10 +107,25 @@ namespace Polkadot.NetApi.Generated.Model.pallet_indices.pallet
         /// - `O(1)`.
         /// </summary>
         freeze = 4,
+        
+        /// <summary>
+        /// >> poke_deposit
+        /// Poke the deposit reserved for an index.
+        /// 
+        /// The dispatch origin for this call must be _Signed_ and the signing account must have a
+        /// non-frozen account `index`.
+        /// 
+        /// The transaction fees is waived if the deposit is changed after poking/reconsideration.
+        /// 
+        /// - `index`: the index whose deposit is to be poked/reconsidered.
+        /// 
+        /// Emits `DepositPoked` if successful.
+        /// </summary>
+        poke_deposit = 5,
     }
     
     /// <summary>
-    /// >> 114 - Variant[pallet_indices.pallet.Call]
+    /// >> 123 - Variant[pallet_indices.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -126,6 +141,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_indices.pallet
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.free);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.force_transfer);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.freeze);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.poke_deposit);
         }
     }
 }

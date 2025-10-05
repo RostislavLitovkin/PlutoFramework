@@ -931,7 +931,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id SelfParaId()
         {
             var result = new XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id();
-            result.Create("0x2E120000");
+            result.Create("0x33120000");
             return result;
         }
     }
@@ -978,17 +978,5 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// No validation function upgrade is currently scheduled.
         /// </summary>
         NotScheduled,
-        
-        /// <summary>
-        /// >> NothingAuthorized
-        /// No code upgrade has been authorized.
-        /// </summary>
-        NothingAuthorized,
-        
-        /// <summary>
-        /// >> Unauthorized
-        /// The given code upgrade has not been authorized.
-        /// </summary>
-        Unauthorized,
     }
 }

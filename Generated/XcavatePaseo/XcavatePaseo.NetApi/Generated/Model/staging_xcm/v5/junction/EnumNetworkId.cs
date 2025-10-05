@@ -44,22 +44,22 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.junction
         /// <summary>
         /// >> Ethereum
         /// </summary>
-        Ethereum = 4,
+        Ethereum = 7,
         
         /// <summary>
         /// >> BitcoinCore
         /// </summary>
-        BitcoinCore = 5,
+        BitcoinCore = 8,
         
         /// <summary>
         /// >> BitcoinCash
         /// </summary>
-        BitcoinCash = 6,
+        BitcoinCash = 9,
         
         /// <summary>
         /// >> PolkadotBulletin
         /// </summary>
-        PolkadotBulletin = 7,
+        PolkadotBulletin = 10,
     }
     
     /// <summary>

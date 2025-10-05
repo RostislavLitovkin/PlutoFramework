@@ -30,9 +30,21 @@ namespace Polkadot.NetApi.Generated.Model.pallet_xcm.pallet
         
         /// <summary>
         /// >> Sent
-        /// A XCM message was sent.
+        /// An XCM message was sent.
         /// </summary>
         Sent = 1,
+        
+        /// <summary>
+        /// >> SendFailed
+        /// An XCM message failed to send.
+        /// </summary>
+        SendFailed = 2,
+        
+        /// <summary>
+        /// >> ProcessXcmError
+        /// An XCM message failed to process.
+        /// </summary>
+        ProcessXcmError = 3,
         
         /// <summary>
         /// >> UnexpectedResponse
@@ -40,21 +52,21 @@ namespace Polkadot.NetApi.Generated.Model.pallet_xcm.pallet
         /// matching query was never registered, it may be because it is a duplicate response, or
         /// because the query timed out.
         /// </summary>
-        UnexpectedResponse = 2,
+        UnexpectedResponse = 4,
         
         /// <summary>
         /// >> ResponseReady
         /// Query response has been received and is ready for taking with `take_response`. There is
         /// no registered notification call.
         /// </summary>
-        ResponseReady = 3,
+        ResponseReady = 5,
         
         /// <summary>
         /// >> Notified
         /// Query response has been received and query is removed. The registered notification has
         /// been dispatched and executed successfully.
         /// </summary>
-        Notified = 4,
+        Notified = 6,
         
         /// <summary>
         /// >> NotifyOverweight
@@ -62,14 +74,14 @@ namespace Polkadot.NetApi.Generated.Model.pallet_xcm.pallet
         /// could not be dispatched because the dispatch weight is greater than the maximum weight
         /// originally budgeted by this runtime for the query result.
         /// </summary>
-        NotifyOverweight = 5,
+        NotifyOverweight = 7,
         
         /// <summary>
         /// >> NotifyDispatchError
         /// Query response has been received and query is removed. There was a general error with
         /// dispatching the notification call.
         /// </summary>
-        NotifyDispatchError = 6,
+        NotifyDispatchError = 8,
         
         /// <summary>
         /// >> NotifyDecodeFailed
@@ -77,7 +89,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_xcm.pallet
         /// decoded into a `Call`; this might be due to dispatch function having a signature which
         /// is not `(origin, QueryId, Response)`.
         /// </summary>
-        NotifyDecodeFailed = 7,
+        NotifyDecodeFailed = 9,
         
         /// <summary>
         /// >> InvalidResponder
@@ -85,7 +97,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_xcm.pallet
         /// not match that expected. The query remains registered for a later, valid, response to
         /// be received and acted upon.
         /// </summary>
-        InvalidResponder = 8,
+        InvalidResponder = 10,
         
         /// <summary>
         /// >> InvalidResponderVersion
@@ -97,19 +109,19 @@ namespace Polkadot.NetApi.Generated.Model.pallet_xcm.pallet
         /// valid response will be dropped. Manual governance intervention is probably going to be
         /// needed.
         /// </summary>
-        InvalidResponderVersion = 9,
+        InvalidResponderVersion = 11,
         
         /// <summary>
         /// >> ResponseTaken
         /// Received query response has been read and removed.
         /// </summary>
-        ResponseTaken = 10,
+        ResponseTaken = 12,
         
         /// <summary>
         /// >> AssetsTrapped
         /// Some assets have been placed in an asset trap.
         /// </summary>
-        AssetsTrapped = 11,
+        AssetsTrapped = 13,
         
         /// <summary>
         /// >> VersionChangeNotified
@@ -117,28 +129,28 @@ namespace Polkadot.NetApi.Generated.Model.pallet_xcm.pallet
         /// 
         /// The cost of sending it (borne by the chain) is included.
         /// </summary>
-        VersionChangeNotified = 12,
+        VersionChangeNotified = 14,
         
         /// <summary>
         /// >> SupportedVersionChanged
         /// The supported version of a location has been changed. This might be through an
         /// automatic notification or a manual intervention.
         /// </summary>
-        SupportedVersionChanged = 13,
+        SupportedVersionChanged = 15,
         
         /// <summary>
         /// >> NotifyTargetSendFail
         /// A given location which had a version change subscription was dropped owing to an error
         /// sending the notification to it.
         /// </summary>
-        NotifyTargetSendFail = 14,
+        NotifyTargetSendFail = 16,
         
         /// <summary>
         /// >> NotifyTargetMigrationFail
         /// A given location which had a version change subscription was dropped owing to an error
         /// migrating the location to our new XCM format.
         /// </summary>
-        NotifyTargetMigrationFail = 15,
+        NotifyTargetMigrationFail = 17,
         
         /// <summary>
         /// >> InvalidQuerierVersion
@@ -150,7 +162,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_xcm.pallet
         /// valid response will be dropped. Manual governance intervention is probably going to be
         /// needed.
         /// </summary>
-        InvalidQuerierVersion = 16,
+        InvalidQuerierVersion = 18,
         
         /// <summary>
         /// >> InvalidQuerier
@@ -158,49 +170,68 @@ namespace Polkadot.NetApi.Generated.Model.pallet_xcm.pallet
         /// not match the expected. The query remains registered for a later, valid, response to
         /// be received and acted upon.
         /// </summary>
-        InvalidQuerier = 17,
+        InvalidQuerier = 19,
         
         /// <summary>
         /// >> VersionNotifyStarted
         /// A remote has requested XCM version change notification from us and we have honored it.
         /// A version information message is sent to them and its cost is included.
         /// </summary>
-        VersionNotifyStarted = 18,
+        VersionNotifyStarted = 20,
         
         /// <summary>
         /// >> VersionNotifyRequested
         /// We have requested that a remote chain send us XCM version change notifications.
         /// </summary>
-        VersionNotifyRequested = 19,
+        VersionNotifyRequested = 21,
         
         /// <summary>
         /// >> VersionNotifyUnrequested
         /// We have requested that a remote chain stops sending us XCM version change
         /// notifications.
         /// </summary>
-        VersionNotifyUnrequested = 20,
+        VersionNotifyUnrequested = 22,
         
         /// <summary>
         /// >> FeesPaid
         /// Fees were paid from a location for an operation (often for using `SendXcm`).
         /// </summary>
-        FeesPaid = 21,
+        FeesPaid = 23,
         
         /// <summary>
         /// >> AssetsClaimed
         /// Some assets have been claimed from an asset trap
         /// </summary>
-        AssetsClaimed = 22,
+        AssetsClaimed = 24,
         
         /// <summary>
         /// >> VersionMigrationFinished
         /// A XCM version migration finished.
         /// </summary>
-        VersionMigrationFinished = 23,
+        VersionMigrationFinished = 25,
+        
+        /// <summary>
+        /// >> AliasAuthorized
+        /// An `aliaser` location was authorized by `target` to alias it, authorization valid until
+        /// `expiry` block number.
+        /// </summary>
+        AliasAuthorized = 26,
+        
+        /// <summary>
+        /// >> AliasAuthorizationRemoved
+        /// `target` removed alias authorization for `aliaser`.
+        /// </summary>
+        AliasAuthorizationRemoved = 27,
+        
+        /// <summary>
+        /// >> AliasesAuthorizationsRemoved
+        /// `target` removed all alias authorizations.
+        /// </summary>
+        AliasesAuthorizationsRemoved = 28,
     }
     
     /// <summary>
-    /// >> 481 - Variant[pallet_xcm.pallet.Event]
+    /// >> 502 - Variant[pallet_xcm.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -211,30 +242,35 @@ namespace Polkadot.NetApi.Generated.Model.pallet_xcm.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<Polkadot.NetApi.Generated.Model.staging_xcm.v4.traits.EnumOutcome>(Event.Attempted);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v4.location.Location, Polkadot.NetApi.Generated.Model.staging_xcm.v4.location.Location, Polkadot.NetApi.Generated.Model.staging_xcm.v4.XcmT1, Polkadot.NetApi.Generated.Types.Base.Arr32U8>>(Event.Sent);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.UnexpectedResponse);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Polkadot.NetApi.Generated.Model.staging_xcm.v4.EnumResponse>>(Event.ResponseReady);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.staging_xcm.v5.traits.EnumOutcome>(Event.Attempted);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Polkadot.NetApi.Generated.Model.staging_xcm.v5.XcmT1, Polkadot.NetApi.Generated.Types.Base.Arr32U8>>(Event.Sent);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Polkadot.NetApi.Generated.Model.xcm.v3.traits.EnumSendError, Polkadot.NetApi.Generated.Types.Base.Arr32U8>>(Event.SendFailed);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Polkadot.NetApi.Generated.Model.xcm.v5.traits.EnumError, Polkadot.NetApi.Generated.Types.Base.Arr32U8>>(Event.ProcessXcmError);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.UnexpectedResponse);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Polkadot.NetApi.Generated.Model.staging_xcm.v5.EnumResponse>>(Event.ResponseReady);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U8, Substrate.NetApi.Model.Types.Primitive.U8>>(Event.Notified);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U8, Substrate.NetApi.Model.Types.Primitive.U8, Polkadot.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Polkadot.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Event.NotifyOverweight);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U8, Substrate.NetApi.Model.Types.Primitive.U8>>(Event.NotifyDispatchError);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U8, Substrate.NetApi.Model.Types.Primitive.U8>>(Event.NotifyDecodeFailed);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.staging_xcm.v4.location.Location>>>(Event.InvalidResponder);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.InvalidResponderVersion);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location>>>(Event.InvalidResponder);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.InvalidResponderVersion);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U64>(Event.ResponseTaken);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.primitive_types.H256, Polkadot.NetApi.Generated.Model.staging_xcm.v4.location.Location, Polkadot.NetApi.Generated.Model.xcm.EnumVersionedAssets>>(Event.AssetsTrapped);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.staging_xcm.v4.asset.Assets, Polkadot.NetApi.Generated.Types.Base.Arr32U8>>(Event.VersionChangeNotified);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.SupportedVersionChanged);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Primitive.U64, Polkadot.NetApi.Generated.Model.xcm.v3.traits.EnumError>>(Event.NotifyTargetSendFail);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.primitive_types.H256, Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Polkadot.NetApi.Generated.Model.xcm.EnumVersionedAssets>>(Event.AssetsTrapped);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.staging_xcm.v5.asset.Assets, Polkadot.NetApi.Generated.Types.Base.Arr32U8>>(Event.VersionChangeNotified);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.SupportedVersionChanged);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Primitive.U64, Polkadot.NetApi.Generated.Model.xcm.v5.traits.EnumError>>(Event.NotifyTargetSendFail);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.xcm.EnumVersionedLocation, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.NotifyTargetMigrationFail);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.InvalidQuerierVersion);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Primitive.U64, Polkadot.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.staging_xcm.v4.location.Location>>>(Event.InvalidQuerier);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v4.location.Location, Polkadot.NetApi.Generated.Model.staging_xcm.v4.asset.Assets, Polkadot.NetApi.Generated.Types.Base.Arr32U8>>(Event.VersionNotifyStarted);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v4.location.Location, Polkadot.NetApi.Generated.Model.staging_xcm.v4.asset.Assets, Polkadot.NetApi.Generated.Types.Base.Arr32U8>>(Event.VersionNotifyRequested);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v4.location.Location, Polkadot.NetApi.Generated.Model.staging_xcm.v4.asset.Assets, Polkadot.NetApi.Generated.Types.Base.Arr32U8>>(Event.VersionNotifyUnrequested);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v4.location.Location, Polkadot.NetApi.Generated.Model.staging_xcm.v4.asset.Assets>>(Event.FeesPaid);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.primitive_types.H256, Polkadot.NetApi.Generated.Model.staging_xcm.v4.location.Location, Polkadot.NetApi.Generated.Model.xcm.EnumVersionedAssets>>(Event.AssetsClaimed);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.InvalidQuerierVersion);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Primitive.U64, Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location>>>(Event.InvalidQuerier);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Polkadot.NetApi.Generated.Model.staging_xcm.v5.asset.Assets, Polkadot.NetApi.Generated.Types.Base.Arr32U8>>(Event.VersionNotifyStarted);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Polkadot.NetApi.Generated.Model.staging_xcm.v5.asset.Assets, Polkadot.NetApi.Generated.Types.Base.Arr32U8>>(Event.VersionNotifyRequested);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Polkadot.NetApi.Generated.Model.staging_xcm.v5.asset.Assets, Polkadot.NetApi.Generated.Types.Base.Arr32U8>>(Event.VersionNotifyUnrequested);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Polkadot.NetApi.Generated.Model.staging_xcm.v5.asset.Assets>>(Event.FeesPaid);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.primitive_types.H256, Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Polkadot.NetApi.Generated.Model.xcm.EnumVersionedAssets>>(Event.AssetsClaimed);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.VersionMigrationFinished);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U64>>>(Event.AliasAuthorized);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location, Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location>>(Event.AliasAuthorizationRemoved);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.staging_xcm.v5.location.Location>(Event.AliasesAuthorizationsRemoved);
         }
     }
 }

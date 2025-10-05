@@ -51,17 +51,19 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "VersionNotifyTargets"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Substrate.NetApi.Model.Types.Primitive.U32>)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "VersionDiscoveryQueue"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "VersionDiscoveryQueue"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "CurrentMigration"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.EnumVersionMigrationStage)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "RemoteLockedFungibles"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssetId>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.RemoteLockedFungibleRecord)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "LockedFungibles"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "XcmExecutionSuspended"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "ShouldRecordXcm"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "RecordedXcm"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.XcmT1)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "AuthorizedAliases"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_xcm.AuthorizedAliasesEntry)));
         }
         
         /// <summary>
@@ -313,10 +315,10 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         ///  the `u32` counter is the number of times that a send to the destination has been attempted,
         ///  which is used as a prioritization.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25> VersionDiscoveryQueue(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27> VersionDiscoveryQueue(string blockhash, CancellationToken token)
         {
             string parameters = PolkadotXcmStorage.VersionDiscoveryQueueParams();
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27>(parameters, blockhash, token);
             return result;
         }
         
@@ -405,10 +407,10 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> LockedFungibles
         ///  Fungible assets which we know are locked on this chain.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27> LockedFungibles(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29> LockedFungibles(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = PolkadotXcmStorage.LockedFungiblesParams(key);
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29>(parameters, blockhash, token);
             return result;
         }
         
@@ -518,6 +520,41 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             string parameters = PolkadotXcmStorage.RecordedXcmParams();
             var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.XcmT1>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> AuthorizedAliasesParams
+        ///  Map of authorized aliasers of local origins. Each local location can authorize a list of
+        ///  other locations to alias into it. Each aliaser is only valid until its inner `expiry`
+        ///  block number.
+        /// </summary>
+        public static string AuthorizedAliasesParams(XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation key)
+        {
+            return RequestGenerator.GetStorage("PolkadotXcm", "AuthorizedAliases", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> AuthorizedAliasesDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string AuthorizedAliasesDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> AuthorizedAliases
+        ///  Map of authorized aliasers of local origins. Each local location can authorize a list of
+        ///  other locations to alias into it. Each aliaser is only valid until its inner `expiry`
+        ///  block number.
+        /// </summary>
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_xcm.AuthorizedAliasesEntry> AuthorizedAliases(XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation key, string blockhash, CancellationToken token)
+        {
+            string parameters = PolkadotXcmStorage.AuthorizedAliasesParams(key);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_xcm.AuthorizedAliasesEntry>(parameters, blockhash, token);
             return result;
         }
     }
@@ -709,6 +746,39 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(weight_limit.Encode());
             return new Method(73, "PolkadotXcm", 13, "transfer_assets_using_type_and_then", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> add_authorized_alias
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method AddAuthorizedAlias(XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation aliaser, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U64> expires)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(aliaser.Encode());
+            byteArray.AddRange(expires.Encode());
+            return new Method(73, "PolkadotXcm", 14, "add_authorized_alias", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> remove_authorized_alias
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method RemoveAuthorizedAlias(XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation aliaser)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(aliaser.Encode());
+            return new Method(73, "PolkadotXcm", 15, "remove_authorized_alias", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> remove_all_authorized_aliases
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method RemoveAllAuthorizedAliases()
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            return new Method(73, "PolkadotXcm", 16, "remove_all_authorized_aliases", byteArray.ToArray());
+        }
     }
     
     /// <summary>
@@ -882,5 +952,23 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// Local XCM execution incomplete.
         /// </summary>
         LocalExecutionIncomplete,
+        
+        /// <summary>
+        /// >> TooManyAuthorizedAliases
+        /// Too many locations authorized to alias origin.
+        /// </summary>
+        TooManyAuthorizedAliases,
+        
+        /// <summary>
+        /// >> ExpiresInPast
+        /// Expiry block number is in the past.
+        /// </summary>
+        ExpiresInPast,
+        
+        /// <summary>
+        /// >> AliasNotFound
+        /// The alias to remove authorization for was not found.
+        /// </summary>
+        AliasNotFound,
     }
 }

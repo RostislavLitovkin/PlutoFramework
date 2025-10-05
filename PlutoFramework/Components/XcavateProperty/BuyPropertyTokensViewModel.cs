@@ -15,7 +15,7 @@ namespace PlutoFramework.Components.XcavateProperty
     public partial class BuyPropertyTokensViewModel : ObservableObject, IPopup, ISetToDefault
     {
         [ObservableProperty]
-        private XcavateMetadata? metadata;
+        private PropertyMetadata? metadata;
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(MaxValue))]
@@ -41,7 +41,7 @@ namespace PlutoFramework.Components.XcavateProperty
                     return "-";
                 }
 
-                double usd = parsedTokens * Metadata?.PricePerToken ?? 0.0;
+                decimal usd = parsedTokens * Metadata?.PricePerToken ?? 0;
                 return usd.ToCurrencyString();
             }
         }
@@ -56,7 +56,7 @@ namespace PlutoFramework.Components.XcavateProperty
                     return "-";
                 }
 
-                var usd = 0.01 * parsedTokens * Metadata?.PricePerToken ?? 0;
+                var usd = (decimal)0.01 * (decimal)parsedTokens * Metadata?.PricePerToken ?? 0;
                 return usd.ToCurrencyString();
             }
         }
@@ -71,7 +71,7 @@ namespace PlutoFramework.Components.XcavateProperty
                     return "-";
                 }
 
-                var usd = 1.01 * parsedTokens * Metadata?.PricePerToken ?? 0;
+                var usd = (decimal)1.01 * (decimal)parsedTokens * Metadata?.PricePerToken ?? 0;
                 return usd.ToCurrencyString();
             }
         }
@@ -80,7 +80,10 @@ namespace PlutoFramework.Components.XcavateProperty
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(ContinueButtonState))]
+        [NotifyPropertyChangedFor(nameof(ErrorIsVisible))]
         private string errorMessage = "";
+
+        public bool ErrorIsVisible => ErrorMessage != "";
 
         public ButtonStateEnum ContinueButtonState => ErrorMessage == "" && Tokens != "" ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
 

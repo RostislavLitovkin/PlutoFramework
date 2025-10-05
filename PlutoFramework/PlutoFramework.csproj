@@ -6,7 +6,6 @@
     <UseMaui>true</UseMaui>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-
     <OutputType>Library</OutputType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
@@ -55,15 +54,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PlutoFrameworkCore\PlutoFrameworkCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AWSSDK.S3" Version="3.7.412.1" />
     <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
     <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.10" />
-    <PackageReference Include="Substrate.NET.API" Version="0.9.24-rc6" />
-    <PackageReference Include="Uniquery" Version="1.0.1" />
-    <PackageReference Include="Plutonication" Version="2.5.0" />
     <PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
-    <PackageReference Include="AzeroIdResolver" Version="1.0.2" />
-    <PackageReference Include="Substrate.NET.Wallet" Version="1.0.8" />
     <PackageReference Include="System.Runtime.InteropServices" Version="4.3.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
     <PackageReference Include="AcrylicView.Maui" Version="2.1.3" />
@@ -90,17 +88,6 @@
     <PackageReference Include="Microsoft.Maui.Controls" Version="9.0.81" />
     <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="9.0.81" />
 
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Generated\Bajun\Bajun.NetApi\Bajun.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\BifrostPolkadot\BifrostPolkadot.NetApi\BifrostPolkadot.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\Hydration\Hydration.NetApi\Hydration.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\InvArch\InvArch.NetApi\InvArch.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\Kilt\Kilt.NetApi\Kilt.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\PolkadotPeople\PolkadotPeople.NetApi\PolkadotPeople.NetApi.csproj" />
-    <ProjectReference Include="..\Generated\Polkadot\Polkadot.NetApi\Polkadot.NetApi.csproj" />
-    <ProjectReference Include="..\UniqueryPlus\UniqueryPlus.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -655,6 +642,9 @@
     <Compile Update="Components\Nft\NftSoldForView.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Nft\NftOwnedListView.xaml.cs">
+      <DependentUpon>NftOwnedListView.xaml</DependentUpon>
     </Compile>
     <Compile Update="Components\Nft\NftThumbnailView.xaml.cs">
       <SubType>Code</SubType>
@@ -1631,6 +1621,9 @@
     <None Update="Components\XcavateProperty\PropertyThumbnailView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Update="Components\XcavateProperty\PropertyTitleWithInfoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Update="Components\XcavateProperty\RelistPropertyTokensView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
@@ -1748,12 +1741,6 @@
     <None Update="Templates\TopNavigationBarTemplate\TopNavigationBar.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Model\Types\Bifrost\" />
-    <Folder Include="Model\Types\Hydration\" />
-    <Folder Include="Model\Types\Polkadot\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -1907,6 +1894,7 @@
     <MauiFont Include="Resources\Fonts\OpenSans-Regular.ttf" />
     <MauiFont Include="Resources\Fonts\OpenSans-Semibold.ttf" />
     <MauiFont Include="Resources\Fonts\xcavatefont.ttf" />
+    <MauiFont Include="Resources\Fonts\dmsans.ttf" Alias="XcavateFont" />
   </ItemGroup>
 
   <ItemGroup>
@@ -2027,6 +2015,7 @@
     <MauiImage Include="Resources\Images\youtubeblack.png" />
     <MauiImage Include="Resources\Images\youtubewhite.png" />
   </ItemGroup>
+
   <ItemGroup>
     <MauiXaml Update="Components\000ComponentTemplate\NewPageTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -2067,6 +2056,9 @@
     <MauiXaml Update="Components\Balance\AssetView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\Balance\BalanceOverviewView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\Balance\BalancePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
@@ -2092,6 +2084,9 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Card\ClickableCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Card\TextCard.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Card\TopPillBackgroundView.xaml">
@@ -2208,6 +2203,15 @@
     <MauiXaml Update="Components\Loading\FullPageLoadingView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\Menu\MainMenuPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Menu\QuickActionItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Menu\UserView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\Messaging\MessagingOverviewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
@@ -2305,13 +2309,25 @@
     <MauiXaml Update="Components\Nft\NftSoldForView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
-    <MauiXaml Update="Components\Nft\NftsOwnedListView.xaml">
+    <MauiXaml Update="Components\Nft\NftOwnedListView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Nft\NftTradingStats.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Nft\NftTransferView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Notifications\DateView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Notifications\NotificationsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Notifications\NotificationTypeBadgeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Notifications\NotificationView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\OpenGov\VotingDelegationView.xaml">
@@ -2321,6 +2337,9 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Password\SetupPasswordPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Progress\ProgressStepperView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\SearchBar\SearchBarView.xaml">
@@ -2351,6 +2370,9 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Table\TwoCellTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Tabs\MultiTabView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Tabs\TabsView.xaml">
@@ -2459,6 +2481,9 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Xcavate\PageBottomBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\QuestionairePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Xcavate\RiskWarningView.xaml">

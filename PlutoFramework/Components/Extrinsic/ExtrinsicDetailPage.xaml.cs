@@ -1,18 +1,16 @@
 using PlutoFramework.Components.Events;
 using PlutoFramework.Components.WebView;
 using PlutoFramework.Constants;
+using PlutoFramework.Templates.PageTemplate;
 
 namespace PlutoFramework.Components.Extrinsic;
 
-public partial class ExtrinsicDetailPage : ContentPage
+public partial class ExtrinsicDetailPage : PageTemplate
 {
     private Endpoint endpoint;
     private string blockNumberExtrinsicIndex;
 	public ExtrinsicDetailPage(EventsListViewModel eventsListModel, Endpoint endpoint, string blockNumberExtrinsicIndex)
 	{
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 
         eventsListView.BindingContext = eventsListModel;

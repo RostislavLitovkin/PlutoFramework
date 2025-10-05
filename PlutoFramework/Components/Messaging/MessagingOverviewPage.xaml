@@ -1,29 +1,47 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PlutoFramework.Components.Messaging.MessagingOverviewPage"
-             Title="MessagingOverviewPage"
-            xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-         xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
-         xmlns:password="clr-namespace:PlutoFramework.Components.Password"
-         BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
-    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                       xmlns:messaging="clr-namespace:PlutoFramework.Components.Messaging"
+                       x:Class="PlutoFramework.Components.Messaging.MessagingOverviewPage"
+                       Title="Messaging Overview">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="IncomingMessageTemplate">
+            <messaging:IncomingMessageView Sender="{Binding Sender}"
+                                           Text="{Binding Message}" 
+                                           Timestamp="{Binding Timestamp}"
+                                           MsgColor="{Binding MsgColor}"
+                                           Rotation="180"/>
+        </DataTemplate>
 
-        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-           Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
-           Opacity="{AppThemeBinding Light=0.96}"
-           Aspect="AspectFill"/>
-
-        <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
-
-            <Label Text="Messaging here" />
-
-        </ScrollView>
+        <DataTemplate x:Key="OutgoingMessageTemplate">
+            <messaging:OutgoingMessageView Text="{Binding Message}" 
+                                           Timestamp="{Binding Timestamp}"
+                                           Rotation="180"/>
+        </DataTemplate>
         
-        <navigationbar:TopNavigationBar Title="MessagingOverviewPage" />
+        <DataTemplate x:Key="StatusMessageTemplate">
+            <messaging:StatusMessageView Text="{Binding Message}"
+                                         Rotation="180"/>
+        </DataTemplate>
 
-        <txanalyzer:TransactionAnalyzerConfirmationView />
-
-        <password:EnterPasswordPopupView />
-    </AbsoluteLayout>
-</ContentPage>
+        <messaging:MessageTemplateSelector x:Key="MessageSelector"
+                                           IncomingTemplate="{StaticResource IncomingMessageTemplate}"
+                                           OutgoingTemplate="{StaticResource OutgoingMessageTemplate}" 
+                                           StatusTemplate="{StaticResource StatusMessageTemplate}"/>
+    </ContentPage.Resources>
+    
+    <template:PageTemplate.MainContent>
+        <VerticalStackLayout BindableLayout.ItemsSource="{Binding Messages}"
+                             BindableLayout.ItemTemplateSelector="{StaticResource MessageSelector}"
+                             Padding="10"
+                             Spacing="5"
+                             Margin="0, 60,0,0"/>
+    </template:PageTemplate.MainContent>
+    
+    <template:PageTemplate.PopupContent>
+        <messaging:MessageInputBarView AbsoluteLayout.LayoutBounds="0,1,1,65"
+                                       AbsoluteLayout.LayoutFlags="WidthProportional, YProportional"
+                                       Margin="10"/>
+    </template:PageTemplate.PopupContent>
+</template:PageTemplate>

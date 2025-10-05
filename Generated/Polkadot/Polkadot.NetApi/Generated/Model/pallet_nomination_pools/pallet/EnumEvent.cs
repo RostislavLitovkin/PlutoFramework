@@ -149,10 +149,41 @@ namespace Polkadot.NetApi.Generated.Model.pallet_nomination_pools.pallet
         /// Claimed excess frozen ED of af the reward pool.
         /// </summary>
         MinBalanceExcessAdjusted = 17,
+        
+        /// <summary>
+        /// >> MemberClaimPermissionUpdated
+        /// A pool member's claim permission has been updated.
+        /// </summary>
+        MemberClaimPermissionUpdated = 18,
+        
+        /// <summary>
+        /// >> MetadataUpdated
+        /// A pool's metadata was updated.
+        /// </summary>
+        MetadataUpdated = 19,
+        
+        /// <summary>
+        /// >> PoolNominationMade
+        /// A pool's nominating account (or the pool's root account) has nominated a validator set
+        /// on behalf of the pool.
+        /// </summary>
+        PoolNominationMade = 20,
+        
+        /// <summary>
+        /// >> PoolNominatorChilled
+        /// The pool is chilled i.e. no longer nominating.
+        /// </summary>
+        PoolNominatorChilled = 21,
+        
+        /// <summary>
+        /// >> GlobalParamsUpdated
+        /// Global parameters regulating nomination pools have been updated.
+        /// </summary>
+        GlobalParamsUpdated = 22,
     }
     
     /// <summary>
-    /// >> 460 - Variant[pallet_nomination_pools.pallet.Event]
+    /// >> 480 - Variant[pallet_nomination_pools.pallet.Event]
     /// Events of this pallet.
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -181,6 +212,11 @@ namespace Polkadot.NetApi.Generated.Model.pallet_nomination_pools.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.PoolCommissionClaimed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.MinBalanceDeficitAdjusted);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.MinBalanceExcessAdjusted);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.pallet_nomination_pools.EnumClaimPermission>>(Event.MemberClaimPermissionUpdated);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.MetadataUpdated);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.PoolNominationMade);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.PoolNominatorChilled);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill>>>(Event.GlobalParamsUpdated);
         }
     }
 }

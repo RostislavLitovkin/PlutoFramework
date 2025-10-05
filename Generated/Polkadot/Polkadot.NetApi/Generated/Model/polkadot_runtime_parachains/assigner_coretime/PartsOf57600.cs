@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.assigner_c
     
     
     /// <summary>
-    /// >> 335 - Composite[polkadot_runtime_parachains.assigner_coretime.PartsOf57600]
+    /// >> 342 - Composite[polkadot_runtime_parachains.assigner_coretime.PartsOf57600]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PartsOf57600 : BaseType

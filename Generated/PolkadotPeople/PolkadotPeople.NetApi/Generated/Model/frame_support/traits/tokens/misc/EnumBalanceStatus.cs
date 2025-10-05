@@ -33,7 +33,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.frame_support.traits.tokens.misc
     }
     
     /// <summary>
-    /// >> 34 - Variant[frame_support.traits.tokens.misc.BalanceStatus]
+    /// >> 37 - Variant[frame_support.traits.tokens.misc.BalanceStatus]
     /// </summary>
     public sealed class EnumBalanceStatus : BaseEnum<BalanceStatus>
     {

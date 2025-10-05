@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.shared
     
     
     /// <summary>
-    /// >> 704 - Composite[polkadot_runtime_parachains.shared.AllowedRelayParentsTracker]
+    /// >> 730 - Composite[polkadot_runtime_parachains.shared.AllowedRelayParentsTracker]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AllowedRelayParentsTracker : BaseType
@@ -27,7 +27,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.shared
         /// <summary>
         /// >> buffer
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.primitive_types.H256, Polkadot.NetApi.Generated.Model.primitive_types.H256>> Buffer { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.shared.RelayParentInfo> Buffer { get; set; }
         /// <summary>
         /// >> latest_number
         /// </summary>
@@ -52,7 +52,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.shared
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Buffer = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.primitive_types.H256, Polkadot.NetApi.Generated.Model.primitive_types.H256>>();
+            Buffer = new Substrate.NetApi.Model.Types.Base.BaseVec<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.shared.RelayParentInfo>();
             Buffer.Decode(byteArray, ref p);
             LatestNumber = new Substrate.NetApi.Model.Types.Primitive.U32();
             LatestNumber.Decode(byteArray, ref p);

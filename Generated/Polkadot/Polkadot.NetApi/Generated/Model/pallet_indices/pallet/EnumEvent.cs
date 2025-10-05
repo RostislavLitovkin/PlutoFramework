@@ -39,10 +39,16 @@ namespace Polkadot.NetApi.Generated.Model.pallet_indices.pallet
         /// A account index has been frozen to its current account ID.
         /// </summary>
         IndexFrozen = 2,
+        
+        /// <summary>
+        /// >> DepositPoked
+        /// A deposit to reserve an index has been poked/reconsidered.
+        /// </summary>
+        DepositPoked = 3,
     }
     
     /// <summary>
-    /// >> 37 - Variant[pallet_indices.pallet.Event]
+    /// >> 38 - Variant[pallet_indices.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -56,6 +62,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_indices.pallet
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.IndexAssigned);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.IndexFreed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.IndexFrozen);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.DepositPoked);
         }
     }
 }

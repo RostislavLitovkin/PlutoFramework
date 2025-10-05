@@ -66,7 +66,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_state_trie_migration.pallet
     }
     
     /// <summary>
-    /// >> 480 - Variant[pallet_state_trie_migration.pallet.Error]
+    /// >> 501 - Variant[pallet_state_trie_migration.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

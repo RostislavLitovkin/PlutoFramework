@@ -63,6 +63,12 @@ namespace Polkadot.NetApi.Generated.Model.frame_system.pallet
         /// An upgrade was authorized.
         /// </summary>
         UpgradeAuthorized = 6,
+        
+        /// <summary>
+        /// >> RejectedInvalidAuthorizedUpgrade
+        /// An invalid authorized upgrade was rejected while trying to apply it.
+        /// </summary>
+        RejectedInvalidAuthorizedUpgrade = 7,
     }
     
     /// <summary>
@@ -77,13 +83,14 @@ namespace Polkadot.NetApi.Generated.Model.frame_system.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<Polkadot.NetApi.Generated.Model.frame_support.dispatch.DispatchInfo>(Event.ExtrinsicSuccess);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_runtime.EnumDispatchError, Polkadot.NetApi.Generated.Model.frame_support.dispatch.DispatchInfo>>(Event.ExtrinsicFailed);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.frame_system.DispatchEventInfo>(Event.ExtrinsicSuccess);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_runtime.EnumDispatchError, Polkadot.NetApi.Generated.Model.frame_system.DispatchEventInfo>>(Event.ExtrinsicFailed);
 				AddTypeDecoder<BaseVoid>(Event.CodeUpdated);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.NewAccount);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.KilledAccount);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.primitive_types.H256>>(Event.Remarked);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Primitive.Bool>>(Event.UpgradeAuthorized);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.primitive_types.H256, Polkadot.NetApi.Generated.Model.sp_runtime.EnumDispatchError>>(Event.RejectedInvalidAuthorizedUpgrade);
         }
     }
 }

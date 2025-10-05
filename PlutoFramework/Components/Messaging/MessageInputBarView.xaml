@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+             x:Class="PlutoFramework.Components.Messaging.MessageInputBarView">
+    <Grid ColumnDefinitions="*,50"
+          RowDefinitions="50"
+          ColumnSpacing="10">
+        <Border Grid.Column="0"
+                StrokeThickness="1"
+                Stroke="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray900}}"
+                BackgroundColor="{AppThemeBinding Light=White, Dark=Black}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+
+                <Entry Grid.Column="0"
+                       Placeholder="Message"
+                       Text="{Binding Message}"
+                       Margin="20, 0, 0, 0"
+                       IsTextPredictionEnabled="False"
+                       Keyboard="Plain"
+                       VerticalTextAlignment="Center"
+                       VerticalOptions="Center"/>
+                <buttons:ElevatedButton Grid.Column="1"
+                                        ImageSource="paper_plane.png"
+                                        Command="{Binding SendButtonPressedCommand}"
+                                        CornerRadius="0"
+                                        BackgroundColor="{AppThemeBinding Light=White, Dark=Black}"/>
+            </Grid>
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="{StaticResource ButtonCornerRadius}"
+                                x:Name="roundRectangle"/>
+
+            </Border.StrokeShape>
+        </Border>
+        
+        <buttons:ElevatedButton Grid.Column="1"
+                                ImageSource="plus_circle.png"
+                                Command="{Binding AddButtonPressedCommand}"
+                                BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray900}}"
+                                Padding="0"/>
+    </Grid>
+</ContentView>

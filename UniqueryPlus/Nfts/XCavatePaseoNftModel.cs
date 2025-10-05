@@ -1,18 +1,19 @@
-﻿using XcavatePaseo.NetApi.Generated;
-using XcavatePaseo.NetApi.Generated.Storage;
+﻿using Nethereum.Util;
 using Substrate.NetApi;
+using Substrate.NetApi.Model.Extrinsics;
 using Substrate.NetApi.Model.Types.Base;
 using Substrate.NetApi.Model.Types.Primitive;
 using System.Numerics;
-using XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types;
-using XcavatePaseo.NetApi.Generated.Model.sp_core.crypto;
-using UniqueryPlus.Collections;
-using Substrate.NetApi.Model.Extrinsics;
-using XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress;
-using UniqueryPlus.Metadata;
 using System.Text.Json;
-using XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.pallet;
-using Nethereum.Util;
+using System.Text.Json.Serialization;
+using UniqueryPlus.Collections;
+using UniqueryPlus.Metadata;
+using XcavatePaseo.NetApi.Generated;
+using XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types;
+using XcavatePaseo.NetApi.Generated.Model.pallet_real_estate_asset.pallet;
+using XcavatePaseo.NetApi.Generated.Model.sp_core.crypto;
+using XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress;
+using XcavatePaseo.NetApi.Generated.Storage;
 
 namespace UniqueryPlus.Nfts
 {
@@ -48,7 +49,7 @@ namespace UniqueryPlus.Nfts
         
         public XcavateOngoingObjectListingDetails? OngoingObjectListingDetails { get; set; }
         public MetadataBase? Metadata { get; set; }
-        public XcavateMetadata? XcavateMetadata { get; set; }
+        public PropertyMetadata? XcavateMetadata { get; set; }
         public XcavatePaseoNftsPalletNft(SubstrateClientExt client)
         {
             this.client = client;
@@ -252,13 +253,18 @@ namespace UniqueryPlus.Nfts
                         Owner = Utils.GetAddressFrom(details.Owner.Encode()),
                         Id = ids.Item2,
                     }
-                }).Zip(nftMetadatas, (XcavatePaseoNftsPalletNft nft, (MetadataBase Metadata, XcavateMetadata XcavateMetadata)? metadata) =>
+                }).Zip(nftMetadatas, (XcavatePaseoNftsPalletNft nft, (MetadataBase Metadata, PropertyMetadata XcavateMetadata)? metadata) =>
                 {
                     if (metadata.HasValue)
                     {
                         nft.Metadata = metadata.Value.Metadata;
                         nft.XcavateMetadata = metadata.Value.XcavateMetadata;
                     }
+                    else
+                    {
+                        Console.WriteLine("PropertyMetadata was null (1)");
+                    }
+                    
                     return nft;
                 }).Zip(nftMarketplaceDetails, (XcavatePaseoNftsPalletNft nft, NftMarketplaceDetails? details) =>
                 {
@@ -310,9 +316,9 @@ namespace UniqueryPlus.Nfts
             // 0x + Twox64 pallet + Twox64 storage
             var keyPrefixLength = 66;
 
-            var keyPrefix = NftMarketplaceStorage.RegisteredNftDetailsParams(new BaseTuple<U32, U32>(new U32(0), new U32(0))).Substring(0, keyPrefixLength);
+            var keyPrefix = RealEstateAssetStorage.PropertyAssetInfoParams(new U32(0)).Substring(0, keyPrefixLength);
 
-            var nftKeys = idKeys.Select(idKey => Utils.HexToByteArray(keyPrefix + idKey));
+            var nftKeys = idKeys.Select(idKey => Utils.HexToByteArray(keyPrefix + idKey.Substring(40)));
             var storageChangeSets = await client.State.GetQueryStorageAtAsync(nftKeys.ToList(), string.Empty, token).ConfigureAwait(false);
 
             var details = new List<NftMarketplaceDetails?>();
@@ -321,23 +327,25 @@ namespace UniqueryPlus.Nfts
             {
                 if (change[1] == null)
                 {
+                    Console.WriteLine("NftMarketplaceDetails was null");
                     details.Add(null);
                     continue;
                 }
 
-                var nftDetails = new NftDetails();
-                nftDetails.Create(change[1]);
+                var propertyDetails = new PropertyAssetDetails();
+                propertyDetails.Create(change[1]);
 
                 details.Add(new NftMarketplaceDetails
                 {
-                    SpvCreated = nftDetails.SpvCreated,
-                    AssetId = nftDetails.AssetId.Value,
-                    Region = nftDetails.Region.Value,
-                    Location = Helpers.VecU8ToString(nftDetails.Location.Value.Value),
+                    SpvCreated = propertyDetails.SpvCreated,
+                    AssetId = propertyDetails.ItemId,
+                    Region = propertyDetails.Region,
+                    Location = Helpers.VecU8ToString(propertyDetails.Location.Value.Value),
+                    Listed = propertyDetails.TokenAmount,
                 });
             }
 
-            var listedTokensKeys = details.Select(d => d is null ? [] : Utils.HexToByteArray(NftMarketplaceStorage.ListedTokenParams(new U32(d.AssetId))));
+            /*var listedTokensKeys = details.Select(d => d is null ? [] : Utils.HexToByteArray(MarketplaceStorage.ListedTokenParams(new U32(d.AssetId))));
 
             var listedTokensStorageChangeSets = await client.State.GetQueryStorageAtAsync(listedTokensKeys.ToList(), string.Empty, token).ConfigureAwait(false);
 
@@ -359,7 +367,7 @@ namespace UniqueryPlus.Nfts
                 {
                     detail.Listed = listed;
                 }
-            }
+            }*/
 
             return details;
         }
@@ -369,7 +377,7 @@ namespace UniqueryPlus.Nfts
             // 0x + Twox64 pallet + Twox64 storage
             var keyPrefixLength = 66;
 
-            var keyPrefix = NftMarketplaceStorage.OngoingObjectListingParams(new U32(0)).Substring(0, keyPrefixLength);
+            var keyPrefix = MarketplaceStorage.OngoingObjectListingParams(new U32(0)).Substring(0, keyPrefixLength);
 
             var nftKeys = idKeys.Select(idKey => Utils.HexToByteArray(keyPrefix + idKey.Substring(40, 40)));
             var storageChangeSets = await client.State.GetQueryStorageAtAsync(nftKeys.ToList(), string.Empty, token).ConfigureAwait(false);
@@ -384,14 +392,14 @@ namespace UniqueryPlus.Nfts
                     continue;
                 }
 
-                var nftDetails = new XcavatePaseo.NetApi.Generated.Model.pallet_nft_marketplace.types.NftListingDetails();
-                nftDetails.Create(change[1]);
+                var propertyDetails = new XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.PropertyListingDetails();
+                propertyDetails.Create(change[1]);
 
                 details.Add(new XcavateOngoingObjectListingDetails
                 {
-                    RealEstateDeveloper = Utils.GetAddressFrom(nftDetails.RealEstateDeveloper.Encode()),
-                    TaxPaidByDeveloper = nftDetails.TaxPaidByDeveloper,
-                    ListingExpiry = nftDetails.ListingExpiry.Value
+                    RealEstateDeveloper = Utils.GetAddressFrom(propertyDetails.RealEstateDeveloper.Encode()),
+                    TaxPaidByDeveloper = propertyDetails.TaxPaidByDeveloper,
+                    ListingExpiry = propertyDetails.ListingExpiry.Value
                 });
             }
 
@@ -399,7 +407,7 @@ namespace UniqueryPlus.Nfts
         }
 
 
-        internal static async Task<IEnumerable<(MetadataBase Metadata, XcavateMetadata XcavateMetadata)?>> GetNftMetadataNftsPalletByIdKeysAsync(SubstrateClientExt client, IEnumerable<string> idKeys, CancellationToken token)
+        internal static async Task<IEnumerable<(MetadataBase Metadata, PropertyMetadata XcavateMetadata)?>> GetNftMetadataNftsPalletByIdKeysAsync(SubstrateClientExt client, IEnumerable<string> idKeys, CancellationToken token)
         {
             // 0x + Twox64 pallet + Twox64 storage
             var keyPrefixLength = 66;
@@ -409,7 +417,7 @@ namespace UniqueryPlus.Nfts
             var nftMetadataKeys = idKeys.Select(idKey => Utils.HexToByteArray(keyPrefix + idKey));
             var storageChangeSets = await client.State.GetQueryStorageAtAsync(nftMetadataKeys.ToList(), string.Empty, token).ConfigureAwait(false);
 
-            var metadatas = new List<(MetadataBase Metadata, XcavateMetadata XcavateMetadata)?>();
+            var metadatas = new List<(MetadataBase Metadata, PropertyMetadata XcavateMetadata)?>();
 
             foreach (var change in storageChangeSets.First().Changes)
             {
@@ -431,12 +439,19 @@ namespace UniqueryPlus.Nfts
 
                     var options = new JsonSerializerOptions
                     {
-                        PropertyNameCaseInsensitive = true
+                        PropertyNameCaseInsensitive = true,
+                        NumberHandling = JsonNumberHandling.AllowReadingFromString
                     };
 
-                    XcavateMetadata? xCavateMetadata = JsonSerializer.Deserialize<XcavateMetadata>(metadataJson, options);
+                    Console.WriteLine("Metadata JSON: ");
+                    Console.WriteLine(metadataJson.Replace(",", ",\n"));
 
-                    if (xCavateMetadata == null)
+                    PropertyMetadata? propertyMetadata = JsonSerializer.Deserialize<PropertyMetadata>(metadataJson, options);
+
+                    Console.WriteLine("Again:");
+                    Console.WriteLine(propertyMetadata); 
+
+                    if (propertyMetadata == null)
                     {
                         metadatas.Add(null);
                         continue;
@@ -444,18 +459,19 @@ namespace UniqueryPlus.Nfts
 
                     var metadata = new MetadataBase
                     {
-                        Name = xCavateMetadata.PropertyName,
-                        Description = xCavateMetadata.PropertyDescription,
-                        //Image = xCavateMetadata
+                        Name = propertyMetadata.PropertyName,
+                        Description = propertyMetadata.PropertyDescription,
+                        Image = propertyMetadata.Images.Count() > 0 ? propertyMetadata.Images[0] : null,
                     };
 
-                    metadatas.Add((metadata, xCavateMetadata));
+                    metadatas.Add((metadata, propertyMetadata));
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Metadata exception:");
+                    Console.WriteLine("Property Metadata exception:");
 
                     Console.WriteLine(e);
+
                     metadatas.Add(null);
                 }
             };

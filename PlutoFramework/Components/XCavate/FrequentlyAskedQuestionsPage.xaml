@@ -1,36 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PlutoFramework.Components.Xcavate.FrequentlyAskedQuestionsPage"
-             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-         xmlns:password="clr-namespace:PlutoFramework.Components.Password"
-             xmlns:settings="clr-namespace:PlutoFramework.Components.Settings"
-         Title="Settings"
-         BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
-    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
-        <ScrollView Orientation="Vertical"
-            x:Name="scrollView"
-            AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-            AbsoluteLayout.LayoutFlags="All"
-            Padding="0, 55, 0, 0">
-            <VerticalStackLayout HorizontalOptions="Center"
+<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                       xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+                       xmlns:settings="clr-namespace:PlutoFramework.Components.Settings"
+                       x:Class="PlutoFramework.Components.Xcavate.FrequentlyAskedQuestionsPage"
+                       Title="FAQ">
+    <VerticalStackLayout HorizontalOptions="Center"
                          Padding="20, 10, 20, 100"
                          Spacing="15">
+        <settings:QuestionAnswerView Question="Can anyone be a property token holder?"
+                                     Answer="Almost yes, apart from a few exceptions; You will need to be at least 18 years old. You will need to be a citizen of a country that is not on any sanctions list or is deemed to be a high risk in terms of money laundering." />
 
-                <settings:QuestionAnswerView Question="Can anyone be a property token holder?"
-                                             Answer="Almost yes, apart from a few exceptions; You will need to be at least 18 years old. You will need to be a citizen of a country that is not on any sanctions list or is deemed to be a high risk in terms of money laundering." />
-
-                <settings:QuestionAnswerView Question="How does the property token legally own the property?"
-                                             Answer="Our system creates an LLP (which is a Special Purpose Vehicle - a legal entity that owns the property… this is an internationally recognised structure and how a lot of professional real estate investors buy property)… this way just the token holders of a particular property… are the share holders / partners of the LLP so have total control of that property." />
-                
-
-            </VerticalStackLayout>
-
-        </ScrollView>
-
-        <navigationbar:TopNavigationBar Title="FAQ"
-                                        x:Name="topNavigationBar" />
-
-        <password:EnterPasswordPopupView />
-    </AbsoluteLayout>
-</ContentPage>
+        <settings:QuestionAnswerView Question="How does the property token legally own the property?"
+                                     Answer="Our system creates an LLP (which is a Special Purpose Vehicle - a legal entity that owns the property… this is an internationally recognised structure and how a lot of professional real estate investors buy property)… this way just the token holders of a particular property… are the share holders / partners of the LLP so have total control of that property." />
+    </VerticalStackLayout>
+</template:PageTemplate>

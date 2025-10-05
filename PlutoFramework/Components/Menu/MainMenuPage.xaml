@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<page:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Menu.MainMenuPage"
+                   xmlns:menu="clr-namespace:PlutoFramework.Components.Menu"
+                   xmlns:account="clr-namespace:PlutoFramework.Components.Account"
+                   xmlns:page="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                   Title="Menu"
+                   NavigationBarExtra1Command="{Binding OpenSettingsCommand}"
+                   NavigationBarExtra1Image="settingsgray.png"
+                   NavigationBarExtra2Command="{Binding OpenQrScannerCommand}"
+                   NavigationBarExtra2Image="qrscannergray.png">
+    <VerticalStackLayout>
+        <menu:UserView />
+
+        <Label Text="Quick action"
+               Margin="20, 20, 20, 0"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="Black" />
+
+        <Grid ColumnSpacing="30"
+                  RowSpacing="20"
+                  HorizontalOptions="Fill"
+                  VerticalOptions="Start"
+              Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <menu:QuickActionItemView Grid.Column="0"
+                                      Grid.Row="0"
+                                      Icon="walletgray.png"
+                                      Title="Wallet"
+                                      Command="{Binding WalletActionCommand}"
+                                      />
+            <menu:QuickActionItemView Grid.Column="1"
+                                      Grid.Row="0"
+                                      Icon="keygray.png"
+                                      Title="Security"
+                                      Command="{Binding SecurityActionCommand}"
+                                      />
+            <menu:QuickActionItemView Grid.Column="2"
+                                      Grid.Row="0"
+                                      Icon="peoplegray.png"
+                                      Title="KYC"
+                                      Command="{Binding KYCActionCommand}"
+                                      />
+            <menu:QuickActionItemView Grid.Column="3"
+                                      Grid.Row="0"
+                                      Icon="infogray.png"
+                                      Title="Support"
+                                      Command="{Binding InfoActionCommand}"
+                                      />
+        </Grid>
+    </VerticalStackLayout>
+
+    <page:PageTemplate.PopupContent>
+        <account:NoAccountPopup />
+    </page:PageTemplate.PopupContent>
+</page:PageTemplate>

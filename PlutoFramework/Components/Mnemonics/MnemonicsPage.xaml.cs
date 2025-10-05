@@ -1,8 +1,9 @@
 ﻿using PlutoFramework.Model;
+using PlutoFramework.Templates.PageTemplate;
 
 namespace PlutoFramework.Components.Mnemonics;
 
-public partial class MnemonicsPage : ContentPage
+public partial class MnemonicsPage : PageTemplate
 {
 
     /// <summary>
@@ -10,10 +11,9 @@ public partial class MnemonicsPage : ContentPage
     /// </summary>
 	public MnemonicsPage(string? secret)
 	{
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
+
+        var viewModel = new MnemonicsPageViewModel();
 
         viewModel.AccountType = (AccountType)Enum.Parse(typeof(AccountType), Preferences.Get(PreferencesModel.ACCOUNT_TYPE, AccountType.None.ToString()));
 
@@ -23,5 +23,7 @@ public partial class MnemonicsPage : ContentPage
         {
             viewModel.Mnemonics = "Mnemonics are not available for your account.";
         }
-	}
+
+        BindingContext = viewModel;
+    }
 }

@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.staging_xcm.v4
     
     
     /// <summary>
-    /// >> 76 - Composite[staging_xcm.v4.PalletInfo]
+    /// >> 291 - Composite[staging_xcm.v4.PalletInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PalletInfo : BaseType
@@ -31,11 +31,11 @@ namespace PolkadotPeople.NetApi.Generated.Model.staging_xcm.v4
         /// <summary>
         /// >> name
         /// </summary>
-        public PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2 Name { get; set; }
+        public PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19 Name { get; set; }
         /// <summary>
         /// >> module_name
         /// </summary>
-        public PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2 ModuleName { get; set; }
+        public PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19 ModuleName { get; set; }
         /// <summary>
         /// >> major
         /// </summary>
@@ -74,9 +74,9 @@ namespace PolkadotPeople.NetApi.Generated.Model.staging_xcm.v4
             var start = p;
             Index = new Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>();
             Index.Decode(byteArray, ref p);
-            Name = new PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2();
+            Name = new PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19();
             Name.Decode(byteArray, ref p);
-            ModuleName = new PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2();
+            ModuleName = new PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19();
             ModuleName.Decode(byteArray, ref p);
             Major = new Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>();
             Major.Decode(byteArray, ref p);

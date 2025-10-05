@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.frame_system.extensions.check_weight
     
     
     /// <summary>
-    /// >> 845 - Composite[frame_system.extensions.check_weight.CheckWeight]
+    /// >> 882 - Composite[frame_system.extensions.check_weight.CheckWeight]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckWeight : BaseType

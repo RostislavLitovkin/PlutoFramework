@@ -24,7 +24,6 @@ namespace PlutoFramework.Components.Kilt
         {
             await KeysModel.GenerateNewAccountAsync(
                 this.Mnemonics,
-                null,
                 accountVariant: "kilt1"
             );
 

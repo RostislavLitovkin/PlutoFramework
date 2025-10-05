@@ -25,10 +25,15 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         /// >> LettingAgent
         /// </summary>
         LettingAgent = 0,
+        
+        /// <summary>
+        /// >> SalesAgent
+        /// </summary>
+        SalesAgent = 1,
     }
     
     /// <summary>
-    /// >> 394 - Variant[pallet_property_management.pallet.HoldReason]
+    /// >> 411 - Variant[pallet_property_management.pallet.HoldReason]
     /// </summary>
     public sealed class EnumHoldReason : BaseEnum<HoldReason>
     {

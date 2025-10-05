@@ -5,7 +5,6 @@ using PlutoFramework.Constants;
 using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
 using PlutoFramework.Model.Xcavate;
-using PlutoFramework.Types;
 using System.Collections.ObjectModel;
 using UniqueryPlus.Nfts;
 using XcavatePaseo.NetApi.Generated;

@@ -1,83 +1,75 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PlutoFramework.Components.Balance.BalancePage"
-             Title="BalancePage"
-             xmlns:addressview="clr-namespace:PlutoFramework.Components.AddressView"
-             xmlns:transferview="clr-namespace:PlutoFramework.Components.TransferView"
-             xmlns:account="clr-namespace:PlutoFramework.Components.Account"
-             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
-             xmlns:balance="clr-namespace:PlutoFramework.Components.Balance"
-             xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
-             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-             xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
-             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
-             xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
-             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}"
-             HideSoftInputOnTapped="True">
-    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                       xmlns:addressview="clr-namespace:PlutoFramework.Components.AddressView"
+                       xmlns:transferview="clr-namespace:PlutoFramework.Components.TransferView"
+                       xmlns:account="clr-namespace:PlutoFramework.Components.Account"
+                       xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+                       xmlns:balance="clr-namespace:PlutoFramework.Components.Balance"
+                       xmlns:assetselect="clr-namespace:PlutoFramework.Components.AssetSelect"
+                       xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+                       xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
+                       x:Class="PlutoFramework.Components.Balance.BalancePage"
+                       Title="Balance">
+    <template:PageTemplate.MainContent>
+        <VerticalStackLayout Spacing="15">
 
-        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-               Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
-               Opacity="{AppThemeBinding Light=0.96}"
-               Aspect="AspectFill"/>
+            <Label HorizontalOptions="Start"
+                   HorizontalTextAlignment="Start"
+                   FontSize="25"
+                   Margin="20, 20, 20, 0"
+                   >
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Hey, "
+                              FontAttributes="Bold" />
 
-        <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-                    Margin="0,65,0,0">
+                        <Span Text="{Binding FirstName}"
+                              FontAttributes="Bold" />
 
-            <VerticalStackLayout Spacing="15"
-                                
-                                 >
-                <Label HeightRequest="100"
-                       VerticalTextAlignment="Center"
-                       FontAttributes="Bold"
-                       HorizontalTextAlignment="Center"
-                       TextColor="{StaticResource Primary}"
-                       FontSize="25">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span FontAttributes="Bold"
-                                  Text="{Binding UsdSum}" />
-                        </FormattedString>
+                        <Span Text=" 👋"
+                              FontAttributes="Bold" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
-                    </Label.FormattedText>
+            <balance:BalanceOverviewView Margin="20, 0, 20, 0" />
 
-                </Label>
-
-                <buttons:ReceiveAndTransferView Margin="20, 0, 20, 0" />
-
-                <VerticalStackLayout Margin="20, 0, 20, 100"
-                                     BindableLayout.ItemsSource="{Binding Assets}"
-                                     Spacing="15">
-                    <BindableLayout.ItemTemplate>
-                        <DataTemplate>
-                            <balance:AssetView AssetInfo="{Binding .}"
-                                              />
-
-                        </DataTemplate>
-
-                    </BindableLayout.ItemTemplate>
-
-
-                </VerticalStackLayout>
-            </VerticalStackLayout>
+            <Label HorizontalOptions="Start"
+                   HorizontalTextAlignment="Start"
+                   FontSize="20"
+                   Margin="20, 0, 20, 0"
+                   >
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Assets"
+                              FontAttributes="Bold"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
             
-        </ScrollView>
+            <VerticalStackLayout Margin="20, 0, 20, 100"
+                                 BindableLayout.ItemsSource="{Binding Assets}"
+                                 Spacing="15">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <balance:AssetView AssetInfo="{Binding .}" />
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </template:PageTemplate.MainContent>
 
-        <navigationbar:TopNavigationBar Title="Balance" />
-
+    <template:PageTemplate.PopupContent>
         <extrinsic:ExtrinsicStatusStackLayout />
         
         <addressview:AddressQrCodeView />
-
+        
         <transferview:TransferView />
-
+        
         <assetselect:AssetSelectView />
-
+        
         <account:NoAccountPopup />
-
-        <txanalyzer:TransactionAnalyzerConfirmationView />
-
-        <password:EnterPasswordPopupView />
-    </AbsoluteLayout>
-</ContentPage>
+    </template:PageTemplate.PopupContent>
+</template:PageTemplate>

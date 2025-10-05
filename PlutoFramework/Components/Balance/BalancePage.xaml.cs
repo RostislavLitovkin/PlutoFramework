@@ -1,16 +1,15 @@
+using PlutoFramework.Templates.PageTemplate;
+
 namespace PlutoFramework.Components.Balance;
 
-public partial class BalancePage : ContentPage
+public partial class BalancePage : PageTemplate
 {
 	public BalancePage()
 	{
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 
-        BindingContext = new UsdBalanceViewModel();
+        BindingContext = new BalancePageViewModel();
 
-        ((UsdBalanceViewModel)BindingContext).UpdateBalances();
+        _ = ((BalancePageViewModel)BindingContext).UpdateAsync();
     }
 }

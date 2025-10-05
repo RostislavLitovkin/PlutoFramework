@@ -34,10 +34,16 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.on_demand.
         /// call, making it invalid.
         /// </summary>
         SpotPriceHigherThanMaxAmount = 1,
+        
+        /// <summary>
+        /// >> InsufficientCredits
+        /// The account doesn't have enough credits to purchase on-demand coretime.
+        /// </summary>
+        InsufficientCredits = 2,
     }
     
     /// <summary>
-    /// >> 777 - Variant[polkadot_runtime_parachains.on_demand.pallet.Error]
+    /// >> 808 - Variant[polkadot_runtime_parachains.on_demand.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

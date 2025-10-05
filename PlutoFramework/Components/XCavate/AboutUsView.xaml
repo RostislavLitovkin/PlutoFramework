@@ -25,36 +25,36 @@
                     <Label Grid.Column="1"
                         VerticalTextAlignment="Center"
                         HorizontalTextAlignment="Center"
-                        Text="FAQ">
+                        Text="Privacy policy">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding FAQCommand}" />
+                            <TapGestureRecognizer Command="{Binding OpenPrivacyPolicyCommand}" />
                         </Label.GestureRecognizers>
                     </Label>
 
                     <Label Grid.Column="2"
                             VerticalTextAlignment="Center"
                             HorizontalTextAlignment="Center"
-                            Text="Team" >
+                            Text="Terms" >
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding OpenTeamCommand}" />
+                            <TapGestureRecognizer Command="{Binding OpenTermsCommand}" />
                         </Label.GestureRecognizers>
                     </Label>
 
                     <Label Grid.Column="3"
                         VerticalTextAlignment="Center"
                         HorizontalTextAlignment="Center"
-                        Text="Blog" >
+                        Text="Agreement" >
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding OpenBlogCommand}" />
+                            <TapGestureRecognizer Command="{Binding OpenAgreementCommand}" />
                         </Label.GestureRecognizers>
                     </Label>
 
                     <Label Grid.Column="4"
                             VerticalTextAlignment="Center"
                             HorizontalTextAlignment="Center"
-                            Text="Whitepaper" >
+                            Text="Fees" >
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding OpenWhitepaperCommand}" />
+                            <TapGestureRecognizer Command="{Binding OpenFeesCommand}" />
                         </Label.GestureRecognizers>
                     </Label>
                 </Grid>
@@ -72,7 +72,6 @@
                   ColumnSpacing="10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="auto" />
                         <ColumnDefinition Width="auto" />
                         <ColumnDefinition Width="auto" />
                         <ColumnDefinition Width="auto" />
@@ -115,16 +114,8 @@
                     </Image>
 
                     <Image HeightRequest="20"
-                        Source="{AppThemeBinding Light=liquidityfinderblack.png, Dark=liquidityfinderwhite.png}"
-                         Grid.Column="4">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding OpenLiquidityFinderCommand}" />
-                        </Image.GestureRecognizers>
-                    </Image>
-
-                    <Image HeightRequest="20"
                         Source="{AppThemeBinding Light=discordblack.png, Dark=discordwhite.png}"
-                         Grid.Column="5" >
+                         Grid.Column="4" >
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding OpenDiscordCommand}" />
                         </Image.GestureRecognizers>

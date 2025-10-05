@@ -1,7 +1,5 @@
 namespace PlutoFramework.Components.XcavateProperty;
 
-using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
-
 public partial class XcavatePropertyMarketplacePage : ContentPage
 {
     public XcavatePropertyMarketplacePage()

@@ -2,96 +2,83 @@
 
 namespace UniqueryPlus.Metadata
 {
-    public record XcavateMetadata
+    public record XcavateNftMetadata
     {
-        public string LocationName => $"{AddressStreet ?? "Unknown street"}, {AddressTownCity ?? "Unknown town"}";
-        public List<string> Images { get; set; } = [];
+        [JsonPropertyName("data")] public required PropertyMetadata Data { get; set; }
+    }
 
-        [JsonPropertyName("price_per_token")]
-        public int PricePerToken { get; init; }
+    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+    public record PropertyMetadata
+    {
+        [JsonPropertyName("price_per_token")] public decimal PricePerToken { get; set; }
 
-        [JsonPropertyName("title_deed_number")]
-        public string TitleDeedNumber { get; init; }
+        [JsonPropertyName("status")] public string Status { get; set; }
 
-        [JsonPropertyName("outdoor_space")]
-        public string OutdoorSpace { get; init; }
+        [JsonPropertyName("title_deed_number")] public string TitleDeedNumber { get; set; }
 
-        [JsonPropertyName("property_name")]
-        public string PropertyName { get; init; }
+        [JsonPropertyName("outdoor_space")] public string? OutdoorSpace { get; set; }
+
+        [JsonPropertyName("property_name")] public string PropertyName { get; set; }
 
         [JsonPropertyName("no_of_bathrooms")]
-        public string NoOfBathrooms { get; init; }
+        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)] 
+        public int NoOfBathrooms { get; set; }
 
-        [JsonPropertyName("files")]
-        public List<string> Files { get; init; }
+        [JsonPropertyName("files")] public List<string>? Files { get; set; }
 
-        [JsonPropertyName("planning_permission_Code")]
-        public string PlanningPermissionCode { get; init; }
+        [JsonPropertyName("planning_permission_Code")] public string PlanningPermissionCode { get; set; }
 
         [JsonPropertyName("property_number")]
-        public string PropertyNumber { get; init; }
+        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)] 
+        public int PropertyNumber { get; set; }
 
-        [JsonPropertyName("property_type")]
-        public string PropertyType { get; init; }
+        [JsonPropertyName("property_type")] public string PropertyType { get; set; }
 
-        [JsonPropertyName("construction_date")]
-        public string ConstructionDate { get; init; }
+        [JsonPropertyName("construction_date")] public string ConstructionDate { get; set; }
 
         [JsonPropertyName("no_of_Bedrooms")]
-        public string NoOfBedrooms { get; init; }
+        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+        public int NoOfBedrooms { get; set; }
 
-        [JsonPropertyName("region")]
-        public int Region { get; init; }
+        [JsonPropertyName("address_street")] public string? AddressStreet { get; set; }
 
-        [JsonPropertyName("address_street")]
-        public string AddressStreet { get; init; }
+        [JsonPropertyName("id")] public Guid Id { get; set; }
 
-        [JsonPropertyName("location")]
-        public int Location { get; init; }
+        [JsonPropertyName("propertyId")] public string PropertyId { get; set; }
 
-        [JsonPropertyName("propertyId")]
-        public long PropertyId { get; init; }
+        [JsonPropertyName("createdAt")] public DateTime CreatedAt { get; set; }
 
-        [JsonPropertyName("address_town_city")]
-        public string AddressTownCity { get; init; }
+        [JsonPropertyName("address_town_city")] public string? AddressTownCity { get; set; }
 
-        [JsonPropertyName("Off_street_parking")]
-        public string OffStreetParking { get; init; }
+        [JsonPropertyName("Off_street_parking")] public string OffStreetParking { get; set; }
 
-        [JsonPropertyName("property_development_Code")]
-        public string PropertyDevelopmentCode { get; init; }
+        [JsonPropertyName("property_development_Code")] public string PropertyDevelopmentCode { get; set; }
 
-        [JsonPropertyName("post_code")]
-        public string PostCode { get; init; }
+        [JsonPropertyName("post_code")] public string PostCode { get; set; }
 
-        [JsonPropertyName("quality")]
-        public string Quality { get; init; }
+        [JsonPropertyName("quality")] public string Quality { get; set; }
 
-        [JsonPropertyName("estimated_rental_income")]
-        public uint EstimatedRentalIncome { get; init; }
+        [JsonPropertyName("estimated_rental_income")] public decimal EstimatedRentalIncome { get; set; }
 
-        [JsonPropertyName("number_of_tokens")]
-        public uint NumberOfTokens { get; init; }
+        [JsonPropertyName("number_of_tokens")] public int NumberOfTokens { get; set; }
 
-        [JsonPropertyName("accountAddress")]
-        public string AccountAddress { get; init; }
+        [JsonPropertyName("accountAddress")] public string AccountAddress { get; set; }
 
-        [JsonPropertyName("area")]
-        public string Area { get; init; }
+        [JsonPropertyName("area")] public string Area { get; set; }
 
-        [JsonPropertyName("local_authority")]
-        public string LocalAuthority { get; init; }
+        [JsonPropertyName("local_authority")] public string LocalAuthority { get; set; }
 
-        [JsonPropertyName("map")]
-        public string Map { get; init; }
+        [JsonPropertyName("updatedAt")] public DateTime UpdatedAt { get; set; }
 
-        [JsonPropertyName("property_description")]
-        public string PropertyDescription { get; init; }
+        [JsonPropertyName("map")] public string Map { get; set; }
 
-        [JsonPropertyName("property_price")]
-        public long PropertyPrice { get; init; }
+        [JsonPropertyName("property_description")] public string PropertyDescription { get; set; }
 
-        [JsonPropertyName("fileUrls")]
-        public List<string> FileUrls { get; init; }
+        [JsonPropertyName("property_price")] public decimal PropertyPrice { get; set; }
+
+        [JsonPropertyName("fileUrls")] public List<string> FileUrls { get; set; }
+        public string LocationName => $"{AddressStreet ?? "Unknown street"}, {AddressTownCity ?? "Unknown town"}";
+
+        public List<string> Images { get; set; } = [];
     }
 }

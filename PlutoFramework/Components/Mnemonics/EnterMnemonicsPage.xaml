@@ -1,121 +1,101 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:mnemonics="clr-namespace:PlutoFramework.Components.Mnemonics"
-             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
-             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
-             x:Class="PlutoFramework.Components.Mnemonics.EnterMnemonicsPage"
-             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
-             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
-    <ContentPage.BindingContext>
+<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                       xmlns:mnemonics="clr-namespace:PlutoFramework.Components.Mnemonics"
+                       xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+                       xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+                       xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+                       x:Class="PlutoFramework.Components.Mnemonics.EnterMnemonicsPage"
+                       Title="Enter mnemonics">
+    <template:PageTemplate.BindingContext>
         <mnemonics:EnterMnemonicsViewModel x:Name="viewModel" />
+    </template:PageTemplate.BindingContext>
 
-    </ContentPage.BindingContext>
+    <template:PageTemplate.MainContent>
+        <VerticalStackLayout HorizontalOptions="Center"
+                             Padding="20, 20, 20, 100"
+                             Spacing="15">  
+            <ContentView HeightRequest="160">
+                <card:Card>
+                    <card:Card.View>
+                        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                                        AbsoluteLayout.LayoutFlags="All"
+                                        Margin="0, 10, 0, 10">
+                            <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                                                 AbsoluteLayout.LayoutFlags="SizeProportional">
+                                <VerticalStackLayout>
+                                    <Label FontAttributes="Bold"
+                                           HorizontalOptions="Center"
+                                           VerticalTextAlignment="End">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span FontAttributes="Bold"
+                                                      Text="Your existing mnemonics: "/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
 
-    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
-        
-        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-               Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
-               Opacity="{AppThemeBinding Light=0.96}"
-               Aspect="AspectFill"/>
-
-        <ScrollView Orientation="Vertical"
-                    x:Name="scrollView"
-                    AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                    AbsoluteLayout.LayoutFlags="All"
-                    Padding="0, 55, 0, 0">
-            <VerticalStackLayout HorizontalOptions="Center"
-                                 Padding="20, 10, 20, 100"
-                                 Spacing="15">
-                <ContentView HeightRequest="160">
-                    <card:Card>
-                        <card:Card.View>
-                            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                                            AbsoluteLayout.LayoutFlags="All"
-                                            Margin="0, 10, 0, 10">
-                                <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
-                                                     AbsoluteLayout.LayoutFlags="SizeProportional">
-                                    <VerticalStackLayout>
-                                        <Label 
-                                            FontAttributes="Bold"
-                                            HorizontalOptions="Center"
-                                            VerticalTextAlignment="End">
-                                            <Label.FormattedText>
-                                                <FormattedString>
-                                                    <Span FontAttributes="Bold" Text="Your existing mnemonics: "/>
-
-                                                </FormattedString>
-
-                                            </Label.FormattedText>
-
-                                        </Label>
-                                        <Editor HeightRequest="120" x:Name="mnemonicsEntry"
-                                                Placeholder="Start entering here.."
-                                                Text="{Binding Mnemonics}"
-                                                >
-                              
-                                        </Editor>
-                                    </VerticalStackLayout>
-                
+                                    <Editor HeightRequest="120"
+                                            x:Name="mnemonicsEntry"
+                                            Placeholder="Start entering here.."
+                                            Text="{Binding Mnemonics}" />
                                 </VerticalStackLayout>
-                            </AbsoluteLayout>
-                        </card:Card.View>
-                    </card:Card>
-                </ContentView>
-                <Label Text="The entered mnemonic phrase was not correct." 
-                        IsVisible="{Binding IncorrectMnemonicsEntered}"/>
-                
-                <buttons:ElevatedButton Text="Continue" Command="{Binding ContinueWithMnemonicsCommand}" />
 
+                            </VerticalStackLayout>
+                        </AbsoluteLayout>
+                    </card:Card.View>
+                </card:Card>
+            </ContentView>
 
-                <ContentView HeightRequest="120" Margin="0, 40, 0, 0"
-                             IsVisible="{Binding UsePrivateKeyIsVisible}">
-                    <card:Card>
-                        <card:Card.View>
-                            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                                            AbsoluteLayout.LayoutFlags="All"
-                                            Margin="0, 10, 0, 10">
-                                <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
-                                                     AbsoluteLayout.LayoutFlags="SizeProportional">
-                                    <VerticalStackLayout>
-                                        <Label 
-                                            FontAttributes="Bold"
-                                            HorizontalOptions="Center"
-                                            VerticalTextAlignment="End">
-                                            <Label.FormattedText>
-                                                <FormattedString>
-                                                    <Span FontAttributes="Bold" Text="Your private key: "/>
+            <Label Text="The entered mnemonic phrase was not correct." 
+                   IsVisible="{Binding IncorrectMnemonicsEntered}"/>
 
-                                                </FormattedString>
+            <buttons:ElevatedButton Text="Continue"
+                                    Command="{Binding ContinueWithMnemonicsCommand}" />
 
-                                            </Label.FormattedText>
+            <ContentView HeightRequest="120"
+                         Margin="0, 40, 0, 0"
+                         IsVisible="{Binding UsePrivateKeyIsVisible}">
+                <card:Card>
+                    <card:Card.View>
+                        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                                        AbsoluteLayout.LayoutFlags="All"
+                                        Margin="0, 10, 0, 10">
+                            <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                                                 AbsoluteLayout.LayoutFlags="SizeProportional">
+                                <VerticalStackLayout>
+                                    <Label FontAttributes="Bold"
+                                           HorizontalOptions="Center"
+                                           VerticalTextAlignment="End">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span FontAttributes="Bold"
+                                                      Text="Your private key: "/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
 
-                                        </Label>
-                                        <Editor HeightRequest="80" x:Name="privateKeyEntry"
-                                                Placeholder="Start entering here.."
-                                                Text="{Binding PrivateKey}">
-
-                                        </Editor>
-                                    </VerticalStackLayout>
-
+                                    <Editor HeightRequest="80"
+                                            x:Name="privateKeyEntry"
+                                            Placeholder="Start entering here.."
+                                            Text="{Binding PrivateKey}" />
                                 </VerticalStackLayout>
-                            </AbsoluteLayout>
-                        </card:Card.View>
-                    </card:Card>
-                </ContentView>
 
-                <buttons:ElevatedButton ButtonState="Enabled" Text="Continue" Command="{Binding ContinueWithPrivateKeyCommand}"
-                                        IsVisible="{Binding UsePrivateKeyIsVisible}" />
+                            </VerticalStackLayout>
+                        </AbsoluteLayout>
+                    </card:Card.View>
+                </card:Card>
+            </ContentView>
 
-                <buttons:ElevatedButton ButtonState="Enabled" Text="Import json" Command="{Binding ImportJsonCommand}"/>
-            </VerticalStackLayout>
-            
-        </ScrollView>
+            <buttons:ElevatedButton ButtonState="Enabled"
+                                    Text="Continue"
+                                    Command="{Binding ContinueWithPrivateKeyCommand}"
+                                    IsVisible="{Binding UsePrivateKeyIsVisible}" />
 
-        <navigationbar:TopNavigationBar Title="Enter mnemonics"
-                                        x:Name="topNavigationBar" />
-
-        <password:EnterPasswordPopupView />
-    </AbsoluteLayout>
-</ContentPage>
+            <buttons:ElevatedButton ButtonState="Enabled"
+                                    Text="Import json"
+                                    Command="{Binding ImportJsonCommand}"/>
+        </VerticalStackLayout>
+    </template:PageTemplate.MainContent>
+</template:PageTemplate>

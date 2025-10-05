@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.on_demand.
     
     
     /// <summary>
-    /// >> 770 - Composite[polkadot_runtime_parachains.on_demand.types.ReverseQueueIndex]
+    /// >> 801 - Composite[polkadot_runtime_parachains.on_demand.types.ReverseQueueIndex]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ReverseQueueIndex : BaseType

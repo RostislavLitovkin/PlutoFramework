@@ -60,13 +60,8 @@ namespace PlutoFramework.Model
             }
         }
 
-        public static async Task GenerateNewAccountAsync(string mnemonics, string? password, string accountVariant = "")
+        public static async Task GenerateNewAccountAsync(string mnemonics, string accountVariant = "")
         {
-            if (password != null)
-            {
-                await RegisterBiometricAuthenticationAsync();
-            }
-
             Account account = MnemonicsModel.GetAccountFromMnemonics(mnemonics);
 
             if (accountVariant.StartsWith("kilt"))
@@ -88,14 +83,6 @@ namespace PlutoFramework.Model
                  PreferencesModel.MNEMONICS + accountVariant,
                  mnemonics
             );
-
-            if (password is not null)
-            {
-                await SecureStorage.Default.SetAsync(
-                    PreferencesModel.PASSWORD + accountVariant,
-                    password
-                );
-            }
 
             Preferences.Set(PreferencesModel.PRIVATE_KEY_EXPAND_MODE + accountVariant, (int)DEFAULT_EXPAND_MODE);
 
@@ -151,7 +138,7 @@ namespace PlutoFramework.Model
 
                 if (wallet.IsUnlocked)
                 {
-                    correctPassword = password.ToString();
+                    correctPassword = password;
                     publicKey = wallet.Account.Value;
 
                     viewModel.SetToDefault();
@@ -238,6 +225,8 @@ namespace PlutoFramework.Model
                 viewModel.IsVisible = true;
 
                 var correctPassword = await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD + accountVariant).ConfigureAwait(false) ?? throw new ArgumentNullException("Password was not setup");
+
+                Console.WriteLine("Password: " + correctPassword);
 
                 for (int i = 0; i < 5; i++)
                 {
@@ -349,7 +338,6 @@ namespace PlutoFramework.Model
             SecureStorage.Default.Remove(PreferencesModel.JSON_ACCOUNT + accountVariant);
             Preferences.Remove(PreferencesModel.ACCOUNT_TYPE + accountVariant);
             SecureStorage.Default.Remove(PreferencesModel.PASSWORD + accountVariant);
-
         }
     }
 }

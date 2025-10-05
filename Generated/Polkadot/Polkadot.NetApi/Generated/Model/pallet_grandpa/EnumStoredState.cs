@@ -43,7 +43,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_grandpa
     }
     
     /// <summary>
-    /// >> 587 - Variant[pallet_grandpa.StoredState]
+    /// >> 614 - Variant[pallet_grandpa.StoredState]
     /// </summary>
     public sealed class EnumStoredState : BaseEnumRust<StoredState>
     {

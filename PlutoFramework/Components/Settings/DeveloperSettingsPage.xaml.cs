@@ -1,14 +1,12 @@
 using PlutoFramework.Components.CustomLayouts;
+using PlutoFramework.Templates.PageTemplate;
 
 namespace PlutoFramework.Components.Settings;
 
-public partial class DeveloperSettingsPage : ContentPage
+public partial class DeveloperSettingsPage : PageTemplate
 {
 	public DeveloperSettingsPage()
 	{
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 
         BindingContext = new DeveloperSettingsViewModel();

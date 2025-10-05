@@ -12,7 +12,7 @@ namespace PlutoFramework.Model.SQLite
 {
     public class SavedXcavatePropertyBase : INftXcavateBase, INftXcavateOngoingObjectListing
     {
-        public XcavateMetadata? XcavateMetadata { get; set; }
+        public PropertyMetadata? XcavateMetadata { get; set; }
         public XcavateOngoingObjectListingDetails? OngoingObjectListingDetails { get; set; }
         public NftTypeEnum Type { get; set; }
         public BigInteger CollectionId { get; set; }
@@ -21,7 +21,7 @@ namespace PlutoFramework.Model.SQLite
         public MetadataBase Metadata { get; set; }
         public async Task<ICollectionBase> GetCollectionAsync(CancellationToken token)
         {
-            var endpointKey = NftModel.GetEndpointKey(Type);
+            var endpointKey = PlutoFrameworkCore.NftModel.GetEndpointKey(Type);
 
             var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(endpointKey, token);
 
@@ -29,7 +29,7 @@ namespace PlutoFramework.Model.SQLite
         }
         public async Task<INftBase> GetFullAsync(CancellationToken token)
         {
-            var endpointKey = NftModel.GetEndpointKey(Type);
+            var endpointKey = PlutoFrameworkCore.NftModel.GetEndpointKey(Type);
 
             var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(endpointKey, token);
 

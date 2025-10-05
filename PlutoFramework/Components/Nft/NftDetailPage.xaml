@@ -1,126 +1,110 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-             xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
-             xmlns:unique="clr-namespace:PlutoFramework.Components.Unique"
-             xmlns:koda="clr-namespace:PlutoFramework.Components.Koda"
-             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
-             xmlns:txanalyzer="clr-namespace:PlutoFramework.Components.TransactionAnalyzer"
-             xmlns:password="clr-namespace:PlutoFramework.Components.Password"
-             xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
-             x:Class="PlutoFramework.Components.Nft.NftDetailPage"
-             Title="NftDetailPage"
-             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
-    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                       xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+                       xmlns:nft="clr-namespace:PlutoFramework.Components.Nft"
+                       xmlns:unique="clr-namespace:PlutoFramework.Components.Unique"
+                       xmlns:koda="clr-namespace:PlutoFramework.Components.Koda"
+                       xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+                       xmlns:customlayouts="clr-namespace:PlutoFramework.Components.CustomLayouts"
+                       x:Class="PlutoFramework.Components.Nft.NftDetailPage"
+                       Title="{Binding Name}">
+    <template:PageTemplate.MainContent>
+        <VerticalStackLayout Margin="0, 45, 0, 0"
+                             Spacing="15"
+                             Padding="20, 15, 20, 200">
+            <nft:NftImageView ImageSource="{Binding Image}" />
 
-        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-           Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
-           Opacity="{AppThemeBinding Light=0.96}"
-           Aspect="AspectFill"/>
+            <Grid IsVisible="{Binding IsOwned}"
+                  ColumnSpacing="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-        <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
-            <VerticalStackLayout Margin="0, 45, 0, 0"
-                                    Spacing="15"
-                                    Padding="20, 15, 20, 200">
-                <nft:NftImageView ImageSource="{Binding Image}" />
+                <buttons:ElevatedButton Text="Sell"
+                                        Grid.Column="0"
+                                        Command="{Binding SellCommand}"
+                                        ButtonState="{Binding SellButtonState}" />
 
-                <Grid  IsVisible="{Binding IsOwned}"
-                       ColumnSpacing="15">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
+                <buttons:ElevatedButton Text="Transfer"
+                                        Grid.Column="1"
+                                        Command="{Binding TransferCommand}"
+                                        ButtonState="{Binding TransferButtonState}" />
+            </Grid>
 
-                    </Grid.ColumnDefinitions>
+            <customlayouts:ItemView Text="This NFT is Soulbound"
+                                    HeightRequest="80"
+                                    IsVisible="{Binding IsSoulbound}" />
 
-                    <buttons:ElevatedButton Text="Sell" Grid.Column="0"
-                                            Command="{Binding SellCommand}"
-                                            ButtonState="{Binding SellButtonState}"
-                                            />
+            <nft:NftBuyView IsVisible="{Binding BuyViewIsVisible}" />
 
-                    <buttons:ElevatedButton Text="Transfer" Grid.Column="1"
-                                            Command="{Binding TransferCommand}"
-                                            ButtonState="{Binding TransferButtonState}"
-                                            />
-                </Grid>
+            <nft:NftSoldForView IsVisible="{Binding SoldForViewIsVisible}" />
 
-                <customlayouts:ItemView Text="This NFT is Soulbound"
-                                        HeightRequest="80"
-                                        IsVisible="{Binding IsSoulbound}" />
-
-                <nft:NftBuyView IsVisible="{Binding BuyViewIsVisible}" />
-
-                <nft:NftSoldForView IsVisible="{Binding SoldForViewIsVisible}" />
-
-                <nft:NftTitleView 
-                              Endpoint="{Binding Endpoint}"
+            <nft:NftTitleView Endpoint="{Binding Endpoint}"
                               KodadotUnlockableUrl="{Binding KodadotUnlockableUrl}"
-                              AzeroIdReservedUntil="{Binding AzeroIdReservedUntil}"/>
+                              AzeroIdReservedUntil="{Binding AzeroIdReservedUntil}" />
 
-                <nft:NftOwnerView />
+            <nft:NftOwnerView />
 
-                <nft:NftNestedParentNftView IsVisible="{Binding HasParentNft}" />
+            <nft:NftNestedParentNftView IsVisible="{Binding HasParentNft}" />
 
-                <nft:NftTradingStats IsVisible="{Binding TradingStatsIsVisible}" />
+            <nft:NftTradingStats IsVisible="{Binding TradingStatsIsVisible}" />
 
-                <nft:NftDescriptionView Description="{Binding Description}" />
+            <nft:NftDescriptionView Description="{Binding Description}" />
 
-                <nft:NftAttributesView IsVisible="{Binding AttributesIsVisible}" />
+            <nft:NftAttributesView IsVisible="{Binding AttributesIsVisible}" />
 
-                <nft:NftNestedNftsView IsVisible="{Binding IsNestable}" />
+            <nft:NftNestedNftsView IsVisible="{Binding IsNestable}" />
 
-                <buttons:ElevatedButton Text="Nest"
-                                        ButtonState="{Binding NestButtonState}"
-                                        Command="{Binding NestCommand}" />
+            <buttons:ElevatedButton Text="Nest"
+                                    ButtonState="{Binding NestButtonState}"
+                                    Command="{Binding NestCommand}" />
 
-                <unique:OpenUniqueButton IsVisible="{Binding UniqueIsVisible}">
-                    <unique:OpenUniqueButton.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OpenUniqueCommand}"/>
-                    </unique:OpenUniqueButton.GestureRecognizers>
-                </unique:OpenUniqueButton>
+            <unique:OpenUniqueButton IsVisible="{Binding UniqueIsVisible}">
+                <unique:OpenUniqueButton.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenUniqueCommand}" />
+                </unique:OpenUniqueButton.GestureRecognizers>
+            </unique:OpenUniqueButton>
 
-                <koda:OpenKodaButton IsVisible="{Binding KodaIsVisible}">
-                    <koda:OpenKodaButton.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OpenKodaCommand}"/>
-                    </koda:OpenKodaButton.GestureRecognizers>
-                </koda:OpenKodaButton>
+            <koda:OpenKodaButton IsVisible="{Binding KodaIsVisible}">
+                <koda:OpenKodaButton.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenKodaCommand}" />
+                </koda:OpenKodaButton.GestureRecognizers>
+            </koda:OpenKodaButton>
 
-                <nft:CollectionThumbnailView 
-                                Endpoint="{Binding Endpoint}"
-                                Favourite="{Binding CollectionFavourite}"
-                                NftImages="{Binding CollectionNftImages}"
-                                CollectionBase="{Binding CollectionBase}" />
+            <nft:CollectionThumbnailView Endpoint="{Binding Endpoint}"
+                                         Favourite="{Binding CollectionFavourite}"
+                                         NftImages="{Binding CollectionNftImages}"
+                                         CollectionBase="{Binding CollectionBase}" />
 
-                <Grid ColumnSpacing="15"
-                      IsVisible="{Binding IsOwned}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
+            <Grid ColumnSpacing="15"
+                  IsVisible="{Binding IsOwned}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-                    <buttons:BasicGrayButton Text="Modify" Grid.Column="0"
-                                            Command="{Binding ModifyCommand}"
-                                             ButtonState="{Binding ModifyButtonState}"/>
+                <buttons:BasicGrayButton Text="Modify"
+                                         Grid.Column="0"
+                                         Command="{Binding ModifyCommand}"
+                                         ButtonState="{Binding ModifyButtonState}" />
 
-                    <buttons:ElevatedButton BackgroundColor="DarkRed" Text="Burn" Grid.Column="1"
-                                            Command="{Binding BurnCommand}"
-                                            ButtonState="{Binding BurnButtonState}"/>
+                <buttons:ElevatedButton BackgroundColor="DarkRed"
+                                        Text="Burn"
+                                        Grid.Column="1"
+                                        Command="{Binding BurnCommand}"
+                                        ButtonState="{Binding BurnButtonState}" />
+            </Grid>
+        </VerticalStackLayout>
+    </template:PageTemplate.MainContent>
 
-                </Grid>
-
-            </VerticalStackLayout>
-        </ScrollView>
-
-        <navigationbar:TopNavigationBar Title="{Binding Name}" />
-
+    <template:PageTemplate.PopupContent>
         <nft:NftTransferView />
 
         <nft:NftSellView />
 
         <nft:NestNftSelectView />
-
-        <txanalyzer:TransactionAnalyzerConfirmationView />
-
-        <password:EnterPasswordPopupView />
-    </AbsoluteLayout>
-</ContentPage>
+    </template:PageTemplate.PopupContent>
+</template:PageTemplate>

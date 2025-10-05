@@ -1,12 +1,11 @@
+using PlutoFramework.Templates.PageTemplate;
+
 namespace PlutoFramework.Components.Nft;
 
-public partial class NftImageFullScreenPage : ContentPage
+public partial class NftImageFullScreenPage : PageTemplate
 {
 	public NftImageFullScreenPage(string imageSource)
 	{
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 
         image.Source = imageSource;

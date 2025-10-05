@@ -132,7 +132,7 @@ namespace PlutoFramework.Model
 
             return new CollectionWrapper
             {
-                Endpoint = Endpoints.GetEndpointDictionary[NftModel.GetEndpointKey(collection.Type)],
+                Endpoint = Endpoints.GetEndpointDictionary[PlutoFrameworkCore.NftModel.GetEndpointKey(collection.Type)],
                 NftImages = (await collection.GetNftsAsync(Math.Min(3, collection.NftCount), null, token)).Select(nft => nft.Metadata?.Image ?? "noimage.png").ToArray(),
                 CollectionBase = collection,
             };

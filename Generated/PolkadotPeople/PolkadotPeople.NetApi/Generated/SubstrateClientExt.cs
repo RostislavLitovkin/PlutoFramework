@@ -50,6 +50,11 @@ namespace PolkadotPeople.NetApi.Generated
         public ParachainInfoStorage ParachainInfoStorage;
         
         /// <summary>
+        /// MultiBlockMigrationsStorage storage calls.
+        /// </summary>
+        public MultiBlockMigrationsStorage MultiBlockMigrationsStorage;
+        
+        /// <summary>
         /// BalancesStorage storage calls.
         /// </summary>
         public BalancesStorage BalancesStorage;
@@ -132,6 +137,7 @@ namespace PolkadotPeople.NetApi.Generated
             this.ParachainSystemStorage = new ParachainSystemStorage(this);
             this.TimestampStorage = new TimestampStorage(this);
             this.ParachainInfoStorage = new ParachainInfoStorage(this);
+            this.MultiBlockMigrationsStorage = new MultiBlockMigrationsStorage(this);
             this.BalancesStorage = new BalancesStorage(this);
             this.TransactionPaymentStorage = new TransactionPaymentStorage(this);
             this.AuthorshipStorage = new AuthorshipStorage(this);

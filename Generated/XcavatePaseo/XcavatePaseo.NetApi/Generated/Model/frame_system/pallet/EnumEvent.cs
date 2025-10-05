@@ -63,6 +63,12 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_system.pallet
         /// An upgrade was authorized.
         /// </summary>
         UpgradeAuthorized = 6,
+        
+        /// <summary>
+        /// >> RejectedInvalidAuthorizedUpgrade
+        /// An invalid authorized upgrade was rejected while trying to apply it.
+        /// </summary>
+        RejectedInvalidAuthorizedUpgrade = 7,
     }
     
     /// <summary>
@@ -84,6 +90,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_system.pallet
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.KilledAccount);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.primitive_types.H256>>(Event.Remarked);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Primitive.Bool>>(Event.UpgradeAuthorized);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.primitive_types.H256, XcavatePaseo.NetApi.Generated.Model.sp_runtime.EnumDispatchError>>(Event.RejectedInvalidAuthorizedUpgrade);
         }
     }
 }

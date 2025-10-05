@@ -1,19 +1,17 @@
 ﻿using PlutoFramework.Components.Buttons;
 using PlutoFramework.Model;
+using PlutoFramework.Templates.PageTemplate;
 using Substrate.NET.Wallet;
 
 namespace PlutoFramework.Components.Password;
 
-public partial class SetupPasswordPage : ContentPage
+public partial class SetupPasswordPage : PageTemplate
 {
     public required Func<Task> Navigation; 
 
     private bool clicked = false;
     public SetupPasswordPage()
     {
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
     }
 
@@ -104,6 +102,5 @@ public partial class SetupPasswordPage : ContentPage
             .AtLeastOneLowercase()
             .Should()
             .AtLeastOneUppercase().IsValid(((Entry)sender).Text) ? ButtonStateEnum.Enabled : ButtonStateEnum.Disabled;
-
     }
 }

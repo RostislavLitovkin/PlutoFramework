@@ -28,7 +28,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.palle
     }
     
     /// <summary>
-    /// >> 392 - Variant[pallet_nft_fractionalization.pallet.HoldReason]
+    /// >> 408 - Variant[pallet_nft_fractionalization.pallet.HoldReason]
     /// </summary>
     public sealed class EnumHoldReason : BaseEnum<HoldReason>
     {

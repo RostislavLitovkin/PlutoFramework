@@ -53,7 +53,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.people_polkadot_runtime
     }
     
     /// <summary>
-    /// >> 126 - Variant[people_polkadot_runtime.ProxyType]
+    /// >> 144 - Variant[people_polkadot_runtime.ProxyType]
     /// </summary>
     public sealed class EnumProxyType : BaseEnum<ProxyType>
     {

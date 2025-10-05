@@ -1,4 +1,5 @@
 using PlutoFramework.Model.Xcavate;
+using PlutoFrameworkCore.Xcavate;
 
 namespace PlutoFramework.Components.Xcavate;
 
@@ -14,12 +15,22 @@ public partial class VerificationBadgeView : ContentView
 
             switch ((VerificationEnum)newValue)
             {
+                case VerificationEnum.None:
+                    control.valueLabel.TextColor = Color.FromArgb("#4E4E4E");
+                    break;
+
+                case VerificationEnum.Loading:
+                    control.valueLabel.TextColor = Color.FromArgb("#4E4E4E");
+                    break;
+
                 case VerificationEnum.Pending:
                     control.valueLabel.TextColor = Color.FromArgb("#FFA500");
                     break;
+
                 case VerificationEnum.Verified:
                     control.valueLabel.TextColor = Color.FromArgb("#457461");
                     break;
+
                 case VerificationEnum.Rejected:
                     control.valueLabel.TextColor = Color.FromArgb("#FF0000");
                     break;

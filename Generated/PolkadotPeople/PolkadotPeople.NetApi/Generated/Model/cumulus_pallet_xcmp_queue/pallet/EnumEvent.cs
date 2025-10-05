@@ -30,7 +30,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.pallet
     }
     
     /// <summary>
-    /// >> 39 - Variant[cumulus_pallet_xcmp_queue.pallet.Event]
+    /// >> 42 - Variant[cumulus_pallet_xcmp_queue.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

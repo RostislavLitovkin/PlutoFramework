@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.sp_arithmetic.fixed_point
     
     
     /// <summary>
-    /// >> 184 - Composite[sp_arithmetic.fixed_point.FixedU128]
+    /// >> 202 - Composite[sp_arithmetic.fixed_point.FixedU128]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class FixedU128 : BaseType

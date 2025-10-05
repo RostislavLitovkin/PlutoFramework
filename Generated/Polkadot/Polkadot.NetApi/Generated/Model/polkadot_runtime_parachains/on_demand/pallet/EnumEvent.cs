@@ -33,10 +33,16 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.on_demand.
         /// The value of the spot price has likely changed
         /// </summary>
         SpotPriceSet = 1,
+        
+        /// <summary>
+        /// >> AccountCredited
+        /// An account was given credits.
+        /// </summary>
+        AccountCredited = 2,
     }
     
     /// <summary>
-    /// >> 472 - Variant[polkadot_runtime_parachains.on_demand.pallet.Event]
+    /// >> 493 - Variant[polkadot_runtime_parachains.on_demand.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -49,6 +55,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.on_demand.
         {
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, Substrate.NetApi.Model.Types.Primitive.U128, Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.OnDemandOrderPlaced);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U128>(Event.SpotPriceSet);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.AccountCredited);
         }
     }
 }

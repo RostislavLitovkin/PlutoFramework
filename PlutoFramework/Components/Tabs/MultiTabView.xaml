@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tabs="clr-namespace:PlutoFramework.Components.Tabs;assembly=PlutoFramework"
+             x:Class="PlutoFramework.Components.Tabs.MultiTabView">
+    <AbsoluteLayout HorizontalOptions="Fill"
+                    HeightRequest="40">
+        <ScrollView Orientation="Horizontal"
+                    HorizontalScrollBarVisibility="Never">
+            <HorizontalStackLayout HorizontalOptions="Start"
+                                   FlowDirection="LeftToRight"
+                       BindableLayout.ItemsSource="{Binding Tabs}"
+                       Spacing="10">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <tabs:TabView SelectCommand="{Binding Source={RelativeSource AncestorType={x:Type ContentView}}, Path=BindingContext.SelectTabCommand}"
+                                      SelectCommandParameter="{Binding Value}"
+                                      IsSelected="{Binding IsSelected}"
+                                      Title="{Binding Title}"
+                                      SelectedUnderlineColor="{StaticResource Primary}"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </HorizontalStackLayout>
+        </ScrollView>
+
+        <Border AbsoluteLayout.LayoutBounds="0.5, 1, 1, 2"
+                AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                BackgroundColor="#20A6A6A6"
+                StrokeThickness="0" />
+    </AbsoluteLayout>
+</ContentView>

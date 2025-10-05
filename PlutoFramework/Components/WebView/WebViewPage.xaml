@@ -1,36 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
-             x:Class="PlutoFramework.Components.WebView.WebViewPage"
-             x:Name="page"
-             Title="WebViewPage"
-             BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}">
-    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
-        
-        <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All"
-               Source="{AppThemeBinding Light=whitebackground.png, Dark=darkbackground.png}"
-               Opacity="{AppThemeBinding Light=0.96}"
-               Aspect="AspectFill"/>
+<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                       xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+                       x:Class="PlutoFramework.Components.WebView.WebViewPage"
+                       Title="Web page">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <ScrollView Orientation="Vertical"
-                    x:Name="scrollView"
-                    AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                    AbsoluteLayout.LayoutFlags="All"
-                    Padding="0, 45, 0, 0">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <WebView WidthRequest="{Binding Source={x:Reference page}, Path=Width}"
-                         BackgroundColor="White"
-                         x:Name="webView"
-                     />
-            </Grid>
-        </ScrollView>
-
-        <navigationbar:TopNavigationBar Title=""
-                                        x:Name="topNavigationBar" />
-
-    </AbsoluteLayout>
-</ContentPage>
+        <WebView WidthRequest="{Binding Source={x:Reference page}, Path=Width}"
+                 BackgroundColor="White"
+                 x:Name="webView" />
+    </Grid>
+</template:PageTemplate>

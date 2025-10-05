@@ -17,22 +17,22 @@ public partial class BohemiaNftOwnedListView : ContentView, ILocalLoadableAsyncV
             return;
         }
 
-        await nftsOwnedListView.LoadAsync(client, token);
+        await nftOwnedListView.LoadAsync(client, token);
 
-		((ToJoinDaoViewModel)toJoinDaoView.BindingContext).NftCount = (uint)((NftOwnedListViewModel)nftsOwnedListView.BindingContext).Items.Count();
+		((ToJoinDaoViewModel)toJoinDaoView.BindingContext).NftCount = (uint)((NftOwnedListViewModel)nftOwnedListView.BindingContext).Items.Count();
     }
 
     public void SetEmpty()
     {
-        ((NftOwnedListViewModel)nftsOwnedListView.BindingContext).Loading = false;
+        ((NftOwnedListViewModel)nftOwnedListView.BindingContext).Loading = false;
 
-        ((ToJoinDaoViewModel)toJoinDaoView.BindingContext).NftCount = (uint)((NftOwnedListViewModel)nftsOwnedListView.BindingContext).Items.Count();
+        ((ToJoinDaoViewModel)toJoinDaoView.BindingContext).NftCount = (uint)((NftOwnedListViewModel)nftOwnedListView.BindingContext).Items.Count();
     }
 
     public async Task LoadAsync(CancellationToken token)
     {
-        await ((NftOwnedListViewModel)nftsOwnedListView.BindingContext).LoadSavedNftsAsync();
+        await ((NftOwnedListViewModel)nftOwnedListView.BindingContext).LoadSavedNftsAsync();
 
-        ((ToJoinDaoViewModel)toJoinDaoView.BindingContext).NftCount = (uint)((NftOwnedListViewModel)nftsOwnedListView.BindingContext).Items.Count();
+        ((ToJoinDaoViewModel)toJoinDaoView.BindingContext).NftCount = (uint)((NftOwnedListViewModel)nftOwnedListView.BindingContext).Items.Count();
     }
 }

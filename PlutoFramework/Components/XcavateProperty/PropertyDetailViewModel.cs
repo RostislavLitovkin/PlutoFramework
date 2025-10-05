@@ -1,13 +1,11 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using PlutoFramework.Components.Account;
 using PlutoFramework.Components.Buttons;
 using PlutoFramework.Constants;
 using PlutoFramework.Model;
 using PlutoFramework.Model.Currency;
 using PlutoFramework.Model.SQLite;
 using PlutoFramework.Model.Xcavate;
-using SocketIOClient.Messages;
 using UniqueryPlus.Metadata;
 using UniqueryPlus.Nfts;
 using PropertyModel = PlutoFramework.Model.Xcavate.XcavatePropertyModel;
@@ -53,7 +51,7 @@ namespace PlutoFramework.Components.XcavateProperty
         [NotifyPropertyChangedFor(nameof(TokensAvailable))]
         [NotifyPropertyChangedFor(nameof(RentalIncome))]
         [NotifyPropertyChangedFor(nameof(TokensOwnedWorth))]
-        private XcavateMetadata? metadata;
+        private PropertyMetadata? metadata;
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(MainActionButtonState))]
@@ -65,11 +63,11 @@ namespace PlutoFramework.Components.XcavateProperty
 
         public string LocationShortName => $"{Metadata?.AddressStreet}, {Metadata?.AddressTownCity}";
 
-        public string ListingPrice => (Metadata?.PropertyPrice ?? 0.0).ToCurrencyString();
+        public string ListingPrice => ((decimal)(Metadata?.PropertyPrice ?? 0)).ToCurrencyString();
 
-        public string PricePerTokenText => $"{ (Metadata?.PricePerToken ?? 0.0).ToCurrencyString() } [{String.Format((string)Application.Current.Resources["CurrencyFormat"], Metadata?.PricePerToken)} USDT]";
+        public string PricePerTokenText => $"{ ((decimal)(Metadata?.PricePerToken ?? 0)).ToCurrencyString() } [{String.Format((string)Application.Current.Resources["CurrencyFormat"], Metadata?.PricePerToken)} USDT]";
 
-        public string Apy => PropertyModel.GetAPY(Metadata?.EstimatedRentalIncome ?? 1, Metadata?.PropertyPrice ?? 1);
+        public string Apy => PropertyModel.GetAPY(Metadata?.EstimatedRentalIncome ?? (decimal)1, Metadata?.PropertyPrice ?? 1);
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(TokensAvailable))]
@@ -77,7 +75,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
         public string TokensAvailable => $"{NftMarketplaceDetails?.Listed.ToString() ?? "-"} / {Metadata?.NumberOfTokens.ToString() ?? "-"}";
 
-        public string RentalIncome => (Metadata?.EstimatedRentalIncome ?? 0.0).ToCurrencyString();
+        public string RentalIncome => ((decimal)(Metadata?.EstimatedRentalIncome ?? 0)).ToCurrencyString();
 
         [ObservableProperty]
         private string companyName = "Needs to be filled";
@@ -94,7 +92,7 @@ namespace PlutoFramework.Components.XcavateProperty
         [NotifyPropertyChangedFor(nameof(RelistPropertyTokensButtonIsVisible))]
         private uint tokensOwned = 0;
 
-        public string TokensOwnedWorth => (TokensOwned * Metadata?.PricePerToken ?? 0.0).ToCurrencyString();
+        public string TokensOwnedWorth => ((decimal)(TokensOwned * Metadata?.PricePerToken ?? 0)).ToCurrencyString();
 
         public bool OwnedPropertyTokensViewIsVisible => TokensOwned > 0;
 
@@ -151,7 +149,7 @@ namespace PlutoFramework.Components.XcavateProperty
             viewModel.NftMarketplaceDetails = NftMarketplaceDetails;
             viewModel.Metadata = Metadata;
             viewModel.IsVisible = true;
-            viewModel.EndpointKey = Model.NftModel.GetEndpointKey(NftBase.Type);   
+            viewModel.EndpointKey = PlutoFrameworkCore.NftModel.GetEndpointKey(NftBase.Type);   
         }
 
         [RelayCommand]
@@ -167,7 +165,7 @@ namespace PlutoFramework.Components.XcavateProperty
             viewModel.NftMarketplaceDetails = NftMarketplaceDetails;
             viewModel.Metadata = Metadata;
             viewModel.IsVisible = true;
-            viewModel.EndpointKey = Model.NftModel.GetEndpointKey(NftBase.Type);
+            viewModel.EndpointKey = PlutoFrameworkCore.NftModel.GetEndpointKey(NftBase.Type);
             viewModel.TokensOwned = TokensOwned;
         }
 

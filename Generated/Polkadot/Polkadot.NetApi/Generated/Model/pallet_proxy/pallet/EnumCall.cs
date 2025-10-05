@@ -182,10 +182,23 @@ namespace Polkadot.NetApi.Generated.Model.pallet_proxy.pallet
         /// - `call`: The call to be made by the `real` account.
         /// </summary>
         proxy_announced = 9,
+        
+        /// <summary>
+        /// >> poke_deposit
+        /// Poke / Adjust deposits made for proxies and announcements based on current values.
+        /// This can be used by accounts to possibly lower their locked amount.
+        /// 
+        /// The dispatch origin for this call must be _Signed_.
+        /// 
+        /// The transaction fee is waived if the deposit amount has changed.
+        /// 
+        /// Emits `DepositPoked` if successful.
+        /// </summary>
+        poke_deposit = 10,
     }
     
     /// <summary>
-    /// >> 181 - Variant[pallet_proxy.pallet.Call]
+    /// >> 188 - Variant[pallet_proxy.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -196,16 +209,17 @@ namespace Polkadot.NetApi.Generated.Model.pallet_proxy.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumProxyType>, Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumRuntimeCall>>(Call.proxy);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.add_proxy);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.remove_proxy);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.polkadot_runtime_constants.proxy.EnumProxyType>, Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumRuntimeCall>>(Call.proxy);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Polkadot.NetApi.Generated.Model.polkadot_runtime_constants.proxy.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.add_proxy);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Polkadot.NetApi.Generated.Model.polkadot_runtime_constants.proxy.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.remove_proxy);
 				AddTypeDecoder<BaseVoid>(Call.remove_proxies);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U16>>(Call.create_pure);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>>(Call.kill_pure);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.polkadot_runtime_constants.proxy.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U16>>(Call.create_pure);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Polkadot.NetApi.Generated.Model.polkadot_runtime_constants.proxy.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>>(Call.kill_pure);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Polkadot.NetApi.Generated.Model.primitive_types.H256>>(Call.announce);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Polkadot.NetApi.Generated.Model.primitive_types.H256>>(Call.remove_announcement);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Polkadot.NetApi.Generated.Model.primitive_types.H256>>(Call.reject_announcement);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumProxyType>, Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumRuntimeCall>>(Call.proxy_announced);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.polkadot_runtime_constants.proxy.EnumProxyType>, Polkadot.NetApi.Generated.Model.polkadot_runtime.EnumRuntimeCall>>(Call.proxy_announced);
+				AddTypeDecoder<BaseVoid>(Call.poke_deposit);
         }
     }
 }

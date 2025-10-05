@@ -37,18 +37,22 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Identity", "IdentityOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.Registration, Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4>>)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.Registration)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Identity", "UsernameOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Identity", "SuperOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32, PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.EnumData>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Identity", "SubsOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18>)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Identity", "Registrars"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Identity", "UsernameAuthorities"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.AuthorityProperties)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Identity", "AccountOfUsername"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4), typeof(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Identity", "Registrars"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Identity", "AuthorityOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29), typeof(PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.AuthorityProperties)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Identity", "UsernameInfoOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6), typeof(PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.UsernameInformation)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Identity", "PendingUsernames"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.EnumProvider>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Identity", "UnbindingUsernames"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
         }
         
         /// <summary>
@@ -81,10 +85,41 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         /// 
         ///  TWOX-NOTE: OK ��� `AccountId` is a secure hash.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.Registration, Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4>>> IdentityOf(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.Registration> IdentityOf(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = IdentityStorage.IdentityOfParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.Registration, Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4>>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.Registration>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> UsernameOfParams
+        ///  Identifies the primary username of an account.
+        /// </summary>
+        public static string UsernameOfParams(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+        {
+            return RequestGenerator.GetStorage("Identity", "UsernameOf", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> UsernameOfDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string UsernameOfDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> UsernameOf
+        ///  Identifies the primary username of an account.
+        /// </summary>
+        public async Task<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6> UsernameOf(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        {
+            string parameters = IdentityStorage.UsernameOfParams(key);
+            var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6>(parameters, blockhash, token);
             return result;
         }
         
@@ -153,10 +188,10 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         /// 
         ///  TWOX-NOTE: OK ��� `AccountId` is a secure hash.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18>> SubsOf(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24>> SubsOf(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = IdentityStorage.SubsOfParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24>>(parameters, blockhash, token);
             return result;
         }
         
@@ -188,80 +223,82 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         /// 
         ///  The index into this can be cast to `RegistrarIndex` to get a valid value.
         /// </summary>
-        public async Task<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22> Registrars(string blockhash, CancellationToken token)
+        public async Task<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28> Registrars(string blockhash, CancellationToken token)
         {
             string parameters = IdentityStorage.RegistrarsParams();
-            var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28>(parameters, blockhash, token);
             return result;
         }
         
         /// <summary>
-        /// >> UsernameAuthoritiesParams
+        /// >> AuthorityOfParams
         ///  A map of the accounts who are authorized to grant usernames.
         /// </summary>
-        public static string UsernameAuthoritiesParams(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+        public static string AuthorityOfParams(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29 key)
         {
-            return RequestGenerator.GetStorage("Identity", "UsernameAuthorities", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+            return RequestGenerator.GetStorage("Identity", "AuthorityOf", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, new Substrate.NetApi.Model.Types.IType[] {
                         key});
         }
         
         /// <summary>
-        /// >> UsernameAuthoritiesDefault
+        /// >> AuthorityOfDefault
         /// Default value as hex string
         /// </summary>
-        public static string UsernameAuthoritiesDefault()
+        public static string AuthorityOfDefault()
         {
             return "0x00";
         }
         
         /// <summary>
-        /// >> UsernameAuthorities
+        /// >> AuthorityOf
         ///  A map of the accounts who are authorized to grant usernames.
         /// </summary>
-        public async Task<PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.AuthorityProperties> UsernameAuthorities(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.AuthorityProperties> AuthorityOf(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29 key, string blockhash, CancellationToken token)
         {
-            string parameters = IdentityStorage.UsernameAuthoritiesParams(key);
+            string parameters = IdentityStorage.AuthorityOfParams(key);
             var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.AuthorityProperties>(parameters, blockhash, token);
             return result;
         }
         
         /// <summary>
-        /// >> AccountOfUsernameParams
-        ///  Reverse lookup from `username` to the `AccountId` that has registered it. The value should
-        ///  be a key in the `IdentityOf` map, but it may not if the user has cleared their identity.
+        /// >> UsernameInfoOfParams
+        ///  Reverse lookup from `username` to the `AccountId` that has registered it and the provider of
+        ///  the username. The `owner` value should be a key in the `UsernameOf` map, but it may not if
+        ///  the user has cleared their username or it has been removed.
         /// 
-        ///  Multiple usernames may map to the same `AccountId`, but `IdentityOf` will only map to one
+        ///  Multiple usernames may map to the same `AccountId`, but `UsernameOf` will only map to one
         ///  primary username.
         /// </summary>
-        public static string AccountOfUsernameParams(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4 key)
+        public static string UsernameInfoOfParams(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 key)
         {
-            return RequestGenerator.GetStorage("Identity", "AccountOfUsername", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+            return RequestGenerator.GetStorage("Identity", "UsernameInfoOf", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
                         key});
         }
         
         /// <summary>
-        /// >> AccountOfUsernameDefault
+        /// >> UsernameInfoOfDefault
         /// Default value as hex string
         /// </summary>
-        public static string AccountOfUsernameDefault()
+        public static string UsernameInfoOfDefault()
         {
             return "0x00";
         }
         
         /// <summary>
-        /// >> AccountOfUsername
-        ///  Reverse lookup from `username` to the `AccountId` that has registered it. The value should
-        ///  be a key in the `IdentityOf` map, but it may not if the user has cleared their identity.
+        /// >> UsernameInfoOf
+        ///  Reverse lookup from `username` to the `AccountId` that has registered it and the provider of
+        ///  the username. The `owner` value should be a key in the `UsernameOf` map, but it may not if
+        ///  the user has cleared their username or it has been removed.
         /// 
-        ///  Multiple usernames may map to the same `AccountId`, but `IdentityOf` will only map to one
+        ///  Multiple usernames may map to the same `AccountId`, but `UsernameOf` will only map to one
         ///  primary username.
         /// </summary>
-        public async Task<PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32> AccountOfUsername(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4 key, string blockhash, CancellationToken token)
+        public async Task<PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.UsernameInformation> UsernameInfoOf(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 key, string blockhash, CancellationToken token)
         {
-            string parameters = IdentityStorage.AccountOfUsernameParams(key);
-            var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32>(parameters, blockhash, token);
+            string parameters = IdentityStorage.UsernameInfoOfParams(key);
+            var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.UsernameInformation>(parameters, blockhash, token);
             return result;
         }
         
@@ -270,11 +307,11 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         ///  Usernames that an authority has granted, but that the account controller has not confirmed
         ///  that they want it. Used primarily in cases where the `AccountId` cannot provide a signature
         ///  because they are a pure proxy, multisig, etc. In order to confirm it, they should call
-        ///  [`Call::accept_username`].
+        ///  [accept_username](`Call::accept_username`).
         /// 
         ///  First tuple item is the account and second is the acceptance deadline.
         /// </summary>
-        public static string PendingUsernamesParams(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4 key)
+        public static string PendingUsernamesParams(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 key)
         {
             return RequestGenerator.GetStorage("Identity", "PendingUsernames", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -295,14 +332,51 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         ///  Usernames that an authority has granted, but that the account controller has not confirmed
         ///  that they want it. Used primarily in cases where the `AccountId` cannot provide a signature
         ///  because they are a pure proxy, multisig, etc. In order to confirm it, they should call
-        ///  [`Call::accept_username`].
+        ///  [accept_username](`Call::accept_username`).
         /// 
         ///  First tuple item is the account and second is the acceptance deadline.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>> PendingUsernames(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.EnumProvider>> PendingUsernames(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 key, string blockhash, CancellationToken token)
         {
             string parameters = IdentityStorage.PendingUsernamesParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, PolkadotPeople.NetApi.Generated.Model.pallet_identity.types.EnumProvider>>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> UnbindingUsernamesParams
+        ///  Usernames for which the authority that granted them has started the removal process by
+        ///  unbinding them. Each unbinding username maps to its grace period expiry, which is the first
+        ///  block in which the username could be deleted through a
+        ///  [remove_username](`Call::remove_username`) call.
+        /// </summary>
+        public static string UnbindingUsernamesParams(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 key)
+        {
+            return RequestGenerator.GetStorage("Identity", "UnbindingUsernames", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> UnbindingUsernamesDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string UnbindingUsernamesDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> UnbindingUsernames
+        ///  Usernames for which the authority that granted them has started the removal process by
+        ///  unbinding them. Each unbinding username maps to its grace period expiry, which is the first
+        ///  block in which the username could be deleted through a
+        ///  [remove_username](`Call::remove_username`) call.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> UnbindingUsernames(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 key, string blockhash, CancellationToken token)
+        {
+            string parameters = IdentityStorage.UnbindingUsernamesParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
             return result;
         }
     }
@@ -502,9 +576,10 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         /// >> remove_username_authority
         /// Identity pallet declaration.
         /// </summary>
-        public static Method RemoveUsernameAuthority(PolkadotPeople.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress authority)
+        public static Method RemoveUsernameAuthority(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> suffix, PolkadotPeople.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress authority)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(suffix.Encode());
             byteArray.AddRange(authority.Encode());
             return new Method(50, "Identity", 16, "remove_username_authority", byteArray.ToArray());
         }
@@ -513,12 +588,13 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         /// >> set_username_for
         /// Identity pallet declaration.
         /// </summary>
-        public static Method SetUsernameFor(PolkadotPeople.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> username, Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotPeople.NetApi.Generated.Model.sp_runtime.EnumMultiSignature> signature)
+        public static Method SetUsernameFor(PolkadotPeople.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress who, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> username, Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotPeople.NetApi.Generated.Model.sp_runtime.EnumMultiSignature> signature, Substrate.NetApi.Model.Types.Primitive.Bool use_allocation)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(who.Encode());
             byteArray.AddRange(username.Encode());
             byteArray.AddRange(signature.Encode());
+            byteArray.AddRange(use_allocation.Encode());
             return new Method(50, "Identity", 17, "set_username_for", byteArray.ToArray());
         }
         
@@ -526,7 +602,7 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         /// >> accept_username
         /// Identity pallet declaration.
         /// </summary>
-        public static Method AcceptUsername(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4 username)
+        public static Method AcceptUsername(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 username)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(username.Encode());
@@ -537,7 +613,7 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         /// >> remove_expired_approval
         /// Identity pallet declaration.
         /// </summary>
-        public static Method RemoveExpiredApproval(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4 username)
+        public static Method RemoveExpiredApproval(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 username)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(username.Encode());
@@ -548,7 +624,7 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         /// >> set_primary_username
         /// Identity pallet declaration.
         /// </summary>
-        public static Method SetPrimaryUsername(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4 username)
+        public static Method SetPrimaryUsername(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 username)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(username.Encode());
@@ -556,14 +632,36 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> remove_dangling_username
+        /// >> unbind_username
         /// Identity pallet declaration.
         /// </summary>
-        public static Method RemoveDanglingUsername(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4 username)
+        public static Method UnbindUsername(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 username)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(username.Encode());
-            return new Method(50, "Identity", 21, "remove_dangling_username", byteArray.ToArray());
+            return new Method(50, "Identity", 21, "unbind_username", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> remove_username
+        /// Identity pallet declaration.
+        /// </summary>
+        public static Method RemoveUsername(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 username)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(username.Encode());
+            return new Method(50, "Identity", 22, "remove_username", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> kill_username
+        /// Identity pallet declaration.
+        /// </summary>
+        public static Method KillUsername(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 username)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(username.Encode());
+            return new Method(50, "Identity", 23, "kill_username", byteArray.ToArray());
         }
     }
     
@@ -592,6 +690,18 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
             result.Create("0xA0860100000000000000000000000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> UsernameDeposit
+        ///  The amount held on deposit per registered username. This value should change only in
+        ///  runtime upgrades with proper migration of existing deposits.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U128 UsernameDeposit()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U128();
+            result.Create("0x00D43000000000000000000000000000");
             return result;
         }
         
@@ -639,6 +749,18 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
             result.Create("0xE0C40000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> UsernameGracePeriod
+        ///  The number of blocks that must pass to enable the permanent deletion of a username by
+        ///  its respective authority.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 UsernameGracePeriod()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x60540000");
             return result;
         }
         
@@ -826,5 +948,30 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         /// The username cannot be forcefully removed because it can still be accepted.
         /// </summary>
         NotExpired,
+        
+        /// <summary>
+        /// >> TooEarly
+        /// The username cannot be removed because it's still in the grace period.
+        /// </summary>
+        TooEarly,
+        
+        /// <summary>
+        /// >> NotUnbinding
+        /// The username cannot be removed because it is not unbinding.
+        /// </summary>
+        NotUnbinding,
+        
+        /// <summary>
+        /// >> AlreadyUnbinding
+        /// The username cannot be unbound because it is already unbinding.
+        /// </summary>
+        AlreadyUnbinding,
+        
+        /// <summary>
+        /// >> InsufficientPrivileges
+        /// The action cannot be performed because of insufficient privileges (e.g. authority
+        /// trying to unbind a username provided by the system).
+        /// </summary>
+        InsufficientPrivileges,
     }
 }

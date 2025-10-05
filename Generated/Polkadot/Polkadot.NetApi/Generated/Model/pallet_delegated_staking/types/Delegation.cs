@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_delegated_staking.types
     
     
     /// <summary>
-    /// >> 695 - Composite[pallet_delegated_staking.types.Delegation]
+    /// >> 721 - Composite[pallet_delegated_staking.types.Delegation]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Delegation : BaseType

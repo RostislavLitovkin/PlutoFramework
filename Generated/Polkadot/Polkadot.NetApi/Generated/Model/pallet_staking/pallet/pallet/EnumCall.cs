@@ -66,7 +66,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking.pallet.pallet
         /// >> unbond
         /// Schedule a portion of the stash to be unlocked ready for transfer out after the bond
         /// period ends. If this leaves an amount actively bonded less than
-        /// T::Currency::minimum_balance(), then it is increased to the full amount.
+        /// [`asset::existential_deposit`], then it is increased to the full amount.
         /// 
         /// The dispatch origin for this call must be _Signed_ by the controller, not the stash.
         /// 
@@ -508,19 +508,46 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking.pallet.pallet
         restore_ledger = 29,
         
         /// <summary>
-        /// >> withdraw_overstake
-        /// Adjusts the staking ledger by withdrawing any excess staked amount.
+        /// >> migrate_currency
+        /// Removes the legacy Staking locks if they exist.
         /// 
-        /// This function corrects cases where a user's recorded stake in the ledger
-        /// exceeds their actual staked funds. This situation can arise due to cases such as
-        /// external slashing by another pallet, leading to an inconsistency between the ledger
-        /// and the actual stake.
+        /// This removes the legacy lock on the stake with [`Config::OldCurrency`] and creates a
+        /// hold on it if needed. If all stake cannot be held, the best effort is made to hold as
+        /// much as possible. The remaining stake is forced withdrawn from the ledger.
+        /// 
+        /// The fee is waived if the migration is successful.
         /// </summary>
-        withdraw_overstake = 32,
+        migrate_currency = 30,
+        
+        /// <summary>
+        /// >> manual_slash
+        /// This function allows governance to manually slash a validator and is a
+        /// **fallback mechanism**.
+        /// 
+        /// The dispatch origin must be `T::AdminOrigin`.
+        /// 
+        /// ## Parameters
+        /// - `validator_stash` - The stash account of the validator to slash.
+        /// - `era` - The era in which the validator was in the active set.
+        /// - `slash_fraction` - The percentage of the stake to slash, expressed as a Perbill.
+        /// 
+        /// ## Behavior
+        /// 
+        /// The slash will be applied using the standard slashing mechanics, respecting the
+        /// configured `SlashDeferDuration`.
+        /// 
+        /// This means:
+        /// - If the validator was already slashed by a higher percentage for the same era, this
+        ///   slash will have no additional effect.
+        /// - If the validator was previously slashed by a lower percentage, only the difference
+        ///   will be applied.
+        /// - The slash will be deferred by `SlashDeferDuration` eras before being enacted.
+        /// </summary>
+        manual_slash = 33,
     }
     
     /// <summary>
-    /// >> 120 - Variant[pallet_staking.pallet.pallet.Call]
+    /// >> 129 - Variant[pallet_staking.pallet.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -561,7 +588,8 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking.pallet.pallet
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Call.update_payee);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1>(Call.deprecate_controller_batch);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128>, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2>>>(Call.restore_ledger);
-				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Call.withdraw_overstake);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Call.migrate_currency);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill>>(Call.manual_slash);
         }
     }
 }

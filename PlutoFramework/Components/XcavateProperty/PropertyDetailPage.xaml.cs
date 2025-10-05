@@ -1,12 +1,11 @@
+using PlutoFramework.Templates.PageTemplate;
+
 namespace PlutoFramework.Components.XcavateProperty;
 
-public partial class PropertyDetailPage : ContentPage
+public partial class PropertyDetailPage : PageTemplate
 {
     public PropertyDetailPage(PropertyDetailViewModel viewModel)
     {
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 
         BindingContext = viewModel;

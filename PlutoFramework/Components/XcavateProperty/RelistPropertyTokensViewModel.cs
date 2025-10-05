@@ -16,7 +16,7 @@ namespace PlutoFramework.Components.XcavateProperty
     public partial class RelistPropertyTokensViewModel : ObservableObject, IPopup, ISetToDefault
     {
         [ObservableProperty]
-        private XcavateMetadata? metadata = null;
+        private PropertyMetadata? metadata = null;
 
         [ObservableProperty]
         private NftMarketplaceDetails? nftMarketplaceDetails = null;
@@ -125,7 +125,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
                 var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(EndpointKey, token);
 
-                var method = PropertyMarketplaceModel.RelistPropertyTokens(EndpointKey, NftMarketplaceDetails.Region, NftMarketplaceDetails.AssetId, parsedTokens, actualPricePerToken, assetSelectButtonViewModel.SelectedAssetKey);
+                var method = PropertyMarketplaceModel.RelistPropertyTokens(EndpointKey, NftMarketplaceDetails.AssetId, parsedTokens, actualPricePerToken, assetSelectButtonViewModel.SelectedAssetKey);
 
                 // Submitting the extrinsic
                 var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();

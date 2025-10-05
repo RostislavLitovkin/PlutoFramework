@@ -76,10 +76,16 @@ namespace Polkadot.NetApi.Generated.Model.pallet_scheduler.pallet
         /// The given task can never be executed since it is overweight.
         /// </summary>
         PermanentlyOverweight = 8,
+        
+        /// <summary>
+        /// >> AgendaIncomplete
+        /// Agenda is incomplete from `when`.
+        /// </summary>
+        AgendaIncomplete = 9,
     }
     
     /// <summary>
-    /// >> 31 - Variant[pallet_scheduler.pallet.Event]
+    /// >> 32 - Variant[pallet_scheduler.pallet.Event]
     /// Events type.
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -99,6 +105,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_scheduler.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Types.Base.Arr32U8>>>(Event.PeriodicFailed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Types.Base.Arr32U8>>>(Event.RetryFailed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Types.Base.Arr32U8>>>(Event.PermanentlyOverweight);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.AgendaIncomplete);
         }
     }
 }

@@ -1,12 +1,11 @@
+using PlutoFramework.Templates.PageTemplate;
+
 namespace PlutoFramework.Components.Error
 {
-    public partial class BadInternetConnectionPage : ContentPage
+    public partial class BadInternetConnectionPage : PageTemplate
     {
         public BadInternetConnectionPage()
         {
-            NavigationPage.SetHasNavigationBar(this, false);
-            Shell.SetNavBarIsVisible(this, false);
-
             InitializeComponent();
         }
     }

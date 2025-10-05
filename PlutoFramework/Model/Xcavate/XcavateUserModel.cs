@@ -1,4 +1,7 @@
-﻿namespace PlutoFramework.Model.Xcavate
+﻿using PlutoFrameworkCore.Xcavate;
+using XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet;
+
+namespace PlutoFramework.Model.Xcavate
 {
     public enum UserRoleEnum
     {
@@ -7,7 +10,34 @@
 
         Developer,
         Investor,
-        LettingAgent
+        LettingAgent,
+        Lawyer
+    }
+
+    public static class UserRoleEnumExtensions
+    {
+        public static Role ToWhitelistRole(this UserRoleEnum role)
+        {
+            return role switch
+            {
+                UserRoleEnum.Developer => Role.RealEstateDeveloper,
+                UserRoleEnum.Investor => Role.RealEstateInvestor,
+                UserRoleEnum.LettingAgent => Role.LettingAgent,
+                UserRoleEnum.Lawyer => Role.Lawyer
+            };
+        }
+
+        public static string ToSumsubVerificationLevel(this UserRoleEnum role)
+        {
+            return role switch
+            {
+                UserRoleEnum.Developer => "csharp-verification-developer",
+                UserRoleEnum.Investor => "csharp-verification-investor",
+                UserRoleEnum.LettingAgent => "csharp-verification-letting-agent",
+                UserRoleEnum.Lawyer => "csharp-verification-lawyer",
+                _ => throw new ArgumentOutOfRangeException(nameof(role), role, null)
+            };
+        }
     }
     public record DeveloperStats
     {

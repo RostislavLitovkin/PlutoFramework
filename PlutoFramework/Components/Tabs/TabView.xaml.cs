@@ -11,6 +11,7 @@ public partial class TabView : ContentView
         {
             var control = (TabView)bindable;
             control.titleLabel.Text = (string)newValue;
+            control.titleLabel.IsVisible = newValue is not null;
         });
 
     public static readonly BindableProperty IconProperty = BindableProperty.Create(
@@ -20,6 +21,8 @@ public partial class TabView : ContentView
         {
             var control = (TabView)bindable;
             control.icon.Source = (ImageSource)newValue;
+            control.icon.IsVisible = newValue is not null;
+
         });
 
     public static readonly BindableProperty IsSelectedProperty = BindableProperty.Create(
@@ -49,7 +52,17 @@ public partial class TabView : ContentView
             var control = (TabView)bindable;
 
             control.tapGestureRecognizer.Command = (IRelayCommand)newValue;
+        });
 
+    public static readonly BindableProperty SelectCommandParameterProperty = BindableProperty.Create(
+        nameof(SelectCommandParameter), typeof(object), typeof(TabView),
+        defaultValue: null,
+        defaultBindingMode: BindingMode.TwoWay,
+        propertyChanging: (bindable, oldValue, newValue) =>
+        {
+            var control = (TabView)bindable;
+
+            control.tapGestureRecognizer.CommandParameter = newValue;
         });
 
     public static readonly BindableProperty SelectedUnderlineColorProperty = BindableProperty.Create(
@@ -98,5 +111,11 @@ public partial class TabView : ContentView
     {
         get => (IRelayCommand)GetValue(SelectCommandProperty);
         set => SetValue(SelectCommandProperty, value);
+    }
+
+    public object SelectCommandParameter
+    {
+        get => (object)GetValue(SelectCommandParameterProperty);
+        set => SetValue(SelectCommandParameterProperty, value);
     }
 }

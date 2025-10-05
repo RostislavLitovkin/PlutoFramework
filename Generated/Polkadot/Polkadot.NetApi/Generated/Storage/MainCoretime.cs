@@ -68,6 +68,18 @@ namespace Polkadot.NetApi.Generated.Storage
         }
         
         /// <summary>
+        /// >> credit_account
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method CreditAccount(Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32 who, Substrate.NetApi.Model.Types.Primitive.U128 amount)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(who.Encode());
+            byteArray.AddRange(amount.Encode());
+            return new Method(74, "Coretime", 3, "credit_account", byteArray.ToArray());
+        }
+        
+        /// <summary>
         /// >> assign_core
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
@@ -103,9 +115,9 @@ namespace Polkadot.NetApi.Generated.Storage
         /// >> BrokerPotLocation
         ///  The coretime chain pot location.
         /// </summary>
-        public Polkadot.NetApi.Generated.Model.staging_xcm.v4.junctions.EnumJunctions BrokerPotLocation()
+        public Polkadot.NetApi.Generated.Model.staging_xcm.v5.junctions.EnumJunctions BrokerPotLocation()
         {
-            var result = new Polkadot.NetApi.Generated.Model.staging_xcm.v4.junctions.EnumJunctions();
+            var result = new Polkadot.NetApi.Generated.Model.staging_xcm.v5.junctions.EnumJunctions();
             result.Create("0x0101006D6F646C70792F62726F6B650000000000000000000000000000000000000000");
             return result;
         }

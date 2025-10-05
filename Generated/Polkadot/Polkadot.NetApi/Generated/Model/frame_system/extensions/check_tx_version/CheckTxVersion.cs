@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.frame_system.extensions.check_tx_versi
     
     
     /// <summary>
-    /// >> 840 - Composite[frame_system.extensions.check_tx_version.CheckTxVersion]
+    /// >> 877 - Composite[frame_system.extensions.check_tx_version.CheckTxVersion]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckTxVersion : BaseType

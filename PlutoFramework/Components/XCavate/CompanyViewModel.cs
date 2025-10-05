@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.Nft;
 using PlutoFramework.Model.Xcavate;
+using PlutoFrameworkCore.Xcavate;
 
 namespace PlutoFramework.Components.Xcavate
 {

@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.frame_support.dispatch
     
     
     /// <summary>
-    /// >> 146 - Composite[frame_support.dispatch.PerDispatchClassT3]
+    /// >> 164 - Composite[frame_support.dispatch.PerDispatchClassT3]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PerDispatchClassT3 : BaseType

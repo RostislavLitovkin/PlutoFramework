@@ -2,31 +2,32 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.Tabs.TabView"
-             HeightRequest="40"
-             HorizontalOptions="Fill"
              x:Name="view">
-    <AbsoluteLayout HeightRequest="40"
-                    HorizontalOptions="Fill">
-        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                             AbsoluteLayout.LayoutFlags="All"
+    <AbsoluteLayout HeightRequest="40">
+        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, AutoSize, 20"
+                             AbsoluteLayout.LayoutFlags="PositionProportional"
+                             Margin="10, 0, 10, 0"
                      HorizontalOptions="Center">
             <Image x:Name="icon"
-           HeightRequest="20"
-           WidthRequest="20"
-           VerticalOptions="Center"
-           IsVisible="False"/>
+                   HeightRequest="20"
+                   WidthRequest="20"
+                   VerticalOptions="Center"
+                   IsVisible="False"/>  
             <Label 
                 VerticalTextAlignment="Center"
                 x:Name="titleLabel"
+                TextColor="#A6A6A6"
                 IsVisible="False"
-                Text=""
-                VerticalOptions="Center" />
+                Text="Ahoj"
+                VerticalOptions="Center"
+                LineBreakMode="NoWrap"
+                />
         </VerticalStackLayout>
         <Border AbsoluteLayout.LayoutBounds="0.5, 1, 1, 4"
                 AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
                 BackgroundColor="Transparent"
+                StrokeThickness="0"
                 x:Name="underline"/>
-
         <AbsoluteLayout.GestureRecognizers>
             <TapGestureRecognizer x:Name="tapGestureRecognizer" />
         </AbsoluteLayout.GestureRecognizers>

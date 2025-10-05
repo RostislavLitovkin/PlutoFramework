@@ -1,15 +1,13 @@
-﻿namespace PlutoFramework.Components.CustomLayouts;
+﻿using PlutoFramework.Templates.PageTemplate;
 
-public partial class AddCustomItemPage : ContentPage
+namespace PlutoFramework.Components.CustomLayouts;
+
+public partial class AddCustomItemPage : PageTemplate
 {
 	private CustomLayoutsViewModel customLayoutsViewModel;
 
-
     public AddCustomItemPage(CustomLayoutsViewModel customLayoutsViewModel)
 	{
-        NavigationPage.SetHasNavigationBar(this, false);
-        Shell.SetNavBarIsVisible(this, false);
-
         InitializeComponent();
 
         this.customLayoutsViewModel = customLayoutsViewModel;
