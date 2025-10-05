@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_democracy.vote
     
     
     /// <summary>
-    /// >> 523 - Composite[pallet_democracy.vote.PriorLock]
+    /// >> 550 - Composite[pallet_democracy.vote.PriorLock]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PriorLock : BaseType

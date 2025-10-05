@@ -98,7 +98,7 @@ namespace Kilt.NetApi.Generated.Model.attestation.pallet
     }
     
     /// <summary>
-    /// >> 358 - Variant[attestation.pallet.Call]
+    /// >> 333 - Variant[attestation.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

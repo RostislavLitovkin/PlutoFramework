@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_ismp.utils
     
     
     /// <summary>
-    /// >> 486 - Composite[pallet_ismp.utils.UpdateConsensusState]
+    /// >> 482 - Composite[pallet_ismp.utils.UpdateConsensusState]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UpdateConsensusState : BaseType
@@ -35,7 +35,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_ismp.utils
         /// <summary>
         /// >> challenge_periods
         /// </summary>
-        public Kilt.NetApi.Generated.Types.Base.BTreeMapT4 ChallengePeriods { get; set; }
+        public Kilt.NetApi.Generated.Types.Base.BTreeMapT3 ChallengePeriods { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -61,7 +61,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_ismp.utils
             ConsensusStateId.Decode(byteArray, ref p);
             UnbondingPeriod = new Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U64>();
             UnbondingPeriod.Decode(byteArray, ref p);
-            ChallengePeriods = new Kilt.NetApi.Generated.Types.Base.BTreeMapT4();
+            ChallengePeriods = new Kilt.NetApi.Generated.Types.Base.BTreeMapT3();
             ChallengePeriods.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

@@ -36,7 +36,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_deposit_storage.pallet
     }
     
     /// <summary>
-    /// >> 168 - Variant[pallet_deposit_storage.pallet.Event]
+    /// >> 171 - Variant[pallet_deposit_storage.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

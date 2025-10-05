@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.polkadot_primitives.v8
     }
     
     /// <summary>
-    /// >> 637 - Variant[polkadot_primitives.v8.UpgradeGoAhead]
+    /// >> 678 - Variant[polkadot_primitives.v8.UpgradeGoAhead]
     /// </summary>
     public sealed class EnumUpgradeGoAhead : BaseEnum<UpgradeGoAhead>
     {

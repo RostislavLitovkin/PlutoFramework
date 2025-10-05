@@ -181,7 +181,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_assets.pallet
     }
     
     /// <summary>
-    /// >> 111 - Variant[pallet_assets.pallet.Event]
+    /// >> 114 - Variant[pallet_assets.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -192,32 +192,32 @@ namespace Kilt.NetApi.Generated.Model.pallet_assets.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.Created);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Issued);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Transferred);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Burned);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.TeamChanged);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.OwnerChanged);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.Frozen);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.Thawed);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Event.AssetFrozen);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Event.AssetThawed);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.AccountsDestroyed);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.ApprovalsDestroyed);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Event.DestructionStarted);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Event.Destroyed);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.ForceCreated);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Primitive.U8, Substrate.NetApi.Model.Types.Primitive.Bool>>(Event.MetadataSet);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Event.MetadataCleared);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.ApprovedTransfer);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.ApprovalCancelled);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.TransferredApproved);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Event.AssetStatusChanged);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.AssetMinBalanceChanged);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.Touched);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.Blocked);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Deposited);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Withdrawn);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.Created);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Issued);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Transferred);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Burned);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.TeamChanged);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.OwnerChanged);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.Frozen);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.Thawed);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.AssetFrozen);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.AssetThawed);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.AccountsDestroyed);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.ApprovalsDestroyed);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.DestructionStarted);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.Destroyed);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.ForceCreated);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Primitive.U8, Substrate.NetApi.Model.Types.Primitive.Bool>>(Event.MetadataSet);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.MetadataCleared);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.ApprovedTransfer);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.ApprovalCancelled);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.TransferredApproved);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.AssetStatusChanged);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.AssetMinBalanceChanged);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.Touched);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.Blocked);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Deposited);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Withdrawn);
         }
     }
 }

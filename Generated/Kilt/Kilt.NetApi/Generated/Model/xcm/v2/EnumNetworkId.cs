@@ -43,7 +43,7 @@ namespace Kilt.NetApi.Generated.Model.xcm.v2
     }
     
     /// <summary>
-    /// >> 94 - Variant[xcm.v2.NetworkId]
+    /// >> 96 - Variant[xcm.v2.NetworkId]
     /// </summary>
     public sealed class EnumNetworkId : BaseEnumRust<NetworkId>
     {

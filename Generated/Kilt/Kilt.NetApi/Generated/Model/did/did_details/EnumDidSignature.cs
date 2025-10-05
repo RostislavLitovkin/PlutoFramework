@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.did.did_details
     }
     
     /// <summary>
-    /// >> 363 - Variant[did.did_details.DidSignature]
+    /// >> 338 - Variant[did.did_details.DidSignature]
     /// </summary>
     public sealed class EnumDidSignature : BaseEnumRust<DidSignature>
     {

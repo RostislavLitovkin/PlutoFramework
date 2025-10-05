@@ -54,7 +54,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_web3_names.pallet
     }
     
     /// <summary>
-    /// >> 124 - Variant[pallet_web3_names.pallet.Event]
+    /// >> 127 - Variant[pallet_web3_names.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

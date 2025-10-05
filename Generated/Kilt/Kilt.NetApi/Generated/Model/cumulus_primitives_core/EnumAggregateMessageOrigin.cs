@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.cumulus_primitives_core
     }
     
     /// <summary>
-    /// >> 216 - Variant[cumulus_primitives_core.AggregateMessageOrigin]
+    /// >> 221 - Variant[cumulus_primitives_core.AggregateMessageOrigin]
     /// </summary>
     public sealed class EnumAggregateMessageOrigin : BaseEnumRust<AggregateMessageOrigin>
     {

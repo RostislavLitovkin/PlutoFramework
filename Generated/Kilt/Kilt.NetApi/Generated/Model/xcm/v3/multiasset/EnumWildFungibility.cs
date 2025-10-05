@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.xcm.v3.multiasset
     }
     
     /// <summary>
-    /// >> 441 - Variant[xcm.v3.multiasset.WildFungibility]
+    /// >> 437 - Variant[xcm.v3.multiasset.WildFungibility]
     /// </summary>
     public sealed class EnumWildFungibility : BaseEnum<WildFungibility>
     {

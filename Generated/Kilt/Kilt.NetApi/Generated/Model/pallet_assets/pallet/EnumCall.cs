@@ -629,7 +629,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_assets.pallet
     }
     
     /// <summary>
-    /// >> 356 - Variant[pallet_assets.pallet.Call]
+    /// >> 331 - Variant[pallet_assets.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -640,39 +640,39 @@ namespace Kilt.NetApi.Generated.Model.pallet_assets.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.create);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Primitive.Bool, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.force_create);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Call.start_destroy);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Call.destroy_accounts);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Call.destroy_approvals);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Call.finish_destroy);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.mint);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.burn);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.transfer);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.transfer_keep_alive);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.force_transfer);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.freeze);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.thaw);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Call.freeze_asset);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Call.thaw_asset);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.transfer_ownership);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.set_team);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Primitive.U8>>(Call.set_metadata);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Call.clear_metadata);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Primitive.U8, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.force_set_metadata);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Call.force_clear_metadata);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>, Substrate.NetApi.Model.Types.Primitive.Bool, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.force_asset_status);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.approve_transfer);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.cancel_approval);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.force_cancel_approval);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.transfer_approved);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Call.touch);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.refund);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.set_min_balance);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.touch_other);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.refund_other);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.block);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.transfer_all);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.create);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Primitive.Bool, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.force_create);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.start_destroy);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.destroy_accounts);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.destroy_approvals);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.finish_destroy);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.mint);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.burn);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.transfer);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.transfer_keep_alive);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.force_transfer);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.freeze);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.thaw);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.freeze_asset);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.thaw_asset);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.transfer_ownership);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.set_team);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Primitive.U8>>(Call.set_metadata);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.clear_metadata);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Primitive.U8, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.force_set_metadata);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.force_clear_metadata);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>, Substrate.NetApi.Model.Types.Primitive.Bool, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.force_asset_status);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.approve_transfer);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.cancel_approval);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.force_cancel_approval);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.transfer_approved);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.touch);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.refund);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.set_min_balance);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.touch_other);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.refund_other);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>>(Call.block);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.transfer_all);
         }
     }
 }

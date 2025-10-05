@@ -24,7 +24,7 @@ namespace Kilt.NetApi.Generated.Model.staging_parachain_info.pallet
     }
     
     /// <summary>
-    /// >> 413 - Variant[staging_parachain_info.pallet.Call]
+    /// >> 409 - Variant[staging_parachain_info.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnum<Call>

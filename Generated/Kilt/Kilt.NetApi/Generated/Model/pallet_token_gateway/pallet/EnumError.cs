@@ -78,7 +78,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_token_gateway.pallet
     }
     
     /// <summary>
-    /// >> 696 - Variant[pallet_token_gateway.pallet.Error]
+    /// >> 737 - Variant[pallet_token_gateway.pallet.Error]
     /// Errors that can be returned by this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

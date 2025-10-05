@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.runtime_common.web3_names
     
     
     /// <summary>
-    /// >> 125 - Composite[runtime_common.web3_names.Web3Name]
+    /// >> 128 - Composite[runtime_common.web3_names.Web3Name]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Web3Name : BaseType

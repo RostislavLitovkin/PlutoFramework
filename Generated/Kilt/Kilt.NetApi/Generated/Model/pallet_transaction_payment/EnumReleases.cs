@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_transaction_payment
     }
     
     /// <summary>
-    /// >> 285 - Variant[pallet_transaction_payment.Releases]
+    /// >> 290 - Variant[pallet_transaction_payment.Releases]
     /// </summary>
     public sealed class EnumReleases : BaseEnum<Releases>
     {

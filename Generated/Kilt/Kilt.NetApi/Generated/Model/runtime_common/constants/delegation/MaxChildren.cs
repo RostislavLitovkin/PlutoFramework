@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.runtime_common.constants.delegation
     
     
     /// <summary>
-    /// >> 602 - Composite[runtime_common.constants.delegation.MaxChildren]
+    /// >> 633 - Composite[runtime_common.constants.delegation.MaxChildren]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MaxChildren : BaseType

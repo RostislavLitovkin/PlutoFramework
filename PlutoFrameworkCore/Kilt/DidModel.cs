@@ -12,6 +12,12 @@ using Substrate.NetApi.Model.Types.Primitive;
 
 namespace PlutoFramework.Model
 {
+
+    public record DidInfo
+    {
+        public required string DidAddress { get; init; }
+        public required IEnumerable<byte[]> EncryptionKeys { get; init; }
+    }
     public static class DidModel
     {
         private static AccountId32 ToAccountId32(this Account account)
@@ -124,19 +130,26 @@ namespace PlutoFramework.Model
             return Kilt.NetApi.Generated.Storage.DidCalls.Create(details, signature);
         }
 
-        public static Task<DidDetails> GetDidAsync(Kilt.NetApi.Generated.SubstrateClientExt client, string address, CancellationToken token)
+        public static string DidAddressToSs58Address(string didAddress)
         {
-            var accountId = new AccountId32();
-            accountId.Create(Utils.GetPublicKeyFrom(address));
+            if (didAddress.Contains("did:kilt:"))
+            {
+                return didAddress.Remove(0, 9);
+            }
 
-            return client.DidStorage.Did(accountId, null, token);
+            return didAddress;
         }
 
-        public static async Task<byte[]> GetEncryptionKeyAsync(Kilt.NetApi.Generated.SubstrateClientExt client, string address, CancellationToken token)
+        public static async Task<DidInfo> GetDidAsync(Kilt.NetApi.Generated.SubstrateClientExt client, string didAddress, CancellationToken token)
         {
-            var did = await GetDidAsync(client, address, token);
+            var ss58Address = DidAddressToSs58Address(didAddress);
 
-            var encryptionKey = did.KeyAgreementKeys.Value.Value.Value.Select(keyHash =>
+            var accountId = new AccountId32();
+            accountId.Create(Utils.GetPublicKeyFrom(ss58Address));
+
+            var did = await client.DidStorage.Did(accountId, null, token);
+
+            var encryptionKeys = did.KeyAgreementKeys.Value.Value.Value.Select(keyHash =>
             {
                 var encodedHash = Utils.Bytes2HexString(keyHash.Encode());
                 return did.PublicKeys.Value.Value.Value.Where(
@@ -145,9 +158,20 @@ namespace PlutoFramework.Model
             })
                 .Select(pair => (DidPublicKeyDetails)pair.Value[1])
                 .Where(details => details.Key.Value == DidPublicKey.PublicEncryptionKey)
-                .First();
+                .Select(encryptionKey => ((EnumDidEncryptionKey)encryptionKey.Key.Value2).Value2.Encode());
 
-            return ((EnumDidEncryptionKey)encryptionKey.Key.Value2).Value2.Encode();
+            return new DidInfo
+            {
+                DidAddress = $"did:kilt:{ss58Address}",
+                EncryptionKeys = encryptionKeys,
+            };
+        }
+
+        public static async Task<byte[]> GetEncryptionKeyAsync(Kilt.NetApi.Generated.SubstrateClientExt client, string address, CancellationToken token)
+        {
+            var did = await GetDidAsync(client, address, token);
+
+            return did.EncryptionKeys.First();
         }
     }
 }

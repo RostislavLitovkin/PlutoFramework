@@ -152,7 +152,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> claim
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Claim(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28 name)
+        public static Method Claim(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23 name)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(name.Encode());
@@ -173,7 +173,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> reclaim_deposit
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ReclaimDeposit(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28 name)
+        public static Method ReclaimDeposit(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23 name)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(name.Encode());
@@ -184,7 +184,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> ban
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Ban(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28 name)
+        public static Method Ban(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23 name)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(name.Encode());
@@ -195,7 +195,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> unban
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Unban(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28 name)
+        public static Method Unban(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23 name)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(name.Encode());
@@ -216,7 +216,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> update_deposit
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method UpdateDeposit(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28 name_input)
+        public static Method UpdateDeposit(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23 name_input)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(name_input.Encode());

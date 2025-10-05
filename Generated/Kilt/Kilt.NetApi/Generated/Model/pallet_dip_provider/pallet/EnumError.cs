@@ -48,7 +48,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_dip_provider.pallet
     }
     
     /// <summary>
-    /// >> 626 - Variant[pallet_dip_provider.pallet.Error]
+    /// >> 657 - Variant[pallet_dip_provider.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>

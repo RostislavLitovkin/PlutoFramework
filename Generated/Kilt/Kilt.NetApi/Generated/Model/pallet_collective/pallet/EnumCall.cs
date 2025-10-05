@@ -144,7 +144,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_collective.pallet
     }
     
     /// <summary>
-    /// >> 331 - Variant[pallet_collective.pallet.Call]
+    /// >> 305 - Variant[pallet_collective.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -156,8 +156,8 @@ namespace Kilt.NetApi.Generated.Model.pallet_collective.pallet
         public EnumCall()
         {
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Substrate.NetApi.Model.Types.Base.BaseOpt<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.set_members);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>>(Call.execute);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>>(Call.propose);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>>(Call.execute);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>>(Call.propose);
 				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.vote);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.primitive_types.H256>(Call.disapprove_proposal);
 				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Kilt.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>>(Call.close);

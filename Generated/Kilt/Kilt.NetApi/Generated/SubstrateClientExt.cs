@@ -55,6 +55,11 @@ namespace Kilt.NetApi.Generated
         public TransactionPaymentStorage TransactionPaymentStorage;
         
         /// <summary>
+        /// SudoStorage storage calls.
+        /// </summary>
+        public SudoStorage SudoStorage;
+        
+        /// <summary>
         /// AuraStorage storage calls.
         /// </summary>
         public AuraStorage AuraStorage;
@@ -160,6 +165,11 @@ namespace Kilt.NetApi.Generated
         public FungiblesStorage FungiblesStorage;
         
         /// <summary>
+        /// BondedFungiblesStorage storage calls.
+        /// </summary>
+        public BondedFungiblesStorage BondedFungiblesStorage;
+        
+        /// <summary>
         /// CtypeStorage storage calls.
         /// </summary>
         public CtypeStorage CtypeStorage;
@@ -208,6 +218,11 @@ namespace Kilt.NetApi.Generated
         /// DepositStorageStorage storage calls.
         /// </summary>
         public DepositStorageStorage DepositStorageStorage;
+        
+        /// <summary>
+        /// BondedCurrenciesStorage storage calls.
+        /// </summary>
+        public BondedCurrenciesStorage BondedCurrenciesStorage;
         
         /// <summary>
         /// ParachainSystemStorage storage calls.
@@ -268,6 +283,7 @@ namespace Kilt.NetApi.Generated
             this.IndicesStorage = new IndicesStorage(this);
             this.BalancesStorage = new BalancesStorage(this);
             this.TransactionPaymentStorage = new TransactionPaymentStorage(this);
+            this.SudoStorage = new SudoStorage(this);
             this.AuraStorage = new AuraStorage(this);
             this.SessionStorage = new SessionStorage(this);
             this.ParachainStakingStorage = new ParachainStakingStorage(this);
@@ -289,6 +305,7 @@ namespace Kilt.NetApi.Generated
             this.MultisigStorage = new MultisigStorage(this);
             this.AssetSwitchPool1Storage = new AssetSwitchPool1Storage(this);
             this.FungiblesStorage = new FungiblesStorage(this);
+            this.BondedFungiblesStorage = new BondedFungiblesStorage(this);
             this.CtypeStorage = new CtypeStorage(this);
             this.AttestationStorage = new AttestationStorage(this);
             this.DelegationStorage = new DelegationStorage(this);
@@ -299,6 +316,7 @@ namespace Kilt.NetApi.Generated
             this.MigrationStorage = new MigrationStorage(this);
             this.DipProviderStorage = new DipProviderStorage(this);
             this.DepositStorageStorage = new DepositStorageStorage(this);
+            this.BondedCurrenciesStorage = new BondedCurrenciesStorage(this);
             this.ParachainSystemStorage = new ParachainSystemStorage(this);
             this.ParachainInfoStorage = new ParachainInfoStorage(this);
             this.XcmpQueueStorage = new XcmpQueueStorage(this);

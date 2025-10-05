@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.ismp.messaging
     
     
     /// <summary>
-    /// >> 478 - Composite[ismp.messaging.CreateConsensusState]
+    /// >> 474 - Composite[ismp.messaging.CreateConsensusState]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CreateConsensusState : BaseType
@@ -43,7 +43,7 @@ namespace Kilt.NetApi.Generated.Model.ismp.messaging
         /// <summary>
         /// >> challenge_periods
         /// </summary>
-        public Kilt.NetApi.Generated.Types.Base.BTreeMapT4 ChallengePeriods { get; set; }
+        public Kilt.NetApi.Generated.Types.Base.BTreeMapT3 ChallengePeriods { get; set; }
         /// <summary>
         /// >> state_machine_commitments
         /// </summary>
@@ -80,7 +80,7 @@ namespace Kilt.NetApi.Generated.Model.ismp.messaging
             ConsensusStateId.Decode(byteArray, ref p);
             UnbondingPeriod = new Substrate.NetApi.Model.Types.Primitive.U64();
             UnbondingPeriod.Decode(byteArray, ref p);
-            ChallengePeriods = new Kilt.NetApi.Generated.Types.Base.BTreeMapT4();
+            ChallengePeriods = new Kilt.NetApi.Generated.Types.Base.BTreeMapT3();
             ChallengePeriods.Decode(byteArray, ref p);
             StateMachineCommitments = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.ismp.consensus.StateMachineId, Kilt.NetApi.Generated.Model.ismp.messaging.StateCommitmentHeight>>();
             StateMachineCommitments.Decode(byteArray, ref p);

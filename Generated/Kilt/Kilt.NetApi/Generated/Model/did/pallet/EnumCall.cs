@@ -403,7 +403,7 @@ namespace Kilt.NetApi.Generated.Model.did.pallet
     }
     
     /// <summary>
-    /// >> 366 - Variant[did.pallet.Call]
+    /// >> 341 - Variant[did.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -423,13 +423,13 @@ namespace Kilt.NetApi.Generated.Model.did.pallet
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.did.did_details.EnumDidEncryptionKey>(Call.add_key_agreement_key);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.primitive_types.H256>(Call.remove_key_agreement_key);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.did.service_endpoints.DidEndpoint>(Call.add_service_endpoint);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23>(Call.remove_service_endpoint);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18>(Call.remove_service_endpoint);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.delete);
 				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.reclaim_deposit);
 				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.did.did_details.DidAuthorizedCallOperation, Kilt.NetApi.Generated.Model.did.did_details.EnumDidSignature>>(Call.submit_did_call);
 				AddTypeDecoder<BaseVoid>(Call.change_deposit_owner);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Call.update_deposit);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall>>(Call.dispatch_as);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall>>(Call.dispatch_as);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.did.did_details.EnumDidVerificationKey>(Call.create_from_account);
         }
     }

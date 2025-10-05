@@ -276,7 +276,7 @@ namespace PlutoFrameworkCore.AssetDidComm
         public static async Task<Method> ShareBucketKeyAsync(Kilt.NetApi.Generated.SubstrateClientExt client, U128 namespaceId, U128 bucketId, X25519KeyPair keyPair, string signerAddress, IEnumerable<string> dids, CancellationToken token)
         {
             var queryEncryptionKeysTasks = dids
-                .Select(did => did.Substring(9)) // Remove did:kilt: prefix
+                .Select(DidModel.DidAddressToSs58Address)
                 .Select(did => DidModel.GetEncryptionKeyAsync(client, did, token));
 
             var recipientEncryptionKeys = (await Task.WhenAll(queryEncryptionKeysTasks));

@@ -310,7 +310,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 415 - Variant[pallet_xcm.pallet.Call]
+    /// >> 411 - Variant[pallet_xcm.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

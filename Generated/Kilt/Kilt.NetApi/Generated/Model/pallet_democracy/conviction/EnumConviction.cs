@@ -58,7 +58,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_democracy.conviction
     }
     
     /// <summary>
-    /// >> 326 - Variant[pallet_democracy.conviction.Conviction]
+    /// >> 301 - Variant[pallet_democracy.conviction.Conviction]
     /// </summary>
     public sealed class EnumConviction : BaseEnum<Conviction>
     {

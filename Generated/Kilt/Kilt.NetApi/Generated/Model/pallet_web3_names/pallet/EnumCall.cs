@@ -138,7 +138,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_web3_names.pallet
     }
     
     /// <summary>
-    /// >> 390 - Variant[pallet_web3_names.pallet.Call]
+    /// >> 365 - Variant[pallet_web3_names.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -149,13 +149,13 @@ namespace Kilt.NetApi.Generated.Model.pallet_web3_names.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28>(Call.claim);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23>(Call.claim);
 				AddTypeDecoder<BaseVoid>(Call.release_by_owner);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28>(Call.reclaim_deposit);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28>(Call.ban);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28>(Call.unban);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23>(Call.reclaim_deposit);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23>(Call.ban);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23>(Call.unban);
 				AddTypeDecoder<BaseVoid>(Call.change_deposit_owner);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28>(Call.update_deposit);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23>(Call.update_deposit);
         }
     }
 }

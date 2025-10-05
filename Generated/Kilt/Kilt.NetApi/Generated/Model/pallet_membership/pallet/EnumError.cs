@@ -42,7 +42,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_membership.pallet
     }
     
     /// <summary>
-    /// >> 572 - Variant[pallet_membership.pallet.Error]
+    /// >> 599 - Variant[pallet_membership.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

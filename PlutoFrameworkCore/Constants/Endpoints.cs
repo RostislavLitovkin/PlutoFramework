@@ -480,7 +480,7 @@ namespace PlutoFramework.Constants
                 {
                     Name = "Kilt",
                     Key = EndpointEnum.Kilt,
-                    URLs =  new string[2] { "wss://kilt.ibp.network", "wss://kilt-rpc.dwellir.com" },
+                    URLs = [ "wss://peregrine.kilt.io" ],
                     Icon = "kiltblack.png",
                     DarkIcon = "kiltwhite.png",
                     Unit = "KILT",

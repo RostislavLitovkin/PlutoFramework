@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_democracy.types
     }
     
     /// <summary>
-    /// >> 43 - Variant[pallet_democracy.types.MetadataOwner]
+    /// >> 47 - Variant[pallet_democracy.types.MetadataOwner]
     /// </summary>
     public sealed class EnumMetadataOwner : BaseEnumRust<MetadataOwner>
     {

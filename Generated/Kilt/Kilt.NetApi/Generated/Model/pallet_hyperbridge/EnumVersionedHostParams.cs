@@ -28,7 +28,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_hyperbridge
     }
     
     /// <summary>
-    /// >> 229 - Variant[pallet_hyperbridge.VersionedHostParams]
+    /// >> 234 - Variant[pallet_hyperbridge.VersionedHostParams]
     /// </summary>
     public sealed class EnumVersionedHostParams : BaseEnumRust<VersionedHostParams>
     {

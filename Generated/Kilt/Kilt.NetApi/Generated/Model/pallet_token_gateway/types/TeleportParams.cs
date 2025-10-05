@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_token_gateway.types
     
     
     /// <summary>
-    /// >> 491 - Composite[pallet_token_gateway.types.TeleportParams]
+    /// >> 487 - Composite[pallet_token_gateway.types.TeleportParams]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class TeleportParams : BaseType

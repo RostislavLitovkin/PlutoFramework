@@ -48,7 +48,7 @@ namespace Kilt.NetApi.Generated.Model.sp_runtime.multiaddress
     }
     
     /// <summary>
-    /// >> 263 - Variant[sp_runtime.multiaddress.MultiAddress]
+    /// >> 268 - Variant[sp_runtime.multiaddress.MultiAddress]
     /// </summary>
     public sealed class EnumMultiAddress : BaseEnumRust<MultiAddress>
     {

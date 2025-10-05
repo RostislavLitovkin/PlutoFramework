@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.xcm.double_encoded
     
     
     /// <summary>
-    /// >> 203 - Composite[xcm.double_encoded.DoubleEncodedT1]
+    /// >> 208 - Composite[xcm.double_encoded.DoubleEncodedT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DoubleEncodedT1 : BaseType

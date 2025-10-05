@@ -58,7 +58,7 @@ namespace Kilt.NetApi.Generated.Model.xcm.v2.multiasset
     }
     
     /// <summary>
-    /// >> 102 - Variant[xcm.v2.multiasset.AssetInstance]
+    /// >> 104 - Variant[xcm.v2.multiasset.AssetInstance]
     /// </summary>
     public sealed class EnumAssetInstance : BaseEnumRust<AssetInstance>
     {

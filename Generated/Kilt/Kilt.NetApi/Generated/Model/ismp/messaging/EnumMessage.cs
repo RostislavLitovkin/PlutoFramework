@@ -48,7 +48,7 @@ namespace Kilt.NetApi.Generated.Model.ismp.messaging
     }
     
     /// <summary>
-    /// >> 457 - Variant[ismp.messaging.Message]
+    /// >> 453 - Variant[ismp.messaging.Message]
     /// </summary>
     public sealed class EnumMessage : BaseEnumRust<Message>
     {

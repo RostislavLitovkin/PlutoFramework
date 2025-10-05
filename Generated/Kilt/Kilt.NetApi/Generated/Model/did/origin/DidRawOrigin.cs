@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.did.origin
     
     
     /// <summary>
-    /// >> 341 - Composite[did.origin.DidRawOrigin]
+    /// >> 315 - Composite[did.origin.DidRawOrigin]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DidRawOrigin : BaseType

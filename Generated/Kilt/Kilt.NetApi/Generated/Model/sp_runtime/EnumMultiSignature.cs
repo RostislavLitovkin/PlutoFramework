@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.sp_runtime
     }
     
     /// <summary>
-    /// >> 388 - Variant[sp_runtime.MultiSignature]
+    /// >> 363 - Variant[sp_runtime.MultiSignature]
     /// </summary>
     public sealed class EnumMultiSignature : BaseEnumRust<MultiSignature>
     {

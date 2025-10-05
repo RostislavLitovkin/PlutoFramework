@@ -68,7 +68,7 @@ namespace Kilt.NetApi.Generated.Model.staging_xcm.v4.junctions
     }
     
     /// <summary>
-    /// >> 78 - Variant[staging_xcm.v4.junctions.Junctions]
+    /// >> 80 - Variant[staging_xcm.v4.junctions.Junctions]
     /// </summary>
     public sealed class EnumJunctions : BaseEnumRust<Junctions>
     {

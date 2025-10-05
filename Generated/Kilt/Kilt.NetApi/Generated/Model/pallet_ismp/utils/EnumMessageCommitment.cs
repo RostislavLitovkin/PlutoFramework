@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_ismp.utils
     }
     
     /// <summary>
-    /// >> 488 - Variant[pallet_ismp.utils.MessageCommitment]
+    /// >> 484 - Variant[pallet_ismp.utils.MessageCommitment]
     /// </summary>
     public sealed class EnumMessageCommitment : BaseEnumRust<MessageCommitment>
     {

@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.ismp.events
     
     
     /// <summary>
-    /// >> 227 - Composite[ismp.events.TimeoutHandled]
+    /// >> 232 - Composite[ismp.events.TimeoutHandled]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class TimeoutHandled : BaseType

@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.polkadot_parachain_primitives.primitives
     
     
     /// <summary>
-    /// >> 217 - Composite[polkadot_parachain_primitives.primitives.Id]
+    /// >> 222 - Composite[polkadot_parachain_primitives.primitives.Id]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Id : BaseType

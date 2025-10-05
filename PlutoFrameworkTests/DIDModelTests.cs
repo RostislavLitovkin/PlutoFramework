@@ -5,7 +5,7 @@ using PlutoFramework.Model.AjunaExt;
 
 namespace PlutoFrameworkTests
 {
-	public class DIDModelTests
+	public class DidModelTests
 	{
         static SubstrateClientExt client;
 

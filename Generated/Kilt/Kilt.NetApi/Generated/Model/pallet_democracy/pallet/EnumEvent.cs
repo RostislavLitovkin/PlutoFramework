@@ -126,7 +126,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_democracy.pallet
     }
     
     /// <summary>
-    /// >> 39 - Variant[pallet_democracy.pallet.Event]
+    /// >> 43 - Variant[pallet_democracy.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

@@ -127,7 +127,7 @@ namespace Kilt.NetApi.Generated.Model.public_credentials.pallet
     }
     
     /// <summary>
-    /// >> 392 - Variant[public_credentials.pallet.Call]
+    /// >> 367 - Variant[public_credentials.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

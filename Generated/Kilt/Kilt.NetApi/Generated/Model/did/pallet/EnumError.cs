@@ -204,7 +204,7 @@ namespace Kilt.NetApi.Generated.Model.did.pallet
     }
     
     /// <summary>
-    /// >> 617 - Variant[did.pallet.Error]
+    /// >> 648 - Variant[did.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

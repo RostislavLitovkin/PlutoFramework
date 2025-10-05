@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.frame_system.limits
     
     
     /// <summary>
-    /// >> 248 - Composite[frame_system.limits.BlockWeights]
+    /// >> 253 - Composite[frame_system.limits.BlockWeights]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BlockWeights : BaseType

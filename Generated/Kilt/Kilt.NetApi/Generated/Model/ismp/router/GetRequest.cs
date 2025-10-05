@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.ismp.router
     
     
     /// <summary>
-    /// >> 468 - Composite[ismp.router.GetRequest]
+    /// >> 464 - Composite[ismp.router.GetRequest]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class GetRequest : BaseType

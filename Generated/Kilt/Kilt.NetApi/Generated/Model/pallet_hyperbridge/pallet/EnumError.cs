@@ -24,7 +24,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_hyperbridge.pallet
     }
     
     /// <summary>
-    /// >> 694 - Variant[pallet_hyperbridge.pallet.Error]
+    /// >> 735 - Variant[pallet_hyperbridge.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

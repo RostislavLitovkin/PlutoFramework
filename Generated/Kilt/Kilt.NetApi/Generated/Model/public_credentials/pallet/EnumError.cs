@@ -63,7 +63,7 @@ namespace Kilt.NetApi.Generated.Model.public_credentials.pallet
     }
     
     /// <summary>
-    /// >> 623 - Variant[public_credentials.pallet.Error]
+    /// >> 654 - Variant[public_credentials.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

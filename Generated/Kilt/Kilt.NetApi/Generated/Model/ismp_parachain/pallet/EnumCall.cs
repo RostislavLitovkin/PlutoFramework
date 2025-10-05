@@ -43,7 +43,7 @@ namespace Kilt.NetApi.Generated.Model.ismp_parachain.pallet
     }
     
     /// <summary>
-    /// >> 489 - Variant[ismp_parachain.pallet.Call]
+    /// >> 485 - Variant[ismp_parachain.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

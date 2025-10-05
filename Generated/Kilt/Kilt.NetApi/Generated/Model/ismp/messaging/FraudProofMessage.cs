@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.ismp.messaging
     
     
     /// <summary>
-    /// >> 459 - Composite[ismp.messaging.FraudProofMessage]
+    /// >> 455 - Composite[ismp.messaging.FraudProofMessage]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class FraudProofMessage : BaseType

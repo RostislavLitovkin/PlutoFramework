@@ -53,7 +53,7 @@ namespace Kilt.NetApi.Generated.Model.staging_xcm.v4
     }
     
     /// <summary>
-    /// >> 192 - Variant[staging_xcm.v4.Response]
+    /// >> 197 - Variant[staging_xcm.v4.Response]
     /// </summary>
     public sealed class EnumResponse : BaseEnumRust<Response>
     {

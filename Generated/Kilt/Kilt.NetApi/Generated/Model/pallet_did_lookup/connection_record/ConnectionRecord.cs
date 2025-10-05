@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_did_lookup.connection_record
     
     
     /// <summary>
-    /// >> 618 - Composite[pallet_did_lookup.connection_record.ConnectionRecord]
+    /// >> 649 - Composite[pallet_did_lookup.connection_record.ConnectionRecord]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ConnectionRecord : BaseType

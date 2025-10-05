@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.primitive_types
     
     
     /// <summary>
-    /// >> 508 - Composite[primitive_types.H160]
+    /// >> 503 - Composite[primitive_types.H160]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class H160 : BaseType

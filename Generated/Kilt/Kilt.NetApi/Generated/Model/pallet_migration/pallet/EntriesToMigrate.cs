@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_migration.pallet
     
     
     /// <summary>
-    /// >> 154 - Composite[pallet_migration.pallet.EntriesToMigrate]
+    /// >> 157 - Composite[pallet_migration.pallet.EntriesToMigrate]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class EntriesToMigrate : BaseType

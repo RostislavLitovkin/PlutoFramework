@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.attestation.authorized_by
     }
     
     /// <summary>
-    /// >> 116 - Variant[attestation.authorized_by.AuthorizedBy]
+    /// >> 119 - Variant[attestation.authorized_by.AuthorizedBy]
     /// </summary>
     public sealed class EnumAuthorizedBy : BaseEnumRust<AuthorizedBy>
     {

@@ -54,7 +54,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_ismp.pallet
     }
     
     /// <summary>
-    /// >> 693 - Variant[pallet_ismp.pallet.Error]
+    /// >> 734 - Variant[pallet_ismp.pallet.Error]
     /// Pallet errors
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

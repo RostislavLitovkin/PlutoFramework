@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_tips
     
     
     /// <summary>
-    /// >> 573 - Composite[pallet_tips.OpenTip]
+    /// >> 600 - Composite[pallet_tips.OpenTip]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OpenTip : BaseType

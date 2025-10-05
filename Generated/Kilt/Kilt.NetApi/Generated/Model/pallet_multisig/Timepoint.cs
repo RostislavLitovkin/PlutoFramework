@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_multisig
     
     
     /// <summary>
-    /// >> 62 - Composite[pallet_multisig.Timepoint]
+    /// >> 64 - Composite[pallet_multisig.Timepoint]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Timepoint : BaseType

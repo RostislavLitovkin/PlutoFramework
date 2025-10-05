@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_asset_switch.@switch
     
     
     /// <summary>
-    /// >> 581 - Composite[pallet_asset_switch.switch.SwitchPairInfo]
+    /// >> 608 - Composite[pallet_asset_switch.switch.SwitchPairInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SwitchPairInfo : BaseType

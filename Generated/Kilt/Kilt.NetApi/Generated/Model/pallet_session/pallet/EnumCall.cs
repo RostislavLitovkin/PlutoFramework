@@ -55,7 +55,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_session.pallet
     }
     
     /// <summary>
-    /// >> 295 - Variant[pallet_session.pallet.Call]
+    /// >> 293 - Variant[pallet_session.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -66,7 +66,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_session.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.spiritnet_runtime.system.SessionKeys, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>>(Call.set_keys);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.peregrine_runtime.system.SessionKeys, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>>(Call.set_keys);
 				AddTypeDecoder<BaseVoid>(Call.purge_keys);
         }
     }

@@ -45,7 +45,7 @@ namespace Kilt.NetApi.Generated.Model.cumulus_pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 214 - Variant[cumulus_pallet_xcm.pallet.Event]
+    /// >> 219 - Variant[cumulus_pallet_xcm.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

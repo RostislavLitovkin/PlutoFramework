@@ -386,7 +386,7 @@ namespace Kilt.NetApi.Generated.Model.parachain_staking.pallet
     }
     
     /// <summary>
-    /// >> 315 - Variant[parachain_staking.pallet.Call]
+    /// >> 296 - Variant[parachain_staking.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

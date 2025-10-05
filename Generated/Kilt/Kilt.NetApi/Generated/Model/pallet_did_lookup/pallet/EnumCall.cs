@@ -129,7 +129,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_did_lookup.pallet
     }
     
     /// <summary>
-    /// >> 386 - Variant[pallet_did_lookup.pallet.Call]
+    /// >> 361 - Variant[pallet_did_lookup.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

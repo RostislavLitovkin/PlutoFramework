@@ -163,7 +163,7 @@ namespace Kilt.NetApi.Generated.Model.xcm.v2
     }
     
     /// <summary>
-    /// >> 445 - Variant[xcm.v2.Instruction]
+    /// >> 441 - Variant[xcm.v2.Instruction]
     /// </summary>
     public sealed class EnumInstruction : BaseEnumRust<Instruction>
     {

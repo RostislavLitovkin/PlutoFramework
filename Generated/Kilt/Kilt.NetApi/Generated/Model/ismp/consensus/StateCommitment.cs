@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.ismp.consensus
     
     
     /// <summary>
-    /// >> 485 - Composite[ismp.consensus.StateCommitment]
+    /// >> 481 - Composite[ismp.consensus.StateCommitment]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class StateCommitment : BaseType

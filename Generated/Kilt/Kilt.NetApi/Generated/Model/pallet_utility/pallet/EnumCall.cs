@@ -123,7 +123,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_utility.pallet
     }
     
     /// <summary>
-    /// >> 335 - Variant[pallet_utility.pallet.Call]
+    /// >> 309 - Variant[pallet_utility.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -134,12 +134,12 @@ namespace Kilt.NetApi.Generated.Model.pallet_utility.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall>>(Call.batch);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall>>(Call.as_derivative);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall>>(Call.batch_all);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumOriginCaller, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall>>(Call.dispatch_as);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall>>(Call.force_batch);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall, Kilt.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Call.with_weight);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall>>(Call.batch);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall>>(Call.as_derivative);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall>>(Call.batch_all);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.peregrine_runtime.EnumOriginCaller, Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall>>(Call.dispatch_as);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall>>(Call.force_batch);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall, Kilt.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Call.with_weight);
         }
     }
 }

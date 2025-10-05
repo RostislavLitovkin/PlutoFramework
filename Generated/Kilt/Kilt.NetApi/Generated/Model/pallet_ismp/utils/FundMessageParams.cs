@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_ismp.utils
     
     
     /// <summary>
-    /// >> 487 - Composite[pallet_ismp.utils.FundMessageParams]
+    /// >> 483 - Composite[pallet_ismp.utils.FundMessageParams]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class FundMessageParams : BaseType

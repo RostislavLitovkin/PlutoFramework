@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.staging_xcm.v4
     
     
     /// <summary>
-    /// >> 196 - Composite[staging_xcm.v4.PalletInfo]
+    /// >> 201 - Composite[staging_xcm.v4.PalletInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PalletInfo : BaseType

@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_token_gateway.types
     
     
     /// <summary>
-    /// >> 495 - Composite[pallet_token_gateway.types.AssetRegistration]
+    /// >> 491 - Composite[pallet_token_gateway.types.AssetRegistration]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetRegistration : BaseType
@@ -39,7 +39,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_token_gateway.types
         /// <summary>
         /// >> precision
         /// </summary>
-        public Kilt.NetApi.Generated.Types.Base.BTreeMapT6 Precision { get; set; }
+        public Kilt.NetApi.Generated.Types.Base.BTreeMapT5 Precision { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -68,7 +68,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_token_gateway.types
             Reg.Decode(byteArray, ref p);
             Native = new Substrate.NetApi.Model.Types.Primitive.Bool();
             Native.Decode(byteArray, ref p);
-            Precision = new Kilt.NetApi.Generated.Types.Base.BTreeMapT6();
+            Precision = new Kilt.NetApi.Generated.Types.Base.BTreeMapT5();
             Precision.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

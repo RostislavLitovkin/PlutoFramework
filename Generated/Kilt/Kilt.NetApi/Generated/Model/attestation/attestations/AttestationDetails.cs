@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.attestation.attestations
     
     
     /// <summary>
-    /// >> 598 - Composite[attestation.attestations.AttestationDetails]
+    /// >> 629 - Composite[attestation.attestations.AttestationDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AttestationDetails : BaseType

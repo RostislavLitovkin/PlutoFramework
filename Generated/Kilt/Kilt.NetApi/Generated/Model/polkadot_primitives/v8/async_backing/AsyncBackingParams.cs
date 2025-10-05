@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.polkadot_primitives.v8.async_backing
     
     
     /// <summary>
-    /// >> 647 - Composite[polkadot_primitives.v8.async_backing.AsyncBackingParams]
+    /// >> 688 - Composite[polkadot_primitives.v8.async_backing.AsyncBackingParams]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AsyncBackingParams : BaseType

@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.ismp_parachain
     
     
     /// <summary>
-    /// >> 236 - Composite[ismp_parachain.ParachainData]
+    /// >> 241 - Composite[ismp_parachain.ParachainData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ParachainData : BaseType

@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_did_lookup.linkable_account
     }
     
     /// <summary>
-    /// >> 121 - Variant[pallet_did_lookup.linkable_account.LinkableAccountId]
+    /// >> 124 - Variant[pallet_did_lookup.linkable_account.LinkableAccountId]
     /// </summary>
     public sealed class EnumLinkableAccountId : BaseEnumRust<LinkableAccountId>
     {

@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_deposit_storage.pallet
     }
     
     /// <summary>
-    /// >> 399 - Variant[pallet_deposit_storage.pallet.Call]
+    /// >> 374 - Variant[pallet_deposit_storage.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

@@ -48,7 +48,7 @@ namespace Kilt.NetApi.Generated.Model.xcm.v2
     }
     
     /// <summary>
-    /// >> 97 - Variant[xcm.v2.BodyPart]
+    /// >> 99 - Variant[xcm.v2.BodyPart]
     /// </summary>
     public sealed class EnumBodyPart : BaseEnumRust<BodyPart>
     {

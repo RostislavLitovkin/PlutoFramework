@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.frame_support.dispatch
     }
     
     /// <summary>
-    /// >> 338 - Variant[frame_support.dispatch.RawOrigin]
+    /// >> 312 - Variant[frame_support.dispatch.RawOrigin]
     /// </summary>
     public sealed class EnumRawOrigin : BaseEnumRust<RawOrigin>
     {

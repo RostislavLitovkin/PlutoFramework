@@ -42,7 +42,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_hyperbridge.pallet
     }
     
     /// <summary>
-    /// >> 228 - Variant[pallet_hyperbridge.pallet.Event]
+    /// >> 233 - Variant[pallet_hyperbridge.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

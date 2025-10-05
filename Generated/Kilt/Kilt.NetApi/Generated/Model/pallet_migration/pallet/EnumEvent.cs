@@ -29,7 +29,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_migration.pallet
     }
     
     /// <summary>
-    /// >> 153 - Variant[pallet_migration.pallet.Event]
+    /// >> 156 - Variant[pallet_migration.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

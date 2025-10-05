@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_assets.types
     
     
     /// <summary>
-    /// >> 588 - Composite[pallet_assets.types.AssetAccount]
+    /// >> 615 - Composite[pallet_assets.types.AssetAccount]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetAccount : BaseType

@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded
     
     
     /// <summary>
-    /// >> 630 - Composite[cumulus_pallet_parachain_system.unincluded_segment.Ancestor]
+    /// >> 671 - Composite[cumulus_pallet_parachain_system.unincluded_segment.Ancestor]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Ancestor : BaseType

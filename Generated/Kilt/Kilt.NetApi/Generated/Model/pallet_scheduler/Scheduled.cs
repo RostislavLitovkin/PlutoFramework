@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_scheduler
     
     
     /// <summary>
-    /// >> 548 - Composite[pallet_scheduler.Scheduled]
+    /// >> 575 - Composite[pallet_scheduler.Scheduled]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Scheduled : BaseType
@@ -43,7 +43,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_scheduler
         /// <summary>
         /// >> origin
         /// </summary>
-        public Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumOriginCaller Origin { get; set; }
+        public Kilt.NetApi.Generated.Model.peregrine_runtime.EnumOriginCaller Origin { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -75,7 +75,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_scheduler
             Call.Decode(byteArray, ref p);
             MaybePeriodic = new Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32>>();
             MaybePeriodic.Decode(byteArray, ref p);
-            Origin = new Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumOriginCaller();
+            Origin = new Kilt.NetApi.Generated.Model.peregrine_runtime.EnumOriginCaller();
             Origin.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

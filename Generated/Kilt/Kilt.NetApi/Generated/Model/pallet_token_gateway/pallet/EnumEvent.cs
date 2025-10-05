@@ -48,7 +48,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_token_gateway.pallet
     }
     
     /// <summary>
-    /// >> 238 - Variant[pallet_token_gateway.pallet.Event]
+    /// >> 243 - Variant[pallet_token_gateway.pallet.Event]
     /// Pallet events that functions in this pallet can emit.
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

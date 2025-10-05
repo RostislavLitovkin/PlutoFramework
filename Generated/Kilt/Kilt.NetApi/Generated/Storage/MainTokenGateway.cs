@@ -230,7 +230,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> set_token_gateway_addresses
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetTokenGatewayAddresses(Kilt.NetApi.Generated.Types.Base.BTreeMapT5 addresses)
+        public static Method SetTokenGatewayAddresses(Kilt.NetApi.Generated.Types.Base.BTreeMapT4 addresses)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(addresses.Encode());

@@ -43,7 +43,7 @@ namespace Kilt.NetApi.Generated.Model.did.did_details
     }
     
     /// <summary>
-    /// >> 382 - Variant[did.did_details.DidVerificationKey]
+    /// >> 357 - Variant[did.did_details.DidVerificationKey]
     /// </summary>
     public sealed class EnumDidVerificationKey : BaseEnumRust<DidVerificationKey>
     {

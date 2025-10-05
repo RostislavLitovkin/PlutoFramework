@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.ismp.router
     }
     
     /// <summary>
-    /// >> 467 - Variant[ismp.router.Request]
+    /// >> 463 - Variant[ismp.router.Request]
     /// </summary>
     public sealed class EnumRequest : BaseEnumRust<Request>
     {

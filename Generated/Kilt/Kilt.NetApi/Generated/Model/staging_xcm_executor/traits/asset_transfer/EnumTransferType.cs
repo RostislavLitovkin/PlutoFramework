@@ -43,7 +43,7 @@ namespace Kilt.NetApi.Generated.Model.staging_xcm_executor.traits.asset_transfer
     }
     
     /// <summary>
-    /// >> 453 - Variant[staging_xcm_executor.traits.asset_transfer.TransferType]
+    /// >> 449 - Variant[staging_xcm_executor.traits.asset_transfer.TransferType]
     /// </summary>
     public sealed class EnumTransferType : BaseEnumRust<TransferType>
     {

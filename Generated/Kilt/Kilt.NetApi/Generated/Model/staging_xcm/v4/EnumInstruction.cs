@@ -263,7 +263,7 @@ namespace Kilt.NetApi.Generated.Model.staging_xcm.v4
     }
     
     /// <summary>
-    /// >> 452 - Variant[staging_xcm.v4.Instruction]
+    /// >> 448 - Variant[staging_xcm.v4.Instruction]
     /// </summary>
     public sealed class EnumInstruction : BaseEnumRust<Instruction>
     {

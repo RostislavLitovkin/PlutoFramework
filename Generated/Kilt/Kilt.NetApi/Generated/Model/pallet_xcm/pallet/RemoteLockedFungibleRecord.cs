@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_xcm.pallet
     
     
     /// <summary>
-    /// >> 678 - Composite[pallet_xcm.pallet.RemoteLockedFungibleRecord]
+    /// >> 719 - Composite[pallet_xcm.pallet.RemoteLockedFungibleRecord]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RemoteLockedFungibleRecord : BaseType
@@ -39,7 +39,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_xcm.pallet
         /// <summary>
         /// >> consumers
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT53 Consumers { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT55 Consumers { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -68,7 +68,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_xcm.pallet
             Owner.Decode(byteArray, ref p);
             Locker = new Kilt.NetApi.Generated.Model.xcm.EnumVersionedLocation();
             Locker.Decode(byteArray, ref p);
-            Consumers = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT53();
+            Consumers = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT55();
             Consumers.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.cumulus_pallet_parachain_system.relay_stat
     
     
     /// <summary>
-    /// >> 641 - Composite[cumulus_pallet_parachain_system.relay_state_snapshot.MessagingStateSnapshot]
+    /// >> 682 - Composite[cumulus_pallet_parachain_system.relay_state_snapshot.MessagingStateSnapshot]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MessagingStateSnapshot : BaseType

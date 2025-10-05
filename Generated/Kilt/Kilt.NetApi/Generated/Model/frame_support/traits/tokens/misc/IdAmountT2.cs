@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.frame_support.traits.tokens.misc
     
     
     /// <summary>
-    /// >> 277 - Composite[frame_support.traits.tokens.misc.IdAmountT2]
+    /// >> 282 - Composite[frame_support.traits.tokens.misc.IdAmountT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class IdAmountT2 : BaseType
@@ -27,7 +27,7 @@ namespace Kilt.NetApi.Generated.Model.frame_support.traits.tokens.misc
         /// <summary>
         /// >> id
         /// </summary>
-        public Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeFreezeReason Id { get; set; }
+        public Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeFreezeReason Id { get; set; }
         /// <summary>
         /// >> amount
         /// </summary>
@@ -52,7 +52,7 @@ namespace Kilt.NetApi.Generated.Model.frame_support.traits.tokens.misc
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Id = new Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeFreezeReason();
+            Id = new Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeFreezeReason();
             Id.Decode(byteArray, ref p);
             Amount = new Substrate.NetApi.Model.Types.Primitive.U128();
             Amount.Decode(byteArray, ref p);

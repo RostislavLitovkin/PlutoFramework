@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.xcm.v3
     }
     
     /// <summary>
-    /// >> 199 - Variant[xcm.v3.MaybeErrorCode]
+    /// >> 204 - Variant[xcm.v3.MaybeErrorCode]
     /// </summary>
     public sealed class EnumMaybeErrorCode : BaseEnumRust<MaybeErrorCode>
     {

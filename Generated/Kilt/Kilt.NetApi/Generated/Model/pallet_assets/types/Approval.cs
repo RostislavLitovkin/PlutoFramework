@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_assets.types
     
     
     /// <summary>
-    /// >> 592 - Composite[pallet_assets.types.Approval]
+    /// >> 619 - Composite[pallet_assets.types.Approval]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Approval : BaseType

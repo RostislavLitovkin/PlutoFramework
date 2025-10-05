@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_web3_names.web3_name
     
     
     /// <summary>
-    /// >> 620 - Composite[pallet_web3_names.web3_name.Web3NameOwnership]
+    /// >> 651 - Composite[pallet_web3_names.web3_name.Web3NameOwnership]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Web3NameOwnership : BaseType

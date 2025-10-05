@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.runtime_common.deposits
     }
     
     /// <summary>
-    /// >> 169 - Variant[runtime_common.deposits.DepositNamespace]
+    /// >> 172 - Variant[runtime_common.deposits.DepositNamespace]
     /// </summary>
     public sealed class EnumDepositNamespace : BaseEnum<DepositNamespace>
     {

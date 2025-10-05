@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.frame_support.traits.preimages
     }
     
     /// <summary>
-    /// >> 323 - Variant[frame_support.traits.preimages.Bounded]
+    /// >> 299 - Variant[frame_support.traits.preimages.Bounded]
     /// </summary>
     public sealed class EnumBounded : BaseEnumRust<Bounded>
     {

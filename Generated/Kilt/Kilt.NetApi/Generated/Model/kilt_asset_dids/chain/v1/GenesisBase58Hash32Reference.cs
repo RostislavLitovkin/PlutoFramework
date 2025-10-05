@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.kilt_asset_dids.chain.v1
     
     
     /// <summary>
-    /// >> 133 - Composite[kilt_asset_dids.chain.v1.GenesisBase58Hash32Reference]
+    /// >> 136 - Composite[kilt_asset_dids.chain.v1.GenesisBase58Hash32Reference]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class GenesisBase58Hash32Reference : BaseType

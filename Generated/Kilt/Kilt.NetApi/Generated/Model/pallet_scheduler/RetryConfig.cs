@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_scheduler
     
     
     /// <summary>
-    /// >> 550 - Composite[pallet_scheduler.RetryConfig]
+    /// >> 577 - Composite[pallet_scheduler.RetryConfig]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RetryConfig : BaseType

@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.did.service_endpoints
     
     
     /// <summary>
-    /// >> 369 - Composite[did.service_endpoints.DidEndpoint]
+    /// >> 344 - Composite[did.service_endpoints.DidEndpoint]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DidEndpoint : BaseType
@@ -27,15 +27,15 @@ namespace Kilt.NetApi.Generated.Model.did.service_endpoints
         /// <summary>
         /// >> id
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23 Id { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18 Id { get; set; }
         /// <summary>
         /// >> service_types
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24 ServiceTypes { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19 ServiceTypes { get; set; }
         /// <summary>
         /// >> urls
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT26 Urls { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21 Urls { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -57,11 +57,11 @@ namespace Kilt.NetApi.Generated.Model.did.service_endpoints
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Id = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23();
+            Id = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18();
             Id.Decode(byteArray, ref p);
-            ServiceTypes = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24();
+            ServiceTypes = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19();
             ServiceTypes.Decode(byteArray, ref p);
-            Urls = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT26();
+            Urls = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21();
             Urls.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

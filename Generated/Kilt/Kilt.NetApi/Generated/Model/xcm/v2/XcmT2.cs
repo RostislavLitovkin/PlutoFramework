@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.xcm.v2
     
     
     /// <summary>
-    /// >> 443 - Composite[xcm.v2.XcmT2]
+    /// >> 439 - Composite[xcm.v2.XcmT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class XcmT2 : BaseType

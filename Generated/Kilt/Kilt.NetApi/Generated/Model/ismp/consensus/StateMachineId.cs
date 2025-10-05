@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.ismp.consensus
     
     
     /// <summary>
-    /// >> 220 - Composite[ismp.consensus.StateMachineId]
+    /// >> 225 - Composite[ismp.consensus.StateMachineId]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class StateMachineId : BaseType

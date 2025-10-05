@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.ismp.events
     
     
     /// <summary>
-    /// >> 226 - Composite[ismp.events.RequestResponseHandled]
+    /// >> 231 - Composite[ismp.events.RequestResponseHandled]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RequestResponseHandled : BaseType

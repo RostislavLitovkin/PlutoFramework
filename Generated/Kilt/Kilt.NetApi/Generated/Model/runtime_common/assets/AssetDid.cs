@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.runtime_common.assets
     
     
     /// <summary>
-    /// >> 128 - Composite[runtime_common.assets.AssetDid]
+    /// >> 131 - Composite[runtime_common.assets.AssetDid]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetDid : BaseType

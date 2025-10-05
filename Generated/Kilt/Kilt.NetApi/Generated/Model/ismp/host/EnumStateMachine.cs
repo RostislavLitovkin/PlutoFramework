@@ -48,7 +48,7 @@ namespace Kilt.NetApi.Generated.Model.ismp.host
     }
     
     /// <summary>
-    /// >> 221 - Variant[ismp.host.StateMachine]
+    /// >> 226 - Variant[ismp.host.StateMachine]
     /// </summary>
     public sealed class EnumStateMachine : BaseEnumRust<StateMachine>
     {

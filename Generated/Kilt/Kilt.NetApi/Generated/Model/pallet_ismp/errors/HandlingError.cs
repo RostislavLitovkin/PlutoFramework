@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_ismp.errors
     
     
     /// <summary>
-    /// >> 224 - Composite[pallet_ismp.errors.HandlingError]
+    /// >> 229 - Composite[pallet_ismp.errors.HandlingError]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class HandlingError : BaseType

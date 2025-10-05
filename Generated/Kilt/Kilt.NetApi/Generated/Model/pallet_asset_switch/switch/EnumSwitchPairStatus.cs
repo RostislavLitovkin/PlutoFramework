@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_asset_switch.@switch
     }
     
     /// <summary>
-    /// >> 582 - Variant[pallet_asset_switch.switch.SwitchPairStatus]
+    /// >> 609 - Variant[pallet_asset_switch.switch.SwitchPairStatus]
     /// </summary>
     public sealed class EnumSwitchPairStatus : BaseEnum<SwitchPairStatus>
     {

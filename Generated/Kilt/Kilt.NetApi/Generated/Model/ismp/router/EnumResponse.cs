@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.ismp.router
     }
     
     /// <summary>
-    /// >> 470 - Variant[ismp.router.Response]
+    /// >> 466 - Variant[ismp.router.Response]
     /// </summary>
     public sealed class EnumResponse : BaseEnumRust<Response>
     {

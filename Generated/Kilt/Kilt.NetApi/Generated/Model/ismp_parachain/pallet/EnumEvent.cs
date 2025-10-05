@@ -36,7 +36,7 @@ namespace Kilt.NetApi.Generated.Model.ismp_parachain.pallet
     }
     
     /// <summary>
-    /// >> 234 - Variant[ismp_parachain.pallet.Event]
+    /// >> 239 - Variant[ismp_parachain.pallet.Event]
     /// Events emitted by this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

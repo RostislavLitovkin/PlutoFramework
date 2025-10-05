@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.bounded_collections.weak_bounded_vec
     
     
     /// <summary>
-    /// >> 663 - Composite[bounded_collections.weak_bounded_vec.WeakBoundedVecT3]
+    /// >> 704 - Composite[bounded_collections.weak_bounded_vec.WeakBoundedVecT3]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class WeakBoundedVecT3 : BaseType

@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.sp_weights
     
     
     /// <summary>
-    /// >> 254 - Composite[sp_weights.RuntimeDbWeight]
+    /// >> 259 - Composite[sp_weights.RuntimeDbWeight]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RuntimeDbWeight : BaseType

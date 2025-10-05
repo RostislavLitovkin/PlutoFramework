@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.ismp.messaging
     
     
     /// <summary>
-    /// >> 458 - Composite[ismp.messaging.ConsensusMessage]
+    /// >> 454 - Composite[ismp.messaging.ConsensusMessage]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ConsensusMessage : BaseType

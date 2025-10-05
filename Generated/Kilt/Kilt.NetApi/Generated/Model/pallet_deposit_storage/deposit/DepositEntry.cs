@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_deposit_storage.deposit
     
     
     /// <summary>
-    /// >> 171 - Composite[pallet_deposit_storage.deposit.DepositEntry]
+    /// >> 174 - Composite[pallet_deposit_storage.deposit.DepositEntry]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DepositEntry : BaseType
@@ -31,7 +31,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_deposit_storage.deposit
         /// <summary>
         /// >> reason
         /// </summary>
-        public Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeHoldReason Reason { get; set; }
+        public Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeHoldReason Reason { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -54,7 +54,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_deposit_storage.deposit
             var start = p;
             Deposit = new Kilt.NetApi.Generated.Model.kilt_support.deposit.Deposit();
             Deposit.Decode(byteArray, ref p);
-            Reason = new Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeHoldReason();
+            Reason = new Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeHoldReason();
             Reason.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

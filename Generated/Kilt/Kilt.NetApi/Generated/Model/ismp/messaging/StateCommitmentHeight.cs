@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.ismp.messaging
     
     
     /// <summary>
-    /// >> 484 - Composite[ismp.messaging.StateCommitmentHeight]
+    /// >> 480 - Composite[ismp.messaging.StateCommitmentHeight]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class StateCommitmentHeight : BaseType

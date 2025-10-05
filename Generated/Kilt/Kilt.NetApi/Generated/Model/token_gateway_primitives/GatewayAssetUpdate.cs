@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.token_gateway_primitives
     
     
     /// <summary>
-    /// >> 504 - Composite[token_gateway_primitives.GatewayAssetUpdate]
+    /// >> 499 - Composite[token_gateway_primitives.GatewayAssetUpdate]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class GatewayAssetUpdate : BaseType
@@ -31,15 +31,15 @@ namespace Kilt.NetApi.Generated.Model.token_gateway_primitives
         /// <summary>
         /// >> add_chains
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35 AddChains { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT31 AddChains { get; set; }
         /// <summary>
         /// >> remove_chains
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35 RemoveChains { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT31 RemoveChains { get; set; }
         /// <summary>
         /// >> new_admins
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT36 NewAdmins { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32 NewAdmins { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -64,11 +64,11 @@ namespace Kilt.NetApi.Generated.Model.token_gateway_primitives
             var start = p;
             AssetId = new Kilt.NetApi.Generated.Model.primitive_types.H256();
             AssetId.Decode(byteArray, ref p);
-            AddChains = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35();
+            AddChains = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT31();
             AddChains.Decode(byteArray, ref p);
-            RemoveChains = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35();
+            RemoveChains = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT31();
             RemoveChains.Decode(byteArray, ref p);
-            NewAdmins = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT36();
+            NewAdmins = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32();
             NewAdmins.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

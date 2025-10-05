@@ -78,7 +78,7 @@ namespace Kilt.NetApi.Generated.Model.staging_xcm.v4.junction
     }
     
     /// <summary>
-    /// >> 82 - Variant[staging_xcm.v4.junction.NetworkId]
+    /// >> 84 - Variant[staging_xcm.v4.junction.NetworkId]
     /// </summary>
     public sealed class EnumNetworkId : BaseEnumRust<NetworkId>
     {

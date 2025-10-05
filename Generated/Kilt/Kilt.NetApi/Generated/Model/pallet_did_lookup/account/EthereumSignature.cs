@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_did_lookup.account
     
     
     /// <summary>
-    /// >> 389 - Composite[pallet_did_lookup.account.EthereumSignature]
+    /// >> 364 - Composite[pallet_did_lookup.account.EthereumSignature]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class EthereumSignature : BaseType

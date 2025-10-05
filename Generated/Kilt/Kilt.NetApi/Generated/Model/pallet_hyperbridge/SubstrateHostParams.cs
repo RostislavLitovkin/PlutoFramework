@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_hyperbridge
     
     
     /// <summary>
-    /// >> 230 - Composite[pallet_hyperbridge.SubstrateHostParams]
+    /// >> 235 - Composite[pallet_hyperbridge.SubstrateHostParams]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SubstrateHostParams : BaseType

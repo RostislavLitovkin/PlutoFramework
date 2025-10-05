@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_assets.types
     }
     
     /// <summary>
-    /// >> 586 - Variant[pallet_assets.types.AssetStatus]
+    /// >> 613 - Variant[pallet_assets.types.AssetStatus]
     /// </summary>
     public sealed class EnumAssetStatus : BaseEnum<AssetStatus>
     {

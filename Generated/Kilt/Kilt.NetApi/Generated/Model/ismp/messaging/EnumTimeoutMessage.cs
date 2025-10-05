@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.ismp.messaging
     }
     
     /// <summary>
-    /// >> 476 - Variant[ismp.messaging.TimeoutMessage]
+    /// >> 472 - Variant[ismp.messaging.TimeoutMessage]
     /// </summary>
     public sealed class EnumTimeoutMessage : BaseEnumRust<TimeoutMessage>
     {

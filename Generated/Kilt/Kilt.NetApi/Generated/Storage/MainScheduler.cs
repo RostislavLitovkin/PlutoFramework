@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Storage
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Scheduler", "IncompleteSince"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Scheduler", "Agenda"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT44)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT45)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Scheduler", "Retries"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Kilt.NetApi.Generated.Model.pallet_scheduler.RetryConfig)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Scheduler", "Lookup"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -96,10 +96,10 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> Agenda
         ///  Items to be executed, indexed by the block number that they should be executed on.
         /// </summary>
-        public async Task<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT44> Agenda(Substrate.NetApi.Model.Types.Primitive.U64 key, string blockhash, CancellationToken token)
+        public async Task<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT45> Agenda(Substrate.NetApi.Model.Types.Primitive.U64 key, string blockhash, CancellationToken token)
         {
             string parameters = SchedulerStorage.AgendaParams(key);
-            var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT44>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT45>(parameters, blockhash, token);
             return result;
         }
         
@@ -182,7 +182,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> schedule
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Schedule(Substrate.NetApi.Model.Types.Primitive.U64 when, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Substrate.NetApi.Model.Types.Primitive.U8 priority, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall call)
+        public static Method Schedule(Substrate.NetApi.Model.Types.Primitive.U64 when, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Substrate.NetApi.Model.Types.Primitive.U8 priority, Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(when.Encode());
@@ -208,7 +208,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> schedule_named
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ScheduleNamed(Kilt.NetApi.Generated.Types.Base.Arr32U8 id, Substrate.NetApi.Model.Types.Primitive.U64 when, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Substrate.NetApi.Model.Types.Primitive.U8 priority, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall call)
+        public static Method ScheduleNamed(Kilt.NetApi.Generated.Types.Base.Arr32U8 id, Substrate.NetApi.Model.Types.Primitive.U64 when, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Substrate.NetApi.Model.Types.Primitive.U8 priority, Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -234,7 +234,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> schedule_after
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ScheduleAfter(Substrate.NetApi.Model.Types.Primitive.U64 after, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Substrate.NetApi.Model.Types.Primitive.U8 priority, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall call)
+        public static Method ScheduleAfter(Substrate.NetApi.Model.Types.Primitive.U64 after, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Substrate.NetApi.Model.Types.Primitive.U8 priority, Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(after.Encode());
@@ -248,7 +248,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> schedule_named_after
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ScheduleNamedAfter(Kilt.NetApi.Generated.Types.Base.Arr32U8 id, Substrate.NetApi.Model.Types.Primitive.U64 after, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Substrate.NetApi.Model.Types.Primitive.U8 priority, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall call)
+        public static Method ScheduleNamedAfter(Kilt.NetApi.Generated.Types.Base.Arr32U8 id, Substrate.NetApi.Model.Types.Primitive.U64 after, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Substrate.NetApi.Model.Types.Primitive.U8 priority, Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());

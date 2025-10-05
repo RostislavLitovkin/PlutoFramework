@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.frame_system
     
     
     /// <summary>
-    /// >> 243 - Composite[frame_system.CodeUpgradeAuthorization]
+    /// >> 248 - Composite[frame_system.CodeUpgradeAuthorization]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CodeUpgradeAuthorization : BaseType

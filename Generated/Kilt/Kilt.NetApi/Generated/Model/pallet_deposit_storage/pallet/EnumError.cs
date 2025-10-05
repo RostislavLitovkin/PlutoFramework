@@ -69,7 +69,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_deposit_storage.pallet
     }
     
     /// <summary>
-    /// >> 628 - Variant[pallet_deposit_storage.pallet.Error]
+    /// >> 659 - Variant[pallet_deposit_storage.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>

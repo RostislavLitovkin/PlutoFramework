@@ -97,7 +97,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_treasury.pallet
     }
     
     /// <summary>
-    /// >> 49 - Variant[pallet_treasury.pallet.Event]
+    /// >> 51 - Variant[pallet_treasury.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

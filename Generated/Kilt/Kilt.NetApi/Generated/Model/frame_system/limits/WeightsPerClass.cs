@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.frame_system.limits
     
     
     /// <summary>
-    /// >> 250 - Composite[frame_system.limits.WeightsPerClass]
+    /// >> 255 - Composite[frame_system.limits.WeightsPerClass]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class WeightsPerClass : BaseType

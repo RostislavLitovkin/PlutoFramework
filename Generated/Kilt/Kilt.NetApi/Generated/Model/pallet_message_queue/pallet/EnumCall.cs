@@ -48,7 +48,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_message_queue.pallet
     }
     
     /// <summary>
-    /// >> 454 - Variant[pallet_message_queue.pallet.Call]
+    /// >> 450 - Variant[pallet_message_queue.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

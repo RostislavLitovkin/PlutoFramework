@@ -46,7 +46,7 @@ namespace Kilt.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(Kilt.NetApi.Generated.Model.pallet_assets.types.Approval)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Fungibles", "Metadata"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location), typeof(Kilt.NetApi.Generated.Model.pallet_assets.types.AssetMetadata)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location), typeof(Kilt.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Fungibles", "NextAssetId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location)));
         }
         
@@ -172,10 +172,10 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> Metadata
         ///  Metadata of an asset.
         /// </summary>
-        public async Task<Kilt.NetApi.Generated.Model.pallet_assets.types.AssetMetadata> Metadata(Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location key, string blockhash, CancellationToken token)
+        public async Task<Kilt.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1> Metadata(Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location key, string blockhash, CancellationToken token)
         {
             string parameters = FungiblesStorage.MetadataParams(key);
-            var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.pallet_assets.types.AssetMetadata>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1>(parameters, blockhash, token);
             return result;
         }
         

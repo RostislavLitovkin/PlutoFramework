@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.ismp.router
     
     
     /// <summary>
-    /// >> 474 - Composite[ismp.router.StorageValue]
+    /// >> 470 - Composite[ismp.router.StorageValue]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class StorageValue : BaseType

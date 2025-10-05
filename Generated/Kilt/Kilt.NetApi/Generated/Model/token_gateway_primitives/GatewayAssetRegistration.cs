@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.token_gateway_primitives
     
     
     /// <summary>
-    /// >> 496 - Composite[token_gateway_primitives.GatewayAssetRegistration]
+    /// >> 492 - Composite[token_gateway_primitives.GatewayAssetRegistration]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class GatewayAssetRegistration : BaseType
@@ -27,11 +27,11 @@ namespace Kilt.NetApi.Generated.Model.token_gateway_primitives
         /// <summary>
         /// >> name
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT33 Name { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27 Name { get; set; }
         /// <summary>
         /// >> symbol
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34 Symbol { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30 Symbol { get; set; }
         /// <summary>
         /// >> chains
         /// </summary>
@@ -62,9 +62,9 @@ namespace Kilt.NetApi.Generated.Model.token_gateway_primitives
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Name = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT33();
+            Name = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27();
             Name.Decode(byteArray, ref p);
-            Symbol = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34();
+            Symbol = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30();
             Symbol.Decode(byteArray, ref p);
             Chains = new Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.ismp.host.EnumStateMachine>();
             Chains.Decode(byteArray, ref p);

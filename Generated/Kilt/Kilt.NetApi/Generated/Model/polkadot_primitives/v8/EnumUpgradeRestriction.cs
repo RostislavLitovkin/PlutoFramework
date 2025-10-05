@@ -28,7 +28,7 @@ namespace Kilt.NetApi.Generated.Model.polkadot_primitives.v8
     }
     
     /// <summary>
-    /// >> 640 - Variant[polkadot_primitives.v8.UpgradeRestriction]
+    /// >> 681 - Variant[polkadot_primitives.v8.UpgradeRestriction]
     /// </summary>
     public sealed class EnumUpgradeRestriction : BaseEnum<UpgradeRestriction>
     {

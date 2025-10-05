@@ -53,7 +53,7 @@ namespace Kilt.NetApi.Generated.Model.frame_support.traits.messages
     }
     
     /// <summary>
-    /// >> 218 - Variant[frame_support.traits.messages.ProcessMessageError]
+    /// >> 223 - Variant[frame_support.traits.messages.ProcessMessageError]
     /// </summary>
     public sealed class EnumProcessMessageError : BaseEnumRust<ProcessMessageError>
     {

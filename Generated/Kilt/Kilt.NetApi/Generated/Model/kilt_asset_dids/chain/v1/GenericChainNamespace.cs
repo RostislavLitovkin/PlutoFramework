@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.kilt_asset_dids.chain.v1
     
     
     /// <summary>
-    /// >> 135 - Composite[kilt_asset_dids.chain.v1.GenericChainNamespace]
+    /// >> 138 - Composite[kilt_asset_dids.chain.v1.GenericChainNamespace]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class GenericChainNamespace : BaseType

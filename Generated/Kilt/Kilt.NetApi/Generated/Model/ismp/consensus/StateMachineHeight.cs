@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.ismp.consensus
     
     
     /// <summary>
-    /// >> 222 - Composite[ismp.consensus.StateMachineHeight]
+    /// >> 227 - Composite[ismp.consensus.StateMachineHeight]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class StateMachineHeight : BaseType

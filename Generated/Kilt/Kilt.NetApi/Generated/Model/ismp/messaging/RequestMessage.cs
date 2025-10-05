@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.ismp.messaging
     
     
     /// <summary>
-    /// >> 460 - Composite[ismp.messaging.RequestMessage]
+    /// >> 456 - Composite[ismp.messaging.RequestMessage]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RequestMessage : BaseType

@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.public_credentials.credentials
     
     
     /// <summary>
-    /// >> 622 - Composite[public_credentials.credentials.CredentialEntry]
+    /// >> 653 - Composite[public_credentials.credentials.CredentialEntry]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CredentialEntry : BaseType

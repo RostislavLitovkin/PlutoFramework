@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.cumulus_pallet_parachain_system.unincluded
     
     
     /// <summary>
-    /// >> 633 - Composite[cumulus_pallet_parachain_system.unincluded_segment.HrmpChannelUpdate]
+    /// >> 674 - Composite[cumulus_pallet_parachain_system.unincluded_segment.HrmpChannelUpdate]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class HrmpChannelUpdate : BaseType

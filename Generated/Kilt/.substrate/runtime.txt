@@ -1,1 +1,1 @@
-kilt-spiritnet_runtime
+mashnet-node_runtime

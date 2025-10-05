@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.kilt_asset_dids.chain.v1
     
     
     /// <summary>
-    /// >> 137 - Composite[kilt_asset_dids.chain.v1.GenericChainReference]
+    /// >> 140 - Composite[kilt_asset_dids.chain.v1.GenericChainReference]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class GenericChainReference : BaseType

@@ -82,7 +82,7 @@ namespace Kilt.NetApi.Generated.Model.frame_system.pallet
     }
     
     /// <summary>
-    /// >> 259 - Variant[frame_system.pallet.Error]
+    /// >> 264 - Variant[frame_system.pallet.Error]
     /// Error for the System pallet
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

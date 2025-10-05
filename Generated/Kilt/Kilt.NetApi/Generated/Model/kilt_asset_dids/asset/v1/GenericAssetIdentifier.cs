@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.kilt_asset_dids.asset.v1
     
     
     /// <summary>
-    /// >> 152 - Composite[kilt_asset_dids.asset.v1.GenericAssetIdentifier]
+    /// >> 155 - Composite[kilt_asset_dids.asset.v1.GenericAssetIdentifier]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class GenericAssetIdentifier : BaseType

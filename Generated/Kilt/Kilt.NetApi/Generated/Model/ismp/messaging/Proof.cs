@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.ismp.messaging
     
     
     /// <summary>
-    /// >> 463 - Composite[ismp.messaging.Proof]
+    /// >> 459 - Composite[ismp.messaging.Proof]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Proof : BaseType

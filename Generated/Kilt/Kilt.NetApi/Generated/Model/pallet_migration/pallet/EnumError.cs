@@ -29,7 +29,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_migration.pallet
     }
     
     /// <summary>
-    /// >> 624 - Variant[pallet_migration.pallet.Error]
+    /// >> 655 - Variant[pallet_migration.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

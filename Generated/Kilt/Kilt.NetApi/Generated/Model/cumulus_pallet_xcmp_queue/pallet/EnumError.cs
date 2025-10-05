@@ -54,7 +54,7 @@ namespace Kilt.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.pallet
     }
     
     /// <summary>
-    /// >> 665 - Variant[cumulus_pallet_xcmp_queue.pallet.Error]
+    /// >> 706 - Variant[cumulus_pallet_xcmp_queue.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

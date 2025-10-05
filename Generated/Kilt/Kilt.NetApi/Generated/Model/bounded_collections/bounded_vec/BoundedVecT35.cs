@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec
     
     
     /// <summary>
-    /// >> 505 - Composite[bounded_collections.bounded_vec.BoundedVecT35]
+    /// >> 525 - Composite[bounded_collections.bounded_vec.BoundedVecT35]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedVecT35 : BaseType
@@ -27,7 +27,7 @@ namespace Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec
         /// <summary>
         /// >> value
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.ismp.host.EnumStateMachine> Value { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.parachain_staking.types.Stake> Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.ismp.host.EnumStateMachine>();
+            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.parachain_staking.types.Stake>();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

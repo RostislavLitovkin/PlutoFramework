@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_deposit_storage.pallet
     }
     
     /// <summary>
-    /// >> 180 - Variant[pallet_deposit_storage.pallet.HoldReason]
+    /// >> 183 - Variant[pallet_deposit_storage.pallet.HoldReason]
     /// </summary>
     public sealed class EnumHoldReason : BaseEnum<HoldReason>
     {

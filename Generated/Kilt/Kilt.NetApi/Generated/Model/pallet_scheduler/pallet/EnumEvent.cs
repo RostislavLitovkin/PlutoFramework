@@ -79,7 +79,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_scheduler.pallet
     }
     
     /// <summary>
-    /// >> 52 - Variant[pallet_scheduler.pallet.Event]
+    /// >> 54 - Variant[pallet_scheduler.pallet.Event]
     /// Events type.
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

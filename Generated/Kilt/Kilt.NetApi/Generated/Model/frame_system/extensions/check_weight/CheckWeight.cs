@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.frame_system.extensions.check_weight
     
     
     /// <summary>
-    /// >> 706 - Composite[frame_system.extensions.check_weight.CheckWeight]
+    /// >> 747 - Composite[frame_system.extensions.check_weight.CheckWeight]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckWeight : BaseType

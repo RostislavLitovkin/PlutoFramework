@@ -102,7 +102,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_ismp.pallet
     }
     
     /// <summary>
-    /// >> 219 - Variant[pallet_ismp.pallet.Event]
+    /// >> 224 - Variant[pallet_ismp.pallet.Event]
     /// Pallet Events
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.staging_xcm.v4.location
     
     
     /// <summary>
-    /// >> 77 - Composite[staging_xcm.v4.location.Location]
+    /// >> 79 - Composite[staging_xcm.v4.location.Location]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Location : BaseType
