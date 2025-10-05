@@ -52,6 +52,11 @@ namespace Kilt.NetApi.Generated.Model.spiritnet_runtime
         ParachainStaking = 21,
         
         /// <summary>
+        /// >> Collators
+        /// </summary>
+        Collators = 25,
+        
+        /// <summary>
         /// >> Democracy
         /// </summary>
         Democracy = 30,
@@ -200,10 +205,30 @@ namespace Kilt.NetApi.Generated.Model.spiritnet_runtime
         /// >> MessageQueue
         /// </summary>
         MessageQueue = 86,
+        
+        /// <summary>
+        /// >> Ismp
+        /// </summary>
+        Ismp = 90,
+        
+        /// <summary>
+        /// >> Hyperbridge
+        /// </summary>
+        Hyperbridge = 91,
+        
+        /// <summary>
+        /// >> IsmpParachain
+        /// </summary>
+        IsmpParachain = 92,
+        
+        /// <summary>
+        /// >> TokenGateway
+        /// </summary>
+        TokenGateway = 93,
     }
     
     /// <summary>
-    /// >> 20 - Variant[spiritnet_runtime.RuntimeEvent]
+    /// >> 21 - Variant[spiritnet_runtime.RuntimeEvent]
     /// </summary>
     public sealed class EnumRuntimeEvent : BaseEnumRust<RuntimeEvent>
     {
@@ -219,6 +244,7 @@ namespace Kilt.NetApi.Generated.Model.spiritnet_runtime
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_transaction_payment.pallet.EnumEvent>(RuntimeEvent.TransactionPayment);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_session.pallet.EnumEvent>(RuntimeEvent.Session);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.parachain_staking.pallet.EnumEvent>(RuntimeEvent.ParachainStaking);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_membership.pallet.EnumEvent>(RuntimeEvent.Collators);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_democracy.pallet.EnumEvent>(RuntimeEvent.Democracy);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_collective.pallet.EnumEvent>(RuntimeEvent.Council);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_collective.pallet.EnumEvent>(RuntimeEvent.TechnicalCommittee);
@@ -249,6 +275,10 @@ namespace Kilt.NetApi.Generated.Model.spiritnet_runtime
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_xcm.pallet.EnumEvent>(RuntimeEvent.PolkadotXcm);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.cumulus_pallet_xcm.pallet.EnumEvent>(RuntimeEvent.CumulusXcm);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_message_queue.pallet.EnumEvent>(RuntimeEvent.MessageQueue);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_ismp.pallet.EnumEvent>(RuntimeEvent.Ismp);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_hyperbridge.pallet.EnumEvent>(RuntimeEvent.Hyperbridge);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.ismp_parachain.pallet.EnumEvent>(RuntimeEvent.IsmpParachain);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_token_gateway.pallet.EnumEvent>(RuntimeEvent.TokenGateway);
         }
     }
 }

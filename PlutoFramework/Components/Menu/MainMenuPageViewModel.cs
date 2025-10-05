@@ -7,6 +7,8 @@ using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
 using PlutoFramework.Model.Xcavate;
 using PlutoFrameworkCore.Xcavate;
+using PlutoFramework.Components.Xcavate;
+using PlutoFramework.Components.Keys;
 
 namespace PlutoFramework.Components.Menu
 {
@@ -22,14 +24,19 @@ namespace PlutoFramework.Components.Menu
         public UserRoleEnum UserRole => User is not null ? User.Role : UserRoleEnum.None;
 
         [ObservableProperty]
-        private string address;
+        [NotifyPropertyChangedFor(nameof(IsLoggedIn))]
+        private string? address = null;
+        public bool IsLoggedIn => Address is not null;
 
         [ObservableProperty]
         private VerificationEnum verification = VerificationEnum.Loading;
         
         public MainMenuPageViewModel()
         {
-            address = Preferences.Get(PreferencesModel.PUBLIC_KEY, "None");
+            if (Preferences.ContainsKey(PreferencesModel.PUBLIC_KEY))
+            {
+                Address = Preferences.Get(PreferencesModel.PUBLIC_KEY, "None");
+            }
 
             _ = LoadAsync();
         }
@@ -48,7 +55,9 @@ namespace PlutoFramework.Components.Menu
 
             var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(EndpointEnum.XcavatePaseo, CancellationToken.None);
 
-            var verification = await WhitelistModel.IsWhitelistedAsync((SubstrateClientExt)client.SubstrateClient, User.Role.ToWhitelistRole(), PreferencesModel.PUBLIC_KEY, CancellationToken.None);
+            var address = KeysModel.GetSubstrateKey();
+
+            var verification = await WhitelistModel.IsWhitelistedAsync((SubstrateClientExt)client.SubstrateClient, User.Role.ToWhitelistRole(), address, CancellationToken.None);
 
             Verification = verification;
         }
@@ -66,10 +75,7 @@ namespace PlutoFramework.Components.Menu
         public Task WalletActionAsync() => NavigationModel.NavigateToBalancesPageAsync();
 
         [RelayCommand]
-        public Task SecurityActionAsync()
-        {
-            return Task.FromResult(0);
-        }
+        public Task SecurityActionAsync() => Shell.Current.Navigation.PushAsync(new KeyListPage());
 
         [RelayCommand]
         public Task KYCActionAsync()
@@ -78,9 +84,6 @@ namespace PlutoFramework.Components.Menu
         }
 
         [RelayCommand]
-        public Task SupportActionAsync()
-        {
-            return Task.FromResult(0);
-        }
+        public Task SupportActionAsync() => Shell.Current.Navigation.PushAsync(new ImportantLinksPage());
     }
 }

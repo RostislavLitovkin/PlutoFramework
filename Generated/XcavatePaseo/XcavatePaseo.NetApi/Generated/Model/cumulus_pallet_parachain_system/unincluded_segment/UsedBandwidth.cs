@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.un
     
     
     /// <summary>
-    /// >> 221 - Composite[cumulus_pallet_parachain_system.unincluded_segment.UsedBandwidth]
+    /// >> 224 - Composite[cumulus_pallet_parachain_system.unincluded_segment.UsedBandwidth]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UsedBandwidth : BaseType

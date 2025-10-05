@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<page:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   xmlns:hyperlink="clr-namespace:PlutoFramework.Components.Hyperlink"
+             xmlns:page="clr-namespace:PlutoFramework.Templates.PageTemplate"
+             x:Class="PlutoFramework.Components.Xcavate.ImportantLinksPage"
+             Title="Important links">
+    <VerticalStackLayout>
+        <Label HorizontalOptions="Center"
+             HorizontalTextAlignment="Center"
+             LineBreakMode="WordWrap"
+             Margin="20, 50, 20, 20"
+             TextColor="{StaticResource Primary}">
+            <Label.FormattedText>
+                <FormattedString>
+                    <hyperlink:Link Text="Terms and Conditions"
+                                 Url="https://realxmarket.xcavate.io/terms"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Label HorizontalOptions="Center"
+     HorizontalTextAlignment="Center"
+     LineBreakMode="WordWrap"
+     Margin="20, 0, 20, 20"
+     TextColor="{StaticResource Primary}">
+            <Label.FormattedText>
+                <FormattedString>
+                    <hyperlink:Link Text="Agreement"
+                 Url="https://realxmarket.xcavate.io/agreement"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Label HorizontalOptions="Center"
+             HorizontalTextAlignment="Center"
+             LineBreakMode="WordWrap"
+             Margin="20, 0, 20, 20"
+             TextColor="{StaticResource Primary}">
+            <Label.FormattedText>
+                <FormattedString>
+                    <hyperlink:Link Text="Privacy policy"
+                         Url="https://realxmarket.xcavate.io/privacy"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Label HorizontalOptions="Center"
+             HorizontalTextAlignment="Center"
+             LineBreakMode="WordWrap"
+             Margin="20, 0, 20, 20"
+             TextColor="{StaticResource Primary}">
+            <Label.FormattedText>
+                <FormattedString>
+                    <hyperlink:Link Text="Fees"
+                         Url="realxmarket.xcacvate.io/property-info-fees"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </VerticalStackLayout>
+</page:PageTemplate>

@@ -24,43 +24,81 @@ namespace Kilt.NetApi.Generated.Model.attestation.pallet
         
         /// <summary>
         /// >> add
-        /// See [`Pallet::add`].
+        /// Create a new attestation.
+        /// 
+        /// The attester can optionally provide a reference to an existing
+        /// delegation that will be saved along with the attestation itself in
+        /// the form of an attested delegation.
+        /// 
+        /// The referenced CType hash must already be present on chain.
+        /// 
+        /// If an optional delegation id is provided, the dispatch origin must
+        /// be the owner of the delegation. Otherwise, it could be any
+        /// `DelegationEntityId`.
+        /// 
+        /// Emits `AttestationCreated`.
         /// </summary>
         add = 0,
         
         /// <summary>
         /// >> revoke
-        /// See [`Pallet::revoke`].
+        /// Revoke an existing attestation.
+        /// 
+        /// The revoker must be either the creator of the attestation being
+        /// revoked or an entity that in the delegation tree is an ancestor of
+        /// the attester, i.e., it was either the delegator of the attester or
+        /// an ancestor thereof.
+        /// 
+        /// Emits `AttestationRevoked`.
         /// </summary>
         revoke = 1,
         
         /// <summary>
         /// >> remove
-        /// See [`Pallet::remove`].
+        /// Remove an attestation.
+        /// 
+        /// The origin must be either the creator of the attestation or an
+        /// entity which is an ancestor of the attester in the delegation tree,
+        /// i.e., it was either the delegator of the attester or an ancestor
+        /// thereof.
+        /// 
+        /// Always emits `AttestationRemoved` and emits `AttestationRevoked`
+        /// only if the attestation was not revoked yet.
         /// </summary>
         remove = 2,
         
         /// <summary>
         /// >> reclaim_deposit
-        /// See [`Pallet::reclaim_deposit`].
+        /// Reclaim a storage deposit by removing an attestation
+        /// 
+        /// Always emits `AttestationRemoved` and emits `AttestationRevoked`
+        /// only if the attestation was not revoked yet.
         /// </summary>
         reclaim_deposit = 3,
         
         /// <summary>
         /// >> change_deposit_owner
-        /// See [`Pallet::change_deposit_owner`].
+        /// Changes the deposit owner.
+        /// 
+        /// The balance that is reserved by the current deposit owner will be
+        /// freed and balance of the new deposit owner will get reserved.
+        /// 
+        /// The subject of the call must be the attester who issues the
+        /// attestation. The sender of the call will be the new deposit owner.
         /// </summary>
         change_deposit_owner = 4,
         
         /// <summary>
         /// >> update_deposit
-        /// See [`Pallet::update_deposit`].
+        /// Updates the deposit amount to the current deposit rate.
+        /// 
+        /// The sender must be the deposit owner.
         /// </summary>
         update_deposit = 5,
     }
     
     /// <summary>
-    /// >> 336 - Variant[attestation.pallet.Call]
+    /// >> 333 - Variant[attestation.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

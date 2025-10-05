@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_treasury
     
     
     /// <summary>
-    /// >> 459 - Composite[pallet_treasury.Proposal]
+    /// >> 561 - Composite[pallet_treasury.Proposal]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Proposal : BaseType

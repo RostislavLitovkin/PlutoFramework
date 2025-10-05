@@ -8,11 +8,27 @@
 
 
   <ItemGroup>
+      <PackageReference Include="jose-jwt" Version="5.2.0" />
+      <PackageReference Include="NSec.Cryptography" Version="25.4.0" />
       <PackageReference Include="Substrate.NET.API" Version="0.9.24-rc6" />
       <PackageReference Include="Uniquery" Version="1.0.1" />
-      <PackageReference Include="Plutonication" Version="2.5.0" />
+      <PackageReference Include="Plutonication" Version="2.6.0" />
       <PackageReference Include="AzeroIdResolver" Version="1.0.2" />
       <PackageReference Include="Substrate.NET.Wallet" Version="1.0.8" />
+      <PackageReference Include="System.Collections" Version="4.3.0" />
+      <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
+      <PackageReference Include="System.IO.FileSystem.Primitives" Version="4.3.0" />
+      <PackageReference Include="Microsoft.Win32.Primitives" Version="4.3.0" />
+      <PackageReference Include="System.Net.Primitives" Version="4.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BouncyCastle" Version="1.8.9">
+      <Aliases>bc18</Aliases>
+    </PackageReference>
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.6.0">
+      <Aliases>bc26</Aliases>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>

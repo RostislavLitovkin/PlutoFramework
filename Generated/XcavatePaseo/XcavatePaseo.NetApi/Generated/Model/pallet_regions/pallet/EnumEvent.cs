@@ -71,10 +71,10 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
         RegionAuctionStarted = 7,
         
         /// <summary>
-        /// >> RegionRejected
+        /// >> RegionProposalRejected
         /// A region got rejected.
         /// </summary>
-        RegionRejected = 8,
+        RegionProposalRejected = 8,
         
         /// <summary>
         /// >> BidSuccessfullyPlaced
@@ -165,6 +165,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
         /// Lawyer has been unregistered.
         /// </summary>
         LawyerUnregistered = 23,
+        
+        /// <summary>
+        /// >> LawyerActiveCasesUpdated
+        /// </summary>
+        LawyerActiveCasesUpdated = 24,
     }
     
     /// <summary>
@@ -180,29 +185,30 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
         public EnumEvent()
         {
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.RegionProposed);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumVote>>(Event.VotedOnRegionProposal);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumVote, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.VotedOnRegionProposal);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>>(Event.RegionCreated);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U16>(Event.NoRegionCreated);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.ListingDurationChanged);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>>(Event.RegionTaxChanged);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10>>(Event.LocationCreated);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.LocationCreated);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U16>(Event.RegionAuctionStarted);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.RegionRejected);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.RegionProposalRejected);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>>(Event.BidSuccessfullyPlaced);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.NewRegionOperatorAdded);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.RegionOperatorRemoved);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.RemoveRegionOwnerProposed);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumVote>>(Event.VotedOnRegionOwnerProposal);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumVote, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.VotedOnRegionOwnerProposal);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U16>(Event.RegionOwnerRemovalRejected);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.RegionalOperatorSlashed);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U8>>(Event.RegionalOperatorSlashed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.RegionOwnerChangeEnabled);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.ReplacementBidSuccessfullyPlaced);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.RegionOwnerChanged);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.RegionOwnerResignationInitiated);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Types.Base.EnumResult>>(Event.RegionOwnerProposalFailed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Types.Base.EnumResult>>(Event.RegionOwnerReplacementFailed);
-				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U16>>(Event.LawyerRegistered);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.LawyerRegistered);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U16>>(Event.LawyerUnregistered);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.LawyerActiveCasesUpdated);
         }
     }
 }

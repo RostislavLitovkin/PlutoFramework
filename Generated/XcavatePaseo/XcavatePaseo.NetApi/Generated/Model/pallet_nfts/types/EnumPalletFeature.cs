@@ -43,7 +43,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
     }
     
     /// <summary>
-    /// >> 459 - Variant[pallet_nfts.types.PalletFeature]
+    /// >> 474 - Variant[pallet_nfts.types.PalletFeature]
     /// </summary>
     public sealed class EnumPalletFeature : BaseEnum<PalletFeature>
     {

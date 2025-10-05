@@ -28,7 +28,7 @@ namespace Kilt.NetApi.Generated.Model.runtime_common.authorization
     }
     
     /// <summary>
-    /// >> 338 - Variant[runtime_common.authorization.PalletAuthorize]
+    /// >> 335 - Variant[runtime_common.authorization.PalletAuthorize]
     /// </summary>
     public sealed class EnumPalletAuthorize : BaseEnumRust<PalletAuthorize>
     {

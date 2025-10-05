@@ -24,19 +24,25 @@ namespace Kilt.NetApi.Generated.Model.pallet_dip_provider.pallet
         
         /// <summary>
         /// >> commit_identity
-        /// See [`Pallet::commit_identity`].
+        /// Generate a new versioned commitment for the subject identified by
+        /// the provided `Identifier`. If an old commitment for the same version
+        /// is present, it is overridden. Hooks are called before the new
+        /// commitment is stored, and optionally before the old one is replaced.
         /// </summary>
         commit_identity = 0,
         
         /// <summary>
         /// >> delete_identity_commitment
-        /// See [`Pallet::delete_identity_commitment`].
+        /// Delete an identity commitment of a specific version for a specific
+        /// `Identifier`. If a commitment of the provided version does not exist
+        /// for the given `Identifier`, an error is returned. Hooks are called
+        /// after the commitment has been removed.
         /// </summary>
         delete_identity_commitment = 1,
     }
     
     /// <summary>
-    /// >> 379 - Variant[pallet_dip_provider.pallet.Call]
+    /// >> 372 - Variant[pallet_dip_provider.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

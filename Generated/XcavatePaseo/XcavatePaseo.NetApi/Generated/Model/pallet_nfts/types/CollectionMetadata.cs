@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 448 - Composite[pallet_nfts.types.CollectionMetadata]
+    /// >> 463 - Composite[pallet_nfts.types.CollectionMetadata]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CollectionMetadata : BaseType

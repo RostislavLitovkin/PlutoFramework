@@ -25,34 +25,30 @@ namespace Kilt.NetApi.Generated.Model.attestation.pallet
         /// <summary>
         /// >> AttestationCreated
         /// A new attestation has been created.
-        /// \[attester ID, claim hash, CType hash, (optional) delegation ID\]
         /// </summary>
         AttestationCreated = 0,
         
         /// <summary>
         /// >> AttestationRevoked
         /// An attestation has been revoked.
-        /// \[account id, claim hash\]
         /// </summary>
         AttestationRevoked = 1,
         
         /// <summary>
         /// >> AttestationRemoved
         /// An attestation has been removed.
-        /// \[account id, claim hash\]
         /// </summary>
         AttestationRemoved = 2,
         
         /// <summary>
-        /// >> DepositReclaimed
-        /// The deposit owner reclaimed a deposit by removing an attestation.
-        /// \[account id, claim hash\]
+        /// >> DepositOwnerChanged
+        /// The deposit for an attestation has changed owner.
         /// </summary>
-        DepositReclaimed = 3,
+        DepositOwnerChanged = 3,
     }
     
     /// <summary>
-    /// >> 112 - Variant[attestation.pallet.Event]
+    /// >> 116 - Variant[attestation.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -64,9 +60,9 @@ namespace Kilt.NetApi.Generated.Model.attestation.pallet
         public EnumEvent()
         {
 				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.primitive_types.H256, Kilt.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Base.BaseOpt<Kilt.NetApi.Generated.Model.runtime_common.authorization.EnumAuthorizationId>>>(Event.AttestationCreated);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.primitive_types.H256>>(Event.AttestationRevoked);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.primitive_types.H256>>(Event.AttestationRemoved);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.primitive_types.H256>>(Event.DepositReclaimed);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.primitive_types.H256, Kilt.NetApi.Generated.Model.primitive_types.H256, Kilt.NetApi.Generated.Model.attestation.authorized_by.EnumAuthorizedBy>>(Event.AttestationRevoked);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.primitive_types.H256, Kilt.NetApi.Generated.Model.primitive_types.H256, Kilt.NetApi.Generated.Model.attestation.authorized_by.EnumAuthorizedBy>>(Event.AttestationRemoved);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.primitive_types.H256, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.DepositOwnerChanged);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec
     
     
     /// <summary>
-    /// >> 616 - Composite[bounded_collections.bounded_vec.BoundedVecT48]
+    /// >> 596 - Composite[bounded_collections.bounded_vec.BoundedVecT48]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedVecT48 : BaseType

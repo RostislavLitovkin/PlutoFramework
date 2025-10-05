@@ -6,9 +6,14 @@
     <VerticalStackLayout Spacing="10">
         <nft:NftImageView x:Name="mainImage" />
 
-        <HorizontalStackLayout Spacing="10"
-                               x:Name="imagesStackLayout">
+        <ScrollView Orientation="Horizontal"
+                    HorizontalScrollBarVisibility="Never"
+                    VerticalScrollBarVisibility="Never"
+                    HorizontalOptions="Fill">
+            <HorizontalStackLayout Spacing="10"
+                                   x:Name="imagesStackLayout">
             
-        </HorizontalStackLayout>
+            </HorizontalStackLayout>
+        </ScrollView>
     </VerticalStackLayout>
 </ContentView>

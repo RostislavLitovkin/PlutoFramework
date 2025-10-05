@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.polkadot_core_primitives
     
     
     /// <summary>
-    /// >> 579 - Composite[polkadot_core_primitives.OutboundHrmpMessage]
+    /// >> 694 - Composite[polkadot_core_primitives.OutboundHrmpMessage]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OutboundHrmpMessage : BaseType

@@ -29,8 +29,7 @@ namespace PlutoFramework.Components.Sumsub
         {
             SetToDefault();
 
-            // TODO
-            //await NoDidModel.DidNavigateToNextPageAsync();
+            await NavigationModel.NavigateToKYC.Invoke();
         }
     }
 }

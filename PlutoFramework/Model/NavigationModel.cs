@@ -13,10 +13,12 @@ namespace PlutoFramework.Model
 {
     public class NavigationModel
     {
+        public static Func<Task> NavigateToKYC { get; set; } = () => Task.FromResult(0);
+        public static Func<Task> NavigateAfterAccountCreation { get; set; } = NavigateToKYC;
         public static Func<Task> NavigateToUserPageAsync { get; set; } = () => Task.FromResult(0);
         public static async Task NavigateToMnemonicsPageAsync()
         {
-            if (!AccountModel.CheckRequirements())
+            if (!RequirementsModel.CheckAccountExists())
             {
                 var noAccountPopupViewModel = DependencyService.Get<NoAccountPopupViewModel>();
 
@@ -35,13 +37,13 @@ namespace PlutoFramework.Model
             {
                 // Failed to authenticate
             }
-
         }
+
         public static async Task NavigateToBalancesPageAsync()
         {
             Console.WriteLine("NavigateToBalancesPageAsync called");
 
-            if (!AccountModel.CheckRequirements())
+            if (!RequirementsModel.CheckAccountExists())
             {
                 return;
             }
@@ -53,7 +55,7 @@ namespace PlutoFramework.Model
 
         public static async Task NavigateToQrScannerPageAsync()
         {
-            if (!AccountModel.CheckRequirements())
+            if (!RequirementsModel.CheckAccountExists())
             {
                 return;
             }

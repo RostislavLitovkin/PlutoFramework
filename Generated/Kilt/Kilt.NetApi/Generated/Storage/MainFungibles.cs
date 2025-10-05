@@ -46,7 +46,8 @@ namespace Kilt.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(Kilt.NetApi.Generated.Model.pallet_assets.types.Approval)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Fungibles", "Metadata"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location), typeof(Kilt.NetApi.Generated.Model.pallet_assets.types.AssetMetadata)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location), typeof(Kilt.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Fungibles", "NextAssetId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location)));
         }
         
         /// <summary>
@@ -171,10 +172,55 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> Metadata
         ///  Metadata of an asset.
         /// </summary>
-        public async Task<Kilt.NetApi.Generated.Model.pallet_assets.types.AssetMetadata> Metadata(Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location key, string blockhash, CancellationToken token)
+        public async Task<Kilt.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1> Metadata(Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location key, string blockhash, CancellationToken token)
         {
             string parameters = FungiblesStorage.MetadataParams(key);
-            var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.pallet_assets.types.AssetMetadata>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.pallet_assets.types.AssetMetadataT1>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> NextAssetIdParams
+        ///  The asset ID enforced for the next asset creation, if any present. Otherwise, this storage
+        ///  item has no effect.
+        /// 
+        ///  This can be useful for setting up constraints for IDs of the new assets. For example, by
+        ///  providing an initial [`NextAssetId`] and using the [`crate::AutoIncAssetId`] callback, an
+        ///  auto-increment model can be applied to all new asset IDs.
+        /// 
+        ///  The initial next asset ID can be set using the [`GenesisConfig`] or the
+        ///  [SetNextAssetId](`migration::next_asset_id::SetNextAssetId`) migration.
+        /// </summary>
+        public static string NextAssetIdParams()
+        {
+            return RequestGenerator.GetStorage("Fungibles", "NextAssetId", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> NextAssetIdDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string NextAssetIdDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> NextAssetId
+        ///  The asset ID enforced for the next asset creation, if any present. Otherwise, this storage
+        ///  item has no effect.
+        /// 
+        ///  This can be useful for setting up constraints for IDs of the new assets. For example, by
+        ///  providing an initial [`NextAssetId`] and using the [`crate::AutoIncAssetId`] callback, an
+        ///  auto-increment model can be applied to all new asset IDs.
+        /// 
+        ///  The initial next asset ID can be set using the [`GenesisConfig`] or the
+        ///  [SetNextAssetId](`migration::next_asset_id::SetNextAssetId`) migration.
+        /// </summary>
+        public async Task<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location> NextAssetId(string blockhash, CancellationToken token)
+        {
+            string parameters = FungiblesStorage.NextAssetIdParams();
+            var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location>(parameters, blockhash, token);
             return result;
         }
     }
@@ -585,6 +631,19 @@ namespace Kilt.NetApi.Generated.Storage
             byteArray.AddRange(who.Encode());
             return new Method(49, "Fungibles", 31, "block", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> transfer_all
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method TransferAll(Kilt.NetApi.Generated.Model.staging_xcm.v4.location.Location id, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress dest, Substrate.NetApi.Model.Types.Primitive.Bool keep_alive)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(id.Encode());
+            byteArray.AddRange(dest.Encode());
+            byteArray.AddRange(keep_alive.Encode());
+            return new Method(49, "Fungibles", 32, "transfer_all", byteArray.ToArray());
+        }
     }
     
     /// <summary>
@@ -803,5 +862,11 @@ namespace Kilt.NetApi.Generated.Storage
         /// Callback action resulted in error
         /// </summary>
         CallbackFailed,
+        
+        /// <summary>
+        /// >> BadAssetId
+        /// The asset ID must be equal to the [`NextAssetId`].
+        /// </summary>
+        BadAssetId,
     }
 }

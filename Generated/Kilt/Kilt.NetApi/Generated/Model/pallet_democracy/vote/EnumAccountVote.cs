@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_democracy.vote
     }
     
     /// <summary>
-    /// >> 40 - Variant[pallet_democracy.vote.AccountVote]
+    /// >> 45 - Variant[pallet_democracy.vote.AccountVote]
     /// </summary>
     public sealed class EnumAccountVote : BaseEnumRust<AccountVote>
     {

@@ -10,50 +10,55 @@
     <card:BottomPopupCard IsShown="{Binding IsVisible}"
                           Title="Sign message">
         <card:BottomPopupCard.View>
-        <AbsoluteLayout>
+            <AbsoluteLayout>
+                <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1"
+                            AbsoluteLayout.LayoutFlags="All">
 
-                <VerticalStackLayout Spacing="10" x:Name="stackLayout">
-                    <Label
+
+                    <VerticalStackLayout Spacing="10" x:Name="stackLayout">
+                        <Label
                             HorizontalOptions="Center"
                             WidthRequest="{Binding Source={x:Reference stackLayout}, Path=Width}">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span FontAttributes="Bold"
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span FontAttributes="Bold"
                                       Text="{Binding MessageDecodedString}"/>
 
-                            </FormattedString>
+                                </FormattedString>
 
-                        </Label.FormattedText>
+                            </Label.FormattedText>
 
-                    </Label>
+                        </Label>
 
-                    <card:ClickableCard 
-                                        CardPadding="0,0,0,0">
-                        <card:ClickableCard.View>
-                            <StackLayout>
-                                <Label
+                        <card:ClickableCard 
+                                        CardPadding="0,0,0,0"
+                                        HorizontalOptions="Fill">
+                            <card:ClickableCard.View>
+                                <StackLayout>
+                                    <Label
                                        VerticalTextAlignment="Center"
                                        HorizontalTextAlignment="Center"
                                        FontAttributes="Bold"
                                         HeightRequest="30"
                                        Text="Message bytes" />
 
-                                <Label
+                                    <Label
                                         Text="{Binding MessageString}"
                                         FontFamily="SourceCode" 
                                         HorizontalTextAlignment="Start"
                                         LineBreakMode="CharacterWrap"
                                         Margin="10,0,10,10"
                                         />
-                            </StackLayout>
-                        </card:ClickableCard.View>
-                    </card:ClickableCard>
+                                </StackLayout>
+                            </card:ClickableCard.View>
+                        </card:ClickableCard>
 
 
-                    <Label Text="{Binding ErrorText}"
+                        <Label Text="{Binding ErrorText}"
                        TextColor="Red"
                        IsVisible="{Binding ErrorIsVisible}" />
-                </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </ScrollView>
 
 
 
@@ -80,7 +85,7 @@
                     </Grid>
                 </AbsoluteLayout>
             </AbsoluteLayout>
-    </card:BottomPopupCard.View>
+        </card:BottomPopupCard.View>
     </card:BottomPopupCard>
 </ContentView>
 

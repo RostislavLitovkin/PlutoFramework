@@ -16,13 +16,25 @@ namespace PlutoFramework.Model.Xcavate
             var roleEnum = new EnumRole();
             roleEnum.Create(role);
 
-            var whitelisted = await client.XcavateWhitelistStorage.AccountRoles(new (accountId, roleEnum), "", token);
-
-            return whitelisted?.Value switch
+            try
             {
-                null => VerificationEnum.Pending,
-                _ => VerificationEnum.Verified,
-            };
+                var whitelisted = await client.XcavateWhitelistStorage.AccountRoles(new(accountId, roleEnum), null, token);
+
+                Console.WriteLine("Account roles without error");
+
+                return whitelisted switch
+                {
+                    null => VerificationEnum.Pending,
+                    _ => VerificationEnum.Verified,
+                };
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error checking whitelist:");
+                Console.WriteLine(ex);
+
+                return VerificationEnum.Pending;
+            }
         }
     }
 }

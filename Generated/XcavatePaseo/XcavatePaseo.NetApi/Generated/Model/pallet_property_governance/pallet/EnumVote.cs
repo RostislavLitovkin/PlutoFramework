@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
     }
     
     /// <summary>
-    /// >> 189 - Variant[pallet_property_governance.pallet.Vote]
+    /// >> 191 - Variant[pallet_property_governance.pallet.Vote]
     /// </summary>
     public sealed class EnumVote : BaseEnum<Vote>
     {

@@ -97,7 +97,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_web3_names.pallet
     }
     
     /// <summary>
-    /// >> 547 - Variant[pallet_web3_names.pallet.Error]
+    /// >> 652 - Variant[pallet_web3_names.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

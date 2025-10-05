@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.public_credentials.credentials
     
     
     /// <summary>
-    /// >> 375 - Composite[public_credentials.credentials.Credential]
+    /// >> 368 - Composite[public_credentials.credentials.Credential]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Credential : BaseType
@@ -31,11 +31,11 @@ namespace Kilt.NetApi.Generated.Model.public_credentials.credentials
         /// <summary>
         /// >> subject
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27 Subject { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24 Subject { get; set; }
         /// <summary>
         /// >> claims
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28 Claims { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25 Claims { get; set; }
         /// <summary>
         /// >> authorization
         /// </summary>
@@ -64,9 +64,9 @@ namespace Kilt.NetApi.Generated.Model.public_credentials.credentials
             var start = p;
             CtypeHash = new Kilt.NetApi.Generated.Model.primitive_types.H256();
             CtypeHash.Decode(byteArray, ref p);
-            Subject = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27();
+            Subject = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24();
             Subject.Decode(byteArray, ref p);
-            Claims = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28();
+            Claims = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25();
             Claims.Decode(byteArray, ref p);
             Authorization = new Substrate.NetApi.Model.Types.Base.BaseOpt<Kilt.NetApi.Generated.Model.runtime_common.authorization.EnumPalletAuthorize>();
             Authorization.Decode(byteArray, ref p);

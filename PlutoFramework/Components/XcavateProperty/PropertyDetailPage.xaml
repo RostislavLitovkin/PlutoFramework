@@ -71,43 +71,41 @@
                 <xcavate:XcavateCell Grid.Column="0"
                                      Grid.Row="0"
                                      Title="Listing price"
+                                     InfoCommand="{Binding NavigateToFeesCommand}"
                                      Value="{Binding ListingPrice}" />
 
                 <xcavate:XcavateCell Grid.Column="1"
                                      Grid.Row="0"
-                                     Title="Rental yield"
+                                     Title="Gross yield"
+                                     InfoCommand="{Binding NavigateToFeesCommand}"
                                      Value="{Binding Apy}" />
 
                 <xcavate:XcavateCell Grid.Column="0"
                                      Grid.Row="1"
-                                     Title="Tokens available"
+                                     Title="Tokens"
+                                     InfoCommand="{Binding NavigateToFeesCommand}"
                                      Value="{Binding TokensAvailable}" />
 
                 <xcavate:XcavateCell Grid.Column="1"
                                      Grid.Row="1"
-                                     Title="Property type"
+                                     Title="Property"
+                                     InfoCommand="{Binding NavigateToFeesCommand}"
                                      Value="{Binding Metadata.PropertyType}" />
             </Grid>
 
-            <xcavateproperty:SliderView Title="Area prices"
+            <xcavateproperty:SliderView Title="Similar property prices in area"
                                         Percentage="{Binding AreaPricesPercentage}"
                                         MinimumTitle="£200,000"
-                                        MaximumTitle="£270,000" />
+                                        MaximumTitle="£270,000"
+                                        InfoCommand="{Binding NavigateToFeesCommand}"/>
 
             <Line Stroke="#888888"
                   X2="{Binding Width, Source={RelativeSource Self}}"
                   HorizontalOptions="Fill"
                   StrokeThickness="1" />
 
-            <Label FontAttributes="Bold"
-                   HorizontalTextAlignment="Start">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="Rental income"
-                              FontAttributes="Bold" />
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
+            <xcavateproperty:PropertyTitleWithInfoView Title="Rental income pcm"
+                                                       Command="{Binding NavigateToFeesCommand}"/>
 
             <Label Text="{Binding RentalIncome}"
                    HorizontalTextAlignment="Start" />
@@ -117,10 +115,11 @@
                   HorizontalOptions="Fill"
                   StrokeThickness="1" />
 
-            <xcavateproperty:SliderView Title="Rental demand"
+            <xcavateproperty:SliderView Title="Rental demand in the area"
                                         Percentage="{Binding RentalDemandPercentage}"
                                         MinimumTitle="Low"
-                                        MaximumTitle="High" />
+                                        MaximumTitle="High"
+                                        InfoCommand="{Binding NavigateToFeesCommand}" />
 
             <xcavateproperty:OwnedPropertyTokensView IsVisible="{Binding OwnedPropertyTokensViewIsVisible}" />
 
@@ -190,12 +189,6 @@
         <xcavateproperty:RelistPropertyTokensView />
 
         <assetselect:AssetSelectView />
-
-        <account:NoAccountPopup />
-
-        <kilt:NoDidPopupView />
-
-        <sumsub:NoKYCPopupView />
 
         <card:BottomPillBackgroundView />
     </template:PageTemplate.PopupContent>

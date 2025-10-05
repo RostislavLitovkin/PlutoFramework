@@ -45,10 +45,16 @@ namespace Kilt.NetApi.Generated.Model.pallet_web3_names.pallet
         /// A name has been unbanned.
         /// </summary>
         Web3NameUnbanned = 3,
+        
+        /// <summary>
+        /// >> DepositOwnerChanged
+        /// The deposit for a web3name has changed owner.
+        /// </summary>
+        DepositOwnerChanged = 4,
     }
     
     /// <summary>
-    /// >> 121 - Variant[pallet_web3_names.pallet.Event]
+    /// >> 127 - Variant[pallet_web3_names.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -59,10 +65,11 @@ namespace Kilt.NetApi.Generated.Model.pallet_web3_names.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.pallet_web3_names.web3_name.AsciiWeb3Name>>(Event.Web3NameClaimed);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.pallet_web3_names.web3_name.AsciiWeb3Name>>(Event.Web3NameReleased);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_web3_names.web3_name.AsciiWeb3Name>(Event.Web3NameBanned);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_web3_names.web3_name.AsciiWeb3Name>(Event.Web3NameUnbanned);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.runtime_common.web3_names.Web3Name>>(Event.Web3NameClaimed);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.runtime_common.web3_names.Web3Name>>(Event.Web3NameReleased);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.runtime_common.web3_names.Web3Name>(Event.Web3NameBanned);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.runtime_common.web3_names.Web3Name>(Event.Web3NameUnbanned);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.runtime_common.web3_names.Web3Name, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.DepositOwnerChanged);
         }
     }
 }

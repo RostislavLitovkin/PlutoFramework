@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.ctype.ctype_entry
     
     
     /// <summary>
-    /// >> 521 - Composite[ctype.ctype_entry.CtypeEntry]
+    /// >> 627 - Composite[ctype.ctype_entry.CtypeEntry]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CtypeEntry : BaseType

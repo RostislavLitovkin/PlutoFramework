@@ -47,8 +47,8 @@ namespace PlutoFramework.Model
                 await PlutonicationWalletClient.InitializeAsync(
                     ac: viewModel.AccessCredentials,
                     pubkey: Model.KeysModel.GetSubstrateKey(),
-                    signPayload: Model.PlutonicationModel.ReceivePayload,
-                    signRaw: Model.PlutonicationModel.ReceiveRaw,
+                    signPayload: Model.PlutonicationModel.ReceivePayloadAsync,
+                    signRaw: Model.PlutonicationModel.ReceiveRawAsync,
                     onConnected: (object sender, EventArgs args) =>
                     {
                         viewModel.Connecting = false;
@@ -113,10 +113,8 @@ namespace PlutoFramework.Model
                 messagePopup.IsVisible = true;
             }
         }
-        public static async Task ReceivePayload(UnCheckedExtrinsic unCheckedExtrinsic, Substrate.NetApi.Model.Rpc.RuntimeVersion runtime)
+        public static async Task ReceivePayloadAsync(UnCheckedExtrinsic unCheckedExtrinsic, Substrate.NetApi.Model.Rpc.RuntimeVersion runtime)
         {
-            Console.WriteLine("Payload received");
-
             try
             {
                 Console.WriteLine("Payload received (in try catch)");
@@ -213,7 +211,7 @@ namespace PlutoFramework.Model
             }
         }
 
-        public static async Task ReceiveRaw(RawMessage message)
+        public static async Task ReceiveRawAsync(RawMessage message)
         {
             try
             {

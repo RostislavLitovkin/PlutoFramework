@@ -208,7 +208,17 @@ namespace Kilt.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 Deposit()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00C0AFD6913600000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> UniqueLinkingEnabled
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.Bool UniqueLinkingEnabled()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.Bool();
+            result.Create("0x00");
             return result;
         }
     }
@@ -252,5 +262,12 @@ namespace Kilt.NetApi.Generated.Storage
         /// NOTE: this will only be returned if the storage has inconsistencies.
         /// </summary>
         Migration,
+        
+        /// <summary>
+        /// >> LinkExisting
+        /// The deployed pallet supports a single account <-> link, which has
+        /// already been previously created for the provided DID.
+        /// </summary>
+        LinkExisting,
     }
 }

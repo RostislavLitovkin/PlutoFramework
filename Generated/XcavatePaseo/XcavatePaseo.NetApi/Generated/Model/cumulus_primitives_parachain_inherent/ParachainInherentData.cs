@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inher
     
     
     /// <summary>
-    /// >> 250 - Composite[cumulus_primitives_parachain_inherent.ParachainInherentData]
+    /// >> 253 - Composite[cumulus_primitives_parachain_inherent.ParachainInherentData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ParachainInherentData : BaseType

@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
     
     
     /// <summary>
-    /// >> 562 - Composite[pallet_property_management.pallet.LettingAgentInfo]
+    /// >> 577 - Composite[pallet_property_management.pallet.LettingAgentInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class LettingAgentInfo : BaseType
@@ -31,7 +31,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         /// <summary>
         /// >> locations
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35 Locations { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40 Locations { get; set; }
         /// <summary>
         /// >> assigned_properties
         /// </summary>
@@ -43,7 +43,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         /// <summary>
         /// >> active_strikes
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT6 ActiveStrikes { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT7 ActiveStrikes { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -69,13 +69,13 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
             var start = p;
             Region = new Substrate.NetApi.Model.Types.Primitive.U16();
             Region.Decode(byteArray, ref p);
-            Locations = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35();
+            Locations = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40();
             Locations.Decode(byteArray, ref p);
             AssignedProperties = new Substrate.NetApi.Model.Types.Primitive.U32();
             AssignedProperties.Decode(byteArray, ref p);
             Deposit = new Substrate.NetApi.Model.Types.Primitive.U128();
             Deposit.Decode(byteArray, ref p);
-            ActiveStrikes = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT6();
+            ActiveStrikes = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT7();
             ActiveStrikes.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

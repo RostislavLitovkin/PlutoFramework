@@ -40,7 +40,7 @@ namespace Kilt.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Treasury", "Proposals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Kilt.NetApi.Generated.Model.pallet_treasury.Proposal)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Treasury", "Deactivated"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Treasury", "Approvals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT36)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Treasury", "Approvals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT43)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Treasury", "SpendCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Treasury", "Spends"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Kilt.NetApi.Generated.Model.pallet_treasury.SpendStatus)));
@@ -157,10 +157,10 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> Approvals
         ///  Proposal indices that have been approved but not yet awarded.
         /// </summary>
-        public async Task<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT36> Approvals(string blockhash, CancellationToken token)
+        public async Task<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT43> Approvals(string blockhash, CancellationToken token)
         {
             string parameters = TreasuryStorage.ApprovalsParams();
-            var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT36>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT43>(parameters, blockhash, token);
             return result;
         }
         
@@ -230,40 +230,6 @@ namespace Kilt.NetApi.Generated.Storage
     /// </summary>
     public sealed class TreasuryCalls
     {
-        
-        /// <summary>
-        /// >> propose_spend
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method ProposeSpend(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> value, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress beneficiary)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(value.Encode());
-            byteArray.AddRange(beneficiary.Encode());
-            return new Method(35, "Treasury", 0, "propose_spend", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> reject_proposal
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method RejectProposal(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> proposal_id)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(proposal_id.Encode());
-            return new Method(35, "Treasury", 1, "reject_proposal", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> approve_proposal
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method ApproveProposal(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> proposal_id)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(proposal_id.Encode());
-            return new Method(35, "Treasury", 2, "approve_proposal", byteArray.ToArray());
-        }
         
         /// <summary>
         /// >> spend_local
@@ -343,40 +309,6 @@ namespace Kilt.NetApi.Generated.Storage
     {
         
         /// <summary>
-        /// >> ProposalBond
-        ///  Fraction of a proposal's value that should be bonded in order to place the proposal.
-        ///  An accepted proposal gets these back. A rejected proposal does not.
-        /// </summary>
-        public Kilt.NetApi.Generated.Model.sp_arithmetic.per_things.Permill ProposalBond()
-        {
-            var result = new Kilt.NetApi.Generated.Model.sp_arithmetic.per_things.Permill();
-            result.Create("0x50C30000");
-            return result;
-        }
-        
-        /// <summary>
-        /// >> ProposalBondMinimum
-        ///  Minimum amount of funds that should be placed in a deposit for making a proposal.
-        /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U128 ProposalBondMinimum()
-        {
-            var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x000082DFE40D47000000000000000000");
-            return result;
-        }
-        
-        /// <summary>
-        /// >> ProposalBondMaximum
-        ///  Maximum amount of funds that should be placed in a deposit for making a proposal.
-        /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128> ProposalBondMaximum()
-        {
-            var result = new Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128>();
-            result.Create("0x00");
-            return result;
-        }
-        
-        /// <summary>
         /// >> SpendPeriod
         ///  Period between successive spends.
         /// </summary>
@@ -394,7 +326,7 @@ namespace Kilt.NetApi.Generated.Storage
         public Kilt.NetApi.Generated.Model.sp_arithmetic.per_things.Permill Burn()
         {
             var result = new Kilt.NetApi.Generated.Model.sp_arithmetic.per_things.Permill();
-            result.Create("0x00000000");
+            result.Create("0x40420F00");
             return result;
         }
         
@@ -439,12 +371,6 @@ namespace Kilt.NetApi.Generated.Storage
     /// </summary>
     public enum TreasuryErrors
     {
-        
-        /// <summary>
-        /// >> InsufficientProposersBalance
-        /// Proposer's balance is too low.
-        /// </summary>
-        InsufficientProposersBalance,
         
         /// <summary>
         /// >> InvalidIndex

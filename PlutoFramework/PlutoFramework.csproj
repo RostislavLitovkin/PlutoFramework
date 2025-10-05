@@ -79,15 +79,19 @@
     <PackageReference Include="ZXing.Net.Maui.Controls" Version="0.4.0" />
     <PackageReference Include="ZXing.Net.Maui" Version="0.4.0" />
     <PackageReference Include="Markdig" Version="0.41.3" />
-    <PackageReference Include="System.Collections" Version="4.3.0" />
-    <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
-    <PackageReference Include="System.IO.FileSystem.Primitives" Version="4.3.0" />
-    <PackageReference Include="Microsoft.Win32.Primitives" Version="4.3.0" />
-    <PackageReference Include="System.Net.Primitives" Version="4.3.1" />
     <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="9.0.81" />
     <PackageReference Include="Microsoft.Maui.Controls" Version="9.0.81" />
     <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="9.0.81" />
 
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BouncyCastle" Version="1.8.9">
+      <Aliases>bc18</Aliases>
+    </PackageReference>
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.6.0">
+      <Aliases>bc26</Aliases>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
@@ -941,6 +945,18 @@
     <Compile Update="Components\Xcavate\PageBottomBarView.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\QuestionnaireFailedPage.xaml.cs">
+      <DependentUpon>QuestionnaireFailedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\QuestionnairePage.xaml.cs">
+      <DependentUpon>QuestionnairePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\QuestionnaireWarningPage.xaml.cs">
+      <DependentUpon>QuestionnaireWarningPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Components\Xcavate\QuestionnairePassPage.xaml.cs">
+      <DependentUpon>QuestionnairePassPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Components\Xcavate\RiskWarningView.xaml.cs">
       <SubType>Code</SubType>
@@ -2167,6 +2183,33 @@
     <MauiXaml Update="Components\Hyperlink\Link.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\Keys\CreateNewKeyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Keys\DidKeyDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Keys\EncryptionX25519KeyDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Keys\ImportEncryptionX25519KeyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Keys\KeyListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Keys\KeyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Keys\NewKeyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Keys\PolkadotJsonKeyDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Keys\Sr25519KeyDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\Kilt\CreateNewDidPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
@@ -2207,6 +2250,9 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Menu\QuickActionItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Menu\UserProfilePictureView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Menu\UserView.xaml">
@@ -2474,7 +2520,13 @@
     <MauiXaml Update="Components\Xcavate\HelpPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\ImportantLinksPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\Xcavate\ModifyCompanyPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\NotWhitelistedPopupView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Xcavate\PageBottomBarButtonView.xaml">
@@ -2483,7 +2535,16 @@
     <MauiXaml Update="Components\Xcavate\PageBottomBarView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
-    <MauiXaml Update="Components\Xcavate\QuestionairePage.xaml">
+    <MauiXaml Update="Components\Xcavate\QuestionnaireFailedPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\QuestionnairePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\QuestionnairePassPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\QuestionnaireWarningPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Xcavate\RiskWarningView.xaml">
@@ -2493,6 +2554,9 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Xcavate\UserProfileHeaderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Xcavate\UserProfileNotCreatedPopupView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Xcavate\UserTypeBadgeView.xaml">

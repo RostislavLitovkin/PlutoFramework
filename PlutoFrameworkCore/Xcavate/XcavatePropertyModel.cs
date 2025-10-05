@@ -11,7 +11,7 @@
         public static double GetRentalDemand()
         {
             // TODO
-            return 0.3;
+            return 0.8;
         }
 
         public static string GetAPY(decimal rentalIncome, decimal price)

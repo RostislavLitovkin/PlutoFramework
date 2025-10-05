@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.did.did_details
     
     
     /// <summary>
-    /// >> 348 - Composite[did.did_details.DidCreationDetails]
+    /// >> 342 - Composite[did.did_details.DidCreationDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DidCreationDetails : BaseType

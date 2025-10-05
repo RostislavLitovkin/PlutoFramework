@@ -28,7 +28,7 @@ namespace Kilt.NetApi.Generated.Model.parachain_staking.pallet
     }
     
     /// <summary>
-    /// >> 257 - Variant[parachain_staking.pallet.FreezeReason]
+    /// >> 284 - Variant[parachain_staking.pallet.FreezeReason]
     /// </summary>
     public sealed class EnumFreezeReason : BaseEnum<FreezeReason>
     {

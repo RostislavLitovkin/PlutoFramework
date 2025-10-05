@@ -30,6 +30,7 @@ using PlutoFramework.Components.XcavateProperty;
 using PlutoFramework.Components.Xcm;
 using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
+using PlutoFrameworkCore;
 using Xe.AcrylicView;
 using ZXing.Net.Maui.Controls;
 
@@ -83,6 +84,10 @@ namespace PlutoFramework
             });
 
             AssetsModel.DatabaseSaver = new BalancesDatabaseSaver();
+
+            PlutoConfigurationModel.SecureStorage = new PlutoSecureStorage();
+            PlutoConfigurationModel.GenerateNewAccountAsync = KeysModel.GenerateNewAccountAsync;
+            PlutoConfigurationModel.AfterAccountImportAsync = () => Task.FromResult(0);
 
             CustomizeWebViewHandler();
 
@@ -172,6 +177,10 @@ namespace PlutoFramework
 
             DependencyService.Register<XcavateNavigationBarViewModel>();
 
+            DependencyService.Register<NotWhitelistedPopupViewModel>();
+
+            DependencyService.Register<UserProfileNotCreatedPopupViewModel>();
+
             return builder;
         }
 
@@ -187,6 +196,4 @@ namespace PlutoFramework
 #endif
         }
     }
-
-
 }

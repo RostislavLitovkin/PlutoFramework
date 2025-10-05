@@ -893,7 +893,7 @@ namespace Kilt.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U64 StakeDuration()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U64();
-            result.Create("0xE0C4000000000000");
+            result.Create("0x0100000000000000");
             return result;
         }
         
@@ -929,7 +929,7 @@ namespace Kilt.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 MinRequiredCollators()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x04000000");
+            result.Create("0x00000000");
             return result;
         }
         

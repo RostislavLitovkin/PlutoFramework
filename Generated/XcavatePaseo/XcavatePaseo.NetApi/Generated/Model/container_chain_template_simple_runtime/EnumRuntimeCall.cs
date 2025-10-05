@@ -178,7 +178,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
     }
     
     /// <summary>
-    /// >> 262 - Variant[container_chain_template_simple_runtime.RuntimeCall]
+    /// >> 265 - Variant[container_chain_template_simple_runtime.RuntimeCall]
     /// </summary>
     public sealed class EnumRuntimeCall : BaseEnumRust<RuntimeCall>
     {

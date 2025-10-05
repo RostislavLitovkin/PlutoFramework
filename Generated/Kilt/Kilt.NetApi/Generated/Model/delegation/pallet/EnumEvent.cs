@@ -66,15 +66,14 @@ namespace Kilt.NetApi.Generated.Model.delegation.pallet
         DelegationRemoved = 5,
         
         /// <summary>
-        /// >> DepositReclaimed
-        /// The deposit owner reclaimed a deposit by removing a delegation
-        /// subtree. \[revoker ID, delegation node ID\]
+        /// >> DepositOwnerChanged
+        /// The deposit for a delegation has changed owner.
         /// </summary>
-        DepositReclaimed = 6,
+        DepositOwnerChanged = 6,
     }
     
     /// <summary>
-    /// >> 115 - Variant[delegation.pallet.Event]
+    /// >> 120 - Variant[delegation.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -91,7 +90,7 @@ namespace Kilt.NetApi.Generated.Model.delegation.pallet
 				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.primitive_types.H256, Kilt.NetApi.Generated.Model.primitive_types.H256, Kilt.NetApi.Generated.Model.primitive_types.H256, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.delegation.delegation_hierarchy.Permissions>>(Event.DelegationCreated);
 				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.primitive_types.H256>>(Event.DelegationRevoked);
 				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.primitive_types.H256>>(Event.DelegationRemoved);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.primitive_types.H256>>(Event.DepositReclaimed);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.primitive_types.H256, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.DepositOwnerChanged);
         }
     }
 }

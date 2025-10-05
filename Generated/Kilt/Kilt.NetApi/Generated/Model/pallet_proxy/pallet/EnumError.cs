@@ -72,7 +72,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_proxy.pallet
     }
     
     /// <summary>
-    /// >> 485 - Variant[pallet_proxy.pallet.Error]
+    /// >> 587 - Variant[pallet_proxy.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

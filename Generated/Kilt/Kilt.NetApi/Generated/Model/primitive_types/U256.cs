@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.primitive_types
     
     
     /// <summary>
-    /// >> 138 - Composite[primitive_types.U256]
+    /// >> 143 - Composite[primitive_types.U256]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class U256 : BaseType

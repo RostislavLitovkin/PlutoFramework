@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 305 - Composite[pallet_nfts.types.ItemTip]
+    /// >> 308 - Composite[pallet_nfts.types.ItemTip]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ItemTip : BaseType

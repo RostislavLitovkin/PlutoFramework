@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                       xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+                       xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+                       xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+                       xmlns:mnemonics="clr-namespace:PlutoFramework.Components.Mnemonics"
+                       xmlns:address="clr-namespace:PlutoFramework.Components.AddressView"
+                       x:Class="PlutoFramework.Components.Keys.Sr25519KeyDetailPage"
+                       Title="Mnemonics">
+
+    <template:PageTemplate.MainContent>
+        <VerticalStackLayout HorizontalOptions="Center"
+                             Padding="20, 10, 20, 100"
+                             Spacing="15">
+
+            <address:AddressView 
+                                Title="Address"
+                                Address="{Binding PublicKey}"
+                                QrAddress="{Binding QrAddress}" />
+
+            <mnemonics:MnemonicsView Title="Mnemonics:"
+                                     Mnemonics="{Binding Mnemonics}" />
+
+            <buttons:ElevatedButton ButtonState="Enabled"
+                                    Text="Export json"
+                                    Command="{Binding ExportJsonCommand}"
+                                    x:Name="exportJsonButton" />
+
+            <buttons:ElevatedButton ButtonState="Enabled"
+                                    Text="What are mnemonics?"
+                                    Command="{Binding GoToMnemonicsExplanationCommand}" />
+
+            <buttons:ElevatedButton ButtonState="Warning"
+                                    Text="Delete"
+                                    Command="{Binding DeleteKeyCommand}" />
+        </VerticalStackLayout>
+    </template:PageTemplate.MainContent>
+
+    <template:PageTemplate.PopupContent>
+        <address:AddressQrCodeView />
+    </template:PageTemplate.PopupContent>
+</template:PageTemplate>

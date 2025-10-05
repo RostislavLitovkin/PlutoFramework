@@ -42,6 +42,9 @@
             </card:Card>
         </ContentView>
 
+        <Label Text="The entered mnemonic phrase was not correct." 
+               IsVisible="{Binding IncorrectMnemonicsEntered}"/>
+
         <buttons:ElevatedButton Text="Continue"
                                 Command="{Binding ContinueToNextPageCommand}" />
     </VerticalStackLayout>

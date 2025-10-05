@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_migrations
     }
     
     /// <summary>
-    /// >> 279 - Variant[pallet_migrations.HistoricCleanupSelector]
+    /// >> 282 - Variant[pallet_migrations.HistoricCleanupSelector]
     /// </summary>
     public sealed class EnumHistoricCleanupSelector : BaseEnumRust<HistoricCleanupSelector>
     {

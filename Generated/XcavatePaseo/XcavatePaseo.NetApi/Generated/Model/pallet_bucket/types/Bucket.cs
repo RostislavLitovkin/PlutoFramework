@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
     
     
     /// <summary>
-    /// >> 593 - Composite[pallet_bucket.types.Bucket]
+    /// >> 608 - Composite[pallet_bucket.types.Bucket]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Bucket : BaseType
@@ -27,7 +27,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
         /// <summary>
         /// >> metadata
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.MetadataMock Metadata { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.BucketMetadata Metadata { get; set; }
         /// <summary>
         /// >> status
         /// </summary>
@@ -57,7 +57,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Metadata = new XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.MetadataMock();
+            Metadata = new XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.BucketMetadata();
             Metadata.Decode(byteArray, ref p);
             Status = new XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.EnumStatus();
             Status.Decode(byteArray, ref p);

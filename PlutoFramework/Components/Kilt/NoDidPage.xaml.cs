@@ -4,10 +4,10 @@ namespace PlutoFramework.Components.Kilt;
 
 public partial class NoDidPage : PageTemplate
 {
-	public NoDidPage(NoDidViewModel viewModel)
+	public NoDidPage()
 	{
         InitializeComponent();
 
-        BindingContext = viewModel;
+        BindingContext = new NoDidViewModel();
 	}
 }

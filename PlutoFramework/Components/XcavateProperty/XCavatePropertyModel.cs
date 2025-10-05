@@ -90,7 +90,7 @@ namespace PlutoFramework.Components.XcavateProperty
             }
             if (nft.NftBase is not INftXcavateMetadata || ((INftXcavateMetadata)nft.NftBase).XcavateMetadata is null || nft.NftBase is not INftXcavateNftMarketplace)
             {
-                var toast = Toast.Make("Could not navigate.");
+                var toast = Toast.Make($"Could not navigate to property id: {nft.Key?.Item3.ToString() ?? "Unknown"}");
                 await toast.Show();
 
                 return;
@@ -102,7 +102,7 @@ namespace PlutoFramework.Components.XcavateProperty
                 Favourite = nft.Favourite,
                 NftBase = nft.NftBase,
                 Metadata = ((INftXcavateMetadata)nft.NftBase).XcavateMetadata,
-                NftMarketplaceDetails = ((INftXcavateNftMarketplace)nft.NftBase).NftMarketplaceDetails,
+                ListingDetails = ((INftXcavateOngoingObjectListing)nft.NftBase).OngoingObjectListingDetails,
                 Region = nft.Region,
                 ListingHasExpired = nft.ListingHasExpired,
             };
