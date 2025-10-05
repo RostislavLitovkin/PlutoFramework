@@ -36,7 +36,7 @@ namespace PlutoFrameworkTests
                 var account = MnemonicsModel.GetAccountFromMnemonics("//Alice");
                 var did = MnemonicsModel.GetAccountFromMnemonics("//AliceDid");
 
-                var createDidTx = DidModel.Create(account, did);
+                var createDidTx = DidModel.Create(account.Value, did);
 
                 await client.SubmitExtrinsicAsync(createDidTx, account, (s, x) => { });
 
@@ -61,7 +61,7 @@ namespace PlutoFrameworkTests
 
             Console.WriteLine($"Encryption key: {Utils.Bytes2HexString(encryptionKey.PublicKey).ToLower()}");
 
-            var createDidTx = DidModel.Create(account, did, encryptionKey.PublicKey);
+            var createDidTx = DidModel.Create("4sQR3dfZrrxobV69jQmLvArxyUto5eJtmyc2f9xs1Hc4quu3", did, encryptionKey.PublicKey);
 
             var result = await DidSponsoringModel.SponsorDidTxAsync(createDidTx, CancellationToken.None);
 

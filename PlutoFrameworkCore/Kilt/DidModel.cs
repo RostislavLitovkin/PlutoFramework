@@ -51,12 +51,15 @@ namespace PlutoFramework.Model
 
         public static string ToDidAddress(this Account account) => $"did:kilt:{Utils.GetAddressFrom(Utils.GetPublicKeyFrom(account.Value), 38)}";
 
-        public static Method Create(Account account, Account did)
+        public static Method Create(string submitterAddress, Account did)
         {
+            var submitter = new AccountId32();
+            submitter.Create(Utils.GetPublicKeyFrom(submitterAddress));
+
             var details = new DidCreationDetails
             {
                 Did = did.ToAccountId32(),
-                Submitter = account.ToAccountId32(),
+                Submitter = submitter,
 
                 NewKeyAgreementKeys = new BoundedBTreeSetT1
                 {
@@ -87,7 +90,7 @@ namespace PlutoFramework.Model
             return Kilt.NetApi.Generated.Storage.DidCalls.Create(details, signature);
         }
 
-        public static Method Create(Account account, Account did, byte[] x25519PublicKey)
+        public static Method Create(string submitterAddress, Account did, byte[] x25519PublicKey)
         {
             var encryptionKey = new EnumDidEncryptionKey();
             encryptionKey.Create(DidEncryptionKey.X25519, new Arr32U8
@@ -95,10 +98,13 @@ namespace PlutoFramework.Model
                 Value = x25519PublicKey.Select(b => new U8(b)).ToArray()
             });
 
+            var submitter = new AccountId32();
+            submitter.Create(Utils.GetPublicKeyFrom(submitterAddress));
+
             var details = new DidCreationDetails
             {
                 Did = did.ToAccountId32(),
-                Submitter = account.ToAccountId32(),
+                Submitter = submitter,
 
                 NewKeyAgreementKeys = new BoundedBTreeSetT1
                 {

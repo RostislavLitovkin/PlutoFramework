@@ -19,6 +19,8 @@ namespace PlutoFrameworkCore
         {
             using var httpClient = new HttpClient();
 
+            Console.WriteLine($"Tx hex: {Utils.Bytes2HexString(method.Encode()).ToLower()}");
+
             var requestBody = new RequestBody
             {
                 TxHex = Utils.Bytes2HexString(method.Encode()).ToLower(),
