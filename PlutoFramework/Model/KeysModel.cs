@@ -117,18 +117,18 @@ namespace PlutoFramework.Model
             Account account = MnemonicsModel.GetAccountFromMnemonics(mnemonics);
 
             Preferences.Set(
-                PreferencesModel.PUBLIC_KEY,
+                PreferencesModel.PUBLIC_KEY + "kilt",
                 account.ToDidAddress()
             );
 
             await SecureStorage.Default.SetAsync(
-                 PreferencesModel.MNEMONICS,
+                 PreferencesModel.MNEMONICS + "kilt",
                  mnemonics
             );
 
-            Preferences.Set(PreferencesModel.PRIVATE_KEY_EXPAND_MODE, (int)DEFAULT_EXPAND_MODE);
+            Preferences.Set(PreferencesModel.PRIVATE_KEY_EXPAND_MODE + "kilt", (int)DEFAULT_EXPAND_MODE);
 
-            Preferences.Set(PreferencesModel.ACCOUNT_TYPE, AccountType.Mnemonic.ToString());
+            Preferences.Set(PreferencesModel.ACCOUNT_TYPE + "kilt", AccountType.Mnemonic.ToString());
 
             // Just get and use the same main password without asking the user again
             var password = await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD);
