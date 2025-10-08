@@ -8,6 +8,7 @@
 
 
   <ItemGroup>
+      <PackageReference Include="Plugin.Firebase.CloudMessaging" Version="3.1.2" />
       <PackageReference Include="Substrate.NET.API" Version="0.9.24-rc6" />
       <PackageReference Include="Uniquery" Version="1.0.1" />
       <PackageReference Include="Plutonication" Version="2.5.0" />
