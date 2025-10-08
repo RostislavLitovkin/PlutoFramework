@@ -4,6 +4,7 @@
              xmlns:page="clr-namespace:PlutoFramework.Templates.PageTemplate"
                    xmlns:card="clr-namespace:PlutoFramework.Components.Card"
                    xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+                   xmlns:keys="clr-namespace:PlutoFramework.Components.Keys"
              x:Class="PlutoFramework.Components.Keys.ImportEncryptionX25519KeyPage"
              Title="Import Encryption X25519 key">
     <page:PageTemplate.MainContent>
@@ -47,6 +48,13 @@
 
             <buttons:ElevatedButton Text="Continue"
                                     Command="{Binding ContinueCommand}" />
+
+            <buttons:BasicGrayButton Text="Forgot key"
+                                     Command="{Binding ForgotKeyCommand}"/>
         </VerticalStackLayout>
     </page:PageTemplate.MainContent>
+
+    <page:PageTemplate.PopupContent>
+        <keys:CanNotRecoverKeyPopupView />
+    </page:PageTemplate.PopupContent>
 </page:PageTemplate>

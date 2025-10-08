@@ -1,7 +1,9 @@
 ﻿
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Components.Keys;
 using PlutoFramework.Model;
+using PlutoFrameworkCore;
 
 namespace PlutoFramework.Components.Kilt
 {
@@ -31,6 +33,23 @@ namespace PlutoFramework.Components.Kilt
             {
                 IncorrectMnemonicsEntered = true;
             }
+        }
+
+        [RelayCommand]
+        public void ForgotKey()
+        {
+            var popupViewModel = DependencyService.Get<CanNotRecoverKeyPopupViewModel>();
+
+            popupViewModel.ProceedFunc = GenerateNewDidAsync;
+
+            popupViewModel.IsVisible = true;
+        }
+
+        public async Task GenerateNewDidAsync()
+        {
+            await Model.KeysModel.GenerateNewDidAsync();
+
+            await Navigation.Invoke();
         }
     }
 }

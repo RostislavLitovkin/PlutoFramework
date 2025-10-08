@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PlutoFrameworkCore;
 
 namespace PlutoFramework.Components.Keys
 {
@@ -35,6 +36,23 @@ namespace PlutoFramework.Components.Keys
             {
                 IncorrectSecretKeyEntered = true;
             }
+        }
+
+        [RelayCommand]
+        public void ForgotKey()
+        {
+            var popupViewModel = DependencyService.Get<CanNotRecoverKeyPopupViewModel>();
+
+            popupViewModel.ProceedFunc = GenerateNewKeyAsync;
+
+            popupViewModel.IsVisible = true;
+        }
+
+        public async Task GenerateNewKeyAsync()
+        {
+            await Model.KeysModel.GenerateNewEncryptionX25519KeyAsync();
+            
+            await Navigation.Invoke();
         }
     }
 }
