@@ -15,7 +15,7 @@ namespace PlutoFramework.Model
 
         public static string[] GenerateMnemonicsArray()
         {
-            return MnemonicFromEntropy(new byte[16].Populate(), BIP39Wordlist.English); ;
+            return MnemonicFromEntropy(new byte[16].Populate(), BIP39Wordlist.English);
         }
 
         public static string GenerateMnemonics()

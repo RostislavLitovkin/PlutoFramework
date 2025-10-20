@@ -33,7 +33,7 @@ namespace PlutoFrameworkTests
         {
             var fee = await FeeModel.GetNativeTransferFeeAsync(client);
 
-            Assert.Greater(fee.Amount, 0);
+            Assert.That(fee.Amount > 0);
         }
     }
 }

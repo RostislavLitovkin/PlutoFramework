@@ -44,7 +44,7 @@ namespace PlutoFrameworkTests
 
             Console.WriteLine("Free: " + accountInfo.Data.Free.Value);
 
-            Assert.Greater(accountInfo.Data.Free.Value, 0);
+            Assert.That(accountInfo.Data.Free.Value > 0);
 
             var transfer = TransferModel.NativeTransfer(client, substrateAddress, 10000000000);
 
