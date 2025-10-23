@@ -1,69 +1,51 @@
-﻿using Plugin.Firebase.CloudMessaging;
-using PlutoFrameworkCore.PushNotificationServices.Api.ApiEndpoints;
+﻿using PlutoFrameworkCore.PushNotificationServices.Api.ApiEndpoints;
 using PlutoFrameworkCore.PushNotificationServices.Core;
+using PlutoFrameworkCore.PushNotificationServices.Core.Interfaces;
+using PlutoFrameworkCore.PushNotificationServices.Core.Misc;
 
 namespace PlutoFrameworkCore.PushNotificationServices.Api;
 
-public static class ApiClient
+public class ApiClient (Platform platform)
 {
-    #if ANDROID
-    private static readonly string? Platform = "android";
-    #elif IOS
-    private static readonly string? Platform = "ios";
-    #else
-    private static readonly string? Platform = null;
-    #endif
-    
-    private static readonly HttpClient SharedClient  = new () {
+    private static readonly HttpClient SharedClient = new () {
         BaseAddress=new Uri(Constants.PushNotifications.API_URL)
     };
 
-    public static async Task RegisterDeviceAsync()
+    public async Task RegisterDeviceAsync(string deviceUUID, IAttestationService attestationService)
     {
-        if (Platform == null) return;
-        
-        var deviceUUID = ""; // TODO
+        if (platform == Platform.Other) return;
 
         var nonce = await NonceEndpoint.GetNonceAsync(SharedClient, new NonceRetrievalData {
             DeviceUUID = deviceUUID
         });
 
-        var attestation = ""; // TODO
+        var attestation = await new AttestationTokenService(attestationService).GetTokenAsync(nonce);
 
         var tokenPair = await AuthTokenPairEndpoint.GetTokenPairAsync(SharedClient, new DeviceRegistrationData {
             DeviceUUID = deviceUUID,
             Attestation = attestation,
-            Platform = Platform
+            Platform = platform.ToStringValue()
         });
 
-        // TODO: save token pair to secure storage
+        await SecureStorageManager.Storage.SaveAuthTokenPairAsync(tokenPair);
     }
 
-    public static async Task RefreshAccessTokenAsync()
+    public async Task RefreshAccessTokenAsync(TokenPair tokenPair)
     {
-        if (Platform == null) return;
+        if (platform == Platform.Other) return;
         
-        TokenPair tokenPair = new ()
-        {
-            Access = "", Refresh = ""
-        }; // TODO: retrieve keys from storage
+        var newTokenPair = await AuthTokenPairEndpoint.RefreshAccessTokenAsync(SharedClient, tokenPair);
         
-        await AuthTokenPairEndpoint.RefreshAccessTokenAsync(SharedClient, tokenPair);
-        
-        // TODO: save token pair to secure storage
+        await SecureStorageManager.Storage.SaveAuthTokenPairAsync(newTokenPair);
     }
 
-    public static async Task UpdateFCMTokenAsync()
+    public async Task UpdateFCMTokenAsync(string newFCMToken)
     {
-        if (Platform == null) return;
-        
-        var currentToken = await FCMTokenService.GetTokenAsync();
-
-        if (currentToken == null) throw new FCMException("Couldn't retrieve current FCM token");
+        if (platform == Platform.Other) return;
         
         await FCMTokenEndpoint.UpdateTokenAsync(SharedClient, new FCMTokenUpdateData
         {
-            FCMToken = currentToken
+            FCMToken = newFCMToken
         });
     }
 }

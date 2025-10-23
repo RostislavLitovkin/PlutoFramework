@@ -4,7 +4,7 @@ namespace PlutoFrameworkCore.PushNotificationServices.Platforms.iOS;
 
 public class AppAttestService : IAttestationService
 {
-    public Task GetAttestationTokenAsync()
+    public Task<string> GetAttestationTokenAsync(string nonce)
     {
         throw new NotImplementedException(); // TODO
     }

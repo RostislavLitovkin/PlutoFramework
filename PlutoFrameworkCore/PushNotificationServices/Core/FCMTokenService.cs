@@ -9,7 +9,9 @@ public static class FCMTokenService
         try
         {
             var token = await CrossFirebaseCloudMessaging.Current.GetTokenAsync();
-            // Console.WriteLine($"FCM Token: {token}");
+            
+            Console.WriteLine($"FCM Token: {token}");
+            
             return token;
         }
         catch (Exception ex)
