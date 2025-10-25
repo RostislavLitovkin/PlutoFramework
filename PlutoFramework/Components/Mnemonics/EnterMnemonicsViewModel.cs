@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Components.Keys;
 using PlutoFramework.Model;
-using PlutoFramework.Model.Sumsub;
 using PlutoFrameworkCore;
 
 namespace PlutoFramework.Components.Mnemonics
@@ -54,6 +54,25 @@ namespace PlutoFramework.Components.Mnemonics
         public async Task ImportJsonAsync()
         {
             await KeysModel.ImportJsonKeyAsync();
+
+            await Navigation.Invoke();
+        }
+
+        [RelayCommand]
+        public void ForgotKey()
+        {
+            var popupViewModel = DependencyService.Get<CanNotRecoverKeyPopupViewModel>();
+
+            popupViewModel.ProceedFunc = GenerateNewAccountAsync;
+
+            popupViewModel.IsVisible = true;
+        }
+        
+        public async Task GenerateNewAccountAsync()
+        {
+            await Model.KeysModel.GenerateNewAccountAsync();
+
+            await PlutoConfigurationModel.AfterAccountImportAsync();
 
             await Navigation.Invoke();
         }

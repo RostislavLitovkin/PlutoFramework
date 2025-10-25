@@ -6,6 +6,7 @@
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        xmlns:card="clr-namespace:PlutoFramework.Components.Card"
                        xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+                       xmlns:keys="clr-namespace:PlutoFramework.Components.Keys"
                        x:Class="PlutoFramework.Components.Mnemonics.EnterMnemonicsPage"
                        Title="Enter mnemonics">
     <template:PageTemplate.BindingContext>
@@ -96,6 +97,13 @@
             <buttons:ElevatedButton ButtonState="Enabled"
                                     Text="Import json"
                                     Command="{Binding ImportJsonCommand}"/>
+
+            <buttons:BasicGrayButton Text="Forgot key"
+                                    Command="{Binding ForgotKeyCommand}"/>
         </VerticalStackLayout>
     </template:PageTemplate.MainContent>
+
+    <template:PageTemplate.PopupContent>
+        <keys:CanNotRecoverKeyPopupView />
+    </template:PageTemplate.PopupContent>
 </template:PageTemplate>

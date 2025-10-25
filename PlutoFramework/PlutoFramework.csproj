@@ -2183,6 +2183,9 @@
     <MauiXaml Update="Components\Hyperlink\Link.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\Keys\CanNotRecoverKeyPopupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\Keys\CreateNewKeyPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
