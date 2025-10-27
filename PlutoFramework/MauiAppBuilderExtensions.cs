@@ -85,7 +85,8 @@ namespace PlutoFramework
 
             AssetsModel.DatabaseSaver = new BalancesDatabaseSaver();
 
-            PushNotificationRegistrar.RegisterPushNotificationServices(builder.Services);
+            // TODO: enable later
+            //PushNotificationRegistrar.RegisterPushNotificationServices(builder.Services);
             
             CustomizeWebViewHandler();
 
