@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.staging_xcm.v4.asset
     }
     
     /// <summary>
-    /// >> 203 - Variant[staging_xcm.v4.asset.AssetFilter]
+    /// >> 210 - Variant[staging_xcm.v4.asset.AssetFilter]
     /// </summary>
     public sealed class EnumAssetFilter : BaseEnumRust<AssetFilter>
     {

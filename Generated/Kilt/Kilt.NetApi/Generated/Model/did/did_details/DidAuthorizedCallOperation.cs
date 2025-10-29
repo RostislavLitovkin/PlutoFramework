@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.did.did_details
     
     
     /// <summary>
-    /// >> 368 - Composite[did.did_details.DidAuthorizedCallOperation]
+    /// >> 360 - Composite[did.did_details.DidAuthorizedCallOperation]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DidAuthorizedCallOperation : BaseType
@@ -35,7 +35,7 @@ namespace Kilt.NetApi.Generated.Model.did.did_details
         /// <summary>
         /// >> call
         /// </summary>
-        public Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall Call { get; set; }
+        public Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall Call { get; set; }
         /// <summary>
         /// >> block_number
         /// </summary>
@@ -71,7 +71,7 @@ namespace Kilt.NetApi.Generated.Model.did.did_details
             Did.Decode(byteArray, ref p);
             TxCounter = new Substrate.NetApi.Model.Types.Primitive.U64();
             TxCounter.Decode(byteArray, ref p);
-            Call = new Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall();
+            Call = new Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall();
             Call.Decode(byteArray, ref p);
             BlockNumber = new Substrate.NetApi.Model.Types.Primitive.U64();
             BlockNumber.Decode(byteArray, ref p);

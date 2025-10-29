@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.sp_version
     
     
     /// <summary>
-    /// >> 233 - Composite[sp_version.RuntimeVersion]
+    /// >> 260 - Composite[sp_version.RuntimeVersion]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RuntimeVersion : BaseType

@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.bounded_collections.bounded_btree_set
     
     
     /// <summary>
-    /// >> 529 - Composite[bounded_collections.bounded_btree_set.BoundedBTreeSetT2]
+    /// >> 635 - Composite[bounded_collections.bounded_btree_set.BoundedBTreeSetT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedBTreeSetT2 : BaseType

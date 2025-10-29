@@ -10,7 +10,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <WebView WidthRequest="{Binding Source={x:Reference page}, Path=Width}"
+        <WebView HorizontalOptions="Fill"
                  BackgroundColor="White"
                  x:Name="webView" />
     </Grid>

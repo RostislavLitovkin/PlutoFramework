@@ -28,7 +28,7 @@ namespace Kilt.NetApi.Generated.Model.spiritnet_runtime
     }
     
     /// <summary>
-    /// >> 256 - Variant[spiritnet_runtime.RuntimeFreezeReason]
+    /// >> 278 - Variant[spiritnet_runtime.RuntimeFreezeReason]
     /// </summary>
     public sealed class EnumRuntimeFreezeReason : BaseEnumRust<RuntimeFreezeReason>
     {

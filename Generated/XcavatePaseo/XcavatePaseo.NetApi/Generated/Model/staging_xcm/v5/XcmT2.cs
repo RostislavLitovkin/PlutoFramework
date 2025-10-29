@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5
     
     
     /// <summary>
-    /// >> 355 - Composite[staging_xcm.v5.XcmT2]
+    /// >> 358 - Composite[staging_xcm.v5.XcmT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class XcmT2 : BaseType

@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
     }
     
     /// <summary>
-    /// >> 594 - Variant[pallet_bucket.types.Status]
+    /// >> 610 - Variant[pallet_bucket.types.Status]
     /// </summary>
     public sealed class EnumStatus : BaseEnumRust<Status>
     {
@@ -43,7 +43,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
         /// </summary>
         public EnumStatus()
         {
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U128>(Status.Writable);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.BucketPublicKey>(Status.Writable);
 				AddTypeDecoder<BaseVoid>(Status.Locked);
         }
     }

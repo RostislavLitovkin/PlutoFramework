@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
     }
     
     /// <summary>
-    /// >> 191 - Variant[pallet_property_governance.pallet.LegalSale]
+    /// >> 193 - Variant[pallet_property_governance.pallet.LegalSale]
     /// </summary>
     public sealed class EnumLegalSale : BaseEnum<LegalSale>
     {

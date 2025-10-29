@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_assets.types
     
     
     /// <summary>
-    /// >> 518 - Composite[pallet_assets.types.AssetMetadata]
+    /// >> 593 - Composite[pallet_assets.types.AssetMetadata]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetMetadata : BaseType
@@ -31,11 +31,11 @@ namespace Kilt.NetApi.Generated.Model.pallet_assets.types
         /// <summary>
         /// >> name
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT44 Name { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT50 Name { get; set; }
         /// <summary>
         /// >> symbol
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT44 Symbol { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT50 Symbol { get; set; }
         /// <summary>
         /// >> decimals
         /// </summary>
@@ -69,9 +69,9 @@ namespace Kilt.NetApi.Generated.Model.pallet_assets.types
             var start = p;
             Deposit = new Substrate.NetApi.Model.Types.Primitive.U128();
             Deposit.Decode(byteArray, ref p);
-            Name = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT44();
+            Name = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT50();
             Name.Decode(byteArray, ref p);
-            Symbol = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT44();
+            Symbol = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT50();
             Symbol.Decode(byteArray, ref p);
             Decimals = new Substrate.NetApi.Model.Types.Primitive.U8();
             Decimals.Decode(byteArray, ref p);

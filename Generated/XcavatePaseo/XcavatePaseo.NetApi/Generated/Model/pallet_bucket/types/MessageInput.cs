@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
     
     
     /// <summary>
-    /// >> 378 - Composite[pallet_bucket.types.MessageInput]
+    /// >> 392 - Composite[pallet_bucket.types.MessageInput]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MessageInput : BaseType
@@ -35,7 +35,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
         /// <summary>
         /// >> metadata_input
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.MetadataInputMock MetadataInput { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.MessageMetadataInput MetadataInput { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -61,7 +61,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
             Reference.Decode(byteArray, ref p);
             Tag = new Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>();
             Tag.Decode(byteArray, ref p);
-            MetadataInput = new XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.MetadataInputMock();
+            MetadataInput = new XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.MessageMetadataInput();
             MetadataInput.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

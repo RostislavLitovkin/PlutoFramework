@@ -49,10 +49,16 @@ namespace Kilt.NetApi.Generated.Model.did.pallet
         /// \[DID caller, dispatch result\]
         /// </summary>
         DidCallDispatched = 3,
+        
+        /// <summary>
+        /// >> DepositOwnerChanged
+        /// The deposit for a DID has changed owner.
+        /// </summary>
+        DepositOwnerChanged = 4,
     }
     
     /// <summary>
-    /// >> 117 - Variant[did.pallet.Event]
+    /// >> 122 - Variant[did.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -67,6 +73,7 @@ namespace Kilt.NetApi.Generated.Model.did.pallet
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.DidUpdated);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.DidDeleted);
 				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Types.Base.EnumResult>>(Event.DidCallDispatched);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.DepositOwnerChanged);
         }
     }
 }

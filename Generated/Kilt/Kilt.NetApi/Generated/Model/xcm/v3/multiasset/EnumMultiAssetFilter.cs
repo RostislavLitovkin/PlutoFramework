@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.xcm.v3.multiasset
     }
     
     /// <summary>
-    /// >> 420 - Variant[xcm.v3.multiasset.MultiAssetFilter]
+    /// >> 435 - Variant[xcm.v3.multiasset.MultiAssetFilter]
     /// </summary>
     public sealed class EnumMultiAssetFilter : BaseEnumRust<MultiAssetFilter>
     {

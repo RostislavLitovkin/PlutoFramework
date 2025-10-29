@@ -31,7 +31,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_author_inherent.pallet
     }
     
     /// <summary>
-    /// >> 315 - Variant[pallet_author_inherent.pallet.Call]
+    /// >> 318 - Variant[pallet_author_inherent.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnum<Call>

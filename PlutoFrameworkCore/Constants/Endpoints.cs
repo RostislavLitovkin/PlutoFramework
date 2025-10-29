@@ -70,7 +70,7 @@ namespace PlutoFramework.Constants
             { "0x401a1f9dca3da46f5c4091016c8a2f26dcea05865116b286f60f668207d1474b", EndpointEnum.Moonriver },
             { "0x262e1b2ad728475fd6fe88e62d34c200abe6fd693931ddad144059b1eb884e5b", EndpointEnum.Bifrost },
             { "0x411f057b9107718c9624d6aa4a3f23c1653898297f3d4d529d9bb6511a39dd21", EndpointEnum.Kilt },
-            { "0xbd91a2939adb4f6fb9f53b9a778176d6da0a708d56dc8beceab2e93445ed0bbc", EndpointEnum.XcavatePaseo },
+            { "0x233351c17fe0196b78239af962bd644797b51ce67d50d6ac9570a192404ec445", EndpointEnum.XcavatePaseo },
         });
 
         public static readonly ReadOnlyDictionary<string, EndpointEnum> ParachainIdToKey = new ReadOnlyDictionary<string, EndpointEnum>(new Dictionary<string, EndpointEnum>()
@@ -480,7 +480,7 @@ namespace PlutoFramework.Constants
                 {
                     Name = "Kilt",
                     Key = EndpointEnum.Kilt,
-                    URLs =  new string[2] { "wss://kilt.ibp.network", "wss://kilt-rpc.dwellir.com" },
+                    URLs = [ "wss://peregrine.kilt.io" ],
                     Icon = "kiltblack.png",
                     DarkIcon = "kiltwhite.png",
                     Unit = "KILT",

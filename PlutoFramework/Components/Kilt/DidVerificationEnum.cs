@@ -6,6 +6,8 @@
     public enum DidVerificationEnum
     {
         None,
+
+        Loading,
         Light,
         Full,
     }

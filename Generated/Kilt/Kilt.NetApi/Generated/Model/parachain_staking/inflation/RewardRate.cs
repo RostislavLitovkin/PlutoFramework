@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.parachain_staking.inflation
     
     
     /// <summary>
-    /// >> 290 - Composite[parachain_staking.inflation.RewardRate]
+    /// >> 528 - Composite[parachain_staking.inflation.RewardRate]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RewardRate : BaseType

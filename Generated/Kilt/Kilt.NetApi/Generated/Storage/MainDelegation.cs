@@ -219,7 +219,7 @@ namespace Kilt.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 Deposit()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x0080C6A47E8D03000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         

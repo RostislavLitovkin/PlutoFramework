@@ -71,116 +71,115 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet
         OfferCancelled = 7,
         
         /// <summary>
-        /// >> LawyerClaimedProperty
-        /// A lawyer claimed a property.
+        /// >> DeveloperLawyerProposed
+        /// A real estate developer lawyer claimed a property.
         /// </summary>
-        LawyerClaimedProperty = 8,
+        DeveloperLawyerProposed = 8,
+        
+        /// <summary>
+        /// >> SpvLawyerProposed
+        /// A spv lawyer claimed a property.
+        /// </summary>
+        SpvLawyerProposed = 9,
         
         /// <summary>
         /// >> LawyerRemovedFromCase
         /// A lawyer stepped back from a legal case.
         /// </summary>
-        LawyerRemovedFromCase = 9,
+        LawyerRemovedFromCase = 10,
         
         /// <summary>
         /// >> DocumentsConfirmed
         /// Documents have been approved or rejected.
         /// </summary>
-        DocumentsConfirmed = 10,
+        DocumentsConfirmed = 11,
         
         /// <summary>
-        /// >> PropertySuccessfullySold
+        /// >> PrimarySaleCompleted
         /// The property deal has been successfully sold.
         /// </summary>
-        PropertySuccessfullySold = 11,
+        PrimarySaleCompleted = 12,
         
         /// <summary>
         /// >> RejectedFundsWithdrawn
         /// Funds has been withdrawn.
         /// </summary>
-        RejectedFundsWithdrawn = 12,
+        RejectedFundsWithdrawn = 13,
         
         /// <summary>
         /// >> ExpiredFundsWithdrawn
         /// Funds have been refunded after expired listing.
         /// </summary>
-        ExpiredFundsWithdrawn = 13,
+        ExpiredFundsWithdrawn = 14,
         
         /// <summary>
         /// >> OfferAccepted
         /// An offer has been accepted.
         /// </summary>
-        OfferAccepted = 14,
+        OfferAccepted = 15,
         
         /// <summary>
         /// >> OfferRejected
         /// An offer has been Rejected.
         /// </summary>
-        OfferRejected = 15,
+        OfferRejected = 16,
         
         /// <summary>
-        /// >> BuyCancelled
+        /// >> InvestmentCancelled
         /// A buy has been cancelled.
         /// </summary>
-        BuyCancelled = 16,
+        InvestmentCancelled = 17,
         
         /// <summary>
         /// >> PropertyTokenSend
         /// Property token have been sent to another account.
         /// </summary>
-        PropertyTokenSend = 17,
+        PropertyTokenSend = 18,
         
         /// <summary>
-        /// >> DepositWithdrawnUnsold
+        /// >> DeveloperDepositReturned
         /// The deposit of the real estate developer has been released.
         /// </summary>
-        DepositWithdrawnUnsold = 18,
+        DeveloperDepositReturned = 19,
         
         /// <summary>
         /// >> VotedOnLawyer
         /// Someone has voted on a lawyer.
         /// </summary>
-        VotedOnLawyer = 19,
+        VotedOnLawyer = 20,
         
         /// <summary>
-        /// >> RealEstateLawyerApproved
-        /// The real estate developer lawyer has been approved.
+        /// >> RealEstateLawyerProposalFinalized
+        /// The real estate developer lawyer has been finalized.
         /// </summary>
-        RealEstateLawyerApproved = 20,
+        RealEstateLawyerProposalFinalized = 21,
         
         /// <summary>
-        /// >> RealEstateLawyerRejected
-        /// The real estate developer lawyer has been rejected.
+        /// >> SpvLawyerVoteFinalized
+        /// The spv lawyer has been finalized.
         /// </summary>
-        RealEstateLawyerRejected = 21,
-        
-        /// <summary>
-        /// >> SpvLawyerApproved
-        /// The spv lawyer has been approved.
-        /// </summary>
-        SpvLawyerApproved = 22,
-        
-        /// <summary>
-        /// >> SpvLawyerRejected
-        /// The spv lawyer has been rejected.
-        /// </summary>
-        SpvLawyerRejected = 23,
+        SpvLawyerVoteFinalized = 22,
         
         /// <summary>
         /// >> PropertyTokenClaimed
         /// </summary>
-        PropertyTokenClaimed = 24,
+        PropertyTokenClaimed = 23,
         
         /// <summary>
         /// >> SpvCreated
         /// </summary>
-        SpvCreated = 25,
+        SpvCreated = 24,
         
         /// <summary>
-        /// >> PropertySoldOut
+        /// >> PrimarySaleSoldOut
         /// All token of a property have been sold.
         /// </summary>
-        PropertySoldOut = 26,
+        PrimarySaleSoldOut = 25,
+        
+        /// <summary>
+        /// >> LawyerCostsAllocated
+        /// </summary>
+        LawyerCostsAllocated = 26,
     }
     
     /// <summary>
@@ -195,33 +194,33 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.Bool, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.ObjectListed);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.RelistedTokenBought);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.PropertyTokenBought);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.Bool, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2>>(Event.ObjectListed);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.RelistedTokenBought);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.PropertyTokenBought);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.TokenRelisted);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.ListingDelisted);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.ObjectUpdated);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.OfferCreated);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.OfferCancelled);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.LawyerClaimedProperty);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.DeveloperLawyerProposed);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.SpvLawyerProposed);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.LawyerRemovedFromCase);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.EnumLegalProperty, Substrate.NetApi.Model.Types.Primitive.Bool>>(Event.DocumentsConfirmed);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.PropertySuccessfullySold);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.FinalSettlementPayouts>>(Event.PrimarySaleCompleted);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.RejectedFundsWithdrawn);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.ExpiredFundsWithdrawn);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.OfferAccepted);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.OfferRejected);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.BuyCancelled);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.InvestmentCancelled);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.PropertyTokenSend);
-				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.DepositWithdrawnUnsold);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.EnumVote>>(Event.VotedOnLawyer);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.RealEstateLawyerApproved);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.RealEstateLawyerRejected);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.SpvLawyerApproved);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.SpvLawyerRejected);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.DeveloperDepositReturned);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.EnumVote, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.VotedOnLawyer);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.Bool>>(Event.RealEstateLawyerProposalFinalized);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.Bool, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.SpvLawyerVoteFinalized);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.PropertyTokenClaimed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.SpvCreated);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.PropertySoldOut);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.PrimarySaleSoldOut);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.EnumLegalProperty, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.LawyerCostsAllocated);
         }
     }
 }

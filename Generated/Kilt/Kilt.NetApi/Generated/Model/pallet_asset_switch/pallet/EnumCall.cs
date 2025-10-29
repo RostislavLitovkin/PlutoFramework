@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace Kilt.NetApi.Generated.Model.pallet_asset_switch.@pallet
+namespace Kilt.NetApi.Generated.Model.pallet_asset_switch.pallet
 {
     
     
@@ -24,49 +24,63 @@ namespace Kilt.NetApi.Generated.Model.pallet_asset_switch.@pallet
         
         /// <summary>
         /// >> set_switch_pair
-        /// See [`Pallet::set_switch_pair`].
+        /// Set a new switch pair.
+        /// 
+        /// See the crate's README for more.
         /// </summary>
         set_switch_pair = 0,
         
         /// <summary>
         /// >> force_set_switch_pair
-        /// See [`Pallet::force_set_switch_pair`].
+        /// Force-set a new switch pair.
+        /// 
+        /// See the crate's README for more.
         /// </summary>
         force_set_switch_pair = 1,
         
         /// <summary>
         /// >> force_unset_switch_pair
-        /// See [`Pallet::force_unset_switch_pair`].
+        /// Unset a switch pair.
+        /// 
+        /// See the crate's README for more.
         /// </summary>
         force_unset_switch_pair = 2,
         
         /// <summary>
         /// >> pause_switch_pair
-        /// See [`Pallet::pause_switch_pair`].
+        /// Pause switches for a switch pair.
+        /// 
+        /// See the crate's README for more.
         /// </summary>
         pause_switch_pair = 3,
         
         /// <summary>
         /// >> resume_switch_pair
-        /// See [`Pallet::resume_switch_pair`].
+        /// Resume switches for a switch pair.
+        /// 
+        /// See the crate's README for more.
         /// </summary>
         resume_switch_pair = 4,
         
         /// <summary>
         /// >> update_remote_xcm_fee
-        /// See [`Pallet::update_remote_xcm_fee`].
+        /// Update the remote XCM fee for a switch pair.
+        /// 
+        /// See the crate's README for more.
         /// </summary>
         update_remote_xcm_fee = 5,
         
         /// <summary>
         /// >> switch
-        /// See [`Pallet::switch`].
+        /// Perform a local -> remote asset switch.
+        /// 
+        /// See the crate's README for more.
         /// </summary>
         @switch = 6,
     }
     
     /// <summary>
-    /// >> 333 - Variant[pallet_asset_switch.pallet.Call]
+    /// >> 329 - Variant[pallet_asset_switch.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

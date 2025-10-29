@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_balances.types
     
     
     /// <summary>
-    /// >> 245 - Composite[pallet_balances.types.BalanceLock]
+    /// >> 272 - Composite[pallet_balances.types.BalanceLock]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BalanceLock : BaseType

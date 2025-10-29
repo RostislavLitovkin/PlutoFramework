@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.sp_runtime.generic.unchecked_extrinsic
     
     
     /// <summary>
-    /// >> 618 - Composite[sp_runtime.generic.unchecked_extrinsic.UncheckedExtrinsic]
+    /// >> 738 - Composite[sp_runtime.generic.unchecked_extrinsic.UncheckedExtrinsic]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UncheckedExtrinsic : BaseType

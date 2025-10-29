@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.frame_system.extensions.check_mortality
     
     
     /// <summary>
-    /// >> 624 - Composite[frame_system.extensions.check_mortality.CheckMortality]
+    /// >> 744 - Composite[frame_system.extensions.check_mortality.CheckMortality]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckMortality : BaseType

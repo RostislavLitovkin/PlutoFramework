@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<page:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   x:Class="PlutoFramework.Components.Keys.KeyListPage"
+                   xmlns:page="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                   xmlns:keys="clr-namespace:PlutoFramework.Components.Keys"
+                   Title="Keys"
+                   NavigationBarExtra1Command="{Binding Extra1Command}"
+                   >
+    <page:PageTemplate.NavigationBarExtra1Image>
+        <FontImageSource Color="{StaticResource Primary}"
+                         Glyph="+"
+                         Size="20" />
+    </page:PageTemplate.NavigationBarExtra1Image>
+    
+    <page:PageTemplate.MainContent>
+        <VerticalStackLayout Spacing="15">
+
+            <!-- Other content -->
+            
+            <VerticalStackLayout Margin="20, 20, 20, 100"
+                             BindableLayout.ItemsSource="{Binding Keys}"
+                             Spacing="15">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <keys:KeyView Key="{Binding .}" />
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </page:PageTemplate.MainContent>
+</page:PageTemplate>

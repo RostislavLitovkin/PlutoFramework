@@ -10,17 +10,24 @@ namespace PlutoFramework.Model.Sumsub
     {
         [JsonPropertyName("email")]
         public required string Email { get; set; }
+
         [JsonPropertyName("phone")]
         public required string Phone { get; set; }
+
+        [JsonPropertyName("externalUserId")]
+        public required string ExternalUserId { get; set; }
     }
     public record Applicant
     {
         [JsonPropertyName("applicantIdentifiers")]
         public required ApplicantIdentifiers ApplicantIdentifiers { get; set; }
+
         [JsonPropertyName("ttlInSecs")]
         public required uint totalInSeconds { get; set; }
+
         [JsonPropertyName("userId")]
         public required string UserId { get; set; }
+
         [JsonPropertyName("levelName")]
         public required string LevelName { get; set; }
     }
@@ -36,27 +43,30 @@ namespace PlutoFramework.Model.Sumsub
     public class SumsubModel
     {
         // The description of the authorization method is available here: https://docs.sumsub.com/reference/authentication
-        private static readonly string SUMSUB_SECRET_KEY = "1SiTD0DH50SB71Qlk2Omp07LGD0Dtk4M"; // Example: Hej2ch71kG2kTd1iIUDZFNsO5C1lh5Gq - Please don't forget to change when switching to production
-        private static readonly string SUMSUB_APP_TOKEN = "sbx:3OcGQFD4j812xUoAhPBvOew3.02kIimwmfz6aj34wAcRVX6hrMVn6kjZm";  // Example: sbx:uY0CgwELmgUAEyl4hNWxLngb.0WSeQeiYny4WEqmAALEAiK2qTC96fBad - Please don't forget to change when switching to production
-        private static readonly string SUMSUB_TEST_BASE_URL = "https://api.sumsub.com";
+        private static readonly string SUMSUB_BASE_URL = "https://api.sumsub.com";
+
 
         /// <summary>
         /// https://docs.sumsub.com/docs/get-started-with-web-sdk#generate-sdk-access-token
         /// </summary>
-        /// <returns>access token</returns>
-        public static async Task<string?> GenerateWebSDKAccessTokenAsync(Applicant applicant, CancellationToken token)
+        /// <param name="applicant">Applicant data (</param>
+        /// <param name="secretKey"></param>
+        /// <param name="appToken"></param>
+        /// <param name="token"></param>
+        /// <returns></returns>
+        public static async Task<string?> GenerateWebSDKAccessTokenAsync(
+            Applicant applicant,
+            string secretKey,
+            string appToken,
+            CancellationToken token)
         {
-            Console.WriteLine("Creating Access Token...");
-
-            var requestBody = new HttpRequestMessage(HttpMethod.Post, SUMSUB_TEST_BASE_URL)
+            var requestBody = new HttpRequestMessage(HttpMethod.Post, SUMSUB_BASE_URL)
             {
                 Content = new StringContent(JsonSerializer.Serialize(applicant), Encoding.UTF8, "application/json")
             };
 
-            var response = await SendPostAsync("/resources/accessTokens/sdk", requestBody);
-
-            Console.WriteLine(ContentToString(response.Content));
-
+            var response = await SendPostAsync("/resources/accessTokens/sdk", requestBody, secretKey, appToken);
+            
             if (!response.IsSuccessStatusCode)
             {
                 return null;
@@ -64,17 +74,20 @@ namespace PlutoFramework.Model.Sumsub
 
             var accessToken = JsonSerializer.Deserialize<AccessTokenResponse>(ContentToString(response.Content));
 
+            Console.WriteLine("UserId: " + accessToken?.UserId);
+
             return accessToken?.Token;
         }
 
         /// <summary>
+        /// https://docs.sumsub.com/reference/get-applicant-data
         /// https://docs.sumsub.com/reference/get-applicant-data-via-externaluserid
         /// </summary>
-        /// <param name="externalUserId">Unique applicant identifier as registered on your side.</param>
+        /// <param name="address">Wallet address</param>
         /// <returns>Applicant data</returns>
-        public static async Task<SumsubApplicant?> GetApplicantDataAsync(string externalUserId, CancellationToken token)
+        public static async Task<SumsubApplicant?> GetApplicantDataAsync(string address, string secretKey, string appToken, CancellationToken token)
         {
-            var response = await SendGetAsync($"/resources/applicants/-;externalUserId={externalUserId}/one", token);
+            var response = await SendGetAsync($"/resources/applicants/-;externalUserId={address}/one", secretKey, appToken, token);
 
             Console.WriteLine(ContentToString(response.Content));
 
@@ -88,12 +101,7 @@ namespace PlutoFramework.Model.Sumsub
             return applicant;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="externalUserId">Unique applicant identifier as registered on your side.</param>
-        /// <returns>Applicant data</returns>
-        public static async Task<bool?> GetApplicantVerificationStatusAsync(string externalUserId, CancellationToken token)
+        public static async Task<bool?> GetApplicantVerificationStatusAsync(string address, string secretKey, string appToken, CancellationToken token)
         {
             // TODO
 
@@ -102,7 +110,7 @@ namespace PlutoFramework.Model.Sumsub
 
 
         // https://docs.sumsub.com/reference/get-applicant-review-status
-        public static async Task<string> CreateApplicant(string externalUserId, string levelName)
+        public static async Task<string> CreateApplicant(string externalUserId, string levelName, string secretKey, string appToken)
         {
             Console.WriteLine("Creating an applicant...");
 
@@ -112,13 +120,13 @@ namespace PlutoFramework.Model.Sumsub
             };
 
             // Create the request body
-            var requestBody = new HttpRequestMessage(HttpMethod.Post, SUMSUB_TEST_BASE_URL)
+            var requestBody = new HttpRequestMessage(HttpMethod.Post, SUMSUB_BASE_URL)
             {
                 Content = new StringContent(JsonSerializer.Serialize(body), Encoding.UTF8, "application/json")
             };
 
             // Get the response
-            var response = await SendPostAsync($"/resources/applicants?levelName={levelName}", requestBody);
+            var response = await SendPostAsync($"/resources/applicants?levelName={levelName}", requestBody, secretKey, appToken);
 
             Console.WriteLine(ContentToString(response.Content));
             /*var applicant = JsonConvert.DeserializeObject<Applicant>(ContentToString(response.Content));
@@ -137,10 +145,8 @@ namespace PlutoFramework.Model.Sumsub
         }
 
         // https://docs.sumsub.com/reference/add-id-documents
-        public static async Task<HttpResponseMessage> AddDocument(string applicantId)
+        public static async Task<HttpResponseMessage> AddDocumentAsync(string applicantId, string secretKey, string appToken)
         {
-            Console.WriteLine("Adding document to the applicant...");
-
             // metadata object
             var metaData = new
             {
@@ -158,12 +164,12 @@ namespace PlutoFramework.Model.Sumsub
                 formContent.Add(new StreamContent(new MemoryStream(binaryImage)), "content", "sumsub-logo.png");
 
                 // Request body
-                var requestBody = new HttpRequestMessage(HttpMethod.Post, SUMSUB_TEST_BASE_URL)
+                var requestBody = new HttpRequestMessage(HttpMethod.Post, SUMSUB_BASE_URL)
                 {
                     Content = formContent
                 };
 
-                var response = await SendPostAsync($"/resources/applicants/{applicantId}/info/idDoc", requestBody);
+                var response = await SendPostAsync($"/resources/applicants/{applicantId}/info/idDoc", requestBody, secretKey, appToken);
 
                 Console.WriteLine(response.IsSuccessStatusCode
                     ? $"Document was successfully added"
@@ -174,32 +180,32 @@ namespace PlutoFramework.Model.Sumsub
         }
 
         // https://docs.sumsub.com/reference/get-applicant-verification-steps-status
-        public static async Task<HttpResponseMessage> GetApplicantStatus(string applicantId, CancellationToken token)
+        public static async Task<HttpResponseMessage> GetApplicantStatus(string applicantId, string secretKey, string appToken, CancellationToken token)
         {
             Console.WriteLine("Getting the applicant status...");
 
-            var response = await SendGetAsync($"/resources/applicants/{applicantId}/requiredIdDocsStatus", token);
+            var response = await SendGetAsync($"/resources/applicants/{applicantId}/requiredIdDocsStatus", secretKey, appToken, token);
             return response;
         }
 
-        public static async Task<HttpResponseMessage> GetAccessToken(string applicantId, string levelName)
+        public static async Task<HttpResponseMessage> GetAccessToken(string applicantId, string levelName, string secretKey, string appToken)
         {
-            var response = await SendPostAsync($"/resources/accessTokens?userId={applicantId}&levelName={levelName}", new HttpRequestMessage());
+            var response = await SendPostAsync($"/resources/accessTokens?userId={applicantId}&levelName={levelName}", new HttpRequestMessage(), secretKey, appToken);
             return response;
         }
 
-        private static async Task<HttpResponseMessage> SendPostAsync(string url, HttpRequestMessage requestBody)
+        private static async Task<HttpResponseMessage> SendPostAsync(string url, HttpRequestMessage requestBody, string secretKey, string appToken)
         {
 
             var ts = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-            var signature = CreateSignature(ts, HttpMethod.Post, url, RequestBodyToBytes(requestBody));
+            var signature = CreateSignature(ts, HttpMethod.Post, url, RequestBodyToBytes(requestBody), secretKey);
 
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             var client = new HttpClient
             {
-                BaseAddress = new Uri(SUMSUB_TEST_BASE_URL)
+                BaseAddress = new Uri(SUMSUB_BASE_URL)
             };
-            client.DefaultRequestHeaders.Add("X-App-Token", SUMSUB_APP_TOKEN);
+            client.DefaultRequestHeaders.Add("X-App-Token", appToken);
             client.DefaultRequestHeaders.Add("X-App-Access-Sig", signature);
             client.DefaultRequestHeaders.Add("X-App-Access-Ts", ts.ToString());
 
@@ -217,16 +223,16 @@ namespace PlutoFramework.Model.Sumsub
             return response;
         }
 
-        private static async Task<HttpResponseMessage> SendGetAsync(string url, CancellationToken token)
+        private static async Task<HttpResponseMessage> SendGetAsync(string url, string secretKey, string appToken, CancellationToken token)
         {
             long ts = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
 
             var client = new HttpClient
             {
-                BaseAddress = new Uri(SUMSUB_TEST_BASE_URL)
+                BaseAddress = new Uri(SUMSUB_BASE_URL)
             };
-            client.DefaultRequestHeaders.Add("X-App-Token", SUMSUB_APP_TOKEN);
-            client.DefaultRequestHeaders.Add("X-App-Access-Sig", CreateSignature(ts, HttpMethod.Get, url, null));
+            client.DefaultRequestHeaders.Add("X-App-Token", appToken);
+            client.DefaultRequestHeaders.Add("X-App-Access-Sig", CreateSignature(ts, HttpMethod.Get, url, null, secretKey));
             client.DefaultRequestHeaders.Add("X-App-Access-Ts", ts.ToString());
 
             var response = await client.GetAsync(url, token);
@@ -241,11 +247,11 @@ namespace PlutoFramework.Model.Sumsub
             return response;
         }
 
-        private static string CreateSignature(long ts, HttpMethod httpMethod, string path, byte[] body)
+        private static string CreateSignature(long ts, HttpMethod httpMethod, string path, byte[] body, string secretKey)
         {
             Console.WriteLine("Creating a signature for the request...");
 
-            var hmac256 = new HMACSHA256(Encoding.ASCII.GetBytes(SUMSUB_SECRET_KEY));
+            var hmac256 = new HMACSHA256(Encoding.ASCII.GetBytes(secretKey));
 
             byte[] byteArray = Encoding.ASCII.GetBytes(ts + httpMethod.Method + path);
 

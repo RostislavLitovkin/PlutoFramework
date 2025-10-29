@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.runtime_common.constants.did
     
     
     /// <summary>
-    /// >> 349 - Composite[runtime_common.constants.did.MaxNewKeyAgreementKeys]
+    /// >> 343 - Composite[runtime_common.constants.did.MaxNewKeyAgreementKeys]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MaxNewKeyAgreementKeys : BaseType

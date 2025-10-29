@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_nonc
     
     
     /// <summary>
-    /// >> 611 - Composite[frame_system.extensions.check_nonce.CheckNonce]
+    /// >> 628 - Composite[frame_system.extensions.check_nonce.CheckNonce]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckNonce : BaseType

@@ -97,7 +97,8 @@ namespace PlutoFramework.Model
                     ],
                     ExtrinsicEvent { PalletName: "Assets", EventName: nameof(PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet.Event.Issued) } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.Assets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[2].Value))],
                     ExtrinsicEvent { PalletName: "Assets", EventName: nameof(PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet.Event.Burned) } => [(e.Parameters[1].Value, (endpoint.Key, AssetPallet.Assets, BigInteger.Parse(e.Parameters[0].Value)), BigInteger.Parse(e.Parameters[2].Value))],
-                    ExtrinsicEvent { PalletName: "AssetsFreezer", EventName: nameof(PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet.Event.Frozen) } => [(e.Parameters[0].Value, (endpoint.Key, AssetPallet.AssetsFrozen, BigInteger.Parse(e.Parameters[1].Value)), -BigInteger.Parse(e.Parameters[2].Value) * 1_000_000)],// Has to be * 10^6 on Xcavate blockchain
+                    ExtrinsicEvent { PalletName: "AssetsFreezer", EventName: nameof(PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet.Event.Frozen) } => [(e.Parameters[0].Value, (endpoint.Key, AssetPallet.AssetsFrozen, BigInteger.Parse(e.Parameters[1].Value)), -BigInteger.Parse(e.Parameters[2].Value))],
+                    ExtrinsicEvent { PalletName: "AssetsHolder", EventName: nameof(XcavatePaseo.NetApi.Generated.Model.pallet_assets_holder.pallet.Event.Held) } => [(e.Parameters[0].Value, (endpoint.Key, AssetPallet.AssetsReserved, BigInteger.Parse(e.Parameters[1].Value)), -BigInteger.Parse(e.Parameters[3].Value))],
 
                     // Fees
                     ExtrinsicEvent { PalletName: "TransactionPayment", EventName: nameof(Polkadot.NetApi.Generated.Model.pallet_transaction_payment.pallet.Event.TransactionFeePaid) } => [("fee", (endpoint.Key, AssetPallet.Native, 0), -BigInteger.Parse(e.Parameters[1].Value) - BigInteger.Parse(e.Parameters[2].Value))],
@@ -253,7 +254,7 @@ namespace PlutoFramework.Model
                 IEnumerable<(string, XcavatePropertyKey, XcavatePropertyOperation, uint)> evaluated = e switch
                 {
                     // Nfts
-                    ExtrinsicEvent { PalletName: "NftMarketplace", EventName: nameof(XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet.Event.PropertyTokenBought) } => [(e.Parameters[2].Value, (endpoint.Key, uint.Parse(e.Parameters[0].Value)), XcavatePropertyOperation.Buy, uint.Parse(e.Parameters[3].Value))],
+                    ExtrinsicEvent { PalletName: "Marketplace", EventName: nameof(XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet.Event.PropertyTokenBought) } => [(e.Parameters[2].Value, (endpoint.Key, uint.Parse(e.Parameters[0].Value)), XcavatePropertyOperation.Buy, uint.Parse(e.Parameters[3].Value))],
 
                     // Handle more events ...
                     _ => []

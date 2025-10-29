@@ -37,24 +37,22 @@
         </Border>
 
         <ContentView AbsoluteLayout.LayoutBounds=".5, .5, 1, 1"
-                         AbsoluteLayout.LayoutFlags="All"
-                         Margin="10, 65, 10, 0"
-                      TranslationY="500"
-                         x:Name="contentView">
-
+                     AbsoluteLayout.LayoutFlags="All"
+                     Margin="10, 65, 10, 0"
+                     TranslationY="500"
+                     x:Name="contentView">
 
         </ContentView>
 
-        <AbsoluteLayout 
-                        Padding="0, 10, 0, 10"
+        <AbsoluteLayout Padding="0, 10, 0, 10"
                         AbsoluteLayout.LayoutBounds="0.5, 0, 1, 65"
                         AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
             <Border BackgroundColor="#888888"
-                        AbsoluteLayout.LayoutBounds=".5, 0, 100, 5"
-                        AbsoluteLayout.LayoutFlags="PositionProportional"
-                        x:Name="dragger"
-                     TranslationY="500"
-                        ZIndex="10">
+                    AbsoluteLayout.LayoutBounds=".5, 0, 100, 5"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    x:Name="dragger"
+                    TranslationY="500"
+                    ZIndex="10">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="2.5"/>
 

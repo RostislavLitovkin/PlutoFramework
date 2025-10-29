@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
     
     
     /// <summary>
-    /// >> 588 - Composite[pallet_property_governance.pallet.Reserve]
+    /// >> 603 - Composite[pallet_property_governance.pallet.Reserve]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Reserve : BaseType

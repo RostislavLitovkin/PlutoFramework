@@ -31,8 +31,11 @@ using PlutoFramework.Components.Xcm;
 using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
 using PlutoFrameworkCore.PushNotificationServices.Core;
+using PlutoFrameworkCore;
 using Xe.AcrylicView;
 using ZXing.Net.Maui.Controls;
+using PlutoFramework.Components.Keys;
+
 
 
 
@@ -88,7 +91,13 @@ namespace PlutoFramework
             // TODO: enable later
             //PushNotificationRegistrar.RegisterPushNotificationServices(builder.Services);
             
+            PlutoConfigurationModel.SecureStorage = new PlutoSecureStorage();
+            PlutoConfigurationModel.GenerateNewAccountAsync = KeysModel.GenerateNewAccountAsync;
+            PlutoConfigurationModel.AfterAccountImportAsync = () => Task.FromResult(0);
+
             CustomizeWebViewHandler();
+
+            DependencyService.Register<CanNotRecoverKeyPopupViewModel>();
 
             DependencyService.Register<TransferViewModel>();
 
@@ -176,6 +185,10 @@ namespace PlutoFramework
 
             DependencyService.Register<XcavateNavigationBarViewModel>();
 
+            DependencyService.Register<NotWhitelistedPopupViewModel>();
+
+            DependencyService.Register<UserProfileNotCreatedPopupViewModel>();
+
             return builder;
         }
 
@@ -185,12 +198,10 @@ namespace PlutoFramework
         private static void CustomizeWebViewHandler()
         {
 #if ANDROID26_0_OR_GREATER
-        Microsoft.Maui.Handlers.WebViewHandler.Mapper.ModifyMapping(
-            nameof(Android.Webkit.WebView.WebChromeClient),
-            (handler, view, args) => handler.PlatformView.SetWebChromeClient(new WebChromeClientWithPermissions(handler)));
+            Microsoft.Maui.Handlers.WebViewHandler.Mapper.ModifyMapping(
+                nameof(Android.Webkit.WebView.WebChromeClient),
+                (handler, view, args) => handler.PlatformView.SetWebChromeClient(new WebChromeClientWithPermissions(handler)));
 #endif
         }
     }
-
-
 }

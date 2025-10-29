@@ -48,7 +48,7 @@ namespace Kilt.NetApi.Generated.Model.kilt_asset_dids.chain.v1
     }
     
     /// <summary>
-    /// >> 127 - Variant[kilt_asset_dids.chain.v1.ChainId]
+    /// >> 133 - Variant[kilt_asset_dids.chain.v1.ChainId]
     /// </summary>
     public sealed class EnumChainId : BaseEnumRust<ChainId>
     {

@@ -28,7 +28,7 @@ namespace Kilt.NetApi.Generated.Model.public_credentials.pallet
     }
     
     /// <summary>
-    /// >> 177 - Variant[public_credentials.pallet.HoldReason]
+    /// >> 182 - Variant[public_credentials.pallet.HoldReason]
     /// </summary>
     public sealed class EnumHoldReason : BaseEnum<HoldReason>
     {

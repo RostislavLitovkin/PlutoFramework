@@ -153,7 +153,7 @@ namespace Kilt.NetApi.Generated.Model.xcm.v2.traits
     }
     
     /// <summary>
-    /// >> 405 - Variant[xcm.v2.traits.Error]
+    /// >> 419 - Variant[xcm.v2.traits.Error]
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>
     {

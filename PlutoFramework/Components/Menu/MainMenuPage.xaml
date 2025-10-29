@@ -2,24 +2,24 @@
 <page:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlutoFramework.Components.Menu.MainMenuPage"
-                   xmlns:menu="clr-namespace:PlutoFramework.Components.Menu"
-                   xmlns:account="clr-namespace:PlutoFramework.Components.Account"
-                   xmlns:page="clr-namespace:PlutoFramework.Templates.PageTemplate"
-                   Title="Menu"
-                   NavigationBarExtra1Command="{Binding OpenSettingsCommand}"
-                   NavigationBarExtra1Image="settingsgray.png"
-                   NavigationBarExtra2Command="{Binding OpenQrScannerCommand}"
-                   NavigationBarExtra2Image="qrscannergray.png">
+            xmlns:menu="clr-namespace:PlutoFramework.Components.Menu"
+            xmlns:account="clr-namespace:PlutoFramework.Components.Account"
+            xmlns:page="clr-namespace:PlutoFramework.Templates.PageTemplate"
+            Title="Menu"
+            NavigationBarExtra1Command="{Binding OpenSettingsCommand}"
+            NavigationBarExtra1Image="settingsgray.png"
+            NavigationBarExtra2Command="{Binding OpenQrScannerCommand}"
+            NavigationBarExtra2Image="qrscannergray.png">
     <VerticalStackLayout>
-        <menu:UserView />
+        <menu:UserView IsVisible="{Binding IsLoggedIn}"/>
 
         <Label Text="Quick action"
                Margin="20, 20, 20, 0"
-                   FontSize="20"
-                   FontAttributes="Bold"
-                   TextColor="Black" />
+               FontSize="20"
+               FontAttributes="Bold"
+               TextColor="Black" />
 
-        <Grid ColumnSpacing="30"
+        <Grid ColumnSpacing="10"
                   RowSpacing="20"
                   HorizontalOptions="Fill"
                   VerticalOptions="Start"
@@ -55,13 +55,9 @@
             <menu:QuickActionItemView Grid.Column="3"
                                       Grid.Row="0"
                                       Icon="infogray.png"
-                                      Title="Support"
-                                      Command="{Binding InfoActionCommand}"
+                                      Title="Documents"
+                                      Command="{Binding SupportActionCommand}"
                                       />
         </Grid>
     </VerticalStackLayout>
-
-    <page:PageTemplate.PopupContent>
-        <account:NoAccountPopup />
-    </page:PageTemplate.PopupContent>
 </page:PageTemplate>

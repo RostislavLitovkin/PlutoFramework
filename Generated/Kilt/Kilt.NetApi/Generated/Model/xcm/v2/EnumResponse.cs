@@ -43,7 +43,7 @@ namespace Kilt.NetApi.Generated.Model.xcm.v2
     }
     
     /// <summary>
-    /// >> 402 - Variant[xcm.v2.Response]
+    /// >> 416 - Variant[xcm.v2.Response]
     /// </summary>
     public sealed class EnumResponse : BaseEnumRust<Response>
     {

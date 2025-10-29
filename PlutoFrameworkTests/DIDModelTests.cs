@@ -2,11 +2,14 @@
 using PlutoFramework.Constants;
 using PlutoFramework.Model;
 using PlutoFramework.Model.AjunaExt;
+using PlutoFrameworkCore;
+using PlutoFrameworkCore.AssetDidComm;
+using Substrate.NetApi;
 
 namespace PlutoFrameworkTests
 {
-	public class DIDModelTests
-	{
+    public class DidModelTests
+    {
         static SubstrateClientExt client;
 
         [SetUp]
@@ -16,7 +19,7 @@ namespace PlutoFrameworkTests
 
             client = new SubstrateClientExt(
                     endpoint,
-                        new Uri("ws://127.0.0.1:8000"),
+                        new Uri(endpoint.URLs[0]),
                         Substrate.NetApi.Model.Extrinsics.ChargeTransactionPayment.Default());
 
             await client.ConnectAndLoadMetadataAsync();
@@ -33,14 +36,35 @@ namespace PlutoFrameworkTests
                 var account = MnemonicsModel.GetAccountFromMnemonics("//Alice");
                 var did = MnemonicsModel.GetAccountFromMnemonics("//AliceDid");
 
-                var createDidTx = DidModel.Create(account, did);
+                var createDidTx = DidModel.Create(account.Value, did);
 
                 await client.SubmitExtrinsicAsync(createDidTx, account, new TaskCompletionSource<string?>(), (s, x) => { });
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
+        }
+
+        [Test]
+        public async Task SponsorCreateAsync()
+        {
+            var account = MnemonicsModel.GetAccountFromMnemonics("//Pluto");
+            var did = MnemonicsModel.GetAccountFromMnemonics("//PlutoDid");
+
+            Console.WriteLine($"Account: {account.Value}");
+            Console.WriteLine($"Did: {did.Value}");
+
+            var encryptionKey = X25519Model.GenerateX25519KeyPair();
+
+            Console.WriteLine($"Encryption key: {Utils.Bytes2HexString(encryptionKey.PublicKey).ToLower()}");
+
+            var createDidTx = DidModel.Create("4sQR3dfZrrxobV69jQmLvArxyUto5eJtmyc2f9xs1Hc4quu3", did, encryptionKey.PublicKey);
+
+            var result = await DidSponsoringModel.SponsorDidTxAsync(createDidTx, CancellationToken.None);
+
+            Assert.That(result);
         }
     }
 }

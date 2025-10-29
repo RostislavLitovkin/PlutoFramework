@@ -169,7 +169,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_democracy.pallet
     }
     
     /// <summary>
-    /// >> 451 - Variant[pallet_democracy.pallet.Error]
+    /// >> 553 - Variant[pallet_democracy.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

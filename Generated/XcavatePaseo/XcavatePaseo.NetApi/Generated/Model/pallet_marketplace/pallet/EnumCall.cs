@@ -123,7 +123,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet
         /// Parameters:
         /// - `listing_id`: The listing that the investor wants to buy from.
         /// 
-        /// Emits `BuyCancelled` event when succesfful.
+        /// Emits `InvestmentCancelled` event when succesfful.
         /// </summary>
         cancel_property_purchase = 6,
         
@@ -220,7 +220,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet
         /// Parameters:
         /// - `listing_id`: The listing that the caller wants to withdraw the deposit from.
         /// 
-        /// Emits `DepositWithdrawnUnsold` event when succesfful.
+        /// Emits `DeveloperDepositReturned` event when succesfful.
         /// </summary>
         withdraw_deposit_unsold = 13,
         
@@ -263,7 +263,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet
         /// - `legal_side`: The side that the lawyer wants to represent.
         /// - `costs`: The costs thats the lawyer demands for his work.
         /// 
-        /// Emits `LawyerClaimedProperty` event when succesfful.
+        /// Emits `DeveloperLawyerProposed` event when succesfful.
         /// </summary>
         lawyer_claim_property = 16,
         
@@ -291,8 +291,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet
         /// - `listing_id`: The listing from the property.
         /// - `approve`: Approves or rejects the lawyer.
         /// 
-        /// Emits `RealEstateLawyerApproved` event when approved
-        /// or RealEstateLawyerRejected when rejected.
+        /// Emits `RealEstateLawyerProposalFinalized` event when succesfful.
         /// </summary>
         approve_developer_lawyer = 18,
         
@@ -305,8 +304,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet
         /// Parameters:
         /// - `listing_id`: The listing from the property.
         /// 
-        /// Emits `SpvLawyerApproved` event when lawyer is approved
-        /// or SpvLawyerRejected when rejected.
+        /// Emits `SpvLawyerVoteFinalized` event when succesfful.
         /// </summary>
         finalize_spv_lawyer = 19,
         
@@ -354,7 +352,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet
     }
     
     /// <summary>
-    /// >> 372 - Variant[pallet_marketplace.pallet.Call]
+    /// >> 375 - Variant[pallet_marketplace.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

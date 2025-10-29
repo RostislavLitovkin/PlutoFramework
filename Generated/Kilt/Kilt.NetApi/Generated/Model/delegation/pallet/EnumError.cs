@@ -162,7 +162,7 @@ namespace Kilt.NetApi.Generated.Model.delegation.pallet
     }
     
     /// <summary>
-    /// >> 532 - Variant[delegation.pallet.Error]
+    /// >> 638 - Variant[delegation.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

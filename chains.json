@@ -50,7 +50,7 @@
     },
     {
       "name": "Kilt",
-      "websocket": "wss://kilt.ibp.network"
+      "websocket": "wss://peregrine.kilt.io"
     }
   ]
 }

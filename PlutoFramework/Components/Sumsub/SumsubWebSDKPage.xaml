@@ -7,15 +7,15 @@
                        x:Class="PlutoFramework.Components.Sumsub.SumsubWebSDKPage"
                        Title="KYC verification">
     <template:PageTemplate.MainContent>
-        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1" AbsoluteLayout.LayoutFlags="All">
+        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                        AbsoluteLayout.LayoutFlags="All"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill">
             <WebView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                 AbsoluteLayout.LayoutFlags="All"
-                 Margin="0,45,0,0"
+                     AbsoluteLayout.LayoutFlags="All"
+                     Margin="0, 0, 0, 0"
                  x:Name="webView"
-                 Navigating="OnNavigating">
-
-                <!-- Add your content here -->
-            </WebView>
+                 Navigating="OnNavigating" />
 
             <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 80"
                         AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"

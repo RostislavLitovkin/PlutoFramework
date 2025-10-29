@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_balances.types
     
     
     /// <summary>
-    /// >> 249 - Composite[pallet_balances.types.ReserveData]
+    /// >> 276 - Composite[pallet_balances.types.ReserveData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ReserveData : BaseType

@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcm.double_encoded
     
     
     /// <summary>
-    /// >> 351 - Composite[xcm.double_encoded.DoubleEncodedT2]
+    /// >> 354 - Composite[xcm.double_encoded.DoubleEncodedT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DoubleEncodedT2 : BaseType

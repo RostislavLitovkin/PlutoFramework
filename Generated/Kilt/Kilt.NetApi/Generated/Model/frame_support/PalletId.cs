@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.frame_support
     
     
     /// <summary>
-    /// >> 465 - Composite[frame_support.PalletId]
+    /// >> 566 - Composite[frame_support.PalletId]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PalletId : BaseType

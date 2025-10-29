@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.polkadot_parachain_primitives.primitives
     
     
     /// <summary>
-    /// >> 385 - Composite[polkadot_parachain_primitives.primitives.HeadData]
+    /// >> 399 - Composite[polkadot_parachain_primitives.primitives.HeadData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class HeadData : BaseType

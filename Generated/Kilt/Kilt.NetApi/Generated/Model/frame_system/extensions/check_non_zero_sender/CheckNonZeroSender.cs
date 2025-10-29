@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.frame_system.extensions.check_non_zero_sen
     
     
     /// <summary>
-    /// >> 620 - Composite[frame_system.extensions.check_non_zero_sender.CheckNonZeroSender]
+    /// >> 740 - Composite[frame_system.extensions.check_non_zero_sender.CheckNonZeroSender]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckNonZeroSender : BaseType

@@ -13,6 +13,8 @@ using System.Collections.Generic;
 
 namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet
 {
+    
+    
     /// <summary>
     /// >> Role
     /// </summary>

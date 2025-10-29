@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.delegation.access_control
     
     
     /// <summary>
-    /// >> 339 - Composite[delegation.access_control.DelegationAc]
+    /// >> 336 - Composite[delegation.access_control.DelegationAc]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DelegationAc : BaseType

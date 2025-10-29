@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                       xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+                       xmlns:kilt="clr-namespace:PlutoFramework.Components.Kilt"
+                       xmlns:mnemonics="clr-namespace:PlutoFramework.Components.Mnemonics"
+                       xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
+                       x:Class="PlutoFramework.Components.Keys.EncryptionX25519KeyDetailPage"
+                       Title="Manage Encryption Key">
+    <VerticalStackLayout HorizontalOptions="Center"
+                         Padding="20, 10, 20, 100"
+                         Spacing="15">
+        <mnemonics:MnemonicsView Title="Secret key:"
+                         Mnemonics="{Binding SecretKey}" />
+        
+        <buttons:ElevatedButton ButtonState="Warning"
+                                Text="Delete"
+                                Command="{Binding DeleteKeyCommand}" />
+    </VerticalStackLayout>
+</template:PageTemplate>

@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.parachain_staking.types
     
     
     /// <summary>
-    /// >> 278 - Composite[parachain_staking.types.DelegationCounter]
+    /// >> 516 - Composite[parachain_staking.types.DelegationCounter]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DelegationCounter : BaseType

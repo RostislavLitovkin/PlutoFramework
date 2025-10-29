@@ -133,8 +133,12 @@
                     HorizontalOptions="Center">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span  Text="Keep PlutoFramework open!"
+                                <Span Text="Keep "
+                                      FontAttributes="Bold" />
+                                <Span Text="{Binding AppName}"
                                    FontAttributes="Bold" />
+                                <Span Text=" open!"
+                                      FontAttributes="Bold" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>

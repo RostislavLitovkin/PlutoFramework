@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.frame_support.traits.preimages
     }
     
     /// <summary>
-    /// >> 300 - Variant[frame_support.traits.preimages.Bounded]
+    /// >> 299 - Variant[frame_support.traits.preimages.Bounded]
     /// </summary>
     public sealed class EnumBounded : BaseEnumRust<Bounded>
     {
@@ -49,7 +49,7 @@ namespace Kilt.NetApi.Generated.Model.frame_support.traits.preimages
         public EnumBounded()
         {
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.primitive_types.H256>(Bounded.Legacy);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5>(Bounded.Inline);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4>(Bounded.Inline);
 				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Primitive.U32>>(Bounded.Lookup);
         }
     }

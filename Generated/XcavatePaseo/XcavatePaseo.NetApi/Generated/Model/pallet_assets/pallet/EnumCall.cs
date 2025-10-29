@@ -638,7 +638,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_assets.pallet
     }
     
     /// <summary>
-    /// >> 361 - Variant[pallet_assets.pallet.Call]
+    /// >> 364 - Variant[pallet_assets.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

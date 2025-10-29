@@ -39,7 +39,7 @@
 
                     <Label x:Name="addressLabel"
                            VerticalOptions="Center" 
-                           HorizontalOptions="FillAndExpand"
+                           HorizontalOptions="Fill"
                            Grid.Column="1"
                            TextColor="{AppThemeBinding Dark=#fdfdfd, Light=#0a0a0a}"
                            FontAttributes="Bold"
