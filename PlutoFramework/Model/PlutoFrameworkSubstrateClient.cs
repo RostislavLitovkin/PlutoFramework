@@ -233,7 +233,14 @@ namespace PlutoFramework.Model
                         extrinsicStackViewModel.Update();
                     });
 
-                    txHash.SetResult(extrinsicHashString);
+                    try
+                    {
+                        txHash.SetResult(extrinsicHashString);
+                    }
+                    catch
+                    {
+
+                    }
                 }
 
                 else
