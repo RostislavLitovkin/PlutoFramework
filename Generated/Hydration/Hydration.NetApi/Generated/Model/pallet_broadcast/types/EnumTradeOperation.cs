@@ -48,7 +48,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_broadcast.types
     }
     
     /// <summary>
-    /// >> 485 - Variant[pallet_broadcast.types.TradeOperation]
+    /// >> 477 - Variant[pallet_broadcast.types.TradeOperation]
     /// </summary>
     public sealed class EnumTradeOperation : BaseEnum<TradeOperation>
     {

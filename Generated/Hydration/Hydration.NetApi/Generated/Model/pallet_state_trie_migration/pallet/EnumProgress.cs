@@ -38,7 +38,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_state_trie_migration.pallet
     }
     
     /// <summary>
-    /// >> 183 - Variant[pallet_state_trie_migration.pallet.Progress]
+    /// >> 173 - Variant[pallet_state_trie_migration.pallet.Progress]
     /// </summary>
     public sealed class EnumProgress : BaseEnumRust<Progress>
     {

@@ -40,7 +40,7 @@ namespace Hydration.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U16>), typeof(Hydration.NetApi.Generated.Model.pallet_conviction_voting.vote.EnumVoting)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ConvictionVoting", "ClassLocksFor"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT42)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41)));
         }
         
         /// <summary>
@@ -105,10 +105,10 @@ namespace Hydration.NetApi.Generated.Storage
         ///  require. The actual amount locked on behalf of this pallet should always be the maximum of
         ///  this list.
         /// </summary>
-        public async Task<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT42> ClassLocksFor(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41> ClassLocksFor(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = ConvictionVotingStorage.ClassLocksForParams(key);
-            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT42>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41>(parameters, blockhash, token);
             return result;
         }
     }

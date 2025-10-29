@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.bounded_collections.weak_bounded_vec
     
     
     /// <summary>
-    /// >> 807 - Composite[bounded_collections.weak_bounded_vec.WeakBoundedVecT3]
+    /// >> 792 - Composite[bounded_collections.weak_bounded_vec.WeakBoundedVecT3]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class WeakBoundedVecT3 : BaseType

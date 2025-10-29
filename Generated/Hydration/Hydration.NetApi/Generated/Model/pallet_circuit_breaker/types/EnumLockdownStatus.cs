@@ -11,46 +11,40 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace Hydration.NetApi.Generated.Model.pallet_elections_phragmen
+namespace Hydration.NetApi.Generated.Model.pallet_circuit_breaker.types
 {
     
     
     /// <summary>
-    /// >> Renouncing
+    /// >> LockdownStatus
     /// </summary>
-    public enum Renouncing
+    public enum LockdownStatus
     {
         
         /// <summary>
-        /// >> Member
+        /// >> Locked
         /// </summary>
-        Member = 0,
+        Locked = 0,
         
         /// <summary>
-        /// >> RunnerUp
+        /// >> Unlocked
         /// </summary>
-        RunnerUp = 1,
-        
-        /// <summary>
-        /// >> Candidate
-        /// </summary>
-        Candidate = 2,
+        Unlocked = 1,
     }
     
     /// <summary>
-    /// >> 169 - Variant[pallet_elections_phragmen.Renouncing]
+    /// >> 653 - Variant[pallet_circuit_breaker.types.LockdownStatus]
     /// </summary>
-    public sealed class EnumRenouncing : BaseEnumRust<Renouncing>
+    public sealed class EnumLockdownStatus : BaseEnumRust<LockdownStatus>
     {
         
         /// <summary>
         /// Initializes a new instance of the class.
         /// </summary>
-        public EnumRenouncing()
+        public EnumLockdownStatus()
         {
-				AddTypeDecoder<BaseVoid>(Renouncing.Member);
-				AddTypeDecoder<BaseVoid>(Renouncing.RunnerUp);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>(Renouncing.Candidate);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(LockdownStatus.Locked);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(LockdownStatus.Unlocked);
         }
     }
 }

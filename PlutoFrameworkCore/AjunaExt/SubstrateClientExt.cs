@@ -121,7 +121,7 @@ namespace PlutoFramework.Model.AjunaExt
             }
         }
 
-        public virtual async Task<string> SubmitExtrinsicAsync(Method method, Account account, Action<string, ExtrinsicStatus> callback, uint lifeTime = 64, CancellationToken token = default)
+        public virtual async Task<string> SubmitExtrinsicAsync(Method method, Account account, TaskCompletionSource<string?> txHash, Action<string, ExtrinsicStatus> callback, uint lifeTime = 64, CancellationToken token = default)
         {
 
             ///

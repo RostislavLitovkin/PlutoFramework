@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_balances.types
     
     
     /// <summary>
-    /// >> 508 - Composite[pallet_balances.types.BalanceLock]
+    /// >> 500 - Composite[pallet_balances.types.BalanceLock]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BalanceLock : BaseType

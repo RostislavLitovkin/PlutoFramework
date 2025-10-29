@@ -77,10 +77,22 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
         /// A pool has been destroyed.
         /// </summary>
         PoolDestroyed = 8,
+        
+        /// <summary>
+        /// >> PoolPegSourceUpdated
+        /// Pool peg source has been updated.
+        /// </summary>
+        PoolPegSourceUpdated = 9,
+        
+        /// <summary>
+        /// >> PoolMaxPegUpdateUpdated
+        /// Pool max peg update has been updated.
+        /// </summary>
+        PoolMaxPegUpdateUpdated = 10,
     }
     
     /// <summary>
-    /// >> 434 - Variant[pallet_stableswap.pallet.Event]
+    /// >> 426 - Variant[pallet_stableswap.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -100,6 +112,8 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.pallet_stableswap.types.Tradability>>(Event.TradableStateUpdated);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Types.Base.NonZeroU16, Hydration.NetApi.Generated.Types.Base.NonZeroU16, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.AmplificationChanging);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.PoolDestroyed);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.pallet_stableswap.types.EnumPegSource>>(Event.PoolPegSourceUpdated);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill>>(Event.PoolMaxPegUpdateUpdated);
         }
     }
 }

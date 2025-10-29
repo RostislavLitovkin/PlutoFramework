@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.frame_support.dispatch
     
     
     /// <summary>
-    /// >> 500 - Composite[frame_support.dispatch.PerDispatchClassT3]
+    /// >> 492 - Composite[frame_support.dispatch.PerDispatchClassT3]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PerDispatchClassT3 : BaseType

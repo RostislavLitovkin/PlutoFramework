@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_evm
     
     
     /// <summary>
-    /// >> 713 - Composite[pallet_evm.CodeMetadata]
+    /// >> 698 - Composite[pallet_evm.CodeMetadata]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CodeMetadata : BaseType

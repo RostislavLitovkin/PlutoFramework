@@ -91,7 +91,7 @@ namespace PlutoFramework.Model
         /// Please prefer using this one.
         /// </summary>
         /// <returns>subscription ID</returns>
-        public override async Task<string> SubmitExtrinsicAsync(Method method, Account account, Action<string, ExtrinsicStatus> callback = null, uint lifeTime = 64, CancellationToken token = default)
+        public override async Task<string> SubmitExtrinsicAsync(Method method, Account account, TaskCompletionSource<string?> txHash, Action<string, ExtrinsicStatus>? callback = null, uint lifeTime = 64, CancellationToken token = default)
         {
             ///
             /// This part is temporary fix before the next Substrate.Net.Api version, that would fix the code gen and sign metadata checks
@@ -232,6 +232,8 @@ namespace PlutoFramework.Model
 
                         extrinsicStackViewModel.Update();
                     });
+
+                    txHash.SetResult(extrinsicHashString);
                 }
 
                 else

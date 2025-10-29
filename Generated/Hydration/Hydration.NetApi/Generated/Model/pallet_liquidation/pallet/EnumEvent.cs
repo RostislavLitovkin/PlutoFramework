@@ -30,7 +30,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_liquidation.pallet
     }
     
     /// <summary>
-    /// >> 447 - Variant[pallet_liquidation.pallet.Event]
+    /// >> 439 - Variant[pallet_liquidation.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

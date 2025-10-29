@@ -49,7 +49,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_state_trie_migration.pallet
     }
     
     /// <summary>
-    /// >> 65 - Variant[pallet_state_trie_migration.pallet.Event]
+    /// >> 60 - Variant[pallet_state_trie_migration.pallet.Event]
     /// Inner events of this pallet.
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

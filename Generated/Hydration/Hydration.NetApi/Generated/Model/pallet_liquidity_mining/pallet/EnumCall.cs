@@ -24,7 +24,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_liquidity_mining.pallet
     }
     
     /// <summary>
-    /// >> 290 - Variant[pallet_liquidity_mining.pallet.Call]
+    /// >> 282 - Variant[pallet_liquidity_mining.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnum<Call>

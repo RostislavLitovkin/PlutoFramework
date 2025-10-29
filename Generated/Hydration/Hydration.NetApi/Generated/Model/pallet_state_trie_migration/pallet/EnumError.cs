@@ -66,7 +66,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_state_trie_migration.pallet
     }
     
     /// <summary>
-    /// >> 67 - Variant[pallet_state_trie_migration.pallet.Error]
+    /// >> 62 - Variant[pallet_state_trie_migration.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

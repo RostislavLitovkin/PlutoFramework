@@ -38,7 +38,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_liquidity_mining.types
     }
     
     /// <summary>
-    /// >> 653 - Variant[pallet_liquidity_mining.types.FarmState]
+    /// >> 638 - Variant[pallet_liquidity_mining.types.FarmState]
     /// </summary>
     public sealed class EnumFarmState : BaseEnum<FarmState>
     {

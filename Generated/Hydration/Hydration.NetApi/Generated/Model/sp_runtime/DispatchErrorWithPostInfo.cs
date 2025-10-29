@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.sp_runtime
     
     
     /// <summary>
-    /// >> 418 - Composite[sp_runtime.DispatchErrorWithPostInfo]
+    /// >> 410 - Composite[sp_runtime.DispatchErrorWithPostInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DispatchErrorWithPostInfo : BaseType

@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.frame_system.limits
     
     
     /// <summary>
-    /// >> 499 - Composite[frame_system.limits.BlockLength]
+    /// >> 491 - Composite[frame_system.limits.BlockLength]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BlockLength : BaseType

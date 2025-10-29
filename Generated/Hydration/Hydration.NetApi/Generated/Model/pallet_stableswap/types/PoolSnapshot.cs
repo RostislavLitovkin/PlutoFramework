@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.types
     
     
     /// <summary>
-    /// >> 684 - Composite[pallet_stableswap.types.PoolSnapshot]
+    /// >> 669 - Composite[pallet_stableswap.types.PoolSnapshot]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PoolSnapshot : BaseType
@@ -31,7 +31,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.types
         /// <summary>
         /// >> reserves
         /// </summary>
-        public Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT48 Reserves { get; set; }
+        public Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT47 Reserves { get; set; }
         /// <summary>
         /// >> amplification
         /// </summary>
@@ -74,7 +74,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.types
             var start = p;
             Assets = new Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12();
             Assets.Decode(byteArray, ref p);
-            Reserves = new Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT48();
+            Reserves = new Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT47();
             Reserves.Decode(byteArray, ref p);
             Amplification = new Substrate.NetApi.Model.Types.Primitive.U128();
             Amplification.Decode(byteArray, ref p);

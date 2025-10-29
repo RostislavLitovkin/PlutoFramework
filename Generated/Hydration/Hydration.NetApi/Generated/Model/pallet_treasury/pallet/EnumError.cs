@@ -91,7 +91,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_treasury.pallet
     }
     
     /// <summary>
-    /// >> 531 - Variant[pallet_treasury.pallet.Error]
+    /// >> 523 - Variant[pallet_treasury.pallet.Error]
     /// Error for the treasury pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

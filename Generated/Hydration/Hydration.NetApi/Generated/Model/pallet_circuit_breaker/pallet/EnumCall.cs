@@ -63,10 +63,59 @@ namespace Hydration.NetApi.Generated.Model.pallet_circuit_breaker.pallet
         /// 
         /// </summary>
         set_remove_liquidity_limit = 2,
+        
+        /// <summary>
+        /// >> lockdown_asset
+        /// Lockdown an asset for minting
+        /// 
+        /// Can be called only by an authority origin
+        /// 
+        /// Parameters:
+        /// - `origin`: The dispatch origin for this call. Must be `AuthorityOrigin`
+        /// - `asset_id`: The identifier of an asset
+        /// - `until`: The block number until which the asset is locked
+        /// 
+        /// /// Emits `AssetLockdowned` event when successful.
+        /// </summary>
+        lockdown_asset = 3,
+        
+        /// <summary>
+        /// >> force_lift_lockdown
+        /// Remove asset lockdown regardless of the state.
+        /// 
+        /// Can be called only by an authority origin
+        /// 
+        /// Parameters:
+        /// 
+        /// - `origin`: The dispatch origin for this call. Must be `AuthorityOrigin`
+        /// - `asset_id`: The identifier of an asset
+        /// 
+        /// Emits `AssetLockdownRemoved` event when successful.
+        /// </summary>
+        force_lift_lockdown = 4,
+        
+        /// <summary>
+        /// >> release_deposit
+        /// Release deposit of an asset.
+        /// 
+        /// It releases all the pallet reserved balance of the asset for the given account
+        /// 
+        /// Can be called by any origin, but only if the asset is not in active lockdown.
+        /// 
+        /// The caller does not pay for this call if successful.
+        /// 
+        /// Parameters:
+        /// - `origin`: The dispatch origin for this call. Can be signed or root.
+        /// - `who`: The account that is saving the deposit.
+        /// - `asset_id`: The identifier of the asset.
+        /// 
+        /// Emits `DepositReleased` event when successful.
+        /// </summary>
+        release_deposit = 5,
     }
     
     /// <summary>
-    /// >> 230 - Variant[pallet_circuit_breaker.pallet.Call]
+    /// >> 220 - Variant[pallet_circuit_breaker.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -80,6 +129,9 @@ namespace Hydration.NetApi.Generated.Model.pallet_circuit_breaker.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>>(Call.set_trade_volume_limit);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>>>(Call.set_add_liquidity_limit);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>>>(Call.set_remove_liquidity_limit);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.lockdown_asset);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.force_lift_lockdown);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.release_deposit);
         }
     }
 }

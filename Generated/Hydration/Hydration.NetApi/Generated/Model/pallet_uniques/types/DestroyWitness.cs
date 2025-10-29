@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_uniques.types
     
     
     /// <summary>
-    /// >> 178 - Composite[pallet_uniques.types.DestroyWitness]
+    /// >> 168 - Composite[pallet_uniques.types.DestroyWitness]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DestroyWitness : BaseType

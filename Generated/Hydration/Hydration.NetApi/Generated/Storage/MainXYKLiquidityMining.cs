@@ -264,6 +264,28 @@ namespace Hydration.NetApi.Generated.Storage
             result.Create("0x0D150000000000000000000000000000");
             return result;
         }
+        
+        /// <summary>
+        /// >> OracleSource
+        ///  Oracle source identifier for this pallet.
+        /// </summary>
+        public Hydration.NetApi.Generated.Types.Base.Arr8U8 OracleSource()
+        {
+            var result = new Hydration.NetApi.Generated.Types.Base.Arr8U8();
+            result.Create("0x687964726178796B");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> OraclePeriod
+        ///  Oracle's liquidity aggregation period.
+        /// </summary>
+        public Hydration.NetApi.Generated.Model.hydradx_traits.oracle.EnumOraclePeriod OraclePeriod()
+        {
+            var result = new Hydration.NetApi.Generated.Model.hydradx_traits.oracle.EnumOraclePeriod();
+            result.Create("0x02");
+            return result;
+        }
     }
     
     /// <summary>
@@ -343,5 +365,11 @@ namespace Hydration.NetApi.Generated.Storage
         /// No global farm - yield farm pairs specified to join
         /// </summary>
         NoFarmsSpecified,
+        
+        /// <summary>
+        /// >> FailedToValueShares
+        /// Failed to calculate value of xyk shares
+        /// </summary>
+        FailedToValueShares,
     }
 }

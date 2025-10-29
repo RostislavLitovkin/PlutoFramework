@@ -45,7 +45,7 @@ namespace Hydration.NetApi.Generated.Model.cumulus_pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 473 - Variant[cumulus_pallet_xcm.pallet.Event]
+    /// >> 465 - Variant[cumulus_pallet_xcm.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

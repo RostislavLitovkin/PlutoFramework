@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.frame_system.extensions.check_spec_ve
     
     
     /// <summary>
-    /// >> 855 - Composite[frame_system.extensions.check_spec_version.CheckSpecVersion]
+    /// >> 840 - Composite[frame_system.extensions.check_spec_version.CheckSpecVersion]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckSpecVersion : BaseType

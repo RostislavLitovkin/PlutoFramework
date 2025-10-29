@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.frame_system.extensions.check_non_zer
     
     
     /// <summary>
-    /// >> 854 - Composite[frame_system.extensions.check_non_zero_sender.CheckNonZeroSender]
+    /// >> 839 - Composite[frame_system.extensions.check_non_zero_sender.CheckNonZeroSender]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckNonZeroSender : BaseType

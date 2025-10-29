@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.frame_support
     
     
     /// <summary>
-    /// >> 530 - Composite[frame_support.PalletId]
+    /// >> 522 - Composite[frame_support.PalletId]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PalletId : BaseType

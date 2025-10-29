@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_traits.router
     
     
     /// <summary>
-    /// >> 234 - Composite[hydradx_traits.router.Trade]
+    /// >> 224 - Composite[hydradx_traits.router.Trade]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Trade : BaseType

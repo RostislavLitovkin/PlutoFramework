@@ -84,7 +84,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_transaction_multi_payment.pall
     }
     
     /// <summary>
-    /// >> 83 - Variant[pallet_transaction_multi_payment.pallet.Call]
+    /// >> 78 - Variant[pallet_transaction_multi_payment.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

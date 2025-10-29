@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.cumulus_pallet_parachain_system.uninc
     
     
     /// <summary>
-    /// >> 753 - Composite[cumulus_pallet_parachain_system.unincluded_segment.Ancestor]
+    /// >> 738 - Composite[cumulus_pallet_parachain_system.unincluded_segment.Ancestor]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Ancestor : BaseType

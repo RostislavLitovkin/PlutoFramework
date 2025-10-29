@@ -38,7 +38,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 778 - Variant[pallet_xcm.pallet.QueryStatus]
+    /// >> 763 - Variant[pallet_xcm.pallet.QueryStatus]
     /// </summary>
     public sealed class EnumQueryStatus : BaseEnumRust<QueryStatus>
     {

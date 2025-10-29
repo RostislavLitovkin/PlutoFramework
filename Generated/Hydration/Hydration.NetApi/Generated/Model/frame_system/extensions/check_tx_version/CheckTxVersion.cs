@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.frame_system.extensions.check_tx_vers
     
     
     /// <summary>
-    /// >> 856 - Composite[frame_system.extensions.check_tx_version.CheckTxVersion]
+    /// >> 841 - Composite[frame_system.extensions.check_tx_version.CheckTxVersion]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckTxVersion : BaseType
