@@ -105,13 +105,13 @@ namespace PlutoFrameworkTests
         {
             var (createNamespace, namespaceId) = AssetDidCommModel.CreateNamespace(new AssetDidCommNamespaceInput { Name = "Csharp e2e test" });
 
-            await xcavateClient.SubmitExtrinsicAsync(createNamespace, managerAccount, (x, y) => { });
+            await xcavateClient.SubmitExtrinsicAsync(createNamespace, managerAccount, new TaskCompletionSource<string?>(), (x, y) => { });
 
             await Task.Delay(6000);
 
             var createBucket = AssetDidCommModel.CreateBucket(namespaceId, new AssetDidCommBucketInput { Name = "Csharp e2e test bucket" });
 
-            await xcavateClient.SubmitExtrinsicAsync(createBucket, managerAccount, (x, y) => { });
+            await xcavateClient.SubmitExtrinsicAsync(createBucket, managerAccount, new TaskCompletionSource<string?>(), (x, y) => { });
 
             await Task.Delay(6000);
         }
