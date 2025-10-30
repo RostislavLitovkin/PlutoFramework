@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Text.Json;
+﻿using System.Text.Json;
 using PlutoFrameworkCore.PushNotificationServices.Api.ApiEndpoints;
 using PlutoFrameworkCore.PushNotificationServices.Core.Background;
 using PlutoFrameworkCore.PushNotificationServices.Core.Interfaces;

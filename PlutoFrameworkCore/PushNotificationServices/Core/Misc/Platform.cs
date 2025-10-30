@@ -17,14 +17,14 @@ public static class Platform
     public static PlatformType Current
     {
         get => _current ?? 
-               throw new Exception("[PlutoNotifications] Error: Set Platform.Current before using it's value"); 
+               throw new InvalidOperationException("Set Platform.Current before using its value"); 
         set => _current = value;
     }
 
     public static IAttestationService AttestationService
     {
         get => _attestationService ?? 
-               throw new Exception("[PlutoNotifications] Error: Set Platform.AttestationService before using it's value");
+               throw new InvalidOperationException("Set Platform.AttestationService before using its value");
         set => _attestationService = value;
     }
     

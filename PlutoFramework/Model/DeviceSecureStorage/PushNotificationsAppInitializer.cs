@@ -1,6 +1,7 @@
 ﻿using PlutoFrameworkCore.PushNotificationServices.Api;
 using PlutoFrameworkCore.PushNotificationServices.Core.Background;
 using PlutoFrameworkCore.PushNotificationServices.Core.Misc;
+using PlutoFrameworkCore.PushNotificationServices.Core.Utils;
 # if ANDROID
 using PlutoFramework.Platforms.Android.Attestation;
 # elif IOS
@@ -17,9 +18,12 @@ public static class PushNotificationsAppInitializer
 
     public static async Task InitializeAsync(string apiUrl)
     {
+        Console.WriteLine($"[PlutoNotifications] Trying to start notification services ...");
         ApiClient.SetBaseUrl(apiUrl);
         Console.WriteLine($"[PlutoNotifications] API URL set: {apiUrl}");
         
+        SecureStorageManager.Storage = new PushNotificationsSecureStorageService();
+
         # if ANDROID
         NotificationsPlatform.Current = PlatformType.Android;
         NotificationsPlatform.AttestationService = new PlayIntegrityService();
@@ -31,15 +35,16 @@ public static class PushNotificationsAppInitializer
         
         var alreadyRegistered = Preferences.Get(RegistrationKey, false);
         Console.WriteLine($"[PlutoNotifications] Device registered: {alreadyRegistered}");
+
+        if (!alreadyRegistered)
+        {
+            JobQueue.Enqueue(JobQueue.DeviceRegisterJobKey);
+            await JobQueue.SaveQueueAsync();
+            Preferences.Set(RegistrationKey, true);
+        }
+
+        await BackgroundJobService.RunQueuedJobsAsync();
         
-        if (alreadyRegistered) return;
-
-        JobQueue.Enqueue(JobQueue.DeviceRegisterJobKey);
-        await JobQueue.SaveQueueAsync();
-
-        Preferences.Set(RegistrationKey, true);
-
-        var bgService = new BackgroundJobService();
-        await bgService.RunQueuedJobsAsync();
+        Console.WriteLine($"[PlutoNotifications] Background jobs processed.");
     }
 }

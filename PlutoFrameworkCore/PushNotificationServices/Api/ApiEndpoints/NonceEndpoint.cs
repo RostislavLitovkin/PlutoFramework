@@ -10,11 +10,13 @@ public record NonceRetrievalData
 {
     [JsonPropertyName("device_uuid")]
     public required string DeviceUUID { get; set; }
+    [JsonPropertyName("platform")]
+    public required string Platform { get; set; }
 }
 
 public abstract class NonceEndpoint: IApiEndpoint
 {
-    public static string EndpointPath => "/nonce";
+    public static string EndpointPath => "/api/nonce/";
     
     private record NonceObject
     {

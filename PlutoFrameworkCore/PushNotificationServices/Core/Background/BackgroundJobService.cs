@@ -1,9 +1,10 @@
 ﻿namespace PlutoFrameworkCore.PushNotificationServices.Core.Background;
 
-public class BackgroundJobService ()
+public static class BackgroundJobService
 {
-    public async Task RunQueuedJobsAsync()
+    public static async Task RunQueuedJobsAsync()
     {
+        Console.WriteLine($"[PlutoNotifications] Checking background job queue ...");
         while (JobQueue.Count > 0)
         {
             var t = JobQueue.Peek()!.Type switch
@@ -12,6 +13,7 @@ public class BackgroundJobService ()
                 JobQueue.UpdateFCMTokenKey => DeviceRegisterService.UpdateFCMTokenAsync(true),
                 _ => throw new Exception("Case not covered"),
             };
+            Console.WriteLine($"[PlutoNotifications] Background job started: {JobQueue.Peek()!.Type}");
 
             if (!await t) break;
         }

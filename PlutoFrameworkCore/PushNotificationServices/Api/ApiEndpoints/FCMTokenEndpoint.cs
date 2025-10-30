@@ -13,7 +13,7 @@ public record FCMTokenUpdateData
 
 public abstract class FCMTokenEndpoint : IApiEndpoint
 {
-    public static string EndpointPath => "/api/fcm/token-update";
+    public static string EndpointPath => "/api/fcm/token-update/";
 
     public static async Task UpdateTokenAsync(HttpClient httpClient, FCMTokenUpdateData input)
     {

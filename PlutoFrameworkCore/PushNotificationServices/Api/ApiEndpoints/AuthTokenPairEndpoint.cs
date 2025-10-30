@@ -26,7 +26,7 @@ public record DeviceRegistrationData
 
 public abstract class AuthTokenPairEndpoint: IApiEndpoint
 {
-    public static string EndpointPath => "/api/token";
+    public static string EndpointPath => "/api/token/";
     public static readonly string RefreshEndpointPath = EndpointPath + "/refresh";
     
     private record AccessTokenObject

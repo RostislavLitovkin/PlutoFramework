@@ -23,6 +23,7 @@ public static class RetryHelper
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"[PlutoNotifications] Attempt {attempt}: failed");
                 if (attempt >= maxAttempts || (isTransient != null && !isTransient(ex)))
                     throw;
 

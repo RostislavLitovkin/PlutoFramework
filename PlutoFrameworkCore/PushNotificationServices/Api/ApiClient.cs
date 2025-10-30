@@ -7,34 +7,41 @@ namespace PlutoFrameworkCore.PushNotificationServices.Api;
 
 public static class ApiClient
 {
-    private static string? _baseUrl;
+    private static HttpClient? _sharedClient;
+    private static HttpClient SharedClient
+    {
+        get => _sharedClient ??  throw new InvalidOperationException("Set ApiClient.BaseUrl before using ApiClient.");
+        set => _sharedClient = value;
+    }
 
     public static void SetBaseUrl(string url)
     {
-        _baseUrl = url ?? throw new ArgumentNullException(nameof(url));
+        SharedClient = new HttpClient
+        {
+            BaseAddress = new Uri(url ?? throw new InvalidOperationException(
+                    "Base URL is not specified. Call SetBaseUrl before using ApiClient."))
+        };
     }
-
-    private static readonly HttpClient SharedClient = new()
-    {
-        BaseAddress = new Uri(_baseUrl ?? throw new InvalidOperationException(
-            "API base URL not set. Call ApiClient.SetBaseUrl(...) before using ApiClient."))
-    };
     
     public static async Task RegisterDeviceRequestAsync(string deviceUUID)
     {
         if (Platform.Current == PlatformType.Other) return;
 
         var nonce = await NonceEndpoint.GetNonceAsync(SharedClient, new NonceRetrievalData {
-            DeviceUUID = deviceUUID
+            DeviceUUID = deviceUUID,
+            Platform = Platform.Current.ToStringValue()
         });
+        Console.WriteLine($"[PlutoNotifications] Got nonce: {nonce}");
 
         var attestation = await new AttestationTokenService(Platform.AttestationService).GetTokenAsync(nonce);
+        Console.WriteLine($"[PlutoNotifications] Got attestation: {attestation}");
 
         var tokenPair = await AuthTokenPairEndpoint.GetTokenPairAsync(SharedClient, new DeviceRegistrationData {
             DeviceUUID = deviceUUID,
             Attestation = attestation,
             Platform = Platform.Current.ToStringValue()
         });
+        Console.WriteLine($"[PlutoNotifications] Got JWT pair: {tokenPair.Access} {tokenPair.Refresh}");
 
         await SecureStorageManager.Storage.SaveAuthTokenPairAsync(tokenPair);
     }

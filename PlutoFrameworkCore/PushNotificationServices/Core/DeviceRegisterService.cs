@@ -10,6 +10,7 @@ public static class DeviceRegisterService
 {
     public static async Task<bool> RegisterDeviceAsync(bool alreadyInQueue = false)
     {
+        Console.WriteLine($"[PlutoNotifications] Trying to register device ...");
         if (!alreadyInQueue)
         {
             // queue the job in case of interrupting the app process
@@ -25,6 +26,7 @@ public static class DeviceRegisterService
         }
         catch (Exception e)
         {
+            Console.WriteLine($"[PlutoNotifications] Device registration failed ...");
             return false; // leave the job queued
         }
 
@@ -32,11 +34,13 @@ public static class DeviceRegisterService
         JobQueue.Enqueue(JobQueue.UpdateFCMTokenKey);
         await JobQueue.SaveQueueAsync();
         
+        Console.WriteLine($"[PlutoNotifications] Device has been registered ...");
         return true;
     }
 
     public static async Task<bool> UpdateFCMTokenAsync(bool alreadyInQueue = false)
     {
+        Console.WriteLine($"[PlutoNotifications] Trying to update FCM token ...");
         if (!alreadyInQueue)
         {
             JobQueue.Enqueue(JobQueue.UpdateFCMTokenKey);
@@ -53,12 +57,14 @@ public static class DeviceRegisterService
         }
         catch (Exception e)
         {
+            Console.WriteLine($"[PlutoNotifications] Token update failed ...");
             return false;
         }
         
         JobQueue.Dequeue();
         await JobQueue.SaveQueueAsync();
         
+        Console.WriteLine($"[PlutoNotifications] Token has been updated  ...");
         return true;
     }
 }
