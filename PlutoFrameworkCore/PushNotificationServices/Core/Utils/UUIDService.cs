@@ -1,4 +1,6 @@
-﻿namespace PlutoFrameworkCore.PushNotificationServices.Core;
+﻿using PlutoFrameworkCore.PushNotificationServices.Core.Utils;
+
+namespace PlutoFrameworkCore.PushNotificationServices.Core.Utils;
 
 public static class UUIDService
 {

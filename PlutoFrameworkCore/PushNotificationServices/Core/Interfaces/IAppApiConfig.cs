@@ -1,6 +1,6 @@
 ﻿namespace PlutoFrameworkCore.PushNotificationServices.Core.Interfaces;
 
-public interface IDeviceRegisterService
+public interface IAppApiConfig
 {
-    Task RegisterDeviceAsync();
+    string ApiUrl { get; }
 }

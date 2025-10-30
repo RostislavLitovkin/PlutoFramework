@@ -1,6 +1,6 @@
 ﻿using Plugin.Firebase.CloudMessaging;
 
-namespace PlutoFrameworkCore.PushNotificationServices.Core;
+namespace PlutoFrameworkCore.PushNotificationServices.Core.Utils;
 
 public static class FCMTokenService
 {

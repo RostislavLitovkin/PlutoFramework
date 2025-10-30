@@ -1,6 +1,6 @@
 ﻿using PlutoFrameworkCore.PushNotificationServices.Core.Interfaces;
 
-namespace PlutoFrameworkCore.PushNotificationServices.Core;
+namespace PlutoFrameworkCore.PushNotificationServices.Core.Utils;
 
 public static class SecureStorageManager
 {

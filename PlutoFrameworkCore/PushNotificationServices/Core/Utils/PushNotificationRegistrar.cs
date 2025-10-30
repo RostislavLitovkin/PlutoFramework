@@ -1,17 +1,17 @@
 ﻿using Plugin.Firebase.CloudMessaging;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace PlutoFrameworkCore.PushNotificationServices.Core;
+namespace PlutoFrameworkCore.PushNotificationServices.Core.Utils;
 
 public static class PushNotificationRegistrar
 {
     public static void RegisterPushNotificationServices(IServiceCollection services)
     {
 
-        CrossFirebaseCloudMessaging.Current.TokenChanged += (_, token) =>
+        CrossFirebaseCloudMessaging.Current.TokenChanged += (sender, token) =>
         {
-            Console.WriteLine($"[PlutoFramework] FCM token updated: {token}");
-            // TODO: await DeviceRegisterService.RegisterOrUpdateTokenAsync(token);
+            Console.WriteLine($"[PlutoNotifications] New FCM token: {token}");
+            _ = DeviceRegisterService.UpdateFCMTokenAsync();
         };
 
         services.AddSingleton(CrossFirebaseCloudMessaging.Current);

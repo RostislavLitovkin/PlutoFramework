@@ -1,7 +1,7 @@
 ﻿using PlutoFrameworkCore.PushNotificationServices.Core.Interfaces;
 using UniqueryPlus.OpalSubquery;
 
-namespace PlutoFrameworkCore.PushNotificationServices.Core;
+namespace PlutoFrameworkCore.PushNotificationServices.Core.Utils;
 
 public class AttestationTokenService (IAttestationService service)
 {

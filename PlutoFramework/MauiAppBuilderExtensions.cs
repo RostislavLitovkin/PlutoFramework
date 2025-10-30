@@ -30,7 +30,7 @@ using PlutoFramework.Components.XcavateProperty;
 using PlutoFramework.Components.Xcm;
 using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
-using PlutoFrameworkCore.PushNotificationServices.Core;
+using PlutoFrameworkCore.PushNotificationServices.Core.Utils;
 using Xe.AcrylicView;
 using ZXing.Net.Maui.Controls;
 

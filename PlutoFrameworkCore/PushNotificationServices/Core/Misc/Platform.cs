@@ -1,26 +1,40 @@
-﻿namespace PlutoFrameworkCore.PushNotificationServices.Core.Misc;
+﻿using PlutoFrameworkCore.PushNotificationServices.Core.Interfaces;
 
-public enum Platform
+namespace PlutoFrameworkCore.PushNotificationServices.Core.Misc;
+
+public enum PlatformType
 {
+    Other,
     Android,
-    iOS,
-    Other
+    iOS
 }
 
-/// <summary>
-/// Usage example:
-/// <code>
-/// Platform platform = Platform.Android;
-/// platform.ToStringValue();
-/// </code>
-/// </summary>
-public static class PlatformExtensions
+public static class Platform
 {
-    public static string ToStringValue(this Platform platform) => platform switch
+    private static PlatformType? _current;
+    private static IAttestationService? _attestationService;
+
+    public static PlatformType Current
     {
-        Platform.Android => "android",
-        Platform.iOS => "ios",
-        Platform.Other => "",
-        _ => throw new ArgumentOutOfRangeException(nameof(platform), platform, null) // shouldn't happen
-    };
+        get => _current ?? 
+               throw new Exception("[PlutoNotifications] Error: Set Platform.Current before using it's value"); 
+        set => _current = value;
+    }
+
+    public static IAttestationService AttestationService
+    {
+        get => _attestationService ?? 
+               throw new Exception("[PlutoNotifications] Error: Set Platform.AttestationService before using it's value");
+        set => _attestationService = value;
+    }
+    
+    public static string ToStringValue(this PlatformType platform)
+    {
+        return platform switch
+        {
+            PlatformType.Android => "android",
+            PlatformType.iOS => "ios",
+            _ => string.Empty
+        };
+    }
 }
