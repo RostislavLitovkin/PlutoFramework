@@ -2166,6 +2166,9 @@
     <MauiXaml Update="Components\Form\FormAssetInputView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\Form\FormDateInputView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\Form\FormImageUploadView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
