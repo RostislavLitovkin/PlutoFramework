@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             x:Class="PlutoFramework.Components.Form.FormMultiAddressInputView"
+             x:Name="Root">
+    <ContentView.Content>
+        <card:ClickableCard CardPadding="0">
+            <card:ClickableCard.View>
+                <VerticalStackLayout Spacing="8" Padding="10">
+                    <CollectionView x:Name="AddressesCollection"
+                                    ItemsSource="{Binding AddressItems, Source={x:Reference Root}}"
+                                    SelectionMode="None"
+                                    Margin="0,0,0,8"
+                                    HeightRequest="-1">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical" ItemSpacing="6" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="*,Auto" Padding="0">
+                                    <Entry Grid.Column="0"
+                                           Text="{Binding Address, Mode=TwoWay}"
+                                           Placeholder="Enter address"
+                                           Completed="OnEntryCompleted"
+                                           TextChanged="OnEntryTextChanged" />
+                                    <Button Grid.Column="1"
+                                            Text="Remove"
+                                            Padding="12,8"
+                                            Clicked="OnRemoveClicked" />
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                    <Button Text="Add address" Clicked="OnAddClicked" />
+                </VerticalStackLayout>
+            </card:ClickableCard.View>
+        </card:ClickableCard>
+    </ContentView.Content>
+</ContentView>

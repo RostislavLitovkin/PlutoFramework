@@ -2181,6 +2181,9 @@
     <MauiXaml Update="Components\Form\FormLargeValueView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\Form\FormMultiAddressInputView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\Form\FormValueView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
