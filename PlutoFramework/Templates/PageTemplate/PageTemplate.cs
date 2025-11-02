@@ -120,8 +120,8 @@ namespace PlutoFramework.Templates.PageTemplate
                 });
         public bool IsScrollEnabled
         {
-            get => (bool)GetValue(IsNavbarVisibleProperty);
-            set => SetValue(IsNavbarVisibleProperty, value);
+            get => (bool)GetValue(IsScrollEnabledProperty);
+            set => SetValue(IsScrollEnabledProperty, value);
         }
 
         public static readonly BindableProperty ScrollViewOrientationProperty =
