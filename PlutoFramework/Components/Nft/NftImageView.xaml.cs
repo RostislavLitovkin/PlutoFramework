@@ -57,6 +57,6 @@ public partial class NftImageView : ContentView
     }
     private async void OnExpandClicked(object sender, TappedEventArgs e)
     {
-        await Navigation.PushAsync(new NftImageFullScreenPage(ImageSource));
+        await Shell.Current.Navigation.PushAsync(new NftImageFullScreenPage(ImageSource));
     }
 }
