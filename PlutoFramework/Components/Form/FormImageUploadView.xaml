@@ -5,14 +5,14 @@
              x:Class="PlutoFramework.Components.Form.FormImageUploadView">
     <card:ClickableCard CardPadding="0">
         <card:ClickableCard.View>
-            <Grid HeightRequest="220">
+            <Grid HeightRequest="230">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="30"/>
                     <RowDefinition Height="200"/>
                 </Grid.RowDefinitions>
 
@@ -22,7 +22,8 @@
                         FontAttributes="Bold"
                         HorizontalOptions="Center"
                        HorizontalTextAlignment="Center"
-                        VerticalTextAlignment="Start">
+                        VerticalTextAlignment="Start"
+                       Margin="5">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span FontAttributes="Bold"
