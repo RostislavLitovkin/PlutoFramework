@@ -97,9 +97,6 @@
             <buttons:ElevatedButton ButtonState="Enabled"
                                     Text="Import json"
                                     Command="{Binding ImportJsonCommand}"/>
-
-            <buttons:BasicGrayButton Text="Forgot key"
-                                    Command="{Binding ForgotKeyCommand}"/>
         </VerticalStackLayout>
     </template:PageTemplate.MainContent>
 

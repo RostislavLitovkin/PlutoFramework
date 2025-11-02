@@ -57,24 +57,5 @@ namespace PlutoFramework.Components.Mnemonics
 
             await Navigation.Invoke();
         }
-
-        [RelayCommand]
-        public void ForgotKey()
-        {
-            var popupViewModel = DependencyService.Get<CanNotRecoverKeyPopupViewModel>();
-
-            popupViewModel.ProceedFunc = GenerateNewAccountAsync;
-
-            popupViewModel.IsVisible = true;
-        }
-        
-        public async Task GenerateNewAccountAsync()
-        {
-            await Model.KeysModel.GenerateNewAccountAsync();
-
-            await PlutoConfigurationModel.AfterAccountImportAsync();
-
-            await Navigation.Invoke();
-        }
     }
 }
