@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.Buttons;
 using PlutoFramework.Components.DAppConnection;
 using PlutoFramework.Components.Extrinsic;
+using PlutoFramework.Components.Loading;
 using PlutoFramework.Constants;
 using PlutoFramework.Model;
 using PlutoFramework.Model.AjunaExt;
@@ -21,6 +22,8 @@ namespace PlutoFramework.Components.TransactionAnalyzer
     public partial class TransactionAnalyzerConfirmationViewModel : ObservableObject, IPopup, ISetToDefault
     {
         private TaskCompletionSource<string?> txHashTask = new TaskCompletionSource<string?>();
+
+        private bool enableLoading = false;
 
         [ObservableProperty]
         private ObservableCollection<ExtrinsicEvent> extrinsicEvents = new ObservableCollection<ExtrinsicEvent>();
@@ -44,7 +47,13 @@ namespace PlutoFramework.Components.TransactionAnalyzer
         [NotifyPropertyChangedFor(nameof(ProcessedPalletCallName))]
         private string palletCallName;
 
-        public string ProcessedPalletCallName => (string)Application.Current.Resources["TransactionAnalyzerPalletCallNameSubstitution"] ?? PalletCallName;
+        public string ProcessedPalletCallName {
+            get {
+                string palletCallName = (string)Application.Current.Resources["TransactionAnalyzerPalletCallNameSubstitution"];
+
+                return !string.IsNullOrWhiteSpace(palletCallName) ? palletCallName : PalletCallName;
+            }
+        }
 
         [ObservableProperty]
         private TempPayload payload;
@@ -74,7 +83,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
         [ObservableProperty]
         private Func<Task> onConfirm;
 
-        public async Task<string?> LoadAsync(SubstrateClientExt client, Method method, bool showDAppView = false, Func<Task>? onConfirm = null, CancellationToken token = default)
+        public async Task<string?> LoadAsync(SubstrateClientExt client, Method method, bool showDAppView = false, Func<Task>? onConfirm = null, bool enableLoading = false, CancellationToken token = default)
         {
             var account = new ChopsticksMockAccount();
             account.Create(KeyType.Sr25519, KeysModel.GetPublicKeyBytes());
@@ -83,10 +92,13 @@ namespace PlutoFramework.Components.TransactionAnalyzer
             var extrinsic = await client.GetTempUnCheckedExtrinsicAsync(method, account, lifeTime: 64, token: token);
             #endregion
 
-            return await LoadAsync(client, extrinsic, showDAppView, onConfirm);
+            return await LoadAsync(client, extrinsic, showDAppView, onConfirm, enableLoading);
         }
-        public async Task<string?> LoadAsync(SubstrateClientExt client, TempUnCheckedExtrinsic unCheckedExtrinsic, bool showDAppView, Func<Task>? onConfirm = null, RuntimeVersion? runtimeVersion = null)
+
+        public async Task<string?> LoadAsync(SubstrateClientExt client, TempUnCheckedExtrinsic unCheckedExtrinsic, bool showDAppView, Func<Task>? onConfirm = null, bool enableLoading = false, RuntimeVersion? runtimeVersion = null)
         {
+
+            this.enableLoading = enableLoading;
             // Reset txHashTask
             try
             {
@@ -234,6 +246,12 @@ namespace PlutoFramework.Components.TransactionAnalyzer
 
         public async Task OnConfirmClickedAsync()
         {
+            if (enableLoading)
+            {
+                var loading = DependencyService.Get<FullPageLoadingViewModel>();
+                loading.IsVisible = true;
+            }
+
             var account = await KeysModel.GetAccountAsync();
 
             if (account is null)

@@ -60,13 +60,6 @@ namespace PlutoFramework.Components.Nft
             false => OwnerAddress,
         };
 
-        [RelayCommand]
-        public async Task CopyAddressAsync() => await CopyAddress.CopyToClipboardAsync(OwnerAddress);
-
-        [RelayCommand]
-        public async Task OpenSubscanOwnerPageAsync() => await Application.Current.MainPage.Navigation.PushAsync(new WebViewPage($"https://www.subscan.io/account/{OwnerAddress}"));
-
-
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(PriceText))]
         private Endpoint endpoint;

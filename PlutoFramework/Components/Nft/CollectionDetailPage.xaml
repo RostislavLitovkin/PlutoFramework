@@ -8,6 +8,7 @@
                        xmlns:koda="clr-namespace:PlutoFramework.Components.Koda"
                        xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
                        xmlns:model="clr-namespace:PlutoFramework.Model"
+                       xmlns:address="clr-namespace:PlutoFramework.Components.AddressView"
                        xmlns:date="clr-namespace:PlutoFramework.Components.Date"
                        x:Class="PlutoFramework.Components.Nft.CollectionDetailPage"
                        Title="{Binding Name}">
@@ -51,7 +52,9 @@
                               KodadotUnlockableUrl="{Binding KodadotUnlockableUrl}"
                               AzeroIdReservedUntil="{Binding AzeroIdReservedUntil}"/>
 
-            <nft:NftOwnerView />
+            <address:SubscanAddressView Address="{Binding OwnerAddress}"
+                            AddressText="{Binding OwnerAddressText}"
+                            Title="Owner"/>
 
             <nft:NftTradingStats IsVisible="{Binding TradingStatsIsVisible}" />
 

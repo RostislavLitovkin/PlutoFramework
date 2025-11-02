@@ -8,6 +8,7 @@
                     xmlns:loading="clr-namespace:PlutoFramework.Components.Loading"
                     xmlns:kilt="clr-namespace:PlutoFramework.Components.Kilt"
                     xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
+                    xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
                     xmlns:topnavigationbartemplate="clr-namespace:PlutoFramework.Templates.TopNavigationBarTemplate"
                     x:Class="PlutoFramework.Templates.PageTemplate.Page">
 
@@ -59,6 +60,8 @@
             <password:EnterPasswordPopupView ZIndex="10"/>
 
             <loading:FullPageLoadingView ZIndex="20" />
+
+            <extrinsic:ExtrinsicStatusStackLayout ZIndex="5" />
         </AbsoluteLayout>
     </ControlTemplate>
 </ResourceDictionary>

@@ -632,10 +632,6 @@
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
-    <Compile Update="Components\Nft\NftOwnerView.xaml.cs">
-      <SubType>Code</SubType>
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
     <Compile Update="Components\Nft\NftPictureView.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
@@ -2052,6 +2048,9 @@
     <MauiXaml Update="Components\AddressView\PolkadotAddressView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\AddressView\SubscanAddressView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\AddressView\SubstrateAddressView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
@@ -2357,9 +2356,6 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Nft\NftOwnedGalleryView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </MauiXaml>
-    <MauiXaml Update="Components\Nft\NftOwnerView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Nft\NftSellView.xaml">

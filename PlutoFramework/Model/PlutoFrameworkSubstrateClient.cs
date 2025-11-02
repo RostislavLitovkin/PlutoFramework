@@ -101,7 +101,7 @@ namespace PlutoFramework.Model
             #endregion
 
             Hash extrinsicHash = new Hash(HashExtension.Blake2(extrinsic.Encode(), 256));
-            string extrinsicHashString = Utils.Bytes2HexString(extrinsicHash);
+            string extrinsicHashString = Utils.Bytes2HexString(extrinsicHash).ToLower();
 
             var (palletName, callName) = Model.PalletCallModel.GetPalletAndCallName(this, extrinsic.Method.ModuleIndex, extrinsic.Method.CallIndex);
 
@@ -232,15 +232,6 @@ namespace PlutoFramework.Model
 
                         extrinsicStackViewModel.Update();
                     });
-
-                    try
-                    {
-                        txHash.SetResult(extrinsicHashString);
-                    }
-                    catch
-                    {
-
-                    }
                 }
 
                 else
@@ -256,7 +247,17 @@ namespace PlutoFramework.Model
 
             string extrinsicId = await this.SubstrateClient.Author.SubmitAndWatchExtrinsicAsync(updateExtrinsicsCallback, Utils.Bytes2HexString(extrinsic.Encode()).ToLower(), token);
 
+
             Console.WriteLine("Extrinsic submitted");
+
+            try
+            {
+                txHash.SetResult(extrinsicHashString);
+            }
+            catch
+            {
+
+            }
 
             return extrinsicId;
         }
