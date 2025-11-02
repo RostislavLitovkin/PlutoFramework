@@ -2389,6 +2389,9 @@
     <MauiXaml Update="Components\Notifications\NotificationView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\Nova\NovaExportGuidePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\OpenGov\VotingDelegationView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
