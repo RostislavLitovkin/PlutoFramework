@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
     
     
     /// <summary>
-    /// >> 563 - Composite[pallet_marketplace.types.OfferDetails]
+    /// >> 581 - Composite[pallet_marketplace.types.OfferDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OfferDetails : BaseType
@@ -36,6 +36,10 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
         /// >> payment_assets
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 PaymentAssets { get; set; }
+        /// <summary>
+        /// >> nonce
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U64 Nonce { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -50,6 +54,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
             result.AddRange(TokenPrice.Encode());
             result.AddRange(Amount.Encode());
             result.AddRange(PaymentAssets.Encode());
+            result.AddRange(Nonce.Encode());
             return result.ToArray();
         }
         
@@ -63,6 +68,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
             Amount.Decode(byteArray, ref p);
             PaymentAssets = new Substrate.NetApi.Model.Types.Primitive.U32();
             PaymentAssets.Decode(byteArray, ref p);
+            Nonce = new Substrate.NetApi.Model.Types.Primitive.U64();
+            Nonce.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;
             Bytes = new byte[bytesLength];

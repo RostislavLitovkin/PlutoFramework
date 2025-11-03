@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
     
     
     /// <summary>
-    /// >> 561 - Composite[pallet_marketplace.types.TokenOwnerDetails]
+    /// >> 579 - Composite[pallet_marketplace.types.TokenOwnerDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class TokenOwnerDetails : BaseType
@@ -31,11 +31,15 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
         /// <summary>
         /// >> paid_funds
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT4 PaidFunds { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 PaidFunds { get; set; }
         /// <summary>
         /// >> paid_tax
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT4 PaidTax { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 PaidTax { get; set; }
+        /// <summary>
+        /// >> relist_count
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U8 RelistCount { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -50,6 +54,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
             result.AddRange(TokenAmount.Encode());
             result.AddRange(PaidFunds.Encode());
             result.AddRange(PaidTax.Encode());
+            result.AddRange(RelistCount.Encode());
             return result.ToArray();
         }
         
@@ -59,10 +64,12 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
             var start = p;
             TokenAmount = new Substrate.NetApi.Model.Types.Primitive.U32();
             TokenAmount.Decode(byteArray, ref p);
-            PaidFunds = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT4();
+            PaidFunds = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             PaidFunds.Decode(byteArray, ref p);
-            PaidTax = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT4();
+            PaidTax = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             PaidTax.Decode(byteArray, ref p);
+            RelistCount = new Substrate.NetApi.Model.Types.Primitive.U8();
+            RelistCount.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;
             Bytes = new byte[bytesLength];

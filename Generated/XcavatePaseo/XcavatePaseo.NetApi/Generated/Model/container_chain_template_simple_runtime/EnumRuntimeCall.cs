@@ -87,14 +87,19 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
         Multisig = 16,
         
         /// <summary>
+        /// >> Parameters
+        /// </summary>
+        Parameters = 17,
+        
+        /// <summary>
         /// >> Nfts
         /// </summary>
-        Nfts = 17,
+        Nfts = 18,
         
         /// <summary>
         /// >> NftFractionalization
         /// </summary>
-        NftFractionalization = 18,
+        NftFractionalization = 19,
         
         /// <summary>
         /// >> AuthoritiesNoting
@@ -178,7 +183,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
     }
     
     /// <summary>
-    /// >> 265 - Variant[container_chain_template_simple_runtime.RuntimeCall]
+    /// >> 282 - Variant[container_chain_template_simple_runtime.RuntimeCall]
     /// </summary>
     public sealed class EnumRuntimeCall : BaseEnumRust<RuntimeCall>
     {
@@ -201,6 +206,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_ru
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_balances.pallet.EnumCall>(RuntimeCall.Balances);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_assets.pallet.EnumCall>(RuntimeCall.RealEstateAssets);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_multisig.pallet.EnumCall>(RuntimeCall.Multisig);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_parameters.pallet.EnumCall>(RuntimeCall.Parameters);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_nfts.pallet.EnumCall>(RuntimeCall.Nfts);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_nft_fractionalization.pallet.EnumCall>(RuntimeCall.NftFractionalization);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_cc_authorities_noting.pallet.EnumCall>(RuntimeCall.AuthoritiesNoting);

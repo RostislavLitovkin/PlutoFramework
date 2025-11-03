@@ -40,7 +40,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_cc_authorities_noting.palle
     }
     
     /// <summary>
-    /// >> 479 - Variant[pallet_cc_authorities_noting.pallet.Error]
+    /// >> 504 - Variant[pallet_cc_authorities_noting.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

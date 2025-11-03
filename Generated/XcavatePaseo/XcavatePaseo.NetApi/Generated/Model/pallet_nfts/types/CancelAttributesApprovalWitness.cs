@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 306 - Composite[pallet_nfts.types.CancelAttributesApprovalWitness]
+    /// >> 326 - Composite[pallet_nfts.types.CancelAttributesApprovalWitness]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CancelAttributesApprovalWitness : BaseType

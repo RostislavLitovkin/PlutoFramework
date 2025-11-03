@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 572 - Composite[BTreeMapT9]
+    /// >> 594 - Composite[BTreeMapT9]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BTreeMapT9 : BaseType
@@ -27,7 +27,7 @@ namespace XcavatePaseo.NetApi.Generated.Types.Base
         /// <summary>
         /// >> value
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.EnumVote>> Value { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10, XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.LocationInfo>> Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace XcavatePaseo.NetApi.Generated.Types.Base
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.EnumVote>>();
+            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10, XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.LocationInfo>>();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

@@ -42,11 +42,13 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         
         /// <summary>
         /// >> ArithmeticOverflow
+        /// Arithmetic operation caused an overflow.
         /// </summary>
         ArithmeticOverflow = 3,
         
         /// <summary>
         /// >> ArithmeticUnderflow
+        /// Arithmetic operation caused an underflow.
         /// </summary>
         ArithmeticUnderflow = 4,
         
@@ -63,134 +65,152 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         NotEnoughFunds = 6,
         
         /// <summary>
-        /// >> TooManyAssignedProperties
-        /// The letting agent has already too many assigned properties.
-        /// </summary>
-        TooManyAssignedProperties = 7,
-        
-        /// <summary>
         /// >> NoLettingAgentFound
         /// No letting agent could be selected.
         /// </summary>
-        NoLettingAgentFound = 8,
+        NoLettingAgentFound = 7,
         
         /// <summary>
         /// >> RegionUnknown
         /// The region is not registered.
         /// </summary>
-        RegionUnknown = 9,
-        
-        /// <summary>
-        /// >> TooManyLettingAgents
-        /// The location has already the maximum amount of letting agents.
-        /// </summary>
-        TooManyLettingAgents = 10,
+        RegionUnknown = 8,
         
         /// <summary>
         /// >> TooManyLocations
         /// The letting agent is already active in too many locations.
         /// </summary>
-        TooManyLocations = 11,
+        TooManyLocations = 9,
         
         /// <summary>
         /// >> NoPermission
         /// The caller is not authorized to call this extrinsic.
         /// </summary>
-        NoPermission = 12,
+        NoPermission = 10,
         
         /// <summary>
         /// >> LettingAgentAlreadySet
         /// The letting agent of this property is already set.
         /// </summary>
-        LettingAgentAlreadySet = 13,
+        LettingAgentAlreadySet = 11,
         
         /// <summary>
         /// >> NoObjectFound
         /// The real estate object could not be found.
         /// </summary>
-        NoObjectFound = 14,
+        NoObjectFound = 12,
         
         /// <summary>
         /// >> AgentNotFound
         /// The account is not a letting agent of this location.
         /// </summary>
-        AgentNotFound = 15,
+        AgentNotFound = 13,
         
         /// <summary>
         /// >> LocationUnknown
         /// The location is not registered.
         /// </summary>
-        LocationUnknown = 16,
+        LocationUnknown = 14,
         
         /// <summary>
         /// >> LettingAgentInLocation
         /// The letting agent is already assigned to this location.
         /// </summary>
-        LettingAgentInLocation = 17,
-        
-        /// <summary>
-        /// >> LettingAgentExists
-        /// The letting agent is already registered.
-        /// </summary>
-        LettingAgentExists = 18,
-        
-        /// <summary>
-        /// >> AssetNotFound
-        /// This asset has no token.
-        /// </summary>
-        AssetNotFound = 19,
+        LettingAgentInLocation = 15,
         
         /// <summary>
         /// >> PaymentAssetNotSupported
         /// This Asset is not supported for payment.
         /// </summary>
-        PaymentAssetNotSupported = 20,
+        PaymentAssetNotSupported = 16,
         
         /// <summary>
         /// >> NoLettingAgentProposed
         /// No letting agent has been proposed for this property.
         /// </summary>
-        NoLettingAgentProposed = 21,
+        NoLettingAgentProposed = 17,
         
         /// <summary>
         /// >> VotingExpired
         /// The propal has expired.
         /// </summary>
-        VotingExpired = 22,
-        
-        /// <summary>
-        /// >> UserNotWhitelisted
-        /// User did not pass the kyc.
-        /// </summary>
-        UserNotWhitelisted = 23,
+        VotingExpired = 18,
         
         /// <summary>
         /// >> VotingStillOngoing
         /// The voting is still ongoing.
         /// </summary>
-        VotingStillOngoing = 24,
+        VotingStillOngoing = 19,
         
         /// <summary>
         /// >> LettingAgentProposalOngoing
         /// There is already a letting agent proposal ongoing.
         /// </summary>
-        LettingAgentProposalOngoing = 25,
+        LettingAgentProposalOngoing = 20,
         
         /// <summary>
-        /// >> TooManyVoters
-        /// There are already too many voters for this voting.
+        /// >> LocationNotFound
+        /// The letting agent has is not responsible for this location.
         /// </summary>
-        TooManyVoters = 26,
+        LocationNotFound = 21,
         
         /// <summary>
-        /// >> AccountIsNotLettingAgent
-        /// The account has not the role of a letting agent.
+        /// >> LettingAgentNotActiveInLocation
+        /// The letting agent is not active in this location.
         /// </summary>
-        AccountIsNotLettingAgent = 27,
+        LettingAgentNotActiveInLocation = 22,
+        
+        /// <summary>
+        /// >> LettingAgentActive
+        /// Letting agent still has active properties in location.
+        /// </summary>
+        LettingAgentActive = 23,
+        
+        /// <summary>
+        /// >> NoFrozenAmount
+        /// The user has no token amount frozen.
+        /// </summary>
+        NoFrozenAmount = 24,
+        
+        /// <summary>
+        /// >> ZeroVoteAmount
+        /// The voting amount must be greater than zero.
+        /// </summary>
+        ZeroVoteAmount = 25,
+        
+        /// <summary>
+        /// >> ZeroDistributionAmount
+        /// The distribution amount cannot be zero.
+        /// </summary>
+        ZeroDistributionAmount = 26,
+        
+        /// <summary>
+        /// >> ZeroTokenSupply
+        /// The total token supply for the property cannot be zero.
+        /// </summary>
+        ZeroTokenSupply = 27,
+        
+        /// <summary>
+        /// >> ResignationAlreadyInitiated
+        /// A resignation notice is already active for the property.
+        /// </summary>
+        ResignationAlreadyInitiated = 28,
+        
+        /// <summary>
+        /// >> TooManyNoticesPerBlock
+        /// Too many resignation notices for the block.
+        /// </summary>
+        TooManyNoticesPerBlock = 29,
+        
+        /// <summary>
+        /// >> NoResignationNotice
+        /// No resignation notice found for the property.
+        /// </summary>
+        NoResignationNotice = 30,
     }
     
     /// <summary>
-    /// >> 590 - Variant[pallet_property_management.pallet.Error]
+    /// >> 606 - Variant[pallet_property_management.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

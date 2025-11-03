@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_migrations
     
     
     /// <summary>
-    /// >> 280 - Composite[pallet_migrations.ActiveCursor]
+    /// >> 297 - Composite[pallet_migrations.ActiveCursor]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ActiveCursor : BaseType

@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcm
     
     
     /// <summary>
-    /// >> 511 - Composite[pallet_xcm.AuthorizedAliasesEntry]
+    /// >> 536 - Composite[pallet_xcm.AuthorizedAliasesEntry]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AuthorizedAliasesEntry : BaseType
@@ -27,7 +27,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcm
         /// <summary>
         /// >> aliasers
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35 Aliasers { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT36 Aliasers { get; set; }
         /// <summary>
         /// >> ticket
         /// </summary>
@@ -52,7 +52,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcm
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Aliasers = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35();
+            Aliasers = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT36();
             Aliasers.Decode(byteArray, ref p);
             Ticket = new XcavatePaseo.NetApi.Generated.Model.frame_support.traits.storage.Disabled();
             Ticket.Decode(byteArray, ref p);

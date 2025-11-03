@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
     }
     
     /// <summary>
-    /// >> 610 - Variant[pallet_bucket.types.Status]
+    /// >> 622 - Variant[pallet_bucket.types.Status]
     /// </summary>
     public sealed class EnumStatus : BaseEnumRust<Status>
     {

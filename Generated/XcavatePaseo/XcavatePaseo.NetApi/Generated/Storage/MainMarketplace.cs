@@ -37,6 +37,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "NextListingId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "NextOfferNonce"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "OngoingObjectListing"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.PropertyListingDetails)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "TokenOwner"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -51,6 +52,8 @@ namespace XcavatePaseo.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.PropertyLawyerDetails)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "RefundToken"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.RefundInfos)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "RefundClaimedToken"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "RefundLegalExpired"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "ListingDeposits"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -58,16 +61,20 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "ProposedLawyers"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.ProposedDeveloperLawyer)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "SpvLawyerProposal"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.ProposedSpvLawyer)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.ProposedSpvLawyer)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "OngoingLawyerVoting"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.VoteStats)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.VoteStats)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "UserLawyerVote"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT6)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.VoteRecord)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "ListingSpvProposal"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "ProposalCounter"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
         }
         
         /// <summary>
         /// >> NextListingIdParams
-        ///  The Id for the next token listing.
+        ///  Storage for the next listing ID.
         /// </summary>
         public static string NextListingIdParams()
         {
@@ -85,7 +92,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> NextListingId
-        ///  The Id for the next token listing.
+        ///  Storage for the next listing ID.
         /// </summary>
         public async Task<Substrate.NetApi.Model.Types.Primitive.U32> NextListingId(string blockhash, CancellationToken token)
         {
@@ -95,8 +102,37 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         }
         
         /// <summary>
+        /// >> NextOfferNonceParams
+        ///  Storage for the next offer nonce.
+        /// </summary>
+        public static string NextOfferNonceParams()
+        {
+            return RequestGenerator.GetStorage("Marketplace", "NextOfferNonce", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> NextOfferNonceDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string NextOfferNonceDefault()
+        {
+            return "0x0000000000000000";
+        }
+        
+        /// <summary>
+        /// >> NextOfferNonce
+        ///  Storage for the next offer nonce.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U64> NextOfferNonce(string blockhash, CancellationToken token)
+        {
+            string parameters = MarketplaceStorage.NextOfferNonceParams();
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U64>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
         /// >> OngoingObjectListingParams
-        ///  Mapping of the listing id to the ongoing property listing details.
+        ///  Storage for ongoing property listings, mapping listing ID to details.
         /// </summary>
         public static string OngoingObjectListingParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
         {
@@ -116,7 +152,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> OngoingObjectListing
-        ///  Mapping of the listing id to the ongoing property listing details.
+        ///  Storage for ongoing property listings, mapping listing ID to details.
         /// </summary>
         public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.PropertyListingDetails> OngoingObjectListing(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
@@ -127,8 +163,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> TokenOwnerParams
-        ///  Double mapping of the account id of the token owner
-        ///  and the listing to the amount of token.
+        ///  Storage for token ownership, mapping account ID and listing ID to token amounts.
         /// </summary>
         public static string TokenOwnerParams(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32> key)
         {
@@ -148,8 +183,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> TokenOwner
-        ///  Double mapping of the account id of the token owner
-        ///  and the listing to the amount of token.
+        ///  Storage for token ownership, mapping account ID and listing ID to token amounts.
         /// </summary>
         public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.TokenOwnerDetails> TokenOwner(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
         {
@@ -160,7 +194,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> TokenListingsParams
-        ///  Mapping of the listing id to the listing details of a token listing.
+        ///  Storage for token listings, mapping listing ID to listing details.
         /// </summary>
         public static string TokenListingsParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
         {
@@ -180,7 +214,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> TokenListings
-        ///  Mapping of the listing id to the listing details of a token listing.
+        ///  Storage for token listings, mapping listing ID to listing details.
         /// </summary>
         public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.TokenListingDetails> TokenListings(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
@@ -191,7 +225,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> OngoingOffersParams
-        ///  Mapping from listing and offeror account id to the offer details.
+        ///  Storage for ongoing offers, mapping listing ID and offeror to offer details.
         /// </summary>
         public static string OngoingOffersParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
         {
@@ -211,7 +245,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> OngoingOffers
-        ///  Mapping from listing and offeror account id to the offer details.
+        ///  Storage for ongoing offers, mapping listing ID and offeror to offer details.
         /// </summary>
         public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.OfferDetails> OngoingOffers(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
         {
@@ -222,7 +256,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> PropertyLawyerParams
-        ///  Stores the lawyer related infos of a listing.
+        ///  Storage for lawyer details related to a listing.
         /// </summary>
         public static string PropertyLawyerParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
         {
@@ -242,7 +276,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> PropertyLawyer
-        ///  Stores the lawyer related infos of a listing.
+        ///  Storage for lawyer details related to a listing.
         /// </summary>
         public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.PropertyLawyerDetails> PropertyLawyer(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
@@ -253,7 +287,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> RefundTokenParams
-        ///  Stores required infos in case of a refund.
+        ///  Storage for refund information.
         /// </summary>
         public static string RefundTokenParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
         {
@@ -273,12 +307,43 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> RefundToken
-        ///  Stores required infos in case of a refund.
+        ///  Storage for refund information.
         /// </summary>
         public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.RefundInfos> RefundToken(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = MarketplaceStorage.RefundTokenParams(key);
             var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.RefundInfos>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> RefundClaimedTokenParams
+        ///  Stores required infos in case of a refund.
+        /// </summary>
+        public static string RefundClaimedTokenParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        {
+            return RequestGenerator.GetStorage("Marketplace", "RefundClaimedToken", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> RefundClaimedTokenDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string RefundClaimedTokenDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> RefundClaimedToken
+        ///  Stores required infos in case of a refund.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> RefundClaimedToken(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        {
+            string parameters = MarketplaceStorage.RefundClaimedTokenParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
             return result;
         }
         
@@ -315,7 +380,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ListingDepositsParams
-        ///  Stores the deposit information of a listing.
+        ///  Storage for listing deposits, mapping listing ID to depositor and amount.
         /// </summary>
         public static string ListingDepositsParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
         {
@@ -335,7 +400,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ListingDeposits
-        ///  Stores the deposit information of a listing.
+        ///  Storage for listing deposits, mapping listing ID to depositor and amount.
         /// </summary>
         public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>> ListingDeposits(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
@@ -379,7 +444,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> SpvLawyerProposalParams
         ///  Mapping of listing to the ongoing spv lawyer proposal.
         /// </summary>
-        public static string SpvLawyerProposalParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        public static string SpvLawyerProposalParams(Substrate.NetApi.Model.Types.Primitive.U64 key)
         {
             return RequestGenerator.GetStorage("Marketplace", "SpvLawyerProposal", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -399,7 +464,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> SpvLawyerProposal
         ///  Mapping of listing to the ongoing spv lawyer proposal.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.ProposedSpvLawyer> SpvLawyerProposal(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.ProposedSpvLawyer> SpvLawyerProposal(Substrate.NetApi.Model.Types.Primitive.U64 key, string blockhash, CancellationToken token)
         {
             string parameters = MarketplaceStorage.SpvLawyerProposalParams(key);
             var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.ProposedSpvLawyer>(parameters, blockhash, token);
@@ -408,9 +473,9 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> OngoingLawyerVotingParams
-        ///  Mapping of ongoing lawyer voted.
+        ///  Storage for ongoing lawyer voting statistics.
         /// </summary>
-        public static string OngoingLawyerVotingParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        public static string OngoingLawyerVotingParams(Substrate.NetApi.Model.Types.Primitive.U64 key)
         {
             return RequestGenerator.GetStorage("Marketplace", "OngoingLawyerVoting", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -428,9 +493,9 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> OngoingLawyerVoting
-        ///  Mapping of ongoing lawyer voted.
+        ///  Storage for ongoing lawyer voting statistics.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.VoteStats> OngoingLawyerVoting(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.VoteStats> OngoingLawyerVoting(Substrate.NetApi.Model.Types.Primitive.U64 key, string blockhash, CancellationToken token)
         {
             string parameters = MarketplaceStorage.OngoingLawyerVotingParams(key);
             var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.VoteStats>(parameters, blockhash, token);
@@ -439,13 +504,13 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> UserLawyerVoteParams
-        ///  Mapping of a listing id and account id to the vote of a user.
+        ///  Storage for ongoing lawyer voting statistics.
         /// </summary>
-        public static string UserLawyerVoteParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        public static string UserLawyerVoteParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
         {
             return RequestGenerator.GetStorage("Marketplace", "UserLawyerVote", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
-                        key});
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, key.Value);
         }
         
         /// <summary>
@@ -459,12 +524,72 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> UserLawyerVote
-        ///  Mapping of a listing id and account id to the vote of a user.
+        ///  Storage for ongoing lawyer voting statistics.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT6> UserLawyerVote(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.VoteRecord> UserLawyerVote(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
         {
             string parameters = MarketplaceStorage.UserLawyerVoteParams(key);
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT6>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.VoteRecord>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> ListingSpvProposalParams
+        ///  Storage for mapping listings to SPV proposals.
+        /// </summary>
+        public static string ListingSpvProposalParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        {
+            return RequestGenerator.GetStorage("Marketplace", "ListingSpvProposal", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> ListingSpvProposalDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string ListingSpvProposalDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> ListingSpvProposal
+        ///  Storage for mapping listings to SPV proposals.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U64> ListingSpvProposal(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        {
+            string parameters = MarketplaceStorage.ListingSpvProposalParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U64>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> ProposalCounterParams
+        ///  Counter of proposal ids.
+        /// </summary>
+        public static string ProposalCounterParams()
+        {
+            return RequestGenerator.GetStorage("Marketplace", "ProposalCounter", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> ProposalCounterDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string ProposalCounterDefault()
+        {
+            return "0x0000000000000000";
+        }
+        
+        /// <summary>
+        /// >> ProposalCounter
+        ///  Counter of proposal ids.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U64> ProposalCounter(string blockhash, CancellationToken token)
+        {
+            string parameters = MarketplaceStorage.ProposalCounterParams();
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U64>(parameters, blockhash, token);
             return result;
         }
     }
@@ -516,6 +641,17 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         }
         
         /// <summary>
+        /// >> finalize_claim_window
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method FinalizeClaimWindow(Substrate.NetApi.Model.Types.Primitive.U32 listing_id)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(listing_id.Encode());
+            return new Method(93, "Marketplace", 3, "finalize_claim_window", byteArray.ToArray());
+        }
+        
+        /// <summary>
         /// >> create_spv
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
@@ -523,7 +659,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 3, "create_spv", byteArray.ToArray());
+            return new Method(93, "Marketplace", 4, "create_spv", byteArray.ToArray());
         }
         
         /// <summary>
@@ -536,7 +672,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(asset_id.Encode());
             byteArray.AddRange(token_price.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(93, "Marketplace", 4, "relist_token", byteArray.ToArray());
+            return new Method(93, "Marketplace", 5, "relist_token", byteArray.ToArray());
         }
         
         /// <summary>
@@ -549,7 +685,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(listing_id.Encode());
             byteArray.AddRange(amount.Encode());
             byteArray.AddRange(payment_asset.Encode());
-            return new Method(93, "Marketplace", 5, "buy_relisted_token", byteArray.ToArray());
+            return new Method(93, "Marketplace", 6, "buy_relisted_token", byteArray.ToArray());
         }
         
         /// <summary>
@@ -560,7 +696,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 6, "cancel_property_purchase", byteArray.ToArray());
+            return new Method(93, "Marketplace", 7, "cancel_property_purchase", byteArray.ToArray());
         }
         
         /// <summary>
@@ -574,20 +710,21 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(offer_price.Encode());
             byteArray.AddRange(amount.Encode());
             byteArray.AddRange(payment_asset.Encode());
-            return new Method(93, "Marketplace", 7, "make_offer", byteArray.ToArray());
+            return new Method(93, "Marketplace", 8, "make_offer", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> handle_offer
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method HandleOffer(Substrate.NetApi.Model.Types.Primitive.U32 listing_id, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 offeror, XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.EnumOffer offer)
+        public static Method HandleOffer(Substrate.NetApi.Model.Types.Primitive.U32 listing_id, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 offeror, XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.EnumOffer offer, Substrate.NetApi.Model.Types.Primitive.U64 offer_nonce)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
             byteArray.AddRange(offeror.Encode());
             byteArray.AddRange(offer.Encode());
-            return new Method(93, "Marketplace", 8, "handle_offer", byteArray.ToArray());
+            byteArray.AddRange(offer_nonce.Encode());
+            return new Method(93, "Marketplace", 9, "handle_offer", byteArray.ToArray());
         }
         
         /// <summary>
@@ -598,7 +735,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 9, "cancel_offer", byteArray.ToArray());
+            return new Method(93, "Marketplace", 10, "cancel_offer", byteArray.ToArray());
         }
         
         /// <summary>
@@ -609,7 +746,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 10, "withdraw_rejected", byteArray.ToArray());
+            return new Method(93, "Marketplace", 11, "withdraw_rejected", byteArray.ToArray());
         }
         
         /// <summary>
@@ -620,7 +757,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 11, "withdraw_legal_process_expired", byteArray.ToArray());
+            return new Method(93, "Marketplace", 12, "withdraw_legal_process_expired", byteArray.ToArray());
         }
         
         /// <summary>
@@ -631,7 +768,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 12, "withdraw_expired", byteArray.ToArray());
+            return new Method(93, "Marketplace", 13, "withdraw_expired", byteArray.ToArray());
         }
         
         /// <summary>
@@ -642,7 +779,29 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 13, "withdraw_deposit_unsold", byteArray.ToArray());
+            return new Method(93, "Marketplace", 14, "withdraw_deposit_unsold", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> withdraw_claiming_expired
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method WithdrawClaimingExpired(Substrate.NetApi.Model.Types.Primitive.U32 listing_id)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(listing_id.Encode());
+            return new Method(93, "Marketplace", 15, "withdraw_claiming_expired", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> withdraw_unclaimed
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method WithdrawUnclaimed(Substrate.NetApi.Model.Types.Primitive.U32 listing_id)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(listing_id.Encode());
+            return new Method(93, "Marketplace", 16, "withdraw_unclaimed", byteArray.ToArray());
         }
         
         /// <summary>
@@ -654,7 +813,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
             byteArray.AddRange(new_price.Encode());
-            return new Method(93, "Marketplace", 14, "upgrade_object", byteArray.ToArray());
+            return new Method(93, "Marketplace", 17, "upgrade_object", byteArray.ToArray());
         }
         
         /// <summary>
@@ -665,7 +824,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 15, "delist_token", byteArray.ToArray());
+            return new Method(93, "Marketplace", 18, "delist_token", byteArray.ToArray());
         }
         
         /// <summary>
@@ -678,19 +837,20 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(listing_id.Encode());
             byteArray.AddRange(legal_side.Encode());
             byteArray.AddRange(costs.Encode());
-            return new Method(93, "Marketplace", 16, "lawyer_claim_property", byteArray.ToArray());
+            return new Method(93, "Marketplace", 19, "lawyer_claim_property", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> vote_on_spv_lawyer
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method VoteOnSpvLawyer(Substrate.NetApi.Model.Types.Primitive.U32 listing_id, XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.EnumVote vote)
+        public static Method VoteOnSpvLawyer(Substrate.NetApi.Model.Types.Primitive.U32 listing_id, XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.EnumVote vote, Substrate.NetApi.Model.Types.Primitive.U32 amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
             byteArray.AddRange(vote.Encode());
-            return new Method(93, "Marketplace", 17, "vote_on_spv_lawyer", byteArray.ToArray());
+            byteArray.AddRange(amount.Encode());
+            return new Method(93, "Marketplace", 20, "vote_on_spv_lawyer", byteArray.ToArray());
         }
         
         /// <summary>
@@ -702,7 +862,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
             byteArray.AddRange(approve.Encode());
-            return new Method(93, "Marketplace", 18, "approve_developer_lawyer", byteArray.ToArray());
+            return new Method(93, "Marketplace", 21, "approve_developer_lawyer", byteArray.ToArray());
         }
         
         /// <summary>
@@ -713,7 +873,18 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 19, "finalize_spv_lawyer", byteArray.ToArray());
+            return new Method(93, "Marketplace", 22, "finalize_spv_lawyer", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> unfreeze_spv_lawyer_token
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method UnfreezeSpvLawyerToken(Substrate.NetApi.Model.Types.Primitive.U64 proposal_id)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(proposal_id.Encode());
+            return new Method(93, "Marketplace", 23, "unfreeze_spv_lawyer_token", byteArray.ToArray());
         }
         
         /// <summary>
@@ -724,7 +895,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 20, "remove_lawyer_claim", byteArray.ToArray());
+            return new Method(93, "Marketplace", 24, "remove_lawyer_claim", byteArray.ToArray());
         }
         
         /// <summary>
@@ -736,7 +907,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
             byteArray.AddRange(approve.Encode());
-            return new Method(93, "Marketplace", 21, "lawyer_confirm_documents", byteArray.ToArray());
+            return new Method(93, "Marketplace", 25, "lawyer_confirm_documents", byteArray.ToArray());
         }
         
         /// <summary>
@@ -749,7 +920,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(asset_id.Encode());
             byteArray.AddRange(receiver.Encode());
             byteArray.AddRange(token_amount.Encode());
-            return new Method(93, "Marketplace", 22, "send_property_token", byteArray.ToArray());
+            return new Method(93, "Marketplace", 26, "send_property_token", byteArray.ToArray());
         }
     }
     
@@ -761,7 +932,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> PalletId
-        ///  The marketplace's pallet id, used for deriving its sovereign account ID.
+        ///  Pallet ID for deriving the marketplace's sovereign account.
         /// </summary>
         public XcavatePaseo.NetApi.Generated.Model.frame_support.PalletId PalletId()
         {
@@ -794,7 +965,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> TreasuryId
-        ///  The Trasury's pallet id, used for deriving its sovereign account ID.
+        ///  The Trasury's pallet ID, used for deriving its sovereign account ID.
         /// </summary>
         public XcavatePaseo.NetApi.Generated.Model.frame_support.PalletId TreasuryId()
         {
@@ -805,7 +976,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ListingDeposit
-        ///  A deposit for listing a property.
+        ///  Deposit required for listing a property.
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U128 ListingDeposit()
         {
@@ -816,28 +987,18 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> MarketplaceFeePercentage
-        ///  The fee percentage charged by the marketplace (e.g., 1 for 1%).
+        ///  The fee percentage charged by the marketplace (e.g., 1% as Perbill).
         /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U128 MarketplaceFeePercentage()
+        public XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill MarketplaceFeePercentage()
         {
-            var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x01000000000000000000000000000000");
-            return result;
-        }
-        
-        /// <summary>
-        /// >> AcceptedAssets
-        /// </summary>
-        public XcavatePaseo.NetApi.Generated.Types.Base.Arr2U32 AcceptedAssets()
-        {
-            var result = new XcavatePaseo.NetApi.Generated.Types.Base.Arr2U32();
-            result.Create("0x39050000C0070000");
+            var result = new XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill();
+            result.Create("0x80969800");
             return result;
         }
         
         /// <summary>
         /// >> MaxAcceptedAssets
-        ///  The maximum amount of accepted assets.
+        ///  Maximum number of accepted assets.
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 MaxAcceptedAssets()
         {
@@ -853,7 +1014,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 LawyerVotingTime()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x64000000");
+            result.Create("0x1E000000");
             return result;
         }
         
@@ -864,7 +1025,73 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 LegalProcessTime()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x40380000");
+            result.Create("0x50000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MinVotingQuorum
+        ///  Minimum quorum that needs to be reached for a proposal to pass.
+        /// </summary>
+        public XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Percent MinVotingQuorum()
+        {
+            var result = new XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Percent();
+            result.Create("0x32");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> ClaimWindow
+        ///  Time window for claiming property tokens.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 ClaimWindow()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x64000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MaxRelistAttempts
+        ///  Maximum attempts to relist unclaimed tokens.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U8 MaxRelistAttempts()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U8();
+            result.Create("0x01");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> StringLimit
+        ///  The maximum length of a name or symbol stored on-chain.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 StringLimit()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x88130000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> PostcodeLimit
+        ///  The maximum length of data stored in for post codes.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 PostcodeLimit()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x0A000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MaxOwnershipPercentage
+        ///  The maximum ownership percentage allowed for any single investor.
+        /// </summary>
+        public XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill MaxOwnershipPercentage()
+        {
+            var result = new XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill();
+            result.Create("0x0065CD1D");
             return result;
         }
     }
@@ -912,18 +1139,20 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         NoPermission,
         
         /// <summary>
-        /// >> UserNotWhitelisted
+        /// >> UserNotCompliant
         /// User did not pass the kyc.
         /// </summary>
-        UserNotWhitelisted,
+        UserNotCompliant,
         
         /// <summary>
         /// >> ArithmeticUnderflow
+        /// Underflow in arithmetic operations.
         /// </summary>
         ArithmeticUnderflow,
         
         /// <summary>
         /// >> ArithmeticOverflow
+        /// Overflow in arithmetic operations.
         /// </summary>
         ArithmeticOverflow,
         
@@ -1001,6 +1230,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ExceedsMaxEntries
+        /// Exceeds maximum allowed entries.
         /// </summary>
         ExceedsMaxEntries,
         
@@ -1051,12 +1281,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// Marketplace fee needs to be below 100 %.
         /// </summary>
         InvalidFeePercentage,
-        
-        /// <summary>
-        /// >> InvalidTaxPercentage
-        /// Marketplace tax needs to be below 100 %.
-        /// </summary>
-        InvalidTaxPercentage,
         
         /// <summary>
         /// >> NotEnoughToken
@@ -1129,5 +1353,89 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// The legal process is currently ongoing.
         /// </summary>
         LegalProcessOngoing,
+        
+        /// <summary>
+        /// >> NoFrozenAmount
+        /// The user has no token amount frozen.
+        /// </summary>
+        NoFrozenAmount,
+        
+        /// <summary>
+        /// >> NoClaimWindow
+        /// The user has no token amount frozen.
+        /// </summary>
+        NoClaimWindow,
+        
+        /// <summary>
+        /// >> ClaimWindowExpired
+        /// The claim window already expired.
+        /// </summary>
+        ClaimWindowExpired,
+        
+        /// <summary>
+        /// >> ClaimWindowNotExpired
+        /// The claim period is still ongoing.
+        /// </summary>
+        ClaimWindowNotExpired,
+        
+        /// <summary>
+        /// >> StillHasUnclaimedToken
+        /// The user still has unclaimed token.
+        /// </summary>
+        StillHasUnclaimedToken,
+        
+        /// <summary>
+        /// >> NoValidTokenToClaim
+        /// The user does not have any valid token to claim.
+        /// </summary>
+        NoValidTokenToClaim,
+        
+        /// <summary>
+        /// >> ExceedsMaxOwnership
+        /// The user is not allowed to own too many token of a certain property.
+        /// </summary>
+        ExceedsMaxOwnership,
+        
+        /// <summary>
+        /// >> ListingNotFound
+        /// The listing does not exist.
+        /// </summary>
+        ListingNotFound,
+        
+        /// <summary>
+        /// >> AllTokensClaimed
+        /// All property token have already been claimed.
+        /// </summary>
+        AllTokensClaimed,
+        
+        /// <summary>
+        /// >> OfferNotFound
+        /// The offer does not exist.
+        /// </summary>
+        OfferNotFound,
+        
+        /// <summary>
+        /// >> NoTokensOwned
+        /// The user does not own any token of the property.
+        /// </summary>
+        NoTokensOwned,
+        
+        /// <summary>
+        /// >> InsufficientRefundableTokens
+        /// There are not enough token available to refund.
+        /// </summary>
+        InsufficientRefundableTokens,
+        
+        /// <summary>
+        /// >> ZeroVoteAmount
+        /// The amount for voting has to be higher than 0.
+        /// </summary>
+        ZeroVoteAmount,
+        
+        /// <summary>
+        /// >> InvalidOfferNonce
+        /// The nonce does not match the nonce for this offer.
+        /// </summary>
+        InvalidOfferNonce,
     }
 }

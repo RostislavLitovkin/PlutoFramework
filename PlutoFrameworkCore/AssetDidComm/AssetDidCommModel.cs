@@ -166,9 +166,9 @@ namespace PlutoFrameworkCore.AssetDidComm
             {
                 Name = name.NameVec,
                 SchemaUri = new BaseOpt<BoundedVecT20>(),
-                Properties = new BoundedBTreeMapT1
+                Properties = new BoundedBTreeMapT3
                 {
-                    Value = new BTreeMapT4()
+                    Value = new BTreeMapT6()
                     {
                         Value = new BaseVec<BaseTuple<BoundedVecT21, BoundedVecT22>>([])
                     }
@@ -194,9 +194,9 @@ namespace PlutoFrameworkCore.AssetDidComm
                 {
                     Value = new BaseVec<U8>([])
                 },
-                Properties = new BoundedBTreeMapT1
+                Properties = new BoundedBTreeMapT3
                 {
-                    Value = new BTreeMapT4()
+                    Value = new BTreeMapT6()
                     {
                         Value = new BaseVec<BaseTuple<BoundedVecT21, BoundedVecT22>>([])
                     }
@@ -384,9 +384,9 @@ namespace PlutoFrameworkCore.AssetDidComm
                             Encoding.UTF8.GetBytes(upload.ContentType ?? "").Select(b => new U8(b)).ToArray()
                         )
                     },
-                    Properties = new BoundedBTreeMapT1
+                    Properties = new BoundedBTreeMapT3
                     {
-                        Value = new BTreeMapT4()
+                        Value = new BTreeMapT6()
                         {
                             Value = new BaseVec<BaseTuple<BoundedVecT21, BoundedVecT22>>([])
                         }

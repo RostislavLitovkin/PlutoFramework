@@ -37,14 +37,13 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Regions", "LastRegionProposalBlock"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Regions", "ProposedRegionIds"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Regions", "RegionProposals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.RegionProposal)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.RegionProposal)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Regions", "OngoingRegionProposalVotes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.VoteStats)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.VoteStats)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Regions", "UserRegionVote"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT3)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.VoteRecord)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Regions", "RegionAuctions"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.RegionAuction)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Regions", "RegionReplacementAuctions"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -55,17 +54,23 @@ namespace XcavatePaseo.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10>), typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Regions", "RegionOwnerProposals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.RemoveRegionOwnerProposal)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.RemoveRegionOwnerProposal)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Regions", "OngoingRegionOwnerProposalVotes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.VoteStats)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.VoteStats)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Regions", "UserRegionOwnerVote"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT3)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.VoteRecord)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Regions", "RegionOwnerRoundsExpiring"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT38)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Regions", "ReplacementAuctionExpiring"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT38)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Regions", "RealEstateLawyer"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.LawyerInfo)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Regions", "ProposalCounter"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Regions", "RegionProposalId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Regions", "RegionOwnerProposalId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
         }
         
         /// <summary>
@@ -98,41 +103,10 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> ProposedRegionIdsParams
-        ///  Currently proposed region IDs.
-        /// </summary>
-        public static string ProposedRegionIdsParams(Substrate.NetApi.Model.Types.Primitive.U16 key)
-        {
-            return RequestGenerator.GetStorage("Regions", "ProposedRegionIds", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
-                        key});
-        }
-        
-        /// <summary>
-        /// >> ProposedRegionIdsDefault
-        /// Default value as hex string
-        /// </summary>
-        public static string ProposedRegionIdsDefault()
-        {
-            return "0x00";
-        }
-        
-        /// <summary>
-        /// >> ProposedRegionIds
-        ///  Currently proposed region IDs.
-        /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> ProposedRegionIds(Substrate.NetApi.Model.Types.Primitive.U16 key, string blockhash, CancellationToken token)
-        {
-            string parameters = RegionsStorage.ProposedRegionIdsParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple>(parameters, blockhash, token);
-            return result;
-        }
-        
-        /// <summary>
         /// >> RegionProposalsParams
         ///  Active region proposals by region ID.
         /// </summary>
-        public static string RegionProposalsParams(Substrate.NetApi.Model.Types.Primitive.U16 key)
+        public static string RegionProposalsParams(Substrate.NetApi.Model.Types.Primitive.U64 key)
         {
             return RequestGenerator.GetStorage("Regions", "RegionProposals", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -152,7 +126,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> RegionProposals
         ///  Active region proposals by region ID.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.RegionProposal> RegionProposals(Substrate.NetApi.Model.Types.Primitive.U16 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.RegionProposal> RegionProposals(Substrate.NetApi.Model.Types.Primitive.U64 key, string blockhash, CancellationToken token)
         {
             string parameters = RegionsStorage.RegionProposalsParams(key);
             var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.RegionProposal>(parameters, blockhash, token);
@@ -161,9 +135,9 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> OngoingRegionProposalVotesParams
-        ///  Voting statistics for ongoing proposals by region ID.
+        ///  Voting statistics for ongoing proposals.
         /// </summary>
-        public static string OngoingRegionProposalVotesParams(Substrate.NetApi.Model.Types.Primitive.U16 key)
+        public static string OngoingRegionProposalVotesParams(Substrate.NetApi.Model.Types.Primitive.U64 key)
         {
             return RequestGenerator.GetStorage("Regions", "OngoingRegionProposalVotes", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -181,9 +155,9 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> OngoingRegionProposalVotes
-        ///  Voting statistics for ongoing proposals by region ID.
+        ///  Voting statistics for ongoing proposals.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.VoteStats> OngoingRegionProposalVotes(Substrate.NetApi.Model.Types.Primitive.U16 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.VoteStats> OngoingRegionProposalVotes(Substrate.NetApi.Model.Types.Primitive.U64 key, string blockhash, CancellationToken token)
         {
             string parameters = RegionsStorage.OngoingRegionProposalVotesParams(key);
             var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.VoteStats>(parameters, blockhash, token);
@@ -194,11 +168,11 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> UserRegionVoteParams
         ///  User votes on region proposals.
         /// </summary>
-        public static string UserRegionVoteParams(Substrate.NetApi.Model.Types.Primitive.U16 key)
+        public static string UserRegionVoteParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
         {
             return RequestGenerator.GetStorage("Regions", "UserRegionVote", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
-                        key});
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, key.Value);
         }
         
         /// <summary>
@@ -214,10 +188,10 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> UserRegionVote
         ///  User votes on region proposals.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT3> UserRegionVote(Substrate.NetApi.Model.Types.Primitive.U16 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.VoteRecord> UserRegionVote(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
         {
             string parameters = RegionsStorage.UserRegionVoteParams(key);
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT3>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.VoteRecord>(parameters, blockhash, token);
             return result;
         }
         
@@ -285,7 +259,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> RegionDetailsParams
-        ///  Mapping of region to the region information.
+        ///  Details of active regions.
         /// </summary>
         public static string RegionDetailsParams(Substrate.NetApi.Model.Types.Primitive.U16 key)
         {
@@ -305,7 +279,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> RegionDetails
-        ///  Mapping of region to the region information.
+        ///  Details of active regions.
         /// </summary>
         public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.RegionInfo> RegionDetails(Substrate.NetApi.Model.Types.Primitive.U16 key, string blockhash, CancellationToken token)
         {
@@ -316,7 +290,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> LocationRegistrationParams
-        ///  True if a location is registered.
+        ///  Registration status of locations within regions.
         /// </summary>
         public static string LocationRegistrationParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10> key)
         {
@@ -336,7 +310,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> LocationRegistration
-        ///  True if a location is registered.
+        ///  Registration status of locations within regions.
         /// </summary>
         public async Task<Substrate.NetApi.Model.Types.Primitive.Bool> LocationRegistration(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10> key, string blockhash, CancellationToken token)
         {
@@ -347,9 +321,9 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> RegionOwnerProposalsParams
-        ///  Mapping from Region ID to a proposal to remove the region owner.
+        ///  Active proposals to remove region owners.
         /// </summary>
-        public static string RegionOwnerProposalsParams(Substrate.NetApi.Model.Types.Primitive.U16 key)
+        public static string RegionOwnerProposalsParams(Substrate.NetApi.Model.Types.Primitive.U64 key)
         {
             return RequestGenerator.GetStorage("Regions", "RegionOwnerProposals", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -367,9 +341,9 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> RegionOwnerProposals
-        ///  Mapping from Region ID to a proposal to remove the region owner.
+        ///  Active proposals to remove region owners.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.RemoveRegionOwnerProposal> RegionOwnerProposals(Substrate.NetApi.Model.Types.Primitive.U16 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.RemoveRegionOwnerProposal> RegionOwnerProposals(Substrate.NetApi.Model.Types.Primitive.U64 key, string blockhash, CancellationToken token)
         {
             string parameters = RegionsStorage.RegionOwnerProposalsParams(key);
             var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.RemoveRegionOwnerProposal>(parameters, blockhash, token);
@@ -378,8 +352,9 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> OngoingRegionOwnerProposalVotesParams
+        ///  Voting statistics for region owner removal proposals.
         /// </summary>
-        public static string OngoingRegionOwnerProposalVotesParams(Substrate.NetApi.Model.Types.Primitive.U16 key)
+        public static string OngoingRegionOwnerProposalVotesParams(Substrate.NetApi.Model.Types.Primitive.U64 key)
         {
             return RequestGenerator.GetStorage("Regions", "OngoingRegionOwnerProposalVotes", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -397,8 +372,9 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> OngoingRegionOwnerProposalVotes
+        ///  Voting statistics for region owner removal proposals.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.VoteStats> OngoingRegionOwnerProposalVotes(Substrate.NetApi.Model.Types.Primitive.U16 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.VoteStats> OngoingRegionOwnerProposalVotes(Substrate.NetApi.Model.Types.Primitive.U64 key, string blockhash, CancellationToken token)
         {
             string parameters = RegionsStorage.OngoingRegionOwnerProposalVotesParams(key);
             var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.VoteStats>(parameters, blockhash, token);
@@ -407,12 +383,13 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> UserRegionOwnerVoteParams
+        ///  User votes on region owner removal proposals.
         /// </summary>
-        public static string UserRegionOwnerVoteParams(Substrate.NetApi.Model.Types.Primitive.U16 key)
+        public static string UserRegionOwnerVoteParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
         {
             return RequestGenerator.GetStorage("Regions", "UserRegionOwnerVote", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
-                        key});
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, key.Value);
         }
         
         /// <summary>
@@ -426,17 +403,18 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> UserRegionOwnerVote
+        ///  User votes on region owner removal proposals.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT3> UserRegionOwnerVote(Substrate.NetApi.Model.Types.Primitive.U16 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.VoteRecord> UserRegionOwnerVote(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
         {
             string parameters = RegionsStorage.UserRegionOwnerVoteParams(key);
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT3>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.VoteRecord>(parameters, blockhash, token);
             return result;
         }
         
         /// <summary>
         /// >> RegionOwnerRoundsExpiringParams
-        ///  Stores the project keys and round types ending on a given block for region owner removal votings.
+        ///  Expiring rounds for region owner removal votings.
         /// </summary>
         public static string RegionOwnerRoundsExpiringParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
         {
@@ -456,18 +434,18 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> RegionOwnerRoundsExpiring
-        ///  Stores the project keys and round types ending on a given block for region owner removal votings.
+        ///  Expiring rounds for region owner removal votings.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT38> RegionOwnerRoundsExpiring(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39> RegionOwnerRoundsExpiring(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = RegionsStorage.RegionOwnerRoundsExpiringParams(key);
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT38>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39>(parameters, blockhash, token);
             return result;
         }
         
         /// <summary>
         /// >> ReplacementAuctionExpiringParams
-        ///  Stores the project keys and round types ending on a given block for region owner removal votings.
+        ///  Expiring replacement auctions.
         /// </summary>
         public static string ReplacementAuctionExpiringParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
         {
@@ -487,19 +465,18 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ReplacementAuctionExpiring
-        ///  Stores the project keys and round types ending on a given block for region owner removal votings.
+        ///  Expiring replacement auctions.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT38> ReplacementAuctionExpiring(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39> ReplacementAuctionExpiring(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = RegionsStorage.ReplacementAuctionExpiringParams(key);
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT38>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39>(parameters, blockhash, token);
             return result;
         }
         
         /// <summary>
         /// >> RealEstateLawyerParams
-        ///  !!!!To be removed!!!!
-        ///  Stores in which region a lawyer is active.
+        ///  Registered lawyers and their details.
         /// </summary>
         public static string RealEstateLawyerParams(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
         {
@@ -519,13 +496,103 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> RealEstateLawyer
-        ///  !!!!To be removed!!!!
-        ///  Stores in which region a lawyer is active.
+        ///  Registered lawyers and their details.
         /// </summary>
         public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.LawyerInfo> RealEstateLawyer(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = RegionsStorage.RealEstateLawyerParams(key);
             var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.LawyerInfo>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> ProposalCounterParams
+        ///  Counter of proposal IDs.
+        /// </summary>
+        public static string ProposalCounterParams()
+        {
+            return RequestGenerator.GetStorage("Regions", "ProposalCounter", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> ProposalCounterDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string ProposalCounterDefault()
+        {
+            return "0x0000000000000000";
+        }
+        
+        /// <summary>
+        /// >> ProposalCounter
+        ///  Counter of proposal IDs.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U64> ProposalCounter(string blockhash, CancellationToken token)
+        {
+            string parameters = RegionsStorage.ProposalCounterParams();
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U64>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> RegionProposalIdParams
+        ///  Mapping from region ID to the active proposal ID for that region
+        /// </summary>
+        public static string RegionProposalIdParams(Substrate.NetApi.Model.Types.Primitive.U16 key)
+        {
+            return RequestGenerator.GetStorage("Regions", "RegionProposalId", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> RegionProposalIdDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string RegionProposalIdDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> RegionProposalId
+        ///  Mapping from region ID to the active proposal ID for that region
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U64> RegionProposalId(Substrate.NetApi.Model.Types.Primitive.U16 key, string blockhash, CancellationToken token)
+        {
+            string parameters = RegionsStorage.RegionProposalIdParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U64>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> RegionOwnerProposalIdParams
+        ///  Mapping from region ID to the active owner-change proposal ID for that region
+        /// </summary>
+        public static string RegionOwnerProposalIdParams(Substrate.NetApi.Model.Types.Primitive.U16 key)
+        {
+            return RequestGenerator.GetStorage("Regions", "RegionOwnerProposalId", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> RegionOwnerProposalIdDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string RegionOwnerProposalIdDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> RegionOwnerProposalId
+        ///  Mapping from region ID to the active owner-change proposal ID for that region
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U64> RegionOwnerProposalId(Substrate.NetApi.Model.Types.Primitive.U16 key, string blockhash, CancellationToken token)
+        {
+            string parameters = RegionsStorage.RegionOwnerProposalIdParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U64>(parameters, blockhash, token);
             return result;
         }
     }
@@ -551,24 +618,36 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> vote_on_region_proposal
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method VoteOnRegionProposal(Substrate.NetApi.Model.Types.Primitive.U16 region_id, XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumVote vote)
+        public static Method VoteOnRegionProposal(Substrate.NetApi.Model.Types.Primitive.U16 region_id, XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumVote vote, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(region_id.Encode());
             byteArray.AddRange(vote.Encode());
+            byteArray.AddRange(amount.Encode());
             return new Method(91, "Regions", 1, "vote_on_region_proposal", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> unlock_region_voting_token
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method UnlockRegionVotingToken(Substrate.NetApi.Model.Types.Primitive.U64 proposal_id)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(proposal_id.Encode());
+            return new Method(91, "Regions", 2, "unlock_region_voting_token", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> bid_on_region
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method BidOnRegion(Substrate.NetApi.Model.Types.Primitive.U16 region_id, Substrate.NetApi.Model.Types.Primitive.U128 amount)
+        public static Method BidOnRegion(Substrate.NetApi.Model.Types.Primitive.U16 region_id, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(region_id.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(91, "Regions", 2, "bid_on_region", byteArray.ToArray());
+            return new Method(91, "Regions", 3, "bid_on_region", byteArray.ToArray());
         }
         
         /// <summary>
@@ -581,7 +660,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(region_id.Encode());
             byteArray.AddRange(listing_duration.Encode());
             byteArray.AddRange(tax.Encode());
-            return new Method(91, "Regions", 3, "create_new_region", byteArray.ToArray());
+            return new Method(91, "Regions", 4, "create_new_region", byteArray.ToArray());
         }
         
         /// <summary>
@@ -593,7 +672,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(region_id.Encode());
             byteArray.AddRange(listing_duration.Encode());
-            return new Method(91, "Regions", 4, "adjust_listing_duration", byteArray.ToArray());
+            return new Method(91, "Regions", 5, "adjust_listing_duration", byteArray.ToArray());
         }
         
         /// <summary>
@@ -605,7 +684,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(region_id.Encode());
             byteArray.AddRange(new_tax.Encode());
-            return new Method(91, "Regions", 5, "adjust_region_tax", byteArray.ToArray());
+            return new Method(91, "Regions", 6, "adjust_region_tax", byteArray.ToArray());
         }
         
         /// <summary>
@@ -617,7 +696,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(region_id.Encode());
             byteArray.AddRange(location.Encode());
-            return new Method(91, "Regions", 6, "create_new_location", byteArray.ToArray());
+            return new Method(91, "Regions", 7, "create_new_location", byteArray.ToArray());
         }
         
         /// <summary>
@@ -628,31 +707,43 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(region_id.Encode());
-            return new Method(91, "Regions", 7, "propose_remove_regional_operator", byteArray.ToArray());
+            return new Method(91, "Regions", 8, "propose_remove_regional_operator", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> vote_on_remove_owner_proposal
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method VoteOnRemoveOwnerProposal(Substrate.NetApi.Model.Types.Primitive.U16 region_id, XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumVote vote)
+        public static Method VoteOnRemoveOwnerProposal(Substrate.NetApi.Model.Types.Primitive.U16 region_id, XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumVote vote, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(region_id.Encode());
             byteArray.AddRange(vote.Encode());
-            return new Method(91, "Regions", 8, "vote_on_remove_owner_proposal", byteArray.ToArray());
+            byteArray.AddRange(amount.Encode());
+            return new Method(91, "Regions", 9, "vote_on_remove_owner_proposal", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> unlock_region_owner_removal_voting_token
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method UnlockRegionOwnerRemovalVotingToken(Substrate.NetApi.Model.Types.Primitive.U64 proposal_id)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(proposal_id.Encode());
+            return new Method(91, "Regions", 10, "unlock_region_owner_removal_voting_token", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> bid_on_region_replacement
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method BidOnRegionReplacement(Substrate.NetApi.Model.Types.Primitive.U16 region_id, Substrate.NetApi.Model.Types.Primitive.U128 amount)
+        public static Method BidOnRegionReplacement(Substrate.NetApi.Model.Types.Primitive.U16 region_id, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128> amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(region_id.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(91, "Regions", 9, "bid_on_region_replacement", byteArray.ToArray());
+            return new Method(91, "Regions", 11, "bid_on_region_replacement", byteArray.ToArray());
         }
         
         /// <summary>
@@ -663,7 +754,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(region_id.Encode());
-            return new Method(91, "Regions", 10, "initiate_region_owner_resignation", byteArray.ToArray());
+            return new Method(91, "Regions", 12, "initiate_region_owner_resignation", byteArray.ToArray());
         }
         
         /// <summary>
@@ -681,10 +772,9 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> unregister_lawyer
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method UnregisterLawyer(Substrate.NetApi.Model.Types.Primitive.U16 region)
+        public static Method UnregisterLawyer()
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(region.Encode());
             return new Method(91, "Regions", 14, "unregister_lawyer", byteArray.ToArray());
         }
     }
@@ -696,10 +786,10 @@ namespace XcavatePaseo.NetApi.Generated.Storage
     {
         
         /// <summary>
-        /// >> PalletId
-        ///  The marketplace's pallet id, used for deriving its sovereign account ID.
+        /// >> MarketplacePalletId
+        ///  The pallet ID for deriving the marketplace's sovereign account.
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.frame_support.PalletId PalletId()
+        public XcavatePaseo.NetApi.Generated.Model.frame_support.PalletId MarketplacePalletId()
         {
             var result = new XcavatePaseo.NetApi.Generated.Model.frame_support.PalletId();
             result.Create("0x70792F6E66747863");
@@ -708,6 +798,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> MaxListingDuration
+        ///  Maximum duration for property listings.
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 MaxListingDuration()
         {
@@ -740,23 +831,23 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> RegionVotingTime
-        ///  The amount of time give to vote for a new region.
+        ///  The amount of time given to vote for a new region.
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 RegionVotingTime()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x64000000");
+            result.Create("0x1E000000");
             return result;
         }
         
         /// <summary>
         /// >> RegionAuctionTime
-        ///  The amount of time give to vote for a new region.
+        ///  The amount of time given to bid on a new region.
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 RegionAuctionTime()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x64000000");
+            result.Create("0x1E000000");
             return result;
         }
         
@@ -778,18 +869,18 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 RegionProposalCooldown()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x90010000");
+            result.Create("0x64000000");
             return result;
         }
         
         /// <summary>
         /// >> RegionOperatorVotingTime
-        ///  The amount of time give to vote against a region operator.
+        ///  The amount of time given to vote against a region operator.
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 RegionOperatorVotingTime()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x64000000");
+            result.Create("0x14000000");
             return result;
         }
         
@@ -800,7 +891,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 MaxProposalsForBlock()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x0A000000");
+            result.Create("0x64000000");
             return result;
         }
         
@@ -817,7 +908,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> RegionSlashingAmount
-        ///  The minimum amount of a regional operator that will be slashed.
+        ///  The minimum amount of collateral for a regional operator that will be slashed
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U128 RegionSlashingAmount()
         {
@@ -828,12 +919,12 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> RegionOwnerChangePeriod
-        ///  The time period required between region owner change.
+        ///  The time period required between region owner changes.
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 RegionOwnerChangePeriod()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0xC0890100");
+            result.Create("0x90010000");
             return result;
         }
         
@@ -844,7 +935,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 RegionOwnerNoticePeriod()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x90010000");
+            result.Create("0x32000000");
             return result;
         }
         
@@ -861,7 +952,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> MinimumRegionDeposit
-        ///  Minimum deposit for a location.
+        ///  Minimum deposit for a region.
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U128 MinimumRegionDeposit()
         {
@@ -893,17 +984,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> MaxRegionVoters
-        ///  The maximum amount of voters for a region.
-        /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U32 MaxRegionVoters()
-        {
-            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0xFA000000");
-            return result;
-        }
-        
-        /// <summary>
         /// >> LawyerDeposit
         ///  A deposit for being active as a lawyer.
         /// </summary>
@@ -911,6 +991,17 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
             result.Create("0x0000C16FF28623000000000000000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MaxTaxPercent
+        ///  The maximum tax percentage for a region.
+        /// </summary>
+        public XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Permill MaxTaxPercent()
+        {
+            var result = new XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Permill();
+            result.Create("0xA0860100");
             return result;
         }
     }
@@ -922,30 +1013,26 @@ namespace XcavatePaseo.NetApi.Generated.Storage
     {
         
         /// <summary>
-        /// >> UserNotWhitelisted
-        /// User did not pass the kyc.
-        /// </summary>
-        UserNotWhitelisted,
-        
-        /// <summary>
         /// >> ListingDurationCantBeZero
-        /// The duration of a listing can not be zero.
+        /// Listing duration cannot be zero.
         /// </summary>
         ListingDurationCantBeZero,
         
         /// <summary>
         /// >> ListingDurationTooHigh
-        /// Listing limit is set too high.
+        /// Listing duration is too high.
         /// </summary>
         ListingDurationTooHigh,
         
         /// <summary>
         /// >> ArithmeticOverflow
+        /// Arithmetic overflow occurred.
         /// </summary>
         ArithmeticOverflow,
         
         /// <summary>
         /// >> ArithmeticUnderflow
+        /// Arithmetic underflow occurred.
         /// </summary>
         ArithmeticUnderflow,
         
@@ -957,7 +1044,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> NoPermission
-        /// No sufficient permission.
+        /// No permission for the operation.
         /// </summary>
         NoPermission,
         
@@ -1011,13 +1098,13 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> RegionProposalCooldownActive
-        /// Cant propose a new regions since the cooldown is still active.
+        /// Cant propose a new region since the cooldown is still active.
         /// </summary>
         RegionProposalCooldownActive,
         
         /// <summary>
         /// >> ProposalExpired
-        /// The proposa has already expired.
+        /// The proposal has already expired.
         /// </summary>
         ProposalExpired,
         
@@ -1026,24 +1113,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// Bid amount can not be zero.
         /// </summary>
         BidCannotBeZero,
-        
-        /// <summary>
-        /// >> AlreadyRegionOperator
-        /// This account is already registers as a region operator.
-        /// </summary>
-        AlreadyRegionOperator,
-        
-        /// <summary>
-        /// >> NoRegionalOperator
-        /// This account is not a regional operator.
-        /// </summary>
-        NoRegionalOperator,
-        
-        /// <summary>
-        /// >> UserNotRegionalOperator
-        /// The user is not a regional operator.
-        /// </summary>
-        UserNotRegionalOperator,
         
         /// <summary>
         /// >> ProposalAlreadyOngoing
@@ -1059,7 +1128,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> RegionOwnerCantBeChanged
-        /// Region owner cant be changed at the moment.
+        /// Region owner can not be changed at the moment.
         /// </summary>
         RegionOwnerCantBeChanged,
         
@@ -1118,18 +1187,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         LawyerAlreadyRegistered,
         
         /// <summary>
-        /// >> TooManyVoters
-        /// There are already too many voters for this voting.
-        /// </summary>
-        TooManyVoters,
-        
-        /// <summary>
-        /// >> AccountNotLawyer
-        /// The account can has not lawyer permission.
-        /// </summary>
-        AccountNotLawyer,
-        
-        /// <summary>
         /// >> LawyerNotRegistered
         /// Lawyer is not registered.
         /// </summary>
@@ -1140,5 +1197,23 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// The lawyer is still active in some cases.
         /// </summary>
         LawyerStillActive,
+        
+        /// <summary>
+        /// >> NoFrozenAmount
+        /// The user has no token amount frozen.
+        /// </summary>
+        NoFrozenAmount,
+        
+        /// <summary>
+        /// >> BelowMinimumVotingAmount
+        /// The token amount for voting is below minimum.
+        /// </summary>
+        BelowMinimumVotingAmount,
+        
+        /// <summary>
+        /// >> TaxTooHigh
+        /// The tax percent is too high.
+        /// </summary>
+        TaxTooHigh,
     }
 }

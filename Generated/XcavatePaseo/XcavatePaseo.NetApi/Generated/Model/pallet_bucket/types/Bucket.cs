@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
     
     
     /// <summary>
-    /// >> 608 - Composite[pallet_bucket.types.Bucket]
+    /// >> 620 - Composite[pallet_bucket.types.Bucket]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Bucket : BaseType

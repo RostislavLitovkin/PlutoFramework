@@ -82,7 +82,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_system.pallet
     }
     
     /// <summary>
-    /// >> 221 - Variant[frame_system.pallet.Error]
+    /// >> 238 - Variant[frame_system.pallet.Error]
     /// Error for the System pallet
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>
