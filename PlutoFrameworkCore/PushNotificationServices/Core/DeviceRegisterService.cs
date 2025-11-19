@@ -1,22 +1,18 @@
 ﻿using PlutoFrameworkCore.PushNotificationServices.Api;
-using PlutoFrameworkCore.PushNotificationServices.Core.Background;
-using PlutoFrameworkCore.PushNotificationServices.Core.Interfaces;
-using PlutoFrameworkCore.PushNotificationServices.Core.Misc;
 using PlutoFrameworkCore.PushNotificationServices.Core.Utils;
 
 namespace PlutoFrameworkCore.PushNotificationServices.Core;
 
 public static class DeviceRegisterService
 {
-    public static async Task<bool> RegisterDeviceAsync(bool alreadyInQueue = false)
+    public static async Task<bool> RegisterDeviceAsync()
     {
-        Console.WriteLine($"[PlutoNotifications] Trying to register device ...");
-        if (!alreadyInQueue)
+        if (await SecureStorageManager.Storage.GetIsRegisteredAsync() ?? false)
         {
-            // queue the job in case of interrupting the app process
-            JobQueue.Enqueue(JobQueue.DeviceRegisterJobKey);
-            await JobQueue.SaveQueueAsync();
+            Console.WriteLine($"[PlutoNotifications] Device is already registered, skipping ...");
+            return true;
         }
+        Console.WriteLine($"[PlutoNotifications] Trying to register device ...");
 
         try
         {
@@ -27,25 +23,22 @@ public static class DeviceRegisterService
         catch (Exception e)
         {
             Console.WriteLine($"[PlutoNotifications] Device registration failed ...");
-            return false; // leave the job queued
+            return false;
         }
 
-        JobQueue.Dequeue();
-        JobQueue.Enqueue(JobQueue.UpdateFCMTokenKey);
-        await JobQueue.SaveQueueAsync();
-        
+        await SecureStorageManager.Storage.SaveIsRegisteredAsync(true);
         Console.WriteLine($"[PlutoNotifications] Device has been registered ...");
         return true;
     }
 
-    public static async Task<bool> UpdateFCMTokenAsync(bool alreadyInQueue = false)
+    public static async Task<bool> UpdateFCMTokenAsync()
     {
-        Console.WriteLine($"[PlutoNotifications] Trying to update FCM token ...");
-        if (!alreadyInQueue)
+        if (!(await SecureStorageManager.Storage.GetFCMTokenExpiredAsync() ?? true))
         {
-            JobQueue.Enqueue(JobQueue.UpdateFCMTokenKey);
-            await JobQueue.SaveQueueAsync();
+            Console.WriteLine($"[PlutoNotifications] FCM token is up-to-date, skipping ...");
+            return true;
         }
+        Console.WriteLine($"[PlutoNotifications] Trying to update FCM token ...");
 
         try
         {
@@ -61,9 +54,7 @@ public static class DeviceRegisterService
             return false;
         }
         
-        JobQueue.Dequeue();
-        await JobQueue.SaveQueueAsync();
-        
+        await SecureStorageManager.Storage.SaveFCMTokenExpiredAsync(false);
         Console.WriteLine($"[PlutoNotifications] Token has been updated  ...");
         return true;
     }

@@ -1,68 +1,92 @@
-﻿using System.Text.Json;
-using PlutoFrameworkCore.PushNotificationServices.Api.ApiEndpoints;
-using PlutoFrameworkCore.PushNotificationServices.Core.Background;
-using PlutoFrameworkCore.PushNotificationServices.Core.Interfaces;
+﻿    using System.Text.Json;
+    using PlutoFrameworkCore.PushNotificationServices.Api.ApiEndpoints;
+    using PlutoFrameworkCore.PushNotificationServices.Core.Interfaces;
 
-namespace PlutoFramework.Model.DeviceSecureStorage;
+    namespace PlutoFramework.Model.DeviceSecureStorage;
 
-public class PushNotificationsSecureStorageService : IPushNotificationsSecureStorage
-{
-    private const string KeyUuid = "installation_uuid";
-    private const string KeyAuthTokenPair = "auth_token_pair";
-    private const string KeyJobQueue = "job_queue";
-    
-    public async Task SaveUUIDAsync(string uuid)
+    public class PushNotificationsSecureStorageService : IPushNotificationsSecureStorage
     {
-        await SecureStorage.Default.SetAsync(KeyUuid, uuid);
-    }
-    
-    public async Task<string?> GetUUIDAsync()
-    {
-        try
+        private const string KeyUuid = "installation_uuid";
+        private const string KeyAuthTokenPair = "auth_token_pair";
+        
+        private const string KeyIsRegistered = "device_registered";
+        private const string KeyFcmTokenExpired = "fcm_token_expired";
+        
+        private static readonly JsonSerializerOptions JsonOptions = new()
         {
-            return await SecureStorage.Default.GetAsync(KeyUuid);
-        }
-        catch
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            WriteIndented = false
+        };
+        
+        public async Task SaveUUIDAsync(string uuid)
         {
-            return null;
+            await SecureStorage.Default.SetAsync(KeyUuid, uuid);
         }
-    }
+        
+        public async Task<string?> GetUUIDAsync()
+        {
+            try
+            {
+                return await SecureStorage.Default.GetAsync(KeyUuid);
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
-    public async Task SaveAuthTokenPairAsync(TokenPair pair)
-    {
-        var json = JsonSerializer.Serialize(pair);
-        await SecureStorage.Default.SetAsync(KeyAuthTokenPair, json);
-    }
-    
-    public async Task<TokenPair?> GetAuthTokenPairAsync()
-    {
-        try
+        public async Task SaveAuthTokenPairAsync(TokenPair pair)
         {
-            var json = await SecureStorage.Default.GetAsync(KeyAuthTokenPair);
-            return json == null ? null : JsonSerializer.Deserialize<TokenPair>(json);
+            var json = JsonSerializer.Serialize(pair, JsonOptions);
+            await SecureStorage.Default.SetAsync(KeyAuthTokenPair, json);
         }
-        catch
+        
+        public async Task<TokenPair?> GetAuthTokenPairAsync()
         {
-            return null;
+            try
+            {
+                var json = await SecureStorage.Default.GetAsync(KeyAuthTokenPair);
+                return json is null ? null : JsonSerializer.Deserialize<TokenPair>(json, JsonOptions);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        
+        public async Task SaveIsRegisteredAsync(bool registered)
+        {
+            await SecureStorage.Default.SetAsync(KeyIsRegistered, registered.ToString());
+        }
+        
+        public async Task<bool?> GetIsRegisteredAsync()
+        {
+            try
+            {
+                var value = await SecureStorage.Default.GetAsync(KeyIsRegistered);
+                return bool.TryParse(value, out var result) ? result : null;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        
+        public async Task SaveFCMTokenExpiredAsync(bool expired)
+        {
+            await SecureStorage.Default.SetAsync(KeyFcmTokenExpired, expired.ToString());
+        }
+        
+        public async Task<bool?> GetFCMTokenExpiredAsync()
+        {
+            try
+            {
+                var value = await SecureStorage.Default.GetAsync(KeyFcmTokenExpired);
+                return bool.TryParse(value, out var result) ? result : null;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
-    
-    public async Task SaveJobQueueAsync(Queue<BackgroundJob> pair)
-    {
-        var json = JsonSerializer.Serialize(pair);
-        await SecureStorage.Default.SetAsync(KeyJobQueue, json);
-    }
-    
-    public async Task<Queue<BackgroundJob>?> GetJobQueueAsync()
-    {
-        try
-        {
-            var json = await SecureStorage.Default.GetAsync(KeyAuthTokenPair);
-            return json == null ? null : JsonSerializer.Deserialize<Queue<BackgroundJob>>(json);
-        }
-        catch
-        {
-            return null;
-        }
-    }
-}

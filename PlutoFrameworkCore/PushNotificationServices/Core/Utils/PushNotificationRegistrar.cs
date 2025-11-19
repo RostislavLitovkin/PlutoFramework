@@ -1,5 +1,6 @@
 ﻿using Plugin.Firebase.CloudMessaging;
 using Microsoft.Extensions.DependencyInjection;
+using PlutoFramework.Model;
 
 namespace PlutoFrameworkCore.PushNotificationServices.Core.Utils;
 

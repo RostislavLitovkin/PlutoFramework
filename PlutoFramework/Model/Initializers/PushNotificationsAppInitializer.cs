@@ -1,5 +1,6 @@
-﻿using PlutoFrameworkCore.PushNotificationServices.Api;
-using PlutoFrameworkCore.PushNotificationServices.Core.Background;
+﻿using PlutoFramework.Model.DeviceSecureStorage;
+using PlutoFrameworkCore.PushNotificationServices.Api;
+using PlutoFrameworkCore.PushNotificationServices.Core;
 using PlutoFrameworkCore.PushNotificationServices.Core.Misc;
 using PlutoFrameworkCore.PushNotificationServices.Core.Utils;
 # if ANDROID
@@ -8,13 +9,12 @@ using PlutoFramework.Platforms.Android.Attestation;
 using PlutoFrameworkCore.PushNotificationServices.Platforms.iOS;
 # endif
 
-namespace PlutoFramework.Model.DeviceSecureStorage;
+namespace PlutoFramework.Model.Initializers;
 
 using NotificationsPlatform = PlutoFrameworkCore.PushNotificationServices.Core.Misc.Platform;
 
 public static class PushNotificationsAppInitializer
 {
-    private const string RegistrationKey = "device_registered";
 
     public static async Task InitializeAsync(string apiUrl)
     {
@@ -33,17 +33,10 @@ public static class PushNotificationsAppInitializer
         # endif
         Console.WriteLine($"[PlutoNotifications] Platform type set: {NotificationsPlatform.Current.ToStringValue()}");
         
-        var alreadyRegistered = Preferences.Get(RegistrationKey, false);
-        Console.WriteLine($"[PlutoNotifications] Device registered: {alreadyRegistered}");
-
-        if (!alreadyRegistered)
+        if (await DeviceRegisterService.RegisterDeviceAsync())
         {
-            JobQueue.Enqueue(JobQueue.DeviceRegisterJobKey);
-            await JobQueue.SaveQueueAsync();
-            Preferences.Set(RegistrationKey, true);
+            await DeviceRegisterService.UpdateFCMTokenAsync();
         }
-
-        await BackgroundJobService.RunQueuedJobsAsync();
         
         Console.WriteLine($"[PlutoNotifications] Background jobs processed.");
     }
