@@ -1,5 +1,4 @@
 ﻿using PlutoFrameworkCore.PushNotificationServices.Core.Interfaces;
-using UniqueryPlus.OpalSubquery;
 
 namespace PlutoFrameworkCore.PushNotificationServices.Core.Utils;
 

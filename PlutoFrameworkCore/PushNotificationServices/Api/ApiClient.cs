@@ -1,9 +1,10 @@
 ﻿using PlutoFrameworkCore.PushNotificationServices.Api.ApiEndpoints;
 using PlutoFrameworkCore.PushNotificationServices.Core.Utils;
-using PlutoFrameworkCore.PushNotificationServices.Core.Interfaces;
 using PlutoFrameworkCore.PushNotificationServices.Core.Misc;
 
 namespace PlutoFrameworkCore.PushNotificationServices.Api;
+
+public class UnauthorizedException(string message) : HttpRequestException(message);
 
 public static class ApiClient
 {
@@ -31,37 +32,63 @@ public static class ApiClient
             DeviceUUID = deviceUUID,
             Platform = Platform.Current.ToStringValue()
         });
-        Console.WriteLine($"[PlutoNotifications] Got nonce: {nonce}");
 
         var attestation = await new AttestationTokenService(Platform.AttestationService).GetTokenAsync(nonce);
-        Console.WriteLine($"[PlutoNotifications] Got attestation: {attestation}");
 
         var tokenPair = await AuthTokenPairEndpoint.GetTokenPairAsync(SharedClient, new DeviceRegistrationData {
             DeviceUUID = deviceUUID,
             Attestation = attestation,
             Platform = Platform.Current.ToStringValue()
         });
-        Console.WriteLine($"[PlutoNotifications] Got JWT pair: {tokenPair.Access} {tokenPair.Refresh}");
+        //Console.WriteLine($"[PlutoNotifications] Got JWT pair: {tokenPair.Access} {tokenPair.Refresh}");
 
         await SecureStorageManager.Storage.SaveAuthTokenPairAsync(tokenPair);
+        SharedClient.DefaultRequestHeaders.Authorization = 
+            new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", tokenPair.Access);
     }
 
     public static async Task RefreshAccessTokenRequestAsync(TokenPair tokenPair)
     {
+        Console.WriteLine($"[PlutoNotifications] Refreshing access token ...");
         if (Platform.Current == PlatformType.Other) return;
+
+        try
+        {
+            var newTokenPair = await AuthTokenPairEndpoint.RefreshAccessTokenAsync(SharedClient, tokenPair);
+            
+            await SecureStorageManager.Storage.SaveAuthTokenPairAsync(newTokenPair);
+            SharedClient.DefaultRequestHeaders.Authorization = 
+                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", newTokenPair.Access);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"[PlutoNotifications] Access token refresh failed");
+            return;
+        }
         
-        var newTokenPair = await AuthTokenPairEndpoint.RefreshAccessTokenAsync(SharedClient, tokenPair);
-        
-        await SecureStorageManager.Storage.SaveAuthTokenPairAsync(newTokenPair);
+        Console.WriteLine($"[PlutoNotifications] Access token refreshed");
     }
 
     public static async Task UpdateFCMTokenRequestAsync(string newFCMToken)
     {
         if (Platform.Current == PlatformType.Other) return;
-        
-        await FCMTokenEndpoint.UpdateTokenAsync(SharedClient, new FCMTokenUpdateData
+
+        try
         {
-            FCMToken = newFCMToken
-        });
+            await FCMTokenEndpoint.UpdateTokenAsync(SharedClient, new FCMTokenUpdateData
+            {
+                FCMToken = newFCMToken
+            });
+        }
+        catch (UnauthorizedException)
+        {
+            var tokenPair = await SecureStorageManager.Storage.GetAuthTokenPairAsync();
+
+            if (tokenPair == null) await SecureStorageManager.Storage.SaveIsRegisteredAsync(false);
+            else
+            {
+                await RefreshAccessTokenRequestAsync(tokenPair);
+            }
+        }
     }
 }

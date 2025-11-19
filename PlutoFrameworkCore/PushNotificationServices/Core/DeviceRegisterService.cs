@@ -33,6 +33,11 @@ public static class DeviceRegisterService
 
     public static async Task<bool> UpdateFCMTokenAsync()
     {
+        if (!(await SecureStorageManager.Storage.GetIsRegisteredAsync() ?? false))
+        {
+            Console.WriteLine($"[PlutoNotifications] Device is not registered, cannot update FCM token");
+            return false;
+        }
         if (!(await SecureStorageManager.Storage.GetFCMTokenExpiredAsync() ?? true))
         {
             Console.WriteLine($"[PlutoNotifications] FCM token is up-to-date, skipping ...");

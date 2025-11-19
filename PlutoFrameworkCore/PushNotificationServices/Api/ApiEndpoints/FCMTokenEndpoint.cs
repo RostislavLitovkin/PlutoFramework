@@ -19,6 +19,11 @@ public abstract class FCMTokenEndpoint : IApiEndpoint
     {
         StringContent jsonContent = new(JsonSerializer.Serialize(input), Encoding.UTF8, "application/json");
         
-        (await httpClient.PostAsync(EndpointPath, jsonContent)).EnsureSuccessStatusCode();
+        var res = await httpClient.PostAsync(EndpointPath, jsonContent);
+        if (res.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+        {
+            throw new UnauthorizedException(res.ReasonPhrase ?? "");
+        }
+        res.EnsureSuccessStatusCode();
     }
 }

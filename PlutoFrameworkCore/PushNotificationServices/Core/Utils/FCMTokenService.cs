@@ -10,13 +10,11 @@ public static class FCMTokenService
         {
             var token = await CrossFirebaseCloudMessaging.Current.GetTokenAsync();
             
-            Console.WriteLine($"FCM Token: {token}");
-            
             return token;
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[PlutoFramework] Error fetching FCM token: {ex.Message}");
+            Console.WriteLine($"[PlutoNotifications] Couldn't fetch FCM token");
             return null;
         }
     }
