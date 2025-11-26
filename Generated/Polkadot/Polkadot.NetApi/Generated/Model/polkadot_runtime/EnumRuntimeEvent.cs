@@ -62,6 +62,11 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
         Offences = 8,
         
         /// <summary>
+        /// >> Historical
+        /// </summary>
+        Historical = 33,
+        
+        /// <summary>
         /// >> Session
         /// </summary>
         Session = 9,
@@ -152,6 +157,11 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
         DelegatedStaking = 41,
         
         /// <summary>
+        /// >> StakingAhClient
+        /// </summary>
+        StakingAhClient = 42,
+        
+        /// <summary>
         /// >> ParaInclusion
         /// </summary>
         ParaInclusion = 53,
@@ -220,6 +230,11 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
         /// >> AssetRate
         /// </summary>
         AssetRate = 101,
+        
+        /// <summary>
+        /// >> RcMigrator
+        /// </summary>
+        RcMigrator = 255,
     }
     
     /// <summary>
@@ -241,6 +256,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_transaction_payment.pallet.EnumEvent>(RuntimeEvent.TransactionPayment);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_staking.pallet.pallet.EnumEvent>(RuntimeEvent.Staking);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_offences.pallet.EnumEvent>(RuntimeEvent.Offences);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_session.historical.pallet.EnumEvent>(RuntimeEvent.Historical);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_session.pallet.EnumEvent>(RuntimeEvent.Session);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_grandpa.pallet.EnumEvent>(RuntimeEvent.Grandpa);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_treasury.pallet.EnumEvent>(RuntimeEvent.Treasury);
@@ -259,6 +275,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_nomination_pools.pallet.EnumEvent>(RuntimeEvent.NominationPools);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_fast_unstake.pallet.EnumEvent>(RuntimeEvent.FastUnstake);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_delegated_staking.pallet.EnumEvent>(RuntimeEvent.DelegatedStaking);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_staking_async_ah_client.pallet.EnumEvent>(RuntimeEvent.StakingAhClient);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.inclusion.pallet.EnumEvent>(RuntimeEvent.ParaInclusion);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.paras.pallet.EnumEvent>(RuntimeEvent.Paras);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.hrmp.pallet.EnumEvent>(RuntimeEvent.Hrmp);
@@ -273,6 +290,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_xcm.pallet.EnumEvent>(RuntimeEvent.XcmPallet);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_message_queue.pallet.EnumEvent>(RuntimeEvent.MessageQueue);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_asset_rate.pallet.EnumEvent>(RuntimeEvent.AssetRate);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_rc_migrator.pallet.EnumEvent>(RuntimeEvent.RcMigrator);
         }
     }
 }

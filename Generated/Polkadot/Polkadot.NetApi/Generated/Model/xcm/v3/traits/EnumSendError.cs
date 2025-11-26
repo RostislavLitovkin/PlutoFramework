@@ -58,7 +58,7 @@ namespace Polkadot.NetApi.Generated.Model.xcm.v3.traits
     }
     
     /// <summary>
-    /// >> 504 - Variant[xcm.v3.traits.SendError]
+    /// >> 559 - Variant[xcm.v3.traits.SendError]
     /// </summary>
     public sealed class EnumSendError : BaseEnum<SendError>
     {

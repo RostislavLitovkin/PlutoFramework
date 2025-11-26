@@ -190,6 +190,11 @@ namespace Polkadot.NetApi.Generated
         public DelegatedStakingStorage DelegatedStakingStorage;
         
         /// <summary>
+        /// StakingAhClientStorage storage calls.
+        /// </summary>
+        public StakingAhClientStorage StakingAhClientStorage;
+        
+        /// <summary>
         /// ParachainsOriginStorage storage calls.
         /// </summary>
         public ParachainsOriginStorage ParachainsOriginStorage;
@@ -324,6 +329,11 @@ namespace Polkadot.NetApi.Generated
         /// </summary>
         public BeefyMmrLeafStorage BeefyMmrLeafStorage;
         
+        /// <summary>
+        /// RcMigratorStorage storage calls.
+        /// </summary>
+        public RcMigratorStorage RcMigratorStorage;
+        
         public SubstrateClientExt(System.Uri uri, Substrate.NetApi.Model.Extrinsics.ChargeType chargeType) : 
                 base(uri, chargeType)
         {
@@ -360,6 +370,7 @@ namespace Polkadot.NetApi.Generated
             this.NominationPoolsStorage = new NominationPoolsStorage(this);
             this.FastUnstakeStorage = new FastUnstakeStorage(this);
             this.DelegatedStakingStorage = new DelegatedStakingStorage(this);
+            this.StakingAhClientStorage = new StakingAhClientStorage(this);
             this.ParachainsOriginStorage = new ParachainsOriginStorage(this);
             this.ConfigurationStorage = new ConfigurationStorage(this);
             this.ParasSharedStorage = new ParasSharedStorage(this);
@@ -387,6 +398,7 @@ namespace Polkadot.NetApi.Generated
             this.BeefyStorage = new BeefyStorage(this);
             this.MmrStorage = new MmrStorage(this);
             this.BeefyMmrLeafStorage = new BeefyMmrLeafStorage(this);
+            this.RcMigratorStorage = new RcMigratorStorage(this);
         }
     }
 }

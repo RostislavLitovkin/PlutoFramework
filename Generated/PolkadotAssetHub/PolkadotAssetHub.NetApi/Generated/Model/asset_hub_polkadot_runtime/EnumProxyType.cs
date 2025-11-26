@@ -55,10 +55,35 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
         /// >> Collator
         /// </summary>
         Collator = 6,
+        
+        /// <summary>
+        /// >> Governance
+        /// </summary>
+        Governance = 7,
+        
+        /// <summary>
+        /// >> Staking
+        /// </summary>
+        Staking = 8,
+        
+        /// <summary>
+        /// >> NominationPools
+        /// </summary>
+        NominationPools = 9,
+        
+        /// <summary>
+        /// >> Auction
+        /// </summary>
+        Auction = 10,
+        
+        /// <summary>
+        /// >> ParaRegistration
+        /// </summary>
+        ParaRegistration = 11,
     }
     
     /// <summary>
-    /// >> 130 - Variant[asset_hub_polkadot_runtime.ProxyType]
+    /// >> 179 - Variant[asset_hub_polkadot_runtime.ProxyType]
     /// </summary>
     public sealed class EnumProxyType : BaseEnum<ProxyType>
     {

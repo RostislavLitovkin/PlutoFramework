@@ -294,7 +294,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.pallet
     }
     
     /// <summary>
-    /// >> 454 - Variant[pallet_nfts.pallet.Error]
+    /// >> 896 - Variant[pallet_nfts.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

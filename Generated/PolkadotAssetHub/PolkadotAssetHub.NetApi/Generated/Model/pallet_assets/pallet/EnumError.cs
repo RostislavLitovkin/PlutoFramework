@@ -150,10 +150,22 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet
         /// The asset ID must be equal to the [`NextAssetId`].
         /// </summary>
         BadAssetId = 20,
+        
+        /// <summary>
+        /// >> ContainsFreezes
+        /// The asset cannot be destroyed because some accounts for this asset contain freezes.
+        /// </summary>
+        ContainsFreezes = 21,
+        
+        /// <summary>
+        /// >> ContainsHolds
+        /// The asset cannot be destroyed because some accounts for this asset contain holds.
+        /// </summary>
+        ContainsHolds = 22,
     }
     
     /// <summary>
-    /// >> 462 - Variant[pallet_assets.pallet.Error]
+    /// >> 904 - Variant[pallet_assets.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

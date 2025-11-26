@@ -23,21 +23,27 @@ namespace Polkadot.NetApi.Generated.Model.pallet_vesting.pallet
     {
         
         /// <summary>
+        /// >> VestingCreated
+        /// A vesting schedule has been created.
+        /// </summary>
+        VestingCreated = 0,
+        
+        /// <summary>
         /// >> VestingUpdated
         /// The amount vested has been updated. This could indicate a change in funds available.
         /// The balance given is the amount which is left unvested (and thus locked).
         /// </summary>
-        VestingUpdated = 0,
+        VestingUpdated = 1,
         
         /// <summary>
         /// >> VestingCompleted
         /// An \[account\] has become fully vested.
         /// </summary>
-        VestingCompleted = 1,
+        VestingCompleted = 2,
     }
     
     /// <summary>
-    /// >> 468 - Variant[pallet_vesting.pallet.Event]
+    /// >> 520 - Variant[pallet_vesting.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -48,6 +54,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_vesting.pallet
         /// </summary>
         public EnumEvent()
         {
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.VestingCreated);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.VestingUpdated);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.VestingCompleted);
         }

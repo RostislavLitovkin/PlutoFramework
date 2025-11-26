@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8
     
     
     /// <summary>
-    /// >> 287 - Composite[polkadot_primitives.v8.AvailabilityBitfield]
+    /// >> 292 - Composite[polkadot_primitives.v8.AvailabilityBitfield]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AvailabilityBitfield : BaseType

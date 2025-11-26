@@ -33,7 +33,7 @@ namespace Polkadot.NetApi.Generated.Model.sp_consensus_grandpa
     }
     
     /// <summary>
-    /// >> 153 - Variant[sp_consensus_grandpa.Equivocation]
+    /// >> 155 - Variant[sp_consensus_grandpa.Equivocation]
     /// </summary>
     public sealed class EnumEquivocation : BaseEnumRust<Equivocation>
     {

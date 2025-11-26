@@ -134,6 +134,19 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
             byteArray.AddRange(call_hash.Encode());
             return new Method(41, "Multisig", 3, "cancel_as_multi", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> poke_deposit
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method PokeDeposit(Substrate.NetApi.Model.Types.Primitive.U16 threshold, Substrate.NetApi.Model.Types.Base.BaseVec<PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32> other_signatories, PolkadotAssetHub.NetApi.Generated.Types.Base.Arr32U8 call_hash)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(threshold.Encode());
+            byteArray.AddRange(other_signatories.Encode());
+            byteArray.AddRange(call_hash.Encode());
+            return new Method(41, "Multisig", 4, "poke_deposit", byteArray.ToArray());
+        }
     }
     
     /// <summary>
@@ -233,13 +246,14 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         
         /// <summary>
         /// >> NotFound
-        /// Multisig operation not found when attempting to cancel.
+        /// Multisig operation not found in storage.
         /// </summary>
         NotFound,
         
         /// <summary>
         /// >> NotOwner
-        /// Only the account that originally created the multisig is able to cancel it.
+        /// Only the account that originally created the multisig is able to cancel it or update
+        /// its deposits.
         /// </summary>
         NotOwner,
         

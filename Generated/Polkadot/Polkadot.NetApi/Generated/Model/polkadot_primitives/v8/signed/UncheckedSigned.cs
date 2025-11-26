@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.signed
     
     
     /// <summary>
-    /// >> 286 - Composite[polkadot_primitives.v8.signed.UncheckedSigned]
+    /// >> 291 - Composite[polkadot_primitives.v8.signed.UncheckedSigned]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UncheckedSigned : BaseType

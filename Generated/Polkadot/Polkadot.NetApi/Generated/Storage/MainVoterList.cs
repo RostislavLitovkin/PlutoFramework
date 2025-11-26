@@ -41,6 +41,8 @@ namespace Polkadot.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("VoterList", "CounterForListNodes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("VoterList", "ListBags"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(Polkadot.NetApi.Generated.Model.pallet_bags_list.list.Bag)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("VoterList", "NextNodeAutoRebagged"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("VoterList", "Lock"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
         }
         
         /// <summary>
@@ -139,6 +141,72 @@ namespace Polkadot.NetApi.Generated.Storage
         {
             string parameters = VoterListStorage.ListBagsParams(key);
             var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.pallet_bags_list.list.Bag>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> NextNodeAutoRebaggedParams
+        ///  Pointer that remembers the next node that will be auto-rebagged.
+        ///  When `None`, the next scan will start from the list head again.
+        /// </summary>
+        public static string NextNodeAutoRebaggedParams()
+        {
+            return RequestGenerator.GetStorage("VoterList", "NextNodeAutoRebagged", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> NextNodeAutoRebaggedDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string NextNodeAutoRebaggedDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> NextNodeAutoRebagged
+        ///  Pointer that remembers the next node that will be auto-rebagged.
+        ///  When `None`, the next scan will start from the list head again.
+        /// </summary>
+        public async Task<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32> NextNodeAutoRebagged(string blockhash, CancellationToken token)
+        {
+            string parameters = VoterListStorage.NextNodeAutoRebaggedParams();
+            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> LockParams
+        ///  Lock all updates to this pallet.
+        /// 
+        ///  If any nodes needs updating, removal or addition due to a temporary lock, the
+        ///  [`Call::rebag`] can be used.
+        /// </summary>
+        public static string LockParams()
+        {
+            return RequestGenerator.GetStorage("VoterList", "Lock", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> LockDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string LockDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> Lock
+        ///  Lock all updates to this pallet.
+        /// 
+        ///  If any nodes needs updating, removal or addition due to a temporary lock, the
+        ///  [`Call::rebag`] can be used.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> Lock(string blockhash, CancellationToken token)
+        {
+            string parameters = VoterListStorage.LockParams();
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple>(parameters, blockhash, token);
             return result;
         }
     }
@@ -282,6 +350,20 @@ namespace Polkadot.NetApi.Generated.Storage
                     "FFFFF");
             return result;
         }
+        
+        /// <summary>
+        /// >> MaxAutoRebagPerBlock
+        ///  Maximum number of accounts that may be re-bagged automatically in `on_idle`.
+        /// 
+        ///  A value of `0` (obtained by configuring `type MaxAutoRebagPerBlock = ();`) disables
+        ///  the feature.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 MaxAutoRebagPerBlock()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x00000000");
+            return result;
+        }
     }
     
     /// <summary>
@@ -295,5 +377,11 @@ namespace Polkadot.NetApi.Generated.Storage
         /// A error in the list interface implementation.
         /// </summary>
         List,
+        
+        /// <summary>
+        /// >> Locked
+        /// Could not update a node, because the pallet is locked.
+        /// </summary>
+        Locked,
     }
 }

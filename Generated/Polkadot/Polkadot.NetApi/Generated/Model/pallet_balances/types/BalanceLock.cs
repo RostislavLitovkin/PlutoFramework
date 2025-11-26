@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_balances.types
     
     
     /// <summary>
-    /// >> 559 - Composite[pallet_balances.types.BalanceLock]
+    /// >> 615 - Composite[pallet_balances.types.BalanceLock]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BalanceLock : BaseType

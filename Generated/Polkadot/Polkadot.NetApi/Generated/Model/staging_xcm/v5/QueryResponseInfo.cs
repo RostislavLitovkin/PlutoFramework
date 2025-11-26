@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.staging_xcm.v5
     
     
     /// <summary>
-    /// >> 414 - Composite[staging_xcm.v5.QueryResponseInfo]
+    /// >> 419 - Composite[staging_xcm.v5.QueryResponseInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class QueryResponseInfo : BaseType

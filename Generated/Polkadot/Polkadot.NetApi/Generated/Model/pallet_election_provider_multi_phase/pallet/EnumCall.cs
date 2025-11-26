@@ -89,7 +89,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_election_provider_multi_phase.p
     }
     
     /// <summary>
-    /// >> 196 - Variant[pallet_election_provider_multi_phase.pallet.Call]
+    /// >> 198 - Variant[pallet_election_provider_multi_phase.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -104,7 +104,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_election_provider_multi_phase.p
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseOpt<Polkadot.NetApi.Generated.Model.sp_npos_elections.ElectionScore>>(Call.set_minimum_untrusted_score);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.sp_npos_elections.Support>>>(Call.set_emergency_election_result);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_election_provider_multi_phase.RawSolution>(Call.submit);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>>>(Call.governance_fallback);
+				AddTypeDecoder<BaseVoid>(Call.governance_fallback);
         }
     }
 }

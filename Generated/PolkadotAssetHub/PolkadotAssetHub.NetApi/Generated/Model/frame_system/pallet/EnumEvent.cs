@@ -59,10 +59,34 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.frame_system.pallet
         Remarked = 5,
         
         /// <summary>
+        /// >> TaskStarted
+        /// A [`Task`] has started executing
+        /// </summary>
+        TaskStarted = 6,
+        
+        /// <summary>
+        /// >> TaskCompleted
+        /// A [`Task`] has finished executing.
+        /// </summary>
+        TaskCompleted = 7,
+        
+        /// <summary>
+        /// >> TaskFailed
+        /// A [`Task`] failed during execution.
+        /// </summary>
+        TaskFailed = 8,
+        
+        /// <summary>
         /// >> UpgradeAuthorized
         /// An upgrade was authorized.
         /// </summary>
-        UpgradeAuthorized = 6,
+        UpgradeAuthorized = 9,
+        
+        /// <summary>
+        /// >> RejectedInvalidAuthorizedUpgrade
+        /// An invalid authorized upgrade was rejected while trying to apply it.
+        /// </summary>
+        RejectedInvalidAuthorizedUpgrade = 10,
     }
     
     /// <summary>
@@ -77,13 +101,17 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.frame_system.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.frame_support.dispatch.DispatchInfo>(Event.ExtrinsicSuccess);
-				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.sp_runtime.EnumDispatchError, PolkadotAssetHub.NetApi.Generated.Model.frame_support.dispatch.DispatchInfo>>(Event.ExtrinsicFailed);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.frame_system.DispatchEventInfo>(Event.ExtrinsicSuccess);
+				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.sp_runtime.EnumDispatchError, PolkadotAssetHub.NetApi.Generated.Model.frame_system.DispatchEventInfo>>(Event.ExtrinsicFailed);
 				AddTypeDecoder<BaseVoid>(Event.CodeUpdated);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.NewAccount);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.KilledAccount);
 				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32, PolkadotAssetHub.NetApi.Generated.Model.primitive_types.H256>>(Event.Remarked);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime.EnumRuntimeTask>(Event.TaskStarted);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime.EnumRuntimeTask>(Event.TaskCompleted);
+				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime.EnumRuntimeTask, PolkadotAssetHub.NetApi.Generated.Model.sp_runtime.EnumDispatchError>>(Event.TaskFailed);
 				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Primitive.Bool>>(Event.UpgradeAuthorized);
+				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.primitive_types.H256, PolkadotAssetHub.NetApi.Generated.Model.sp_runtime.EnumDispatchError>>(Event.RejectedInvalidAuthorizedUpgrade);
         }
     }
 }

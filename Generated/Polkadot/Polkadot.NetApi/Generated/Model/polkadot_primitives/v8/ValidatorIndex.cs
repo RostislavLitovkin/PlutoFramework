@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8
     
     
     /// <summary>
-    /// >> 290 - Composite[polkadot_primitives.v8.ValidatorIndex]
+    /// >> 295 - Composite[polkadot_primitives.v8.ValidatorIndex]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ValidatorIndex : BaseType

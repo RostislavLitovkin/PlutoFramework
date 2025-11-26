@@ -143,10 +143,28 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_multisig.pallet
         /// - Storage: removes one item.
         /// </summary>
         cancel_as_multi = 3,
+        
+        /// <summary>
+        /// >> poke_deposit
+        /// Poke the deposit reserved for an existing multisig operation.
+        /// 
+        /// The dispatch origin for this call must be _Signed_ and must be the original depositor of
+        /// the multisig operation.
+        /// 
+        /// The transaction fee is waived if the deposit amount has changed.
+        /// 
+        /// - `threshold`: The total number of approvals needed for this multisig.
+        /// - `other_signatories`: The accounts (other than the sender) who are part of the
+        ///   multisig.
+        /// - `call_hash`: The hash of the call this deposit is reserved for.
+        /// 
+        /// Emits `DepositPoked` if successful.
+        /// </summary>
+        poke_deposit = 4,
     }
     
     /// <summary>
-    /// >> 354 - Variant[pallet_multisig.pallet.Call]
+    /// >> 326 - Variant[pallet_multisig.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -161,6 +179,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_multisig.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Base.BaseVec<PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotAssetHub.NetApi.Generated.Model.pallet_multisig.Timepoint>, PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime.EnumRuntimeCall, PolkadotAssetHub.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Call.as_multi);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Base.BaseVec<PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotAssetHub.NetApi.Generated.Model.pallet_multisig.Timepoint>, PolkadotAssetHub.NetApi.Generated.Types.Base.Arr32U8, PolkadotAssetHub.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Call.approve_as_multi);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Base.BaseVec<PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32>, PolkadotAssetHub.NetApi.Generated.Model.pallet_multisig.Timepoint, PolkadotAssetHub.NetApi.Generated.Types.Base.Arr32U8>>(Call.cancel_as_multi);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Base.BaseVec<PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32>, PolkadotAssetHub.NetApi.Generated.Types.Base.Arr32U8>>(Call.poke_deposit);
         }
     }
 }

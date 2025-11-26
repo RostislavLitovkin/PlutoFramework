@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8
     
     
     /// <summary>
-    /// >> 310 - Composite[polkadot_primitives.v8.DisputeStatementSet]
+    /// >> 315 - Composite[polkadot_primitives.v8.DisputeStatementSet]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DisputeStatementSet : BaseType

@@ -27,10 +27,16 @@ namespace Polkadot.NetApi.Generated.Model.pallet_bags_list.pallet
         /// A error in the list interface implementation.
         /// </summary>
         List = 0,
+        
+        /// <summary>
+        /// >> Locked
+        /// Could not update a node, because the pallet is locked.
+        /// </summary>
+        Locked = 1,
     }
     
     /// <summary>
-    /// >> 698 - Variant[pallet_bags_list.pallet.Error]
+    /// >> 755 - Variant[pallet_bags_list.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>
@@ -42,6 +48,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_bags_list.pallet
         public EnumError()
         {
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_bags_list.list.EnumListError>(Error.List);
+				AddTypeDecoder<BaseVoid>(Error.Locked);
         }
     }
 }

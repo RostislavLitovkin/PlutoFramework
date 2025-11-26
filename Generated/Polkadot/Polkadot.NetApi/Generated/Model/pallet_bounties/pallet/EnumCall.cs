@@ -167,10 +167,30 @@ namespace Polkadot.NetApi.Generated.Model.pallet_bounties.pallet
         /// - O(1).
         /// </summary>
         approve_bounty_with_curator = 9,
+        
+        /// <summary>
+        /// >> poke_deposit
+        /// Poke the deposit reserved for creating a bounty proposal.
+        /// 
+        /// This can be used by accounts to update their reserved amount.
+        /// 
+        /// The dispatch origin for this call must be _Signed_.
+        /// 
+        /// Parameters:
+        /// - `bounty_id`: The bounty id for which to adjust the deposit.
+        /// 
+        /// If the deposit is updated, the difference will be reserved/unreserved from the
+        /// proposer's account.
+        /// 
+        /// The transaction is made free if the deposit is updated and paid otherwise.
+        /// 
+        /// Emits `DepositPoked` if the deposit is updated.
+        /// </summary>
+        poke_deposit = 10,
     }
     
     /// <summary>
-    /// >> 194 - Variant[pallet_bounties.pallet.Call]
+    /// >> 196 - Variant[pallet_bounties.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -191,6 +211,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_bounties.pallet
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>(Call.close_bounty);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>>(Call.extend_bounty_expiry);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.approve_bounty_with_curator);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>(Call.poke_deposit);
         }
     }
 }

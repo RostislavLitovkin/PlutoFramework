@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.vstaging
     
     
     /// <summary>
-    /// >> 284 - Composite[polkadot_primitives.vstaging.InherentData]
+    /// >> 289 - Composite[polkadot_primitives.vstaging.InherentData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class InherentData : BaseType

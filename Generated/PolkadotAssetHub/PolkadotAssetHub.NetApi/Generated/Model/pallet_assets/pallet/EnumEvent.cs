@@ -181,7 +181,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet
     }
     
     /// <summary>
-    /// >> 148 - Variant[pallet_assets.pallet.Event]
+    /// >> 199 - Variant[pallet_assets.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

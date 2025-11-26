@@ -33,7 +33,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8
     }
     
     /// <summary>
-    /// >> 278 - Variant[polkadot_primitives.v8.PvfExecKind]
+    /// >> 283 - Variant[polkadot_primitives.v8.PvfExecKind]
     /// </summary>
     public sealed class EnumPvfExecKind : BaseEnum<PvfExecKind>
     {

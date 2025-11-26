@@ -40,10 +40,15 @@ namespace Polkadot.NetApi.Generated.Model.pallet_bags_list.list
         /// >> NodeNotFound
         /// </summary>
         NodeNotFound = 3,
+        
+        /// <summary>
+        /// >> Locked
+        /// </summary>
+        Locked = 4,
     }
     
     /// <summary>
-    /// >> 699 - Variant[pallet_bags_list.list.ListError]
+    /// >> 756 - Variant[pallet_bags_list.list.ListError]
     /// </summary>
     public sealed class EnumListError : BaseEnum<ListError>
     {

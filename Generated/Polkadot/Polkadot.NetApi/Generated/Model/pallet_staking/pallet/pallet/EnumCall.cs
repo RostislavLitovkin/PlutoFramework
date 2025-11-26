@@ -68,6 +68,8 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking.pallet.pallet
         /// period ends. If this leaves an amount actively bonded less than
         /// [`asset::existential_deposit`], then it is increased to the full amount.
         /// 
+        /// The stash may be chilled if the ledger total amount falls to 0 after unbonding.
+        /// 
         /// The dispatch origin for this call must be _Signed_ by the controller, not the stash.
         /// 
         /// Once the unlock period is done, you can call `withdraw_unbonded` to actually move
@@ -304,6 +306,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking.pallet.pallet
         /// Can be called by the `T::AdminOrigin`.
         /// 
         /// Parameters: era and indices of the slashes for that era to kill.
+        /// They **must** be sorted in ascending order, *and* unique.
         /// </summary>
         cancel_deferred_slash = 17,
         
@@ -547,7 +550,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking.pallet.pallet
     }
     
     /// <summary>
-    /// >> 129 - Variant[pallet_staking.pallet.pallet.Call]
+    /// >> 131 - Variant[pallet_staking.pallet.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

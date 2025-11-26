@@ -51,9 +51,9 @@ namespace PlutoFramework.Components.AssetSelect
         {
             if (decimal.TryParse(Amount, out decimal decimalAmount) && decimalAmount > 0)
             {
-                var price = Sdk.GetSpotPrice(symbol);
+                double? price = Sdk.GetSpotPrice(symbol);
 
-                if (price != 0)
+                if (price != null && price != 0)
                 {
                     UsdAmountEnabled = true;
                     UsdAmountPlaceholder = "USD amount";

@@ -73,7 +73,7 @@ namespace Polkadot.NetApi.Generated.Model.staging_xcm.v5.junction
     }
     
     /// <summary>
-    /// >> 86 - Variant[staging_xcm.v5.junction.Junction]
+    /// >> 88 - Variant[staging_xcm.v5.junction.Junction]
     /// </summary>
     public sealed class EnumJunction : BaseEnumRust<Junction>
     {

@@ -147,6 +147,11 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
         FastUnstake = 40,
         
         /// <summary>
+        /// >> StakingAhClient
+        /// </summary>
+        StakingAhClient = 42,
+        
+        /// <summary>
         /// >> Configuration
         /// </summary>
         Configuration = 51,
@@ -245,10 +250,15 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
         /// >> Beefy
         /// </summary>
         Beefy = 200,
+        
+        /// <summary>
+        /// >> RcMigrator
+        /// </summary>
+        RcMigrator = 255,
     }
     
     /// <summary>
-    /// >> 104 - Variant[polkadot_runtime.RuntimeCall]
+    /// >> 106 - Variant[polkadot_runtime.RuntimeCall]
     /// </summary>
     public sealed class EnumRuntimeCall : BaseEnumRust<RuntimeCall>
     {
@@ -283,6 +293,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_bags_list.pallet.EnumCall>(RuntimeCall.VoterList);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_nomination_pools.pallet.EnumCall>(RuntimeCall.NominationPools);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_fast_unstake.pallet.EnumCall>(RuntimeCall.FastUnstake);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_staking_async_ah_client.pallet.EnumCall>(RuntimeCall.StakingAhClient);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.configuration.pallet.EnumCall>(RuntimeCall.Configuration);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.shared.pallet.EnumCall>(RuntimeCall.ParasShared);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.inclusion.pallet.EnumCall>(RuntimeCall.ParaInclusion);
@@ -303,6 +314,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_message_queue.pallet.EnumCall>(RuntimeCall.MessageQueue);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_asset_rate.pallet.EnumCall>(RuntimeCall.AssetRate);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_beefy.pallet.EnumCall>(RuntimeCall.Beefy);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_rc_migrator.pallet.EnumCall>(RuntimeCall.RcMigrator);
         }
     }
 }

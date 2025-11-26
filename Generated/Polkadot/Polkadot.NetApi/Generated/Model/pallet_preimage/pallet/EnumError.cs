@@ -72,7 +72,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_preimage.pallet
     }
     
     /// <summary>
-    /// >> 539 - Variant[pallet_preimage.pallet.Error]
+    /// >> 595 - Variant[pallet_preimage.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

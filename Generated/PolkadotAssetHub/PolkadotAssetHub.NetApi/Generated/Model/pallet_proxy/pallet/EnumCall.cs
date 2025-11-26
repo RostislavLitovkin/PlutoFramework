@@ -68,7 +68,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_proxy.pallet
         /// 
         /// The dispatch origin for this call must be _Signed_.
         /// 
-        /// WARNING: This may be called on accounts created by `pure`, however if done, then
+        /// WARNING: This may be called on accounts created by `create_pure`, however if done, then
         /// the unreserved fees will be inaccessible. **All access to this account will be lost.**
         /// </summary>
         remove_proxies = 3,
@@ -104,16 +104,16 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_proxy.pallet
         /// inaccessible.
         /// 
         /// Requires a `Signed` origin, and the sender account must have been created by a call to
-        /// `pure` with corresponding parameters.
+        /// `create_pure` with corresponding parameters.
         /// 
-        /// - `spawner`: The account that originally called `pure` to create this account.
-        /// - `index`: The disambiguation index originally passed to `pure`. Probably `0`.
-        /// - `proxy_type`: The proxy type originally passed to `pure`.
-        /// - `height`: The height of the chain when the call to `pure` was processed.
-        /// - `ext_index`: The extrinsic index in which the call to `pure` was processed.
+        /// - `spawner`: The account that originally called `create_pure` to create this account.
+        /// - `index`: The disambiguation index originally passed to `create_pure`. Probably `0`.
+        /// - `proxy_type`: The proxy type originally passed to `create_pure`.
+        /// - `height`: The height of the chain when the call to `create_pure` was processed.
+        /// - `ext_index`: The extrinsic index in which the call to `create_pure` was processed.
         /// 
         /// Fails with `NoPermission` in case the caller is not a previously created pure
-        /// account whose `pure` call has corresponding parameters.
+        /// account whose `create_pure` call has corresponding parameters.
         /// </summary>
         kill_pure = 5,
         
@@ -182,10 +182,23 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_proxy.pallet
         /// - `call`: The call to be made by the `real` account.
         /// </summary>
         proxy_announced = 9,
+        
+        /// <summary>
+        /// >> poke_deposit
+        /// Poke / Adjust deposits made for proxies and announcements based on current values.
+        /// This can be used by accounts to possibly lower their locked amount.
+        /// 
+        /// The dispatch origin for this call must be _Signed_.
+        /// 
+        /// The transaction fee is waived if the deposit amount has changed.
+        /// 
+        /// Emits `DepositPoked` if successful.
+        /// </summary>
+        poke_deposit = 10,
     }
     
     /// <summary>
-    /// >> 356 - Variant[pallet_proxy.pallet.Call]
+    /// >> 328 - Variant[pallet_proxy.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -206,6 +219,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_proxy.pallet
 				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, PolkadotAssetHub.NetApi.Generated.Model.primitive_types.H256>>(Call.remove_announcement);
 				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, PolkadotAssetHub.NetApi.Generated.Model.primitive_types.H256>>(Call.reject_announcement);
 				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, PolkadotAssetHub.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime.EnumProxyType>, PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime.EnumRuntimeCall>>(Call.proxy_announced);
+				AddTypeDecoder<BaseVoid>(Call.poke_deposit);
         }
     }
 }

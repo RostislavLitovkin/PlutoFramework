@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.vstaging
     
     
     /// <summary>
-    /// >> 296 - Composite[polkadot_primitives.vstaging.InternalVersion]
+    /// >> 301 - Composite[polkadot_primitives.vstaging.InternalVersion]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class InternalVersion : BaseType

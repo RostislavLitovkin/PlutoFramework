@@ -39,7 +39,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_asset_rate.pallet
     }
     
     /// <summary>
-    /// >> 507 - Variant[pallet_asset_rate.pallet.Event]
+    /// >> 562 - Variant[pallet_asset_rate.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.assigner_c
     
     
     /// <summary>
-    /// >> 811 - Composite[polkadot_runtime_parachains.assigner_coretime.CoreDescriptor]
+    /// >> 878 - Composite[polkadot_runtime_parachains.assigner_coretime.CoreDescriptor]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CoreDescriptor : BaseType

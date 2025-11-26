@@ -165,7 +165,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_asset_conversion.pallet
     }
     
     /// <summary>
-    /// >> 465 - Variant[pallet_asset_conversion.pallet.Error]
+    /// >> 906 - Variant[pallet_asset_conversion.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

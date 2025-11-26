@@ -50,6 +50,21 @@ namespace PolkadotAssetHub.NetApi.Generated
         public ParachainInfoStorage ParachainInfoStorage;
         
         /// <summary>
+        /// PreimageStorage storage calls.
+        /// </summary>
+        public PreimageStorage PreimageStorage;
+        
+        /// <summary>
+        /// SchedulerStorage storage calls.
+        /// </summary>
+        public SchedulerStorage SchedulerStorage;
+        
+        /// <summary>
+        /// ParametersStorage storage calls.
+        /// </summary>
+        public ParametersStorage ParametersStorage;
+        
+        /// <summary>
         /// BalancesStorage storage calls.
         /// </summary>
         public BalancesStorage BalancesStorage;
@@ -68,6 +83,11 @@ namespace PolkadotAssetHub.NetApi.Generated
         /// VestingStorage storage calls.
         /// </summary>
         public VestingStorage VestingStorage;
+        
+        /// <summary>
+        /// ClaimsStorage storage calls.
+        /// </summary>
+        public ClaimsStorage ClaimsStorage;
         
         /// <summary>
         /// AuthorshipStorage storage calls.
@@ -120,6 +140,11 @@ namespace PolkadotAssetHub.NetApi.Generated
         public MessageQueueStorage MessageQueueStorage;
         
         /// <summary>
+        /// SnowbridgeSystemFrontendStorage storage calls.
+        /// </summary>
+        public SnowbridgeSystemFrontendStorage SnowbridgeSystemFrontendStorage;
+        
+        /// <summary>
         /// UtilityStorage storage calls.
         /// </summary>
         public UtilityStorage UtilityStorage;
@@ -133,6 +158,11 @@ namespace PolkadotAssetHub.NetApi.Generated
         /// ProxyStorage storage calls.
         /// </summary>
         public ProxyStorage ProxyStorage;
+        
+        /// <summary>
+        /// IndicesStorage storage calls.
+        /// </summary>
+        public IndicesStorage IndicesStorage;
         
         /// <summary>
         /// AssetsStorage storage calls.
@@ -165,9 +195,104 @@ namespace PolkadotAssetHub.NetApi.Generated
         public AssetConversionStorage AssetConversionStorage;
         
         /// <summary>
+        /// TreasuryStorage storage calls.
+        /// </summary>
+        public TreasuryStorage TreasuryStorage;
+        
+        /// <summary>
+        /// ConvictionVotingStorage storage calls.
+        /// </summary>
+        public ConvictionVotingStorage ConvictionVotingStorage;
+        
+        /// <summary>
+        /// ReferendaStorage storage calls.
+        /// </summary>
+        public ReferendaStorage ReferendaStorage;
+        
+        /// <summary>
+        /// OriginsStorage storage calls.
+        /// </summary>
+        public OriginsStorage OriginsStorage;
+        
+        /// <summary>
+        /// WhitelistStorage storage calls.
+        /// </summary>
+        public WhitelistStorage WhitelistStorage;
+        
+        /// <summary>
+        /// BountiesStorage storage calls.
+        /// </summary>
+        public BountiesStorage BountiesStorage;
+        
+        /// <summary>
+        /// ChildBountiesStorage storage calls.
+        /// </summary>
+        public ChildBountiesStorage ChildBountiesStorage;
+        
+        /// <summary>
+        /// AssetRateStorage storage calls.
+        /// </summary>
+        public AssetRateStorage AssetRateStorage;
+        
+        /// <summary>
         /// StateTrieMigrationStorage storage calls.
         /// </summary>
         public StateTrieMigrationStorage StateTrieMigrationStorage;
+        
+        /// <summary>
+        /// NominationPoolsStorage storage calls.
+        /// </summary>
+        public NominationPoolsStorage NominationPoolsStorage;
+        
+        /// <summary>
+        /// VoterListStorage storage calls.
+        /// </summary>
+        public VoterListStorage VoterListStorage;
+        
+        /// <summary>
+        /// DelegatedStakingStorage storage calls.
+        /// </summary>
+        public DelegatedStakingStorage DelegatedStakingStorage;
+        
+        /// <summary>
+        /// StakingRcClientStorage storage calls.
+        /// </summary>
+        public StakingRcClientStorage StakingRcClientStorage;
+        
+        /// <summary>
+        /// MultiBlockElectionStorage storage calls.
+        /// </summary>
+        public MultiBlockElectionStorage MultiBlockElectionStorage;
+        
+        /// <summary>
+        /// MultiBlockElectionVerifierStorage storage calls.
+        /// </summary>
+        public MultiBlockElectionVerifierStorage MultiBlockElectionVerifierStorage;
+        
+        /// <summary>
+        /// MultiBlockElectionUnsignedStorage storage calls.
+        /// </summary>
+        public MultiBlockElectionUnsignedStorage MultiBlockElectionUnsignedStorage;
+        
+        /// <summary>
+        /// MultiBlockElectionSignedStorage storage calls.
+        /// </summary>
+        public MultiBlockElectionSignedStorage MultiBlockElectionSignedStorage;
+        
+        /// <summary>
+        /// StakingStorage storage calls.
+        /// </summary>
+        public StakingStorage StakingStorage;
+        
+        /// <summary>
+        /// AhOpsStorage storage calls.
+        /// </summary>
+        public AhOpsStorage AhOpsStorage;
+        
+        /// <summary>
+        /// AhMigratorStorage storage calls.
+        /// </summary>
+        public AhMigratorStorage AhMigratorStorage;
         
         public SubstrateClientExt(System.Uri uri, Substrate.NetApi.Model.Extrinsics.ChargeType chargeType) : 
                 base(uri, chargeType)
@@ -177,10 +302,14 @@ namespace PolkadotAssetHub.NetApi.Generated
             this.ParachainSystemStorage = new ParachainSystemStorage(this);
             this.TimestampStorage = new TimestampStorage(this);
             this.ParachainInfoStorage = new ParachainInfoStorage(this);
+            this.PreimageStorage = new PreimageStorage(this);
+            this.SchedulerStorage = new SchedulerStorage(this);
+            this.ParametersStorage = new ParametersStorage(this);
             this.BalancesStorage = new BalancesStorage(this);
             this.TransactionPaymentStorage = new TransactionPaymentStorage(this);
             this.AssetTxPaymentStorage = new AssetTxPaymentStorage(this);
             this.VestingStorage = new VestingStorage(this);
+            this.ClaimsStorage = new ClaimsStorage(this);
             this.AuthorshipStorage = new AuthorshipStorage(this);
             this.CollatorSelectionStorage = new CollatorSelectionStorage(this);
             this.SessionStorage = new SessionStorage(this);
@@ -191,16 +320,37 @@ namespace PolkadotAssetHub.NetApi.Generated
             this.CumulusXcmStorage = new CumulusXcmStorage(this);
             this.ToKusamaXcmRouterStorage = new ToKusamaXcmRouterStorage(this);
             this.MessageQueueStorage = new MessageQueueStorage(this);
+            this.SnowbridgeSystemFrontendStorage = new SnowbridgeSystemFrontendStorage(this);
             this.UtilityStorage = new UtilityStorage(this);
             this.MultisigStorage = new MultisigStorage(this);
             this.ProxyStorage = new ProxyStorage(this);
+            this.IndicesStorage = new IndicesStorage(this);
             this.AssetsStorage = new AssetsStorage(this);
             this.UniquesStorage = new UniquesStorage(this);
             this.NftsStorage = new NftsStorage(this);
             this.ForeignAssetsStorage = new ForeignAssetsStorage(this);
             this.PoolAssetsStorage = new PoolAssetsStorage(this);
             this.AssetConversionStorage = new AssetConversionStorage(this);
+            this.TreasuryStorage = new TreasuryStorage(this);
+            this.ConvictionVotingStorage = new ConvictionVotingStorage(this);
+            this.ReferendaStorage = new ReferendaStorage(this);
+            this.OriginsStorage = new OriginsStorage(this);
+            this.WhitelistStorage = new WhitelistStorage(this);
+            this.BountiesStorage = new BountiesStorage(this);
+            this.ChildBountiesStorage = new ChildBountiesStorage(this);
+            this.AssetRateStorage = new AssetRateStorage(this);
             this.StateTrieMigrationStorage = new StateTrieMigrationStorage(this);
+            this.NominationPoolsStorage = new NominationPoolsStorage(this);
+            this.VoterListStorage = new VoterListStorage(this);
+            this.DelegatedStakingStorage = new DelegatedStakingStorage(this);
+            this.StakingRcClientStorage = new StakingRcClientStorage(this);
+            this.MultiBlockElectionStorage = new MultiBlockElectionStorage(this);
+            this.MultiBlockElectionVerifierStorage = new MultiBlockElectionVerifierStorage(this);
+            this.MultiBlockElectionUnsignedStorage = new MultiBlockElectionUnsignedStorage(this);
+            this.MultiBlockElectionSignedStorage = new MultiBlockElectionSignedStorage(this);
+            this.StakingStorage = new StakingStorage(this);
+            this.AhOpsStorage = new AhOpsStorage(this);
+            this.AhMigratorStorage = new AhMigratorStorage(this);
         }
     }
 }

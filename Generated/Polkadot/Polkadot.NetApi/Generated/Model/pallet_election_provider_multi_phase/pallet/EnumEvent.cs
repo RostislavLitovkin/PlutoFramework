@@ -68,7 +68,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_election_provider_multi_phase.p
     }
     
     /// <summary>
-    /// >> 475 - Variant[pallet_election_provider_multi_phase.pallet.Event]
+    /// >> 527 - Variant[pallet_election_provider_multi_phase.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

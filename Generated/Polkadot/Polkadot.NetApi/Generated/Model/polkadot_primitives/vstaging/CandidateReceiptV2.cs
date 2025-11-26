@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.vstaging
     
     
     /// <summary>
-    /// >> 485 - Composite[polkadot_primitives.vstaging.CandidateReceiptV2]
+    /// >> 539 - Composite[polkadot_primitives.vstaging.CandidateReceiptV2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CandidateReceiptV2 : BaseType

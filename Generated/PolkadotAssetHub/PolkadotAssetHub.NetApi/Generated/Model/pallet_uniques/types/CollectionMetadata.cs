@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_uniques.types
     
     
     /// <summary>
-    /// >> 428 - Composite[pallet_uniques.types.CollectionMetadata]
+    /// >> 870 - Composite[pallet_uniques.types.CollectionMetadata]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CollectionMetadata : BaseType
@@ -31,7 +31,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_uniques.types
         /// <summary>
         /// >> data
         /// </summary>
-        public PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4 Data { get; set; }
+        public PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 Data { get; set; }
         /// <summary>
         /// >> is_frozen
         /// </summary>
@@ -59,7 +59,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_uniques.types
             var start = p;
             Deposit = new Substrate.NetApi.Model.Types.Primitive.U128();
             Deposit.Decode(byteArray, ref p);
-            Data = new PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4();
+            Data = new PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6();
             Data.Decode(byteArray, ref p);
             IsFrozen = new Substrate.NetApi.Model.Types.Primitive.Bool();
             IsFrozen.Decode(byteArray, ref p);

@@ -62,7 +62,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_fast_unstake.pallet
     }
     
     /// <summary>
-    /// >> 720 - Variant[pallet_fast_unstake.pallet.Error]
+    /// >> 777 - Variant[pallet_fast_unstake.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>
