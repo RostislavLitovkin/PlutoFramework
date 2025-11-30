@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Model;
 
 namespace PlutoFramework.Templates.TopNavigationBarTemplate
 {
@@ -12,6 +13,6 @@ namespace PlutoFramework.Templates.TopNavigationBarTemplate
         private bool extra2IsVisible = false;
 
         [RelayCommand]
-        public Task BackAsync() => Application.Current.MainPage.Navigation.PopAsync();
+        public Task BackAsync() => NavigationModel.PopAsync();
     }
 }

@@ -378,7 +378,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                 EncodedCall = Payload.Call.Encode(),
             };
 
-            await Application.Current.MainPage.Navigation.PushAsync(new CallDetailPage(viewModel));
+            await NavigationModel.PushAsync(new CallDetailPage(viewModel));
         }
     }
 }

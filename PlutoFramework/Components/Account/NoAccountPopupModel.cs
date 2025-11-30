@@ -22,7 +22,7 @@ public partial class NoAccountPopupViewModel : ObservableObject, IPopup, ISetToD
     public void Cancel() => SetToDefault();
 
     [RelayCommand]
-    public Task CreateAccountAsync() => Application.Current.MainPage.Navigation.PushAsync(new SetupPasswordPage()
+    public Task CreateAccountAsync() => NavigationModel.PushAsync(new SetupPasswordPage()
         {
             Navigation = CreateAccountNavigationAsync
         });

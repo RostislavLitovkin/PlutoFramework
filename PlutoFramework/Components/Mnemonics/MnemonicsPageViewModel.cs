@@ -33,13 +33,13 @@ public partial class MnemonicsPageViewModel : ObservableObject
 
     [RelayCommand]
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
-    public Task GoToEnterMnemonicsAsync() => Application.Current.MainPage.Navigation.PushAsync(new EnterMnemonicsPage(new EnterMnemonicsViewModel
+    public Task GoToEnterMnemonicsAsync() => NavigationModel.PushAsync(new EnterMnemonicsPage(new EnterMnemonicsViewModel
     {
         Navigation = () => Shell.Current.GoToAsync("../..")
     }));
 
     [RelayCommand]
-    public Task GoToMnemonicsExplanationAsync() => Application.Current.MainPage.Navigation.PushAsync(new MnemonicsExplanationPage());
+    public Task GoToMnemonicsExplanationAsync() => NavigationModel.PushAsync(new MnemonicsExplanationPage());
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
 
     [RelayCommand]

@@ -38,10 +38,13 @@ public partial class FormImageUploadView : ContentView
 
     private async void OnSelectTapped(object sender, TappedEventArgs e)
     {
-        var result = await MediaPicker.PickPhotoAsync(new MediaPickerOptions
+        var results = await MediaPicker.PickPhotosAsync(new MediaPickerOptions
         {
             Title = Title,
+            SelectionLimit = 1,
         });
+
+        var result = results.Count > 0 ? results[0] : null;
 
         await SetImageAsync(result);
     }

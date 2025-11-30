@@ -32,8 +32,8 @@ public partial class CustomLayoutsPage : PageTemplate
             deleteView.IsVisible = true;
 
             await Task.WhenAll(
-                deleteView.FadeTo(1, 250),
-                plusView.FadeTo(0, 250));
+                deleteView.FadeToAsync(1, 250),
+                plusView.FadeToAsync(0, 250));
         }
 
         if (e.StatusType == GestureStatus.Running)
@@ -57,15 +57,15 @@ public partial class CustomLayoutsPage : PageTemplate
                     }
                     if (dragger.Y < selectedDragger.Y && dragger.Y + 30 > selectedDragger.Y + selectedDragger.TranslationY)
                     {
-                        dragger.TranslateTo(0, 65, 100);
+                        _ = dragger.TranslateToAsync(0, 65, 100);
                     }
                     else if (dragger.Y > selectedDragger.Y)
                     {
-                        dragger.TranslateTo(0, -65, 100);
+                        _ = dragger.TranslateToAsync(0, -65, 100);
                     }
                     else
                     {
-                        dragger.TranslateTo(0, 0, 100);
+                        _ = dragger.TranslateToAsync(0, 0, 100);
                     }
                 }
             }
@@ -81,15 +81,15 @@ public partial class CustomLayoutsPage : PageTemplate
                     }
                     if (dragger.Y < selectedDragger.Y && dragger.Y + 30 > selectedDragger.Y + selectedDragger.TranslationY)
                     {
-                        dragger.TranslateTo(0, 65, 100);
+                        _ = dragger.TranslateToAsync(0, 65, 100);
                     }
                     else if (dragger.Y > selectedDragger.Y && dragger.Y - 30 < selectedDragger.Y + selectedDragger.TranslationY)
                     {
-                        dragger.TranslateTo(0, -65, 100);
+                        _ = dragger.TranslateToAsync(0, -65, 100);
                     }
                     else
                     {
-                        dragger.TranslateTo(0, 0, 100);
+                        _ = dragger.TranslateToAsync(0, 0, 100);
                     }
                 }
             }
@@ -104,15 +104,15 @@ public partial class CustomLayoutsPage : PageTemplate
             if (selectedDragger.Y + selectedDragger.TranslationY + selectedDragger.Height - ScrollView.ScrollY + 65 > deleteView.Y &&
                 selectedDragger.Y + selectedDragger.TranslationY - ScrollView.ScrollY + 65 < deleteView.Y + deleteView.Height)
             {
-                await selectedDragger.FadeTo(0, 250);
+                await selectedDragger.FadeToAsync(0, 250);
 
                 selectedDragger = null;
 
                 ((CustomLayoutsViewModel)this.BindingContext).DeleteItem(selectedIndex);
 
-                await Task.WhenAll(
-                   deleteView.FadeTo(0, 250),
-                   plusView.FadeTo(1, 250));
+                     await Task.WhenAll(
+                         deleteView.FadeToAsync(0, 250),
+                         plusView.FadeToAsync(1, 250));
 
                 deleteView.IsVisible = false;
 
@@ -141,14 +141,14 @@ public partial class CustomLayoutsPage : PageTemplate
                 }
             }
 
-            await selectedDragger.TranslateTo(0, (index - selectedIndex) * 65, 500, Easing.CubicOut);
+            await selectedDragger.TranslateToAsync(0, (index - selectedIndex) * 65, 500, Easing.CubicOut);
 
             selectedDragger.ZIndex = 0;
             selectedDragger = null;
 
-            await Task.WhenAll(
-                    deleteView.FadeTo(0, 250),
-                    plusView.FadeTo(1, 250));
+                await Task.WhenAll(
+                    deleteView.FadeToAsync(0, 250),
+                    plusView.FadeToAsync(1, 250));
 
             deleteView.IsVisible = false;
 

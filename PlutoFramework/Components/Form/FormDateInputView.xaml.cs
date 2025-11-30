@@ -95,7 +95,7 @@ public partial class FormDateInputView : ContentView
         try
         {
             var tp = GetTimePicker();
-            var combined = e.NewDate.Date + (tp?.Time ?? TimeSpan.Zero);
+            var combined = e.NewDate?.Date + (tp?.Time ?? TimeSpan.Zero);
             if (Date != combined)
             {
                 SetValue(DateProperty, combined);
