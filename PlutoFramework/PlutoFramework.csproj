@@ -20,6 +20,10 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <MauiXamlInflator>SourceGen</MauiXamlInflator>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <AssemblyName>PlutoFramework</AssemblyName>
     <PackageId>PlutoFramework</PackageId>
     <Version>0.1.9</Version>

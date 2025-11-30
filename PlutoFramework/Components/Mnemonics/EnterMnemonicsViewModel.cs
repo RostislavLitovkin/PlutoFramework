@@ -8,7 +8,7 @@ namespace PlutoFramework.Components.Mnemonics
 {
     public partial class EnterMnemonicsViewModel : ObservableObject
     {
-        public required Func<Task> Navigation;
+        public Func<Task> Navigation { get; set; } = () => Task.CompletedTask;
 
         [ObservableProperty]
         private bool incorrectMnemonicsEntered = false;
