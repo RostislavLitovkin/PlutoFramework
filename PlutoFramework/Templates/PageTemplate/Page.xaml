@@ -9,6 +9,7 @@
                     xmlns:kilt="clr-namespace:PlutoFramework.Components.Kilt"
                     xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
                     xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
+                    xmlns:webview="clr-namespace:PlutoFramework.Components.WebView"
                     xmlns:topnavigationbartemplate="clr-namespace:PlutoFramework.Templates.TopNavigationBarTemplate"
                     x:Class="PlutoFramework.Templates.PageTemplate.Page">
 
@@ -47,6 +48,8 @@
                                                                HasShadow="{TemplateBinding NavigationBarHasShadow}"
                                                                x:Name="TopNavigationBar" />
 
+            <webview:WebSignRawPopupView />
+            
             <txanalyzer:TransactionAnalyzerConfirmationView ZIndex="{TemplateBinding TransactionAnalyzerZIndex}"/>
 
             <account:NoAccountPopup ZIndex="10" />

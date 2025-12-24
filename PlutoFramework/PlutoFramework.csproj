@@ -2463,6 +2463,9 @@
     <MauiXaml Update="Components\Unique\OpenUniqueButton.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\WebView\WebSignRawPopupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\XcavateProperty\BuyPropertyTokensView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>

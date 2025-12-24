@@ -35,9 +35,7 @@ using PlutoFrameworkCore;
 using Xe.AcrylicView;
 using ZXing.Net.Maui.Controls;
 using PlutoFramework.Components.Keys;
-
-
-
+using PlutoFramework.Components.WebView;
 
 #if ANDROID26_0_OR_GREATER
 using Microsoft.Maui.Controls.Compatibility.Platform.Android;
@@ -188,6 +186,8 @@ namespace PlutoFramework
             DependencyService.Register<NotWhitelistedPopupViewModel>();
 
             DependencyService.Register<UserProfileNotCreatedPopupViewModel>();
+
+            DependencyService.Register<WebSignRawPopupViewModel>();
 
             return builder;
         }
