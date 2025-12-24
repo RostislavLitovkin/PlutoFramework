@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
     }
     
     /// <summary>
-    /// >> 187 - Variant[pallet_marketplace.types.Vote]
+    /// >> 204 - Variant[pallet_marketplace.types.Vote]
     /// </summary>
     public sealed class EnumVote : BaseEnum<Vote>
     {

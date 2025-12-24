@@ -24,49 +24,79 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         
         /// <summary>
         /// >> LettingAgentAdded
-        /// A new letting agent got set.
+        /// A letting agent was registered in a region.
         /// </summary>
         LettingAgentAdded = 0,
         
         /// <summary>
-        /// >> LettingAgentSet
-        /// A letting agent has been added to a property.
+        /// >> LettingAgentRemoved
+        /// A letting has been removed from a location.
         /// </summary>
-        LettingAgentSet = 1,
+        LettingAgentRemoved = 1,
+        
+        /// <summary>
+        /// >> LettingAgentSet
+        /// A letting agent was assigned to a property.
+        /// </summary>
+        LettingAgentSet = 2,
         
         /// <summary>
         /// >> IncomeDistributed
-        /// The rental income has been distributed.
+        /// Rental income was distributed for a property.
         /// </summary>
-        IncomeDistributed = 2,
+        IncomeDistributed = 3,
         
         /// <summary>
         /// >> WithdrawFunds
         /// A user withdrew funds.
         /// </summary>
-        WithdrawFunds = 3,
+        WithdrawFunds = 4,
         
         /// <summary>
         /// >> LettingAgentProposed
-        /// A letting agent has been proposed for a property.
+        /// A letting agent was proposed for a property.
         /// </summary>
-        LettingAgentProposed = 4,
+        LettingAgentProposed = 5,
         
         /// <summary>
         /// >> VotedOnLettingAgent
-        /// Someone has voted on a letting agent.
+        /// A user voted on a letting agent proposal.
         /// </summary>
-        VotedOnLettingAgent = 5,
+        VotedOnLettingAgent = 6,
         
         /// <summary>
         /// >> LettingAgentRejected
-        /// A letting agent has been rejected.
+        /// A letting agent proposal was rejected.
         /// </summary>
-        LettingAgentRejected = 6,
+        LettingAgentRejected = 7,
+        
+        /// <summary>
+        /// >> TokenUnfrozen
+        /// A user���s frozen tokens were released after voting.
+        /// </summary>
+        TokenUnfrozen = 8,
+        
+        /// <summary>
+        /// >> LettingAgentResignationInitiated
+        /// A letting agent initiated resignation from a property.
+        /// </summary>
+        LettingAgentResignationInitiated = 9,
+        
+        /// <summary>
+        /// >> LettingAgentResignationFinalized
+        /// A letting agent���s resignation was finalized.
+        /// </summary>
+        LettingAgentResignationFinalized = 10,
+        
+        /// <summary>
+        /// >> ResignationProcessingFailed
+        /// Processing of a letting agent resignation failed.
+        /// </summary>
+        ResignationProcessingFailed = 11,
     }
     
     /// <summary>
-    /// >> 188 - Variant[pallet_property_management.pallet.Event]
+    /// >> 205 - Variant[pallet_property_management.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -78,12 +108,17 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         public EnumEvent()
         {
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.LettingAgentAdded);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.LettingAgentRemoved);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.LettingAgentSet);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.IncomeDistributed);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.WithdrawFunds);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.LettingAgentProposed);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.EnumVote>>(Event.VotedOnLettingAgent);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.LettingAgentProposed);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.EnumVote>>(Event.VotedOnLettingAgent);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.LettingAgentRejected);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.TokenUnfrozen);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.LettingAgentResignationInitiated);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.LettingAgentResignationFinalized);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Types.Base.EnumResult>>(Event.ResignationProcessingFailed);
         }
     }
 }

@@ -59,18 +59,20 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet
         NoPermission = 5,
         
         /// <summary>
-        /// >> UserNotWhitelisted
+        /// >> UserNotCompliant
         /// User did not pass the kyc.
         /// </summary>
-        UserNotWhitelisted = 6,
+        UserNotCompliant = 6,
         
         /// <summary>
         /// >> ArithmeticUnderflow
+        /// Underflow in arithmetic operations.
         /// </summary>
         ArithmeticUnderflow = 7,
         
         /// <summary>
         /// >> ArithmeticOverflow
+        /// Overflow in arithmetic operations.
         /// </summary>
         ArithmeticOverflow = 8,
         
@@ -148,6 +150,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet
         
         /// <summary>
         /// >> ExceedsMaxEntries
+        /// Exceeds maximum allowed entries.
         /// </summary>
         ExceedsMaxEntries = 21,
         
@@ -200,86 +203,164 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet
         InvalidFeePercentage = 29,
         
         /// <summary>
-        /// >> InvalidTaxPercentage
-        /// Marketplace tax needs to be below 100 %.
-        /// </summary>
-        InvalidTaxPercentage = 30,
-        
-        /// <summary>
         /// >> NotEnoughToken
         /// The sender has not enough token.
         /// </summary>
-        NotEnoughToken = 31,
+        NotEnoughToken = 30,
         
         /// <summary>
         /// >> TokenNotReturned
         /// Token have not been returned yet.
         /// </summary>
-        TokenNotReturned = 32,
+        TokenNotReturned = 31,
         
         /// <summary>
         /// >> NoObjectFound
         /// The real estate object could not be found.
         /// </summary>
-        NoObjectFound = 33,
+        NoObjectFound = 32,
         
         /// <summary>
         /// >> WrongRegion
         /// The lawyer has no permission for this region.
         /// </summary>
-        WrongRegion = 34,
+        WrongRegion = 33,
         
         /// <summary>
         /// >> TokenOwnerNotFound
         /// TokenOwnerHasNotBeenFound.
         /// </summary>
-        TokenOwnerNotFound = 35,
+        TokenOwnerNotFound = 34,
         
         /// <summary>
         /// >> NoLawyerProposed
         /// No lawyer has been proposed to vote on.
         /// </summary>
-        NoLawyerProposed = 36,
+        NoLawyerProposed = 35,
         
         /// <summary>
         /// >> LawyerProposalOngoing
         /// There is already a lawyer proposal ongoing.
         /// </summary>
-        LawyerProposalOngoing = 37,
+        LawyerProposalOngoing = 36,
         
         /// <summary>
         /// >> VotingExpired
         /// The propal has expired.
         /// </summary>
-        VotingExpired = 38,
+        VotingExpired = 37,
         
         /// <summary>
         /// >> VotingStillOngoing
         /// The voting is still ongoing.
         /// </summary>
-        VotingStillOngoing = 39,
+        VotingStillOngoing = 38,
         
         /// <summary>
         /// >> PropertyHasNotBeenSoldYet
         /// Property has not been sold yet.
         /// </summary>
-        PropertyHasNotBeenSoldYet = 40,
+        PropertyHasNotBeenSoldYet = 39,
         
         /// <summary>
         /// >> LegalProcessFailed
         /// The legal process was not finished on time.
         /// </summary>
-        LegalProcessFailed = 41,
+        LegalProcessFailed = 40,
         
         /// <summary>
         /// >> LegalProcessOngoing
         /// The legal process is currently ongoing.
         /// </summary>
-        LegalProcessOngoing = 42,
+        LegalProcessOngoing = 41,
+        
+        /// <summary>
+        /// >> NoFrozenAmount
+        /// The user has no token amount frozen.
+        /// </summary>
+        NoFrozenAmount = 42,
+        
+        /// <summary>
+        /// >> NoClaimWindow
+        /// The user has no token amount frozen.
+        /// </summary>
+        NoClaimWindow = 43,
+        
+        /// <summary>
+        /// >> ClaimWindowExpired
+        /// The claim window already expired.
+        /// </summary>
+        ClaimWindowExpired = 44,
+        
+        /// <summary>
+        /// >> ClaimWindowNotExpired
+        /// The claim period is still ongoing.
+        /// </summary>
+        ClaimWindowNotExpired = 45,
+        
+        /// <summary>
+        /// >> StillHasUnclaimedToken
+        /// The user still has unclaimed token.
+        /// </summary>
+        StillHasUnclaimedToken = 46,
+        
+        /// <summary>
+        /// >> NoValidTokenToClaim
+        /// The user does not have any valid token to claim.
+        /// </summary>
+        NoValidTokenToClaim = 47,
+        
+        /// <summary>
+        /// >> ExceedsMaxOwnership
+        /// The user is not allowed to own too many token of a certain property.
+        /// </summary>
+        ExceedsMaxOwnership = 48,
+        
+        /// <summary>
+        /// >> ListingNotFound
+        /// The listing does not exist.
+        /// </summary>
+        ListingNotFound = 49,
+        
+        /// <summary>
+        /// >> AllTokensClaimed
+        /// All property token have already been claimed.
+        /// </summary>
+        AllTokensClaimed = 50,
+        
+        /// <summary>
+        /// >> OfferNotFound
+        /// The offer does not exist.
+        /// </summary>
+        OfferNotFound = 51,
+        
+        /// <summary>
+        /// >> NoTokensOwned
+        /// The user does not own any token of the property.
+        /// </summary>
+        NoTokensOwned = 52,
+        
+        /// <summary>
+        /// >> InsufficientRefundableTokens
+        /// There are not enough token available to refund.
+        /// </summary>
+        InsufficientRefundableTokens = 53,
+        
+        /// <summary>
+        /// >> ZeroVoteAmount
+        /// The amount for voting has to be higher than 0.
+        /// </summary>
+        ZeroVoteAmount = 54,
+        
+        /// <summary>
+        /// >> InvalidOfferNonce
+        /// The nonce does not match the nonce for this offer.
+        /// </summary>
+        InvalidOfferNonce = 55,
     }
     
     /// <summary>
-    /// >> 576 - Variant[pallet_marketplace.pallet.Error]
+    /// >> 590 - Variant[pallet_marketplace.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

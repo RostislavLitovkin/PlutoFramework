@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
     
     
     /// <summary>
-    /// >> 557 - Composite[pallet_marketplace.types.TokenOwnerFunds]
+    /// >> 575 - Composite[pallet_marketplace.types.TokenOwnerFunds]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class TokenOwnerFunds : BaseType
@@ -27,11 +27,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
         /// <summary>
         /// >> paid_funds
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT4 PaidFunds { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 PaidFunds { get; set; }
         /// <summary>
         /// >> paid_fee
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT4 PaidFee { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 PaidFee { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -52,9 +52,9 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            PaidFunds = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT4();
+            PaidFunds = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             PaidFunds.Decode(byteArray, ref p);
-            PaidFee = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT4();
+            PaidFee = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             PaidFee.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

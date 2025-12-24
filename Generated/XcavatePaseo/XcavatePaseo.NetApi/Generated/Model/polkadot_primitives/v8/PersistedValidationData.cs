@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v8
     
     
     /// <summary>
-    /// >> 233 - Composite[polkadot_primitives.v8.PersistedValidationData]
+    /// >> 250 - Composite[polkadot_primitives.v8.PersistedValidationData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PersistedValidationData : BaseType

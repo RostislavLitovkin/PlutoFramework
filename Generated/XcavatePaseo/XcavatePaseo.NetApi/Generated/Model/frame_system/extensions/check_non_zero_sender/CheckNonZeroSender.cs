@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_non_
     
     
     /// <summary>
-    /// >> 622 - Composite[frame_system.extensions.check_non_zero_sender.CheckNonZeroSender]
+    /// >> 634 - Composite[frame_system.extensions.check_non_zero_sender.CheckNonZeroSender]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckNonZeroSender : BaseType

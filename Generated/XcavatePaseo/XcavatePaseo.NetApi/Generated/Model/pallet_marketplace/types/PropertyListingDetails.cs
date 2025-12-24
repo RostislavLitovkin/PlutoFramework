@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
     
     
     /// <summary>
-    /// >> 551 - Composite[pallet_marketplace.types.PropertyListingDetails]
+    /// >> 573 - Composite[pallet_marketplace.types.PropertyListingDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PropertyListingDetails : BaseType
@@ -35,15 +35,15 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
         /// <summary>
         /// >> collected_funds
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT4 CollectedFunds { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 CollectedFunds { get; set; }
         /// <summary>
         /// >> collected_tax
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT4 CollectedTax { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 CollectedTax { get; set; }
         /// <summary>
         /// >> collected_fees
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT4 CollectedFees { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 CollectedFees { get; set; }
         /// <summary>
         /// >> asset_id
         /// </summary>
@@ -80,6 +80,18 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
         /// >> investor_funds
         /// </summary>
         public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT5 InvestorFunds { get; set; }
+        /// <summary>
+        /// >> claim_expiry
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> ClaimExpiry { get; set; }
+        /// <summary>
+        /// >> relist_count
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U8 RelistCount { get; set; }
+        /// <summary>
+        /// >> unclaimed_token_amount
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 UnclaimedTokenAmount { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -105,6 +117,9 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
             result.AddRange(Tax.Encode());
             result.AddRange(ListingExpiry.Encode());
             result.AddRange(InvestorFunds.Encode());
+            result.AddRange(ClaimExpiry.Encode());
+            result.AddRange(RelistCount.Encode());
+            result.AddRange(UnclaimedTokenAmount.Encode());
             return result.ToArray();
         }
         
@@ -116,11 +131,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
             RealEstateDeveloper.Decode(byteArray, ref p);
             TokenPrice = new Substrate.NetApi.Model.Types.Primitive.U128();
             TokenPrice.Decode(byteArray, ref p);
-            CollectedFunds = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT4();
+            CollectedFunds = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             CollectedFunds.Decode(byteArray, ref p);
-            CollectedTax = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT4();
+            CollectedTax = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             CollectedTax.Decode(byteArray, ref p);
-            CollectedFees = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT4();
+            CollectedFees = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             CollectedFees.Decode(byteArray, ref p);
             AssetId = new Substrate.NetApi.Model.Types.Primitive.U32();
             AssetId.Decode(byteArray, ref p);
@@ -140,6 +155,12 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
             ListingExpiry.Decode(byteArray, ref p);
             InvestorFunds = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT5();
             InvestorFunds.Decode(byteArray, ref p);
+            ClaimExpiry = new Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>();
+            ClaimExpiry.Decode(byteArray, ref p);
+            RelistCount = new Substrate.NetApi.Model.Types.Primitive.U8();
+            RelistCount.Decode(byteArray, ref p);
+            UnclaimedTokenAmount = new Substrate.NetApi.Model.Types.Primitive.U32();
+            UnclaimedTokenAmount.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;
             Bytes = new byte[bytesLength];

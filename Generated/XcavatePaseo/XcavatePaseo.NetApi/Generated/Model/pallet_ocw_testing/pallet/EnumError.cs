@@ -29,7 +29,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_ocw_testing.pallet
     }
     
     /// <summary>
-    /// >> 618 - Variant[pallet_ocw_testing.pallet.Error]
+    /// >> 630 - Variant[pallet_ocw_testing.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

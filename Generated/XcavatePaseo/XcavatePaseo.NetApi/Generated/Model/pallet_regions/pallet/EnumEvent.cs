@@ -83,97 +83,92 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
         BidSuccessfullyPlaced = 9,
         
         /// <summary>
-        /// >> NewRegionOperatorAdded
-        /// A new regional operator has been added.
-        /// </summary>
-        NewRegionOperatorAdded = 10,
-        
-        /// <summary>
-        /// >> RegionOperatorRemoved
-        /// A regional operator has been removed.
-        /// </summary>
-        RegionOperatorRemoved = 11,
-        
-        /// <summary>
         /// >> RemoveRegionOwnerProposed
         /// A proposal to remove the region owner has been proposed.
         /// </summary>
-        RemoveRegionOwnerProposed = 12,
+        RemoveRegionOwnerProposed = 10,
         
         /// <summary>
         /// >> VotedOnRegionOwnerProposal
         /// Voted on proposal to remove region owner.
         /// </summary>
-        VotedOnRegionOwnerProposal = 13,
+        VotedOnRegionOwnerProposal = 11,
         
         /// <summary>
         /// >> RegionOwnerRemovalRejected
         /// A proposal for removing the region owner got rejected.
         /// </summary>
-        RegionOwnerRemovalRejected = 14,
+        RegionOwnerRemovalRejected = 12,
         
         /// <summary>
         /// >> RegionalOperatorSlashed
         /// A regional operator has been slashed.
         /// </summary>
-        RegionalOperatorSlashed = 15,
+        RegionalOperatorSlashed = 13,
         
         /// <summary>
         /// >> RegionOwnerChangeEnabled
         /// The region is now eligible for an owner change after the specified block.
         /// </summary>
-        RegionOwnerChangeEnabled = 16,
+        RegionOwnerChangeEnabled = 14,
         
         /// <summary>
         /// >> ReplacementBidSuccessfullyPlaced
         /// A bid for a region got placed.
         /// </summary>
-        ReplacementBidSuccessfullyPlaced = 17,
+        ReplacementBidSuccessfullyPlaced = 15,
         
         /// <summary>
         /// >> RegionOwnerChanged
         /// The owner of a region has been changed.
         /// </summary>
-        RegionOwnerChanged = 18,
+        RegionOwnerChanged = 16,
         
         /// <summary>
         /// >> RegionOwnerResignationInitiated
         /// The owner of a region has initiated resignation.
         /// </summary>
-        RegionOwnerResignationInitiated = 19,
+        RegionOwnerResignationInitiated = 17,
         
         /// <summary>
         /// >> RegionOwnerProposalFailed
         /// Processing of a proposal failed.
         /// </summary>
-        RegionOwnerProposalFailed = 20,
+        RegionOwnerProposalFailed = 18,
         
         /// <summary>
         /// >> RegionOwnerReplacementFailed
         /// Processing of a region owner replacement failed.
         /// </summary>
-        RegionOwnerReplacementFailed = 21,
+        RegionOwnerReplacementFailed = 19,
         
         /// <summary>
         /// >> LawyerRegistered
         /// A lawyer has been registered.
         /// </summary>
-        LawyerRegistered = 22,
+        LawyerRegistered = 20,
         
         /// <summary>
         /// >> LawyerUnregistered
         /// Lawyer has been unregistered.
         /// </summary>
-        LawyerUnregistered = 23,
+        LawyerUnregistered = 21,
         
         /// <summary>
         /// >> LawyerActiveCasesUpdated
+        /// Active cases of a lawyer have been updated.
         /// </summary>
-        LawyerActiveCasesUpdated = 24,
+        LawyerActiveCasesUpdated = 22,
+        
+        /// <summary>
+        /// >> TokenUnlocked
+        /// A user has unfrozen his token.
+        /// </summary>
+        TokenUnlocked = 23,
     }
     
     /// <summary>
-    /// >> 178 - Variant[pallet_regions.pallet.Event]
+    /// >> 187 - Variant[pallet_regions.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -184,8 +179,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.RegionProposed);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumVote, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.VotedOnRegionProposal);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.RegionProposed);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumVote, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.VotedOnRegionProposal);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>>(Event.RegionCreated);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U16>(Event.NoRegionCreated);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.ListingDurationChanged);
@@ -194,10 +189,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U16>(Event.RegionAuctionStarted);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.RegionProposalRejected);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>>(Event.BidSuccessfullyPlaced);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.NewRegionOperatorAdded);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.RegionOperatorRemoved);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.RemoveRegionOwnerProposed);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumVote, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.VotedOnRegionOwnerProposal);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.RemoveRegionOwnerProposed);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumVote, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.VotedOnRegionOwnerProposal);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U16>(Event.RegionOwnerRemovalRejected);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U8>>(Event.RegionalOperatorSlashed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.RegionOwnerChangeEnabled);
@@ -207,8 +200,9 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Types.Base.EnumResult>>(Event.RegionOwnerProposalFailed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Types.Base.EnumResult>>(Event.RegionOwnerReplacementFailed);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.LawyerRegistered);
-				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U16>>(Event.LawyerUnregistered);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.LawyerUnregistered);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.LawyerActiveCasesUpdated);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.TokenUnlocked);
         }
     }
 }

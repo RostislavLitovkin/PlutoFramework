@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_weight_reclaim
     
     
     /// <summary>
-    /// >> 620 - Composite[cumulus_pallet_weight_reclaim.StorageWeightReclaim]
+    /// >> 632 - Composite[cumulus_pallet_weight_reclaim.StorageWeightReclaim]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class StorageWeightReclaim : BaseType

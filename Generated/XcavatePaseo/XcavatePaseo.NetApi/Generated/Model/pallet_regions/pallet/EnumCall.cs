@@ -26,12 +26,12 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
         /// >> propose_new_region
         /// Creates a proposal for a new region.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RegionalOperator and have sufficient funds.
         /// 
         /// Parameters:
         /// - `region_identifier`: The id of the region the caller is proposing.
         /// 
-        /// Emits `RegionProposed` event when succesfful.
+        /// Emits `RegionProposed` event when successful.
         /// </summary>
         propose_new_region = 0,
         
@@ -39,171 +39,199 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
         /// >> vote_on_region_proposal
         /// Lets a xcav holder vote on a proposal for a region.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be signed and have sufficient funds.
         /// 
         /// Parameters:
         /// - `region_id`: Id of the region.
         /// - `vote`: Must be either a Yes vote or a No vote.
+        /// - `amount`: The amount that the caller is using for voting.
         /// 
-        /// Emits `VotedOnRegionProposal` event when succesfful.
+        /// Emits `VotedOnRegionProposal` event when successful.
         /// </summary>
         vote_on_region_proposal = 1,
+        
+        /// <summary>
+        /// >> unlock_region_voting_token
+        /// Lets a voter unlock his locked token after voting on a region.
+        /// 
+        /// The origin must be signed and have sufficient funds.
+        /// 
+        /// Parameters:
+        /// - `proposal_id`: Id of the region proposal.
+        /// 
+        /// Emits `TokenUnlocked` event when successful.
+        /// </summary>
+        unlock_region_voting_token = 2,
         
         /// <summary>
         /// >> bid_on_region
         /// Lets a registered account bid on a region to become the regional operator.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RegionalOperator and have sufficient funds.
         /// 
         /// Parameters:
         /// - `region_id`: Id of the region.
         /// - `amount`: The amount that the caller is willing to bid and to have locked.
         /// 
-        /// Emits `BidSuccessfullyPlaced` event when succesfful.
+        /// Emits `BidSuccessfullyPlaced` event when successful.
         /// </summary>
-        bid_on_region = 2,
+        bid_on_region = 3,
         
         /// <summary>
         /// >> create_new_region
         /// Creates a new region for the marketplace.
         /// This function calls the nfts-pallet to create a new collection.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RegionalOperator and have sufficient funds.
         /// 
         /// Parameters:
         /// - `region_id`: Id of the region.
         /// - `listing_duration`: Duration of a listing in this region.
         /// - `tax`: Tax percentage for selling a property in this region.
         /// 
-        /// Emits `RegionCreated` event when succesfful.
+        /// Emits `RegionCreated` event when successful.
         /// </summary>
-        create_new_region = 3,
+        create_new_region = 4,
         
         /// <summary>
         /// >> adjust_listing_duration
         /// Region owner can adjust the listing duration.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RegionalOperator and have sufficient funds.
         /// 
         /// Parameters:
         /// - `region_id`: Region in where the listing duration should be changed.
         /// - `listing_duration`: New duration of a listing in this region.
         /// 
-        /// Emits `ListingDurationChanged` event when succesfful.
+        /// Emits `ListingDurationChanged` event when successful.
         /// </summary>
-        adjust_listing_duration = 4,
+        adjust_listing_duration = 5,
         
         /// <summary>
         /// >> adjust_region_tax
         /// Region owner can adjust the tax in a region.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RegionalOperator and have sufficient funds.
         /// 
         /// Parameters:
         /// - `region_id`: Region in where the tax should be changed.
         /// - `new_tax`: New tax for a property sell in this region.
         /// 
-        /// Emits `RegionTaxChanged` event when succesfful.
+        /// Emits `RegionTaxChanged` event when successful.
         /// </summary>
-        adjust_region_tax = 5,
+        adjust_region_tax = 6,
         
         /// <summary>
         /// >> create_new_location
         /// Creates a new location for a region.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RegionalOperator and have sufficient funds.
         /// 
         /// Parameters:
         /// - `region_id`: The region where the new location should be created.
         /// - `location`: The postcode of the new location.
         /// 
-        /// Emits `LocationCreated` event when succesfful.
+        /// Emits `LocationCreated` event when successful.
         /// </summary>
-        create_new_location = 6,
+        create_new_location = 7,
         
         /// <summary>
         /// >> propose_remove_regional_operator
         /// Creates proposal to remove a region owner.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be signed and have sufficient funds.
         /// 
         /// Parameters:
         /// - `region_id`: The region where the region owner should be removed.
         /// 
-        /// Emits `RemoveRegionOwnerProposed` event when succesfful.
+        /// Emits `RemoveRegionOwnerProposed` event when successful.
         /// </summary>
-        propose_remove_regional_operator = 7,
+        propose_remove_regional_operator = 8,
         
         /// <summary>
         /// >> vote_on_remove_owner_proposal
         /// Vote on proposal to remove a region owner.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be signed and have sufficient funds.
         /// 
         /// Parameters:
         /// - `region_id`: The region where the region owner should be removed.
         /// - `vote`: Must be either a Yes vote or a No vote.
+        /// - `amount`: The amount that the caller is using for voting.
         /// 
-        /// Emits `VotedOnRegionOwnerProposal` event when succesfful.
+        /// Emits `VotedOnRegionOwnerProposal` event when successful.
         /// </summary>
-        vote_on_remove_owner_proposal = 8,
+        vote_on_remove_owner_proposal = 9,
+        
+        /// <summary>
+        /// >> unlock_region_owner_removal_voting_token
+        /// Lets a voter unlock his locked token after voting on removal of a regional operator.
+        /// 
+        /// The origin must be signed and have sufficient funds.
+        /// 
+        /// Parameters:
+        /// - `proposal_id`: Id of the region proposal.
+        /// 
+        /// Emits `TokenUnlocked` event when successful.
+        /// </summary>
+        unlock_region_owner_removal_voting_token = 10,
         
         /// <summary>
         /// >> bid_on_region_replacement
         /// Lets a registered account bid on a region to become the new regional operator.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RegionalOperator and have sufficient funds.
         /// 
         /// Parameters:
         /// - `region_id`: The region where the region owner should be removed.
         /// - `amount`: The amount that the caller is willing to bid and to have locked.
         /// 
-        /// Emits `ReplacementBidSuccessfullyPlaced` event when succesfful.
+        /// Emits `ReplacementBidSuccessfullyPlaced` event when successful.
         /// </summary>
-        bid_on_region_replacement = 9,
+        bid_on_region_replacement = 11,
         
         /// <summary>
         /// >> initiate_region_owner_resignation
         /// Lets a regional operator resign.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RegionalOperator and have sufficient funds.
         /// 
         /// Parameters:
         /// - `region_id`: The region where the region wants to resign.
         /// 
-        /// Emits `RegionOwnerResignationInitiated` event when succesfful.
+        /// Emits `RegionOwnerResignationInitiated` event when successful.
         /// </summary>
-        initiate_region_owner_resignation = 10,
+        initiate_region_owner_resignation = 12,
         
         /// <summary>
         /// >> register_lawyer
         /// Registers a new lawyer.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a Lawyer and have sufficient funds.
         /// 
         /// Parameters:
         /// - `lawyer`: The lawyer that should be registered.
         /// 
-        /// Emits `LawyerRegistered` event when succesfful.
+        /// Emits `LawyerRegistered` event when successful.
         /// </summary>
         register_lawyer = 13,
         
         /// <summary>
         /// >> unregister_lawyer
-        /// Unegisters a new lawyer.
+        /// Unregisters a new lawyer.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a Lawyer and have sufficient funds.
         /// 
         /// Parameters:
-        /// - `lawyer`: The lawyer that should be runegistered.
+        /// - `lawyer`: The lawyer that should be unregistered.
         /// 
-        /// Emits `LawyerUnregistered` event when succesfful.
+        /// Emits `LawyerUnregistered` event when successful.
         /// </summary>
         unregister_lawyer = 14,
     }
     
     /// <summary>
-    /// >> 373 - Variant[pallet_regions.pallet.Call]
+    /// >> 393 - Variant[pallet_regions.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -215,18 +243,20 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
         public EnumCall()
         {
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumRegionIdentifier>(Call.propose_new_region);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumVote>>(Call.vote_on_region_proposal);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.bid_on_region);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumVote, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.vote_on_region_proposal);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U64>(Call.unlock_region_voting_token);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.bid_on_region);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>>(Call.create_new_region);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.adjust_listing_duration);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>>(Call.adjust_region_tax);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10>>(Call.create_new_location);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U16>(Call.propose_remove_regional_operator);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumVote>>(Call.vote_on_remove_owner_proposal);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.bid_on_region_replacement);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumVote, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.vote_on_remove_owner_proposal);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U64>(Call.unlock_region_owner_removal_voting_token);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.bid_on_region_replacement);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U16>(Call.initiate_region_owner_resignation);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U16>(Call.register_lawyer);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U16>(Call.unregister_lawyer);
+				AddTypeDecoder<BaseVoid>(Call.unregister_lawyer);
         }
     }
 }

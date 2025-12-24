@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcm_runtime_apis.authorized_aliase
     
     
     /// <summary>
-    /// >> 515 - Composite[xcm_runtime_apis.authorized_aliases.OriginAliaser]
+    /// >> 540 - Composite[xcm_runtime_apis.authorized_aliases.OriginAliaser]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OriginAliaser : BaseType
