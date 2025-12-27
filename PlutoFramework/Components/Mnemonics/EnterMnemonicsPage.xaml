@@ -13,10 +13,11 @@
         <mnemonics:EnterMnemonicsViewModel x:Name="viewModel" />
     </template:PageTemplate.BindingContext>
 
-    <template:PageTemplate.MainContent>
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
         <VerticalStackLayout HorizontalOptions="Center"
                              Padding="20, 20, 20, 100"
-                             Spacing="15">  
+                             Spacing="15">
             <ContentView HeightRequest="160">
                 <card:Card>
                     <card:Card.View>
@@ -98,7 +99,7 @@
                                     Text="Import json"
                                     Command="{Binding ImportJsonCommand}"/>
         </VerticalStackLayout>
-    </template:PageTemplate.MainContent>
+    </ScrollView>
 
     <template:PageTemplate.PopupContent>
         <keys:CanNotRecoverKeyPopupView />

@@ -10,7 +10,8 @@
                        x:Class="PlutoFramework.Components.Keys.PolkadotJsonKeyDetailPage"
                        Title="Json">
 
-    <template:PageTemplate.MainContent>
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
         <VerticalStackLayout HorizontalOptions="Center"
                              Padding="20, 10, 20, 100"
                              Spacing="15">
@@ -27,9 +28,9 @@
 
             <buttons:ElevatedButton ButtonState="Warning"
                                     Text="Delete"
-                                    Command="{Binding DeleteKeyCommand}" /> 
+                                    Command="{Binding DeleteKeyCommand}" />
         </VerticalStackLayout>
-    </template:PageTemplate.MainContent>
+    </ScrollView>
 
     <template:PageTemplate.PopupContent>
         <address:AddressQrCodeView />

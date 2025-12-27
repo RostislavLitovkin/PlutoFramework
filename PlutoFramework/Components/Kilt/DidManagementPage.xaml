@@ -8,25 +8,28 @@
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        x:Class="PlutoFramework.Components.Kilt.DidManagementPage"
                        Title="Manage Kilt DID">
-    <VerticalStackLayout HorizontalOptions="Center"
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
+        <VerticalStackLayout HorizontalOptions="Center"
                          Padding="20, 10, 20, 100"
                          Spacing="15">
-        <kilt:DidView Did="{Binding Did}"
+            <kilt:DidView Did="{Binding Did}"
                       Verification="{Binding DidVerification}" />
 
-        <mnemonics:MnemonicsView Title="DID Mnemonics:"
+            <mnemonics:MnemonicsView Title="DID Mnemonics:"
                                  Mnemonics="{Binding Mnemonics}" />
 
-        <buttons:ElevatedButton ButtonState="Enabled"
+            <buttons:ElevatedButton ButtonState="Enabled"
                                 Text="What are mnemonics?"
                                 Command="{Binding GoToMnemonicsExplanationCommand}" />
 
-        <buttons:ElevatedButton ButtonState="Enabled"
+            <buttons:ElevatedButton ButtonState="Enabled"
                                 Text="What are DIDs"
                                 Command="{Binding GoToDidExplanationPageCommand}" />
 
-        <buttons:ElevatedButton ButtonState="Warning"
+            <buttons:ElevatedButton ButtonState="Warning"
                                 Text="Delete DID"
                                 Command="{Binding DeleteDIDCommand}" />
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </template:PageTemplate>

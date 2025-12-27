@@ -11,7 +11,8 @@
                        xmlns:address="clr-namespace:PlutoFramework.Components.AddressView"
                        x:Class="PlutoFramework.Components.Nft.NftDetailPage"
                        Title="{Binding Name}">
-    <template:PageTemplate.MainContent>
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
         <VerticalStackLayout Margin="0, 45, 0, 0"
                              Spacing="15"
                              Padding="20, 15, 20, 200">
@@ -101,7 +102,7 @@
                                         ButtonState="{Binding BurnButtonState}" />
             </Grid>
         </VerticalStackLayout>
-    </template:PageTemplate.MainContent>
+    </ScrollView>
 
     <template:PageTemplate.PopupContent>
         <nft:NftTransferView />

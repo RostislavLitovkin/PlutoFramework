@@ -1,11 +1,11 @@
 ﻿using Chaos.NaCl;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Components.Buttons;
 using PlutoFramework.Model;
 using Substrate.NET.Schnorrkel;
-using Substrate.NetApi.Model.Types;
 using Substrate.NetApi;
-using PlutoFramework.Components.Buttons;
+using Substrate.NetApi.Model.Types;
 
 namespace PlutoFramework.Components.WebView
 {
@@ -24,7 +24,7 @@ namespace PlutoFramework.Components.WebView
         [NotifyPropertyChangedFor(nameof(MessageDecodedString))]
         private Plutonication.RawMessage? message = null;
 
-        public string MessageString => Message is not null ? Message.data : "IDK";
+        public string MessageString => Message?.data ?? "IDK";
 
         public string MessageDecodedString => Message is not null ? System.Text.Encoding.UTF8.GetString(Utils.HexToByteArray(Message.data)) : "";
 
@@ -50,7 +50,7 @@ namespace PlutoFramework.Components.WebView
 
             try
             {
-                byte[] msg = Utils.HexToByteArray(Message.data);
+                byte[] msg = Utils.HexToByteArray(Message?.data);
 
                 var account = await Model.KeysModel.GetAccountAsync();
                 if (account is null)

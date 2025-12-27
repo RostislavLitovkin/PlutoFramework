@@ -8,131 +8,134 @@
                    xmlns:hyperlink="clr-namespace:PlutoFramework.Components.Hyperlink"
                    Title=""
                    NavigationBarHasShadow="False">
-    <VerticalStackLayout>
-        <Grid HorizontalOptions="Fill"
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
+        <VerticalStackLayout>
+            <Grid HorizontalOptions="Fill"
               Margin="20, 0, 20, 0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="200" />
-            </Grid.ColumnDefinitions>
-            
-            <Label HorizontalOptions="Start"
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="200" />
+                </Grid.ColumnDefinitions>
+
+                <Label HorizontalOptions="Start"
                    HorizontalTextAlignment="Start"
                    Grid.Column="0">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span FontAttributes="Bold" Text="Questionnaire" />
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span FontAttributes="Bold" Text="Questionnaire" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
 
-            <progress:ProgressStepperView Step="{Binding Step}"
+                <progress:ProgressStepperView Step="{Binding Step}"
                                           Steps="{Binding Steps}"
                                           Grid.Column="2"
                                           HorizontalOptions="End" />
-        </Grid>
+            </Grid>
 
-        <Label HorizontalOptions="Center"
+            <Label HorizontalOptions="Center"
                HorizontalTextAlignment="Center"
                LineBreakMode="WordWrap"
                Margin="30, 50, 30, 10"
                FontSize="20">
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span FontAttributes="Bold"
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold"
                   Text="{Binding Question.Heading}"/>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
-        <Label HorizontalOptions="Center"
+            <Label HorizontalOptions="Center"
                HorizontalTextAlignment="Center"
                LineBreakMode="WordWrap"
                Margin="30, 10, 30, 20">
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span FontAttributes="Bold"
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold"
                           Text="{Binding Question.QuestionText}"/>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
-        <Label HorizontalOptions="Center"
+            <Label HorizontalOptions="Center"
                HorizontalTextAlignment="Center"
                LineBreakMode="WordWrap"
                Margin="20, 0, 20, 40"
-               TextColor="#717171">   
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span Text="Please select a response" />
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-        
-        <!-- Answers -->
-        <Label HorizontalOptions="Start"
+               TextColor="#717171">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Please select a response" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!-- Answers -->
+            <Label HorizontalOptions="Start"
                HorizontalTextAlignment="Start"
                LineBreakMode="WordWrap"
                Margin="20, 20, 20, 20"
                FontSize="20">
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span Text="{Binding Answer0}" FontAttributes="{Binding Answer0FontAttributes}" />
-                </FormattedString>
-            </Label.FormattedText>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding Answer0}" FontAttributes="{Binding Answer0FontAttributes}" />
+                    </FormattedString>
+                </Label.FormattedText>
 
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding SelectAnswerCommand}" CommandParameter="0" />
-            </Label.GestureRecognizers>
-        </Label>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SelectAnswerCommand}" CommandParameter="0" />
+                </Label.GestureRecognizers>
+            </Label>
 
-        <Label HorizontalOptions="Start"
+            <Label HorizontalOptions="Start"
                HorizontalTextAlignment="Start"
                LineBreakMode="WordWrap"
                Margin="20, 20, 20, 20"
                FontSize="20">
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span Text="{Binding Answer1}" FontAttributes="{Binding Answer1FontAttributes}" />
-                </FormattedString>
-            </Label.FormattedText>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding Answer1}" FontAttributes="{Binding Answer1FontAttributes}" />
+                    </FormattedString>
+                </Label.FormattedText>
 
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding SelectAnswerCommand}" CommandParameter="1" />
-            </Label.GestureRecognizers>
-        </Label>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SelectAnswerCommand}" CommandParameter="1" />
+                </Label.GestureRecognizers>
+            </Label>
 
-        <Label HorizontalOptions="Start"
+            <Label HorizontalOptions="Start"
                HorizontalTextAlignment="Start"
                LineBreakMode="WordWrap"
                Margin="20, 20, 20, 20"
                FontSize="20">
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span Text="{Binding Answer2}" FontAttributes="{Binding Answer2FontAttributes}" />
-                </FormattedString>
-            </Label.FormattedText>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding Answer2}" FontAttributes="{Binding Answer2FontAttributes}" />
+                    </FormattedString>
+                </Label.FormattedText>
 
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding SelectAnswerCommand}" CommandParameter="2" />
-            </Label.GestureRecognizers>
-        </Label>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SelectAnswerCommand}" CommandParameter="2" />
+                </Label.GestureRecognizers>
+            </Label>
 
-        <Label HorizontalOptions="Start"
+            <Label HorizontalOptions="Start"
                HorizontalTextAlignment="Start"
                LineBreakMode="WordWrap"
                Margin="20, 20, 20, 20"
                FontSize="20">
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span Text="{Binding Answer3}" FontAttributes="{Binding Answer3FontAttributes}" />
-                </FormattedString>
-            </Label.FormattedText>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding Answer3}" FontAttributes="{Binding Answer3FontAttributes}" />
+                    </FormattedString>
+                </Label.FormattedText>
 
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding SelectAnswerCommand}" CommandParameter="3" />
-            </Label.GestureRecognizers>
-        </Label>
-    </VerticalStackLayout>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SelectAnswerCommand}" CommandParameter="3" />
+                </Label.GestureRecognizers>
+            </Label>
+        </VerticalStackLayout>
+    </ScrollView>
 </page:PageTemplate>

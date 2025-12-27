@@ -12,6 +12,8 @@ public partial class PolkadotExtensionWebView : Microsoft.Maui.Controls.WebView
 
     private readonly PolkadotExtensionWalletBridge _walletBridge = new();
 
+    public event EventHandler<Microsoft.Maui.Controls.ScrolledEventArgs>? Scrolled;
+
     public PolkadotExtensionWebView()
     {
         Navigated += OnNavigated;
@@ -185,4 +187,9 @@ public partial class PolkadotExtensionWebView : Microsoft.Maui.Controls.WebView
     partial void DisconnectPlatformBridge();
 
     private partial Task DispatchScriptAsync(string script);
+
+    internal void RaiseScrolled(double x, double y)
+    {
+        Scrolled?.Invoke(this, new Microsoft.Maui.Controls.ScrolledEventArgs(x, y));
+    }
 }

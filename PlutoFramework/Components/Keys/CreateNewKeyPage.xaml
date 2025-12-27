@@ -5,7 +5,8 @@
                    xmlns:keys="clr-namespace:PlutoFramework.Components.Keys"
                    xmlns:page="clr-namespace:PlutoFramework.Templates.PageTemplate"
                    Title="Generate new key">
-    <page:PageTemplate.MainContent>
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                AbsoluteLayout.LayoutFlags="All">
 
         <VerticalStackLayout Spacing="15" Margin="20, 20, 20, 100">
 
@@ -18,5 +19,5 @@
             <keys:NewKeyView KeyType="EncryptionX25519" />
 
         </VerticalStackLayout>
-    </page:PageTemplate.MainContent>
+    </ScrollView>
 </page:PageTemplate>

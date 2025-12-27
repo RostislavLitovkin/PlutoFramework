@@ -8,7 +8,9 @@
                        x:Class="PlutoFramework.Components.CustomLayouts.CustomLayoutsPage"
                        Title="Custom layout"
                        NavigationBarExtra1Text="Export">
-    <template:PageTemplate.MainContent>
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All"
+                x:Name="scrollView">
         <VerticalStackLayout HorizontalOptions="Center"
                              Padding="20, 10, 20, 100"
                              Spacing="5">
@@ -31,7 +33,7 @@
                 </customlayouts:PlusItemView.GestureRecognizers>
             </customlayouts:PlusItemView>
         </VerticalStackLayout>
-    </template:PageTemplate.MainContent>
+    </ScrollView>
 
     <template:PageTemplate.PopupContent>
         <AbsoluteLayout AbsoluteLayout.LayoutBounds="1, 0, 80, 1"

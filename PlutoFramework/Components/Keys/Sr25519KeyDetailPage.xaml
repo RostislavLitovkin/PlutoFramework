@@ -10,7 +10,8 @@
                        x:Class="PlutoFramework.Components.Keys.Sr25519KeyDetailPage"
                        Title="Mnemonics">
 
-    <template:PageTemplate.MainContent>
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
         <VerticalStackLayout HorizontalOptions="Center"
                              Padding="20, 10, 20, 100"
                              Spacing="15">
@@ -36,7 +37,7 @@
                                     Text="Delete"
                                     Command="{Binding DeleteKeyCommand}" />
         </VerticalStackLayout>
-    </template:PageTemplate.MainContent>
+    </ScrollView>
 
     <template:PageTemplate.PopupContent>
         <address:AddressQrCodeView />

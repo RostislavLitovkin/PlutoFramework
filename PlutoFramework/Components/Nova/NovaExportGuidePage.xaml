@@ -5,31 +5,34 @@
                        xmlns:card="clr-namespace:PlutoFramework.Components.Card"
                        x:Class="PlutoFramework.Components.Nova.NovaExportGuidePage"
                        Title="Export from Nova Wallet">
-    <VerticalStackLayout Spacing="20"
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
+        <VerticalStackLayout Spacing="20"
                          Padding="20, 20, 20, 100">
-        <Label Text="How to export your account from Nova Wallet"
+            <Label Text="How to export your account from Nova Wallet"
                            FontSize="24"
                            FontAttributes="Bold"/>
-        <Label Text="Follow these steps in Nova Wallet and then import the exported data into this app."
+            <Label Text="Follow these steps in Nova Wallet and then import the exported data into this app."
                            TextType="Text"/>
 
-        <!-- Step 1 -->
-        <Label Text="1) Open Nova Wallet and go to Settings, then security and backup."/>
-        <Image Source="novaimport1.png"
+            <!-- Step 1 -->
+            <Label Text="1) Open Nova Wallet and go to Settings, then security and backup."/>
+            <Image Source="novaimport1.png"
                            Aspect="AspectFit"/>
 
-        <!-- Step 2 -->
-        <Label Text="Select backup manually."/>
-        <Image Source="novaimport2.png"
+            <!-- Step 2 -->
+            <Label Text="Select backup manually."/>
+            <Image Source="novaimport2.png"
                            Aspect="AspectFit"/>
 
-        <!-- Step 3 -->
-        <Label Text="Then select the account you wish to import into this app. Confirm that you are aware not to share the passphrase with anyone. Then reveal your passphrase."
+            <!-- Step 3 -->
+            <Label Text="Then select the account you wish to import into this app. Confirm that you are aware not to share the passphrase with anyone. Then reveal your passphrase."
                />
-        <Image Source="novaimport3.png"
+            <Image Source="novaimport3.png"
                            Aspect="AspectFit"/>
 
-        <Label Text="After you know your seedphrase, return here, go to the Show mnemonics page, select Use existing mnemonics and copy over your seedphrase from Nova wallet."
-                           Margin="0,10,0,0"/> 
-    </VerticalStackLayout>
+            <Label Text="After you know your seedphrase, return here, go to the Show mnemonics page, select Use existing mnemonics and copy over your seedphrase from Nova wallet."
+                           Margin="0,10,0,0"/>
+        </VerticalStackLayout>
+    </ScrollView>
 </template:PageTemplate>

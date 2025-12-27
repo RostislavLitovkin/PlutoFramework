@@ -20,10 +20,6 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <MauiXamlInflator>SourceGen</MauiXamlInflator>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <AssemblyName>PlutoFramework</AssemblyName>
     <PackageId>PlutoFramework</PackageId>
     <Version>0.1.9</Version>
@@ -2463,7 +2459,13 @@
     <MauiXaml Update="Components\Unique\OpenUniqueButton.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\WebView\ExtensionWebViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\WebView\WebSignRawPopupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\WebView\WebViewNavigationBarView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\XcavateProperty\BuyPropertyTokensView.xaml">

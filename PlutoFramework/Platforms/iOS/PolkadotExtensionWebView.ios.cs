@@ -12,6 +12,7 @@ public partial class PolkadotExtensionWebView
 {
     private WKWebView? _nativeWebView;
     private WalletMessageHandler? _messageHandler;
+    private EventHandler? _scrolledHandler;
 
     partial void InitializePlatformBridge(WebViewHandler handler)
     {
@@ -21,6 +22,8 @@ public partial class PolkadotExtensionWebView
         }
 
         _nativeWebView = platformView;
+
+        AttachScrollHandler(platformView);
 
         _messageHandler?.Dispose();
         _messageHandler = new WalletMessageHandler(this);
@@ -34,6 +37,8 @@ public partial class PolkadotExtensionWebView
             return;
         }
 
+        DetachScrollHandler();
+
         if (_messageHandler is not null)
         {
             _nativeWebView.Configuration.UserContentController.RemoveScriptMessageHandler(ScriptInterfaceName);
@@ -42,6 +47,35 @@ public partial class PolkadotExtensionWebView
         }
 
         _nativeWebView = null;
+    }
+
+    private void AttachScrollHandler(WKWebView platformView)
+    {
+        DetachScrollHandler();
+
+        var scrollView = platformView.ScrollView;
+        if (scrollView is null)
+        {
+            return;
+        }
+
+        _scrolledHandler = (sender, args) =>
+        {
+            var offset = scrollView.ContentOffset;
+            RaiseScrolled(offset.X, offset.Y);
+        };
+
+        scrollView.Scrolled += _scrolledHandler;
+    }
+
+    private void DetachScrollHandler()
+    {
+        if (_nativeWebView?.ScrollView is not null && _scrolledHandler is not null)
+        {
+            _nativeWebView.ScrollView.Scrolled -= _scrolledHandler;
+        }
+
+        _scrolledHandler = null;
     }
 
     private partial Task DispatchScriptAsync(string script)

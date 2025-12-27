@@ -1,6 +1,7 @@
 #if ANDROID
 using System;
 using System.Threading.Tasks;
+using Android.Views;
 using Android.Webkit;
 using Java.Interop;
 using Microsoft.Maui.Handlers;
@@ -11,6 +12,7 @@ public partial class PolkadotExtensionWebView
 {
     private Android.Webkit.WebView? _nativeWebView;
     private WalletJavascriptInterface? _javascriptInterface;
+    private ScrollChangedListener? _scrollListener;
 
     partial void InitializePlatformBridge(WebViewHandler handler)
     {
@@ -21,6 +23,8 @@ public partial class PolkadotExtensionWebView
 
         _nativeWebView = platformView;
 
+        AttachScrollListener(platformView);
+
         _javascriptInterface?.Dispose();
         _javascriptInterface = new WalletJavascriptInterface(this);
         platformView.AddJavascriptInterface(_javascriptInterface, ScriptInterfaceName);
@@ -28,6 +32,8 @@ public partial class PolkadotExtensionWebView
 
     partial void DisconnectPlatformBridge()
     {
+        DetachScrollListener();
+
         if (_nativeWebView is not null)
         {
             try
@@ -43,6 +49,31 @@ public partial class PolkadotExtensionWebView
         _javascriptInterface?.Dispose();
         _javascriptInterface = null;
         _nativeWebView = null;
+    }
+
+    private void AttachScrollListener(Android.Webkit.WebView platformView)
+    {
+        DetachScrollListener();
+
+        if (platformView.ViewTreeObserver?.IsAlive != true)
+        {
+            return;
+        }
+
+        var listener = new ScrollChangedListener(this, platformView);
+        platformView.ViewTreeObserver.AddOnScrollChangedListener(listener);
+        _scrollListener = listener;
+    }
+
+    private void DetachScrollListener()
+    {
+        if (_nativeWebView?.ViewTreeObserver?.IsAlive == true && _scrollListener is not null)
+        {
+            _nativeWebView.ViewTreeObserver.RemoveOnScrollChangedListener(_scrollListener);
+        }
+
+        _scrollListener?.Dispose();
+        _scrollListener = null;
     }
 
     private partial Task DispatchScriptAsync(string script)
@@ -86,6 +117,26 @@ public partial class PolkadotExtensionWebView
             if (_owner.TryGetTarget(out var view))
             {
                 view.EnqueueWalletRequest(json);
+            }
+        }
+    }
+
+    private sealed class ScrollChangedListener : Java.Lang.Object, ViewTreeObserver.IOnScrollChangedListener
+    {
+        private readonly WeakReference<PolkadotExtensionWebView> _owner;
+        private readonly WeakReference<Android.Webkit.WebView> _nativeWebView;
+
+        public ScrollChangedListener(PolkadotExtensionWebView owner, Android.Webkit.WebView nativeWebView)
+        {
+            _owner = new(owner);
+            _nativeWebView = new(nativeWebView);
+        }
+
+        public void OnScrollChanged()
+        {
+            if (_owner.TryGetTarget(out var owner) && _nativeWebView.TryGetTarget(out var native))
+            {
+                owner.RaiseScrolled(native.ScrollX, native.ScrollY);
             }
         }
     }
