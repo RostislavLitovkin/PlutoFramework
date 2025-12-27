@@ -20,25 +20,22 @@ public partial class ExtensionWebViewPage : PageTemplate
         };
     }
 
-    private Task OnScrolledAsync(object sender, ScrolledEventArgs e)
+    private async void OnScrolled(object sender, ScrolledEventArgs e)
     {
         if (lastScrollY < e.ScrollY && !scrollingDown)
         {
             scrollingDown = true;
 
-            return navigationBar.TranslateToAsync(0, 60, 250, Easing.CubicInOut)
-                .ContinueWith(_ => { lastScrollY = e.ScrollY; }, TaskScheduler.FromCurrentSynchronizationContext());
+            await navigationBar.TranslateToAsync(0, 60, 250, Easing.CubicInOut);
         }
         else if (lastScrollY > e.ScrollY && scrollingDown)
         {
             scrollingDown = false;
 
-            return navigationBar.TranslateToAsync(0, 0, 250, Easing.CubicInOut)
-                .ContinueWith(_ => { lastScrollY = e.ScrollY; }, TaskScheduler.FromCurrentSynchronizationContext());
+            await navigationBar.TranslateToAsync(0, 0, 250, Easing.CubicInOut);
         }
 
         lastScrollY = e.ScrollY;
-        return Task.CompletedTask;
     }
 
     private void OnPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -50,9 +47,16 @@ public partial class ExtensionWebViewPage : PageTemplate
             viewModel.CanGoBack = ((Microsoft.Maui.Controls.WebView)sender).CanGoBack;
         }
 
-        if (e.PropertyName == "Source")
+        if (e.PropertyName == "Source" && ((Microsoft.Maui.Controls.WebView)sender).Source is UrlWebViewSource)
         {
-            Console.WriteLine(((Microsoft.Maui.Controls.WebView)sender).Source.ToString());
+            viewModel.SearchSource = ((UrlWebViewSource)((Microsoft.Maui.Controls.WebView)sender).Source).Url;
         }
+    }
+
+    private void OnNavigated(object sender, WebNavigatedEventArgs e)
+    {
+        var viewModel = (ExtensionWebViewPageViewModel)BindingContext;
+
+        viewModel.SearchSource = e.Url;
     }
 }

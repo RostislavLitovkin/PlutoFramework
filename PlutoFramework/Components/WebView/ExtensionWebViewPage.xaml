@@ -10,9 +10,10 @@
     <webview:PolkadotExtensionWebView
         AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
         AbsoluteLayout.LayoutFlags="All"
-        Scrolled="OnScrolledAsync"
+        Scrolled="OnScrolled"
         PropertyChanged="OnPropertyChanged"
         x:Name="webView"
+        Navigated="OnNavigated"
         Source="{Binding Source}"/>
 
     <page:PageTemplate.PopupContent>
