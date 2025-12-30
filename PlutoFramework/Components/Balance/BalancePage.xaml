@@ -12,7 +12,8 @@
                        xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
                        x:Class="PlutoFramework.Components.Balance.BalancePage"
                        Title="Balance">
-    <template:PageTemplate.MainContent>
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
         <VerticalStackLayout Spacing="15">
 
             <Label HorizontalOptions="Start"
@@ -48,7 +49,7 @@
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
-            
+
             <VerticalStackLayout Margin="20, 0, 20, 100"
                                  BindableLayout.ItemsSource="{Binding Assets}"
                                  Spacing="15">
@@ -59,7 +60,7 @@
                 </BindableLayout.ItemTemplate>
             </VerticalStackLayout>
         </VerticalStackLayout>
-    </template:PageTemplate.MainContent>
+    </ScrollView>
 
     <template:PageTemplate.PopupContent>
         <extrinsic:ExtrinsicStatusStackLayout />

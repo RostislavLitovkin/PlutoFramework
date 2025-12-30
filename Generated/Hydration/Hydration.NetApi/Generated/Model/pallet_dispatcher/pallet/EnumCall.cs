@@ -51,10 +51,24 @@ namespace Hydration.NetApi.Generated.Model.pallet_dispatcher.pallet
         /// The extra gas is not refunded, even if not used.
         /// </summary>
         dispatch_with_extra_gas = 3,
+        
+        /// <summary>
+        /// >> dispatch_evm_call
+        /// Execute a single EVM call.
+        /// This extrinsic will fail if the EVM call returns any other ExitReason than `ExitSucceed(Returned)` or `ExitSucceed(Stopped)`.
+        /// Look the [hydradx_runtime::evm::runner::WrapRunner] implementation for details.
+        /// 
+        /// Parameters:
+        /// - `origin`: Signed origin.
+        /// - `call`: presumably `pallet_evm::Call::call` as boxed `RuntimeCall`.
+        /// 
+        /// Emits `EvmCallFailed` event when failed.
+        /// </summary>
+        dispatch_evm_call = 4,
     }
     
     /// <summary>
-    /// >> 191 - Variant[pallet_dispatcher.pallet.Call]
+    /// >> 181 - Variant[pallet_dispatcher.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -69,6 +83,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_dispatcher.pallet
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.hydradx_runtime.EnumRuntimeCall>(Call.dispatch_as_aave_manager);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Call.note_aave_manager);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.hydradx_runtime.EnumRuntimeCall, Substrate.NetApi.Model.Types.Primitive.U64>>(Call.dispatch_with_extra_gas);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.hydradx_runtime.EnumRuntimeCall>(Call.dispatch_evm_call);
         }
     }
 }

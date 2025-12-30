@@ -43,7 +43,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 298 - Variant[pallet_xcm.pallet.VersionMigrationStage]
+    /// >> 813 - Variant[pallet_xcm.pallet.VersionMigrationStage]
     /// </summary>
     public sealed class EnumVersionMigrationStage : BaseEnumRust<VersionMigrationStage>
     {

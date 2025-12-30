@@ -40,10 +40,20 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
         /// >> LawyerDepositReserve
         /// </summary>
         LawyerDepositReserve = 3,
+        
+        /// <summary>
+        /// >> RegionVotingReserve
+        /// </summary>
+        RegionVotingReserve = 4,
+        
+        /// <summary>
+        /// >> RegionOperatorRemovalVoting
+        /// </summary>
+        RegionOperatorRemovalVoting = 5,
     }
     
     /// <summary>
-    /// >> 424 - Variant[pallet_regions.pallet.HoldReason]
+    /// >> 444 - Variant[pallet_regions.pallet.HoldReason]
     /// </summary>
     public sealed class EnumHoldReason : BaseEnum<HoldReason>
     {

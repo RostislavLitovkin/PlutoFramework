@@ -287,6 +287,17 @@ namespace Polkadot.NetApi.Generated.Storage
             byteArray.AddRange(fee.Encode());
             return new Method(34, "Bounties", 9, "approve_bounty_with_curator", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> poke_deposit
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method PokeDeposit(Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> bounty_id)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(bounty_id.Encode());
+            return new Method(34, "Bounties", 10, "poke_deposit", byteArray.ToArray());
+        }
     }
     
     /// <summary>
@@ -477,5 +488,11 @@ namespace Polkadot.NetApi.Generated.Storage
         /// Too many approvals are already queued.
         /// </summary>
         TooManyQueued,
+        
+        /// <summary>
+        /// >> NotProposer
+        /// User is not the proposer of the bounty.
+        /// </summary>
+        NotProposer,
     }
 }

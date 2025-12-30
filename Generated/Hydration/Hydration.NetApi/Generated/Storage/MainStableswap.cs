@@ -332,7 +332,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> create_pool_with_pegs
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method CreatePoolWithPegs(Substrate.NetApi.Model.Types.Primitive.U32 share_asset, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12 assets, Substrate.NetApi.Model.Types.Primitive.U16 amplification, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill fee, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13 peg_source, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill max_peg_update)
+        public static Method CreatePoolWithPegs(Substrate.NetApi.Model.Types.Primitive.U32 share_asset, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12 assets, Substrate.NetApi.Model.Types.Primitive.U16 amplification, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill fee, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13 peg_source, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill max_peg_update)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(share_asset.Encode());
@@ -355,6 +355,31 @@ namespace Hydration.NetApi.Generated.Storage
             byteArray.AddRange(assets.Encode());
             byteArray.AddRange(min_shares.Encode());
             return new Method(70, "Stableswap", 12, "add_assets_liquidity", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> update_asset_peg_source
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method UpdateAssetPegSource(Substrate.NetApi.Model.Types.Primitive.U32 pool_id, Substrate.NetApi.Model.Types.Primitive.U32 asset_id, Hydration.NetApi.Generated.Model.pallet_stableswap.types.EnumPegSource peg_source)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(pool_id.Encode());
+            byteArray.AddRange(asset_id.Encode());
+            byteArray.AddRange(peg_source.Encode());
+            return new Method(70, "Stableswap", 13, "update_asset_peg_source", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> update_pool_max_peg_update
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method UpdatePoolMaxPegUpdate(Substrate.NetApi.Model.Types.Primitive.U32 pool_id, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill max_peg_update)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(pool_id.Encode());
+            byteArray.AddRange(max_peg_update.Encode());
+            return new Method(70, "Stableswap", 14, "update_pool_max_peg_update", byteArray.ToArray());
         }
     }
     
@@ -565,5 +590,11 @@ namespace Hydration.NetApi.Generated.Storage
         /// Creating pool with pegs is not allowed for asset with different decimals.
         /// </summary>
         IncorrectAssetDecimals,
+        
+        /// <summary>
+        /// >> NoPegSource
+        /// Pool does not have pegs configured.
+        /// </summary>
+        NoPegSource,
     }
 }

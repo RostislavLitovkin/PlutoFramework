@@ -11,7 +11,8 @@
                        x:Class="PlutoFramework.Components.Nft.NftMainPage"
                        Title="NftMainPage"
                        IsNavbarVisible="False">
-    <template:PageTemplate.MainContent>
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
         <VerticalStackLayout Margin="0, 45, 0, 0"
                              Spacing="15"
                              Padding="20, 15, 20, 200">
@@ -19,7 +20,7 @@
                                     Clicked="OnClaimDiamondsClicked"
                                     ButtonState="Enabled"
                                     IsVisible="False" />
-            
+
             <customlayouts:CategoryHeaderView TitleText="Featured: "
                                               ImageSource="{AppThemeBinding Light=hotblack.png, Dark=hotwhite.png}" />
             <nft:NftGalleryView Nfts="{Binding FeaturedNfts}"
@@ -140,7 +141,7 @@
                                     Command="{Binding ShowAllOwnedCollectionsCommand}"
                                     ButtonState="Enabled" />
         </VerticalStackLayout>
-    </template:PageTemplate.MainContent>
+    </ScrollView>
 
     <template:PageTemplate.PopupContent>
         <searchBar:SearchBarView Text="{Binding SearchText}"

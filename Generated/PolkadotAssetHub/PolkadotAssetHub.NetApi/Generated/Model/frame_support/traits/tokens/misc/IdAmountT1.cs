@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.frame_support.traits.tokens.mi
     
     
     /// <summary>
-    /// >> 230 - Composite[frame_support.traits.tokens.misc.IdAmountT1]
+    /// >> 502 - Composite[frame_support.traits.tokens.misc.IdAmountT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class IdAmountT1 : BaseType
@@ -27,7 +27,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.frame_support.traits.tokens.mi
         /// <summary>
         /// >> id
         /// </summary>
-        public PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime.EnumRuntimeHoldReason Id { get; set; }
+        public PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.types.EnumPortableHoldReason Id { get; set; }
         /// <summary>
         /// >> amount
         /// </summary>
@@ -52,7 +52,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.frame_support.traits.tokens.mi
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Id = new PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime.EnumRuntimeHoldReason();
+            Id = new PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.types.EnumPortableHoldReason();
             Id.Decode(byteArray, ref p);
             Amount = new Substrate.NetApi.Model.Types.Primitive.U128();
             Amount.Decode(byteArray, ref p);

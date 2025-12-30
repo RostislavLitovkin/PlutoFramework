@@ -56,7 +56,7 @@ namespace Polkadot.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Polkadot.NetApi.Generated.Model.pallet_nomination_pools.SubPools)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NominationPools", "CounterForSubPoolsStorage"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NominationPools", "Metadata"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT36)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NominationPools", "CounterForMetadata"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NominationPools", "LastPoolId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("NominationPools", "ReversePoolIdLookup"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -571,10 +571,10 @@ namespace Polkadot.NetApi.Generated.Storage
         /// >> Metadata
         ///  Metadata for the pool.
         /// </summary>
-        public async Task<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT36> Metadata(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37> Metadata(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = NominationPoolsStorage.MetadataParams(key);
-            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT36>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37>(parameters, blockhash, token);
             return result;
         }
         

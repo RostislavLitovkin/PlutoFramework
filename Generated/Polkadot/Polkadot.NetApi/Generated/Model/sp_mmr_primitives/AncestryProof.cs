@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.sp_mmr_primitives
     
     
     /// <summary>
-    /// >> 456 - Composite[sp_mmr_primitives.AncestryProof]
+    /// >> 461 - Composite[sp_mmr_primitives.AncestryProof]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AncestryProof : BaseType

@@ -30,15 +30,19 @@
                                            OutgoingTemplate="{StaticResource OutgoingMessageTemplate}" 
                                            StatusTemplate="{StaticResource StatusMessageTemplate}"/>
     </ContentPage.Resources>
-    
-    <template:PageTemplate.MainContent>
+
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All"
+                x:Name="scrollView"
+                Rotation="180"
+                VerticalScrollBarVisibility="Never">
         <VerticalStackLayout BindableLayout.ItemsSource="{Binding Messages}"
                              BindableLayout.ItemTemplateSelector="{StaticResource MessageSelector}"
                              Padding="10"
                              Spacing="5"
                              Margin="0, 60,0,0"/>
-    </template:PageTemplate.MainContent>
-    
+    </ScrollView>
+
     <template:PageTemplate.PopupContent>
         <messaging:MessageInputBarView AbsoluteLayout.LayoutBounds="0,1,1,65"
                                        AbsoluteLayout.LayoutFlags="WidthProportional, YProportional"

@@ -30,13 +30,12 @@ using PlutoFramework.Components.XcavateProperty;
 using PlutoFramework.Components.Xcm;
 using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
+using PlutoFrameworkCore.PushNotificationServices.Core;
 using PlutoFrameworkCore;
 using Xe.AcrylicView;
 using ZXing.Net.Maui.Controls;
 using PlutoFramework.Components.Keys;
-
-
-
+using PlutoFramework.Components.WebView;
 
 #if ANDROID26_0_OR_GREATER
 using Microsoft.Maui.Controls.Compatibility.Platform.Android;
@@ -87,6 +86,9 @@ namespace PlutoFramework
 
             AssetsModel.DatabaseSaver = new BalancesDatabaseSaver();
 
+            // TODO: enable later
+            //PushNotificationRegistrar.RegisterPushNotificationServices(builder.Services);
+            
             PlutoConfigurationModel.SecureStorage = new PlutoSecureStorage();
             PlutoConfigurationModel.GenerateNewAccountAsync = KeysModel.GenerateNewAccountAsync;
             PlutoConfigurationModel.AfterAccountImportAsync = () => Task.FromResult(0);
@@ -184,6 +186,8 @@ namespace PlutoFramework
             DependencyService.Register<NotWhitelistedPopupViewModel>();
 
             DependencyService.Register<UserProfileNotCreatedPopupViewModel>();
+
+            DependencyService.Register<WebSignRawPopupViewModel>();
 
             return builder;
         }

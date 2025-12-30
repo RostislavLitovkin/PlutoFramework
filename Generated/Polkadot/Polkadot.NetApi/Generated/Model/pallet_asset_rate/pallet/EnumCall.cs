@@ -51,7 +51,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_asset_rate.pallet
     }
     
     /// <summary>
-    /// >> 444 - Variant[pallet_asset_rate.pallet.Call]
+    /// >> 449 - Variant[pallet_asset_rate.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

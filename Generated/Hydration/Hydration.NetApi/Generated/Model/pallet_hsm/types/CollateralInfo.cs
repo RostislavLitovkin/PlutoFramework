@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_hsm.types
     
     
     /// <summary>
-    /// >> 700 - Composite[pallet_hsm.types.CollateralInfo]
+    /// >> 685 - Composite[pallet_hsm.types.CollateralInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CollateralInfo : BaseType

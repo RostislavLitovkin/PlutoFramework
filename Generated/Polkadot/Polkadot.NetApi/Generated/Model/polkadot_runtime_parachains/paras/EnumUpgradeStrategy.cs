@@ -33,7 +33,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.paras
     }
     
     /// <summary>
-    /// >> 759 - Variant[polkadot_runtime_parachains.paras.UpgradeStrategy]
+    /// >> 825 - Variant[polkadot_runtime_parachains.paras.UpgradeStrategy]
     /// </summary>
     public sealed class EnumUpgradeStrategy : BaseEnum<UpgradeStrategy>
     {

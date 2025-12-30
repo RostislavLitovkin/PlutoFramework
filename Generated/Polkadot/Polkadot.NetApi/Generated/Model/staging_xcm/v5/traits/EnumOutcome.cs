@@ -38,7 +38,7 @@ namespace Polkadot.NetApi.Generated.Model.staging_xcm.v5.traits
     }
     
     /// <summary>
-    /// >> 503 - Variant[staging_xcm.v5.traits.Outcome]
+    /// >> 557 - Variant[staging_xcm.v5.traits.Outcome]
     /// </summary>
     public sealed class EnumOutcome : BaseEnumRust<Outcome>
     {
@@ -49,8 +49,8 @@ namespace Polkadot.NetApi.Generated.Model.staging_xcm.v5.traits
         public EnumOutcome()
         {
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_weights.weight_v2.Weight>(Outcome.Complete);
-				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Polkadot.NetApi.Generated.Model.xcm.v5.traits.EnumError>>(Outcome.Incomplete);
-				AddTypeDecoder<Polkadot.NetApi.Generated.Model.xcm.v5.traits.EnumError>(Outcome.Error);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Polkadot.NetApi.Generated.Model.staging_xcm.v5.traits.InstructionError>>(Outcome.Incomplete);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.staging_xcm.v5.traits.InstructionError>(Outcome.Error);
         }
     }
 }

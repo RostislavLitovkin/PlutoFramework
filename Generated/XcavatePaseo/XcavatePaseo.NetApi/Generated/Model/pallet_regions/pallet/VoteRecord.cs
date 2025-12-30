@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
     
     
     /// <summary>
-    /// >> 536 - Composite[pallet_regions.pallet.VoteRecord]
+    /// >> 561 - Composite[pallet_regions.pallet.VoteRecord]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class VoteRecord : BaseType
@@ -28,6 +28,10 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
         /// >> vote
         /// </summary>
         public XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumVote Vote { get; set; }
+        /// <summary>
+        /// >> region_id
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U16 RegionId { get; set; }
         /// <summary>
         /// >> power
         /// </summary>
@@ -44,6 +48,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
         {
             var result = new List<byte>();
             result.AddRange(Vote.Encode());
+            result.AddRange(RegionId.Encode());
             result.AddRange(Power.Encode());
             return result.ToArray();
         }
@@ -54,6 +59,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
             var start = p;
             Vote = new XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumVote();
             Vote.Decode(byteArray, ref p);
+            RegionId = new Substrate.NetApi.Model.Types.Primitive.U16();
+            RegionId.Decode(byteArray, ref p);
             Power = new Substrate.NetApi.Model.Types.Primitive.U128();
             Power.Decode(byteArray, ref p);
             var bytesLength = p - start;

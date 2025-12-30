@@ -86,7 +86,7 @@ namespace PlutoFramework.Model
                     viewModel.AzeroIdReservedUntil = await Model.AzeroId.AzeroIdModel.GetReservedUntilStringForName(nftBase.Metadata.Name).ConfigureAwait(false);
                 }
 
-                await Application.Current.MainPage.Navigation.PushAsync(new NftDetailPage(viewModel));
+                await NavigationModel.PushAsync(new NftDetailPage(viewModel));
 
                 // load these details after
                 viewModel.KodadotUnlockableUrl = await Model.Kodadot.UnlockablesModel.FetchKeywiseAsync(endpoint, nftBase.CollectionId).ConfigureAwait(false);
@@ -198,7 +198,7 @@ namespace PlutoFramework.Model
 
                 await UpdateViewModelAsync(viewModel, collectionBase, token);
 
-                await Application.Current.MainPage.Navigation.PushAsync(new CollectionDetailPage(viewModel));
+                await NavigationModel.PushAsync(new CollectionDetailPage(viewModel));
 
                 var fullCollection = await collectionBase.GetFullAsync(token);
 

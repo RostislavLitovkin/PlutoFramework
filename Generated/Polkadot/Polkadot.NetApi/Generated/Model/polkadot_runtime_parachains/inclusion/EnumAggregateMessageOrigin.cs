@@ -28,7 +28,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.inclusion
     }
     
     /// <summary>
-    /// >> 442 - Variant[polkadot_runtime_parachains.inclusion.AggregateMessageOrigin]
+    /// >> 447 - Variant[polkadot_runtime_parachains.inclusion.AggregateMessageOrigin]
     /// </summary>
     public sealed class EnumAggregateMessageOrigin : BaseEnumRust<AggregateMessageOrigin>
     {

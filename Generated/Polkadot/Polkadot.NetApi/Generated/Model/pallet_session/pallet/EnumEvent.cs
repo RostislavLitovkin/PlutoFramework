@@ -30,20 +30,27 @@ namespace Polkadot.NetApi.Generated.Model.pallet_session.pallet
         NewSession = 0,
         
         /// <summary>
+        /// >> NewQueued
+        /// The `NewSession` event in the current block also implies a new validator set to be
+        /// queued.
+        /// </summary>
+        NewQueued = 1,
+        
+        /// <summary>
         /// >> ValidatorDisabled
         /// Validator has been disabled.
         /// </summary>
-        ValidatorDisabled = 1,
+        ValidatorDisabled = 2,
         
         /// <summary>
         /// >> ValidatorReenabled
         /// Validator has been re-enabled.
         /// </summary>
-        ValidatorReenabled = 2,
+        ValidatorReenabled = 3,
     }
     
     /// <summary>
-    /// >> 51 - Variant[pallet_session.pallet.Event]
+    /// >> 53 - Variant[pallet_session.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -55,6 +62,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_session.pallet
         public EnumEvent()
         {
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.NewSession);
+				AddTypeDecoder<BaseVoid>(Event.NewQueued);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.ValidatorDisabled);
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.ValidatorReenabled);
         }

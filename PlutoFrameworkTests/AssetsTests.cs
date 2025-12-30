@@ -132,7 +132,7 @@ public class PolkadotAssetHubAssetsTests
 
         Console.WriteLine("Free: " + accountInfo.Data.Free.Value);
 
-        Assert.Greater(accountInfo.Data.Free.Value, 0);
+        Assert.That(accountInfo.Data.Free.Value > 0);
     }
 
     [Test]

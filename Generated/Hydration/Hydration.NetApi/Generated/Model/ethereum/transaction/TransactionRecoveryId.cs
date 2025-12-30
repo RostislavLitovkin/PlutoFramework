@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.ethereum.transaction
     
     
     /// <summary>
-    /// >> 280 - Composite[ethereum.transaction.TransactionRecoveryId]
+    /// >> 272 - Composite[ethereum.transaction.TransactionRecoveryId]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class TransactionRecoveryId : BaseType

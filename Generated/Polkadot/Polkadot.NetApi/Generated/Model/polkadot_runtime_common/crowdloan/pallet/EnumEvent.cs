@@ -85,7 +85,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_common.crowdloan.pall
     }
     
     /// <summary>
-    /// >> 497 - Variant[polkadot_runtime_common.crowdloan.pallet.Event]
+    /// >> 551 - Variant[polkadot_runtime_common.crowdloan.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

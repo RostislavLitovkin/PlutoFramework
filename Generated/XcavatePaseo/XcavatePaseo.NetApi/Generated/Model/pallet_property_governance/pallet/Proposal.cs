@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
     
     
     /// <summary>
-    /// >> 591 - Composite[pallet_property_governance.pallet.Proposal]
+    /// >> 607 - Composite[pallet_property_governance.pallet.Proposal]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Proposal : BaseType
@@ -28,10 +28,6 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         /// >> proposer
         /// </summary>
         public XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Proposer { get; set; }
-        /// <summary>
-        /// >> asset_id
-        /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U32 AssetId { get; set; }
         /// <summary>
         /// >> amount
         /// </summary>
@@ -56,7 +52,6 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         {
             var result = new List<byte>();
             result.AddRange(Proposer.Encode());
-            result.AddRange(AssetId.Encode());
             result.AddRange(Amount.Encode());
             result.AddRange(CreatedAt.Encode());
             result.AddRange(Metadata.Encode());
@@ -69,8 +64,6 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
             var start = p;
             Proposer = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Proposer.Decode(byteArray, ref p);
-            AssetId = new Substrate.NetApi.Model.Types.Primitive.U32();
-            AssetId.Decode(byteArray, ref p);
             Amount = new Substrate.NetApi.Model.Types.Primitive.U128();
             Amount.Decode(byteArray, ref p);
             CreatedAt = new Substrate.NetApi.Model.Types.Primitive.U32();

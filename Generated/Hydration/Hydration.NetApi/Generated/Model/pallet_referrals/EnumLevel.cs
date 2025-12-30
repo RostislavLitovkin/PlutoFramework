@@ -53,7 +53,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_referrals
     }
     
     /// <summary>
-    /// >> 256 - Variant[pallet_referrals.Level]
+    /// >> 249 - Variant[pallet_referrals.Level]
     /// </summary>
     public sealed class EnumLevel : BaseEnum<Level>
     {

@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_conviction_voting.vote
     
     
     /// <summary>
-    /// >> 634 - Composite[pallet_conviction_voting.vote.PriorLock]
+    /// >> 687 - Composite[pallet_conviction_voting.vote.PriorLock]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PriorLock : BaseType

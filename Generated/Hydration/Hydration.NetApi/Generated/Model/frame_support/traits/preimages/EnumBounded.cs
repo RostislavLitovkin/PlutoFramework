@@ -38,7 +38,7 @@ namespace Hydration.NetApi.Generated.Model.frame_support.traits.preimages
     }
     
     /// <summary>
-    /// >> 72 - Variant[frame_support.traits.preimages.Bounded]
+    /// >> 67 - Variant[frame_support.traits.preimages.Bounded]
     /// </summary>
     public sealed class EnumBounded : BaseEnumRust<Bounded>
     {

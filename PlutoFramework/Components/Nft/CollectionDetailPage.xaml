@@ -8,10 +8,12 @@
                        xmlns:koda="clr-namespace:PlutoFramework.Components.Koda"
                        xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
                        xmlns:model="clr-namespace:PlutoFramework.Model"
+                       xmlns:address="clr-namespace:PlutoFramework.Components.AddressView"
                        xmlns:date="clr-namespace:PlutoFramework.Components.Date"
                        x:Class="PlutoFramework.Components.Nft.CollectionDetailPage"
                        Title="{Binding Name}">
-    <template:PageTemplate.MainContent>
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
         <VerticalStackLayout Margin="0, 45, 0, 0"
                              Spacing="15"
                              Padding="20, 15, 20, 200">
@@ -51,7 +53,9 @@
                               KodadotUnlockableUrl="{Binding KodadotUnlockableUrl}"
                               AzeroIdReservedUntil="{Binding AzeroIdReservedUntil}"/>
 
-            <nft:NftOwnerView />
+            <address:SubscanAddressView Address="{Binding OwnerAddress}"
+                            AddressText="{Binding OwnerAddressText}"
+                            Title="Owner"/>
 
             <nft:NftTradingStats IsVisible="{Binding TradingStatsIsVisible}" />
 
@@ -92,7 +96,7 @@
                 </BindableLayout.ItemTemplate>
             </VerticalStackLayout>
         </VerticalStackLayout>
-    </template:PageTemplate.MainContent>
+    </ScrollView>
 
     <template:PageTemplate.PopupContent>
         <nft:NftTransferView />

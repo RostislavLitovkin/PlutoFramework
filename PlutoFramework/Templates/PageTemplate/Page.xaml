@@ -8,31 +8,22 @@
                     xmlns:loading="clr-namespace:PlutoFramework.Components.Loading"
                     xmlns:kilt="clr-namespace:PlutoFramework.Components.Kilt"
                     xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
+                    xmlns:extrinsic="clr-namespace:PlutoFramework.Components.Extrinsic"
+                    xmlns:webview="clr-namespace:PlutoFramework.Components.WebView"
                     xmlns:topnavigationbartemplate="clr-namespace:PlutoFramework.Templates.TopNavigationBarTemplate"
                     x:Class="PlutoFramework.Templates.PageTemplate.Page">
 
     <ControlTemplate x:Key="PageTemplate">
-        <!-- BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}" -->
         <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                         AbsoluteLayout.LayoutFlags="All"
                         x:Name="PopupsLayout">
 
             <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                AbsoluteLayout.LayoutFlags="All"
-                BackgroundColor="{AppThemeBinding Light=#ffffff, Dark=#000000}">
-                <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                   AbsoluteLayout.LayoutFlags="All"
-                   Opacity="{AppThemeBinding Light=0.96}"
-                   Aspect="AspectFill"/>
-
-                <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-                        AbsoluteLayout.LayoutFlags="All"
-                        Padding="{TemplateBinding ScrollPadding}"
-                        Orientation="{TemplateBinding ScrollViewOrientation}"
-                        x:Name="scrollView">
-                    <!-- Content block -->
-                    <ContentPresenter Content="{TemplateBinding MainContent}"/>
-                </ScrollView>
+                            AbsoluteLayout.LayoutFlags="All"
+                            BackgroundColor="{AppThemeBinding Light=#ffffff, Dark=#000000}">
+                <ContentPresenter Content="{TemplateBinding MainContent}"
+                                  AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                                  AbsoluteLayout.LayoutFlags="All"/>
             </AbsoluteLayout>
 
             <topnavigationbartemplate:TopNavigationBarTemplate Title="{TemplateBinding Title}"
@@ -42,10 +33,13 @@
                                                                Extra2Text="{TemplateBinding NavigationBarExtra2Text}"
                                                                Extra2Command="{TemplateBinding NavigationBarExtra2Command}"
                                                                Extra2Image="{TemplateBinding NavigationBarExtra2Image}"
-                                                               IsVisible="{TemplateBinding IsNavbarVisible}"
+                                                               IsVisible="{TemplateBinding NavigationBarIsVisible}"
                                                                HasShadow="{TemplateBinding NavigationBarHasShadow}"
-                                                               x:Name="TopNavigationBar" />
+                                                               x:Name="TopNavigationBar"
+                                                               />
 
+            <webview:WebSignRawPopupView />
+            
             <txanalyzer:TransactionAnalyzerConfirmationView ZIndex="{TemplateBinding TransactionAnalyzerZIndex}"/>
 
             <account:NoAccountPopup ZIndex="10" />
@@ -59,6 +53,8 @@
             <password:EnterPasswordPopupView ZIndex="10"/>
 
             <loading:FullPageLoadingView ZIndex="20" />
+
+            <extrinsic:ExtrinsicStatusStackLayout ZIndex="5" />
         </AbsoluteLayout>
     </ControlTemplate>
 </ResourceDictionary>

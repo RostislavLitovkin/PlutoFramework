@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_xcm
     
     
     /// <summary>
-    /// >> 854 - Composite[pallet_xcm.AuthorizedAliasesEntry]
+    /// >> 921 - Composite[pallet_xcm.AuthorizedAliasesEntry]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AuthorizedAliasesEntry : BaseType
@@ -27,7 +27,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_xcm
         /// <summary>
         /// >> aliasers
         /// </summary>
-        public Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT43 Aliasers { get; set; }
+        public Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT45 Aliasers { get; set; }
         /// <summary>
         /// >> ticket
         /// </summary>
@@ -52,7 +52,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_xcm
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Aliasers = new Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT43();
+            Aliasers = new Polkadot.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT45();
             Aliasers.Decode(byteArray, ref p);
             Ticket = new Polkadot.NetApi.Generated.Model.frame_support.traits.storage.Disabled();
             Ticket.Decode(byteArray, ref p);

@@ -48,7 +48,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_conviction_voting.pallet
     }
     
     /// <summary>
-    /// >> 68 - Variant[pallet_conviction_voting.pallet.Event]
+    /// >> 63 - Variant[pallet_conviction_voting.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

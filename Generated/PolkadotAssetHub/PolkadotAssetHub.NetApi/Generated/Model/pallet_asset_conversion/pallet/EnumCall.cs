@@ -98,7 +98,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_asset_conversion.pallet
     }
     
     /// <summary>
-    /// >> 386 - Variant[pallet_asset_conversion.pallet.Call]
+    /// >> 358 - Variant[pallet_asset_conversion.pallet.Call]
     /// Pallet's callable functions.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -109,12 +109,12 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_asset_conversion.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v4.location.Location, PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Call.create_pool);
-				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v4.location.Location, PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.add_liquidity);
-				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v4.location.Location, PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.remove_liquidity);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseVec<PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v4.location.Location>, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.swap_exact_tokens_for_tokens);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseVec<PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v4.location.Location>, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.swap_tokens_for_exact_tokens);
-				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v4.location.Location, PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Call.touch);
+				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v5.location.Location, PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v5.location.Location>>(Call.create_pool);
+				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v5.location.Location, PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.add_liquidity);
+				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v5.location.Location, PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.remove_liquidity);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseVec<PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v5.location.Location>, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.swap_exact_tokens_for_tokens);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseVec<PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v5.location.Location>, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.swap_tokens_for_exact_tokens);
+				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v5.location.Location, PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v5.location.Location>>(Call.touch);
         }
     }
 }

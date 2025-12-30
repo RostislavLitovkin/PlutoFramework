@@ -58,6 +58,8 @@ namespace Polkadot.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Paras", "FutureCodeUpgradesAt"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, Substrate.NetApi.Model.Types.Primitive.U32>>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Paras", "FutureCodeHash"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id), typeof(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.ValidationCodeHash)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Paras", "AuthorizedCodeHash"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id), typeof(Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.paras.AuthorizedCodeHashAndExpiry)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Paras", "UpgradeGoAheadSignal"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id), typeof(Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.EnumUpgradeGoAhead)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Paras", "UpgradeRestrictionSignal"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -530,6 +532,37 @@ namespace Polkadot.NetApi.Generated.Storage
         }
         
         /// <summary>
+        /// >> AuthorizedCodeHashParams
+        ///  The code hash authorizations for a para which will expire `expire_at` `BlockNumberFor<T>`.
+        /// </summary>
+        public static string AuthorizedCodeHashParams(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id key)
+        {
+            return RequestGenerator.GetStorage("Paras", "AuthorizedCodeHash", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> AuthorizedCodeHashDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string AuthorizedCodeHashDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> AuthorizedCodeHash
+        ///  The code hash authorizations for a para which will expire `expire_at` `BlockNumberFor<T>`.
+        /// </summary>
+        public async Task<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.paras.AuthorizedCodeHashAndExpiry> AuthorizedCodeHash(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id key, string blockhash, CancellationToken token)
+        {
+            string parameters = ParasStorage.AuthorizedCodeHashParams(key);
+            var result = await _client.GetStorageAsync<Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.paras.AuthorizedCodeHashAndExpiry>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
         /// >> UpgradeGoAheadSignalParams
         ///  This is used by the relay-chain to communicate to a parachain a go-ahead with in the upgrade
         ///  procedure.
@@ -945,6 +978,42 @@ namespace Polkadot.NetApi.Generated.Storage
             byteArray.AddRange(context.Encode());
             return new Method(56, "Paras", 8, "force_set_most_recent_context", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> remove_upgrade_cooldown
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method RemoveUpgradeCooldown(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id para)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(para.Encode());
+            return new Method(56, "Paras", 9, "remove_upgrade_cooldown", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> authorize_force_set_current_code_hash
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method AuthorizeForceSetCurrentCodeHash(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id para, Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.ValidationCodeHash new_code_hash, Substrate.NetApi.Model.Types.Primitive.U32 valid_period)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(para.Encode());
+            byteArray.AddRange(new_code_hash.Encode());
+            byteArray.AddRange(valid_period.Encode());
+            return new Method(56, "Paras", 10, "authorize_force_set_current_code_hash", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> apply_authorized_force_set_current_code
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method ApplyAuthorizedForceSetCurrentCode(Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id para, Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.ValidationCode new_code)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(para.Encode());
+            byteArray.AddRange(new_code.Encode());
+            return new Method(56, "Paras", 11, "apply_authorized_force_set_current_code", byteArray.ToArray());
+        }
     }
     
     /// <summary>
@@ -1047,5 +1116,23 @@ namespace Polkadot.NetApi.Generated.Storage
         /// Invalid validation code size.
         /// </summary>
         InvalidCode,
+        
+        /// <summary>
+        /// >> NothingAuthorized
+        /// No upgrade authorized.
+        /// </summary>
+        NothingAuthorized,
+        
+        /// <summary>
+        /// >> Unauthorized
+        /// The submitted code is not authorized.
+        /// </summary>
+        Unauthorized,
+        
+        /// <summary>
+        /// >> InvalidBlockNumber
+        /// Invalid block number.
+        /// </summary>
+        InvalidBlockNumber,
     }
 }

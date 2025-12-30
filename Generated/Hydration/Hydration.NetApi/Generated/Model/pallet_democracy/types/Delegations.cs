@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_democracy.types
     
     
     /// <summary>
-    /// >> 570 - Composite[pallet_democracy.types.Delegations]
+    /// >> 563 - Composite[pallet_democracy.types.Delegations]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Delegations : BaseType

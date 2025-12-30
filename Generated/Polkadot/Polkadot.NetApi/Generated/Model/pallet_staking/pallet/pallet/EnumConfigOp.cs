@@ -38,7 +38,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking.pallet.pallet
     }
     
     /// <summary>
-    /// >> 136 - Variant[pallet_staking.pallet.pallet.ConfigOp]
+    /// >> 138 - Variant[pallet_staking.pallet.pallet.ConfigOp]
     /// </summary>
     public sealed class EnumConfigOp : BaseEnumRust<ConfigOp>
     {

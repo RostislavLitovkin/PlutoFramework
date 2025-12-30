@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
     
     
     /// <summary>
-    /// >> 564 - Composite[pallet_marketplace.types.PropertyLawyerDetails]
+    /// >> 582 - Composite[pallet_marketplace.types.PropertyLawyerDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PropertyLawyerDetails : BaseType
@@ -43,11 +43,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
         /// <summary>
         /// >> real_estate_developer_lawyer_costs
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT4 RealEstateDeveloperLawyerCosts { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 RealEstateDeveloperLawyerCosts { get; set; }
         /// <summary>
         /// >> spv_lawyer_costs
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT4 SpvLawyerCosts { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 SpvLawyerCosts { get; set; }
         /// <summary>
         /// >> legal_process_expiry
         /// </summary>
@@ -90,9 +90,9 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
             RealEstateDeveloperStatus.Decode(byteArray, ref p);
             SpvStatus = new XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.EnumDocumentStatus();
             SpvStatus.Decode(byteArray, ref p);
-            RealEstateDeveloperLawyerCosts = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT4();
+            RealEstateDeveloperLawyerCosts = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             RealEstateDeveloperLawyerCosts.Decode(byteArray, ref p);
-            SpvLawyerCosts = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT4();
+            SpvLawyerCosts = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             SpvLawyerCosts.Decode(byteArray, ref p);
             LegalProcessExpiry = new Substrate.NetApi.Model.Types.Primitive.U32();
             LegalProcessExpiry.Decode(byteArray, ref p);

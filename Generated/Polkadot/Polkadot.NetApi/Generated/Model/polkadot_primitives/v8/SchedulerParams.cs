@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8
     
     
     /// <summary>
-    /// >> 280 - Composite[polkadot_primitives.v8.SchedulerParams]
+    /// >> 285 - Composite[polkadot_primitives.v8.SchedulerParams]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SchedulerParams : BaseType

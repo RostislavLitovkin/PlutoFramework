@@ -2,11 +2,11 @@
   "chains": [
     {
       "name": "Polkadot",
-      "websocket": "wss://polkadot.api.onfinality.io/public-ws"
+      "websocket": "wss://rpc.ibp.network/polkadot"
     },
     {
       "name": "PolkadotAssetHub",
-      "websocket": "wss://polkadot-asset-hub-rpc.polkadot.io"
+      "websocket": "wss://sys.ibp.network/asset-hub-polkadot"
     },
     {
       "name": "PolkadotPeople",
@@ -46,7 +46,7 @@
     },
     {
       "name": "XcavatePaseo",
-      "websocket": "wss://fraa-flashbox-4659-rpc.a.stagenet.tanssi.network"
+      "websocket": "wss://fraa-flashbox-4671-rpc.a.stagenet.tanssi.network"
     },
     {
       "name": "Kilt",

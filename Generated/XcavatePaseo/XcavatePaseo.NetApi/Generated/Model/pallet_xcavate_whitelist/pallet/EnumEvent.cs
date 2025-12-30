@@ -36,7 +36,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet
         
         /// <summary>
         /// >> AdminRegistered
-        /// A new admin has been registered.
+        /// A new admin has been added.
         /// </summary>
         AdminRegistered = 2,
         
@@ -45,10 +45,16 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet
         /// An admin has been removed.
         /// </summary>
         AdminRemoved = 3,
+        
+        /// <summary>
+        /// >> PermissionUpdated
+        /// A user���s compliance status has been updated.
+        /// </summary>
+        PermissionUpdated = 4,
     }
     
     /// <summary>
-    /// >> 176 - Variant[pallet_xcavate_whitelist.pallet.Event]
+    /// >> 184 - Variant[pallet_xcavate_whitelist.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -63,6 +69,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumRole>>(Event.RoleRemoved);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.AdminRegistered);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.AdminRemoved);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumRole, XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumAccessPermission>>(Event.PermissionUpdated);
         }
     }
 }

@@ -21,10 +21,16 @@ namespace Hydration.NetApi.Generated.Model.pallet_dynamic_fees.pallet
     /// </summary>
     public enum Error
     {
+        
+        /// <summary>
+        /// >> InvalidFeeParameters
+        /// Invalid fee parameters provided
+        /// </summary>
+        InvalidFeeParameters = 0,
     }
     
     /// <summary>
-    /// >> 672 - Variant[pallet_dynamic_fees.pallet.Error]
+    /// >> 657 - Variant[pallet_dynamic_fees.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

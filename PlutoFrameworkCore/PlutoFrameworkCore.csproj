@@ -1,13 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
 
   <ItemGroup>
+      <PackageReference Include="Plugin.Firebase.CloudMessaging" Version="3.1.2" />
       <PackageReference Include="jose-jwt" Version="5.2.0" />
       <PackageReference Include="NSec.Cryptography" Version="25.4.0" />
       <PackageReference Include="Substrate.NET.API" Version="0.9.24-rc6" />

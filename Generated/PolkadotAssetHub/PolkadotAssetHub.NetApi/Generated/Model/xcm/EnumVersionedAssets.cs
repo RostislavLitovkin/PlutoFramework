@@ -22,11 +22,6 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.xcm
     {
         
         /// <summary>
-        /// >> V2
-        /// </summary>
-        V2 = 1,
-        
-        /// <summary>
         /// >> V3
         /// </summary>
         V3 = 3,
@@ -35,10 +30,15 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.xcm
         /// >> V4
         /// </summary>
         V4 = 4,
+        
+        /// <summary>
+        /// >> V5
+        /// </summary>
+        V5 = 5,
     }
     
     /// <summary>
-    /// >> 91 - Variant[xcm.VersionedAssets]
+    /// >> 133 - Variant[xcm.VersionedAssets]
     /// </summary>
     public sealed class EnumVersionedAssets : BaseEnumRust<VersionedAssets>
     {
@@ -48,9 +48,9 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.xcm
         /// </summary>
         public EnumVersionedAssets()
         {
-				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.xcm.v2.multiasset.MultiAssets>(VersionedAssets.V2);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.xcm.v3.multiasset.MultiAssets>(VersionedAssets.V3);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v4.asset.Assets>(VersionedAssets.V4);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v5.asset.Assets>(VersionedAssets.V5);
         }
     }
 }

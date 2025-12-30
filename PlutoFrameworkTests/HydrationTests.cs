@@ -57,9 +57,9 @@ public class HydrationTests
 
         Assert.That(PlutoFramework.Model.HydraDX.Sdk.Assets.Any());
 
-        foreach (var asset in PlutoFramework.Model.HydraDX.Sdk.Assets.Keys)
+        foreach (var asset in PlutoFramework.Model.HydraDX.Sdk.Assets)
         {
-            Console.WriteLine(asset);
+            Console.WriteLine(asset.Key + "  " + asset.Value.PoolBalance);
         }
 
         Console.WriteLine(PlutoFramework.Model.HydraDX.Sdk.GetSpotPrice("DOT"));
@@ -125,6 +125,13 @@ public class HydrationTests
         {
             Console.WriteLine($"{blocknumber}: {price}");
         }
+    }
 
+    [Test]
+    public static void GetSpotPrice()
+    {
+        var price = Sdk.GetSpotPrice("DOT");
+
+        Console.WriteLine($"{price}");
     }
 }

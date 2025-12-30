@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
     
     
     /// <summary>
-    /// >> 600 - Composite[pallet_property_governance.pallet.PropertySaleInfo]
+    /// >> 613 - Composite[pallet_property_governance.pallet.PropertySaleInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PropertySaleInfo : BaseType
@@ -76,6 +76,10 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         /// >> reserve
         /// </summary>
         public Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.Reserve> Reserve { get; set; }
+        /// <summary>
+        /// >> legal_process_expiry
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> LegalProcessExpiry { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -100,6 +104,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
             result.AddRange(Finalized.Encode());
             result.AddRange(PropertyTokenAmount.Encode());
             result.AddRange(Reserve.Encode());
+            result.AddRange(LegalProcessExpiry.Encode());
             return result.ToArray();
         }
         
@@ -133,6 +138,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
             PropertyTokenAmount.Decode(byteArray, ref p);
             Reserve = new Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.Reserve>();
             Reserve.Decode(byteArray, ref p);
+            LegalProcessExpiry = new Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>();
+            LegalProcessExpiry.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;
             Bytes = new byte[bytesLength];

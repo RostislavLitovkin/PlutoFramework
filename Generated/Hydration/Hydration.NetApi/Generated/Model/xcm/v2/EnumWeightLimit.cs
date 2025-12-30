@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Model.xcm.v2
     }
     
     /// <summary>
-    /// >> 338 - Variant[xcm.v2.WeightLimit]
+    /// >> 330 - Variant[xcm.v2.WeightLimit]
     /// </summary>
     public sealed class EnumWeightLimit : BaseEnumRust<WeightLimit>
     {

@@ -60,9 +60,9 @@ namespace PlutoFrameworkTests
 
             var currencyChanges = await TransactionAnalyzerModel.AnalyzeCurrencyChangesInEventsAsync(client, extrinsicDetails.Events, endpoint, CancellationToken.None);
 
-            Assert.AreEqual(1, currencyChanges[senderAddress].Values.Count());
-            Assert.AreEqual("DOT", currencyChanges[senderAddress].Values.ElementAt(0).Symbol);
-            Assert.Greater(-1, currencyChanges[senderAddress].Values.ElementAt(0).Amount);
+            Assert.That(1 == currencyChanges[senderAddress].Values.Count());
+            Assert.That("DOT" == currencyChanges[senderAddress].Values.ElementAt(0).Symbol);
+            Assert.That(-1 > currencyChanges[senderAddress].Values.ElementAt(0).Amount);
         }
 
         [Test]
@@ -111,9 +111,9 @@ namespace PlutoFrameworkTests
 
             var currencyChanges = await TransactionAnalyzerModel.AnalyzeCurrencyChangesInEventsAsync(client, extrinsicDetails.Events, endpoint, CancellationToken.None);
 
-            Assert.AreEqual(1, currencyChanges[senderAddress].Values.Count());
-            Assert.AreEqual("DOT", currencyChanges[senderAddress].Values.ElementAt(0).Symbol);
-            Assert.Greater(-1, currencyChanges[senderAddress].Values.ElementAt(0).Amount);
+            Assert.That(1 == currencyChanges[senderAddress].Values.Count());
+            Assert.That("DOT" ==  currencyChanges[senderAddress].Values.ElementAt(0).Symbol);
+            Assert.That(-1 > currencyChanges[senderAddress].Values.ElementAt(0).Amount);
         }
 
         [Test]
@@ -166,7 +166,7 @@ namespace PlutoFrameworkTests
                 Console.WriteLine(currencyChange.Symbol + " " + currencyChange.Amount);
             }
 
-            Assert.AreEqual(3, currencyChanges[senderAddress].Values.Count());
+            Assert.That(3 == currencyChanges[senderAddress].Values.Count());
             //Assert.AreEqual("DOT", currencyChanges[senderAddress].Values.ElementAt(0).Symbol);
             //Assert.Greater(-1, currencyChanges[senderAddress].Values.ElementAt(0).Amount);
         }

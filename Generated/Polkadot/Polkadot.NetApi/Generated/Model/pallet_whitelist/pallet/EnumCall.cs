@@ -44,7 +44,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_whitelist.pallet
     }
     
     /// <summary>
-    /// >> 175 - Variant[pallet_whitelist.pallet.Call]
+    /// >> 177 - Variant[pallet_whitelist.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

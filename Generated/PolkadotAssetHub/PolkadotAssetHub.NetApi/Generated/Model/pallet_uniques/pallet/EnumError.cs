@@ -129,10 +129,34 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_uniques.pallet
         /// The provided bid is too low.
         /// </summary>
         BidTooLow = 17,
+        
+        /// <summary>
+        /// >> NoMetadata
+        /// No metadata is found.
+        /// </summary>
+        NoMetadata = 18,
+        
+        /// <summary>
+        /// >> WrongMetadata
+        /// Wrong metadata key/value bytes supplied.
+        /// </summary>
+        WrongMetadata = 19,
+        
+        /// <summary>
+        /// >> AttributeNotFound
+        /// An attribute is not found.
+        /// </summary>
+        AttributeNotFound = 20,
+        
+        /// <summary>
+        /// >> WrongAttribute
+        /// Wrong attribute key/value bytes supplied.
+        /// </summary>
+        WrongAttribute = 21,
     }
     
     /// <summary>
-    /// >> 433 - Variant[pallet_uniques.pallet.Error]
+    /// >> 875 - Variant[pallet_uniques.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

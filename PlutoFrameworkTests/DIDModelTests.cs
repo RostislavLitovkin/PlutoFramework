@@ -38,7 +38,7 @@ namespace PlutoFrameworkTests
 
                 var createDidTx = DidModel.Create(account.Value, did);
 
-                await client.SubmitExtrinsicAsync(createDidTx, account, (s, x) => { });
+                await client.SubmitExtrinsicAsync(createDidTx, account, new TaskCompletionSource<string?>(), (s, x) => { });
 
             }
             catch (Exception ex)
@@ -55,7 +55,6 @@ namespace PlutoFrameworkTests
 
             Console.WriteLine($"Account: {account.Value}");
             Console.WriteLine($"Did: {did.Value}");
-
 
             var encryptionKey = X25519Model.GenerateX25519KeyPair();
 

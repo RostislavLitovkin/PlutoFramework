@@ -27,19 +27,19 @@ public partial class LoadingView : ContentView
     {
         while (Playing)
         {
-            await leftDot.FadeTo(1, BASE_ANIMATION_SPEED);
+            await leftDot.FadeToAsync(1, BASE_ANIMATION_SPEED);
 
             await Task.WhenAll(
-                leftDot.FadeTo(0, BASE_ANIMATION_SPEED),
-                middleDot.FadeTo(1, BASE_ANIMATION_SPEED)
+                leftDot.FadeToAsync(0, BASE_ANIMATION_SPEED),
+                middleDot.FadeToAsync(1, BASE_ANIMATION_SPEED)
             );
 
             await Task.WhenAll(
-                middleDot.FadeTo(0, BASE_ANIMATION_SPEED),
-                rightDot.FadeTo(1, BASE_ANIMATION_SPEED)
+                middleDot.FadeToAsync(0, BASE_ANIMATION_SPEED),
+                rightDot.FadeToAsync(1, BASE_ANIMATION_SPEED)
             );
 
-            await rightDot.FadeTo(0, BASE_ANIMATION_SPEED);
+            await rightDot.FadeToAsync(0, BASE_ANIMATION_SPEED);
         }
     }
 }

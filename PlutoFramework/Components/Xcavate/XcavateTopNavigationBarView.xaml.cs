@@ -1,4 +1,5 @@
 using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Model;
 
 namespace PlutoFramework.Components.Xcavate;
 
@@ -189,6 +190,6 @@ public partial class XcavateTopNavigationBarView : ContentView
     }
     private async void OnBackClicked(object sender, TappedEventArgs e)
     {
-        await Application.Current.MainPage.Navigation.PopAsync();
+        await NavigationModel.PopAsync();
     }
 }

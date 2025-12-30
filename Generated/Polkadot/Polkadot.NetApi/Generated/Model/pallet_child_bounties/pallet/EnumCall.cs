@@ -201,7 +201,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_child_bounties.pallet
     }
     
     /// <summary>
-    /// >> 195 - Variant[pallet_child_bounties.pallet.Call]
+    /// >> 197 - Variant[pallet_child_bounties.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

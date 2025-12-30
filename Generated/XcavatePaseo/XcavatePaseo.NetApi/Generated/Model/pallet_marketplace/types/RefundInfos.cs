@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
     
     
     /// <summary>
-    /// >> 566 - Composite[pallet_marketplace.types.RefundInfos]
+    /// >> 584 - Composite[pallet_marketplace.types.RefundInfos]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RefundInfos : BaseType

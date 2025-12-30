@@ -103,7 +103,7 @@ public partial class ContractView : ContentView, ISubstrateClientLoadableAsyncVi
             {
                 var account = await KeysModel.GetAccountAsync();
 
-                string extrinsicId = await client.SubmitExtrinsicAsync(transfer, account, token: CancellationToken.None);
+                string extrinsicId = await client.SubmitExtrinsicAsync(transfer, account, new TaskCompletionSource<string?>(), token: CancellationToken.None);
             }
             catch
             {

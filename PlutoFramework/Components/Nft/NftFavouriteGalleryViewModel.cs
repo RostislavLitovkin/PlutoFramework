@@ -59,6 +59,6 @@ namespace PlutoFramework.Components.Nft
         }
 
         [RelayCommand]
-        public Task NavigateToNftOwnedPageAsync() => Application.Current.MainPage.Navigation.PushAsync(new NftListPage(new OwnedNftsListViewModel()));
+        public Task NavigateToNftOwnedPageAsync() => NavigationModel.PushAsync(new NftListPage(new OwnedNftsListViewModel()));
     }
 }

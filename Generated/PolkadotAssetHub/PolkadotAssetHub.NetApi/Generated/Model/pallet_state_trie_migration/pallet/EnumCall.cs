@@ -98,7 +98,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_state_trie_migration.pa
     }
     
     /// <summary>
-    /// >> 388 - Variant[pallet_state_trie_migration.pallet.Call]
+    /// >> 371 - Variant[pallet_state_trie_migration.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

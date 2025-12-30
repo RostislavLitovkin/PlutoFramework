@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
     }
     
     /// <summary>
-    /// >> 516 - Variant[hydradx_runtime.RuntimeHoldReason]
+    /// >> 508 - Variant[hydradx_runtime.RuntimeHoldReason]
     /// </summary>
     public sealed class EnumRuntimeHoldReason : BaseEnumRust<RuntimeHoldReason>
     {

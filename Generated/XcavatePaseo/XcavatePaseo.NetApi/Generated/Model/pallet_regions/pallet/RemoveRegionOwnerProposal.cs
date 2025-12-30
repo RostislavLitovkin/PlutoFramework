@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
     
     
     /// <summary>
-    /// >> 543 - Composite[pallet_regions.pallet.RemoveRegionOwnerProposal]
+    /// >> 565 - Composite[pallet_regions.pallet.RemoveRegionOwnerProposal]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RemoveRegionOwnerProposal : BaseType
@@ -28,6 +28,10 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
         /// >> proposer
         /// </summary>
         public XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 Proposer { get; set; }
+        /// <summary>
+        /// >> proposal_expiry
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 ProposalExpiry { get; set; }
         /// <summary>
         /// >> deposit
         /// </summary>
@@ -44,6 +48,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
         {
             var result = new List<byte>();
             result.AddRange(Proposer.Encode());
+            result.AddRange(ProposalExpiry.Encode());
             result.AddRange(Deposit.Encode());
             return result.ToArray();
         }
@@ -54,6 +59,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
             var start = p;
             Proposer = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Proposer.Decode(byteArray, ref p);
+            ProposalExpiry = new Substrate.NetApi.Model.Types.Primitive.U32();
+            ProposalExpiry.Decode(byteArray, ref p);
             Deposit = new Substrate.NetApi.Model.Types.Primitive.U128();
             Deposit.Decode(byteArray, ref p);
             var bytesLength = p - start;

@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.validator_app
     
     
     /// <summary>
-    /// >> 146 - Composite[polkadot_primitives.v8.validator_app.Public]
+    /// >> 148 - Composite[polkadot_primitives.v8.validator_app.Public]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Public : BaseType

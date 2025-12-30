@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking
     
     
     /// <summary>
-    /// >> 593 - Composite[pallet_staking.EraRewardPoints]
+    /// >> 648 - Composite[pallet_staking.EraRewardPoints]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class EraRewardPoints : BaseType

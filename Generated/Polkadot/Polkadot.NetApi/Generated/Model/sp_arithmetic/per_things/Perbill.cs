@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.sp_arithmetic.per_things
     
     
     /// <summary>
-    /// >> 44 - Composite[sp_arithmetic.per_things.Perbill]
+    /// >> 45 - Composite[sp_arithmetic.per_things.Perbill]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Perbill : BaseType

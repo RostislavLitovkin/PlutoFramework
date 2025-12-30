@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.frame_system
     
     
     /// <summary>
-    /// >> 163 - Composite[frame_system.CodeUpgradeAuthorization]
+    /// >> 702 - Composite[frame_system.CodeUpgradeAuthorization]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CodeUpgradeAuthorization : BaseType

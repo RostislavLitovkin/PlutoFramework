@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_proxy
     
     
     /// <summary>
-    /// >> 402 - Composite[pallet_proxy.ProxyDefinition]
+    /// >> 422 - Composite[pallet_proxy.ProxyDefinition]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ProxyDefinition : BaseType

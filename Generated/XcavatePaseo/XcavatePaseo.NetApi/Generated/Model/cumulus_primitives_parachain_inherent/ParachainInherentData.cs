@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inher
     
     
     /// <summary>
-    /// >> 253 - Composite[cumulus_primitives_parachain_inherent.ParachainInherentData]
+    /// >> 270 - Composite[cumulus_primitives_parachain_inherent.ParachainInherentData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ParachainInherentData : BaseType
@@ -39,7 +39,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inher
         /// <summary>
         /// >> horizontal_messages
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT3 HorizontalMessages { get; set; }
+        public XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT5 HorizontalMessages { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -68,7 +68,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inher
             RelayChainState.Decode(byteArray, ref p);
             DownwardMessages = new Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.polkadot_core_primitives.InboundDownwardMessage>();
             DownwardMessages.Decode(byteArray, ref p);
-            HorizontalMessages = new XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT3();
+            HorizontalMessages = new XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT5();
             HorizontalMessages.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

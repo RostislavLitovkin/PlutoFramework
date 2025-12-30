@@ -43,7 +43,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_nomination_pools
     }
     
     /// <summary>
-    /// >> 265 - Variant[pallet_nomination_pools.ClaimPermission]
+    /// >> 267 - Variant[pallet_nomination_pools.ClaimPermission]
     /// </summary>
     public sealed class EnumClaimPermission : BaseEnum<ClaimPermission>
     {

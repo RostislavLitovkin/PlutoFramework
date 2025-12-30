@@ -183,10 +183,16 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
         /// Creating pool with pegs is not allowed for asset with different decimals.
         /// </summary>
         IncorrectAssetDecimals = 26,
+        
+        /// <summary>
+        /// >> NoPegSource
+        /// Pool does not have pegs configured.
+        /// </summary>
+        NoPegSource = 27,
     }
     
     /// <summary>
-    /// >> 689 - Variant[pallet_stableswap.pallet.Error]
+    /// >> 674 - Variant[pallet_stableswap.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

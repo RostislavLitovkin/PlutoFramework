@@ -79,6 +79,11 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.frame_system.pallet
         remark_with_event = 7,
         
         /// <summary>
+        /// >> do_task
+        /// </summary>
+        do_task = 8,
+        
+        /// <summary>
         /// >> authorize_upgrade
         /// Authorize an upgrade to a given `code_hash` for the runtime. The runtime can be supplied
         /// later.
@@ -116,7 +121,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.frame_system.pallet
     }
     
     /// <summary>
-    /// >> 164 - Variant[frame_system.pallet.Call]
+    /// >> 214 - Variant[frame_system.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -135,6 +140,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.frame_system.pallet
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>>(Call.kill_storage);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.kill_prefix);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>(Call.remark_with_event);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime.EnumRuntimeTask>(Call.do_task);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.primitive_types.H256>(Call.authorize_upgrade);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.primitive_types.H256>(Call.authorize_upgrade_without_checks);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>(Call.apply_authorized_upgrade);

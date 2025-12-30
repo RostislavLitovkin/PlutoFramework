@@ -12,12 +12,13 @@
                          Glyph="+"
                          Size="20" />
     </page:PageTemplate.NavigationBarExtra1Image>
-    
-    <page:PageTemplate.MainContent>
+
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
         <VerticalStackLayout Spacing="15">
 
             <!-- Other content -->
-            
+
             <VerticalStackLayout Margin="20, 20, 20, 100"
                              BindableLayout.ItemsSource="{Binding Keys}"
                              Spacing="15">
@@ -28,5 +29,5 @@
                 </BindableLayout.ItemTemplate>
             </VerticalStackLayout>
         </VerticalStackLayout>
-    </page:PageTemplate.MainContent>
+    </ScrollView>
 </page:PageTemplate>

@@ -53,7 +53,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_broadcast.types
     }
     
     /// <summary>
-    /// >> 492 - Variant[pallet_broadcast.types.ExecutionType]
+    /// >> 484 - Variant[pallet_broadcast.types.ExecutionType]
     /// </summary>
     public sealed class EnumExecutionType : BaseEnumRust<ExecutionType>
     {

@@ -38,23 +38,32 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyManagement", "LettingStorage"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyManagement", "InvestorFunds"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyManagement", "PropertyIncome"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyManagement", "OwnerCheckpoints"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyManagement", "LettingInfo"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.LettingAgentInfo)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyManagement", "LettingAgentProposal"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.ProposedLettingAgent)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.ProposedLettingAgent)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyManagement", "OngoingLettingAgentVoting"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.VoteStats)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.VoteStats)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyManagement", "UserLettingAgentVote"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT8)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.VoteRecord)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyManagement", "AssetLettingProposal"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyManagement", "ProposalCounter"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyManagement", "ResignationNotices"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.ResignationNotice)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyManagement", "ResignationQueue"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40)));
         }
         
         /// <summary>
         /// >> LettingStorageParams
-        ///  Mapping from the real estate object to the letting agent.
+        ///  Maps property asset IDs to their letting agent.
         /// </summary>
         public static string LettingStorageParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
         {
@@ -74,7 +83,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> LettingStorage
-        ///  Mapping from the real estate object to the letting agent.
+        ///  Maps property asset IDs to their letting agent.
         /// </summary>
         public async Task<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> LettingStorage(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
@@ -84,40 +93,70 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> InvestorFundsParams
-        ///  Mapping from account to currently stored balance.
+        /// >> PropertyIncomeParams
+        ///  Maps asset IDs to accumulated property income.
         /// </summary>
-        public static string InvestorFundsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key)
+        public static string PropertyIncomeParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
         {
-            return RequestGenerator.GetStorage("PropertyManagement", "InvestorFunds", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, key.Value);
+            return RequestGenerator.GetStorage("PropertyManagement", "PropertyIncome", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
         }
         
         /// <summary>
-        /// >> InvestorFundsDefault
+        /// >> PropertyIncomeDefault
         /// Default value as hex string
         /// </summary>
-        public static string InvestorFundsDefault()
+        public static string PropertyIncomeDefault()
         {
             return "0x00000000000000000000000000000000";
         }
         
         /// <summary>
-        /// >> InvestorFunds
-        ///  Mapping from account to currently stored balance.
+        /// >> PropertyIncome
+        ///  Maps asset IDs to accumulated property income.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.U128> InvestorFunds(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U128> PropertyIncome(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
-            string parameters = PropertyManagementStorage.InvestorFundsParams(key);
+            string parameters = PropertyManagementStorage.PropertyIncomeParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U128>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> OwnerCheckpointsParams
+        ///  Maps accounts and asset IDs to income checkpoints.
+        /// </summary>
+        public static string OwnerCheckpointsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32> key)
+        {
+            return RequestGenerator.GetStorage("PropertyManagement", "OwnerCheckpoints", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, key.Value);
+        }
+        
+        /// <summary>
+        /// >> OwnerCheckpointsDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string OwnerCheckpointsDefault()
+        {
+            return "0x00000000000000000000000000000000";
+        }
+        
+        /// <summary>
+        /// >> OwnerCheckpoints
+        ///  Maps accounts and asset IDs to income checkpoints.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U128> OwnerCheckpoints(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
+        {
+            string parameters = PropertyManagementStorage.OwnerCheckpointsParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U128>(parameters, blockhash, token);
             return result;
         }
         
         /// <summary>
         /// >> LettingInfoParams
-        ///  Mapping from account to letting agent info
+        ///  Maps letting agent accounts to their info.
         /// </summary>
         public static string LettingInfoParams(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
         {
@@ -137,7 +176,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> LettingInfo
-        ///  Mapping from account to letting agent info
+        ///  Maps letting agent accounts to their info.
         /// </summary>
         public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.LettingAgentInfo> LettingInfo(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
@@ -148,9 +187,9 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> LettingAgentProposalParams
-        ///  Mapping of asset id to the ongoing letting agent proposal.
+        ///  Maps proposal IDs to letting agent proposals.
         /// </summary>
-        public static string LettingAgentProposalParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        public static string LettingAgentProposalParams(Substrate.NetApi.Model.Types.Primitive.U64 key)
         {
             return RequestGenerator.GetStorage("PropertyManagement", "LettingAgentProposal", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -168,9 +207,9 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> LettingAgentProposal
-        ///  Mapping of asset id to the ongoing letting agent proposal.
+        ///  Maps proposal IDs to letting agent proposals.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.ProposedLettingAgent> LettingAgentProposal(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.ProposedLettingAgent> LettingAgentProposal(Substrate.NetApi.Model.Types.Primitive.U64 key, string blockhash, CancellationToken token)
         {
             string parameters = PropertyManagementStorage.LettingAgentProposalParams(key);
             var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.ProposedLettingAgent>(parameters, blockhash, token);
@@ -179,9 +218,9 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> OngoingLettingAgentVotingParams
-        ///  Mapping of ongoing letting agent vote.
+        ///  Maps proposal IDs to voting stats.
         /// </summary>
-        public static string OngoingLettingAgentVotingParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        public static string OngoingLettingAgentVotingParams(Substrate.NetApi.Model.Types.Primitive.U64 key)
         {
             return RequestGenerator.GetStorage("PropertyManagement", "OngoingLettingAgentVoting", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -199,9 +238,9 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> OngoingLettingAgentVoting
-        ///  Mapping of ongoing letting agent vote.
+        ///  Maps proposal IDs to voting stats.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.VoteStats> OngoingLettingAgentVoting(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.VoteStats> OngoingLettingAgentVoting(Substrate.NetApi.Model.Types.Primitive.U64 key, string blockhash, CancellationToken token)
         {
             string parameters = PropertyManagementStorage.OngoingLettingAgentVotingParams(key);
             var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.VoteStats>(parameters, blockhash, token);
@@ -210,13 +249,13 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> UserLettingAgentVoteParams
-        ///  Mapping of a asset id and account id to the vote of a user.
+        ///  Maps proposal and account IDs to user votes.
         /// </summary>
-        public static string UserLettingAgentVoteParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        public static string UserLettingAgentVoteParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
         {
             return RequestGenerator.GetStorage("PropertyManagement", "UserLettingAgentVote", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
-                        key});
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, key.Value);
         }
         
         /// <summary>
@@ -230,12 +269,134 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> UserLettingAgentVote
-        ///  Mapping of a asset id and account id to the vote of a user.
+        ///  Maps proposal and account IDs to user votes.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT8> UserLettingAgentVote(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.VoteRecord> UserLettingAgentVote(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
         {
             string parameters = PropertyManagementStorage.UserLettingAgentVoteParams(key);
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT8>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.VoteRecord>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> AssetLettingProposalParams
+        ///  Maps asset IDs to active letting agent proposal IDs.
+        /// </summary>
+        public static string AssetLettingProposalParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        {
+            return RequestGenerator.GetStorage("PropertyManagement", "AssetLettingProposal", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> AssetLettingProposalDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string AssetLettingProposalDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> AssetLettingProposal
+        ///  Maps asset IDs to active letting agent proposal IDs.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U64> AssetLettingProposal(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        {
+            string parameters = PropertyManagementStorage.AssetLettingProposalParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U64>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> ProposalCounterParams
+        ///  Counter of proposal IDs.
+        /// </summary>
+        public static string ProposalCounterParams()
+        {
+            return RequestGenerator.GetStorage("PropertyManagement", "ProposalCounter", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> ProposalCounterDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string ProposalCounterDefault()
+        {
+            return "0x0000000000000000";
+        }
+        
+        /// <summary>
+        /// >> ProposalCounter
+        ///  Counter of proposal IDs.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U64> ProposalCounter(string blockhash, CancellationToken token)
+        {
+            string parameters = PropertyManagementStorage.ProposalCounterParams();
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U64>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> ResignationNoticesParams
+        ///  Maps asset IDs to resignation notices.
+        /// </summary>
+        public static string ResignationNoticesParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        {
+            return RequestGenerator.GetStorage("PropertyManagement", "ResignationNotices", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> ResignationNoticesDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string ResignationNoticesDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> ResignationNotices
+        ///  Maps asset IDs to resignation notices.
+        /// </summary>
+        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.ResignationNotice> ResignationNotices(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        {
+            string parameters = PropertyManagementStorage.ResignationNoticesParams(key);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.ResignationNotice>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> ResignationQueueParams
+        ///  Queue of resignation notices expiring at specific block numbers.
+        /// </summary>
+        public static string ResignationQueueParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        {
+            return RequestGenerator.GetStorage("PropertyManagement", "ResignationQueue", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> ResignationQueueDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string ResignationQueueDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> ResignationQueue
+        ///  Queue of resignation notices expiring at specific block numbers.
+        /// </summary>
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40> ResignationQueue(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        {
+            string parameters = PropertyManagementStorage.ResignationQueueParams(key);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40>(parameters, blockhash, token);
             return result;
         }
     }
@@ -259,26 +420,38 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> letting_agent_propose
+        /// >> remove_letting_agent
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method LettingAgentPropose(Substrate.NetApi.Model.Types.Primitive.U32 asset_id)
+        public static Method RemoveLettingAgent(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10 location)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(location.Encode());
+            return new Method(94, "PropertyManagement", 1, "remove_letting_agent", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> letting_agent_claim_property
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method LettingAgentClaimProperty(Substrate.NetApi.Model.Types.Primitive.U32 asset_id)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset_id.Encode());
-            return new Method(94, "PropertyManagement", 3, "letting_agent_propose", byteArray.ToArray());
+            return new Method(94, "PropertyManagement", 2, "letting_agent_claim_property", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> vote_on_letting_agent
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method VoteOnLettingAgent(Substrate.NetApi.Model.Types.Primitive.U32 asset_id, XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.EnumVote vote)
+        public static Method VoteOnLettingAgent(Substrate.NetApi.Model.Types.Primitive.U32 asset_id, XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.EnumVote vote, Substrate.NetApi.Model.Types.Primitive.U32 amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset_id.Encode());
             byteArray.AddRange(vote.Encode());
-            return new Method(94, "PropertyManagement", 4, "vote_on_letting_agent", byteArray.ToArray());
+            byteArray.AddRange(amount.Encode());
+            return new Method(94, "PropertyManagement", 3, "vote_on_letting_agent", byteArray.ToArray());
         }
         
         /// <summary>
@@ -289,7 +462,18 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset_id.Encode());
-            return new Method(94, "PropertyManagement", 5, "finalize_letting_agent", byteArray.ToArray());
+            return new Method(94, "PropertyManagement", 4, "finalize_letting_agent", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> unfreeze_letting_voting_token
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method UnfreezeLettingVotingToken(Substrate.NetApi.Model.Types.Primitive.U64 proposal_id)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(proposal_id.Encode());
+            return new Method(94, "PropertyManagement", 5, "unfreeze_letting_voting_token", byteArray.ToArray());
         }
         
         /// <summary>
@@ -309,12 +493,22 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> claim_income
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ClaimIncome(Substrate.NetApi.Model.Types.Primitive.U32 asset_id, Substrate.NetApi.Model.Types.Primitive.U32 payment_asset)
+        public static Method ClaimIncome(Substrate.NetApi.Model.Types.Primitive.U32 asset_id)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset_id.Encode());
-            byteArray.AddRange(payment_asset.Encode());
             return new Method(94, "PropertyManagement", 7, "claim_income", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> resign_from_property
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method ResignFromProperty(Substrate.NetApi.Model.Types.Primitive.U32 asset_id)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(asset_id.Encode());
+            return new Method(94, "PropertyManagement", 8, "resign_from_property", byteArray.ToArray());
         }
     }
     
@@ -326,7 +520,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> MarketplacePalletId
-        ///  The property management's pallet id, used for deriving its sovereign account ID.
+        ///  The property marketplace's pallet id, used for deriving its sovereign account ID.
         /// </summary>
         public XcavatePaseo.NetApi.Generated.Model.frame_support.PalletId MarketplacePalletId()
         {
@@ -337,7 +531,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> LettingAgentDeposit
-        ///  The minimum amount of a letting agent that has to be deposited.
+        ///  Minimum deposit for letting agent registration.
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U128 LettingAgentDeposit()
         {
@@ -348,7 +542,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> MaxProperties
-        ///  The maximum amount of properties that can be assigned to a letting agent.
+        ///  Maximum properties a letting agent can manage.
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 MaxProperties()
         {
@@ -358,45 +552,68 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> MaxLettingAgents
-        ///  The maximum amount of letting agents in a location.
-        /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U32 MaxLettingAgents()
-        {
-            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x64000000");
-            return result;
-        }
-        
-        /// <summary>
         /// >> MaxLocations
-        ///  The maximum amount of locations a letting agent can be assigned to.
+        ///  Maximum locations a letting agent can handle.
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 MaxLocations()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x64000000");
-            return result;
-        }
-        
-        /// <summary>
-        /// >> AcceptedAssets
-        /// </summary>
-        public XcavatePaseo.NetApi.Generated.Types.Base.Arr2U32 AcceptedAssets()
-        {
-            var result = new XcavatePaseo.NetApi.Generated.Types.Base.Arr2U32();
-            result.Create("0x39050000C0070000");
+            result.Create("0x32000000");
             return result;
         }
         
         /// <summary>
         /// >> LettingAgentVotingTime
-        ///  The amount of time given to vote for a lawyer proposal.
+        ///  Voting duration for letting agent proposals.
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 LettingAgentVotingTime()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x64000000");
+            result.Create("0x14000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MinVotingQuorum
+        ///  Minimum quorum that needs to be reached for a proposal to pass.
+        /// </summary>
+        public XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Percent MinVotingQuorum()
+        {
+            var result = new XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Percent();
+            result.Create("0x32");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> LettingAgentNoticePeriod
+        ///  Notice period for letting agent resignation.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 LettingAgentNoticePeriod()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x1E000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MaxNoticesPerBlock
+        ///  Maximum resignation notices per block.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 MaxNoticesPerBlock()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x0A000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> PostcodeLimit
+        ///  The maximum length of data stored in for post codes.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 PostcodeLimit()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x0A000000");
             return result;
         }
     }
@@ -427,11 +644,13 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ArithmeticOverflow
+        /// Arithmetic operation caused an overflow.
         /// </summary>
         ArithmeticOverflow,
         
         /// <summary>
         /// >> ArithmeticUnderflow
+        /// Arithmetic operation caused an underflow.
         /// </summary>
         ArithmeticUnderflow,
         
@@ -448,12 +667,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         NotEnoughFunds,
         
         /// <summary>
-        /// >> TooManyAssignedProperties
-        /// The letting agent has already too many assigned properties.
-        /// </summary>
-        TooManyAssignedProperties,
-        
-        /// <summary>
         /// >> NoLettingAgentFound
         /// No letting agent could be selected.
         /// </summary>
@@ -464,12 +677,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// The region is not registered.
         /// </summary>
         RegionUnknown,
-        
-        /// <summary>
-        /// >> TooManyLettingAgents
-        /// The location has already the maximum amount of letting agents.
-        /// </summary>
-        TooManyLettingAgents,
         
         /// <summary>
         /// >> TooManyLocations
@@ -514,18 +721,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         LettingAgentInLocation,
         
         /// <summary>
-        /// >> LettingAgentExists
-        /// The letting agent is already registered.
-        /// </summary>
-        LettingAgentExists,
-        
-        /// <summary>
-        /// >> AssetNotFound
-        /// This asset has no token.
-        /// </summary>
-        AssetNotFound,
-        
-        /// <summary>
         /// >> PaymentAssetNotSupported
         /// This Asset is not supported for payment.
         /// </summary>
@@ -544,12 +739,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         VotingExpired,
         
         /// <summary>
-        /// >> UserNotWhitelisted
-        /// User did not pass the kyc.
-        /// </summary>
-        UserNotWhitelisted,
-        
-        /// <summary>
         /// >> VotingStillOngoing
         /// The voting is still ongoing.
         /// </summary>
@@ -562,15 +751,63 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         LettingAgentProposalOngoing,
         
         /// <summary>
-        /// >> TooManyVoters
-        /// There are already too many voters for this voting.
+        /// >> LocationNotFound
+        /// The letting agent has is not responsible for this location.
         /// </summary>
-        TooManyVoters,
+        LocationNotFound,
         
         /// <summary>
-        /// >> AccountIsNotLettingAgent
-        /// The account has not the role of a letting agent.
+        /// >> LettingAgentNotActiveInLocation
+        /// The letting agent is not active in this location.
         /// </summary>
-        AccountIsNotLettingAgent,
+        LettingAgentNotActiveInLocation,
+        
+        /// <summary>
+        /// >> LettingAgentActive
+        /// Letting agent still has active properties in location.
+        /// </summary>
+        LettingAgentActive,
+        
+        /// <summary>
+        /// >> NoFrozenAmount
+        /// The user has no token amount frozen.
+        /// </summary>
+        NoFrozenAmount,
+        
+        /// <summary>
+        /// >> ZeroVoteAmount
+        /// The voting amount must be greater than zero.
+        /// </summary>
+        ZeroVoteAmount,
+        
+        /// <summary>
+        /// >> ZeroDistributionAmount
+        /// The distribution amount cannot be zero.
+        /// </summary>
+        ZeroDistributionAmount,
+        
+        /// <summary>
+        /// >> ZeroTokenSupply
+        /// The total token supply for the property cannot be zero.
+        /// </summary>
+        ZeroTokenSupply,
+        
+        /// <summary>
+        /// >> ResignationAlreadyInitiated
+        /// A resignation notice is already active for the property.
+        /// </summary>
+        ResignationAlreadyInitiated,
+        
+        /// <summary>
+        /// >> TooManyNoticesPerBlock
+        /// Too many resignation notices for the block.
+        /// </summary>
+        TooManyNoticesPerBlock,
+        
+        /// <summary>
+        /// >> NoResignationNotice
+        /// No resignation notice found for the property.
+        /// </summary>
+        NoResignationNotice,
     }
 }

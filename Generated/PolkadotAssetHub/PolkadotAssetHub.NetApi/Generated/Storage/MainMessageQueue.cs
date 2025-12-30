@@ -215,7 +215,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotAssetHub.NetApi.Generated.Model.sp_weights.weight_v2.Weight> ServiceWeight()
         {
             var result = new Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotAssetHub.NetApi.Generated.Model.sp_weights.weight_v2.Weight>();
-            result.Create("0x01070016D0BE2802007000");
+            result.Create("0x01070010A5D4E802004001");
             return result;
         }
         
@@ -230,7 +230,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotAssetHub.NetApi.Generated.Model.sp_weights.weight_v2.Weight> IdleMaxServiceWeight()
         {
             var result = new Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotAssetHub.NetApi.Generated.Model.sp_weights.weight_v2.Weight>();
-            result.Create("0x010700E876481702004000");
+            result.Create("0x01070010A5D4E802004001");
             return result;
         }
     }

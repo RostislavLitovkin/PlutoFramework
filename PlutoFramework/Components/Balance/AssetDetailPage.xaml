@@ -16,7 +16,8 @@
                        x:Class="PlutoFramework.Components.Balance.AssetDetailPage"
                        Title="{Binding AssetInfo.Symbol}">
 
-    <template:PageTemplate.MainContent>
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
         <VerticalStackLayout Spacing="15"
                              Padding="0"
                              Margin="0">
@@ -146,8 +147,8 @@
                 </Label>
             </VerticalStackLayout>
         </VerticalStackLayout>
-    </template:PageTemplate.MainContent>
-
+    </ScrollView>
+    
     <template:PageTemplate.PopupContent>
         <xcavate:PageBottomBarView AbsoluteLayout.LayoutBounds="0.5, 1, 1, 90"
                                    AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"

@@ -9,7 +9,8 @@
                        x:Class="PlutoFramework.Components.Kilt.CreateNewDidPage"
                        Title="New DID"
                        IsNavbarVisible="False">
-    <template:PageTemplate.MainContent>
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
         <VerticalStackLayout Spacing="15"
                              Padding="20, 10, 20, 100">
 
@@ -30,9 +31,8 @@
                                     Text="How to save Mnemonics?"
                                     Command="{Binding GoToMnemonicsExplanationCommand}" />
         </VerticalStackLayout>
-    
-        
-    </template:PageTemplate.MainContent>
+
+    </ScrollView>
 
     <template:PageTemplate.PopupContent>
         <VerticalStackLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, AutoSize"

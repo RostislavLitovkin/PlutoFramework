@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.frame_system.limits
     
     
     /// <summary>
-    /// >> 496 - Composite[frame_system.limits.BlockWeights]
+    /// >> 488 - Composite[frame_system.limits.BlockWeights]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BlockWeights : BaseType

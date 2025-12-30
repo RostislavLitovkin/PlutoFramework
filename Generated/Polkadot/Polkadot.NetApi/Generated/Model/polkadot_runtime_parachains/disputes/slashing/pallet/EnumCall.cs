@@ -29,7 +29,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.disputes.s
     }
     
     /// <summary>
-    /// >> 324 - Variant[polkadot_runtime_parachains.disputes.slashing.pallet.Call]
+    /// >> 329 - Variant[polkadot_runtime_parachains.disputes.slashing.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

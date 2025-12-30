@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcm.v3
     
     
     /// <summary>
-    /// >> 333 - Composite[xcm.v3.QueryResponseInfo]
+    /// >> 353 - Composite[xcm.v3.QueryResponseInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class QueryResponseInfo : BaseType

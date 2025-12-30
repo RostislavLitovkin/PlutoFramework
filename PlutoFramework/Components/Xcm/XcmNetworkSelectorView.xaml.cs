@@ -46,11 +46,11 @@ public partial class XcmNetworkSelectorView : ContentView
 
             if ((bool)newValue)
             {
-                control.border.BackgroundColor = Color.FromHex("7aff7a");
+                control.border.BackgroundColor = Color.FromArgb("#FF7AFF7A");
             }
             else
             {
-                control.border.SetAppThemeColor(Label.BackgroundColorProperty, Color.FromHex("fdfdfd"), Color.FromHex("000000"));
+                control.border.SetAppThemeColor(Label.BackgroundColorProperty, Color.FromArgb("#FFFDFDFD"), Color.FromArgb("#FF000000"));
             }
         });
 

@@ -45,7 +45,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 117 - Variant[cumulus_pallet_xcm.pallet.Event]
+    /// >> 166 - Variant[cumulus_pallet_xcm.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -58,7 +58,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_xcm.pallet
         {
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Types.Base.Arr32U8>(Event.InvalidFormat);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Types.Base.Arr32U8>(Event.UnsupportedVersion);
-				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Types.Base.Arr32U8, PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v4.traits.EnumOutcome>>(Event.ExecutedDownward);
+				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Types.Base.Arr32U8, PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v5.traits.EnumOutcome>>(Event.ExecutedDownward);
         }
     }
 }

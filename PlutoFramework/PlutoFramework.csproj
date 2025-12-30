@@ -1,7 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net9.0-ios;net9.0-android35.0</TargetFrameworks>
+    <TargetFrameworks>net10.0-ios;net10.0-android</TargetFrameworks>
     <SingleProject>true</SingleProject>
     <UseMaui>true</UseMaui>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -70,18 +71,17 @@
     <PackageReference Include="Microcharts.Maui" Version="1.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.1" />
-    <PackageReference Include="Microsoft.VisualStudio.VsixColorCompiler" Version="17.0.31709.430" />
     <PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="3.119.0" />
     <PackageReference Include="System.Private.Uri" Version="4.3.2" />
     <PackageReference Include="System.Security.Cryptography.X509Certificates" Version="4.3.2" />
     <PackageReference Include="websocketsharp.core" Version="1.0.0" />
-    <PackageReference Include="CommunityToolkit.Maui" Version="9.0.2" />
+    <PackageReference Include="CommunityToolkit.Maui" Version="12.3.0" />
     <PackageReference Include="ZXing.Net.Maui.Controls" Version="0.4.0" />
     <PackageReference Include="ZXing.Net.Maui" Version="0.4.0" />
     <PackageReference Include="Markdig" Version="0.41.3" />
-    <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="9.0.81" />
-    <PackageReference Include="Microsoft.Maui.Controls" Version="9.0.81" />
-    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="9.0.81" />
+    <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="10.0.0" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.0" />
+    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="10.0.0" />
 
   </ItemGroup>
 
@@ -628,10 +628,6 @@
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
     <Compile Update="Components\Nft\NftOwnedGalleryView.xaml.cs">
-      <SubType>Code</SubType>
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
-    <Compile Update="Components\Nft\NftOwnerView.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
@@ -1760,8 +1756,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="..\Generated\%2a%2a\%2a%2a.NetApi\bin\Debug\net9.0\%2a.dll" />
-    <None Remove="..\UniqueryPlus\bin\Debug\net9.0-ios\UniqueryPlus.dll" />
+    <None Remove="..\Generated\%2a%2a\%2a%2a.NetApi\bin\Debug\net10.0\%2a.dll" />
+    <None Remove="..\UniqueryPlus\bin\Debug\net10.0-ios\UniqueryPlus.dll" />
     <None Remove="AjunaExt\" />
     <None Remove="AzeroId\" />
     <None Remove="HydraDX\" />
@@ -2051,6 +2047,9 @@
     <MauiXaml Update="Components\AddressView\PolkadotAddressView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\AddressView\SubscanAddressView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\AddressView\SubstrateAddressView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
@@ -2165,6 +2164,12 @@
     <MauiXaml Update="Components\Form\FormAssetInputView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Components\Form\FormDateInputView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Form\FormImageUploadView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Components\Form\FormInputView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
@@ -2172,6 +2177,9 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Form\FormLargeValueView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Form\FormMultiAddressInputView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Form\FormValueView.xaml">
@@ -2349,9 +2357,6 @@
     <MauiXaml Update="Components\Nft\NftOwnedGalleryView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
-    <MauiXaml Update="Components\Nft\NftOwnerView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </MauiXaml>
     <MauiXaml Update="Components\Nft\NftSellView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
@@ -2377,6 +2382,9 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Notifications\NotificationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\Nova\NovaExportGuidePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\OpenGov\VotingDelegationView.xaml">
@@ -2449,6 +2457,15 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Unique\OpenUniqueButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\WebView\ExtensionWebViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\WebView\WebSignRawPopupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\WebView\WebViewNavigationBarView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\XcavateProperty\BuyPropertyTokensView.xaml">

@@ -38,15 +38,15 @@ namespace PlutoFrameworkTests
             var method = new Method(5, 3, Utils.HexToByteArray("0x0016b3861912eb2dda98ca3abc80f8b5b01b42c00753222dc5be9373117d2e616f0700e40b5402"));
 
             (var pallet, var call) = PalletCallModel.GetPalletAndCallName(client, method.ModuleIndex, method.CallIndex);
-            Assert.AreEqual("Balances", pallet);
+            Assert.That("Balances" == pallet);
         
-            Assert.AreEqual("transfer_keep_alive", call);
+            Assert.That("transfer_keep_alive" == call);
         }
 
         [Test]
         public void GetMetadataVersion()
         {
-            Assert.AreEqual(14, client.SubstrateClient.MetaData.Version);
+            Assert.That(14 == client.SubstrateClient.MetaData.Version);
         }
     }
 }

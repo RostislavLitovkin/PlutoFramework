@@ -1,11 +1,14 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-using Substrate.NetApi.Model.Types;
-using Substrate.NET.Wallet.Keyring;
+﻿using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Storage;
-using CommunityToolkit.Maui.Alerts;
-using PlutoFramework.Model;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.Buttons;
+using PlutoFramework.Components.Keys;
+using PlutoFramework.Model;
+using PlutoFramework.Model.SQLite;
+using PlutoFrameworkCore;
+using Substrate.NET.Wallet.Keyring;
+using Substrate.NetApi.Model.Types;
 
 namespace PlutoFramework.Components.Mnemonics;
 public partial class MnemonicsPageViewModel : ObservableObject
@@ -30,59 +33,66 @@ public partial class MnemonicsPageViewModel : ObservableObject
 
     [RelayCommand]
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
-    public Task GoToEnterMnemonicsAsync() => Application.Current.MainPage.Navigation.PushAsync(new EnterMnemonicsPage(new EnterMnemonicsViewModel
+    public Task GoToEnterMnemonicsAsync() => NavigationModel.PushAsync(new EnterMnemonicsPage(new EnterMnemonicsViewModel
     {
         Navigation = () => Shell.Current.GoToAsync("../..")
     }));
 
     [RelayCommand]
-    public Task GoToMnemonicsExplanationAsync() => Application.Current.MainPage.Navigation.PushAsync(new MnemonicsExplanationPage());
+    public Task GoToMnemonicsExplanationAsync() => NavigationModel.PushAsync(new MnemonicsExplanationPage());
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
 
     [RelayCommand]
     public async Task ExportJsonAsync()
     {
-        var token = CancellationToken.None;
-
-        var accountType = (AccountType)Enum.Parse(typeof(AccountType), Preferences.Get(PreferencesModel.ACCOUNT_TYPE, AccountType.None.ToString()));
-
         try
         {
-            var secret = await Model.KeysModel.GetMnemonicsOrPrivateKeyAsync();
+            var token = CancellationToken.None;
 
-            if (secret == null)
+            var accountType = (AccountType)Enum.Parse(typeof(AccountType), Preferences.Get(PreferencesModel.ACCOUNT_TYPE, AccountType.None.ToString()));
+
+            try
+            {
+                var secret = await Model.KeysModel.GetMnemonicsOrPrivateKeyAsync();
+
+                if (secret == null)
+                {
+                    return;
+                }
+
+                if (accountType == AccountType.Json)
+                {
+                    await SaveJsonAsync(secret, token);
+
+                    return;
+                }
+            }
+            catch
+            {
+                // Authentication failed
+            }
+
+            if (accountType != AccountType.Mnemonic)
             {
                 return;
             }
 
-            if (accountType == AccountType.Json)
+            if (Mnemonics is null || Mnemonics == "")
             {
-                await SaveJsonAsync(secret, token);
-
                 return;
             }
+
+            var keyring = new Keyring();
+            var wallet = keyring.AddFromMnemonic(Mnemonics, new Meta() { Name = $"account" }, KeyType.Sr25519);
+
+            var json = wallet.ToJson($"account", await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD));
+
+            await SaveJsonAsync(json, token);
         }
-        catch
+        catch(Exception ex)
         {
-            // Authentication failed
+            Console.WriteLine(ex);
         }
-
-        if (accountType != AccountType.Mnemonic)
-        {
-            return;
-        }
-
-        if (Mnemonics is null || Mnemonics == "")
-        {
-            return;
-        }
-
-        var keyring = new Keyring();
-        var wallet = keyring.AddFromMnemonic(Mnemonics, new Meta() { Name = $"{AppInfo.Current.Name} account" }, KeyType.Sr25519);
-
-        var json = wallet.ToJson($"{AppInfo.Current.Name} account", await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD));
-
-        await SaveJsonAsync(json, token);
     }
 
     /// <summary>
@@ -101,6 +111,25 @@ public partial class MnemonicsPageViewModel : ObservableObject
         {
             await Toast.Make($"Failed to export.").Show(token);
         }
+    }
+
+
+    [RelayCommand]
+    public void ForgotKey()
+    {
+        var popupViewModel = DependencyService.Get<CanNotRecoverKeyPopupViewModel>();
+
+        popupViewModel.ProceedFunc = GenerateNewAccountAsync;
+
+        popupViewModel.IsVisible = true;
+    }
+    private async Task GenerateNewAccountAsync()
+    {
+        await SQLiteModel.DeleteAllDatabasesAsync();
+
+        await Model.KeysModel.GenerateNewAccountAsync();
+
+        await PlutoConfigurationModel.AfterAccountImportAsync();
     }
 }
 

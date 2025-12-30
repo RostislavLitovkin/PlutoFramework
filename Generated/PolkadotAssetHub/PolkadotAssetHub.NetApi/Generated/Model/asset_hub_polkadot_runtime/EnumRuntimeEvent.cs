@@ -32,6 +32,21 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
         ParachainSystem = 1,
         
         /// <summary>
+        /// >> Preimage
+        /// </summary>
+        Preimage = 5,
+        
+        /// <summary>
+        /// >> Scheduler
+        /// </summary>
+        Scheduler = 6,
+        
+        /// <summary>
+        /// >> Parameters
+        /// </summary>
+        Parameters = 7,
+        
+        /// <summary>
         /// >> Balances
         /// </summary>
         Balances = 10,
@@ -50,6 +65,11 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
         /// >> Vesting
         /// </summary>
         Vesting = 14,
+        
+        /// <summary>
+        /// >> Claims
+        /// </summary>
+        Claims = 15,
         
         /// <summary>
         /// >> CollatorSelection
@@ -87,6 +107,11 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
         MessageQueue = 35,
         
         /// <summary>
+        /// >> SnowbridgeSystemFrontend
+        /// </summary>
+        SnowbridgeSystemFrontend = 36,
+        
+        /// <summary>
         /// >> Utility
         /// </summary>
         Utility = 40,
@@ -100,6 +125,11 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
         /// >> Proxy
         /// </summary>
         Proxy = 42,
+        
+        /// <summary>
+        /// >> Indices
+        /// </summary>
+        Indices = 43,
         
         /// <summary>
         /// >> Assets
@@ -132,9 +162,94 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
         AssetConversion = 55,
         
         /// <summary>
+        /// >> Treasury
+        /// </summary>
+        Treasury = 60,
+        
+        /// <summary>
+        /// >> ConvictionVoting
+        /// </summary>
+        ConvictionVoting = 61,
+        
+        /// <summary>
+        /// >> Referenda
+        /// </summary>
+        Referenda = 62,
+        
+        /// <summary>
+        /// >> Whitelist
+        /// </summary>
+        Whitelist = 64,
+        
+        /// <summary>
+        /// >> Bounties
+        /// </summary>
+        Bounties = 65,
+        
+        /// <summary>
+        /// >> ChildBounties
+        /// </summary>
+        ChildBounties = 66,
+        
+        /// <summary>
+        /// >> AssetRate
+        /// </summary>
+        AssetRate = 67,
+        
+        /// <summary>
         /// >> StateTrieMigration
         /// </summary>
         StateTrieMigration = 70,
+        
+        /// <summary>
+        /// >> NominationPools
+        /// </summary>
+        NominationPools = 80,
+        
+        /// <summary>
+        /// >> VoterList
+        /// </summary>
+        VoterList = 82,
+        
+        /// <summary>
+        /// >> DelegatedStaking
+        /// </summary>
+        DelegatedStaking = 83,
+        
+        /// <summary>
+        /// >> StakingRcClient
+        /// </summary>
+        StakingRcClient = 84,
+        
+        /// <summary>
+        /// >> MultiBlockElection
+        /// </summary>
+        MultiBlockElection = 85,
+        
+        /// <summary>
+        /// >> MultiBlockElectionVerifier
+        /// </summary>
+        MultiBlockElectionVerifier = 86,
+        
+        /// <summary>
+        /// >> MultiBlockElectionSigned
+        /// </summary>
+        MultiBlockElectionSigned = 88,
+        
+        /// <summary>
+        /// >> Staking
+        /// </summary>
+        Staking = 89,
+        
+        /// <summary>
+        /// >> AhOps
+        /// </summary>
+        AhOps = 254,
+        
+        /// <summary>
+        /// >> AhMigrator
+        /// </summary>
+        AhMigrator = 255,
     }
     
     /// <summary>
@@ -150,10 +265,14 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
         {
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.frame_system.pallet.EnumEvent>(RuntimeEvent.System);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_parachain_system.pallet.EnumEvent>(RuntimeEvent.ParachainSystem);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_preimage.pallet.EnumEvent>(RuntimeEvent.Preimage);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_scheduler.pallet.EnumEvent>(RuntimeEvent.Scheduler);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_parameters.pallet.EnumEvent>(RuntimeEvent.Parameters);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_balances.pallet.EnumEvent>(RuntimeEvent.Balances);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_transaction_payment.pallet.EnumEvent>(RuntimeEvent.TransactionPayment);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_asset_conversion_tx_payment.pallet.EnumEvent>(RuntimeEvent.AssetTxPayment);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_vesting.pallet.EnumEvent>(RuntimeEvent.Vesting);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.polkadot_runtime_common.claims.pallet.EnumEvent>(RuntimeEvent.Claims);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_collator_selection.pallet.EnumEvent>(RuntimeEvent.CollatorSelection);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_session.pallet.EnumEvent>(RuntimeEvent.Session);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.pallet.EnumEvent>(RuntimeEvent.XcmpQueue);
@@ -161,16 +280,35 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_xcm.pallet.EnumEvent>(RuntimeEvent.CumulusXcm);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_xcm_bridge_hub_router.pallet.EnumEvent>(RuntimeEvent.ToKusamaXcmRouter);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_message_queue.pallet.EnumEvent>(RuntimeEvent.MessageQueue);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.snowbridge_pallet_system_frontend.pallet.EnumEvent>(RuntimeEvent.SnowbridgeSystemFrontend);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_utility.pallet.EnumEvent>(RuntimeEvent.Utility);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_multisig.pallet.EnumEvent>(RuntimeEvent.Multisig);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_proxy.pallet.EnumEvent>(RuntimeEvent.Proxy);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_indices.pallet.EnumEvent>(RuntimeEvent.Indices);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet.EnumEvent>(RuntimeEvent.Assets);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_uniques.pallet.EnumEvent>(RuntimeEvent.Uniques);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.pallet.EnumEvent>(RuntimeEvent.Nfts);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet.EnumEvent>(RuntimeEvent.ForeignAssets);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet.EnumEvent>(RuntimeEvent.PoolAssets);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_asset_conversion.pallet.EnumEvent>(RuntimeEvent.AssetConversion);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_treasury.pallet.EnumEvent>(RuntimeEvent.Treasury);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_conviction_voting.pallet.EnumEvent>(RuntimeEvent.ConvictionVoting);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_referenda.pallet.EnumEvent>(RuntimeEvent.Referenda);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_whitelist.pallet.EnumEvent>(RuntimeEvent.Whitelist);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_bounties.pallet.EnumEvent>(RuntimeEvent.Bounties);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_child_bounties.pallet.EnumEvent>(RuntimeEvent.ChildBounties);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_asset_rate.pallet.EnumEvent>(RuntimeEvent.AssetRate);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_state_trie_migration.pallet.EnumEvent>(RuntimeEvent.StateTrieMigration);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_nomination_pools.pallet.EnumEvent>(RuntimeEvent.NominationPools);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_bags_list.pallet.EnumEvent>(RuntimeEvent.VoterList);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_delegated_staking.pallet.EnumEvent>(RuntimeEvent.DelegatedStaking);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async_rc_client.pallet.EnumEvent>(RuntimeEvent.StakingRcClient);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi_block.pallet.EnumEvent>(RuntimeEvent.MultiBlockElection);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi_block.verifier.impls.pallet.EnumEvent>(RuntimeEvent.MultiBlockElectionVerifier);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi_block.signed.pallet.EnumEvent>(RuntimeEvent.MultiBlockElectionSigned);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async.pallet.pallet.EnumEvent>(RuntimeEvent.Staking);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_ah_ops.pallet.EnumEvent>(RuntimeEvent.AhOps);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_ah_migrator.pallet.EnumEvent>(RuntimeEvent.AhMigrator);
         }
     }
 }

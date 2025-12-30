@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_state_trie_migration.pa
     
     
     /// <summary>
-    /// >> 390 - Composite[pallet_state_trie_migration.pallet.MigrationLimits]
+    /// >> 373 - Composite[pallet_state_trie_migration.pallet.MigrationLimits]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MigrationLimits : BaseType

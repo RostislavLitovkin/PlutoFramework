@@ -13,7 +13,8 @@
 
             <Grid HeightRequest="40"
                   ColumnSpacing="10"
-                  x:Name="usdGrid">
+                  x:Name="usdGrid"
+                  >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
@@ -21,7 +22,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Entry x:Name="entry"
-                       HorizontalOptions="Start"
+                       HorizontalOptions="Fill"
                        HorizontalTextAlignment="Start"
                        Grid.Column="0"
                        Grid.ColumnSpan="2"
@@ -51,10 +52,10 @@
                             Padding="15,0,15,0"
                             HorizontalOptions="Center">
                         <Label Text="Max"
-                                TextColor="Black"
-                                HorizontalTextAlignment="Center"
-                                VerticalTextAlignment="Center"
-                                HorizontalOptions="Center"
+                               TextColor="Black"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               HorizontalOptions="Center"
                                FontAttributes="Bold"
                             />
 

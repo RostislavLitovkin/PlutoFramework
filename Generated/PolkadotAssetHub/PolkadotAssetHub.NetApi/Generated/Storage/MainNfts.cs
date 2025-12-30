@@ -62,7 +62,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7, PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types.AttributeDeposit>)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9, PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types.AttributeDeposit>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Nfts", "ItemPriceOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32>>)));
@@ -339,7 +339,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         /// >> AttributeParams
         ///  Attributes of a collection.
         /// </summary>
-        public static string AttributeParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6> key)
+        public static string AttributeParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8> key)
         {
             return RequestGenerator.GetStorage("Nfts", "Attribute", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -361,10 +361,10 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         /// >> Attribute
         ///  Attributes of a collection.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7, PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types.AttributeDeposit>> Attribute(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9, PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types.AttributeDeposit>> Attribute(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8> key, string blockhash, CancellationToken token)
         {
             string parameters = NftsStorage.AttributeParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7, PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types.AttributeDeposit>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9, PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types.AttributeDeposit>>(parameters, blockhash, token);
             return result;
         }
         
@@ -805,7 +805,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         /// >> set_attribute
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetAttribute(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> maybe_item, PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace @namespace, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 key, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7 value)
+        public static Method SetAttribute(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> maybe_item, PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace @namespace, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 key, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 value)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -820,7 +820,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         /// >> force_set_attribute
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceSetAttribute(Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32> set_as, Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> maybe_item, PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace @namespace, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 key, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7 value)
+        public static Method ForceSetAttribute(Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32> set_as, Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> maybe_item, PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace @namespace, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 key, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 value)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(set_as.Encode());
@@ -836,7 +836,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         /// >> clear_attribute
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ClearAttribute(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> maybe_item, PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace @namespace, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 key)
+        public static Method ClearAttribute(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> maybe_item, PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types.EnumAttributeNamespace @namespace, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 key)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -877,7 +877,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         /// >> set_metadata
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetMetadata(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Primitive.U32 item, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7 data)
+        public static Method SetMetadata(Substrate.NetApi.Model.Types.Primitive.U32 collection, Substrate.NetApi.Model.Types.Primitive.U32 item, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 data)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -902,7 +902,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         /// >> set_collection_metadata
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetCollectionMetadata(Substrate.NetApi.Model.Types.Primitive.U32 collection, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7 data)
+        public static Method SetCollectionMetadata(Substrate.NetApi.Model.Types.Primitive.U32 collection, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 data)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
@@ -987,7 +987,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         /// >> pay_tips
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method PayTips(PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22 tips)
+        public static Method PayTips(PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14 tips)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(tips.Encode());
@@ -1199,7 +1199,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 MaxDeadlineDuration()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x008D2700");
+            result.Create("0x001A4F00");
             return result;
         }
         

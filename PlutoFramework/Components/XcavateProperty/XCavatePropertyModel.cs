@@ -112,7 +112,7 @@ namespace PlutoFramework.Components.XcavateProperty
                 viewModel.TokensOwned = tokenInfo.Amount;
             }
 
-            await Application.Current.MainPage.Navigation.PushAsync(new PropertyDetailPage(viewModel));
+            await NavigationModel.PushAsync(new PropertyDetailPage(viewModel));
         }
     }
 }

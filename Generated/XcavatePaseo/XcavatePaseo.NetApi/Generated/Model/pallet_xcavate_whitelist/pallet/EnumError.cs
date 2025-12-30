@@ -24,7 +24,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet
         
         /// <summary>
         /// >> RoleAlreadyAssigned
-        /// The role has already been assigned to the usser.
+        /// The role has already been assigned to the user.
         /// </summary>
         RoleAlreadyAssigned = 0,
         
@@ -36,19 +36,25 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet
         
         /// <summary>
         /// >> AlreadyAdmin
-        /// The acount is already registered as an admin.
+        /// The account is already registered as an admin.
         /// </summary>
         AlreadyAdmin = 2,
         
         /// <summary>
         /// >> AccountNotAdmin
-        /// The acount is not registered as an admin.
+        /// The account is not registered as an admin.
         /// </summary>
         AccountNotAdmin = 3,
+        
+        /// <summary>
+        /// >> PermissionAlreadySet
+        /// This permission has already been set.
+        /// </summary>
+        PermissionAlreadySet = 4,
     }
     
     /// <summary>
-    /// >> 532 - Variant[pallet_xcavate_whitelist.pallet.Error]
+    /// >> 557 - Variant[pallet_xcavate_whitelist.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

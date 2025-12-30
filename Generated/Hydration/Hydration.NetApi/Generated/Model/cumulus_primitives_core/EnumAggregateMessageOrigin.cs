@@ -38,7 +38,7 @@ namespace Hydration.NetApi.Generated.Model.cumulus_primitives_core
     }
     
     /// <summary>
-    /// >> 400 - Variant[cumulus_primitives_core.AggregateMessageOrigin]
+    /// >> 392 - Variant[cumulus_primitives_core.AggregateMessageOrigin]
     /// </summary>
     public sealed class EnumAggregateMessageOrigin : BaseEnumRust<AggregateMessageOrigin>
     {

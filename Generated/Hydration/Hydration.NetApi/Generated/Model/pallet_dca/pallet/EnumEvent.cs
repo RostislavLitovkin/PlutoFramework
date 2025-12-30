@@ -69,10 +69,16 @@ namespace Hydration.NetApi.Generated.Model.pallet_dca.pallet
         /// Randomness generation failed possibly coming from missing data about relay chain
         /// </summary>
         RandomnessGenerationFailed = 7,
+        
+        /// <summary>
+        /// >> ReserveUnlocked
+        /// DCA reserve for the given asset have been unlocked for a user
+        /// </summary>
+        ReserveUnlocked = 8,
     }
     
     /// <summary>
-    /// >> 467 - Variant[pallet_dca.pallet.Event]
+    /// >> 459 - Variant[pallet_dca.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -91,6 +97,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_dca.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.sp_runtime.EnumDispatchError>>(Event.Terminated);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.Completed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.sp_runtime.EnumDispatchError>>(Event.RandomnessGenerationFailed);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.ReserveUnlocked);
         }
     }
 }

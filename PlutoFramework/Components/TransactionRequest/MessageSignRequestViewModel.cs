@@ -14,7 +14,7 @@ namespace PlutoFramework.Components.TransactionRequest
 	public partial class MessageSignRequestViewModel : ObservableObject, IPopup, ISetToDefault
     {
         [ObservableProperty]
-        private string signButtonText = "Sing";
+        private string signButtonText = "Sign";
 
         [ObservableProperty]
         private ButtonStateEnum signButtonState = ButtonStateEnum.Enabled;

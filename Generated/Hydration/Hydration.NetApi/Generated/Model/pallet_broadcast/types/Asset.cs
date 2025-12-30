@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_broadcast.types
     
     
     /// <summary>
-    /// >> 487 - Composite[pallet_broadcast.types.Asset]
+    /// >> 479 - Composite[pallet_broadcast.types.Asset]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Asset : BaseType

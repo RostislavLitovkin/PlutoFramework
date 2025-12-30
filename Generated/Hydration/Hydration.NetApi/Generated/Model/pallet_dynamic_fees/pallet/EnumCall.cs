@@ -21,13 +21,48 @@ namespace Hydration.NetApi.Generated.Model.pallet_dynamic_fees.pallet
     /// </summary>
     public enum Call
     {
+        
+        /// <summary>
+        /// >> set_asset_fee
+        /// Set fee configuration for an asset
+        /// 
+        /// This function allows setting either fixed or dynamic fee configuration for a specific asset.
+        /// 
+        /// # Arguments
+        /// * `origin` - Authority origin required
+        /// * `asset_id` - The asset ID to configure
+        /// * `config` - Fee configuration (Fixed or Dynamic)
+        /// </summary>
+        set_asset_fee = 0,
+        
+        /// <summary>
+        /// >> remove_asset_fee
+        /// Remove fee configuration for an asset (will use default parameters)
+        /// 
+        /// This function removes any custom fee configuration for the specified asset.
+        /// After removal, the asset will use the default dynamic fee parameters configured in the runtime.
+        /// 
+        /// # Arguments
+        /// * `origin` - Authority origin required
+        /// * `asset_id` - The asset ID to remove configuration for
+        /// </summary>
+        remove_asset_fee = 1,
     }
     
     /// <summary>
-    /// >> 238 - Variant[pallet_dynamic_fees.pallet.Call]
+    /// >> 228 - Variant[pallet_dynamic_fees.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
-    public sealed class EnumCall : BaseEnum<Call>
+    public sealed class EnumCall : BaseEnumRust<Call>
     {
+        
+        /// <summary>
+        /// Initializes a new instance of the class.
+        /// </summary>
+        public EnumCall()
+        {
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.pallet_dynamic_fees.types.EnumAssetFeeConfig>>(Call.set_asset_fee);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.remove_asset_fee);
+        }
     }
 }

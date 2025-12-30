@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.sp_runtime.traits
     
     
     /// <summary>
-    /// >> 411 - Composite[sp_runtime.traits.BlakeTwo256]
+    /// >> 403 - Composite[sp_runtime.traits.BlakeTwo256]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BlakeTwo256 : BaseType

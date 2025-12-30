@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.vstaging
     
     
     /// <summary>
-    /// >> 325 - Composite[polkadot_primitives.vstaging.DisputeProof]
+    /// >> 330 - Composite[polkadot_primitives.vstaging.DisputeProof]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DisputeProof : BaseType

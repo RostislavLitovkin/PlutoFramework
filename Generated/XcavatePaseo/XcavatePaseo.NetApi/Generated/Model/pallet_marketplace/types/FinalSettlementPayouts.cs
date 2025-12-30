@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
     
     
     /// <summary>
-    /// >> 185 - Composite[pallet_marketplace.types.FinalSettlementPayouts]
+    /// >> 194 - Composite[pallet_marketplace.types.FinalSettlementPayouts]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class FinalSettlementPayouts : BaseType
@@ -27,7 +27,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
         /// <summary>
         /// >> developer_payout
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.Payout DeveloperPayout { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 DeveloperPayout { get; set; }
         /// <summary>
         /// >> developer_account
         /// </summary>
@@ -35,7 +35,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
         /// <summary>
         /// >> spv_lawyer_payout
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.Payout SpvLawyerPayout { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 SpvLawyerPayout { get; set; }
         /// <summary>
         /// >> spv_lawyer_account
         /// </summary>
@@ -43,7 +43,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
         /// <summary>
         /// >> treasury_payout
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.Payout TreasuryPayout { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 TreasuryPayout { get; set; }
         /// <summary>
         /// >> treasury_account
         /// </summary>
@@ -51,7 +51,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
         /// <summary>
         /// >> region_owner_payout
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.Payout RegionOwnerPayout { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 RegionOwnerPayout { get; set; }
         /// <summary>
         /// >> region_owner_account
         /// </summary>
@@ -82,19 +82,19 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            DeveloperPayout = new XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.Payout();
+            DeveloperPayout = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             DeveloperPayout.Decode(byteArray, ref p);
             DeveloperAccount = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             DeveloperAccount.Decode(byteArray, ref p);
-            SpvLawyerPayout = new XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.Payout();
+            SpvLawyerPayout = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             SpvLawyerPayout.Decode(byteArray, ref p);
             SpvLawyerAccount = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             SpvLawyerAccount.Decode(byteArray, ref p);
-            TreasuryPayout = new XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.Payout();
+            TreasuryPayout = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             TreasuryPayout.Decode(byteArray, ref p);
             TreasuryAccount = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             TreasuryAccount.Decode(byteArray, ref p);
-            RegionOwnerPayout = new XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.Payout();
+            RegionOwnerPayout = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
             RegionOwnerPayout.Decode(byteArray, ref p);
             RegionOwnerAccount = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             RegionOwnerAccount.Decode(byteArray, ref p);

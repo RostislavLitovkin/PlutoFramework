@@ -72,7 +72,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.pall
     }
     
     /// <summary>
-    /// >> 277 - Variant[cumulus_pallet_xcmp_queue.pallet.Call]
+    /// >> 268 - Variant[cumulus_pallet_xcmp_queue.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

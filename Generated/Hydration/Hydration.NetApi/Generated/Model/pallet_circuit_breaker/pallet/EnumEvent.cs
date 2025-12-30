@@ -39,10 +39,28 @@ namespace Hydration.NetApi.Generated.Model.pallet_circuit_breaker.pallet
         /// Remove liquidity limit of an asset was changed.
         /// </summary>
         RemoveLiquidityLimitChanged = 2,
+        
+        /// <summary>
+        /// >> AssetLockdown
+        /// Asset went to lockdown
+        /// </summary>
+        AssetLockdown = 3,
+        
+        /// <summary>
+        /// >> AssetLockdownRemoved
+        /// Asset lockdown was removed
+        /// </summary>
+        AssetLockdownRemoved = 4,
+        
+        /// <summary>
+        /// >> DepositReleased
+        /// All reserved amount of deposit was released
+        /// </summary>
+        DepositReleased = 5,
     }
     
     /// <summary>
-    /// >> 430 - Variant[pallet_circuit_breaker.pallet.Event]
+    /// >> 422 - Variant[pallet_circuit_breaker.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -56,6 +74,9 @@ namespace Hydration.NetApi.Generated.Model.pallet_circuit_breaker.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>>(Event.TradeVolumeLimitChanged);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>>>(Event.AddLiquidityLimitChanged);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>>>(Event.RemoveLiquidityLimitChanged);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.AssetLockdown);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.AssetLockdownRemoved);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.DepositReleased);
         }
     }
 }

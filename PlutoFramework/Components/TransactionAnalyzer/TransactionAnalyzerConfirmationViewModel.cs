@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.Buttons;
 using PlutoFramework.Components.DAppConnection;
 using PlutoFramework.Components.Extrinsic;
+using PlutoFramework.Components.Loading;
 using PlutoFramework.Constants;
 using PlutoFramework.Model;
 using PlutoFramework.Model.AjunaExt;
@@ -20,6 +21,10 @@ namespace PlutoFramework.Components.TransactionAnalyzer
 {
     public partial class TransactionAnalyzerConfirmationViewModel : ObservableObject, IPopup, ISetToDefault
     {
+        private TaskCompletionSource<string?> txHashTask = new TaskCompletionSource<string?>();
+
+        private bool enableLoading = false;
+
         [ObservableProperty]
         private ObservableCollection<ExtrinsicEvent> extrinsicEvents = new ObservableCollection<ExtrinsicEvent>();
 
@@ -42,11 +47,16 @@ namespace PlutoFramework.Components.TransactionAnalyzer
         [NotifyPropertyChangedFor(nameof(ProcessedPalletCallName))]
         private string palletCallName;
 
-        public string ProcessedPalletCallName => (string)Application.Current.Resources["TransactionAnalyzerPalletCallNameSubstitution"] ?? PalletCallName;
+        public string ProcessedPalletCallName {
+            get {
+                string palletCallName = (string)Application.Current.Resources["TransactionAnalyzerPalletCallNameSubstitution"];
+
+                return !string.IsNullOrWhiteSpace(palletCallName) ? palletCallName : PalletCallName;
+            }
+        }
 
         [ObservableProperty]
         private TempPayload payload;
-
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(ExtrinsicFailedIsVisible))]
@@ -56,7 +66,6 @@ namespace PlutoFramework.Components.TransactionAnalyzer
         public string ProcessedExtrinsicFailedMessage => ExtrinsicFailedMessage.Substring(ExtrinsicFailedMessage.IndexOf(':') + 1);
 
         public bool ExtrinsicFailedIsVisible => ExtrinsicFailedMessage != "";
-
 
         [ObservableProperty]
         private ButtonStateEnum confirmButtonState = ButtonStateEnum.Enabled;
@@ -74,7 +83,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
         [ObservableProperty]
         private Func<Task> onConfirm;
 
-        public async Task LoadAsync(SubstrateClientExt client, Method method, bool showDAppView = false, Func<Task>? onConfirm = null, CancellationToken token = default)
+        public async Task<string?> LoadAsync(SubstrateClientExt client, Method method, bool showDAppView = false, Func<Task>? onConfirm = null, bool enableLoading = false, CancellationToken token = default)
         {
             var account = new ChopsticksMockAccount();
             account.Create(KeyType.Sr25519, KeysModel.GetPublicKeyBytes());
@@ -83,10 +92,25 @@ namespace PlutoFramework.Components.TransactionAnalyzer
             var extrinsic = await client.GetTempUnCheckedExtrinsicAsync(method, account, lifeTime: 64, token: token);
             #endregion
 
-            await LoadAsync(client, extrinsic, showDAppView, onConfirm);
+            return await LoadAsync(client, extrinsic, showDAppView, onConfirm, enableLoading);
         }
-        public async Task LoadAsync(SubstrateClientExt client, TempUnCheckedExtrinsic unCheckedExtrinsic, bool showDAppView, Func<Task>? onConfirm = null, RuntimeVersion? runtimeVersion = null)
+
+        public async Task<string?> LoadAsync(SubstrateClientExt client, TempUnCheckedExtrinsic unCheckedExtrinsic, bool showDAppView, Func<Task>? onConfirm = null, bool enableLoading = false, RuntimeVersion? runtimeVersion = null)
         {
+
+            this.enableLoading = enableLoading;
+            // Reset txHashTask
+            try
+            {
+                txHashTask.TrySetResult(null);
+            }
+            catch
+            {
+
+            }
+
+            txHashTask = new TaskCompletionSource<string?>();
+
             CancellationToken token = CancellationToken.None;
 
             OnConfirm = onConfirm is null ? OnConfirmClickedAsync : onConfirm;
@@ -99,8 +123,6 @@ namespace PlutoFramework.Components.TransactionAnalyzer
             Payload = unCheckedExtrinsic.GetPayload(runtimeVersion ?? client.SubstrateClient.RuntimeVersion);
 
             var dAppConnectionViewModel = DependencyService.Get<DAppConnectionViewModel>();
-
-
 
             if (showDAppView)
             {
@@ -197,7 +219,6 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                         var fromXcavatePropertyChanges = await TransactionAnalyzerModel.AnalyzeXcavatePropertyChangesInEventsAsync(client, fromExtrinsicDetails.Events, client.Endpoint, CancellationToken.None);
 
                         xcavatePropertyChanges = await TransactionAnalyzerModel.AnalyzeXcavatePropertyChangesInEventsAsync(client, toExtrinsicDetails.Events, client.Endpoint, CancellationToken.None, existingPropertyChanges: fromXcavatePropertyChanges);
-
                     }
                 }
                 ;
@@ -219,10 +240,18 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                 EstimatedFee = "Estimated fee: Unknown";
             }
             #endregion
+
+            return await txHashTask.Task;
         }
 
-        public static async Task OnConfirmClickedAsync()
+        public async Task OnConfirmClickedAsync()
         {
+            if (enableLoading)
+            {
+                var loading = DependencyService.Get<FullPageLoadingViewModel>();
+                loading.IsVisible = true;
+            }
+
             var account = await KeysModel.GetAccountAsync();
 
             if (account is null)
@@ -239,7 +268,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
 
             try
             {
-                string extrinsicId = await clientExt.SubmitExtrinsicAsync(transactionAnalyzerConfirmationViewModel.Payload.Call, account, token: CancellationToken.None);
+                string extrinsicId = await clientExt.SubmitExtrinsicAsync(transactionAnalyzerConfirmationViewModel.Payload.Call, account, txHash: txHashTask, token: CancellationToken.None);
             }
             catch (Exception ex)
             {
@@ -323,7 +352,6 @@ namespace PlutoFramework.Components.TransactionAnalyzer
 
             ExtrinsicEvents = new ObservableCollection<ExtrinsicEvent>();
 
-
             var analyzedOutcomeViewModel = DependencyService.Get<AnalyzedOutcomeViewModel>();
             analyzedOutcomeViewModel.SetToDefault();
         }
@@ -350,7 +378,7 @@ namespace PlutoFramework.Components.TransactionAnalyzer
                 EncodedCall = Payload.Call.Encode(),
             };
 
-            await Application.Current.MainPage.Navigation.PushAsync(new CallDetailPage(viewModel));
+            await NavigationModel.PushAsync(new CallDetailPage(viewModel));
         }
     }
 }

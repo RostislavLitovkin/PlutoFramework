@@ -1303,7 +1303,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.sp_runtime.generic.era
     }
     
     /// <summary>
-    /// >> 627 - Variant[sp_runtime.generic.era.Era]
+    /// >> 639 - Variant[sp_runtime.generic.era.Era]
     /// </summary>
     public sealed class EnumEra : BaseEnumRust<Era>
     {

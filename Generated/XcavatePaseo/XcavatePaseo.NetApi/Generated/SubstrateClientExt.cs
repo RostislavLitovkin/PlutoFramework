@@ -105,9 +105,19 @@ namespace XcavatePaseo.NetApi.Generated
         public AssetsHolderStorage AssetsHolderStorage;
         
         /// <summary>
+        /// AssetsFreezerStorage storage calls.
+        /// </summary>
+        public AssetsFreezerStorage AssetsFreezerStorage;
+        
+        /// <summary>
         /// MultisigStorage storage calls.
         /// </summary>
         public MultisigStorage MultisigStorage;
+        
+        /// <summary>
+        /// ParametersStorage storage calls.
+        /// </summary>
+        public ParametersStorage ParametersStorage;
         
         /// <summary>
         /// NftsStorage storage calls.
@@ -185,9 +195,9 @@ namespace XcavatePaseo.NetApi.Generated
         public RegionsStorage RegionsStorage;
         
         /// <summary>
-        /// RealEstateAssetStorage storage calls.
+        /// RealWorldAssetStorage storage calls.
         /// </summary>
-        public RealEstateAssetStorage RealEstateAssetStorage;
+        public RealWorldAssetStorage RealWorldAssetStorage;
         
         /// <summary>
         /// MarketplaceStorage storage calls.
@@ -243,7 +253,9 @@ namespace XcavatePaseo.NetApi.Generated
             this.TransactionPaymentStorage = new TransactionPaymentStorage(this);
             this.RealEstateAssetsStorage = new RealEstateAssetsStorage(this);
             this.AssetsHolderStorage = new AssetsHolderStorage(this);
+            this.AssetsFreezerStorage = new AssetsFreezerStorage(this);
             this.MultisigStorage = new MultisigStorage(this);
+            this.ParametersStorage = new ParametersStorage(this);
             this.NftsStorage = new NftsStorage(this);
             this.NftFractionalizationStorage = new NftFractionalizationStorage(this);
             this.AuthoritiesNotingStorage = new AuthoritiesNotingStorage(this);
@@ -259,7 +271,7 @@ namespace XcavatePaseo.NetApi.Generated
             this.WeightReclaimStorage = new WeightReclaimStorage(this);
             this.XcavateWhitelistStorage = new XcavateWhitelistStorage(this);
             this.RegionsStorage = new RegionsStorage(this);
-            this.RealEstateAssetStorage = new RealEstateAssetStorage(this);
+            this.RealWorldAssetStorage = new RealWorldAssetStorage(this);
             this.MarketplaceStorage = new MarketplaceStorage(this);
             this.PropertyManagementStorage = new PropertyManagementStorage(this);
             this.PropertyGovernanceStorage = new PropertyGovernanceStorage(this);

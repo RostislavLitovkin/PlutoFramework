@@ -7,15 +7,18 @@
                        xmlns:subscan="clr-namespace:PlutoFramework.Components.Subscan"
                        x:Class="PlutoFramework.Components.Extrinsic.ExtrinsicDetailPage"
                        Title="Extrinsic detail">
-    <VerticalStackLayout HorizontalOptions="Center"
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
+        <VerticalStackLayout HorizontalOptions="Center"
                          Padding="20, 20, 20, 100"
                          Spacing="15">
-        <events:EventsListView x:Name="eventsListView" />
+            <events:EventsListView x:Name="eventsListView" />
 
-        <subscan:OpenSubscanButton x:Name="subscanButton">
-            <subscan:OpenSubscanButton.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnOpenSubscanClicked" />
-            </subscan:OpenSubscanButton.GestureRecognizers>
-        </subscan:OpenSubscanButton>
-    </VerticalStackLayout>
+            <subscan:OpenSubscanButton x:Name="subscanButton">
+                <subscan:OpenSubscanButton.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnOpenSubscanClicked" />
+                </subscan:OpenSubscanButton.GestureRecognizers>
+            </subscan:OpenSubscanButton>
+        </VerticalStackLayout>
+    </ScrollView>
 </template:PageTemplate>

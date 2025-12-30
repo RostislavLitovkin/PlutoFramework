@@ -6,69 +6,72 @@
                    xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
                      xmlns:hyperlink="clr-namespace:PlutoFramework.Components.Hyperlink"
                      Title="Questionnaire passed">
-    <VerticalStackLayout>
-        <Label HorizontalOptions="Center"
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
+        <VerticalStackLayout>
+            <Label HorizontalOptions="Center"
                 HorizontalTextAlignment="Center"
                 LineBreakMode="WordWrap"
                 Margin="30, 50, 30, 10"
                 FontSize="20">
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span FontAttributes="Bold"
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold"
                           Text="{Binding Text}"/>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
-        <Label HorizontalOptions="Center"
+            <Label HorizontalOptions="Center"
                 HorizontalTextAlignment="Center"
                 LineBreakMode="WordWrap"
                 Margin="20, 50, 20, 20">
-            <Label.FormattedText>
-                <FormattedString>
-                    <hyperlink:Link Text="Terms and Conditions"
+                <Label.FormattedText>
+                    <FormattedString>
+                        <hyperlink:Link Text="Terms and Conditions"
                                     Url="https://realxmarket.xcavate.io/terms"/>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
-        <Label HorizontalOptions="Center"
+            <Label HorizontalOptions="Center"
                 HorizontalTextAlignment="Center"
                 LineBreakMode="WordWrap"
                 Margin="20, 0, 20, 20">
-            <Label.FormattedText>
-                <FormattedString>
-                    <hyperlink:Link Text="Agreement"
+                <Label.FormattedText>
+                    <FormattedString>
+                        <hyperlink:Link Text="Agreement"
                     Url="https://realxmarket.xcavate.io/agreement"/>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
-        <Label HorizontalOptions="Center"
+            <Label HorizontalOptions="Center"
                 HorizontalTextAlignment="Center"
                 LineBreakMode="WordWrap"
                 Margin="20, 0, 20, 20">
-            <Label.FormattedText>
-                <FormattedString>
-                    <hyperlink:Link Text="Privacy policy"
+                <Label.FormattedText>
+                    <FormattedString>
+                        <hyperlink:Link Text="Privacy policy"
                             Url="https://realxmarket.xcavate.io/privacy"/>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
-        <HorizontalStackLayout HorizontalOptions="Center"
+            <HorizontalStackLayout HorizontalOptions="Center"
                                Spacing="5"
                                Margin="30, 0, 30, 20">
-            
-            <CheckBox IsChecked="{Binding Agreed}"
+
+                <CheckBox IsChecked="{Binding Agreed}"
                       VerticalOptions="Center" />
-            
-            <Label Text="I accept the privacy, terms and agreement"
+
+                <Label Text="I accept the privacy, terms and agreement"
                    TextColor="Gray"
                    VerticalOptions="Center"/>
-            
-        </HorizontalStackLayout>
-    </VerticalStackLayout>
+
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 
     <page:PageTemplate.PopupContent>
         <xcavate:PageBottomBarButtonView Text="Continue"

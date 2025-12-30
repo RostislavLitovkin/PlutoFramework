@@ -188,7 +188,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_uniques.pallet
     }
     
     /// <summary>
-    /// >> 133 - Variant[pallet_uniques.pallet.Event]
+    /// >> 184 - Variant[pallet_uniques.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -214,13 +214,13 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_uniques.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32, PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.ApprovedTransfer);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32, PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.ApprovalCancelled);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.ItemStatusChanged);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4, Substrate.NetApi.Model.Types.Primitive.Bool>>(Event.CollectionMetadataSet);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6, Substrate.NetApi.Model.Types.Primitive.Bool>>(Event.CollectionMetadataSet);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.CollectionMetadataCleared);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4, Substrate.NetApi.Model.Types.Primitive.Bool>>(Event.MetadataSet);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6, Substrate.NetApi.Model.Types.Primitive.Bool>>(Event.MetadataSet);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.MetadataCleared);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U32>>>(Event.Redeposited);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6>>(Event.AttributeSet);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5>>(Event.AttributeCleared);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8>>(Event.AttributeSet);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7>>(Event.AttributeCleared);
 				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>>>(Event.OwnershipAcceptanceChanged);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.CollectionMaxSupplySet);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32>>>(Event.ItemPriceSet);

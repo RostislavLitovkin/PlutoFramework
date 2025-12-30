@@ -120,11 +120,13 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         
         /// <summary>
         /// >> ArithmeticOverflow
+        /// Arithmetic overflow occurred.
         /// </summary>
         ArithmeticOverflow = 16,
         
         /// <summary>
         /// >> ArithmeticUnderflow
+        /// Arithmetic underflow occurred.
         /// </summary>
         ArithmeticUnderflow = 17,
         
@@ -177,68 +179,104 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         NoOngoingAuction = 25,
         
         /// <summary>
-        /// >> UserNotWhitelisted
-        /// User did not pass the kyc.
-        /// </summary>
-        UserNotWhitelisted = 26,
-        
-        /// <summary>
         /// >> BidTooLow
         /// The bid is lower than the current highest bid.
         /// </summary>
-        BidTooLow = 27,
+        BidTooLow = 26,
         
         /// <summary>
         /// >> SaleOngoing
         /// There is already a sale ongoing.
         /// </summary>
-        SaleOngoing = 28,
+        SaleOngoing = 27,
         
         /// <summary>
         /// >> PropertySaleProposalOngoing
         /// There is already a sale proposal ongoing.
         /// </summary>
-        PropertySaleProposalOngoing = 29,
+        PropertySaleProposalOngoing = 28,
         
         /// <summary>
         /// >> BuyerNotSet
         /// No buyer has been set.
         /// </summary>
-        BuyerNotSet = 30,
+        BuyerNotSet = 29,
         
         /// <summary>
         /// >> NoReserve
         /// No reserve has been set for the sale.
         /// </summary>
-        NoReserve = 31,
+        NoReserve = 30,
         
         /// <summary>
         /// >> ZeroTokenAmount
         /// Token amount is zero.
         /// </summary>
-        ZeroTokenAmount = 32,
+        ZeroTokenAmount = 31,
         
         /// <summary>
         /// >> TooManyAssignedProperties
         /// The letting agent has already too many assigned properties.
         /// </summary>
-        TooManyAssignedProperties = 33,
+        TooManyAssignedProperties = 32,
         
         /// <summary>
         /// >> ChallengeAlreadyOngoing
         /// A challenge against a letting agent is already ongoing.
         /// </summary>
-        ChallengeAlreadyOngoing = 34,
+        ChallengeAlreadyOngoing = 33,
         
         /// <summary>
-        /// >> TooManyVoters
-        /// There are already too many voters for this voting.
+        /// >> NoFrozenAmount
+        /// The user has no token amount frozen.
         /// </summary>
-        TooManyVoters = 35,
+        NoFrozenAmount = 34,
+        
+        /// <summary>
+        /// >> VotingStillOngoing
+        /// The voting is still ongoing.
+        /// </summary>
+        VotingStillOngoing = 35,
+        
+        /// <summary>
+        /// >> ProposalOngoing
+        /// A proposal is already ongoing.
+        /// </summary>
+        ProposalOngoing = 36,
+        
+        /// <summary>
+        /// >> ZeroVoteAmount
+        /// The amount for voting has to be higher than 0.
+        /// </summary>
+        ZeroVoteAmount = 37,
+        
+        /// <summary>
+        /// >> ZeroAmount
+        /// Proposal amount can not be 0.
+        /// </summary>
+        ZeroAmount = 38,
+        
+        /// <summary>
+        /// >> LegalProcessFailed
+        /// The legal process was not finished on time.
+        /// </summary>
+        LegalProcessFailed = 39,
+        
+        /// <summary>
+        /// >> LegalProcessOngoing
+        /// The legal process is currently ongoing.
+        /// </summary>
+        LegalProcessOngoing = 40,
+        
+        /// <summary>
+        /// >> LegalExpiryNotSet
+        /// Legal process expiry has not ben set.
+        /// </summary>
+        LegalExpiryNotSet = 41,
     }
     
     /// <summary>
-    /// >> 605 - Variant[pallet_property_governance.pallet.Error]
+    /// >> 618 - Variant[pallet_property_governance.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

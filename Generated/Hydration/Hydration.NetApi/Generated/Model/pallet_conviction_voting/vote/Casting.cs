@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_conviction_voting.vote
     
     
     /// <summary>
-    /// >> 611 - Composite[pallet_conviction_voting.vote.Casting]
+    /// >> 595 - Composite[pallet_conviction_voting.vote.Casting]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Casting : BaseType
@@ -27,7 +27,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_conviction_voting.vote
         /// <summary>
         /// >> votes
         /// </summary>
-        public Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41 Votes { get; set; }
+        public Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40 Votes { get; set; }
         /// <summary>
         /// >> delegations
         /// </summary>
@@ -57,7 +57,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_conviction_voting.vote
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Votes = new Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41();
+            Votes = new Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40();
             Votes.Decode(byteArray, ref p);
             Delegations = new Hydration.NetApi.Generated.Model.pallet_conviction_voting.types.Delegations();
             Delegations.Decode(byteArray, ref p);

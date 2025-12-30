@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_parachain_syste
     
     
     /// <summary>
-    /// >> 182 - Composite[cumulus_pallet_parachain_system.unincluded_segment.UsedBandwidth]
+    /// >> 716 - Composite[cumulus_pallet_parachain_system.unincluded_segment.UsedBandwidth]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UsedBandwidth : BaseType
@@ -35,7 +35,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_parachain_syste
         /// <summary>
         /// >> hrmp_outgoing
         /// </summary>
-        public PolkadotAssetHub.NetApi.Generated.Types.Base.BTreeMapT1 HrmpOutgoing { get; set; }
+        public PolkadotAssetHub.NetApi.Generated.Types.Base.BTreeMapT3 HrmpOutgoing { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -61,7 +61,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_parachain_syste
             UmpMsgCount.Decode(byteArray, ref p);
             UmpTotalBytes = new Substrate.NetApi.Model.Types.Primitive.U32();
             UmpTotalBytes.Decode(byteArray, ref p);
-            HrmpOutgoing = new PolkadotAssetHub.NetApi.Generated.Types.Base.BTreeMapT1();
+            HrmpOutgoing = new PolkadotAssetHub.NetApi.Generated.Types.Base.BTreeMapT3();
             HrmpOutgoing.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

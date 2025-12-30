@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
     
     
     /// <summary>
-    /// >> 393 - Composite[pallet_bucket.types.MessageMetadataInput]
+    /// >> 413 - Composite[pallet_bucket.types.MessageMetadataInput]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MessageMetadataInput : BaseType
@@ -39,7 +39,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
         /// <summary>
         /// >> properties
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1 Properties { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT3 Properties { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -68,7 +68,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
             ContentType.Decode(byteArray, ref p);
             ContentHash = new XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8();
             ContentHash.Decode(byteArray, ref p);
-            Properties = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT1();
+            Properties = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT3();
             Properties.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

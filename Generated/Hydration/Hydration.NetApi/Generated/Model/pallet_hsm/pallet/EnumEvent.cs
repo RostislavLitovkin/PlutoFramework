@@ -42,7 +42,6 @@ namespace Hydration.NetApi.Generated.Model.pallet_hsm.pallet
         /// 
         /// Parameters:
         /// - `asset_id`: The ID of the asset removed from collaterals
-        /// - `amount`: The amount of the asset that was returned (should be zero)
         /// </summary>
         CollateralRemoved = 1,
         
@@ -80,7 +79,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_hsm.pallet
     }
     
     /// <summary>
-    /// >> 448 - Variant[pallet_hsm.pallet.Event]
+    /// >> 440 - Variant[pallet_hsm.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -92,9 +91,9 @@ namespace Hydration.NetApi.Generated.Model.pallet_hsm.pallet
         public EnumEvent()
         {
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill, Hydration.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill>>(Event.CollateralAdded);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.CollateralRemoved);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.CollateralRemoved);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill>>>(Event.CollateralUpdated);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.ArbitrageExecuted);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U8, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.ArbitrageExecuted);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.primitive_types.H160>(Event.FlashMinterSet);
         }
     }

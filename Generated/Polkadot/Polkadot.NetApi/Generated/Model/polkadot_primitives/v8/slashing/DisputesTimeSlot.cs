@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.slashing
     
     
     /// <summary>
-    /// >> 326 - Composite[polkadot_primitives.v8.slashing.DisputesTimeSlot]
+    /// >> 331 - Composite[polkadot_primitives.v8.slashing.DisputesTimeSlot]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DisputesTimeSlot : BaseType

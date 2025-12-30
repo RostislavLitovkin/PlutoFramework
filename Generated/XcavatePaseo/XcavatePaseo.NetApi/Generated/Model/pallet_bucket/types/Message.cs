@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
     
     
     /// <summary>
-    /// >> 611 - Composite[pallet_bucket.types.Message]
+    /// >> 623 - Composite[pallet_bucket.types.Message]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Message : BaseType

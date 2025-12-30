@@ -349,23 +349,23 @@ namespace PlutoFramework.Components.Nft
         }
 
         [RelayCommand]
-        public Task ShowAllOwnedNftsAsync() => Application.Current.MainPage.Navigation.PushAsync(new NftListPage(new OwnedNftsListViewModel()));
+        public Task ShowAllOwnedNftsAsync() => NavigationModel.PushAsync(new NftListPage(new OwnedNftsListViewModel()));
 
         [RelayCommand]
-        public Task ShowAllFavouriteNftsAsync() => Application.Current.MainPage.Navigation.PushAsync(new NftListPage(new FavouriteNftsListViewModel()));
+        public Task ShowAllFavouriteNftsAsync() => NavigationModel.PushAsync(new NftListPage(new FavouriteNftsListViewModel()));
 
         [RelayCommand]
-        public Task ShowAllOwnedCollectionsAsync() => Application.Current.MainPage.Navigation.PushAsync(new CollectionListPage(new OwnedCollectionsListViewModel()));
+        public Task ShowAllOwnedCollectionsAsync() => NavigationModel.PushAsync(new CollectionListPage(new OwnedCollectionsListViewModel()));
 
         [RelayCommand]
-        public Task ShowAllFavouriteCollectionsAsync() => Application.Current.MainPage.Navigation.PushAsync(new CollectionListPage(new FavouriteCollectionsListViewModel()));
+        public Task ShowAllFavouriteCollectionsAsync() => NavigationModel.PushAsync(new CollectionListPage(new FavouriteCollectionsListViewModel()));
 
         #region Search
         [ObservableProperty]
         private string searchText = "";
 
         [RelayCommand]
-        public Task SearchAsync() => Application.Current.MainPage.Navigation.PushAsync(new NftListPage(new SearchByNameNftsListViewModel(SearchText)));
+        public Task SearchAsync() => NavigationModel.PushAsync(new NftListPage(new SearchByNameNftsListViewModel(SearchText)));
         #endregion
     }
 }

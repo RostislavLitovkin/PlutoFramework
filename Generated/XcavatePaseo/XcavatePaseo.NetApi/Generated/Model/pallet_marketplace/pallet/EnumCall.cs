@@ -27,7 +27,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet
         /// List a real estate object. A new nft gets minted.
         /// This function calls the nfts-pallet to mint a new nft and sets the Metadata.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RealEstateDeveloper and have sufficient funds.
         /// 
         /// Parameters:
         /// - `region`: The region where the object is located.
@@ -37,7 +37,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet
         /// - `data`: The Metadata of the nft.
         /// - `tax_paid_by_developer`: Bool if the tax is paid by the real estate developer or not.
         /// 
-        /// Emits `ObjectListed` event when succesfful
+        /// Emits `ObjectListed` event when successful
         /// </summary>
         list_property = 0,
         
@@ -45,14 +45,14 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet
         /// >> buy_property_token
         /// Buy listed token from the marketplace.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a compliant RealEstateInvestor and have sufficient funds.
         /// 
         /// Parameters:
         /// - `listing_id`: The listing that the investor wants to buy token from.
         /// - `amount`: The amount of token that the investor wants to buy.
         /// - `payment_asset`: Asset in which the investor wants to pay.
         /// 
-        /// Emits `PropertyTokenBought` event when succesfful.
+        /// Emits `PropertyTokenBought` event when successful.
         /// </summary>
         buy_property_token = 1,
         
@@ -60,34 +60,47 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet
         /// >> claim_property_token
         /// Claim purchased property token once all token are sold.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a compliant RealEstateInvestor and have sufficient funds.
         /// 
         /// Parameters:
         /// - `listing_id`: The listing that the investor wants to claim token from.
         /// 
-        /// Emits `PropertyTokenClaimed` event when succesfful.
+        /// Emits `PropertyTokenClaimed` event when successful.
         /// </summary>
         claim_property_token = 2,
+        
+        /// <summary>
+        /// >> finalize_claim_window
+        /// Finalizes a claim period once it is over.
+        /// 
+        /// The origin must be signed and have sufficient funds.
+        /// 
+        /// Parameters:
+        /// - `listing_id`: The listing that the investor wants to finalize the claim window from
+        /// 
+        /// Emits `PropertyTokenClaimed` event when successful.
+        /// </summary>
+        finalize_claim_window = 3,
         
         /// <summary>
         /// >> create_spv
         /// Confirm that a spv has been created.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a SpvConfirmation and have sufficient funds.
         /// 
         /// Parameters:
         /// - `listing_id`: The listing that the spv has been created for.
         /// 
-        /// Emits `SpvCreated` event when succesfful.
+        /// Emits `SpvCreated` event when successful.
         /// </summary>
-        create_spv = 3,
+        create_spv = 4,
         
         /// <summary>
         /// >> relist_token
         /// Relist token on the marketplace.
         /// The property must be registered on the marketplace.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RealEstateInvestor and have sufficient funds.
         /// 
         /// Parameters:
         /// - `region`: The region where the object is located.
@@ -95,43 +108,43 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet
         /// - `token_price`: The price of a single token.
         /// - `amount`: The amount of token of the real estate object that should be listed.
         /// 
-        /// Emits `TokenRelisted` event when succesfful
+        /// Emits `TokenRelisted` event when successful
         /// </summary>
-        relist_token = 4,
+        relist_token = 5,
         
         /// <summary>
         /// >> buy_relisted_token
         /// Buy token from the marketplace.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a compliant RealEstateInvestor and have sufficient funds.
         /// 
         /// Parameters:
         /// - `listing_id`: The listing that the investor wants to buy from.
         /// - `amount`: The amount of token the investor wants to buy.
         /// - `payment_asset`: Asset in which the investor wants to pay.
         /// 
-        /// Emits `RelistedTokenBought` event when succesfful.
+        /// Emits `RelistedTokenBought` event when successful.
         /// </summary>
-        buy_relisted_token = 5,
+        buy_relisted_token = 6,
         
         /// <summary>
         /// >> cancel_property_purchase
         /// Lets a investor cancel the property token purchase.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RealEstateInvestor and have sufficient funds.
         /// 
         /// Parameters:
         /// - `listing_id`: The listing that the investor wants to buy from.
         /// 
-        /// Emits `InvestmentCancelled` event when succesfful.
+        /// Emits `InvestmentCancelled` event when successful.
         /// </summary>
-        cancel_property_purchase = 6,
+        cancel_property_purchase = 7,
         
         /// <summary>
         /// >> make_offer
         /// Created an offer for a token listing.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a compliant RealEstateInvestor and have sufficient funds.
         /// 
         /// Parameters:
         /// - `listing_id`: The listing that the investor wants to buy from.
@@ -139,220 +152,259 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet
         /// - `amount`: The amount of token that the investor wants to buy.
         /// - `payment_asset`: Asset in which the investor wants to pay.
         /// 
-        /// Emits `OfferCreated` event when succesfful.
+        /// Emits `OfferCreated` event when successful.
         /// </summary>
-        make_offer = 7,
+        make_offer = 8,
         
         /// <summary>
         /// >> handle_offer
         /// Lets the investor handle an offer.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RealEstateInvestor and have sufficient funds.
         /// 
         /// Parameters:
         /// - `listing_id`: The listing that the investor wants to buy from.
         /// - `offeror`: AccountId of the person that the seller wants to handle the offer from.
         /// - `offer`: Enum for offer which is either Accept or Reject.
         /// 
-        /// Emits `OfferAccepted` event when offer gets accepted succesffully.
-        /// Emits `OfferRejected` event when offer gets rejected succesffully.
+        /// Emits `OfferAccepted` event when offer gets accepted successfully.
+        /// Emits `OfferRejected` event when offer gets rejected successfully.
         /// </summary>
-        handle_offer = 8,
+        handle_offer = 9,
         
         /// <summary>
         /// >> cancel_offer
         /// Lets the investor cancel an offer.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RealEstateInvestor and have sufficient funds.
         /// 
         /// Parameters:
         /// - `listing_id`: The listing that the investor wants to buy from.
         /// 
-        /// Emits `OfferCancelled` event when succesfful.
+        /// Emits `OfferCancelled` event when successful.
         /// </summary>
-        cancel_offer = 9,
+        cancel_offer = 10,
         
         /// <summary>
         /// >> withdraw_rejected
         /// Lets the investor withdraw his funds after a property deal was unsuccessful.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RealEstateInvestor and have sufficient funds.
         /// 
         /// Parameters:
         /// - `listing_id`: The listing that the investor wants to withdraw from.
         /// 
-        /// Emits `RejectedFundsWithdrawn` event when succesfful.
+        /// Emits `RejectedFundsWithdrawn` event when successful.
         /// </summary>
-        withdraw_rejected = 10,
+        withdraw_rejected = 11,
         
         /// <summary>
         /// >> withdraw_legal_process_expired
         /// Lets the investor withdraw his funds after a property deal expired.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RealEstateInvestor and have sufficient funds.
         /// 
         /// Parameters:
         /// - `listing_id`: The listing that the investor wants to withdraw from.
         /// 
-        /// Emits `ExpiredFundsWithdrawn` event when succesfful.
+        /// Emits `ExpiredFundsWithdrawn` event when successful.
         /// </summary>
-        withdraw_legal_process_expired = 11,
+        withdraw_legal_process_expired = 12,
         
         /// <summary>
         /// >> withdraw_expired
         /// Lets the investor unfreeze his funds after a property listing expired.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RealEstateInvestor and have sufficient funds.
         /// 
         /// Parameters:
         /// - `listing_id`: The listing that the investor wants to buy from.
         /// 
-        /// Emits `ExpiredFundsWithdrawn` event when succesfful.
+        /// Emits `ExpiredFundsWithdrawn` event when successful.
         /// </summary>
-        withdraw_expired = 12,
+        withdraw_expired = 13,
         
         /// <summary>
         /// >> withdraw_deposit_unsold
         /// Lets the real estate developer withdraw his deposit in case no token have been sold.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RealEstateDeveloper and have sufficient funds.
         /// 
         /// Parameters:
         /// - `listing_id`: The listing that the caller wants to withdraw the deposit from.
         /// 
-        /// Emits `DeveloperDepositReturned` event when succesfful.
+        /// Emits `DeveloperDepositReturned` event when successful.
         /// </summary>
-        withdraw_deposit_unsold = 13,
+        withdraw_deposit_unsold = 14,
+        
+        /// <summary>
+        /// >> withdraw_claiming_expired
+        /// Lets the real estate investor withdraw his funds in case the sale is cancelled.
+        /// 
+        /// The origin must be Signed by a RealEstateInvestor and have sufficient funds.
+        /// 
+        /// Parameters:
+        /// - `listing_id`: The listing that the caller wants to withdraw the funds from.
+        /// 
+        /// Emits `RejectedFundsWithdrawn` event when successful.
+        /// </summary>
+        withdraw_claiming_expired = 15,
+        
+        /// <summary>
+        /// >> withdraw_unclaimed
+        /// Lets the real estate investor unfreeze his funds in case the claiming window expired.
+        /// 
+        /// The origin must be Signed by a RealEstateInvestor and have sufficient funds.
+        /// 
+        /// Parameters:
+        /// - `listing_id`: The listing that the caller wants to unfreeze the funds from.
+        /// 
+        /// Emits `UnclaimedTokenWithdrawn` event when successful.
+        /// </summary>
+        withdraw_unclaimed = 16,
         
         /// <summary>
         /// >> upgrade_object
-        /// Upgrade the price from a listed object.
+        /// Allows a real estate developer to update the price of a listed property.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RealEstateDeveloper and have sufficient funds.
         /// 
         /// Parameters:
         /// - `listing_id`: The listing that the seller wants to update.
         /// - `new_price`: The new price of the object.
         /// 
-        /// Emits `ObjectUpdated` event when succesfful.
+        /// Emits `ObjectUpdated` event when successful.
         /// </summary>
-        upgrade_object = 14,
+        upgrade_object = 17,
         
         /// <summary>
         /// >> delist_token
-        /// Delist the choosen listing from the marketplace.
-        /// Works only for relisted token.
+        /// Allows a real estate investor to delist (remove) a relisted token from the marketplace.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RealEstateInvestor and have sufficient funds.
         /// 
         /// Parameters:
         /// - `listing_id`: The listing that the seller wants to delist.
         /// 
-        /// Emits `ListingDelisted` event when succesfful.
+        /// Emits `ListingDelisted` event when successful.
         /// </summary>
-        delist_token = 15,
+        delist_token = 18,
         
         /// <summary>
         /// >> lawyer_claim_property
         /// Lets a lawyer claim a property to handle the legal work.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a Lawyer and have sufficient funds.
         /// 
         /// Parameters:
         /// - `listing_id`: The listing from the property.
         /// - `legal_side`: The side that the lawyer wants to represent.
         /// - `costs`: The costs thats the lawyer demands for his work.
         /// 
-        /// Emits `DeveloperLawyerProposed` event when succesfful.
+        /// Emits `DeveloperLawyerProposed` event or `SpvLawyerProposed` event when successful.
         /// </summary>
-        lawyer_claim_property = 16,
+        lawyer_claim_property = 19,
         
         /// <summary>
         /// >> vote_on_spv_lawyer
-        /// Lets token buyer vote for a lawyer to represent the spv.
+        /// Allows a token holder (real estate investor) to vote on the lawyer that will represent the SPV.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RealEstateInvestor and have sufficient funds.
         /// 
         /// Parameters:
         /// - `listing_id`: The listing from the property.
         /// - `vote`: Must be either a Yes vote or a No vote.
+        /// - `amount`: The amount of property token that the investor is using for voting.
         /// 
-        /// Emits `VotedOnLawyer` event when succesfful.
+        /// Emits `VotedOnLawyer` event when successful.
         /// </summary>
-        vote_on_spv_lawyer = 17,
+        vote_on_spv_lawyer = 20,
         
         /// <summary>
         /// >> approve_developer_lawyer
-        /// Lets the real estate developer approve or reject a lawyer.
+        /// Allows the Real Estate Developer to approve or reject a proposed lawyer.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RealEstateDeveloper and have sufficient funds.
         /// 
         /// Parameters:
         /// - `listing_id`: The listing from the property.
         /// - `approve`: Approves or rejects the lawyer.
         /// 
-        /// Emits `RealEstateLawyerProposalFinalized` event when succesfful.
+        /// Emits `RealEstateLawyerProposalFinalized` event when successful.
         /// </summary>
-        approve_developer_lawyer = 18,
+        approve_developer_lawyer = 21,
         
         /// <summary>
         /// >> finalize_spv_lawyer
         /// Finalizes the spv lawyer voting.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be signed and have sufficient funds.
         /// 
         /// Parameters:
         /// - `listing_id`: The listing from the property.
         /// 
-        /// Emits `SpvLawyerVoteFinalized` event when succesfful.
+        /// Emits `SpvLawyerVoteFinalized` event when successful.
         /// </summary>
-        finalize_spv_lawyer = 19,
+        finalize_spv_lawyer = 22,
+        
+        /// <summary>
+        /// >> unfreeze_spv_lawyer_token
+        /// Lets a voter unlock his locked token after voting on a spv lawyer.
+        /// 
+        /// The origin must be signed and have sufficient funds.
+        /// 
+        /// Parameters:
+        /// - `proposal_id`: Id of the spv lawyer proposal.
+        /// 
+        /// Emits `TokenUnfrozen` event when successful.
+        /// </summary>
+        unfreeze_spv_lawyer_token = 23,
         
         /// <summary>
         /// >> remove_lawyer_claim
         /// Lets a lawyer step back from a case.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a Lawyer and have sufficient funds.
         /// 
         /// Parameters:
         /// - `listing_id`: The listing from the property.
         /// 
-        /// Emits `LawyerRemovedFromCase` event when succesfful.
+        /// Emits `LawyerRemovedFromCase` event when successful.
         /// </summary>
-        remove_lawyer_claim = 20,
+        remove_lawyer_claim = 24,
         
         /// <summary>
         /// >> lawyer_confirm_documents
-        /// Lets a lawyer confirm a legal case.
+        /// Allows a lawyer to confirm or reject a legal case.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a Lawyer and have sufficient funds.
         /// 
         /// Parameters:
         /// - `listing_id`: The listing from the property.
         /// - `approve`: Approves or Rejects the case.
         /// 
-        /// Emits `DocumentsConfirmed` event when succesfful.
+        /// Emits `DocumentsConfirmed` event when successful.
         /// </summary>
-        lawyer_confirm_documents = 21,
+        lawyer_confirm_documents = 25,
         
         /// <summary>
         /// >> send_property_token
-        /// Lets the sender send property token to another account.
+        /// Allows a sender to transfer property tokens to another account.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RealEstateInvestor and have sufficient funds.
         /// 
         /// Parameters:
         /// - `asset_id`: The asset id of the property.
         /// - `receiver`: AccountId of the person that the seller wants to handle the offer from.
         /// - `token_amount`: The amount of token the sender wants to send.
         /// 
-        /// Emits `DocumentsConfirmed` event when succesfful.
+        /// Emits `DocumentsConfirmed` event when successful.
         /// </summary>
-        send_property_token = 22,
+        send_property_token = 26,
     }
     
     /// <summary>
-    /// >> 375 - Variant[pallet_marketplace.pallet.Call]
+    /// >> 395 - Variant[pallet_marketplace.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -366,23 +418,27 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.list_property);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.buy_property_token);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.claim_property_token);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.finalize_claim_window);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.create_spv);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.relist_token);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.buy_relisted_token);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.cancel_property_purchase);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.make_offer);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.EnumOffer>>(Call.handle_offer);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.EnumOffer, Substrate.NetApi.Model.Types.Primitive.U64>>(Call.handle_offer);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.cancel_offer);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.withdraw_rejected);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.withdraw_legal_process_expired);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.withdraw_expired);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.withdraw_deposit_unsold);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.withdraw_claiming_expired);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.withdraw_unclaimed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.upgrade_object);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.delist_token);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.EnumLegalProperty, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.lawyer_claim_property);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.EnumVote>>(Call.vote_on_spv_lawyer);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types.EnumVote, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.vote_on_spv_lawyer);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.approve_developer_lawyer);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.finalize_spv_lawyer);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U64>(Call.unfreeze_spv_lawyer_token);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.remove_lawyer_claim);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.lawyer_confirm_documents);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.send_property_token);

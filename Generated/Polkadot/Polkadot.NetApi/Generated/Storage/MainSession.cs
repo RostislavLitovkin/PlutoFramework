@@ -301,6 +301,17 @@ namespace Polkadot.NetApi.Generated.Storage
     /// </summary>
     public sealed class SessionConstants
     {
+        
+        /// <summary>
+        /// >> KeyDeposit
+        ///  The amount to be held when setting keys.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U128 KeyDeposit()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U128();
+            result.Create("0x00000000000000000000000000000000");
+            return result;
+        }
     }
     
     /// <summary>

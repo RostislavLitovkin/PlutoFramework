@@ -8,7 +8,7 @@ namespace PlutoFramework.Components.Mnemonics
 {
     public partial class EnterMnemonicsViewModel : ObservableObject
     {
-        public required Func<Task> Navigation;
+        public Func<Task> Navigation { get; set; } = () => Task.CompletedTask;
 
         [ObservableProperty]
         private bool incorrectMnemonicsEntered = false;
@@ -54,25 +54,6 @@ namespace PlutoFramework.Components.Mnemonics
         public async Task ImportJsonAsync()
         {
             await KeysModel.ImportJsonKeyAsync();
-
-            await Navigation.Invoke();
-        }
-
-        [RelayCommand]
-        public void ForgotKey()
-        {
-            var popupViewModel = DependencyService.Get<CanNotRecoverKeyPopupViewModel>();
-
-            popupViewModel.ProceedFunc = GenerateNewAccountAsync;
-
-            popupViewModel.IsVisible = true;
-        }
-        
-        public async Task GenerateNewAccountAsync()
-        {
-            await Model.KeysModel.GenerateNewAccountAsync();
-
-            await PlutoConfigurationModel.AfterAccountImportAsync();
 
             await Navigation.Invoke();
         }

@@ -6,7 +6,7 @@
     "rest_client": "Substrate.RestClient"
   },
    "metadata": {
-      "websocket": "wss://polkadot.api.onfinality.io/public-ws"
+      "websocket": "wss://rpc.ibp.network/polkadot"
    },
   "rest_client_settings": {
     "service_assembly": "Substrate.RestService.dll"

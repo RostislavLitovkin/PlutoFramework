@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             x:Class="PlutoFramework.Components.Form.FormDateInputView"
+             HeightRequest="40"
+             HorizontalOptions="Fill">
+    <card:Card HeightRequest="40"
+               IsThin="True"
+               CardPadding="10, 0, 10, 0">
+        <card:Card.View>
+            <Grid HeightRequest="40"
+                  ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="titleLabel"
+                       Grid.Column="0"
+                       VerticalOptions="Center"
+                       HorizontalOptions="StartAndExpand"
+                       FontAttributes="Bold" />
+
+                <!-- Container for date and time pickers -->
+                <Grid Grid.Column="1"
+                      ColumnDefinitions="*,Auto"
+                      ColumnSpacing="10"
+                      VerticalOptions="Center"
+                      HorizontalOptions="FillAndExpand">
+                    <DatePicker x:Name="datePicker"
+                                Grid.Column="0"
+                                VerticalOptions="Center"
+                                HorizontalOptions="FillAndExpand"
+                                FontAttributes="Bold"
+                                DateSelected="OnDateSelected" />
+
+                    <TimePicker x:Name="timePicker"
+                                Grid.Column="1"
+                                VerticalOptions="Center"
+                                HorizontalOptions="End"
+                                PropertyChanged="OnTimePropertyChanged" />
+                </Grid>
+            </Grid>
+        </card:Card.View>
+    </card:Card>
+</ContentView>

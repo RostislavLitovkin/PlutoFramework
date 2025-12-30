@@ -28,9 +28,9 @@ namespace PlutoFramework.Components.Keys
         [RelayCommand]
         public Task ContinueAsync()
         {
-            SetToDefault();
-
             return ProceedFunc.Invoke();
+
+            SetToDefault();
         }
     }
 }

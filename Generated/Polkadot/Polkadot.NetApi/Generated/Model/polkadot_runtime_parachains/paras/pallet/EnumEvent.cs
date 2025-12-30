@@ -72,10 +72,22 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.paras.pall
         /// `code_hash` `para_id`
         /// </summary>
         PvfCheckRejected = 7,
+        
+        /// <summary>
+        /// >> UpgradeCooldownRemoved
+        /// The upgrade cooldown was removed.
+        /// </summary>
+        UpgradeCooldownRemoved = 8,
+        
+        /// <summary>
+        /// >> CodeAuthorized
+        /// A new code hash has been authorized for a Para.
+        /// </summary>
+        CodeAuthorized = 9,
     }
     
     /// <summary>
-    /// >> 488 - Variant[polkadot_runtime_parachains.paras.pallet.Event]
+    /// >> 542 - Variant[polkadot_runtime_parachains.paras.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -94,6 +106,8 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.paras.pall
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.ValidationCodeHash, Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>>(Event.PvfCheckStarted);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.ValidationCodeHash, Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>>(Event.PvfCheckAccepted);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.ValidationCodeHash, Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>>(Event.PvfCheckRejected);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>(Event.UpgradeCooldownRemoved);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.ValidationCodeHash, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.CodeAuthorized);
         }
     }
 }

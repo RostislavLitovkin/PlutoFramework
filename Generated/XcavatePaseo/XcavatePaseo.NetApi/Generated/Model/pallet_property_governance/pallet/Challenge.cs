@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
     
     
     /// <summary>
-    /// >> 593 - Composite[pallet_property_governance.pallet.Challenge]
+    /// >> 609 - Composite[pallet_property_governance.pallet.Challenge]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Challenge : BaseType
@@ -32,6 +32,10 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         /// >> created_at
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 CreatedAt { get; set; }
+        /// <summary>
+        /// >> deposit_amount
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U128 DepositAmount { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -45,6 +49,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
             var result = new List<byte>();
             result.AddRange(Proposer.Encode());
             result.AddRange(CreatedAt.Encode());
+            result.AddRange(DepositAmount.Encode());
             return result.ToArray();
         }
         
@@ -56,6 +61,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
             Proposer.Decode(byteArray, ref p);
             CreatedAt = new Substrate.NetApi.Model.Types.Primitive.U32();
             CreatedAt.Decode(byteArray, ref p);
+            DepositAmount = new Substrate.NetApi.Model.Types.Primitive.U128();
+            DepositAmount.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;
             Bytes = new byte[bytesLength];

@@ -28,7 +28,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 572 - Variant[pallet_xcm.pallet.HoldReason]
+    /// >> 629 - Variant[pallet_xcm.pallet.HoldReason]
     /// </summary>
     public sealed class EnumHoldReason : BaseEnum<HoldReason>
     {
