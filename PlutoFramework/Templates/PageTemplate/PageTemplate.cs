@@ -8,7 +8,14 @@ namespace PlutoFramework.Templates.PageTemplate
     public class PageTemplate : ContentPage
     {
         public static readonly BindableProperty MainContentProperty =
-            BindableProperty.Create(nameof(MainContent), typeof(MauiView), typeof(PageTemplate), defaultValue: default(MauiView));
+            BindableProperty.Create(nameof(MainContent), typeof(MauiView), typeof(PageTemplate), defaultValue: default(MauiView), propertyChanged: OnMainContentChanged);
+        private static void OnMainContentChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var pageTemplate = (PageTemplate)bindable;
+
+            pageTemplate.SetBindingContextForContents();
+            pageTemplate.ApplyScrollViewPadding();
+        }
         public MauiView MainContent
         {
             get => (MauiView)GetValue(MainContentProperty);
@@ -111,8 +118,6 @@ namespace PlutoFramework.Templates.PageTemplate
             Shell.SetNavBarIsVisible(this, false);
 
             HideSoftInputOnTapped = true;
-
-            ApplyScrollViewPadding();
         }
 
         private void ApplyScrollViewPadding()
@@ -138,6 +143,11 @@ namespace PlutoFramework.Templates.PageTemplate
 
                     break;
 
+                case CollectionView collectionView:
+                    collectionView.Margin = padding;
+
+                    break;
+
                 case Layout layout:
                     foreach (var child in layout.Children.OfType<MauiView>())
                     {
@@ -147,6 +157,10 @@ namespace PlutoFramework.Templates.PageTemplate
                     break;
 
                 case ContentView contentView when contentView.Content is MauiView content:
+                    ApplyScrollViewPadding(content, padding);
+                    break;
+
+                case ContentPresenter contentPresenter when contentPresenter.Content is MauiView content:
                     ApplyScrollViewPadding(content, padding);
                     break;
             }
@@ -173,6 +187,8 @@ namespace PlutoFramework.Templates.PageTemplate
             SetBindingContextForContents();
 
             _pendingPopupContent.Clear();
+
+            ApplyScrollViewPadding();
         }
 
         protected override void OnBindingContextChanged()

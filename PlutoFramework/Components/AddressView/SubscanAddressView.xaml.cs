@@ -58,6 +58,6 @@ public partial class SubscanAddressView : ContentView
 
     private async void OnSubscanTapped(object sender, TappedEventArgs e)
     {
-        await Shell.Current.Navigation.PushAsync(new WebViewPage($"https://www.subscan.io/account/{Address}"));
+        await Shell.Current.Navigation.PushAsync(new ExtensionWebViewPage($"https://www.subscan.io/account/{Address}"));
     }
 }
