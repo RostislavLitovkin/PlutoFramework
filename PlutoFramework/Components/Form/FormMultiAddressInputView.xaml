@@ -2,6 +2,7 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
              x:Class="PlutoFramework.Components.Form.FormMultiAddressInputView"
              x:Name="Root">
     <ContentView.Content>
@@ -24,16 +25,15 @@
                                            Placeholder="Enter address"
                                            Completed="OnEntryCompleted"
                                            TextChanged="OnEntryTextChanged" />
-                                    <Button Grid.Column="1"
+                                    <buttons:ElevatedButton Grid.Column="1"
                                             Text="Remove"
-                                            Padding="12,8"
                                             Clicked="OnRemoveClicked" />
                                 </Grid>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
 
-                    <Button Text="Add address" Clicked="OnAddClicked" />
+                  <buttons:ElevatedButton Text="Add address" Clicked="OnAddClicked" />
                 </VerticalStackLayout>
             </card:ClickableCard.View>
         </card:ClickableCard>
