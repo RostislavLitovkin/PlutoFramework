@@ -1,6 +1,5 @@
 using PlutoFramework.Templates.PageTemplate;
 
-
 namespace PlutoFramework.Components.WebView;
 
 public partial class ExtensionWebViewPage : PageTemplate

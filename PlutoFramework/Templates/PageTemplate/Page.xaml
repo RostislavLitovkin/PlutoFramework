@@ -38,8 +38,10 @@
                                                                x:Name="TopNavigationBar"
                                                                />
 
-            <webview:WebSignRawPopupView />
-            
+            <webview:WebSignRawPopupView ZIndex="10"/>
+
+            <webview:DAppWebViewConnectionRequestPopupView ZIndex="10"/>
+
             <txanalyzer:TransactionAnalyzerConfirmationView ZIndex="{TemplateBinding TransactionAnalyzerZIndex}"/>
 
             <account:NoAccountPopup ZIndex="10" />

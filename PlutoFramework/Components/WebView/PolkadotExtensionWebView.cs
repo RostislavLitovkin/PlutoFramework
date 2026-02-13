@@ -1,4 +1,5 @@
 using Microsoft.Maui.Handlers;
+using PlutoFramework.Model;
 using System.Diagnostics;
 using System.Text.Json;
 
@@ -8,7 +9,7 @@ public partial class PolkadotExtensionWebView : Microsoft.Maui.Controls.WebView
 {
     private const string ScriptInterfaceName = "mauiWallet";
 
-    private static readonly string ProviderInjectionScript = BuildProviderInjectionScript();
+    private uint? tabId = null;
 
     private readonly PolkadotExtensionWalletBridge _walletBridge = new();
 
@@ -76,7 +77,16 @@ public partial class PolkadotExtensionWebView : Microsoft.Maui.Controls.WebView
     }
 
     private Task InjectProviderAsync()
-        => DispatchScriptSafeAsync(ProviderInjectionScript);
+    {
+        if (tabId is null)
+        {
+            tabId = ExtensionWebViewModel.GetNextTabId();
+        }
+
+        ExtensionWebViewModel.TabInfos[tabId.Value] = GetDAppInfo();
+
+        return DispatchScriptSafeAsync(BuildProviderInjectionScript());
+    }
 
     private Task DispatchScriptSafeAsync(string script)
     {
@@ -106,7 +116,7 @@ public partial class PolkadotExtensionWebView : Microsoft.Maui.Controls.WebView
         return null;
     }
 
-    private static string BuildProviderInjectionScript()
+    private string BuildProviderInjectionScript()
     {
         return @$"(function () {{
     if (window.__plutoWalletInjected) {{ return; }}
@@ -154,7 +164,7 @@ public partial class PolkadotExtensionWebView : Microsoft.Maui.Controls.WebView
         name: '{AppInfo.Name}',
         version: '{AppInfo.VersionString}',
         enable: function (origin) {{
-            return send('enable', {{ origin: origin }}).then(function () {{
+            return send('enable', {{ origin: origin, tabId: {tabId} }}).then(function () {{
                 return {{
                     accounts: {{
                         get: function () {{ return send('accounts.get'); }},
@@ -180,6 +190,79 @@ public partial class PolkadotExtensionWebView : Microsoft.Maui.Controls.WebView
         }}
     }};
 }})();";
+    }
+
+    private DAppInfo GetDAppInfo()
+    {
+        var url = GetCurrentUrl() ?? string.Empty;
+        var title = GetCurrentTitle();
+        var icon = BuildFaviconSource(url);
+
+        return new DAppInfo
+        {
+            Icon = icon,
+            Name = string.IsNullOrWhiteSpace(title) ? (TryGetHost(url) ?? string.Empty) : title,
+            Url = url
+        };
+    }
+
+    private string? GetCurrentUrl()
+    {
+#if ANDROID
+        if (!string.IsNullOrWhiteSpace(_nativeWebView?.Url))
+        {
+            return _nativeWebView.Url;
+        }
+#elif IOS || MACCATALYST
+        if (_nativeWebView?.Url is not null)
+        {
+            return _nativeWebView.Url.ToString();
+        }
+#endif
+
+        if (Source is UrlWebViewSource urlSource)
+        {
+            return urlSource.Url;
+        }
+
+        return null;
+    }
+
+    private string? GetCurrentTitle()
+    {
+#if ANDROID
+        if (!string.IsNullOrWhiteSpace(_nativeWebView?.Title))
+        {
+            return _nativeWebView.Title;
+        }
+#elif IOS || MACCATALYST
+        if (!string.IsNullOrWhiteSpace(_nativeWebView?.Title))
+        {
+            return _nativeWebView.Title;
+        }
+#endif
+
+        return null;
+    }
+
+    private static ImageSource BuildFaviconSource(string? url)
+    {
+        if (Uri.TryCreate(url, UriKind.Absolute, out var uri))
+        {
+            // Use Google's favicon service to return a PNG image that Glide can decode reliably.
+            var host = uri.IsDefaultPort ? uri.Host : $"{uri.Host}:{uri.Port}";
+            var faviconUri = new Uri($"https://www.google.com/s2/favicons?domain={Uri.EscapeDataString(host)}&sz=256");
+            return ImageSource.FromUri(faviconUri);
+        }
+
+        return ImageSource.FromStream(() => Stream.Null);
+    }
+
+    private static string? TryGetHost(string? url)
+    {
+        return Uri.TryCreate(url, UriKind.Absolute, out var uri)
+            ? uri.Host
+            : null;
     }
 
     partial void InitializePlatformBridge(WebViewHandler handler);

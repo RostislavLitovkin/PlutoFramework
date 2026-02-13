@@ -14,7 +14,7 @@ public partial class BottomPopupCard : AbsoluteLayout
         defaultBindingMode: BindingMode.TwoWay,
         propertyChanged: (bindable, oldValue, newValue) =>
         {
-            Console.WriteLine("Got new value? " + newValue);    
+            Console.WriteLine("Got new value? " + newValue);
             var control = (BottomPopupCard)bindable;
             if ((bool)newValue)
             {
@@ -27,8 +27,8 @@ public partial class BottomPopupCard : AbsoluteLayout
         });
 
     public BottomPopupCard()
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
     }
 
     public bool IsShown
@@ -37,13 +37,13 @@ public partial class BottomPopupCard : AbsoluteLayout
         set
         {
             //if ((bool)GetValue(animating) != value)
-                SetValue(IsShownProperty, value);
+            SetValue(IsShownProperty, value);
         }
     }
 
     public Microsoft.Maui.Controls.View View { set { contentView.Content = value; } }
 
-    public string Title { set { titleLabel.Text = value; } }
+    public string Title { set { titleText.Text = value; } }
 
     private async Task ShowCardAsync()
     {

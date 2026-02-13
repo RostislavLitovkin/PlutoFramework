@@ -14,6 +14,27 @@ using System.Text.Json.Serialization;
 
 namespace PlutoFramework.Components.WebView;
 
+public record EnablePayload
+{
+    [JsonPropertyName("origin")]
+    public string Origin { get; set; } = string.Empty;
+
+    [JsonPropertyName("tabId")]
+    public uint TabId { get; set; }
+}
+
+public record DAppInfo
+{
+    [JsonPropertyName("icon")]
+    public required ImageSource Icon { get; set; }
+
+    [JsonPropertyName("name")]
+    public required string Name { get; set; }
+
+    [JsonPropertyName("url")]
+    public required string Url { get; set; }
+}
+
 public class PolkadotExtensionWalletBridge
 {
     public static TaskCompletionSource<byte[]> SignatureTask = new();
@@ -52,7 +73,7 @@ public class PolkadotExtensionWalletBridge
             switch (request.Method)
             {
                 case "enable":
-                    result = HandleEnable(request.Payload);
+                    result = await HandleEnableAsync(request.Payload);
                     break;
                 case "accounts.get":
                     result = HandleAccounts();
@@ -80,10 +101,38 @@ public class PolkadotExtensionWalletBridge
         });
     }
 
-    private static object HandleEnable(JsonElement? payload)
+    private static async Task<object> HandleEnableAsync(JsonElement? payload)
     {
-        // We currently allow every origin. Add policies/UX prompts here when needed.
-        return new { approved = true, provider = ProviderName };
+        var allowedOrigins = (string[])Application.Current.Resources["AllowedOrigins"];
+
+        if (payload == null)
+        {
+            return new { approved = false, provider = ProviderName };
+        }
+
+        EnablePayload enablePayload = payload!.Value.Deserialize<EnablePayload>(SerializerOptions)!;
+
+        var dAppInfo = ExtensionWebViewModel.TabInfos[enablePayload.TabId];
+
+
+        if (allowedOrigins.Any(dAppInfo.Url.Contains))
+        {
+            return new { approved = true, provider = ProviderName };
+        }
+
+        var uri = new Uri(dAppInfo.Url);
+
+        if (ExtensionWebViewModel.ApprovedUrls.TryGetValue(uri.Host, out var cachedApproved) && cachedApproved)
+        {
+            return new { approved = cachedApproved, provider = ProviderName };
+        }
+
+        var popupViewModel = DependencyService.Get<DAppWebViewConnectionRequestPopupViewModel>();
+        var approved = await popupViewModel.ShowAsync(dAppInfo);
+
+        ExtensionWebViewModel.ApprovedUrls[uri.Host] = approved;
+
+        return new { approved, provider = ProviderName };
     }
 
     private static IEnumerable<InjectedAccount> HandleAccounts()
@@ -108,7 +157,6 @@ public class PolkadotExtensionWalletBridge
             }
         ];
     }
-
 
     private static async Task<SignerResultPayload> HandleSignRawAsync(WalletBridgeRequest request)
     {
@@ -148,7 +196,8 @@ public class PolkadotExtensionWalletBridge
 
             messageSignRequest.SignatureTask = SignatureTask;
 
-            messageSignRequest.Message = new RawMessage {
+            messageSignRequest.Message = new RawMessage
+            {
                 type = signRawPayload.Type,
                 data = signRawPayload.Data,
                 address = signRawPayload.Address,

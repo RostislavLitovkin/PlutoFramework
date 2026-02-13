@@ -12,6 +12,8 @@
     <x:String x:Key="TransactionAnalyzerPalletCallNameSubstitution"></x:String>
     <x:Boolean x:Key="DisplayNetworks">false</x:Boolean>
     <x:String x:Key="DefaultEndpoints">[Polkadot, Kusama]</x:String>
+    <x:Array x:Key="AllowedOrigins" Type="{x:Type x:String}">
+    </x:Array>
 
     <x:Double x:Key="CardBorderThickness">0</x:Double>
     <Color x:Key="CardBorderColor">Black</Color>
