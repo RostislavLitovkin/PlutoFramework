@@ -64,13 +64,17 @@
             <Label
                 AbsoluteLayout.LayoutBounds=".5, 1, 1, 30"
                 AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
-                FontAttributes="Bold"
-                Text=""
                 HorizontalTextAlignment="Center"
                 VerticalTextAlignment="Center"
                 Margin="20, 0, 20, 0"
                  TranslationY="500"
-                x:Name="titleLabel"  />
+                x:Name="titleLabel">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontAttributes="Bold" x:Name="titleText" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
             <AbsoluteLayout.GestureRecognizers>
                 <PanGestureRecognizer PanUpdated="OnPanUpdated" />
