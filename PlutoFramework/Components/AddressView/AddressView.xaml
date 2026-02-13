@@ -33,6 +33,7 @@
                     </Label>
 
                     <Label x:Name="addressLabel"
+                           AutomationId="AddressLabel"
                            VerticalOptions="Center" 
                            HorizontalOptions="Fill"
                            Grid.Column="1"

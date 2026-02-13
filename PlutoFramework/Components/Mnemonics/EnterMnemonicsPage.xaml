@@ -40,6 +40,7 @@
 
                                     <Editor HeightRequest="120"
                                             x:Name="mnemonicsEntry"
+                                            AutomationId="mnemonicsEntry"
                                             Placeholder="Start entering here.."
                                             Text="{Binding Mnemonics}" />
                                 </VerticalStackLayout>
@@ -54,6 +55,7 @@
                    IsVisible="{Binding IncorrectMnemonicsEntered}"/>
 
             <buttons:ElevatedButton Text="Continue"
+                                    AutomationId="ContinueMnemonics"
                                     Command="{Binding ContinueWithMnemonicsCommand}" />
 
             <ContentView HeightRequest="120"

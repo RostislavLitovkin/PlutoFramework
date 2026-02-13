@@ -8,7 +8,7 @@
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        x:Class="PlutoFramework.Components.Kilt.CreateNewDidPage"
                        Title="New DID"
-                       IsNavbarVisible="False">
+                       NavigationBarIsVisible="False">
     <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
             AbsoluteLayout.LayoutFlags="All">
         <VerticalStackLayout Spacing="15"

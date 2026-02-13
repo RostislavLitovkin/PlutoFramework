@@ -15,7 +15,7 @@
                        xmlns:card="clr-namespace:PlutoFramework.Components.Card"
                        x:Class="PlutoFramework.Components.XcavateProperty.PropertyDetailPage"
                        Title="PropertyDetailPage"
-                       IsNavbarVisible="False">
+                       NavigationBarIsVisible="False">
     <template:PageTemplate.MainContent>
         <VerticalStackLayout Spacing="15"
                              Padding="20, 80, 20, 100">

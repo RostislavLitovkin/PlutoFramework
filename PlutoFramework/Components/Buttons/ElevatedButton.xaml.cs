@@ -43,7 +43,7 @@ public partial class ElevatedButton : Button
     public ElevatedButton()
 	{
 		InitializeComponent();
-	}
+    }
 
     public ButtonStateEnum ButtonState
     {

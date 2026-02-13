@@ -112,10 +112,11 @@ namespace PlutoFramework.Templates.PageTemplate
 
         public PageTemplate()
         {
-            ControlTemplate = (ControlTemplate)Application.Current.Resources["PageTemplate"];
+            ControlTemplate = (ControlTemplate)Application.Current!.Resources["PageTemplate"];
 
             NavigationPage.SetHasNavigationBar(this, false);
             Shell.SetNavBarIsVisible(this, false);
+            AutomationProperties.SetIsInAccessibleTree(this, true);
 
             HideSoftInputOnTapped = true;
         }
