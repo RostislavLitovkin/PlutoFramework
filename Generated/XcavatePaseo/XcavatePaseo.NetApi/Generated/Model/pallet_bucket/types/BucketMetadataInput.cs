@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
     
     
     /// <summary>
-    /// >> 410 - Composite[pallet_bucket.types.BucketMetadataInput]
+    /// >> 468 - Composite[pallet_bucket.types.BucketMetadataInput]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BucketMetadataInput : BaseType
@@ -27,11 +27,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
         /// <summary>
         /// >> name
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19 Name { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24 Name { get; set; }
         /// <summary>
         /// >> category
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23 Category { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28 Category { get; set; }
         /// <summary>
         /// >> properties
         /// </summary>
@@ -57,9 +57,9 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Name = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19();
+            Name = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24();
             Name.Decode(byteArray, ref p);
-            Category = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23();
+            Category = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28();
             Category.Decode(byteArray, ref p);
             Properties = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT3();
             Properties.Decode(byteArray, ref p);

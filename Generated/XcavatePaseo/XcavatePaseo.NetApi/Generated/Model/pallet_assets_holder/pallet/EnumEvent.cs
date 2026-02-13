@@ -42,7 +42,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_assets_holder.pallet
     }
     
     /// <summary>
-    /// >> 54 - Variant[pallet_assets_holder.pallet.Event]
+    /// >> 164 - Variant[pallet_assets_holder.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -53,9 +53,9 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_assets_holder.pallet
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.xcavate_primitives.EnumMarketplaceHoldReason, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Held);
-				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.xcavate_primitives.EnumMarketplaceHoldReason, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Released);
-				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.xcavate_primitives.EnumMarketplaceHoldReason, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Burned);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.primitives.EnumMarketplaceHoldReason, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Held);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.primitives.EnumMarketplaceHoldReason, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Released);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.primitives.EnumMarketplaceHoldReason, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Burned);
         }
     }
 }

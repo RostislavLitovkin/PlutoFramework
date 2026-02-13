@@ -64,7 +64,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_sudo.pallet
     }
     
     /// <summary>
-    /// >> 281 - Variant[pallet_sudo.pallet.Call]
+    /// >> 315 - Variant[pallet_sudo.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -75,10 +75,10 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_sudo.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>(Call.sudo);
-				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Call.sudo_unchecked_weight);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcavate_runtime.EnumRuntimeCall>(Call.sudo);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.xcavate_runtime.EnumRuntimeCall, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Call.sudo_unchecked_weight);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress>(Call.set_key);
-				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall>>(Call.sudo_as);
+				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress, XcavatePaseo.NetApi.Generated.Model.xcavate_runtime.EnumRuntimeCall>>(Call.sudo_as);
 				AddTypeDecoder<BaseVoid>(Call.remove_key);
         }
     }

@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_primitives_parachain_inher
     
     
     /// <summary>
-    /// >> 263 - Composite[cumulus_primitives_parachain_inherent.MessageQueueChain]
+    /// >> 270 - Composite[cumulus_primitives_parachain_inherent.MessageQueueChain]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MessageQueueChain : BaseType

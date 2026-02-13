@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_message_queue
     
     
     /// <summary>
-    /// >> 545 - Composite[pallet_message_queue.Neighbours]
+    /// >> 573 - Composite[pallet_message_queue.Neighbours]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Neighbours : BaseType

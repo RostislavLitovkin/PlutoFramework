@@ -435,7 +435,7 @@ namespace PlutoFramework.Constants
                 {
                     Name = "Xcavate",
                     Key = EndpointEnum.XcavatePaseo,
-                    URLs =  new string[1] { "wss://fraa-flashbox-4671-rpc.a.stagenet.tanssi.network" },
+                    URLs =  new string[1] { "wss://xcavate-paseo.api.onfinality.io/public-ws" },
                     Icon = "xcavate.png",
                     DarkIcon = "xcavate.png",
                     Unit = "XCAV",

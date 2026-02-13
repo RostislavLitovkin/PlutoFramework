@@ -12,7 +12,7 @@ namespace PlutoFrameworkTests
         [Test]
         public async Task ApiResponseAsync()
         {
-            var WS_URL = "wss://fraa-flashbox-4654-rpc.a.stagenet.tanssi.network";
+            var WS_URL = "wss://xcavate-paseo.api.onfinality.io/public-ws";
             var DST_ADDR = "5Di95BnfEUyZaACLhyRhwRop5FReA1WErEwk6MrgqVFFkBGF";
             await FaucetApiModel.PostRequestAsync(WS_URL, DST_ADDR);
         }

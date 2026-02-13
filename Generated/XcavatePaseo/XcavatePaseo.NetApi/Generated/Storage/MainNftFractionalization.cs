@@ -90,7 +90,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(asset_id.Encode());
             byteArray.AddRange(beneficiary.Encode());
             byteArray.AddRange(fractions.Encode());
-            return new Method(19, "NftFractionalization", 0, "fractionalize", byteArray.ToArray());
+            return new Method(43, "NftFractionalization", 0, "fractionalize", byteArray.ToArray());
         }
         
         /// <summary>
@@ -104,7 +104,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(nft_id.Encode());
             byteArray.AddRange(asset_id.Encode());
             byteArray.AddRange(beneficiary.Encode());
-            return new Method(19, "NftFractionalization", 1, "unify", byteArray.ToArray());
+            return new Method(43, "NftFractionalization", 1, "unify", byteArray.ToArray());
         }
     }
     
@@ -141,9 +141,9 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> NewAssetSymbol
         ///  The newly created asset's symbol.
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2 NewAssetSymbol()
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 NewAssetSymbol()
         {
-            var result = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2();
+            var result = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6();
             result.Create("0x1042524958");
             return result;
         }
@@ -152,9 +152,9 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> NewAssetName
         ///  The newly created asset's name.
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2 NewAssetName()
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 NewAssetName()
         {
-            var result = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2();
+            var result = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6();
             result.Create("0x1042726978");
             return result;
         }

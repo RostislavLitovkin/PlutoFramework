@@ -46,7 +46,7 @@ namespace UniqueryPlus.Nfts
         public BigInteger Id { get; set; }
         public required string Owner { get; set; }
         public NftMarketplaceDetails? NftMarketplaceDetails { get; set; }
-        
+
         public XcavateOngoingObjectListingDetails? OngoingObjectListingDetails { get; set; }
         public MetadataBase? Metadata { get; set; }
         public PropertyMetadata? XcavateMetadata { get; set; }
@@ -264,11 +264,12 @@ namespace UniqueryPlus.Nfts
                     {
                         Console.WriteLine("PropertyMetadata was null (1)");
                     }
-                    
+
                     return nft;
                 }).Zip(nftMarketplaceDetails, (XcavatePaseoNftsPalletNft nft, NftMarketplaceDetails? details) =>
                 {
-                    if (details is not null) {
+                    if (details is not null)
+                    {
                         nft.NftMarketplaceDetails = details;
                     }
 
@@ -454,7 +455,7 @@ namespace UniqueryPlus.Nfts
                     PropertyMetadata? propertyMetadata = JsonSerializer.Deserialize<PropertyMetadata>(metadataJson, options);
 
                     Console.WriteLine("Again:");
-                    Console.WriteLine(propertyMetadata); 
+                    Console.WriteLine(propertyMetadata);
 
                     if (propertyMetadata == null)
                     {
@@ -479,14 +480,15 @@ namespace UniqueryPlus.Nfts
 
                     metadatas.Add(null);
                 }
-            };
+            }
+            ;
 
             return metadatas;
         }
 
         internal static async Task<BigInteger?> GetNftPriceNftsPalletAsync(SubstrateClientExt client, uint collectionId, uint id, CancellationToken token)
         {
-            var price = await client.NftsStorage.ItemPriceOf(new BaseTuple<U32, U32>(new U32(collectionId), new U32(id)), null, token).ConfigureAwait(false);
+            var price = await client.RealEstateNftsStorage.ItemPriceOf(new BaseTuple<U32, U32>(new U32(collectionId), new U32(id)), null, token).ConfigureAwait(false);
 
             if (price is null)
             {

@@ -41,158 +41,68 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         VotedOnProposal = 2,
         
         /// <summary>
-        /// >> VotedOnPropertySaleProposal
-        /// A user voted on a property sale proposal.
-        /// </summary>
-        VotedOnPropertySaleProposal = 3,
-        
-        /// <summary>
         /// >> VotedOnChallenge
         /// A user voted on challenge.
         /// </summary>
-        VotedOnChallenge = 4,
+        VotedOnChallenge = 3,
         
         /// <summary>
         /// >> ProposalExecuted
         /// A proposal was executed.
         /// </summary>
-        ProposalExecuted = 5,
+        ProposalExecuted = 4,
         
         /// <summary>
         /// >> AgentSlashed
         /// A letting agent was slashed.
         /// </summary>
-        AgentSlashed = 6,
+        AgentSlashed = 5,
         
         /// <summary>
         /// >> AgentChanged
         /// A letting agent was changed.
         /// </summary>
-        AgentChanged = 7,
+        AgentChanged = 6,
         
         /// <summary>
         /// >> ProposalRejected
         /// A proposal was rejected.
         /// </summary>
-        ProposalRejected = 8,
+        ProposalRejected = 7,
         
         /// <summary>
         /// >> ChallengeRejected
         /// A challenge was rejected.
         /// </summary>
-        ChallengeRejected = 9,
+        ChallengeRejected = 8,
         
         /// <summary>
         /// >> ProposalThresHoldNotReached
         /// A proposal failed to meet the voting threshold.
         /// </summary>
-        ProposalThresHoldNotReached = 10,
-        
-        /// <summary>
-        /// >> PropertySaleProposed
-        /// A new property sale proposal was created.
-        /// </summary>
-        PropertySaleProposed = 11,
-        
-        /// <summary>
-        /// >> PropertySaleProposalRejected
-        /// A property sale proposal was rejected.
-        /// </summary>
-        PropertySaleProposalRejected = 12,
-        
-        /// <summary>
-        /// >> SalesLawyerSet
-        /// A lawyer was assigned to a sale.
-        /// </summary>
-        SalesLawyerSet = 13,
-        
-        /// <summary>
-        /// >> LawyerApprovesSale
-        /// A lawyer approved a sale.
-        /// </summary>
-        LawyerApprovesSale = 14,
-        
-        /// <summary>
-        /// >> LawyerRejectsSale
-        /// A lawyer rejected a sale.
-        /// </summary>
-        LawyerRejectsSale = 15,
-        
-        /// <summary>
-        /// >> SaleFinalized
-        /// A property sale was finalized.     
-        /// </summary>
-        SaleFinalized = 16,
-        
-        /// <summary>
-        /// >> SaleFundsClaimed
-        /// A token owner claimed his sale funds.
-        /// </summary>
-        SaleFundsClaimed = 17,
-        
-        /// <summary>
-        /// >> BidSuccessfullyPlaced
-        /// A bid was placed in an auction.
-        /// </summary>
-        BidSuccessfullyPlaced = 18,
-        
-        /// <summary>
-        /// >> AuctionWon
-        /// An auction was won.
-        /// </summary>
-        AuctionWon = 19,
-        
-        /// <summary>
-        /// >> SaleApproved
-        /// A sale was approved.
-        /// </summary>
-        SaleApproved = 20,
-        
-        /// <summary>
-        /// >> SaleRejected
-        /// A sale was rejected.
-        /// </summary>
-        SaleRejected = 21,
+        ProposalThresHoldNotReached = 9,
         
         /// <summary>
         /// >> ProposalProcessingFailed
         /// Processing of a proposal failed.
         /// </summary>
-        ProposalProcessingFailed = 22,
-        
-        /// <summary>
-        /// >> SaleProposalProcessingFailed
-        /// Processing of a sale proposal failed.
-        /// </summary>
-        SaleProposalProcessingFailed = 23,
+        ProposalProcessingFailed = 10,
         
         /// <summary>
         /// >> ChallengeProcessingFailed
         /// Processing of a challenge failed.
         /// </summary>
-        ChallengeProcessingFailed = 24,
-        
-        /// <summary>
-        /// >> AuctionProcessingFailed
-        /// Processing of an auction failed.
-        /// </summary>
-        AuctionProcessingFailed = 25,
+        ChallengeProcessingFailed = 11,
         
         /// <summary>
         /// >> TokenUnfrozen
         /// A user���s tokens were unfrozen after voting.
         /// </summary>
-        TokenUnfrozen = 26,
-        
-        /// <summary>
-        /// >> ExpiredSaleCancelled
-        /// An expired sale was cancelled.
-        /// </summary>
-        ExpiredSaleCancelled = 27,
+        TokenUnfrozen = 12,
     }
     
     /// <summary>
-    /// >> 207 - Variant[pallet_property_governance.pallet.Event]
+    /// >> 217 - Variant[pallet_property_governance.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -206,7 +116,6 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.Proposed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.Challenge);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote>>(Event.VotedOnProposal);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote>>(Event.VotedOnPropertySaleProposal);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote>>(Event.VotedOnChallenge);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.ProposalExecuted);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.AgentSlashed);
@@ -214,23 +123,9 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U64>(Event.ProposalRejected);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.ChallengeRejected);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Percent>>(Event.ProposalThresHoldNotReached);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.PropertySaleProposed);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.PropertySaleProposalRejected);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumLegalSale>>(Event.SalesLawyerSet);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumLegalSale>>(Event.LawyerApprovesSale);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumLegalSale>>(Event.LawyerRejectsSale);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.SaleFinalized);
-				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.SaleFundsClaimed);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.BidSuccessfullyPlaced);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.AuctionWon);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.SaleApproved);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.SaleRejected);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Types.Base.EnumResult>>(Event.ProposalProcessingFailed);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Types.Base.EnumResult>>(Event.SaleProposalProcessingFailed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Types.Base.EnumResult>>(Event.ChallengeProcessingFailed);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Types.Base.EnumResult>>(Event.AuctionProcessingFailed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.TokenUnfrozen);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.ExpiredSaleCancelled);
         }
     }
 }

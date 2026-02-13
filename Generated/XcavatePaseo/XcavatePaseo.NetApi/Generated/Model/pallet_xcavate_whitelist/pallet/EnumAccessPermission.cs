@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet
     }
     
     /// <summary>
-    /// >> 186 - Variant[pallet_xcavate_whitelist.pallet.AccessPermission]
+    /// >> 191 - Variant[pallet_xcavate_whitelist.pallet.AccessPermission]
     /// </summary>
     public sealed class EnumAccessPermission : BaseEnum<AccessPermission>
     {

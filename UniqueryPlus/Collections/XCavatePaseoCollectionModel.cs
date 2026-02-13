@@ -1,20 +1,19 @@
 ﻿
+using StrawberryShake;
 using Substrate.NetApi;
-using XcavatePaseo.NetApi.Generated;
-using XcavatePaseo.NetApi.Generated.Model.sp_core.crypto;
+using Substrate.NetApi.Model.Extrinsics;
+using Substrate.NetApi.Model.Types.Base;
 using Substrate.NetApi.Model.Types.Primitive;
-using XcavatePaseo.NetApi.Generated.Storage;
-using XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types;
 using System.Numerics;
 using UniqueryPlus.Ipfs;
-using UniqueryPlus.Nfts;
-using SubstrateCollectionMetadata = XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionMetadata;
-using Substrate.NetApi.Model.Types.Base;
-using UniqueryPlus.External;
-using StrawberryShake;
-using Substrate.NetApi.Model.Extrinsics;
-using XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress;
 using UniqueryPlus.Metadata;
+using UniqueryPlus.Nfts;
+using XcavatePaseo.NetApi.Generated;
+using XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types;
+using XcavatePaseo.NetApi.Generated.Model.sp_core.crypto;
+using XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress;
+using XcavatePaseo.NetApi.Generated.Storage;
+using SubstrateCollectionMetadata = XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionMetadata;
 
 
 namespace UniqueryPlus.Collections
@@ -242,14 +241,15 @@ namespace UniqueryPlus.Collections
                 }
 
                 metadatas.Add(await IpfsModel.GetMetadataAsync<MetadataBase>(ipfsLink, Constants.KODA_IPFS_ENDPOINT, token).ConfigureAwait(false));
-            };
+            }
+            ;
 
             return metadatas;
         }
 
         internal static async Task<CollectionMintConfig> GetCollectionMintConfigNftsPalletAsync(SubstrateClientExt client, uint collectionId, CancellationToken token)
         {
-            var collectionMintConfig = await client.NftsStorage.CollectionConfigOf(new U32(collectionId), null, token).ConfigureAwait(false);
+            var collectionMintConfig = await client.RealEstateNftsStorage.CollectionConfigOf(new U32(collectionId), null, token).ConfigureAwait(false);
 
             return new CollectionMintConfig
             {
@@ -321,7 +321,7 @@ namespace UniqueryPlus.Collections
 
         internal static async Task<uint> GetTotalCountOfCollectionsAsync(SubstrateClientExt client, CancellationToken token)
         {
-            return await client.NftsStorage.NextCollectionId(null, token).ConfigureAwait(false);
+            return await client.RealEstateNftsStorage.NextCollectionId(null, token).ConfigureAwait(false);
         }
 
         internal static async Task<uint> GetTotalCountOfCollectionsForSaleAsync(CancellationToken token)

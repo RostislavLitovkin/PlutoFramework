@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_proxy
     
     
     /// <summary>
-    /// >> 422 - Composite[pallet_proxy.ProxyDefinition]
+    /// >> 291 - Composite[pallet_proxy.ProxyDefinition]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ProxyDefinition : BaseType
@@ -31,7 +31,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_proxy
         /// <summary>
         /// >> proxy_type
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType ProxyType { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.xcavate_runtime.configs.EnumProxyType ProxyType { get; set; }
         /// <summary>
         /// >> delay
         /// </summary>
@@ -59,7 +59,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_proxy
             var start = p;
             Delegate = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Delegate.Decode(byteArray, ref p);
-            ProxyType = new XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumProxyType();
+            ProxyType = new XcavatePaseo.NetApi.Generated.Model.xcavate_runtime.configs.EnumProxyType();
             ProxyType.Decode(byteArray, ref p);
             Delay = new Substrate.NetApi.Model.Types.Primitive.U32();
             Delay.Decode(byteArray, ref p);

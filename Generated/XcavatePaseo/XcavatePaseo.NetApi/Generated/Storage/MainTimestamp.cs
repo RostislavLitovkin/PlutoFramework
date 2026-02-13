@@ -141,7 +141,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U64 MinimumPeriod()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U64();
-            result.Create("0xB80B000000000000");
+            result.Create("0x0000000000000000");
             return result;
         }
     }

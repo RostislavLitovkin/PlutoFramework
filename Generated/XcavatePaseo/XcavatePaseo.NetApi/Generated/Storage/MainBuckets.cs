@@ -36,6 +36,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public BucketsStorage(SubstrateClientExt client)
         {
             this._client = client;
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Buckets", "NextNamespaceId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Buckets", "Namespaces"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U128), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.NamespaceMetadata)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Buckets", "Buckets"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -55,8 +56,40 @@ namespace XcavatePaseo.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Buckets", "Tags"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Buckets", "TagMessages"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12>), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Buckets", "NextBucketId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
+        }
+        
+        /// <summary>
+        /// >> NextNamespaceIdParams
+        ///  The next available namespace identifier.
+        /// </summary>
+        public static string NextNamespaceIdParams()
+        {
+            return RequestGenerator.GetStorage("Buckets", "NextNamespaceId", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> NextNamespaceIdDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string NextNamespaceIdDefault()
+        {
+            return "0x00000000000000000000000000000000";
+        }
+        
+        /// <summary>
+        /// >> NextNamespaceId
+        ///  The next available namespace identifier.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U128> NextNamespaceId(string blockhash, CancellationToken token)
+        {
+            string parameters = BucketsStorage.NextNamespaceIdParams();
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U128>(parameters, blockhash, token);
+            return result;
         }
         
         /// <summary>
@@ -293,7 +326,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// 
         ///  Tags are only available for a specific bucket.
         /// </summary>
-        public static string TagsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11> key)
+        public static string TagsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12> key)
         {
             return RequestGenerator.GetStorage("Buckets", "Tags", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -315,10 +348,41 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// 
         ///  Tags are only available for a specific bucket.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> Tags(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> Tags(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12> key, string blockhash, CancellationToken token)
         {
             string parameters = BucketsStorage.TagsParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> TagMessagesParams
+        ///  Tracks how many messages reference a given tag within a specific bucket.
+        /// </summary>
+        public static string TagMessagesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12> key)
+        {
+            return RequestGenerator.GetStorage("Buckets", "TagMessages", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, key.Value);
+        }
+        
+        /// <summary>
+        /// >> TagMessagesDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string TagMessagesDefault()
+        {
+            return "0x00000000";
+        }
+        
+        /// <summary>
+        /// >> TagMessages
+        ///  Tracks how many messages reference a given tag within a specific bucket.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> TagMessages(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12> key, string blockhash, CancellationToken token)
+        {
+            string parameters = BucketsStorage.TagMessagesParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
             return result;
         }
         
@@ -362,12 +426,11 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> create_namespace
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method CreateNamespace(Substrate.NetApi.Model.Types.Primitive.U128 namespace_id, XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.NamespaceMetadataInput metadata_input)
+        public static Method CreateNamespace(XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.NamespaceMetadataInput metadata_input)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(namespace_id.Encode());
             byteArray.AddRange(metadata_input.Encode());
-            return new Method(96, "Buckets", 0, "create_namespace", byteArray.ToArray());
+            return new Method(68, "Buckets", 0, "create_namespace", byteArray.ToArray());
         }
         
         /// <summary>
@@ -380,7 +443,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(namespace_id.Encode());
             byteArray.AddRange(bucket_id.Encode());
             byteArray.AddRange(contributor.Encode());
-            return new Method(96, "Buckets", 1, "add_contributor", byteArray.ToArray());
+            return new Method(68, "Buckets", 1, "add_contributor", byteArray.ToArray());
         }
         
         /// <summary>
@@ -393,7 +456,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(namespace_id.Encode());
             byteArray.AddRange(bucket_id.Encode());
             byteArray.AddRange(contributor.Encode());
-            return new Method(96, "Buckets", 2, "remove_contributor", byteArray.ToArray());
+            return new Method(68, "Buckets", 2, "remove_contributor", byteArray.ToArray());
         }
         
         /// <summary>
@@ -406,7 +469,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(namespace_id.Encode());
             byteArray.AddRange(bucket_id.Encode());
             byteArray.AddRange(admin.Encode());
-            return new Method(96, "Buckets", 3, "add_admin", byteArray.ToArray());
+            return new Method(68, "Buckets", 3, "add_admin", byteArray.ToArray());
         }
         
         /// <summary>
@@ -419,7 +482,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(namespace_id.Encode());
             byteArray.AddRange(bucket_id.Encode());
             byteArray.AddRange(admin.Encode());
-            return new Method(96, "Buckets", 4, "remove_admin", byteArray.ToArray());
+            return new Method(68, "Buckets", 4, "remove_admin", byteArray.ToArray());
         }
         
         /// <summary>
@@ -431,7 +494,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(namespace_id.Encode());
             byteArray.AddRange(new_manager.Encode());
-            return new Method(96, "Buckets", 5, "add_manager", byteArray.ToArray());
+            return new Method(68, "Buckets", 5, "add_manager", byteArray.ToArray());
         }
         
         /// <summary>
@@ -443,7 +506,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(namespace_id.Encode());
             byteArray.AddRange(old_manager.Encode());
-            return new Method(96, "Buckets", 6, "remove_manager", byteArray.ToArray());
+            return new Method(68, "Buckets", 6, "remove_manager", byteArray.ToArray());
         }
         
         /// <summary>
@@ -455,7 +518,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(namespace_id.Encode());
             byteArray.AddRange(metadata_input.Encode());
-            return new Method(96, "Buckets", 7, "create_bucket", byteArray.ToArray());
+            return new Method(68, "Buckets", 7, "create_bucket", byteArray.ToArray());
         }
         
         /// <summary>
@@ -467,7 +530,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(namespace_id.Encode());
             byteArray.AddRange(bucket_id.Encode());
-            return new Method(96, "Buckets", 8, "pause_writing", byteArray.ToArray());
+            return new Method(68, "Buckets", 8, "pause_writing", byteArray.ToArray());
         }
         
         /// <summary>
@@ -480,19 +543,19 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(namespace_id.Encode());
             byteArray.AddRange(bucket_id.Encode());
             byteArray.AddRange(new_encryption_key.Encode());
-            return new Method(96, "Buckets", 9, "resume_writing", byteArray.ToArray());
+            return new Method(68, "Buckets", 9, "resume_writing", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> create_tag
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method CreateTag(Substrate.NetApi.Model.Types.Primitive.U128 bucket_id, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11 new_tag)
+        public static Method CreateTag(Substrate.NetApi.Model.Types.Primitive.U128 bucket_id, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12 new_tag)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(bucket_id.Encode());
             byteArray.AddRange(new_tag.Encode());
-            return new Method(96, "Buckets", 10, "create_tag", byteArray.ToArray());
+            return new Method(68, "Buckets", 10, "create_tag", byteArray.ToArray());
         }
         
         /// <summary>
@@ -505,7 +568,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(namespace_id.Encode());
             byteArray.AddRange(bucket_id.Encode());
             byteArray.AddRange(new_encryption_key.Encode());
-            return new Method(96, "Buckets", 11, "rotate_key", byteArray.ToArray());
+            return new Method(68, "Buckets", 11, "rotate_key", byteArray.ToArray());
         }
         
         /// <summary>
@@ -518,7 +581,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(namespace_id.Encode());
             byteArray.AddRange(bucket_id.Encode());
             byteArray.AddRange(message_input.Encode());
-            return new Method(96, "Buckets", 12, "write", byteArray.ToArray());
+            return new Method(68, "Buckets", 12, "write", byteArray.ToArray());
         }
         
         /// <summary>
@@ -529,7 +592,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(namespace_id.Encode());
-            return new Method(96, "Buckets", 13, "force_remove_namespace", byteArray.ToArray());
+            return new Method(68, "Buckets", 13, "force_remove_namespace", byteArray.ToArray());
         }
         
         /// <summary>
@@ -541,7 +604,19 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(namespace_id.Encode());
             byteArray.AddRange(bucket_id.Encode());
-            return new Method(96, "Buckets", 14, "force_remove_bucket", byteArray.ToArray());
+            return new Method(68, "Buckets", 14, "force_remove_bucket", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> force_remove_tag
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method ForceRemoveTag(Substrate.NetApi.Model.Types.Primitive.U128 bucket_id, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12 tag)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(bucket_id.Encode());
+            byteArray.AddRange(tag.Encode());
+            return new Method(68, "Buckets", 15, "force_remove_tag", byteArray.ToArray());
         }
         
         /// <summary>
@@ -553,7 +628,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(bucket_id.Encode());
             byteArray.AddRange(message_id.Encode());
-            return new Method(96, "Buckets", 15, "force_remove_message", byteArray.ToArray());
+            return new Method(68, "Buckets", 16, "force_remove_message", byteArray.ToArray());
         }
         
         /// <summary>
@@ -565,7 +640,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(namespace_id.Encode());
             byteArray.AddRange(manager.Encode());
-            return new Method(96, "Buckets", 16, "force_add_manager", byteArray.ToArray());
+            return new Method(68, "Buckets", 17, "force_add_manager", byteArray.ToArray());
         }
     }
     
@@ -582,7 +657,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 FeeNamespace()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00CA9A3B000000000000000000000000");
+            result.Create("0x00ECC5EE1D0000000000000000000000");
             return result;
         }
         
@@ -593,7 +668,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 FeeBucket()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00CA9A3B000000000000000000000000");
+            result.Create("0x00D1FC731D0000000000000000000000");
             return result;
         }
         
@@ -604,7 +679,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 FeeMessage()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00CA9A3B000000000000000000000000");
+            result.Create("0x00A10F871D0000000000000000000000");
             return result;
         }
         
@@ -792,5 +867,29 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// There are dangling managers
         /// </summary>
         DanglingManagers,
+        
+        /// <summary>
+        /// >> ArithmeticOverflow
+        /// Overflow in arithmetic operations.
+        /// </summary>
+        ArithmeticOverflow,
+        
+        /// <summary>
+        /// >> ArithmeticUnderflow
+        /// Underflow in arithmetic operations.
+        /// </summary>
+        ArithmeticUnderflow,
+        
+        /// <summary>
+        /// >> LastManagerRemoval
+        /// Cannot remove the last manager of a namespace.
+        /// </summary>
+        LastManagerRemoval,
+        
+        /// <summary>
+        /// >> DanglingTags
+        /// There are dangling Tags.
+        /// </summary>
+        DanglingTags,
     }
 }

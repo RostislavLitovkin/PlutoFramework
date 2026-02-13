@@ -43,7 +43,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
         /// 
         /// Parameters:
         /// - `region_id`: Id of the region.
-        /// - `vote`: Must be either a Yes vote or a No vote.
+        /// - `vote`: Must be either a Yes vote, a No vote or a Abstain vote.
         /// - `amount`: The amount that the caller is using for voting.
         /// 
         /// Emits `VotedOnRegionProposal` event when successful.
@@ -156,7 +156,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
         /// 
         /// Parameters:
         /// - `region_id`: The region where the region owner should be removed.
-        /// - `vote`: Must be either a Yes vote or a No vote.
+        /// - `vote`: Must be either a Yes vote, a No vote or a Abstain vote.
         /// - `amount`: The amount that the caller is using for voting.
         /// 
         /// Emits `VotedOnRegionOwnerProposal` event when successful.
@@ -231,7 +231,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
     }
     
     /// <summary>
-    /// >> 393 - Variant[pallet_regions.pallet.Call]
+    /// >> 453 - Variant[pallet_regions.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -249,7 +249,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>>(Call.create_new_region);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.adjust_listing_duration);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>>(Call.adjust_region_tax);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10>>(Call.create_new_location);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>>(Call.create_new_location);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U16>(Call.propose_remove_regional_operator);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumVote, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.vote_on_remove_owner_proposal);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U64>(Call.unlock_region_owner_removal_voting_token);
