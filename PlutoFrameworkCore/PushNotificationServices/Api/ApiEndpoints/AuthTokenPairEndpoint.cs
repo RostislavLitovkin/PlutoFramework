@@ -14,20 +14,23 @@ public record TokenPair
 
 public record DeviceRegistrationData
 {
-    [JsonPropertyName("device_uuid")]
-    public required string DeviceUUID { get; set; }
-
-    [JsonPropertyName("attestation")]
-    public required string Attestation { get; set; }
-
+    [JsonPropertyName("device_id")]
+    public required string DeviceId { get; set; }
+    
     [JsonPropertyName("platform")]
     public required string Platform { get; set; }
+
+    [JsonPropertyName("attestation")]
+    public string? Attestation { get; set; }
+    
+    [JsonPropertyName("assertion")]
+    public string? Assertion { get; set; }
 }
 
 public abstract class AuthTokenPairEndpoint: IApiEndpoint
 {
     public static string EndpointPath => "/api/token/";
-    public static readonly string RefreshEndpointPath = EndpointPath + "/refresh";
+    public static readonly string RefreshEndpointPath = EndpointPath + "refresh/";
     
     private record AccessTokenObject
     {

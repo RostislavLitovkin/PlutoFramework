@@ -2,5 +2,8 @@
 
 public interface IAttestationService
 {
-    Task<string> GetAttestationTokenAsync(string nonce);
+    Task<string> GetAttestationAsync(string nonce);
+    Task<string?> GetAssertionAsync(string nonce);
+    
+    Task<string> GetDeviceIdAsync();
 }

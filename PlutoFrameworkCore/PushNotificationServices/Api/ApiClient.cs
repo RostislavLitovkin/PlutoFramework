@@ -1,4 +1,5 @@
 ﻿using PlutoFrameworkCore.PushNotificationServices.Api.ApiEndpoints;
+using PlutoFrameworkCore.PushNotificationServices.Core.Interfaces;
 using PlutoFrameworkCore.PushNotificationServices.Core.Utils;
 using PlutoFrameworkCore.PushNotificationServices.Core.Misc;
 
@@ -8,36 +9,31 @@ public class UnauthorizedException(string message) : HttpRequestException(messag
 
 public static class ApiClient
 {
-    private static HttpClient? _sharedClient;
+    private static HttpClient? sharedClient;
     private static HttpClient SharedClient
     {
-        get => _sharedClient ??  throw new InvalidOperationException("Set ApiClient.BaseUrl before using ApiClient.");
-        set => _sharedClient = value;
+        get => sharedClient ?? throw new InvalidOperationException("Call SetBaseUrl before using ApiClient.");
+        set => sharedClient = value;
     }
 
     public static void SetBaseUrl(string url)
     {
         SharedClient = new HttpClient
         {
-            BaseAddress = new Uri(url ?? throw new InvalidOperationException(
-                    "Base URL is not specified. Call SetBaseUrl before using ApiClient."))
+            BaseAddress = new Uri(url)
         };
     }
     
-    public static async Task RegisterDeviceRequestAsync(string deviceUUID)
+    public static async Task RegisterDeviceRequestAsync()
     {
         if (Platform.Current == PlatformType.Other) return;
 
-        var nonce = await NonceEndpoint.GetNonceAsync(SharedClient, new NonceRetrievalData {
-            DeviceUUID = deviceUUID,
-            Platform = Platform.Current.ToStringValue()
-        });
-
-        var attestation = await new AttestationTokenService(Platform.AttestationService).GetTokenAsync(nonce);
+        var nonce = await NonceEndpoint.GetNonceAsync(SharedClient);
 
         var tokenPair = await AuthTokenPairEndpoint.GetTokenPairAsync(SharedClient, new DeviceRegistrationData {
-            DeviceUUID = deviceUUID,
-            Attestation = attestation,
+            DeviceId = await Platform.AttestationService.GetDeviceIdAsync(),
+            Attestation = await Platform.AttestationService.GetAttestationAsync(nonce),
+            Assertion = await Platform.AttestationService.GetAssertionAsync(nonce),
             Platform = Platform.Current.ToStringValue()
         });
         //Console.WriteLine($"[PlutoNotifications] Got JWT pair: {tokenPair.Access} {tokenPair.Refresh}");
@@ -75,9 +71,9 @@ public static class ApiClient
 
         try
         {
-            await FCMTokenEndpoint.UpdateTokenAsync(SharedClient, new FCMTokenUpdateData
+            await FcmTokenEndpoint.UpdateTokenAsync(SharedClient, new FcmTokenUpdateData
             {
-                FCMToken = newFCMToken
+                FcmToken = newFCMToken
             });
         }
         catch (UnauthorizedException)

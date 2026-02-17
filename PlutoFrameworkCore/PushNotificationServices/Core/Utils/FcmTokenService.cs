@@ -2,7 +2,7 @@
 
 namespace PlutoFrameworkCore.PushNotificationServices.Core.Utils;
 
-public static class FCMTokenService
+public static class FcmTokenService
 {
     public static async Task<string?> GetTokenAsync()
     {

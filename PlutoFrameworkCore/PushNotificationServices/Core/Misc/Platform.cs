@@ -11,21 +11,21 @@ public enum PlatformType
 
 public static class Platform
 {
-    private static PlatformType? _current;
-    private static IAttestationService? _attestationService;
+    private static PlatformType? current;
+    private static IAttestationService? attestationService;
 
     public static PlatformType Current
     {
-        get => _current ?? 
+        get => current ?? 
                throw new InvalidOperationException("Set Platform.Current before using its value"); 
-        set => _current = value;
+        set => current = value;
     }
 
     public static IAttestationService AttestationService
     {
-        get => _attestationService ?? 
+        get => attestationService ?? 
                throw new InvalidOperationException("Set Platform.AttestationService before using its value");
-        set => _attestationService = value;
+        set => attestationService = value;
     }
     
     public static string ToStringValue(this PlatformType platform)

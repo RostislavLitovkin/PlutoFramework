@@ -6,7 +6,7 @@
 
     public class PushNotificationsSecureStorageService : IPushNotificationsSecureStorage
     {
-        private const string KeyUuid = "installation_uuid";
+        private const string KeyDeviceId = "device_id";
         private const string KeyAuthTokenPair = "auth_token_pair";
         
         private const string KeyIsRegistered = "device_registered";
@@ -18,16 +18,16 @@
             WriteIndented = false
         };
         
-        public async Task SaveUUIDAsync(string uuid)
+        public async Task SaveDeviceIdAsync(string uuid)
         {
-            await SecureStorage.Default.SetAsync(KeyUuid, uuid);
+            await SecureStorage.Default.SetAsync(KeyDeviceId, uuid);
         }
         
-        public async Task<string?> GetUUIDAsync()
+        public async Task<string?> GetDeviceIdAsync()
         {
             try
             {
-                return await SecureStorage.Default.GetAsync(KeyUuid);
+                return await SecureStorage.Default.GetAsync(KeyDeviceId);
             }
             catch
             {
@@ -72,12 +72,12 @@
             }
         }
         
-        public async Task SaveFCMTokenExpiredAsync(bool expired)
+        public async Task SaveFcmTokenExpiredAsync(bool expired)
         {
             await SecureStorage.Default.SetAsync(KeyFcmTokenExpired, expired.ToString());
         }
         
-        public async Task<bool?> GetFCMTokenExpiredAsync()
+        public async Task<bool?> GetFcmTokenExpiredAsync()
         {
             try
             {

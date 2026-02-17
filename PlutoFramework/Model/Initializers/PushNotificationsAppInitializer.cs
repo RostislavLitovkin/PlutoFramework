@@ -15,8 +15,12 @@ using NotificationsPlatform = PlutoFrameworkCore.PushNotificationServices.Core.M
 
 public static class PushNotificationsAppInitializer
 {
+    public static void Initialize(string apiUrl)
+    {
+        _ = InitializeAsync(apiUrl);
+    }
 
-    public static async Task InitializeAsync(string apiUrl)
+    private static async Task InitializeAsync(string apiUrl)
     {
         Console.WriteLine($"[PlutoNotifications] Trying to start notification services ...");
         ApiClient.SetBaseUrl(apiUrl);
@@ -26,16 +30,16 @@ public static class PushNotificationsAppInitializer
 
         # if ANDROID
         NotificationsPlatform.Current = PlatformType.Android;
-        NotificationsPlatform.AttestationService = new PlayIntegrityService();
+        NotificationsPlatform.AttestationService = new PlayIntegrityService(SecureStorageManager.Storage);
         # elif IOS
         NotificationsPlatform.Current = PlatformType.iOS;
-        NotificationsPlatform.AttestationService = new AppAttestService();
+        NotificationsPlatform.AttestationService = new AppAttestService(SecureStorageManager.Storage);
         # endif
         Console.WriteLine($"[PlutoNotifications] Platform type set: {NotificationsPlatform.Current.ToStringValue()}");
         
         if (await DeviceRegisterService.RegisterDeviceAsync())
         {
-            await DeviceRegisterService.UpdateFCMTokenAsync();
+            await DeviceRegisterService.UpdateFcmTokenAsync();
         }
         
         Console.WriteLine($"[PlutoNotifications] Background jobs processed.");
