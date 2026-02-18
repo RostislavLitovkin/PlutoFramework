@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
     
     
     /// <summary>
-    /// >> 657 - Composite[pallet_marketplace.types.TokenOwnerFunds]
+    /// >> 745 - Composite[pallet_marketplace.types.TokenOwnerFunds]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class TokenOwnerFunds : BaseType

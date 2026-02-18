@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_nomination_pools
     
     
     /// <summary>
-    /// >> 937 - Composite[pallet_nomination_pools.UnbondPool]
+    /// >> 949 - Composite[pallet_nomination_pools.UnbondPool]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UnbondPool : BaseType

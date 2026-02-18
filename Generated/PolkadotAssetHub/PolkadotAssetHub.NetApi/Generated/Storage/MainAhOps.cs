@@ -266,6 +266,20 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
             byteArray.AddRange(asset_id.Encode());
             return new Method(254, "AhOps", 3, "transfer_to_post_migration_treasury", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> translate_para_sovereign_child_to_sibling_derived
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method TranslateParaSovereignChildToSiblingDerived(Substrate.NetApi.Model.Types.Primitive.U16 para_id, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U16> derivation_path, PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32 old_account, PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32 new_account)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(para_id.Encode());
+            byteArray.AddRange(derivation_path.Encode());
+            byteArray.AddRange(old_account.Encode());
+            byteArray.AddRange(new_account.Encode());
+            return new Method(254, "AhOps", 4, "translate_para_sovereign_child_to_sibling_derived", byteArray.ToArray());
+        }
     }
     
     /// <summary>
@@ -346,5 +360,29 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         /// The balance is zero.
         /// </summary>
         ZeroBalance,
+        
+        /// <summary>
+        /// >> FailedToTransfer
+        /// Failed to transfer balance.
+        /// </summary>
+        FailedToTransfer,
+        
+        /// <summary>
+        /// >> AlreadyTranslated
+        /// The account has already been translated.
+        /// </summary>
+        AlreadyTranslated,
+        
+        /// <summary>
+        /// >> TooLongDerivationPath
+        /// The derivation path is too long.
+        /// </summary>
+        TooLongDerivationPath,
+        
+        /// <summary>
+        /// >> FailedToForceUnstake
+        /// Failed to force unstake.
+        /// </summary>
+        FailedToForceUnstake,
     }
 }

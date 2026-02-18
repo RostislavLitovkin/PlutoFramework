@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.frame_system.extensions.check_
     
     
     /// <summary>
-    /// >> 1010 - Composite[frame_system.extensions.check_nonce.CheckNonce]
+    /// >> 1064 - Composite[frame_system.extensions.check_nonce.CheckNonce]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckNonce : BaseType

@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_weig
     
     
     /// <summary>
-    /// >> 719 - Composite[frame_system.extensions.check_weight.CheckWeight]
+    /// >> 835 - Composite[frame_system.extensions.check_weight.CheckWeight]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckWeight : BaseType

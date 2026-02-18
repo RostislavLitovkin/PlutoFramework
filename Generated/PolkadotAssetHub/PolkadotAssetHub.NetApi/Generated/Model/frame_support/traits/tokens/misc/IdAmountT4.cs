@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.frame_support.traits.tokens.mi
     
     
     /// <summary>
-    /// >> 766 - Composite[frame_support.traits.tokens.misc.IdAmountT4]
+    /// >> 776 - Composite[frame_support.traits.tokens.misc.IdAmountT4]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class IdAmountT4 : BaseType

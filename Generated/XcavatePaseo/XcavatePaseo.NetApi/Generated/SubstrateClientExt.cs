@@ -239,6 +239,41 @@ namespace XcavatePaseo.NetApi.Generated
         /// </summary>
         public BucketsStorage BucketsStorage;
         
+        /// <summary>
+        /// CtypeStorage storage calls.
+        /// </summary>
+        public CtypeStorage CtypeStorage;
+        
+        /// <summary>
+        /// AttestationStorage storage calls.
+        /// </summary>
+        public AttestationStorage AttestationStorage;
+        
+        /// <summary>
+        /// DelegationStorage storage calls.
+        /// </summary>
+        public DelegationStorage DelegationStorage;
+        
+        /// <summary>
+        /// DidStorage storage calls.
+        /// </summary>
+        public DidStorage DidStorage;
+        
+        /// <summary>
+        /// PublicCredentialsStorage storage calls.
+        /// </summary>
+        public PublicCredentialsStorage PublicCredentialsStorage;
+        
+        /// <summary>
+        /// KiltMigrationStorage storage calls.
+        /// </summary>
+        public KiltMigrationStorage KiltMigrationStorage;
+        
+        /// <summary>
+        /// DidLookupStorage storage calls.
+        /// </summary>
+        public DidLookupStorage DidLookupStorage;
+        
         public SubstrateClientExt(System.Uri uri, Substrate.NetApi.Model.Extrinsics.ChargeType chargeType) : 
                 base(uri, chargeType)
         {
@@ -285,6 +320,13 @@ namespace XcavatePaseo.NetApi.Generated
             this.PropertyManagementStorage = new PropertyManagementStorage(this);
             this.PropertyGovernanceStorage = new PropertyGovernanceStorage(this);
             this.BucketsStorage = new BucketsStorage(this);
+            this.CtypeStorage = new CtypeStorage(this);
+            this.AttestationStorage = new AttestationStorage(this);
+            this.DelegationStorage = new DelegationStorage(this);
+            this.DidStorage = new DidStorage(this);
+            this.PublicCredentialsStorage = new PublicCredentialsStorage(this);
+            this.KiltMigrationStorage = new KiltMigrationStorage(this);
+            this.DidLookupStorage = new DidLookupStorage(this);
         }
     }
 }

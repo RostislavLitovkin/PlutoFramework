@@ -48,7 +48,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.claims
     }
     
     /// <summary>
-    /// >> 580 - Variant[pallet_rc_migrator.claims.RcClaimsMessage]
+    /// >> 588 - Variant[pallet_rc_migrator.claims.RcClaimsMessage]
     /// </summary>
     public sealed class EnumRcClaimsMessage : BaseEnumRust<RcClaimsMessage>
     {

@@ -47,142 +47,122 @@ namespace Hydration.NetApi.Generated.Model.pallet_xyk.pallet
         ZeroLiquidity = 3,
         
         /// <summary>
-        /// >> ZeroInitialPrice
-        /// It is not allowed to create a pool with zero initial price.
-        /// Not used, kept for backward compatibility
-        /// </summary>
-        ZeroInitialPrice = 4,
-        
-        /// <summary>
-        /// >> CreatePoolAssetAmountInvalid
-        /// Overflow
-        /// Not used, kept for backward compatibility
-        /// </summary>
-        CreatePoolAssetAmountInvalid = 5,
-        
-        /// <summary>
         /// >> InvalidMintedLiquidity
         /// Overflow
         /// </summary>
-        InvalidMintedLiquidity = 6,
+        InvalidMintedLiquidity = 4,
         
         /// <summary>
         /// >> InvalidLiquidityAmount
         /// Overflow
         /// </summary>
-        InvalidLiquidityAmount = 7,
+        InvalidLiquidityAmount = 5,
         
         /// <summary>
         /// >> AssetAmountExceededLimit
         /// Asset amount has exceeded given limit.
         /// </summary>
-        AssetAmountExceededLimit = 8,
+        AssetAmountExceededLimit = 6,
         
         /// <summary>
         /// >> AssetAmountNotReachedLimit
         /// Asset amount has not reached given limit.
         /// </summary>
-        AssetAmountNotReachedLimit = 9,
+        AssetAmountNotReachedLimit = 7,
         
         /// <summary>
         /// >> InsufficientAssetBalance
         /// Asset balance is not sufficient.
         /// </summary>
-        InsufficientAssetBalance = 10,
+        InsufficientAssetBalance = 8,
         
         /// <summary>
         /// >> InsufficientPoolAssetBalance
         /// Not enough asset liquidity in the pool.
         /// </summary>
-        InsufficientPoolAssetBalance = 11,
+        InsufficientPoolAssetBalance = 9,
         
         /// <summary>
         /// >> InsufficientNativeCurrencyBalance
         /// Not enough core asset liquidity in the pool.
         /// </summary>
-        InsufficientNativeCurrencyBalance = 12,
+        InsufficientNativeCurrencyBalance = 10,
         
         /// <summary>
         /// >> TokenPoolNotFound
         /// Liquidity pool for given assets does not exist.
         /// </summary>
-        TokenPoolNotFound = 13,
+        TokenPoolNotFound = 11,
         
         /// <summary>
         /// >> TokenPoolAlreadyExists
         /// Liquidity pool for given assets already exists.
         /// </summary>
-        TokenPoolAlreadyExists = 14,
+        TokenPoolAlreadyExists = 12,
         
         /// <summary>
         /// >> AddAssetAmountInvalid
         /// Overflow
         /// </summary>
-        AddAssetAmountInvalid = 15,
+        AddAssetAmountInvalid = 13,
         
         /// <summary>
         /// >> RemoveAssetAmountInvalid
         /// Overflow
         /// </summary>
-        RemoveAssetAmountInvalid = 16,
+        RemoveAssetAmountInvalid = 14,
         
         /// <summary>
         /// >> SellAssetAmountInvalid
         /// Overflow
         /// </summary>
-        SellAssetAmountInvalid = 17,
+        SellAssetAmountInvalid = 15,
         
         /// <summary>
         /// >> BuyAssetAmountInvalid
         /// Overflow
         /// </summary>
-        BuyAssetAmountInvalid = 18,
+        BuyAssetAmountInvalid = 16,
         
         /// <summary>
         /// >> FeeAmountInvalid
         /// Overflow
         /// </summary>
-        FeeAmountInvalid = 19,
-        
-        /// <summary>
-        /// >> CannotApplyDiscount
-        /// Overflow
-        /// </summary>
-        CannotApplyDiscount = 20,
+        FeeAmountInvalid = 17,
         
         /// <summary>
         /// >> MaxOutRatioExceeded
         /// Max fraction of pool to buy in single transaction has been exceeded.
         /// </summary>
-        MaxOutRatioExceeded = 21,
+        MaxOutRatioExceeded = 18,
         
         /// <summary>
         /// >> MaxInRatioExceeded
         /// Max fraction of pool to sell in single transaction has been exceeded.
         /// </summary>
-        MaxInRatioExceeded = 22,
+        MaxInRatioExceeded = 19,
         
         /// <summary>
         /// >> Overflow
         /// Overflow
         /// </summary>
-        Overflow = 23,
+        Overflow = 20,
         
         /// <summary>
         /// >> CannotCreatePool
         /// Pool cannot be created due to outside factors.
         /// </summary>
-        CannotCreatePool = 24,
+        CannotCreatePool = 21,
         
         /// <summary>
         /// >> SlippageLimit
         /// Slippage protection.
         /// </summary>
-        SlippageLimit = 25,
+        SlippageLimit = 22,
     }
     
     /// <summary>
-    /// >> 679 - Variant[pallet_xyk.pallet.Error]
+    /// >> 745 - Variant[pallet_xyk.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

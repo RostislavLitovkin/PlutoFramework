@@ -20,12 +20,31 @@ namespace PolkadotPeople.NetApi.Generated.Model.people_polkadot_runtime
     /// </summary>
     public enum RuntimeHoldReason
     {
+        
+        /// <summary>
+        /// >> Session
+        /// </summary>
+        Session = 22,
+        
+        /// <summary>
+        /// >> PolkadotXcm
+        /// </summary>
+        PolkadotXcm = 31,
     }
     
     /// <summary>
-    /// >> 234 - Variant[people_polkadot_runtime.RuntimeHoldReason]
+    /// >> 249 - Variant[people_polkadot_runtime.RuntimeHoldReason]
     /// </summary>
-    public sealed class EnumRuntimeHoldReason : BaseEnum<RuntimeHoldReason>
+    public sealed class EnumRuntimeHoldReason : BaseEnumRust<RuntimeHoldReason>
     {
+        
+        /// <summary>
+        /// Initializes a new instance of the class.
+        /// </summary>
+        public EnumRuntimeHoldReason()
+        {
+				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.pallet_session.pallet.EnumHoldReason>(RuntimeHoldReason.Session);
+				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.pallet_xcm.pallet.EnumHoldReason>(RuntimeHoldReason.PolkadotXcm);
+        }
     }
 }

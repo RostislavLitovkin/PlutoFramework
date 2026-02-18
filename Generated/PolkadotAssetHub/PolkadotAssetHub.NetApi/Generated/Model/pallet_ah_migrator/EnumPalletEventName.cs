@@ -158,7 +158,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_ah_migrator
     }
     
     /// <summary>
-    /// >> 697 - Variant[pallet_ah_migrator.PalletEventName]
+    /// >> 706 - Variant[pallet_ah_migrator.PalletEventName]
     /// </summary>
     public sealed class EnumPalletEventName : BaseEnum<PalletEventName>
     {

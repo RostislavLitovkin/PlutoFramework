@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.staking.mes
     
     
     /// <summary>
-    /// >> 656 - Composite[pallet_rc_migrator.staking.message.PortableIndividualExposure]
+    /// >> 664 - Composite[pallet_rc_migrator.staking.message.PortableIndividualExposure]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PortableIndividualExposure : BaseType

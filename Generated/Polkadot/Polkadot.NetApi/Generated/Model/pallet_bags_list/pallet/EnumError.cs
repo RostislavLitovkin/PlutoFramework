@@ -36,7 +36,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_bags_list.pallet
     }
     
     /// <summary>
-    /// >> 755 - Variant[pallet_bags_list.pallet.Error]
+    /// >> 757 - Variant[pallet_bags_list.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>

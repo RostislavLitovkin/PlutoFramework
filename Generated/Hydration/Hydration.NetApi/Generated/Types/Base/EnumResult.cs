@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Types.Base
     }
     
     /// <summary>
-    /// >> 407 - Variant[Result]
+    /// >> 462 - Variant[Result]
     /// </summary>
     public sealed class EnumResult : BaseEnumRust<Result>
     {

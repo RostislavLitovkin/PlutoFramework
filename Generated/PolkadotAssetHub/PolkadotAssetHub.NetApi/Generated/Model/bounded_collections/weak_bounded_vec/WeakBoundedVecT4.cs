@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.weak_bound
     
     
     /// <summary>
-    /// >> 988 - Composite[bounded_collections.weak_bounded_vec.WeakBoundedVecT4]
+    /// >> 1000 - Composite[bounded_collections.weak_bounded_vec.WeakBoundedVecT4]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class WeakBoundedVecT4 : BaseType

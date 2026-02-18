@@ -30,6 +30,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_evm_accounts.pallet
         /// to the origin address.
         /// 
         /// Binding an address is not necessary for interacting with the EVM.
+        /// Increases `sufficients` for the account.
         /// 
         /// Parameters:
         /// - `origin`: Substrate account binding an address
@@ -93,16 +94,32 @@ namespace Hydration.NetApi.Generated.Model.pallet_evm_accounts.pallet
         /// Removes address of the contract from the list of approved contracts to manage balances.
         /// 
         /// Parameters:
-        /// - `origin`:  Must be `ControllerOrigin`.
+        /// - `origin`: Must be `ControllerOrigin`.
         /// - `address`: Contract address that will be disapproved
         /// 
         /// Emits `ContractDisapproved` event when successful.
         /// </summary>
         disapprove_contract = 5,
+        
+        /// <summary>
+        /// >> claim_account
+        /// Proves ownership of an account and binds it to the EVM address.
+        /// This is useful for accounts that want to submit some substrate transaction, but only
+        /// received some ERC20 balance and `System` pallet doesn't register them as a substrate account.
+        /// 
+        /// Parameters:
+        /// - `origin`: Unsigned origin.
+        /// - `account`: Account proving ownership of the address.
+        /// - `asset_id`: Asset ID to be set as fee currency for the account.
+        /// - `signature`: Signed message by the account that proves ownership of the account.
+        /// 
+        /// Emits `AccountClaimed` event when successful.
+        /// </summary>
+        claim_account = 6,
     }
     
     /// <summary>
-    /// >> 277 - Variant[pallet_evm_accounts.pallet.Call]
+    /// >> 299 - Variant[pallet_evm_accounts.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -119,6 +136,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_evm_accounts.pallet
 				AddTypeDecoder<BaseVoid>(Call.renounce_contract_deployer);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.primitive_types.H160>(Call.approve_contract);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.primitive_types.H160>(Call.disapprove_contract);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.sp_runtime.EnumMultiSignature>>(Call.claim_account);
         }
     }
 }

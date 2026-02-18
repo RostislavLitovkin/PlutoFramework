@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Model.cumulus_pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 110 - Variant[cumulus_pallet_xcm.pallet.Origin]
+    /// >> 112 - Variant[cumulus_pallet_xcm.pallet.Origin]
     /// </summary>
     public sealed class EnumOrigin : BaseEnumRust<Origin>
     {

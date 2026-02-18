@@ -242,6 +242,11 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
         Staking = 89,
         
         /// <summary>
+        /// >> Revive
+        /// </summary>
+        Revive = 90,
+        
+        /// <summary>
         /// >> AhOps
         /// </summary>
         AhOps = 254,
@@ -307,6 +312,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi_block.verifier.impls.pallet.EnumEvent>(RuntimeEvent.MultiBlockElectionVerifier);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi_block.signed.pallet.EnumEvent>(RuntimeEvent.MultiBlockElectionSigned);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async.pallet.pallet.EnumEvent>(RuntimeEvent.Staking);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_revive.pallet.EnumEvent>(RuntimeEvent.Revive);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_ah_ops.pallet.EnumEvent>(RuntimeEvent.AhOps);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_ah_migrator.pallet.EnumEvent>(RuntimeEvent.AhMigrator);
         }

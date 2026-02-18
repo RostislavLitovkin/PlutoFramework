@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.ismp.consensus
     
     
     /// <summary>
-    /// >> 424 - Composite[ismp.consensus.StateCommitment]
+    /// >> 473 - Composite[ismp.consensus.StateCommitment]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class StateCommitment : BaseType

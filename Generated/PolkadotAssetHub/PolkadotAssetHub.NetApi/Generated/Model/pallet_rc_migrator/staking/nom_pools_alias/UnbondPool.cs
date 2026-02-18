@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.staking.nom
     
     
     /// <summary>
-    /// >> 550 - Composite[pallet_rc_migrator.staking.nom_pools_alias.UnbondPool]
+    /// >> 558 - Composite[pallet_rc_migrator.staking.nom_pools_alias.UnbondPool]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UnbondPool : BaseType

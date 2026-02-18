@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_state_trie_migration.pallet
     }
     
     /// <summary>
-    /// >> 61 - Variant[pallet_state_trie_migration.pallet.MigrationCompute]
+    /// >> 63 - Variant[pallet_state_trie_migration.pallet.MigrationCompute]
     /// </summary>
     public sealed class EnumMigrationCompute : BaseEnum<MigrationCompute>
     {

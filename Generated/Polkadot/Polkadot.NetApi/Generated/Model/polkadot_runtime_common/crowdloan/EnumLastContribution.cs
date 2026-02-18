@@ -38,7 +38,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_common.crowdloan
     }
     
     /// <summary>
-    /// >> 898 - Variant[polkadot_runtime_common.crowdloan.LastContribution]
+    /// >> 900 - Variant[polkadot_runtime_common.crowdloan.LastContribution]
     /// </summary>
     public sealed class EnumLastContribution : BaseEnumRust<LastContribution>
     {

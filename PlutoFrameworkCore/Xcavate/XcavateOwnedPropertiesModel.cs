@@ -1,7 +1,7 @@
-﻿using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
+﻿using PlutoFramework.Constants;
 using PlutoFramework.Model.AjunaExt;
-using PlutoFramework.Constants;
 using UniqueryPlus.Nfts;
+using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
 
 namespace PlutoFramework.Model.Xcavate
 {
@@ -72,6 +72,6 @@ namespace PlutoFramework.Model.Xcavate
 
         public static long GetTotalPropertiesOwned() => ItemsDict.Values.Sum(x => x.Amount);
 
-        public static long GetTotalInvested() => ItemsDict.Values.Sum(x => (long)(x.Amount * ((INftXcavateMetadata)x.NftBase).XcavateMetadata?.PricePerToken ?? 0));
+        public static long GetTotalInvested() => ItemsDict.Values.Sum(x => (long)(x.Amount * ((INftXcavateMetadata)x.NftBase).XcavateMetadata?.Financials.PricePerToken ?? 0));
     }
 }

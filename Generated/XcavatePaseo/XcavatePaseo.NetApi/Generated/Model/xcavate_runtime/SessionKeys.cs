@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcavate_runtime
     
     
     /// <summary>
-    /// >> 318 - Composite[xcavate_runtime.SessionKeys]
+    /// >> 367 - Composite[xcavate_runtime.SessionKeys]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SessionKeys : BaseType

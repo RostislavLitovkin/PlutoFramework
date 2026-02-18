@@ -43,7 +43,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_ah_migrator
     }
     
     /// <summary>
-    /// >> 665 - Variant[pallet_ah_migrator.MigrationStage]
+    /// >> 673 - Variant[pallet_ah_migrator.MigrationStage]
     /// </summary>
     public sealed class EnumMigrationStage : BaseEnumRust<MigrationStage>
     {

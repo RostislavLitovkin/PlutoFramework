@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4.asset
     }
     
     /// <summary>
-    /// >> 351 - Variant[staging_xcm.v4.asset.WildFungibility]
+    /// >> 400 - Variant[staging_xcm.v4.asset.WildFungibility]
     /// </summary>
     public sealed class EnumWildFungibility : BaseEnum<WildFungibility>
     {

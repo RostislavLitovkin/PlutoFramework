@@ -53,7 +53,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async_rc_client
     }
     
     /// <summary>
-    /// >> 684 - Variant[pallet_staking_async_rc_client.pallet.UnexpectedKind]
+    /// >> 692 - Variant[pallet_staking_async_rc_client.pallet.UnexpectedKind]
     /// </summary>
     public sealed class EnumUnexpectedKind : BaseEnum<UnexpectedKind>
     {

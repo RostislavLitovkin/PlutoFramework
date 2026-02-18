@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.types
     
     
     /// <summary>
-    /// >> 668 - Composite[pallet_rc_migrator.types.MigrationFinishedData]
+    /// >> 676 - Composite[pallet_rc_migrator.types.MigrationFinishedData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MigrationFinishedData : BaseType

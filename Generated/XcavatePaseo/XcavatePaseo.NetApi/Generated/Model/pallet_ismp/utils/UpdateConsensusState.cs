@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_ismp.utils
     
     
     /// <summary>
-    /// >> 425 - Composite[pallet_ismp.utils.UpdateConsensusState]
+    /// >> 474 - Composite[pallet_ismp.utils.UpdateConsensusState]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UpdateConsensusState : BaseType

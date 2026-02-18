@@ -58,7 +58,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.treasury
     }
     
     /// <summary>
-    /// >> 620 - Variant[pallet_rc_migrator.treasury.PortableTreasuryMessage]
+    /// >> 628 - Variant[pallet_rc_migrator.treasury.PortableTreasuryMessage]
     /// </summary>
     public sealed class EnumPortableTreasuryMessage : BaseEnumRust<PortableTreasuryMessage>
     {

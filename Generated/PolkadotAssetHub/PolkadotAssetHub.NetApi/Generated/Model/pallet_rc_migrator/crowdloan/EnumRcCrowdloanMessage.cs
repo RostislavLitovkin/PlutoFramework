@@ -38,7 +38,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.crowdloan
     }
     
     /// <summary>
-    /// >> 616 - Variant[pallet_rc_migrator.crowdloan.RcCrowdloanMessage]
+    /// >> 624 - Variant[pallet_rc_migrator.crowdloan.RcCrowdloanMessage]
     /// </summary>
     public sealed class EnumRcCrowdloanMessage : BaseEnumRust<RcCrowdloanMessage>
     {

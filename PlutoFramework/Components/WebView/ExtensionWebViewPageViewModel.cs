@@ -29,10 +29,20 @@ namespace PlutoFramework.Components.WebView
         [NotifyPropertyChangedFor(nameof(BackOpacity))]
         private bool canGoBack = false;
 
-        public double BackOpacity => CanGoBack ? 1.0 : 0.5;
+        public double BackOpacity => 1.0;
 
         [RelayCommand]
-        public void GoBack() => GoBackFunction();
+        public async Task GoBackAsync()
+        {
+            if (CanGoBack)
+            {
+                GoBackFunction();
+            }
+            else
+            {
+                await Shell.Current.Navigation.PopAsync();
+            }
+        }
 
         [RelayCommand]
         public void Reload() => ReloadFunction();

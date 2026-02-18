@@ -45,10 +45,28 @@ namespace Hydration.NetApi.Generated.Model.pallet_evm_accounts.pallet
         /// Address not whitelisted
         /// </summary>
         AddressNotWhitelisted = 3,
+        
+        /// <summary>
+        /// >> InvalidSignature
+        /// Provided signature is invalid
+        /// </summary>
+        InvalidSignature = 4,
+        
+        /// <summary>
+        /// >> AccountAlreadyExists
+        /// Account already exists in the system pallet
+        /// </summary>
+        AccountAlreadyExists = 5,
+        
+        /// <summary>
+        /// >> InsufficientAssetBalance
+        /// Insufficient asset balance of the claimed asset
+        /// </summary>
+        InsufficientAssetBalance = 6,
     }
     
     /// <summary>
-    /// >> 717 - Variant[pallet_evm_accounts.pallet.Error]
+    /// >> 787 - Variant[pallet_evm_accounts.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

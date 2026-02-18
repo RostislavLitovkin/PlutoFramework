@@ -8,6 +8,7 @@ using PlutoFramework.Constants;
 using PlutoFramework.Model.SQLite;
 using PlutoFramework.Model.Sumsub;
 using PlutoFramework.Model.Xcavate;
+using PlutoFrameworkCore.Keys;
 using PlutoFrameworkCore.Xcavate;
 using XcavatePaseo.NetApi.Generated;
 
@@ -41,6 +42,8 @@ namespace PlutoFramework.Model
             #region Sumsub
             var address = KeysModel.GetSubstrateKey();
 
+            Console.WriteLine("REAL WALLET Address: " + address);
+
             var sumsubSecrets = SumsubSecretModel.GetSecrets();
 
             var applicantData = await SumsubModel.GetApplicantDataAsync(
@@ -52,12 +55,16 @@ namespace PlutoFramework.Model
 
             if (applicantData is null)
             {
+
+                Console.WriteLine("applicantData was null");
                 var userProfileNotCreatedPopupViewModel = DependencyService.Get<UserProfileNotCreatedPopupViewModel>();
 
                 userProfileNotCreatedPopupViewModel.IsVisible = true;
 
                 return false;
             }
+
+            Console.WriteLine("applicantData was good");
             #endregion
 
             #region Whitelist
@@ -67,12 +74,18 @@ namespace PlutoFramework.Model
 
             if (user is null)
             {
+                Console.WriteLine("user was null");
+
+                var userProfileNotCreatedPopupViewModel = DependencyService.Get<UserProfileNotCreatedPopupViewModel>();
+
+                userProfileNotCreatedPopupViewModel.IsVisible = true;
+
                 return false;
             }
 
             var verification = await WhitelistModel.IsWhitelistedAsync((SubstrateClientExt)xcavateClient.SubstrateClient, user.Role.ToWhitelistRole(), address, CancellationToken.None);
 
-            switch(verification)
+            switch (verification)
             {
                 case VerificationEnum.Verified:
 
@@ -108,7 +121,7 @@ namespace PlutoFramework.Model
 
         public static bool CheckDidExists()
         {
-            if (!KeysModel.HasSubstrateKey(accountVariant: "kilt1"))
+            if (KeysModel.GetKeyOfTypeAsync(KeyTypeEnum.Did) is null)
             {
                 var noDidPopupViewModel = DependencyService.Get<NoDidPopupViewModel>();
 

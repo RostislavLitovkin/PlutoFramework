@@ -120,7 +120,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool.pallet
         
         /// <summary>
         /// >> HubAssetUpdateError
-        /// LRNA update after trade results in positive value.
+        /// Hub asset reserve update after trade resulted in unexpected Decrease.
         /// </summary>
         HubAssetUpdateError = 16,
         
@@ -216,7 +216,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool.pallet
     }
     
     /// <summary>
-    /// >> 632 - Variant[pallet_omnipool.pallet.Error]
+    /// >> 697 - Variant[pallet_omnipool.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

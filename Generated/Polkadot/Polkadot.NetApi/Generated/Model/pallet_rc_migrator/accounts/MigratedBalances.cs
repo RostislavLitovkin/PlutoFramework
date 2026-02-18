@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_rc_migrator.accounts
     
     
     /// <summary>
-    /// >> 942 - Composite[pallet_rc_migrator.accounts.MigratedBalances]
+    /// >> 944 - Composite[pallet_rc_migrator.accounts.MigratedBalances]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MigratedBalances : BaseType

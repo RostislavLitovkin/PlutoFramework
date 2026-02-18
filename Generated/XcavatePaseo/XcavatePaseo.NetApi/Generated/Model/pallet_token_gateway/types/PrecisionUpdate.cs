@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_token_gateway.types
     
     
     /// <summary>
-    /// >> 448 - Composite[pallet_token_gateway.types.PrecisionUpdate]
+    /// >> 497 - Composite[pallet_token_gateway.types.PrecisionUpdate]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PrecisionUpdate : BaseType

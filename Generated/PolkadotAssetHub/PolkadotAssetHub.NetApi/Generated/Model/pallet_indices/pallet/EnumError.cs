@@ -54,7 +54,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_indices.pallet
     }
     
     /// <summary>
-    /// >> 855 - Variant[pallet_indices.pallet.Error]
+    /// >> 867 - Variant[pallet_indices.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

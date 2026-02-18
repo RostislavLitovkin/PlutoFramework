@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.ismp.messaging
     
     
     /// <summary>
-    /// >> 399 - Composite[ismp.messaging.RequestMessage]
+    /// >> 448 - Composite[ismp.messaging.RequestMessage]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RequestMessage : BaseType

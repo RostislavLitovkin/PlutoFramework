@@ -54,7 +54,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_ismp.pallet
     }
     
     /// <summary>
-    /// >> 618 - Variant[pallet_ismp.pallet.Error]
+    /// >> 706 - Variant[pallet_ismp.pallet.Error]
     /// Pallet errors
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

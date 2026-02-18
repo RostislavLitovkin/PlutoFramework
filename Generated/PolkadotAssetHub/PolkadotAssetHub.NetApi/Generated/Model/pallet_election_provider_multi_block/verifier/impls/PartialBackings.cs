@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi
     
     
     /// <summary>
-    /// >> 963 - Composite[pallet_election_provider_multi_block.verifier.impls.PartialBackings]
+    /// >> 975 - Composite[pallet_election_provider_multi_block.verifier.impls.PartialBackings]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PartialBackings : BaseType

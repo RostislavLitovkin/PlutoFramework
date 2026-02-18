@@ -58,7 +58,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_conviction_voting.conviction
     }
     
     /// <summary>
-    /// >> 176 - Variant[pallet_conviction_voting.conviction.Conviction]
+    /// >> 177 - Variant[pallet_conviction_voting.conviction.Conviction]
     /// </summary>
     public sealed class EnumConviction : BaseEnum<Conviction>
     {

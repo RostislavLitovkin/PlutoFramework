@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async.pallet.pa
     
     
     /// <summary>
-    /// >> 979 - Composite[pallet_staking_async.pallet.pallet.BoundedExposurePage]
+    /// >> 991 - Composite[pallet_staking_async.pallet.pallet.BoundedExposurePage]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedExposurePage : BaseType

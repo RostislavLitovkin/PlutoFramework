@@ -40,6 +40,11 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
         /// >> Origins
         /// </summary>
         Origins = 63,
+        
+        /// <summary>
+        /// >> Revive
+        /// </summary>
+        Revive = 90,
     }
     
     /// <summary>
@@ -57,6 +62,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_xcm.pallet.EnumOrigin>(OriginCaller.PolkadotXcm);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_xcm.pallet.EnumOrigin>(OriginCaller.CumulusXcm);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime.governance.origins.pallet_custom_origins.EnumOrigin>(OriginCaller.Origins);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_revive.pallet.EnumOrigin>(OriginCaller.Revive);
         }
     }
 }

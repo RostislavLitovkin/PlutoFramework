@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.token_gateway_primitives
     
     
     /// <summary>
-    /// >> 435 - Composite[token_gateway_primitives.GatewayAssetRegistration]
+    /// >> 484 - Composite[token_gateway_primitives.GatewayAssetRegistration]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class GatewayAssetRegistration : BaseType
@@ -27,11 +27,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.token_gateway_primitives
         /// <summary>
         /// >> name
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT20 Name { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27 Name { get; set; }
         /// <summary>
         /// >> symbol
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21 Symbol { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28 Symbol { get; set; }
         /// <summary>
         /// >> chains
         /// </summary>
@@ -62,9 +62,9 @@ namespace XcavatePaseo.NetApi.Generated.Model.token_gateway_primitives
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Name = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT20();
+            Name = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT27();
             Name.Decode(byteArray, ref p);
-            Symbol = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21();
+            Symbol = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28();
             Symbol.Decode(byteArray, ref p);
             Chains = new Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.ismp.host.EnumStateMachine>();
             Chains.Decode(byteArray, ref p);

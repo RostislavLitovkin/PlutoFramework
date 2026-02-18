@@ -55,6 +55,11 @@ namespace PolkadotPeople.NetApi.Generated
         public MultiBlockMigrationsStorage MultiBlockMigrationsStorage;
         
         /// <summary>
+        /// WeightReclaimStorage storage calls.
+        /// </summary>
+        public WeightReclaimStorage WeightReclaimStorage;
+        
+        /// <summary>
         /// BalancesStorage storage calls.
         /// </summary>
         public BalancesStorage BalancesStorage;
@@ -138,6 +143,7 @@ namespace PolkadotPeople.NetApi.Generated
             this.TimestampStorage = new TimestampStorage(this);
             this.ParachainInfoStorage = new ParachainInfoStorage(this);
             this.MultiBlockMigrationsStorage = new MultiBlockMigrationsStorage(this);
+            this.WeightReclaimStorage = new WeightReclaimStorage(this);
             this.BalancesStorage = new BalancesStorage(this);
             this.TransactionPaymentStorage = new TransactionPaymentStorage(this);
             this.AuthorshipStorage = new AuthorshipStorage(this);

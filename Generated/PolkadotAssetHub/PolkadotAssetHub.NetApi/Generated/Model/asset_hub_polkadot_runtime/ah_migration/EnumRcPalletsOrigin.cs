@@ -33,7 +33,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime.ah_
     }
     
     /// <summary>
-    /// >> 570 - Variant[asset_hub_polkadot_runtime.ah_migration.RcPalletsOrigin]
+    /// >> 578 - Variant[asset_hub_polkadot_runtime.ah_migration.RcPalletsOrigin]
     /// </summary>
     public sealed class EnumRcPalletsOrigin : BaseEnumRust<RcPalletsOrigin>
     {

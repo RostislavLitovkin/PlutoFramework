@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.preimage.re
     
     
     /// <summary>
-    /// >> 524 - Composite[pallet_rc_migrator.preimage.request_status.PortableRequestStatus]
+    /// >> 532 - Composite[pallet_rc_migrator.preimage.request_status.PortableRequestStatus]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PortableRequestStatus : BaseType

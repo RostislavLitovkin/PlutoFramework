@@ -38,7 +38,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_balances.types
     }
     
     /// <summary>
-    /// >> 227 - Variant[pallet_balances.types.Reasons]
+    /// >> 242 - Variant[pallet_balances.types.Reasons]
     /// </summary>
     public sealed class EnumReasons : BaseEnum<Reasons>
     {

@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.types
     
     
     /// <summary>
-    /// >> 429 - Composite[pallet_stableswap.types.PoolPegInfo]
+    /// >> 483 - Composite[pallet_stableswap.types.PoolPegInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PoolPegInfo : BaseType
@@ -29,13 +29,17 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.types
         /// </summary>
         public Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13 Source { get; set; }
         /// <summary>
+        /// >> updated_at
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 UpdatedAt { get; set; }
+        /// <summary>
         /// >> max_peg_update
         /// </summary>
         public Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill MaxPegUpdate { get; set; }
         /// <summary>
         /// >> current
         /// </summary>
-        public Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23 Current { get; set; }
+        public Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37 Current { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -48,6 +52,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.types
         {
             var result = new List<byte>();
             result.AddRange(Source.Encode());
+            result.AddRange(UpdatedAt.Encode());
             result.AddRange(MaxPegUpdate.Encode());
             result.AddRange(Current.Encode());
             return result.ToArray();
@@ -59,9 +64,11 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.types
             var start = p;
             Source = new Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13();
             Source.Decode(byteArray, ref p);
+            UpdatedAt = new Substrate.NetApi.Model.Types.Primitive.U32();
+            UpdatedAt.Decode(byteArray, ref p);
             MaxPegUpdate = new Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill();
             MaxPegUpdate.Decode(byteArray, ref p);
-            Current = new Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23();
+            Current = new Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37();
             Current.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

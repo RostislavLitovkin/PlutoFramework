@@ -38,7 +38,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async
     }
     
     /// <summary>
-    /// >> 994 - Variant[pallet_staking_async.SnapshotStatus]
+    /// >> 1006 - Variant[pallet_staking_async.SnapshotStatus]
     /// </summary>
     public sealed class EnumSnapshotStatus : BaseEnumRust<SnapshotStatus>
     {

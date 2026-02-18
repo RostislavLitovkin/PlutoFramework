@@ -63,7 +63,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.polkadot_runtime_constants.pro
     }
     
     /// <summary>
-    /// >> 515 - Variant[polkadot_runtime_constants.proxy.ProxyType]
+    /// >> 523 - Variant[polkadot_runtime_constants.proxy.ProxyType]
     /// </summary>
     public sealed class EnumProxyType : BaseEnum<ProxyType>
     {

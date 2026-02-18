@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.bounded_collections.bounded_btree_set
     
     
     /// <summary>
-    /// >> 831 - Composite[bounded_collections.bounded_btree_set.BoundedBTreeSetT2]
+    /// >> 909 - Composite[bounded_collections.bounded_btree_set.BoundedBTreeSetT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedBTreeSetT2 : BaseType

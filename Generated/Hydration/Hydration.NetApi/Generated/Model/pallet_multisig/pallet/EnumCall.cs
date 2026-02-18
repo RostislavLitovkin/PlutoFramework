@@ -143,10 +143,28 @@ namespace Hydration.NetApi.Generated.Model.pallet_multisig.pallet
         /// - Storage: removes one item.
         /// </summary>
         cancel_as_multi = 3,
+        
+        /// <summary>
+        /// >> poke_deposit
+        /// Poke the deposit reserved for an existing multisig operation.
+        /// 
+        /// The dispatch origin for this call must be _Signed_ and must be the original depositor of
+        /// the multisig operation.
+        /// 
+        /// The transaction fee is waived if the deposit amount has changed.
+        /// 
+        /// - `threshold`: The total number of approvals needed for this multisig.
+        /// - `other_signatories`: The accounts (other than the sender) who are part of the
+        ///   multisig.
+        /// - `call_hash`: The hash of the call this deposit is reserved for.
+        /// 
+        /// Emits `DepositPoked` if successful.
+        /// </summary>
+        poke_deposit = 4,
     }
     
     /// <summary>
-    /// >> 165 - Variant[pallet_multisig.pallet.Call]
+    /// >> 166 - Variant[pallet_multisig.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -161,6 +179,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_multisig.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.pallet_multisig.Timepoint>, Hydration.NetApi.Generated.Model.hydradx_runtime.EnumRuntimeCall, Hydration.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Call.as_multi);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.pallet_multisig.Timepoint>, Hydration.NetApi.Generated.Types.Base.Arr32U8, Hydration.NetApi.Generated.Model.sp_weights.weight_v2.Weight>>(Call.approve_as_multi);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Hydration.NetApi.Generated.Model.pallet_multisig.Timepoint, Hydration.NetApi.Generated.Types.Base.Arr32U8>>(Call.cancel_as_multi);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>, Hydration.NetApi.Generated.Types.Base.Arr32U8>>(Call.poke_deposit);
         }
     }
 }

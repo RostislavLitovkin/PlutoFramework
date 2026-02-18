@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_collator_selection.pallet
     
     
     /// <summary>
-    /// >> 517 - Composite[pallet_collator_selection.pallet.CandidateInfo]
+    /// >> 605 - Composite[pallet_collator_selection.pallet.CandidateInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CandidateInfo : BaseType

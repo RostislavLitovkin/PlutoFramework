@@ -32,7 +32,7 @@ public partial class PropertyThumbnailView : ContentView
 
             control.propertyNameLabel.Text = nftBase.XcavateMetadata.PropertyName;
 
-            control.apyLabel.Text = PropertyModel.GetAPY(nftBase.XcavateMetadata.EstimatedRentalIncome, nftBase.XcavateMetadata.PropertyPrice);
+            control.apyLabel.Text = PropertyModel.GetAPY(nftBase.XcavateMetadata.Financials.EstimatedRentalIncome, nftBase.XcavateMetadata.Financials.PropertyPrice);
 
             if (control.TokensOwned == 0)
             {
@@ -47,10 +47,10 @@ public partial class PropertyThumbnailView : ContentView
             }
             else
             {
-                control.tokensLabel.Text = $"{control.TokensOwned} / {nftBase.XcavateMetadata.NumberOfTokens}";
+                control.tokensLabel.Text = $"{control.TokensOwned} / {nftBase.XcavateMetadata.Financials.NumberOfTokens}";
             }
 
-            control.priceLabelText.Text = ((double)nftBase.XcavateMetadata.PropertyPrice).ToCurrencyString();
+            control.priceLabelText.Text = ((double)nftBase.XcavateMetadata.Financials.PropertyPrice).ToCurrencyString();
 
             control.locationView.LocationName = nftBase.XcavateMetadata.LocationName;
 
@@ -58,14 +58,14 @@ public partial class PropertyThumbnailView : ContentView
             {
                 // Default image
                 false => "noimage.png",
-                true => nftBase.XcavateMetadata?.Images[0][0..4] switch
+                true => nftBase.XcavateMetadata.Images[0][0..4] switch
                 {
                     "http" => new UriImageSource
                     {
-                        Uri = new Uri(nftBase.XcavateMetadata?.Images[0]),
+                        Uri = new Uri(nftBase.XcavateMetadata.Images[0]),
                         CacheValidity = new TimeSpan(1, 0, 0),
                     },
-                    _ => nftBase.XcavateMetadata?.Images[0]
+                    _ => nftBase.XcavateMetadata.Images[0]
                 },
             };
         });
@@ -93,7 +93,7 @@ public partial class PropertyThumbnailView : ContentView
 
             if (control.NftBase is not null && ((XcavatePaseoNftsPalletNft)control.NftBase)?.XcavateMetadata is not null)
             {
-                control.tokensLabel.Text = $"{tokensOwned} / {((XcavatePaseoNftsPalletNft)control.NftBase).XcavateMetadata?.NumberOfTokens}";
+                control.tokensLabel.Text = $"{tokensOwned} / {((XcavatePaseoNftsPalletNft)control.NftBase).XcavateMetadata?.Financials.NumberOfTokens}";
             }
             else
             {

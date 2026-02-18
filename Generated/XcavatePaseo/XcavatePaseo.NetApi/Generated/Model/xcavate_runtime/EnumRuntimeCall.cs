@@ -185,10 +185,45 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcavate_runtime
         /// >> Buckets
         /// </summary>
         Buckets = 68,
+        
+        /// <summary>
+        /// >> Ctype
+        /// </summary>
+        Ctype = 80,
+        
+        /// <summary>
+        /// >> Attestation
+        /// </summary>
+        Attestation = 81,
+        
+        /// <summary>
+        /// >> Delegation
+        /// </summary>
+        Delegation = 82,
+        
+        /// <summary>
+        /// >> Did
+        /// </summary>
+        Did = 83,
+        
+        /// <summary>
+        /// >> PublicCredentials
+        /// </summary>
+        PublicCredentials = 84,
+        
+        /// <summary>
+        /// >> KiltMigration
+        /// </summary>
+        KiltMigration = 85,
+        
+        /// <summary>
+        /// >> DidLookup
+        /// </summary>
+        DidLookup = 86,
     }
     
     /// <summary>
-    /// >> 301 - Variant[xcavate_runtime.RuntimeCall]
+    /// >> 349 - Variant[xcavate_runtime.RuntimeCall]
     /// </summary>
     public sealed class EnumRuntimeCall : BaseEnumRust<RuntimeCall>
     {
@@ -231,6 +266,13 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcavate_runtime
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.EnumCall>(RuntimeCall.PropertyManagement);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumCall>(RuntimeCall.PropertyGovernance);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_bucket.pallet.EnumCall>(RuntimeCall.Buckets);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.ctype.pallet.EnumCall>(RuntimeCall.Ctype);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.attestation.pallet.EnumCall>(RuntimeCall.Attestation);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.delegation.pallet.EnumCall>(RuntimeCall.Delegation);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.did.pallet.EnumCall>(RuntimeCall.Did);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.public_credentials.pallet.EnumCall>(RuntimeCall.PublicCredentials);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_kilt_migration.pallet.EnumCall>(RuntimeCall.KiltMigration);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_did_lookup.pallet.EnumCall>(RuntimeCall.DidLookup);
         }
     }
 }

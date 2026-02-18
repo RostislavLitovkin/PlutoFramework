@@ -721,7 +721,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.pallet
     }
     
     /// <summary>
-    /// >> 336 - Variant[pallet_nfts.pallet.Call]
+    /// >> 338 - Variant[pallet_nfts.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

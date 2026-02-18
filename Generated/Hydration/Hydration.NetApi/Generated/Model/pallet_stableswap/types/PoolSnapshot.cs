@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.types
     
     
     /// <summary>
-    /// >> 669 - Composite[pallet_stableswap.types.PoolSnapshot]
+    /// >> 735 - Composite[pallet_stableswap.types.PoolSnapshot]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PoolSnapshot : BaseType
@@ -31,7 +31,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.types
         /// <summary>
         /// >> reserves
         /// </summary>
-        public Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT47 Reserves { get; set; }
+        public Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT61 Reserves { get; set; }
         /// <summary>
         /// >> amplification
         /// </summary>
@@ -41,9 +41,13 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.types
         /// </summary>
         public Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill Fee { get; set; }
         /// <summary>
+        /// >> block_fee
+        /// </summary>
+        public Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill BlockFee { get; set; }
+        /// <summary>
         /// >> pegs
         /// </summary>
-        public Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23 Pegs { get; set; }
+        public Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37 Pegs { get; set; }
         /// <summary>
         /// >> share_issuance
         /// </summary>
@@ -63,6 +67,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.types
             result.AddRange(Reserves.Encode());
             result.AddRange(Amplification.Encode());
             result.AddRange(Fee.Encode());
+            result.AddRange(BlockFee.Encode());
             result.AddRange(Pegs.Encode());
             result.AddRange(ShareIssuance.Encode());
             return result.ToArray();
@@ -74,13 +79,15 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.types
             var start = p;
             Assets = new Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12();
             Assets.Decode(byteArray, ref p);
-            Reserves = new Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT47();
+            Reserves = new Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT61();
             Reserves.Decode(byteArray, ref p);
             Amplification = new Substrate.NetApi.Model.Types.Primitive.U128();
             Amplification.Decode(byteArray, ref p);
             Fee = new Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill();
             Fee.Decode(byteArray, ref p);
-            Pegs = new Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23();
+            BlockFee = new Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill();
+            BlockFee.Decode(byteArray, ref p);
+            Pegs = new Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37();
             Pegs.Decode(byteArray, ref p);
             ShareIssuance = new Substrate.NetApi.Model.Types.Primitive.U128();
             ShareIssuance.Decode(byteArray, ref p);

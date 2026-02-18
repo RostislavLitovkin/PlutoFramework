@@ -236,6 +236,18 @@ namespace Hydration.NetApi.Generated.Storage
         }
         
         /// <summary>
+        /// >> remove_all_liquidity
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method RemoveAllLiquidity(Substrate.NetApi.Model.Types.Primitive.U128 position_id, Substrate.NetApi.Model.Types.Primitive.U128 min_limit)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(position_id.Encode());
+            byteArray.AddRange(min_limit.Encode());
+            return new Method(59, "Omnipool", 15, "remove_all_liquidity", byteArray.ToArray());
+        }
+        
+        /// <summary>
         /// >> sacrifice_position
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
@@ -438,7 +450,18 @@ namespace Hydration.NetApi.Generated.Storage
         public Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill BurnProtocolFee()
         {
             var result = new Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill();
-            result.Create("0x20A10700");
+            result.Create("0x00000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> HubDestination
+        ///  Destination account when hub asset is sold
+        /// </summary>
+        public Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 HubDestination()
+        {
+            var result = new Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            result.Create("0x6D6F646C70792F74727372790000000000000000000000000000000000000000");
             return result;
         }
     }
@@ -547,7 +570,7 @@ namespace Hydration.NetApi.Generated.Storage
         
         /// <summary>
         /// >> HubAssetUpdateError
-        /// LRNA update after trade results in positive value.
+        /// Hub asset reserve update after trade resulted in unexpected Decrease.
         /// </summary>
         HubAssetUpdateError,
         

@@ -239,7 +239,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_real_x_education.pallet
     }
     
     /// <summary>
-    /// >> 452 - Variant[pallet_real_x_education.pallet.Call]
+    /// >> 501 - Variant[pallet_real_x_education.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

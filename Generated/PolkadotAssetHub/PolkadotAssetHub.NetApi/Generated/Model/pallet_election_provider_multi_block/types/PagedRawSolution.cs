@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi
     
     
     /// <summary>
-    /// >> 415 - Composite[pallet_election_provider_multi_block.types.PagedRawSolution]
+    /// >> 418 - Composite[pallet_election_provider_multi_block.types.PagedRawSolution]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PagedRawSolution : BaseType

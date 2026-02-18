@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_identity.types
     
     
     /// <summary>
-    /// >> 423 - Composite[pallet_identity.types.AuthorityProperties]
+    /// >> 453 - Composite[pallet_identity.types.AuthorityProperties]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AuthorityProperties : BaseType

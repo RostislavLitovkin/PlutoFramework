@@ -223,7 +223,7 @@ namespace Hydration.NetApi.Generated.Model.xcm.v3.traits
     }
     
     /// <summary>
-    /// >> 343 - Variant[xcm.v3.traits.Error]
+    /// >> 357 - Variant[xcm.v3.traits.Error]
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>
     {

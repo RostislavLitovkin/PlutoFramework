@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.staking.mes
     
     
     /// <summary>
-    /// >> 660 - Composite[pallet_rc_migrator.staking.message.PortableUnappliedSlash]
+    /// >> 668 - Composite[pallet_rc_migrator.staking.message.PortableUnappliedSlash]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PortableUnappliedSlash : BaseType

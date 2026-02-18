@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.staking.mes
     
     
     /// <summary>
-    /// >> 650 - Composite[pallet_rc_migrator.staking.message.PortableValidatorPrefs]
+    /// >> 658 - Composite[pallet_rc_migrator.staking.message.PortableValidatorPrefs]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PortableValidatorPrefs : BaseType

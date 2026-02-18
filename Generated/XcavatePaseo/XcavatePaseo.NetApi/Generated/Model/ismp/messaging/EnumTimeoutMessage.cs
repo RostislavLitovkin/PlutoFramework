@@ -38,7 +38,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.ismp.messaging
     }
     
     /// <summary>
-    /// >> 415 - Variant[ismp.messaging.TimeoutMessage]
+    /// >> 464 - Variant[ismp.messaging.TimeoutMessage]
     /// </summary>
     public sealed class EnumTimeoutMessage : BaseEnumRust<TimeoutMessage>
     {

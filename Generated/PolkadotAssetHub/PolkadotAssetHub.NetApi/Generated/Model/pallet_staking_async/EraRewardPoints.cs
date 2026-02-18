@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async
     
     
     /// <summary>
-    /// >> 984 - Composite[pallet_staking_async.EraRewardPoints]
+    /// >> 996 - Composite[pallet_staking_async.EraRewardPoints]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class EraRewardPoints : BaseType

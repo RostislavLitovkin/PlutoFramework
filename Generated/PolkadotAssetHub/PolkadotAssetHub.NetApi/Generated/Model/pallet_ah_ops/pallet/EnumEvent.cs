@@ -40,10 +40,16 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_ah_ops.pallet
         /// representation.
         /// </summary>
         SovereignMigrated = 2,
+        
+        /// <summary>
+        /// >> FailedToBond
+        /// Failed to re-bond some migrated funds.
+        /// </summary>
+        FailedToBond = 3,
     }
     
     /// <summary>
-    /// >> 695 - Variant[pallet_ah_ops.pallet.Event]
+    /// >> 704 - Variant[pallet_ah_ops.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -56,7 +62,8 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_ah_ops.pallet
         {
 				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32, PolkadotAssetHub.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.LeaseUnreserveRemaining);
 				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32, PolkadotAssetHub.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.CrowdloanUnreserveRemaining);
-				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32, PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U16>>>(Event.SovereignMigrated);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32, PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U16>>>(Event.SovereignMigrated);
+				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.FailedToBond);
         }
     }
 }

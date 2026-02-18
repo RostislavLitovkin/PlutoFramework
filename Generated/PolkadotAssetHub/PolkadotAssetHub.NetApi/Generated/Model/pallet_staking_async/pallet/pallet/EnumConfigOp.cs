@@ -38,7 +38,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async.pallet.pa
     }
     
     /// <summary>
-    /// >> 481 - Variant[pallet_staking_async.pallet.pallet.ConfigOp]
+    /// >> 484 - Variant[pallet_staking_async.pallet.pallet.ConfigOp]
     /// </summary>
     public sealed class EnumConfigOp : BaseEnumRust<ConfigOp>
     {

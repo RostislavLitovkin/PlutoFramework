@@ -233,11 +233,11 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> execute_arbitrage
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ExecuteArbitrage(Substrate.NetApi.Model.Types.Primitive.U32 collateral_asset_id, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128> flash_amount)
+        public static Method ExecuteArbitrage(Substrate.NetApi.Model.Types.Primitive.U32 collateral_asset_id, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.pallet_hsm.types.EnumArbitrage> arbitrage)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collateral_asset_id.Encode());
-            byteArray.AddRange(flash_amount.Encode());
+            byteArray.AddRange(arbitrage.Encode());
             return new Method(82, "HSM", 5, "execute_arbitrage", byteArray.ToArray());
         }
         
@@ -278,6 +278,26 @@ namespace Hydration.NetApi.Generated.Storage
         {
             var result = new Hydration.NetApi.Generated.Model.frame_support.PalletId();
             result.Create("0x70792F68736D6F64");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MinArbitrageAmount
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U128 MinArbitrageAmount()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U128();
+            result.Create("0x000064A7B3B6E00D0000000000000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> FlashLoanReceiver
+        /// </summary>
+        public Hydration.NetApi.Generated.Model.primitive_types.H160 FlashLoanReceiver()
+        {
+            var result = new Hydration.NetApi.Generated.Model.primitive_types.H160();
+            result.Create("0x000000000000000000000000000000000000090A");
             return result;
         }
         
@@ -386,14 +406,6 @@ namespace Hydration.NetApi.Generated.Storage
         /// There is no profitable arbitrage opportunity for the specified collateral.
         /// </summary>
         NoArbitrageOpportunity,
-        
-        /// <summary>
-        /// >> OffchainLockError
-        /// Offchain lock error
-        /// 
-        /// Failed to acquire the lock for offchain workers, likely because another operation is in progress.
-        /// </summary>
-        OffchainLockError,
         
         /// <summary>
         /// >> AssetNotFound

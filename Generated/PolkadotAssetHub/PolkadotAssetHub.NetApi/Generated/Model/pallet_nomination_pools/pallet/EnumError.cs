@@ -261,7 +261,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_nomination_pools.pallet
     }
     
     /// <summary>
-    /// >> 942 - Variant[pallet_nomination_pools.pallet.Error]
+    /// >> 954 - Variant[pallet_nomination_pools.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>

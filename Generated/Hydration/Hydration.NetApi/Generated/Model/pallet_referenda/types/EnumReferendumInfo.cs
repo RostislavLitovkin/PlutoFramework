@@ -53,7 +53,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_referenda.types
     }
     
     /// <summary>
-    /// >> 606 - Variant[pallet_referenda.types.ReferendumInfo]
+    /// >> 671 - Variant[pallet_referenda.types.ReferendumInfo]
     /// </summary>
     public sealed class EnumReferendumInfo : BaseEnumRust<ReferendumInfo>
     {

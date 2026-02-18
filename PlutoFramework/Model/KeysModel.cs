@@ -1,9 +1,7 @@
 ﻿extern alias bc26;
-
+using bc26::Org.BouncyCastle.Crypto.Parameters;
 using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Storage;
-
-using bc26::Org.BouncyCastle.Crypto.Parameters;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
 using PlutoFramework.Components.Password;
@@ -86,7 +84,7 @@ namespace PlutoFramework.Model
         public static async Task SaveSr25519KeyAsync(string mnemonics)
         {
             Account account = MnemonicsModel.GetAccountFromMnemonics(mnemonics);
-            
+
             Preferences.Set(
                 PreferencesModel.PUBLIC_KEY,
                 account.Value
@@ -381,7 +379,8 @@ namespace PlutoFramework.Model
                 }
             }
 
-            return accountType switch {
+            return accountType switch
+            {
                 AccountType.Mnemonic => await SecureStorage.Default.GetAsync(PreferencesModel.MNEMONICS + accountVariant).ConfigureAwait(false),
                 AccountType.PrivateKey => await SecureStorage.Default.GetAsync(PreferencesModel.PRIVATE_KEY + accountVariant).ConfigureAwait(false),
                 AccountType.Json => await SecureStorage.Default.GetAsync(PreferencesModel.JSON_ACCOUNT + accountVariant).ConfigureAwait(false),
@@ -438,7 +437,7 @@ namespace PlutoFramework.Model
 
             var wallet = keyring.AddFromJson(json);
 
-            if(!wallet.Unlock(password))
+            if (!wallet.Unlock(password))
             {
                 return null;
             }
@@ -470,6 +469,10 @@ namespace PlutoFramework.Model
                 await Toast.Make($"Failed to export.").Show(token);
             }
         }
+
+        public static Task<IEnumerable<GenericLockedKey>> GetKeysOfTypeAsync(KeyTypeEnum type) => KeysDatabase.GetAllKeysOfTypeAsync(type);
+
+        public static async Task<GenericLockedKey?> GetKeyOfTypeAsync(KeyTypeEnum type) => (await KeysDatabase.GetAllKeysOfTypeAsync(type)).FirstOrDefault();
 
         public static void RemoveAccount(string accountVariant = "")
         {

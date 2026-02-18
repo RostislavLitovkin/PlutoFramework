@@ -200,6 +200,41 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcavate_runtime
         /// >> Buckets
         /// </summary>
         Buckets = 68,
+        
+        /// <summary>
+        /// >> Ctype
+        /// </summary>
+        Ctype = 80,
+        
+        /// <summary>
+        /// >> Attestation
+        /// </summary>
+        Attestation = 81,
+        
+        /// <summary>
+        /// >> Delegation
+        /// </summary>
+        Delegation = 82,
+        
+        /// <summary>
+        /// >> Did
+        /// </summary>
+        Did = 83,
+        
+        /// <summary>
+        /// >> PublicCredentials
+        /// </summary>
+        PublicCredentials = 84,
+        
+        /// <summary>
+        /// >> KiltMigration
+        /// </summary>
+        KiltMigration = 85,
+        
+        /// <summary>
+        /// >> DidLookup
+        /// </summary>
+        DidLookup = 86,
     }
     
     /// <summary>
@@ -249,6 +284,13 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcavate_runtime
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.EnumEvent>(RuntimeEvent.PropertyManagement);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumEvent>(RuntimeEvent.PropertyGovernance);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_bucket.pallet.EnumEvent>(RuntimeEvent.Buckets);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.ctype.pallet.EnumEvent>(RuntimeEvent.Ctype);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.attestation.pallet.EnumEvent>(RuntimeEvent.Attestation);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.delegation.pallet.EnumEvent>(RuntimeEvent.Delegation);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.did.pallet.EnumEvent>(RuntimeEvent.Did);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.public_credentials.pallet.EnumEvent>(RuntimeEvent.PublicCredentials);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_kilt_migration.pallet.EnumEvent>(RuntimeEvent.KiltMigration);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_did_lookup.pallet.EnumEvent>(RuntimeEvent.DidLookup);
         }
     }
 }

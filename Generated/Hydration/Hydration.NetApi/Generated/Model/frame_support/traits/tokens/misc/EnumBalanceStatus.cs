@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Model.frame_support.traits.tokens.misc
     }
     
     /// <summary>
-    /// >> 32 - Variant[frame_support.traits.tokens.misc.BalanceStatus]
+    /// >> 33 - Variant[frame_support.traits.tokens.misc.BalanceStatus]
     /// </summary>
     public sealed class EnumBalanceStatus : BaseEnum<BalanceStatus>
     {

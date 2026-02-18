@@ -33,7 +33,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_nomination_pools
     }
     
     /// <summary>
-    /// >> 378 - Variant[pallet_nomination_pools.BondExtra]
+    /// >> 380 - Variant[pallet_nomination_pools.BondExtra]
     /// </summary>
     public sealed class EnumBondExtra : BaseEnumRust<BondExtra>
     {

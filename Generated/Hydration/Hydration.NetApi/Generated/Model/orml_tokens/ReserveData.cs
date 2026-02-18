@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.orml_tokens
     
     
     /// <summary>
-    /// >> 692 - Composite[orml_tokens.ReserveData]
+    /// >> 761 - Composite[orml_tokens.ReserveData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ReserveData : BaseType

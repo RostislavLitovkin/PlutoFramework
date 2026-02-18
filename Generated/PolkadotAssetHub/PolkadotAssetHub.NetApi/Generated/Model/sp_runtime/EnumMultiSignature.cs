@@ -38,7 +38,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.sp_runtime
     }
     
     /// <summary>
-    /// >> 353 - Variant[sp_runtime.MultiSignature]
+    /// >> 355 - Variant[sp_runtime.MultiSignature]
     /// </summary>
     public sealed class EnumMultiSignature : BaseEnumRust<MultiSignature>
     {

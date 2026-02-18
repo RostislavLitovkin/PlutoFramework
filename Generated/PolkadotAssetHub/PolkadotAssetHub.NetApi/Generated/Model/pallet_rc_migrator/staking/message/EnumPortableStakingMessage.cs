@@ -113,7 +113,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.staking.mes
     }
     
     /// <summary>
-    /// >> 638 - Variant[pallet_rc_migrator.staking.message.PortableStakingMessage]
+    /// >> 646 - Variant[pallet_rc_migrator.staking.message.PortableStakingMessage]
     /// </summary>
     public sealed class EnumPortableStakingMessage : BaseEnumRust<PortableStakingMessage>
     {

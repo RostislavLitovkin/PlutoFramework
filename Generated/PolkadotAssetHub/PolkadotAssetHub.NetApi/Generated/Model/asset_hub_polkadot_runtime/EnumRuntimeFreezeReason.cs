@@ -28,7 +28,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
     }
     
     /// <summary>
-    /// >> 767 - Variant[asset_hub_polkadot_runtime.RuntimeFreezeReason]
+    /// >> 777 - Variant[asset_hub_polkadot_runtime.RuntimeFreezeReason]
     /// </summary>
     public sealed class EnumRuntimeFreezeReason : BaseEnumRust<RuntimeFreezeReason>
     {

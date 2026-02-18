@@ -38,7 +38,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.xcm
     }
     
     /// <summary>
-    /// >> 101 - Variant[xcm.VersionedAssets]
+    /// >> 104 - Variant[xcm.VersionedAssets]
     /// </summary>
     public sealed class EnumVersionedAssets : BaseEnumRust<VersionedAssets>
     {

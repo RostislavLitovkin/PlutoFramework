@@ -1,13 +1,13 @@
-﻿using System.Numerics;
-using PlutoFramework.Model.AjunaExt;
-using Substrate.NetApi;
-using Polkadot.NetApi.Generated.Model.sp_core.crypto;
-using PlutoFramework.Types;
+﻿using BifrostPolkadot.NetApi.Generated.Model.orml_tokens;
 using PlutoFramework.Constants;
-using BifrostPolkadot.NetApi.Generated.Model.orml_tokens;
+using PlutoFramework.Model.AjunaExt;
+using PlutoFramework.Types;
+using Polkadot.NetApi.Generated.Model.sp_core.crypto;
+using Substrate.NetApi;
 using Substrate.NetApi.Model.Types.Primitive;
-using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.AssetPallet, System.Numerics.BigInteger);
+using System.Numerics;
 using XcavatePaseo.NetApi.Generated.Storage;
+using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.AssetPallet, System.Numerics.BigInteger);
 
 namespace PlutoFramework.Model
 {
@@ -124,11 +124,14 @@ namespace PlutoFramework.Model
             {
                 var accountInfo = await GetNativeBalance(client.SubstrateClient, substrateAddress, token);
 
-                amount = (double)(accountInfo.Data.Free.Value - accountInfo.Data.Frozen.Value) / Math.Pow(10, endpoint.Decimals);
+                if (accountInfo is not null)
+                {
+                    amount = (double)(accountInfo.Data.Free.Value - accountInfo.Data.Frozen.Value) / Math.Pow(10, endpoint.Decimals);
 
-                reservedAmount = (double)accountInfo.Data.Reserved.Value / Math.Pow(10, endpoint.Decimals);
+                    reservedAmount = (double)accountInfo.Data.Reserved.Value / Math.Pow(10, endpoint.Decimals);
 
-                frozenAmount = (double)accountInfo.Data.Frozen.Value / Math.Pow(10, endpoint.Decimals);
+                    frozenAmount = (double)accountInfo.Data.Frozen.Value / Math.Pow(10, endpoint.Decimals);
+                }
             }
             catch
             {

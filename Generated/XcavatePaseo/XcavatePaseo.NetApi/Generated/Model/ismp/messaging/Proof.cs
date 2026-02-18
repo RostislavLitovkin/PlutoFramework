@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.ismp.messaging
     
     
     /// <summary>
-    /// >> 402 - Composite[ismp.messaging.Proof]
+    /// >> 451 - Composite[ismp.messaging.Proof]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Proof : BaseType
@@ -31,7 +31,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.ismp.messaging
         /// <summary>
         /// >> proof
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> ProofValue { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -44,7 +44,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.ismp.messaging
         {
             var result = new List<byte>();
             result.AddRange(Height.Encode());
-            result.AddRange(ProofValue.Encode());
+            result.AddRange(Value.Encode());
             return result.ToArray();
         }
         
@@ -54,8 +54,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.ismp.messaging
             var start = p;
             Height = new XcavatePaseo.NetApi.Generated.Model.ismp.consensus.StateMachineHeight();
             Height.Decode(byteArray, ref p);
-            ProofValue = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>();
-            ProofValue.Decode(byteArray, ref p);
+            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>();
+            Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;
             Bytes = new byte[bytesLength];

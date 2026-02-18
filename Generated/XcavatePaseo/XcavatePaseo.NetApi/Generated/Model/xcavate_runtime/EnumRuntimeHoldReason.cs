@@ -55,10 +55,35 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcavate_runtime
         /// >> PropertyManagement
         /// </summary>
         PropertyManagement = 66,
+        
+        /// <summary>
+        /// >> Attestation
+        /// </summary>
+        Attestation = 81,
+        
+        /// <summary>
+        /// >> Delegation
+        /// </summary>
+        Delegation = 82,
+        
+        /// <summary>
+        /// >> Did
+        /// </summary>
+        Did = 83,
+        
+        /// <summary>
+        /// >> PublicCredentials
+        /// </summary>
+        PublicCredentials = 84,
+        
+        /// <summary>
+        /// >> DidLookup
+        /// </summary>
+        DidLookup = 86,
     }
     
     /// <summary>
-    /// >> 488 - Variant[xcavate_runtime.RuntimeHoldReason]
+    /// >> 571 - Variant[xcavate_runtime.RuntimeHoldReason]
     /// </summary>
     public sealed class EnumRuntimeHoldReason : BaseEnumRust<RuntimeHoldReason>
     {
@@ -75,6 +100,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcavate_runtime
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet.EnumHoldReason>(RuntimeHoldReason.Regions);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet.EnumHoldReason>(RuntimeHoldReason.Marketplace);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.EnumHoldReason>(RuntimeHoldReason.PropertyManagement);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.attestation.pallet.EnumHoldReason>(RuntimeHoldReason.Attestation);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.delegation.pallet.EnumHoldReason>(RuntimeHoldReason.Delegation);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.did.pallet.EnumHoldReason>(RuntimeHoldReason.Did);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.public_credentials.pallet.EnumHoldReason>(RuntimeHoldReason.PublicCredentials);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_did_lookup.pallet.EnumHoldReason>(RuntimeHoldReason.DidLookup);
         }
     }
 }

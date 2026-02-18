@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.sp_runtime.traits
     
     
     /// <summary>
-    /// >> 669 - Composite[sp_runtime.traits.BlakeTwo256]
+    /// >> 677 - Composite[sp_runtime.traits.BlakeTwo256]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BlakeTwo256 : BaseType

@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.preimage.le
     
     
     /// <summary>
-    /// >> 530 - Composite[pallet_rc_migrator.preimage.legacy_request_status.RcPreimageLegacyStatus]
+    /// >> 538 - Composite[pallet_rc_migrator.preimage.legacy_request_status.RcPreimageLegacyStatus]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RcPreimageLegacyStatus : BaseType

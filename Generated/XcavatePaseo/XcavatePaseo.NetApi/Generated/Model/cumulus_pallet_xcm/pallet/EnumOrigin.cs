@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 307 - Variant[cumulus_pallet_xcm.pallet.Origin]
+    /// >> 355 - Variant[cumulus_pallet_xcm.pallet.Origin]
     /// </summary>
     public sealed class EnumOrigin : BaseEnumRust<Origin>
     {

@@ -50,7 +50,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_dynamic_fees.pallet
     }
     
     /// <summary>
-    /// >> 228 - Variant[pallet_dynamic_fees.pallet.Call]
+    /// >> 224 - Variant[pallet_dynamic_fees.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async_rc_client
     
     
     /// <summary>
-    /// >> 953 - Composite[pallet_staking_async_rc_client.ValidatorSetReport]
+    /// >> 965 - Composite[pallet_staking_async_rc_client.ValidatorSetReport]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ValidatorSetReport : BaseType

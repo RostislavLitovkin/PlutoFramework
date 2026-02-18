@@ -45,7 +45,7 @@ namespace Hydration.NetApi.Generated.Model.cumulus_pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 465 - Variant[cumulus_pallet_xcm.pallet.Event]
+    /// >> 522 - Variant[cumulus_pallet_xcm.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -58,7 +58,7 @@ namespace Hydration.NetApi.Generated.Model.cumulus_pallet_xcm.pallet
         {
 				AddTypeDecoder<Hydration.NetApi.Generated.Types.Base.Arr32U8>(Event.InvalidFormat);
 				AddTypeDecoder<Hydration.NetApi.Generated.Types.Base.Arr32U8>(Event.UnsupportedVersion);
-				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Types.Base.Arr32U8, Hydration.NetApi.Generated.Model.staging_xcm.v4.traits.EnumOutcome>>(Event.ExecutedDownward);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Types.Base.Arr32U8, Hydration.NetApi.Generated.Model.staging_xcm.v5.traits.EnumOutcome>>(Event.ExecutedDownward);
         }
     }
 }

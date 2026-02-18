@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
     
     
     /// <summary>
-    /// >> 673 - Composite[pallet_marketplace.types.DelayedCallInfo]
+    /// >> 761 - Composite[pallet_marketplace.types.DelayedCallInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DelayedCallInfo : BaseType
@@ -31,7 +31,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
         /// <summary>
         /// >> encoded
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT47 Encoded { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT62 Encoded { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -54,7 +54,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
             var start = p;
             Signer = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Signer.Decode(byteArray, ref p);
-            Encoded = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT47();
+            Encoded = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT62();
             Encoded.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

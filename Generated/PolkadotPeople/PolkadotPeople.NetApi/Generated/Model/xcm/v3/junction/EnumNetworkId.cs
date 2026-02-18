@@ -78,7 +78,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.xcm.v3.junction
     }
     
     /// <summary>
-    /// >> 110 - Variant[xcm.v3.junction.NetworkId]
+    /// >> 113 - Variant[xcm.v3.junction.NetworkId]
     /// </summary>
     public sealed class EnumNetworkId : BaseEnumRust<NetworkId>
     {

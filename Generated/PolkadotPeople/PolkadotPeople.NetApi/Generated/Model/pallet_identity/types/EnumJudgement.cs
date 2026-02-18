@@ -58,7 +58,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_identity.types
     }
     
     /// <summary>
-    /// >> 390 - Variant[pallet_identity.types.Judgement]
+    /// >> 420 - Variant[pallet_identity.types.Judgement]
     /// </summary>
     public sealed class EnumJudgement : BaseEnumRust<Judgement>
     {

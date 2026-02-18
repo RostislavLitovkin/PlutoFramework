@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.staking.mes
     
     
     /// <summary>
-    /// >> 658 - Composite[pallet_rc_migrator.staking.message.PortableEraRewardPoints]
+    /// >> 666 - Composite[pallet_rc_migrator.staking.message.PortableEraRewardPoints]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PortableEraRewardPoints : BaseType

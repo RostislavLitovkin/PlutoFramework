@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.frame_system.extensions.check_mo
     
     
     /// <summary>
-    /// >> 434 - Composite[frame_system.extensions.check_mortality.CheckMortality]
+    /// >> 465 - Composite[frame_system.extensions.check_mortality.CheckMortality]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckMortality : BaseType

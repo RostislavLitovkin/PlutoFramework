@@ -35,10 +35,15 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcavate_runtime
         /// >> CumulusXcm
         /// </summary>
         CumulusXcm = 32,
+        
+        /// <summary>
+        /// >> Did
+        /// </summary>
+        Did = 83,
     }
     
     /// <summary>
-    /// >> 304 - Variant[xcavate_runtime.OriginCaller]
+    /// >> 352 - Variant[xcavate_runtime.OriginCaller]
     /// </summary>
     public sealed class EnumOriginCaller : BaseEnumRust<OriginCaller>
     {
@@ -51,6 +56,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcavate_runtime
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.frame_support.dispatch.EnumRawOrigin>(OriginCaller.system);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.EnumOrigin>(OriginCaller.PolkadotXcm);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_xcm.pallet.EnumOrigin>(OriginCaller.CumulusXcm);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.did.origin.DidRawOrigin>(OriginCaller.Did);
         }
     }
 }

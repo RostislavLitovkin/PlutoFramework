@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.staking.nom
     
     
     /// <summary>
-    /// >> 549 - Composite[pallet_rc_migrator.staking.nom_pools_alias.SubPools]
+    /// >> 557 - Composite[pallet_rc_migrator.staking.nom_pools_alias.SubPools]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SubPools : BaseType

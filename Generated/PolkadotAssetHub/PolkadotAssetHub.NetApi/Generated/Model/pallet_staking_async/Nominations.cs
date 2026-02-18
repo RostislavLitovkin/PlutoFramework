@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async
     
     
     /// <summary>
-    /// >> 975 - Composite[pallet_staking_async.Nominations]
+    /// >> 987 - Composite[pallet_staking_async.Nominations]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Nominations : BaseType

@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_metadata_hash_extension
     }
     
     /// <summary>
-    /// >> 722 - Variant[frame_metadata_hash_extension.Mode]
+    /// >> 838 - Variant[frame_metadata_hash_extension.Mode]
     /// </summary>
     public sealed class EnumMode : BaseEnum<Mode>
     {

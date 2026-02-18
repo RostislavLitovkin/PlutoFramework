@@ -97,7 +97,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_bounties.pallet
     }
     
     /// <summary>
-    /// >> 930 - Variant[pallet_bounties.pallet.Error]
+    /// >> 942 - Variant[pallet_bounties.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

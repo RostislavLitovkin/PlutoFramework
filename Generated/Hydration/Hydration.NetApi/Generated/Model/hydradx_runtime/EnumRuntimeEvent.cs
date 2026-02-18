@@ -217,6 +217,16 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
         HSM = 82,
         
         /// <summary>
+        /// >> Signet
+        /// </summary>
+        Signet = 84,
+        
+        /// <summary>
+        /// >> EthDispenser
+        /// </summary>
+        EthDispenser = 85,
+        
+        /// <summary>
         /// >> Tokens
         /// </summary>
         Tokens = 77,
@@ -295,6 +305,11 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
         /// >> MessageQueue
         /// </summary>
         MessageQueue = 114,
+        
+        /// <summary>
+        /// >> MultiBlockMigrations
+        /// </summary>
+        MultiBlockMigrations = 116,
         
         /// <summary>
         /// >> OrmlXcm
@@ -382,6 +397,8 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_referrals.pallet.EnumEvent>(RuntimeEvent.Referrals);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_liquidation.pallet.EnumEvent>(RuntimeEvent.Liquidation);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_hsm.pallet.EnumEvent>(RuntimeEvent.HSM);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_signet.pallet.EnumEvent>(RuntimeEvent.Signet);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_dispenser.pallet.EnumEvent>(RuntimeEvent.EthDispenser);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.orml_tokens.module.EnumEvent>(RuntimeEvent.Tokens);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_currencies.module.EnumEvent>(RuntimeEvent.Currencies);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.orml_vesting.module.EnumEvent>(RuntimeEvent.Vesting);
@@ -398,6 +415,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.cumulus_pallet_xcm.pallet.EnumEvent>(RuntimeEvent.CumulusXcm);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.pallet.EnumEvent>(RuntimeEvent.XcmpQueue);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_message_queue.pallet.EnumEvent>(RuntimeEvent.MessageQueue);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_migrations.pallet.EnumEvent>(RuntimeEvent.MultiBlockMigrations);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.orml_xcm.module.EnumEvent>(RuntimeEvent.OrmlXcm);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.orml_xtokens.module.EnumEvent>(RuntimeEvent.XTokens);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.orml_unknown_tokens.module.EnumEvent>(RuntimeEvent.UnknownTokens);

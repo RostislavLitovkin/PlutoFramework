@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcavate_runtime
     
     
     /// <summary>
-    /// >> 723 - Composite[xcavate_runtime.Runtime]
+    /// >> 259 - Composite[xcavate_runtime.Runtime]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Runtime : BaseType

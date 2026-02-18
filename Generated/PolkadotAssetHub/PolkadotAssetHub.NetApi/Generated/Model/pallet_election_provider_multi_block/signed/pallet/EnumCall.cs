@@ -72,7 +72,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi
     }
     
     /// <summary>
-    /// >> 468 - Variant[pallet_election_provider_multi_block.signed.pallet.Call]
+    /// >> 471 - Variant[pallet_election_provider_multi_block.signed.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

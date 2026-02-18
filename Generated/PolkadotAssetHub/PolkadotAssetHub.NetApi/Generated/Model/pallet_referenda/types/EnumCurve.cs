@@ -38,7 +38,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_referenda.types
     }
     
     /// <summary>
-    /// >> 923 - Variant[pallet_referenda.types.Curve]
+    /// >> 935 - Variant[pallet_referenda.types.Curve]
     /// </summary>
     public sealed class EnumCurve : BaseEnumRust<Curve>
     {

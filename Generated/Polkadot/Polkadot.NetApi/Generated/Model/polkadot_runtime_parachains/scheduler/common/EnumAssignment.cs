@@ -33,7 +33,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.scheduler.
     }
     
     /// <summary>
-    /// >> 819 - Variant[polkadot_runtime_parachains.scheduler.common.Assignment]
+    /// >> 821 - Variant[polkadot_runtime_parachains.scheduler.common.Assignment]
     /// </summary>
     public sealed class EnumAssignment : BaseEnumRust<Assignment>
     {

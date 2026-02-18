@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.prim
     
     
     /// <summary>
-    /// >> 258 - Composite[polkadot_parachain_primitives.primitives.HeadData]
+    /// >> 306 - Composite[polkadot_parachain_primitives.primitives.HeadData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class HeadData : BaseType

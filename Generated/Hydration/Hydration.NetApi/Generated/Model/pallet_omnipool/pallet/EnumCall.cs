@@ -148,6 +148,31 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool.pallet
         remove_liquidity_with_limit = 14,
         
         /// <summary>
+        /// >> remove_all_liquidity
+        /// Remove all liquidity from position
+        /// 
+        /// Limit protection is applied.
+        /// 
+        /// `remove_all_liquidity` removes all shares amount from given PositionId (NFT instance).
+        /// 
+        /// Asset's tradable state must contain REMOVE_LIQUIDITY flag, otherwise `NotAllowed` error is returned.
+        /// 
+        /// if all shares from given position are removed, position is destroyed and NFT is burned.
+        /// 
+        /// Remove all liquidity fails if price difference between spot price and oracle price is higher than allowed by `PriceBarrier`.
+        /// 
+        /// Dynamic withdrawal fee is applied if withdrawal is not safe. It is calculated using spot price and external price oracle.
+        /// Withdrawal is considered safe when trading is disabled.
+        /// 
+        /// Parameters:
+        /// - `position_id`: The identifier of position which liquidity is entirely removed from.
+        /// 
+        /// Emits `LiquidityRemoved` event when successful.
+        /// 
+        /// </summary>
+        remove_all_liquidity = 15,
+        
+        /// <summary>
         /// >> sacrifice_position
         /// Sacrifice LP position in favor of pool.
         /// 
@@ -277,7 +302,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool.pallet
     }
     
     /// <summary>
-    /// >> 199 - Variant[pallet_omnipool.pallet.Call]
+    /// >> 195 - Variant[pallet_omnipool.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -293,6 +318,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.add_liquidity_with_limit);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.remove_liquidity);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.remove_liquidity_with_limit);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.remove_all_liquidity);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U128>(Call.sacrifice_position);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.sell);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.buy);

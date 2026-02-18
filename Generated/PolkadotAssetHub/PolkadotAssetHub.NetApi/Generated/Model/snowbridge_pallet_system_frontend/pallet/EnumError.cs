@@ -103,7 +103,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.snowbridge_pallet_system_front
     }
     
     /// <summary>
-    /// >> 839 - Variant[snowbridge_pallet_system_frontend.pallet.Error]
+    /// >> 851 - Variant[snowbridge_pallet_system_frontend.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

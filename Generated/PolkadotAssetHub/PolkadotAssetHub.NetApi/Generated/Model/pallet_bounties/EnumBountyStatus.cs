@@ -58,7 +58,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_bounties
     }
     
     /// <summary>
-    /// >> 612 - Variant[pallet_bounties.BountyStatus]
+    /// >> 620 - Variant[pallet_bounties.BountyStatus]
     /// </summary>
     public sealed class EnumBountyStatus : BaseEnumRust<BountyStatus>
     {

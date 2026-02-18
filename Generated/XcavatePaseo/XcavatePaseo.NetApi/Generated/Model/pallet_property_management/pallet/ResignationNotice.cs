@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
     
     
     /// <summary>
-    /// >> 691 - Composite[pallet_property_management.pallet.ResignationNotice]
+    /// >> 779 - Composite[pallet_property_management.pallet.ResignationNotice]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ResignationNotice : BaseType

@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.sp_staking
     
     
     /// <summary>
-    /// >> 978 - Composite[sp_staking.PagedExposureMetadata]
+    /// >> 990 - Composite[sp_staking.PagedExposureMetadata]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PagedExposureMetadata : BaseType

@@ -189,10 +189,22 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
         /// Pool does not have pegs configured.
         /// </summary>
         NoPegSource = 27,
+        
+        /// <summary>
+        /// >> ZeroAmountOut
+        /// Trade would result in zero amount out.
+        /// </summary>
+        ZeroAmountOut = 28,
+        
+        /// <summary>
+        /// >> ZeroAmountIn
+        /// Trade would result in zero amount in.
+        /// </summary>
+        ZeroAmountIn = 29,
     }
     
     /// <summary>
-    /// >> 674 - Variant[pallet_stableswap.pallet.Error]
+    /// >> 740 - Variant[pallet_stableswap.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

@@ -62,7 +62,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_token_gateway.pallet
     }
     
     /// <summary>
-    /// >> 429 - Variant[pallet_token_gateway.pallet.Call]
+    /// >> 478 - Variant[pallet_token_gateway.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_ah_migrator
     
     
     /// <summary>
-    /// >> 1000 - Composite[pallet_ah_migrator.BalancesBefore]
+    /// >> 1053 - Composite[pallet_ah_migrator.BalancesBefore]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BalancesBefore : BaseType

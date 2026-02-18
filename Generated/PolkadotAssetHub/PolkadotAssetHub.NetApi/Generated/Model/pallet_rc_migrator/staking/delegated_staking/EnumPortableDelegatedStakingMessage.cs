@@ -33,7 +33,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.staking.del
     }
     
     /// <summary>
-    /// >> 631 - Variant[pallet_rc_migrator.staking.delegated_staking.PortableDelegatedStakingMessage]
+    /// >> 639 - Variant[pallet_rc_migrator.staking.delegated_staking.PortableDelegatedStakingMessage]
     /// </summary>
     public sealed class EnumPortableDelegatedStakingMessage : BaseEnumRust<PortableDelegatedStakingMessage>
     {

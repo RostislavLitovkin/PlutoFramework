@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.staging_xcm.v4.asset
     
     
     /// <summary>
-    /// >> 363 - Composite[staging_xcm.v4.asset.AssetId]
+    /// >> 378 - Composite[staging_xcm.v4.asset.AssetId]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetId : BaseType

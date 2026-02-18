@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.frame_system
     
     
     /// <summary>
-    /// >> 152 - Composite[frame_system.LastRuntimeUpgradeInfo]
+    /// >> 157 - Composite[frame_system.LastRuntimeUpgradeInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class LastRuntimeUpgradeInfo : BaseType

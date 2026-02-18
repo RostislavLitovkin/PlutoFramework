@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_token_gateway.types
     
     
     /// <summary>
-    /// >> 434 - Composite[pallet_token_gateway.types.AssetRegistration]
+    /// >> 483 - Composite[pallet_token_gateway.types.AssetRegistration]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetRegistration : BaseType

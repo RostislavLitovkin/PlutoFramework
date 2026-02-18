@@ -53,7 +53,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.staging_xcm.v5.asset
     }
     
     /// <summary>
-    /// >> 72 - Variant[staging_xcm.v5.asset.AssetInstance]
+    /// >> 74 - Variant[staging_xcm.v5.asset.AssetInstance]
     /// </summary>
     public sealed class EnumAssetInstance : BaseEnumRust<AssetInstance>
     {

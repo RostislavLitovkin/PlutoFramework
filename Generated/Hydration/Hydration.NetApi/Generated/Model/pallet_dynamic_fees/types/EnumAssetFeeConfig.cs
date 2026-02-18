@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_dynamic_fees.types
     }
     
     /// <summary>
-    /// >> 229 - Variant[pallet_dynamic_fees.types.AssetFeeConfig]
+    /// >> 225 - Variant[pallet_dynamic_fees.types.AssetFeeConfig]
     /// </summary>
     public sealed class EnumAssetFeeConfig : BaseEnumRust<AssetFeeConfig>
     {

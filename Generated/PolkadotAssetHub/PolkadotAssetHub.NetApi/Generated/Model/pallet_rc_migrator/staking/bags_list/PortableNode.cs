@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.staking.bag
     
     
     /// <summary>
-    /// >> 586 - Composite[pallet_rc_migrator.staking.bags_list.PortableNode]
+    /// >> 594 - Composite[pallet_rc_migrator.staking.bags_list.PortableNode]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PortableNode : BaseType

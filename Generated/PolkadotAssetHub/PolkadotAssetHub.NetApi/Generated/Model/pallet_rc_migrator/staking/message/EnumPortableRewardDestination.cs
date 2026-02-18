@@ -48,7 +48,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.staking.mes
     }
     
     /// <summary>
-    /// >> 649 - Variant[pallet_rc_migrator.staking.message.PortableRewardDestination]
+    /// >> 657 - Variant[pallet_rc_migrator.staking.message.PortableRewardDestination]
     /// </summary>
     public sealed class EnumPortableRewardDestination : BaseEnumRust<PortableRewardDestination>
     {

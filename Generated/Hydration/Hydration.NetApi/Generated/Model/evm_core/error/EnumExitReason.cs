@@ -43,7 +43,7 @@ namespace Hydration.NetApi.Generated.Model.evm_core.error
     }
     
     /// <summary>
-    /// >> 447 - Variant[evm_core.error.ExitReason]
+    /// >> 503 - Variant[evm_core.error.ExitReason]
     /// </summary>
     public sealed class EnumExitReason : BaseEnumRust<ExitReason>
     {

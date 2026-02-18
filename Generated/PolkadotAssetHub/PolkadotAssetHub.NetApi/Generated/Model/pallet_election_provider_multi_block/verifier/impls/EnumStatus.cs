@@ -33,7 +33,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi
     }
     
     /// <summary>
-    /// >> 965 - Variant[pallet_election_provider_multi_block.verifier.impls.Status]
+    /// >> 977 - Variant[pallet_election_provider_multi_block.verifier.impls.Status]
     /// </summary>
     public sealed class EnumStatus : BaseEnumRust<Status>
     {

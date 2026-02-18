@@ -68,10 +68,26 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_ah_ops.pallet
         /// This call can only be called after the migration is completed.
         /// </summary>
         transfer_to_post_migration_treasury = 3,
+        
+        /// <summary>
+        /// >> translate_para_sovereign_child_to_sibling_derived
+        /// Translate recursively derived parachain sovereign child account to its sibling.
+        /// 
+        /// Uses the same derivation path on the sibling. The old and new account arguments are only
+        /// witness data to ensure correct usage. Can only be called by the `MigrateOrigin`.
+        /// 
+        /// This migrates:
+        /// - Native DOT balance
+        /// - All assets listed in `T::RelevantAssets`
+        /// - Staked balances
+        /// 
+        /// Things like non-relevant assets or vested transfers may remain on the old account.
+        /// </summary>
+        translate_para_sovereign_child_to_sibling_derived = 4,
     }
     
     /// <summary>
-    /// >> 488 - Variant[pallet_ah_ops.pallet.Call]
+    /// >> 495 - Variant[pallet_ah_ops.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -86,6 +102,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_ah_ops.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32>, PolkadotAssetHub.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>>(Call.withdraw_crowdloan_contribution);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32>, PolkadotAssetHub.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>>(Call.unreserve_crowdloan_reserve);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.staging_xcm.v5.location.Location>(Call.transfer_to_post_migration_treasury);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U16>, PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32, PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.translate_para_sovereign_child_to_sibling_derived);
         }
     }
 }

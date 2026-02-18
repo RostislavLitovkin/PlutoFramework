@@ -499,7 +499,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_uniques.pallet
     }
     
     /// <summary>
-    /// >> 332 - Variant[pallet_uniques.pallet.Call]
+    /// >> 334 - Variant[pallet_uniques.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

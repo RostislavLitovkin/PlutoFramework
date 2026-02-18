@@ -5,7 +5,7 @@ namespace PlutoFramework.Components.XcavateProperty;
 
 public partial class PropertyLittleThumbnailView : ContentView
 {
-	public static readonly BindableProperty XcavateMetadataProperty = BindableProperty.Create(
+    public static readonly BindableProperty XcavateMetadataProperty = BindableProperty.Create(
         nameof(XcavateMetadata), typeof(PropertyMetadata), typeof(PropertyLittleThumbnailView),
         defaultBindingMode: BindingMode.TwoWay,
         propertyChanging: (bindable, oldValue, newValue) =>
@@ -20,9 +20,9 @@ public partial class PropertyLittleThumbnailView : ContentView
             }
 
             control.nameLabelText.Text = metadata.PropertyName;
-            control.locationView.LocationName = $"{metadata.AddressStreet}, {metadata.AddressTownCity}";
+            control.locationView.LocationName = $"{metadata.Address.Street}, {metadata.Address.TownCity}";
 
-            var images = metadata.Images;
+            var images = metadata.FileUrls;
 
             if (images.Count() > 0)
             {
@@ -65,13 +65,13 @@ public partial class PropertyLittleThumbnailView : ContentView
         });
 
     public PropertyLittleThumbnailView()
-	{
-		InitializeComponent();
-	}
+    {
+        InitializeComponent();
+    }
 
-	public PropertyMetadata? XcavateMetadata
-	{
-		get => (PropertyMetadata?)GetValue(XcavateMetadataProperty);
+    public PropertyMetadata? XcavateMetadata
+    {
+        get => (PropertyMetadata?)GetValue(XcavateMetadataProperty);
         set => SetValue(XcavateMetadataProperty, value);
     }
 

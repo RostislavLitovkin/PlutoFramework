@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.xcm_runtime_apis.authorized_al
     
     
     /// <summary>
-    /// >> 827 - Composite[xcm_runtime_apis.authorized_aliases.OriginAliaser]
+    /// >> 839 - Composite[xcm_runtime_apis.authorized_aliases.OriginAliaser]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OriginAliaser : BaseType

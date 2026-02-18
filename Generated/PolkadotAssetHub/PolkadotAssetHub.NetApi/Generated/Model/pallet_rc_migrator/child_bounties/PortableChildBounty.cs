@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.child_bount
     
     
     /// <summary>
-    /// >> 634 - Composite[pallet_rc_migrator.child_bounties.PortableChildBounty]
+    /// >> 642 - Composite[pallet_rc_migrator.child_bounties.PortableChildBounty]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PortableChildBounty : BaseType

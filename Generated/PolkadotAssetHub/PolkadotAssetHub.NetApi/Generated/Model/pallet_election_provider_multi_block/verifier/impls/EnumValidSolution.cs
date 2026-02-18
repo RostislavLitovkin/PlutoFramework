@@ -33,7 +33,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi
     }
     
     /// <summary>
-    /// >> 960 - Variant[pallet_election_provider_multi_block.verifier.impls.ValidSolution]
+    /// >> 972 - Variant[pallet_election_provider_multi_block.verifier.impls.ValidSolution]
     /// </summary>
     public sealed class EnumValidSolution : BaseEnum<ValidSolution>
     {

@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point
     
     
     /// <summary>
-    /// >> 276 - Composite[sp_arithmetic.fixed_point.FixedU128]
+    /// >> 324 - Composite[sp_arithmetic.fixed_point.FixedU128]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class FixedU128 : BaseType

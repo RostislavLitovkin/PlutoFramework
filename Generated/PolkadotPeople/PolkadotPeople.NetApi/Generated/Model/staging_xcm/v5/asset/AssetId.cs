@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.staging_xcm.v5.asset
     
     
     /// <summary>
-    /// >> 70 - Composite[staging_xcm.v5.asset.AssetId]
+    /// >> 72 - Composite[staging_xcm.v5.asset.AssetId]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetId : BaseType

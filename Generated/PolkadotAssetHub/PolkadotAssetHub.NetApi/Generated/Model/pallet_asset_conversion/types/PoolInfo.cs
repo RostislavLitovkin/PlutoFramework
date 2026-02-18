@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_asset_conversion.types
     
     
     /// <summary>
-    /// >> 905 - Composite[pallet_asset_conversion.types.PoolInfo]
+    /// >> 917 - Composite[pallet_asset_conversion.types.PoolInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PoolInfo : BaseType

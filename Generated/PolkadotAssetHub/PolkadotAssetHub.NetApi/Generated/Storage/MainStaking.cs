@@ -2060,7 +2060,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 PlanningEraOffset()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x02000000");
+            result.Create("0x06000000");
             return result;
         }
         

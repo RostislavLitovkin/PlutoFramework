@@ -126,7 +126,7 @@ namespace Hydration.NetApi.Generated.Storage
         public Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 ProfitReceiver()
         {
             var result = new Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32();
-            result.Create("0x6D6F646C70792F74727372790000000000000000000000000000000000000000");
+            result.Create("0x45544800E52567FF06ACD6CBE7BA94DC777A3126E180B6D90000000000000000");
             return result;
         }
         

@@ -48,7 +48,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_education_regions.pallet
     }
     
     /// <summary>
-    /// >> 491 - Variant[pallet_education_regions.pallet.HoldReason]
+    /// >> 574 - Variant[pallet_education_regions.pallet.HoldReason]
     /// </summary>
     public sealed class EnumHoldReason : BaseEnum<HoldReason>
     {

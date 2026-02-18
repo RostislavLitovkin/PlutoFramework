@@ -111,20 +111,12 @@ namespace Hydration.NetApi.Generated.Model.pallet_hsm.pallet
         NoArbitrageOpportunity = 10,
         
         /// <summary>
-        /// >> OffchainLockError
-        /// Offchain lock error
-        /// 
-        /// Failed to acquire the lock for offchain workers, likely because another operation is in progress.
-        /// </summary>
-        OffchainLockError = 11,
-        
-        /// <summary>
         /// >> AssetNotFound
         /// Asset not in the pool
         /// 
         /// The specified asset was not found in the pool.
         /// </summary>
-        AssetNotFound = 12,
+        AssetNotFound = 11,
         
         /// <summary>
         /// >> InvalidPoolState
@@ -132,7 +124,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_hsm.pallet
         /// 
         /// The retrieved pool state has inconsistent or invalid data.
         /// </summary>
-        InvalidPoolState = 13,
+        InvalidPoolState = 12,
         
         /// <summary>
         /// >> CollateralNotEmpty
@@ -140,7 +132,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_hsm.pallet
         /// 
         /// Cannot remove a collateral asset that still has a non-zero balance in the HSM account.
         /// </summary>
-        CollateralNotEmpty = 14,
+        CollateralNotEmpty = 13,
         
         /// <summary>
         /// >> AssetNotInPool
@@ -148,7 +140,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_hsm.pallet
         /// 
         /// The collateral asset is not present in the specified pool.
         /// </summary>
-        AssetNotInPool = 15,
+        AssetNotInPool = 14,
         
         /// <summary>
         /// >> HollarNotInPool
@@ -156,7 +148,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_hsm.pallet
         /// 
         /// The Hollar asset is not present in the specified pool.
         /// </summary>
-        HollarNotInPool = 16,
+        HollarNotInPool = 15,
         
         /// <summary>
         /// >> InsufficientCollateralBalance
@@ -164,7 +156,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_hsm.pallet
         /// 
         /// The HSM does not have enough of the collateral asset to complete the operation.
         /// </summary>
-        InsufficientCollateralBalance = 17,
+        InsufficientCollateralBalance = 16,
         
         /// <summary>
         /// >> HollarContractAddressNotFound
@@ -172,29 +164,29 @@ namespace Hydration.NetApi.Generated.Model.pallet_hsm.pallet
         /// 
         /// The EVM address for the GHO (Hollar) token contract was not found.
         /// </summary>
-        HollarContractAddressNotFound = 18,
+        HollarContractAddressNotFound = 17,
         
         /// <summary>
         /// >> MaxNumberOfCollateralsReached
         /// HSM contains maximum number of allowed collateral assets.
         /// </summary>
-        MaxNumberOfCollateralsReached = 19,
+        MaxNumberOfCollateralsReached = 18,
         
         /// <summary>
         /// >> FlashMinterNotSet
         /// Flash minter address not set
         /// </summary>
-        FlashMinterNotSet = 20,
+        FlashMinterNotSet = 19,
         
         /// <summary>
         /// >> InvalidArbitrageData
         /// Provided arbitrage data is invalid
         /// </summary>
-        InvalidArbitrageData = 21,
+        InvalidArbitrageData = 20,
     }
     
     /// <summary>
-    /// >> 686 - Variant[pallet_hsm.pallet.Error]
+    /// >> 752 - Variant[pallet_hsm.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

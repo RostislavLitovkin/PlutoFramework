@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async
     
     
     /// <summary>
-    /// >> 991 - Composite[pallet_staking_async.UnappliedSlash]
+    /// >> 1003 - Composite[pallet_staking_async.UnappliedSlash]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UnappliedSlash : BaseType

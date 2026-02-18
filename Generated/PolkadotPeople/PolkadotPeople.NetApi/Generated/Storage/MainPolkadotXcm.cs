@@ -51,17 +51,19 @@ namespace PolkadotPeople.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "VersionNotifyTargets"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, PolkadotPeople.NetApi.Generated.Model.xcm.EnumVersionedLocation>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, PolkadotPeople.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Substrate.NetApi.Model.Types.Primitive.U32>)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "VersionDiscoveryQueue"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT20)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "VersionDiscoveryQueue"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "CurrentMigration"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotPeople.NetApi.Generated.Model.pallet_xcm.pallet.EnumVersionMigrationStage)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "RemoteLockedFungibles"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32, PolkadotPeople.NetApi.Generated.Model.xcm.EnumVersionedAssetId>), typeof(PolkadotPeople.NetApi.Generated.Model.pallet_xcm.pallet.RemoteLockedFungibleRecord)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "LockedFungibles"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "XcmExecutionSuspended"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "ShouldRecordXcm"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "RecordedXcm"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotPeople.NetApi.Generated.Model.staging_xcm.v5.XcmT1)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "AuthorizedAliases"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.xcm.EnumVersionedLocation), typeof(PolkadotPeople.NetApi.Generated.Model.pallet_xcm.AuthorizedAliasesEntry)));
         }
         
         /// <summary>
@@ -313,10 +315,10 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         ///  the `u32` counter is the number of times that a send to the destination has been attempted,
         ///  which is used as a prioritization.
         /// </summary>
-        public async Task<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT20> VersionDiscoveryQueue(string blockhash, CancellationToken token)
+        public async Task<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21> VersionDiscoveryQueue(string blockhash, CancellationToken token)
         {
             string parameters = PolkadotXcmStorage.VersionDiscoveryQueueParams();
-            var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT20>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21>(parameters, blockhash, token);
             return result;
         }
         
@@ -405,10 +407,10 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         /// >> LockedFungibles
         ///  Fungible assets which we know are locked on this chain.
         /// </summary>
-        public async Task<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22> LockedFungibles(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23> LockedFungibles(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = PolkadotXcmStorage.LockedFungiblesParams(key);
-            var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23>(parameters, blockhash, token);
             return result;
         }
         
@@ -518,6 +520,41 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         {
             string parameters = PolkadotXcmStorage.RecordedXcmParams();
             var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.staging_xcm.v5.XcmT1>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> AuthorizedAliasesParams
+        ///  Map of authorized aliasers of local origins. Each local location can authorize a list of
+        ///  other locations to alias into it. Each aliaser is only valid until its inner `expiry`
+        ///  block number.
+        /// </summary>
+        public static string AuthorizedAliasesParams(PolkadotPeople.NetApi.Generated.Model.xcm.EnumVersionedLocation key)
+        {
+            return RequestGenerator.GetStorage("PolkadotXcm", "AuthorizedAliases", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> AuthorizedAliasesDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string AuthorizedAliasesDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> AuthorizedAliases
+        ///  Map of authorized aliasers of local origins. Each local location can authorize a list of
+        ///  other locations to alias into it. Each aliaser is only valid until its inner `expiry`
+        ///  block number.
+        /// </summary>
+        public async Task<PolkadotPeople.NetApi.Generated.Model.pallet_xcm.AuthorizedAliasesEntry> AuthorizedAliases(PolkadotPeople.NetApi.Generated.Model.xcm.EnumVersionedLocation key, string blockhash, CancellationToken token)
+        {
+            string parameters = PolkadotXcmStorage.AuthorizedAliasesParams(key);
+            var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.pallet_xcm.AuthorizedAliasesEntry>(parameters, blockhash, token);
             return result;
         }
     }
@@ -709,6 +746,39 @@ namespace PolkadotPeople.NetApi.Generated.Storage
             byteArray.AddRange(weight_limit.Encode());
             return new Method(31, "PolkadotXcm", 13, "transfer_assets_using_type_and_then", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> add_authorized_alias
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method AddAuthorizedAlias(PolkadotPeople.NetApi.Generated.Model.xcm.EnumVersionedLocation aliaser, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U64> expires)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(aliaser.Encode());
+            byteArray.AddRange(expires.Encode());
+            return new Method(31, "PolkadotXcm", 14, "add_authorized_alias", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> remove_authorized_alias
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method RemoveAuthorizedAlias(PolkadotPeople.NetApi.Generated.Model.xcm.EnumVersionedLocation aliaser)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(aliaser.Encode());
+            return new Method(31, "PolkadotXcm", 15, "remove_authorized_alias", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> remove_all_authorized_aliases
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method RemoveAllAuthorizedAliases()
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            return new Method(31, "PolkadotXcm", 16, "remove_all_authorized_aliases", byteArray.ToArray());
+        }
     }
     
     /// <summary>
@@ -716,6 +786,51 @@ namespace PolkadotPeople.NetApi.Generated.Storage
     /// </summary>
     public sealed class PolkadotXcmConstants
     {
+        
+        /// <summary>
+        /// >> UniversalLocation
+        ///  This chain's Universal Location.
+        /// </summary>
+        public PolkadotPeople.NetApi.Generated.Model.staging_xcm.v5.junctions.EnumJunctions UniversalLocation()
+        {
+            var result = new PolkadotPeople.NetApi.Generated.Model.staging_xcm.v5.junctions.EnumJunctions();
+            result.Create("0x02090200B10F");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> AdvertisedXcmVersion
+        ///  The latest supported version that we advertise. Generally just set it to
+        ///  `pallet_xcm::CurrentXcmVersion`.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 AdvertisedXcmVersion()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x05000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MaxLockers
+        ///  The maximum number of local XCM locks that a single account may have.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 MaxLockers()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x08000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MaxRemoteLockConsumers
+        ///  The maximum number of consumers a single remote lock may have.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 MaxRemoteLockConsumers()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x00000000");
+            return result;
+        }
     }
     
     /// <summary>
@@ -870,5 +985,30 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         /// Local XCM execution incomplete.
         /// </summary>
         LocalExecutionIncomplete,
+        
+        /// <summary>
+        /// >> TooManyAuthorizedAliases
+        /// Too many locations authorized to alias origin.
+        /// </summary>
+        TooManyAuthorizedAliases,
+        
+        /// <summary>
+        /// >> ExpiresInPast
+        /// Expiry block number is in the past.
+        /// </summary>
+        ExpiresInPast,
+        
+        /// <summary>
+        /// >> AliasNotFound
+        /// The alias to remove authorization for was not found.
+        /// </summary>
+        AliasNotFound,
+        
+        /// <summary>
+        /// >> LocalExecutionIncompleteWithError
+        /// Local XCM execution incomplete with the actual XCM error and the index of the
+        /// instruction that caused the error.
+        /// </summary>
+        LocalExecutionIncompleteWithError,
     }
 }

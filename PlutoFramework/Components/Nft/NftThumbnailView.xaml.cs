@@ -1,8 +1,8 @@
 ﻿using Markdig;
 using PlutoFramework.Constants;
 using PlutoFramework.Model;
-using UniqueryPlus.Nfts;
 using PlutoFramework.Model.SQLite;
+using UniqueryPlus.Nfts;
 
 namespace PlutoFramework.Components.Nft;
 
@@ -31,14 +31,14 @@ public partial class NftThumbnailView : ContentView
                 "http" => new UriImageSource
                 {
                     Uri = new Uri(nftBase.Metadata.Image),
-                    CacheValidity = new TimeSpan(1,0,0),
+                    CacheValidity = new TimeSpan(1, 0, 0),
                 },
                 _ => nftBase.Metadata.Image
             };
 
             if (nftBase is INftXcavateMetadata)
             {
-                control.priceAttribute.Value = $"£{((INftXcavateMetadata)nftBase).XcavateMetadata?.PropertyPrice}";
+                control.priceAttribute.Value = $"£{((INftXcavateMetadata)nftBase).XcavateMetadata?.Financials.PropertyPrice}";
 
                 // Set Xcavate apy
 

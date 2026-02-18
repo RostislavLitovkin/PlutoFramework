@@ -138,7 +138,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_ah_migrator.pallet
     }
     
     /// <summary>
-    /// >> 1001 - Variant[pallet_ah_migrator.pallet.Error]
+    /// >> 1054 - Variant[pallet_ah_migrator.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

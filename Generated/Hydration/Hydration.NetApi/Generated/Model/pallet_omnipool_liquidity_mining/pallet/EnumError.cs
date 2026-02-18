@@ -64,10 +64,22 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool_liquidity_mining.pall
         /// No farms specified to join
         /// </summary>
         NoFarmEntriesSpecified = 6,
+        
+        /// <summary>
+        /// >> NoAssetsSpecified
+        /// No assets specified in the withdrawal
+        /// </summary>
+        NoAssetsSpecified = 7,
+        
+        /// <summary>
+        /// >> PositionIdMismatch
+        /// The provided position_id does not match the deposit's associated position.
+        /// </summary>
+        PositionIdMismatch = 8,
     }
     
     /// <summary>
-    /// >> 647 - Variant[pallet_omnipool_liquidity_mining.pallet.Error]
+    /// >> 712 - Variant[pallet_omnipool_liquidity_mining.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>
@@ -85,6 +97,8 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool_liquidity_mining.pall
 				AddTypeDecoder<BaseVoid>(Error.OracleNotAvailable);
 				AddTypeDecoder<BaseVoid>(Error.PriceAdjustmentNotAvailable);
 				AddTypeDecoder<BaseVoid>(Error.NoFarmEntriesSpecified);
+				AddTypeDecoder<BaseVoid>(Error.NoAssetsSpecified);
+				AddTypeDecoder<BaseVoid>(Error.PositionIdMismatch);
         }
     }
 }

@@ -138,7 +138,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_rc_migrator.pallet
     }
     
     /// <summary>
-    /// >> 943 - Variant[pallet_rc_migrator.pallet.Error]
+    /// >> 945 - Variant[pallet_rc_migrator.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

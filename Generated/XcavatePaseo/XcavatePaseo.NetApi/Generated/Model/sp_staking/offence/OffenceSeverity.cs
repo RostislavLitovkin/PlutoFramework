@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.sp_staking.offence
     
     
     /// <summary>
-    /// >> 525 - Composite[sp_staking.offence.OffenceSeverity]
+    /// >> 613 - Composite[sp_staking.offence.OffenceSeverity]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OffenceSeverity : BaseType

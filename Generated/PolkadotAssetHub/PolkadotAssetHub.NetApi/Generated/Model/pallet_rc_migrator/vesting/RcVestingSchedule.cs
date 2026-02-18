@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.vesting
     
     
     /// <summary>
-    /// >> 558 - Composite[pallet_rc_migrator.vesting.RcVestingSchedule]
+    /// >> 566 - Composite[pallet_rc_migrator.vesting.RcVestingSchedule]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RcVestingSchedule : BaseType

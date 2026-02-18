@@ -100,7 +100,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_delegated_staking.palle
     }
     
     /// <summary>
-    /// >> 951 - Variant[pallet_delegated_staking.pallet.Error]
+    /// >> 963 - Variant[pallet_delegated_staking.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

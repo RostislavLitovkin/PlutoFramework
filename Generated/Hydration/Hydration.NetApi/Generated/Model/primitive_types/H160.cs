@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.primitive_types
     
     
     /// <summary>
-    /// >> 80 - Composite[primitive_types.H160]
+    /// >> 82 - Composite[primitive_types.H160]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class H160 : BaseType

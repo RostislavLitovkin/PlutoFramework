@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime.sta
     
     
     /// <summary>
-    /// >> 417 - Composite[asset_hub_polkadot_runtime.staking.NposCompactSolution16]
+    /// >> 420 - Composite[asset_hub_polkadot_runtime.staking.NposCompactSolution16]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class NposCompactSolution16 : BaseType

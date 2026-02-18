@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.sp_arithmetic.per_things
     
     
     /// <summary>
-    /// >> 425 - Composite[sp_arithmetic.per_things.PerU16]
+    /// >> 428 - Composite[sp_arithmetic.per_things.PerU16]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PerU16 : BaseType

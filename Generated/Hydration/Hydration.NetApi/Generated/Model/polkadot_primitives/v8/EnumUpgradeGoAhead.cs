@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Model.polkadot_primitives.v8
     }
     
     /// <summary>
-    /// >> 745 - Variant[polkadot_primitives.v8.UpgradeGoAhead]
+    /// >> 815 - Variant[polkadot_primitives.v8.UpgradeGoAhead]
     /// </summary>
     public sealed class EnumUpgradeGoAhead : BaseEnum<UpgradeGoAhead>
     {

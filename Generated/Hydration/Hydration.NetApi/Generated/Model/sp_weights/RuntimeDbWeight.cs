@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.sp_weights
     
     
     /// <summary>
-    /// >> 493 - Composite[sp_weights.RuntimeDbWeight]
+    /// >> 555 - Composite[sp_weights.RuntimeDbWeight]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RuntimeDbWeight : BaseType

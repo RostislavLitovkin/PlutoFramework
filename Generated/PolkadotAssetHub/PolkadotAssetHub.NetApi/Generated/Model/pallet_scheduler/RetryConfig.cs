@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_scheduler
     
     
     /// <summary>
-    /// >> 591 - Composite[pallet_scheduler.RetryConfig]
+    /// >> 599 - Composite[pallet_scheduler.RetryConfig]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RetryConfig : BaseType

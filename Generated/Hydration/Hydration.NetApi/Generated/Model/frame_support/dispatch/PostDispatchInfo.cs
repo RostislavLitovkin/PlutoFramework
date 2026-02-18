@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.frame_support.dispatch
     
     
     /// <summary>
-    /// >> 408 - Composite[frame_support.dispatch.PostDispatchInfo]
+    /// >> 463 - Composite[frame_support.dispatch.PostDispatchInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PostDispatchInfo : BaseType

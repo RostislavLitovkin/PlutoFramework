@@ -10,7 +10,6 @@ using UniqueryPlus.Collections;
 using UniqueryPlus.Metadata;
 using XcavatePaseo.NetApi.Generated;
 using XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types;
-using XcavatePaseo.NetApi.Generated.Model.pallet_real_estate_asset.pallet;
 using XcavatePaseo.NetApi.Generated.Model.sp_core.crypto;
 using XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress;
 using XcavatePaseo.NetApi.Generated.Storage;
@@ -31,11 +30,11 @@ namespace UniqueryPlus.Nfts
         public Method Sell(BigInteger price)
         {
             var whitelisted_buyer = new BaseOpt<EnumMultiAddress>();
-            return NftsCalls.SetPrice(new U32((uint)CollectionId), new U32((uint)Id), new BaseOpt<U128>(new U128(price)), whitelisted_buyer);
+            return RealEstateNftsCalls.SetPrice(new U32((uint)CollectionId), new U32((uint)Id), new BaseOpt<U128>(new U128(price)), whitelisted_buyer);
         }
         public Method Buy()
         {
-            return NftsCalls.BuyItem(new U32((uint)CollectionId), new U32((uint)Id), new U128(Price ?? 0));
+            return RealEstateNftsCalls.BuyItem(new U32((uint)CollectionId), new U32((uint)Id), new U128(Price ?? 0));
         }
     }
     public record XcavatePaseoNftsPalletNft : INftXcavateBase, INftBase, INftTransferable, INftBurnable, INftMarketPrice, INftFractionalization, INftXcavateMetadata, INftXcavateNftMarketplace, INftXcavateOngoingObjectListing
@@ -66,7 +65,7 @@ namespace UniqueryPlus.Nfts
             var multiAddress = new EnumMultiAddress();
             multiAddress.Create(MultiAddress.Id, accountId);
 
-            return NftsCalls.Transfer(new U32((uint)CollectionId), new U32((uint)Id), multiAddress);
+            return RealEstateNftsCalls.Transfer(new U32((uint)CollectionId), new U32((uint)Id), multiAddress);
         }
         public async Task<BigInteger> NftToAssetAsync(CancellationToken token)
         {
@@ -75,20 +74,10 @@ namespace UniqueryPlus.Nfts
             return details.Asset.Value;
         }
         public bool IsBurnable { get; set; } = true;
-        public Method Burn() => NftsCalls.Burn(new U32((uint)CollectionId), new U32((uint)Id));
+        public Method Burn() => RealEstateNftsCalls.Burn(new U32((uint)CollectionId), new U32((uint)Id));
         public async Task<BigInteger?> GetMarketPriceAsync(CancellationToken token)
         {
-            var speckClient = Indexers.GetSpeckClient();
-
-            var collectionStats = await speckClient.GetCollectionStats.ExecuteAsync(CollectionId.ToString(), token).ConfigureAwait(false);
-
-            //collectionStats.EnsureNoErrors();
-            if (collectionStats is null || collectionStats.Errors.Count > 0)
-            {
-                return null;
-            }
-
-            return collectionStats.Data?.CollectionEntityById?.HighestSale is not null ? BigInteger.Parse(collectionStats.Data.CollectionEntityById.HighestSale ?? "Should not happen") : null;
+            throw new Exception("Not implemented");
         }
 
         public async Task<INftBase> GetFullAsync(CancellationToken token)
@@ -113,13 +102,13 @@ namespace UniqueryPlus.Nfts
         {
             var keyPrefixLength = 66;
 
-            var idKeys = nftIds.Select(id => NftsStorage.ItemParams(new BaseTuple<U32, U32>(id.Item1, id.Item2)).Substring(keyPrefixLength));
+            var idKeys = nftIds.Select(id => RealEstateNftsStorage.ItemParams(new BaseTuple<U32, U32>(id.Item1, id.Item2)).Substring(keyPrefixLength));
 
             return GetNftsNftsPalletByIdKeysAsync(client, idKeys, lastKey, token);
         }
         internal static async Task<INftBase?> GetNftNftsPalletByIdAsync(SubstrateClientExt client, uint collectionId, uint id, CancellationToken token)
         {
-            var keyPrefix = Utils.HexToByteArray(NftsStorage.ItemParams(new BaseTuple<U32, U32>(new U32(collectionId), new U32(id))));
+            var keyPrefix = Utils.HexToByteArray(RealEstateNftsStorage.ItemParams(new BaseTuple<U32, U32>(new U32(collectionId), new U32(id))));
 
             var fullKeys = await client.State.GetKeysPagedAsync(keyPrefix, 1, null, string.Empty, token).ConfigureAwait(false);
 
@@ -139,7 +128,7 @@ namespace UniqueryPlus.Nfts
             // 0x + Twox64 pallet + Twox64 storage + Blake2_128Concat U32
             var keyPrefixLength = 106;
 
-            var keyPrefix = Utils.HexToByteArray(NftsStorage.ItemParams(new BaseTuple<U32, U32>(new U32(collectionId), new U32(0))).Substring(0, keyPrefixLength));
+            var keyPrefix = Utils.HexToByteArray(RealEstateNftsStorage.ItemParams(new BaseTuple<U32, U32>(new U32(collectionId), new U32(0))).Substring(0, keyPrefixLength));
 
             var fullKeys = await client.State.GetKeysPagedAsync(keyPrefix, limit, lastKey, string.Empty, token).ConfigureAwait(false);
 
@@ -169,7 +158,7 @@ namespace UniqueryPlus.Nfts
             // 0x + Twox64 pallet + Twox64 storage + Blake2_128Concat accountId32
             var keyPrefixLength = 162;
 
-            var keyPrefix = Utils.HexToByteArray(NftsStorage.AccountParams(new BaseTuple<AccountId32, U32, U32>(accountId32, new U32(0), new U32(0))).Substring(0, keyPrefixLength));
+            var keyPrefix = Utils.HexToByteArray(RealEstateNftsStorage.AccountParams(new BaseTuple<AccountId32, U32, U32>(accountId32, new U32(0), new U32(0))).Substring(0, keyPrefixLength));
 
             var fullKeys = await client.State.GetKeysPagedAsync(keyPrefix, limit, lastKey, string.Empty, token).ConfigureAwait(false);
 
@@ -197,7 +186,7 @@ namespace UniqueryPlus.Nfts
             // 0x + Twox64 pallet + Twox64 storage + Blake2_128Concat accountId32 + Blake2_128Concat collectionId
             var keyPrefixLength = 202;
 
-            var keyPrefix = Utils.HexToByteArray(NftsStorage.AccountParams(new BaseTuple<AccountId32, U32, U32>(accountId32, new U32(collectionId), new U32(0))).Substring(0, keyPrefixLength));
+            var keyPrefix = Utils.HexToByteArray(RealEstateNftsStorage.AccountParams(new BaseTuple<AccountId32, U32, U32>(accountId32, new U32(collectionId), new U32(0))).Substring(0, keyPrefixLength));
 
             var fullKeys = await client.State.GetKeysPagedAsync(keyPrefix, limit, lastKey, string.Empty, token).ConfigureAwait(false);
 
@@ -292,7 +281,7 @@ namespace UniqueryPlus.Nfts
             // 0x + Twox64 pallet + Twox64 storage
             var keyPrefixLength = 66;
 
-            var keyPrefix = NftsStorage.ItemParams(new BaseTuple<U32, U32>(new U32(0), new U32(0))).Substring(0, keyPrefixLength);
+            var keyPrefix = RealEstateNftsStorage.ItemParams(new BaseTuple<U32, U32>(new U32(0), new U32(0))).Substring(0, keyPrefixLength);
 
             var nftDetailsKeys = idKeys.Select(idKey => Utils.HexToByteArray(keyPrefix + idKey));
 
@@ -317,7 +306,7 @@ namespace UniqueryPlus.Nfts
             // 0x + Twox64 pallet + Twox64 storage
             var keyPrefixLength = 66;
 
-            var keyPrefix = RealEstateAssetStorage.PropertyAssetInfoParams(new U32(0)).Substring(0, keyPrefixLength);
+            var keyPrefix = RealWorldAssetStorage.PropertyAssetInfoParams(new U32(0)).Substring(0, keyPrefixLength);
 
             var nftKeys = idKeys.Select(idKey => Utils.HexToByteArray(keyPrefix + idKey.Substring(40)));
             var storageChangeSets = await client.State.GetQueryStorageAtAsync(nftKeys.ToList(), string.Empty, token).ConfigureAwait(false);
@@ -333,7 +322,7 @@ namespace UniqueryPlus.Nfts
                     continue;
                 }
 
-                var propertyDetails = new PropertyAssetDetails();
+                var propertyDetails = new XcavatePaseo.NetApi.Generated.Model.pallet_real_world_asset.pallet.PropertyAssetDetails();
                 propertyDetails.Create(change[1]);
 
                 details.Add(new NftMarketplaceDetails
@@ -402,7 +391,6 @@ namespace UniqueryPlus.Nfts
                     TaxPaidByDeveloper = propertyDetails.TaxPaidByDeveloper,
                     ListingExpiry = propertyDetails.ListingExpiry.Value,
                     ListedTokens = propertyDetails.ListedTokenAmount,
-
                     AssetId = propertyDetails.AssetId,
                     CollectionId = propertyDetails.CollectionId,
                     ItemId = propertyDetails.ItemId,
@@ -418,7 +406,7 @@ namespace UniqueryPlus.Nfts
             // 0x + Twox64 pallet + Twox64 storage
             var keyPrefixLength = 66;
 
-            var keyPrefix = NftsStorage.ItemMetadataOfParams(new BaseTuple<U32, U32>(new U32(0), new U32(0))).Substring(0, keyPrefixLength);
+            var keyPrefix = RealEstateNftsStorage.ItemMetadataOfParams(new BaseTuple<U32, U32>(new U32(0), new U32(0))).Substring(0, keyPrefixLength);
 
             var nftMetadataKeys = idKeys.Select(idKey => Utils.HexToByteArray(keyPrefix + idKey));
             var storageChangeSets = await client.State.GetQueryStorageAtAsync(nftMetadataKeys.ToList(), string.Empty, token).ConfigureAwait(false);
@@ -467,7 +455,7 @@ namespace UniqueryPlus.Nfts
                     {
                         Name = propertyMetadata.PropertyName,
                         Description = propertyMetadata.PropertyDescription,
-                        Image = propertyMetadata.Images.Count() > 0 ? propertyMetadata.Images[0] : null,
+                        Image = propertyMetadata.FileUrls.Count() > 0 ? propertyMetadata.FileUrls[0] : null,
                     };
 
                     metadatas.Add((metadata, propertyMetadata));

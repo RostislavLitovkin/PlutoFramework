@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async.ledger
     
     
     /// <summary>
-    /// >> 974 - Composite[pallet_staking_async.ledger.StakingLedger]
+    /// >> 986 - Composite[pallet_staking_async.ledger.StakingLedger]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class StakingLedger : BaseType

@@ -1,12 +1,12 @@
-﻿using Amazon.S3;
+﻿using Amazon;
+using Amazon.S3;
+using CommunityToolkit.Maui.Alerts;
 using Microsoft.Extensions.Configuration;
 using PlutoFramework.Constants;
-using PlutoFramework.Model.Xcavate;
 using PlutoFramework.Model;
-using UniqueryPlus.Nfts;
-using Amazon;
-using CommunityToolkit.Maui.Alerts;
 using PlutoFramework.Model.SQLite;
+using PlutoFramework.Model.Xcavate;
+using UniqueryPlus.Nfts;
 
 namespace PlutoFramework.Components.XcavateProperty
 {
@@ -62,7 +62,7 @@ namespace PlutoFramework.Components.XcavateProperty
                     nft.Metadata.Image = "noimage.png";
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine("To Xcavate nft wrapper error:");
                 Console.WriteLine(ex);

@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_identity.types
     
     
     /// <summary>
-    /// >> 424 - Composite[pallet_identity.types.UsernameInformation]
+    /// >> 454 - Composite[pallet_identity.types.UsernameInformation]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UsernameInformation : BaseType

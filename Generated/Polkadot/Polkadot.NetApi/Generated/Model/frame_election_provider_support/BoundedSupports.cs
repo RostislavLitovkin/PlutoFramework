@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.frame_election_provider_support
     
     
     /// <summary>
-    /// >> 738 - Composite[frame_election_provider_support.BoundedSupports]
+    /// >> 740 - Composite[frame_election_provider_support.BoundedSupports]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedSupports : BaseType

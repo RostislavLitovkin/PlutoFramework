@@ -54,7 +54,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_session.pallet
     }
     
     /// <summary>
-    /// >> 815 - Variant[pallet_session.pallet.Error]
+    /// >> 894 - Variant[pallet_session.pallet.Error]
     /// Error for the session pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

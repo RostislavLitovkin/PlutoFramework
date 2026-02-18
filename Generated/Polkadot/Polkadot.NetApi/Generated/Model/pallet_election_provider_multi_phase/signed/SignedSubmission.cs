@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_election_provider_multi_phase.s
     
     
     /// <summary>
-    /// >> 750 - Composite[pallet_election_provider_multi_phase.signed.SignedSubmission]
+    /// >> 752 - Composite[pallet_election_provider_multi_phase.signed.SignedSubmission]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SignedSubmission : BaseType

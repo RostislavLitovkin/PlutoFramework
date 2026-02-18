@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_education_regions.pallet
     
     
     /// <summary>
-    /// >> 628 - Composite[pallet_education_regions.pallet.RegionAuction]
+    /// >> 716 - Composite[pallet_education_regions.pallet.RegionAuction]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RegionAuction : BaseType

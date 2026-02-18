@@ -43,7 +43,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.cumulus_pallet_parachain_system.
     }
     
     /// <summary>
-    /// >> 203 - Variant[cumulus_pallet_parachain_system.pallet.Call]
+    /// >> 209 - Variant[cumulus_pallet_parachain_system.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -54,7 +54,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.cumulus_pallet_parachain_system.
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.cumulus_primitives_parachain_inherent.ParachainInherentData>(Call.set_validation_data);
+				AddTypeDecoder<BaseTuple<PolkadotPeople.NetApi.Generated.Model.cumulus_pallet_parachain_system.parachain_inherent.BasicParachainInherentData, PolkadotPeople.NetApi.Generated.Model.cumulus_pallet_parachain_system.parachain_inherent.InboundMessagesData>>(Call.set_validation_data);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>(Call.sudo_send_upward_message);
         }
     }

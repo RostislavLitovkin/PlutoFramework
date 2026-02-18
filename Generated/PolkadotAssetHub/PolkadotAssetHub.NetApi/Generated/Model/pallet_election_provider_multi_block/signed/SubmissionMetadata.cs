@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi
     
     
     /// <summary>
-    /// >> 970 - Composite[pallet_election_provider_multi_block.signed.SubmissionMetadata]
+    /// >> 982 - Composite[pallet_election_provider_multi_block.signed.SubmissionMetadata]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SubmissionMetadata : BaseType

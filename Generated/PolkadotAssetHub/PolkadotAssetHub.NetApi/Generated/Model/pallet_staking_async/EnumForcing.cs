@@ -43,7 +43,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async
     }
     
     /// <summary>
-    /// >> 692 - Variant[pallet_staking_async.Forcing]
+    /// >> 700 - Variant[pallet_staking_async.Forcing]
     /// </summary>
     public sealed class EnumForcing : BaseEnum<Forcing>
     {

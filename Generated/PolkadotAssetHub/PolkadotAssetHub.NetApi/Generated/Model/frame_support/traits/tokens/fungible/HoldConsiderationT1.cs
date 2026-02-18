@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.frame_support.traits.tokens.fu
     
     
     /// <summary>
-    /// >> 744 - Composite[frame_support.traits.tokens.fungible.HoldConsiderationT1]
+    /// >> 753 - Composite[frame_support.traits.tokens.fungible.HoldConsiderationT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class HoldConsiderationT1 : BaseType

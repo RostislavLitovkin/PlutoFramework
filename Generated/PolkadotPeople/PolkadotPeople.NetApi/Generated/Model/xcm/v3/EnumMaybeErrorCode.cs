@@ -38,7 +38,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.xcm.v3
     }
     
     /// <summary>
-    /// >> 82 - Variant[xcm.v3.MaybeErrorCode]
+    /// >> 84 - Variant[xcm.v3.MaybeErrorCode]
     /// </summary>
     public sealed class EnumMaybeErrorCode : BaseEnumRust<MaybeErrorCode>
     {

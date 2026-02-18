@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_xcm.pallet
     
     
     /// <summary>
-    /// >> 816 - Composite[pallet_xcm.pallet.RemoteLockedFungibleRecord]
+    /// >> 828 - Composite[pallet_xcm.pallet.RemoteLockedFungibleRecord]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RemoteLockedFungibleRecord : BaseType

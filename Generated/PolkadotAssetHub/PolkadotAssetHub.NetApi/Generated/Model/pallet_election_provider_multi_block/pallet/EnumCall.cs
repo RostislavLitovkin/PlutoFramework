@@ -26,15 +26,20 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi
         /// >> manage
         /// Manage this pallet.
         /// 
-        /// The origin of this call must be [`Config::AdminOrigin`].
+        /// The origin of this call must be [`Config::ManagerOrigin`].
         /// 
-        /// See [`AdminOperation`] for various operations that are possible.
+        /// See [`ManagerOperation`] for various operations that are possible.
         /// </summary>
         manage = 0,
+        
+        /// <summary>
+        /// >> admin
+        /// </summary>
+        admin = 1,
     }
     
     /// <summary>
-    /// >> 401 - Variant[pallet_election_provider_multi_block.pallet.Call]
+    /// >> 403 - Variant[pallet_election_provider_multi_block.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -45,7 +50,8 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi_block.EnumAdminOperation>(Call.manage);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi_block.EnumManagerOperation>(Call.manage);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi_block.EnumAdminOperation>(Call.admin);
         }
     }
 }

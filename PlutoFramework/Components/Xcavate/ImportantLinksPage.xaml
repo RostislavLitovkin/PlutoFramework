@@ -16,7 +16,7 @@
                 <Label.FormattedText>
                     <FormattedString>
                         <hyperlink:Link Text="Terms and Conditions"
-                                 Url="https://realxmarket.xcavate.io/terms"/>
+                                 Url="https://app.realxmarket.io/terms"/>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
@@ -29,7 +29,7 @@
                 <Label.FormattedText>
                     <FormattedString>
                         <hyperlink:Link Text="Agreement"
-                 Url="https://realxmarket.xcavate.io/agreement"/>
+                 Url="https://app.realxmarket.io/agreement"/>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
@@ -42,7 +42,7 @@
                 <Label.FormattedText>
                     <FormattedString>
                         <hyperlink:Link Text="Privacy policy"
-                         Url="https://realxmarket.xcavate.io/privacy"/>
+                         Url="https://app.realxmarket.io/privacy"/>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>

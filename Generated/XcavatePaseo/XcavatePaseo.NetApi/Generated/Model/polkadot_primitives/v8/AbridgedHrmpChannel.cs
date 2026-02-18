@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.polkadot_primitives.v8
     
     
     /// <summary>
-    /// >> 267 - Composite[polkadot_primitives.v8.AbridgedHrmpChannel]
+    /// >> 315 - Composite[polkadot_primitives.v8.AbridgedHrmpChannel]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AbridgedHrmpChannel : BaseType

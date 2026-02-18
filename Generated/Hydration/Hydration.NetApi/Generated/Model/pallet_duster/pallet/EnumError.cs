@@ -23,16 +23,16 @@ namespace Hydration.NetApi.Generated.Model.pallet_duster.pallet
     {
         
         /// <summary>
-        /// >> AccountBlacklisted
+        /// >> AccountWhitelisted
         /// Account is excluded from dusting.
         /// </summary>
-        AccountBlacklisted = 0,
+        AccountWhitelisted = 0,
         
         /// <summary>
-        /// >> AccountNotBlacklisted
+        /// >> AccountNotWhitelisted
         /// Account is not present in the non-dustable list.
         /// </summary>
-        AccountNotBlacklisted = 1,
+        AccountNotWhitelisted = 1,
         
         /// <summary>
         /// >> ZeroBalance
@@ -41,16 +41,16 @@ namespace Hydration.NetApi.Generated.Model.pallet_duster.pallet
         ZeroBalance = 2,
         
         /// <summary>
+        /// >> NonZeroBalance
+        /// The balance was not fully dusted, there is some leftover on the account. Normally, it should never happen.
+        /// </summary>
+        NonZeroBalance = 3,
+        
+        /// <summary>
         /// >> BalanceSufficient
         /// The balance is sufficient to keep account open.
         /// </summary>
-        BalanceSufficient = 3,
-        
-        /// <summary>
-        /// >> DustAccountNotSet
-        /// Dust account is not set.
-        /// </summary>
-        DustAccountNotSet = 4,
+        BalanceSufficient = 4,
         
         /// <summary>
         /// >> ReserveAccountNotSet
@@ -60,7 +60,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_duster.pallet
     }
     
     /// <summary>
-    /// >> 636 - Variant[pallet_duster.pallet.Error]
+    /// >> 701 - Variant[pallet_duster.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

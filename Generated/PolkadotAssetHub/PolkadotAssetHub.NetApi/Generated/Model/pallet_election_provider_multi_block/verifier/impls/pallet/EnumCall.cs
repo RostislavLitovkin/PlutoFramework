@@ -24,7 +24,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi
     }
     
     /// <summary>
-    /// >> 413 - Variant[pallet_election_provider_multi_block.verifier.impls.pallet.Call]
+    /// >> 416 - Variant[pallet_election_provider_multi_block.verifier.impls.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnum<Call>

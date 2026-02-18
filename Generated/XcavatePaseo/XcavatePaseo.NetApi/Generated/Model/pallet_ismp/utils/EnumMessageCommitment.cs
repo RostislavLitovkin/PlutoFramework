@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_ismp.utils
     }
     
     /// <summary>
-    /// >> 427 - Variant[pallet_ismp.utils.MessageCommitment]
+    /// >> 476 - Variant[pallet_ismp.utils.MessageCommitment]
     /// </summary>
     public sealed class EnumMessageCommitment : BaseEnumRust<MessageCommitment>
     {

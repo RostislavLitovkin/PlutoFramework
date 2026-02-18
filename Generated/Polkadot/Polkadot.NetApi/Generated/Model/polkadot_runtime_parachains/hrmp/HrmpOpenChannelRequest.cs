@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.hrmp
     
     
     /// <summary>
-    /// >> 843 - Composite[polkadot_runtime_parachains.hrmp.HrmpOpenChannelRequest]
+    /// >> 845 - Composite[polkadot_runtime_parachains.hrmp.HrmpOpenChannelRequest]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class HrmpOpenChannelRequest : BaseType

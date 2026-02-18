@@ -33,7 +33,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_nomination_pools
     }
     
     /// <summary>
-    /// >> 390 - Variant[pallet_nomination_pools.CommissionClaimPermission]
+    /// >> 392 - Variant[pallet_nomination_pools.CommissionClaimPermission]
     /// </summary>
     public sealed class EnumCommissionClaimPermission : BaseEnumRust<CommissionClaimPermission>
     {

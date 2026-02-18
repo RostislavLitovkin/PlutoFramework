@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_traits.stableswap
     
     
     /// <summary>
-    /// >> 216 - Composite[hydradx_traits.stableswap.AssetAmount]
+    /// >> 212 - Composite[hydradx_traits.stableswap.AssetAmount]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetAmount : BaseType

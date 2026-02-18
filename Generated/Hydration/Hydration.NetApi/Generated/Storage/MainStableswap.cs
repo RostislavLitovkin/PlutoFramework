@@ -45,6 +45,8 @@ namespace Hydration.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Hydration.NetApi.Generated.Model.pallet_stableswap.types.Tradability)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Stableswap", "PoolSnapshots"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Hydration.NetApi.Generated.Model.pallet_stableswap.types.PoolSnapshot)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Stableswap", "BlockFee"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill)));
         }
         
         /// <summary>
@@ -170,6 +172,37 @@ namespace Hydration.NetApi.Generated.Storage
             var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.pallet_stableswap.types.PoolSnapshot>(parameters, blockhash, token);
             return result;
         }
+        
+        /// <summary>
+        /// >> BlockFeeParams
+        ///  Temporary pool's trade fee for current block.
+        /// </summary>
+        public static string BlockFeeParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        {
+            return RequestGenerator.GetStorage("Stableswap", "BlockFee", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> BlockFeeDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string BlockFeeDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> BlockFee
+        ///  Temporary pool's trade fee for current block.
+        /// </summary>
+        public async Task<Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill> BlockFee(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        {
+            string parameters = StableswapStorage.BlockFeeParams(key);
+            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>(parameters, blockhash, token);
+            return result;
+        }
     }
     
     /// <summary>
@@ -216,18 +249,6 @@ namespace Hydration.NetApi.Generated.Storage
             byteArray.AddRange(start_block.Encode());
             byteArray.AddRange(end_block.Encode());
             return new Method(70, "Stableswap", 2, "update_amplification", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> add_liquidity
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method AddLiquidity(Substrate.NetApi.Model.Types.Primitive.U32 pool_id, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10 assets)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(pool_id.Encode());
-            byteArray.AddRange(assets.Encode());
-            return new Method(70, "Stableswap", 3, "add_liquidity", byteArray.ToArray());
         }
         
         /// <summary>
@@ -596,5 +617,17 @@ namespace Hydration.NetApi.Generated.Storage
         /// Pool does not have pegs configured.
         /// </summary>
         NoPegSource,
+        
+        /// <summary>
+        /// >> ZeroAmountOut
+        /// Trade would result in zero amount out.
+        /// </summary>
+        ZeroAmountOut,
+        
+        /// <summary>
+        /// >> ZeroAmountIn
+        /// Trade would result in zero amount in.
+        /// </summary>
+        ZeroAmountIn,
     }
 }

@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_referenda.types
     
     
     /// <summary>
-    /// >> 918 - Composite[pallet_referenda.types.ReferendumStatusT2]
+    /// >> 930 - Composite[pallet_referenda.types.ReferendumStatusT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ReferendumStatusT2 : BaseType

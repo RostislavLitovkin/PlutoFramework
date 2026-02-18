@@ -38,7 +38,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_rc_migrator.accounts
     }
     
     /// <summary>
-    /// >> 941 - Variant[pallet_rc_migrator.accounts.AccountState]
+    /// >> 943 - Variant[pallet_rc_migrator.accounts.AccountState]
     /// </summary>
     public sealed class EnumAccountState : BaseEnumRust<AccountState>
     {

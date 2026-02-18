@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.sp_runtime.generic.unchecked_ext
     
     
     /// <summary>
-    /// >> 428 - Composite[sp_runtime.generic.unchecked_extrinsic.UncheckedExtrinsic]
+    /// >> 458 - Composite[sp_runtime.generic.unchecked_extrinsic.UncheckedExtrinsic]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UncheckedExtrinsic : BaseType

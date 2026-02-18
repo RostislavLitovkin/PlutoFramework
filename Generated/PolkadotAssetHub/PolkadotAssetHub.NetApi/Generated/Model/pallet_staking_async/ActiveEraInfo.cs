@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async
     
     
     /// <summary>
-    /// >> 976 - Composite[pallet_staking_async.ActiveEraInfo]
+    /// >> 988 - Composite[pallet_staking_async.ActiveEraInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ActiveEraInfo : BaseType

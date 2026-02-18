@@ -41,7 +41,7 @@ namespace PlutoFramework.Components.XcavateProperty
                     return "-";
                 }
 
-                decimal usd = parsedTokens * Metadata?.PricePerToken ?? 0;
+                decimal usd = parsedTokens * Metadata?.Financials.PricePerToken ?? 0;
                 return usd.ToCurrencyString();
             }
         }
@@ -56,7 +56,7 @@ namespace PlutoFramework.Components.XcavateProperty
                     return "-";
                 }
 
-                var usd = (decimal)0.01 * (decimal)parsedTokens * Metadata?.PricePerToken ?? 0;
+                var usd = (decimal)0.01 * (decimal)parsedTokens * Metadata?.Financials.PricePerToken ?? 0;
                 return usd.ToCurrencyString();
             }
         }
@@ -71,7 +71,7 @@ namespace PlutoFramework.Components.XcavateProperty
                     return "-";
                 }
 
-                var usd = (decimal)1.01 * (decimal)parsedTokens * Metadata?.PricePerToken ?? 0;
+                var usd = (decimal)1.01 * (decimal)parsedTokens * Metadata?.Financials.PricePerToken ?? 0;
                 return usd.ToCurrencyString();
             }
         }

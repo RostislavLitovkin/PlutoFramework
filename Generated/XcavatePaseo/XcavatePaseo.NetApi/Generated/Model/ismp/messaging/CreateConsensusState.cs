@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.ismp.messaging
     
     
     /// <summary>
-    /// >> 417 - Composite[ismp.messaging.CreateConsensusState]
+    /// >> 466 - Composite[ismp.messaging.CreateConsensusState]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CreateConsensusState : BaseType

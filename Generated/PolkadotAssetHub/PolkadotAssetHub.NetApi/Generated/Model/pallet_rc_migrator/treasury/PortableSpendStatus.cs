@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.treasury
     
     
     /// <summary>
-    /// >> 623 - Composite[pallet_rc_migrator.treasury.PortableSpendStatus]
+    /// >> 631 - Composite[pallet_rc_migrator.treasury.PortableSpendStatus]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PortableSpendStatus : BaseType
