@@ -8,15 +8,26 @@
     {
         private const string KeyDeviceId = "device_id";
         private const string KeyAuthTokenPair = "auth_token_pair";
-        
         private const string KeyIsRegistered = "device_registered";
         private const string KeyFcmTokenExpired = "fcm_token_expired";
+        
+        private const string InstallInitializedKey = "install_initialized";
         
         private static readonly JsonSerializerOptions JsonOptions = new()
         {
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
             WriteIndented = false
         };
+        
+        public async Task EnsurePerInstallIsolationAsync()
+        {
+            if (!Preferences.Default.ContainsKey(InstallInitializedKey))
+            {
+                await WipeAllAsync();
+
+                Preferences.Default.Set(InstallInitializedKey, true);
+            }
+        }
         
         public async Task SaveDeviceIdAsync(string uuid)
         {
@@ -88,5 +99,22 @@
             {
                 return null;
             }
+        }
+        
+        private static async Task WipeAllAsync()
+        {
+            try
+            {
+                SecureStorage.Default.Remove(KeyDeviceId);
+                SecureStorage.Default.Remove(KeyAuthTokenPair);
+                SecureStorage.Default.Remove(KeyIsRegistered);
+                SecureStorage.Default.Remove(KeyFcmTokenExpired);
+            }
+            catch
+            {
+                // Intentionally ignore
+            }
+
+            await Task.CompletedTask;
         }
     }

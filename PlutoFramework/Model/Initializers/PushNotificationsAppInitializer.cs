@@ -27,6 +27,7 @@ public static class PushNotificationsAppInitializer
         Console.WriteLine($"[PlutoNotifications] API URL set: {apiUrl}");
         
         SecureStorageManager.Storage = new PushNotificationsSecureStorageService();
+        await SecureStorageManager.Storage.EnsurePerInstallIsolationAsync();
 
         # if ANDROID
         NotificationsPlatform.Current = PlatformType.Android;

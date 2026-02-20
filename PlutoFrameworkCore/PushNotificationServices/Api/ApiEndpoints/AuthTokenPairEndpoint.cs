@@ -14,6 +14,8 @@ public record TokenPair
 
 public record DeviceRegistrationData
 {
+    [JsonPropertyName("nonce")]
+    public required string Nonce { get; set; }
     [JsonPropertyName("device_id")]
     public required string DeviceId { get; set; }
     

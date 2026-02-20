@@ -48,7 +48,7 @@ public static class DeviceRegisterService
         try
         {
             await RetryHelper.RunWithRetryAsync(async () =>
-                await ApiClient.UpdateFCMTokenRequestAsync(
+                await ApiClient.UpdateFcmTokenRequestAsync(
                     (await FcmTokenService.GetTokenAsync())!
                 )
             );

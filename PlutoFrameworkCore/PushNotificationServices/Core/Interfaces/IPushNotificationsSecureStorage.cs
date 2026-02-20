@@ -4,6 +4,7 @@ namespace PlutoFrameworkCore.PushNotificationServices.Core.Interfaces;
 
 public interface IPushNotificationsSecureStorage
 {
+    public Task EnsurePerInstallIsolationAsync();
     public Task SaveDeviceIdAsync(string uuid);
     public Task<string?> GetDeviceIdAsync();
     public Task SaveAuthTokenPairAsync(TokenPair tokenPair);

@@ -29,14 +29,35 @@ public static class ApiClient
         if (Platform.Current == PlatformType.Other) return;
 
         var nonce = await NonceEndpoint.GetNonceAsync(SharedClient);
+        Console.WriteLine($"[PlutoNotifications] Got nonce: {nonce}");
+        
+        string? attestation = null;
+        try
+        {
+            attestation = await Platform.AttestationService.GetAttestationAsync(nonce);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"[PlutoNotifications] Attestation failed");
+            Console.WriteLine($"[PlutoNotifications] Error: {e.Message}");
+        }
+        Console.WriteLine($"[PlutoNotifications] Got attestation: {attestation}");
+        
+        var assertion = await Platform.AttestationService.GetAssertionAsync(nonce);
+        Console.WriteLine($"[PlutoNotifications] Got assertion: {assertion}");
+        
+        var deviceId = await Platform.AttestationService.GetDeviceIdAsync();
+        Console.WriteLine($"[PlutoNotifications] Got device id: {deviceId}");
+        
 
         var tokenPair = await AuthTokenPairEndpoint.GetTokenPairAsync(SharedClient, new DeviceRegistrationData {
-            DeviceId = await Platform.AttestationService.GetDeviceIdAsync(),
-            Attestation = await Platform.AttestationService.GetAttestationAsync(nonce),
-            Assertion = await Platform.AttestationService.GetAssertionAsync(nonce),
+            Nonce = nonce,
+            DeviceId = deviceId,
+            Attestation = attestation,
+            Assertion = assertion,
             Platform = Platform.Current.ToStringValue()
         });
-        //Console.WriteLine($"[PlutoNotifications] Got JWT pair: {tokenPair.Access} {tokenPair.Refresh}");
+        Console.WriteLine($"[PlutoNotifications] Got JWT pair: {tokenPair.Access} {tokenPair.Refresh}");
 
         await SecureStorageManager.Storage.SaveAuthTokenPairAsync(tokenPair);
         SharedClient.DefaultRequestHeaders.Authorization = 
@@ -65,7 +86,7 @@ public static class ApiClient
         Console.WriteLine($"[PlutoNotifications] Access token refreshed");
     }
 
-    public static async Task UpdateFCMTokenRequestAsync(string newFCMToken)
+    public static async Task UpdateFcmTokenRequestAsync(string newFcmToken)
     {
         if (Platform.Current == PlatformType.Other) return;
 
@@ -73,7 +94,7 @@ public static class ApiClient
         {
             await FcmTokenEndpoint.UpdateTokenAsync(SharedClient, new FcmTokenUpdateData
             {
-                FcmToken = newFCMToken
+                FcmToken = newFcmToken
             });
         }
         catch (UnauthorizedException)

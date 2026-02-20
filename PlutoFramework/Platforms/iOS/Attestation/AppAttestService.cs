@@ -12,42 +12,75 @@ public class AppAttestService (IPushNotificationsSecureStorage secureStorage) : 
     
     public async Task<string> GetAttestationAsync(string nonce)
     {
-        if (!DCAppAttestService.SharedService.Supported)
+        if (!attestService.Supported)
             throw new NotSupportedException("App Attest is not supported on this device.");
 
-        var keyId = await GetDeviceIdAsync();
-        if (string.IsNullOrEmpty(keyId))
-        {
-            keyId = await attestService.GenerateKeyAsync();
-            await secureStorage.SaveDeviceIdAsync(keyId);
-        }
-        
         var clientDataHash = SHA256.HashData(Encoding.UTF8.GetBytes(nonce));
         var hashData = NSData.FromArray(clientDataHash);
 
-        var attestation = await attestService.AttestKeyAsync(keyId, hashData);
-        if (attestation == null)
-            throw new InvalidOperationException("Failed to generate App Attest attestation.");
+        var keyId = await secureStorage.GetDeviceIdAsync();
 
-        return attestation.GetBase64EncodedString(NSDataBase64EncodingOptions.None);
+        if (string.IsNullOrEmpty(keyId))
+        {
+            keyId = await GenerateAndStoreNewKeyAsync();
+        }
+
+        try
+        {
+            var attestation = await attestService.AttestKeyAsync(keyId, hashData);
+
+            if (attestation == null)
+                throw new InvalidOperationException("Attestation returned null.");
+
+            return attestation.GetBase64EncodedString(NSDataBase64EncodingOptions.None);
+        }
+        catch
+        {
+            await secureStorage.SaveDeviceIdAsync(string.Empty);
+
+            keyId = await GenerateAndStoreNewKeyAsync();
+
+            var attestation = await attestService.AttestKeyAsync(keyId, hashData);
+
+            if (attestation == null)
+                throw new InvalidOperationException("Failed to generate App Attest attestation after regeneration.");
+
+            return attestation.GetBase64EncodedString(NSDataBase64EncodingOptions.None);
+        }
     }
 
     public async Task<string?> GetAssertionAsync(string nonce)
     {
-        var keyId = await GetDeviceIdAsync();
-        if (string.IsNullOrEmpty(keyId))
-            throw new InvalidOperationException("No App Attest key exists for this device.");
-
-        var service = DCAppAttestService.SharedService;
-
         var clientDataHash = SHA256.HashData(Encoding.UTF8.GetBytes(nonce));
         var hashData = NSData.FromArray(clientDataHash);
 
-        var assertion = await service.GenerateAssertionAsync(keyId, hashData);
-        if (assertion == null)
-            throw new InvalidOperationException("Failed to generate App Attest assertion.");
+        var keyId = await secureStorage.GetDeviceIdAsync();
 
-        return assertion.GetBase64EncodedString(NSDataBase64EncodingOptions.None);
+        if (string.IsNullOrEmpty(keyId))
+            keyId = await GenerateAndStoreNewKeyAsync();
+
+        try
+        {
+            var assertion = await attestService.GenerateAssertionAsync(keyId, hashData);
+
+            if (assertion == null)
+                throw new InvalidOperationException("Assertion returned null.");
+
+            return assertion.GetBase64EncodedString(NSDataBase64EncodingOptions.None);
+        }
+        catch
+        {
+            await secureStorage.SaveDeviceIdAsync(string.Empty);
+
+            keyId = await GenerateAndStoreNewKeyAsync();
+
+            var assertion = await attestService.GenerateAssertionAsync(keyId, hashData);
+
+            if (assertion == null)
+                throw new InvalidOperationException("Failed to generate assertion after regeneration.");
+
+            return assertion.GetBase64EncodedString(NSDataBase64EncodingOptions.None);
+        }
     }
 
     public async Task<string> GetDeviceIdAsync()
@@ -61,5 +94,17 @@ public class AppAttestService (IPushNotificationsSecureStorage secureStorage) : 
         await secureStorage.SaveDeviceIdAsync(keyId);
         
         return keyId;
+    }
+    
+    private async Task<string> GenerateAndStoreNewKeyAsync()
+    {
+        var newKeyId = await attestService.GenerateKeyAsync();
+
+        if (string.IsNullOrEmpty(newKeyId))
+            throw new InvalidOperationException("Failed to generate App Attest key.");
+
+        await secureStorage.SaveDeviceIdAsync(newKeyId);
+
+        return newKeyId;
     }
 }
