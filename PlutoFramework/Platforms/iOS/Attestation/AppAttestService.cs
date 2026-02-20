@@ -2,6 +2,7 @@
 using System.Text;
 using DeviceCheck;
 using Foundation;
+using Microsoft.AspNetCore.WebUtilities;
 using PlutoFrameworkCore.PushNotificationServices.Core.Interfaces;
 
 namespace PlutoFrameworkCore.PushNotificationServices.Platforms.iOS;
@@ -15,7 +16,7 @@ public class AppAttestService (IPushNotificationsSecureStorage secureStorage) : 
         if (!attestService.Supported)
             throw new NotSupportedException("App Attest is not supported on this device.");
 
-        var clientDataHash = SHA256.HashData(Encoding.UTF8.GetBytes(nonce));
+        var clientDataHash = SHA256.HashData(WebEncoders.Base64UrlDecode(nonce));
         var hashData = NSData.FromArray(clientDataHash);
 
         var keyId = await secureStorage.GetDeviceIdAsync();
@@ -28,6 +29,7 @@ public class AppAttestService (IPushNotificationsSecureStorage secureStorage) : 
         try
         {
             var attestation = await attestService.AttestKeyAsync(keyId, hashData);
+            await Console.Out.WriteLineAsync($"[PlutoNotifications] Attestation using device id (1): {keyId}");
 
             if (attestation == null)
                 throw new InvalidOperationException("Attestation returned null.");
@@ -41,6 +43,7 @@ public class AppAttestService (IPushNotificationsSecureStorage secureStorage) : 
             keyId = await GenerateAndStoreNewKeyAsync();
 
             var attestation = await attestService.AttestKeyAsync(keyId, hashData);
+            await Console.Out.WriteLineAsync($"[PlutoNotifications] Attestation using device id (2): {keyId}");
 
             if (attestation == null)
                 throw new InvalidOperationException("Failed to generate App Attest attestation after regeneration.");
@@ -51,7 +54,7 @@ public class AppAttestService (IPushNotificationsSecureStorage secureStorage) : 
 
     public async Task<string?> GetAssertionAsync(string nonce)
     {
-        var clientDataHash = SHA256.HashData(Encoding.UTF8.GetBytes(nonce));
+        var clientDataHash = SHA256.HashData(WebEncoders.Base64UrlDecode(nonce));
         var hashData = NSData.FromArray(clientDataHash);
 
         var keyId = await secureStorage.GetDeviceIdAsync();
