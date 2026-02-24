@@ -15,6 +15,7 @@ public static class FcmTokenService
         catch (Exception ex)
         {
             Console.WriteLine($"[PlutoNotifications] Couldn't fetch FCM token");
+            Console.WriteLine($"[PlutoNotifications] Exception: {ex.Message}");
             return null;
         }
     }

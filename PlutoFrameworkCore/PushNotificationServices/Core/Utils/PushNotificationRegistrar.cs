@@ -7,7 +7,6 @@ public static class PushNotificationRegistrar
 {
     public static void RegisterPushNotificationServices(IServiceCollection services)
     {
-
         CrossFirebaseCloudMessaging.Current.TokenChanged += (sender, eventArgs) =>
         {
             _ = DeviceRegisterService.UpdateFcmTokenAsync();

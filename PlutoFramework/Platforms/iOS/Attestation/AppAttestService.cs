@@ -29,7 +29,6 @@ public class AppAttestService (IPushNotificationsSecureStorage secureStorage) : 
         try
         {
             var attestation = await attestService.AttestKeyAsync(keyId, hashData);
-            await Console.Out.WriteLineAsync($"[PlutoNotifications] Attestation using device id (1): {keyId}");
 
             if (attestation == null)
                 throw new InvalidOperationException("Attestation returned null.");
@@ -43,7 +42,6 @@ public class AppAttestService (IPushNotificationsSecureStorage secureStorage) : 
             keyId = await GenerateAndStoreNewKeyAsync();
 
             var attestation = await attestService.AttestKeyAsync(keyId, hashData);
-            await Console.Out.WriteLineAsync($"[PlutoNotifications] Attestation using device id (2): {keyId}");
 
             if (attestation == null)
                 throw new InvalidOperationException("Failed to generate App Attest attestation after regeneration.");

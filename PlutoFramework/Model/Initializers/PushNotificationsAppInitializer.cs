@@ -4,6 +4,8 @@ using PlutoFrameworkCore.PushNotificationServices.Core;
 using PlutoFrameworkCore.PushNotificationServices.Core.Misc;
 using PlutoFrameworkCore.PushNotificationServices.Core.Utils;
 # if ANDROID
+using Firebase;
+using PlutoFramework.Platforms.Android;
 using PlutoFramework.Platforms.Android.Attestation;
 # elif IOS
 using PlutoFrameworkCore.PushNotificationServices.Platforms.iOS;
@@ -30,9 +32,22 @@ public static class PushNotificationsAppInitializer
         await SecureStorageManager.Storage.EnsurePerInstallIsolationAsync();
 
         # if ANDROID
+        try
+        {
+            Console.WriteLine($"[PlutoNotifications] Trying to request notification permission ...");
+            await Permissions.RequestAsync<NotificationPermission>();
+        }
+        catch (PermissionException e)
+        {
+            Console.WriteLine($"[PlutoNotifications] Permission exception: {e.Message}");
+        }
+
         NotificationsPlatform.Current = PlatformType.Android;
         NotificationsPlatform.AttestationService = new PlayIntegrityService(SecureStorageManager.Storage);
         # elif IOS
+        Firebase.Core.App.Configure();
+        await Platforms.iOS.NotificationPermission.RequestAsync();
+        
         NotificationsPlatform.Current = PlatformType.iOS;
         NotificationsPlatform.AttestationService = new AppAttestService(SecureStorageManager.Storage);
         # endif
