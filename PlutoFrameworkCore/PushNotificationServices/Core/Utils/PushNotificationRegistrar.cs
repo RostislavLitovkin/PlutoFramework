@@ -9,9 +9,22 @@ public static class PushNotificationRegistrar
     {
         CrossFirebaseCloudMessaging.Current.TokenChanged += (sender, eventArgs) =>
         {
-            _ = DeviceRegisterService.UpdateFcmTokenAsync();
+            _ = HandleTokenChangedAsync();
         };
 
         services.AddSingleton(CrossFirebaseCloudMessaging.Current);
+    }
+    
+    private static async Task HandleTokenChangedAsync()
+    {
+        try
+        {
+            await SecureStorageManager.Storage.SaveFcmTokenExpiredAsync(true);
+            await DeviceRegisterService.UpdateFcmTokenAsync();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"[PlutoNotifications] TokenChanged handler failed: {e}");
+        }
     }
 }

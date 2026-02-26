@@ -5,14 +5,16 @@ namespace PlutoFrameworkCore.PushNotificationServices.Core;
 
 public static class DeviceRegisterService
 {
+    private static readonly SemaphoreSlim _updateLock = new(1, 1);
+    
     public static async Task<bool> RegisterDeviceAsync()
     {
         if (await SecureStorageManager.Storage.GetIsRegisteredAsync() ?? false)
         {
-            Console.WriteLine($"[PlutoNotifications] Device is already registered, skipping ...");
+            Console.WriteLine("[PlutoNotifications] Device is already registered, skipping.");
             return true;
         }
-        Console.WriteLine($"[PlutoNotifications] Trying to register device ...");
+        Console.WriteLine("[PlutoNotifications] Trying to register device...");
 
         try
         {
@@ -20,31 +22,35 @@ public static class DeviceRegisterService
                 await ApiClient.RegisterDeviceRequestAsync()
             );
         }
-        catch (Exception e)
+        catch
         {
-            Console.WriteLine($"[PlutoNotifications] Device registration failed ...");
+            Console.WriteLine("[PlutoNotifications] Device registration failed.");
             return false;
         }
 
         await SecureStorageManager.Storage.SaveIsRegisteredAsync(true);
-        Console.WriteLine($"[PlutoNotifications] Device has been registered ...");
+        Console.WriteLine("[PlutoNotifications] Device has been registered.");
         return true;
     }
 
     public static async Task<bool> UpdateFcmTokenAsync()
     {
+        if (!await _updateLock.WaitAsync(0))
+            return false;
+
         if (!(await SecureStorageManager.Storage.GetIsRegisteredAsync() ?? false))
         {
-            Console.WriteLine($"[PlutoNotifications] Device is not registered, cannot update FCM token");
+            Console.WriteLine("[PlutoNotifications] Device is not registered, cannot update FCM token.");
             return false;
         }
+
         if (!(await SecureStorageManager.Storage.GetFcmTokenExpiredAsync() ?? true))
         {
-            Console.WriteLine($"[PlutoNotifications] FCM token is up-to-date, skipping ...");
+            Console.WriteLine("[PlutoNotifications] FCM token is up-to-date, skipping.");
             return true;
         }
-        Console.WriteLine($"[PlutoNotifications] Trying to update FCM token ...");
 
+        Console.WriteLine("[PlutoNotifications] Trying to update FCM token...");
         try
         {
             await RetryHelper.RunWithRetryAsync(async () =>
@@ -52,15 +58,19 @@ public static class DeviceRegisterService
                     (await FcmTokenService.GetTokenAsync())!
                 )
             );
+
+            await SecureStorageManager.Storage.SaveFcmTokenExpiredAsync(false);
+            Console.WriteLine("[PlutoNotifications] Token has been updated.");
+            return true;
         }
-        catch (Exception e)
+        catch
         {
-            Console.WriteLine($"[PlutoNotifications] Token update failed ...");
+            Console.WriteLine("[PlutoNotifications] Token update failed.");
             return false;
         }
-        
-        await SecureStorageManager.Storage.SaveFcmTokenExpiredAsync(false);
-        Console.WriteLine($"[PlutoNotifications] Token has been updated  ...");
-        return true;
+        finally
+        {
+            _updateLock.Release();
+        }
     }
 }
