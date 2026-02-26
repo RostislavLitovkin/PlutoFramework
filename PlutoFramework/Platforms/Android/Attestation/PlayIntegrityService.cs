@@ -6,7 +6,7 @@ namespace PlutoFramework.Platforms.Android.Attestation;
 
 public class PlayIntegrityService (IPushNotificationsSecureStorage secureStorage) : IAttestationService
 {
-    public async Task<string> GetAttestationAsync(string nonce)
+    public async Task<AttestationProof> GetAttestationAsync(string nonce)
     {
         var context = global::Android.App.Application.Context;
         var integrityManager = IntegrityManagerFactory.Create(context);
@@ -21,13 +21,13 @@ public class PlayIntegrityService (IPushNotificationsSecureStorage secureStorage
         if (objResponse is not IntegrityTokenResponse response)
             throw new InvalidOperationException("Invalid Play Integrity response type.");
 
-        return response.Token()!;
+        return new AttestationProof (await GetDeviceIdAsync(), response.Token()!);
     }
 
-    public Task<string?> GetAssertionAsync(string nonce)
+    public async Task<AttestationProof> GetAssertionAsync(string nonce)
     {
         // Android does not use assertion
-        return Task.FromResult<string?>(null);
+        return new AttestationProof(await GetDeviceIdAsync(), null);
     }
 
     public async Task<string> GetDeviceIdAsync()

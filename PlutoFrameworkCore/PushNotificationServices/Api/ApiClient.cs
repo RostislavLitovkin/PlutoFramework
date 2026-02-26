@@ -1,4 +1,5 @@
 ﻿using PlutoFrameworkCore.PushNotificationServices.Api.ApiEndpoints;
+using PlutoFrameworkCore.PushNotificationServices.Core;
 using PlutoFrameworkCore.PushNotificationServices.Core.Interfaces;
 using PlutoFrameworkCore.PushNotificationServices.Core.Utils;
 using PlutoFrameworkCore.PushNotificationServices.Core.Misc;
@@ -27,36 +28,11 @@ public static class ApiClient
     public static async Task RegisterDeviceRequestAsync()
     {
         if (Platform.Current == PlatformType.Other) return;
-
-        var nonce = await NonceEndpoint.GetNonceAsync(SharedClient);
-        Console.WriteLine($"[PlutoNotifications] Got nonce: {nonce}");
         
-        string? attestation = null;
-        try
-        {
-            attestation = await Platform.AttestationService.GetAttestationAsync(nonce);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine($"[PlutoNotifications] Attestation failed");
-            Console.WriteLine($"[PlutoNotifications] Error: {e.Message}");
-        }
-        Console.WriteLine($"[PlutoNotifications] Got attestation: {attestation}");
-        
-        var assertion = await Platform.AttestationService.GetAssertionAsync(nonce);
-        Console.WriteLine($"[PlutoNotifications] Got assertion: {assertion}");
-        
-        var deviceId = await Platform.AttestationService.GetDeviceIdAsync();
-        Console.WriteLine($"[PlutoNotifications] Got device id: {deviceId}");
-        
-
-        var tokenPair = await AuthTokenPairEndpoint.GetTokenPairAsync(SharedClient, new DeviceRegistrationData {
-            Nonce = nonce,
-            DeviceId = deviceId,
-            Attestation = attestation,
-            Assertion = assertion,
-            Platform = Platform.Current.ToStringValue()
-        });
+        var tokenPair = await AuthTokenPairEndpoint.GetTokenPairAsync(
+            SharedClient,
+            await GetDeviceRegistrationDataAsync()
+            );
         Console.WriteLine($"[PlutoNotifications] Got JWT pair: {tokenPair.Access} {tokenPair.Refresh}");
 
         await SecureStorageManager.Storage.SaveAuthTokenPairAsync(tokenPair);
@@ -64,48 +40,115 @@ public static class ApiClient
             new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", tokenPair.Access);
     }
 
-    public static async Task RefreshAccessTokenRequestAsync(TokenPair tokenPair)
+    public static async Task<bool> RefreshAccessTokenRequestAsync(TokenPair tokenPair)
     {
-        Console.WriteLine($"[PlutoNotifications] Refreshing access token ...");
-        if (Platform.Current == PlatformType.Other) return;
+        Console.WriteLine("[PlutoNotifications] Refreshing access token ...");
+        if (Platform.Current == PlatformType.Other) return false;
 
+        TokenPair newTokenPair;
         try
         {
-            var newTokenPair = await AuthTokenPairEndpoint.RefreshAccessTokenAsync(SharedClient, tokenPair);
-            
-            await SecureStorageManager.Storage.SaveAuthTokenPairAsync(newTokenPair);
-            SharedClient.DefaultRequestHeaders.Authorization = 
-                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", newTokenPair.Access);
+            newTokenPair = await AuthTokenPairEndpoint.RefreshAccessTokenAsync(SharedClient, tokenPair);
         }
-        catch (Exception e)
+        catch
         {
-            Console.WriteLine($"[PlutoNotifications] Access token refresh failed");
-            return;
+            Console.WriteLine("[PlutoNotifications] Access token refresh failed");
+            return false;
         }
         
-        Console.WriteLine($"[PlutoNotifications] Access token refreshed");
+        await SecureStorageManager.Storage.SaveAuthTokenPairAsync(newTokenPair);
+        SharedClient.DefaultRequestHeaders.Authorization =
+            new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", newTokenPair.Access);
+        
+        Console.WriteLine("[PlutoNotifications] Access token refreshed");
+        return true;
     }
 
     public static async Task UpdateFcmTokenRequestAsync(string newFcmToken)
     {
         if (Platform.Current == PlatformType.Other) return;
 
+        await RequestWithAuthAsync(async () =>
+            await FcmTokenEndpoint.UpdateTokenAsync(
+                SharedClient,
+                new FcmTokenUpdateData
+                {
+                    FcmToken = newFcmToken
+                })
+        );
+
+    }
+    
+    public static async Task<T> RequestWithAuthAsync<T>(Func<Task<T>> apiCall)
+    {
         try
         {
-            await FcmTokenEndpoint.UpdateTokenAsync(SharedClient, new FcmTokenUpdateData
-            {
-                FcmToken = newFcmToken
-            });
+            return await apiCall();
         }
         catch (UnauthorizedException)
         {
             var tokenPair = await SecureStorageManager.Storage.GetAuthTokenPairAsync();
-
-            if (tokenPair == null) await SecureStorageManager.Storage.SaveIsRegisteredAsync(false);
-            else
+            if (tokenPair == null)
             {
-                await RefreshAccessTokenRequestAsync(tokenPair);
+                await SecureStorageManager.Storage.SaveIsRegisteredAsync(false);
+                throw;
             }
+
+            if (await RefreshAccessTokenRequestAsync(tokenPair) || await DeviceRegisterService.RegisterDeviceAsync())
+                return await apiCall();
+
+            throw;
         }
+    }
+    
+    public static async Task RequestWithAuthAsync(Func<Task> apiCall)
+    {
+        try
+        {
+            await apiCall();
+        }
+        catch (UnauthorizedException)
+        {
+            var tokenPair = await SecureStorageManager.Storage.GetAuthTokenPairAsync();
+            if (tokenPair == null)
+            {
+                Console.WriteLine("[PlutoNotifications] No tokens stored, marking device as unregistered.");
+                await SecureStorageManager.Storage.SaveIsRegisteredAsync(false);
+                throw;
+            }
+
+            if (!await RefreshAccessTokenRequestAsync(tokenPair) && !await DeviceRegisterService.RegisterDeviceAsync())
+                throw;
+
+            await apiCall();
+        }
+    }
+    
+    private static async Task<DeviceRegistrationData> GetDeviceRegistrationDataAsync()
+    {
+        var nonce = await NonceEndpoint.GetNonceAsync(SharedClient);
+        var isFirstRegister = !(await SecureStorageManager.Storage.GetIsRegisteredAsync() ?? false);
+
+        AttestationProof proof;
+        if (Platform.Current == PlatformType.Android || (Platform.Current == PlatformType.iOS && isFirstRegister))
+        {
+            proof = await Platform.AttestationService.GetAttestationAsync(nonce);
+            return new DeviceRegistrationData
+            {
+                Nonce = nonce,
+                Attestation = proof.Proof,
+                DeviceId = proof.DeviceId,
+                Platform = Platform.Current.ToStringValue()
+            };
+        }
+        
+        proof = await Platform.AttestationService.GetAssertionAsync(nonce);
+        return new DeviceRegistrationData
+        {
+            Nonce = nonce,
+            Assertion = proof.Proof,
+            DeviceId = proof.DeviceId,
+            Platform = Platform.Current.ToStringValue()
+        };
     }
 }

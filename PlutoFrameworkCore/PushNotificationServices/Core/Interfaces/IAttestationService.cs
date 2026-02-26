@@ -1,9 +1,11 @@
 ﻿namespace PlutoFrameworkCore.PushNotificationServices.Core.Interfaces;
 
+public record AttestationProof(string DeviceId, string? Proof);
+
 public interface IAttestationService
 {
-    Task<string> GetAttestationAsync(string nonce);
-    Task<string?> GetAssertionAsync(string nonce);
+    Task<AttestationProof> GetAttestationAsync(string nonce);
+    Task<AttestationProof> GetAssertionAsync(string nonce);
     
     Task<string> GetDeviceIdAsync();
 }

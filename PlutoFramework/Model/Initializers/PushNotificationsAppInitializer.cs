@@ -31,10 +31,10 @@ public static class PushNotificationsAppInitializer
         SecureStorageManager.Storage = new PushNotificationsSecureStorageService();
         await SecureStorageManager.Storage.EnsurePerInstallIsolationAsync();
 
+        Console.WriteLine($"[PlutoNotifications] Trying to request notification permission ...");
         # if ANDROID
         try
         {
-            Console.WriteLine($"[PlutoNotifications] Trying to request notification permission ...");
             await Permissions.RequestAsync<NotificationPermission>();
         }
         catch (PermissionException e)
@@ -53,10 +53,10 @@ public static class PushNotificationsAppInitializer
         # endif
         Console.WriteLine($"[PlutoNotifications] Platform type set: {NotificationsPlatform.Current.ToStringValue()}");
         
-        if (await DeviceRegisterService.RegisterDeviceAsync())
-        {
+        var isRegistered = await SecureStorageManager.Storage.GetIsRegisteredAsync() ?? false;
+        
+        if (isRegistered || await DeviceRegisterService.RegisterDeviceAsync())
             await DeviceRegisterService.UpdateFcmTokenAsync();
-        }
         
         Console.WriteLine($"[PlutoNotifications] Background jobs processed.");
     }

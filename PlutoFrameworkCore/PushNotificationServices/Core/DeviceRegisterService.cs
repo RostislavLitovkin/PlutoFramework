@@ -9,18 +9,10 @@ public static class DeviceRegisterService
     
     public static async Task<bool> RegisterDeviceAsync()
     {
-        if (await SecureStorageManager.Storage.GetIsRegisteredAsync() ?? false)
-        {
-            Console.WriteLine("[PlutoNotifications] Device is already registered, skipping.");
-            return true;
-        }
         Console.WriteLine("[PlutoNotifications] Trying to register device...");
-
         try
         {
-            await RetryHelper.RunWithRetryAsync(async () =>
-                await ApiClient.RegisterDeviceRequestAsync()
-            );
+            await RetryHelper.RunWithRetryAsync(ApiClient.RegisterDeviceRequestAsync);
         }
         catch
         {

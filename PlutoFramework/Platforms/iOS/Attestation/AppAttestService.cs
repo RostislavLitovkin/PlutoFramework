@@ -1,5 +1,4 @@
 ﻿using System.Security.Cryptography;
-using System.Text;
 using DeviceCheck;
 using Foundation;
 using Microsoft.AspNetCore.WebUtilities;
@@ -11,7 +10,7 @@ public class AppAttestService (IPushNotificationsSecureStorage secureStorage) : 
 {
     private readonly DCAppAttestService attestService = DCAppAttestService.SharedService;
     
-    public async Task<string> GetAttestationAsync(string nonce)
+    public async Task<AttestationProof> GetAttestationAsync(string nonce)
     {
         if (!attestService.Supported)
             throw new NotSupportedException("App Attest is not supported on this device.");
@@ -25,15 +24,15 @@ public class AppAttestService (IPushNotificationsSecureStorage secureStorage) : 
         {
             keyId = await GenerateAndStoreNewKeyAsync();
         }
+        
+        NSData? attestation;
 
         try
         {
-            var attestation = await attestService.AttestKeyAsync(keyId, hashData);
+            attestation = await attestService.AttestKeyAsync(keyId, hashData);
 
             if (attestation == null)
                 throw new InvalidOperationException("Attestation returned null.");
-
-            return attestation.GetBase64EncodedString(NSDataBase64EncodingOptions.None);
         }
         catch
         {
@@ -41,16 +40,18 @@ public class AppAttestService (IPushNotificationsSecureStorage secureStorage) : 
 
             keyId = await GenerateAndStoreNewKeyAsync();
 
-            var attestation = await attestService.AttestKeyAsync(keyId, hashData);
+            attestation = await attestService.AttestKeyAsync(keyId, hashData);
 
             if (attestation == null)
                 throw new InvalidOperationException("Failed to generate App Attest attestation after regeneration.");
-
-            return attestation.GetBase64EncodedString(NSDataBase64EncodingOptions.None);
         }
+        return new AttestationProof (
+            await GetDeviceIdAsync(),
+            attestation.GetBase64EncodedString(NSDataBase64EncodingOptions.None)
+            );
     }
 
-    public async Task<string?> GetAssertionAsync(string nonce)
+    public async Task<AttestationProof> GetAssertionAsync(string nonce)
     {
         var clientDataHash = SHA256.HashData(WebEncoders.Base64UrlDecode(nonce));
         var hashData = NSData.FromArray(clientDataHash);
@@ -60,14 +61,14 @@ public class AppAttestService (IPushNotificationsSecureStorage secureStorage) : 
         if (string.IsNullOrEmpty(keyId))
             keyId = await GenerateAndStoreNewKeyAsync();
 
+        NSData? assertion;
+        
         try
         {
-            var assertion = await attestService.GenerateAssertionAsync(keyId, hashData);
+            assertion = await attestService.GenerateAssertionAsync(keyId, hashData);
 
             if (assertion == null)
                 throw new InvalidOperationException("Assertion returned null.");
-
-            return assertion.GetBase64EncodedString(NSDataBase64EncodingOptions.None);
         }
         catch
         {
@@ -75,13 +76,15 @@ public class AppAttestService (IPushNotificationsSecureStorage secureStorage) : 
 
             keyId = await GenerateAndStoreNewKeyAsync();
 
-            var assertion = await attestService.GenerateAssertionAsync(keyId, hashData);
+            assertion = await attestService.GenerateAssertionAsync(keyId, hashData);
 
             if (assertion == null)
                 throw new InvalidOperationException("Failed to generate assertion after regeneration.");
-
-            return assertion.GetBase64EncodedString(NSDataBase64EncodingOptions.None);
         }
+        return new AttestationProof (
+            await GetDeviceIdAsync(),
+            assertion.GetBase64EncodedString(NSDataBase64EncodingOptions.None)
+            );
     }
 
     public async Task<string> GetDeviceIdAsync()
