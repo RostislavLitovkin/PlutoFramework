@@ -93,10 +93,16 @@ namespace Hydration.NetApi.Generated.Model.pallet_transaction_multi_payment.pall
         /// EVM permit call failed.
         /// </summary>
         EvmPermitRunnerError = 11,
+        
+        /// <summary>
+        /// >> EvmPermitNonceInvariantViolated
+        /// EVM permit must not affect account nonce.
+        /// </summary>
+        EvmPermitNonceInvariantViolated = 12,
     }
     
     /// <summary>
-    /// >> 525 - Variant[pallet_transaction_multi_payment.pallet.Error]
+    /// >> 581 - Variant[pallet_transaction_multi_payment.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

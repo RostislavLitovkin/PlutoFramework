@@ -44,7 +44,7 @@ namespace PlutoFrameworkTests
 
             Console.WriteLine("Free: " + accountInfo.Data.Free.Value);
 
-            Assert.Greater(accountInfo.Data.Free.Value, 0);
+            Assert.That(accountInfo.Data.Free.Value > 0);
 
             var transfer = TransferModel.NativeTransfer(client, substrateAddress, 10000000000);
 
@@ -108,7 +108,7 @@ namespace PlutoFrameworkTests
 
                 Console.WriteLine("Callback finished");
             };
-            var extrinsicId = await client.SubmitExtrinsicAsync(transfer, alice, updateExtrinsicsCallback);
+            var extrinsicId = await client.SubmitExtrinsicAsync(transfer, alice, new TaskCompletionSource<string?>(), updateExtrinsicsCallback);
 
             await Task.Delay(20_000);
         }

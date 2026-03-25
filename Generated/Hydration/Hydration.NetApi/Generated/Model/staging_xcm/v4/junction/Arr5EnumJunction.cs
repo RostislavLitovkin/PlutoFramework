@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.staging_xcm.v4.junction
     
     
     /// <summary>
-    /// >> 112 - Array
+    /// >> 340 - Array
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Array)]
     public sealed class Arr5EnumJunction : BaseType

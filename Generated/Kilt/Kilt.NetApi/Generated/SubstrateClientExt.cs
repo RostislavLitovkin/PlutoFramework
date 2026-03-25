@@ -55,6 +55,11 @@ namespace Kilt.NetApi.Generated
         public TransactionPaymentStorage TransactionPaymentStorage;
         
         /// <summary>
+        /// SudoStorage storage calls.
+        /// </summary>
+        public SudoStorage SudoStorage;
+        
+        /// <summary>
         /// AuraStorage storage calls.
         /// </summary>
         public AuraStorage AuraStorage;
@@ -78,6 +83,11 @@ namespace Kilt.NetApi.Generated
         /// AuraExtStorage storage calls.
         /// </summary>
         public AuraExtStorage AuraExtStorage;
+        
+        /// <summary>
+        /// CollatorsStorage storage calls.
+        /// </summary>
+        public CollatorsStorage CollatorsStorage;
         
         /// <summary>
         /// DemocracyStorage storage calls.
@@ -155,6 +165,11 @@ namespace Kilt.NetApi.Generated
         public FungiblesStorage FungiblesStorage;
         
         /// <summary>
+        /// BondedFungiblesStorage storage calls.
+        /// </summary>
+        public BondedFungiblesStorage BondedFungiblesStorage;
+        
+        /// <summary>
         /// CtypeStorage storage calls.
         /// </summary>
         public CtypeStorage CtypeStorage;
@@ -173,11 +188,6 @@ namespace Kilt.NetApi.Generated
         /// DidStorage storage calls.
         /// </summary>
         public DidStorage DidStorage;
-        
-        /// <summary>
-        /// InflationStorage storage calls.
-        /// </summary>
-        public InflationStorage InflationStorage;
         
         /// <summary>
         /// DidLookupStorage storage calls.
@@ -210,6 +220,11 @@ namespace Kilt.NetApi.Generated
         public DepositStorageStorage DepositStorageStorage;
         
         /// <summary>
+        /// BondedCurrenciesStorage storage calls.
+        /// </summary>
+        public BondedCurrenciesStorage BondedCurrenciesStorage;
+        
+        /// <summary>
         /// ParachainSystemStorage storage calls.
         /// </summary>
         public ParachainSystemStorage ParachainSystemStorage;
@@ -239,6 +254,26 @@ namespace Kilt.NetApi.Generated
         /// </summary>
         public MessageQueueStorage MessageQueueStorage;
         
+        /// <summary>
+        /// IsmpStorage storage calls.
+        /// </summary>
+        public IsmpStorage IsmpStorage;
+        
+        /// <summary>
+        /// HyperbridgeStorage storage calls.
+        /// </summary>
+        public HyperbridgeStorage HyperbridgeStorage;
+        
+        /// <summary>
+        /// IsmpParachainStorage storage calls.
+        /// </summary>
+        public IsmpParachainStorage IsmpParachainStorage;
+        
+        /// <summary>
+        /// TokenGatewayStorage storage calls.
+        /// </summary>
+        public TokenGatewayStorage TokenGatewayStorage;
+        
         public SubstrateClientExt(System.Uri uri, Substrate.NetApi.Model.Extrinsics.ChargeType chargeType) : 
                 base(uri, chargeType)
         {
@@ -248,11 +283,13 @@ namespace Kilt.NetApi.Generated
             this.IndicesStorage = new IndicesStorage(this);
             this.BalancesStorage = new BalancesStorage(this);
             this.TransactionPaymentStorage = new TransactionPaymentStorage(this);
+            this.SudoStorage = new SudoStorage(this);
             this.AuraStorage = new AuraStorage(this);
             this.SessionStorage = new SessionStorage(this);
             this.ParachainStakingStorage = new ParachainStakingStorage(this);
             this.AuthorshipStorage = new AuthorshipStorage(this);
             this.AuraExtStorage = new AuraExtStorage(this);
+            this.CollatorsStorage = new CollatorsStorage(this);
             this.DemocracyStorage = new DemocracyStorage(this);
             this.CouncilStorage = new CouncilStorage(this);
             this.TechnicalCommitteeStorage = new TechnicalCommitteeStorage(this);
@@ -268,23 +305,28 @@ namespace Kilt.NetApi.Generated
             this.MultisigStorage = new MultisigStorage(this);
             this.AssetSwitchPool1Storage = new AssetSwitchPool1Storage(this);
             this.FungiblesStorage = new FungiblesStorage(this);
+            this.BondedFungiblesStorage = new BondedFungiblesStorage(this);
             this.CtypeStorage = new CtypeStorage(this);
             this.AttestationStorage = new AttestationStorage(this);
             this.DelegationStorage = new DelegationStorage(this);
             this.DidStorage = new DidStorage(this);
-            this.InflationStorage = new InflationStorage(this);
             this.DidLookupStorage = new DidLookupStorage(this);
             this.Web3NamesStorage = new Web3NamesStorage(this);
             this.PublicCredentialsStorage = new PublicCredentialsStorage(this);
             this.MigrationStorage = new MigrationStorage(this);
             this.DipProviderStorage = new DipProviderStorage(this);
             this.DepositStorageStorage = new DepositStorageStorage(this);
+            this.BondedCurrenciesStorage = new BondedCurrenciesStorage(this);
             this.ParachainSystemStorage = new ParachainSystemStorage(this);
             this.ParachainInfoStorage = new ParachainInfoStorage(this);
             this.XcmpQueueStorage = new XcmpQueueStorage(this);
             this.PolkadotXcmStorage = new PolkadotXcmStorage(this);
             this.CumulusXcmStorage = new CumulusXcmStorage(this);
             this.MessageQueueStorage = new MessageQueueStorage(this);
+            this.IsmpStorage = new IsmpStorage(this);
+            this.HyperbridgeStorage = new HyperbridgeStorage(this);
+            this.IsmpParachainStorage = new IsmpParachainStorage(this);
+            this.TokenGatewayStorage = new TokenGatewayStorage(this);
         }
     }
 }

@@ -36,7 +36,7 @@ namespace Hydration.NetApi.Generated.Model.orml_tokens.module
         /// 
         /// - `dest`: The recipient of the transfer.
         /// - `currency_id`: currency type.
-        /// - `amount`: free balance amount to tranfer.
+        /// - `amount`: free balance amount to transfer.
         /// </summary>
         transfer = 0,
         
@@ -76,7 +76,7 @@ namespace Hydration.NetApi.Generated.Model.orml_tokens.module
         /// 
         /// - `dest`: The recipient of the transfer.
         /// - `currency_id`: currency type.
-        /// - `amount`: free balance amount to tranfer.
+        /// - `amount`: free balance amount to transfer.
         /// </summary>
         transfer_keep_alive = 2,
         
@@ -90,7 +90,7 @@ namespace Hydration.NetApi.Generated.Model.orml_tokens.module
         /// - `source`: The sender of the transfer.
         /// - `dest`: The recipient of the transfer.
         /// - `currency_id`: currency type.
-        /// - `amount`: free balance amount to tranfer.
+        /// - `amount`: free balance amount to transfer.
         /// </summary>
         force_transfer = 3,
         
@@ -109,7 +109,7 @@ namespace Hydration.NetApi.Generated.Model.orml_tokens.module
     }
     
     /// <summary>
-    /// >> 265 - Variant[orml_tokens.module.Call]
+    /// >> 274 - Variant[orml_tokens.module.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

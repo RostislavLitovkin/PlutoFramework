@@ -36,32 +36,38 @@ namespace Polkadot.NetApi.Generated.Model.pallet_proxy.pallet
         PureCreated = 1,
         
         /// <summary>
+        /// >> PureKilled
+        /// A pure proxy was killed by its spawner.
+        /// </summary>
+        PureKilled = 2,
+        
+        /// <summary>
         /// >> Announced
         /// An announcement was placed to make a call in the future.
         /// </summary>
-        Announced = 2,
+        Announced = 3,
         
         /// <summary>
         /// >> ProxyAdded
         /// A proxy was added.
         /// </summary>
-        ProxyAdded = 3,
+        ProxyAdded = 4,
         
         /// <summary>
         /// >> ProxyRemoved
         /// A proxy was removed.
         /// </summary>
-        ProxyRemoved = 4,
+        ProxyRemoved = 5,
         
         /// <summary>
         /// >> DepositPoked
         /// A deposit stored for proxies or announcements was poked / updated.
         /// </summary>
-        DepositPoked = 5,
+        DepositPoked = 6,
     }
     
     /// <summary>
-    /// >> 470 - Variant[pallet_proxy.pallet.Event]
+    /// >> 522 - Variant[pallet_proxy.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -74,6 +80,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_proxy.pallet
         {
 				AddTypeDecoder<Polkadot.NetApi.Generated.Types.Base.EnumResult>(Event.ProxyExecuted);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.polkadot_runtime_constants.proxy.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U16>>(Event.PureCreated);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.polkadot_runtime_constants.proxy.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U16>>(Event.PureKilled);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.primitive_types.H256>>(Event.Announced);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.polkadot_runtime_constants.proxy.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.ProxyAdded);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Polkadot.NetApi.Generated.Model.polkadot_runtime_constants.proxy.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.ProxyRemoved);

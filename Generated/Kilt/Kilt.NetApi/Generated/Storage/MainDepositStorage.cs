@@ -38,7 +38,10 @@ namespace Kilt.NetApi.Generated.Storage
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("DepositStorage", "Deposits"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.runtime_common.dip.deposit.EnumDepositNamespace, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>), typeof(Kilt.NetApi.Generated.Model.pallet_deposit_storage.deposit.DepositEntry)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.runtime_common.deposits.EnumDepositNamespace, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10>), typeof(Kilt.NetApi.Generated.Model.pallet_deposit_storage.deposit.DepositEntry)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("DepositStorage", "SystemDeposits"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.runtime_common.deposits.EnumDepositNamespace, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10>), typeof(Kilt.NetApi.Generated.Model.pallet_deposit_storage.deposit.DepositEntry)));
         }
         
         /// <summary>
@@ -47,7 +50,7 @@ namespace Kilt.NetApi.Generated.Storage
         ///  one the deposit key. Its value includes the details associated to a
         ///  deposit instance.
         /// </summary>
-        public static string DepositsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.runtime_common.dip.deposit.EnumDepositNamespace, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11> key)
+        public static string DepositsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.runtime_common.deposits.EnumDepositNamespace, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10> key)
         {
             return RequestGenerator.GetStorage("DepositStorage", "Deposits", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -69,9 +72,44 @@ namespace Kilt.NetApi.Generated.Storage
         ///  one the deposit key. Its value includes the details associated to a
         ///  deposit instance.
         /// </summary>
-        public async Task<Kilt.NetApi.Generated.Model.pallet_deposit_storage.deposit.DepositEntry> Deposits(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.runtime_common.dip.deposit.EnumDepositNamespace, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11> key, string blockhash, CancellationToken token)
+        public async Task<Kilt.NetApi.Generated.Model.pallet_deposit_storage.deposit.DepositEntry> Deposits(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.runtime_common.deposits.EnumDepositNamespace, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10> key, string blockhash, CancellationToken token)
         {
             string parameters = DepositStorageStorage.DepositsParams(key);
+            var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.pallet_deposit_storage.deposit.DepositEntry>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> SystemDepositsParams
+        ///  Storage of all system deposits. They are the same as user deposits, but
+        ///  cannot be claimed back by the payers. Instead, some on chain logic must
+        ///  trigger their release.
+        /// </summary>
+        public static string SystemDepositsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.runtime_common.deposits.EnumDepositNamespace, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10> key)
+        {
+            return RequestGenerator.GetStorage("DepositStorage", "SystemDeposits", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, key.Value);
+        }
+        
+        /// <summary>
+        /// >> SystemDepositsDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string SystemDepositsDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> SystemDeposits
+        ///  Storage of all system deposits. They are the same as user deposits, but
+        ///  cannot be claimed back by the payers. Instead, some on chain logic must
+        ///  trigger their release.
+        /// </summary>
+        public async Task<Kilt.NetApi.Generated.Model.pallet_deposit_storage.deposit.DepositEntry> SystemDeposits(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.runtime_common.deposits.EnumDepositNamespace, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10> key, string blockhash, CancellationToken token)
+        {
+            string parameters = DepositStorageStorage.SystemDepositsParams(key);
             var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.pallet_deposit_storage.deposit.DepositEntry>(parameters, blockhash, token);
             return result;
         }
@@ -87,7 +125,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> reclaim_deposit
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ReclaimDeposit(Kilt.NetApi.Generated.Model.runtime_common.dip.deposit.EnumDepositNamespace @namespace, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11 key)
+        public static Method ReclaimDeposit(Kilt.NetApi.Generated.Model.runtime_common.deposits.EnumDepositNamespace @namespace, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10 key)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@namespace.Encode());
@@ -158,5 +196,11 @@ namespace Kilt.NetApi.Generated.Storage
         /// The external hook failed.
         /// </summary>
         Hook,
+        
+        /// <summary>
+        /// >> Internal
+        /// Internal error.
+        /// </summary>
+        Internal,
     }
 }

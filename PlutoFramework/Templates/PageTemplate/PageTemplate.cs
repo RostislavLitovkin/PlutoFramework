@@ -8,7 +8,14 @@ namespace PlutoFramework.Templates.PageTemplate
     public class PageTemplate : ContentPage
     {
         public static readonly BindableProperty MainContentProperty =
-            BindableProperty.Create(nameof(MainContent), typeof(MauiView), typeof(PageTemplate), defaultValue: default(MauiView));
+            BindableProperty.Create(nameof(MainContent), typeof(MauiView), typeof(PageTemplate), defaultValue: default(MauiView), propertyChanged: OnMainContentChanged);
+        private static void OnMainContentChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var pageTemplate = (PageTemplate)bindable;
+
+            pageTemplate.SetBindingContextForContents();
+            pageTemplate.ApplyScrollViewPadding();
+        }
         public MauiView MainContent
         {
             get => (MauiView)GetValue(MainContentProperty);
@@ -77,19 +84,19 @@ namespace PlutoFramework.Templates.PageTemplate
             set => SetValue(NavigationBarExtra2ImageProperty, value);
         }
 
-        public static readonly BindableProperty IsNavbarVisibleProperty =
-            BindableProperty.Create(nameof(IsNavbarVisible), typeof(bool), typeof(PageTemplate), true,
+        public static readonly BindableProperty NavigationBarIsVisibleProperty =
+            BindableProperty.Create(nameof(NavigationBarIsVisible), typeof(bool), typeof(PageTemplate), true,
                 propertyChanged: (BindableObject bindable, object oldValue, object newValue) =>
                 {
-                    if (bindable is PageTemplate page)
+                    if ((bool)newValue)
                     {
-                        page.ScrollPadding = (bool)newValue ? new Thickness(0, 55, 0, 0) : new Thickness(0);
+                        ((PageTemplate)bindable).ApplyScrollViewPadding();
                     }
                 });
-        public bool IsNavbarVisible
+        public bool NavigationBarIsVisible
         {
-            get => (bool)GetValue(IsNavbarVisibleProperty);
-            set => SetValue(IsNavbarVisibleProperty, value);
+            get => (bool)GetValue(NavigationBarIsVisibleProperty);
+            set => SetValue(NavigationBarIsVisibleProperty, value);
         }
 
         public static readonly BindableProperty NavigationBarHasShadowProperty =
@@ -101,53 +108,63 @@ namespace PlutoFramework.Templates.PageTemplate
             set => SetValue(NavigationBarHasShadowProperty, value);
         }
 
-
-        public static readonly BindableProperty ScrollPaddingProperty =
-            BindableProperty.Create(nameof(ScrollPadding), typeof(Thickness), typeof(PageTemplate), new Thickness(0));
-        public Thickness ScrollPadding
-        {
-            get => (Thickness)GetValue(ScrollPaddingProperty);
-            set => SetValue(ScrollPaddingProperty, value);
-        }
-
-        public static readonly BindableProperty IsScrollEnabledProperty =
-            BindableProperty.Create(nameof(IsScrollEnabled), typeof(bool), typeof(PageTemplate), true,
-                propertyChanged: (BindableObject bindable, object oldValue, object newValue) => {
-                    if (bindable is PageTemplate page)
-                    {
-                        page.ScrollViewOrientation = (bool)newValue ? ScrollOrientation.Vertical : ScrollOrientation.Neither;
-                    }
-                });
-        public bool IsScrollEnabled
-        {
-            get => (bool)GetValue(IsNavbarVisibleProperty);
-            set => SetValue(IsNavbarVisibleProperty, value);
-        }
-
-        public static readonly BindableProperty ScrollViewOrientationProperty =
-            BindableProperty.Create(nameof(ScrollViewOrientation), typeof(ScrollOrientation), typeof(PageTemplate), ScrollOrientation.Vertical);
-        public ScrollOrientation ScrollViewOrientation
-        {
-            get => (ScrollOrientation)GetValue(ScrollViewOrientationProperty);
-            set => SetValue(ScrollViewOrientationProperty, value);
-        }
-
-        public ScrollView ScrollView { get => (ScrollView)GetTemplateChild("scrollView"); }
         public TopNavigationBar TopNavigationBar { get => this.FindByName<TopNavigationBar>("TopNavigationBar"); }
 
         public PageTemplate()
         {
-            ControlTemplate = (ControlTemplate)Application.Current.Resources["PageTemplate"];
+            ControlTemplate = (ControlTemplate)Application.Current!.Resources["PageTemplate"];
 
             NavigationPage.SetHasNavigationBar(this, false);
             Shell.SetNavBarIsVisible(this, false);
+            AutomationProperties.SetIsInAccessibleTree(this, true);
 
             HideSoftInputOnTapped = true;
+        }
+
+        private void ApplyScrollViewPadding()
+        {
+            if (MainContent == null)
+            {
+                return;
+            }
 
             var topNavigationBarHeight = (double)Application.Current.Resources["TopNavigationBarHeight"];
 
-            ScrollPadding = IsNavbarVisible ? new Thickness(0, topNavigationBarHeight, 0, 0) : new Thickness(0);
-            ScrollViewOrientation = IsScrollEnabled ? ScrollOrientation.Vertical : ScrollOrientation.Neither;
+            var scrollViewPadding = NavigationBarIsVisible ? new Thickness(0, topNavigationBarHeight, 0, 0) : new Thickness(0);
+
+            ApplyScrollViewPadding(MainContent, scrollViewPadding);
+        }
+
+        private void ApplyScrollViewPadding(MauiView view, Thickness padding)
+        {
+            switch (view)
+            {
+                case ScrollView scrollView:
+                    scrollView.Padding = padding;
+
+                    break;
+
+                case CollectionView collectionView:
+                    collectionView.Margin = padding;
+
+                    break;
+
+                case Layout layout:
+                    foreach (var child in layout.Children.OfType<MauiView>())
+                    {
+                        ApplyScrollViewPadding(child, padding);
+                    }
+
+                    break;
+
+                case ContentView contentView when contentView.Content is MauiView content:
+                    ApplyScrollViewPadding(content, padding);
+                    break;
+
+                case ContentPresenter contentPresenter when contentPresenter.Content is MauiView content:
+                    ApplyScrollViewPadding(content, padding);
+                    break;
+            }
         }
 
         protected override void OnApplyTemplate()
@@ -171,6 +188,8 @@ namespace PlutoFramework.Templates.PageTemplate
             SetBindingContextForContents();
 
             _pendingPopupContent.Clear();
+
+            ApplyScrollViewPadding();
         }
 
         protected override void OnBindingContextChanged()

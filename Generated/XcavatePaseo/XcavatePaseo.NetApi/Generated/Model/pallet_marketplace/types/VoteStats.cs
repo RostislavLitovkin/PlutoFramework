@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
     
     
     /// <summary>
-    /// >> 570 - Composite[pallet_marketplace.types.VoteStats]
+    /// >> 758 - Composite[pallet_marketplace.types.VoteStats]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class VoteStats : BaseType
@@ -32,6 +32,10 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
         /// >> no_voting_power
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 NoVotingPower { get; set; }
+        /// <summary>
+        /// >> abstain_voting_power
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 AbstainVotingPower { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -45,6 +49,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
             var result = new List<byte>();
             result.AddRange(YesVotingPower.Encode());
             result.AddRange(NoVotingPower.Encode());
+            result.AddRange(AbstainVotingPower.Encode());
             return result.ToArray();
         }
         
@@ -56,6 +61,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
             YesVotingPower.Decode(byteArray, ref p);
             NoVotingPower = new Substrate.NetApi.Model.Types.Primitive.U32();
             NoVotingPower.Decode(byteArray, ref p);
+            AbstainVotingPower = new Substrate.NetApi.Model.Types.Primitive.U32();
+            AbstainVotingPower.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;
             Bytes = new byte[bytesLength];

@@ -97,7 +97,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_treasury.pallet
     }
     
     /// <summary>
-    /// >> 56 - Variant[pallet_treasury.pallet.Event]
+    /// >> 58 - Variant[pallet_treasury.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

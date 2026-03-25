@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.sp_version
     
     
     /// <summary>
-    /// >> 502 - Composite[sp_version.RuntimeVersion]
+    /// >> 556 - Composite[sp_version.RuntimeVersion]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RuntimeVersion : BaseType
@@ -27,11 +27,11 @@ namespace Hydration.NetApi.Generated.Model.sp_version
         /// <summary>
         /// >> spec_name
         /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.Str SpecName { get; set; }
+        public Hydration.NetApi.Generated.Types.Base.CowT1 SpecName { get; set; }
         /// <summary>
         /// >> impl_name
         /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.Str ImplName { get; set; }
+        public Hydration.NetApi.Generated.Types.Base.CowT1 ImplName { get; set; }
         /// <summary>
         /// >> authoring_version
         /// </summary>
@@ -53,9 +53,9 @@ namespace Hydration.NetApi.Generated.Model.sp_version
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 TransactionVersion { get; set; }
         /// <summary>
-        /// >> state_version
+        /// >> system_version
         /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U8 StateVersion { get; set; }
+        public Substrate.NetApi.Model.Types.Primitive.U8 SystemVersion { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -74,7 +74,7 @@ namespace Hydration.NetApi.Generated.Model.sp_version
             result.AddRange(ImplVersion.Encode());
             result.AddRange(Apis.Encode());
             result.AddRange(TransactionVersion.Encode());
-            result.AddRange(StateVersion.Encode());
+            result.AddRange(SystemVersion.Encode());
             return result.ToArray();
         }
         
@@ -82,9 +82,9 @@ namespace Hydration.NetApi.Generated.Model.sp_version
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            SpecName = new Substrate.NetApi.Model.Types.Primitive.Str();
+            SpecName = new Hydration.NetApi.Generated.Types.Base.CowT1();
             SpecName.Decode(byteArray, ref p);
-            ImplName = new Substrate.NetApi.Model.Types.Primitive.Str();
+            ImplName = new Hydration.NetApi.Generated.Types.Base.CowT1();
             ImplName.Decode(byteArray, ref p);
             AuthoringVersion = new Substrate.NetApi.Model.Types.Primitive.U32();
             AuthoringVersion.Decode(byteArray, ref p);
@@ -96,8 +96,8 @@ namespace Hydration.NetApi.Generated.Model.sp_version
             Apis.Decode(byteArray, ref p);
             TransactionVersion = new Substrate.NetApi.Model.Types.Primitive.U32();
             TransactionVersion.Decode(byteArray, ref p);
-            StateVersion = new Substrate.NetApi.Model.Types.Primitive.U8();
-            StateVersion.Decode(byteArray, ref p);
+            SystemVersion = new Substrate.NetApi.Model.Types.Primitive.U8();
+            SystemVersion.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;
             Bytes = new byte[bytesLength];

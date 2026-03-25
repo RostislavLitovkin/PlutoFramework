@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_xcm.pallet
     
     
     /// <summary>
-    /// >> 856 - Composite[pallet_xcm.pallet.MaxAuthorizedAliases]
+    /// >> 925 - Composite[pallet_xcm.pallet.MaxAuthorizedAliases]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MaxAuthorizedAliases : BaseType

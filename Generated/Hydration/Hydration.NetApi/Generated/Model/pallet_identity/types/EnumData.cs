@@ -213,7 +213,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_identity.types
     }
     
     /// <summary>
-    /// >> 125 - Variant[pallet_identity.types.Data]
+    /// >> 120 - Variant[pallet_identity.types.Data]
     /// </summary>
     public sealed class EnumData : BaseEnumRust<Data>
     {

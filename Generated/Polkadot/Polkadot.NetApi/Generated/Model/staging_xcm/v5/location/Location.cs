@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.staging_xcm.v5.location
     
     
     /// <summary>
-    /// >> 83 - Composite[staging_xcm.v5.location.Location]
+    /// >> 85 - Composite[staging_xcm.v5.location.Location]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Location : BaseType

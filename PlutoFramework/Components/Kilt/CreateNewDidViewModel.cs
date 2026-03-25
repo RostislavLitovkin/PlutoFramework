@@ -22,9 +22,8 @@ namespace PlutoFramework.Components.Kilt
         [RelayCommand]
         public async Task ContinueToNextPageAsync()
         {
-            await KeysModel.GenerateNewAccountAsync(
-                this.Mnemonics,
-                accountVariant: "kilt1"
+            await KeysModel.SaveDidKeyAsync(
+                this.Mnemonics
             );
 
             await Navigation.Invoke();

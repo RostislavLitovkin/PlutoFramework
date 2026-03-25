@@ -6,15 +6,18 @@
              xmlns:page="clr-namespace:PlutoFramework.Templates.PageTemplate"
              x:Class="PlutoFramework.Components.Notifications.NotificationsPage"
              Title="Notifications">
-    <VerticalStackLayout>
-        <tabs:MultiTabView Margin="20, 10, 20, 10" />
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
+        <VerticalStackLayout>
+            <tabs:MultiTabView Margin="20, 10, 20, 10" />
 
-        <VerticalStackLayout BindableLayout.ItemsSource="{Binding Notifications}">
-            <BindableLayout.ItemTemplate>
-                <DataTemplate>
-                    <notifications:NotificationView />
-                </DataTemplate>
-            </BindableLayout.ItemTemplate>
+            <VerticalStackLayout BindableLayout.ItemsSource="{Binding Notifications}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <notifications:NotificationView />
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
         </VerticalStackLayout>
-    </VerticalStackLayout>
+    </ScrollView>
 </page:PageTemplate>

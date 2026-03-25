@@ -36,9 +36,11 @@ namespace Hydration.NetApi.Generated.Storage
         public EthereumStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Ethereum", "Pending"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.ethereum.transaction.EnumTransactionV2, Hydration.NetApi.Generated.Model.fp_rpc.TransactionStatus, Hydration.NetApi.Generated.Model.ethereum.receipt.EnumReceiptV3>>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Ethereum", "Pending"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Identity}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.ethereum.transaction.EnumTransactionV3, Hydration.NetApi.Generated.Model.fp_rpc.TransactionStatus, Hydration.NetApi.Generated.Model.ethereum.receipt.EnumReceiptV4>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Ethereum", "CounterForPending"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Ethereum", "CurrentBlock"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Hydration.NetApi.Generated.Model.ethereum.block.Block)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Ethereum", "CurrentReceipts"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.ethereum.receipt.EnumReceiptV3>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Ethereum", "CurrentReceipts"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.ethereum.receipt.EnumReceiptV4>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Ethereum", "CurrentTransactionStatuses"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.fp_rpc.TransactionStatus>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Ethereum", "BlockHash"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Hydration.NetApi.Generated.Model.primitive_types.U256), typeof(Hydration.NetApi.Generated.Model.primitive_types.H256)));
@@ -46,11 +48,13 @@ namespace Hydration.NetApi.Generated.Storage
         
         /// <summary>
         /// >> PendingParams
-        ///  Current building block's transactions and receipts.
+        ///  Mapping from transaction index to transaction in the current building block.
         /// </summary>
-        public static string PendingParams()
+        public static string PendingParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
         {
-            return RequestGenerator.GetStorage("Ethereum", "Pending", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+            return RequestGenerator.GetStorage("Ethereum", "Pending", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.Identity}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
         }
         
         /// <summary>
@@ -64,12 +68,41 @@ namespace Hydration.NetApi.Generated.Storage
         
         /// <summary>
         /// >> Pending
-        ///  Current building block's transactions and receipts.
+        ///  Mapping from transaction index to transaction in the current building block.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.ethereum.transaction.EnumTransactionV2, Hydration.NetApi.Generated.Model.fp_rpc.TransactionStatus, Hydration.NetApi.Generated.Model.ethereum.receipt.EnumReceiptV3>>> Pending(string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.ethereum.transaction.EnumTransactionV3, Hydration.NetApi.Generated.Model.fp_rpc.TransactionStatus, Hydration.NetApi.Generated.Model.ethereum.receipt.EnumReceiptV4>> Pending(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
-            string parameters = EthereumStorage.PendingParams();
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.ethereum.transaction.EnumTransactionV2, Hydration.NetApi.Generated.Model.fp_rpc.TransactionStatus, Hydration.NetApi.Generated.Model.ethereum.receipt.EnumReceiptV3>>>(parameters, blockhash, token);
+            string parameters = EthereumStorage.PendingParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.ethereum.transaction.EnumTransactionV3, Hydration.NetApi.Generated.Model.fp_rpc.TransactionStatus, Hydration.NetApi.Generated.Model.ethereum.receipt.EnumReceiptV4>>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> CounterForPendingParams
+        /// Counter for the related counted storage map
+        /// </summary>
+        public static string CounterForPendingParams()
+        {
+            return RequestGenerator.GetStorage("Ethereum", "CounterForPending", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> CounterForPendingDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string CounterForPendingDefault()
+        {
+            return "0x00000000";
+        }
+        
+        /// <summary>
+        /// >> CounterForPending
+        /// Counter for the related counted storage map
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> CounterForPending(string blockhash, CancellationToken token)
+        {
+            string parameters = EthereumStorage.CounterForPendingParams();
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
             return result;
         }
         
@@ -124,10 +157,10 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> CurrentReceipts
         ///  The current Ethereum receipts.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.ethereum.receipt.EnumReceiptV3>> CurrentReceipts(string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.ethereum.receipt.EnumReceiptV4>> CurrentReceipts(string blockhash, CancellationToken token)
         {
             string parameters = EthereumStorage.CurrentReceiptsParams();
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.ethereum.receipt.EnumReceiptV3>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.ethereum.receipt.EnumReceiptV4>>(parameters, blockhash, token);
             return result;
         }
         
@@ -200,7 +233,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> transact
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Transact(Hydration.NetApi.Generated.Model.ethereum.transaction.EnumTransactionV2 transaction)
+        public static Method Transact(Hydration.NetApi.Generated.Model.ethereum.transaction.EnumTransactionV3 transaction)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(transaction.Encode());

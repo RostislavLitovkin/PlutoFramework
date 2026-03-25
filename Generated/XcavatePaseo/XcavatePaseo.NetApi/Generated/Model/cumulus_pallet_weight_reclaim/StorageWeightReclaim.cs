@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_weight_reclaim
     
     
     /// <summary>
-    /// >> 620 - Composite[cumulus_pallet_weight_reclaim.StorageWeightReclaim]
+    /// >> 826 - Composite[cumulus_pallet_weight_reclaim.StorageWeightReclaim]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class StorageWeightReclaim : BaseType
@@ -27,7 +27,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_weight_reclaim
         /// <summary>
         /// >> value
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_non_zero_sender.CheckNonZeroSender, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_spec_version.CheckSpecVersion, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_tx_version.CheckTxVersion, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_genesis.CheckGenesis, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_mortality.CheckMortality, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_nonce.CheckNonce, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_weight.CheckWeight, XcavatePaseo.NetApi.Generated.Model.pallet_transaction_payment.ChargeTransactionPayment> Value { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_non_zero_sender.CheckNonZeroSender, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_spec_version.CheckSpecVersion, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_tx_version.CheckTxVersion, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_genesis.CheckGenesis, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_mortality.CheckMortality, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_nonce.CheckNonce, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_weight.CheckWeight, XcavatePaseo.NetApi.Generated.Model.pallet_transaction_payment.ChargeTransactionPayment, XcavatePaseo.NetApi.Generated.Model.frame_metadata_hash_extension.CheckMetadataHash> Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_weight_reclaim
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_non_zero_sender.CheckNonZeroSender, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_spec_version.CheckSpecVersion, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_tx_version.CheckTxVersion, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_genesis.CheckGenesis, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_mortality.CheckMortality, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_nonce.CheckNonce, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_weight.CheckWeight, XcavatePaseo.NetApi.Generated.Model.pallet_transaction_payment.ChargeTransactionPayment>();
+            Value = new Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_non_zero_sender.CheckNonZeroSender, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_spec_version.CheckSpecVersion, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_tx_version.CheckTxVersion, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_genesis.CheckGenesis, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_mortality.CheckMortality, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_nonce.CheckNonce, XcavatePaseo.NetApi.Generated.Model.frame_system.extensions.check_weight.CheckWeight, XcavatePaseo.NetApi.Generated.Model.pallet_transaction_payment.ChargeTransactionPayment, XcavatePaseo.NetApi.Generated.Model.frame_metadata_hash_extension.CheckMetadataHash>();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

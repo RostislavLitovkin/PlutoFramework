@@ -18,16 +18,16 @@ namespace Hydration.NetApi.Generated.Model.pallet_identity.types
     
     
     /// <summary>
-    /// >> 554 - Composite[pallet_identity.types.AuthorityProperties]
+    /// >> 610 - Composite[pallet_identity.types.AuthorityProperties]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AuthorityProperties : BaseType
     {
         
         /// <summary>
-        /// >> suffix
+        /// >> account_id
         /// </summary>
-        public Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32 Suffix { get; set; }
+        public Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 AccountId { get; set; }
         /// <summary>
         /// >> allocation
         /// </summary>
@@ -43,7 +43,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_identity.types
         public override byte[] Encode()
         {
             var result = new List<byte>();
-            result.AddRange(Suffix.Encode());
+            result.AddRange(AccountId.Encode());
             result.AddRange(Allocation.Encode());
             return result.ToArray();
         }
@@ -52,8 +52,8 @@ namespace Hydration.NetApi.Generated.Model.pallet_identity.types
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Suffix = new Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32();
-            Suffix.Decode(byteArray, ref p);
+            AccountId = new Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            AccountId.Decode(byteArray, ref p);
             Allocation = new Substrate.NetApi.Model.Types.Primitive.U32();
             Allocation.Decode(byteArray, ref p);
             var bytesLength = p - start;

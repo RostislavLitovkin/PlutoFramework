@@ -14,7 +14,7 @@ public partial class BottomPopupCard : AbsoluteLayout
         defaultBindingMode: BindingMode.TwoWay,
         propertyChanged: (bindable, oldValue, newValue) =>
         {
-            Console.WriteLine("Got new value? " + newValue);    
+            Console.WriteLine("Got new value? " + newValue);
             var control = (BottomPopupCard)bindable;
             if ((bool)newValue)
             {
@@ -27,8 +27,8 @@ public partial class BottomPopupCard : AbsoluteLayout
         });
 
     public BottomPopupCard()
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
     }
 
     public bool IsShown
@@ -37,13 +37,13 @@ public partial class BottomPopupCard : AbsoluteLayout
         set
         {
             //if ((bool)GetValue(animating) != value)
-                SetValue(IsShownProperty, value);
+            SetValue(IsShownProperty, value);
         }
     }
 
     public Microsoft.Maui.Controls.View View { set { contentView.Content = value; } }
 
-    public string Title { set { titleLabel.Text = value; } }
+    public string Title { set { titleText.Text = value; } }
 
     private async Task ShowCardAsync()
     {
@@ -120,21 +120,21 @@ public partial class BottomPopupCard : AbsoluteLayout
     }
 
     private Task AnimateToTop() => Task.WhenAll(
-                    border.TranslateTo(0, 0, (uint)(int)Application.Current.Resources["BottomCardPopupAnimationDuration"], Easing.CubicOut),
-                    dragger.TranslateTo(0, 0, (uint)(int)Application.Current.Resources["BottomCardPopupAnimationDuration"], Easing.CubicOut),
-                    contentView.TranslateTo(0, 0, (uint)(int)Application.Current.Resources["BottomCardPopupAnimationDuration"], Easing.CubicOut)
-                    //,closeButton.TranslateTo(0, 0, 250, Easing.CubicOut)
-                    , titleLabel.TranslateTo(0, 0, (uint)(int)Application.Current.Resources["BottomCardPopupAnimationDuration"], Easing.CubicOut)
-                    , darken.FadeTo(1, (uint)(int)Application.Current.Resources["BottomCardPopupAnimationDuration"], Easing.CubicOut)
+                    border.TranslateToAsync(0, 0, (uint)(int)Application.Current.Resources["BottomCardPopupAnimationDuration"], Easing.CubicOut),
+                    dragger.TranslateToAsync(0, 0, (uint)(int)Application.Current.Resources["BottomCardPopupAnimationDuration"], Easing.CubicOut),
+                    contentView.TranslateToAsync(0, 0, (uint)(int)Application.Current.Resources["BottomCardPopupAnimationDuration"], Easing.CubicOut)
+                    //,closeButton.TranslateToAsync(0, 0, 250, Easing.CubicOut)
+                    , titleLabel.TranslateToAsync(0, 0, (uint)(int)Application.Current.Resources["BottomCardPopupAnimationDuration"], Easing.CubicOut)
+                    , darken.FadeToAsync(1, (uint)(int)Application.Current.Resources["BottomCardPopupAnimationDuration"], Easing.CubicOut)
                     );
 
     private Task AnimateToBottom() => Task.WhenAll(
-                    border.TranslateTo(0, border.Height, (uint)(int)Application.Current.Resources["BottomCardPopupAnimationDuration"], Easing.CubicOut),
-                    dragger.TranslateTo(0, border.Height, (uint)(int)Application.Current.Resources["BottomCardPopupAnimationDuration"], Easing.CubicOut),
-                    contentView.TranslateTo(0, border.Height, (uint)(int)Application.Current.Resources["BottomCardPopupAnimationDuration"], Easing.CubicOut),
-                    //,closeButton.TranslateTo(0, border.Height, 250, Easing.CubicOut)
-                    titleLabel.TranslateTo(0, border.Height, (uint)(int)Application.Current.Resources["BottomCardPopupAnimationDuration"], Easing.CubicOut)
-                    , darken.FadeTo(0, (uint)(int)Application.Current.Resources["BottomCardPopupAnimationDuration"], Easing.CubicOut)
+                    border.TranslateToAsync(0, border.Height, (uint)(int)Application.Current.Resources["BottomCardPopupAnimationDuration"], Easing.CubicOut),
+                    dragger.TranslateToAsync(0, border.Height, (uint)(int)Application.Current.Resources["BottomCardPopupAnimationDuration"], Easing.CubicOut),
+                    contentView.TranslateToAsync(0, border.Height, (uint)(int)Application.Current.Resources["BottomCardPopupAnimationDuration"], Easing.CubicOut),
+                    //,closeButton.TranslateToAsync(0, border.Height, 250, Easing.CubicOut)
+                    titleLabel.TranslateToAsync(0, border.Height, (uint)(int)Application.Current.Resources["BottomCardPopupAnimationDuration"], Easing.CubicOut)
+                    , darken.FadeToAsync(0, (uint)(int)Application.Current.Resources["BottomCardPopupAnimationDuration"], Easing.CubicOut)
                 );
     private async void OnCloseClicked(object sender, EventArgs e)
     {

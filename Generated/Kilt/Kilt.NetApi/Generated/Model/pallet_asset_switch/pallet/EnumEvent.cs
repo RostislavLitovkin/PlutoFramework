@@ -11,7 +11,7 @@ using Substrate.NetApi.Model.Types.Base;
 using System.Collections.Generic;
 
 
-namespace Kilt.NetApi.Generated.Model.pallet_asset_switch.@pallet
+namespace Kilt.NetApi.Generated.Model.pallet_asset_switch.pallet
 {
     
     
@@ -79,7 +79,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_asset_switch.@pallet
     }
     
     /// <summary>
-    /// >> 62 - Variant[pallet_asset_switch.pallet.Event]
+    /// >> 65 - Variant[pallet_asset_switch.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

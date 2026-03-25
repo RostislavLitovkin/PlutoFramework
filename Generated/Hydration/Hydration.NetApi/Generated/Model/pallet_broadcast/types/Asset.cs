@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_broadcast.types
     
     
     /// <summary>
-    /// >> 487 - Composite[pallet_broadcast.types.Asset]
+    /// >> 541 - Composite[pallet_broadcast.types.Asset]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Asset : BaseType
@@ -27,7 +27,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_broadcast.types
         /// <summary>
         /// >> asset
         /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U32 AssetId { get; set; }
+        public Substrate.NetApi.Model.Types.Primitive.U32 Value { get; set; }
         /// <summary>
         /// >> amount
         /// </summary>
@@ -43,7 +43,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_broadcast.types
         public override byte[] Encode()
         {
             var result = new List<byte>();
-            result.AddRange(AssetId.Encode());
+            result.AddRange(Value.Encode());
             result.AddRange(Amount.Encode());
             return result.ToArray();
         }
@@ -52,8 +52,8 @@ namespace Hydration.NetApi.Generated.Model.pallet_broadcast.types
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            AssetId = new Substrate.NetApi.Model.Types.Primitive.U32();
-            AssetId.Decode(byteArray, ref p);
+            Value = new Substrate.NetApi.Model.Types.Primitive.U32();
+            Value.Decode(byteArray, ref p);
             Amount = new Substrate.NetApi.Model.Types.Primitive.U128();
             Amount.Decode(byteArray, ref p);
             var bytesLength = p - start;

@@ -184,7 +184,7 @@ namespace Kilt.NetApi.Generated.Model.parachain_staking.pallet
     }
     
     /// <summary>
-    /// >> 36 - Variant[parachain_staking.pallet.Event]
+    /// >> 40 - Variant[parachain_staking.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

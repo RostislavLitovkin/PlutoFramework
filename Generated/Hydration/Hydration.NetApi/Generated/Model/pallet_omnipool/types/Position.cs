@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool.types
     
     
     /// <summary>
-    /// >> 646 - Composite[pallet_omnipool.types.Position]
+    /// >> 696 - Composite[pallet_omnipool.types.Position]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Position : BaseType

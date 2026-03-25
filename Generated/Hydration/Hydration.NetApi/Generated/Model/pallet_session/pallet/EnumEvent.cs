@@ -28,10 +28,22 @@ namespace Hydration.NetApi.Generated.Model.pallet_session.pallet
         /// block number as the type might suggest.
         /// </summary>
         NewSession = 0,
+        
+        /// <summary>
+        /// >> ValidatorDisabled
+        /// Validator has been disabled.
+        /// </summary>
+        ValidatorDisabled = 1,
+        
+        /// <summary>
+        /// >> ValidatorReenabled
+        /// Validator has been re-enabled.
+        /// </summary>
+        ValidatorReenabled = 2,
     }
     
     /// <summary>
-    /// >> 481 - Variant[pallet_session.pallet.Event]
+    /// >> 531 - Variant[pallet_session.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -43,6 +55,8 @@ namespace Hydration.NetApi.Generated.Model.pallet_session.pallet
         public EnumEvent()
         {
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.NewSession);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.ValidatorDisabled);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.ValidatorReenabled);
         }
     }
 }

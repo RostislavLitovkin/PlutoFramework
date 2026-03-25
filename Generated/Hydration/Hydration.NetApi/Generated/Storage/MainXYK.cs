@@ -361,20 +361,6 @@ namespace Hydration.NetApi.Generated.Storage
         ZeroLiquidity,
         
         /// <summary>
-        /// >> ZeroInitialPrice
-        /// It is not allowed to create a pool with zero initial price.
-        /// Not used, kept for backward compatibility
-        /// </summary>
-        ZeroInitialPrice,
-        
-        /// <summary>
-        /// >> CreatePoolAssetAmountInvalid
-        /// Overflow
-        /// Not used, kept for backward compatibility
-        /// </summary>
-        CreatePoolAssetAmountInvalid,
-        
-        /// <summary>
         /// >> InvalidMintedLiquidity
         /// Overflow
         /// </summary>
@@ -457,12 +443,6 @@ namespace Hydration.NetApi.Generated.Storage
         /// Overflow
         /// </summary>
         FeeAmountInvalid,
-        
-        /// <summary>
-        /// >> CannotApplyDiscount
-        /// Overflow
-        /// </summary>
-        CannotApplyDiscount,
         
         /// <summary>
         /// >> MaxOutRatioExceeded

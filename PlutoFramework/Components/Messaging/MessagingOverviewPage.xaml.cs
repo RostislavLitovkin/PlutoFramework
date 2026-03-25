@@ -1,23 +1,21 @@
-using System.Collections.ObjectModel;
 using PlutoFramework.Templates.PageTemplate;
+using System.Collections.ObjectModel;
 
 namespace PlutoFramework.Components.Messaging;
 
 public partial class MessagingOverviewPage : PageTemplate
 {
-	public ObservableCollection<Message> Messages { get; } = new();
-	
-	public MessagingOverviewPage()
-	{
+    public ObservableCollection<Message> Messages { get; } = new();
+
+    public MessagingOverviewPage()
+    {
         InitializeComponent();
-        
-        ScrollView.Rotation = 180;
-        ScrollView.VerticalScrollBarVisibility = ScrollBarVisibility.Never;
-        ScrollView.Padding = new Thickness(ScrollView.Padding.Right, ScrollView.Padding.Bottom, 
-	        ScrollView.Padding.Left, ScrollView.Padding.Top);
-        
+
+        scrollView.Padding = new Thickness(scrollView.Padding.Right, scrollView.Padding.Bottom,
+            scrollView.Padding.Left, scrollView.Padding.Top);
+
         BindingContext = this;
-        
+
         // Temporary mock msgs
         AddIncoming("Lorem ipsum", "dolor sit amet, consectetur adipiscing elit. Donec luctus ligula eu" +
                                    " erat malesuada, vitae scelerisque libero fermentum. Nunc pellentesque ac enim a" +
@@ -50,33 +48,33 @@ public partial class MessagingOverviewPage : PageTemplate
                                    " Donec vel rhoncus odio. Aenean nunc ex, iaculis sed nunc at, scelerisque imperdiet" +
                                    " ex. Pellentesque sed augue viverra, fermentum arcu eu, placerat orci." +
                                    " Pellentesque ullamcorper auctor tortor a tristique.",
-	        "Aug 5, 2025, 10:16 AM", null);
-	}
-	
-	private void AddMessage(string text, Message.MessageType type, string? sender, string? timestamp, Color? msgColor)
-	{
-		Messages.Add(new Message
-		{
-			Text = text,
-			Type = type,
-			Sender = sender,
-			Timestamp = timestamp,
-			MsgColor = msgColor ?? Application.Current.Resources["Primary"] as Color
-		});
-	}
+            "Aug 5, 2025, 10:16 AM", null);
+    }
 
-	public void AddIncoming(string sender, string text, string timestamp, Color? msgColor)
-	{
-		AddMessage(text, Message.MessageType.Incoming, sender, timestamp, msgColor);
-	}
+    private void AddMessage(string text, Message.MessageType type, string? sender, string? timestamp, Color? msgColor)
+    {
+        Messages.Add(new Message
+        {
+            Text = text,
+            Type = type,
+            Sender = sender,
+            Timestamp = timestamp,
+            MsgColor = msgColor ?? Application.Current.Resources["Primary"] as Color
+        });
+    }
 
-	public void AddOutgoing(string text, string timestamp)
-	{
-		AddMessage(text, Message.MessageType.Outgoing, null, timestamp, null);
-	}
+    public void AddIncoming(string sender, string text, string timestamp, Color? msgColor)
+    {
+        AddMessage(text, Message.MessageType.Incoming, sender, timestamp, msgColor);
+    }
 
-	public void AddStatus(string text)
-	{
-		AddMessage(text, Message.MessageType.Status, null, null, null);
-	}
+    public void AddOutgoing(string text, string timestamp)
+    {
+        AddMessage(text, Message.MessageType.Outgoing, null, timestamp, null);
+    }
+
+    public void AddStatus(string text)
+    {
+        AddMessage(text, Message.MessageType.Status, null, null, null);
+    }
 }

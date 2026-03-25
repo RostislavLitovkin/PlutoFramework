@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_proxy
     }
     
     /// <summary>
-    /// >> 42 - Variant[pallet_proxy.DepositKind]
+    /// >> 39 - Variant[pallet_proxy.DepositKind]
     /// </summary>
     public sealed class EnumDepositKind : BaseEnum<DepositKind>
     {

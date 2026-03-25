@@ -26,29 +26,42 @@ namespace Hydration.NetApi.Generated.Model.pallet_duster.pallet
         /// >> dust_account
         /// Dust specified account.
         /// IF account balance is < min. existential deposit of given currency, and account is allowed to
-        /// be dusted, the remaining balance is transferred to selected account (usually treasury).
+        /// be dusted, the remaining balance is transferred to treasury account.
         /// 
-        /// Caller is rewarded with chosen reward in native currency.
+        /// In case of AToken, we perform an erc20 dust, which does a wihtdraw all to the treasury account
+        /// Note that in this case, the treasury will just receive the underlying token, not the atoken variant.
+        /// 
+        /// The transaction fee is returned back in case of successful dusting.
+        /// 
+        /// Treasury account can never be dusted.
+        /// 
+        /// Emits `Dusted` event when successful.
         /// </summary>
         dust_account = 0,
         
         /// <summary>
-        /// >> add_nondustable_account
-        /// Add account to list of non-dustable account. Account whihc are excluded from udsting.
-        /// If such account should be dusted - `AccountBlacklisted` error is returned.
+        /// >> whitelist_account
+        /// Add account to list of whitelist accounts. Account which are excluded from dusting.
+        /// If such account should be dusted - `AccountWhitelisted` error is returned.
         /// Only root can perform this action.
+        /// 
+        /// Emits `Added` event when successful.
+        /// 
         /// </summary>
-        add_nondustable_account = 1,
+        whitelist_account = 1,
         
         /// <summary>
-        /// >> remove_nondustable_account
-        /// Remove account from list of non-dustable accounts. That means account can be dusted again.
+        /// >> remove_from_whitelist
+        /// Remove account from list of whitelist accounts. That means account can be dusted again.
+        /// 
+        /// Emits `Removed` event when successful.
+        /// 
         /// </summary>
-        remove_nondustable_account = 2,
+        remove_from_whitelist = 2,
     }
     
     /// <summary>
-    /// >> 214 - Variant[pallet_duster.pallet.Call]
+    /// >> 200 - Variant[pallet_duster.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -60,8 +73,8 @@ namespace Hydration.NetApi.Generated.Model.pallet_duster.pallet
         public EnumCall()
         {
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.dust_account);
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Call.add_nondustable_account);
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Call.remove_nondustable_account);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Call.whitelist_account);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Call.remove_from_whitelist);
         }
     }
 }

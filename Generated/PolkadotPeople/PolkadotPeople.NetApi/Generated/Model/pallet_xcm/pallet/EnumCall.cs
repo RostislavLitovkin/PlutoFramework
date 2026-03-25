@@ -307,10 +307,40 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_xcm.pallet
         /// - `weight_limit`: The remote-side weight limit, if any, for the XCM fee purchase.
         /// </summary>
         transfer_assets_using_type_and_then = 13,
+        
+        /// <summary>
+        /// >> add_authorized_alias
+        /// Authorize another `aliaser` location to alias into the local `origin` making this call.
+        /// The `aliaser` is only authorized until the provided `expiry` block number.
+        /// The call can also be used for a previously authorized alias in order to update its
+        /// `expiry` block number.
+        /// 
+        /// Usually useful to allow your local account to be aliased into from a remote location
+        /// also under your control (like your account on another chain).
+        /// 
+        /// WARNING: make sure the caller `origin` (you) trusts the `aliaser` location to act in
+        /// their/your name. Once authorized using this call, the `aliaser` can freely impersonate
+        /// `origin` in XCM programs executed on the local chain.
+        /// </summary>
+        add_authorized_alias = 14,
+        
+        /// <summary>
+        /// >> remove_authorized_alias
+        /// Remove a previously authorized `aliaser` from the list of locations that can alias into
+        /// the local `origin` making this call.
+        /// </summary>
+        remove_authorized_alias = 15,
+        
+        /// <summary>
+        /// >> remove_all_authorized_aliases
+        /// Remove all previously authorized `aliaser`s that can alias into the local `origin`
+        /// making this call.
+        /// </summary>
+        remove_all_authorized_aliases = 16,
     }
     
     /// <summary>
-    /// >> 309 - Variant[pallet_xcm.pallet.Call]
+    /// >> 338 - Variant[pallet_xcm.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -335,6 +365,9 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_xcm.pallet
 				AddTypeDecoder<BaseTuple<PolkadotPeople.NetApi.Generated.Model.xcm.EnumVersionedLocation, PolkadotPeople.NetApi.Generated.Model.xcm.EnumVersionedLocation, PolkadotPeople.NetApi.Generated.Model.xcm.EnumVersionedAssets, Substrate.NetApi.Model.Types.Primitive.U32, PolkadotPeople.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.transfer_assets);
 				AddTypeDecoder<BaseTuple<PolkadotPeople.NetApi.Generated.Model.xcm.EnumVersionedAssets, PolkadotPeople.NetApi.Generated.Model.xcm.EnumVersionedLocation>>(Call.claim_assets);
 				AddTypeDecoder<BaseTuple<PolkadotPeople.NetApi.Generated.Model.xcm.EnumVersionedLocation, PolkadotPeople.NetApi.Generated.Model.xcm.EnumVersionedAssets, PolkadotPeople.NetApi.Generated.Model.staging_xcm_executor.traits.asset_transfer.EnumTransferType, PolkadotPeople.NetApi.Generated.Model.xcm.EnumVersionedAssetId, PolkadotPeople.NetApi.Generated.Model.staging_xcm_executor.traits.asset_transfer.EnumTransferType, PolkadotPeople.NetApi.Generated.Model.xcm.EnumVersionedXcm, PolkadotPeople.NetApi.Generated.Model.xcm.v3.EnumWeightLimit>>(Call.transfer_assets_using_type_and_then);
+				AddTypeDecoder<BaseTuple<PolkadotPeople.NetApi.Generated.Model.xcm.EnumVersionedLocation, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U64>>>(Call.add_authorized_alias);
+				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.xcm.EnumVersionedLocation>(Call.remove_authorized_alias);
+				AddTypeDecoder<BaseVoid>(Call.remove_all_authorized_aliases);
         }
     }
 }

@@ -81,6 +81,9 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet
         /// 
         /// - `id`: The identifier of the asset to be destroyed. This must identify an existing
         ///   asset.
+        /// 
+        /// It will fail with either [`Error::ContainsHolds`] or [`Error::ContainsFreezes`] if
+        /// an account contains holds or freezes in place.
         /// </summary>
         start_destroy = 2,
         
@@ -540,6 +543,9 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet
         ///   refunded.
         /// - `allow_burn`: If `true` then assets may be destroyed in order to complete the refund.
         /// 
+        /// It will fail with either [`Error::ContainsHolds`] or [`Error::ContainsFreezes`] if
+        /// the asset account contains holds or freezes in place.
+        /// 
         /// Emits `Refunded` event when successful.
         /// </summary>
         refund = 27,
@@ -567,9 +573,10 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet
         /// 
         /// A deposit will be taken from the signer account.
         /// 
-        /// - `origin`: Must be Signed by `Freezer` or `Admin` of the asset `id`; the signer account
-        ///   must have sufficient funds for a deposit to be taken.
-        /// - `id`: The identifier of the asset for the account to be created.
+        /// - `origin`: Must be Signed; the signer account must have sufficient funds for a deposit
+        ///   to be taken.
+        /// - `id`: The identifier of the asset for the account to be created, the asset status must
+        ///   be live.
         /// - `who`: The account to be created.
         /// 
         /// Emits `Touched` event when successful.
@@ -586,6 +593,9 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet
         /// 
         /// - `id`: The identifier of the asset for the account holding a deposit.
         /// - `who`: The account to refund.
+        /// 
+        /// It will fail with either [`Error::ContainsHolds`] or [`Error::ContainsFreezes`] if
+        /// the asset account contains holds or freezes in place.
         /// 
         /// Emits `Refunded` event when successful.
         /// </summary>
@@ -629,7 +639,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet
     }
     
     /// <summary>
-    /// >> 385 - Variant[pallet_assets.pallet.Call]
+    /// >> 359 - Variant[pallet_assets.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

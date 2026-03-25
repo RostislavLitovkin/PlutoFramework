@@ -53,7 +53,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.xcm.v3.multiasset
     }
     
     /// <summary>
-    /// >> 115 - Variant[xcm.v3.multiasset.AssetInstance]
+    /// >> 144 - Variant[xcm.v3.multiasset.AssetInstance]
     /// </summary>
     public sealed class EnumAssetInstance : BaseEnumRust<AssetInstance>
     {

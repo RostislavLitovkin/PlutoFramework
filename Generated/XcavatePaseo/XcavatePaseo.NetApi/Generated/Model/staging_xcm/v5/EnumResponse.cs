@@ -53,7 +53,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5
     }
     
     /// <summary>
-    /// >> 108 - Variant[staging_xcm.v5.Response]
+    /// >> 87 - Variant[staging_xcm.v5.Response]
     /// </summary>
     public sealed class EnumResponse : BaseEnumRust<Response>
     {
@@ -67,7 +67,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.asset.Assets>(Response.Assets);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.xcm.v5.traits.EnumError>>>(Response.ExecutionResult);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Response.Version);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5>(Response.PalletsInfo);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1>(Response.PalletsInfo);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.xcm.v3.EnumMaybeErrorCode>(Response.DispatchResult);
         }
     }

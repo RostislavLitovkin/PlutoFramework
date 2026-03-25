@@ -125,7 +125,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_collator_selection.pall
     }
     
     /// <summary>
-    /// >> 253 - Variant[pallet_collator_selection.pallet.Call]
+    /// >> 264 - Variant[pallet_collator_selection.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

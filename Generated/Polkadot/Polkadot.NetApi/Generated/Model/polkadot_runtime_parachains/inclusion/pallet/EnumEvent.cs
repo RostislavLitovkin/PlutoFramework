@@ -48,7 +48,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.inclusion.
     }
     
     /// <summary>
-    /// >> 484 - Variant[polkadot_runtime_parachains.inclusion.pallet.Event]
+    /// >> 538 - Variant[polkadot_runtime_parachains.inclusion.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

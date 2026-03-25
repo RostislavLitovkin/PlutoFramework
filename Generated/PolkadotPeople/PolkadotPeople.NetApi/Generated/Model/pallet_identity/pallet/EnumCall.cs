@@ -312,7 +312,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_identity.pallet
     }
     
     /// <summary>
-    /// >> 356 - Variant[pallet_identity.pallet.Call]
+    /// >> 386 - Variant[pallet_identity.pallet.Call]
     /// Identity pallet declaration.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

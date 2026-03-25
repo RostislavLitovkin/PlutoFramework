@@ -151,8 +151,8 @@ namespace PlutoFramework.Model
                             checkMetadata: client.CheckMetadata
                         )
                     );
-
-                    await transactionAnalyzerConfirmationViewModel.LoadAsync(client, unCheckedExtrinsic.ToTempUnCheckedExtrinsic(payload, client.Endpoint.AddressVersion, client.CheckMetadata), true, onConfirm: OnConfirmClickedAsync, runtime);
+                    
+                    await transactionAnalyzerConfirmationViewModel.LoadAsync(client, unCheckedExtrinsic.ToTempUnCheckedExtrinsic(payload, client.Endpoint.AddressVersion, client.CheckMetadata), true, onConfirm: OnConfirmClickedAsync, runtimeVersion: runtime);
 
                     Console.WriteLine("Load finished");
 

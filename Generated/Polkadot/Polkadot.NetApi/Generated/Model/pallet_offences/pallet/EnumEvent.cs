@@ -32,7 +32,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_offences.pallet
     }
     
     /// <summary>
-    /// >> 49 - Variant[pallet_offences.pallet.Event]
+    /// >> 50 - Variant[pallet_offences.pallet.Event]
     /// Events type.
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

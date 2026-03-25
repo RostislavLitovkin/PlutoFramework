@@ -1,15 +1,25 @@
-﻿using PlutoFramework.Components.Account;
+﻿using Plugin.Fingerprint;
+using Plugin.Fingerprint.Abstractions;
+using PlutoFramework.Components.Account;
 using PlutoFramework.Components.Kilt;
+using PlutoFramework.Components.Password;
 using PlutoFramework.Components.Xcavate;
 using PlutoFramework.Constants;
 using PlutoFramework.Model.SQLite;
 using PlutoFramework.Model.Sumsub;
 using PlutoFramework.Model.Xcavate;
+using PlutoFrameworkCore.Keys;
 using PlutoFrameworkCore.Xcavate;
 using XcavatePaseo.NetApi.Generated;
 
 namespace PlutoFramework.Model
 {
+    public record AuthenticationResult
+    {
+        public required string Password { get; set; }
+        public required bool Value { get; set; }
+    }
+
     public class RequirementsModel
     {
         public static Task<bool> CheckRequirementsAsync()
@@ -32,6 +42,8 @@ namespace PlutoFramework.Model
             #region Sumsub
             var address = KeysModel.GetSubstrateKey();
 
+            Console.WriteLine("REAL WALLET Address: " + address);
+
             var sumsubSecrets = SumsubSecretModel.GetSecrets();
 
             var applicantData = await SumsubModel.GetApplicantDataAsync(
@@ -43,12 +55,16 @@ namespace PlutoFramework.Model
 
             if (applicantData is null)
             {
+
+                Console.WriteLine("applicantData was null");
                 var userProfileNotCreatedPopupViewModel = DependencyService.Get<UserProfileNotCreatedPopupViewModel>();
 
                 userProfileNotCreatedPopupViewModel.IsVisible = true;
 
                 return false;
             }
+
+            Console.WriteLine("applicantData was good");
             #endregion
 
             #region Whitelist
@@ -58,12 +74,18 @@ namespace PlutoFramework.Model
 
             if (user is null)
             {
+                Console.WriteLine("user was null");
+
+                var userProfileNotCreatedPopupViewModel = DependencyService.Get<UserProfileNotCreatedPopupViewModel>();
+
+                userProfileNotCreatedPopupViewModel.IsVisible = true;
+
                 return false;
             }
 
             var verification = await WhitelistModel.IsWhitelistedAsync((SubstrateClientExt)xcavateClient.SubstrateClient, user.Role.ToWhitelistRole(), address, CancellationToken.None);
 
-            switch(verification)
+            switch (verification)
             {
                 case VerificationEnum.Verified:
 
@@ -99,7 +121,7 @@ namespace PlutoFramework.Model
 
         public static bool CheckDidExists()
         {
-            if (!KeysModel.HasSubstrateKey(accountVariant: "kilt1"))
+            if (KeysModel.GetKeyOfTypeAsync(KeyTypeEnum.Did) is null)
             {
                 var noDidPopupViewModel = DependencyService.Get<NoDidPopupViewModel>();
 
@@ -109,6 +131,78 @@ namespace PlutoFramework.Model
             }
 
             return true;
+        }
+
+        public static async Task<AuthenticationResult> CheckAuthenticationAsync(string passwordStorageKey = PreferencesModel.PASSWORD)
+        {
+            var biometricsEnabled = Preferences.Get(PreferencesModel.BIOMETRICS_ENABLED, false);
+
+            var request = new AuthenticationRequestConfiguration("Biometric verification", "..");
+            FingerprintAuthenticationResult result;
+
+            if (biometricsEnabled)
+            {
+                result = await CrossFingerprint.Current.AuthenticateAsync(request).ConfigureAwait(false);
+            }
+            else
+            {
+                result = new FingerprintAuthenticationResult
+                {
+                    Status = FingerprintAuthenticationResultStatus.Denied,
+                };
+            }
+
+            var correctPassword = await SecureStorage.Default.GetAsync(passwordStorageKey).ConfigureAwait(false) ?? throw new ArgumentNullException("Password was not setup");
+
+            if (!result.Authenticated || result.Status == FingerprintAuthenticationResultStatus.Denied)
+            {
+                var viewModel = DependencyService.Get<EnterPasswordPopupViewModel>();
+
+                viewModel.IsVisible = true;
+
+                for (int i = 0; i < 5; i++)
+                {
+                    var password = await viewModel.EnteredPassword.Task;
+
+                    viewModel.EnteredPassword = new();
+
+                    if (password is null)
+                    {
+                        viewModel.SetToDefault();
+                        throw new Exception("Failed to authenticate");
+                    }
+
+                    if (password == correctPassword)
+                    {
+                        viewModel.SetToDefault();
+
+                        return new AuthenticationResult
+                        {
+                            Value = true,
+                            Password = correctPassword,
+                        };
+                    }
+
+                    viewModel.ErrorIsVisible = true;
+
+                    if (i == 4)
+                    {
+                        viewModel.SetToDefault();
+
+                        return new AuthenticationResult
+                        {
+                            Value = false,
+                            Password = "-",
+                        };
+                    }
+                }
+            }
+
+            return new AuthenticationResult
+            {
+                Value = true,
+                Password = correctPassword,
+            };
         }
     }
 }

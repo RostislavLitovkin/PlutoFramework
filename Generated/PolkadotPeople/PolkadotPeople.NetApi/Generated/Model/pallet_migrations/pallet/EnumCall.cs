@@ -64,7 +64,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_migrations.pallet
     }
     
     /// <summary>
-    /// >> 220 - Variant[pallet_migrations.pallet.Call]
+    /// >> 235 - Variant[pallet_migrations.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -76,7 +76,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_migrations.pallet
         public EnumCall()
         {
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotPeople.NetApi.Generated.Model.pallet_migrations.EnumMigrationCursor>>(Call.force_set_cursor);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7>, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>>>(Call.force_set_active_cursor);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8>, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>>>(Call.force_set_active_cursor);
 				AddTypeDecoder<BaseVoid>(Call.force_onboard_mbms);
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.pallet_migrations.EnumHistoricCleanupSelector>(Call.clear_historic);
         }

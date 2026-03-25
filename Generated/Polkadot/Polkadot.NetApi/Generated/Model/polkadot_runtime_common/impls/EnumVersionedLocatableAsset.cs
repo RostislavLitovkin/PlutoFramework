@@ -38,7 +38,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_common.impls
     }
     
     /// <summary>
-    /// >> 57 - Variant[polkadot_runtime_common.impls.VersionedLocatableAsset]
+    /// >> 59 - Variant[polkadot_runtime_common.impls.VersionedLocatableAsset]
     /// </summary>
     public sealed class EnumVersionedLocatableAsset : BaseEnumRust<VersionedLocatableAsset>
     {

@@ -53,7 +53,7 @@ namespace Hydration.NetApi.Generated.Model.frame_support.traits.messages
     }
     
     /// <summary>
-    /// >> 476 - Variant[frame_support.traits.messages.ProcessMessageError]
+    /// >> 525 - Variant[frame_support.traits.messages.ProcessMessageError]
     /// </summary>
     public sealed class EnumProcessMessageError : BaseEnumRust<ProcessMessageError>
     {

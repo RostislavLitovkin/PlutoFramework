@@ -67,24 +67,9 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
         Democracy = 19,
         
         /// <summary>
-        /// >> Elections
-        /// </summary>
-        Elections = 21,
-        
-        /// <summary>
-        /// >> Council
-        /// </summary>
-        Council = 23,
-        
-        /// <summary>
         /// >> TechnicalCommittee
         /// </summary>
         TechnicalCommittee = 25,
-        
-        /// <summary>
-        /// >> Tips
-        /// </summary>
-        Tips = 27,
         
         /// <summary>
         /// >> Proxy
@@ -232,6 +217,16 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
         HSM = 82,
         
         /// <summary>
+        /// >> Signet
+        /// </summary>
+        Signet = 84,
+        
+        /// <summary>
+        /// >> EthDispenser
+        /// </summary>
+        EthDispenser = 85,
+        
+        /// <summary>
         /// >> Tokens
         /// </summary>
         Tokens = 77,
@@ -312,6 +307,11 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
         MessageQueue = 114,
         
         /// <summary>
+        /// >> MultiBlockMigrations
+        /// </summary>
+        MultiBlockMigrations = 116,
+        
+        /// <summary>
         /// >> OrmlXcm
         /// </summary>
         OrmlXcm = 135,
@@ -343,7 +343,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
     }
     
     /// <summary>
-    /// >> 73 - Variant[hydradx_runtime.RuntimeCall]
+    /// >> 70 - Variant[hydradx_runtime.RuntimeCall]
     /// </summary>
     public sealed class EnumRuntimeCall : BaseEnumRust<RuntimeCall>
     {
@@ -362,10 +362,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_preimage.pallet.EnumCall>(RuntimeCall.Preimage);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_identity.pallet.EnumCall>(RuntimeCall.Identity);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_democracy.pallet.EnumCall>(RuntimeCall.Democracy);
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_elections_phragmen.pallet.EnumCall>(RuntimeCall.Elections);
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_collective.pallet.EnumCall>(RuntimeCall.Council);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_collective.pallet.EnumCall>(RuntimeCall.TechnicalCommittee);
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_tips.pallet.EnumCall>(RuntimeCall.Tips);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_proxy.pallet.EnumCall>(RuntimeCall.Proxy);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_multisig.pallet.EnumCall>(RuntimeCall.Multisig);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_uniques.pallet.EnumCall>(RuntimeCall.Uniques);
@@ -395,6 +392,8 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_referrals.pallet.EnumCall>(RuntimeCall.Referrals);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_liquidation.pallet.EnumCall>(RuntimeCall.Liquidation);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_hsm.pallet.EnumCall>(RuntimeCall.HSM);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_signet.pallet.EnumCall>(RuntimeCall.Signet);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_dispenser.pallet.EnumCall>(RuntimeCall.EthDispenser);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.orml_tokens.module.EnumCall>(RuntimeCall.Tokens);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_currencies.module.EnumCall>(RuntimeCall.Currencies);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.orml_vesting.module.EnumCall>(RuntimeCall.Vesting);
@@ -411,6 +410,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_xcm.pallet.EnumCall>(RuntimeCall.PolkadotXcm);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.cumulus_pallet_xcm.pallet.EnumCall>(RuntimeCall.CumulusXcm);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_message_queue.pallet.EnumCall>(RuntimeCall.MessageQueue);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_migrations.pallet.EnumCall>(RuntimeCall.MultiBlockMigrations);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.orml_xcm.module.EnumCall>(RuntimeCall.OrmlXcm);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.orml_xtokens.module.EnumCall>(RuntimeCall.XTokens);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_collator_selection.pallet.EnumCall>(RuntimeCall.CollatorSelection);

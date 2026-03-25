@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_multisig
     
     
     /// <summary>
-    /// >> 503 - Composite[pallet_multisig.Multisig]
+    /// >> 605 - Composite[pallet_multisig.Multisig]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Multisig : BaseType
@@ -39,7 +39,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_multisig
         /// <summary>
         /// >> approvals
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT43 Approvals { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT50 Approvals { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -68,7 +68,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_multisig
             Deposit.Decode(byteArray, ref p);
             Depositor = new Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Depositor.Decode(byteArray, ref p);
-            Approvals = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT43();
+            Approvals = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT50();
             Approvals.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

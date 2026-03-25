@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.WebView.WebViewNavigationBarView"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             AbsoluteLayout.LayoutBounds="0.5, 1, 1, 60"
+             AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
+    <Grid
+        AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+        AbsoluteLayout.LayoutFlags="All"
+        Margin="10"
+        ColumnSpacing="10"
+        >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="40" />
+        </Grid.ColumnDefinitions>
+
+        <card:ClickableCard HeightRequest="40"
+                   IsThin="True"
+                   CardPadding="10"
+                   Grid.Column="0">
+            <Image WidthRequest="20"
+                   HeightRequest="20"
+                   Opacity="{Binding BackOpacity}">
+                <Image.Source>
+                    <FontImageSource Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                                     Glyph="&#xf053;"
+                                     FontFamily="FontAwesome"
+                                     Size="20" />
+                </Image.Source>
+            </Image>
+
+            <card:ClickableCard.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+            </card:ClickableCard.GestureRecognizers>
+        </card:ClickableCard>
+
+        <card:Card HeightRequest="40"
+                   IsThin="True"
+                   Grid.Column="1"
+                   CardPadding="10, 0, 10, 0">
+            <card:Card.View>
+
+                <Grid HeightRequest="40"
+                  Grid.Column="1"
+              ColumnSpacing="10"
+              x:Name="usdGrid"
+              >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+
+                    </Grid.ColumnDefinitions>
+
+                    <Entry x:Name="entry"
+                           Text="{Binding SearchSource}"
+                           HorizontalOptions="Fill"
+                           HorizontalTextAlignment="Start"
+                           Grid.Column="0"
+                           Keyboard="Text"
+                           HeightRequest="40"
+                           FontAttributes="Bold"
+                           IsSpellCheckEnabled="false"
+                           IsTextPredictionEnabled="false"
+                           Placeholder="Enter URL"
+                           />
+                </Grid>
+            </card:Card.View>
+        </card:Card>
+
+        <card:ClickableCard HeightRequest="40"
+                   Grid.Column="2"
+                    IsThin="True"
+                            IsVisible="{Binding RefreshIsVisible}"
+                    CardPadding="10">
+            <Image WidthRequest="20"
+                   HeightRequest="20">
+                <Image.Source>
+                    <FontImageSource Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                                    Glyph="&#xf021;"
+                                    FontFamily="FontAwesome"
+                                    Size="20" />
+                </Image.Source>
+            </Image>
+            <card:ClickableCard.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ReloadCommand}" />
+            </card:ClickableCard.GestureRecognizers>
+        </card:ClickableCard>
+
+        <card:ClickableCard HeightRequest="40"
+           Grid.Column="2"
+            IsThin="True"
+                            IsVisible="{Binding SearchIsVisible}"
+            CardPadding="10">
+            <Image WidthRequest="20"
+           HeightRequest="20">
+                <Image.Source>
+                    <FontImageSource Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                            Glyph="&#xf002;"
+                            FontFamily="FontAwesome"
+                            Size="20" />
+                </Image.Source>
+            </Image>
+            <card:ClickableCard.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding SearchCommand}" />
+            </card:ClickableCard.GestureRecognizers>
+        </card:ClickableCard>
+    </Grid>
+</ContentView>

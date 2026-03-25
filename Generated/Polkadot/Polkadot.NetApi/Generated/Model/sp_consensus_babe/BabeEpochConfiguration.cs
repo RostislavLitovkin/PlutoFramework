@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.sp_consensus_babe
     
     
     /// <summary>
-    /// >> 551 - Composite[sp_consensus_babe.BabeEpochConfiguration]
+    /// >> 607 - Composite[sp_consensus_babe.BabeEpochConfiguration]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BabeEpochConfiguration : BaseType

@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.parachain_staking.types
     }
     
     /// <summary>
-    /// >> 284 - Variant[parachain_staking.types.CandidateStatus]
+    /// >> 522 - Variant[parachain_staking.types.CandidateStatus]
     /// </summary>
     public sealed class EnumCandidateStatus : BaseEnumRust<CandidateStatus>
     {

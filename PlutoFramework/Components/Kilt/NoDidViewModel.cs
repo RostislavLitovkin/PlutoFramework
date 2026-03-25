@@ -13,7 +13,7 @@ namespace PlutoFramework.Components.Kilt
         [RelayCommand]
         public async Task CreateDidAsync()
         {
-            await Model.KeysModel.GenerateNewAccountAsync(accountVariant: "kilt1");
+            await Model.KeysModel.GenerateNewDidAsync();
 
             await NavigationModel.NavigateAfterAccountCreation.Invoke();
         }

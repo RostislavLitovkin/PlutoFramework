@@ -4,6 +4,7 @@ using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Model;
 using PlutoFramework.Model.Currency;
 using PlutoFramework.Types;
+using PlutoFramework.Constants;
 
 namespace PlutoFramework.Components.Balance
 {
@@ -49,7 +50,9 @@ namespace PlutoFramework.Components.Balance
 
             foreach (Asset a in Model.AssetsModel.AssetsDict.Values)
             {
-                if (a.Amount > 0 || a.Pallet == AssetPallet.Native)
+                if ((EndpointEnum.PolkadotAssetHub == a.Endpoint.Key && AssetPallet.Native == a.Pallet) ||
+                    (EndpointEnum.PolkadotAssetHub == a.Endpoint.Key && AssetPallet.Assets == a.Pallet && 1984 == a.AssetId) ||
+                    (EndpointEnum.PolkadotAssetHub == a.Endpoint.Key && AssetPallet.Assets == a.Pallet && 31337 == a.AssetId))
                 {
                     tempAssets.Add(new AssetInfo
                     {

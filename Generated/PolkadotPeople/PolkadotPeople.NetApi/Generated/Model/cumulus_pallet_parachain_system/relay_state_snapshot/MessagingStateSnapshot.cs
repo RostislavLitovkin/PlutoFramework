@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.cumulus_pallet_parachain_system.
     
     
     /// <summary>
-    /// >> 189 - Composite[cumulus_pallet_parachain_system.relay_state_snapshot.MessagingStateSnapshot]
+    /// >> 194 - Composite[cumulus_pallet_parachain_system.relay_state_snapshot.MessagingStateSnapshot]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MessagingStateSnapshot : BaseType

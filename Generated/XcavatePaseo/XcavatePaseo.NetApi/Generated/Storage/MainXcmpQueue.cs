@@ -36,8 +36,8 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public XcmpQueueStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "InboundXcmpSuspended"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT2)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "OutboundXcmpStatus"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT31)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "InboundXcmpSuspended"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT1)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "OutboundXcmpStatus"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT51)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "OutboundXcmpMessages"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, Substrate.NetApi.Model.Types.Primitive.U16>), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2)));
@@ -85,10 +85,10 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         ///  NOTE: The PoV benchmarking cannot know this and will over-estimate, but the actual proof
         ///  will be smaller.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT2> InboundXcmpSuspended(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT1> InboundXcmpSuspended(string blockhash, CancellationToken token)
         {
             string parameters = XcmpQueueStorage.InboundXcmpSuspendedParams();
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT2>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT1>(parameters, blockhash, token);
             return result;
         }
         
@@ -124,10 +124,10 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         ///  case of the need to send a high-priority signal message this block.
         ///  The bool is true if there is a signal message waiting to be sent.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT31> OutboundXcmpStatus(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT51> OutboundXcmpStatus(string blockhash, CancellationToken token)
         {
             string parameters = XcmpQueueStorage.OutboundXcmpStatusParams();
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT31>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT51>(parameters, blockhash, token);
             return result;
         }
         
@@ -288,6 +288,59 @@ namespace XcavatePaseo.NetApi.Generated.Storage
     /// </summary>
     public sealed class XcmpQueueCalls
     {
+        
+        /// <summary>
+        /// >> suspend_xcm_execution
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method SuspendXcmExecution()
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            return new Method(30, "XcmpQueue", 1, "suspend_xcm_execution", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> resume_xcm_execution
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method ResumeXcmExecution()
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            return new Method(30, "XcmpQueue", 2, "resume_xcm_execution", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> update_suspend_threshold
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method UpdateSuspendThreshold(Substrate.NetApi.Model.Types.Primitive.U32 @new)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(@new.Encode());
+            return new Method(30, "XcmpQueue", 3, "update_suspend_threshold", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> update_drop_threshold
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method UpdateDropThreshold(Substrate.NetApi.Model.Types.Primitive.U32 @new)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(@new.Encode());
+            return new Method(30, "XcmpQueue", 4, "update_drop_threshold", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> update_resume_threshold
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method UpdateResumeThreshold(Substrate.NetApi.Model.Types.Primitive.U32 @new)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(@new.Encode());
+            return new Method(30, "XcmpQueue", 5, "update_resume_threshold", byteArray.ToArray());
+        }
     }
     
     /// <summary>

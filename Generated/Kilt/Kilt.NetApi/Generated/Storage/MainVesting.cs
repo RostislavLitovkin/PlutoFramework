@@ -37,7 +37,7 @@ namespace Kilt.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Vesting", "Vesting"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT44)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Vesting", "StorageVersion"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Kilt.NetApi.Generated.Model.pallet_vesting.EnumReleases)));
         }
         
@@ -65,10 +65,10 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> Vesting
         ///  Information regarding the vesting of a given account.
         /// </summary>
-        public async Task<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37> Vesting(Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT44> Vesting(Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = VestingStorage.VestingParams(key);
-            var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT37>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT44>(parameters, blockhash, token);
             return result;
         }
         

@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 800 - Composite[BinaryHeapT1]
+    /// >> 869 - Composite[BinaryHeapT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BinaryHeapT1 : BaseType

@@ -1,14 +1,12 @@
-﻿using Substrate.NetApi.Model.Types.Base;
-using Substrate.NetApi.Model.Types.Primitive;
-using Substrate.NetApi.Model.Extrinsics;
-using Substrate.NetApi;
-using PlutoFramework.Types;
-using Substrate.NetApi.Model.Meta;
+﻿using PlutoFramework.Constants;
 using PlutoFramework.Model.AjunaExt;
+using PlutoFramework.Types;
 using Polkadot.NetApi.Generated.Model.sp_runtime.multiaddress;
-using PlutoFramework.Constants;
-using Newtonsoft.Json;
-using Nethereum.Contracts;
+using Substrate.NetApi;
+using Substrate.NetApi.Model.Extrinsics;
+using Substrate.NetApi.Model.Meta;
+using Substrate.NetApi.Model.Types.Base;
+using Substrate.NetApi.Model.Types.Primitive;
 
 namespace PlutoFramework.Model
 {
@@ -139,7 +137,7 @@ namespace PlutoFramework.Model
                 EndpointEnum.Unique => new Unique.NetApi.Generated.Model.unique_runtime.EnumRuntimeCall(),
                 EndpointEnum.Opal => new Opal.NetApi.Generated.Model.opal_runtime.EnumRuntimeCall(),
                 EndpointEnum.Mythos => new Mythos.NetApi.Generated.Model.mainnet_runtime.EnumRuntimeCall(),
-                EndpointEnum.XcavatePaseo => new XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall(),
+                EndpointEnum.XcavatePaseo => new XcavatePaseo.NetApi.Generated.Model.xcavate_runtime.EnumRuntimeCall(),
                 _ => null,
             };
 

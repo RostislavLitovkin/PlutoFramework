@@ -38,6 +38,7 @@ namespace PolkadotPeople.NetApi.Generated.Storage
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("TransactionPayment", "NextFeeMultiplier"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotPeople.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("TransactionPayment", "StorageVersion"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotPeople.NetApi.Generated.Model.pallet_transaction_payment.EnumReleases)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("TransactionPayment", "TxPaymentCredit"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotPeople.NetApi.Generated.Model.frame_support.traits.storage.NoDrop)));
         }
         
         /// <summary>
@@ -91,6 +92,39 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         {
             string parameters = TransactionPaymentStorage.StorageVersionParams();
             var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.pallet_transaction_payment.EnumReleases>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> TxPaymentCreditParams
+        ///  The `OnChargeTransaction` stores the withdrawn tx fee here.
+        /// 
+        ///  Use `withdraw_txfee` and `remaining_txfee` to access from outside the crate.
+        /// </summary>
+        public static string TxPaymentCreditParams()
+        {
+            return RequestGenerator.GetStorage("TransactionPayment", "TxPaymentCredit", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> TxPaymentCreditDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string TxPaymentCreditDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> TxPaymentCredit
+        ///  The `OnChargeTransaction` stores the withdrawn tx fee here.
+        /// 
+        ///  Use `withdraw_txfee` and `remaining_txfee` to access from outside the crate.
+        /// </summary>
+        public async Task<PolkadotPeople.NetApi.Generated.Model.frame_support.traits.storage.NoDrop> TxPaymentCredit(string blockhash, CancellationToken token)
+        {
+            string parameters = TransactionPaymentStorage.TxPaymentCreditParams();
+            var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.frame_support.traits.storage.NoDrop>(parameters, blockhash, token);
             return result;
         }
     }

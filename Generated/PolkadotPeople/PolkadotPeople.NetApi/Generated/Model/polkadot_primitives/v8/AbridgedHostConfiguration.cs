@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.polkadot_primitives.v8
     
     
     /// <summary>
-    /// >> 194 - Composite[polkadot_primitives.v8.AbridgedHostConfiguration]
+    /// >> 199 - Composite[polkadot_primitives.v8.AbridgedHostConfiguration]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AbridgedHostConfiguration : BaseType

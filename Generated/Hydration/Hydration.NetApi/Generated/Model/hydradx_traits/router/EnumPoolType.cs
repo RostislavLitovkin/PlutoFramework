@@ -53,7 +53,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_traits.router
     }
     
     /// <summary>
-    /// >> 235 - Variant[hydradx_traits.router.PoolType]
+    /// >> 221 - Variant[hydradx_traits.router.PoolType]
     /// </summary>
     public sealed class EnumPoolType : BaseEnumRust<PoolType>
     {

@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_scheduler
     
     
     /// <summary>
-    /// >> 527 - Composite[pallet_scheduler.Scheduled]
+    /// >> 584 - Composite[pallet_scheduler.Scheduled]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Scheduled : BaseType

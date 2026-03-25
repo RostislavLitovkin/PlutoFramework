@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.parachain_staking.types
     
     
     /// <summary>
-    /// >> 277 - Composite[parachain_staking.types.RoundInfo]
+    /// >> 515 - Composite[parachain_staking.types.RoundInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RoundInfo : BaseType

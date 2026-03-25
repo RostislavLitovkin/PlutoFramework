@@ -102,7 +102,7 @@
                                 <Span Text="Don’t invest unless you’re prepared to lose all the money you invest. This is a high-risk investment and you are unlikely to be protected if something goes wrong. "
                   FontAttributes="Bold" />
                                 <hyperlink:Link Text="Take 2 mins to learn more."
-                            Url="https://realxmarket.xcavate.io/risk-warning"
+                            Url="https://app.realxmarket.io/risk-warning"
                             TextColor="{StaticResource Primary}"
                             FontAttributes="Bold"/>
                             </FormattedString>

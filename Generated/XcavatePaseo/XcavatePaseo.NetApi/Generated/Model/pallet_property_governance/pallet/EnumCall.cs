@@ -27,14 +27,14 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         /// Creates a proposal for a real estate object.
         /// Only the letting agent can propose.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a LettingAgent and have sufficient funds.
         /// 
         /// Parameters:
         /// - `asset_id`: The asset id of the property.
         /// - `amount`: The amount the letting agent is asking for.
         /// - `data`: The data regarding this proposal.
         /// 
-        /// Emits `Proposed` event when succesfful.
+        /// Emits `Proposed` event when successful.
         /// </summary>
         propose = 0,
         
@@ -43,12 +43,12 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         /// Creates an challenge against the letting agent of the real estate object.
         /// Only one of the owner of the property can propose.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RealEstateInvestor and have sufficient funds.
         /// 
         /// Parameters:
         /// - `asset_id`: The asset id of the property.
         /// 
-        /// Emits `Challenge` event when succesfful.
+        /// Emits `Challenge` event when successful.
         /// </summary>
         challenge_against_letting_agent = 1,
         
@@ -56,134 +56,61 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         /// >> vote_on_proposal
         /// Lets owner of the real estate object vote on a proposal.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RealEstateInvestor and have sufficient funds.
         /// 
         /// Parameters:
         /// - `proposal_id`: The index of the proposal.
         /// - `vote`: Must be either a Yes vote or a No vote.
+        /// - `amount`: The amount of property token that the caller is using for voting.
         /// 
-        /// Emits `VotedOnProposal` event when succesfful.
+        /// Emits `VotedOnProposal` event when successful.
         /// </summary>
         vote_on_proposal = 2,
+        
+        /// <summary>
+        /// >> unfreeze_proposal_token
+        /// Lets a voter unlock his locked token after voting on a proposal.
+        /// 
+        /// The origin must be signed and have sufficient funds.
+        /// 
+        /// Parameters:
+        /// - `proposal_id`: Id of the proposal.
+        /// 
+        /// Emits `TokenUnfrozen` event when successful.
+        /// </summary>
+        unfreeze_proposal_token = 3,
         
         /// <summary>
         /// >> vote_on_letting_agent_challenge
         /// Lets owner of the real estate object vote on an challenge.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be Signed by a RealEstateInvestor and have sufficient funds.
         /// 
         /// Parameters:
         /// - `asset_id: u32`: The index of the challenge.
         /// - `vote`: Must be either a Yes vote or a No vote.
+        /// - `amount`: The amount of property token that the caller is using for voting.
         /// 
-        /// Emits `VotedOnChallenge` event when succesfful.
+        /// Emits `VotedOnChallenge` event when successful.
         /// </summary>
-        vote_on_letting_agent_challenge = 3,
+        vote_on_letting_agent_challenge = 4,
         
         /// <summary>
-        /// >> propose_property_sale
-        /// Creates a proposal to sell a real estate object as a whole.
-        /// Only a token holder can propose.
+        /// >> unfreeze_challenge_token
+        /// Lets a voter unlock his locked token after voting on a letting agent challenge.
         /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
-        /// 
-        /// Parameters:
-        /// - `asset_id`: The asset id of the property.
-        /// 
-        /// Emits `PropertySaleProposed` event when succesfful.
-        /// </summary>
-        propose_property_sale = 4,
-        
-        /// <summary>
-        /// >> vote_on_property_sale
-        /// Lets owner of the real estate object vote on a sale proposal.
-        /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
+        /// The origin must be signed and have sufficient funds.
         /// 
         /// Parameters:
-        /// - `asset_id`: The asset id of the property.
-        /// - `vote`: Must be either a Yes vote or a No vote.
+        /// - `proposal_id`: Id of the letting agent challenge.
         /// 
-        /// Emits `VotedOnPropertySaleProposal` event when succesfful.
+        /// Emits `TokenUnfrozen` event when successful.
         /// </summary>
-        vote_on_property_sale = 5,
-        
-        /// <summary>
-        /// >> bid_on_sale
-        /// Lets someone bid to buy the property that is on sale.
-        /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
-        /// 
-        /// Parameters:
-        /// - `asset_id`: The asset id of the property.
-        /// - `price`: Price that the buyer wants to pay.
-        /// - `payment_asset`: Asset in which the caller wants to pay.
-        /// 
-        /// Emits `BidSuccessfullyPlaced` event when succesfful.
-        /// </summary>
-        bid_on_sale = 6,
-        
-        /// <summary>
-        /// >> lawyer_claim_sale
-        /// Lets a lawyer claim a sale to handle the legal work.
-        /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
-        /// 
-        /// Parameters:
-        /// - `asset_id`: The asset id of the property.
-        /// - `legal_side`: The side that the lawyer wants to represent.
-        /// - `costs`: The costs thats the lawyer demands for his work.
-        /// 
-        /// Emits `SalesLawyerSet` event when succesfful.
-        /// </summary>
-        lawyer_claim_sale = 7,
-        
-        /// <summary>
-        /// >> lawyer_confirm_sale
-        /// Lets a lawyer confirm a legal case.
-        /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
-        /// 
-        /// Parameters:
-        /// - `asset_id`: The asset id of the property.
-        /// - `approve`: Approves or Rejects the case.
-        /// 
-        /// Emits `LawyerApprovesSale` event when approved successfully.
-        /// Emits `LawyerRejectsSale` event when rejected successfully.
-        /// </summary>
-        lawyer_confirm_sale = 8,
-        
-        /// <summary>
-        /// >> finalize_sale
-        /// Lets a the lawyer that represents the buyer finalize the sale and sending the funds.
-        /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
-        /// 
-        /// Parameters:
-        /// - `asset_id`: The asset id of the property.
-        /// - `payment_asset`: Asset in which the lawyer wants to pay.
-        /// 
-        /// Emits `SaleFinalized` event when succesfful.
-        /// </summary>
-        finalize_sale = 9,
-        
-        /// <summary>
-        /// >> claim_sale_funds
-        /// Lets a token holder withdraw his stored funds from a sale.
-        /// 
-        /// The origin must be Signed and the sender must have sufficient funds free.
-        /// 
-        /// Parameters:
-        /// - `asset_id`: The asset id of the property.
-        /// - `payment_asset`: Asset id the caller wants to withdraw funds in.
-        /// 
-        /// Emits `SaleFundsClaimed` event when succesfful.
-        /// </summary>
-        claim_sale_funds = 10,
+        unfreeze_challenge_token = 5,
     }
     
     /// <summary>
-    /// >> 378 - Variant[pallet_property_governance.pallet.Call]
+    /// >> 505 - Variant[pallet_property_governance.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -194,17 +121,12 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2>>(Call.propose);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6>>(Call.propose);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.challenge_against_letting_agent);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote>>(Call.vote_on_proposal);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote>>(Call.vote_on_letting_agent_challenge);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.propose_property_sale);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote>>(Call.vote_on_property_sale);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.bid_on_sale);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumLegalSale, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.lawyer_claim_sale);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.lawyer_confirm_sale);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.finalize_sale);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.claim_sale_funds);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.vote_on_proposal);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U64>(Call.unfreeze_proposal_token);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.vote_on_letting_agent_challenge);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U64>(Call.unfreeze_challenge_token);
         }
     }
 }

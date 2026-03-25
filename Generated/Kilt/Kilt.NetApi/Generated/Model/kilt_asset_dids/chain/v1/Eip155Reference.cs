@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.kilt_asset_dids.chain.v1
     
     
     /// <summary>
-    /// >> 128 - Composite[kilt_asset_dids.chain.v1.Eip155Reference]
+    /// >> 134 - Composite[kilt_asset_dids.chain.v1.Eip155Reference]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Eip155Reference : BaseType

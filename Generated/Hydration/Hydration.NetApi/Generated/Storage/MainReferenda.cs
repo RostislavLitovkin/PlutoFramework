@@ -40,7 +40,7 @@ namespace Hydration.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Referenda", "ReferendumInfoFor"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Hydration.NetApi.Generated.Model.pallet_referenda.types.EnumReferendumInfo)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Referenda", "TrackQueue"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT43)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT56)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Referenda", "DecidingCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U16), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Referenda", "MetadataOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -137,10 +137,10 @@ namespace Hydration.NetApi.Generated.Storage
         /// 
         ///  This should be empty if `DecidingCount` is less than `TrackInfo::max_deciding`.
         /// </summary>
-        public async Task<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT43> TrackQueue(Substrate.NetApi.Model.Types.Primitive.U16 key, string blockhash, CancellationToken token)
+        public async Task<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT56> TrackQueue(Substrate.NetApi.Model.Types.Primitive.U16 key, string blockhash, CancellationToken token)
         {
             string parameters = ReferendaStorage.TrackQueueParams(key);
-            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT43>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT56>(parameters, blockhash, token);
             return result;
         }
         
@@ -381,35 +381,40 @@ namespace Hydration.NetApi.Generated.Storage
         
         /// <summary>
         /// >> Tracks
-        ///  Information concerning the different referendum tracks.
+        ///  A list of tracks.
+        /// 
+        ///  Note: if the tracks are dynamic, the value in the static metadata might be inaccurate.
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Hydration.NetApi.Generated.Model.pallet_referenda.types.TrackInfo>> Tracks()
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Hydration.NetApi.Generated.Model.pallet_referenda.types.TrackDetails>> Tracks()
         {
-            var result = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Hydration.NetApi.Generated.Model.pallet_referenda.types.TrackInfo>>();
-            result.Create("0x28000010726F6F7403000000000064A7B3B6E00D000000000000000058020000C0890100201C000" +
-                    "0640000000290D73E0D000000005743DE13000000005443DE13000000000000CA9A3B00000000006" +
-                    "5CD1D01004877686974656C69737465645F63616C6C6572030000000000C52EBCA2B100000000000" +
-                    "000000064000000C0A8000060090000640000000290D73E0D000000005743DE13000000005443DE1" +
-                    "30000000002DFC7050000000000A2080C00000000004C662B01000000000200507265666572656E6" +
-                    "4756D5F63616E63656C6C6572030000000000D9E9AC2D7803000000000000000058020000C0A8000" +
-                    "0580200006400000000DB4E0F220065CD1D00CA9A3B025D6F780000000000E82EED00000000008C6" +
-                    "889FFFFFFFFFF0300447265666572656E64756D5F6B696C6C65720300000000008BBD0689680A000" +
-                    "000000000000058020000C0A80000580200006400000000DB4E0F220065CD1D00CA9A3B025D6F780" +
-                    "000000000E82EED00000000008C6889FFFFFFFFFF04003467656E6572616C5F61646D696E0300000" +
-                    "00000D9E9AC2D7803000000000000000058020000C089010008070000640000000290D73E0D00000" +
-                    "0005743DE13000000005443DE130000000002413CB00100000000755D34030000000045D165FEFFF" +
-                    "FFFFF0500247472656173757265720300000000008BBD0689680A000000000000000058020000C08" +
-                    "90100201C0000640000000290D73E0D000000005743DE13000000005443DE13000000000000CA9A3" +
-                    "B0000000080B2E60E06001C7370656E6465720300000000008A5D784563010000000000000000580" +
-                    "20000C089010008070000640000000000CA9A3B0065CD1D00CA9A3B02413CB00100000000755D340" +
-                    "30000000045D165FEFFFFFFFF070018746970706572030000000000C16FF28623000000000000000" +
-                    "00058020000C0890100080700006400000000DB4E0F220065CD1D00CA9A3B025D6F780000000000E" +
-                    "82EED00000000008C6889FFFFFFFFFF0800386F6D6E69706F6F6C5F61646D696E030000000000D9E" +
-                    "9AC2D7803000000000000000058020000C089010008070000640000000290D73E0D000000005743D" +
-                    "E13000000005443DE130000000002413CB00100000000755D34030000000045D165FEFFFFFFFF090" +
-                    "04C65636F6E6F6D69635F706172616D65746572730300000000008BBD0689680A000000000000000" +
-                    "058020000C0890100201C0000640000000290D73E0D000000005743DE13000000005443DE1300000" +
-                    "0000000CA9A3B0000000080B2E60E");
+            var result = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, Hydration.NetApi.Generated.Model.pallet_referenda.types.TrackDetails>>();
+            result.Create("0x28000064726F6F7400000000000000000000000000000000000000000003000000000064A7B3B6E" +
+                    "00D000000000000000058020000C0890100201C0000640000000290D73E0D000000005743DE13000" +
+                    "000005443DE13000000000000CA9A3B00000000002A751501006477686974656C69737465645F636" +
+                    "16C6C657200000000000000030000000000C52EBCA2B100000000000000000064000000C0A800006" +
+                    "0090000640000000290D73E0D000000005743DE13000000005443DE130000000002DFC7050000000" +
+                    "000A2080C00000000004C662B01000000000200647265666572656E64756D5F63616E63656C6C657" +
+                    "20000000000030000000000D9E9AC2D7803000000000000000058020000C0A800005802000064000" +
+                    "00000DB4E0F220065CD1D00CA9A3B021DEC7A000000000052224E010000000034B687FFFFFFFFFF0" +
+                    "300647265666572656E64756D5F6B696C6C657200000000000000000300000000008BBD0689680A0" +
+                    "00000000000000058020000C0A80000580200006400000000DB4E0F220065CD1D00CA9A3B021DEC7" +
+                    "A000000000052224E010000000034B687FFFFFFFFFF04006467656E6572616C5F61646D696E00000" +
+                    "0000000000000000000030000000000D9E9AC2D7803000000000000000058020000C089010008070" +
+                    "000640000000290D73E0D000000005743DE13000000005443DE130000000002180EC70100000000C" +
+                    "BC0950400000000EA7259FEFFFFFFFF0500647472656173757265720000000000000000000000000" +
+                    "00000000300000000008BBD0689680A000000000000000058020000C0890100201C0000640000000" +
+                    "290D73E0D000000005743DE13000000005443DE13000000000000CA9A3B000000000095BA0A06006" +
+                    "47370656E6465720000000000000000000000000000000000000300000000008A5D7845630100000" +
+                    "0000000000058020000C089010008070000640000000000CA9A3B0065CD1D00CA9A3B02180EC7010" +
+                    "0000000CBC0950400000000EA7259FEFFFFFFFF07006474697070657200000000000000000000000" +
+                    "000000000000000030000000000C16FF2862300000000000000000058020000C0890100080700006" +
+                    "400000000DB4E0F220065CD1D00CA9A3B021DEC7A000000000052224E010000000034B687FFFFFFF" +
+                    "FFF0800646F6D6E69706F6F6C5F61646D696E0000000000000000000000030000000000D9E9AC2D7" +
+                    "803000000000000000058020000C089010008070000640000000290D73E0D000000005743DE13000" +
+                    "000005443DE130000000002180EC70100000000CBC0950400000000EA7259FEFFFFFFFF090064656" +
+                    "36F6E6F6D69635F706172616D65746572730000000000000300000000008BBD0689680A000000000" +
+                    "000000058020000C0890100201C0000640000000290D73E0D000000005743DE13000000005443DE1" +
+                    "3000000000000CA9A3B000000000095BA0A");
             return result;
         }
     }

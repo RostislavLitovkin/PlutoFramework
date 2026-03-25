@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.cumulus_pallet_parachain_system.
     
     
     /// <summary>
-    /// >> 175 - Composite[cumulus_pallet_parachain_system.unincluded_segment.HrmpChannelUpdate]
+    /// >> 180 - Composite[cumulus_pallet_parachain_system.unincluded_segment.HrmpChannelUpdate]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class HrmpChannelUpdate : BaseType

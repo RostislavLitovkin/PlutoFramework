@@ -51,10 +51,16 @@ namespace Hydration.NetApi.Generated.Model.pallet_evm_accounts.pallet
         /// Contract was disapproved.
         /// </summary>
         ContractDisapproved = 4,
+        
+        /// <summary>
+        /// >> AccountClaimed
+        /// Account was claimed.
+        /// </summary>
+        AccountClaimed = 5,
     }
     
     /// <summary>
-    /// >> 463 - Variant[pallet_evm_accounts.pallet.Event]
+    /// >> 511 - Variant[pallet_evm_accounts.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -70,6 +76,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_evm_accounts.pallet
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.primitive_types.H160>(Event.DeployerRemoved);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.primitive_types.H160>(Event.ContractApproved);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.primitive_types.H160>(Event.ContractDisapproved);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.AccountClaimed);
         }
     }
 }

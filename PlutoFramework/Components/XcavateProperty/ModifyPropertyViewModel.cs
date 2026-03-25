@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.Buttons;
 using PlutoFramework.Components.Nft;
+using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
 using UniqueryPlus.Metadata;
 
@@ -47,11 +48,13 @@ namespace PlutoFramework.Components.XcavateProperty
         {
             var token = CancellationToken.None;
 
-            var result = await MediaPicker.PickPhotoAsync(new MediaPickerOptions
+            var results = await MediaPicker.PickPhotosAsync(new MediaPickerOptions
             {
                 Title = ImageSources.Count() == 0 ? "Select the main Property image" : "Select a new Property image",
+                SelectionLimit = 1,
             });
 
+            var result = results.Count > 0 ? results[0] : null;
 
             if (result == null)
             {
@@ -123,7 +126,7 @@ namespace PlutoFramework.Components.XcavateProperty
         {
             //await XcavatePropertyDatabase.DeleteAllAsync();
 
-            await Application.Current.MainPage.Navigation.PopAsync();
+            await NavigationModel.PopAsync();
         }
 
         [RelayCommand]
@@ -135,7 +138,7 @@ namespace PlutoFramework.Components.XcavateProperty
         [RelayCommand]
         public async Task CancelAsync()
         {
-            await Application.Current.MainPage.Navigation.PopAsync();
+            await NavigationModel.PopAsync();
         }
     }
 }

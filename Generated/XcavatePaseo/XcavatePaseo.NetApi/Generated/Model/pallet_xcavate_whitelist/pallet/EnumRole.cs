@@ -50,10 +50,40 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet
         /// >> SpvConfirmation
         /// </summary>
         SpvConfirmation = 5,
+        
+        /// <summary>
+        /// >> ModuleCreator
+        /// </summary>
+        ModuleCreator = 6,
+        
+        /// <summary>
+        /// >> ModuleSponsor
+        /// </summary>
+        ModuleSponsor = 7,
+        
+        /// <summary>
+        /// >> ModuleBooker
+        /// </summary>
+        ModuleBooker = 8,
+        
+        /// <summary>
+        /// >> ModuleDeliverer
+        /// </summary>
+        ModuleDeliverer = 9,
+        
+        /// <summary>
+        /// >> ModuleAIAgent
+        /// </summary>
+        ModuleAIAgent = 10,
+        
+        /// <summary>
+        /// >> ModuleRecipient
+        /// </summary>
+        ModuleRecipient = 11,
     }
     
     /// <summary>
-    /// >> 177 - Variant[pallet_xcavate_whitelist.pallet.Role]
+    /// >> 190 - Variant[pallet_xcavate_whitelist.pallet.Role]
     /// </summary>
     public sealed class EnumRole : BaseEnum<Role>
     {

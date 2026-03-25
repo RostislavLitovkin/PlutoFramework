@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_preimage
     }
     
     /// <summary>
-    /// >> 535 - Variant[pallet_preimage.RequestStatus]
+    /// >> 592 - Variant[pallet_preimage.RequestStatus]
     /// </summary>
     public sealed class EnumRequestStatus : BaseEnumRust<RequestStatus>
     {

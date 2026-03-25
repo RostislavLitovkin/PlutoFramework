@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime.xcm
     
     
     /// <summary>
-    /// >> 198 - Composite[hydradx_runtime.xcm.AssetLocation]
+    /// >> 189 - Composite[hydradx_runtime.xcm.AssetLocation]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetLocation : BaseType
@@ -27,7 +27,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime.xcm
         /// <summary>
         /// >> value
         /// </summary>
-        public Hydration.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation Value { get; set; }
+        public Hydration.NetApi.Generated.Model.staging_xcm.v5.location.Location Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime.xcm
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Hydration.NetApi.Generated.Model.staging_xcm.v3.multilocation.MultiLocation();
+            Value = new Hydration.NetApi.Generated.Model.staging_xcm.v5.location.Location();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

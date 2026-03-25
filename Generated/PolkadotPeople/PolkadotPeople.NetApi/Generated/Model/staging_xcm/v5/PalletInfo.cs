@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.staging_xcm.v5
     
     
     /// <summary>
-    /// >> 79 - Composite[staging_xcm.v5.PalletInfo]
+    /// >> 81 - Composite[staging_xcm.v5.PalletInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PalletInfo : BaseType

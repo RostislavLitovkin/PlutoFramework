@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 234 - Composite[Cow]
+    /// >> 261 - Composite[Cow]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Cow : BaseType

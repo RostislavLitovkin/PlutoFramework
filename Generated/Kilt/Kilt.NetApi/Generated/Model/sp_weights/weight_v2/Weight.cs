@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.sp_weights.weight_v2
     
     
     /// <summary>
-    /// >> 10 - Composite[sp_weights.weight_v2.Weight]
+    /// >> 11 - Composite[sp_weights.weight_v2.Weight]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Weight : BaseType

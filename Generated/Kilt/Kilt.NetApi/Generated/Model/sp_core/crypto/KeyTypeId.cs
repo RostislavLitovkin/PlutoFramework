@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.sp_core.crypto
     
     
     /// <summary>
-    /// >> 274 - Composite[sp_core.crypto.KeyTypeId]
+    /// >> 513 - Composite[sp_core.crypto.KeyTypeId]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class KeyTypeId : BaseType

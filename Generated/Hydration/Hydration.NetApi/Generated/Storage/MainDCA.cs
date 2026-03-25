@@ -49,7 +49,9 @@ namespace Hydration.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("DCA", "ScheduleExecutionBlock"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("DCA", "ScheduleIdsPerBlock"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT53)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT66)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("DCA", "ScheduleExtraGas"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
         }
         
         /// <summary>
@@ -260,10 +262,45 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> ScheduleIdsPerBlock
         ///  Keep tracking of the schedule ids to be executed in the block
         /// </summary>
-        public async Task<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT53> ScheduleIdsPerBlock(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT66> ScheduleIdsPerBlock(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = DCAStorage.ScheduleIdsPerBlockParams(key);
-            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT53>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT66>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> ScheduleExtraGasParams
+        ///  Stores the current extra gas value for each schedule.
+        ///  Initialized to 0, increments on EvmOutOfGas, persists after successful execution.
+        ///  Cleaned up when schedule terminates or completes.
+        /// </summary>
+        public static string ScheduleExtraGasParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        {
+            return RequestGenerator.GetStorage("DCA", "ScheduleExtraGas", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> ScheduleExtraGasDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string ScheduleExtraGasDefault()
+        {
+            return "0x0000000000000000";
+        }
+        
+        /// <summary>
+        /// >> ScheduleExtraGas
+        ///  Stores the current extra gas value for each schedule.
+        ///  Initialized to 0, increments on EvmOutOfGas, persists after successful execution.
+        ///  Cleaned up when schedule terminates or completes.
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U64> ScheduleExtraGas(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        {
+            string parameters = DCAStorage.ScheduleExtraGasParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U64>(parameters, blockhash, token);
             return result;
         }
     }
@@ -296,6 +333,18 @@ namespace Hydration.NetApi.Generated.Storage
             byteArray.AddRange(schedule_id.Encode());
             byteArray.AddRange(next_execution_block.Encode());
             return new Method(66, "DCA", 1, "terminate", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> unlock_reserves
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method UnlockReserves(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 who, Substrate.NetApi.Model.Types.Primitive.U32 asset_id)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(who.Encode());
+            byteArray.AddRange(asset_id.Encode());
+            return new Method(66, "DCA", 2, "unlock_reserves", byteArray.ToArray());
         }
     }
     
@@ -551,5 +600,17 @@ namespace Hydration.NetApi.Generated.Storage
         /// Stability threshold cannot be higher than `MaxConfigurablePriceDifferenceBetweenBlock`
         /// </summary>
         StabilityThresholdTooHigh,
+        
+        /// <summary>
+        /// >> HasActiveSchedules
+        /// User still has active DCA schedules and cannot unlock reserves
+        /// </summary>
+        HasActiveSchedules,
+        
+        /// <summary>
+        /// >> NoReservesLocked
+        /// No reserves are locked for the user for the given asset
+        /// </summary>
+        NoReservesLocked,
     }
 }

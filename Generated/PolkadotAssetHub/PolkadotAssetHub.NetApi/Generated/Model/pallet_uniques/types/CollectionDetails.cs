@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_uniques.types
     
     
     /// <summary>
-    /// >> 424 - Composite[pallet_uniques.types.CollectionDetails]
+    /// >> 879 - Composite[pallet_uniques.types.CollectionDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CollectionDetails : BaseType

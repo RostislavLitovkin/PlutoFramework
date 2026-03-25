@@ -72,31 +72,6 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
         update_amplification = 2,
         
         /// <summary>
-        /// >> add_liquidity
-        /// Add liquidity to selected pool.
-        /// 
-        /// Use `add_assets_liquidity` instead.
-        /// This extrinsics will be removed in the future.
-        /// 
-        /// First call of `add_liquidity` must provide "initial liquidity" of all assets.
-        /// 
-        /// If there is liquidity already in the pool, LP can provide liquidity of any number of pool assets.
-        /// 
-        /// LP must have sufficient amount of each asset.
-        /// 
-        /// Origin is given corresponding amount of shares.
-        /// 
-        /// Parameters:
-        /// - `origin`: liquidity provider
-        /// - `pool_id`: Pool Id
-        /// - `assets`: asset id and liquidity amount provided
-        /// 
-        /// Emits `LiquidityAdded` event when successful.
-        /// Emits `pallet_broadcast::Swapped` event when successful.
-        /// </summary>
-        add_liquidity = 3,
-        
-        /// <summary>
         /// >> add_liquidity_shares
         /// Add liquidity to selected pool given exact amount of shares to receive.
         /// 
@@ -301,10 +276,55 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
         /// Emits `pallet_broadcast::Swapped` event when successful.
         /// </summary>
         add_assets_liquidity = 12,
+        
+        /// <summary>
+        /// >> update_asset_peg_source
+        /// Update the peg source for a specific asset in a pool.
+        /// 
+        /// This function allows updating the peg source for an asset within a pool.
+        /// The pool must exist and have pegs configured. The asset must be part of the pool.
+        /// The current price is always preserved when updating the peg source.
+        /// 
+        /// Parameters:
+        /// - `origin`: Must be `T::AuthorityOrigin`.
+        /// - `pool_id`: The ID of the pool containing the asset.
+        /// - `asset_id`: The ID of the asset whose peg source is to be updated.
+        /// - `peg_source`: The new peg source for the asset.
+        /// 
+        /// Emits `PoolPegSourceUpdated` event when successful.
+        /// 
+        /// # Errors
+        /// - `PoolNotFound`: If the specified pool does not exist.
+        /// - `NoPegSource`: If the pool does not have pegs configured.
+        /// - `AssetNotInPool`: If the specified asset is not part of the pool.
+        /// 
+        /// </summary>
+        update_asset_peg_source = 13,
+        
+        /// <summary>
+        /// >> update_pool_max_peg_update
+        /// Update the maximum peg update percentage for a pool.
+        /// 
+        /// This function allows updating the maximum percentage by which peg values
+        /// can change in a pool with pegs configured.
+        /// 
+        /// Parameters:
+        /// - `origin`: Must be `T::AuthorityOrigin`.
+        /// - `pool_id`: The ID of the pool to update.
+        /// - `max_peg_update`: The new maximum peg update percentage.
+        /// 
+        /// Emits `PoolMaxPegUpdateUpdated` event when successful.
+        /// 
+        /// # Errors
+        /// - `PoolNotFound`: If the specified pool does not exist.
+        /// - `NoPegSource`: If the pool does not have pegs configured.
+        /// 
+        /// </summary>
+        update_pool_max_peg_update = 14,
     }
     
     /// <summary>
-    /// >> 240 - Variant[pallet_stableswap.pallet.Call]
+    /// >> 228 - Variant[pallet_stableswap.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -318,7 +338,6 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12, Substrate.NetApi.Model.Types.Primitive.U16, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>>(Call.create_pool);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>>(Call.update_pool_fee);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.update_amplification);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10>>(Call.add_liquidity);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.add_liquidity_shares);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.remove_liquidity_one_asset);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.withdraw_asset_amount);
@@ -326,8 +345,10 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.buy);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.pallet_stableswap.types.Tradability>>(Call.set_asset_tradable_state);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10>>(Call.remove_liquidity);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12, Substrate.NetApi.Model.Types.Primitive.U16, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>>(Call.create_pool_with_pegs);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12, Substrate.NetApi.Model.Types.Primitive.U16, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill>>(Call.create_pool_with_pegs);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.add_assets_liquidity);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.pallet_stableswap.types.EnumPegSource>>(Call.update_asset_peg_source);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill>>(Call.update_pool_max_peg_update);
         }
     }
 }

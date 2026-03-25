@@ -141,10 +141,36 @@ namespace Hydration.NetApi.Generated.Model.pallet_collective.pallet
         ///   - `P2` is proposal-count (code-bounded)
         /// </summary>
         close = 6,
+        
+        /// <summary>
+        /// >> kill
+        /// Disapprove the proposal and burn the cost held for storing this proposal.
+        /// 
+        /// Parameters:
+        /// - `origin`: must be the `KillOrigin`.
+        /// - `proposal_hash`: The hash of the proposal that should be killed.
+        /// 
+        /// Emits `Killed` and `ProposalCostBurned` if any cost was held for a given proposal.
+        /// </summary>
+        kill = 7,
+        
+        /// <summary>
+        /// >> release_proposal_cost
+        /// Release the cost held for storing a proposal once the given proposal is completed.
+        /// 
+        /// If there is no associated cost for the given proposal, this call will have no effect.
+        /// 
+        /// Parameters:
+        /// - `origin`: must be `Signed` or `Root`.
+        /// - `proposal_hash`: The hash of the proposal.
+        /// 
+        /// Emits `ProposalCostReleased` if any cost held for a given proposal.
+        /// </summary>
+        release_proposal_cost = 8,
     }
     
     /// <summary>
-    /// >> 171 - Variant[pallet_collective.pallet.Call]
+    /// >> 163 - Variant[pallet_collective.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -161,6 +187,8 @@ namespace Hydration.NetApi.Generated.Model.pallet_collective.pallet
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.vote);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.primitive_types.H256>(Call.disapprove_proposal);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>, Hydration.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>>>(Call.close);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.primitive_types.H256>(Call.kill);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.primitive_types.H256>(Call.release_proposal_cost);
         }
     }
 }

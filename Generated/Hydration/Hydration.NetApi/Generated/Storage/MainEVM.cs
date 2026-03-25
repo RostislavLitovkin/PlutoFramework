@@ -43,8 +43,6 @@ namespace Hydration.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("EVM", "AccountStorages"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.primitive_types.H160, Hydration.NetApi.Generated.Model.primitive_types.H256>), typeof(Hydration.NetApi.Generated.Model.primitive_types.H256)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("EVM", "Suicided"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.primitive_types.H160), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
         }
         
         /// <summary>
@@ -133,35 +131,6 @@ namespace Hydration.NetApi.Generated.Storage
             var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.primitive_types.H256>(parameters, blockhash, token);
             return result;
         }
-        
-        /// <summary>
-        /// >> SuicidedParams
-        /// </summary>
-        public static string SuicidedParams(Hydration.NetApi.Generated.Model.primitive_types.H160 key)
-        {
-            return RequestGenerator.GetStorage("EVM", "Suicided", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
-                        key});
-        }
-        
-        /// <summary>
-        /// >> SuicidedDefault
-        /// Default value as hex string
-        /// </summary>
-        public static string SuicidedDefault()
-        {
-            return "0x00";
-        }
-        
-        /// <summary>
-        /// >> Suicided
-        /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> Suicided(Hydration.NetApi.Generated.Model.primitive_types.H160 key, string blockhash, CancellationToken token)
-        {
-            string parameters = EVMStorage.SuicidedParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple>(parameters, blockhash, token);
-            return result;
-        }
     }
     
     /// <summary>
@@ -186,7 +155,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> call
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Call(Hydration.NetApi.Generated.Model.primitive_types.H160 source, Hydration.NetApi.Generated.Model.primitive_types.H160 target, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> input, Hydration.NetApi.Generated.Model.primitive_types.U256 value, Substrate.NetApi.Model.Types.Primitive.U64 gas_limit, Hydration.NetApi.Generated.Model.primitive_types.U256 max_fee_per_gas, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.primitive_types.U256> max_priority_fee_per_gas, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.primitive_types.U256> nonce, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.primitive_types.H160, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.primitive_types.H256>>> access_list)
+        public static Method Call(Hydration.NetApi.Generated.Model.primitive_types.H160 source, Hydration.NetApi.Generated.Model.primitive_types.H160 target, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> input, Hydration.NetApi.Generated.Model.primitive_types.U256 value, Substrate.NetApi.Model.Types.Primitive.U64 gas_limit, Hydration.NetApi.Generated.Model.primitive_types.U256 max_fee_per_gas, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.primitive_types.U256> max_priority_fee_per_gas, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.primitive_types.U256> nonce, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.primitive_types.H160, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.primitive_types.H256>>> access_list, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.ethereum.transaction.eip7702.AuthorizationListItem> authorization_list)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(source.Encode());
@@ -198,6 +167,7 @@ namespace Hydration.NetApi.Generated.Storage
             byteArray.AddRange(max_priority_fee_per_gas.Encode());
             byteArray.AddRange(nonce.Encode());
             byteArray.AddRange(access_list.Encode());
+            byteArray.AddRange(authorization_list.Encode());
             return new Method(90, "EVM", 1, "call", byteArray.ToArray());
         }
         
@@ -205,7 +175,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> create
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Create(Hydration.NetApi.Generated.Model.primitive_types.H160 source, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> init, Hydration.NetApi.Generated.Model.primitive_types.U256 value, Substrate.NetApi.Model.Types.Primitive.U64 gas_limit, Hydration.NetApi.Generated.Model.primitive_types.U256 max_fee_per_gas, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.primitive_types.U256> max_priority_fee_per_gas, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.primitive_types.U256> nonce, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.primitive_types.H160, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.primitive_types.H256>>> access_list)
+        public static Method Create(Hydration.NetApi.Generated.Model.primitive_types.H160 source, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> init, Hydration.NetApi.Generated.Model.primitive_types.U256 value, Substrate.NetApi.Model.Types.Primitive.U64 gas_limit, Hydration.NetApi.Generated.Model.primitive_types.U256 max_fee_per_gas, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.primitive_types.U256> max_priority_fee_per_gas, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.primitive_types.U256> nonce, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.primitive_types.H160, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.primitive_types.H256>>> access_list, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.ethereum.transaction.eip7702.AuthorizationListItem> authorization_list)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(source.Encode());
@@ -216,6 +186,7 @@ namespace Hydration.NetApi.Generated.Storage
             byteArray.AddRange(max_priority_fee_per_gas.Encode());
             byteArray.AddRange(nonce.Encode());
             byteArray.AddRange(access_list.Encode());
+            byteArray.AddRange(authorization_list.Encode());
             return new Method(90, "EVM", 2, "create", byteArray.ToArray());
         }
         
@@ -223,7 +194,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> create2
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Create2(Hydration.NetApi.Generated.Model.primitive_types.H160 source, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> init, Hydration.NetApi.Generated.Model.primitive_types.H256 salt, Hydration.NetApi.Generated.Model.primitive_types.U256 value, Substrate.NetApi.Model.Types.Primitive.U64 gas_limit, Hydration.NetApi.Generated.Model.primitive_types.U256 max_fee_per_gas, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.primitive_types.U256> max_priority_fee_per_gas, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.primitive_types.U256> nonce, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.primitive_types.H160, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.primitive_types.H256>>> access_list)
+        public static Method Create2(Hydration.NetApi.Generated.Model.primitive_types.H160 source, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8> init, Hydration.NetApi.Generated.Model.primitive_types.H256 salt, Hydration.NetApi.Generated.Model.primitive_types.U256 value, Substrate.NetApi.Model.Types.Primitive.U64 gas_limit, Hydration.NetApi.Generated.Model.primitive_types.U256 max_fee_per_gas, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.primitive_types.U256> max_priority_fee_per_gas, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.primitive_types.U256> nonce, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.primitive_types.H160, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.primitive_types.H256>>> access_list, Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.ethereum.transaction.eip7702.AuthorizationListItem> authorization_list)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(source.Encode());
@@ -235,6 +206,7 @@ namespace Hydration.NetApi.Generated.Storage
             byteArray.AddRange(max_priority_fee_per_gas.Encode());
             byteArray.AddRange(nonce.Encode());
             byteArray.AddRange(access_list.Encode());
+            byteArray.AddRange(authorization_list.Encode());
             return new Method(90, "EVM", 3, "create2", byteArray.ToArray());
         }
     }
@@ -329,5 +301,11 @@ namespace Hydration.NetApi.Generated.Storage
         /// Undefined error.
         /// </summary>
         Undefined,
+        
+        /// <summary>
+        /// >> CreateOriginNotAllowed
+        /// Address not allowed to deploy contracts either via CREATE or CALL(CREATE).
+        /// </summary>
+        CreateOriginNotAllowed,
     }
 }

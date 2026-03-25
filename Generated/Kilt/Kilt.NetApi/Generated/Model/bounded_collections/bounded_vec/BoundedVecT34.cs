@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec
     
     
     /// <summary>
-    /// >> 455 - Composite[bounded_collections.bounded_vec.BoundedVecT34]
+    /// >> 520 - Composite[bounded_collections.bounded_vec.BoundedVecT34]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedVecT34 : BaseType
@@ -27,7 +27,7 @@ namespace Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec
         /// <summary>
         /// >> value
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.primitive_types.H256> Value { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.parachain_staking.types.Stake> Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.primitive_types.H256>();
+            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.parachain_staking.types.Stake>();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

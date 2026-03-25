@@ -22,11 +22,6 @@ namespace Hydration.NetApi.Generated.Model.xcm
     {
         
         /// <summary>
-        /// >> V2
-        /// </summary>
-        V2 = 1,
-        
-        /// <summary>
         /// >> V3
         /// </summary>
         V3 = 3,
@@ -35,10 +30,15 @@ namespace Hydration.NetApi.Generated.Model.xcm
         /// >> V4
         /// </summary>
         V4 = 4,
+        
+        /// <summary>
+        /// >> V5
+        /// </summary>
+        V5 = 5,
     }
     
     /// <summary>
-    /// >> 384 - Variant[xcm.VersionedAssets]
+    /// >> 422 - Variant[xcm.VersionedAssets]
     /// </summary>
     public sealed class EnumVersionedAssets : BaseEnumRust<VersionedAssets>
     {
@@ -48,9 +48,9 @@ namespace Hydration.NetApi.Generated.Model.xcm
         /// </summary>
         public EnumVersionedAssets()
         {
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.xcm.v2.multiasset.MultiAssets>(VersionedAssets.V2);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.xcm.v3.multiasset.MultiAssets>(VersionedAssets.V3);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.staging_xcm.v4.asset.Assets>(VersionedAssets.V4);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.staging_xcm.v5.asset.Assets>(VersionedAssets.V5);
         }
     }
 }

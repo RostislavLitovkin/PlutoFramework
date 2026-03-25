@@ -22,7 +22,7 @@ namespace PlutoFramework.Components.Kilt
         {
             SetToDefault();
 
-            await Model.KeysModel.GenerateNewAccountAsync(accountVariant: "kilt1");
+            await Model.KeysModel.GenerateNewDidAsync();
 
             await NavigationModel.NavigateAfterAccountCreation.Invoke();
         }

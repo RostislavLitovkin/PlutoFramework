@@ -197,20 +197,20 @@ public partial class ExtrinsicStatusView : ContentView
             if (card.TranslationX < -50)
             {
                 await Task.WhenAll(
-                    card.TranslateTo(card.Width * -1 - 30, 0, 500, Easing.CubicIn)
+                    card.TranslateToAsync(card.Width * -1 - 30, 0, 500, Easing.CubicIn)
                     //, this.ScaleYTo(0, 500)
                     );
             }
             else if (card.TranslationX > 50)
             {
                 await Task.WhenAll(
-                    card.TranslateTo(card.Width + 30, 0, 500, Easing.CubicIn)
+                    card.TranslateToAsync(card.Width + 30, 0, 500, Easing.CubicIn)
                     //, this.ScaleYTo(0, 500)
                     );
             }
             else
             {
-                await card.TranslateTo(0, 0, 500, Easing.CubicOut);
+                await card.TranslateToAsync(0, 0, 500, Easing.CubicOut);
 
                 return;
             }

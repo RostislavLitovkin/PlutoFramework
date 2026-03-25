@@ -33,7 +33,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_migrations
     }
     
     /// <summary>
-    /// >> 222 - Variant[pallet_migrations.HistoricCleanupSelector]
+    /// >> 237 - Variant[pallet_migrations.HistoricCleanupSelector]
     /// </summary>
     public sealed class EnumHistoricCleanupSelector : BaseEnumRust<HistoricCleanupSelector>
     {
@@ -43,7 +43,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_migrations
         /// </summary>
         public EnumHistoricCleanupSelector()
         {
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8>>(HistoricCleanupSelector.Specific);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVec<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9>>(HistoricCleanupSelector.Specific);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>>>(HistoricCleanupSelector.Wildcard);
         }
     }

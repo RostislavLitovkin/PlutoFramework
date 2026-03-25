@@ -1,5 +1,4 @@
-﻿
-
+﻿using Microsoft.Maui.Controls;
 using PlutoFramework.Components.Account;
 using PlutoFramework.Components.Balance;
 using PlutoFramework.Components.MessagePopup;
@@ -66,6 +65,29 @@ namespace PlutoFramework.Model
             });
         }
 
+        public static INavigation? GetCurrentNavigation()
+        {
+            if (Shell.Current is not null)
+            {
+                return Shell.Current.Navigation;
+            }
+
+            var window = Application.Current?.Windows.FirstOrDefault();
+            return window?.Page?.Navigation;
+        }
+
+        public static Task PushAsync(Page page)
+        {
+            var navigation = GetCurrentNavigation();
+            return navigation?.PushAsync(page) ?? Task.CompletedTask;
+        }
+
+        public static Task PopAsync()
+        {
+            var navigation = GetCurrentNavigation();
+            return navigation?.PopAsync() ?? Task.CompletedTask;
+        }
+
         public static void OnScanned(System.Object sender, ZXing.Net.Maui.BarcodeDetectionEventArgs e)
         {
 #pragma warning disable VSTHRD101 // Avoid unsupported async delegates
@@ -128,7 +150,7 @@ namespace PlutoFramework.Model
                         messagePopup.IsVisible = true;
                     }
 
-                    await Application.Current.MainPage.Navigation.PopAsync();
+                    await PopAsync();
                 }
                 catch (Exception ex)
                 {

@@ -34,19 +34,10 @@ public partial class DidView : ContentView
 
             var verification = (DidVerificationEnum)newValue;
 
-            if (verification == DidVerificationEnum.None)
-            {
-                return;
-            }
-            
-            if (verification == DidVerificationEnum.Light)
-            {
-                return;
-            }
-
-            if (verification == DidVerificationEnum.Full)
-            {
-                control.verificationImage.Source = "chaingreen.png";
+            switch (verification) {
+                case DidVerificationEnum.Full:
+                    control.verificationImage.Source = "chaingreen.png";
+                    break;
             }
         });
 

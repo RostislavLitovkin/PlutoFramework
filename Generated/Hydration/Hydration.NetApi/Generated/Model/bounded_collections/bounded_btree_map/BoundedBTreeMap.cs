@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.bounded_collections.bounded_btree_map
     
     
     /// <summary>
-    /// >> 835 - Composite[bounded_collections.bounded_btree_map.BoundedBTreeMap]
+    /// >> 899 - Composite[bounded_collections.bounded_btree_map.BoundedBTreeMap]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedBTreeMap : BaseType
@@ -27,7 +27,7 @@ namespace Hydration.NetApi.Generated.Model.bounded_collections.bounded_btree_map
         /// <summary>
         /// >> value
         /// </summary>
-        public Hydration.NetApi.Generated.Types.Base.BTreeMapT4 Value { get; set; }
+        public Hydration.NetApi.Generated.Types.Base.BTreeMapT5 Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace Hydration.NetApi.Generated.Model.bounded_collections.bounded_btree_map
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Hydration.NetApi.Generated.Types.Base.BTreeMapT4();
+            Value = new Hydration.NetApi.Generated.Types.Base.BTreeMapT5();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

@@ -83,19 +83,19 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> as_multi_threshold_1
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AsMultiThreshold1(Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> other_signatories, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall call)
+        public static Method AsMultiThreshold1(Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> other_signatories, XcavatePaseo.NetApi.Generated.Model.xcavate_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(other_signatories.Encode());
             byteArray.AddRange(call.Encode());
-            return new Method(16, "Multisig", 0, "as_multi_threshold_1", byteArray.ToArray());
+            return new Method(6, "Multisig", 0, "as_multi_threshold_1", byteArray.ToArray());
         }
         
         /// <summary>
         /// >> as_multi
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AsMulti(Substrate.NetApi.Model.Types.Primitive.U16 threshold, Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> other_signatories, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.pallet_multisig.Timepoint> maybe_timepoint, XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeCall call, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight max_weight)
+        public static Method AsMulti(Substrate.NetApi.Model.Types.Primitive.U16 threshold, Substrate.NetApi.Model.Types.Base.BaseVec<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> other_signatories, Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.pallet_multisig.Timepoint> maybe_timepoint, XcavatePaseo.NetApi.Generated.Model.xcavate_runtime.EnumRuntimeCall call, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight max_weight)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(threshold.Encode());
@@ -103,7 +103,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(maybe_timepoint.Encode());
             byteArray.AddRange(call.Encode());
             byteArray.AddRange(max_weight.Encode());
-            return new Method(16, "Multisig", 1, "as_multi", byteArray.ToArray());
+            return new Method(6, "Multisig", 1, "as_multi", byteArray.ToArray());
         }
         
         /// <summary>
@@ -118,7 +118,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(maybe_timepoint.Encode());
             byteArray.AddRange(call_hash.Encode());
             byteArray.AddRange(max_weight.Encode());
-            return new Method(16, "Multisig", 2, "approve_as_multi", byteArray.ToArray());
+            return new Method(6, "Multisig", 2, "approve_as_multi", byteArray.ToArray());
         }
         
         /// <summary>
@@ -132,7 +132,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(other_signatories.Encode());
             byteArray.AddRange(timepoint.Encode());
             byteArray.AddRange(call_hash.Encode());
-            return new Method(16, "Multisig", 3, "cancel_as_multi", byteArray.ToArray());
+            return new Method(6, "Multisig", 3, "cancel_as_multi", byteArray.ToArray());
         }
         
         /// <summary>
@@ -145,7 +145,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(threshold.Encode());
             byteArray.AddRange(other_signatories.Encode());
             byteArray.AddRange(call_hash.Encode());
-            return new Method(16, "Multisig", 4, "poke_deposit", byteArray.ToArray());
+            return new Method(6, "Multisig", 4, "poke_deposit", byteArray.ToArray());
         }
     }
     
@@ -167,7 +167,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 DepositBase()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x0040FC54190000000000000000000000");
+            result.Create("0x00A4EA7C170000000000000000000000");
             return result;
         }
         
@@ -180,7 +180,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 DepositFactor()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x0020BCBE000000000000000000000000");
+            result.Create("0x00D01213000000000000000000000000");
             return result;
         }
         
@@ -191,7 +191,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 MaxSignatories()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x64000000");
+            result.Create("0x14000000");
             return result;
         }
     }

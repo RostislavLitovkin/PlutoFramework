@@ -38,7 +38,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcm
     }
     
     /// <summary>
-    /// >> 135 - Variant[xcm.VersionedAssets]
+    /// >> 114 - Variant[xcm.VersionedAssets]
     /// </summary>
     public sealed class EnumVersionedAssets : BaseEnumRust<VersionedAssets>
     {

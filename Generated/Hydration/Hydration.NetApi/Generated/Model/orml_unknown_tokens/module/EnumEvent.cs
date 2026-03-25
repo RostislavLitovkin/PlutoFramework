@@ -36,7 +36,7 @@ namespace Hydration.NetApi.Generated.Model.orml_unknown_tokens.module
     }
     
     /// <summary>
-    /// >> 479 - Variant[orml_unknown_tokens.module.Event]
+    /// >> 529 - Variant[orml_unknown_tokens.module.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -47,8 +47,8 @@ namespace Hydration.NetApi.Generated.Model.orml_unknown_tokens.module
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.staging_xcm.v4.asset.Asset, Hydration.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Event.Deposited);
-				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.staging_xcm.v4.asset.Asset, Hydration.NetApi.Generated.Model.staging_xcm.v4.location.Location>>(Event.Withdrawn);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.staging_xcm.v5.asset.Asset, Hydration.NetApi.Generated.Model.staging_xcm.v5.location.Location>>(Event.Deposited);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.staging_xcm.v5.asset.Asset, Hydration.NetApi.Generated.Model.staging_xcm.v5.location.Location>>(Event.Withdrawn);
         }
     }
 }

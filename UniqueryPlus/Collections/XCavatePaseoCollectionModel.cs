@@ -1,20 +1,19 @@
 ﻿
+using StrawberryShake;
 using Substrate.NetApi;
-using XcavatePaseo.NetApi.Generated;
-using XcavatePaseo.NetApi.Generated.Model.sp_core.crypto;
+using Substrate.NetApi.Model.Extrinsics;
+using Substrate.NetApi.Model.Types.Base;
 using Substrate.NetApi.Model.Types.Primitive;
-using XcavatePaseo.NetApi.Generated.Storage;
-using XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types;
 using System.Numerics;
 using UniqueryPlus.Ipfs;
-using UniqueryPlus.Nfts;
-using SubstrateCollectionMetadata = XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionMetadata;
-using Substrate.NetApi.Model.Types.Base;
-using UniqueryPlus.External;
-using StrawberryShake;
-using Substrate.NetApi.Model.Extrinsics;
-using XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress;
 using UniqueryPlus.Metadata;
+using UniqueryPlus.Nfts;
+using XcavatePaseo.NetApi.Generated;
+using XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types;
+using XcavatePaseo.NetApi.Generated.Model.sp_core.crypto;
+using XcavatePaseo.NetApi.Generated.Model.sp_runtime.multiaddress;
+using XcavatePaseo.NetApi.Generated.Storage;
+using SubstrateCollectionMetadata = XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types.CollectionMetadata;
 
 
 namespace UniqueryPlus.Collections
@@ -44,7 +43,7 @@ namespace UniqueryPlus.Collections
             var multiAddress = new EnumMultiAddress();
             multiAddress.Create(MultiAddress.Id, accountId);
 
-            return NftsCalls.TransferOwnership(new U32((uint)CollectionId), multiAddress);
+            return RealEstateNftsCalls.TransferOwnership(new U32((uint)CollectionId), multiAddress);
         }
     }
 
@@ -123,7 +122,7 @@ namespace UniqueryPlus.Collections
             // 0x + Twox64 pallet + Twox64 storage + Blake2_128Concat accountId32
             var keyPrefixLength = 162;
 
-            var keyPrefix = Utils.HexToByteArray(NftsStorage.CollectionAccountParams(new BaseTuple<AccountId32, U32>(accountId32, new U32(0))).Substring(0, keyPrefixLength));
+            var keyPrefix = Utils.HexToByteArray(RealEstateNftsStorage.CollectionAccountParams(new BaseTuple<AccountId32, U32>(accountId32, new U32(0))).Substring(0, keyPrefixLength));
 
             var fullKeys = await client.State.GetKeysPagedAsync(keyPrefix, limit, lastKey, string.Empty, token).ConfigureAwait(false);
 
@@ -145,7 +144,7 @@ namespace UniqueryPlus.Collections
 
         internal static async Task<ICollectionBase> GetCollectionNftsPalletByCollectionIdAsync(SubstrateClientExt client, uint collectionId, CancellationToken token)
         {
-            var collectionIdKey = NftsStorage.CollectionParams(new U32(collectionId)).Substring(Constants.BASE_STORAGE_KEY_LENGTH);
+            var collectionIdKey = RealEstateNftsStorage.CollectionParams(new U32(collectionId)).Substring(Constants.BASE_STORAGE_KEY_LENGTH);
 
             var result = await GetCollectionsNftsPalletByIdKeysAsync(client, [collectionIdKey], "", token).ConfigureAwait(false);
 
@@ -190,7 +189,7 @@ namespace UniqueryPlus.Collections
 
         internal static async Task<IEnumerable<CollectionDetails?>> GetCollectionCollectionNftsPalletByCollectionIdKeysAsync(SubstrateClientExt client, IEnumerable<string> collectionIdKeys, CancellationToken token)
         {
-            var keyPrefix = NftsStorage.CollectionParams(new U32(0)).Substring(0, Constants.BASE_STORAGE_KEY_LENGTH);
+            var keyPrefix = RealEstateNftsStorage.CollectionParams(new U32(0)).Substring(0, Constants.BASE_STORAGE_KEY_LENGTH);
 
             var collectionCollectionKeys = collectionIdKeys.Select(collectionIdKey => Utils.HexToByteArray(keyPrefix + collectionIdKey));
 
@@ -212,7 +211,7 @@ namespace UniqueryPlus.Collections
 
         internal static async Task<IEnumerable<MetadataBase?>> GetCollectionMetadataNftsPalletByCollectionIdKeysAsync(SubstrateClientExt client, IEnumerable<string> collectionIdKeys, CancellationToken token)
         {
-            var keyPrefix = NftsStorage.CollectionMetadataOfParams(new U32(0)).Substring(0, Constants.BASE_STORAGE_KEY_LENGTH);
+            var keyPrefix = RealEstateNftsStorage.CollectionMetadataOfParams(new U32(0)).Substring(0, Constants.BASE_STORAGE_KEY_LENGTH);
 
             var collectionMetadataKeys = collectionIdKeys.Select(collectionIdKey => Utils.HexToByteArray(keyPrefix + collectionIdKey));
             var storageChangeSets = await client.State.GetQueryStorageAtAsync(collectionMetadataKeys.ToList(), string.Empty, token).ConfigureAwait(false);
@@ -242,14 +241,15 @@ namespace UniqueryPlus.Collections
                 }
 
                 metadatas.Add(await IpfsModel.GetMetadataAsync<MetadataBase>(ipfsLink, Constants.KODA_IPFS_ENDPOINT, token).ConfigureAwait(false));
-            };
+            }
+            ;
 
             return metadatas;
         }
 
         internal static async Task<CollectionMintConfig> GetCollectionMintConfigNftsPalletAsync(SubstrateClientExt client, uint collectionId, CancellationToken token)
         {
-            var collectionMintConfig = await client.NftsStorage.CollectionConfigOf(new U32(collectionId), null, token).ConfigureAwait(false);
+            var collectionMintConfig = await client.RealEstateNftsStorage.CollectionConfigOf(new U32(collectionId), null, token).ConfigureAwait(false);
 
             return new CollectionMintConfig
             {
@@ -316,12 +316,12 @@ namespace UniqueryPlus.Collections
                 }
             };
 
-            return NftsCalls.Create(multiAddress, config);
+            return RealEstateNftsCalls.Create(multiAddress, config);
         }
 
         internal static async Task<uint> GetTotalCountOfCollectionsAsync(SubstrateClientExt client, CancellationToken token)
         {
-            return await client.NftsStorage.NextCollectionId(null, token).ConfigureAwait(false);
+            return await client.RealEstateNftsStorage.NextCollectionId(null, token).ConfigureAwait(false);
         }
 
         internal static async Task<uint> GetTotalCountOfCollectionsForSaleAsync(CancellationToken token)

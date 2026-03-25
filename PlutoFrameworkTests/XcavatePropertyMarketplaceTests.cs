@@ -38,12 +38,13 @@ namespace PlutoFrameworkTests
             {
                 if (uniqueryNftEnumerator != null && await uniqueryNftEnumerator.MoveNextAsync().ConfigureAwait(false))
                 {
-                    /*var newNft = PlutoFramework.Model.NftModel.ToNftWrapper(uniqueryNftEnumerator.Current);
+                    Console.WriteLine(uniqueryNftEnumerator.Current);
 
-                    var property = (XcavatePaseoNftsPalletNft)newNft.NftBase;
+                    var newNft = PlutoFrameworkCore.NftModel.ToNftWrapper(uniqueryNftEnumerator.Current);
 
-                    Console.WriteLine("Property: " + property?.XcavateMetadata?.PropertyName + " - " + property?.XcavateMetadata?.Files?.FirstOrDefault());*/
+                    var property = (XcavatePaseoNftsPalletNft)newNft.NftBase!;
 
+                    Console.WriteLine("Property: " + property?.XcavateMetadata?.PropertyName + " - " + property?.XcavateMetadata?.Files?.FirstOrDefault());
                 }
             }
 

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             x:Class="PlutoFramework.Components.WebView.WebSignRawPopupView"
+             xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+             IsVisible="{Binding IsVisible}"
+             AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+             AbsoluteLayout.LayoutFlags="All">
+    <card:BottomPopupCard IsShown="{Binding IsVisible}"
+                          Title="Sign message">
+        <card:BottomPopupCard.View>
+            <AbsoluteLayout>
+                <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1"
+                            AbsoluteLayout.LayoutFlags="All">
+
+
+                    <VerticalStackLayout Spacing="10" x:Name="stackLayout">
+                        <Label
+                            HorizontalOptions="Center"
+                            WidthRequest="{Binding Source={x:Reference stackLayout}, Path=Width}">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span FontAttributes="Bold"
+                                      Text="{Binding MessageDecodedString}"/>
+
+                                </FormattedString>
+
+                            </Label.FormattedText>
+
+                        </Label>
+
+                        <card:ClickableCard 
+                                        CardPadding="0,0,0,0"
+                                        HorizontalOptions="Fill">
+                            <card:ClickableCard.View>
+                                <StackLayout>
+                                    <Label
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Center"
+                                       FontAttributes="Bold"
+                                        HeightRequest="30"
+                                       Text="Message bytes" />
+
+                                    <Label
+                                        Text="{Binding MessageString}"
+                                        FontFamily="SourceCode" 
+                                        HorizontalTextAlignment="Start"
+                                        LineBreakMode="CharacterWrap"
+                                        Margin="10,0,10,10"
+                                        />
+                                </StackLayout>
+                            </card:ClickableCard.View>
+                        </card:ClickableCard>
+
+
+                        <Label Text="{Binding ErrorText}"
+                       TextColor="Red"
+                       IsVisible="{Binding ErrorIsVisible}" />
+                    </VerticalStackLayout>
+                </ScrollView>
+
+
+
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 80"
+                                AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional">
+                    <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 50"
+                          AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                          ColumnSpacing="15"
+                          Margin="0, 0, 0, 10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+
+                        </Grid.ColumnDefinitions>
+
+                        <buttons:BasicGrayButton Text="Reject"
+                             Grid.Column="0"
+                             Command="{Binding RejectCommand}"/>
+
+                        <buttons:PlutoFrameworkElevatedButton Text="{Binding SignButtonText}"
+                                                              Grid.Column="1"
+                                                              Command="{Binding SignCommand}"
+                                                              ButtonState="{Binding SignButtonState}" />
+                    </Grid>
+                </AbsoluteLayout>
+            </AbsoluteLayout>
+        </card:BottomPopupCard.View>
+    </card:BottomPopupCard>
+</ContentView>
+

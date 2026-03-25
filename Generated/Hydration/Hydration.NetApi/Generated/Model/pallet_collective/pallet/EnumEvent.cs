@@ -65,10 +65,28 @@ namespace Hydration.NetApi.Generated.Model.pallet_collective.pallet
         /// A proposal was closed because its threshold was reached or after its duration was up.
         /// </summary>
         Closed = 6,
+        
+        /// <summary>
+        /// >> Killed
+        /// A proposal was killed.
+        /// </summary>
+        Killed = 7,
+        
+        /// <summary>
+        /// >> ProposalCostBurned
+        /// Some cost for storing a proposal was burned.
+        /// </summary>
+        ProposalCostBurned = 8,
+        
+        /// <summary>
+        /// >> ProposalCostReleased
+        /// Some cost for storing a proposal was released.
+        /// </summary>
+        ProposalCostReleased = 9,
     }
     
     /// <summary>
-    /// >> 51 - Variant[pallet_collective.pallet.Event]
+    /// >> 48 - Variant[pallet_collective.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -86,6 +104,9 @@ namespace Hydration.NetApi.Generated.Model.pallet_collective.pallet
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.primitive_types.H256, Hydration.NetApi.Generated.Types.Base.EnumResult>>(Event.Executed);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.primitive_types.H256, Hydration.NetApi.Generated.Types.Base.EnumResult>>(Event.MemberExecuted);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.primitive_types.H256, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.Closed);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.primitive_types.H256>(Event.Killed);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.primitive_types.H256, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.ProposalCostBurned);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.primitive_types.H256, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.ProposalCostReleased);
         }
     }
 }

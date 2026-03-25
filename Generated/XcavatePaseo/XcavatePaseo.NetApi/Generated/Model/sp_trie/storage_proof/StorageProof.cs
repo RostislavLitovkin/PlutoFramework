@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.sp_trie.storage_proof
     
     
     /// <summary>
-    /// >> 237 - Composite[sp_trie.storage_proof.StorageProof]
+    /// >> 309 - Composite[sp_trie.storage_proof.StorageProof]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class StorageProof : BaseType

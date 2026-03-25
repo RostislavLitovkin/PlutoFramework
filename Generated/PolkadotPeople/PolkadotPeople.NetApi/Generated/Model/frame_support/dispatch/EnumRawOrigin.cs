@@ -35,10 +35,15 @@ namespace PolkadotPeople.NetApi.Generated.Model.frame_support.dispatch
         /// >> None
         /// </summary>
         None = 2,
+        
+        /// <summary>
+        /// >> Authorized
+        /// </summary>
+        Authorized = 3,
     }
     
     /// <summary>
-    /// >> 396 - Variant[frame_support.dispatch.RawOrigin]
+    /// >> 426 - Variant[frame_support.dispatch.RawOrigin]
     /// </summary>
     public sealed class EnumRawOrigin : BaseEnumRust<RawOrigin>
     {
@@ -51,6 +56,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.frame_support.dispatch
 				AddTypeDecoder<BaseVoid>(RawOrigin.Root);
 				AddTypeDecoder<PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32>(RawOrigin.Signed);
 				AddTypeDecoder<BaseVoid>(RawOrigin.None);
+				AddTypeDecoder<BaseVoid>(RawOrigin.Authorized);
         }
     }
 }

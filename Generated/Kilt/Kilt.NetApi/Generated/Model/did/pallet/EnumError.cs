@@ -190,14 +190,21 @@ namespace Kilt.NetApi.Generated.Model.did.pallet
         MaxStoredEndpointsCountExceeded = 25,
         
         /// <summary>
+        /// >> CannotDelete
+        /// The DID cannot be deleted because the runtime logic returned an
+        /// error.
+        /// </summary>
+        CannotDelete = 26,
+        
+        /// <summary>
         /// >> Internal
         /// An error that is not supposed to take place, yet it happened.
         /// </summary>
-        Internal = 26,
+        Internal = 27,
     }
     
     /// <summary>
-    /// >> 542 - Variant[did.pallet.Error]
+    /// >> 648 - Variant[did.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

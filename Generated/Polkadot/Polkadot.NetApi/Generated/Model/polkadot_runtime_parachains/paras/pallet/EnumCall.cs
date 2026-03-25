@@ -95,10 +95,42 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.paras.pall
         /// Set the storage for the current parachain head data immediately.
         /// </summary>
         force_set_most_recent_context = 8,
+        
+        /// <summary>
+        /// >> remove_upgrade_cooldown
+        /// Remove an upgrade cooldown for a parachain.
+        /// 
+        /// The cost for removing the cooldown earlier depends on the time left for the cooldown
+        /// multiplied by [`Config::CooldownRemovalMultiplier`]. The paid tokens are burned.
+        /// </summary>
+        remove_upgrade_cooldown = 9,
+        
+        /// <summary>
+        /// >> authorize_force_set_current_code_hash
+        /// Sets the storage for the authorized current code hash of the parachain.
+        /// If not applied, it will be removed at the `System::block_number() + valid_period` block.
+        /// 
+        /// This can be useful, when triggering `Paras::force_set_current_code(para, code)`
+        /// from a different chain than the one where the `Paras` pallet is deployed.
+        /// 
+        /// The main purpose is to avoid transferring the entire `code` Wasm blob between chains.
+        /// Instead, we authorize `code_hash` with `root`, which can later be applied by
+        /// `Paras::apply_authorized_force_set_current_code(para, code)` by anyone.
+        /// 
+        /// Authorizations are stored in an **overwriting manner**.
+        /// </summary>
+        authorize_force_set_current_code_hash = 10,
+        
+        /// <summary>
+        /// >> apply_authorized_force_set_current_code
+        /// Applies the already authorized current code for the parachain,
+        /// triggering the same functionality as `force_set_current_code`.
+        /// </summary>
+        apply_authorized_force_set_current_code = 11,
     }
     
     /// <summary>
-    /// >> 318 - Variant[polkadot_runtime_parachains.paras.pallet.Call]
+    /// >> 323 - Variant[polkadot_runtime_parachains.paras.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -118,6 +150,9 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.paras.pall
 				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.ValidationCodeHash>(Call.poke_unused_validation_code);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.PvfCheckStatement, Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.validator_app.Signature>>(Call.include_pvf_check_statement);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.force_set_most_recent_context);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id>(Call.remove_upgrade_cooldown);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.ValidationCodeHash, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.authorize_force_set_current_code_hash);
+				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, Polkadot.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.ValidationCode>>(Call.apply_authorized_force_set_current_code);
         }
     }
 }

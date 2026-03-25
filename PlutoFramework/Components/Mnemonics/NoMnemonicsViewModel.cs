@@ -1,6 +1,7 @@
 ﻿
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PlutoFramework.Model;
 
 namespace PlutoFramework.Components.Mnemonics
 {
@@ -9,7 +10,7 @@ namespace PlutoFramework.Components.Mnemonics
         public Func<Task> Navigation = Shell.Current.Navigation.PopToRootAsync;
 
         [RelayCommand]
-        public Task ImportAccountAsync() => Application.Current.MainPage.Navigation.PushAsync(new EnterMnemonicsPage(
+        public Task ImportAccountAsync() => NavigationModel.PushAsync(new EnterMnemonicsPage(
             new EnterMnemonicsViewModel
             {
                 Navigation = Navigation,
@@ -17,7 +18,7 @@ namespace PlutoFramework.Components.Mnemonics
         ));
 
         [RelayCommand]
-        public Task CreateAccountAsync() => Application.Current.MainPage.Navigation.PushAsync(
+        public Task CreateAccountAsync() => NavigationModel.PushAsync(
             new CreateMnemonicsPage(
                 new CreateMnemonicsViewModel
                 {

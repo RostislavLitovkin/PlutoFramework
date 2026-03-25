@@ -72,7 +72,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_preimage.pallet
     }
     
     /// <summary>
-    /// >> 495 - Variant[pallet_preimage.pallet.Error]
+    /// >> 597 - Variant[pallet_preimage.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

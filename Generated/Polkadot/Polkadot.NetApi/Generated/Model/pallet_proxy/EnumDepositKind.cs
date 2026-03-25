@@ -33,7 +33,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_proxy
     }
     
     /// <summary>
-    /// >> 471 - Variant[pallet_proxy.DepositKind]
+    /// >> 523 - Variant[pallet_proxy.DepositKind]
     /// </summary>
     public sealed class EnumDepositKind : BaseEnum<DepositKind>
     {

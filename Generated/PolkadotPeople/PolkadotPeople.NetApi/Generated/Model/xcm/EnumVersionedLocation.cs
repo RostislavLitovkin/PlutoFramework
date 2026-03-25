@@ -38,7 +38,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.xcm
     }
     
     /// <summary>
-    /// >> 132 - Variant[xcm.VersionedLocation]
+    /// >> 135 - Variant[xcm.VersionedLocation]
     /// </summary>
     public sealed class EnumVersionedLocation : BaseEnumRust<VersionedLocation>
     {

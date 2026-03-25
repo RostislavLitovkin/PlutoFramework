@@ -33,7 +33,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_migrations
     }
     
     /// <summary>
-    /// >> 215 - Variant[pallet_migrations.MigrationCursor]
+    /// >> 230 - Variant[pallet_migrations.MigrationCursor]
     /// </summary>
     public sealed class EnumMigrationCursor : BaseEnumRust<MigrationCursor>
     {

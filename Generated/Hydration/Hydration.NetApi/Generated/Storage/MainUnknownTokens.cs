@@ -38,10 +38,10 @@ namespace Hydration.NetApi.Generated.Storage
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("UnknownTokens", "ConcreteFungibleBalances"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.staging_xcm.v4.location.Location, Hydration.NetApi.Generated.Model.staging_xcm.v4.location.Location>), typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.staging_xcm.v5.location.Location, Hydration.NetApi.Generated.Model.staging_xcm.v5.location.Location>), typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("UnknownTokens", "AbstractFungibleBalances"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>), typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>), typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
         }
         
         /// <summary>
@@ -51,7 +51,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// 
         ///  double_map: who, asset_id => u128
         /// </summary>
-        public static string ConcreteFungibleBalancesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.staging_xcm.v4.location.Location, Hydration.NetApi.Generated.Model.staging_xcm.v4.location.Location> key)
+        public static string ConcreteFungibleBalancesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.staging_xcm.v5.location.Location, Hydration.NetApi.Generated.Model.staging_xcm.v5.location.Location> key)
         {
             return RequestGenerator.GetStorage("UnknownTokens", "ConcreteFungibleBalances", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -74,7 +74,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// 
         ///  double_map: who, asset_id => u128
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.U128> ConcreteFungibleBalances(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.staging_xcm.v4.location.Location, Hydration.NetApi.Generated.Model.staging_xcm.v4.location.Location> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U128> ConcreteFungibleBalances(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.staging_xcm.v5.location.Location, Hydration.NetApi.Generated.Model.staging_xcm.v5.location.Location> key, string blockhash, CancellationToken token)
         {
             string parameters = UnknownTokensStorage.ConcreteFungibleBalancesParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U128>(parameters, blockhash, token);
@@ -88,7 +88,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// 
         ///  double_map: who, asset_id => u128
         /// </summary>
-        public static string AbstractFungibleBalancesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>> key)
+        public static string AbstractFungibleBalancesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>> key)
         {
             return RequestGenerator.GetStorage("UnknownTokens", "AbstractFungibleBalances", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -111,7 +111,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// 
         ///  double_map: who, asset_id => u128
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.U128> AbstractFungibleBalances(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.staging_xcm.v4.location.Location, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U128> AbstractFungibleBalances(Substrate.NetApi.Model.Types.Base.BaseTuple<Hydration.NetApi.Generated.Model.staging_xcm.v5.location.Location, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>> key, string blockhash, CancellationToken token)
         {
             string parameters = UnknownTokensStorage.AbstractFungibleBalancesParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U128>(parameters, blockhash, token);

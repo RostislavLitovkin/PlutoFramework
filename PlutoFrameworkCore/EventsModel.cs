@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using PlutoFramework.Constants;
+﻿using PlutoFramework.Constants;
 using PlutoFramework.Model.AjunaExt;
 using PlutoFramework.Model.Temp;
 using PlutoFramework.Types;
@@ -97,9 +96,10 @@ namespace PlutoFramework.Model
                 Console.WriteLine("Value:: " + parameter.GetProperty("Value").ToString());
                 var variant = error.Variants[(int)parameter.GetProperty("Value")];
 
-                switch (variant.Name) {
+                switch (variant.Name)
+                {
                     case "Module":
-                        
+
 
                         var module = client.CustomMetadata.NodeMetadata.Modules[((object)parameter.GetProperty("Value2")).GetProperty("Index").ToString()];
                         var moduleName = module.Name;
@@ -129,7 +129,7 @@ namespace PlutoFramework.Model
 
                         break;
                 }
-                
+
             }
             catch (Exception e)
             {
@@ -297,13 +297,15 @@ namespace PlutoFramework.Model
 
                         break;
                     }
-                };
+                }
+                ;
 
                 Console.WriteLine("Extrinsic index found: " + extrinsicIndex);
 
                 return await GetExtrinsicEventsForClientAsync(substrateClient, extrinsicIndex, eventsBytes, blockNumber: block.Block.Header.Number.Value, token);
             }
-            catch {
+            catch
+            {
 
                 var block = await substrateClient.SubstrateClient.InvokeAsync<TempOldBlockData>("chain_getBlock", new object[1] { blockHash?.Value }, token);
 
@@ -319,7 +321,8 @@ namespace PlutoFramework.Model
 
                         break;
                     }
-                };
+                }
+                ;
 
                 Console.WriteLine("Extrinsic index found: " + extrinsicIndex);
 
@@ -343,7 +346,7 @@ namespace PlutoFramework.Model
                 EndpointEnum.Unique => await GetExtrinsicEventsAsync<Unique.NetApi.Generated.Model.unique_runtime.EnumRuntimeEvent>(substrateClient, extrinsicIndex, eventsBytes, blockNumber, token),
                 EndpointEnum.Opal => await GetExtrinsicEventsAsync<Opal.NetApi.Generated.Model.opal_runtime.EnumRuntimeEvent>(substrateClient, extrinsicIndex, eventsBytes, blockNumber, token),
                 EndpointEnum.Hydration => await GetExtrinsicEventsAsync<Hydration.NetApi.Generated.Model.hydradx_runtime.EnumRuntimeEvent>(substrateClient, extrinsicIndex, eventsBytes, blockNumber, token),
-                EndpointEnum.XcavatePaseo => await GetExtrinsicEventsAsync<XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeEvent>(substrateClient, extrinsicIndex, eventsBytes, blockNumber, token),
+                EndpointEnum.XcavatePaseo => await GetExtrinsicEventsAsync<XcavatePaseo.NetApi.Generated.Model.xcavate_runtime.EnumRuntimeEvent>(substrateClient, extrinsicIndex, eventsBytes, blockNumber, token),
                 EndpointEnum.Mythos => await GetExtrinsicEventsAsync<Mythos.NetApi.Generated.Model.mainnet_runtime.EnumRuntimeEvent>(substrateClient, extrinsicIndex, eventsBytes, blockNumber, token),
                 EndpointEnum.Bajun => await GetExtrinsicEventsAsync<Bajun.NetApi.Generated.Model.bajun_runtime.EnumRuntimeEvent>(substrateClient, extrinsicIndex, eventsBytes, blockNumber, token),
                 EndpointEnum.Bifrost => await GetExtrinsicEventsAsync<BifrostPolkadot.NetApi.Generated.Model.bifrost_polkadot_runtime.EnumRuntimeEvent>(substrateClient, extrinsicIndex, eventsBytes, blockNumber, token),

@@ -30,10 +30,15 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
         /// >> No
         /// </summary>
         No = 1,
+        
+        /// <summary>
+        /// >> Abstain
+        /// </summary>
+        Abstain = 2,
     }
     
     /// <summary>
-    /// >> 179 - Variant[pallet_regions.pallet.Vote]
+    /// >> 197 - Variant[pallet_regions.pallet.Vote]
     /// </summary>
     public sealed class EnumVote : BaseEnum<Vote>
     {

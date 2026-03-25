@@ -52,7 +52,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_transaction_multi_payment.pall
     }
     
     /// <summary>
-    /// >> 34 - Variant[pallet_transaction_multi_payment.pallet.Event]
+    /// >> 35 - Variant[pallet_transaction_multi_payment.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

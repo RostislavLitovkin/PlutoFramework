@@ -103,7 +103,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.people_polkadot_runtime
     }
     
     /// <summary>
-    /// >> 351 - Variant[people_polkadot_runtime.RuntimeCall]
+    /// >> 381 - Variant[people_polkadot_runtime.RuntimeCall]
     /// </summary>
     public sealed class EnumRuntimeCall : BaseEnumRust<RuntimeCall>
     {

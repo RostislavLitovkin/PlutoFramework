@@ -171,7 +171,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> join_farms
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method JoinFarms(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15 farm_entries, Hydration.NetApi.Generated.Model.pallet_xyk.types.AssetPair asset_pair, Substrate.NetApi.Model.Types.Primitive.U128 shares_amount)
+        public static Method JoinFarms(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25 farm_entries, Hydration.NetApi.Generated.Model.pallet_xyk.types.AssetPair asset_pair, Substrate.NetApi.Model.Types.Primitive.U128 shares_amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(farm_entries.Encode());
@@ -184,7 +184,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> add_liquidity_and_join_farms
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AddLiquidityAndJoinFarms(Substrate.NetApi.Model.Types.Primitive.U32 asset_a, Substrate.NetApi.Model.Types.Primitive.U32 asset_b, Substrate.NetApi.Model.Types.Primitive.U128 amount_a, Substrate.NetApi.Model.Types.Primitive.U128 amount_b_max_limit, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15 farm_entries)
+        public static Method AddLiquidityAndJoinFarms(Substrate.NetApi.Model.Types.Primitive.U32 asset_a, Substrate.NetApi.Model.Types.Primitive.U32 asset_b, Substrate.NetApi.Model.Types.Primitive.U128 amount_a, Substrate.NetApi.Model.Types.Primitive.U128 amount_b_max_limit, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25 farm_entries)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset_a.Encode());
@@ -238,7 +238,7 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> exit_farms
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ExitFarms(Substrate.NetApi.Model.Types.Primitive.U128 deposit_id, Hydration.NetApi.Generated.Model.pallet_xyk.types.AssetPair asset_pair, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16 farm_entries)
+        public static Method ExitFarms(Substrate.NetApi.Model.Types.Primitive.U128 deposit_id, Hydration.NetApi.Generated.Model.pallet_xyk.types.AssetPair asset_pair, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT26 farm_entries)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(deposit_id.Encode());
@@ -262,6 +262,28 @@ namespace Hydration.NetApi.Generated.Storage
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
             result.Create("0x0D150000000000000000000000000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> OracleSource
+        ///  Oracle source identifier for this pallet.
+        /// </summary>
+        public Hydration.NetApi.Generated.Types.Base.Arr8U8 OracleSource()
+        {
+            var result = new Hydration.NetApi.Generated.Types.Base.Arr8U8();
+            result.Create("0x687964726178796B");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> OraclePeriod
+        ///  Oracle's liquidity aggregation period.
+        /// </summary>
+        public Hydration.NetApi.Generated.Model.hydradx_traits.oracle.EnumOraclePeriod OraclePeriod()
+        {
+            var result = new Hydration.NetApi.Generated.Model.hydradx_traits.oracle.EnumOraclePeriod();
+            result.Create("0x02");
             return result;
         }
     }
@@ -343,5 +365,11 @@ namespace Hydration.NetApi.Generated.Storage
         /// No global farm - yield farm pairs specified to join
         /// </summary>
         NoFarmsSpecified,
+        
+        /// <summary>
+        /// >> FailedToValueShares
+        /// Failed to calculate value of xyk shares
+        /// </summary>
+        FailedToValueShares,
     }
 }

@@ -33,7 +33,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8
     }
     
     /// <summary>
-    /// >> 314 - Variant[polkadot_primitives.v8.DisputeStatement]
+    /// >> 319 - Variant[polkadot_primitives.v8.DisputeStatement]
     /// </summary>
     public sealed class EnumDisputeStatement : BaseEnumRust<DisputeStatement>
     {

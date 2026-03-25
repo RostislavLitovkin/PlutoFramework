@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_transaction_payment
     
     
     /// <summary>
-    /// >> 628 - Composite[pallet_transaction_payment.ChargeTransactionPayment]
+    /// >> 748 - Composite[pallet_transaction_payment.ChargeTransactionPayment]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ChargeTransactionPayment : BaseType

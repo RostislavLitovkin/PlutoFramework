@@ -31,7 +31,6 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.pallet
         /// If successful, the events `NamespaceCreated` and `ManagerAdded` will be emitted.
         /// 
         /// # Parameters
-        /// - `namespace_id`: The id of the namespace to be created.
         /// - `metadata_input`: The metadata of the namespace to be created.
         /// </summary>
         create_namespace = 0,
@@ -244,6 +243,21 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.pallet
         force_remove_bucket = 14,
         
         /// <summary>
+        /// >> force_remove_tag
+        /// Forcefully removes a tag.
+        /// 
+        /// This function is only available for the force origin.
+        /// It will remove the specified tag. To avoid dangling messages, all messages
+        /// that use the tag must be removed beforehand.
+        /// If successful, a `TagDeleted` event will be emitted.
+        /// 
+        /// # Parameters
+        /// - `bucket_id`: The id of the bucket to which the tag belongs.
+        /// - `tag`: The tag to be deleted.
+        /// </summary>
+        force_remove_tag = 15,
+        
+        /// <summary>
         /// >> force_remove_message
         /// Forcefully removes a message.
         /// 
@@ -255,7 +269,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.pallet
         /// - `bucket_id`: The ID of the bucket to which the message belongs.
         /// - `message_id`: The ID of the message to be removed.
         /// </summary>
-        force_remove_message = 15,
+        force_remove_message = 16,
         
         /// <summary>
         /// >> force_add_manager
@@ -269,11 +283,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.pallet
         /// - `namespace_id`: The ID of the namespace to which the manager belongs.
         /// - `manager`: The ID of the manager to be added.
         /// </summary>
-        force_add_manager = 16,
+        force_add_manager = 17,
     }
     
     /// <summary>
-    /// >> 379 - Variant[pallet_bucket.pallet.Call]
+    /// >> 506 - Variant[pallet_bucket.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -284,7 +298,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.NamespaceMetadataInput>>(Call.create_namespace);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.NamespaceMetadataInput>(Call.create_namespace);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.add_contributor);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.remove_contributor);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.add_admin);
@@ -294,11 +308,12 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.BucketMetadataInput>>(Call.create_bucket);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.pause_writing);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.BucketPublicKey>>(Call.resume_writing);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>>(Call.create_tag);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12>>(Call.create_tag);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.BucketPublicKey>>(Call.rotate_key);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.MessageInput>>(Call.write);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U128>(Call.force_remove_namespace);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.force_remove_bucket);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12>>(Call.force_remove_tag);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.force_remove_message);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.force_add_manager);
         }

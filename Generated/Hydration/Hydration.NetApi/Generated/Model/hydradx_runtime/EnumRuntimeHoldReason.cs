@@ -27,13 +27,23 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
         Preimage = 15,
         
         /// <summary>
+        /// >> TechnicalCommittee
+        /// </summary>
+        TechnicalCommittee = 25,
+        
+        /// <summary>
         /// >> StateTrieMigration
         /// </summary>
         StateTrieMigration = 35,
+        
+        /// <summary>
+        /// >> PolkadotXcm
+        /// </summary>
+        PolkadotXcm = 107,
     }
     
     /// <summary>
-    /// >> 516 - Variant[hydradx_runtime.RuntimeHoldReason]
+    /// >> 570 - Variant[hydradx_runtime.RuntimeHoldReason]
     /// </summary>
     public sealed class EnumRuntimeHoldReason : BaseEnumRust<RuntimeHoldReason>
     {
@@ -44,7 +54,9 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
         public EnumRuntimeHoldReason()
         {
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_preimage.pallet.EnumHoldReason>(RuntimeHoldReason.Preimage);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_collective.pallet.EnumHoldReason>(RuntimeHoldReason.TechnicalCommittee);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_state_trie_migration.pallet.EnumHoldReason>(RuntimeHoldReason.StateTrieMigration);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_xcm.pallet.EnumHoldReason>(RuntimeHoldReason.PolkadotXcm);
         }
     }
 }

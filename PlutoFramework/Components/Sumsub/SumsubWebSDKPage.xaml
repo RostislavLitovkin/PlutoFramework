@@ -6,34 +6,32 @@
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        x:Class="PlutoFramework.Components.Sumsub.SumsubWebSDKPage"
                        Title="KYC verification">
-    <template:PageTemplate.MainContent>
-        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+    <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                         AbsoluteLayout.LayoutFlags="All"
                         HorizontalOptions="Fill"
                         VerticalOptions="Fill">
-            <WebView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+        <WebView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                      AbsoluteLayout.LayoutFlags="All"
                      Margin="0, 0, 0, 0"
                  x:Name="webView"
                  Navigating="OnNavigating" />
 
-            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 80"
+        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 1, 1, 80"
                         AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
                         x:Name="continueButton"
                         IsVisible="False">
 
-                <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 50"
+            <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 50"
                   AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
                   ColumnSpacing="15"
                   Margin="20, 0, 20, 10">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <buttons:PlutoFrameworkElevatedButton Text="Continue"
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <buttons:PlutoFrameworkElevatedButton Text="Continue"
                                                       Grid.Column="0"
                                                       ButtonState="Enabled" />
-                </Grid>
-            </AbsoluteLayout>
+            </Grid>
         </AbsoluteLayout>
-    </template:PageTemplate.MainContent>
+    </AbsoluteLayout>
 </template:PageTemplate>

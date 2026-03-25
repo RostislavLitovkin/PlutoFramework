@@ -71,64 +71,94 @@ namespace Hydration.NetApi.Generated.Model.pallet_identity.pallet
         SubIdentityAdded = 7,
         
         /// <summary>
+        /// >> SubIdentitiesSet
+        /// An account's sub-identities were set (in bulk).
+        /// </summary>
+        SubIdentitiesSet = 8,
+        
+        /// <summary>
+        /// >> SubIdentityRenamed
+        /// A given sub-account's associated name was changed by its super-identity.
+        /// </summary>
+        SubIdentityRenamed = 9,
+        
+        /// <summary>
         /// >> SubIdentityRemoved
         /// A sub-identity was removed from an identity and the deposit freed.
         /// </summary>
-        SubIdentityRemoved = 8,
+        SubIdentityRemoved = 10,
         
         /// <summary>
         /// >> SubIdentityRevoked
         /// A sub-identity was cleared, and the given deposit repatriated from the
         /// main identity account to the sub-identity account.
         /// </summary>
-        SubIdentityRevoked = 9,
+        SubIdentityRevoked = 11,
         
         /// <summary>
         /// >> AuthorityAdded
         /// A username authority was added.
         /// </summary>
-        AuthorityAdded = 10,
+        AuthorityAdded = 12,
         
         /// <summary>
         /// >> AuthorityRemoved
         /// A username authority was removed.
         /// </summary>
-        AuthorityRemoved = 11,
+        AuthorityRemoved = 13,
         
         /// <summary>
         /// >> UsernameSet
         /// A username was set for `who`.
         /// </summary>
-        UsernameSet = 12,
+        UsernameSet = 14,
         
         /// <summary>
         /// >> UsernameQueued
         /// A username was queued, but `who` must accept it prior to `expiration`.
         /// </summary>
-        UsernameQueued = 13,
+        UsernameQueued = 15,
         
         /// <summary>
         /// >> PreapprovalExpired
         /// A queued username passed its expiration without being claimed and was removed.
         /// </summary>
-        PreapprovalExpired = 14,
+        PreapprovalExpired = 16,
         
         /// <summary>
         /// >> PrimaryUsernameSet
         /// A username was set as a primary and can be looked up from `who`.
         /// </summary>
-        PrimaryUsernameSet = 15,
+        PrimaryUsernameSet = 17,
         
         /// <summary>
         /// >> DanglingUsernameRemoved
         /// A dangling username (as in, a username corresponding to an account that has removed its
         /// identity) has been removed.
         /// </summary>
-        DanglingUsernameRemoved = 16,
+        DanglingUsernameRemoved = 18,
+        
+        /// <summary>
+        /// >> UsernameUnbound
+        /// A username has been unbound.
+        /// </summary>
+        UsernameUnbound = 19,
+        
+        /// <summary>
+        /// >> UsernameRemoved
+        /// A username has been removed.
+        /// </summary>
+        UsernameRemoved = 20,
+        
+        /// <summary>
+        /// >> UsernameKilled
+        /// A username has been killed.
+        /// </summary>
+        UsernameKilled = 21,
     }
     
     /// <summary>
-    /// >> 40 - Variant[pallet_identity.pallet.Event]
+    /// >> 41 - Variant[pallet_identity.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -147,6 +177,8 @@ namespace Hydration.NetApi.Generated.Model.pallet_identity.pallet
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.JudgementGiven);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.RegistrarAdded);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.SubIdentityAdded);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.SubIdentitiesSet);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.SubIdentityRenamed);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.SubIdentityRemoved);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.SubIdentityRevoked);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.AuthorityAdded);
@@ -156,6 +188,9 @@ namespace Hydration.NetApi.Generated.Model.pallet_identity.pallet
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>(Event.PreapprovalExpired);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1>>(Event.PrimaryUsernameSet);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1>>(Event.DanglingUsernameRemoved);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1>(Event.UsernameUnbound);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1>(Event.UsernameRemoved);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT1>(Event.UsernameKilled);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.cumulus_pallet_parachain_system.relay_stat
     
     
     /// <summary>
-    /// >> 568 - Composite[cumulus_pallet_parachain_system.relay_state_snapshot.RelayDispatchQueueRemainingCapacity]
+    /// >> 683 - Composite[cumulus_pallet_parachain_system.relay_state_snapshot.RelayDispatchQueueRemainingCapacity]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RelayDispatchQueueRemainingCapacity : BaseType

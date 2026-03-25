@@ -868,5 +868,17 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         /// The asset ID must be equal to the [`NextAssetId`].
         /// </summary>
         BadAssetId,
+        
+        /// <summary>
+        /// >> ContainsFreezes
+        /// The asset cannot be destroyed because some accounts for this asset contain freezes.
+        /// </summary>
+        ContainsFreezes,
+        
+        /// <summary>
+        /// >> ContainsHolds
+        /// The asset cannot be destroyed because some accounts for this asset contain holds.
+        /// </summary>
+        ContainsHolds,
     }
 }

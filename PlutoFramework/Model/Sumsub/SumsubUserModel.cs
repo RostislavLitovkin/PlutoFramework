@@ -27,6 +27,9 @@ namespace PlutoFramework.Model.Sumsub
             var role = applicant.Review.LevelName switch
             {
                 "csharp-verification-developer" => UserRoleEnum.Developer,
+                "csharp-verification-investor" => UserRoleEnum.Investor,
+                "csharp-verification-letting-agent" => UserRoleEnum.LettingAgent,
+                "csharp-verification-lawyer" => UserRoleEnum.Lawyer,
                 _ => UserRoleEnum.None,
             };
 

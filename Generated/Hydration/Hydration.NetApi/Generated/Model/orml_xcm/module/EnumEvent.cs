@@ -30,7 +30,7 @@ namespace Hydration.NetApi.Generated.Model.orml_xcm.module
     }
     
     /// <summary>
-    /// >> 477 - Variant[orml_xcm.module.Event]
+    /// >> 527 - Variant[orml_xcm.module.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -41,7 +41,7 @@ namespace Hydration.NetApi.Generated.Model.orml_xcm.module
         /// </summary>
         public EnumEvent()
         {
-				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.staging_xcm.v4.location.Location, Hydration.NetApi.Generated.Model.staging_xcm.v4.XcmT1>>(Event.Sent);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.staging_xcm.v5.location.Location, Hydration.NetApi.Generated.Model.staging_xcm.v5.XcmT1>>(Event.Sent);
         }
     }
 }

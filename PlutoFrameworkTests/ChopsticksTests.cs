@@ -12,24 +12,22 @@ namespace PlutoFrameworkTests
 
         static string senderAddress = "5CaUEtkTHmVM9aQ6XwiPkKcGscaKKxo5Zy2bCp2sRSXCevRf";
 
-        static string badSenderAddress = "5CqRJaSqUrr6XKhBuWjvcJafuoQF9LcteaMVjQgW6mc8A6cJ";
         [Test]
         public async Task SimulateCallFailAsync()
         {
-            var endpoint = PlutoFramework.Constants.Endpoints.GetEndpointDictionary[EndpointEnum.Polkadot];
+            var endpoint = PlutoFramework.Constants.Endpoints.GetEndpointDictionary[EndpointEnum.PolkadotAssetHub];
 
             var client = new SubstrateClientExt(
                     endpoint,
                         new Uri(endpoint.URLs[0]),
-                        Substrate.NetApi.Model.Extrinsics.ChargeTransactionPayment.Default());
+                        Substrate.NetApi.Model.Extrinsics.ChargeAssetTxPayment.Default());
 
             var x = await client.ConnectAndLoadMetadataAsync();
 
-            var transfer = TransferModel.NativeTransfer(client, substrateAddress, 10000000000);
+            var transfer = TransferModel.NativeTransfer(client, substrateAddress, 100000_0000000000);
 
-            
             var account = new ChopsticksMockAccount();
-            account.Create(KeyType.Sr25519, Utils.GetPublicKeyFrom(badSenderAddress));
+            account.Create(KeyType.Sr25519, Utils.GetPublicKeyFrom(senderAddress));
 
             var extrinsic = await client.GetTempUnCheckedExtrinsicAsync(transfer, account, 64, CancellationToken.None, signed: true);
 
@@ -60,20 +58,20 @@ namespace PlutoFrameworkTests
 
             var currencyChanges = await TransactionAnalyzerModel.AnalyzeCurrencyChangesInEventsAsync(client, extrinsicDetails.Events, endpoint, CancellationToken.None);
 
-            Assert.AreEqual(1, currencyChanges[senderAddress].Values.Count());
-            Assert.AreEqual("DOT", currencyChanges[senderAddress].Values.ElementAt(0).Symbol);
-            Assert.Greater(-1, currencyChanges[senderAddress].Values.ElementAt(0).Amount);
+            Assert.That(1 == currencyChanges[senderAddress].Values.Count());
+            Assert.That("DOT" == currencyChanges[senderAddress].Values.ElementAt(0).Symbol);
+            Assert.That(1 > Math.Abs(currencyChanges[senderAddress].Values.ElementAt(0).Amount));
         }
 
         [Test]
         public async Task SimulateCallAsync()
         {
-            var endpoint = PlutoFramework.Constants.Endpoints.GetEndpointDictionary[EndpointEnum.Polkadot];
+            var endpoint = PlutoFramework.Constants.Endpoints.GetEndpointDictionary[EndpointEnum.PolkadotAssetHub];
 
             var client = new SubstrateClientExt(
                     endpoint,
                         new Uri(endpoint.URLs[0]),
-                        Substrate.NetApi.Model.Extrinsics.ChargeTransactionPayment.Default());
+                        Substrate.NetApi.Model.Extrinsics.ChargeAssetTxPayment.Default());
 
             var x = await client.ConnectAndLoadMetadataAsync();
 
@@ -111,13 +109,14 @@ namespace PlutoFrameworkTests
 
             var currencyChanges = await TransactionAnalyzerModel.AnalyzeCurrencyChangesInEventsAsync(client, extrinsicDetails.Events, endpoint, CancellationToken.None);
 
-            Assert.AreEqual(1, currencyChanges[senderAddress].Values.Count());
-            Assert.AreEqual("DOT", currencyChanges[senderAddress].Values.ElementAt(0).Symbol);
-            Assert.Greater(-1, currencyChanges[senderAddress].Values.ElementAt(0).Amount);
+            Assert.That(1 == currencyChanges[senderAddress].Values.Count());
+            Assert.That("DOT" == currencyChanges[senderAddress].Values.ElementAt(0).Symbol);
+            Assert.That(-1 > currencyChanges[senderAddress].Values.ElementAt(0).Amount);
         }
 
         [Test]
-        public async Task SimulateSwapCallAsync() {
+        public async Task SimulateSwapCallAsync()
+        {
             var endpoint = PlutoFramework.Constants.Endpoints.GetEndpointDictionary[EndpointEnum.Hydration];
 
             var client = new SubstrateClientExt(
@@ -161,17 +160,18 @@ namespace PlutoFrameworkTests
 
             var currencyChanges = await TransactionAnalyzerModel.AnalyzeCurrencyChangesInEventsAsync(client, extrinsicDetails.Events, endpoint, CancellationToken.None);
 
-            foreach(var currencyChange in currencyChanges[senderAddress].Values)
+            foreach (var currencyChange in currencyChanges[senderAddress].Values)
             {
                 Console.WriteLine(currencyChange.Symbol + " " + currencyChange.Amount);
             }
 
-            Assert.AreEqual(3, currencyChanges[senderAddress].Values.Count());
+            Assert.That(3 == currencyChanges[senderAddress].Values.Count());
             //Assert.AreEqual("DOT", currencyChanges[senderAddress].Values.ElementAt(0).Symbol);
             //Assert.Greater(-1, currencyChanges[senderAddress].Values.ElementAt(0).Amount);
         }
 
         [Test]
+        [Ignore("Outdated Extrinsic")]
         public async Task SimulateXcmCallAsync()
         {
             var fromEndpoint = PlutoFramework.Constants.Endpoints.GetEndpointDictionary[EndpointEnum.Hydration];

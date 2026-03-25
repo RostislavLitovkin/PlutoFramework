@@ -63,7 +63,7 @@ namespace Kilt.NetApi.Generated.Model.spiritnet_runtime
     }
     
     /// <summary>
-    /// >> 170 - Variant[spiritnet_runtime.RuntimeHoldReason]
+    /// >> 172 - Variant[spiritnet_runtime.RuntimeHoldReason]
     /// </summary>
     public sealed class EnumRuntimeHoldReason : BaseEnumRust<RuntimeHoldReason>
     {

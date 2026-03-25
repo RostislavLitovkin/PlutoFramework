@@ -30,7 +30,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_ethereum.pallet
     }
     
     /// <summary>
-    /// >> 275 - Variant[pallet_ethereum.pallet.Call]
+    /// >> 287 - Variant[pallet_ethereum.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -41,7 +41,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_ethereum.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.ethereum.transaction.EnumTransactionV2>(Call.transact);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.ethereum.transaction.EnumTransactionV3>(Call.transact);
         }
     }
 }

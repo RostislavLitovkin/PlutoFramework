@@ -6,16 +6,18 @@
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        xmlns:card="clr-namespace:PlutoFramework.Components.Card"
                        xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
+                       xmlns:keys="clr-namespace:PlutoFramework.Components.Keys"
                        x:Class="PlutoFramework.Components.Mnemonics.EnterMnemonicsPage"
                        Title="Enter mnemonics">
     <template:PageTemplate.BindingContext>
         <mnemonics:EnterMnemonicsViewModel x:Name="viewModel" />
     </template:PageTemplate.BindingContext>
 
-    <template:PageTemplate.MainContent>
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
         <VerticalStackLayout HorizontalOptions="Center"
                              Padding="20, 20, 20, 100"
-                             Spacing="15">  
+                             Spacing="15">
             <ContentView HeightRequest="160">
                 <card:Card>
                     <card:Card.View>
@@ -38,6 +40,7 @@
 
                                     <Editor HeightRequest="120"
                                             x:Name="mnemonicsEntry"
+                                            AutomationId="mnemonicsEntry"
                                             Placeholder="Start entering here.."
                                             Text="{Binding Mnemonics}" />
                                 </VerticalStackLayout>
@@ -52,6 +55,7 @@
                    IsVisible="{Binding IncorrectMnemonicsEntered}"/>
 
             <buttons:ElevatedButton Text="Continue"
+                                    AutomationId="ContinueMnemonics"
                                     Command="{Binding ContinueWithMnemonicsCommand}" />
 
             <ContentView HeightRequest="120"
@@ -97,5 +101,9 @@
                                     Text="Import json"
                                     Command="{Binding ImportJsonCommand}"/>
         </VerticalStackLayout>
-    </template:PageTemplate.MainContent>
+    </ScrollView>
+
+    <template:PageTemplate.PopupContent>
+        <keys:CanNotRecoverKeyPopupView />
+    </template:PageTemplate.PopupContent>
 </template:PageTemplate>

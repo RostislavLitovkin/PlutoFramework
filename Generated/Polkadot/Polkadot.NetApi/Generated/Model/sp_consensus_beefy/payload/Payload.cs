@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.sp_consensus_beefy.payload
     
     
     /// <summary>
-    /// >> 451 - Composite[sp_consensus_beefy.payload.Payload]
+    /// >> 456 - Composite[sp_consensus_beefy.payload.Payload]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Payload : BaseType

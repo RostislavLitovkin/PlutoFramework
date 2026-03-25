@@ -33,7 +33,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_preimage
     }
     
     /// <summary>
-    /// >> 489 - Variant[pallet_preimage.RequestStatus]
+    /// >> 591 - Variant[pallet_preimage.RequestStatus]
     /// </summary>
     public sealed class EnumRequestStatus : BaseEnumRust<RequestStatus>
     {

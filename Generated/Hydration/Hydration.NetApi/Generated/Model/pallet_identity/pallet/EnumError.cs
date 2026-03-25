@@ -177,10 +177,35 @@ namespace Hydration.NetApi.Generated.Model.pallet_identity.pallet
         /// The username cannot be forcefully removed because it can still be accepted.
         /// </summary>
         NotExpired = 25,
+        
+        /// <summary>
+        /// >> TooEarly
+        /// The username cannot be removed because it's still in the grace period.
+        /// </summary>
+        TooEarly = 26,
+        
+        /// <summary>
+        /// >> NotUnbinding
+        /// The username cannot be removed because it is not unbinding.
+        /// </summary>
+        NotUnbinding = 27,
+        
+        /// <summary>
+        /// >> AlreadyUnbinding
+        /// The username cannot be unbound because it is already unbinding.
+        /// </summary>
+        AlreadyUnbinding = 28,
+        
+        /// <summary>
+        /// >> InsufficientPrivileges
+        /// The action cannot be performed because of insufficient privileges (e.g. authority
+        /// trying to unbind a username provided by the system).
+        /// </summary>
+        InsufficientPrivileges = 29,
     }
     
     /// <summary>
-    /// >> 557 - Variant[pallet_identity.pallet.Error]
+    /// >> 614 - Variant[pallet_identity.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

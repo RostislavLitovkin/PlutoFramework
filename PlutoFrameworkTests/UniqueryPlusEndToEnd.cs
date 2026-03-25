@@ -77,7 +77,7 @@ namespace PlutoFrameworkTests
                  Console.WriteLine(status.ExtrinsicState);
             };
 
-            var extrinsicId = await client.SubmitExtrinsicAsync(createCollection, alice, updateExtrinsicsCallback);
+            var extrinsicId = await client.SubmitExtrinsicAsync(createCollection, alice, new TaskCompletionSource<string?>(), updateExtrinsicsCallback);
 
             await Task.Delay(20_000);
 

@@ -51,14 +51,14 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "VersionNotifyTargets"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedLocation>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight, Substrate.NetApi.Model.Types.Primitive.U32>)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "VersionDiscoveryQueue"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "VersionDiscoveryQueue"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT52)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "CurrentMigration"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.EnumVersionMigrationStage)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "RemoteLockedFungibles"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.xcm.EnumVersionedAssetId>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet.RemoteLockedFungibleRecord)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "LockedFungibles"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT54)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "XcmExecutionSuspended"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "ShouldRecordXcm"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PolkadotXcm", "RecordedXcm"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.XcmT1)));
@@ -315,10 +315,10 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         ///  the `u32` counter is the number of times that a send to the destination has been attempted,
         ///  which is used as a prioritization.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32> VersionDiscoveryQueue(string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT52> VersionDiscoveryQueue(string blockhash, CancellationToken token)
         {
             string parameters = PolkadotXcmStorage.VersionDiscoveryQueueParams();
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT32>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT52>(parameters, blockhash, token);
             return result;
         }
         
@@ -407,10 +407,10 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> LockedFungibles
         ///  Fungible assets which we know are locked on this chain.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34> LockedFungibles(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT54> LockedFungibles(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = PolkadotXcmStorage.LockedFungiblesParams(key);
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT54>(parameters, blockhash, token);
             return result;
         }
         
@@ -574,7 +574,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(dest.Encode());
             byteArray.AddRange(message.Encode());
-            return new Method(73, "PolkadotXcm", 0, "send", byteArray.ToArray());
+            return new Method(31, "PolkadotXcm", 0, "send", byteArray.ToArray());
         }
         
         /// <summary>
@@ -588,7 +588,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(beneficiary.Encode());
             byteArray.AddRange(assets.Encode());
             byteArray.AddRange(fee_asset_item.Encode());
-            return new Method(73, "PolkadotXcm", 1, "teleport_assets", byteArray.ToArray());
+            return new Method(31, "PolkadotXcm", 1, "teleport_assets", byteArray.ToArray());
         }
         
         /// <summary>
@@ -602,7 +602,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(beneficiary.Encode());
             byteArray.AddRange(assets.Encode());
             byteArray.AddRange(fee_asset_item.Encode());
-            return new Method(73, "PolkadotXcm", 2, "reserve_transfer_assets", byteArray.ToArray());
+            return new Method(31, "PolkadotXcm", 2, "reserve_transfer_assets", byteArray.ToArray());
         }
         
         /// <summary>
@@ -614,7 +614,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(message.Encode());
             byteArray.AddRange(max_weight.Encode());
-            return new Method(73, "PolkadotXcm", 3, "execute", byteArray.ToArray());
+            return new Method(31, "PolkadotXcm", 3, "execute", byteArray.ToArray());
         }
         
         /// <summary>
@@ -626,7 +626,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(location.Encode());
             byteArray.AddRange(version.Encode());
-            return new Method(73, "PolkadotXcm", 4, "force_xcm_version", byteArray.ToArray());
+            return new Method(31, "PolkadotXcm", 4, "force_xcm_version", byteArray.ToArray());
         }
         
         /// <summary>
@@ -637,7 +637,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(maybe_xcm_version.Encode());
-            return new Method(73, "PolkadotXcm", 5, "force_default_xcm_version", byteArray.ToArray());
+            return new Method(31, "PolkadotXcm", 5, "force_default_xcm_version", byteArray.ToArray());
         }
         
         /// <summary>
@@ -648,7 +648,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(location.Encode());
-            return new Method(73, "PolkadotXcm", 6, "force_subscribe_version_notify", byteArray.ToArray());
+            return new Method(31, "PolkadotXcm", 6, "force_subscribe_version_notify", byteArray.ToArray());
         }
         
         /// <summary>
@@ -659,7 +659,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(location.Encode());
-            return new Method(73, "PolkadotXcm", 7, "force_unsubscribe_version_notify", byteArray.ToArray());
+            return new Method(31, "PolkadotXcm", 7, "force_unsubscribe_version_notify", byteArray.ToArray());
         }
         
         /// <summary>
@@ -674,7 +674,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(assets.Encode());
             byteArray.AddRange(fee_asset_item.Encode());
             byteArray.AddRange(weight_limit.Encode());
-            return new Method(73, "PolkadotXcm", 8, "limited_reserve_transfer_assets", byteArray.ToArray());
+            return new Method(31, "PolkadotXcm", 8, "limited_reserve_transfer_assets", byteArray.ToArray());
         }
         
         /// <summary>
@@ -689,7 +689,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(assets.Encode());
             byteArray.AddRange(fee_asset_item.Encode());
             byteArray.AddRange(weight_limit.Encode());
-            return new Method(73, "PolkadotXcm", 9, "limited_teleport_assets", byteArray.ToArray());
+            return new Method(31, "PolkadotXcm", 9, "limited_teleport_assets", byteArray.ToArray());
         }
         
         /// <summary>
@@ -700,7 +700,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(suspended.Encode());
-            return new Method(73, "PolkadotXcm", 10, "force_suspension", byteArray.ToArray());
+            return new Method(31, "PolkadotXcm", 10, "force_suspension", byteArray.ToArray());
         }
         
         /// <summary>
@@ -715,7 +715,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(assets.Encode());
             byteArray.AddRange(fee_asset_item.Encode());
             byteArray.AddRange(weight_limit.Encode());
-            return new Method(73, "PolkadotXcm", 11, "transfer_assets", byteArray.ToArray());
+            return new Method(31, "PolkadotXcm", 11, "transfer_assets", byteArray.ToArray());
         }
         
         /// <summary>
@@ -727,7 +727,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(assets.Encode());
             byteArray.AddRange(beneficiary.Encode());
-            return new Method(73, "PolkadotXcm", 12, "claim_assets", byteArray.ToArray());
+            return new Method(31, "PolkadotXcm", 12, "claim_assets", byteArray.ToArray());
         }
         
         /// <summary>
@@ -744,7 +744,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(fees_transfer_type.Encode());
             byteArray.AddRange(custom_xcm_on_dest.Encode());
             byteArray.AddRange(weight_limit.Encode());
-            return new Method(73, "PolkadotXcm", 13, "transfer_assets_using_type_and_then", byteArray.ToArray());
+            return new Method(31, "PolkadotXcm", 13, "transfer_assets_using_type_and_then", byteArray.ToArray());
         }
         
         /// <summary>
@@ -756,7 +756,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(aliaser.Encode());
             byteArray.AddRange(expires.Encode());
-            return new Method(73, "PolkadotXcm", 14, "add_authorized_alias", byteArray.ToArray());
+            return new Method(31, "PolkadotXcm", 14, "add_authorized_alias", byteArray.ToArray());
         }
         
         /// <summary>
@@ -767,7 +767,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(aliaser.Encode());
-            return new Method(73, "PolkadotXcm", 15, "remove_authorized_alias", byteArray.ToArray());
+            return new Method(31, "PolkadotXcm", 15, "remove_authorized_alias", byteArray.ToArray());
         }
         
         /// <summary>
@@ -777,7 +777,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public static Method RemoveAllAuthorizedAliases()
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            return new Method(73, "PolkadotXcm", 16, "remove_all_authorized_aliases", byteArray.ToArray());
+            return new Method(31, "PolkadotXcm", 16, "remove_all_authorized_aliases", byteArray.ToArray());
         }
     }
     
@@ -788,6 +788,17 @@ namespace XcavatePaseo.NetApi.Generated.Storage
     {
         
         /// <summary>
+        /// >> UniversalLocation
+        ///  This chain's Universal Location.
+        /// </summary>
+        public XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.junctions.EnumJunctions UniversalLocation()
+        {
+            var result = new XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.junctions.EnumJunctions();
+            result.Create("0x01002D49");
+            return result;
+        }
+        
+        /// <summary>
         /// >> AdvertisedXcmVersion
         ///  The latest supported version that we advertise. Generally just set it to
         ///  `pallet_xcm::CurrentXcmVersion`.
@@ -796,6 +807,28 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
             result.Create("0x05000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MaxLockers
+        ///  The maximum number of local XCM locks that a single account may have.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 MaxLockers()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x08000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MaxRemoteLockConsumers
+        ///  The maximum number of consumers a single remote lock may have.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 MaxRemoteLockConsumers()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x00000000");
             return result;
         }
     }

@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.parachain_staking.set
     
     
     /// <summary>
-    /// >> 281 - Composite[parachain_staking.set.OrderedSetT1]
+    /// >> 519 - Composite[parachain_staking.set.OrderedSetT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OrderedSetT1 : BaseType
@@ -27,7 +27,7 @@ namespace Kilt.NetApi.Generated.Model.parachain_staking.set
         /// <summary>
         /// >> value
         /// </summary>
-        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19 Value { get; set; }
+        public Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34 Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace Kilt.NetApi.Generated.Model.parachain_staking.set
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19();
+            Value = new Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

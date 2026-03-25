@@ -7,52 +7,55 @@
                        xmlns:link="clr-namespace:PlutoFramework.Components.Hyperlink"
                        x:Class="PlutoFramework.Components.Mnemonics.MnemonicsExplanationPage"
                        Title="About Mnemonics">
-    <VerticalStackLayout Spacing="20"
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
+        <VerticalStackLayout Spacing="20"
                          Padding="20">
-        <card:Card>
-            <card:Card.View>
-                <VerticalStackLayout Padding="20"
+            <card:Card>
+                <card:Card.View>
+                    <VerticalStackLayout Padding="20"
                                      Spacing="20">
-                    <!-- What are Mnemonics section -->
-                    <Label Text="What are Mnemonics?"
+                        <!-- What are Mnemonics section -->
+                        <Label Text="What are Mnemonics?"
                            FontSize="24"
                            FontAttributes="Bold"/>
-                    <Label Text="Mnemonics, also known as seed phrases or recovery phrases, are a series of 12 words that represent the private key of your cryptocurrency wallet. These phrases are crucial because they allow you to recover your wallet and access your funds if you lose your device or forget your password."
+                        <Label Text="Mnemonics, also known as seed phrases or recovery phrases, are a series of 12 words that represent the private key of your cryptocurrency wallet. These phrases are crucial because they allow you to recover your wallet and access your funds if you lose your device or forget your password."
                            TextType="Text"/>
 
-                    <!-- How to Store section -->
-                    <Label Text="How to Store Mnemonics Safely"
+                        <!-- How to Store section -->
+                        <Label Text="How to Store Mnemonics Safely"
                            FontSize="24"
                            FontAttributes="Bold"
                            Margin="0,10,0,0"/>
 
-                    <VerticalStackLayout Spacing="10">
-                        <Label Text="1. Write it Down on Paper and store it in a secure place where you will not lose it. Potentionally consider creating multiple copies."
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="1. Write it Down on Paper and store it in a secure place where you will not lose it. Potentionally consider creating multiple copies."
                                TextType="Text"/>
 
-                        <Label Text="2. Do not store your mnemonic phrase in cloud storage, email, or any online service. These platforms are vulnerable to cyber-attacks, which could compromise your mnemonic phrase."
+                            <Label Text="2. Do not store your mnemonic phrase in cloud storage, email, or any online service. These platforms are vulnerable to cyber-attacks, which could compromise your mnemonic phrase."
                                TextType="Text"/>
 
-                        <Label Text="3. Never share your mnemonic phrase with anyone. Possession of the mnemonic phrase means full control over your wallet and its funds."
+                            <Label Text="3. Never share your mnemonic phrase with anyone. Possession of the mnemonic phrase means full control over your wallet and its funds."
                                TextType="Text"/>
 
-                        <Label Text="4. Never enter the mnemonic phrase into any website/application, even if they ask you. Be wary of phishing attempts and scams that may try to trick you into revealing your phrase."
+                            <Label Text="4. Never enter the mnemonic phrase into any website/application, even if they ask you. Be wary of phishing attempts and scams that may try to trick you into revealing your phrase."
                                TextType="Text"/>
-                    </VerticalStackLayout>
+                        </VerticalStackLayout>
 
-                    <Label Margin="0, 10, 0, 0"
+                        <Label Margin="0, 10, 0, 0"
                            FontSize="12">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="Source: "
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Source: "
                                       TextColor="Grey"/>
-                                <link:Link Text="https://support.polkadot.network/support/solutions/articles/65000110873-glossary"
+                                    <link:Link Text="https://support.polkadot.network/support/solutions/articles/65000110873-glossary"
                                            Url="https://support.polkadot.network/support/solutions/articles/65000110873-glossary"/>
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                </VerticalStackLayout>
-            </card:Card.View>
-        </card:Card>
-    </VerticalStackLayout>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </VerticalStackLayout>
+                </card:Card.View>
+            </card:Card>
+        </VerticalStackLayout>
+    </ScrollView>
 </template:PageTemplate>

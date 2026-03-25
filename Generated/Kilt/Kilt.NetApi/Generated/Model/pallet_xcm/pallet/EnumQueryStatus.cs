@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 590 - Variant[pallet_xcm.pallet.QueryStatus]
+    /// >> 707 - Variant[pallet_xcm.pallet.QueryStatus]
     /// </summary>
     public sealed class EnumQueryStatus : BaseEnumRust<QueryStatus>
     {

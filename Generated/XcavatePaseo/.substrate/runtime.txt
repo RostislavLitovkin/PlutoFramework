@@ -1,1 +1,1 @@
-container-chain-template_runtime
+template-parachain_runtime

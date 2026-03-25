@@ -42,6 +42,12 @@ namespace Hydration.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.primitive_types.H160), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("EVMAccounts", "ApprovedContract"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.primitive_types.H160), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("EVMAccounts", "MarkedEvmAccounts"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("EVMAccounts", "Allowances"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.primitive_types.H160, Hydration.NetApi.Generated.Model.primitive_types.H160>), typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
         }
         
         /// <summary>
@@ -136,6 +142,79 @@ namespace Hydration.NetApi.Generated.Storage
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple>(parameters, blockhash, token);
             return result;
         }
+        
+        /// <summary>
+        /// >> MarkedEvmAccountsParams
+        ///  Tracks accounts that have been marked as EVM accounts.
+        ///  An account is marked as EVM account right before we charge the evm fee
+        ///  This is used to avoid resetting frame system nonce of accounts.
+        ///  When we mark account as EVM account, we increase its sufficients counter by one.
+        ///  We never decrease this sufficients, so side effect is that account can never be reaped
+        /// </summary>
+        public static string MarkedEvmAccountsParams(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+        {
+            return RequestGenerator.GetStorage("EVMAccounts", "MarkedEvmAccounts", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> MarkedEvmAccountsDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string MarkedEvmAccountsDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> MarkedEvmAccounts
+        ///  Tracks accounts that have been marked as EVM accounts.
+        ///  An account is marked as EVM account right before we charge the evm fee
+        ///  This is used to avoid resetting frame system nonce of accounts.
+        ///  When we mark account as EVM account, we increase its sufficients counter by one.
+        ///  We never decrease this sufficients, so side effect is that account can never be reaped
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> MarkedEvmAccounts(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        {
+            string parameters = EVMAccountsStorage.MarkedEvmAccountsParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> AllowancesParams
+        ///  ERC20-style allowances storage for the MultiCurrency precompile:
+        ///  (asset_id, owner, spender) -> allowance
+        /// </summary>
+        public static string AllowancesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.primitive_types.H160, Hydration.NetApi.Generated.Model.primitive_types.H160> key)
+        {
+            return RequestGenerator.GetStorage("EVMAccounts", "Allowances", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, key.Value);
+        }
+        
+        /// <summary>
+        /// >> AllowancesDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string AllowancesDefault()
+        {
+            return "0x00000000000000000000000000000000";
+        }
+        
+        /// <summary>
+        /// >> Allowances
+        ///  ERC20-style allowances storage for the MultiCurrency precompile:
+        ///  (asset_id, owner, spender) -> allowance
+        /// </summary>
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U128> Allowances(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.primitive_types.H160, Hydration.NetApi.Generated.Model.primitive_types.H160> key, string blockhash, CancellationToken token)
+        {
+            string parameters = EVMAccountsStorage.AllowancesParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U128>(parameters, blockhash, token);
+            return result;
+        }
     }
     
     /// <summary>
@@ -207,6 +286,19 @@ namespace Hydration.NetApi.Generated.Storage
             byteArray.AddRange(address.Encode());
             return new Method(93, "EVMAccounts", 5, "disapprove_contract", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> claim_account
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method ClaimAccount(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 account, Substrate.NetApi.Model.Types.Primitive.U32 asset_id, Hydration.NetApi.Generated.Model.sp_runtime.EnumMultiSignature signature)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(account.Encode());
+            byteArray.AddRange(asset_id.Encode());
+            byteArray.AddRange(signature.Encode());
+            return new Method(93, "EVMAccounts", 6, "claim_account", byteArray.ToArray());
+        }
     }
     
     /// <summary>
@@ -256,5 +348,23 @@ namespace Hydration.NetApi.Generated.Storage
         /// Address not whitelisted
         /// </summary>
         AddressNotWhitelisted,
+        
+        /// <summary>
+        /// >> InvalidSignature
+        /// Provided signature is invalid
+        /// </summary>
+        InvalidSignature,
+        
+        /// <summary>
+        /// >> AccountAlreadyExists
+        /// Account already exists in the system pallet
+        /// </summary>
+        AccountAlreadyExists,
+        
+        /// <summary>
+        /// >> InsufficientAssetBalance
+        /// Insufficient asset balance of the claimed asset
+        /// </summary>
+        InsufficientAssetBalance,
     }
 }

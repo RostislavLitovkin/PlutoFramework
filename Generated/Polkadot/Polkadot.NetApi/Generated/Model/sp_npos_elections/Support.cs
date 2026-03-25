@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.sp_npos_elections
     
     
     /// <summary>
-    /// >> 254 - Composite[sp_npos_elections.Support]
+    /// >> 256 - Composite[sp_npos_elections.Support]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Support : BaseType

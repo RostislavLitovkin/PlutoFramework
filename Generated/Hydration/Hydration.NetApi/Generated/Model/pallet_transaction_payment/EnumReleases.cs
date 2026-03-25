@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_transaction_payment
     }
     
     /// <summary>
-    /// >> 524 - Variant[pallet_transaction_payment.Releases]
+    /// >> 580 - Variant[pallet_transaction_payment.Releases]
     /// </summary>
     public sealed class EnumReleases : BaseEnum<Releases>
     {

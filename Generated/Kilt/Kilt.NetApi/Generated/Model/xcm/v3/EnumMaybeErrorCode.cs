@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.xcm.v3
     }
     
     /// <summary>
-    /// >> 197 - Variant[xcm.v3.MaybeErrorCode]
+    /// >> 204 - Variant[xcm.v3.MaybeErrorCode]
     /// </summary>
     public sealed class EnumMaybeErrorCode : BaseEnumRust<MaybeErrorCode>
     {
@@ -49,8 +49,8 @@ namespace Kilt.NetApi.Generated.Model.xcm.v3
         public EnumMaybeErrorCode()
         {
 				AddTypeDecoder<BaseVoid>(MaybeErrorCode.Success);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14>(MaybeErrorCode.Error);
-				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14>(MaybeErrorCode.TruncatedError);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13>(MaybeErrorCode.Error);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13>(MaybeErrorCode.TruncatedError);
         }
     }
 }

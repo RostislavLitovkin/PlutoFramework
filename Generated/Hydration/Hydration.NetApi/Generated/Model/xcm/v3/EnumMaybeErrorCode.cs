@@ -38,7 +38,7 @@ namespace Hydration.NetApi.Generated.Model.xcm.v3
     }
     
     /// <summary>
-    /// >> 356 - Variant[xcm.v3.MaybeErrorCode]
+    /// >> 362 - Variant[xcm.v3.MaybeErrorCode]
     /// </summary>
     public sealed class EnumMaybeErrorCode : BaseEnumRust<MaybeErrorCode>
     {
@@ -49,8 +49,8 @@ namespace Hydration.NetApi.Generated.Model.xcm.v3
         public EnumMaybeErrorCode()
         {
 				AddTypeDecoder<BaseVoid>(MaybeErrorCode.Success);
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19>(MaybeErrorCode.Error);
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19>(MaybeErrorCode.TruncatedError);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29>(MaybeErrorCode.Error);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29>(MaybeErrorCode.TruncatedError);
         }
     }
 }

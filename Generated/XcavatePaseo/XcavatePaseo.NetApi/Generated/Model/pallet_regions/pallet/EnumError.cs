@@ -23,228 +23,206 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
     {
         
         /// <summary>
-        /// >> UserNotWhitelisted
-        /// User did not pass the kyc.
-        /// </summary>
-        UserNotWhitelisted = 0,
-        
-        /// <summary>
         /// >> ListingDurationCantBeZero
-        /// The duration of a listing can not be zero.
+        /// Listing duration cannot be zero.
         /// </summary>
-        ListingDurationCantBeZero = 1,
+        ListingDurationCantBeZero = 0,
         
         /// <summary>
         /// >> ListingDurationTooHigh
-        /// Listing limit is set too high.
+        /// Listing duration is too high.
         /// </summary>
-        ListingDurationTooHigh = 2,
+        ListingDurationTooHigh = 1,
         
         /// <summary>
         /// >> ArithmeticOverflow
+        /// Arithmetic overflow occurred.
         /// </summary>
-        ArithmeticOverflow = 3,
+        ArithmeticOverflow = 2,
         
         /// <summary>
         /// >> ArithmeticUnderflow
+        /// Arithmetic underflow occurred.
         /// </summary>
-        ArithmeticUnderflow = 4,
+        ArithmeticUnderflow = 3,
         
         /// <summary>
         /// >> RegionUnknown
         /// This Region is not known.
         /// </summary>
-        RegionUnknown = 5,
+        RegionUnknown = 4,
         
         /// <summary>
         /// >> NoPermission
-        /// No sufficient permission.
+        /// No permission for the operation.
         /// </summary>
-        NoPermission = 6,
+        NoPermission = 5,
         
         /// <summary>
         /// >> LocationRegistered
         /// The location is already registered.
         /// </summary>
-        LocationRegistered = 7,
+        LocationRegistered = 6,
         
         /// <summary>
         /// >> NotOngoing
         /// The proposal is not ongoing.
         /// </summary>
-        NotOngoing = 8,
+        NotOngoing = 7,
         
         /// <summary>
         /// >> NoOngoingAuction
         /// There is no auction to bid on.
         /// </summary>
-        NoOngoingAuction = 9,
+        NoOngoingAuction = 8,
         
         /// <summary>
         /// >> BidTooLow
         /// The bid is lower than the current highest bid.
         /// </summary>
-        BidTooLow = 10,
+        BidTooLow = 9,
         
         /// <summary>
         /// >> BidBelowMinimum
         /// The bid is below the minimum.
         /// </summary>
-        BidBelowMinimum = 11,
+        BidBelowMinimum = 10,
         
         /// <summary>
         /// >> VotingStillOngoing
         /// The voting has not ended yet.
         /// </summary>
-        VotingStillOngoing = 12,
+        VotingStillOngoing = 11,
         
         /// <summary>
         /// >> NoAuction
         /// No Auction found.
         /// </summary>
-        NoAuction = 13,
+        NoAuction = 12,
         
         /// <summary>
         /// >> AuctionNotFinished
         /// Auction is still ongoing.
         /// </summary>
-        AuctionNotFinished = 14,
-        
-        /// <summary>
-        /// >> RegionProposalCooldownActive
-        /// Cant propose a new regions since the cooldown is still active.
-        /// </summary>
-        RegionProposalCooldownActive = 15,
+        AuctionNotFinished = 13,
         
         /// <summary>
         /// >> ProposalExpired
-        /// The proposa has already expired.
+        /// The proposal has already expired.
         /// </summary>
-        ProposalExpired = 16,
+        ProposalExpired = 14,
         
         /// <summary>
         /// >> BidCannotBeZero
         /// Bid amount can not be zero.
         /// </summary>
-        BidCannotBeZero = 17,
-        
-        /// <summary>
-        /// >> AlreadyRegionOperator
-        /// This account is already registers as a region operator.
-        /// </summary>
-        AlreadyRegionOperator = 18,
-        
-        /// <summary>
-        /// >> NoRegionalOperator
-        /// This account is not a regional operator.
-        /// </summary>
-        NoRegionalOperator = 19,
-        
-        /// <summary>
-        /// >> UserNotRegionalOperator
-        /// The user is not a regional operator.
-        /// </summary>
-        UserNotRegionalOperator = 20,
+        BidCannotBeZero = 15,
         
         /// <summary>
         /// >> ProposalAlreadyOngoing
         /// There is alerady a proposal ongoing for this region.
         /// </summary>
-        ProposalAlreadyOngoing = 21,
+        ProposalAlreadyOngoing = 16,
         
         /// <summary>
         /// >> TooManyProposals
         /// There are already too many proposals in the ending block.
         /// </summary>
-        TooManyProposals = 22,
+        TooManyProposals = 17,
         
         /// <summary>
         /// >> RegionOwnerCantBeChanged
-        /// Region owner cant be changed at the moment.
+        /// Region owner can not be changed at the moment.
         /// </summary>
-        RegionOwnerCantBeChanged = 23,
+        RegionOwnerCantBeChanged = 18,
         
         /// <summary>
         /// >> TooManyAuctions
         /// There are already too many auctions in the ending block.
         /// </summary>
-        TooManyAuctions = 24,
+        TooManyAuctions = 19,
         
         /// <summary>
         /// >> NotRegionOwner
         /// Caller is not the region owner.
         /// </summary>
-        NotRegionOwner = 25,
+        NotRegionOwner = 20,
         
         /// <summary>
         /// >> OwnerChangeAlreadyScheduled
         /// Owner would change before resignation period would be over.
         /// </summary>
-        OwnerChangeAlreadyScheduled = 26,
+        OwnerChangeAlreadyScheduled = 21,
         
         /// <summary>
         /// >> ProposalNotFound
         /// The proposal could not be found.
         /// </summary>
-        ProposalNotFound = 27,
+        ProposalNotFound = 22,
         
         /// <summary>
         /// >> RegionAlreadyCreated
         /// The region has already been created.
         /// </summary>
-        RegionAlreadyCreated = 28,
+        RegionAlreadyCreated = 23,
         
         /// <summary>
         /// >> RegionProposalAlreadyExists
         /// This region has an ongoing proposal.
         /// </summary>
-        RegionProposalAlreadyExists = 29,
+        RegionProposalAlreadyExists = 24,
         
         /// <summary>
         /// >> NotEnoughTokenToVote
         /// The caller does not have enough token to vote.
         /// </summary>
-        NotEnoughTokenToVote = 30,
+        NotEnoughTokenToVote = 25,
         
         /// <summary>
         /// >> RegionHasNoWinningBidder
         /// The auction does not have an winning bidder.
         /// </summary>
-        RegionHasNoWinningBidder = 31,
+        RegionHasNoWinningBidder = 26,
         
         /// <summary>
         /// >> LawyerAlreadyRegistered
         /// The lawyer has already been registered.
         /// </summary>
-        LawyerAlreadyRegistered = 32,
-        
-        /// <summary>
-        /// >> TooManyVoters
-        /// There are already too many voters for this voting.
-        /// </summary>
-        TooManyVoters = 33,
-        
-        /// <summary>
-        /// >> AccountNotLawyer
-        /// The account can has not lawyer permission.
-        /// </summary>
-        AccountNotLawyer = 34,
+        LawyerAlreadyRegistered = 27,
         
         /// <summary>
         /// >> LawyerNotRegistered
         /// Lawyer is not registered.
         /// </summary>
-        LawyerNotRegistered = 35,
+        LawyerNotRegistered = 28,
         
         /// <summary>
         /// >> LawyerStillActive
         /// The lawyer is still active in some cases.
         /// </summary>
-        LawyerStillActive = 36,
+        LawyerStillActive = 29,
+        
+        /// <summary>
+        /// >> NoFrozenAmount
+        /// The user has no token amount frozen.
+        /// </summary>
+        NoFrozenAmount = 30,
+        
+        /// <summary>
+        /// >> BelowMinimumVotingAmount
+        /// The token amount for voting is below minimum.
+        /// </summary>
+        BelowMinimumVotingAmount = 31,
+        
+        /// <summary>
+        /// >> TaxTooHigh
+        /// The tax percent is too high.
+        /// </summary>
+        TaxTooHigh = 32,
     }
     
     /// <summary>
-    /// >> 547 - Variant[pallet_regions.pallet.Error]
+    /// >> 739 - Variant[pallet_regions.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

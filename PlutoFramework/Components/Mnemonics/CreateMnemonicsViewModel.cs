@@ -21,9 +21,8 @@ namespace PlutoFramework.Components.Mnemonics
         [RelayCommand]
         public async Task ContinueToNextPageAsync()
         {
-            await KeysModel.GenerateNewAccountAsync(
-                Mnemonics,
-                null
+            await KeysModel.SaveSr25519KeyAsync(
+                Mnemonics
             );
 
             await Navigation.Invoke();

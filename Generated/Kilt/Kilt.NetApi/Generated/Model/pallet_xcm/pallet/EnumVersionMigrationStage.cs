@@ -43,7 +43,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 600 - Variant[pallet_xcm.pallet.VersionMigrationStage]
+    /// >> 717 - Variant[pallet_xcm.pallet.VersionMigrationStage]
     /// </summary>
     public sealed class EnumVersionMigrationStage : BaseEnumRust<VersionMigrationStage>
     {
