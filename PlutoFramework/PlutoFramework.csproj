@@ -1014,6 +1014,14 @@
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
+    <Compile Update="Components\XcavateProperty\PropertyDocumentsPage.xaml.cs">
+      <DependentUpon>PropertyDocumentsPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\XcavateProperty\PropertyActionsPage.xaml.cs">
+      <DependentUpon>PropertyActionsPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -2611,6 +2619,12 @@
     </MauiXaml>
     <MauiXaml Update="Templates\TopNavigationBarTemplate\TopNavigationBar.xaml">
       <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\PropertyDocumentsPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\PropertyActionsPage.xaml">
+      <SubType>Designer</SubType>
     </MauiXaml>
   </ItemGroup>
 </Project>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                       xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
+                       x:Class="PlutoFramework.Components.XcavateProperty.PropertyDocumentsPage"
+                       Title="PropertyDocumentsPage">
+    <template:PageTemplate.MainContent>
+        <Label Text="Documents here" />
+    </template:PageTemplate.MainContent>
+    
+    <template:PageTemplate.PopupContent>
+        <xcavate:XcavatePropertyNavigationBarView />
+    </template:PageTemplate.PopupContent>
+</template:PageTemplate>

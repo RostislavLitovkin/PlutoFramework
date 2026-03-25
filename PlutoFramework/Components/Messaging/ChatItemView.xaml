@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Messaging.ChatItemView"
+             xmlns:messaging="clr-namespace:PlutoFramework.Components.Messaging">
+        <Border StrokeThickness="0"
+                Padding="8,6"
+                BackgroundColor="{AppThemeBinding Light={StaticResource Gray50}, Dark={StaticResource Gray950}}"
+                StrokeShape="RoundRectangle 4,4">
+            <VerticalStackLayout Spacing="8">
+                <Grid ColumnDefinitions="Auto,*">
+                    <Border Grid.Column="0"
+                            StrokeThickness="0"
+                            Padding="8,6"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray900}}"
+                            StrokeShape="RoundRectangle 4,4">
+                        <Label LineBreakMode="NoWrap"
+                               FontSize="11"
+                               HorizontalOptions="Start"
+                               Text="{Binding State}"/>
+                    </Border>
+                    
+                    <Label Grid.Column="1"
+                           LineBreakMode="NoWrap"
+                           FontSize="11"
+                           TextColor="{StaticResource LightGrayText}"
+                           HorizontalOptions="End"
+                           Text="{Binding Time}"/>
+                </Grid>
+                
+                <Label Text="{Binding Title}"
+                       LineBreakMode="WordWrap"
+                       FontAttributes="Bold"/>
+                
+                <Border StrokeThickness="0"
+                        Padding="8,6"
+                        StrokeShape="RoundRectangle 4,4"
+                        HorizontalOptions="End"
+                        BackgroundColor="{Binding IsApprovedBgColor}">
+                    <Label LineBreakMode="NoWrap"
+                           FontSize="11"
+                           TextColor="{Binding IsApprovedColor}"
+                           HorizontalOptions="End"
+                           Text="{Binding IsApproved}"/>
+                </Border>
+            </VerticalStackLayout>
+        </Border>
+</ContentView>

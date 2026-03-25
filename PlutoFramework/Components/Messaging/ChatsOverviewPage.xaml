@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<template:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:template="clr-namespace:PlutoFramework.Templates.PageTemplate"
+                       xmlns:messaging="clr-namespace:PlutoFramework.Components.Messaging"
+                       xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate;assembly=PlutoFramework"
+                       xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons;assembly=PlutoFramework"
+                       x:Class="PlutoFramework.Components.Messaging.ChatsOverviewPage"
+                       Title="Messaging Overview">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="ChatItem">
+            <messaging:ChatItemView Title="{Binding Title}"
+                                    State="{Binding State}" 
+                                    Time="{Binding Time}"
+                                    IsApproved="{Binding IsApproved}"
+                                    IsApprovedColor="{Binding IsApprovedColor}"
+                                    IsApprovedBgColor="{Binding IsApprovedBgColor}"/>
+        </DataTemplate>
+    </ContentPage.Resources>
+    
+    <template:PageTemplate.MainContent>
+        <VerticalStackLayout BindableLayout.ItemsSource="{Binding Chats}"
+                             BindableLayout.ItemTemplate="{StaticResource ChatItem}"
+                             Padding="15, 15, 15, 168"
+                             Spacing="15"/>
+    </template:PageTemplate.MainContent>
+    
+    <template:PageTemplate.PopupContent>
+        <VerticalStackLayout AbsoluteLayout.LayoutBounds="1,1,1,AutoSize"
+                             AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                             Padding="15"
+                             Margin="0, 0, 0, 90">
+            <buttons:ElevatedButton WidthRequest="48"
+                                    HeightRequest="48"
+                                    HorizontalOptions="End"
+                                    Text="+"
+                                    FontSize="32"
+                                    Padding="0"
+                                    TextTransform="None"/>
+        </VerticalStackLayout>
+        
+        <xcavate:XcavatePropertyNavigationBarView />
+    </template:PageTemplate.PopupContent>
+</template:PageTemplate>

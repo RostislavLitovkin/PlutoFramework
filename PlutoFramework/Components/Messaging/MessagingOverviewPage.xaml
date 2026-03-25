@@ -32,7 +32,7 @@
     </ContentPage.Resources>
 
     <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
-            AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutFlags="All"
                 x:Name="scrollView"
                 Rotation="180"
                 VerticalScrollBarVisibility="Never">
@@ -40,9 +40,9 @@
                              BindableLayout.ItemTemplateSelector="{StaticResource MessageSelector}"
                              Padding="10"
                              Spacing="5"
-                             Margin="0, 60,0,0"/>
+                             Margin="0,60,0,0"/>
     </ScrollView>
-
+  
     <template:PageTemplate.PopupContent>
         <messaging:MessageInputBarView AbsoluteLayout.LayoutBounds="0,1,1,65"
                                        AbsoluteLayout.LayoutFlags="WidthProportional, YProportional"

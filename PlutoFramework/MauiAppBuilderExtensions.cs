@@ -181,6 +181,8 @@ namespace PlutoFramework
             DependencyService.Register<RelistPropertyTokensViewModel>();
 
             DependencyService.Register<XcavateNavigationBarViewModel>();
+            
+            DependencyService.Register<XcavatePropertyNavigationBarViewModel>();
 
             DependencyService.Register<NotWhitelistedPopupViewModel>();
 
