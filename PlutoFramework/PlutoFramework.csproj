@@ -30,6 +30,10 @@
     <RepositoryUrl>https://github.com/rostislavlitovkin/PlutoFramework</RepositoryUrl>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-ios|AnyCPU'">
+    <MtouchLink>None</MtouchLink>
+  </PropertyGroup>
+
   <ItemGroup>
     <!-- Images -->
     <MauiImage Include="Resources\Images\*svg" />

@@ -59,28 +59,11 @@ public class AppAttestService (IPushNotificationsSecureStorage secureStorage) : 
         var keyId = await secureStorage.GetDeviceIdAsync();
 
         if (string.IsNullOrEmpty(keyId))
-            keyId = await GenerateAndStoreNewKeyAsync();
-
-        NSData? assertion;
+            throw new InvalidOperationException("No attested key available. Full re-attestation required.");
         
-        try
-        {
-            assertion = await attestService.GenerateAssertionAsync(keyId, hashData);
+        var assertion = await attestService.GenerateAssertionAsync(keyId, hashData)
+                    ?? throw new InvalidOperationException("Assertion returned null.");
 
-            if (assertion == null)
-                throw new InvalidOperationException("Assertion returned null.");
-        }
-        catch
-        {
-            await secureStorage.SaveDeviceIdAsync(string.Empty);
-
-            keyId = await GenerateAndStoreNewKeyAsync();
-
-            assertion = await attestService.GenerateAssertionAsync(keyId, hashData);
-
-            if (assertion == null)
-                throw new InvalidOperationException("Failed to generate assertion after regeneration.");
-        }
         return new AttestationProof (
             await GetDeviceIdAsync(),
             assertion.GetBase64EncodedString(NSDataBase64EncodingOptions.None)

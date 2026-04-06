@@ -30,21 +30,21 @@ public static class DeviceRegisterService
         if (!await _updateLock.WaitAsync(0))
             return false;
 
-        if (!(await SecureStorageManager.Storage.GetIsRegisteredAsync() ?? false))
-        {
-            Console.WriteLine("[PlutoNotifications] Device is not registered, cannot update FCM token.");
-            return false;
-        }
-
-        if (!(await SecureStorageManager.Storage.GetFcmTokenExpiredAsync() ?? true))
-        {
-            Console.WriteLine("[PlutoNotifications] FCM token is up-to-date, skipping.");
-            return true;
-        }
-
-        Console.WriteLine("[PlutoNotifications] Trying to update FCM token...");
         try
         {
+            if (!(await SecureStorageManager.Storage.GetIsRegisteredAsync() ?? false))
+            {
+                Console.WriteLine("[PlutoNotifications] Device is not registered, cannot update FCM token.");
+                return false;
+            }
+
+            if (!(await SecureStorageManager.Storage.GetFcmTokenExpiredAsync() ?? true))
+            {
+                Console.WriteLine("[PlutoNotifications] FCM token is up-to-date, skipping.");
+                return true;
+            }
+
+            Console.WriteLine("[PlutoNotifications] Trying to update FCM token...");
             await RetryHelper.RunWithRetryAsync(async () =>
                 await ApiClient.UpdateFcmTokenRequestAsync(
                     (await FcmTokenService.GetTokenAsync())!

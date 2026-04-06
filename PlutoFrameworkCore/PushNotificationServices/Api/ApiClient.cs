@@ -10,16 +10,26 @@ public class UnauthorizedException(string message) : HttpRequestException(messag
 
 public static class ApiClient
 {
-    private static HttpClient? sharedClient;
-    private static HttpClient SharedClient
+    private static HttpClient? publicClient;
+    private static HttpClient? authenticatedClient;
+    private static HttpClient PublicClient
     {
-        get => sharedClient ?? throw new InvalidOperationException("Call SetBaseUrl before using ApiClient.");
-        set => sharedClient = value;
+        get => publicClient ?? throw new InvalidOperationException("Call SetBaseUrl before using ApiClient.");
+        set => publicClient = value;
+    }
+    private static HttpClient AuthenticatedClient
+    {
+        get => authenticatedClient ?? throw new InvalidOperationException("Call SetBaseUrl before using ApiClient.");
+        set => authenticatedClient = value;
     }
 
     public static void SetBaseUrl(string url)
     {
-        SharedClient = new HttpClient
+        PublicClient = new HttpClient
+        {
+            BaseAddress = new Uri(url)
+        };
+        AuthenticatedClient = new HttpClient
         {
             BaseAddress = new Uri(url)
         };
@@ -30,14 +40,12 @@ public static class ApiClient
         if (Platform.Current == PlatformType.Other) return;
         
         var tokenPair = await AuthTokenPairEndpoint.GetTokenPairAsync(
-            SharedClient,
+            PublicClient,
             await GetDeviceRegistrationDataAsync()
             );
         Console.WriteLine($"[PlutoNotifications] Got JWT pair: {tokenPair.Access} {tokenPair.Refresh}");
 
         await SecureStorageManager.Storage.SaveAuthTokenPairAsync(tokenPair);
-        SharedClient.DefaultRequestHeaders.Authorization = 
-            new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", tokenPair.Access);
     }
 
     public static async Task<bool> RefreshAccessTokenRequestAsync(TokenPair tokenPair)
@@ -48,7 +56,7 @@ public static class ApiClient
         TokenPair newTokenPair;
         try
         {
-            newTokenPair = await AuthTokenPairEndpoint.RefreshAccessTokenAsync(SharedClient, tokenPair);
+            newTokenPair = await AuthTokenPairEndpoint.RefreshAccessTokenAsync(PublicClient, tokenPair);
         }
         catch
         {
@@ -57,8 +65,6 @@ public static class ApiClient
         }
         
         await SecureStorageManager.Storage.SaveAuthTokenPairAsync(newTokenPair);
-        SharedClient.DefaultRequestHeaders.Authorization =
-            new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", newTokenPair.Access);
         
         Console.WriteLine("[PlutoNotifications] Access token refreshed");
         return true;
@@ -70,7 +76,7 @@ public static class ApiClient
 
         await RequestWithAuthAsync(async () =>
             await FcmTokenEndpoint.UpdateTokenAsync(
-                SharedClient,
+                AuthenticatedClient,
                 new FcmTokenUpdateData
                 {
                     FcmToken = newFcmToken
@@ -81,6 +87,7 @@ public static class ApiClient
     
     public static async Task<T> RequestWithAuthAsync<T>(Func<Task<T>> apiCall)
     {
+        if (!await SetAuthHeaderAsync()) throw new UnauthorizedException("Not authorized");
         try
         {
             return await apiCall();
@@ -103,6 +110,7 @@ public static class ApiClient
     
     public static async Task RequestWithAuthAsync(Func<Task> apiCall)
     {
+        if (!await SetAuthHeaderAsync()) throw new UnauthorizedException("Not authorized");
         try
         {
             await apiCall();
@@ -126,7 +134,7 @@ public static class ApiClient
     
     private static async Task<DeviceRegistrationData> GetDeviceRegistrationDataAsync()
     {
-        var nonce = await NonceEndpoint.GetNonceAsync(SharedClient);
+        var nonce = await NonceEndpoint.GetNonceAsync(PublicClient);
         var isFirstRegister = !(await SecureStorageManager.Storage.GetIsRegisteredAsync() ?? false);
 
         AttestationProof proof;
@@ -150,5 +158,16 @@ public static class ApiClient
             DeviceId = proof.DeviceId,
             Platform = Platform.Current.ToStringValue()
         };
+    }
+
+    private static async Task<bool> SetAuthHeaderAsync()
+    {
+        var tokenPair = await SecureStorageManager.Storage.GetAuthTokenPairAsync();
+        if (tokenPair == null) return false;
+        
+        AuthenticatedClient.DefaultRequestHeaders.Authorization = 
+            new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", tokenPair.Access);
+        
+        return true;
     }
 }
