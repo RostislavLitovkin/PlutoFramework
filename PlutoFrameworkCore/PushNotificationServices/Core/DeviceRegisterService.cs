@@ -27,8 +27,7 @@ public static class DeviceRegisterService
 
     public static async Task<bool> UpdateFcmTokenAsync()
     {
-        if (!await _updateLock.WaitAsync(0))
-            return false;
+        await _updateLock.WaitAsync();
 
         try
         {
