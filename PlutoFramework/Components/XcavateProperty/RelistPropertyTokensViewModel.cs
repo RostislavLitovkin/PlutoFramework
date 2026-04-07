@@ -19,7 +19,7 @@ namespace PlutoFramework.Components.XcavateProperty
         private PropertyMetadata? metadata = null;
 
         [ObservableProperty]
-        private NftMarketplaceDetails? nftMarketplaceDetails = null;
+        private XcavateOngoingObjectListingDetails? listingDetails = null;
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(MaxValue))]
@@ -87,7 +87,7 @@ namespace PlutoFramework.Components.XcavateProperty
             ErrorMessage = "";
             TokensOwned = 0;
             Metadata = null;
-            NftMarketplaceDetails = null;
+            ListingDetails = null;
             EndpointKey = EndpointEnum.None;
         }
 
@@ -104,7 +104,7 @@ namespace PlutoFramework.Components.XcavateProperty
                 var assetSelectButtonViewModel = DependencyService.Get<AssetSelectButtonViewModel>();
 
 
-                if (NftMarketplaceDetails is null)
+                if (ListingDetails is null)
                 {
                     return;
                 }
@@ -125,7 +125,7 @@ namespace PlutoFramework.Components.XcavateProperty
 
                 var client = await SubstrateClientModel.GetOrAddSubstrateClientAsync(EndpointKey, token);
 
-                var method = PropertyMarketplaceModel.RelistPropertyTokens(EndpointKey, NftMarketplaceDetails.AssetId, parsedTokens, actualPricePerToken, assetSelectButtonViewModel.SelectedAssetKey);
+                var method = PropertyMarketplaceModel.RelistPropertyTokens(EndpointKey, ListingDetails?.AssetId, parsedTokens, actualPricePerToken, assetSelectButtonViewModel.SelectedAssetKey);
 
                 // Submitting the extrinsic
                 var transactionAnalyzerConfirmationViewModel = DependencyService.Get<TransactionAnalyzerConfirmationViewModel>();
@@ -174,9 +174,9 @@ namespace PlutoFramework.Components.XcavateProperty
                 return;
             }
 
-            if (parsedTokens > NftMarketplaceDetails?.Listed)
+            if (parsedTokens > ListingDetails?.ListedTokens)
             {
-                ErrorMessage = $"Tokens must be less than {NftMarketplaceDetails.Listed}";
+                ErrorMessage = $"Tokens must be less than {ListingDetails.ListedTokens}";
 
                 return;
             }

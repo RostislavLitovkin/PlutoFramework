@@ -67,24 +67,9 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
         Democracy = 19,
         
         /// <summary>
-        /// >> Elections
-        /// </summary>
-        Elections = 21,
-        
-        /// <summary>
-        /// >> Council
-        /// </summary>
-        Council = 23,
-        
-        /// <summary>
         /// >> TechnicalCommittee
         /// </summary>
         TechnicalCommittee = 25,
-        
-        /// <summary>
-        /// >> Tips
-        /// </summary>
-        Tips = 27,
         
         /// <summary>
         /// >> Proxy
@@ -343,7 +328,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
     }
     
     /// <summary>
-    /// >> 73 - Variant[hydradx_runtime.RuntimeCall]
+    /// >> 68 - Variant[hydradx_runtime.RuntimeCall]
     /// </summary>
     public sealed class EnumRuntimeCall : BaseEnumRust<RuntimeCall>
     {
@@ -362,10 +347,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_preimage.pallet.EnumCall>(RuntimeCall.Preimage);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_identity.pallet.EnumCall>(RuntimeCall.Identity);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_democracy.pallet.EnumCall>(RuntimeCall.Democracy);
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_elections_phragmen.pallet.EnumCall>(RuntimeCall.Elections);
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_collective.pallet.EnumCall>(RuntimeCall.Council);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_collective.pallet.EnumCall>(RuntimeCall.TechnicalCommittee);
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_tips.pallet.EnumCall>(RuntimeCall.Tips);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_proxy.pallet.EnumCall>(RuntimeCall.Proxy);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_multisig.pallet.EnumCall>(RuntimeCall.Multisig);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_uniques.pallet.EnumCall>(RuntimeCall.Uniques);

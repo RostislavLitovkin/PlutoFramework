@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 688 - Composite[RangeInclusive]
+    /// >> 673 - Composite[RangeInclusive]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RangeInclusive : BaseType

@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.frame_metadata_hash_extension
     
     
     /// <summary>
-    /// >> 864 - Composite[frame_metadata_hash_extension.CheckMetadataHash]
+    /// >> 849 - Composite[frame_metadata_hash_extension.CheckMetadataHash]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckMetadataHash : BaseType

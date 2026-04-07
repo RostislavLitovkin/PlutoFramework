@@ -44,7 +44,7 @@ namespace Hydration.NetApi.Generated.Model.orml_vesting.module
     }
     
     /// <summary>
-    /// >> 268 - Variant[orml_vesting.module.Call]
+    /// >> 260 - Variant[orml_vesting.module.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_democracy.types
     
     
     /// <summary>
-    /// >> 442 - Composite[pallet_democracy.types.Tally]
+    /// >> 544 - Composite[pallet_democracy.types.Tally]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Tally : BaseType

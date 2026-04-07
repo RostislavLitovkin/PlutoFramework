@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.assignment_app
     
     
     /// <summary>
-    /// >> 147 - Composite[polkadot_primitives.v8.assignment_app.Public]
+    /// >> 149 - Composite[polkadot_primitives.v8.assignment_app.Public]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Public : BaseType

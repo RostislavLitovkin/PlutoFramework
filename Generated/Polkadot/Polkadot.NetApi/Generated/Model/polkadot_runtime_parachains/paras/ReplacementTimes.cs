@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.paras
     
     
     /// <summary>
-    /// >> 766 - Composite[polkadot_runtime_parachains.paras.ReplacementTimes]
+    /// >> 832 - Composite[polkadot_runtime_parachains.paras.ReplacementTimes]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ReplacementTimes : BaseType

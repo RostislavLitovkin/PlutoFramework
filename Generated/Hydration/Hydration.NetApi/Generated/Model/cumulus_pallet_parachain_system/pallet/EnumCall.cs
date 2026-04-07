@@ -43,7 +43,7 @@ namespace Hydration.NetApi.Generated.Model.cumulus_pallet_parachain_system.palle
     }
     
     /// <summary>
-    /// >> 296 - Variant[cumulus_pallet_parachain_system.pallet.Call]
+    /// >> 288 - Variant[cumulus_pallet_parachain_system.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

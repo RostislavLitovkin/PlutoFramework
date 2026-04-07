@@ -38,7 +38,9 @@ namespace Kilt.NetApi.Generated.Storage
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Scheduler", "IncompleteSince"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Scheduler", "Agenda"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT38)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT45)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Scheduler", "Retries"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Kilt.NetApi.Generated.Model.pallet_scheduler.RetryConfig)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Scheduler", "Lookup"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Kilt.NetApi.Generated.Types.Base.Arr32U8), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32>)));
         }
@@ -94,10 +96,41 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> Agenda
         ///  Items to be executed, indexed by the block number that they should be executed on.
         /// </summary>
-        public async Task<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT38> Agenda(Substrate.NetApi.Model.Types.Primitive.U64 key, string blockhash, CancellationToken token)
+        public async Task<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT45> Agenda(Substrate.NetApi.Model.Types.Primitive.U64 key, string blockhash, CancellationToken token)
         {
             string parameters = SchedulerStorage.AgendaParams(key);
-            var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT38>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT45>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> RetriesParams
+        ///  Retry configurations for items to be executed, indexed by task address.
+        /// </summary>
+        public static string RetriesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32> key)
+        {
+            return RequestGenerator.GetStorage("Scheduler", "Retries", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> RetriesDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string RetriesDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> Retries
+        ///  Retry configurations for items to be executed, indexed by task address.
+        /// </summary>
+        public async Task<Kilt.NetApi.Generated.Model.pallet_scheduler.RetryConfig> Retries(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
+        {
+            string parameters = SchedulerStorage.RetriesParams(key);
+            var result = await _client.GetStorageAsync<Kilt.NetApi.Generated.Model.pallet_scheduler.RetryConfig>(parameters, blockhash, token);
             return result;
         }
         
@@ -149,7 +182,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> schedule
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Schedule(Substrate.NetApi.Model.Types.Primitive.U64 when, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Substrate.NetApi.Model.Types.Primitive.U8 priority, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall call)
+        public static Method Schedule(Substrate.NetApi.Model.Types.Primitive.U64 when, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Substrate.NetApi.Model.Types.Primitive.U8 priority, Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(when.Encode());
@@ -175,7 +208,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> schedule_named
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ScheduleNamed(Kilt.NetApi.Generated.Types.Base.Arr32U8 id, Substrate.NetApi.Model.Types.Primitive.U64 when, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Substrate.NetApi.Model.Types.Primitive.U8 priority, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall call)
+        public static Method ScheduleNamed(Kilt.NetApi.Generated.Types.Base.Arr32U8 id, Substrate.NetApi.Model.Types.Primitive.U64 when, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Substrate.NetApi.Model.Types.Primitive.U8 priority, Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -201,7 +234,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> schedule_after
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ScheduleAfter(Substrate.NetApi.Model.Types.Primitive.U64 after, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Substrate.NetApi.Model.Types.Primitive.U8 priority, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall call)
+        public static Method ScheduleAfter(Substrate.NetApi.Model.Types.Primitive.U64 after, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Substrate.NetApi.Model.Types.Primitive.U8 priority, Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(after.Encode());
@@ -215,7 +248,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> schedule_named_after
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ScheduleNamedAfter(Kilt.NetApi.Generated.Types.Base.Arr32U8 id, Substrate.NetApi.Model.Types.Primitive.U64 after, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Substrate.NetApi.Model.Types.Primitive.U8 priority, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall call)
+        public static Method ScheduleNamedAfter(Kilt.NetApi.Generated.Types.Base.Arr32U8 id, Substrate.NetApi.Model.Types.Primitive.U64 after, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32>> maybe_periodic, Substrate.NetApi.Model.Types.Primitive.U8 priority, Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(id.Encode());
@@ -224,6 +257,54 @@ namespace Kilt.NetApi.Generated.Storage
             byteArray.AddRange(priority.Encode());
             byteArray.AddRange(call.Encode());
             return new Method(42, "Scheduler", 5, "schedule_named_after", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> set_retry
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method SetRetry(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32> task, Substrate.NetApi.Model.Types.Primitive.U8 retries, Substrate.NetApi.Model.Types.Primitive.U64 period)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(task.Encode());
+            byteArray.AddRange(retries.Encode());
+            byteArray.AddRange(period.Encode());
+            return new Method(42, "Scheduler", 6, "set_retry", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> set_retry_named
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method SetRetryNamed(Kilt.NetApi.Generated.Types.Base.Arr32U8 id, Substrate.NetApi.Model.Types.Primitive.U8 retries, Substrate.NetApi.Model.Types.Primitive.U64 period)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(id.Encode());
+            byteArray.AddRange(retries.Encode());
+            byteArray.AddRange(period.Encode());
+            return new Method(42, "Scheduler", 7, "set_retry_named", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> cancel_retry
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method CancelRetry(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, Substrate.NetApi.Model.Types.Primitive.U32> task)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(task.Encode());
+            return new Method(42, "Scheduler", 8, "cancel_retry", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> cancel_retry_named
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method CancelRetryNamed(Kilt.NetApi.Generated.Types.Base.Arr32U8 id)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(id.Encode());
+            return new Method(42, "Scheduler", 9, "cancel_retry_named", byteArray.ToArray());
         }
     }
     

@@ -38,6 +38,8 @@ namespace Hydration.NetApi.Generated.Storage
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("DynamicFees", "AssetFee"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Hydration.NetApi.Generated.Model.pallet_dynamic_fees.types.FeeEntry)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("DynamicFees", "AssetFeeConfiguration"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Hydration.NetApi.Generated.Model.pallet_dynamic_fees.types.EnumAssetFeeConfig)));
         }
         
         /// <summary>
@@ -72,6 +74,37 @@ namespace Hydration.NetApi.Generated.Storage
             var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.pallet_dynamic_fees.types.FeeEntry>(parameters, blockhash, token);
             return result;
         }
+        
+        /// <summary>
+        /// >> AssetFeeConfigurationParams
+        ///  Stores per-asset fee configuration (Fixed or Dynamic)
+        /// </summary>
+        public static string AssetFeeConfigurationParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        {
+            return RequestGenerator.GetStorage("DynamicFees", "AssetFeeConfiguration", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> AssetFeeConfigurationDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string AssetFeeConfigurationDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> AssetFeeConfiguration
+        ///  Stores per-asset fee configuration (Fixed or Dynamic)
+        /// </summary>
+        public async Task<Hydration.NetApi.Generated.Model.pallet_dynamic_fees.types.EnumAssetFeeConfig> AssetFeeConfiguration(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        {
+            string parameters = DynamicFeesStorage.AssetFeeConfigurationParams(key);
+            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.pallet_dynamic_fees.types.EnumAssetFeeConfig>(parameters, blockhash, token);
+            return result;
+        }
     }
     
     /// <summary>
@@ -79,6 +112,29 @@ namespace Hydration.NetApi.Generated.Storage
     /// </summary>
     public sealed class DynamicFeesCalls
     {
+        
+        /// <summary>
+        /// >> set_asset_fee
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method SetAssetFee(Substrate.NetApi.Model.Types.Primitive.U32 asset_id, Hydration.NetApi.Generated.Model.pallet_dynamic_fees.types.EnumAssetFeeConfig config)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(asset_id.Encode());
+            byteArray.AddRange(config.Encode());
+            return new Method(68, "DynamicFees", 0, "set_asset_fee", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> remove_asset_fee
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method RemoveAssetFee(Substrate.NetApi.Model.Types.Primitive.U32 asset_id)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(asset_id.Encode());
+            return new Method(68, "DynamicFees", 1, "remove_asset_fee", byteArray.ToArray());
+        }
     }
     
     /// <summary>
@@ -93,7 +149,7 @@ namespace Hydration.NetApi.Generated.Storage
         public Hydration.NetApi.Generated.Model.pallet_dynamic_fees.types.FeeParams AssetFeeParameters()
         {
             var result = new Hydration.NetApi.Generated.Model.pallet_dynamic_fees.types.FeeParams();
-            result.Create("0xDC05000050C3000000203D88792D000000000000000000000000C84E676DC11B000000000000000" +
+            result.Create("0xC409000050C3000000203D88792D000000000000000000000000C84E676DC11B000000000000000" +
                     "0");
             return result;
         }
@@ -115,5 +171,11 @@ namespace Hydration.NetApi.Generated.Storage
     /// </summary>
     public enum DynamicFeesErrors
     {
+        
+        /// <summary>
+        /// >> InvalidFeeParameters
+        /// Invalid fee parameters provided
+        /// </summary>
+        InvalidFeeParameters,
     }
 }

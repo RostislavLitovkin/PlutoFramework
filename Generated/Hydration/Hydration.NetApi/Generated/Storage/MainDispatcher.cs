@@ -38,6 +38,7 @@ namespace Hydration.NetApi.Generated.Storage
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Dispatcher", "AaveManagerAccount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Dispatcher", "ExtraGas"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Dispatcher", "LastEvmCallExitReason"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Hydration.NetApi.Generated.Model.evm_core.error.EnumExitReason)));
         }
         
         /// <summary>
@@ -93,6 +94,33 @@ namespace Hydration.NetApi.Generated.Storage
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U64>(parameters, blockhash, token);
             return result;
         }
+        
+        /// <summary>
+        /// >> LastEvmCallExitReasonParams
+        /// </summary>
+        public static string LastEvmCallExitReasonParams()
+        {
+            return RequestGenerator.GetStorage("Dispatcher", "LastEvmCallExitReason", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> LastEvmCallExitReasonDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string LastEvmCallExitReasonDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> LastEvmCallExitReason
+        /// </summary>
+        public async Task<Hydration.NetApi.Generated.Model.evm_core.error.EnumExitReason> LastEvmCallExitReason(string blockhash, CancellationToken token)
+        {
+            string parameters = DispatcherStorage.LastEvmCallExitReasonParams();
+            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.evm_core.error.EnumExitReason>(parameters, blockhash, token);
+            return result;
+        }
     }
     
     /// <summary>
@@ -145,6 +173,17 @@ namespace Hydration.NetApi.Generated.Storage
             byteArray.AddRange(extra_gas.Encode());
             return new Method(40, "Dispatcher", 3, "dispatch_with_extra_gas", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> dispatch_evm_call
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method DispatchEvmCall(Hydration.NetApi.Generated.Model.hydradx_runtime.EnumRuntimeCall call)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(call.Encode());
+            return new Method(40, "Dispatcher", 4, "dispatch_evm_call", byteArray.ToArray());
+        }
     }
     
     /// <summary>
@@ -152,5 +191,25 @@ namespace Hydration.NetApi.Generated.Storage
     /// </summary>
     public sealed class DispatcherConstants
     {
+    }
+    
+    /// <summary>
+    /// >> DispatcherErrors
+    /// </summary>
+    public enum DispatcherErrors
+    {
+        
+        /// <summary>
+        /// >> EvmCallFailed
+        /// The EVM call execution failed. This happens when the EVM returns an exit reason
+        /// other than `ExitSucceed(Returned)` or `ExitSucceed(Stopped)`.
+        /// </summary>
+        EvmCallFailed,
+        
+        /// <summary>
+        /// >> NotEvmCall
+        /// The provided call is not an EVM call. This extrinsic only accepts `pallet_evm::Call::call`.
+        /// </summary>
+        NotEvmCall,
     }
 }

@@ -24,13 +24,16 @@ namespace Kilt.NetApi.Generated.Model.pallet_deposit_storage.pallet
         
         /// <summary>
         /// >> reclaim_deposit
-        /// See [`Pallet::reclaim_deposit`].
+        /// Reclaim a deposit that was previously taken. If there is no deposit
+        /// with the given key under the given namespace, it returns an error.
+        /// If a deposit exists, the deposit hooks are invoked after the deposit
+        /// has been removed from the pallet storage.
         /// </summary>
         reclaim_deposit = 0,
     }
     
     /// <summary>
-    /// >> 381 - Variant[pallet_deposit_storage.pallet.Call]
+    /// >> 374 - Variant[pallet_deposit_storage.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -41,7 +44,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_deposit_storage.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.runtime_common.dip.deposit.EnumDepositNamespace, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>>(Call.reclaim_deposit);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.runtime_common.deposits.EnumDepositNamespace, Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10>>(Call.reclaim_deposit);
         }
     }
 }

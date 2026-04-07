@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlutoFramework.Components.Keys.NewKeyView"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             HeightRequest="60">
+    <Grid ColumnSpacing="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="60" />
+            <ColumnDefinition Width="60" />
+        </Grid.ColumnDefinitions>
+
+        <card:ClickableCard HeightRequest="60">
+            <card:ClickableCard.View>
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    Margin="0, 10, 0, 10">
+                    <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                             AbsoluteLayout.LayoutFlags="SizeProportional">
+                        <HorizontalStackLayout>
+                            <Label FontAttributes="Bold"
+                                   HorizontalOptions="Center"
+                                   VerticalTextAlignment="End">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span FontAttributes="Bold" x:Name="nameLabelText" />
+
+                                    </FormattedString>
+
+                                </Label.FormattedText>
+
+                            </Label>
+                        </HorizontalStackLayout>
+
+                    </VerticalStackLayout>
+                </AbsoluteLayout>
+            </card:ClickableCard.View>
+        </card:ClickableCard>
+
+        <card:ClickableCard HeightRequest="60"
+                            Grid.Column="1">
+            <card:ClickableCard.View>
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                                AbsoluteLayout.LayoutFlags="All">
+                    <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 30, 30"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           Opacity="0.8"
+                           x:Name="plus">
+
+                        <Image.Source>
+                            <FontImageSource Color="{AppThemeBinding Light=#222222, Dark=#dddddd}"
+                                             Glyph="&#xf067;"
+                                             FontFamily="FontAwesome"
+                                             Size="30" />
+                        </Image.Source>
+                    </Image>
+                </AbsoluteLayout>
+            </card:ClickableCard.View>
+
+            <card:ClickableCard.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnAddClicked" />
+            </card:ClickableCard.GestureRecognizers>
+
+                
+        </card:ClickableCard>
+
+        <card:ClickableCard HeightRequest="60"
+                            Grid.Column="2">
+            <card:ClickableCard.View>
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                    AbsoluteLayout.LayoutFlags="All">
+                    <Image AbsoluteLayout.LayoutBounds="0.5, 0.5, 30, 30"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           Opacity="0.8"
+                           x:Name="import">
+
+                        <Image.Source>
+                            <FontImageSource Color="{AppThemeBinding Light=#222222, Dark=#dddddd}"
+                                 Glyph="&#xf063;"
+                                 FontFamily="FontAwesome"
+                                 Size="30" />
+                        </Image.Source>
+                    </Image>
+                </AbsoluteLayout>
+            </card:ClickableCard.View>
+
+            <card:ClickableCard.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnImportClicked" />
+            </card:ClickableCard.GestureRecognizers>
+        </card:ClickableCard>
+    </Grid>
+    
+</ContentView>

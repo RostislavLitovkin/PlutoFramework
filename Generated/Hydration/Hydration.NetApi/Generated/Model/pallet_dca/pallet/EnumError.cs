@@ -129,10 +129,22 @@ namespace Hydration.NetApi.Generated.Model.pallet_dca.pallet
         /// Stability threshold cannot be higher than `MaxConfigurablePriceDifferenceBetweenBlock`
         /// </summary>
         StabilityThresholdTooHigh = 17,
+        
+        /// <summary>
+        /// >> HasActiveSchedules
+        /// User still has active DCA schedules and cannot unlock reserves
+        /// </summary>
+        HasActiveSchedules = 18,
+        
+        /// <summary>
+        /// >> NoReservesLocked
+        /// No reserves are locked for the user for the given asset
+        /// </summary>
+        NoReservesLocked = 19,
     }
     
     /// <summary>
-    /// >> 745 - Variant[pallet_dca.pallet.Error]
+    /// >> 730 - Variant[pallet_dca.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

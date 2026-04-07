@@ -36,7 +36,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_xcm_bridge_hub_router.p
     }
     
     /// <summary>
-    /// >> 118 - Variant[pallet_xcm_bridge_hub_router.pallet.Event]
+    /// >> 167 - Variant[pallet_xcm_bridge_hub_router.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

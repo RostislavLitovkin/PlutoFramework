@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_conviction_voting.vote
     
     
     /// <summary>
-    /// >> 70 - Composite[pallet_conviction_voting.vote.Vote]
+    /// >> 65 - Composite[pallet_conviction_voting.vote.Vote]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Vote : BaseType

@@ -60,7 +60,7 @@ namespace Hydration.NetApi.Generated.Model.orml_vesting.module
     }
     
     /// <summary>
-    /// >> 712 - Variant[orml_vesting.module.Error]
+    /// >> 697 - Variant[orml_vesting.module.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

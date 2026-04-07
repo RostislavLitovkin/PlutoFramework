@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.frame_system.limits
     
     
     /// <summary>
-    /// >> 498 - Composite[frame_system.limits.WeightsPerClass]
+    /// >> 490 - Composite[frame_system.limits.WeightsPerClass]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class WeightsPerClass : BaseType

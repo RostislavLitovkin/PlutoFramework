@@ -24,49 +24,190 @@ namespace Kilt.NetApi.Generated.Model.delegation.pallet
         
         /// <summary>
         /// >> create_hierarchy
-        /// See [`Pallet::create_hierarchy`].
+        /// Create a new delegation root associated with a given CType hash.
+        /// 
+        /// The new root will allow a new trust hierarchy to be created by
+        /// adding children delegations to the root.
+        /// 
+        /// There must be no delegation with the same ID stored on chain, while
+        /// there must be already a CType with the given hash stored in the
+        /// CType pallet.
+        /// 
+        /// The dispatch origin must be split into
+        /// * a submitter of type `AccountId` who is responsible for paying the
+        ///   transaction fee and
+        /// * a DID subject of type `DelegationEntityId` who creates, owns and
+        ///   can revoke the delegation.
+        /// 
+        /// Requires the sender of the transaction to have a reservable balance
+        /// of at least `Deposit` many tokens.
+        /// 
+        /// Emits `RootCreated`.
+        /// 
+        /// # <weight>
+        /// Weight: O(1)
+        /// - Reads: [Origin Account], Roots, CTypes
+        /// - Writes: Roots
+        /// # </weight>
         /// </summary>
         create_hierarchy = 0,
         
         /// <summary>
         /// >> add_delegation
-        /// See [`Pallet::add_delegation`].
+        /// Create a new delegation node.
+        /// 
+        /// The new delegation node represents a new trust hierarchy that
+        /// considers the new node as its root. The owner of this node has full
+        /// control over any of its direct and indirect descendants.
+        /// 
+        /// For the creation to succeed, the delegatee must provide a valid
+        /// signature over the (blake256) hash of the creation operation details
+        /// which include (in order) delegation id, root node id, parent id, and
+        /// permissions of the new node.
+        /// 
+        /// There must be no delegation with the same id stored on chain.
+        /// Furthermore, the referenced root and parent nodes must already be
+        /// present on chain and contain the valid permissions and revocation
+        /// status (i.e., not revoked).
+        /// 
+        /// The dispatch origin must be split into
+        /// * a submitter of type `AccountId` who is responsible for paying the
+        ///   transaction fee and
+        /// * a DID subject of type `DelegationEntityId` who creates, owns and
+        ///   can revoke the delegation.
+        /// 
+        /// Requires the sender of the transaction to have a reservable balance
+        /// of at least `Deposit` many tokens.
+        /// 
+        /// Emits `DelegationCreated`.
+        /// 
+        /// # <weight>
+        /// Weight: O(1)
+        /// - Reads: [Origin Account], Roots, Delegations
+        /// - Writes: Delegations
+        /// # </weight>
         /// </summary>
         add_delegation = 1,
         
         /// <summary>
         /// >> revoke_delegation
-        /// See [`Pallet::revoke_delegation`].
+        /// Revoke a delegation node (potentially a root node) and all its
+        /// children.
+        /// 
+        /// Does not refund the delegation back to the deposit owner as the
+        /// node is still stored on chain. Requires to additionally call
+        /// `remove_delegation` to unreserve the deposit.
+        /// 
+        /// Revoking a delegation node results in the trust hierarchy starting
+        /// from the given node being revoked. Nevertheless, revocation starts
+        /// from the leave nodes upwards, so if the operation ends prematurely
+        /// because it runs out of gas, the delegation state would be consistent
+        /// as no child would "survive" its parent. As a consequence, if the
+        /// given node is revoked, the trust hierarchy with the node as root is
+        /// to be considered revoked.
+        /// 
+        /// The dispatch origin must be split into
+        /// * a submitter of type `AccountId` who is responsible for paying the
+        ///   transaction fee and
+        /// * a DID subject of type `DelegationEntityId` who creates, owns and
+        ///   can revoke the delegation.
+        /// 
+        /// Emits C * `DelegationRevoked`.
+        /// 
+        /// # <weight>
+        /// Weight: O(C) where C is the number of children of the delegation
+        /// node which is bounded by `max_children`.
+        /// - Reads: [Origin Account], Roots, C * Delegations, C * Children.
+        /// - Writes: Roots, C * Delegations
+        /// # </weight>
         /// </summary>
         revoke_delegation = 2,
         
         /// <summary>
         /// >> remove_delegation
-        /// See [`Pallet::remove_delegation`].
+        /// Remove a delegation node (potentially a root node) and all its
+        /// children.
+        /// 
+        /// Returns the delegation deposit to the deposit owner for each
+        /// removed DelegationNode by unreserving it.
+        /// 
+        /// Removing a delegation node results in the trust hierarchy starting
+        /// from the given node being removed. Nevertheless, removal starts
+        /// from the leave nodes upwards, so if the operation ends prematurely
+        /// because it runs out of gas, the delegation state would be consistent
+        /// as no child would "survive" its parent. As a consequence, if the
+        /// given node is removed, the trust hierarchy with the node as root is
+        /// to be considered removed.
+        /// 
+        /// The dispatch origin must be split into
+        /// * a submitter of type `AccountId` who is responsible for paying the
+        ///   transaction fee and
+        /// * a DID subject of type `DelegationEntityId` who creates, owns and
+        ///   can revoke the delegation.
+        /// 
+        /// Emits C * `DelegationRemoved`.
+        /// 
+        /// # <weight>
+        /// Weight: O(C) where C is the number of children of the delegation
+        /// node which is bounded by `max_children`.
+        /// - Reads: [Origin Account], Roots, C * Delegations, C * Children.
+        /// - Writes: Roots, 2 * C * Delegations
+        /// # </weight>
         /// </summary>
         remove_delegation = 3,
         
         /// <summary>
         /// >> reclaim_deposit
-        /// See [`Pallet::reclaim_deposit`].
+        /// Reclaim the deposit for a delegation node (potentially a root
+        /// node), removing the node and all its children.
+        /// 
+        /// Returns the delegation deposit to the deposit owner for each
+        /// removed DelegationNode by unreserving it.
+        /// 
+        /// Removing a delegation node results in the trust hierarchy starting
+        /// from the given node being removed. Nevertheless, removal starts
+        /// from the leave nodes upwards, so if the operation ends prematurely
+        /// because it runs out of gas, the delegation state would be consistent
+        /// as no child would "survive" its parent. As a consequence, if the
+        /// given node is removed, the trust hierarchy with the node as root is
+        /// to be considered removed.
+        /// 
+        /// The dispatch origin must be signed by the delegation deposit owner.
+        /// 
+        /// `DepositReclaimed`.
+        /// 
+        /// # <weight>
+        /// Weight: O(C) where C is the number of children of the delegation
+        /// node which is bounded by `max_removals`.
+        /// - Reads: [Origin Account], Roots, C * Delegations, C * Children.
+        /// - Writes: Roots, 2 * C * Delegations
+        /// # </weight>
         /// </summary>
         reclaim_deposit = 4,
         
         /// <summary>
         /// >> change_deposit_owner
-        /// See [`Pallet::change_deposit_owner`].
+        /// Changes the deposit owner.
+        /// 
+        /// The balance that is reserved by the current deposit owner will be
+        /// freed and balance of the new deposit owner will get reserved.
+        /// 
+        /// The subject of the call must be the owner of the delegation node.
+        /// The sender of the call will be the new deposit owner.
         /// </summary>
         change_deposit_owner = 5,
         
         /// <summary>
         /// >> update_deposit
-        /// See [`Pallet::update_deposit`].
+        /// Updates the deposit amount to the current deposit rate.
+        /// 
+        /// The sender must be the deposit owner.
         /// </summary>
         update_deposit = 6,
     }
     
     /// <summary>
-    /// >> 340 - Variant[delegation.pallet.Call]
+    /// >> 337 - Variant[delegation.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.assigner_c
     
     
     /// <summary>
-    /// >> 810 - Composite[polkadot_runtime_parachains.assigner_coretime.Schedule]
+    /// >> 877 - Composite[polkadot_runtime_parachains.assigner_coretime.Schedule]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Schedule : BaseType

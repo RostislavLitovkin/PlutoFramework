@@ -38,7 +38,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_nomination_pools
     }
     
     /// <summary>
-    /// >> 260 - Variant[pallet_nomination_pools.PoolState]
+    /// >> 262 - Variant[pallet_nomination_pools.PoolState]
     /// </summary>
     public sealed class EnumPoolState : BaseEnum<PoolState>
     {

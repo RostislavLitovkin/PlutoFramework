@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_did_lookup.account
     
     
     /// <summary>
-    /// >> 120 - Composite[pallet_did_lookup.account.AccountId20]
+    /// >> 125 - Composite[pallet_did_lookup.account.AccountId20]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AccountId20 : BaseType

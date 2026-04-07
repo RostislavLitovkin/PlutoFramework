@@ -87,10 +87,16 @@ namespace Polkadot.NetApi.Generated.Model.pallet_bounties.pallet
         /// A bounty curator is accepted.
         /// </summary>
         CuratorAccepted = 10,
+        
+        /// <summary>
+        /// >> DepositPoked
+        /// A bounty deposit has been poked.
+        /// </summary>
+        DepositPoked = 11,
     }
     
     /// <summary>
-    /// >> 473 - Variant[pallet_bounties.pallet.Event]
+    /// >> 525 - Variant[pallet_bounties.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -112,6 +118,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_bounties.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.CuratorProposed);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.CuratorUnassigned);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Event.CuratorAccepted);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.DepositPoked);
         }
     }
 }

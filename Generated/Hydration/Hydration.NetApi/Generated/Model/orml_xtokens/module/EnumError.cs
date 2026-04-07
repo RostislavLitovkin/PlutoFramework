@@ -147,7 +147,7 @@ namespace Hydration.NetApi.Generated.Model.orml_xtokens.module
     }
     
     /// <summary>
-    /// >> 818 - Variant[orml_xtokens.module.Error]
+    /// >> 803 - Variant[orml_xtokens.module.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

@@ -32,7 +32,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.initialize
     }
     
     /// <summary>
-    /// >> 320 - Variant[polkadot_runtime_parachains.initializer.pallet.Call]
+    /// >> 325 - Variant[polkadot_runtime_parachains.initializer.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

@@ -67,10 +67,28 @@ namespace Hydration.NetApi.Generated.Model.pallet_dca.pallet
         /// 
         /// </summary>
         terminate = 1,
+        
+        /// <summary>
+        /// >> unlock_reserves
+        /// Unlocks DCA reserves of provided asset for the caller if they have no active schedules.
+        /// 
+        /// This is a utility function to help users recover their reserved funds in case
+        /// a DCA schedule was terminated but left some reserved amounts.
+        /// 
+        /// This can only be called when the user has no active DCA schedules.
+        /// 
+        /// Parameters:
+        /// - `origin`: The account to unlock reserves for (must be signed)
+        /// - `asset_id`: The asset ID for which reserves should be unlocked.
+        /// 
+        /// Emits `ReserveUnlocked` event when successful.
+        /// 
+        /// </summary>
+        unlock_reserves = 2,
     }
     
     /// <summary>
-    /// >> 292 - Variant[pallet_dca.pallet.Call]
+    /// >> 284 - Variant[pallet_dca.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -83,6 +101,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_dca.pallet
         {
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.pallet_dca.types.Schedule, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>>>(Call.schedule);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32>>>(Call.terminate);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.unlock_reserves);
         }
     }
 }

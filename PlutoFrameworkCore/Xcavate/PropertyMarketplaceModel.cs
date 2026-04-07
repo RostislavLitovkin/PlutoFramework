@@ -1,21 +1,20 @@
-﻿using Substrate.NetApi.Model.Types.Primitive;
-using XcavatePaseo.NetApi.Generated;
-using UniqueryPlus;
-using Substrate.NetApi;
-using XcavatePaseo.NetApi.Generated.Storage;
-using XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet;
-using UniqueryPlus.Nfts;
-using Substrate.NetApi.Model.Extrinsics;
-using XcavatePaseo.NetApi.Generated.Model.sp_core.crypto;
-using Substrate.NetApi.Model.Types.Base;
-using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
-using System.ComponentModel;
-using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.AssetPallet, System.Numerics.BigInteger);
-using PlutoFramework.Constants;
+﻿using PlutoFramework.Constants;
 using PlutoFramework.Types;
+using Substrate.NetApi;
+using Substrate.NetApi.Model.Extrinsics;
+using Substrate.NetApi.Model.Types.Base;
+using Substrate.NetApi.Model.Types.Primitive;
+using System.ComponentModel;
 using System.Numerics;
+using UniqueryPlus;
+using UniqueryPlus.Nfts;
+using XcavatePaseo.NetApi.Generated;
 using XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types;
 using XcavatePaseo.NetApi.Generated.Model.pallet_real_estate_asset.pallet;
+using XcavatePaseo.NetApi.Generated.Model.sp_core.crypto;
+using XcavatePaseo.NetApi.Generated.Storage;
+using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.AssetPallet, System.Numerics.BigInteger);
+using NftKey = (UniqueryPlus.NftTypeEnum, System.Numerics.BigInteger, System.Numerics.BigInteger);
 
 namespace PlutoFramework.Model.Xcavate
 {
@@ -63,7 +62,9 @@ namespace PlutoFramework.Model.Xcavate
     {
         public static IEnumerable<AssetKey> GetAcceptedAssets(EndpointEnum endpointKey) => endpointKey switch
         {
-            EndpointEnum.XcavatePaseo => new MarketplaceConstants().AcceptedAssets().Value.Select(u32 => (EndpointEnum.XcavatePaseo, AssetPallet.Assets, new BigInteger(u32.Value))),
+            EndpointEnum.XcavatePaseo => /*new MarketplaceConstants().AcceptedAssets().Value*/
+                                         new List<U32>() { new U32(1337), new U32(1984) }
+                                         .Select(u32 => (EndpointEnum.XcavatePaseo, AssetPallet.Assets, new BigInteger(u32.Value))),
             _ => [],
         };
 
@@ -122,7 +123,8 @@ namespace PlutoFramework.Model.Xcavate
                 tokenOwnerDetails.Add(details);
 
                 // Combine the amount owned with the rest of the property details
-            };
+            }
+            ;
 
             var propertyAssetDetails = await GetPropertyAssetDetailsAsync(client, idKeys, lastKey, token);
 

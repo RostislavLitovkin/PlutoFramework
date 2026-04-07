@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_democracy.vote
     
     
     /// <summary>
-    /// >> 571 - Composite[pallet_democracy.vote.PriorLock]
+    /// >> 564 - Composite[pallet_democracy.vote.PriorLock]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PriorLock : BaseType

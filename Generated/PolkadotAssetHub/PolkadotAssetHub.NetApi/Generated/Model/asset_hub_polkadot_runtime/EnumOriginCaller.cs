@@ -37,13 +37,13 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
         CumulusXcm = 32,
         
         /// <summary>
-        /// >> Void
+        /// >> Origins
         /// </summary>
-        Void = 3,
+        Origins = 63,
     }
     
     /// <summary>
-    /// >> 394 - Variant[asset_hub_polkadot_runtime.OriginCaller]
+    /// >> 321 - Variant[asset_hub_polkadot_runtime.OriginCaller]
     /// </summary>
     public sealed class EnumOriginCaller : BaseEnumRust<OriginCaller>
     {
@@ -56,7 +56,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.frame_support.dispatch.EnumRawOrigin>(OriginCaller.system);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_xcm.pallet.EnumOrigin>(OriginCaller.PolkadotXcm);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_xcm.pallet.EnumOrigin>(OriginCaller.CumulusXcm);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVoid>(OriginCaller.Void);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime.governance.origins.pallet_custom_origins.EnumOrigin>(OriginCaller.Origins);
         }
     }
 }

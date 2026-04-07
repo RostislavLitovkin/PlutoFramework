@@ -38,7 +38,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.types
     }
     
     /// <summary>
-    /// >> 244 - Variant[pallet_stableswap.types.PegSource]
+    /// >> 236 - Variant[pallet_stableswap.types.PegSource]
     /// </summary>
     public sealed class EnumPegSource : BaseEnumRust<PegSource>
     {

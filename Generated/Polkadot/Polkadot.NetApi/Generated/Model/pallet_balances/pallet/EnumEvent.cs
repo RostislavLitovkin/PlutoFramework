@@ -155,6 +155,12 @@ namespace Polkadot.NetApi.Generated.Model.pallet_balances.pallet
         /// The `TotalIssuance` was forcefully changed.
         /// </summary>
         TotalIssuanceForced = 21,
+        
+        /// <summary>
+        /// >> Unexpected
+        /// An unexpected/defensive event was triggered.
+        /// </summary>
+        Unexpected = 22,
     }
     
     /// <summary>
@@ -191,6 +197,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_balances.pallet
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Frozen);
 				AddTypeDecoder<BaseTuple<Polkadot.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Thawed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.TotalIssuanceForced);
+				AddTypeDecoder<Polkadot.NetApi.Generated.Model.pallet_balances.pallet.EnumUnexpectedKind>(Event.Unexpected);
         }
     }
 }

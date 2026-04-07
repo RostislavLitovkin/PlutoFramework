@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.bp_xcm_bridge_hub_router
     
     
     /// <summary>
-    /// >> 341 - Composite[bp_xcm_bridge_hub_router.BridgeState]
+    /// >> 831 - Composite[bp_xcm_bridge_hub_router.BridgeState]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BridgeState : BaseType

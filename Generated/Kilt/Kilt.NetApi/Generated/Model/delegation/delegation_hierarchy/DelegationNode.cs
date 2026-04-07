@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.delegation.delegation_hierarchy
     
     
     /// <summary>
-    /// >> 526 - Composite[delegation.delegation_hierarchy.DelegationNode]
+    /// >> 632 - Composite[delegation.delegation_hierarchy.DelegationNode]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DelegationNode : BaseType

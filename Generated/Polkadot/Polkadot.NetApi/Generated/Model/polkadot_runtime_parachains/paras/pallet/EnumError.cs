@@ -99,10 +99,28 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.paras.pall
         /// Invalid validation code size.
         /// </summary>
         InvalidCode = 12,
+        
+        /// <summary>
+        /// >> NothingAuthorized
+        /// No upgrade authorized.
+        /// </summary>
+        NothingAuthorized = 13,
+        
+        /// <summary>
+        /// >> Unauthorized
+        /// The submitted code is not authorized.
+        /// </summary>
+        Unauthorized = 14,
+        
+        /// <summary>
+        /// >> InvalidBlockNumber
+        /// Invalid block number.
+        /// </summary>
+        InvalidBlockNumber = 15,
     }
     
     /// <summary>
-    /// >> 771 - Variant[polkadot_runtime_parachains.paras.pallet.Error]
+    /// >> 838 - Variant[polkadot_runtime_parachains.paras.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

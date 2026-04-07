@@ -50,15 +50,10 @@ namespace Kilt.NetApi.Generated.Model.spiritnet_runtime
         /// >> CumulusXcm
         /// </summary>
         CumulusXcm = 84,
-        
-        /// <summary>
-        /// >> Void
-        /// </summary>
-        Void = 6,
     }
     
     /// <summary>
-    /// >> 314 - Variant[spiritnet_runtime.OriginCaller]
+    /// >> 337 - Variant[spiritnet_runtime.OriginCaller]
     /// </summary>
     public sealed class EnumOriginCaller : BaseEnumRust<OriginCaller>
     {
@@ -74,7 +69,6 @@ namespace Kilt.NetApi.Generated.Model.spiritnet_runtime
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.did.origin.DidRawOrigin>(OriginCaller.Did);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_xcm.pallet.EnumOrigin>(OriginCaller.PolkadotXcm);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.cumulus_pallet_xcm.pallet.EnumOrigin>(OriginCaller.CumulusXcm);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseVoid>(OriginCaller.Void);
         }
     }
 }

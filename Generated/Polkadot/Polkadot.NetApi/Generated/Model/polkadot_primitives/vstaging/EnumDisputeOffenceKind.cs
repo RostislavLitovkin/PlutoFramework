@@ -38,7 +38,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.vstaging
     }
     
     /// <summary>
-    /// >> 327 - Variant[polkadot_primitives.vstaging.DisputeOffenceKind]
+    /// >> 332 - Variant[polkadot_primitives.vstaging.DisputeOffenceKind]
     /// </summary>
     public sealed class EnumDisputeOffenceKind : BaseEnum<DisputeOffenceKind>
     {

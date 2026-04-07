@@ -25,6 +25,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_liquidation.pallet
         /// <summary>
         /// >> liquidate
         /// Liquidates an existing money market position.
+        /// Can be both signed and unsigned.
         /// 
         /// Performs a flash loan to get funds to pay for the debt.
         /// Received collateral is swapped and the profit is transferred to `FeeReceiver`.
@@ -50,7 +51,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_liquidation.pallet
     }
     
     /// <summary>
-    /// >> 258 - Variant[pallet_liquidation.pallet.Call]
+    /// >> 251 - Variant[pallet_liquidation.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

@@ -24,49 +24,112 @@ namespace Kilt.NetApi.Generated.Model.pallet_did_lookup.pallet
         
         /// <summary>
         /// >> associate_account
-        /// See [`Pallet::associate_account`].
+        /// Associate the given account to the DID that authorized this call.
+        /// 
+        /// The account has to sign the DID and a blocknumber after which the
+        /// signature expires in order to authorize the association.
+        /// 
+        /// The signature will be checked against the scale encoded tuple of the
+        /// method specific id of the did identifier and the block number after
+        /// which the signature should be regarded invalid.
+        /// 
+        /// Emits `AssociationEstablished` and, optionally, `AssociationRemoved`
+        /// if there was a previous association for the account.
+        /// 
+        /// # <weight>
+        /// Weight: O(1)
+        /// - Reads: ConnectedDids + ConnectedAccounts + DID Origin Check
+        /// - Writes: ConnectedDids + ConnectedAccounts
+        /// # </weight>
         /// </summary>
         associate_account = 0,
         
         /// <summary>
         /// >> associate_sender
-        /// See [`Pallet::associate_sender`].
+        /// Associate the sender of the call to the DID that authorized this
+        /// call.
+        /// 
+        /// Emits `AssociationEstablished` and, optionally, `AssociationRemoved`
+        /// if there was a previous association for the account.
+        /// 
+        /// # <weight>
+        /// Weight: O(1)
+        /// - Reads: ConnectedDids + ConnectedAccounts + DID Origin Check
+        /// - Writes: ConnectedDids + ConnectedAccounts
+        /// # </weight>
         /// </summary>
         associate_sender = 1,
         
         /// <summary>
         /// >> remove_sender_association
-        /// See [`Pallet::remove_sender_association`].
+        /// Remove the association of the sender account. This call doesn't
+        /// require the authorization of the DID, but requires a signed origin.
+        /// 
+        /// Emits `AssociationRemoved`.
+        /// 
+        /// # <weight>
+        /// Weight: O(1)
+        /// - Reads: ConnectedDids + ConnectedAccounts + DID Origin Check
+        /// - Writes: ConnectedDids + ConnectedAccounts
+        /// # </weight>
         /// </summary>
         remove_sender_association = 2,
         
         /// <summary>
         /// >> remove_account_association
-        /// See [`Pallet::remove_account_association`].
+        /// Remove the association of the provided account ID. This call doesn't
+        /// require the authorization of the account ID, but the associated DID
+        /// needs to match the DID that authorized this call.
+        /// 
+        /// Emits `AssociationRemoved`.
+        /// 
+        /// # <weight>
+        /// Weight: O(1)
+        /// - Reads: ConnectedDids + ConnectedAccounts + DID Origin Check
+        /// - Writes: ConnectedDids + ConnectedAccounts
+        /// # </weight>
         /// </summary>
         remove_account_association = 3,
         
         /// <summary>
         /// >> reclaim_deposit
-        /// See [`Pallet::reclaim_deposit`].
+        /// Remove the association of the provided account. This call can only
+        /// be called from the deposit owner. The reserved deposit will be
+        /// freed.
+        /// 
+        /// Emits `AssociationRemoved`.
+        /// 
+        /// # <weight>
+        /// Weight: O(1)
+        /// - Reads: ConnectedDids
+        /// - Writes: ConnectedDids
+        /// # </weight>
         /// </summary>
         reclaim_deposit = 4,
         
         /// <summary>
         /// >> change_deposit_owner
-        /// See [`Pallet::change_deposit_owner`].
+        /// Changes the deposit owner.
+        /// 
+        /// The balance that is reserved by the current deposit owner will be
+        /// freed and balance of the new deposit owner will get reserved.
+        /// 
+        /// The subject of the call must be linked to the account.
+        /// The sender of the call will be the new deposit owner.
         /// </summary>
         change_deposit_owner = 5,
         
         /// <summary>
         /// >> update_deposit
-        /// See [`Pallet::update_deposit`].
+        /// Updates the deposit amount to the current deposit rate.
+        /// 
+        /// The sender must be the deposit owner.
         /// </summary>
         update_deposit = 6,
     }
     
     /// <summary>
-    /// >> 369 - Variant[pallet_did_lookup.pallet.Call]
+    /// >> 361 - Variant[pallet_did_lookup.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

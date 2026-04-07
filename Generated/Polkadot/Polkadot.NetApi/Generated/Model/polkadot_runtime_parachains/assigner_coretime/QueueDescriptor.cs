@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.assigner_c
     
     
     /// <summary>
-    /// >> 813 - Composite[polkadot_runtime_parachains.assigner_coretime.QueueDescriptor]
+    /// >> 880 - Composite[polkadot_runtime_parachains.assigner_coretime.QueueDescriptor]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class QueueDescriptor : BaseType

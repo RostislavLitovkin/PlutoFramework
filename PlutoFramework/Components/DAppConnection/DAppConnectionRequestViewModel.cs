@@ -13,6 +13,8 @@ namespace PlutoFramework.Components.DAppConnection
 {
     public partial class DAppConnectionRequestViewModel : ObservableObject, IPopup, ISetToDefault
     {
+        public string AppName => AppInfo.Current.Name;
+
         [ObservableProperty]
         private string name;
 

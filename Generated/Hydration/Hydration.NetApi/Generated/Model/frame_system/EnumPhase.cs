@@ -38,7 +38,7 @@ namespace Hydration.NetApi.Generated.Model.frame_system
     }
     
     /// <summary>
-    /// >> 493 - Variant[frame_system.Phase]
+    /// >> 485 - Variant[frame_system.Phase]
     /// </summary>
     public sealed class EnumPhase : BaseEnumRust<Phase>
     {

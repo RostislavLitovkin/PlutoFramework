@@ -20,7 +20,6 @@ namespace PlutoFramework.Model
             Console.WriteLine(pallet);
             Console.WriteLine(id);
 
-
             var basePallet = pallet.ToBaseAssetPallet();
 
             if (AssetsMetadataDict.ContainsKey((client.Endpoint.Key, basePallet, id)))

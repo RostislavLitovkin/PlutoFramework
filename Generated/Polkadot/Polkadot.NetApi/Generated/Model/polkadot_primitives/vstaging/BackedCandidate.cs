@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.vstaging
     
     
     /// <summary>
-    /// >> 293 - Composite[polkadot_primitives.vstaging.BackedCandidate]
+    /// >> 298 - Composite[polkadot_primitives.vstaging.BackedCandidate]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BackedCandidate : BaseType

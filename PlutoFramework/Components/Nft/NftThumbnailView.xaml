@@ -69,7 +69,7 @@
 
                         <nft:NftAttributeView AttributeName="Price"
                                               x:Name="priceAttribute" />
-                        <nft:NftAttributeView AttributeName="APY"
+                        <nft:NftAttributeView AttributeName="Gross yield"
                                               x:Name="apyAttribute" />
                         
                     </StackLayout>

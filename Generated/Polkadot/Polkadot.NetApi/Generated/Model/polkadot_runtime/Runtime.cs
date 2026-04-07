@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime
     
     
     /// <summary>
-    /// >> 887 - Composite[polkadot_runtime.Runtime]
+    /// >> 958 - Composite[polkadot_runtime.Runtime]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Runtime : BaseType

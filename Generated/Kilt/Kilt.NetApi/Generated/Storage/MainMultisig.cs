@@ -83,7 +83,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> as_multi_threshold_1
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AsMultiThreshold1(Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32> other_signatories, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall call)
+        public static Method AsMultiThreshold1(Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32> other_signatories, Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(other_signatories.Encode());
@@ -95,7 +95,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> as_multi
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AsMulti(Substrate.NetApi.Model.Types.Primitive.U16 threshold, Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32> other_signatories, Substrate.NetApi.Model.Types.Base.BaseOpt<Kilt.NetApi.Generated.Model.pallet_multisig.Timepoint> maybe_timepoint, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall call, Kilt.NetApi.Generated.Model.sp_weights.weight_v2.Weight max_weight)
+        public static Method AsMulti(Substrate.NetApi.Model.Types.Primitive.U16 threshold, Substrate.NetApi.Model.Types.Base.BaseVec<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32> other_signatories, Substrate.NetApi.Model.Types.Base.BaseOpt<Kilt.NetApi.Generated.Model.pallet_multisig.Timepoint> maybe_timepoint, Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall call, Kilt.NetApi.Generated.Model.sp_weights.weight_v2.Weight max_weight)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(threshold.Encode());
@@ -154,7 +154,7 @@ namespace Kilt.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 DepositBase()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00801B84EE3200000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         
@@ -167,7 +167,7 @@ namespace Kilt.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 DepositFactor()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00743BA40B0000000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         

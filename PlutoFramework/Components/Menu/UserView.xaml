@@ -2,15 +2,21 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
+             xmlns:menu="clr-namespace:PlutoFramework.Components.Menu"
              x:Class="PlutoFramework.Components.Menu.UserView"
              >
     <xcavate:PageBottomBarView Padding="20">
         <xcavate:PageBottomBarView.ColumnDefinitions>
+            <ColumnDefinition Width="70" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="30" />
         </xcavate:PageBottomBarView.ColumnDefinitions>
 
-        <VerticalStackLayout Spacing="5">
+        <menu:UserProfilePictureView Address="{Binding Address}"
+                                     Margin="0, 0, 10, 0"/>
+
+        <VerticalStackLayout Spacing="5"
+                             Grid.Column="1">
             <Label HorizontalOptions="Start"
                    HorizontalTextAlignment="Start"
                    TextColor="{AppThemeBinding Light=Black, Dark=White}"
@@ -24,10 +30,10 @@
                 </Label.FormattedText>
             </Label>
             <Label HorizontalOptions="Start"
-           HorizontalTextAlignment="Start"
-           TextColor="#804E4E4E"
-           FontSize="10"
-       >
+                    HorizontalTextAlignment="Start"
+                    TextColor="#804E4E4E"
+                    FontSize="10"
+                    LineBreakMode="TailTruncation">
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="{Binding Address}" />
@@ -46,11 +52,10 @@
                HorizontalOptions="Center"
                HeightRequest="30"
                Source="arrowrightgray.png"
-               Grid.Column="1"/>
+               Grid.Column="2"/>
 
         <xcavate:PageBottomBarView.GestureRecognizers>
             <TapGestureRecognizer Command="{Binding OpenUserCommand}" />
         </xcavate:PageBottomBarView.GestureRecognizers>
     </xcavate:PageBottomBarView>
-    
 </ContentView>

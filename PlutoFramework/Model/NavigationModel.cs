@@ -1,5 +1,4 @@
-﻿
-
+﻿using Microsoft.Maui.Controls;
 using PlutoFramework.Components.Account;
 using PlutoFramework.Components.Balance;
 using PlutoFramework.Components.MessagePopup;
@@ -13,10 +12,12 @@ namespace PlutoFramework.Model
 {
     public class NavigationModel
     {
+        public static Func<Task> NavigateToKYC { get; set; } = () => Task.FromResult(0);
+        public static Func<Task> NavigateAfterAccountCreation { get; set; } = NavigateToKYC;
         public static Func<Task> NavigateToUserPageAsync { get; set; } = () => Task.FromResult(0);
         public static async Task NavigateToMnemonicsPageAsync()
         {
-            if (!AccountModel.CheckRequirements())
+            if (!RequirementsModel.CheckAccountExists())
             {
                 var noAccountPopupViewModel = DependencyService.Get<NoAccountPopupViewModel>();
 
@@ -35,13 +36,13 @@ namespace PlutoFramework.Model
             {
                 // Failed to authenticate
             }
-
         }
+
         public static async Task NavigateToBalancesPageAsync()
         {
             Console.WriteLine("NavigateToBalancesPageAsync called");
 
-            if (!AccountModel.CheckRequirements())
+            if (!RequirementsModel.CheckAccountExists())
             {
                 return;
             }
@@ -53,7 +54,7 @@ namespace PlutoFramework.Model
 
         public static async Task NavigateToQrScannerPageAsync()
         {
-            if (!AccountModel.CheckRequirements())
+            if (!RequirementsModel.CheckAccountExists())
             {
                 return;
             }
@@ -62,6 +63,29 @@ namespace PlutoFramework.Model
             {
                 OnScannedMethod = OnScanned
             });
+        }
+
+        public static INavigation? GetCurrentNavigation()
+        {
+            if (Shell.Current is not null)
+            {
+                return Shell.Current.Navigation;
+            }
+
+            var window = Application.Current?.Windows.FirstOrDefault();
+            return window?.Page?.Navigation;
+        }
+
+        public static Task PushAsync(Page page)
+        {
+            var navigation = GetCurrentNavigation();
+            return navigation?.PushAsync(page) ?? Task.CompletedTask;
+        }
+
+        public static Task PopAsync()
+        {
+            var navigation = GetCurrentNavigation();
+            return navigation?.PopAsync() ?? Task.CompletedTask;
         }
 
         public static void OnScanned(System.Object sender, ZXing.Net.Maui.BarcodeDetectionEventArgs e)
@@ -126,7 +150,7 @@ namespace PlutoFramework.Model
                         messagePopup.IsVisible = true;
                     }
 
-                    await Application.Current.MainPage.Navigation.PopAsync();
+                    await PopAsync();
                 }
                 catch (Exception ex)
                 {

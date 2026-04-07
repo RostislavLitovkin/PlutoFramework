@@ -6,10 +6,11 @@
                        xmlns:navigationbar="clr-namespace:PlutoFramework.Components.NavigationBar"
                        xmlns:buttons="clr-namespace:PlutoFramework.Components.Buttons"
                        xmlns:mnemonics="clr-namespace:PlutoFramework.Components.Mnemonics"
+                       xmlns:keys="clr-namespace:PlutoFramework.Components.Keys"
                        x:Class="PlutoFramework.Components.Mnemonics.MnemonicsPage"
                        Title="Mnemonics">
-
-    <template:PageTemplate.MainContent>
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
         <VerticalStackLayout HorizontalOptions="Center"
                              Padding="20, 10, 20, 100"
                              Spacing="15">
@@ -28,6 +29,13 @@
             <buttons:ElevatedButton ButtonState="Enabled"
                                     Text="What are mnemonics?"
                                     Command="{Binding GoToMnemonicsExplanationCommand}" />
+
+            <buttons:BasicGrayButton Text="Forgot key"
+                                     Command="{Binding ForgotKeyCommand}"/>
         </VerticalStackLayout>
-    </template:PageTemplate.MainContent>
+    </ScrollView>
+
+    <template:PageTemplate.PopupContent>
+        <keys:CanNotRecoverKeyPopupView />
+    </template:PageTemplate.PopupContent>
 </template:PageTemplate>

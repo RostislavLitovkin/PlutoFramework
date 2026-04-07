@@ -54,7 +54,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_whitelist.pallet
     }
     
     /// <summary>
-    /// >> 658 - Variant[pallet_whitelist.pallet.Error]
+    /// >> 711 - Variant[pallet_whitelist.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

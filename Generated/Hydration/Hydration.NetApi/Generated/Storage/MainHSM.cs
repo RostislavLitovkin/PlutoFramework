@@ -233,10 +233,11 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> execute_arbitrage
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ExecuteArbitrage(Substrate.NetApi.Model.Types.Primitive.U32 collateral_asset_id)
+        public static Method ExecuteArbitrage(Substrate.NetApi.Model.Types.Primitive.U32 collateral_asset_id, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128> flash_amount)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collateral_asset_id.Encode());
+            byteArray.AddRange(flash_amount.Encode());
             return new Method(82, "HSM", 5, "execute_arbitrage", byteArray.ToArray());
         }
         
@@ -287,7 +288,7 @@ namespace Hydration.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U64 GasLimit()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U64();
-            result.Create("0x00093D0000000000");
+            result.Create("0x801A060000000000");
             return result;
         }
     }

@@ -214,7 +214,7 @@ namespace Kilt.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 DataDepositPerByte()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00743BA40B0000000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         
@@ -247,7 +247,7 @@ namespace Kilt.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 TipReportDepositBase()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00F45628FA3200000000000000000000");
+            result.Create("0x01000000000000000000000000000000");
             return result;
         }
         

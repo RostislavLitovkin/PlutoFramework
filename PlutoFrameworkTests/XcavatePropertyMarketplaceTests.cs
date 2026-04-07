@@ -53,7 +53,7 @@ namespace PlutoFrameworkTests
 
             foreach (XcavatePaseoNftsPalletNft property in properties.Items)
             {
-                Console.WriteLine("Property: " + property.XcavateMetadata?.PropertyName + " - " + property.NftMarketplaceDetails?.Listed);
+                Console.WriteLine("Property: " + property.XcavateMetadata?.PropertyName + " - " + property.OngoingObjectListingDetails?.ListedTokens);
             }
         }
 

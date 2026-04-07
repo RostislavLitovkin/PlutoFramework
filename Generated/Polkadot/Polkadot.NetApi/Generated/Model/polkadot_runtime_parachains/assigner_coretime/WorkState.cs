@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.assigner_c
     
     
     /// <summary>
-    /// >> 815 - Composite[polkadot_runtime_parachains.assigner_coretime.WorkState]
+    /// >> 882 - Composite[polkadot_runtime_parachains.assigner_coretime.WorkState]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class WorkState : BaseType

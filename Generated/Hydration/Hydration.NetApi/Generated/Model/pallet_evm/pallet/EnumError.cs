@@ -102,7 +102,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_evm.pallet
     }
     
     /// <summary>
-    /// >> 715 - Variant[pallet_evm.pallet.Error]
+    /// >> 700 - Variant[pallet_evm.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

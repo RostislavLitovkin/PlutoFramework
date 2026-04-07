@@ -49,9 +49,11 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "RelevantMessagingState"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_parachain_system.relay_state_snapshot.MessagingStateSnapshot)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "HostConfiguration"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Model.polkadot_primitives.v8.AbridgedHostConfiguration)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "LastDmqMqcHead"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Model.cumulus_primitives_parachain_inherent.MessageQueueChain)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "LastHrmpMqcHeads"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Types.Base.BTreeMapT2)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "LastHrmpMqcHeads"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Types.Base.BTreeMapT4)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "ProcessedDownwardMessages"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "LastProcessedDownwardMessage"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_parachain_system.parachain_inherent.InboundMessageId)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "HrmpWatermark"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "LastProcessedHrmpMessage"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_parachain_system.parachain_inherent.InboundMessageId)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "HrmpOutboundMessages"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<PolkadotAssetHub.NetApi.Generated.Model.polkadot_core_primitives.OutboundHrmpMessage>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "UpwardMessages"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("ParachainSystem", "PendingUpwardMessages"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>)));
@@ -565,10 +567,10 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         ///  This value is loaded before and saved after processing inbound downward messages carried
         ///  by the system inherent.
         /// </summary>
-        public async Task<PolkadotAssetHub.NetApi.Generated.Types.Base.BTreeMapT2> LastHrmpMqcHeads(string blockhash, CancellationToken token)
+        public async Task<PolkadotAssetHub.NetApi.Generated.Types.Base.BTreeMapT4> LastHrmpMqcHeads(string blockhash, CancellationToken token)
         {
             string parameters = ParachainSystemStorage.LastHrmpMqcHeadsParams();
-            var result = await _client.GetStorageAsync<PolkadotAssetHub.NetApi.Generated.Types.Base.BTreeMapT2>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<PolkadotAssetHub.NetApi.Generated.Types.Base.BTreeMapT4>(parameters, blockhash, token);
             return result;
         }
         
@@ -606,10 +608,41 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         }
         
         /// <summary>
+        /// >> LastProcessedDownwardMessageParams
+        ///  The last processed downward message.
+        /// 
+        ///  We need to keep track of this to filter the messages that have been already processed.
+        /// </summary>
+        public static string LastProcessedDownwardMessageParams()
+        {
+            return RequestGenerator.GetStorage("ParachainSystem", "LastProcessedDownwardMessage", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> LastProcessedDownwardMessageDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string LastProcessedDownwardMessageDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> LastProcessedDownwardMessage
+        ///  The last processed downward message.
+        /// 
+        ///  We need to keep track of this to filter the messages that have been already processed.
+        /// </summary>
+        public async Task<PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_parachain_system.parachain_inherent.InboundMessageId> LastProcessedDownwardMessage(string blockhash, CancellationToken token)
+        {
+            string parameters = ParachainSystemStorage.LastProcessedDownwardMessageParams();
+            var result = await _client.GetStorageAsync<PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_parachain_system.parachain_inherent.InboundMessageId>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
         /// >> HrmpWatermarkParams
         ///  HRMP watermark that was set in a block.
-        /// 
-        ///  This will be cleared in `on_initialize` of each new block.
         /// </summary>
         public static string HrmpWatermarkParams()
         {
@@ -628,13 +661,44 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         /// <summary>
         /// >> HrmpWatermark
         ///  HRMP watermark that was set in a block.
-        /// 
-        ///  This will be cleared in `on_initialize` of each new block.
         /// </summary>
         public async Task<Substrate.NetApi.Model.Types.Primitive.U32> HrmpWatermark(string blockhash, CancellationToken token)
         {
             string parameters = ParachainSystemStorage.HrmpWatermarkParams();
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
+        /// >> LastProcessedHrmpMessageParams
+        ///  The last processed HRMP message.
+        /// 
+        ///  We need to keep track of this to filter the messages that have been already processed.
+        /// </summary>
+        public static string LastProcessedHrmpMessageParams()
+        {
+            return RequestGenerator.GetStorage("ParachainSystem", "LastProcessedHrmpMessage", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> LastProcessedHrmpMessageDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string LastProcessedHrmpMessageDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> LastProcessedHrmpMessage
+        ///  The last processed HRMP message.
+        /// 
+        ///  We need to keep track of this to filter the messages that have been already processed.
+        /// </summary>
+        public async Task<PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_parachain_system.parachain_inherent.InboundMessageId> LastProcessedHrmpMessage(string blockhash, CancellationToken token)
+        {
+            string parameters = ParachainSystemStorage.LastProcessedHrmpMessageParams();
+            var result = await _client.GetStorageAsync<PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_parachain_system.parachain_inherent.InboundMessageId>(parameters, blockhash, token);
             return result;
         }
         
@@ -899,10 +963,11 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         /// >> set_validation_data
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetValidationData(PolkadotAssetHub.NetApi.Generated.Model.cumulus_primitives_parachain_inherent.ParachainInherentData data)
+        public static Method SetValidationData(PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_parachain_system.parachain_inherent.BasicParachainInherentData data, PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_parachain_system.parachain_inherent.InboundMessagesData inbound_messages_data)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(data.Encode());
+            byteArray.AddRange(inbound_messages_data.Encode());
             return new Method(1, "ParachainSystem", 0, "set_validation_data", byteArray.ToArray());
         }
         
@@ -978,17 +1043,5 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         /// No validation function upgrade is currently scheduled.
         /// </summary>
         NotScheduled,
-        
-        /// <summary>
-        /// >> NothingAuthorized
-        /// No code upgrade has been authorized.
-        /// </summary>
-        NothingAuthorized,
-        
-        /// <summary>
-        /// >> Unauthorized
-        /// The given code upgrade has not been authorized.
-        /// </summary>
-        Unauthorized,
     }
 }

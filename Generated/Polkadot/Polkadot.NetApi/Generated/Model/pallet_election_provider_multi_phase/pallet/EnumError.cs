@@ -114,7 +114,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_election_provider_multi_phase.p
     }
     
     /// <summary>
-    /// >> 694 - Variant[pallet_election_provider_multi_phase.pallet.Error]
+    /// >> 751 - Variant[pallet_election_provider_multi_phase.pallet.Error]
     /// Error of the pallet that can be returned in response to dispatches.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

@@ -186,15 +186,21 @@ namespace Hydration.NetApi.Generated.Model.pallet_liquidity_mining.pallet
         IncentivizedAssetNotRegistered = 26,
         
         /// <summary>
+        /// >> AmmPoolIdMismatch
+        /// Provided `amm_pool_id` doesn't match deposit's `amm_pool_id`.
+        /// </summary>
+        AmmPoolIdMismatch = 27,
+        
+        /// <summary>
         /// >> InconsistentState
         /// Action cannot be completed because unexpected error has occurred. This should be reported
         /// to protocol maintainers.
         /// </summary>
-        InconsistentState = 27,
+        InconsistentState = 28,
     }
     
     /// <summary>
-    /// >> 742 - Variant[pallet_liquidity_mining.pallet.Error]
+    /// >> 726 - Variant[pallet_liquidity_mining.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>
@@ -232,6 +238,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_liquidity_mining.pallet
 				AddTypeDecoder<BaseVoid>(Error.IncorrectValuedShares);
 				AddTypeDecoder<BaseVoid>(Error.RewardCurrencyNotRegistered);
 				AddTypeDecoder<BaseVoid>(Error.IncentivizedAssetNotRegistered);
+				AddTypeDecoder<BaseVoid>(Error.AmmPoolIdMismatch);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_liquidity_mining.pallet.EnumInconsistentStateError>(Error.InconsistentState);
         }
     }

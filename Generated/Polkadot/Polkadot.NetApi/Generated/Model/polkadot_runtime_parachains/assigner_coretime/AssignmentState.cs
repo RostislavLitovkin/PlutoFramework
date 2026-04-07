@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.assigner_c
     
     
     /// <summary>
-    /// >> 818 - Composite[polkadot_runtime_parachains.assigner_coretime.AssignmentState]
+    /// >> 885 - Composite[polkadot_runtime_parachains.assigner_coretime.AssignmentState]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssignmentState : BaseType

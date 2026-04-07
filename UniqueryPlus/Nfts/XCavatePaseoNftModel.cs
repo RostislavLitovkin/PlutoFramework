@@ -341,7 +341,7 @@ namespace UniqueryPlus.Nfts
                     AssetId = propertyDetails.ItemId,
                     Region = propertyDetails.Region,
                     Location = Helpers.VecU8ToString(propertyDetails.Location.Value.Value),
-                    Listed = propertyDetails.TokenAmount,
+                    Tokens = propertyDetails.TokenAmount,
                 });
             }
 
@@ -399,7 +399,12 @@ namespace UniqueryPlus.Nfts
                 {
                     RealEstateDeveloper = Utils.GetAddressFrom(propertyDetails.RealEstateDeveloper.Encode()),
                     TaxPaidByDeveloper = propertyDetails.TaxPaidByDeveloper,
-                    ListingExpiry = propertyDetails.ListingExpiry.Value
+                    ListingExpiry = propertyDetails.ListingExpiry.Value,
+                    ListedTokens = propertyDetails.ListedTokenAmount,
+
+                    AssetId = propertyDetails.AssetId,
+                    CollectionId = propertyDetails.CollectionId,
+                    ItemId = propertyDetails.ItemId,
                 });
             }
 

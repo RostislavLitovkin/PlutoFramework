@@ -2,6 +2,7 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             xmlns:xcavateproperty="clr-namespace:PlutoFramework.Components.XcavateProperty"
              x:Class="PlutoFramework.Components.Xcavate.XcavateCell"
              HeightRequest="80"
              Margin="0">
@@ -19,20 +20,9 @@
                     AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
                              Margin="10,0,10,0"
                     >
-                    <Label
-                        HeightRequest="30"
-                        VerticalTextAlignment="Center"
-                        HorizontalTextAlignment="Start"
-                        HorizontalOptions="Start"
-                        TextColor="#4E4E4E"
-                        Margin="0, 5, 0, 0"
-                    >
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span x:Name="titleText" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
+                    <xcavateproperty:PropertyTitleWithInfoView x:Name="titleView"
+                                                               HeightRequest="28"
+                                                               Margin="0, 5, 0, 0"/>
 
                     <Label HeightRequest="30"
                            VerticalTextAlignment="Center"

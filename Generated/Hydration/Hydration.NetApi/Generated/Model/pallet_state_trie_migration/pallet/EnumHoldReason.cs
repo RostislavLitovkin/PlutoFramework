@@ -28,7 +28,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_state_trie_migration.pallet
     }
     
     /// <summary>
-    /// >> 518 - Variant[pallet_state_trie_migration.pallet.HoldReason]
+    /// >> 510 - Variant[pallet_state_trie_migration.pallet.HoldReason]
     /// </summary>
     public sealed class EnumHoldReason : BaseEnum<HoldReason>
     {

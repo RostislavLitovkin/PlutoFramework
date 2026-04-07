@@ -21,7 +21,9 @@ namespace PlutoFramework.Components.Kilt
 
             var did = Preferences.Get(PreferencesModel.PUBLIC_KEY + "kilt1", "");
 
-            var applicantData = await SumsubModel.GetApplicantDataAsync(did, token);
+            var secrets = SumsubSecretModel.GetSecrets();
+
+            var applicantData = await SumsubModel.GetApplicantDataAsync(did, secrets.SecretKey, secrets.AppToken, token);
 
             if (applicantData is not null)
             {

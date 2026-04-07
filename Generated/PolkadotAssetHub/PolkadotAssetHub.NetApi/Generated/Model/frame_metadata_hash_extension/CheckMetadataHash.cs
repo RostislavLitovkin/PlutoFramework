@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.frame_metadata_hash_extension
     
     
     /// <summary>
-    /// >> 477 - Composite[frame_metadata_hash_extension.CheckMetadataHash]
+    /// >> 1013 - Composite[frame_metadata_hash_extension.CheckMetadataHash]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckMetadataHash : BaseType

@@ -79,7 +79,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_scheduler.pallet
     }
     
     /// <summary>
-    /// >> 468 - Variant[pallet_scheduler.pallet.Event]
+    /// >> 460 - Variant[pallet_scheduler.pallet.Event]
     /// Events type.
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

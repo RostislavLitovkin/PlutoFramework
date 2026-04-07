@@ -36,8 +36,8 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         public CollatorSelectionStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("CollatorSelection", "Invulnerables"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("CollatorSelection", "CandidateList"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("CollatorSelection", "Invulnerables"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("CollatorSelection", "CandidateList"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CollatorSelection", "LastAuthoredBlock"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CollatorSelection", "DesiredCandidates"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
@@ -66,10 +66,10 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         /// >> Invulnerables
         ///  The invulnerable, permissioned collators. This list must be sorted.
         /// </summary>
-        public async Task<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12> Invulnerables(string blockhash, CancellationToken token)
+        public async Task<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39> Invulnerables(string blockhash, CancellationToken token)
         {
             string parameters = CollatorSelectionStorage.InvulnerablesParams();
-            var result = await _client.GetStorageAsync<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39>(parameters, blockhash, token);
             return result;
         }
         
@@ -103,10 +103,10 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         ///  This list is sorted in ascending order by deposit and when the deposits are equal, the least
         ///  recently updated is considered greater.
         /// </summary>
-        public async Task<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13> CandidateList(string blockhash, CancellationToken token)
+        public async Task<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40> CandidateList(string blockhash, CancellationToken token)
         {
             string parameters = CollatorSelectionStorage.CandidateListParams();
-            var result = await _client.GetStorageAsync<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT13>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40>(parameters, blockhash, token);
             return result;
         }
         
@@ -318,6 +318,75 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
     /// </summary>
     public sealed class CollatorSelectionConstants
     {
+        
+        /// <summary>
+        /// >> PotId
+        ///  Account Identifier from which the internal Pot is generated.
+        /// </summary>
+        public PolkadotAssetHub.NetApi.Generated.Model.frame_support.PalletId PotId()
+        {
+            var result = new PolkadotAssetHub.NetApi.Generated.Model.frame_support.PalletId();
+            result.Create("0x506F745374616B65");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MaxCandidates
+        ///  Maximum number of candidates that we should have.
+        /// 
+        ///  This does not take into account the invulnerables.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 MaxCandidates()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x64000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MinEligibleCollators
+        ///  Minimum number eligible collators. Should always be greater than zero. This includes
+        ///  Invulnerable collators. This ensures that there will always be one collator who can
+        ///  produce a block.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 MinEligibleCollators()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x04000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MaxInvulnerables
+        ///  Maximum number of invulnerables.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 MaxInvulnerables()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x14000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> KickThreshold
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 KickThreshold()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x100E0000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> pot_account
+        ///  Gets this pallet's derived pot account.
+        /// </summary>
+        public PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32 pot_account()
+        {
+            var result = new PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32();
+            result.Create("0x6D6F646C506F745374616B650000000000000000000000000000000000000000");
+            return result;
+        }
     }
     
     /// <summary>

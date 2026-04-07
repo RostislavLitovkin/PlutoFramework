@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.sp_arithmetic.per_things
     
     
     /// <summary>
-    /// >> 217 - Composite[sp_arithmetic.per_things.Perquintill]
+    /// >> 207 - Composite[sp_arithmetic.per_things.Perquintill]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Perquintill : BaseType

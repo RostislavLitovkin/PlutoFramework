@@ -58,6 +58,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "UpgradedToTripleRefCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "ExecutionPhase"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Model.frame_system.EnumPhase)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "AuthorizedUpgrade"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Model.frame_system.CodeUpgradeAuthorization)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "ExtrinsicWeightReclaimed"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Model.sp_weights.weight_v2.Weight)));
         }
         
         /// <summary>
@@ -623,6 +624,47 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
             var result = await _client.GetStorageAsync<PolkadotAssetHub.NetApi.Generated.Model.frame_system.CodeUpgradeAuthorization>(parameters, blockhash, token);
             return result;
         }
+        
+        /// <summary>
+        /// >> ExtrinsicWeightReclaimedParams
+        ///  The weight reclaimed for the extrinsic.
+        /// 
+        ///  This information is available until the end of the extrinsic execution.
+        ///  More precisely this information is removed in `note_applied_extrinsic`.
+        /// 
+        ///  Logic doing some post dispatch weight reduction must update this storage to avoid duplicate
+        ///  reduction.
+        /// </summary>
+        public static string ExtrinsicWeightReclaimedParams()
+        {
+            return RequestGenerator.GetStorage("System", "ExtrinsicWeightReclaimed", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> ExtrinsicWeightReclaimedDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string ExtrinsicWeightReclaimedDefault()
+        {
+            return "0x0000";
+        }
+        
+        /// <summary>
+        /// >> ExtrinsicWeightReclaimed
+        ///  The weight reclaimed for the extrinsic.
+        /// 
+        ///  This information is available until the end of the extrinsic execution.
+        ///  More precisely this information is removed in `note_applied_extrinsic`.
+        /// 
+        ///  Logic doing some post dispatch weight reduction must update this storage to avoid duplicate
+        ///  reduction.
+        /// </summary>
+        public async Task<PolkadotAssetHub.NetApi.Generated.Model.sp_weights.weight_v2.Weight> ExtrinsicWeightReclaimed(string blockhash, CancellationToken token)
+        {
+            string parameters = SystemStorage.ExtrinsicWeightReclaimedParams();
+            var result = await _client.GetStorageAsync<PolkadotAssetHub.NetApi.Generated.Model.sp_weights.weight_v2.Weight>(parameters, blockhash, token);
+            return result;
+        }
     }
     
     /// <summary>
@@ -721,6 +763,17 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         }
         
         /// <summary>
+        /// >> do_task
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method DoTask(PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime.EnumRuntimeTask task)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(task.Encode());
+            return new Method(0, "System", 8, "do_task", byteArray.ToArray());
+        }
+        
+        /// <summary>
         /// >> authorize_upgrade
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
@@ -767,9 +820,9 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         public PolkadotAssetHub.NetApi.Generated.Model.frame_system.limits.BlockWeights BlockWeights()
         {
             var result = new PolkadotAssetHub.NetApi.Generated.Model.frame_system.limits.BlockWeights();
-            result.Create("0x0700F2052A0100070088526A74020040010265CD1D000107C0D22C76510200E000010700E6BD4F5" +
-                    "70200F0000100000265CD1D000107C074C1906E0200300101070088526A7402004001010700A2941" +
-                    "A1D020050000265CD1D00000000");
+            result.Create("0x0700F2052A01000B00204AA9D101020080020265CD1D00010BC026FB7F740102000002010B0068E" +
+                    "5CF8B01020020020100000265CD1D00010BC0DE5F59BA0102006002010B00204AA9D101020080020" +
+                    "10700B864D945020060000265CD1D00000000");
             return result;
         }
         
@@ -780,7 +833,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         public PolkadotAssetHub.NetApi.Generated.Model.frame_system.limits.BlockLength BlockLength()
         {
             var result = new PolkadotAssetHub.NetApi.Generated.Model.frame_system.limits.BlockLength();
-            result.Create("0x00003C000000500000005000");
+            result.Create("0x000044000000500000005000");
             return result;
         }
         
@@ -813,7 +866,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         public PolkadotAssetHub.NetApi.Generated.Model.sp_version.RuntimeVersion Version()
         {
             var result = new PolkadotAssetHub.NetApi.Generated.Model.sp_version.RuntimeVersion();
-            result.Create(@"0x2473746174656D696E742473746174656D696E7401000000E2510F000000000048DD718D5CC53262D401000000D7BDD8A272CA0D6501000000DF6ACB689907609B0500000037E397FC7C91F5E40200000040FE3AD401F8959A06000000D2BC9897EED08F1503000000F78B278BE53F454C02000000AB3C0572291FEB8B01000000BC9D89904F5B923F0100000037C8BB1350A9A2A804000000F3FF14D5AB527059030000006FF52EE858E6C5BD0100000091B1C8B16328EB92010000009FFB505AA738D69C01000000DE92B8A0426B9BF602000000EA93E3F16F3D696202000000FBC577B9D747EFD6010000008A8047A53A8277EC010000000F00000001");
+            result.Create(@"0x2473746174656D696E742473746174656D696E740100000082841E000000000068DD718D5CC53262D40100000004E70521A0D3D2F801000000D7BDD8A272CA0D6502000000DF6ACB689907609B0500000037E397FC7C91F5E40200000040FE3AD401F8959A06000000D2BC9897EED08F1503000000F78B278BE53F454C02000000AB3C0572291FEB8B01000000CCD9DE6396C899CA01000000BC9D89904F5B923F0100000037C8BB1350A9A2A804000000F3FF14D5AB527059030000006FF52EE858E6C5BD0100000091B1C8B16328EB92020000009FFB505AA738D69C010000002609BE83AC4468DC0100000012C8E3D4D7E06DE001000000DE92B8A0426B9BF602000000EA93E3F16F3D696203000000FBC577B9D747EFD6010000008A8047A53A8277EC01000000A2DDB6A58477BF630100000017A6BC0D0062AEB30100000018EF58A3B67BA77001000000C51FF1FA3F5D0CCA010000000F00000001");
             return result;
         }
         
@@ -884,6 +937,18 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         /// A multi-block migration is ongoing and prevents the current code from being replaced.
         /// </summary>
         MultiBlockMigrationsOngoing,
+        
+        /// <summary>
+        /// >> InvalidTask
+        /// The specified [`Task`] is not valid.
+        /// </summary>
+        InvalidTask,
+        
+        /// <summary>
+        /// >> FailedTask
+        /// The specified [`Task`] failed during execution.
+        /// </summary>
+        FailedTask,
         
         /// <summary>
         /// >> NothingAuthorized

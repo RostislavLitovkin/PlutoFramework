@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.asset
     
     
     /// <summary>
-    /// >> 103 - Composite[staging_xcm.v5.asset.AssetId]
+    /// >> 111 - Composite[staging_xcm.v5.asset.AssetId]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetId : BaseType

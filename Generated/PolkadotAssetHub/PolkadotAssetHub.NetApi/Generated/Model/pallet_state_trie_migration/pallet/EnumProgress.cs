@@ -38,7 +38,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_state_trie_migration.pa
     }
     
     /// <summary>
-    /// >> 392 - Variant[pallet_state_trie_migration.pallet.Progress]
+    /// >> 375 - Variant[pallet_state_trie_migration.pallet.Progress]
     /// </summary>
     public sealed class EnumProgress : BaseEnumRust<Progress>
     {
@@ -49,7 +49,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_state_trie_migration.pa
         public EnumProgress()
         {
 				AddTypeDecoder<BaseVoid>(Progress.ToStart);
-				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23>(Progress.LastKey);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15>(Progress.LastKey);
 				AddTypeDecoder<BaseVoid>(Progress.Complete);
         }
     }

@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.frame_system.limits
     
     
     /// <summary>
-    /// >> 170 - Composite[frame_system.limits.WeightsPerClass]
+    /// >> 705 - Composite[frame_system.limits.WeightsPerClass]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class WeightsPerClass : BaseType

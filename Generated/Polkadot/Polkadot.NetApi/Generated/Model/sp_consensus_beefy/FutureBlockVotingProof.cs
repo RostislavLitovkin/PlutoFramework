@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.sp_consensus_beefy
     
     
     /// <summary>
-    /// >> 459 - Composite[sp_consensus_beefy.FutureBlockVotingProof]
+    /// >> 464 - Composite[sp_consensus_beefy.FutureBlockVotingProof]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class FutureBlockVotingProof : BaseType

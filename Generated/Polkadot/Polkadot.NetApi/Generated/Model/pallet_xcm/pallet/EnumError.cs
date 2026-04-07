@@ -186,13 +186,55 @@ namespace Polkadot.NetApi.Generated.Model.pallet_xcm.pallet
         /// The alias to remove authorization for was not found.
         /// </summary>
         AliasNotFound = 27,
+        
+        /// <summary>
+        /// >> LocalExecutionIncompleteWithError
+        /// Local XCM execution incomplete with the actual XCM error and the index of the
+        /// instruction that caused the error.
+        /// </summary>
+        LocalExecutionIncompleteWithError = 28,
     }
     
     /// <summary>
-    /// >> 860 - Variant[pallet_xcm.pallet.Error]
+    /// >> 927 - Variant[pallet_xcm.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
-    public sealed class EnumError : BaseEnum<Error>
+    public sealed class EnumError : BaseEnumRust<Error>
     {
+        
+        /// <summary>
+        /// Initializes a new instance of the class.
+        /// </summary>
+        public EnumError()
+        {
+				AddTypeDecoder<BaseVoid>(Error.Unreachable);
+				AddTypeDecoder<BaseVoid>(Error.SendFailure);
+				AddTypeDecoder<BaseVoid>(Error.Filtered);
+				AddTypeDecoder<BaseVoid>(Error.UnweighableMessage);
+				AddTypeDecoder<BaseVoid>(Error.DestinationNotInvertible);
+				AddTypeDecoder<BaseVoid>(Error.Empty);
+				AddTypeDecoder<BaseVoid>(Error.CannotReanchor);
+				AddTypeDecoder<BaseVoid>(Error.TooManyAssets);
+				AddTypeDecoder<BaseVoid>(Error.InvalidOrigin);
+				AddTypeDecoder<BaseVoid>(Error.BadVersion);
+				AddTypeDecoder<BaseVoid>(Error.BadLocation);
+				AddTypeDecoder<BaseVoid>(Error.NoSubscription);
+				AddTypeDecoder<BaseVoid>(Error.AlreadySubscribed);
+				AddTypeDecoder<BaseVoid>(Error.CannotCheckOutTeleport);
+				AddTypeDecoder<BaseVoid>(Error.LowBalance);
+				AddTypeDecoder<BaseVoid>(Error.TooManyLocks);
+				AddTypeDecoder<BaseVoid>(Error.AccountNotSovereign);
+				AddTypeDecoder<BaseVoid>(Error.FeesNotMet);
+				AddTypeDecoder<BaseVoid>(Error.LockNotFound);
+				AddTypeDecoder<BaseVoid>(Error.InUse);
+				AddTypeDecoder<BaseVoid>(Error.InvalidAssetUnknownReserve);
+				AddTypeDecoder<BaseVoid>(Error.InvalidAssetUnsupportedReserve);
+				AddTypeDecoder<BaseVoid>(Error.TooManyReserves);
+				AddTypeDecoder<BaseVoid>(Error.LocalExecutionIncomplete);
+				AddTypeDecoder<BaseVoid>(Error.TooManyAuthorizedAliases);
+				AddTypeDecoder<BaseVoid>(Error.ExpiresInPast);
+				AddTypeDecoder<BaseVoid>(Error.AliasNotFound);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U8, Polkadot.NetApi.Generated.Model.pallet_xcm.errors.EnumExecutionError>>(Error.LocalExecutionIncompleteWithError);
+        }
     }
 }

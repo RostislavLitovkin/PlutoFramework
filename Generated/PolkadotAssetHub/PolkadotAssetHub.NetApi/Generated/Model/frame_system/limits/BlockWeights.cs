@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.frame_system.limits
     
     
     /// <summary>
-    /// >> 168 - Composite[frame_system.limits.BlockWeights]
+    /// >> 703 - Composite[frame_system.limits.BlockWeights]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BlockWeights : BaseType

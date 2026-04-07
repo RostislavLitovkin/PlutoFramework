@@ -14,7 +14,7 @@ namespace PlutoFramework.Components.Kilt
         private DidVerificationEnum didVerification = (DidVerificationEnum)Enum.Parse(typeof(DidVerificationEnum), Preferences.Get(PreferencesModel.DID_VERIFICATION + "kilt1", DidVerificationEnum.Light.ToString()));
 
         [RelayCommand]
-        public Task GoToDidExplanationPageAsync() => Application.Current.MainPage.Navigation.PushAsync(new DidExplanationPage());
+        public Task GoToDidExplanationPageAsync() => NavigationModel.PushAsync(new DidExplanationPage());
 
         [RelayCommand]
         public async Task DeleteDIDAsync()

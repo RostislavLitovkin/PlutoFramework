@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.location
     
     
     /// <summary>
-    /// >> 79 - Composite[staging_xcm.v5.location.Location]
+    /// >> 88 - Composite[staging_xcm.v5.location.Location]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Location : BaseType

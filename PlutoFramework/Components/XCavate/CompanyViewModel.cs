@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.Nft;
+using PlutoFramework.Model;
 using PlutoFramework.Model.Xcavate;
 using PlutoFrameworkCore.Xcavate;
 
@@ -102,7 +103,7 @@ namespace PlutoFramework.Components.Xcavate
         public VerificationEnum PassportOrDriversLicenseVerified => Company.PassportOrDriversLicense.VerificationStatus;
 
         [RelayCommand]
-        public async Task EditAsync() => await Application.Current.MainPage.Navigation.PushAsync(new ModifyCompanyPage(
+        public async Task EditAsync() => await NavigationModel.PushAsync(new ModifyCompanyPage(
             new ModifyCompanyViewModel
             {
                 Title = "Modify company",

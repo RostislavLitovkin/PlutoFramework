@@ -43,7 +43,7 @@ namespace Hydration.NetApi.Generated.Model.xcm.v2
     }
     
     /// <summary>
-    /// >> 329 - Variant[xcm.v2.Response]
+    /// >> 321 - Variant[xcm.v2.Response]
     /// </summary>
     public sealed class EnumResponse : BaseEnumRust<Response>
     {

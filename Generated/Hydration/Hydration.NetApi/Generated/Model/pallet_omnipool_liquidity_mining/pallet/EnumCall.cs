@@ -356,7 +356,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool_liquidity_mining.pall
     }
     
     /// <summary>
-    /// >> 216 - Variant[pallet_omnipool_liquidity_mining.pallet.Call]
+    /// >> 206 - Variant[pallet_omnipool_liquidity_mining.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

@@ -109,7 +109,7 @@ namespace Hydration.NetApi.Generated.Model.orml_tokens.module
     }
     
     /// <summary>
-    /// >> 265 - Variant[orml_tokens.module.Call]
+    /// >> 257 - Variant[orml_tokens.module.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

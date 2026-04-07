@@ -60,7 +60,7 @@ namespace Hydration.NetApi.Generated.Model.cumulus_pallet_parachain_system.palle
     }
     
     /// <summary>
-    /// >> 470 - Variant[cumulus_pallet_parachain_system.pallet.Event]
+    /// >> 462 - Variant[cumulus_pallet_parachain_system.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

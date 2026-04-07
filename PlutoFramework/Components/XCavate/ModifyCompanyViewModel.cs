@@ -50,11 +50,11 @@ namespace PlutoFramework.Components.Xcavate
         {
             // Save
 
-            await Application.Current.MainPage.Navigation.PopAsync();
+            await NavigationModel.PopAsync();
         }
 
         [RelayCommand]
-        public Task CancelAsync() => Application.Current.MainPage.Navigation.PopAsync();
+        public Task CancelAsync() => NavigationModel.PopAsync();
 
     }
 }

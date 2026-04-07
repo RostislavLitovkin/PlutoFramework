@@ -6,7 +6,7 @@
     "rest_client": "Substrate.RestClient"
   },
    "metadata": {
-      "websocket": "wss://kilt.ibp.network"
+      "websocket": "wss://peregrine.kilt.io"
    },
   "rest_client_settings": {
     "service_assembly": "Substrate.RestService.dll"

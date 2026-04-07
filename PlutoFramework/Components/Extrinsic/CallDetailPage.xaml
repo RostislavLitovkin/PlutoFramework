@@ -10,18 +10,21 @@
                        x:Class="PlutoFramework.Components.Extrinsic.CallDetailPage"
                        
                        Title="Call details">
-    <VerticalStackLayout HorizontalOptions="Center"
+    <ScrollView AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
+        <VerticalStackLayout HorizontalOptions="Center"
                          Padding="20, 20, 20, 100"
                          Spacing="15">
-        <txanalyzer:PalletCallView PalletCallName="{Binding PalletCallName}"
+            <txanalyzer:PalletCallView PalletCallName="{Binding PalletCallName}"
                                    Endpoint="{Binding Endpoint}"
                                    ExpandIconIsVisible="False"/>
 
-        <extrinsic:CallParametersView />
+            <extrinsic:CallParametersView />
 
-        <events:EventsListView />
+            <events:EventsListView />
 
-        <extrinsic:EncodedCallView />
+            <extrinsic:EncodedCallView />
 
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </template:PageTemplate>

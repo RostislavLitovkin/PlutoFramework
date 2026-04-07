@@ -22,7 +22,7 @@
 
                     <Label x:Name="titleLabel"
                            VerticalOptions="Center" 
-                           HorizontalOptions="StartAndExpand"
+                           HorizontalOptions="Start"
                            FontAttributes="Bold"
                     >
                         <Label.GestureRecognizers>
@@ -33,8 +33,9 @@
                     </Label>
 
                     <Label x:Name="addressLabel"
+                           AutomationId="AddressLabel"
                            VerticalOptions="Center" 
-                           HorizontalOptions="FillAndExpand"
+                           HorizontalOptions="Fill"
                            Grid.Column="1"
                            Grid.ColumnSpan="2"
                             TextColor="{AppThemeBinding Dark=#fdfdfd, Light=#0a0a0a}"

@@ -53,7 +53,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime.system
     }
     
     /// <summary>
-    /// >> 54 - Variant[hydradx_runtime.system.ProxyType]
+    /// >> 49 - Variant[hydradx_runtime.system.ProxyType]
     /// </summary>
     public sealed class EnumProxyType : BaseEnum<ProxyType>
     {

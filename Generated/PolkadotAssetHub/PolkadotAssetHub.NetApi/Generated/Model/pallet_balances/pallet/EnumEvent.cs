@@ -155,10 +155,16 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_balances.pallet
         /// The `TotalIssuance` was forcefully changed.
         /// </summary>
         TotalIssuanceForced = 21,
+        
+        /// <summary>
+        /// >> Unexpected
+        /// An unexpected/defensive event was triggered.
+        /// </summary>
+        Unexpected = 22,
     }
     
     /// <summary>
-    /// >> 33 - Variant[pallet_balances.pallet.Event]
+    /// >> 62 - Variant[pallet_balances.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -191,6 +197,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_balances.pallet
 				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Frozen);
 				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.Thawed);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.TotalIssuanceForced);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_balances.pallet.EnumUnexpectedKind>(Event.Unexpected);
         }
     }
 }

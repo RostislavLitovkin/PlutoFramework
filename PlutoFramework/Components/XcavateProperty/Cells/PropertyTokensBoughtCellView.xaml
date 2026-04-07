@@ -4,7 +4,7 @@
               xmlns:xcavate="clr-namespace:PlutoFramework.Components.Xcavate"
              x:Class="PlutoFramework.Components.XcavateProperty.Cells.PropertyTokensBoughtCellView"
              HeightRequest="80">
-    <xcavate:XcavateCell Title="Property tokens bought"
+    <xcavate:XcavateCell Title="Property tokens"
                              x:Name="cell"
                              Value="Loading">
 

@@ -570,7 +570,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(admin.Encode());
             byteArray.AddRange(config.Encode());
-            return new Method(17, "Nfts", 0, "create", byteArray.ToArray());
+            return new Method(18, "Nfts", 0, "create", byteArray.ToArray());
         }
         
         /// <summary>
@@ -582,7 +582,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(owner.Encode());
             byteArray.AddRange(config.Encode());
-            return new Method(17, "Nfts", 1, "force_create", byteArray.ToArray());
+            return new Method(18, "Nfts", 1, "force_create", byteArray.ToArray());
         }
         
         /// <summary>
@@ -594,7 +594,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
             byteArray.AddRange(witness.Encode());
-            return new Method(17, "Nfts", 2, "destroy", byteArray.ToArray());
+            return new Method(18, "Nfts", 2, "destroy", byteArray.ToArray());
         }
         
         /// <summary>
@@ -608,7 +608,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(item.Encode());
             byteArray.AddRange(mint_to.Encode());
             byteArray.AddRange(witness_data.Encode());
-            return new Method(17, "Nfts", 3, "mint", byteArray.ToArray());
+            return new Method(18, "Nfts", 3, "mint", byteArray.ToArray());
         }
         
         /// <summary>
@@ -622,7 +622,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(item.Encode());
             byteArray.AddRange(mint_to.Encode());
             byteArray.AddRange(item_config.Encode());
-            return new Method(17, "Nfts", 4, "force_mint", byteArray.ToArray());
+            return new Method(18, "Nfts", 4, "force_mint", byteArray.ToArray());
         }
         
         /// <summary>
@@ -634,7 +634,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
             byteArray.AddRange(item.Encode());
-            return new Method(17, "Nfts", 5, "burn", byteArray.ToArray());
+            return new Method(18, "Nfts", 5, "burn", byteArray.ToArray());
         }
         
         /// <summary>
@@ -647,7 +647,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(collection.Encode());
             byteArray.AddRange(item.Encode());
             byteArray.AddRange(dest.Encode());
-            return new Method(17, "Nfts", 6, "transfer", byteArray.ToArray());
+            return new Method(18, "Nfts", 6, "transfer", byteArray.ToArray());
         }
         
         /// <summary>
@@ -659,7 +659,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
             byteArray.AddRange(items.Encode());
-            return new Method(17, "Nfts", 7, "redeposit", byteArray.ToArray());
+            return new Method(18, "Nfts", 7, "redeposit", byteArray.ToArray());
         }
         
         /// <summary>
@@ -671,7 +671,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
             byteArray.AddRange(item.Encode());
-            return new Method(17, "Nfts", 8, "lock_item_transfer", byteArray.ToArray());
+            return new Method(18, "Nfts", 8, "lock_item_transfer", byteArray.ToArray());
         }
         
         /// <summary>
@@ -683,7 +683,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
             byteArray.AddRange(item.Encode());
-            return new Method(17, "Nfts", 9, "unlock_item_transfer", byteArray.ToArray());
+            return new Method(18, "Nfts", 9, "unlock_item_transfer", byteArray.ToArray());
         }
         
         /// <summary>
@@ -695,7 +695,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
             byteArray.AddRange(lock_settings.Encode());
-            return new Method(17, "Nfts", 10, "lock_collection", byteArray.ToArray());
+            return new Method(18, "Nfts", 10, "lock_collection", byteArray.ToArray());
         }
         
         /// <summary>
@@ -707,7 +707,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
             byteArray.AddRange(new_owner.Encode());
-            return new Method(17, "Nfts", 11, "transfer_ownership", byteArray.ToArray());
+            return new Method(18, "Nfts", 11, "transfer_ownership", byteArray.ToArray());
         }
         
         /// <summary>
@@ -721,7 +721,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(issuer.Encode());
             byteArray.AddRange(admin.Encode());
             byteArray.AddRange(freezer.Encode());
-            return new Method(17, "Nfts", 12, "set_team", byteArray.ToArray());
+            return new Method(18, "Nfts", 12, "set_team", byteArray.ToArray());
         }
         
         /// <summary>
@@ -733,7 +733,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
             byteArray.AddRange(owner.Encode());
-            return new Method(17, "Nfts", 13, "force_collection_owner", byteArray.ToArray());
+            return new Method(18, "Nfts", 13, "force_collection_owner", byteArray.ToArray());
         }
         
         /// <summary>
@@ -745,7 +745,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
             byteArray.AddRange(config.Encode());
-            return new Method(17, "Nfts", 14, "force_collection_config", byteArray.ToArray());
+            return new Method(18, "Nfts", 14, "force_collection_config", byteArray.ToArray());
         }
         
         /// <summary>
@@ -759,7 +759,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(item.Encode());
             byteArray.AddRange(@delegate.Encode());
             byteArray.AddRange(maybe_deadline.Encode());
-            return new Method(17, "Nfts", 15, "approve_transfer", byteArray.ToArray());
+            return new Method(18, "Nfts", 15, "approve_transfer", byteArray.ToArray());
         }
         
         /// <summary>
@@ -772,7 +772,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(collection.Encode());
             byteArray.AddRange(item.Encode());
             byteArray.AddRange(@delegate.Encode());
-            return new Method(17, "Nfts", 16, "cancel_approval", byteArray.ToArray());
+            return new Method(18, "Nfts", 16, "cancel_approval", byteArray.ToArray());
         }
         
         /// <summary>
@@ -784,7 +784,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
             byteArray.AddRange(item.Encode());
-            return new Method(17, "Nfts", 17, "clear_all_transfer_approvals", byteArray.ToArray());
+            return new Method(18, "Nfts", 17, "clear_all_transfer_approvals", byteArray.ToArray());
         }
         
         /// <summary>
@@ -798,7 +798,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(item.Encode());
             byteArray.AddRange(lock_metadata.Encode());
             byteArray.AddRange(lock_attributes.Encode());
-            return new Method(17, "Nfts", 18, "lock_item_properties", byteArray.ToArray());
+            return new Method(18, "Nfts", 18, "lock_item_properties", byteArray.ToArray());
         }
         
         /// <summary>
@@ -813,7 +813,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(@namespace.Encode());
             byteArray.AddRange(key.Encode());
             byteArray.AddRange(value.Encode());
-            return new Method(17, "Nfts", 19, "set_attribute", byteArray.ToArray());
+            return new Method(18, "Nfts", 19, "set_attribute", byteArray.ToArray());
         }
         
         /// <summary>
@@ -829,7 +829,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(@namespace.Encode());
             byteArray.AddRange(key.Encode());
             byteArray.AddRange(value.Encode());
-            return new Method(17, "Nfts", 20, "force_set_attribute", byteArray.ToArray());
+            return new Method(18, "Nfts", 20, "force_set_attribute", byteArray.ToArray());
         }
         
         /// <summary>
@@ -843,7 +843,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(maybe_item.Encode());
             byteArray.AddRange(@namespace.Encode());
             byteArray.AddRange(key.Encode());
-            return new Method(17, "Nfts", 21, "clear_attribute", byteArray.ToArray());
+            return new Method(18, "Nfts", 21, "clear_attribute", byteArray.ToArray());
         }
         
         /// <summary>
@@ -856,7 +856,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(collection.Encode());
             byteArray.AddRange(item.Encode());
             byteArray.AddRange(@delegate.Encode());
-            return new Method(17, "Nfts", 22, "approve_item_attributes", byteArray.ToArray());
+            return new Method(18, "Nfts", 22, "approve_item_attributes", byteArray.ToArray());
         }
         
         /// <summary>
@@ -870,7 +870,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(item.Encode());
             byteArray.AddRange(@delegate.Encode());
             byteArray.AddRange(witness.Encode());
-            return new Method(17, "Nfts", 23, "cancel_item_attributes_approval", byteArray.ToArray());
+            return new Method(18, "Nfts", 23, "cancel_item_attributes_approval", byteArray.ToArray());
         }
         
         /// <summary>
@@ -883,7 +883,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(collection.Encode());
             byteArray.AddRange(item.Encode());
             byteArray.AddRange(data.Encode());
-            return new Method(17, "Nfts", 24, "set_metadata", byteArray.ToArray());
+            return new Method(18, "Nfts", 24, "set_metadata", byteArray.ToArray());
         }
         
         /// <summary>
@@ -895,7 +895,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
             byteArray.AddRange(item.Encode());
-            return new Method(17, "Nfts", 25, "clear_metadata", byteArray.ToArray());
+            return new Method(18, "Nfts", 25, "clear_metadata", byteArray.ToArray());
         }
         
         /// <summary>
@@ -907,7 +907,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
             byteArray.AddRange(data.Encode());
-            return new Method(17, "Nfts", 26, "set_collection_metadata", byteArray.ToArray());
+            return new Method(18, "Nfts", 26, "set_collection_metadata", byteArray.ToArray());
         }
         
         /// <summary>
@@ -918,7 +918,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
-            return new Method(17, "Nfts", 27, "clear_collection_metadata", byteArray.ToArray());
+            return new Method(18, "Nfts", 27, "clear_collection_metadata", byteArray.ToArray());
         }
         
         /// <summary>
@@ -929,7 +929,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(maybe_collection.Encode());
-            return new Method(17, "Nfts", 28, "set_accept_ownership", byteArray.ToArray());
+            return new Method(18, "Nfts", 28, "set_accept_ownership", byteArray.ToArray());
         }
         
         /// <summary>
@@ -941,7 +941,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
             byteArray.AddRange(max_supply.Encode());
-            return new Method(17, "Nfts", 29, "set_collection_max_supply", byteArray.ToArray());
+            return new Method(18, "Nfts", 29, "set_collection_max_supply", byteArray.ToArray());
         }
         
         /// <summary>
@@ -953,7 +953,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(collection.Encode());
             byteArray.AddRange(mint_settings.Encode());
-            return new Method(17, "Nfts", 30, "update_mint_settings", byteArray.ToArray());
+            return new Method(18, "Nfts", 30, "update_mint_settings", byteArray.ToArray());
         }
         
         /// <summary>
@@ -967,7 +967,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(item.Encode());
             byteArray.AddRange(price.Encode());
             byteArray.AddRange(whitelisted_buyer.Encode());
-            return new Method(17, "Nfts", 31, "set_price", byteArray.ToArray());
+            return new Method(18, "Nfts", 31, "set_price", byteArray.ToArray());
         }
         
         /// <summary>
@@ -980,7 +980,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(collection.Encode());
             byteArray.AddRange(item.Encode());
             byteArray.AddRange(bid_price.Encode());
-            return new Method(17, "Nfts", 32, "buy_item", byteArray.ToArray());
+            return new Method(18, "Nfts", 32, "buy_item", byteArray.ToArray());
         }
         
         /// <summary>
@@ -991,7 +991,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(tips.Encode());
-            return new Method(17, "Nfts", 33, "pay_tips", byteArray.ToArray());
+            return new Method(18, "Nfts", 33, "pay_tips", byteArray.ToArray());
         }
         
         /// <summary>
@@ -1007,7 +1007,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(maybe_desired_item.Encode());
             byteArray.AddRange(maybe_price.Encode());
             byteArray.AddRange(duration.Encode());
-            return new Method(17, "Nfts", 34, "create_swap", byteArray.ToArray());
+            return new Method(18, "Nfts", 34, "create_swap", byteArray.ToArray());
         }
         
         /// <summary>
@@ -1019,7 +1019,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(offered_collection.Encode());
             byteArray.AddRange(offered_item.Encode());
-            return new Method(17, "Nfts", 35, "cancel_swap", byteArray.ToArray());
+            return new Method(18, "Nfts", 35, "cancel_swap", byteArray.ToArray());
         }
         
         /// <summary>
@@ -1034,7 +1034,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(receive_collection.Encode());
             byteArray.AddRange(receive_item.Encode());
             byteArray.AddRange(witness_price.Encode());
-            return new Method(17, "Nfts", 36, "claim_swap", byteArray.ToArray());
+            return new Method(18, "Nfts", 36, "claim_swap", byteArray.ToArray());
         }
         
         /// <summary>
@@ -1047,7 +1047,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(mint_data.Encode());
             byteArray.AddRange(signature.Encode());
             byteArray.AddRange(signer.Encode());
-            return new Method(17, "Nfts", 37, "mint_pre_signed", byteArray.ToArray());
+            return new Method(18, "Nfts", 37, "mint_pre_signed", byteArray.ToArray());
         }
         
         /// <summary>
@@ -1060,7 +1060,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(data.Encode());
             byteArray.AddRange(signature.Encode());
             byteArray.AddRange(signer.Encode());
-            return new Method(17, "Nfts", 38, "set_attributes_pre_signed", byteArray.ToArray());
+            return new Method(18, "Nfts", 38, "set_attributes_pre_signed", byteArray.ToArray());
         }
     }
     

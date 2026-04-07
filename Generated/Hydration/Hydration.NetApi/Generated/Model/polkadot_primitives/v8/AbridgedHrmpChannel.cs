@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.polkadot_primitives.v8
     
     
     /// <summary>
-    /// >> 768 - Composite[polkadot_primitives.v8.AbridgedHrmpChannel]
+    /// >> 753 - Composite[polkadot_primitives.v8.AbridgedHrmpChannel]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AbridgedHrmpChannel : BaseType

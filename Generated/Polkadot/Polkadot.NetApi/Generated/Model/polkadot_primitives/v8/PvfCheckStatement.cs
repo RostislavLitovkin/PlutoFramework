@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8
     
     
     /// <summary>
-    /// >> 319 - Composite[polkadot_primitives.v8.PvfCheckStatement]
+    /// >> 324 - Composite[polkadot_primitives.v8.PvfCheckStatement]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PvfCheckStatement : BaseType

@@ -38,7 +38,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_treasury
     }
     
     /// <summary>
-    /// >> 529 - Variant[pallet_treasury.PaymentState]
+    /// >> 521 - Variant[pallet_treasury.PaymentState]
     /// </summary>
     public sealed class EnumPaymentState : BaseEnumRust<PaymentState>
     {

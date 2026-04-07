@@ -124,7 +124,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_route_executor.pallet
     }
     
     /// <summary>
-    /// >> 232 - Variant[pallet_route_executor.pallet.Call]
+    /// >> 222 - Variant[pallet_route_executor.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

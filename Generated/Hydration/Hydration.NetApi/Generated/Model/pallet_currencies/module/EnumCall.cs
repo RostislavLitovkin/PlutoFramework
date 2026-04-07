@@ -50,7 +50,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_currencies.module
     }
     
     /// <summary>
-    /// >> 266 - Variant[pallet_currencies.module.Call]
+    /// >> 258 - Variant[pallet_currencies.module.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

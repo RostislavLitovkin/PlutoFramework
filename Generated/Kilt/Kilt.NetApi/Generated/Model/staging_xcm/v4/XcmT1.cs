@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.staging_xcm.v4
     
     
     /// <summary>
-    /// >> 185 - Composite[staging_xcm.v4.XcmT1]
+    /// >> 192 - Composite[staging_xcm.v4.XcmT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class XcmT1 : BaseType

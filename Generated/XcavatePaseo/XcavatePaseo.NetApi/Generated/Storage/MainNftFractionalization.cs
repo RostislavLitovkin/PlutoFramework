@@ -90,7 +90,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(asset_id.Encode());
             byteArray.AddRange(beneficiary.Encode());
             byteArray.AddRange(fractions.Encode());
-            return new Method(18, "NftFractionalization", 0, "fractionalize", byteArray.ToArray());
+            return new Method(19, "NftFractionalization", 0, "fractionalize", byteArray.ToArray());
         }
         
         /// <summary>
@@ -104,7 +104,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(nft_id.Encode());
             byteArray.AddRange(asset_id.Encode());
             byteArray.AddRange(beneficiary.Encode());
-            return new Method(18, "NftFractionalization", 1, "unify", byteArray.ToArray());
+            return new Method(19, "NftFractionalization", 1, "unify", byteArray.ToArray());
         }
     }
     

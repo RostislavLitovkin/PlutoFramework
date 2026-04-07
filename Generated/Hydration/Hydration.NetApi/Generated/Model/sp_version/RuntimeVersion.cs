@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.sp_version
     
     
     /// <summary>
-    /// >> 502 - Composite[sp_version.RuntimeVersion]
+    /// >> 494 - Composite[sp_version.RuntimeVersion]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RuntimeVersion : BaseType

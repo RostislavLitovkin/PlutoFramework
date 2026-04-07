@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.ethereum_types.hash
     
     
     /// <summary>
-    /// >> 727 - Composite[ethereum_types.hash.H64]
+    /// >> 711 - Composite[ethereum_types.hash.H64]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class H64 : BaseType

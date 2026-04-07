@@ -58,7 +58,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8.executor_params
     }
     
     /// <summary>
-    /// >> 276 - Variant[polkadot_primitives.v8.executor_params.ExecutorParam]
+    /// >> 281 - Variant[polkadot_primitives.v8.executor_params.ExecutorParam]
     /// </summary>
     public sealed class EnumExecutorParam : BaseEnumRust<ExecutorParam>
     {

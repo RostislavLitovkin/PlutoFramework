@@ -91,7 +91,7 @@ namespace PlutoFramework.Model.SQLite
             if (Database is not null)
                 return;
 
-            Database = new SQLiteAsyncConnection(Path.Combine(FileSystem.AppDataDirectory, "XcavatePropertySQLite.db3"), SQLiteConstants.XcavateDatabaseFlags);
+            Database = new SQLiteAsyncConnection(Path.Combine(FileSystem.AppDataDirectory, "XcavatePropertySQLite.db3"), SQLiteConstants.XcavateUserDatabaseFlags);
 
             var result = await Database.CreateTableAsync<XcavatePropertyDatabaseItem>().ConfigureAwait(false);
         }
@@ -101,7 +101,7 @@ namespace PlutoFramework.Model.SQLite
             if (Database is not null)
                 return;
 
-            Database = new SQLiteAsyncConnection(Path.Combine(FileSystem.AppDataDirectory, "XcavatePropertySQLite.db3"), SQLiteConstants.XcavateDatabaseFlags);
+            Database = new SQLiteAsyncConnection(Path.Combine(FileSystem.AppDataDirectory, "XcavatePropertySQLite.db3"), SQLiteConstants.XcavateUserDatabaseFlags);
 
             await Database.DropTableAsync<XcavatePropertyDatabaseItem>();
         }

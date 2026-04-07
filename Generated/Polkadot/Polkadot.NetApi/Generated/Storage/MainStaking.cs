@@ -2066,6 +2066,17 @@ namespace Polkadot.NetApi.Generated.Storage
         }
         
         /// <summary>
+        /// >> MaxValidatorSet
+        ///  The absolute maximum of winner validators this pallet should return.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 MaxValidatorSet()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0xB0040000");
+            return result;
+        }
+        
+        /// <summary>
         /// >> MaxUnlockingChunks
         ///  The maximum number of `unlocking` chunks a [`StakingLedger`] can
         ///  have. Effectively determines how many unique eras a staker may be

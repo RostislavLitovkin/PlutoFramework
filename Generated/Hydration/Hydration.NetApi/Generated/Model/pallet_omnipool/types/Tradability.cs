@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_omnipool.types
     
     
     /// <summary>
-    /// >> 211 - Composite[pallet_omnipool.types.Tradability]
+    /// >> 201 - Composite[pallet_omnipool.types.Tradability]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Tradability : BaseType

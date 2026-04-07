@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_ema_oracle.types
     
     
     /// <summary>
-    /// >> 837 - Composite[pallet_ema_oracle.types.OracleEntry]
+    /// >> 822 - Composite[pallet_ema_oracle.types.OracleEntry]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OracleEntry : BaseType
@@ -37,6 +37,10 @@ namespace Hydration.NetApi.Generated.Model.pallet_ema_oracle.types
         /// </summary>
         public Hydration.NetApi.Generated.Model.hydradx_traits.oracle.Liquidity Liquidity { get; set; }
         /// <summary>
+        /// >> shares_issuance
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128> SharesIssuance { get; set; }
+        /// <summary>
         /// >> updated_at
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 UpdatedAt { get; set; }
@@ -54,6 +58,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_ema_oracle.types
             result.AddRange(Price.Encode());
             result.AddRange(Volume.Encode());
             result.AddRange(Liquidity.Encode());
+            result.AddRange(SharesIssuance.Encode());
             result.AddRange(UpdatedAt.Encode());
             return result.ToArray();
         }
@@ -68,6 +73,8 @@ namespace Hydration.NetApi.Generated.Model.pallet_ema_oracle.types
             Volume.Decode(byteArray, ref p);
             Liquidity = new Hydration.NetApi.Generated.Model.hydradx_traits.oracle.Liquidity();
             Liquidity.Decode(byteArray, ref p);
+            SharesIssuance = new Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128>();
+            SharesIssuance.Decode(byteArray, ref p);
             UpdatedAt = new Substrate.NetApi.Model.Types.Primitive.U32();
             UpdatedAt.Decode(byteArray, ref p);
             var bytesLength = p - start;

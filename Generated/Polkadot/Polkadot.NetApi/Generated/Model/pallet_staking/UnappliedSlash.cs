@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking
     
     
     /// <summary>
-    /// >> 598 - Composite[pallet_staking.UnappliedSlash]
+    /// >> 652 - Composite[pallet_staking.UnappliedSlash]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UnappliedSlash : BaseType

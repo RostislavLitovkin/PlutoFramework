@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.sp_staking
     
     
     /// <summary>
-    /// >> 589 - Composite[sp_staking.IndividualExposure]
+    /// >> 645 - Composite[sp_staking.IndividualExposure]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class IndividualExposure : BaseType

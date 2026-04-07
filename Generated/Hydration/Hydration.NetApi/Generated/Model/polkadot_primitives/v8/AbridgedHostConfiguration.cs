@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.polkadot_primitives.v8
     
     
     /// <summary>
-    /// >> 769 - Composite[polkadot_primitives.v8.AbridgedHostConfiguration]
+    /// >> 754 - Composite[polkadot_primitives.v8.AbridgedHostConfiguration]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AbridgedHostConfiguration : BaseType

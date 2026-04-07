@@ -52,6 +52,11 @@ namespace Kilt.NetApi.Generated.Model.spiritnet_runtime
         ParachainStaking = 21,
         
         /// <summary>
+        /// >> Collators
+        /// </summary>
+        Collators = 25,
+        
+        /// <summary>
         /// >> Democracy
         /// </summary>
         Democracy = 30,
@@ -200,10 +205,25 @@ namespace Kilt.NetApi.Generated.Model.spiritnet_runtime
         /// >> MessageQueue
         /// </summary>
         MessageQueue = 86,
+        
+        /// <summary>
+        /// >> Ismp
+        /// </summary>
+        Ismp = 90,
+        
+        /// <summary>
+        /// >> IsmpParachain
+        /// </summary>
+        IsmpParachain = 92,
+        
+        /// <summary>
+        /// >> TokenGateway
+        /// </summary>
+        TokenGateway = 93,
     }
     
     /// <summary>
-    /// >> 301 - Variant[spiritnet_runtime.RuntimeCall]
+    /// >> 324 - Variant[spiritnet_runtime.RuntimeCall]
     /// </summary>
     public sealed class EnumRuntimeCall : BaseEnumRust<RuntimeCall>
     {
@@ -219,6 +239,7 @@ namespace Kilt.NetApi.Generated.Model.spiritnet_runtime
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_balances.pallet.EnumCall>(RuntimeCall.Balances);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_session.pallet.EnumCall>(RuntimeCall.Session);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.parachain_staking.pallet.EnumCall>(RuntimeCall.ParachainStaking);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_membership.pallet.EnumCall>(RuntimeCall.Collators);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_democracy.pallet.EnumCall>(RuntimeCall.Democracy);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_collective.pallet.EnumCall>(RuntimeCall.Council);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_collective.pallet.EnumCall>(RuntimeCall.TechnicalCommittee);
@@ -249,6 +270,9 @@ namespace Kilt.NetApi.Generated.Model.spiritnet_runtime
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.pallet.EnumCall>(RuntimeCall.XcmpQueue);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_xcm.pallet.EnumCall>(RuntimeCall.PolkadotXcm);
 				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_message_queue.pallet.EnumCall>(RuntimeCall.MessageQueue);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_ismp.pallet.EnumCall>(RuntimeCall.Ismp);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.ismp_parachain.pallet.EnumCall>(RuntimeCall.IsmpParachain);
+				AddTypeDecoder<Kilt.NetApi.Generated.Model.pallet_token_gateway.pallet.EnumCall>(RuntimeCall.TokenGateway);
         }
     }
 }

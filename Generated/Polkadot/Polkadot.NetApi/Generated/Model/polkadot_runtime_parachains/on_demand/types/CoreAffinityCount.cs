@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.on_demand.
     
     
     /// <summary>
-    /// >> 797 - Composite[polkadot_runtime_parachains.on_demand.types.CoreAffinityCount]
+    /// >> 864 - Composite[polkadot_runtime_parachains.on_demand.types.CoreAffinityCount]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CoreAffinityCount : BaseType

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             x:Class="PlutoFramework.Components.Keys.KeyView">
+    <card:ClickableCard CardPadding="0, 0, 0, 0"
+                        x:Name="card">
+        <card:ClickableCard.View>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="120" />
+                </Grid.ColumnDefinitions>
+
+                <AbsoluteLayout HeightRequest="60"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                x:Name="infoLayout">
+                    <HorizontalStackLayout AbsoluteLayout.LayoutBounds="0.5, 0, 1, 30"
+                                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                                       HorizontalOptions="Start">
+                        <Label Margin="10, 0, 0, 0"
+                               LineBreakMode="TailTruncation"
+                               VerticalTextAlignment="Center"
+                               FontSize="16">
+
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span FontAttributes="Bold"
+                                          x:Name="nameLabel" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Margin="10, 0, 0, 0"
+                               WidthRequest="200"
+                               LineBreakMode="TailTruncation"
+                               VerticalTextAlignment="End"
+                               TextColor="{AppThemeBinding Dark=#fdfdfd, Light=#0a0a0a}"
+                               FontFamily="SourceCode"
+                               FontSize="16">
+
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span FontFamily="SourceCode"
+                                          x:Name="publicKeyLabel" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Image HorizontalOptions="Start" VerticalOptions="Center"
+                               HeightRequest="15" WidthRequest="15"
+                               IsVisible="False"
+                               x:Name="icon"
+                                Margin="10, 0, 0, 0">
+                        </Image>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout AbsoluteLayout.LayoutBounds="0.5, 30, 1, 30"
+                                       AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                                       HorizontalOptions="Start"
+                                           >
+                        <Label Margin="10, 0, 0, 0"
+                               LineBreakMode="TailTruncation"
+                               VerticalTextAlignment="Center"
+                               FontSize="12">
+
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span x:Name="descriptionLabel" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </HorizontalStackLayout>
+                </AbsoluteLayout>
+
+            </Grid>
+
+        </card:ClickableCard.View>
+
+        <card:ClickableCard.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnClicked" />
+        </card:ClickableCard.GestureRecognizers>
+    </card:ClickableCard>
+</ContentView>

@@ -60,13 +60,6 @@ namespace PlutoFramework.Components.Nft
             false => OwnerAddress,
         };
 
-        [RelayCommand]
-        public async Task CopyAddressAsync() => await CopyAddress.CopyToClipboardAsync(OwnerAddress);
-
-        [RelayCommand]
-        public async Task OpenSubscanOwnerPageAsync() => await Application.Current.MainPage.Navigation.PushAsync(new WebViewPage($"https://www.subscan.io/account/{OwnerAddress}"));
-
-
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(PriceText))]
         private Endpoint endpoint;
@@ -101,7 +94,7 @@ namespace PlutoFramework.Components.Nft
         [RelayCommand]
         private async Task OpenUniqueAsync()
         {
-            await Application.Current.MainPage.Navigation.PushAsync(new WebViewPage(((IUniqueMarketplaceLink)NftBase).UniqueMarketplaceLink));
+            await NavigationModel.PushAsync(new WebViewPage(((IUniqueMarketplaceLink)NftBase).UniqueMarketplaceLink));
         }
 
         [ObservableProperty]
@@ -110,7 +103,7 @@ namespace PlutoFramework.Components.Nft
         [RelayCommand]
         private async Task OpenKodaAsync()
         {
-            await Application.Current.MainPage.Navigation.PushAsync(new WebViewPage(((IKodaLink)NftBase).KodaLink));
+            await NavigationModel.PushAsync(new WebViewPage(((IKodaLink)NftBase).KodaLink));
         }
 
         [ObservableProperty]

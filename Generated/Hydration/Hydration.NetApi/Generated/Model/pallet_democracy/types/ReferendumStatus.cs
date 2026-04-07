@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_democracy.types
     
     
     /// <summary>
-    /// >> 564 - Composite[pallet_democracy.types.ReferendumStatus]
+    /// >> 557 - Composite[pallet_democracy.types.ReferendumStatus]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ReferendumStatus : BaseType

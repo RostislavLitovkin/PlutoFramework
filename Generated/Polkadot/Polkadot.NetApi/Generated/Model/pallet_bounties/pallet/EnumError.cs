@@ -88,10 +88,16 @@ namespace Polkadot.NetApi.Generated.Model.pallet_bounties.pallet
         /// Too many approvals are already queued.
         /// </summary>
         TooManyQueued = 10,
+        
+        /// <summary>
+        /// >> NotProposer
+        /// User is not the proposer of the bounty.
+        /// </summary>
+        NotProposer = 11,
     }
     
     /// <summary>
-    /// >> 681 - Variant[pallet_bounties.pallet.Error]
+    /// >> 733 - Variant[pallet_bounties.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

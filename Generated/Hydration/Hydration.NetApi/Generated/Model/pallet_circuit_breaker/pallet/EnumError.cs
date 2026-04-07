@@ -57,10 +57,30 @@ namespace Hydration.NetApi.Generated.Model.pallet_circuit_breaker.pallet
         /// Asset is not allowed to have a limit
         /// </summary>
         NotAllowed = 5,
+        
+        /// <summary>
+        /// >> AssetInLockdown
+        /// Asset still in lockdown as it reached the allowed deposit limit for the period
+        /// Query the `asset_lockdown_state` storage to determine until which block the asset is locked,
+        /// so that the deposit can be released afterward.
+        /// </summary>
+        AssetInLockdown = 6,
+        
+        /// <summary>
+        /// >> AssetNotInLockdown
+        /// Asset is not in a lockdown
+        /// </summary>
+        AssetNotInLockdown = 7,
+        
+        /// <summary>
+        /// >> InvalidAmount
+        /// Invalid amount to save deposit
+        /// </summary>
+        InvalidAmount = 8,
     }
     
     /// <summary>
-    /// >> 668 - Variant[pallet_circuit_breaker.pallet.Error]
+    /// >> 654 - Variant[pallet_circuit_breaker.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

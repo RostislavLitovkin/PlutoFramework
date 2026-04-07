@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.on_demand.
     
     
     /// <summary>
-    /// >> 804 - Composite[polkadot_runtime_parachains.on_demand.types.EnqueuedOrder]
+    /// >> 871 - Composite[polkadot_runtime_parachains.on_demand.types.EnqueuedOrder]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class EnqueuedOrder : BaseType

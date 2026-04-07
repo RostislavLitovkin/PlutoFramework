@@ -69,20 +69,32 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.frame_system.pallet
         MultiBlockMigrationsOngoing = 6,
         
         /// <summary>
+        /// >> InvalidTask
+        /// The specified [`Task`] is not valid.
+        /// </summary>
+        InvalidTask = 7,
+        
+        /// <summary>
+        /// >> FailedTask
+        /// The specified [`Task`] failed during execution.
+        /// </summary>
+        FailedTask = 8,
+        
+        /// <summary>
         /// >> NothingAuthorized
         /// No upgrade authorized.
         /// </summary>
-        NothingAuthorized = 7,
+        NothingAuthorized = 9,
         
         /// <summary>
         /// >> Unauthorized
         /// The submitted code is not authorized.
         /// </summary>
-        Unauthorized = 8,
+        Unauthorized = 10,
     }
     
     /// <summary>
-    /// >> 179 - Variant[frame_system.pallet.Error]
+    /// >> 713 - Variant[frame_system.pallet.Error]
     /// Error for the System pallet
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

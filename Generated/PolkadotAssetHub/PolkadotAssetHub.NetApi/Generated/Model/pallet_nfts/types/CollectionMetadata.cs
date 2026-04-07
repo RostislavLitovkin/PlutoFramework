@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 443 - Composite[pallet_nfts.types.CollectionMetadata]
+    /// >> 885 - Composite[pallet_nfts.types.CollectionMetadata]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CollectionMetadata : BaseType
@@ -31,7 +31,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types
         /// <summary>
         /// >> data
         /// </summary>
-        public PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7 Data { get; set; }
+        public PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 Data { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -54,7 +54,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types
             var start = p;
             Deposit = new Substrate.NetApi.Model.Types.Primitive.U128();
             Deposit.Decode(byteArray, ref p);
-            Data = new PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7();
+            Data = new PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9();
             Data.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

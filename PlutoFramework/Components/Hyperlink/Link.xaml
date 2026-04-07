@@ -7,7 +7,6 @@
              x:Class="PlutoFramework.Components.Hyperlink.Link">
 
     <Span.GestureRecognizers>
-        <TapGestureRecognizer Command="{Binding OpenUrlCommand}"
-                              CommandParameter="{Binding Url}"/>
+        <TapGestureRecognizer Command="{Binding OpenUrlCommand}"/>
     </Span.GestureRecognizers>
 </Span>

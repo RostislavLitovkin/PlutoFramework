@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.cumulus_primitives_storage_weight_rec
     
     
     /// <summary>
-    /// >> 866 - Composite[cumulus_primitives_storage_weight_reclaim.StorageWeightReclaim]
+    /// >> 851 - Composite[cumulus_primitives_storage_weight_reclaim.StorageWeightReclaim]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class StorageWeightReclaim : BaseType

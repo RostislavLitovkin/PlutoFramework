@@ -10,6 +10,7 @@ using PlutoFramework.Components.CustomLayouts;
 using PlutoFramework.Components.DAppConnection;
 using PlutoFramework.Components.Extrinsic;
 using PlutoFramework.Components.Fee;
+using PlutoFramework.Components.Keys;
 using PlutoFramework.Components.Kilt;
 using PlutoFramework.Components.Loading;
 using PlutoFramework.Components.MessagePopup;
@@ -25,16 +26,16 @@ using PlutoFramework.Components.TransactionRequest;
 using PlutoFramework.Components.TransferView;
 using PlutoFramework.Components.Vault;
 using PlutoFramework.Components.VTokens;
+using PlutoFramework.Components.WebView;
 using PlutoFramework.Components.Xcavate;
 using PlutoFramework.Components.XcavateProperty;
 using PlutoFramework.Components.Xcm;
 using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
 using PlutoFrameworkCore.PushNotificationServices.Core.Utils;
+using PlutoFrameworkCore;
 using Xe.AcrylicView;
 using ZXing.Net.Maui.Controls;
-
-
 
 #if ANDROID26_0_OR_GREATER
 using Microsoft.Maui.Controls.Compatibility.Platform.Android;
@@ -86,8 +87,14 @@ namespace PlutoFramework
             AssetsModel.DatabaseSaver = new BalancesDatabaseSaver();
 
             PushNotificationRegistrar.RegisterPushNotificationServices(builder.Services);
-            
+
+            PlutoConfigurationModel.SecureStorage = new PlutoSecureStorage();
+            PlutoConfigurationModel.GenerateNewAccountAsync = KeysModel.GenerateNewAccountAsync;
+            PlutoConfigurationModel.AfterAccountImportAsync = () => Task.FromResult(0);
+
             CustomizeWebViewHandler();
+
+            DependencyService.Register<CanNotRecoverKeyPopupViewModel>();
 
             DependencyService.Register<TransferViewModel>();
 
@@ -175,6 +182,14 @@ namespace PlutoFramework
 
             DependencyService.Register<XcavateNavigationBarViewModel>();
 
+            DependencyService.Register<NotWhitelistedPopupViewModel>();
+
+            DependencyService.Register<UserProfileNotCreatedPopupViewModel>();
+
+            DependencyService.Register<WebSignRawPopupViewModel>();
+
+            DependencyService.Register<DAppWebViewConnectionRequestPopupViewModel>();
+
             return builder;
         }
 
@@ -184,12 +199,10 @@ namespace PlutoFramework
         private static void CustomizeWebViewHandler()
         {
 #if ANDROID26_0_OR_GREATER
-        Microsoft.Maui.Handlers.WebViewHandler.Mapper.ModifyMapping(
-            nameof(Android.Webkit.WebView.WebChromeClient),
-            (handler, view, args) => handler.PlatformView.SetWebChromeClient(new WebChromeClientWithPermissions(handler)));
+            Microsoft.Maui.Handlers.WebViewHandler.Mapper.ModifyMapping(
+                nameof(Android.Webkit.WebView.WebChromeClient),
+                (handler, view, args) => handler.PlatformView.SetWebChromeClient(new WebChromeClientWithPermissions(handler)));
 #endif
         }
     }
-
-
 }

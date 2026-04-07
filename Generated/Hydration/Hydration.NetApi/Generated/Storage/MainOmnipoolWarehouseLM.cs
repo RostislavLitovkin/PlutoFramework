@@ -483,6 +483,12 @@ namespace Hydration.NetApi.Generated.Storage
         IncentivizedAssetNotRegistered,
         
         /// <summary>
+        /// >> AmmPoolIdMismatch
+        /// Provided `amm_pool_id` doesn't match deposit's `amm_pool_id`.
+        /// </summary>
+        AmmPoolIdMismatch,
+        
+        /// <summary>
         /// >> InconsistentState
         /// Action cannot be completed because unexpected error has occurred. This should be reported
         /// to protocol maintainers.

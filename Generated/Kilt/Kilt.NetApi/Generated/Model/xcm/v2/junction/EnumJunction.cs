@@ -68,7 +68,7 @@ namespace Kilt.NetApi.Generated.Model.xcm.v2.junction
     }
     
     /// <summary>
-    /// >> 92 - Variant[xcm.v2.junction.Junction]
+    /// >> 95 - Variant[xcm.v2.junction.Junction]
     /// </summary>
     public sealed class EnumJunction : BaseEnumRust<Junction>
     {

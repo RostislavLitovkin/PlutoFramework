@@ -18,7 +18,7 @@ namespace Kilt.NetApi.Generated.Model.sp_consensus_slots
     
     
     /// <summary>
-    /// >> 268 - Composite[sp_consensus_slots.Slot]
+    /// >> 509 - Composite[sp_consensus_slots.Slot]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Slot : BaseType

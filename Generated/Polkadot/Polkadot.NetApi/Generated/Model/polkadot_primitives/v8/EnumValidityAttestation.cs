@@ -33,7 +33,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.v8
     }
     
     /// <summary>
-    /// >> 308 - Variant[polkadot_primitives.v8.ValidityAttestation]
+    /// >> 313 - Variant[polkadot_primitives.v8.ValidityAttestation]
     /// </summary>
     public sealed class EnumValidityAttestation : BaseEnumRust<ValidityAttestation>
     {

@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_collator_selection.pall
     
     
     /// <summary>
-    /// >> 251 - Composite[pallet_collator_selection.pallet.CandidateInfo]
+    /// >> 776 - Composite[pallet_collator_selection.pallet.CandidateInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CandidateInfo : BaseType

@@ -68,7 +68,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime.governance.origins.pa
     }
     
     /// <summary>
-    /// >> 98 - Variant[hydradx_runtime.governance.origins.pallet_custom_origins.Origin]
+    /// >> 92 - Variant[hydradx_runtime.governance.origins.pallet_custom_origins.Origin]
     /// </summary>
     public sealed class EnumOrigin : BaseEnum<Origin>
     {

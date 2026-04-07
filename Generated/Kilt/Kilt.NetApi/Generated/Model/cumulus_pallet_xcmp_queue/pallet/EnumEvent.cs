@@ -30,7 +30,7 @@ namespace Kilt.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.pallet
     }
     
     /// <summary>
-    /// >> 181 - Variant[cumulus_pallet_xcmp_queue.pallet.Event]
+    /// >> 188 - Variant[cumulus_pallet_xcmp_queue.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

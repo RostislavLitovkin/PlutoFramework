@@ -67,24 +67,9 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
         Democracy = 19,
         
         /// <summary>
-        /// >> Elections
-        /// </summary>
-        Elections = 21,
-        
-        /// <summary>
-        /// >> Council
-        /// </summary>
-        Council = 23,
-        
-        /// <summary>
         /// >> TechnicalCommittee
         /// </summary>
         TechnicalCommittee = 25,
-        
-        /// <summary>
-        /// >> Tips
-        /// </summary>
-        Tips = 27,
         
         /// <summary>
         /// >> Proxy
@@ -367,10 +352,7 @@ namespace Hydration.NetApi.Generated.Model.hydradx_runtime
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_preimage.pallet.EnumEvent>(RuntimeEvent.Preimage);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_identity.pallet.EnumEvent>(RuntimeEvent.Identity);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_democracy.pallet.EnumEvent>(RuntimeEvent.Democracy);
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_elections_phragmen.pallet.EnumEvent>(RuntimeEvent.Elections);
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_collective.pallet.EnumEvent>(RuntimeEvent.Council);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_collective.pallet.EnumEvent>(RuntimeEvent.TechnicalCommittee);
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_tips.pallet.EnumEvent>(RuntimeEvent.Tips);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_proxy.pallet.EnumEvent>(RuntimeEvent.Proxy);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_multisig.pallet.EnumEvent>(RuntimeEvent.Multisig);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.pallet_uniques.pallet.EnumEvent>(RuntimeEvent.Uniques);

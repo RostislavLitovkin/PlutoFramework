@@ -38,7 +38,7 @@ namespace Hydration.NetApi.Generated.Model.ethereum.transaction
     }
     
     /// <summary>
-    /// >> 276 - Variant[ethereum.transaction.TransactionV2]
+    /// >> 268 - Variant[ethereum.transaction.TransactionV2]
     /// </summary>
     public sealed class EnumTransactionV2 : BaseEnumRust<TransactionV2>
     {

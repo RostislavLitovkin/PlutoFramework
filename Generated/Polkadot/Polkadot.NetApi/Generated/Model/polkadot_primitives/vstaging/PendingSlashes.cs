@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.vstaging
     
     
     /// <summary>
-    /// >> 792 - Composite[polkadot_primitives.vstaging.PendingSlashes]
+    /// >> 859 - Composite[polkadot_primitives.vstaging.PendingSlashes]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PendingSlashes : BaseType

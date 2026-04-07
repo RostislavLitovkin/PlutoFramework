@@ -33,7 +33,7 @@ namespace Polkadot.NetApi.Generated.Model.frame_support.traits.schedule
     }
     
     /// <summary>
-    /// >> 173 - Variant[frame_support.traits.schedule.DispatchTime]
+    /// >> 175 - Variant[frame_support.traits.schedule.DispatchTime]
     /// </summary>
     public sealed class EnumDispatchTime : BaseEnumRust<DispatchTime>
     {

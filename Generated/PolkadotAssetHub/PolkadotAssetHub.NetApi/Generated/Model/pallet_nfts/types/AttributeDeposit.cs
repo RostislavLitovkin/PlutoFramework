@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 448 - Composite[pallet_nfts.types.AttributeDeposit]
+    /// >> 890 - Composite[pallet_nfts.types.AttributeDeposit]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AttributeDeposit : BaseType

@@ -2,6 +2,8 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:card="clr-namespace:PlutoFramework.Components.Card"
+             xmlns:mnemonics="clr-namespace:PlutoFramework.Components.Mnemonics"
+             xmlns:acrylic="clr-namespace:Xe.AcrylicView;assembly=Xe.AcrylicView"
              x:Class="PlutoFramework.Components.Mnemonics.MnemonicsView"
              HeightRequest="120">
     <card:Card>
@@ -9,28 +11,83 @@
             <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
                             AbsoluteLayout.LayoutFlags="All"
                             Margin="0, 10, 0, 10">
-                <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
-                                     AbsoluteLayout.LayoutFlags="SizeProportional">
-                    <VerticalStackLayout>
-                        <Label 
-                            FontAttributes="Bold"
-                            HorizontalOptions="Center"
-                            VerticalTextAlignment="End">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <Span FontAttributes="Bold"
-                                          x:Name="titleSpan"/>
+                <AbsoluteLayout.BindingContext>
+                    <mnemonics:MnemonicsViewModel />
+                </AbsoluteLayout.BindingContext>
 
-                                </FormattedString>
 
-                            </Label.FormattedText>
+                <Label AbsoluteLayout.LayoutBounds="0.5, 0, 1, 20"
+                       AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span FontAttributes="Bold"
+                                  x:Name="titleSpan"/>
 
-                        </Label>
-                        <Label x:Name="mnemonicsLabel"
-                                HorizontalTextAlignment="Center" />
-                    </VerticalStackLayout>
+                        </FormattedString>
 
-                </VerticalStackLayout>
+                    </Label.FormattedText>
+
+                </Label>
+
+                <Label x:Name="mnemonicsLabel"
+                       AbsoluteLayout.LayoutBounds="0.5, 30, 1, AutoSize"
+                       AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                       Margin="20, 0, 20, 0"
+                       TextColor="Black"
+                       LineBreakMode="WordWrap"
+                       VerticalTextAlignment="Start"
+                       HorizontalTextAlignment="Center"
+                       IsVisible="{Binding MnemonicsIsVisble}"/>
+
+                <Label AbsoluteLayout.LayoutBounds="0.5, 30, 1, AutoSize"
+                       AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                       Margin="20, 0, 20, 0"
+                       TextColor="Black"
+                       Text="**** ***** **** ****** ***** **** ***** **** **** ******* ***** ****"
+                       LineBreakMode="WordWrap"
+                       VerticalTextAlignment="Start"
+                       HorizontalTextAlignment="Center"
+                       IsVisible="{Binding Hidden}"/>
+
+                <Image AbsoluteLayout.LayoutBounds="1, 1, 40, 40"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        Margin="10, 10, 10, 5"
+                        ZIndex="1000"
+                        x:Name="eyeball"
+                        IsVisible="{Binding Hidden}">
+                    <Image.Source>
+                        <FontImageSource Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                                         Glyph="&#xf06e;"
+                                         FontFamily="FontAwesome"
+                                         Size="20" />
+                    </Image.Source>
+
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding HideUnhideCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image AbsoluteLayout.LayoutBounds="1, 1, 40, 40"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        Margin="10, 10, 10, 5"
+                        ZIndex="1000"
+                        x:Name="eyeballSlash"
+                        IsVisible="{Binding MnemonicsIsVisble}">
+                    <Image.Source>
+                        <FontImageSource Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                                            Glyph="&#xf070;"
+                                            FontFamily="FontAwesome"
+                                            Size="20" />
+                    </Image.Source>
+
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding HideUnhideCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
             </AbsoluteLayout>
         </card:Card.View>
     </card:Card>

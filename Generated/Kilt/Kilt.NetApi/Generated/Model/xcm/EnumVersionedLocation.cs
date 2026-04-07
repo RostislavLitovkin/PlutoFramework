@@ -38,7 +38,7 @@ namespace Kilt.NetApi.Generated.Model.xcm
     }
     
     /// <summary>
-    /// >> 89 - Variant[xcm.VersionedLocation]
+    /// >> 92 - Variant[xcm.VersionedLocation]
     /// </summary>
     public sealed class EnumVersionedLocation : BaseEnumRust<VersionedLocation>
     {

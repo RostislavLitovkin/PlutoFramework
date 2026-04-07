@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.polkadot_primitives.v8
     
     
     /// <summary>
-    /// >> 201 - Composite[polkadot_primitives.v8.AbridgedHrmpChannel]
+    /// >> 730 - Composite[polkadot_primitives.v8.AbridgedHrmpChannel]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AbridgedHrmpChannel : BaseType

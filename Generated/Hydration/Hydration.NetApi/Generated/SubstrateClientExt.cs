@@ -80,24 +80,9 @@ namespace Hydration.NetApi.Generated
         public DemocracyStorage DemocracyStorage;
         
         /// <summary>
-        /// ElectionsStorage storage calls.
-        /// </summary>
-        public ElectionsStorage ElectionsStorage;
-        
-        /// <summary>
-        /// CouncilStorage storage calls.
-        /// </summary>
-        public CouncilStorage CouncilStorage;
-        
-        /// <summary>
         /// TechnicalCommitteeStorage storage calls.
         /// </summary>
         public TechnicalCommitteeStorage TechnicalCommitteeStorage;
-        
-        /// <summary>
-        /// TipsStorage storage calls.
-        /// </summary>
-        public TipsStorage TipsStorage;
         
         /// <summary>
         /// ProxyStorage storage calls.
@@ -253,6 +238,11 @@ namespace Hydration.NetApi.Generated
         /// HSMStorage storage calls.
         /// </summary>
         public HSMStorage HSMStorage;
+        
+        /// <summary>
+        /// ParametersStorage storage calls.
+        /// </summary>
+        public ParametersStorage ParametersStorage;
         
         /// <summary>
         /// TokensStorage storage calls.
@@ -413,10 +403,7 @@ namespace Hydration.NetApi.Generated
             this.PreimageStorage = new PreimageStorage(this);
             this.IdentityStorage = new IdentityStorage(this);
             this.DemocracyStorage = new DemocracyStorage(this);
-            this.ElectionsStorage = new ElectionsStorage(this);
-            this.CouncilStorage = new CouncilStorage(this);
             this.TechnicalCommitteeStorage = new TechnicalCommitteeStorage(this);
-            this.TipsStorage = new TipsStorage(this);
             this.ProxyStorage = new ProxyStorage(this);
             this.MultisigStorage = new MultisigStorage(this);
             this.UniquesStorage = new UniquesStorage(this);
@@ -448,6 +435,7 @@ namespace Hydration.NetApi.Generated
             this.ReferralsStorage = new ReferralsStorage(this);
             this.LiquidationStorage = new LiquidationStorage(this);
             this.HSMStorage = new HSMStorage(this);
+            this.ParametersStorage = new ParametersStorage(this);
             this.TokensStorage = new TokensStorage(this);
             this.CurrenciesStorage = new CurrenciesStorage(this);
             this.VestingStorage = new VestingStorage(this);

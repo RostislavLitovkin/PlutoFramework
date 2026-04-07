@@ -59,7 +59,7 @@ public partial class XcmTransferPage : PageTemplate
                 return;
             }
 
-            string extrinsicId = await clientExt.SubmitExtrinsicAsync(transferMethod, account, token: CancellationToken.None);
+            string extrinsicId = await clientExt.SubmitExtrinsicAsync(transferMethod, account, new TaskCompletionSource<string?>(), token: CancellationToken.None);
         }
         catch (Exception ex)
         {

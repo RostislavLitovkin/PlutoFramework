@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.polkadot_primitives.v8
     
     
     /// <summary>
-    /// >> 298 - Composite[polkadot_primitives.v8.PersistedValidationData]
+    /// >> 290 - Composite[polkadot_primitives.v8.PersistedValidationData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PersistedValidationData : BaseType

@@ -33,7 +33,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Types.Base
     }
     
     /// <summary>
-    /// >> 125 - Variant[Result]
+    /// >> 693 - Variant[Result]
     /// </summary>
     public sealed class EnumResult : BaseEnumRust<Result>
     {
@@ -43,8 +43,8 @@ namespace PolkadotAssetHub.NetApi.Generated.Types.Base
         /// </summary>
         public EnumResult()
         {
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Base.BaseTuple>(Result.Ok);
-				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.sp_runtime.EnumDispatchError>(Result.Err);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Result.Ok);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Result.Err);
         }
     }
 }

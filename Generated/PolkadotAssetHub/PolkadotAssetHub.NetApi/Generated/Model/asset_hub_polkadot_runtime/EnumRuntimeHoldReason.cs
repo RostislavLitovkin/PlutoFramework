@@ -22,13 +22,43 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
     {
         
         /// <summary>
+        /// >> Preimage
+        /// </summary>
+        Preimage = 5,
+        
+        /// <summary>
+        /// >> Session
+        /// </summary>
+        Session = 22,
+        
+        /// <summary>
+        /// >> PolkadotXcm
+        /// </summary>
+        PolkadotXcm = 31,
+        
+        /// <summary>
         /// >> StateTrieMigration
         /// </summary>
         StateTrieMigration = 70,
+        
+        /// <summary>
+        /// >> DelegatedStaking
+        /// </summary>
+        DelegatedStaking = 83,
+        
+        /// <summary>
+        /// >> MultiBlockElectionSigned
+        /// </summary>
+        MultiBlockElectionSigned = 88,
+        
+        /// <summary>
+        /// >> Staking
+        /// </summary>
+        Staking = 89,
     }
     
     /// <summary>
-    /// >> 231 - Variant[asset_hub_polkadot_runtime.RuntimeHoldReason]
+    /// >> 761 - Variant[asset_hub_polkadot_runtime.RuntimeHoldReason]
     /// </summary>
     public sealed class EnumRuntimeHoldReason : BaseEnumRust<RuntimeHoldReason>
     {
@@ -38,7 +68,13 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
         /// </summary>
         public EnumRuntimeHoldReason()
         {
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_preimage.pallet.EnumHoldReason>(RuntimeHoldReason.Preimage);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_session.pallet.EnumHoldReason>(RuntimeHoldReason.Session);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_xcm.pallet.EnumHoldReason>(RuntimeHoldReason.PolkadotXcm);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_state_trie_migration.pallet.EnumHoldReason>(RuntimeHoldReason.StateTrieMigration);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_delegated_staking.pallet.EnumHoldReason>(RuntimeHoldReason.DelegatedStaking);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi_block.signed.pallet.EnumHoldReason>(RuntimeHoldReason.MultiBlockElectionSigned);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async.pallet.pallet.EnumHoldReason>(RuntimeHoldReason.Staking);
         }
     }
 }

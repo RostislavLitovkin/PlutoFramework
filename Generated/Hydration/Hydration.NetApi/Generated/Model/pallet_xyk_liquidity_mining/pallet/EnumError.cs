@@ -93,10 +93,16 @@ namespace Hydration.NetApi.Generated.Model.pallet_xyk_liquidity_mining.pallet
         /// No global farm - yield farm pairs specified to join
         /// </summary>
         NoFarmsSpecified = 11,
+        
+        /// <summary>
+        /// >> FailedToValueShares
+        /// Failed to calculate value of xyk shares
+        /// </summary>
+        FailedToValueShares = 12,
     }
     
     /// <summary>
-    /// >> 734 - Variant[pallet_xyk_liquidity_mining.pallet.Error]
+    /// >> 718 - Variant[pallet_xyk_liquidity_mining.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

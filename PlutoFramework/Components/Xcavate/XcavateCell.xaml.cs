@@ -11,7 +11,7 @@ public partial class XcavateCell : ContentView
         propertyChanging: (bindable, oldValue, newValue) => {
             var control = (XcavateCell)bindable;
 
-            control.titleText.Text = ((string)newValue);
+            control.titleView.Title = ((string)newValue);
         });
 
     public static readonly BindableProperty ValueProperty = BindableProperty.Create(
@@ -39,6 +39,15 @@ public partial class XcavateCell : ContentView
             control.arrow.IsVisible = newValue != null;
         });
 
+    public static readonly BindableProperty InfoCommandProperty = BindableProperty.Create(
+        nameof(InfoCommand), typeof(IAsyncRelayCommand), typeof(XcavateCell),
+        defaultBindingMode: BindingMode.TwoWay,
+        propertyChanging: (bindable, oldValue, newValue) => {
+            var control = (XcavateCell)bindable;
+
+            control.titleView.Command = (IAsyncRelayCommand)newValue;
+        });
+
     public XcavateCell()
 	{
 		InitializeComponent();
@@ -60,5 +69,11 @@ public partial class XcavateCell : ContentView
     {
         get => (IAsyncRelayCommand)GetValue(CommandProperty);
         set => SetValue(CommandProperty, value);
+    }
+
+    public IAsyncRelayCommand InfoCommand
+    {
+        get => (IAsyncRelayCommand)GetValue(InfoCommandProperty);
+        set => SetValue(InfoCommandProperty, value);
     }
 }

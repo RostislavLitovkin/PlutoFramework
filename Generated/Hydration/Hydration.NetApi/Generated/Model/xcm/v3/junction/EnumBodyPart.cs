@@ -48,7 +48,7 @@ namespace Hydration.NetApi.Generated.Model.xcm.v3.junction
     }
     
     /// <summary>
-    /// >> 108 - Variant[xcm.v3.junction.BodyPart]
+    /// >> 102 - Variant[xcm.v3.junction.BodyPart]
     /// </summary>
     public sealed class EnumBodyPart : BaseEnumRust<BodyPart>
     {

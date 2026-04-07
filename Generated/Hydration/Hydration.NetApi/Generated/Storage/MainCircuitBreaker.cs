@@ -44,6 +44,8 @@ namespace Hydration.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CircuitBreaker", "AllowedAddLiquidityAmountPerAsset"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Hydration.NetApi.Generated.Model.pallet_circuit_breaker.LiquidityLimit)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("CircuitBreaker", "AssetLockdownState"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Hydration.NetApi.Generated.Model.pallet_circuit_breaker.types.EnumLockdownStatus)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CircuitBreaker", "LiquidityRemoveLimitPerAsset"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("CircuitBreaker", "AllowedRemoveLiquidityAmountPerAsset"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -179,6 +181,35 @@ namespace Hydration.NetApi.Generated.Storage
         }
         
         /// <summary>
+        /// >> AssetLockdownStateParams
+        /// </summary>
+        public static string AssetLockdownStateParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        {
+            return RequestGenerator.GetStorage("CircuitBreaker", "AssetLockdownState", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
+                        key});
+        }
+        
+        /// <summary>
+        /// >> AssetLockdownStateDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string AssetLockdownStateDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> AssetLockdownState
+        /// </summary>
+        public async Task<Hydration.NetApi.Generated.Model.pallet_circuit_breaker.types.EnumLockdownStatus> AssetLockdownState(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        {
+            string parameters = CircuitBreakerStorage.AssetLockdownStateParams(key);
+            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.pallet_circuit_breaker.types.EnumLockdownStatus>(parameters, blockhash, token);
+            return result;
+        }
+        
+        /// <summary>
         /// >> LiquidityRemoveLimitPerAssetParams
         ///  Liquidity limits of assets for removing liquidity.
         ///  If not set, returns the default limit.
@@ -284,6 +315,41 @@ namespace Hydration.NetApi.Generated.Storage
             byteArray.AddRange(liquidity_limit.Encode());
             return new Method(65, "CircuitBreaker", 2, "set_remove_liquidity_limit", byteArray.ToArray());
         }
+        
+        /// <summary>
+        /// >> lockdown_asset
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method LockdownAsset(Substrate.NetApi.Model.Types.Primitive.U32 asset_id, Substrate.NetApi.Model.Types.Primitive.U32 until)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(asset_id.Encode());
+            byteArray.AddRange(until.Encode());
+            return new Method(65, "CircuitBreaker", 3, "lockdown_asset", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> force_lift_lockdown
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method ForceLiftLockdown(Substrate.NetApi.Model.Types.Primitive.U32 asset_id)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(asset_id.Encode());
+            return new Method(65, "CircuitBreaker", 4, "force_lift_lockdown", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> release_deposit
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method ReleaseDeposit(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 who, Substrate.NetApi.Model.Types.Primitive.U32 asset_id)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(who.Encode());
+            byteArray.AddRange(asset_id.Encode());
+            return new Method(65, "CircuitBreaker", 5, "release_deposit", byteArray.ToArray());
+        }
     }
     
     /// <summary>
@@ -372,5 +438,25 @@ namespace Hydration.NetApi.Generated.Storage
         /// Asset is not allowed to have a limit
         /// </summary>
         NotAllowed,
+        
+        /// <summary>
+        /// >> AssetInLockdown
+        /// Asset still in lockdown as it reached the allowed deposit limit for the period
+        /// Query the `asset_lockdown_state` storage to determine until which block the asset is locked,
+        /// so that the deposit can be released afterward.
+        /// </summary>
+        AssetInLockdown,
+        
+        /// <summary>
+        /// >> AssetNotInLockdown
+        /// Asset is not in a lockdown
+        /// </summary>
+        AssetNotInLockdown,
+        
+        /// <summary>
+        /// >> InvalidAmount
+        /// Invalid amount to save deposit
+        /// </summary>
+        InvalidAmount,
     }
 }

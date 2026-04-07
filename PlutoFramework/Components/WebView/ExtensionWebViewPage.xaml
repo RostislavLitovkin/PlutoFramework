@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<page:PageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:page="clr-namespace:PlutoFramework.Templates.PageTemplate"
+             x:Class="PlutoFramework.Components.WebView.ExtensionWebViewPage"
+             xmlns:webview="clr-namespace:PlutoFramework.Components.WebView;assembly=PlutoFramework"
+             NavigationBarIsVisible="False"
+            >
+
+    <webview:PolkadotExtensionWebView
+        AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+        AbsoluteLayout.LayoutFlags="All"
+        Scrolled="OnScrolled"
+        PropertyChanged="OnPropertyChanged"
+        x:Name="webView"
+        Navigated="OnNavigated"
+        Source="{Binding Source}"/>
+
+    <page:PageTemplate.PopupContent>
+        <webview:WebViewNavigationBarView x:Name="navigationBar"/>
+    </page:PageTemplate.PopupContent>
+</page:PageTemplate>

@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types
     
     
     /// <summary>
-    /// >> 457 - Composite[pallet_assets.types.AssetMetadataT2]
+    /// >> 899 - Composite[pallet_assets.types.AssetMetadataT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetMetadataT2 : BaseType
@@ -31,11 +31,11 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types
         /// <summary>
         /// >> name
         /// </summary>
-        public PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28 Name { get; set; }
+        public PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT52 Name { get; set; }
         /// <summary>
         /// >> symbol
         /// </summary>
-        public PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28 Symbol { get; set; }
+        public PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT52 Symbol { get; set; }
         /// <summary>
         /// >> decimals
         /// </summary>
@@ -69,9 +69,9 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types
             var start = p;
             Deposit = new Substrate.NetApi.Model.Types.Primitive.U128();
             Deposit.Decode(byteArray, ref p);
-            Name = new PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28();
+            Name = new PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT52();
             Name.Decode(byteArray, ref p);
-            Symbol = new PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT28();
+            Symbol = new PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT52();
             Symbol.Decode(byteArray, ref p);
             Decimals = new Substrate.NetApi.Model.Types.Primitive.U8();
             Decimals.Decode(byteArray, ref p);

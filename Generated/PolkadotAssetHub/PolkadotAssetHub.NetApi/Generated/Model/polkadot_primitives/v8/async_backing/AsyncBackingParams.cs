@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.polkadot_primitives.v8.async_b
     
     
     /// <summary>
-    /// >> 203 - Composite[polkadot_primitives.v8.async_backing.AsyncBackingParams]
+    /// >> 732 - Composite[polkadot_primitives.v8.async_backing.AsyncBackingParams]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AsyncBackingParams : BaseType

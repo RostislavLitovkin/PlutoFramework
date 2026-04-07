@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.hydra_dx_math.stableswap.types
     
     
     /// <summary>
-    /// >> 686 - Composite[hydra_dx_math.stableswap.types.AssetReserve]
+    /// >> 671 - Composite[hydra_dx_math.stableswap.types.AssetReserve]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetReserve : BaseType

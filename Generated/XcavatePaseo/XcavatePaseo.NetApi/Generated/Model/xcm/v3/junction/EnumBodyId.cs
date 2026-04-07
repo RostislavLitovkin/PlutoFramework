@@ -73,7 +73,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcm.v3.junction
     }
     
     /// <summary>
-    /// >> 88 - Variant[xcm.v3.junction.BodyId]
+    /// >> 96 - Variant[xcm.v3.junction.BodyId]
     /// </summary>
     public sealed class EnumBodyId : BaseEnumRust<BodyId>
     {

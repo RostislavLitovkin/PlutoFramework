@@ -292,7 +292,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_identity.pallet
     }
     
     /// <summary>
-    /// >> 121 - Variant[pallet_identity.pallet.Call]
+    /// >> 115 - Variant[pallet_identity.pallet.Call]
     /// Identity pallet declaration.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

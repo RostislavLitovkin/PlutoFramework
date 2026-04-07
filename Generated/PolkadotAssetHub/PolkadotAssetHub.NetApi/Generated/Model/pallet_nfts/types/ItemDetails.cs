@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 437 - Composite[pallet_nfts.types.ItemDetails]
+    /// >> 879 - Composite[pallet_nfts.types.ItemDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ItemDetails : BaseType
@@ -31,7 +31,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types
         /// <summary>
         /// >> approvals
         /// </summary>
-        public PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMap Approvals { get; set; }
+        public PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT3 Approvals { get; set; }
         /// <summary>
         /// >> deposit
         /// </summary>
@@ -59,7 +59,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types
             var start = p;
             Owner = new PolkadotAssetHub.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             Owner.Decode(byteArray, ref p);
-            Approvals = new PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMap();
+            Approvals = new PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT3();
             Approvals.Decode(byteArray, ref p);
             Deposit = new PolkadotAssetHub.NetApi.Generated.Model.pallet_nfts.types.ItemDeposit();
             Deposit.Decode(byteArray, ref p);

@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.ethereum.transaction
     
     
     /// <summary>
-    /// >> 277 - Composite[ethereum.transaction.LegacyTransaction]
+    /// >> 269 - Composite[ethereum.transaction.LegacyTransaction]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class LegacyTransaction : BaseType

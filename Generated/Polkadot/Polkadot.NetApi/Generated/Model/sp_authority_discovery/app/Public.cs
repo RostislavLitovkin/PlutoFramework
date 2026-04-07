@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.sp_authority_discovery.app
     
     
     /// <summary>
-    /// >> 148 - Composite[sp_authority_discovery.app.Public]
+    /// >> 150 - Composite[sp_authority_discovery.app.Public]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Public : BaseType

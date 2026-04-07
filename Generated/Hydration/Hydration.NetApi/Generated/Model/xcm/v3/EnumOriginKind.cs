@@ -43,7 +43,7 @@ namespace Hydration.NetApi.Generated.Model.xcm.v3
     }
     
     /// <summary>
-    /// >> 359 - Variant[xcm.v3.OriginKind]
+    /// >> 351 - Variant[xcm.v3.OriginKind]
     /// </summary>
     public sealed class EnumOriginKind : BaseEnum<OriginKind>
     {

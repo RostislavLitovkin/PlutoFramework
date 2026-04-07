@@ -38,7 +38,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_broker.coretime_interface
     }
     
     /// <summary>
-    /// >> 341 - Variant[pallet_broker.coretime_interface.CoreAssignment]
+    /// >> 346 - Variant[pallet_broker.coretime_interface.CoreAssignment]
     /// </summary>
     public sealed class EnumCoreAssignment : BaseEnumRust<CoreAssignment>
     {

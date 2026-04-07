@@ -255,7 +255,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U32 MaxKeyLen()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x20000000");
+            result.Create("0x00020000");
             return result;
         }
     }

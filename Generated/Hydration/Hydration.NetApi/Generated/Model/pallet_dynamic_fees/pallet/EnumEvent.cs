@@ -21,13 +21,34 @@ namespace Hydration.NetApi.Generated.Model.pallet_dynamic_fees.pallet
     /// </summary>
     public enum Event
     {
+        
+        /// <summary>
+        /// >> AssetFeeConfigSet
+        /// Asset fee configuration has been set
+        /// </summary>
+        AssetFeeConfigSet = 0,
+        
+        /// <summary>
+        /// >> AssetFeeConfigRemoved
+        /// Asset fee configuration has been removed
+        /// </summary>
+        AssetFeeConfigRemoved = 1,
     }
     
     /// <summary>
-    /// >> 432 - Variant[pallet_dynamic_fees.pallet.Event]
+    /// >> 424 - Variant[pallet_dynamic_fees.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
-    public sealed class EnumEvent : BaseEnum<Event>
+    public sealed class EnumEvent : BaseEnumRust<Event>
     {
+        
+        /// <summary>
+        /// Initializes a new instance of the class.
+        /// </summary>
+        public EnumEvent()
+        {
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.pallet_dynamic_fees.types.EnumAssetFeeConfig>>(Event.AssetFeeConfigSet);
+				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Event.AssetFeeConfigRemoved);
+        }
     }
 }

@@ -36,8 +36,8 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         public AuraExtStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("AuraExt", "Authorities"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("AuraExt", "SlotInfo"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.sp_consensus_slots.Slot, Substrate.NetApi.Model.Types.Primitive.U32>)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("AuraExt", "Authorities"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("AuraExt", "RelaySlotInfo"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.sp_consensus_slots.Slot, Substrate.NetApi.Model.Types.Primitive.U32>)));
         }
         
         /// <summary>
@@ -70,42 +70,44 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         ///  but we require the old authorities to verify the seal when validating a PoV. This will
         ///  always be updated to the latest AuRa authorities in `on_finalize`.
         /// </summary>
-        public async Task<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14> Authorities(string blockhash, CancellationToken token)
+        public async Task<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41> Authorities(string blockhash, CancellationToken token)
         {
             string parameters = AuraExtStorage.AuthoritiesParams();
-            var result = await _client.GetStorageAsync<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41>(parameters, blockhash, token);
             return result;
         }
         
         /// <summary>
-        /// >> SlotInfoParams
-        ///  Current slot paired with a number of authored blocks.
+        /// >> RelaySlotInfoParams
+        ///  Current relay chain slot paired with a number of authored blocks.
         /// 
-        ///  Updated on each block initialization.
+        ///  This is updated in [`FixedVelocityConsensusHook::on_state_proof`] with the current relay
+        ///  chain slot as provided by the relay chain state proof.
         /// </summary>
-        public static string SlotInfoParams()
+        public static string RelaySlotInfoParams()
         {
-            return RequestGenerator.GetStorage("AuraExt", "SlotInfo", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+            return RequestGenerator.GetStorage("AuraExt", "RelaySlotInfo", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
         }
         
         /// <summary>
-        /// >> SlotInfoDefault
+        /// >> RelaySlotInfoDefault
         /// Default value as hex string
         /// </summary>
-        public static string SlotInfoDefault()
+        public static string RelaySlotInfoDefault()
         {
             return "0x00";
         }
         
         /// <summary>
-        /// >> SlotInfo
-        ///  Current slot paired with a number of authored blocks.
+        /// >> RelaySlotInfo
+        ///  Current relay chain slot paired with a number of authored blocks.
         /// 
-        ///  Updated on each block initialization.
+        ///  This is updated in [`FixedVelocityConsensusHook::on_state_proof`] with the current relay
+        ///  chain slot as provided by the relay chain state proof.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.sp_consensus_slots.Slot, Substrate.NetApi.Model.Types.Primitive.U32>> SlotInfo(string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.sp_consensus_slots.Slot, Substrate.NetApi.Model.Types.Primitive.U32>> RelaySlotInfo(string blockhash, CancellationToken token)
         {
-            string parameters = AuraExtStorage.SlotInfoParams();
+            string parameters = AuraExtStorage.RelaySlotInfoParams();
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.sp_consensus_slots.Slot, Substrate.NetApi.Model.Types.Primitive.U32>>(parameters, blockhash, token);
             return result;
         }

@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.sp_arithmetic.per_things
     
     
     /// <summary>
-    /// >> 210 - Composite[sp_arithmetic.per_things.Permill]
+    /// >> 200 - Composite[sp_arithmetic.per_things.Permill]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Permill : BaseType

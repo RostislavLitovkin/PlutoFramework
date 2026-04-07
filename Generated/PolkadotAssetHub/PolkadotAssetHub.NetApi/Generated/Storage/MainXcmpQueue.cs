@@ -37,12 +37,12 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "InboundXcmpSuspended"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_btree_set.BoundedBTreeSetT1)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "OutboundXcmpStatus"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "OutboundXcmpStatus"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT42)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "OutboundXcmpMessages"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, Substrate.NetApi.Model.Types.Primitive.U16>), typeof(PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT3)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, Substrate.NetApi.Model.Types.Primitive.U16>), typeof(PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "SignalMessages"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(PolkadotAssetHub.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id), typeof(PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT3)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(PolkadotAssetHub.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id), typeof(PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "QueueConfig"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Model.cumulus_pallet_xcmp_queue.QueueConfigData)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "QueueSuspended"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcmpQueue", "DeliveryFeeFactor"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -124,10 +124,10 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         ///  case of the need to send a high-priority signal message this block.
         ///  The bool is true if there is a signal message waiting to be sent.
         /// </summary>
-        public async Task<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15> OutboundXcmpStatus(string blockhash, CancellationToken token)
+        public async Task<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT42> OutboundXcmpStatus(string blockhash, CancellationToken token)
         {
             string parameters = XcmpQueueStorage.OutboundXcmpStatusParams();
-            var result = await _client.GetStorageAsync<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT42>(parameters, blockhash, token);
             return result;
         }
         
@@ -155,10 +155,10 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         /// >> OutboundXcmpMessages
         ///  The messages outbound in a given XCMP channel.
         /// </summary>
-        public async Task<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT3> OutboundXcmpMessages(Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, Substrate.NetApi.Model.Types.Primitive.U16> key, string blockhash, CancellationToken token)
+        public async Task<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2> OutboundXcmpMessages(Substrate.NetApi.Model.Types.Base.BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id, Substrate.NetApi.Model.Types.Primitive.U16> key, string blockhash, CancellationToken token)
         {
             string parameters = XcmpQueueStorage.OutboundXcmpMessagesParams(key);
-            var result = await _client.GetStorageAsync<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT3>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2>(parameters, blockhash, token);
             return result;
         }
         
@@ -186,10 +186,10 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         /// >> SignalMessages
         ///  Any signal messages waiting to be sent.
         /// </summary>
-        public async Task<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT3> SignalMessages(PolkadotAssetHub.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id key, string blockhash, CancellationToken token)
+        public async Task<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2> SignalMessages(PolkadotAssetHub.NetApi.Generated.Model.polkadot_parachain_primitives.primitives.Id key, string blockhash, CancellationToken token)
         {
             string parameters = XcmpQueueStorage.SignalMessagesParams(key);
-            var result = await _client.GetStorageAsync<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT3>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2>(parameters, blockhash, token);
             return result;
         }
         

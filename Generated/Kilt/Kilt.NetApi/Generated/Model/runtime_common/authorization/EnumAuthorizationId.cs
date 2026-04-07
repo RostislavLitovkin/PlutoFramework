@@ -28,7 +28,7 @@ namespace Kilt.NetApi.Generated.Model.runtime_common.authorization
     }
     
     /// <summary>
-    /// >> 114 - Variant[runtime_common.authorization.AuthorizationId]
+    /// >> 118 - Variant[runtime_common.authorization.AuthorizationId]
     /// </summary>
     public sealed class EnumAuthorizationId : BaseEnumRust<AuthorizationId>
     {

@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_identity.legacy
     
     
     /// <summary>
-    /// >> 122 - Composite[pallet_identity.legacy.IdentityInfo]
+    /// >> 116 - Composite[pallet_identity.legacy.IdentityInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class IdentityInfo : BaseType

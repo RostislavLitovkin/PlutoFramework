@@ -55,7 +55,7 @@ namespace Kilt.NetApi.Generated.Model.pallet_proxy.pallet
     }
     
     /// <summary>
-    /// >> 54 - Variant[pallet_proxy.pallet.Event]
+    /// >> 57 - Variant[pallet_proxy.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -67,10 +67,10 @@ namespace Kilt.NetApi.Generated.Model.pallet_proxy.pallet
         public EnumEvent()
         {
 				AddTypeDecoder<Kilt.NetApi.Generated.Types.Base.EnumResult>(Event.ProxyExecuted);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U16>>(Event.PureCreated);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.peregrine_runtime.system.proxy.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U16>>(Event.PureCreated);
 				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.primitive_types.H256>>(Event.Announced);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.ProxyAdded);
-				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.ProxyRemoved);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.peregrine_runtime.system.proxy.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.ProxyAdded);
+				AddTypeDecoder<BaseTuple<Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32, Kilt.NetApi.Generated.Model.peregrine_runtime.system.proxy.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U64>>(Event.ProxyRemoved);
         }
     }
 }

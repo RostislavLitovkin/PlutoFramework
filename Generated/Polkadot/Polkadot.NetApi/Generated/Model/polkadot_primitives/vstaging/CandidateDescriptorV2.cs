@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_primitives.vstaging
     
     
     /// <summary>
-    /// >> 295 - Composite[polkadot_primitives.vstaging.CandidateDescriptorV2]
+    /// >> 300 - Composite[polkadot_primitives.vstaging.CandidateDescriptorV2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CandidateDescriptorV2 : BaseType

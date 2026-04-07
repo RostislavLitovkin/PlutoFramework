@@ -37,9 +37,9 @@ namespace Kilt.NetApi.Generated.Storage
         {
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Proxy", "Proxies"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39, Substrate.NetApi.Model.Types.Primitive.U128>)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT46, Substrate.NetApi.Model.Types.Primitive.U128>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Proxy", "Announcements"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40, Substrate.NetApi.Model.Types.Primitive.U128>)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT47, Substrate.NetApi.Model.Types.Primitive.U128>)));
         }
         
         /// <summary>
@@ -68,10 +68,10 @@ namespace Kilt.NetApi.Generated.Storage
         ///  The set of account proxies. Maps the account which has delegated to the accounts
         ///  which are being delegated to, together with the amount held on deposit.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39, Substrate.NetApi.Model.Types.Primitive.U128>> Proxies(Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT46, Substrate.NetApi.Model.Types.Primitive.U128>> Proxies(Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = ProxyStorage.ProxiesParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39, Substrate.NetApi.Model.Types.Primitive.U128>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT46, Substrate.NetApi.Model.Types.Primitive.U128>>(parameters, blockhash, token);
             return result;
         }
         
@@ -99,10 +99,10 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> Announcements
         ///  The announcements made by the proxy (key).
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40, Substrate.NetApi.Model.Types.Primitive.U128>> Announcements(Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT47, Substrate.NetApi.Model.Types.Primitive.U128>> Announcements(Kilt.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = ProxyStorage.AnnouncementsParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40, Substrate.NetApi.Model.Types.Primitive.U128>>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple<Kilt.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT47, Substrate.NetApi.Model.Types.Primitive.U128>>(parameters, blockhash, token);
             return result;
         }
     }
@@ -117,7 +117,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> proxy
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Proxy(Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress real, Substrate.NetApi.Model.Types.Base.BaseOpt<Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumProxyType> force_proxy_type, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall call)
+        public static Method Proxy(Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress real, Substrate.NetApi.Model.Types.Base.BaseOpt<Kilt.NetApi.Generated.Model.peregrine_runtime.system.proxy.EnumProxyType> force_proxy_type, Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(real.Encode());
@@ -130,7 +130,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> add_proxy
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AddProxy(Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U64 delay)
+        public static Method AddProxy(Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, Kilt.NetApi.Generated.Model.peregrine_runtime.system.proxy.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U64 delay)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@delegate.Encode());
@@ -143,7 +143,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> remove_proxy
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method RemoveProxy(Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U64 delay)
+        public static Method RemoveProxy(Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, Kilt.NetApi.Generated.Model.peregrine_runtime.system.proxy.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U64 delay)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@delegate.Encode());
@@ -166,7 +166,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> create_pure
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method CreatePure(Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U64 delay, Substrate.NetApi.Model.Types.Primitive.U16 index)
+        public static Method CreatePure(Kilt.NetApi.Generated.Model.peregrine_runtime.system.proxy.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U64 delay, Substrate.NetApi.Model.Types.Primitive.U16 index)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(proxy_type.Encode());
@@ -179,7 +179,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> kill_pure
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method KillPure(Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress spawner, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U16 index, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64> height, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> ext_index)
+        public static Method KillPure(Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress spawner, Kilt.NetApi.Generated.Model.peregrine_runtime.system.proxy.EnumProxyType proxy_type, Substrate.NetApi.Model.Types.Primitive.U16 index, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U64> height, Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32> ext_index)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(spawner.Encode());
@@ -230,7 +230,7 @@ namespace Kilt.NetApi.Generated.Storage
         /// >> proxy_announced
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ProxyAnnounced(Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress real, Substrate.NetApi.Model.Types.Base.BaseOpt<Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumProxyType> force_proxy_type, Kilt.NetApi.Generated.Model.spiritnet_runtime.EnumRuntimeCall call)
+        public static Method ProxyAnnounced(Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress @delegate, Kilt.NetApi.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress real, Substrate.NetApi.Model.Types.Base.BaseOpt<Kilt.NetApi.Generated.Model.peregrine_runtime.system.proxy.EnumProxyType> force_proxy_type, Kilt.NetApi.Generated.Model.peregrine_runtime.EnumRuntimeCall call)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(@delegate.Encode());
@@ -257,7 +257,7 @@ namespace Kilt.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 ProxyDepositBase()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x0020F7A54B3300000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         
@@ -272,7 +272,7 @@ namespace Kilt.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 ProxyDepositFactor()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00F4A92B800100000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         
@@ -308,7 +308,7 @@ namespace Kilt.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 AnnouncementDepositBase()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x0020F7A54B3300000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
         
@@ -322,7 +322,7 @@ namespace Kilt.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Primitive.U128 AnnouncementDepositFactor()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00E85357000300000000000000000000");
+            result.Create("0x00000000000000000000000000000000");
             return result;
         }
     }

@@ -58,7 +58,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_broadcast.types
     }
     
     /// <summary>
-    /// >> 484 - Variant[pallet_broadcast.types.Filler]
+    /// >> 476 - Variant[pallet_broadcast.types.Filler]
     /// </summary>
     public sealed class EnumFiller : BaseEnumRust<Filler>
     {

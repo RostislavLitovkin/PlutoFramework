@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_child_bounties
     
     
     /// <summary>
-    /// >> 682 - Composite[pallet_child_bounties.ChildBounty]
+    /// >> 734 - Composite[pallet_child_bounties.ChildBounty]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ChildBounty : BaseType

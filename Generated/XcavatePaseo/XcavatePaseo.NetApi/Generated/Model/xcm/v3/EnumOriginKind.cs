@@ -43,7 +43,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcm.v3
     }
     
     /// <summary>
-    /// >> 118 - Variant[xcm.v3.OriginKind]
+    /// >> 126 - Variant[xcm.v3.OriginKind]
     /// </summary>
     public sealed class EnumOriginKind : BaseEnum<OriginKind>
     {

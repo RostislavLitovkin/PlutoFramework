@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Model.frame_support.traits.schedule
     }
     
     /// <summary>
-    /// >> 189 - Variant[frame_support.traits.schedule.DispatchTime]
+    /// >> 179 - Variant[frame_support.traits.schedule.DispatchTime]
     /// </summary>
     public sealed class EnumDispatchTime : BaseEnumRust<DispatchTime>
     {
