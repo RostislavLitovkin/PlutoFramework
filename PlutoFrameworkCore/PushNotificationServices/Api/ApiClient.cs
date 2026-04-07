@@ -43,7 +43,7 @@ public static class ApiClient
             PublicClient,
             await GetDeviceRegistrationDataAsync()
             );
-        Console.WriteLine($"[PlutoNotifications] Got JWT pair: {tokenPair.Access} {tokenPair.Refresh}");
+        Console.WriteLine("[PlutoNotifications] Got JWT pair");
 
         await SecureStorageManager.Storage.SaveAuthTokenPairAsync(tokenPair);
     }
