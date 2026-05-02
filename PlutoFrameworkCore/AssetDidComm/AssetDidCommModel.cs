@@ -23,11 +23,11 @@ namespace PlutoFrameworkCore.AssetDidComm
         [JsonPropertyName("name")]
         public required string Name { get; set; }
 
-        public BoundedVecT31 NameVec
+        public BoundedVecT12 NameVec
         {
             get
             {
-                var name = new BoundedVecT31();
+                var name = new BoundedVecT12();
 
                 var vec = new BaseVec<U8>(
                     Encoding.UTF8.GetBytes(Name).Select(b => new U8(b)).ToArray()
@@ -47,11 +47,11 @@ namespace PlutoFrameworkCore.AssetDidComm
         [JsonPropertyName("name")]
         public required string Name { get; set; }
 
-        public BoundedVecT31 NameVec
+        public BoundedVecT12 NameVec
         {
             get
             {
-                var name = new BoundedVecT31();
+                var name = new BoundedVecT12();
 
                 var vec = new BaseVec<U8>(
                     Encoding.UTF8.GetBytes(Name).Select(b => new U8(b)).ToArray()
@@ -164,12 +164,12 @@ namespace PlutoFrameworkCore.AssetDidComm
             var metadata = new NamespaceMetadataInput
             {
                 Name = name.NameVec,
-                SchemaUri = new BaseOpt<BoundedVecT32>(),
+                SchemaUri = new BaseOpt<BoundedVecT13>(),
                 Properties = new BoundedBTreeMapT3
                 {
-                    Value = new BTreeMapT10()
+                    Value = new BTreeMapT4()
                     {
-                        Value = new BaseVec<BaseTuple<BoundedVecT33, BoundedVecT34>>([])
+                        Value = new BaseVec<BaseTuple<BoundedVecT14, BoundedVecT15>>([])
                     }
                 }
             };
@@ -188,15 +188,15 @@ namespace PlutoFrameworkCore.AssetDidComm
             var metadata = new BucketMetadataInput
             {
                 Name = bucket.NameVec,
-                Category = new BoundedVecT35
+                Category = new BoundedVecT16
                 {
                     Value = new BaseVec<U8>([])
                 },
                 Properties = new BoundedBTreeMapT3
                 {
-                    Value = new BTreeMapT10()
+                    Value = new BTreeMapT4()
                     {
-                        Value = new BaseVec<BaseTuple<BoundedVecT33, BoundedVecT34>>([])
+                        Value = new BaseVec<BaseTuple<BoundedVecT14, BoundedVecT15>>([])
                     }
                 }
             };
@@ -258,7 +258,7 @@ namespace PlutoFrameworkCore.AssetDidComm
 
         public static Method CreateTag(U128 bucketId, string tag)
         {
-            var tagVec = new BoundedVecT12
+            var tagVec = new BoundedVecT17
             {
                 Value = new BaseVec<U8>(
                         Encoding.UTF8.GetBytes(tag).Select(b => new U8(b)).ToArray()
@@ -354,14 +354,14 @@ namespace PlutoFrameworkCore.AssetDidComm
 
             var messageInput = new MessageInput
             {
-                Reference = new BoundedVecT12
+                Reference = new BoundedVecT17
                 {
                     Value = new BaseVec<U8>(
                         Encoding.UTF8.GetBytes(uploadResponse.Data.Cid).Select(b => new U8(b)).ToArray()
                     )
                 },
-                Tag = new BaseOpt<BoundedVecT12>(
-                    new BoundedVecT12
+                Tag = new BaseOpt<BoundedVecT17>(
+                    new BoundedVecT17
                     {
                         Value = new BaseVec<U8>(
                             Encoding.UTF8.GetBytes(tag).Select(b => new U8(b)).ToArray()
@@ -370,13 +370,13 @@ namespace PlutoFrameworkCore.AssetDidComm
                 ),
                 MetadataInput = new MessageMetadataInput
                 {
-                    Description = new BoundedVecT31
+                    Description = new BoundedVecT12
                     {
                         Value = new BaseVec<U8>(
                             Encoding.UTF8.GetBytes(upload.Filename ?? "").Select(b => new U8(b)).ToArray()
                         )
                     },
-                    ContentType = new BoundedVecT35
+                    ContentType = new BoundedVecT16
                     {
                         Value = new BaseVec<U8>(
                             Encoding.UTF8.GetBytes(upload.ContentType ?? "").Select(b => new U8(b)).ToArray()
@@ -384,9 +384,9 @@ namespace PlutoFrameworkCore.AssetDidComm
                     },
                     Properties = new BoundedBTreeMapT3
                     {
-                        Value = new BTreeMapT10()
+                        Value = new BTreeMapT4()
                         {
-                            Value = new BaseVec<BaseTuple<BoundedVecT33, BoundedVecT34>>([])
+                            Value = new BaseVec<BaseTuple<BoundedVecT14, BoundedVecT15>>([])
                         }
                     }
                 }

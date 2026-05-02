@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.kilt_asset_dids.asset.v1
     
     
     /// <summary>
-    /// >> 247 - Composite[kilt_asset_dids.asset.v1.EvmSmartContractNonFungibleReference]
+    /// >> 264 - Composite[kilt_asset_dids.asset.v1.EvmSmartContractNonFungibleReference]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class EvmSmartContractNonFungibleReference : BaseType

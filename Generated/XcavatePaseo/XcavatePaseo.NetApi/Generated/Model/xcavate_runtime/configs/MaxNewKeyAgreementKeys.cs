@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcavate_runtime.configs
     
     
     /// <summary>
-    /// >> 531 - Composite[xcavate_runtime.configs.MaxNewKeyAgreementKeys]
+    /// >> 537 - Composite[xcavate_runtime.configs.MaxNewKeyAgreementKeys]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MaxNewKeyAgreementKeys : BaseType

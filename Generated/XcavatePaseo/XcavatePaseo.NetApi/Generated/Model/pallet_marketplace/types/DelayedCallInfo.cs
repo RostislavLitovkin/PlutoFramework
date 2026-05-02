@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
     
     
     /// <summary>
-    /// >> 761 - Composite[pallet_marketplace.types.DelayedCallInfo]
+    /// >> 767 - Composite[pallet_marketplace.types.DelayedCallInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DelayedCallInfo : BaseType

@@ -38,7 +38,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.attestation.authorized_by
     }
     
     /// <summary>
-    /// >> 227 - Variant[attestation.authorized_by.AuthorizedBy]
+    /// >> 244 - Variant[attestation.authorized_by.AuthorizedBy]
     /// </summary>
     public sealed class EnumAuthorizedBy : BaseEnumRust<AuthorizedBy>
     {

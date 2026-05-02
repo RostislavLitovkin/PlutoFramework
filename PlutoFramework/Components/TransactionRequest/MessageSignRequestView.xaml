@@ -15,7 +15,9 @@
                             AbsoluteLayout.LayoutFlags="All">
 
 
-                    <VerticalStackLayout Spacing="10" x:Name="stackLayout">
+                    <VerticalStackLayout Spacing="10"
+                                         x:Name="stackLayout"
+                                         Padding="10, 10, 10, 10">
                         <Label
                             HorizontalOptions="Center"
                             WidthRequest="{Binding Source={x:Reference stackLayout}, Path=Width}">
@@ -67,7 +69,7 @@
                     <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 50"
                           AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
                           ColumnSpacing="15"
-                          Margin="0, 0, 0, 10">
+                          Margin="10, 0, 10, 10">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />

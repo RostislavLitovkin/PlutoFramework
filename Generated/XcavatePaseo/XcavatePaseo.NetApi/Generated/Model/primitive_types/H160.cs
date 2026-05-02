@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.primitive_types
     
     
     /// <summary>
-    /// >> 495 - Composite[primitive_types.H160]
+    /// >> 512 - Composite[primitive_types.H160]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class H160 : BaseType

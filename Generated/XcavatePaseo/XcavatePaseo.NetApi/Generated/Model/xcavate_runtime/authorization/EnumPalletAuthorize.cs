@@ -28,7 +28,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcavate_runtime.authorization
     }
     
     /// <summary>
-    /// >> 525 - Variant[xcavate_runtime.authorization.PalletAuthorize]
+    /// >> 531 - Variant[xcavate_runtime.authorization.PalletAuthorize]
     /// </summary>
     public sealed class EnumPalletAuthorize : BaseEnumRust<PalletAuthorize>
     {

@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.did.origin
     
     
     /// <summary>
-    /// >> 356 - Composite[did.origin.DidRawOrigin]
+    /// >> 373 - Composite[did.origin.DidRawOrigin]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DidRawOrigin : BaseType

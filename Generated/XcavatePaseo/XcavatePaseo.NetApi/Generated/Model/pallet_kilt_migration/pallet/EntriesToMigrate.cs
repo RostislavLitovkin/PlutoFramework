@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_kilt_migration.pallet
     
     
     /// <summary>
-    /// >> 258 - Composite[pallet_kilt_migration.pallet.EntriesToMigrate]
+    /// >> 275 - Composite[pallet_kilt_migration.pallet.EntriesToMigrate]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class EntriesToMigrate : BaseType
@@ -27,23 +27,23 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_kilt_migration.pallet
         /// <summary>
         /// >> attestation
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16 Attestation { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21 Attestation { get; set; }
         /// <summary>
         /// >> delegation
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16 Delegation { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21 Delegation { get; set; }
         /// <summary>
         /// >> did
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17 Did { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22 Did { get; set; }
         /// <summary>
         /// >> lookup
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18 Lookup { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23 Lookup { get; set; }
         /// <summary>
         /// >> public_credentials
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19 PublicCredentials { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24 PublicCredentials { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -67,15 +67,15 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_kilt_migration.pallet
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Attestation = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16();
+            Attestation = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21();
             Attestation.Decode(byteArray, ref p);
-            Delegation = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16();
+            Delegation = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT21();
             Delegation.Decode(byteArray, ref p);
-            Did = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17();
+            Did = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT22();
             Did.Decode(byteArray, ref p);
-            Lookup = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT18();
+            Lookup = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT23();
             Lookup.Decode(byteArray, ref p);
-            PublicCredentials = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19();
+            PublicCredentials = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24();
             PublicCredentials.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

@@ -716,7 +716,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> TreasuryId
-        ///  The Trasury's pallet id, used for deriving its sovereign account ID.
+        ///  The Treasury's pallet id, used for deriving its sovereign account ID.
         /// </summary>
         public XcavatePaseo.NetApi.Generated.Model.frame_support.PalletId TreasuryId()
         {
@@ -900,7 +900,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ProposalAlreadyOngoing
-        /// There is alerady a proposal ongoing for this region.
+        /// There is already a proposal ongoing for this region.
         /// </summary>
         ProposalAlreadyOngoing,
         

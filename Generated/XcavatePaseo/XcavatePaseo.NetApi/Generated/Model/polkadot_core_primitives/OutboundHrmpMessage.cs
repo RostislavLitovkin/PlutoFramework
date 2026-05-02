@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.polkadot_core_primitives
     
     
     /// <summary>
-    /// >> 323 - Composite[polkadot_core_primitives.OutboundHrmpMessage]
+    /// >> 340 - Composite[polkadot_core_primitives.OutboundHrmpMessage]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OutboundHrmpMessage : BaseType

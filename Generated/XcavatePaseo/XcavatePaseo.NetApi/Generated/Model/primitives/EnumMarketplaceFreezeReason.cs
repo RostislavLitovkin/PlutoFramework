@@ -43,7 +43,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.primitives
     }
     
     /// <summary>
-    /// >> 702 - Variant[primitives.MarketplaceFreezeReason]
+    /// >> 708 - Variant[primitives.MarketplaceFreezeReason]
     /// </summary>
     public sealed class EnumMarketplaceFreezeReason : BaseEnum<MarketplaceFreezeReason>
     {

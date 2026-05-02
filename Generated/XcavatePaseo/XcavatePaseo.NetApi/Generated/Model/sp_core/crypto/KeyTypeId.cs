@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.sp_core.crypto
     
     
     /// <summary>
-    /// >> 616 - Composite[sp_core.crypto.KeyTypeId]
+    /// >> 622 - Composite[sp_core.crypto.KeyTypeId]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class KeyTypeId : BaseType

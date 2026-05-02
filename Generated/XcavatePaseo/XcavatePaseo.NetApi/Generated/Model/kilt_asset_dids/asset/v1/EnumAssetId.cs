@@ -48,7 +48,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.kilt_asset_dids.asset.v1
     }
     
     /// <summary>
-    /// >> 242 - Variant[kilt_asset_dids.asset.v1.AssetId]
+    /// >> 259 - Variant[kilt_asset_dids.asset.v1.AssetId]
     /// </summary>
     public sealed class EnumAssetId : BaseEnumRust<AssetId>
     {

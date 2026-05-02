@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.kilt_asset_dids.v1
     
     
     /// <summary>
-    /// >> 233 - Composite[kilt_asset_dids.v1.AssetDid]
+    /// >> 250 - Composite[kilt_asset_dids.v1.AssetDid]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetDid : BaseType

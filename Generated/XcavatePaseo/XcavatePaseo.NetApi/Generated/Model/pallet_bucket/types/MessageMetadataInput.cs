@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
     
     
     /// <summary>
-    /// >> 520 - Composite[pallet_bucket.types.MessageMetadataInput]
+    /// >> 527 - Composite[pallet_bucket.types.MessageMetadataInput]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MessageMetadataInput : BaseType
@@ -27,11 +27,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
         /// <summary>
         /// >> description
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT31 Description { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12 Description { get; set; }
         /// <summary>
         /// >> content_type
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35 ContentType { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16 ContentType { get; set; }
         /// <summary>
         /// >> content_hash
         /// </summary>
@@ -62,9 +62,9 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Description = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT31();
+            Description = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12();
             Description.Decode(byteArray, ref p);
-            ContentType = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35();
+            ContentType = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16();
             ContentType.Decode(byteArray, ref p);
             ContentHash = new XcavatePaseo.NetApi.Generated.Types.Base.Arr32U8();
             ContentHash.Decode(byteArray, ref p);

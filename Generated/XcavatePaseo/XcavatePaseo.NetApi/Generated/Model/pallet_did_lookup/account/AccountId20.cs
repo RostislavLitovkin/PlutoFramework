@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_did_lookup.account
     
     
     /// <summary>
-    /// >> 265 - Composite[pallet_did_lookup.account.AccountId20]
+    /// >> 282 - Composite[pallet_did_lookup.account.AccountId20]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AccountId20 : BaseType

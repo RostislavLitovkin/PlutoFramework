@@ -9,31 +9,31 @@
     <card:BottomPopupCard IsShown="{Binding IsVisible}">
         <card:BottomPopupCard.View>
 
-            
-                <ScrollView AbsoluteLayout.LayoutBounds=".5, .5, 1, 1"
+
+            <ScrollView AbsoluteLayout.LayoutBounds=".5, .5, 1, 1"
                                        AbsoluteLayout.LayoutFlags="All"
                                        Orientation="Vertical">
 
-                    <VerticalStackLayout 
+                <VerticalStackLayout 
                                        BindableLayout.ItemsSource="{Binding Networks}"
-                                       Padding="0, 0, 0, 20"
+                        Padding="10, 10, 10, 20"
                                        Spacing="10">
 
-                        <BindableLayout.ItemTemplate>
-                            <DataTemplate>
-                                <xcm:XcmNetworkSelectorView Name="{Binding Name}"
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <xcm:XcmNetworkSelectorView Name="{Binding Name}"
                                                             WsAddress="{Binding Url}"
                                                             Icon="{Binding Icon}"
                                                             Key="{Binding EndpointKey}"
                                                             IsSelected="{Binding IsSelected}"
                                                             ParachainId="{Binding ParachainId}"
                                                             />
-                            </DataTemplate>
+                        </DataTemplate>
 
-                        </BindableLayout.ItemTemplate>
-                    </VerticalStackLayout>
-                </ScrollView>
-                
+                    </BindableLayout.ItemTemplate>
+                </VerticalStackLayout>
+            </ScrollView>
+
 
         </card:BottomPopupCard.View>
 

@@ -230,7 +230,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> set_token_gateway_addresses
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method SetTokenGatewayAddresses(XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT8 addresses)
+        public static Method SetTokenGatewayAddresses(XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT9 addresses)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(addresses.Encode());

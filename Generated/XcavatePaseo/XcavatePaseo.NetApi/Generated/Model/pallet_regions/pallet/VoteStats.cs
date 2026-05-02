@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
     
     
     /// <summary>
-    /// >> 732 - Composite[pallet_regions.pallet.VoteStats]
+    /// >> 738 - Composite[pallet_regions.pallet.VoteStats]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class VoteStats : BaseType

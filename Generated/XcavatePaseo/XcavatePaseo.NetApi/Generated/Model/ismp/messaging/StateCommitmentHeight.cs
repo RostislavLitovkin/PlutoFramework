@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.ismp.messaging
     
     
     /// <summary>
-    /// >> 472 - Composite[ismp.messaging.StateCommitmentHeight]
+    /// >> 489 - Composite[ismp.messaging.StateCommitmentHeight]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class StateCommitmentHeight : BaseType

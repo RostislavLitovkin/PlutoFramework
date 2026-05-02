@@ -681,7 +681,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         
         /// <summary>
         /// >> TreasuryId
-        ///  The Trasury's pallet ID, used for deriving its sovereign account ID.
+        ///  The Treasury's pallet ID, used for deriving its sovereign account ID.
         /// </summary>
         public XcavatePaseo.NetApi.Generated.Model.frame_support.PalletId TreasuryId()
         {

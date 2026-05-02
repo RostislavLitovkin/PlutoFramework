@@ -56,10 +56,10 @@ namespace XcavatePaseo.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Buckets", "Tags"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17>), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Buckets", "TagMessages"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12>), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17>), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Buckets", "NextBucketId"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
         }
         
@@ -326,7 +326,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// 
         ///  Tags are only available for a specific bucket.
         /// </summary>
-        public static string TagsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12> key)
+        public static string TagsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17> key)
         {
             return RequestGenerator.GetStorage("Buckets", "Tags", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -348,7 +348,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// 
         ///  Tags are only available for a specific bucket.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> Tags(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> Tags(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17> key, string blockhash, CancellationToken token)
         {
             string parameters = BucketsStorage.TagsParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple>(parameters, blockhash, token);
@@ -359,7 +359,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> TagMessagesParams
         ///  Tracks how many messages reference a given tag within a specific bucket.
         /// </summary>
-        public static string TagMessagesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12> key)
+        public static string TagMessagesParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17> key)
         {
             return RequestGenerator.GetStorage("Buckets", "TagMessages", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
@@ -379,7 +379,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> TagMessages
         ///  Tracks how many messages reference a given tag within a specific bucket.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> TagMessages(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12> key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> TagMessages(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17> key, string blockhash, CancellationToken token)
         {
             string parameters = BucketsStorage.TagMessagesParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
@@ -550,7 +550,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> create_tag
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method CreateTag(Substrate.NetApi.Model.Types.Primitive.U128 bucket_id, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12 new_tag)
+        public static Method CreateTag(Substrate.NetApi.Model.Types.Primitive.U128 bucket_id, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17 new_tag)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(bucket_id.Encode());
@@ -611,7 +611,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> force_remove_tag
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceRemoveTag(Substrate.NetApi.Model.Types.Primitive.U128 bucket_id, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12 tag)
+        public static Method ForceRemoveTag(Substrate.NetApi.Model.Types.Primitive.U128 bucket_id, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17 tag)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(bucket_id.Encode());

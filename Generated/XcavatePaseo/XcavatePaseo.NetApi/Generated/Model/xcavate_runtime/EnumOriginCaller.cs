@@ -43,7 +43,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcavate_runtime
     }
     
     /// <summary>
-    /// >> 352 - Variant[xcavate_runtime.OriginCaller]
+    /// >> 369 - Variant[xcavate_runtime.OriginCaller]
     /// </summary>
     public sealed class EnumOriginCaller : BaseEnumRust<OriginCaller>
     {

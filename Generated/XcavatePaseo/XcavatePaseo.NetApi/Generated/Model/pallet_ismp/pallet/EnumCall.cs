@@ -69,7 +69,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_ismp.pallet
     }
     
     /// <summary>
-    /// >> 443 - Variant[pallet_ismp.pallet.Call]
+    /// >> 460 - Variant[pallet_ismp.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

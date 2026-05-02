@@ -28,7 +28,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.did.did_details
     }
     
     /// <summary>
-    /// >> 541 - Variant[did.did_details.DidEncryptionKey]
+    /// >> 547 - Variant[did.did_details.DidEncryptionKey]
     /// </summary>
     public sealed class EnumDidEncryptionKey : BaseEnumRust<DidEncryptionKey>
     {

@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_ismp.utils
     
     
     /// <summary>
-    /// >> 475 - Composite[pallet_ismp.utils.FundMessageParams]
+    /// >> 492 - Composite[pallet_ismp.utils.FundMessageParams]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class FundMessageParams : BaseType

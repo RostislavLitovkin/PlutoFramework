@@ -28,7 +28,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.attestation.pallet
     }
     
     /// <summary>
-    /// >> 579 - Variant[attestation.pallet.HoldReason]
+    /// >> 585 - Variant[attestation.pallet.HoldReason]
     /// </summary>
     public sealed class EnumHoldReason : BaseEnum<HoldReason>
     {

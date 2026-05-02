@@ -28,7 +28,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcavate_runtime.authorization
     }
     
     /// <summary>
-    /// >> 226 - Variant[xcavate_runtime.authorization.AuthorizationId]
+    /// >> 243 - Variant[xcavate_runtime.authorization.AuthorizationId]
     /// </summary>
     public sealed class EnumAuthorizationId : BaseEnumRust<AuthorizationId>
     {

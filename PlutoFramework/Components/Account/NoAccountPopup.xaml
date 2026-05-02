@@ -16,7 +16,8 @@
                 <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, AutoSize"
                          AbsoluteLayout.LayoutFlags="WidthProportional"
                          x:Name="verticalStackLayout"
-                         Spacing="20">
+                         Spacing="20"
+                                     Padding="10, 10, 10, 10">
 
                     <Label Text="You are not logged in to your account. Do you want to log in or create a new one?" />
                 </VerticalStackLayout>

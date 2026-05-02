@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.kilt_asset_dids.chain.v1
     
     
     /// <summary>
-    /// >> 237 - Composite[kilt_asset_dids.chain.v1.GenesisBase58Hash32Reference]
+    /// >> 254 - Composite[kilt_asset_dids.chain.v1.GenesisBase58Hash32Reference]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class GenesisBase58Hash32Reference : BaseType

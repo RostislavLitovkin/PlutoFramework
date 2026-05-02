@@ -62,7 +62,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_token_gateway.pallet
     }
     
     /// <summary>
-    /// >> 478 - Variant[pallet_token_gateway.pallet.Call]
+    /// >> 495 - Variant[pallet_token_gateway.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -74,7 +74,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_token_gateway.pallet
         public EnumCall()
         {
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_token_gateway.types.TeleportParams>(Call.teleport);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT8>(Call.set_token_gateway_addresses);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT9>(Call.set_token_gateway_addresses);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_token_gateway.types.AssetRegistration>(Call.create_erc6160_asset);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.token_gateway_primitives.GatewayAssetUpdate>(Call.update_erc6160_asset);
 				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.pallet_token_gateway.types.PrecisionUpdate>(Call.update_asset_precision);

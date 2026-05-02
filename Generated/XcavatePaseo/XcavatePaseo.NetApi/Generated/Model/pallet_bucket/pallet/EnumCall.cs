@@ -287,7 +287,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.pallet
     }
     
     /// <summary>
-    /// >> 506 - Variant[pallet_bucket.pallet.Call]
+    /// >> 523 - Variant[pallet_bucket.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -308,12 +308,12 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.BucketMetadataInput>>(Call.create_bucket);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.pause_writing);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.BucketPublicKey>>(Call.resume_writing);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12>>(Call.create_tag);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17>>(Call.create_tag);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.BucketPublicKey>>(Call.rotate_key);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types.MessageInput>>(Call.write);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U128>(Call.force_remove_namespace);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.force_remove_bucket);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12>>(Call.force_remove_tag);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17>>(Call.force_remove_tag);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.force_remove_message);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>>(Call.force_add_manager);
         }

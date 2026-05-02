@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
     
     
     /// <summary>
-    /// >> 790 - Composite[pallet_bucket.types.BucketMetadata]
+    /// >> 232 - Composite[pallet_bucket.types.BucketMetadata]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BucketMetadata : BaseType
@@ -27,7 +27,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
         /// <summary>
         /// >> name
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT31 Name { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12 Name { get; set; }
         /// <summary>
         /// >> created_at
         /// </summary>
@@ -35,7 +35,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
         /// <summary>
         /// >> category
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35 Category { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16 Category { get; set; }
         /// <summary>
         /// >> properties
         /// </summary>
@@ -62,11 +62,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_bucket.types
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Name = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT31();
+            Name = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12();
             Name.Decode(byteArray, ref p);
             CreatedAt = new Substrate.NetApi.Model.Types.Primitive.U32();
             CreatedAt.Decode(byteArray, ref p);
-            Category = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35();
+            Category = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT16();
             Category.Decode(byteArray, ref p);
             Properties = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_map.BoundedBTreeMapT3();
             Properties.Decode(byteArray, ref p);

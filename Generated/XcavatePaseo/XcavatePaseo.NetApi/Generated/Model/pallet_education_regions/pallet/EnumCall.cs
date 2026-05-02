@@ -43,7 +43,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_education_regions.pallet
         /// 
         /// Parameters:
         /// - `region_id`: Id of the region.
-        /// - `vote`: Must be either a Yes vote, a No vote or a Abstain vote.
+        /// - `vote`: Must be either a Yes vote, a No vote or an Abstain vote.
         /// - `amount`: The amount that the caller is using for voting.
         /// 
         /// Emits `VotedOnRegionProposal` event when successful.
@@ -111,7 +111,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_education_regions.pallet
         /// 
         /// Parameters:
         /// - `region_id`: The region where the region owner should be removed.
-        /// - `vote`: Must be either a Yes vote, a No vote or a Abstain vote.
+        /// - `vote`: Must be either a Yes vote, a No vote or an Abstain vote.
         /// - `amount`: The amount that the caller is using for voting.
         /// 
         /// Emits `VotedOnRegionOwnerProposal` event when successful.
@@ -160,7 +160,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_education_regions.pallet
     }
     
     /// <summary>
-    /// >> 499 - Variant[pallet_education_regions.pallet.Call]
+    /// >> 516 - Variant[pallet_education_regions.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

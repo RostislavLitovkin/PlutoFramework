@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.did.did_details
     
     
     /// <summary>
-    /// >> 530 - Composite[did.did_details.DidCreationDetails]
+    /// >> 536 - Composite[did.did_details.DidCreationDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DidCreationDetails : BaseType

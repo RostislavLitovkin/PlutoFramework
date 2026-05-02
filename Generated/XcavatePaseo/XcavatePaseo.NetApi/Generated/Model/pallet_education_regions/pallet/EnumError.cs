@@ -102,7 +102,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_education_regions.pallet
         
         /// <summary>
         /// >> ProposalAlreadyOngoing
-        /// There is alerady a proposal ongoing for this region.
+        /// There is already a proposal ongoing for this region.
         /// </summary>
         ProposalAlreadyOngoing = 13,
         
@@ -180,7 +180,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_education_regions.pallet
     }
     
     /// <summary>
-    /// >> 721 - Variant[pallet_education_regions.pallet.Error]
+    /// >> 727 - Variant[pallet_education_regions.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

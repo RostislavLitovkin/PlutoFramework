@@ -38,7 +38,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.did.did_details
     }
     
     /// <summary>
-    /// >> 528 - Variant[did.did_details.DidSignature]
+    /// >> 534 - Variant[did.did_details.DidSignature]
     /// </summary>
     public sealed class EnumDidSignature : BaseEnumRust<DidSignature>
     {

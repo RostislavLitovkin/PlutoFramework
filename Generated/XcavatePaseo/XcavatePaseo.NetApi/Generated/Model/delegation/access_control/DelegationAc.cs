@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.delegation.access_control
     
     
     /// <summary>
-    /// >> 526 - Composite[delegation.access_control.DelegationAc]
+    /// >> 532 - Composite[delegation.access_control.DelegationAc]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DelegationAc : BaseType

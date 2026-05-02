@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types
     
     
     /// <summary>
-    /// >> 752 - Composite[pallet_marketplace.types.PropertyLawyerDetails]
+    /// >> 758 - Composite[pallet_marketplace.types.PropertyLawyerDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PropertyLawyerDetails : BaseType

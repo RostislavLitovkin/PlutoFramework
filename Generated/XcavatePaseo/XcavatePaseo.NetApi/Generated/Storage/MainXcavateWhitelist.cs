@@ -38,7 +38,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcavateWhitelist", "AdminAccounts"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcavateWhitelist", "StoredNumber"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("XcavateWhitelist", "AccountRoles"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumRole>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumAccessPermission)));
@@ -72,33 +71,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             string parameters = XcavateWhitelistStorage.AdminAccountsParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple>(parameters, blockhash, token);
-            return result;
-        }
-        
-        /// <summary>
-        /// >> StoredNumberParams
-        /// </summary>
-        public static string StoredNumberParams()
-        {
-            return RequestGenerator.GetStorage("XcavateWhitelist", "StoredNumber", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
-        }
-        
-        /// <summary>
-        /// >> StoredNumberDefault
-        /// Default value as hex string
-        /// </summary>
-        public static string StoredNumberDefault()
-        {
-            return "0x00000000000000000000000000000000";
-        }
-        
-        /// <summary>
-        /// >> StoredNumber
-        /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128> StoredNumber(string blockhash, CancellationToken token)
-        {
-            string parameters = XcavateWhitelistStorage.StoredNumberParams();
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>(parameters, blockhash, token);
             return result;
         }
         
@@ -197,17 +169,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(role.Encode());
             byteArray.AddRange(permission.Encode());
             return new Method(60, "XcavateWhitelist", 4, "set_permission", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> test
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method Test(Substrate.NetApi.Model.Types.Primitive.U32 number)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(number.Encode());
-            return new Method(60, "XcavateWhitelist", 10, "test", byteArray.ToArray());
         }
     }
     

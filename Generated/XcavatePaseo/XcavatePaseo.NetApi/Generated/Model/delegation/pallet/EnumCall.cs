@@ -207,7 +207,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.delegation.pallet
     }
     
     /// <summary>
-    /// >> 527 - Variant[delegation.pallet.Call]
+    /// >> 533 - Variant[delegation.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

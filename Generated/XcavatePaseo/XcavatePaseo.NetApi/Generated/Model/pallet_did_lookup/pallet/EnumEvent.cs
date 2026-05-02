@@ -54,7 +54,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_did_lookup.pallet
     }
     
     /// <summary>
-    /// >> 270 - Variant[pallet_did_lookup.pallet.Event]
+    /// >> 287 - Variant[pallet_did_lookup.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
