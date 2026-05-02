@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.delegation.delegation_hierarchy
     
     
     /// <summary>
-    /// >> 229 - Composite[delegation.delegation_hierarchy.Permissions]
+    /// >> 246 - Composite[delegation.delegation_hierarchy.Permissions]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Permissions : BaseType

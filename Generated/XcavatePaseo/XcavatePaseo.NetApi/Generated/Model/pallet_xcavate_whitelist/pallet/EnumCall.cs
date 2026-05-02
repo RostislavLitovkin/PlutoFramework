@@ -90,15 +90,10 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet
         /// Emits `PermissionUpdated` event when successful.
         /// </summary>
         set_permission = 4,
-        
-        /// <summary>
-        /// >> test
-        /// </summary>
-        test = 10,
     }
     
     /// <summary>
-    /// >> 498 - Variant[pallet_xcavate_whitelist.pallet.Call]
+    /// >> 515 - Variant[pallet_xcavate_whitelist.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -114,7 +109,6 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumRole>>(Call.assign_role);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumRole>>(Call.remove_role);
 				AddTypeDecoder<BaseTuple<XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32, XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumRole, XcavatePaseo.NetApi.Generated.Model.pallet_xcavate_whitelist.pallet.EnumAccessPermission>>(Call.set_permission);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.test);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_education_regions.pallet
     
     
     /// <summary>
-    /// >> 717 - Composite[pallet_education_regions.pallet.RegionInfo]
+    /// >> 723 - Composite[pallet_education_regions.pallet.RegionInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RegionInfo : BaseType

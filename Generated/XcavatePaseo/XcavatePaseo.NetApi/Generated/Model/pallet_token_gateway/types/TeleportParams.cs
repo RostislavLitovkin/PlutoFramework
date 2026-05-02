@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_token_gateway.types
     
     
     /// <summary>
-    /// >> 479 - Composite[pallet_token_gateway.types.TeleportParams]
+    /// >> 496 - Composite[pallet_token_gateway.types.TeleportParams]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class TeleportParams : BaseType

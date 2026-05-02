@@ -48,7 +48,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.ismp.messaging
     }
     
     /// <summary>
-    /// >> 445 - Variant[ismp.messaging.Message]
+    /// >> 462 - Variant[ismp.messaging.Message]
     /// </summary>
     public sealed class EnumMessage : BaseEnumRust<Message>
     {

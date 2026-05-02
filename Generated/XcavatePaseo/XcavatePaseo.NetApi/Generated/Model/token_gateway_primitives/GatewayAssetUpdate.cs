@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.token_gateway_primitives
     
     
     /// <summary>
-    /// >> 491 - Composite[token_gateway_primitives.GatewayAssetUpdate]
+    /// >> 508 - Composite[token_gateway_primitives.GatewayAssetUpdate]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class GatewayAssetUpdate : BaseType
@@ -31,15 +31,15 @@ namespace XcavatePaseo.NetApi.Generated.Model.token_gateway_primitives
         /// <summary>
         /// >> add_chains
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29 AddChains { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34 AddChains { get; set; }
         /// <summary>
         /// >> remove_chains
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29 RemoveChains { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34 RemoveChains { get; set; }
         /// <summary>
         /// >> new_admins
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30 NewAdmins { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35 NewAdmins { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -64,11 +64,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.token_gateway_primitives
             var start = p;
             AssetId = new XcavatePaseo.NetApi.Generated.Model.primitive_types.H256();
             AssetId.Decode(byteArray, ref p);
-            AddChains = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29();
+            AddChains = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34();
             AddChains.Decode(byteArray, ref p);
-            RemoveChains = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT29();
+            RemoveChains = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT34();
             RemoveChains.Decode(byteArray, ref p);
-            NewAdmins = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30();
+            NewAdmins = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT35();
             NewAdmins.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

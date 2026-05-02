@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.public_credentials.credentials
     
     
     /// <summary>
-    /// >> 549 - Composite[public_credentials.credentials.Credential]
+    /// >> 555 - Composite[public_credentials.credentials.Credential]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Credential : BaseType

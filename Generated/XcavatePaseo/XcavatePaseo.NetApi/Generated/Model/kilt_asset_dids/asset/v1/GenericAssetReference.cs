@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.kilt_asset_dids.asset.v1
     
     
     /// <summary>
-    /// >> 253 - Composite[kilt_asset_dids.asset.v1.GenericAssetReference]
+    /// >> 270 - Composite[kilt_asset_dids.asset.v1.GenericAssetReference]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class GenericAssetReference : BaseType
@@ -27,7 +27,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.kilt_asset_dids.asset.v1
         /// <summary>
         /// >> value
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15 Value { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT20 Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.kilt_asset_dids.asset.v1
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT15();
+            Value = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT20();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

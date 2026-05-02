@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.ismp.router
     }
     
     /// <summary>
-    /// >> 455 - Variant[ismp.router.Request]
+    /// >> 472 - Variant[ismp.router.Request]
     /// </summary>
     public sealed class EnumRequest : BaseEnumRust<Request>
     {

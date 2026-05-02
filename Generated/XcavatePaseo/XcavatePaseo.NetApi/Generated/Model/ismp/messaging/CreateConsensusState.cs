@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.ismp.messaging
     
     
     /// <summary>
-    /// >> 466 - Composite[ismp.messaging.CreateConsensusState]
+    /// >> 483 - Composite[ismp.messaging.CreateConsensusState]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CreateConsensusState : BaseType
@@ -43,7 +43,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.ismp.messaging
         /// <summary>
         /// >> challenge_periods
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT7 ChallengePeriods { get; set; }
+        public XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT8 ChallengePeriods { get; set; }
         /// <summary>
         /// >> state_machine_commitments
         /// </summary>
@@ -80,7 +80,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.ismp.messaging
             ConsensusStateId.Decode(byteArray, ref p);
             UnbondingPeriod = new Substrate.NetApi.Model.Types.Primitive.U64();
             UnbondingPeriod.Decode(byteArray, ref p);
-            ChallengePeriods = new XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT7();
+            ChallengePeriods = new XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT8();
             ChallengePeriods.Decode(byteArray, ref p);
             StateMachineCommitments = new Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Base.BaseTuple<XcavatePaseo.NetApi.Generated.Model.ismp.consensus.StateMachineId, XcavatePaseo.NetApi.Generated.Model.ismp.messaging.StateCommitmentHeight>>();
             StateMachineCommitments.Decode(byteArray, ref p);

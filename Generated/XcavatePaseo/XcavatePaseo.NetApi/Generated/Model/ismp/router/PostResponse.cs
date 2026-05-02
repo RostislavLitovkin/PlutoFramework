@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.ismp.router
     
     
     /// <summary>
-    /// >> 459 - Composite[ismp.router.PostResponse]
+    /// >> 476 - Composite[ismp.router.PostResponse]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PostResponse : BaseType

@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.kilt_asset_dids.asset.v1
     
     
     /// <summary>
-    /// >> 243 - Composite[kilt_asset_dids.asset.v1.Slip44Reference]
+    /// >> 260 - Composite[kilt_asset_dids.asset.v1.Slip44Reference]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Slip44Reference : BaseType

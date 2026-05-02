@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.cumulus_pallet_parachain_system.un
     
     
     /// <summary>
-    /// >> 298 - Composite[cumulus_pallet_parachain_system.unincluded_segment.HrmpChannelUpdate]
+    /// >> 315 - Composite[cumulus_pallet_parachain_system.unincluded_segment.HrmpChannelUpdate]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class HrmpChannelUpdate : BaseType

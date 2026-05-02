@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_token_gateway.types
     
     
     /// <summary>
-    /// >> 497 - Composite[pallet_token_gateway.types.PrecisionUpdate]
+    /// >> 514 - Composite[pallet_token_gateway.types.PrecisionUpdate]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PrecisionUpdate : BaseType
@@ -31,7 +31,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_token_gateway.types
         /// <summary>
         /// >> precisions
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT9 Precisions { get; set; }
+        public XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT10 Precisions { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -54,7 +54,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_token_gateway.types
             var start = p;
             AssetId = new Substrate.NetApi.Model.Types.Primitive.U32();
             AssetId.Decode(byteArray, ref p);
-            Precisions = new XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT9();
+            Precisions = new XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT10();
             Precisions.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

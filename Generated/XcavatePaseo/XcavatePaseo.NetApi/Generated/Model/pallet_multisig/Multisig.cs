@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_multisig
     
     
     /// <summary>
-    /// >> 559 - Composite[pallet_multisig.Multisig]
+    /// >> 565 - Composite[pallet_multisig.Multisig]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Multisig : BaseType

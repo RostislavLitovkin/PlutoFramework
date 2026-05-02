@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_did_lookup.account
     
     
     /// <summary>
-    /// >> 555 - Composite[pallet_did_lookup.account.EthereumSignature]
+    /// >> 561 - Composite[pallet_did_lookup.account.EthereumSignature]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class EthereumSignature : BaseType

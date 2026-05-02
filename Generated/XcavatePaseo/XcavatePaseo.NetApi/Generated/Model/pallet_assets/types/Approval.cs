@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_assets.types
     
     
     /// <summary>
-    /// >> 597 - Composite[pallet_assets.types.Approval]
+    /// >> 603 - Composite[pallet_assets.types.Approval]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Approval : BaseType

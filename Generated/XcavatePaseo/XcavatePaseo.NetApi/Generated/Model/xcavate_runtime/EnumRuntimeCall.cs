@@ -223,7 +223,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcavate_runtime
     }
     
     /// <summary>
-    /// >> 349 - Variant[xcavate_runtime.RuntimeCall]
+    /// >> 366 - Variant[xcavate_runtime.RuntimeCall]
     /// </summary>
     public sealed class EnumRuntimeCall : BaseEnumRust<RuntimeCall>
     {

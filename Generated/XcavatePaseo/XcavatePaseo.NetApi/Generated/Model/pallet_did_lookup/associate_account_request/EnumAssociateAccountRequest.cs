@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_did_lookup.associate_accoun
     }
     
     /// <summary>
-    /// >> 554 - Variant[pallet_did_lookup.associate_account_request.AssociateAccountRequest]
+    /// >> 560 - Variant[pallet_did_lookup.associate_account_request.AssociateAccountRequest]
     /// </summary>
     public sealed class EnumAssociateAccountRequest : BaseEnumRust<AssociateAccountRequest>
     {

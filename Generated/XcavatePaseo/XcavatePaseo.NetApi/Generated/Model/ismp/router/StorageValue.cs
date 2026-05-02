@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.ismp.router
     
     
     /// <summary>
-    /// >> 462 - Composite[ismp.router.StorageValue]
+    /// >> 479 - Composite[ismp.router.StorageValue]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class StorageValue : BaseType

@@ -29,7 +29,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_kilt_migration.pallet
     }
     
     /// <summary>
-    /// >> 257 - Variant[pallet_kilt_migration.pallet.Event]
+    /// >> 274 - Variant[pallet_kilt_migration.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

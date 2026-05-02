@@ -43,7 +43,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.did.did_details
     }
     
     /// <summary>
-    /// >> 544 - Variant[did.did_details.DidVerificationKey]
+    /// >> 550 - Variant[did.did_details.DidVerificationKey]
     /// </summary>
     public sealed class EnumDidVerificationKey : BaseEnumRust<DidVerificationKey>
     {

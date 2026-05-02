@@ -18,7 +18,7 @@
 
                 <VerticalStackLayout 
                                        BindableLayout.ItemsSource="{Binding Assets}"
-                                       Padding="0, 0, 0, 20"
+                                       Padding="10, 10, 10, 20"
                                        Spacing="10">
 
                     <BindableLayout.ItemTemplate>

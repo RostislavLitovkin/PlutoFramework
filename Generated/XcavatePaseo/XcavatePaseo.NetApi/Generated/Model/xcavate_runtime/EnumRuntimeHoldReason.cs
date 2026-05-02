@@ -83,7 +83,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcavate_runtime
     }
     
     /// <summary>
-    /// >> 571 - Variant[xcavate_runtime.RuntimeHoldReason]
+    /// >> 577 - Variant[xcavate_runtime.RuntimeHoldReason]
     /// </summary>
     public sealed class EnumRuntimeHoldReason : BaseEnumRust<RuntimeHoldReason>
     {

@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_xcm.pallet
     
     
     /// <summary>
-    /// >> 654 - Composite[pallet_xcm.pallet.MaxAuthorizedAliases]
+    /// >> 660 - Composite[pallet_xcm.pallet.MaxAuthorizedAliases]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class MaxAuthorizedAliases : BaseType

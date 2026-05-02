@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.did.did_details
     
     
     /// <summary>
-    /// >> 547 - Composite[did.did_details.DidAuthorizedCallOperation]
+    /// >> 553 - Composite[did.did_details.DidAuthorizedCallOperation]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DidAuthorizedCallOperation : BaseType

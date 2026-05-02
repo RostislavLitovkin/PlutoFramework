@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.polkadot_core_primitives
     
     
     /// <summary>
-    /// >> 328 - Composite[polkadot_core_primitives.InboundDownwardMessage]
+    /// >> 345 - Composite[polkadot_core_primitives.InboundDownwardMessage]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class InboundDownwardMessage : BaseType

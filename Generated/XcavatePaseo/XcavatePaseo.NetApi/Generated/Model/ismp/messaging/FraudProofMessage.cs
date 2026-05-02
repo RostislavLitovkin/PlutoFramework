@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.ismp.messaging
     
     
     /// <summary>
-    /// >> 447 - Composite[ismp.messaging.FraudProofMessage]
+    /// >> 464 - Composite[ismp.messaging.FraudProofMessage]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class FraudProofMessage : BaseType

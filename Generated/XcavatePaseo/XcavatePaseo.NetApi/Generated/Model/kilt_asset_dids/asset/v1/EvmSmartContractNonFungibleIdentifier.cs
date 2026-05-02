@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.kilt_asset_dids.asset.v1
     
     
     /// <summary>
-    /// >> 249 - Composite[kilt_asset_dids.asset.v1.EvmSmartContractNonFungibleIdentifier]
+    /// >> 266 - Composite[kilt_asset_dids.asset.v1.EvmSmartContractNonFungibleIdentifier]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class EvmSmartContractNonFungibleIdentifier : BaseType
@@ -27,7 +27,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.kilt_asset_dids.asset.v1
         /// <summary>
         /// >> value
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14 Value { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19 Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.kilt_asset_dids.asset.v1
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT14();
+            Value = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT19();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

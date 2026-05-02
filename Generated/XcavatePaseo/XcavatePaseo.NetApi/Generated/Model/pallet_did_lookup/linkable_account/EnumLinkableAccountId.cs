@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_did_lookup.linkable_account
     }
     
     /// <summary>
-    /// >> 264 - Variant[pallet_did_lookup.linkable_account.LinkableAccountId]
+    /// >> 281 - Variant[pallet_did_lookup.linkable_account.LinkableAccountId]
     /// </summary>
     public sealed class EnumLinkableAccountId : BaseEnumRust<LinkableAccountId>
     {

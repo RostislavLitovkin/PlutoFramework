@@ -29,7 +29,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_kilt_migration.pallet
     }
     
     /// <summary>
-    /// >> 552 - Variant[pallet_kilt_migration.pallet.Call]
+    /// >> 558 - Variant[pallet_kilt_migration.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

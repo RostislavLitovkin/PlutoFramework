@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcavate_runtime.assets
     
     
     /// <summary>
-    /// >> 232 - Composite[xcavate_runtime.assets.AssetDid]
+    /// >> 249 - Composite[xcavate_runtime.assets.AssetDid]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetDid : BaseType

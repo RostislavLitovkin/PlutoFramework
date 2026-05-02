@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_real_x_education.pallet
     
     
     /// <summary>
-    /// >> 722 - Composite[pallet_real_x_education.pallet.ModuleDetails]
+    /// >> 728 - Composite[pallet_real_x_education.pallet.ModuleDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ModuleDetails : BaseType

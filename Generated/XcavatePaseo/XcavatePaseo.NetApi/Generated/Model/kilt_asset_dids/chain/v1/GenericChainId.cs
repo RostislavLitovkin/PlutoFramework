@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.kilt_asset_dids.chain.v1
     
     
     /// <summary>
-    /// >> 238 - Composite[kilt_asset_dids.chain.v1.GenericChainId]
+    /// >> 255 - Composite[kilt_asset_dids.chain.v1.GenericChainId]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class GenericChainId : BaseType

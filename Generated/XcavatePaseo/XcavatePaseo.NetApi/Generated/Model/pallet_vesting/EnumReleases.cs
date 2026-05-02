@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_vesting
     }
     
     /// <summary>
-    /// >> 668 - Variant[pallet_vesting.Releases]
+    /// >> 674 - Variant[pallet_vesting.Releases]
     /// </summary>
     public sealed class EnumReleases : BaseEnum<Releases>
     {

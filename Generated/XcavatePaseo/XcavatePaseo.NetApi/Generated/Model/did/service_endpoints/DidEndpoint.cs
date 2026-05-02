@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.did.service_endpoints
     
     
     /// <summary>
-    /// >> 532 - Composite[did.service_endpoints.DidEndpoint]
+    /// >> 538 - Composite[did.service_endpoints.DidEndpoint]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DidEndpoint : BaseType

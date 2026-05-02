@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_ismp.utils
     
     
     /// <summary>
-    /// >> 474 - Composite[pallet_ismp.utils.UpdateConsensusState]
+    /// >> 491 - Composite[pallet_ismp.utils.UpdateConsensusState]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UpdateConsensusState : BaseType
@@ -35,7 +35,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_ismp.utils
         /// <summary>
         /// >> challenge_periods
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT7 ChallengePeriods { get; set; }
+        public XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT8 ChallengePeriods { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -61,7 +61,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_ismp.utils
             ConsensusStateId.Decode(byteArray, ref p);
             UnbondingPeriod = new Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U64>();
             UnbondingPeriod.Decode(byteArray, ref p);
-            ChallengePeriods = new XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT7();
+            ChallengePeriods = new XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT8();
             ChallengePeriods.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
     
     
     /// <summary>
-    /// >> 690 - Composite[pallet_nfts.types.PendingSwap]
+    /// >> 696 - Composite[pallet_nfts.types.PendingSwap]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PendingSwap : BaseType
