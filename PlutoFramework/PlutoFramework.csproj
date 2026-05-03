@@ -63,7 +63,6 @@
     <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
     <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.10" />
     <PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
-    <PackageReference Include="System.Runtime.InteropServices" Version="4.3.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
     <PackageReference Include="AcrylicView.Maui" Version="2.1.3" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
@@ -72,9 +71,6 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.1" />
     <PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="3.119.0" />
-    <PackageReference Include="System.Private.Uri" Version="4.3.2" />
-    <PackageReference Include="System.Security.Cryptography.X509Certificates" Version="4.3.2" />
-    <PackageReference Include="websocketsharp.core" Version="1.0.0" />
     <PackageReference Include="CommunityToolkit.Maui" Version="12.3.0" />
     <PackageReference Include="ZXing.Net.Maui.Controls" Version="0.4.0" />
     <PackageReference Include="ZXing.Net.Maui" Version="0.4.0" />
@@ -86,9 +82,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BouncyCastle" Version="1.8.9">
-      <Aliases>bc18</Aliases>
-    </PackageReference>
     <PackageReference Include="BouncyCastle.Cryptography" Version="2.6.0">
       <Aliases>bc26</Aliases>
     </PackageReference>

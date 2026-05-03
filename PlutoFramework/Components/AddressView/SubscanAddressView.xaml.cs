@@ -1,6 +1,5 @@
 using CommunityToolkit.Mvvm.Input;
 using PlutoFramework.Components.WebView;
-using WebSocketSharp;
 
 namespace PlutoFramework.Components.AddressView;
 
