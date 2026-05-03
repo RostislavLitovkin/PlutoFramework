@@ -83,6 +83,7 @@ namespace PlutoFramework
 #endif
             });
 
+
             AssetsModel.DatabaseSaver = new BalancesDatabaseSaver();
 
             // TODO: enable later
@@ -181,7 +182,7 @@ namespace PlutoFramework
             DependencyService.Register<RelistPropertyTokensViewModel>();
 
             DependencyService.Register<XcavateNavigationBarViewModel>();
-            
+
             DependencyService.Register<XcavatePropertyNavigationBarViewModel>();
 
             DependencyService.Register<NotWhitelistedPopupViewModel>();

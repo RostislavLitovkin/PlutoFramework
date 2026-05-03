@@ -36,6 +36,13 @@ namespace PlutoFramework.Components.Keys
             }
 
             await LockedKey.RemoveAsync();
+
+            if (LockedKey.Type == KeyTypeEnum.PolkadotJson || LockedKey.Type == KeyTypeEnum.Sr25519)
+            {
+                Preferences.Clear(PreferencesModel.PUBLIC_KEY);
+
+                NavigationModel.SetWelcomeShell();
+            }
         }
     }
 }

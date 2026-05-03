@@ -423,19 +423,11 @@
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
-    <Compile Update="Components\Kilt\CreateNewDidPage.xaml.cs">
-      <SubType>Code</SubType>
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
     <Compile Update="Components\Kilt\DidExplanationPage.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
     <Compile Update="Components\Kilt\DidListView.xaml.cs">
-      <SubType>Code</SubType>
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
-    <Compile Update="Components\Kilt\DidManagementPage.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
@@ -480,10 +472,6 @@
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
     <Compile Update="Components\Mnemonics\BackupMnemonicsReminderView.xaml.cs">
-      <SubType>Code</SubType>
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
-    <Compile Update="Components\Mnemonics\CreateMnemonicsPage.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
@@ -2229,16 +2217,10 @@
     <MauiXaml Update="Components\Keys\Sr25519KeyDetailPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
-    <MauiXaml Update="Components\Kilt\CreateNewDidPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </MauiXaml>
     <MauiXaml Update="Components\Kilt\DidExplanationPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Kilt\DidListView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </MauiXaml>
-    <MauiXaml Update="Components\Kilt\DidManagementPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Kilt\DidView.xaml">
@@ -2280,14 +2262,7 @@
     <MauiXaml Update="Components\Messaging\MessagingOverviewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
-    <MauiXaml Update="Components\Mnemonics\CreateMnemonicsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </MauiXaml>
     <MauiXaml Update="Components\Mnemonics\EnterMnemonicsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </MauiXaml>
-    <MauiXaml Update="Components\Mnemonics\MnemonicsPage.xaml">
-      <SubType></SubType>
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Mnemonics\MnemonicsView.xaml">
