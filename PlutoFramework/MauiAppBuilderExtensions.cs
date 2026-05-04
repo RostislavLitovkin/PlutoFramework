@@ -48,8 +48,9 @@ namespace PlutoFramework
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
         public static IServiceProvider Services { get; set; }
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
+        private static bool _isFullInitialized;
 
-        public static MauiAppBuilder UsePlutoFramework(this MauiAppBuilder builder)
+        public static MauiAppBuilder UsePlutoFrameworkMinimal(this MauiAppBuilder builder)
         {
             builder
                 .UseAcrylicView()
@@ -90,10 +91,20 @@ namespace PlutoFramework
             //PushNotificationRegistrar.RegisterPushNotificationServices(builder.Services);
 
             PlutoConfigurationModel.SecureStorage = new PlutoSecureStorage();
-            PlutoConfigurationModel.GenerateNewAccountAsync = KeysModel.GenerateNewAccountAsync;
-            PlutoConfigurationModel.AfterAccountImportAsync = () => Task.FromResult(0);
 
             CustomizeWebViewHandler();
+
+            return builder;
+        }
+
+        public static void InitializePlutoFrameworkFull()
+        {
+            if (_isFullInitialized)
+            {
+                return;
+            }
+
+            _isFullInitialized = true;
 
             DependencyService.Register<CanNotRecoverKeyPopupViewModel>();
 
@@ -192,8 +203,6 @@ namespace PlutoFramework
             DependencyService.Register<WebSignRawPopupViewModel>();
 
             DependencyService.Register<DAppWebViewConnectionRequestPopupViewModel>();
-
-            return builder;
         }
 
         /// <summary>

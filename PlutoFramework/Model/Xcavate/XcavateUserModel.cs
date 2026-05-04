@@ -56,7 +56,7 @@ namespace PlutoFramework.Model.Xcavate
         public required string PhoneNumber { get; set; }
         public required string FirstName { get; set; }
         public required string LastName { get; set; }
-        public string FullName => $"{FirstName} {LastName}"; 
+        public string FullName => $"{FirstName} {LastName}";
         public required DateTime? AccountCreatedAt { get; set; }
         public DeveloperStats? DeveloperStats { get; set; }
         public uint? Id { get; set; } = null;
