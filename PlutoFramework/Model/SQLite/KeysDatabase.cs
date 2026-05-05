@@ -47,13 +47,15 @@ namespace PlutoFramework.Model.SQLite
         public static async Task<IEnumerable<GenericLockedKey>> GetAllKeysOfTypeAsync(KeyTypeEnum type)
         {
             await InitAsync().ConfigureAwait(false);
-            return (await Database.Table<KeysDatabaseItem>().Where(p => ((GenericLockedKey)p).Type == type).ToListAsync().ConfigureAwait(false)).Select(p => (GenericLockedKey)p);
+            var items = await Database.Table<KeysDatabaseItem>().ToListAsync().ConfigureAwait(false);
+            return items.Select(p => (GenericLockedKey)p).Where(p => p.Type == type);
         }
 
         public static async Task<IEnumerable<GenericLockedKey>> GetAllKeysOfTypeAsync(KeyTypeEnum type1, KeyTypeEnum type2)
         {
             await InitAsync().ConfigureAwait(false);
-            return (await Database.Table<KeysDatabaseItem>().Where(p => ((GenericLockedKey)p).Type == type1 || ((GenericLockedKey)p).Type == type2).ToListAsync().ConfigureAwait(false)).Select(p => (GenericLockedKey)p);
+            var items = await Database.Table<KeysDatabaseItem>().ToListAsync().ConfigureAwait(false);
+            return items.Select(p => (GenericLockedKey)p).Where(p => p.Type == type1 || p.Type == type2);
         }
 
         public static async Task<int> SaveKeyAsync(GenericLockedKey item)

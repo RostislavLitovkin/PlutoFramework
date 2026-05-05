@@ -85,6 +85,18 @@ namespace PlutoFramework
             });
 
 
+            Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping("FixDuplicateCursor", (handler, view) =>
+            {
+#if ANDROID
+                // Android specifically struggles with this caret issue
+                handler.PlatformView.FocusChange += (sender, e) =>
+                {
+                    handler.PlatformView.SetCursorVisible(e.HasFocus);
+                };
+#endif
+            });
+
+
             AssetsModel.DatabaseSaver = new BalancesDatabaseSaver();
 
             // TODO: enable later

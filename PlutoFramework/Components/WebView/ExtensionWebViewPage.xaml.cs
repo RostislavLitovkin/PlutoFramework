@@ -25,7 +25,7 @@ public partial class ExtensionWebViewPage : PageTemplate
         {
             scrollingDown = true;
 
-            await navigationBar.TranslateToAsync(0, 60, 250, Easing.CubicInOut);
+            await navigationBar.TranslateToAsync(0, 80, 250, Easing.CubicInOut);
         }
         else if (lastScrollY > e.ScrollY && scrollingDown)
         {
