@@ -22,7 +22,7 @@ public abstract class FcmTokenEndpoint : IApiEndpoint
         var res = await httpClient.PostAsync(EndpointPath, jsonContent);
         if (res.StatusCode == System.Net.HttpStatusCode.Unauthorized)
         {
-            throw new UnauthorizedException(res.ReasonPhrase ?? "");
+            throw new PlutoFrameworkCore.PushNotificationServices.Api.UnauthorizedException(res.ReasonPhrase ?? "");
         }
         res.EnsureSuccessStatusCode();
     }
