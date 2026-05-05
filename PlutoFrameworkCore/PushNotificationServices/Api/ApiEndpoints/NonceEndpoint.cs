@@ -6,26 +6,18 @@ using PlutoFrameworkCore.PushNotificationServices.Core.Interfaces;
 
 namespace PlutoFrameworkCore.PushNotificationServices.Api.ApiEndpoints;
 
-public record NonceRetrievalData
-{
-    [JsonPropertyName("device_uuid")]
-    public required string DeviceUUID { get; set; }
-}
-
 public abstract class NonceEndpoint: IApiEndpoint
 {
-    public static string EndpointPath => "/nonce";
+    public static string EndpointPath => "/api/nonce/";
     
     private record NonceObject
     {
         public required string Nonce { get; init; }
     }
     
-    public static async Task<string> GetNonceAsync(HttpClient httpClient, NonceRetrievalData input)
+    public static async Task<string> GetNonceAsync(HttpClient httpClient)
     {
-        StringContent jsonContent = new(JsonSerializer.Serialize(input), Encoding.UTF8, "application/json");
-        
-        var response = (await httpClient.PostAsync(EndpointPath, jsonContent)).EnsureSuccessStatusCode();
+        var response = (await httpClient.PostAsync(EndpointPath, null)).EnsureSuccessStatusCode();
         
         var nonceObj = await response.Content.ReadFromJsonAsync<NonceObject>();
         

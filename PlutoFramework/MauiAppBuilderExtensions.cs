@@ -32,6 +32,7 @@ using PlutoFramework.Components.XcavateProperty;
 using PlutoFramework.Components.Xcm;
 using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
+using PlutoFrameworkCore.PushNotificationServices.Core.Utils;
 using PlutoFrameworkCore;
 using Xe.AcrylicView;
 using ZXing.Net.Maui.Controls;
@@ -85,8 +86,7 @@ namespace PlutoFramework
 
             AssetsModel.DatabaseSaver = new BalancesDatabaseSaver();
 
-            // TODO: enable later
-            //PushNotificationRegistrar.RegisterPushNotificationServices(builder.Services);
+            PushNotificationRegistrar.RegisterPushNotificationServices(builder.Services);
 
             PlutoConfigurationModel.SecureStorage = new PlutoSecureStorage();
             PlutoConfigurationModel.GenerateNewAccountAsync = KeysModel.GenerateNewAccountAsync;
