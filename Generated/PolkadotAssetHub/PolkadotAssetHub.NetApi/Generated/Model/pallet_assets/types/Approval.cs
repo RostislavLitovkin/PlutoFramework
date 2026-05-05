@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types
     
     
     /// <summary>
-    /// >> 863 - Composite[pallet_assets.types.Approval]
+    /// >> 875 - Composite[pallet_assets.types.Approval]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Approval : BaseType

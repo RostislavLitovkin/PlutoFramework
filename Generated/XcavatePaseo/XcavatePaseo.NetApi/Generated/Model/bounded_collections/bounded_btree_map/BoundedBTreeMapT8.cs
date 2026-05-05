@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_
     
     
     /// <summary>
-    /// >> 586 - Composite[bounded_collections.bounded_btree_map.BoundedBTreeMapT8]
+    /// >> 812 - Composite[bounded_collections.bounded_btree_map.BoundedBTreeMapT8]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedBTreeMapT8 : BaseType
@@ -27,7 +27,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_
         /// <summary>
         /// >> value
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT11 Value { get; set; }
+        public XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT15 Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_btree_
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT11();
+            Value = new XcavatePaseo.NetApi.Generated.Types.Base.BTreeMapT15();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

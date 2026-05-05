@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.paras
     
     
     /// <summary>
-    /// >> 834 - Composite[polkadot_runtime_parachains.paras.AuthorizedCodeHashAndExpiry]
+    /// >> 836 - Composite[polkadot_runtime_parachains.paras.AuthorizedCodeHashAndExpiry]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AuthorizedCodeHashAndExpiry : BaseType

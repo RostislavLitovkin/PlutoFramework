@@ -120,7 +120,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(admin.Encode());
-            return new Method(90, "XcavateWhitelist", 0, "add_admin", byteArray.ToArray());
+            return new Method(60, "XcavateWhitelist", 0, "add_admin", byteArray.ToArray());
         }
         
         /// <summary>
@@ -131,7 +131,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(admin.Encode());
-            return new Method(90, "XcavateWhitelist", 1, "remove_admin", byteArray.ToArray());
+            return new Method(60, "XcavateWhitelist", 1, "remove_admin", byteArray.ToArray());
         }
         
         /// <summary>
@@ -143,7 +143,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(user.Encode());
             byteArray.AddRange(role.Encode());
-            return new Method(90, "XcavateWhitelist", 2, "assign_role", byteArray.ToArray());
+            return new Method(60, "XcavateWhitelist", 2, "assign_role", byteArray.ToArray());
         }
         
         /// <summary>
@@ -155,7 +155,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(user.Encode());
             byteArray.AddRange(role.Encode());
-            return new Method(90, "XcavateWhitelist", 3, "remove_role", byteArray.ToArray());
+            return new Method(60, "XcavateWhitelist", 3, "remove_role", byteArray.ToArray());
         }
         
         /// <summary>
@@ -168,7 +168,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(user.Encode());
             byteArray.AddRange(role.Encode());
             byteArray.AddRange(permission.Encode());
-            return new Method(90, "XcavateWhitelist", 4, "set_permission", byteArray.ToArray());
+            return new Method(60, "XcavateWhitelist", 4, "set_permission", byteArray.ToArray());
         }
     }
     

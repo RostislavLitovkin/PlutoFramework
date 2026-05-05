@@ -38,7 +38,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.types
     }
     
     /// <summary>
-    /// >> 666 - Variant[pallet_rc_migrator.types.QueuePriority]
+    /// >> 674 - Variant[pallet_rc_migrator.types.QueuePriority]
     /// </summary>
     public sealed class EnumQueuePriority : BaseEnumRust<QueuePriority>
     {

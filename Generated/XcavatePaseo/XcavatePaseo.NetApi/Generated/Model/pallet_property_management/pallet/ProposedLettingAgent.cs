@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
     
     
     /// <summary>
-    /// >> 601 - Composite[pallet_property_management.pallet.ProposedLettingAgent]
+    /// >> 782 - Composite[pallet_property_management.pallet.ProposedLettingAgent]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ProposedLettingAgent : BaseType
@@ -31,7 +31,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         /// <summary>
         /// >> location
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10 Location { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11 Location { get; set; }
         /// <summary>
         /// >> expiry_block
         /// </summary>
@@ -59,7 +59,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
             var start = p;
             LettingAgent = new XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32();
             LettingAgent.Decode(byteArray, ref p);
-            Location = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10();
+            Location = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11();
             Location.Decode(byteArray, ref p);
             ExpiryBlock = new Substrate.NetApi.Model.Types.Primitive.U32();
             ExpiryBlock.Decode(byteArray, ref p);

@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.shared
     
     
     /// <summary>
-    /// >> 798 - Composite[polkadot_runtime_parachains.shared.RelayParentInfo]
+    /// >> 800 - Composite[polkadot_runtime_parachains.shared.RelayParentInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RelayParentInfo : BaseType

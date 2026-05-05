@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_real_world_asset.pallet
     
     
     /// <summary>
-    /// >> 570 - Composite[pallet_real_world_asset.pallet.PropertyAssetDetails]
+    /// >> 746 - Composite[pallet_real_world_asset.pallet.PropertyAssetDetails]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PropertyAssetDetails : BaseType
@@ -39,7 +39,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_real_world_asset.pallet
         /// <summary>
         /// >> location
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10 Location { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11 Location { get; set; }
         /// <summary>
         /// >> price
         /// </summary>
@@ -88,7 +88,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_real_world_asset.pallet
             ItemId.Decode(byteArray, ref p);
             Region = new Substrate.NetApi.Model.Types.Primitive.U16();
             Region.Decode(byteArray, ref p);
-            Location = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10();
+            Location = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11();
             Location.Decode(byteArray, ref p);
             Price = new Substrate.NetApi.Model.Types.Primitive.U128();
             Price.Decode(byteArray, ref p);

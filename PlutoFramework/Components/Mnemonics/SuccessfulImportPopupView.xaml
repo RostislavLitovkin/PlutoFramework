@@ -15,7 +15,7 @@
                 <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, AutoSize"
                                  AbsoluteLayout.LayoutFlags="WidthProportional"
                                  Spacing="10"
-                                 Padding="0, 50, 0, 0">
+                                 Padding="10, 50, 10, 10">
 
                     <Image HeightRequest="50"
                            WidthRequest="50">
@@ -40,7 +40,7 @@
                     <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 50"
                       AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
                       ColumnSpacing="15"
-                      Margin="0, 0, 0, 10">
+                      Margin="10, 0, 10, 10">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>

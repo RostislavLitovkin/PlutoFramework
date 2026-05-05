@@ -147,7 +147,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
     }
     
     /// <summary>
-    /// >> 397 - Variant[pallet_property_management.pallet.Call]
+    /// >> 521 - Variant[pallet_property_management.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -158,8 +158,8 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10>>(Call.add_letting_agent);
-				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10>(Call.remove_letting_agent);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U16, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>>(Call.add_letting_agent);
+				AddTypeDecoder<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>(Call.remove_letting_agent);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.letting_agent_claim_property);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet.EnumVote, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.vote_on_letting_agent);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.finalize_letting_agent);

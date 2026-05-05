@@ -7,10 +7,12 @@ using PlutoFramework.Components.Keys;
 using PlutoFramework.Model;
 using PlutoFramework.Model.SQLite;
 using PlutoFrameworkCore;
+using PlutoFrameworkCore.Keys;
 using Substrate.NET.Wallet.Keyring;
 using Substrate.NetApi.Model.Types;
 
 namespace PlutoFramework.Components.Mnemonics;
+
 public partial class MnemonicsPageViewModel : ObservableObject
 {
 
@@ -45,60 +47,61 @@ public partial class MnemonicsPageViewModel : ObservableObject
     [RelayCommand]
     public async Task ExportJsonAsync()
     {
+        var token = CancellationToken.None;
+        var accounts = await KeysDatabase.GetAllKeysOfTypeAsync(KeyTypeEnum.Sr25519, KeyTypeEnum.PolkadotJson);
+
+        if (!accounts.Any())
+        {
+            return;
+        }
+
+        if (!accounts.Any())
+        {
+            await Toast.Make($"Failed to export.").Show();
+
+            return;
+        }
+
+        var accountLockedKey = accounts.First();
+
         try
         {
-            var token = CancellationToken.None;
-
-            var accountType = (AccountType)Enum.Parse(typeof(AccountType), Preferences.Get(PreferencesModel.ACCOUNT_TYPE, AccountType.None.ToString()));
-
-            try
+            switch (accountLockedKey.Type)
             {
-                var secret = await Model.KeysModel.GetMnemonicsOrPrivateKeyAsync();
+                case KeyTypeEnum.Sr25519:
 
-                if (secret == null)
-                {
+                    var mnemonics = await accountLockedKey.ToSr25519KeyAsync();
+
+                    var keyring = new Keyring();
+                    var wallet = keyring.AddFromMnemonic(Mnemonics, new Meta() { Name = $"account" }, KeyType.Sr25519);
+
+                    var json = wallet.ToJson($"account", await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD));
+
+                    await ExportJsonAsync(json, token);
+
+                    break;
+                case KeyTypeEnum.PolkadotJson:
+                    var jsonKey = await accountLockedKey.ToPolkadotJsonKeyAsync();
+
+                    await ExportJsonAsync(jsonKey.Json, token);
+
+                    break;
+                default:
                     return;
-                }
-
-                if (accountType == AccountType.Json)
-                {
-                    await SaveJsonAsync(secret, token);
-
-                    return;
-                }
             }
-            catch
-            {
-                // Authentication failed
-            }
-
-            if (accountType != AccountType.Mnemonic)
-            {
-                return;
-            }
-
-            if (Mnemonics is null || Mnemonics == "")
-            {
-                return;
-            }
-
-            var keyring = new Keyring();
-            var wallet = keyring.AddFromMnemonic(Mnemonics, new Meta() { Name = $"account" }, KeyType.Sr25519);
-
-            var json = wallet.ToJson($"account", await SecureStorage.Default.GetAsync(PreferencesModel.PASSWORD));
-
-            await SaveJsonAsync(json, token);
         }
-        catch(Exception ex)
+        catch
         {
-            Console.WriteLine(ex);
+            await Toast.Make($"Failed to export.").Show();
+
+            return;
         }
     }
 
     /// <summary>
     /// Source: https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/essentials/file-saver?tabs=macos 
     /// </summary>
-    private static async Task SaveJsonAsync(string json, CancellationToken token)
+    private static async Task ExportJsonAsync(string json, CancellationToken token)
     {
         using var stream = new MemoryStream(System.Text.Encoding.Default.GetBytes(json));
         var fileSaverResult = await FileSaver.Default.SaveAsync($"{AppInfo.Current.Name.ToLower()}.json", stream, token);

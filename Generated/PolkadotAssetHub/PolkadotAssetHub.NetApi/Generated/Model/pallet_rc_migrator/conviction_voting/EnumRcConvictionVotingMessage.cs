@@ -33,7 +33,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.conviction_
     }
     
     /// <summary>
-    /// >> 596 - Variant[pallet_rc_migrator.conviction_voting.RcConvictionVotingMessage]
+    /// >> 604 - Variant[pallet_rc_migrator.conviction_voting.RcConvictionVotingMessage]
     /// </summary>
     public sealed class EnumRcConvictionVotingMessage : BaseEnumRust<RcConvictionVotingMessage>
     {

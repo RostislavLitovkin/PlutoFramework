@@ -48,7 +48,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_nfts.types
     }
     
     /// <summary>
-    /// >> 315 - Variant[pallet_nfts.types.CollectionSetting]
+    /// >> 438 - Variant[pallet_nfts.types.CollectionSetting]
     /// </summary>
     public sealed class EnumCollectionSetting : BaseEnum<CollectionSetting>
     {

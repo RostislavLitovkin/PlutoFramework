@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_support.traits.tokens.misc
     
     
     /// <summary>
-    /// >> 469 - Composite[frame_support.traits.tokens.misc.IdAmountT4]
+    /// >> 707 - Composite[frame_support.traits.tokens.misc.IdAmountT4]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class IdAmountT4 : BaseType
@@ -27,7 +27,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_support.traits.tokens.misc
         /// <summary>
         /// >> id
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.xcavate_primitives.EnumMarketplaceFreezeReason Id { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.primitives.EnumMarketplaceFreezeReason Id { get; set; }
         /// <summary>
         /// >> amount
         /// </summary>
@@ -52,7 +52,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_support.traits.tokens.misc
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Id = new XcavatePaseo.NetApi.Generated.Model.xcavate_primitives.EnumMarketplaceFreezeReason();
+            Id = new XcavatePaseo.NetApi.Generated.Model.primitives.EnumMarketplaceFreezeReason();
             Id.Decode(byteArray, ref p);
             Amount = new Substrate.NetApi.Model.Types.Primitive.U128();
             Amount.Decode(byteArray, ref p);

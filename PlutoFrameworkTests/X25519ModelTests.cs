@@ -1,7 +1,8 @@
-﻿extern alias bc26; 
+﻿extern alias bc26;
 
 using bc26::Org.BouncyCastle.Crypto.Parameters;
 using PlutoFrameworkCore.AssetDidComm;
+using Substrate.NetApi;
 using Substrate.NetApi.Extensions;
 using System.Security.Cryptography;
 using System.Text;
@@ -21,7 +22,7 @@ namespace PlutoFrameworkTests
             var sk2 = new X25519PrivateKeyParameters(sk.GetEncoded());
             var pk2 = sk2.GeneratePublicKey();
 
-            Assert.Equals(pk.GetEncoded(), pk2.GetEncoded());
+            Assert.That(Utils.Bytes2HexString(pk.GetEncoded()) == Utils.Bytes2HexString(pk2.GetEncoded()));
         }
 
         [Test]

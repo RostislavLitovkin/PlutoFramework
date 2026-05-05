@@ -151,7 +151,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(message_origin.Encode());
             byteArray.AddRange(page_index.Encode());
-            return new Method(74, "MessageQueue", 0, "reap_page", byteArray.ToArray());
+            return new Method(33, "MessageQueue", 0, "reap_page", byteArray.ToArray());
         }
         
         /// <summary>
@@ -165,7 +165,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(page.Encode());
             byteArray.AddRange(index.Encode());
             byteArray.AddRange(weight_limit.Encode());
-            return new Method(74, "MessageQueue", 1, "execute_overweight", byteArray.ToArray());
+            return new Method(33, "MessageQueue", 1, "execute_overweight", byteArray.ToArray());
         }
     }
     
@@ -215,7 +215,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight> ServiceWeight()
         {
             var result = new Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>();
-            result.Create("0x01070088526A7402005000");
+            result.Create("0x0107005840FBA202007000");
             return result;
         }
         
@@ -230,7 +230,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         public Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight> IdleMaxServiceWeight()
         {
             var result = new Substrate.NetApi.Model.Types.Base.BaseOpt<XcavatePaseo.NetApi.Generated.Model.sp_weights.weight_v2.Weight>();
-            result.Create("0x01070088526A7402005000");
+            result.Create("0x0107005840FBA202007000");
             return result;
         }
     }

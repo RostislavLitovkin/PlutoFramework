@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.accounts
     
     
     /// <summary>
-    /// >> 491 - Composite[pallet_rc_migrator.accounts.Account]
+    /// >> 499 - Composite[pallet_rc_migrator.accounts.Account]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Account : BaseType

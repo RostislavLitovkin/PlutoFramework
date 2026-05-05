@@ -530,7 +530,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async.pallet.pa
     }
     
     /// <summary>
-    /// >> 470 - Variant[pallet_staking_async.pallet.pallet.Call]
+    /// >> 473 - Variant[pallet_staking_async.pallet.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

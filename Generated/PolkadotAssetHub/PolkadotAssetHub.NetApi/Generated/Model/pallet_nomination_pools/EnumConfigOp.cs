@@ -38,7 +38,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_nomination_pools
     }
     
     /// <summary>
-    /// >> 384 - Variant[pallet_nomination_pools.ConfigOp]
+    /// >> 386 - Variant[pallet_nomination_pools.ConfigOp]
     /// </summary>
     public sealed class EnumConfigOp : BaseEnumRust<ConfigOp>
     {

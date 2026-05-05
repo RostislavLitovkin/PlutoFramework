@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.proxy
     
     
     /// <summary>
-    /// >> 514 - Composite[pallet_rc_migrator.proxy.RcProxy]
+    /// >> 522 - Composite[pallet_rc_migrator.proxy.RcProxy]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RcProxy : BaseType

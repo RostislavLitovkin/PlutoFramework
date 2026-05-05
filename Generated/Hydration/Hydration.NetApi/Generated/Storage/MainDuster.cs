@@ -36,98 +36,38 @@ namespace Hydration.NetApi.Generated.Storage
         public DusterStorage(SubstrateClientExt client)
         {
             this._client = client;
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Duster", "AccountBlacklist"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Duster", "AccountWhitelist"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Duster", "RewardAccount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Duster", "DustAccount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32)));
         }
         
         /// <summary>
-        /// >> AccountBlacklistParams
+        /// >> AccountWhitelistParams
         ///  Accounts excluded from dusting.
         /// </summary>
-        public static string AccountBlacklistParams(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
+        public static string AccountWhitelistParams(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 key)
         {
-            return RequestGenerator.GetStorage("Duster", "AccountBlacklist", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+            return RequestGenerator.GetStorage("Duster", "AccountWhitelist", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
                         key});
         }
         
         /// <summary>
-        /// >> AccountBlacklistDefault
+        /// >> AccountWhitelistDefault
         /// Default value as hex string
         /// </summary>
-        public static string AccountBlacklistDefault()
+        public static string AccountWhitelistDefault()
         {
             return "0x00";
         }
         
         /// <summary>
-        /// >> AccountBlacklist
+        /// >> AccountWhitelist
         ///  Accounts excluded from dusting.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> AccountBlacklist(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> AccountWhitelist(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
-            string parameters = DusterStorage.AccountBlacklistParams(key);
+            string parameters = DusterStorage.AccountWhitelistParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple>(parameters, blockhash, token);
-            return result;
-        }
-        
-        /// <summary>
-        /// >> RewardAccountParams
-        ///  Account to take reward from.
-        /// </summary>
-        public static string RewardAccountParams()
-        {
-            return RequestGenerator.GetStorage("Duster", "RewardAccount", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
-        }
-        
-        /// <summary>
-        /// >> RewardAccountDefault
-        /// Default value as hex string
-        /// </summary>
-        public static string RewardAccountDefault()
-        {
-            return "0x00";
-        }
-        
-        /// <summary>
-        /// >> RewardAccount
-        ///  Account to take reward from.
-        /// </summary>
-        public async Task<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32> RewardAccount(string blockhash, CancellationToken token)
-        {
-            string parameters = DusterStorage.RewardAccountParams();
-            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>(parameters, blockhash, token);
-            return result;
-        }
-        
-        /// <summary>
-        /// >> DustAccountParams
-        ///  Account to send dust to.
-        /// </summary>
-        public static string DustAccountParams()
-        {
-            return RequestGenerator.GetStorage("Duster", "DustAccount", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
-        }
-        
-        /// <summary>
-        /// >> DustAccountDefault
-        /// Default value as hex string
-        /// </summary>
-        public static string DustAccountDefault()
-        {
-            return "0x00";
-        }
-        
-        /// <summary>
-        /// >> DustAccount
-        ///  Account to send dust to.
-        /// </summary>
-        public async Task<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32> DustAccount(string blockhash, CancellationToken token)
-        {
-            string parameters = DusterStorage.DustAccountParams();
-            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>(parameters, blockhash, token);
             return result;
         }
     }
@@ -151,25 +91,25 @@ namespace Hydration.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> add_nondustable_account
+        /// >> whitelist_account
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AddNondustableAccount(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 account)
+        public static Method WhitelistAccount(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 account)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(account.Encode());
-            return new Method(61, "Duster", 1, "add_nondustable_account", byteArray.ToArray());
+            return new Method(61, "Duster", 1, "whitelist_account", byteArray.ToArray());
         }
         
         /// <summary>
-        /// >> remove_nondustable_account
+        /// >> remove_from_whitelist
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method RemoveNondustableAccount(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 account)
+        public static Method RemoveFromWhitelist(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 account)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(account.Encode());
-            return new Method(61, "Duster", 2, "remove_nondustable_account", byteArray.ToArray());
+            return new Method(61, "Duster", 2, "remove_from_whitelist", byteArray.ToArray());
         }
     }
     
@@ -180,30 +120,8 @@ namespace Hydration.NetApi.Generated.Storage
     {
         
         /// <summary>
-        /// >> Reward
-        ///  Reward amount
-        /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U128 Reward()
-        {
-            var result = new Substrate.NetApi.Model.Types.Primitive.U128();
-            result.Create("0x00000000000000000000000000000000");
-            return result;
-        }
-        
-        /// <summary>
-        /// >> NativeCurrencyId
-        ///  Native Asset Id
-        /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U32 NativeCurrencyId()
-        {
-            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x00000000");
-            return result;
-        }
-        
-        /// <summary>
         /// >> TreasuryAccountId
-        ///  Default account for `reward_account` and `dust_account` in genesis config.
+        ///  Treasury account, which receives the dust.
         /// </summary>
         public Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 TreasuryAccountId()
         {
@@ -220,16 +138,16 @@ namespace Hydration.NetApi.Generated.Storage
     {
         
         /// <summary>
-        /// >> AccountBlacklisted
+        /// >> AccountWhitelisted
         /// Account is excluded from dusting.
         /// </summary>
-        AccountBlacklisted,
+        AccountWhitelisted,
         
         /// <summary>
-        /// >> AccountNotBlacklisted
+        /// >> AccountNotWhitelisted
         /// Account is not present in the non-dustable list.
         /// </summary>
-        AccountNotBlacklisted,
+        AccountNotWhitelisted,
         
         /// <summary>
         /// >> ZeroBalance
@@ -238,16 +156,16 @@ namespace Hydration.NetApi.Generated.Storage
         ZeroBalance,
         
         /// <summary>
+        /// >> NonZeroBalance
+        /// The balance was not fully dusted, there is some leftover on the account. Normally, it should never happen.
+        /// </summary>
+        NonZeroBalance,
+        
+        /// <summary>
         /// >> BalanceSufficient
         /// The balance is sufficient to keep account open.
         /// </summary>
         BalanceSufficient,
-        
-        /// <summary>
-        /// >> DustAccountNotSet
-        /// Dust account is not set.
-        /// </summary>
-        DustAccountNotSet,
         
         /// <summary>
         /// >> ReserveAccountNotSet

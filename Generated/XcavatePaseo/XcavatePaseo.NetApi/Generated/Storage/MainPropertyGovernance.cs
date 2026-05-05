@@ -39,8 +39,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyGovernance", "ProposalCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyGovernance", "Proposals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.Proposal)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyGovernance", "SaleProposals"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.PropertySaleProposal)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyGovernance", "Challenges"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.Challenge)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyGovernance", "OngoingProposalVotes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -50,13 +48,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.VoteRecord)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyGovernance", "AssetProposal"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyGovernance", "OngoingSaleProposalVotes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.VoteStats)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyGovernance", "UserSaleProposalVote"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32>), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.VoteRecord)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyGovernance", "AssetSaleProposal"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyGovernance", "OngoingChallengeVotes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U64), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.VoteStats)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyGovernance", "UserChallengeVote"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
@@ -65,20 +56,11 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyGovernance", "AssetLettingChallenge"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyGovernance", "ProposalRoundsExpiring"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyGovernance", "SaleProposalRoundsExpiring"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT64)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyGovernance", "ChallengeRoundsExpiring"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyGovernance", "PropertySale"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.PropertySaleInfo)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyGovernance", "SaleAuctions"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.SaleAuction)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyGovernance", "AuctionRoundsExpiring"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyGovernance", "PropertySaleFunds"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>), typeof(Substrate.NetApi.Model.Types.Primitive.U128)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT64)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("PropertyGovernance", "LastAutoExecutionBlock"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U32)));
         }
         
         /// <summary>
@@ -138,37 +120,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             string parameters = PropertyGovernanceStorage.ProposalsParams(key);
             var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.Proposal>(parameters, blockhash, token);
-            return result;
-        }
-        
-        /// <summary>
-        /// >> SaleProposalsParams
-        ///  Stores property sale proposals by their ID.
-        /// </summary>
-        public static string SaleProposalsParams(Substrate.NetApi.Model.Types.Primitive.U64 key)
-        {
-            return RequestGenerator.GetStorage("PropertyGovernance", "SaleProposals", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
-                        key});
-        }
-        
-        /// <summary>
-        /// >> SaleProposalsDefault
-        /// Default value as hex string
-        /// </summary>
-        public static string SaleProposalsDefault()
-        {
-            return "0x00";
-        }
-        
-        /// <summary>
-        /// >> SaleProposals
-        ///  Stores property sale proposals by their ID.
-        /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.PropertySaleProposal> SaleProposals(Substrate.NetApi.Model.Types.Primitive.U64 key, string blockhash, CancellationToken token)
-        {
-            string parameters = PropertyGovernanceStorage.SaleProposalsParams(key);
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.PropertySaleProposal>(parameters, blockhash, token);
             return result;
         }
         
@@ -297,99 +248,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> OngoingSaleProposalVotesParams
-        ///  Tracks voting statistics for ongoing property sale proposals.
-        /// </summary>
-        public static string OngoingSaleProposalVotesParams(Substrate.NetApi.Model.Types.Primitive.U64 key)
-        {
-            return RequestGenerator.GetStorage("PropertyGovernance", "OngoingSaleProposalVotes", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
-                        key});
-        }
-        
-        /// <summary>
-        /// >> OngoingSaleProposalVotesDefault
-        /// Default value as hex string
-        /// </summary>
-        public static string OngoingSaleProposalVotesDefault()
-        {
-            return "0x00";
-        }
-        
-        /// <summary>
-        /// >> OngoingSaleProposalVotes
-        ///  Tracks voting statistics for ongoing property sale proposals.
-        /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.VoteStats> OngoingSaleProposalVotes(Substrate.NetApi.Model.Types.Primitive.U64 key, string blockhash, CancellationToken token)
-        {
-            string parameters = PropertyGovernanceStorage.OngoingSaleProposalVotesParams(key);
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.VoteStats>(parameters, blockhash, token);
-            return result;
-        }
-        
-        /// <summary>
-        /// >> UserSaleProposalVoteParams
-        ///  Maps sale proposal and account IDs to user vote records.
-        /// </summary>
-        public static string UserSaleProposalVoteParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key)
-        {
-            return RequestGenerator.GetStorage("PropertyGovernance", "UserSaleProposalVote", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, key.Value);
-        }
-        
-        /// <summary>
-        /// >> UserSaleProposalVoteDefault
-        /// Default value as hex string
-        /// </summary>
-        public static string UserSaleProposalVoteDefault()
-        {
-            return "0x00";
-        }
-        
-        /// <summary>
-        /// >> UserSaleProposalVote
-        ///  Maps sale proposal and account IDs to user vote records.
-        /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.VoteRecord> UserSaleProposalVote(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U64, XcavatePaseo.NetApi.Generated.Model.sp_core.crypto.AccountId32> key, string blockhash, CancellationToken token)
-        {
-            string parameters = PropertyGovernanceStorage.UserSaleProposalVoteParams(key);
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.VoteRecord>(parameters, blockhash, token);
-            return result;
-        }
-        
-        /// <summary>
-        /// >> AssetSaleProposalParams
-        ///  Maps asset IDs to their associated sale proposal IDs.
-        /// </summary>
-        public static string AssetSaleProposalParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
-        {
-            return RequestGenerator.GetStorage("PropertyGovernance", "AssetSaleProposal", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
-                        key});
-        }
-        
-        /// <summary>
-        /// >> AssetSaleProposalDefault
-        /// Default value as hex string
-        /// </summary>
-        public static string AssetSaleProposalDefault()
-        {
-            return "0x00";
-        }
-        
-        /// <summary>
-        /// >> AssetSaleProposal
-        ///  Maps asset IDs to their associated sale proposal IDs.
-        /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.U64> AssetSaleProposal(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
-        {
-            string parameters = PropertyGovernanceStorage.AssetSaleProposalParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U64>(parameters, blockhash, token);
-            return result;
-        }
-        
-        /// <summary>
         /// >> OngoingChallengeVotesParams
         ///  Tracks voting statistics for ongoing challenges.
         /// </summary>
@@ -506,41 +364,10 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> ProposalRoundsExpiring
         ///  Stores asset IDs for proposal votings ending at a specific block.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41> ProposalRoundsExpiring(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT64> ProposalRoundsExpiring(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = PropertyGovernanceStorage.ProposalRoundsExpiringParams(key);
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41>(parameters, blockhash, token);
-            return result;
-        }
-        
-        /// <summary>
-        /// >> SaleProposalRoundsExpiringParams
-        ///  Stores asset IDs for sale proposal votings ending at a specific block.
-        /// </summary>
-        public static string SaleProposalRoundsExpiringParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
-        {
-            return RequestGenerator.GetStorage("PropertyGovernance", "SaleProposalRoundsExpiring", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
-                        key});
-        }
-        
-        /// <summary>
-        /// >> SaleProposalRoundsExpiringDefault
-        /// Default value as hex string
-        /// </summary>
-        public static string SaleProposalRoundsExpiringDefault()
-        {
-            return "0x00";
-        }
-        
-        /// <summary>
-        /// >> SaleProposalRoundsExpiring
-        ///  Stores asset IDs for sale proposal votings ending at a specific block.
-        /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41> SaleProposalRoundsExpiring(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
-        {
-            string parameters = PropertyGovernanceStorage.SaleProposalRoundsExpiringParams(key);
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT64>(parameters, blockhash, token);
             return result;
         }
         
@@ -568,134 +395,41 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> ChallengeRoundsExpiring
         ///  Stores asset IDs for challenge votings ending at a specific block.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41> ChallengeRoundsExpiring(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT64> ChallengeRoundsExpiring(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
             string parameters = PropertyGovernanceStorage.ChallengeRoundsExpiringParams(key);
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT64>(parameters, blockhash, token);
             return result;
         }
         
         /// <summary>
-        /// >> PropertySaleParams
-        ///  Maps asset IDs to property sale details.
+        /// >> LastAutoExecutionBlockParams
+        ///  Tracks the last block number when automatic executions were performed for each property.
         /// </summary>
-        public static string PropertySaleParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
+        public static string LastAutoExecutionBlockParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
         {
-            return RequestGenerator.GetStorage("PropertyGovernance", "PropertySale", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+            return RequestGenerator.GetStorage("PropertyGovernance", "LastAutoExecutionBlock", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
                         key});
         }
         
         /// <summary>
-        /// >> PropertySaleDefault
+        /// >> LastAutoExecutionBlockDefault
         /// Default value as hex string
         /// </summary>
-        public static string PropertySaleDefault()
+        public static string LastAutoExecutionBlockDefault()
         {
             return "0x00";
         }
         
         /// <summary>
-        /// >> PropertySale
-        ///  Maps asset IDs to property sale details.
+        /// >> LastAutoExecutionBlock
+        ///  Tracks the last block number when automatic executions were performed for each property.
         /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.PropertySaleInfo> PropertySale(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Primitive.U32> LastAutoExecutionBlock(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
         {
-            string parameters = PropertyGovernanceStorage.PropertySaleParams(key);
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.PropertySaleInfo>(parameters, blockhash, token);
-            return result;
-        }
-        
-        /// <summary>
-        /// >> SaleAuctionsParams
-        ///  Maps asset IDs to auction details.
-        /// </summary>
-        public static string SaleAuctionsParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
-        {
-            return RequestGenerator.GetStorage("PropertyGovernance", "SaleAuctions", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
-                        key});
-        }
-        
-        /// <summary>
-        /// >> SaleAuctionsDefault
-        /// Default value as hex string
-        /// </summary>
-        public static string SaleAuctionsDefault()
-        {
-            return "0x00";
-        }
-        
-        /// <summary>
-        /// >> SaleAuctions
-        ///  Maps asset IDs to auction details.
-        /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.SaleAuction> SaleAuctions(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
-        {
-            string parameters = PropertyGovernanceStorage.SaleAuctionsParams(key);
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.SaleAuction>(parameters, blockhash, token);
-            return result;
-        }
-        
-        /// <summary>
-        /// >> AuctionRoundsExpiringParams
-        ///  Stores asset IDs for auctions ending at a specific block.
-        /// </summary>
-        public static string AuctionRoundsExpiringParams(Substrate.NetApi.Model.Types.Primitive.U32 key)
-        {
-            return RequestGenerator.GetStorage("PropertyGovernance", "AuctionRoundsExpiring", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, new Substrate.NetApi.Model.Types.IType[] {
-                        key});
-        }
-        
-        /// <summary>
-        /// >> AuctionRoundsExpiringDefault
-        /// Default value as hex string
-        /// </summary>
-        public static string AuctionRoundsExpiringDefault()
-        {
-            return "0x00";
-        }
-        
-        /// <summary>
-        /// >> AuctionRoundsExpiring
-        ///  Stores asset IDs for auctions ending at a specific block.
-        /// </summary>
-        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41> AuctionRoundsExpiring(Substrate.NetApi.Model.Types.Primitive.U32 key, string blockhash, CancellationToken token)
-        {
-            string parameters = PropertyGovernanceStorage.AuctionRoundsExpiringParams(key);
-            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT41>(parameters, blockhash, token);
-            return result;
-        }
-        
-        /// <summary>
-        /// >> PropertySaleFundsParams
-        ///  Stores funds from property sales, mapped by asset ID and payment asset.
-        /// </summary>
-        public static string PropertySaleFundsParams(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key)
-        {
-            return RequestGenerator.GetStorage("PropertyGovernance", "PropertySaleFunds", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat,
-                        Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, key.Value);
-        }
-        
-        /// <summary>
-        /// >> PropertySaleFundsDefault
-        /// Default value as hex string
-        /// </summary>
-        public static string PropertySaleFundsDefault()
-        {
-            return "0x00000000000000000000000000000000";
-        }
-        
-        /// <summary>
-        /// >> PropertySaleFunds
-        ///  Stores funds from property sales, mapped by asset ID and payment asset.
-        /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Primitive.U128> PropertySaleFunds(Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32> key, string blockhash, CancellationToken token)
-        {
-            string parameters = PropertyGovernanceStorage.PropertySaleFundsParams(key);
-            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U128>(parameters, blockhash, token);
+            string parameters = PropertyGovernanceStorage.LastAutoExecutionBlockParams(key);
+            var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U32>(parameters, blockhash, token);
             return result;
         }
     }
@@ -710,13 +444,13 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> propose
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Propose(Substrate.NetApi.Model.Types.Primitive.U32 asset_id, Substrate.NetApi.Model.Types.Primitive.U128 amount, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2 data)
+        public static Method Propose(Substrate.NetApi.Model.Types.Primitive.U32 asset_id, Substrate.NetApi.Model.Types.Primitive.U128 amount, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 data)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset_id.Encode());
             byteArray.AddRange(amount.Encode());
             byteArray.AddRange(data.Encode());
-            return new Method(95, "PropertyGovernance", 0, "propose", byteArray.ToArray());
+            return new Method(67, "PropertyGovernance", 0, "propose", byteArray.ToArray());
         }
         
         /// <summary>
@@ -727,7 +461,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(asset_id.Encode());
-            return new Method(95, "PropertyGovernance", 1, "challenge_against_letting_agent", byteArray.ToArray());
+            return new Method(67, "PropertyGovernance", 1, "challenge_against_letting_agent", byteArray.ToArray());
         }
         
         /// <summary>
@@ -740,7 +474,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(asset_id.Encode());
             byteArray.AddRange(vote.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(95, "PropertyGovernance", 2, "vote_on_proposal", byteArray.ToArray());
+            return new Method(67, "PropertyGovernance", 2, "vote_on_proposal", byteArray.ToArray());
         }
         
         /// <summary>
@@ -751,7 +485,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(proposal_id.Encode());
-            return new Method(95, "PropertyGovernance", 3, "unfreeze_proposal_token", byteArray.ToArray());
+            return new Method(67, "PropertyGovernance", 3, "unfreeze_proposal_token", byteArray.ToArray());
         }
         
         /// <summary>
@@ -764,7 +498,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(asset_id.Encode());
             byteArray.AddRange(vote.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(95, "PropertyGovernance", 4, "vote_on_letting_agent_challenge", byteArray.ToArray());
+            return new Method(67, "PropertyGovernance", 4, "vote_on_letting_agent_challenge", byteArray.ToArray());
         }
         
         /// <summary>
@@ -775,115 +509,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(proposal_id.Encode());
-            return new Method(95, "PropertyGovernance", 5, "unfreeze_challenge_token", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> propose_property_sale
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method ProposePropertySale(Substrate.NetApi.Model.Types.Primitive.U32 asset_id)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(asset_id.Encode());
-            return new Method(95, "PropertyGovernance", 6, "propose_property_sale", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> vote_on_property_sale
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method VoteOnPropertySale(Substrate.NetApi.Model.Types.Primitive.U32 asset_id, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote vote, Substrate.NetApi.Model.Types.Primitive.U32 amount)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(asset_id.Encode());
-            byteArray.AddRange(vote.Encode());
-            byteArray.AddRange(amount.Encode());
-            return new Method(95, "PropertyGovernance", 7, "vote_on_property_sale", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> unfreeze_sale_proposal_token
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method UnfreezeSaleProposalToken(Substrate.NetApi.Model.Types.Primitive.U64 proposal_id)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(proposal_id.Encode());
-            return new Method(95, "PropertyGovernance", 8, "unfreeze_sale_proposal_token", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> bid_on_sale
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method BidOnSale(Substrate.NetApi.Model.Types.Primitive.U32 asset_id, Substrate.NetApi.Model.Types.Primitive.U128 price, Substrate.NetApi.Model.Types.Primitive.U32 payment_asset)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(asset_id.Encode());
-            byteArray.AddRange(price.Encode());
-            byteArray.AddRange(payment_asset.Encode());
-            return new Method(95, "PropertyGovernance", 9, "bid_on_sale", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> lawyer_claim_sale
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method LawyerClaimSale(Substrate.NetApi.Model.Types.Primitive.U32 asset_id, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumLegalSale legal_side, Substrate.NetApi.Model.Types.Primitive.U128 costs)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(asset_id.Encode());
-            byteArray.AddRange(legal_side.Encode());
-            byteArray.AddRange(costs.Encode());
-            return new Method(95, "PropertyGovernance", 10, "lawyer_claim_sale", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> lawyer_confirm_sale
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method LawyerConfirmSale(Substrate.NetApi.Model.Types.Primitive.U32 asset_id, Substrate.NetApi.Model.Types.Primitive.Bool approve)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(asset_id.Encode());
-            byteArray.AddRange(approve.Encode());
-            return new Method(95, "PropertyGovernance", 11, "lawyer_confirm_sale", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> finalize_sale
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method FinalizeSale(Substrate.NetApi.Model.Types.Primitive.U32 asset_id, Substrate.NetApi.Model.Types.Primitive.U32 payment_asset)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(asset_id.Encode());
-            byteArray.AddRange(payment_asset.Encode());
-            return new Method(95, "PropertyGovernance", 12, "finalize_sale", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> claim_sale_funds
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method ClaimSaleFunds(Substrate.NetApi.Model.Types.Primitive.U32 asset_id, Substrate.NetApi.Model.Types.Primitive.U32 payment_asset)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(asset_id.Encode());
-            byteArray.AddRange(payment_asset.Encode());
-            return new Method(95, "PropertyGovernance", 13, "claim_sale_funds", byteArray.ToArray());
-        }
-        
-        /// <summary>
-        /// >> cancel_expired_sale
-        /// Contains a variant per dispatchable extrinsic that this pallet has.
-        /// </summary>
-        public static Method CancelExpiredSale(Substrate.NetApi.Model.Types.Primitive.U32 asset_id)
-        {
-            System.Collections.Generic.List<byte> byteArray = new List<byte>();
-            byteArray.AddRange(asset_id.Encode());
-            return new Method(95, "PropertyGovernance", 14, "cancel_expired_sale", byteArray.ToArray());
+            return new Method(67, "PropertyGovernance", 5, "unfreeze_challenge_token", byteArray.ToArray());
         }
     }
     
@@ -898,17 +524,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         ///  The amount of time given to vote for a proposal.
         /// </summary>
         public Substrate.NetApi.Model.Types.Primitive.U32 VotingTime()
-        {
-            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x14000000");
-            return result;
-        }
-        
-        /// <summary>
-        /// >> SaleVotingTime
-        ///  The amount of time give to vote for a sale proposal.
-        /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U32 SaleVotingTime()
         {
             var result = new Substrate.NetApi.Model.Types.Primitive.U32();
             result.Create("0x14000000");
@@ -982,39 +597,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> SaleApprovalYesThreshold
-        ///  Threshold for selling a property.
-        /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Percent SaleApprovalYesThreshold()
-        {
-            var result = new XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Percent();
-            result.Create("0x5A");
-            return result;
-        }
-        
-        /// <summary>
-        /// >> AuctionTime
-        ///  Time of auctions of a property sale.
-        /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U32 AuctionTime()
-        {
-            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x1C000000");
-            return result;
-        }
-        
-        /// <summary>
-        /// >> TreasuryId
-        ///  The Trasury's pallet id, used for deriving its sovereign account ID.
-        /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.frame_support.PalletId TreasuryId()
-        {
-            var result = new XcavatePaseo.NetApi.Generated.Model.frame_support.PalletId();
-            result.Create("0x70792F7472737279");
-            return result;
-        }
-        
-        /// <summary>
         /// >> MinVotingQuorum
         ///  Minimum quorum that needs to be reached for a proposal to pass.
         /// </summary>
@@ -1022,28 +604,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             var result = new XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Percent();
             result.Create("0x32");
-            return result;
-        }
-        
-        /// <summary>
-        /// >> MinPropertySaleQuorum
-        ///  Minimum quorum that needs to be reached for a property sale proposal to pass.
-        /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Percent MinPropertySaleQuorum()
-        {
-            var result = new XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Percent();
-            result.Create("0x4B");
-            return result;
-        }
-        
-        /// <summary>
-        /// >> LegalProcessTime
-        ///  The amount of time given for the lawyer to handle the legal process.
-        /// </summary>
-        public Substrate.NetApi.Model.Types.Primitive.U32 LegalProcessTime()
-        {
-            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
-            result.Create("0x50000000");
             return result;
         }
         
@@ -1081,35 +641,13 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         }
         
         /// <summary>
-        /// >> AuctionReservePercentage
-        ///  The percentage of the bid price to hold as reserve for auctions.
+        /// >> AutoExecutionCooldown
+        ///  Cooldown period between automatic executions for a property.
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill AuctionReservePercentage()
+        public Substrate.NetApi.Model.Types.Primitive.U32 AutoExecutionCooldown()
         {
-            var result = new XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill();
-            result.Create("0x00E1F505");
-            return result;
-        }
-        
-        /// <summary>
-        /// >> MaxCostPercentage
-        ///  The percentage of the bid price to calculate maximum costs for auctions.
-        /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill MaxCostPercentage()
-        {
-            var result = new XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill();
-            result.Create("0x80969800");
-            return result;
-        }
-        
-        /// <summary>
-        /// >> SaleFeePercentage
-        ///  The percentage of the sale price to calculate fees for a sale.
-        /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill SaleFeePercentage()
-        {
-            var result = new XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill();
-            result.Create("0x002D3101");
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x1C000000");
             return result;
         }
     }
@@ -1139,18 +677,6 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         NoLettingAgentFound,
         
         /// <summary>
-        /// >> NotEnoughFunds
-        /// The pallet has not enough funds.
-        /// </summary>
-        NotEnoughFunds,
-        
-        /// <summary>
-        /// >> RegionUnknown
-        /// The region is not registered.
-        /// </summary>
-        RegionUnknown,
-        
-        /// <summary>
         /// >> NoPermission
         /// The caller is not authorized to call this extrinsic.
         /// </summary>
@@ -1163,148 +689,16 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         AssetNotFound,
         
         /// <summary>
-        /// >> NoPermissionInRegion
-        /// This Agent has no authorization in the region.
-        /// </summary>
-        NoPermissionInRegion,
-        
-        /// <summary>
-        /// >> NotForSale
-        /// The property is not for sale.
-        /// </summary>
-        NotForSale,
-        
-        /// <summary>
-        /// >> SaleHasNotBeenApproved
-        /// The sale has not been approved yet by a lawyer.
-        /// </summary>
-        SaleHasNotBeenApproved,
-        
-        /// <summary>
         /// >> NoObjectFound
         /// The real estate object could not be found.
         /// </summary>
         NoObjectFound,
         
         /// <summary>
-        /// >> DivisionError
-        /// Error by dividing a number.
-        /// </summary>
-        DivisionError,
-        
-        /// <summary>
-        /// >> MultiplyError
-        /// Error by multiplying a number.
-        /// </summary>
-        MultiplyError,
-        
-        /// <summary>
-        /// >> PaymentAssetNotSupported
-        /// This Asset is not supported for payment.
-        /// </summary>
-        PaymentAssetNotSupported,
-        
-        /// <summary>
-        /// >> AlreadyFinalized
-        /// The property sale has already been finalized.
-        /// </summary>
-        AlreadyFinalized,
-        
-        /// <summary>
-        /// >> SaleNotFinalized
-        /// Sale has not been finalized.
-        /// </summary>
-        SaleNotFinalized,
-        
-        /// <summary>
         /// >> ArithmeticOverflow
         /// Arithmetic overflow occurred.
         /// </summary>
         ArithmeticOverflow,
-        
-        /// <summary>
-        /// >> ArithmeticUnderflow
-        /// Arithmetic underflow occurred.
-        /// </summary>
-        ArithmeticUnderflow,
-        
-        /// <summary>
-        /// >> SaleAlreadyConfirmed
-        /// The lawyer already confirmed the sale.
-        /// </summary>
-        SaleAlreadyConfirmed,
-        
-        /// <summary>
-        /// >> NoFundsToClaim
-        /// There are no funds to claim for the caller.
-        /// </summary>
-        NoFundsToClaim,
-        
-        /// <summary>
-        /// >> CostsTooHigh
-        /// Costs for the lawyer are too high.
-        /// </summary>
-        CostsTooHigh,
-        
-        /// <summary>
-        /// >> LawyerJobTaken
-        /// The lawyer job has already been taken.
-        /// </summary>
-        LawyerJobTaken,
-        
-        /// <summary>
-        /// >> PriceNotSet
-        /// Price for a property sale has not been set yet.
-        /// </summary>
-        PriceNotSet,
-        
-        /// <summary>
-        /// >> SpvLawyerNotSet
-        /// The Spv lawyer is not set.
-        /// </summary>
-        SpvLawyerNotSet,
-        
-        /// <summary>
-        /// >> NoPriceSet
-        /// No price has been set.
-        /// </summary>
-        NoPriceSet,
-        
-        /// <summary>
-        /// >> NoOngoingAuction
-        /// There is no auction to bid on.
-        /// </summary>
-        NoOngoingAuction,
-        
-        /// <summary>
-        /// >> BidTooLow
-        /// The bid is lower than the current highest bid.
-        /// </summary>
-        BidTooLow,
-        
-        /// <summary>
-        /// >> SaleOngoing
-        /// There is already a sale ongoing.
-        /// </summary>
-        SaleOngoing,
-        
-        /// <summary>
-        /// >> PropertySaleProposalOngoing
-        /// There is already a sale proposal ongoing.
-        /// </summary>
-        PropertySaleProposalOngoing,
-        
-        /// <summary>
-        /// >> BuyerNotSet
-        /// No buyer has been set.
-        /// </summary>
-        BuyerNotSet,
-        
-        /// <summary>
-        /// >> NoReserve
-        /// No reserve has been set for the sale.
-        /// </summary>
-        NoReserve,
         
         /// <summary>
         /// >> ZeroTokenAmount
@@ -1355,21 +749,9 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         ZeroAmount,
         
         /// <summary>
-        /// >> LegalProcessFailed
-        /// The legal process was not finished on time.
+        /// >> AutoExecutionTooSoon
+        /// Automatic execution attempted too soon after the last one.
         /// </summary>
-        LegalProcessFailed,
-        
-        /// <summary>
-        /// >> LegalProcessOngoing
-        /// The legal process is currently ongoing.
-        /// </summary>
-        LegalProcessOngoing,
-        
-        /// <summary>
-        /// >> LegalExpiryNotSet
-        /// Legal process expiry has not ben set.
-        /// </summary>
-        LegalExpiryNotSet,
+        AutoExecutionTooSoon,
     }
 }

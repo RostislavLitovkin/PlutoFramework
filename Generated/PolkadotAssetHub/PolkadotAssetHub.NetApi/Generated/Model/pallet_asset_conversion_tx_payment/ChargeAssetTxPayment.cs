@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_asset_conversion_tx_pay
     
     
     /// <summary>
-    /// >> 1012 - Composite[pallet_asset_conversion_tx_payment.ChargeAssetTxPayment]
+    /// >> 1066 - Composite[pallet_asset_conversion_tx_payment.ChargeAssetTxPayment]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ChargeAssetTxPayment : BaseType

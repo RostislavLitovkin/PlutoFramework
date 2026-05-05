@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 382 - Array
+    /// >> 412 - Array
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Array)]
     public sealed class Arr27U8 : BaseType

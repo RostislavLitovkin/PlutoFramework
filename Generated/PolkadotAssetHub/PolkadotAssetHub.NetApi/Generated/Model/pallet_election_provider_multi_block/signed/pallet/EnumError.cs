@@ -78,7 +78,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi
     }
     
     /// <summary>
-    /// >> 973 - Variant[pallet_election_provider_multi_block.signed.pallet.Error]
+    /// >> 985 - Variant[pallet_election_provider_multi_block.signed.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

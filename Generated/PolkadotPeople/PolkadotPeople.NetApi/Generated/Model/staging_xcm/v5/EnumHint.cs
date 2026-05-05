@@ -28,7 +28,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.staging_xcm.v5
     }
     
     /// <summary>
-    /// >> 99 - Variant[staging_xcm.v5.Hint]
+    /// >> 101 - Variant[staging_xcm.v5.Hint]
     /// </summary>
     public sealed class EnumHint : BaseEnumRust<Hint>
     {

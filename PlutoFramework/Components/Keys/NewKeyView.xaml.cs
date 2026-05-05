@@ -40,7 +40,7 @@ public partial class NewKeyView : ContentView
         get => (KeyTypeEnum)GetValue(KeyTypeProperty);
         set => SetValue(KeyTypeProperty, value);
     }
-    
+
     private async Task ChangeButtonsIfKeyExistsAsync()
     {
         if (!await CheckKeyExistsAsync(disableToast: true))
@@ -124,12 +124,14 @@ public partial class NewKeyView : ContentView
             plus.Opacity = 0.3;
 
             return;
-        };
+        }
+        ;
 
         switch (KeyType)
         {
             case KeyTypeEnum.Sr25519:
-                await Shell.Current.Navigation.PushAsync(new EnterMnemonicsPage(new EnterMnemonicsViewModel {
+                await Shell.Current.Navigation.PushAsync(new EnterMnemonicsPage(new EnterMnemonicsViewModel
+                {
                     Navigation = Shell.Current.Navigation.PopAsync,
                 }));
 

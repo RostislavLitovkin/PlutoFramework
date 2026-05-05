@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_conviction_voting.vote
     
     
     /// <summary>
-    /// >> 913 - Composite[pallet_conviction_voting.vote.CastingT2]
+    /// >> 925 - Composite[pallet_conviction_voting.vote.CastingT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CastingT2 : BaseType

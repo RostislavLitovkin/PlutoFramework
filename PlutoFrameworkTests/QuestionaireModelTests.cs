@@ -21,7 +21,7 @@ namespace PlutoFrameworkTests
         }
 
         [Test]
-            public async Task PostAnswersPassAsync()
+        public async Task PostAnswersPassAsync()
         {
             var answers = new QuestionnaireAnswers
             {
@@ -254,6 +254,7 @@ namespace PlutoFrameworkTests
         }
 
         [Test]
+
         public async Task AcceptTermsAsync()
         {
             var response = await QuestionnaireModel.AcceptTermsAsync(address);

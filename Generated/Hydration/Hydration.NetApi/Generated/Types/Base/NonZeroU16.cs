@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 427 - Composite[NonZeroU16]
+    /// >> 481 - Composite[NonZeroU16]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class NonZeroU16 : BaseType

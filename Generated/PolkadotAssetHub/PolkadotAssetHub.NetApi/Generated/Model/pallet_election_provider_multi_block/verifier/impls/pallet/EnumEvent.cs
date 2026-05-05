@@ -46,7 +46,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi
     }
     
     /// <summary>
-    /// >> 686 - Variant[pallet_election_provider_multi_block.verifier.impls.pallet.Event]
+    /// >> 694 - Variant[pallet_election_provider_multi_block.verifier.impls.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

@@ -38,7 +38,7 @@
 
         <ContentView AbsoluteLayout.LayoutBounds=".5, .5, 1, 1"
                      AbsoluteLayout.LayoutFlags="All"
-                     Margin="10, 65, 10, 0"
+                     Margin="0, 65, 0, 0"
                      TranslationY="500"
                      x:Name="contentView">
 

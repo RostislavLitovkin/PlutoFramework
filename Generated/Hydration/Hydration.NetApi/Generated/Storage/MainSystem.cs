@@ -58,6 +58,7 @@ namespace Hydration.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "UpgradedToTripleRefCount"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.Bool)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "ExecutionPhase"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Hydration.NetApi.Generated.Model.frame_system.EnumPhase)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "AuthorizedUpgrade"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Hydration.NetApi.Generated.Model.frame_system.CodeUpgradeAuthorization)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("System", "ExtrinsicWeightReclaimed"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Hydration.NetApi.Generated.Model.sp_weights.weight_v2.Weight)));
         }
         
         /// <summary>
@@ -623,6 +624,47 @@ namespace Hydration.NetApi.Generated.Storage
             var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.frame_system.CodeUpgradeAuthorization>(parameters, blockhash, token);
             return result;
         }
+        
+        /// <summary>
+        /// >> ExtrinsicWeightReclaimedParams
+        ///  The weight reclaimed for the extrinsic.
+        /// 
+        ///  This information is available until the end of the extrinsic execution.
+        ///  More precisely this information is removed in `note_applied_extrinsic`.
+        /// 
+        ///  Logic doing some post dispatch weight reduction must update this storage to avoid duplicate
+        ///  reduction.
+        /// </summary>
+        public static string ExtrinsicWeightReclaimedParams()
+        {
+            return RequestGenerator.GetStorage("System", "ExtrinsicWeightReclaimed", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> ExtrinsicWeightReclaimedDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string ExtrinsicWeightReclaimedDefault()
+        {
+            return "0x0000";
+        }
+        
+        /// <summary>
+        /// >> ExtrinsicWeightReclaimed
+        ///  The weight reclaimed for the extrinsic.
+        /// 
+        ///  This information is available until the end of the extrinsic execution.
+        ///  More precisely this information is removed in `note_applied_extrinsic`.
+        /// 
+        ///  Logic doing some post dispatch weight reduction must update this storage to avoid duplicate
+        ///  reduction.
+        /// </summary>
+        public async Task<Hydration.NetApi.Generated.Model.sp_weights.weight_v2.Weight> ExtrinsicWeightReclaimed(string blockhash, CancellationToken token)
+        {
+            string parameters = SystemStorage.ExtrinsicWeightReclaimedParams();
+            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.sp_weights.weight_v2.Weight>(parameters, blockhash, token);
+            return result;
+        }
     }
     
     /// <summary>
@@ -767,9 +809,9 @@ namespace Hydration.NetApi.Generated.Storage
         public Hydration.NetApi.Generated.Model.frame_system.limits.BlockWeights BlockWeights()
         {
             var result = new Hydration.NetApi.Generated.Model.frame_system.limits.BlockWeights();
-            result.Create("0x624D186C000B00204AA9D1010200400103104D845FE9B0010BF0D6373B51011A4FE700010B0098F" +
-                    "73E5D010200F00001000003104D845FE9B0010BF05E8AA5C5011A4F3701010B00204AA9D10102004" +
-                    "00101070088526A740200500003104D845FE9B0000000");
+            result.Create("0xC2A0E766000B00204AA9D1010200400103E0187C62E9B0010B200B403851011A4FE700010B0098F" +
+                    "73E5D010200F00001000003E0187C62E9B0010B209392A2C5011A4F3701010B00204AA9D10102004" +
+                    "00101070088526A740200500003E0187C62E9B0000000");
             return result;
         }
         
@@ -813,7 +855,7 @@ namespace Hydration.NetApi.Generated.Storage
         public Hydration.NetApi.Generated.Model.sp_version.RuntimeVersion Version()
         {
             var result = new Hydration.NetApi.Generated.Model.sp_version.RuntimeVersion();
-            result.Create(@"0x1C687964726164781C68796472616478010000005B0100000000000058DF6ACB689907609B0500000037E397FC7C91F5E40200000040FE3AD401F8959A06000000D2BC9897EED08F1503000000F78B278BE53F454C02000000AB3C0572291FEB8B01000000DD718D5CC53262D401000000EA93E3F16F3D6962020000009AF86751B70C112D01000000BC9D89904F5B923F0100000037C8BB1350A9A2A804000000582211F65BB14B8905000000E65B00E46CEDD0AA020000000BB67A52FCD040FF01000000542334FE4FD7CADA010000006FF52EE858E6C5BD01000000D7BDD8A272CA0D650100000091B1C8B16328EB92010000009FFB505AA738D69C010000002B5F5BCD2460E4F001000000A2B2B484FCB8694301000000FBC577B9D747EFD6010000000100000001");
+            result.Create(@"0x1C687964726164781C68796472616478010000008A010000000000005CDF6ACB689907609B0500000037E397FC7C91F5E40200000040FE3AD401F8959A06000000D2BC9897EED08F1503000000F78B278BE53F454C02000000AB3C0572291FEB8B01000000DD718D5CC53262D401000000EA93E3F16F3D6962020000009AF86751B70C112D01000000BC9D89904F5B923F0100000037C8BB1350A9A2A804000000582211F65BB14B8906000000E65B00E46CEDD0AA020000000BB67A52FCD040FF0100000034A3D488166B5A5501000000542334FE4FD7CADA010000006FF52EE858E6C5BD01000000D7BDD8A272CA0D650200000091B1C8B16328EB92020000009FFB505AA738D69C010000002B5F5BCD2460E4F001000000A2B2B484FCB8694301000000FBC577B9D747EFD6010000000100000001");
             return result;
         }
         

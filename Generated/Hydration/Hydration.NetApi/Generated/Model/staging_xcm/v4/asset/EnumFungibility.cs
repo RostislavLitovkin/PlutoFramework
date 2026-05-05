@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Model.staging_xcm.v4.asset
     }
     
     /// <summary>
-    /// >> 364 - Variant[staging_xcm.v4.asset.Fungibility]
+    /// >> 379 - Variant[staging_xcm.v4.asset.Fungibility]
     /// </summary>
     public sealed class EnumFungibility : BaseEnumRust<Fungibility>
     {

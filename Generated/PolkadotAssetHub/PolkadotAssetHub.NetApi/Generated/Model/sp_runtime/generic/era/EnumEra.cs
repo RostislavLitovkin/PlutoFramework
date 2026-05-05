@@ -1303,7 +1303,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.sp_runtime.generic.era
     }
     
     /// <summary>
-    /// >> 1009 - Variant[sp_runtime.generic.era.Era]
+    /// >> 1063 - Variant[sp_runtime.generic.era.Era]
     /// </summary>
     public sealed class EnumEra : BaseEnumRust<Era>
     {

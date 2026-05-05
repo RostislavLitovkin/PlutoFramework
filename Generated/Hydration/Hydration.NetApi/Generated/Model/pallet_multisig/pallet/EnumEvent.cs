@@ -45,10 +45,16 @@ namespace Hydration.NetApi.Generated.Model.pallet_multisig.pallet
         /// A multisig operation has been cancelled.
         /// </summary>
         MultisigCancelled = 3,
+        
+        /// <summary>
+        /// >> DepositPoked
+        /// The deposit for a multisig operation has been updated/poked.
+        /// </summary>
+        DepositPoked = 4,
     }
     
     /// <summary>
-    /// >> 51 - Variant[pallet_multisig.pallet.Event]
+    /// >> 53 - Variant[pallet_multisig.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -63,6 +69,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_multisig.pallet
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.pallet_multisig.Timepoint, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Types.Base.Arr32U8>>(Event.MultisigApproval);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.pallet_multisig.Timepoint, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Types.Base.Arr32U8, Hydration.NetApi.Generated.Types.Base.EnumResult>>(Event.MultisigExecuted);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.pallet_multisig.Timepoint, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Types.Base.Arr32U8>>(Event.MultisigCancelled);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Types.Base.Arr32U8, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.DepositPoked);
         }
     }
 }

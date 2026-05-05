@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.polkadot_primitives.v8
     
     
     /// <summary>
-    /// >> 183 - Composite[polkadot_primitives.v8.PersistedValidationData]
+    /// >> 188 - Composite[polkadot_primitives.v8.PersistedValidationData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PersistedValidationData : BaseType

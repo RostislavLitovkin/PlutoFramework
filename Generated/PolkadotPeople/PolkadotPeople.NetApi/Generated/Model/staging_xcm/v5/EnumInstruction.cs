@@ -283,7 +283,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.staging_xcm.v5
     }
     
     /// <summary>
-    /// >> 337 - Variant[staging_xcm.v5.Instruction]
+    /// >> 366 - Variant[staging_xcm.v5.Instruction]
     /// </summary>
     public sealed class EnumInstruction : BaseEnumRust<Instruction>
     {

@@ -78,7 +78,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi
     }
     
     /// <summary>
-    /// >> 687 - Variant[pallet_election_provider_multi_block.verifier.FeasibilityError]
+    /// >> 695 - Variant[pallet_election_provider_multi_block.verifier.FeasibilityError]
     /// </summary>
     public sealed class EnumFeasibilityError : BaseEnumRust<FeasibilityError>
     {

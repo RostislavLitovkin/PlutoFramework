@@ -38,7 +38,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.scheduler
     }
     
     /// <summary>
-    /// >> 589 - Variant[pallet_rc_migrator.scheduler.RcSchedulerMessage]
+    /// >> 597 - Variant[pallet_rc_migrator.scheduler.RcSchedulerMessage]
     /// </summary>
     public sealed class EnumRcSchedulerMessage : BaseEnumRust<RcSchedulerMessage>
     {

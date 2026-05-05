@@ -99,10 +99,16 @@ namespace Hydration.NetApi.Generated.Model.pallet_evm.pallet
         /// Undefined error.
         /// </summary>
         Undefined = 12,
+        
+        /// <summary>
+        /// >> CreateOriginNotAllowed
+        /// Address not allowed to deploy contracts either via CREATE or CALL(CREATE).
+        /// </summary>
+        CreateOriginNotAllowed = 13,
     }
     
     /// <summary>
-    /// >> 700 - Variant[pallet_evm.pallet.Error]
+    /// >> 769 - Variant[pallet_evm.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

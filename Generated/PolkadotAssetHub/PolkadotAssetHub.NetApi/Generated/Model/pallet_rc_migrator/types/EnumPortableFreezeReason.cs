@@ -28,7 +28,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.types
     }
     
     /// <summary>
-    /// >> 499 - Variant[pallet_rc_migrator.types.PortableFreezeReason]
+    /// >> 507 - Variant[pallet_rc_migrator.types.PortableFreezeReason]
     /// </summary>
     public sealed class EnumPortableFreezeReason : BaseEnumRust<PortableFreezeReason>
     {

@@ -10,7 +10,8 @@
                CardPadding="10, 0, 10, 0">
         <card:Card.View>
             <Grid HeightRequest="40"
-                  ColumnSpacing="10">
+                  ColumnSpacing="10"
+                  >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="120" />
                     <ColumnDefinition Width="*" />

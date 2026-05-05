@@ -60,7 +60,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_circuit_breaker.pallet
     }
     
     /// <summary>
-    /// >> 422 - Variant[pallet_circuit_breaker.pallet.Event]
+    /// >> 476 - Variant[pallet_circuit_breaker.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

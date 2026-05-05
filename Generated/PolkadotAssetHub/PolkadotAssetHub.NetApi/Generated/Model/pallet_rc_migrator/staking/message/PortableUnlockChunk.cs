@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.staking.mes
     
     
     /// <summary>
-    /// >> 647 - Composite[pallet_rc_migrator.staking.message.PortableUnlockChunk]
+    /// >> 655 - Composite[pallet_rc_migrator.staking.message.PortableUnlockChunk]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PortableUnlockChunk : BaseType

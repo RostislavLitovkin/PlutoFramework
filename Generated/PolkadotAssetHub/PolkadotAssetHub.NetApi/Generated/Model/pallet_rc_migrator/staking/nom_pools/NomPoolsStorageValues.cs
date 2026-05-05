@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.staking.nom
     
     
     /// <summary>
-    /// >> 533 - Composite[pallet_rc_migrator.staking.nom_pools.NomPoolsStorageValues]
+    /// >> 541 - Composite[pallet_rc_migrator.staking.nom_pools.NomPoolsStorageValues]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class NomPoolsStorageValues : BaseType

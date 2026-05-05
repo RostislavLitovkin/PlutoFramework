@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.frame_support.traits.storage
     
     
     /// <summary>
-    /// >> 922 - Composite[frame_support.traits.storage.Disabled]
+    /// >> 924 - Composite[frame_support.traits.storage.Disabled]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Disabled : BaseType

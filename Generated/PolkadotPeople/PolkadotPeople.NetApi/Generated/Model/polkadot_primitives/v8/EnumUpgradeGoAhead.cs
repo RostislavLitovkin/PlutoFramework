@@ -33,7 +33,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.polkadot_primitives.v8
     }
     
     /// <summary>
-    /// >> 180 - Variant[polkadot_primitives.v8.UpgradeGoAhead]
+    /// >> 185 - Variant[polkadot_primitives.v8.UpgradeGoAhead]
     /// </summary>
     public sealed class EnumUpgradeGoAhead : BaseEnum<UpgradeGoAhead>
     {

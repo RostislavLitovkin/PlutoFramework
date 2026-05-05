@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.staking.mes
     
     
     /// <summary>
-    /// >> 651 - Composite[pallet_rc_migrator.staking.message.PortableNominations]
+    /// >> 659 - Composite[pallet_rc_migrator.staking.message.PortableNominations]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PortableNominations : BaseType

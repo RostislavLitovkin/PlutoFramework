@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.cumulus_pallet_parachain_system.uninc
     
     
     /// <summary>
-    /// >> 739 - Composite[cumulus_pallet_parachain_system.unincluded_segment.UsedBandwidth]
+    /// >> 809 - Composite[cumulus_pallet_parachain_system.unincluded_segment.UsedBandwidth]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UsedBandwidth : BaseType
@@ -35,7 +35,7 @@ namespace Hydration.NetApi.Generated.Model.cumulus_pallet_parachain_system.uninc
         /// <summary>
         /// >> hrmp_outgoing
         /// </summary>
-        public Hydration.NetApi.Generated.Types.Base.BTreeMapT2 HrmpOutgoing { get; set; }
+        public Hydration.NetApi.Generated.Types.Base.BTreeMapT3 HrmpOutgoing { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -61,7 +61,7 @@ namespace Hydration.NetApi.Generated.Model.cumulus_pallet_parachain_system.uninc
             UmpMsgCount.Decode(byteArray, ref p);
             UmpTotalBytes = new Substrate.NetApi.Model.Types.Primitive.U32();
             UmpTotalBytes.Decode(byteArray, ref p);
-            HrmpOutgoing = new Hydration.NetApi.Generated.Types.Base.BTreeMapT2();
+            HrmpOutgoing = new Hydration.NetApi.Generated.Types.Base.BTreeMapT3();
             HrmpOutgoing.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

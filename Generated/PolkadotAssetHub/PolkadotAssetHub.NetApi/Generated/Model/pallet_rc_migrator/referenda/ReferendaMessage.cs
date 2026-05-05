@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.referenda
     
     
     /// <summary>
-    /// >> 562 - Composite[pallet_rc_migrator.referenda.ReferendaMessage]
+    /// >> 570 - Composite[pallet_rc_migrator.referenda.ReferendaMessage]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ReferendaMessage : BaseType

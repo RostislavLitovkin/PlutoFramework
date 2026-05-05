@@ -1,6 +1,5 @@
 #if ANDROID
-using System;
-using System.Threading.Tasks;
+using Android.Runtime;
 using Android.Views;
 using Android.Webkit;
 using Java.Interop;
@@ -126,6 +125,12 @@ public partial class PolkadotExtensionWebView
         private readonly WeakReference<PolkadotExtensionWebView> _owner;
         private readonly WeakReference<Android.Webkit.WebView> _nativeWebView;
 
+        // Required JNI constructor so Android can rehydrate this listener from native handles
+        protected ScrollChangedListener(IntPtr handle, JniHandleOwnership transfer)
+            : base(handle, transfer)
+        {
+        }
+
         public ScrollChangedListener(PolkadotExtensionWebView owner, Android.Webkit.WebView nativeWebView)
         {
             _owner = new(owner);
@@ -134,7 +139,7 @@ public partial class PolkadotExtensionWebView
 
         public void OnScrollChanged()
         {
-            if (_owner.TryGetTarget(out var owner) && _nativeWebView.TryGetTarget(out var native))
+            if (_owner is not null && _owner.TryGetTarget(out var owner) && _nativeWebView.TryGetTarget(out var native))
             {
                 owner.RaiseScrolled(native.ScrollX, native.ScrollY);
             }

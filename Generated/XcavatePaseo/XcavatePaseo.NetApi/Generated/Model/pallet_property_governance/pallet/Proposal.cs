@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
     
     
     /// <summary>
-    /// >> 607 - Composite[pallet_property_governance.pallet.Proposal]
+    /// >> 788 - Composite[pallet_property_governance.pallet.Proposal]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Proposal : BaseType
@@ -39,7 +39,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         /// <summary>
         /// >> metadata
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2 Metadata { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 Metadata { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -68,7 +68,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
             Amount.Decode(byteArray, ref p);
             CreatedAt = new Substrate.NetApi.Model.Types.Primitive.U32();
             CreatedAt.Decode(byteArray, ref p);
-            Metadata = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2();
+            Metadata = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6();
             Metadata.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

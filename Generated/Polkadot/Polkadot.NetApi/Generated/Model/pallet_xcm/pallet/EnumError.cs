@@ -196,7 +196,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 927 - Variant[pallet_xcm.pallet.Error]
+    /// >> 929 - Variant[pallet_xcm.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnumRust<Error>

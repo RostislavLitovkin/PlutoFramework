@@ -73,7 +73,7 @@ namespace PlutoFrameworkTests
         [Test]
         public async Task AirdropAsync()
         {
-            var WS_URL = "wss://fraa-flashbox-4659-rpc.a.stagenet.tanssi.network";
+            var WS_URL = "wss://xcavate-paseo.api.onfinality.io/public-ws";
 
             //var status = await FaucetApiModel.PostRequestAsync(WS_URL, managerAccount.Value);
 

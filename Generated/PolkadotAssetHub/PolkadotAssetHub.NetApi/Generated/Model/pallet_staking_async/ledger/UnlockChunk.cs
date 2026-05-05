@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async.ledger
     
     
     /// <summary>
-    /// >> 485 - Composite[pallet_staking_async.ledger.UnlockChunk]
+    /// >> 488 - Composite[pallet_staking_async.ledger.UnlockChunk]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class UnlockChunk : BaseType

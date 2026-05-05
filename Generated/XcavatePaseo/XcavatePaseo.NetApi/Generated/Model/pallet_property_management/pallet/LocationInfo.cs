@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_management.pallet
     
     
     /// <summary>
-    /// >> 593 - Composite[pallet_property_management.pallet.LocationInfo]
+    /// >> 774 - Composite[pallet_property_management.pallet.LocationInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class LocationInfo : BaseType

@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.staking.mes
     
     
     /// <summary>
-    /// >> 641 - Composite[pallet_rc_migrator.staking.message.PortableActiveEraInfo]
+    /// >> 649 - Composite[pallet_rc_migrator.staking.message.PortableActiveEraInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PortableActiveEraInfo : BaseType

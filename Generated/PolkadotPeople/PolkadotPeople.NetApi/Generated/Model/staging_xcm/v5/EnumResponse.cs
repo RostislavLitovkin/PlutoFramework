@@ -53,7 +53,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.staging_xcm.v5
     }
     
     /// <summary>
-    /// >> 75 - Variant[staging_xcm.v5.Response]
+    /// >> 77 - Variant[staging_xcm.v5.Response]
     /// </summary>
     public sealed class EnumResponse : BaseEnumRust<Response>
     {

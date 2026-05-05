@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async
     
     
     /// <summary>
-    /// >> 472 - Composite[pallet_staking_async.ValidatorPrefs]
+    /// >> 475 - Composite[pallet_staking_async.ValidatorPrefs]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ValidatorPrefs : BaseType

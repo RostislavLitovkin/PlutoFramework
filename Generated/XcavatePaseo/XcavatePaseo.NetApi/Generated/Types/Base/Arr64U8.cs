@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 332 - Array
+    /// >> 455 - Array
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Array)]
     public sealed class Arr64U8 : BaseType

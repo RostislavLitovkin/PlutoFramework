@@ -98,7 +98,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_asset_conversion.pallet
     }
     
     /// <summary>
-    /// >> 358 - Variant[pallet_asset_conversion.pallet.Call]
+    /// >> 360 - Variant[pallet_asset_conversion.pallet.Call]
     /// Pallet's callable functions.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

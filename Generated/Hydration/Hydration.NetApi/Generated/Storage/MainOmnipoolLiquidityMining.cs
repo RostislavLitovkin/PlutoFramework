@@ -279,13 +279,28 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> add_liquidity_stableswap_omnipool_and_join_farms
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method AddLiquidityStableswapOmnipoolAndJoinFarms(Substrate.NetApi.Model.Types.Primitive.U32 stable_pool_id, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10 stable_asset_amounts, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8> farm_entries)
+        public static Method AddLiquidityStableswapOmnipoolAndJoinFarms(Substrate.NetApi.Model.Types.Primitive.U32 stable_pool_id, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10 stable_asset_amounts, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8> farm_entries, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128> min_shares_limit)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(stable_pool_id.Encode());
             byteArray.AddRange(stable_asset_amounts.Encode());
             byteArray.AddRange(farm_entries.Encode());
+            byteArray.AddRange(min_shares_limit.Encode());
             return new Method(63, "OmnipoolLiquidityMining", 16, "add_liquidity_stableswap_omnipool_and_join_farms", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> remove_liquidity_stableswap_omnipool_and_exit_farms
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method RemoveLiquidityStableswapOmnipoolAndExitFarms(Substrate.NetApi.Model.Types.Primitive.U128 position_id, Substrate.NetApi.Model.Types.Primitive.U128 omnipool_min_limit, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10 stableswap_min_amounts_out, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128> deposit_id)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(position_id.Encode());
+            byteArray.AddRange(omnipool_min_limit.Encode());
+            byteArray.AddRange(stableswap_min_amounts_out.Encode());
+            byteArray.AddRange(deposit_id.Encode());
+            return new Method(63, "OmnipoolLiquidityMining", 17, "remove_liquidity_stableswap_omnipool_and_exit_farms", byteArray.ToArray());
         }
     }
     
@@ -377,5 +392,17 @@ namespace Hydration.NetApi.Generated.Storage
         /// No farms specified to join
         /// </summary>
         NoFarmEntriesSpecified,
+        
+        /// <summary>
+        /// >> NoAssetsSpecified
+        /// No assets specified in the withdrawal
+        /// </summary>
+        NoAssetsSpecified,
+        
+        /// <summary>
+        /// >> PositionIdMismatch
+        /// The provided position_id does not match the deposit's associated position.
+        /// </summary>
+        PositionIdMismatch,
     }
 }

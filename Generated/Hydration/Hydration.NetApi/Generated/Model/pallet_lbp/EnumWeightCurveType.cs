@@ -28,7 +28,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_lbp
     }
     
     /// <summary>
-    /// >> 244 - Variant[pallet_lbp.WeightCurveType]
+    /// >> 240 - Variant[pallet_lbp.WeightCurveType]
     /// </summary>
     public sealed class EnumWeightCurveType : BaseEnum<WeightCurveType>
     {

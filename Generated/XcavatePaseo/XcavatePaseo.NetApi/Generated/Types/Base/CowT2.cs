@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 235 - Composite[CowT2]
+    /// >> 307 - Composite[CowT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CowT2 : BaseType

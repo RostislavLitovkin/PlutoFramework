@@ -77,10 +77,17 @@ namespace Hydration.NetApi.Generated.Model.pallet_circuit_breaker.pallet
         /// Invalid amount to save deposit
         /// </summary>
         InvalidAmount = 8,
+        
+        /// <summary>
+        /// >> DepositLimitExceededForWhitelistedAccount
+        /// Deposit limit would be exceeded for a whitelisted account.
+        /// Operation rejected to prevent funds being locked on system accounts.
+        /// </summary>
+        DepositLimitExceededForWhitelistedAccount = 9,
     }
     
     /// <summary>
-    /// >> 654 - Variant[pallet_circuit_breaker.pallet.Error]
+    /// >> 719 - Variant[pallet_circuit_breaker.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

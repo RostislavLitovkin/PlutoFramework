@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.cumulus_pallet_parachain_system.
     
     
     /// <summary>
-    /// >> 181 - Composite[cumulus_pallet_parachain_system.unincluded_segment.SegmentTracker]
+    /// >> 186 - Composite[cumulus_pallet_parachain_system.unincluded_segment.SegmentTracker]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SegmentTracker : BaseType

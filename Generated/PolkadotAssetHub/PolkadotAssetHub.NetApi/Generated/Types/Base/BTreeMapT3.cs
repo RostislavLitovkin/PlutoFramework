@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 717 - Composite[BTreeMapT3]
+    /// >> 726 - Composite[BTreeMapT3]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BTreeMapT3 : BaseType

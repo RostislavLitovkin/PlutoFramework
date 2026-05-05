@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_xcm.pallet
     }
     
     /// <summary>
-    /// >> 94 - Variant[pallet_xcm.pallet.Origin]
+    /// >> 96 - Variant[pallet_xcm.pallet.Origin]
     /// </summary>
     public sealed class EnumOrigin : BaseEnumRust<Origin>
     {
@@ -43,8 +43,8 @@ namespace Hydration.NetApi.Generated.Model.pallet_xcm.pallet
         /// </summary>
         public EnumOrigin()
         {
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Origin.Xcm);
-				AddTypeDecoder<Hydration.NetApi.Generated.Model.staging_xcm.v4.location.Location>(Origin.Response);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.staging_xcm.v5.location.Location>(Origin.Xcm);
+				AddTypeDecoder<Hydration.NetApi.Generated.Model.staging_xcm.v5.location.Location>(Origin.Response);
         }
     }
 }

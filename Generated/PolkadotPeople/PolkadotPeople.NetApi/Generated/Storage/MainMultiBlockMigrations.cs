@@ -38,7 +38,7 @@ namespace PolkadotPeople.NetApi.Generated.Storage
             this._client = client;
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("MultiBlockMigrations", "Cursor"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotPeople.NetApi.Generated.Model.pallet_migrations.EnumMigrationCursor)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("MultiBlockMigrations", "Historic"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9), typeof(Substrate.NetApi.Model.Types.Base.BaseTuple)));
         }
         
         /// <summary>
@@ -81,7 +81,7 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         ///  This is used as blacklist, to not re-execute migrations that have not been removed from the
         ///  codebase yet. Governance can regularly clear this out via `clear_historic`.
         /// </summary>
-        public static string HistoricParams(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 key)
+        public static string HistoricParams(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 key)
         {
             return RequestGenerator.GetStorage("MultiBlockMigrations", "Historic", Substrate.NetApi.Model.Meta.Storage.Type.Map, new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                         Substrate.NetApi.Model.Meta.Storage.Hasher.Twox64Concat}, new Substrate.NetApi.Model.Types.IType[] {
@@ -104,7 +104,7 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         ///  This is used as blacklist, to not re-execute migrations that have not been removed from the
         ///  codebase yet. Governance can regularly clear this out via `clear_historic`.
         /// </summary>
-        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> Historic(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8 key, string blockhash, CancellationToken token)
+        public async Task<Substrate.NetApi.Model.Types.Base.BaseTuple> Historic(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9 key, string blockhash, CancellationToken token)
         {
             string parameters = MultiBlockMigrationsStorage.HistoricParams(key);
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Base.BaseTuple>(parameters, blockhash, token);
@@ -133,7 +133,7 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         /// >> force_set_active_cursor
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ForceSetActiveCursor(Substrate.NetApi.Model.Types.Primitive.U32 index, Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7> inner_cursor, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> started_at)
+        public static Method ForceSetActiveCursor(Substrate.NetApi.Model.Types.Primitive.U32 index, Substrate.NetApi.Model.Types.Base.BaseOpt<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8> inner_cursor, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U32> started_at)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(index.Encode());

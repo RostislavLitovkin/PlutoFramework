@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async_rc_client
     
     
     /// <summary>
-    /// >> 400 - Composite[pallet_staking_async_rc_client.Offence]
+    /// >> 402 - Composite[pallet_staking_async_rc_client.Offence]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Offence : BaseType

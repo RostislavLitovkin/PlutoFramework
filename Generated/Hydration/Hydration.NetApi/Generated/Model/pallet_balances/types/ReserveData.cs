@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_balances.types
     
     
     /// <summary>
-    /// >> 504 - Composite[pallet_balances.types.ReserveData]
+    /// >> 566 - Composite[pallet_balances.types.ReserveData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ReserveData : BaseType

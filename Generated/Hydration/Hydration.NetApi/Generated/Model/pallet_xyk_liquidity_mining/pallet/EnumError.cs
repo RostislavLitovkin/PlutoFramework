@@ -102,7 +102,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_xyk_liquidity_mining.pallet
     }
     
     /// <summary>
-    /// >> 718 - Variant[pallet_xyk_liquidity_mining.pallet.Error]
+    /// >> 788 - Variant[pallet_xyk_liquidity_mining.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

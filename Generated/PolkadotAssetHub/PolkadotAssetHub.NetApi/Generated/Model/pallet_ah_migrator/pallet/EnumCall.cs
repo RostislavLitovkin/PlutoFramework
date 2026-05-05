@@ -216,7 +216,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_ah_migrator.pallet
     }
     
     /// <summary>
-    /// >> 489 - Variant[pallet_ah_migrator.pallet.Call]
+    /// >> 497 - Variant[pallet_ah_migrator.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

@@ -70,7 +70,7 @@ namespace PlutoFramework.Constants
             { "0x401a1f9dca3da46f5c4091016c8a2f26dcea05865116b286f60f668207d1474b", EndpointEnum.Moonriver },
             { "0x262e1b2ad728475fd6fe88e62d34c200abe6fd693931ddad144059b1eb884e5b", EndpointEnum.Bifrost },
             { "0x411f057b9107718c9624d6aa4a3f23c1653898297f3d4d529d9bb6511a39dd21", EndpointEnum.Kilt },
-            { "0x233351c17fe0196b78239af962bd644797b51ce67d50d6ac9570a192404ec445", EndpointEnum.XcavatePaseo },
+            { "0xe600ea6d0dfa0987874bc539b4c471b9f7e5a3277e80989e47a6cc69bb944511", EndpointEnum.XcavatePaseo },
         });
 
         public static readonly ReadOnlyDictionary<string, EndpointEnum> ParachainIdToKey = new ReadOnlyDictionary<string, EndpointEnum>(new Dictionary<string, EndpointEnum>()
@@ -254,7 +254,7 @@ namespace PlutoFramework.Constants
             {
                 Name = "Kusama Asset Hub",
                 Key = EndpointEnum.KusamaAssetHub,
-                URLs =  new string[4] { "wss://asset-hub-kusama-rpc.dwellir.com", "wss://rpc-asset-hub-kusama.luckyfriday.io", "wss://ksm-rpc.stakeworld.io/assethub", "wss://statemine-rpc-tn.dwellir.com" },
+                URLs =  new string[4] { "wss://asset-hub-kusama-rpc.n.dwellir.com", "wss://rpc-asset-hub-kusama.luckyfriday.io", "wss://ksm-rpc.stakeworld.io/assethub", "wss://statemine-rpc-tn.dwellir.com" },
                 Icon = "kusamaassethub.png",
                 DarkIcon = "kusamaassethub.png",
                 Unit = "KSM",
@@ -268,7 +268,7 @@ namespace PlutoFramework.Constants
             { EndpointEnum.PolkadotAssetHub, new Endpoint {
                 Name = "Polkadot Asset Hub",
                 Key = EndpointEnum.PolkadotAssetHub,
-                URLs =  new string[4] { "wss://asset-hub-polkadot-rpc.dwellir.com", "wss://statemint-rpc-tn.dwellir.com", "wss://statemint.api.onfinality.io/public-ws", "wss://dot-rpc.stakeworld.io/assethub" },
+                URLs =  new string[4] { "wss://asset-hub-polkadot-rpc.n.dwellir.com", "wss://statemint-rpc-tn.dwellir.com", "wss://statemint.api.onfinality.io/public-ws", "wss://dot-rpc.stakeworld.io/assethub" },
                 Icon = "polkadotassethub.png",
                 DarkIcon = "polkadotassethub.png",
                 Unit = "DOT",
@@ -435,7 +435,7 @@ namespace PlutoFramework.Constants
                 {
                     Name = "Xcavate",
                     Key = EndpointEnum.XcavatePaseo,
-                    URLs =  new string[1] { "wss://fraa-flashbox-4671-rpc.a.stagenet.tanssi.network" },
+                    URLs =  new string[1] { "wss://xcavate-paseo.api.onfinality.io/public-ws" },
                     Icon = "xcavate.png",
                     DarkIcon = "xcavate.png",
                     Unit = "XCAV",

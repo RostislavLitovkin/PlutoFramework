@@ -58,22 +58,10 @@ namespace PolkadotPeople.NetApi.Generated.Model.cumulus_pallet_parachain_system.
         /// No validation function upgrade is currently scheduled.
         /// </summary>
         NotScheduled = 5,
-        
-        /// <summary>
-        /// >> NothingAuthorized
-        /// No code upgrade has been authorized.
-        /// </summary>
-        NothingAuthorized = 6,
-        
-        /// <summary>
-        /// >> Unauthorized
-        /// The given code upgrade has not been authorized.
-        /// </summary>
-        Unauthorized = 7,
     }
     
     /// <summary>
-    /// >> 212 - Variant[cumulus_pallet_parachain_system.pallet.Error]
+    /// >> 227 - Variant[cumulus_pallet_parachain_system.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

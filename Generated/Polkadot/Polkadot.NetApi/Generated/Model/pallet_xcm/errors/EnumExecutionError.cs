@@ -228,7 +228,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_xcm.errors
     }
     
     /// <summary>
-    /// >> 928 - Variant[pallet_xcm.errors.ExecutionError]
+    /// >> 930 - Variant[pallet_xcm.errors.ExecutionError]
     /// </summary>
     public sealed class EnumExecutionError : BaseEnum<ExecutionError>
     {

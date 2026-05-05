@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_treasury
     
     
     /// <summary>
-    /// >> 622 - Composite[pallet_treasury.Proposal]
+    /// >> 630 - Composite[pallet_treasury.Proposal]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Proposal : BaseType

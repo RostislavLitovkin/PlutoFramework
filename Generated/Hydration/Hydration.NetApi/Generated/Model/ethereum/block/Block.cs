@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.ethereum.block
     
     
     /// <summary>
-    /// >> 709 - Composite[ethereum.block.Block]
+    /// >> 778 - Composite[ethereum.block.Block]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Block : BaseType
@@ -31,7 +31,7 @@ namespace Hydration.NetApi.Generated.Model.ethereum.block
         /// <summary>
         /// >> transactions
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.ethereum.transaction.EnumTransactionV2> Transactions { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.ethereum.transaction.EnumTransactionV3> Transactions { get; set; }
         /// <summary>
         /// >> ommers
         /// </summary>
@@ -59,7 +59,7 @@ namespace Hydration.NetApi.Generated.Model.ethereum.block
             var start = p;
             Header = new Hydration.NetApi.Generated.Model.ethereum.header.Header();
             Header.Decode(byteArray, ref p);
-            Transactions = new Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.ethereum.transaction.EnumTransactionV2>();
+            Transactions = new Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.ethereum.transaction.EnumTransactionV3>();
             Transactions.Decode(byteArray, ref p);
             Ommers = new Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.ethereum.header.Header>();
             Ommers.Decode(byteArray, ref p);

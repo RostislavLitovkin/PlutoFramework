@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.cumulus_pallet_parachain_system.uninc
     
     
     /// <summary>
-    /// >> 741 - Composite[cumulus_pallet_parachain_system.unincluded_segment.HrmpChannelUpdate]
+    /// >> 811 - Composite[cumulus_pallet_parachain_system.unincluded_segment.HrmpChannelUpdate]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class HrmpChannelUpdate : BaseType

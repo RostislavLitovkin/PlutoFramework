@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_nomination_pools
     
     
     /// <summary>
-    /// >> 545 - Composite[pallet_nomination_pools.PoolRoles]
+    /// >> 553 - Composite[pallet_nomination_pools.PoolRoles]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PoolRoles : BaseType

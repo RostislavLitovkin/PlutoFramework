@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.staking.mes
     
     
     /// <summary>
-    /// >> 639 - Composite[pallet_rc_migrator.staking.message.StakingValues]
+    /// >> 647 - Composite[pallet_rc_migrator.staking.message.StakingValues]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class StakingValues : BaseType

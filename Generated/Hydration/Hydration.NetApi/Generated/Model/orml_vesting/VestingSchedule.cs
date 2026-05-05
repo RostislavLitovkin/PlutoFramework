@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.orml_vesting
     
     
     /// <summary>
-    /// >> 261 - Composite[orml_vesting.VestingSchedule]
+    /// >> 278 - Composite[orml_vesting.VestingSchedule]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class VestingSchedule : BaseType

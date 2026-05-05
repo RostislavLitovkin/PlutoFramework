@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.staking.mes
     
     
     /// <summary>
-    /// >> 645 - Composite[pallet_rc_migrator.staking.message.PortableStakingLedger]
+    /// >> 653 - Composite[pallet_rc_migrator.staking.message.PortableStakingLedger]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PortableStakingLedger : BaseType

@@ -43,11 +43,11 @@ namespace PolkadotPeople.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Locks"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(PolkadotPeople.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT1)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Reserves"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Holds"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Freezes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Holds"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Freezes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12)));
         }
         
         /// <summary>
@@ -251,10 +251,10 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         /// 
         ///  Use of reserves is deprecated in favour of holds. See `https://github.com/paritytech/substrate/pull/12951/`
         /// </summary>
-        public async Task<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9> Reserves(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10> Reserves(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = BalancesStorage.ReservesParams(key);
-            var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT9>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10>(parameters, blockhash, token);
             return result;
         }
         
@@ -282,10 +282,10 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         /// >> Holds
         ///  Holds on account balances.
         /// </summary>
-        public async Task<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10> Holds(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11> Holds(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = BalancesStorage.HoldsParams(key);
-            var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>(parameters, blockhash, token);
             return result;
         }
         
@@ -313,10 +313,10 @@ namespace PolkadotPeople.NetApi.Generated.Storage
         /// >> Freezes
         ///  Freeze locks on account balances.
         /// </summary>
-        public async Task<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11> Freezes(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12> Freezes(PolkadotPeople.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = BalancesStorage.FreezesParams(key);
-            var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<PolkadotPeople.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12>(parameters, blockhash, token);
             return result;
         }
     }

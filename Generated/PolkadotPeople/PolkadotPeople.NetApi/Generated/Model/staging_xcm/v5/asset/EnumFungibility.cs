@@ -33,7 +33,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.staging_xcm.v5.asset
     }
     
     /// <summary>
-    /// >> 71 - Variant[staging_xcm.v5.asset.Fungibility]
+    /// >> 73 - Variant[staging_xcm.v5.asset.Fungibility]
     /// </summary>
     public sealed class EnumFungibility : BaseEnumRust<Fungibility>
     {

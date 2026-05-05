@@ -28,7 +28,7 @@ namespace Hydration.NetApi.Generated.Model.evm_core.error
     }
     
     /// <summary>
-    /// >> 453 - Variant[evm_core.error.ExitRevert]
+    /// >> 509 - Variant[evm_core.error.ExitRevert]
     /// </summary>
     public sealed class EnumExitRevert : BaseEnum<ExitRevert>
     {

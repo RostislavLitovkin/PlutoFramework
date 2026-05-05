@@ -43,7 +43,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.bounties
     }
     
     /// <summary>
-    /// >> 608 - Variant[pallet_rc_migrator.bounties.RcBountiesMessage]
+    /// >> 616 - Variant[pallet_rc_migrator.bounties.RcBountiesMessage]
     /// </summary>
     public sealed class EnumRcBountiesMessage : BaseEnumRust<RcBountiesMessage>
     {

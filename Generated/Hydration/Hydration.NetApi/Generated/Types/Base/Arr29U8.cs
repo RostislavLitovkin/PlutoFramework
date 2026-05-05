@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 147 - Array
+    /// >> 148 - Array
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Array)]
     public sealed class Arr29U8 : BaseType

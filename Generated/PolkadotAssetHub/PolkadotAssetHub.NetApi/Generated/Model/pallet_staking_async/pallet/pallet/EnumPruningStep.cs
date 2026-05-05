@@ -58,7 +58,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async.pallet.pa
     }
     
     /// <summary>
-    /// >> 996 - Variant[pallet_staking_async.pallet.pallet.PruningStep]
+    /// >> 1008 - Variant[pallet_staking_async.pallet.pallet.PruningStep]
     /// </summary>
     public sealed class EnumPruningStep : BaseEnum<PruningStep>
     {

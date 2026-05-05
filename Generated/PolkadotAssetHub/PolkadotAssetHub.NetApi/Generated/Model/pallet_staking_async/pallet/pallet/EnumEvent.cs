@@ -194,7 +194,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async.pallet.pa
     }
     
     /// <summary>
-    /// >> 691 - Variant[pallet_staking_async.pallet.pallet.Event]
+    /// >> 699 - Variant[pallet_staking_async.pallet.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>

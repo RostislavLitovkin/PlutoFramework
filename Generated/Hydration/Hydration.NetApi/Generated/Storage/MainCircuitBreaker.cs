@@ -458,5 +458,12 @@ namespace Hydration.NetApi.Generated.Storage
         /// Invalid amount to save deposit
         /// </summary>
         InvalidAmount,
+        
+        /// <summary>
+        /// >> DepositLimitExceededForWhitelistedAccount
+        /// Deposit limit would be exceeded for a whitelisted account.
+        /// Operation rejected to prevent funds being locked on system accounts.
+        /// </summary>
+        DepositLimitExceededForWhitelistedAccount,
     }
 }

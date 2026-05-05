@@ -159,28 +159,38 @@ namespace Hydration.NetApi.Generated.Model.pallet_hsm.pallet
         
         /// <summary>
         /// >> execute_arbitrage
-        /// Execute arbitrage opportunity between HSM and collateral stable pool
+        /// Execute arbitrage opportunity between HSM and collateral stable pool using flash loans
         /// 
-        /// This call is designed to be triggered automatically by offchain workers. It:
-        /// 1. Detects price imbalances between HSM and a stable pool for a collateral
-        /// 2. If an opportunity exists, mints Hollar, swaps it for collateral on HSM
-        /// 3. Swaps that collateral for Hollar on the stable pool
-        /// 4. Burns the Hollar received from the arbitrage
+        /// This call is designed to be triggered automatically by offchain workers. It executes
+        /// arbitrage by taking a flash loan from the GHO contract and performing trades to profit
+        /// from price imbalances between HSM and the StableSwap pool.
+        /// 
+        /// The arbitrage execution flow:
+        /// 1. Takes a flash loan of Hollar from the GHO contract
+        /// 2. Executes trades between HSM and StableSwap pool based on arbitrage direction:
+        ///    - For HollarIn (buy direction): Sell Hollar to HSM for collateral, then sell collateral back for Hollar in pool
+        ///    - For HollarOut (sell direction): Sell Hollar for collateral in pool, then buy Hollar back from HSM
+        /// 3. Repays the flash loan
+        /// 4. Any remaining profit (in collateral) is transferred to the ArbitrageProfitReceiver
         /// 
         /// This helps maintain the peg of Hollar by profiting from and correcting price imbalances.
         /// The call is unsigned and should only be executed by offchain workers.
         /// 
         /// Parameters:
         /// - `origin`: Must be None (unsigned)
-        /// - `collateral_asset_id`: The ID of the collateral asset to check for arbitrage
+        /// - `collateral_asset_id`: The ID of the collateral asset to use for arbitrage
+        /// - `arbitrage`: Optional arbitrage parameters (direction and amount). If None, the function
+        ///   will automatically find and calculate the optimal arbitrage opportunity.
         /// 
         /// Emits:
         /// - `ArbitrageExecuted` when the arbitrage is successful
         /// 
         /// Errors:
+        /// - `FlashMinterNotSet` if the flash minter contract address has not been configured
         /// - `AssetNotApproved` if the asset is not a registered collateral
         /// - `NoArbitrageOpportunity` if there's no profitable arbitrage opportunity
         /// - `MaxBuyPriceExceeded` if the arbitrage would exceed the maximum buy price
+        /// - `MaxBuyBackExceeded` if the arbitrage would exceed the buyback limit
         /// - `InvalidEVMInteraction` if there's an error interacting with the Hollar ERC20 contract
         /// - Other errors from underlying calls
         /// </summary>
@@ -188,12 +198,27 @@ namespace Hydration.NetApi.Generated.Model.pallet_hsm.pallet
         
         /// <summary>
         /// >> set_flash_minter
+        /// Set the flash minter contract address
+        /// 
+        /// Configures the EVM address of the flash loan contract that will be used for arbitrage
+        /// operations. This contract must support the ERC-3156 flash loan standard and be trusted
+        /// to handle flash loans of Hollar tokens.
+        /// 
+        /// Parameters:
+        /// - `origin`: Must be authorized (governance/root)
+        /// - `flash_minter_addr`: The EVM address of the flash minter contract
+        /// 
+        /// Emits:
+        /// - `FlashMinterSet` when the address is successfully configured
+        /// 
+        /// Errors:
+        /// - Authorization errors if origin is not authorized
         /// </summary>
         set_flash_minter = 6,
     }
     
     /// <summary>
-    /// >> 252 - Variant[pallet_hsm.pallet.Call]
+    /// >> 248 - Variant[pallet_hsm.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -209,7 +234,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_hsm.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.sp_arithmetic.fixed_point.FixedU128>, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill>, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128>>>>(Call.update_collateral_asset);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.sell);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.buy);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Primitive.U128>>>(Call.execute_arbitrage);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Base.BaseOpt<Hydration.NetApi.Generated.Model.pallet_hsm.types.EnumArbitrage>>>(Call.execute_arbitrage);
 				AddTypeDecoder<Hydration.NetApi.Generated.Model.primitive_types.H160>(Call.set_flash_minter);
         }
     }

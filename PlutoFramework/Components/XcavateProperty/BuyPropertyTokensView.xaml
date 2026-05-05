@@ -23,7 +23,7 @@
                          x:Name="verticalStackLayout"
                          Spacing="20"
                     HorizontalOptions="Fill"
-                    Margin="0,0,0,0">
+                        Padding="10, 10, 10, 10">
 
                     <!-- Add your content here -->
 
@@ -42,7 +42,6 @@
                                         Text="{Binding Tokens}"
                                         MaxValue="{Binding MaxValue}"
                                         UpdateCommand="{Binding FormChangedCommand}"
-                                        CardWidth="{Binding Source={x:Reference verticalStackLayout}, Path=Width}"
                                         />
 
                     <AbsoluteLayout Margin="10, 0, 0, -10">
@@ -102,7 +101,7 @@
                                 <Span Text="Don’t invest unless you’re prepared to lose all the money you invest. This is a high-risk investment and you are unlikely to be protected if something goes wrong. "
                   FontAttributes="Bold" />
                                 <hyperlink:Link Text="Take 2 mins to learn more."
-                            Url="https://realxmarket.xcavate.io/risk-warning"
+                            Url="https://app.realxmarket.io/risk-warning"
                             TextColor="{StaticResource Primary}"
                             FontAttributes="Bold"/>
                             </FormattedString>
@@ -117,7 +116,7 @@
                     <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 50"
                       AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
                       ColumnSpacing="15"
-                      Margin="0, 0, 0, 10">
+                      Margin="10, 0, 10, 10">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />

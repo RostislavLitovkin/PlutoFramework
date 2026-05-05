@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.types
     
     
     /// <summary>
-    /// >> 864 - Composite[pallet_assets.types.AssetMetadataT1]
+    /// >> 876 - Composite[pallet_assets.types.AssetMetadataT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AssetMetadataT1 : BaseType

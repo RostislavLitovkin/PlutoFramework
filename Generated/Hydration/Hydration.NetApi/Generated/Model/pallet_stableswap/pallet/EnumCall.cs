@@ -72,31 +72,6 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
         update_amplification = 2,
         
         /// <summary>
-        /// >> add_liquidity
-        /// Add liquidity to selected pool.
-        /// 
-        /// Use `add_assets_liquidity` instead.
-        /// This extrinsics will be removed in the future.
-        /// 
-        /// First call of `add_liquidity` must provide "initial liquidity" of all assets.
-        /// 
-        /// If there is liquidity already in the pool, LP can provide liquidity of any number of pool assets.
-        /// 
-        /// LP must have sufficient amount of each asset.
-        /// 
-        /// Origin is given corresponding amount of shares.
-        /// 
-        /// Parameters:
-        /// - `origin`: liquidity provider
-        /// - `pool_id`: Pool Id
-        /// - `assets`: asset id and liquidity amount provided
-        /// 
-        /// Emits `LiquidityAdded` event when successful.
-        /// Emits `pallet_broadcast::Swapped` event when successful.
-        /// </summary>
-        add_liquidity = 3,
-        
-        /// <summary>
         /// >> add_liquidity_shares
         /// Add liquidity to selected pool given exact amount of shares to receive.
         /// 
@@ -349,7 +324,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
     }
     
     /// <summary>
-    /// >> 232 - Variant[pallet_stableswap.pallet.Call]
+    /// >> 228 - Variant[pallet_stableswap.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -363,7 +338,6 @@ namespace Hydration.NetApi.Generated.Model.pallet_stableswap.pallet
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT12, Substrate.NetApi.Model.Types.Primitive.U16, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>>(Call.create_pool);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.sp_arithmetic.per_things.Permill>>(Call.update_pool_fee);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U16, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.update_amplification);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10>>(Call.add_liquidity);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.add_liquidity_shares);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.remove_liquidity_one_asset);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.withdraw_asset_amount);

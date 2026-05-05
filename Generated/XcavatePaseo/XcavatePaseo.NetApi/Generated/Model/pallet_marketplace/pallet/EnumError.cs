@@ -357,10 +357,22 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.pallet
         /// The nonce does not match the nonce for this offer.
         /// </summary>
         InvalidOfferNonce = 55,
+        
+        /// <summary>
+        /// >> CallTooLarge
+        /// The encoded call is larger than `T::MaxCallLen`
+        /// </summary>
+        CallTooLarge = 56,
+        
+        /// <summary>
+        /// >> TooManyDelayedCalls
+        /// There are too many delayed calls.
+        /// </summary>
+        TooManyDelayedCalls = 57,
     }
     
     /// <summary>
-    /// >> 590 - Variant[pallet_marketplace.pallet.Error]
+    /// >> 771 - Variant[pallet_marketplace.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

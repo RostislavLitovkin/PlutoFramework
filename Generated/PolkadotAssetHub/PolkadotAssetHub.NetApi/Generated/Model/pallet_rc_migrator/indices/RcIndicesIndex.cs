@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.indices
     
     
     /// <summary>
-    /// >> 594 - Composite[pallet_rc_migrator.indices.RcIndicesIndex]
+    /// >> 602 - Composite[pallet_rc_migrator.indices.RcIndicesIndex]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RcIndicesIndex : BaseType

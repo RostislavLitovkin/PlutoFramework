@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 458 - Array
+    /// >> 461 - Array
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Array)]
     public sealed class Arr12BaseTuple : BaseType

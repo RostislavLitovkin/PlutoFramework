@@ -1,6 +1,4 @@
 ﻿
-using WebSocketSharp;
-
 namespace PlutoFramework.Components.AddressView;
 
 public partial class AddressView : ContentView
@@ -24,7 +22,7 @@ public partial class AddressView : ContentView
         {
             var control = (AddressView)bindable;
 
-            if (((string)newValue).IsNullOrEmpty())
+            if (string.IsNullOrEmpty((string)newValue))
             {
                 control.qr.IsVisible = false;
                 Grid.SetColumnSpan(control.addressLabel, 2);
@@ -73,7 +71,7 @@ public partial class AddressView : ContentView
 
     private async void OnTapped(System.Object sender, System.EventArgs e)
     {
-        if (QrAddress.IsNullOrEmpty())
+        if (string.IsNullOrEmpty(QrAddress))
         {
             return;
         }

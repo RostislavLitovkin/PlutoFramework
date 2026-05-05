@@ -18,13 +18,13 @@
                 <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, AutoSize"
                                      AbsoluteLayout.LayoutFlags="WidthProportional"
                                      x:Name="verticalStackLayout"
+                                     Padding="10, 10, 10, 10"
                                      Spacing="20">
                     <identity:IdentityAddressView x:Name="identityAddressView"
                                                   DestinationAddress="{Binding Address}"
                                                   Address="{Binding AddressInput}"/>
 
                     <assetselect:AssetInputView
-                         CardWidth="{Binding Source={x:Reference verticalStackLayout}, Path=Width}"
                             Amount="{Binding Amount}"/>
 
                     <Label Text="{Binding Fee}"
@@ -41,7 +41,7 @@
                     <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 50"
                           AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
                           ColumnSpacing="15"
-                          Margin="0, 0, 0, 10">
+                          Padding="10, 0, 10, 10">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />

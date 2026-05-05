@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_xcm
     
     
     /// <summary>
-    /// >> 823 - Composite[pallet_xcm.AuthorizedAliasesEntry]
+    /// >> 835 - Composite[pallet_xcm.AuthorizedAliasesEntry]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AuthorizedAliasesEntry : BaseType

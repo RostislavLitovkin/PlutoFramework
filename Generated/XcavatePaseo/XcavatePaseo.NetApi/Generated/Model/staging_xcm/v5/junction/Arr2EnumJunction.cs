@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.junction
     
     
     /// <summary>
-    /// >> 98 - Array
+    /// >> 69 - Array
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Array)]
     public sealed class Arr2EnumJunction : BaseType

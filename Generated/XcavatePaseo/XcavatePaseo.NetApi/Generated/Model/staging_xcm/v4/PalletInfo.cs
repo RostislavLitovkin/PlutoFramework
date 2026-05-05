@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4
     
     
     /// <summary>
-    /// >> 362 - Composite[staging_xcm.v4.PalletInfo]
+    /// >> 410 - Composite[staging_xcm.v4.PalletInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PalletInfo : BaseType
@@ -31,11 +31,11 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4
         /// <summary>
         /// >> name
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17 Name { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30 Name { get; set; }
         /// <summary>
         /// >> module_name
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17 ModuleName { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30 ModuleName { get; set; }
         /// <summary>
         /// >> major
         /// </summary>
@@ -74,9 +74,9 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v4
             var start = p;
             Index = new Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>();
             Index.Decode(byteArray, ref p);
-            Name = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17();
+            Name = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30();
             Name.Decode(byteArray, ref p);
-            ModuleName = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT17();
+            ModuleName = new XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT30();
             ModuleName.Decode(byteArray, ref p);
             Major = new Substrate.NetApi.Model.Types.Base.BaseCom<Substrate.NetApi.Model.Types.Primitive.U32>();
             Major.Decode(byteArray, ref p);

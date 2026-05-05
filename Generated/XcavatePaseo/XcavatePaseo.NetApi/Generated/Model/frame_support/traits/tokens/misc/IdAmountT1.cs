@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_support.traits.tokens.misc
     
     
     /// <summary>
-    /// >> 441 - Composite[frame_support.traits.tokens.misc.IdAmountT1]
+    /// >> 576 - Composite[frame_support.traits.tokens.misc.IdAmountT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class IdAmountT1 : BaseType
@@ -27,7 +27,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_support.traits.tokens.misc
         /// <summary>
         /// >> id
         /// </summary>
-        public XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeHoldReason Id { get; set; }
+        public XcavatePaseo.NetApi.Generated.Model.xcavate_runtime.EnumRuntimeHoldReason Id { get; set; }
         /// <summary>
         /// >> amount
         /// </summary>
@@ -52,7 +52,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_support.traits.tokens.misc
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Id = new XcavatePaseo.NetApi.Generated.Model.container_chain_template_simple_runtime.EnumRuntimeHoldReason();
+            Id = new XcavatePaseo.NetApi.Generated.Model.xcavate_runtime.EnumRuntimeHoldReason();
             Id.Decode(byteArray, ref p);
             Amount = new Substrate.NetApi.Model.Types.Primitive.U128();
             Amount.Decode(byteArray, ref p);

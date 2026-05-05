@@ -116,7 +116,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.frame_system.pallet
     }
     
     /// <summary>
-    /// >> 156 - Variant[frame_system.pallet.Call]
+    /// >> 161 - Variant[frame_system.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

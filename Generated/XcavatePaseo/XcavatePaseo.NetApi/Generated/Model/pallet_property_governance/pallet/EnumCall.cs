@@ -107,138 +107,10 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         /// Emits `TokenUnfrozen` event when successful.
         /// </summary>
         unfreeze_challenge_token = 5,
-        
-        /// <summary>
-        /// >> propose_property_sale
-        /// Creates a proposal to sell a real estate object as a whole.
-        /// Only a token holder can propose.
-        /// 
-        /// The origin must be Signed by a RealEstateInvestor and have sufficient funds.
-        /// 
-        /// Parameters:
-        /// - `asset_id`: The asset id of the property.
-        /// 
-        /// Emits `PropertySaleProposed` event when successful.
-        /// </summary>
-        propose_property_sale = 6,
-        
-        /// <summary>
-        /// >> vote_on_property_sale
-        /// Lets owner of the real estate object vote on a sale proposal.
-        /// 
-        /// The origin must be Signed by a RealEstateInvestor and have sufficient funds.
-        /// 
-        /// Parameters:
-        /// - `asset_id`: The asset id of the property.
-        /// - `vote`: Must be either a Yes vote or a No vote.
-        /// - `amount`: The amount of property token that the caller is using for voting.
-        /// 
-        /// Emits `VotedOnPropertySaleProposal` event when successful.
-        /// </summary>
-        vote_on_property_sale = 7,
-        
-        /// <summary>
-        /// >> unfreeze_sale_proposal_token
-        /// Lets a voter unlock his locked token after voting on a sale proposal.
-        /// 
-        /// The origin must be signed and have sufficient funds.
-        /// 
-        /// Parameters:
-        /// - `proposal_id`: Id of the sale proposal.
-        /// 
-        /// Emits `TokenUnfrozen` event when successful.
-        /// </summary>
-        unfreeze_sale_proposal_token = 8,
-        
-        /// <summary>
-        /// >> bid_on_sale
-        /// Lets someone bid to buy the property that is on sale.
-        /// 
-        /// The origin must be Signed by a RealEstateInvestor and have sufficient funds.
-        /// 
-        /// Parameters:
-        /// - `asset_id`: The asset id of the property.
-        /// - `price`: Price that the buyer wants to pay.
-        /// - `payment_asset`: Asset in which the caller wants to pay.
-        /// 
-        /// Emits `BidSuccessfullyPlaced` event when successful.
-        /// </summary>
-        bid_on_sale = 9,
-        
-        /// <summary>
-        /// >> lawyer_claim_sale
-        /// Lets a lawyer claim a sale to handle the legal work.
-        /// 
-        /// The origin must be Signed by a Lawyer and have sufficient funds.
-        /// 
-        /// Parameters:
-        /// - `asset_id`: The asset id of the property.
-        /// - `legal_side`: The side that the lawyer wants to represent.
-        /// - `costs`: The costs thats the lawyer demands for his work.
-        /// 
-        /// Emits `SalesLawyerSet` event when successful.
-        /// </summary>
-        lawyer_claim_sale = 10,
-        
-        /// <summary>
-        /// >> lawyer_confirm_sale
-        /// Lets a lawyer confirm a legal case.
-        /// 
-        /// The origin must be Signed by a Lawyer and have sufficient funds.
-        /// 
-        /// Parameters:
-        /// - `asset_id`: The asset id of the property.
-        /// - `approve`: Approves or Rejects the case.
-        /// 
-        /// Emits `LawyerApprovesSale` event when approved successfully.
-        /// Emits `LawyerRejectsSale` event when rejected successfully.
-        /// </summary>
-        lawyer_confirm_sale = 11,
-        
-        /// <summary>
-        /// >> finalize_sale
-        /// Finalizes a property sale by the buyer���s lawyer, transferring funds and fees.
-        /// 
-        /// The origin must be Signed by a Lawyer and have sufficient funds.
-        /// 
-        /// Parameters:
-        /// - `asset_id`: The asset id of the property.
-        /// - `payment_asset`: Asset in which the lawyer wants to pay.
-        /// 
-        /// Emits `SaleFinalized` event when successful.
-        /// </summary>
-        finalize_sale = 12,
-        
-        /// <summary>
-        /// >> claim_sale_funds
-        /// Allows a token holder to withdraw their share of funds from a finalized property sale.
-        /// 
-        /// The origin must be Signed by a RealEstateInvestor and have sufficient funds.
-        /// 
-        /// Parameters:
-        /// - `asset_id`: The asset id of the property.
-        /// - `payment_asset`: Asset id the caller wants to withdraw funds in.
-        /// 
-        /// Emits `SaleFundsClaimed` event when successful.
-        /// </summary>
-        claim_sale_funds = 13,
-        
-        /// <summary>
-        /// >> cancel_expired_sale
-        /// Cancels a property sale if its legal process has expired.
-        /// 
-        /// The origin must be signed and have sufficient funds.
-        /// 
-        /// Parameters:
-        /// - `asset_id`: The ID of the property sale to cancel.
-        /// 
-        /// Emits `ExpiredSaleCancelled` event when successful.
-        /// </summary>
-        cancel_expired_sale = 14,
     }
     
     /// <summary>
-    /// >> 398 - Variant[pallet_property_governance.pallet.Call]
+    /// >> 522 - Variant[pallet_property_governance.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>
@@ -249,21 +121,12 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet
         /// </summary>
         public EnumCall()
         {
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2>>(Call.propose);
+				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6>>(Call.propose);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.challenge_against_letting_agent);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.vote_on_proposal);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U64>(Call.unfreeze_proposal_token);
 				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.vote_on_letting_agent_challenge);
 				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U64>(Call.unfreeze_challenge_token);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.propose_property_sale);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumVote, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.vote_on_property_sale);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U64>(Call.unfreeze_sale_proposal_token);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.bid_on_sale);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, XcavatePaseo.NetApi.Generated.Model.pallet_property_governance.pallet.EnumLegalSale, Substrate.NetApi.Model.Types.Primitive.U128>>(Call.lawyer_claim_sale);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.Bool>>(Call.lawyer_confirm_sale);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.finalize_sale);
-				AddTypeDecoder<BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>(Call.claim_sale_funds);
-				AddTypeDecoder<Substrate.NetApi.Model.Types.Primitive.U32>(Call.cancel_expired_sale);
         }
     }
 }

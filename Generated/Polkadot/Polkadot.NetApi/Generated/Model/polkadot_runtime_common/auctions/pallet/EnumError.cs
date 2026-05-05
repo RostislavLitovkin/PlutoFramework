@@ -66,7 +66,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_common.auctions.palle
     }
     
     /// <summary>
-    /// >> 896 - Variant[polkadot_runtime_common.auctions.pallet.Error]
+    /// >> 898 - Variant[polkadot_runtime_common.auctions.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

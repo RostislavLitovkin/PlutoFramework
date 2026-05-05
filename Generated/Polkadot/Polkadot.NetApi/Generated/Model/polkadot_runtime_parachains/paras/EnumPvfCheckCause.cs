@@ -33,7 +33,7 @@ namespace Polkadot.NetApi.Generated.Model.polkadot_runtime_parachains.paras
     }
     
     /// <summary>
-    /// >> 824 - Variant[polkadot_runtime_parachains.paras.PvfCheckCause]
+    /// >> 826 - Variant[polkadot_runtime_parachains.paras.PvfCheckCause]
     /// </summary>
     public sealed class EnumPvfCheckCause : BaseEnumRust<PvfCheckCause>
     {

@@ -58,7 +58,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.child_bount
     }
     
     /// <summary>
-    /// >> 633 - Variant[pallet_rc_migrator.child_bounties.PortableChildBountiesMessage]
+    /// >> 641 - Variant[pallet_rc_migrator.child_bounties.PortableChildBountiesMessage]
     /// </summary>
     public sealed class EnumPortableChildBountiesMessage : BaseEnumRust<PortableChildBountiesMessage>
     {

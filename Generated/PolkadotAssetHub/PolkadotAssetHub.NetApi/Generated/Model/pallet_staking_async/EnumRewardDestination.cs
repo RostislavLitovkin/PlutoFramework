@@ -48,7 +48,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async
     }
     
     /// <summary>
-    /// >> 471 - Variant[pallet_staking_async.RewardDestination]
+    /// >> 474 - Variant[pallet_staking_async.RewardDestination]
     /// </summary>
     public sealed class EnumRewardDestination : BaseEnumRust<RewardDestination>
     {

@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.staging_xcm.v5
     
     
     /// <summary>
-    /// >> 64 - Composite[staging_xcm.v5.XcmT1]
+    /// >> 66 - Composite[staging_xcm.v5.XcmT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class XcmT1 : BaseType

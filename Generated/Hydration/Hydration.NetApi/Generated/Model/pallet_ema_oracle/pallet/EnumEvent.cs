@@ -33,10 +33,16 @@ namespace Hydration.NetApi.Generated.Model.pallet_ema_oracle.pallet
         /// Oracle was removed from the whitelist.
         /// </summary>
         RemovedFromWhitelist = 1,
+        
+        /// <summary>
+        /// >> OracleUpdated
+        /// Oracle price was updated
+        /// </summary>
+        OracleUpdated = 2,
     }
     
     /// <summary>
-    /// >> 474 - Variant[pallet_ema_oracle.pallet.Event]
+    /// >> 532 - Variant[pallet_ema_oracle.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -49,6 +55,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_ema_oracle.pallet
         {
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Types.Base.Arr8U8, Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>>(Event.AddedToWhitelist);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Types.Base.Arr8U8, Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>>>(Event.RemovedFromWhitelist);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Types.Base.Arr8U8, Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Primitive.U32, Substrate.NetApi.Model.Types.Primitive.U32>, Hydration.NetApi.Generated.Types.Base.BTreeMapT2>>(Event.OracleUpdated);
         }
     }
 }

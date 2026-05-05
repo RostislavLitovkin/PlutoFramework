@@ -300,11 +300,22 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         /// >> manage
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method Manage(PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi_block.EnumAdminOperation op)
+        public static Method Manage(PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi_block.EnumManagerOperation op)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(op.Encode());
             return new Method(85, "MultiBlockElection", 0, "manage", byteArray.ToArray());
+        }
+        
+        /// <summary>
+        /// >> admin
+        /// Contains a variant per dispatchable extrinsic that this pallet has.
+        /// </summary>
+        public static Method Admin(PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi_block.EnumAdminOperation op)
+        {
+            System.Collections.Generic.List<byte> byteArray = new List<byte>();
+            byteArray.AddRange(op.Encode());
+            return new Method(85, "MultiBlockElection", 1, "admin", byteArray.ToArray());
         }
     }
     

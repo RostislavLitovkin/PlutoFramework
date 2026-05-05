@@ -33,7 +33,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.frame_support.traits.tokens.misc
     }
     
     /// <summary>
-    /// >> 51 - Variant[frame_support.traits.tokens.misc.BalanceStatus]
+    /// >> 44 - Variant[frame_support.traits.tokens.misc.BalanceStatus]
     /// </summary>
     public sealed class EnumBalanceStatus : BaseEnum<BalanceStatus>
     {

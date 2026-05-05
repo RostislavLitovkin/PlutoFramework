@@ -8,7 +8,7 @@
     <card:Card HeightRequest="40"
                x:Name="card"
                IsThin="True"
-               CardPadding="10, 0, 10, 0">
+               CardPadding="10,0,10,0">
         <card:Card.View>
 
             <Grid HeightRequest="40"

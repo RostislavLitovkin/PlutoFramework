@@ -246,7 +246,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async.pallet.pa
     }
     
     /// <summary>
-    /// >> 997 - Variant[pallet_staking_async.pallet.pallet.Error]
+    /// >> 1009 - Variant[pallet_staking_async.pallet.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

@@ -55,10 +55,15 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
         /// >> Staking
         /// </summary>
         Staking = 89,
+        
+        /// <summary>
+        /// >> Revive
+        /// </summary>
+        Revive = 90,
     }
     
     /// <summary>
-    /// >> 761 - Variant[asset_hub_polkadot_runtime.RuntimeHoldReason]
+    /// >> 770 - Variant[asset_hub_polkadot_runtime.RuntimeHoldReason]
     /// </summary>
     public sealed class EnumRuntimeHoldReason : BaseEnumRust<RuntimeHoldReason>
     {
@@ -75,6 +80,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.asset_hub_polkadot_runtime
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_delegated_staking.pallet.EnumHoldReason>(RuntimeHoldReason.DelegatedStaking);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi_block.signed.pallet.EnumHoldReason>(RuntimeHoldReason.MultiBlockElectionSigned);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async.pallet.pallet.EnumHoldReason>(RuntimeHoldReason.Staking);
+				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_revive.pallet.EnumHoldReason>(RuntimeHoldReason.Revive);
         }
     }
 }

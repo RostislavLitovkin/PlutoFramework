@@ -53,7 +53,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.types
     }
     
     /// <summary>
-    /// >> 492 - Variant[pallet_rc_migrator.types.PortableHoldReason]
+    /// >> 500 - Variant[pallet_rc_migrator.types.PortableHoldReason]
     /// </summary>
     public sealed class EnumPortableHoldReason : BaseEnumRust<PortableHoldReason>
     {

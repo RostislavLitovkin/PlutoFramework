@@ -73,7 +73,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.sp_npos_elections
     }
     
     /// <summary>
-    /// >> 688 - Variant[sp_npos_elections.Error]
+    /// >> 696 - Variant[sp_npos_elections.Error]
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>
     {

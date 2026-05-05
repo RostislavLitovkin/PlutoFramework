@@ -107,128 +107,122 @@ namespace XcavatePaseo.NetApi.Generated.Model.pallet_regions.pallet
         AuctionNotFinished = 13,
         
         /// <summary>
-        /// >> RegionProposalCooldownActive
-        /// Cant propose a new region since the cooldown is still active.
-        /// </summary>
-        RegionProposalCooldownActive = 14,
-        
-        /// <summary>
         /// >> ProposalExpired
         /// The proposal has already expired.
         /// </summary>
-        ProposalExpired = 15,
+        ProposalExpired = 14,
         
         /// <summary>
         /// >> BidCannotBeZero
         /// Bid amount can not be zero.
         /// </summary>
-        BidCannotBeZero = 16,
+        BidCannotBeZero = 15,
         
         /// <summary>
         /// >> ProposalAlreadyOngoing
         /// There is alerady a proposal ongoing for this region.
         /// </summary>
-        ProposalAlreadyOngoing = 17,
+        ProposalAlreadyOngoing = 16,
         
         /// <summary>
         /// >> TooManyProposals
         /// There are already too many proposals in the ending block.
         /// </summary>
-        TooManyProposals = 18,
+        TooManyProposals = 17,
         
         /// <summary>
         /// >> RegionOwnerCantBeChanged
         /// Region owner can not be changed at the moment.
         /// </summary>
-        RegionOwnerCantBeChanged = 19,
+        RegionOwnerCantBeChanged = 18,
         
         /// <summary>
         /// >> TooManyAuctions
         /// There are already too many auctions in the ending block.
         /// </summary>
-        TooManyAuctions = 20,
+        TooManyAuctions = 19,
         
         /// <summary>
         /// >> NotRegionOwner
         /// Caller is not the region owner.
         /// </summary>
-        NotRegionOwner = 21,
+        NotRegionOwner = 20,
         
         /// <summary>
         /// >> OwnerChangeAlreadyScheduled
         /// Owner would change before resignation period would be over.
         /// </summary>
-        OwnerChangeAlreadyScheduled = 22,
+        OwnerChangeAlreadyScheduled = 21,
         
         /// <summary>
         /// >> ProposalNotFound
         /// The proposal could not be found.
         /// </summary>
-        ProposalNotFound = 23,
+        ProposalNotFound = 22,
         
         /// <summary>
         /// >> RegionAlreadyCreated
         /// The region has already been created.
         /// </summary>
-        RegionAlreadyCreated = 24,
+        RegionAlreadyCreated = 23,
         
         /// <summary>
         /// >> RegionProposalAlreadyExists
         /// This region has an ongoing proposal.
         /// </summary>
-        RegionProposalAlreadyExists = 25,
+        RegionProposalAlreadyExists = 24,
         
         /// <summary>
         /// >> NotEnoughTokenToVote
         /// The caller does not have enough token to vote.
         /// </summary>
-        NotEnoughTokenToVote = 26,
+        NotEnoughTokenToVote = 25,
         
         /// <summary>
         /// >> RegionHasNoWinningBidder
         /// The auction does not have an winning bidder.
         /// </summary>
-        RegionHasNoWinningBidder = 27,
+        RegionHasNoWinningBidder = 26,
         
         /// <summary>
         /// >> LawyerAlreadyRegistered
         /// The lawyer has already been registered.
         /// </summary>
-        LawyerAlreadyRegistered = 28,
+        LawyerAlreadyRegistered = 27,
         
         /// <summary>
         /// >> LawyerNotRegistered
         /// Lawyer is not registered.
         /// </summary>
-        LawyerNotRegistered = 29,
+        LawyerNotRegistered = 28,
         
         /// <summary>
         /// >> LawyerStillActive
         /// The lawyer is still active in some cases.
         /// </summary>
-        LawyerStillActive = 30,
+        LawyerStillActive = 29,
         
         /// <summary>
         /// >> NoFrozenAmount
         /// The user has no token amount frozen.
         /// </summary>
-        NoFrozenAmount = 31,
+        NoFrozenAmount = 30,
         
         /// <summary>
         /// >> BelowMinimumVotingAmount
         /// The token amount for voting is below minimum.
         /// </summary>
-        BelowMinimumVotingAmount = 32,
+        BelowMinimumVotingAmount = 31,
         
         /// <summary>
         /// >> TaxTooHigh
         /// The tax percent is too high.
         /// </summary>
-        TaxTooHigh = 33,
+        TaxTooHigh = 32,
     }
     
     /// <summary>
-    /// >> 569 - Variant[pallet_regions.pallet.Error]
+    /// >> 745 - Variant[pallet_regions.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

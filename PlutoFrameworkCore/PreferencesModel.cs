@@ -18,8 +18,6 @@
 
         public const string PASSWORD = "password";
 
-        public const string ACCOUNT_TYPE = "accountType";
-
         public const string DID = "did";
 
         public const string DID_VERIFICATION = "didVerification";

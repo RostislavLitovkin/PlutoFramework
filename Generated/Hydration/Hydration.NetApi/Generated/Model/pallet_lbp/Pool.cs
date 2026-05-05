@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_lbp
     
     
     /// <summary>
-    /// >> 435 - Composite[pallet_lbp.Pool]
+    /// >> 489 - Composite[pallet_lbp.Pool]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Pool : BaseType

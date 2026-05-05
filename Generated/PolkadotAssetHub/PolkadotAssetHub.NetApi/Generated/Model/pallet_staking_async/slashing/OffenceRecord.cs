@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_staking_async.slashing
     
     
     /// <summary>
-    /// >> 987 - Composite[pallet_staking_async.slashing.OffenceRecord]
+    /// >> 999 - Composite[pallet_staking_async.slashing.OffenceRecord]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class OffenceRecord : BaseType

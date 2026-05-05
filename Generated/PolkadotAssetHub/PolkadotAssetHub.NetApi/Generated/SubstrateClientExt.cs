@@ -65,6 +65,11 @@ namespace PolkadotAssetHub.NetApi.Generated
         public ParametersStorage ParametersStorage;
         
         /// <summary>
+        /// WeightReclaimStorage storage calls.
+        /// </summary>
+        public WeightReclaimStorage WeightReclaimStorage;
+        
+        /// <summary>
         /// BalancesStorage storage calls.
         /// </summary>
         public BalancesStorage BalancesStorage;
@@ -285,6 +290,11 @@ namespace PolkadotAssetHub.NetApi.Generated
         public StakingStorage StakingStorage;
         
         /// <summary>
+        /// ReviveStorage storage calls.
+        /// </summary>
+        public ReviveStorage ReviveStorage;
+        
+        /// <summary>
         /// AhOpsStorage storage calls.
         /// </summary>
         public AhOpsStorage AhOpsStorage;
@@ -305,6 +315,7 @@ namespace PolkadotAssetHub.NetApi.Generated
             this.PreimageStorage = new PreimageStorage(this);
             this.SchedulerStorage = new SchedulerStorage(this);
             this.ParametersStorage = new ParametersStorage(this);
+            this.WeightReclaimStorage = new WeightReclaimStorage(this);
             this.BalancesStorage = new BalancesStorage(this);
             this.TransactionPaymentStorage = new TransactionPaymentStorage(this);
             this.AssetTxPaymentStorage = new AssetTxPaymentStorage(this);
@@ -349,6 +360,7 @@ namespace PolkadotAssetHub.NetApi.Generated
             this.MultiBlockElectionUnsignedStorage = new MultiBlockElectionUnsignedStorage(this);
             this.MultiBlockElectionSignedStorage = new MultiBlockElectionSignedStorage(this);
             this.StakingStorage = new StakingStorage(this);
+            this.ReviveStorage = new ReviveStorage(this);
             this.AhOpsStorage = new AhOpsStorage(this);
             this.AhMigratorStorage = new AhMigratorStorage(this);
         }

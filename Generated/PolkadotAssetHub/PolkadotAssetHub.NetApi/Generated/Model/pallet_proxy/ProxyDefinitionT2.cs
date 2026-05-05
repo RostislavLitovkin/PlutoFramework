@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_proxy
     
     
     /// <summary>
-    /// >> 847 - Composite[pallet_proxy.ProxyDefinitionT2]
+    /// >> 859 - Composite[pallet_proxy.ProxyDefinitionT2]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class ProxyDefinitionT2 : BaseType

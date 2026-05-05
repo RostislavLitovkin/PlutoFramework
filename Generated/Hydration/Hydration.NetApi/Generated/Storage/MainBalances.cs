@@ -41,13 +41,13 @@ namespace Hydration.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Account"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Hydration.NetApi.Generated.Model.pallet_balances.types.AccountData)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Locks"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Hydration.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Hydration.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT1)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Reserves"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT38)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Holds"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Balances", "Freezes"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
-                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT26)));
+                            Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32), typeof(Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40)));
         }
         
         /// <summary>
@@ -216,10 +216,10 @@ namespace Hydration.NetApi.Generated.Storage
         /// 
         ///  Use of locks is deprecated in favour of freezes. See `https://github.com/paritytech/substrate/pull/12951/`
         /// </summary>
-        public async Task<Hydration.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2> Locks(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Hydration.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT1> Locks(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = BalancesStorage.LocksParams(key);
-            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT1>(parameters, blockhash, token);
             return result;
         }
         
@@ -251,10 +251,10 @@ namespace Hydration.NetApi.Generated.Storage
         /// 
         ///  Use of reserves is deprecated in favour of holds. See `https://github.com/paritytech/substrate/pull/12951/`
         /// </summary>
-        public async Task<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24> Reserves(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT38> Reserves(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = BalancesStorage.ReservesParams(key);
-            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT24>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT38>(parameters, blockhash, token);
             return result;
         }
         
@@ -282,10 +282,10 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> Holds
         ///  Holds on account balances.
         /// </summary>
-        public async Task<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25> Holds(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39> Holds(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = BalancesStorage.HoldsParams(key);
-            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT25>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT39>(parameters, blockhash, token);
             return result;
         }
         
@@ -313,10 +313,10 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> Freezes
         ///  Freeze locks on account balances.
         /// </summary>
-        public async Task<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT26> Freezes(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
+        public async Task<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40> Freezes(Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32 key, string blockhash, CancellationToken token)
         {
             string parameters = BalancesStorage.FreezesParams(key);
-            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT26>(parameters, blockhash, token);
+            var result = await _client.GetStorageAsync<Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT40>(parameters, blockhash, token);
             return result;
         }
     }

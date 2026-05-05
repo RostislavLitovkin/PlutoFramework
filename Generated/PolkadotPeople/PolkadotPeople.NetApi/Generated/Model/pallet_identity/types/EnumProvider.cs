@@ -38,7 +38,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.pallet_identity.types
     }
     
     /// <summary>
-    /// >> 425 - Variant[pallet_identity.types.Provider]
+    /// >> 455 - Variant[pallet_identity.types.Provider]
     /// </summary>
     public sealed class EnumProvider : BaseEnumRust<Provider>
     {

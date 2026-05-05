@@ -52,10 +52,16 @@ namespace Hydration.NetApi.Generated.Model.pallet_proxy.pallet
         /// A proxy was removed.
         /// </summary>
         ProxyRemoved = 4,
+        
+        /// <summary>
+        /// >> DepositPoked
+        /// A deposit stored for proxies or announcements was poked / updated.
+        /// </summary>
+        DepositPoked = 5,
     }
     
     /// <summary>
-    /// >> 48 - Variant[pallet_proxy.pallet.Event]
+    /// >> 49 - Variant[pallet_proxy.pallet.Event]
     /// The `Event` enum of this pallet
     /// </summary>
     public sealed class EnumEvent : BaseEnumRust<Event>
@@ -71,6 +77,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_proxy.pallet
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.primitive_types.H256>>(Event.Announced);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.hydradx_runtime.system.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.ProxyAdded);
 				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.hydradx_runtime.system.EnumProxyType, Substrate.NetApi.Model.Types.Primitive.U32>>(Event.ProxyRemoved);
+				AddTypeDecoder<BaseTuple<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32, Hydration.NetApi.Generated.Model.pallet_proxy.EnumDepositKind, Substrate.NetApi.Model.Types.Primitive.U128, Substrate.NetApi.Model.Types.Primitive.U128>>(Event.DepositPoked);
         }
     }
 }

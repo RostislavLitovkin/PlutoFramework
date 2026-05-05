@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.scheduler
     
     
     /// <summary>
-    /// >> 626 - Composite[pallet_rc_migrator.scheduler.SchedulerAgendaMessage]
+    /// >> 634 - Composite[pallet_rc_migrator.scheduler.SchedulerAgendaMessage]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SchedulerAgendaMessage : BaseType

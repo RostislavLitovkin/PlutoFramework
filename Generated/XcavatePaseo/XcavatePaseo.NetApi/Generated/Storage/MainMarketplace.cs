@@ -70,6 +70,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "ListingSpvProposal"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(new Substrate.NetApi.Model.Meta.Storage.Hasher[] {
                             Substrate.NetApi.Model.Meta.Storage.Hasher.BlakeTwo128Concat}, typeof(Substrate.NetApi.Model.Types.Primitive.U32), typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "ProposalCounter"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Primitive.U64)));
+            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Marketplace", "DelayedCalls"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT61)));
         }
         
         /// <summary>
@@ -592,6 +593,35 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             var result = await _client.GetStorageAsync<Substrate.NetApi.Model.Types.Primitive.U64>(parameters, blockhash, token);
             return result;
         }
+        
+        /// <summary>
+        /// >> DelayedCallsParams
+        ///  Delayed extrinsic calls.
+        /// </summary>
+        public static string DelayedCallsParams()
+        {
+            return RequestGenerator.GetStorage("Marketplace", "DelayedCalls", Substrate.NetApi.Model.Meta.Storage.Type.Plain);
+        }
+        
+        /// <summary>
+        /// >> DelayedCallsDefault
+        /// Default value as hex string
+        /// </summary>
+        public static string DelayedCallsDefault()
+        {
+            return "0x00";
+        }
+        
+        /// <summary>
+        /// >> DelayedCalls
+        ///  Delayed extrinsic calls.
+        /// </summary>
+        public async Task<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT61> DelayedCalls(string blockhash, CancellationToken token)
+        {
+            string parameters = MarketplaceStorage.DelayedCallsParams();
+            var result = await _client.GetStorageAsync<XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT61>(parameters, blockhash, token);
+            return result;
+        }
     }
     
     /// <summary>
@@ -604,7 +634,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// >> list_property
         /// Contains a variant per dispatchable extrinsic that this pallet has.
         /// </summary>
-        public static Method ListProperty(Substrate.NetApi.Model.Types.Primitive.U16 region, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT10 location, Substrate.NetApi.Model.Types.Primitive.U128 token_price, Substrate.NetApi.Model.Types.Primitive.U32 token_amount, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2 data, Substrate.NetApi.Model.Types.Primitive.Bool tax_paid_by_developer)
+        public static Method ListProperty(Substrate.NetApi.Model.Types.Primitive.U16 region, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT11 location, Substrate.NetApi.Model.Types.Primitive.U128 token_price, Substrate.NetApi.Model.Types.Primitive.U32 token_amount, XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6 data, Substrate.NetApi.Model.Types.Primitive.Bool tax_paid_by_developer)
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(region.Encode());
@@ -613,7 +643,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(token_amount.Encode());
             byteArray.AddRange(data.Encode());
             byteArray.AddRange(tax_paid_by_developer.Encode());
-            return new Method(93, "Marketplace", 0, "list_property", byteArray.ToArray());
+            return new Method(65, "Marketplace", 0, "list_property", byteArray.ToArray());
         }
         
         /// <summary>
@@ -626,7 +656,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(listing_id.Encode());
             byteArray.AddRange(amount.Encode());
             byteArray.AddRange(payment_asset.Encode());
-            return new Method(93, "Marketplace", 1, "buy_property_token", byteArray.ToArray());
+            return new Method(65, "Marketplace", 1, "buy_property_token", byteArray.ToArray());
         }
         
         /// <summary>
@@ -637,7 +667,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 2, "claim_property_token", byteArray.ToArray());
+            return new Method(65, "Marketplace", 2, "claim_property_token", byteArray.ToArray());
         }
         
         /// <summary>
@@ -648,7 +678,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 3, "finalize_claim_window", byteArray.ToArray());
+            return new Method(65, "Marketplace", 3, "finalize_claim_window", byteArray.ToArray());
         }
         
         /// <summary>
@@ -659,7 +689,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 4, "create_spv", byteArray.ToArray());
+            return new Method(65, "Marketplace", 4, "create_spv", byteArray.ToArray());
         }
         
         /// <summary>
@@ -672,7 +702,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(asset_id.Encode());
             byteArray.AddRange(token_price.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(93, "Marketplace", 5, "relist_token", byteArray.ToArray());
+            return new Method(65, "Marketplace", 5, "relist_token", byteArray.ToArray());
         }
         
         /// <summary>
@@ -685,7 +715,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(listing_id.Encode());
             byteArray.AddRange(amount.Encode());
             byteArray.AddRange(payment_asset.Encode());
-            return new Method(93, "Marketplace", 6, "buy_relisted_token", byteArray.ToArray());
+            return new Method(65, "Marketplace", 6, "buy_relisted_token", byteArray.ToArray());
         }
         
         /// <summary>
@@ -696,7 +726,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 7, "cancel_property_purchase", byteArray.ToArray());
+            return new Method(65, "Marketplace", 7, "cancel_property_purchase", byteArray.ToArray());
         }
         
         /// <summary>
@@ -710,7 +740,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(offer_price.Encode());
             byteArray.AddRange(amount.Encode());
             byteArray.AddRange(payment_asset.Encode());
-            return new Method(93, "Marketplace", 8, "make_offer", byteArray.ToArray());
+            return new Method(65, "Marketplace", 8, "make_offer", byteArray.ToArray());
         }
         
         /// <summary>
@@ -724,7 +754,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(offeror.Encode());
             byteArray.AddRange(offer.Encode());
             byteArray.AddRange(offer_nonce.Encode());
-            return new Method(93, "Marketplace", 9, "handle_offer", byteArray.ToArray());
+            return new Method(65, "Marketplace", 9, "handle_offer", byteArray.ToArray());
         }
         
         /// <summary>
@@ -735,7 +765,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 10, "cancel_offer", byteArray.ToArray());
+            return new Method(65, "Marketplace", 10, "cancel_offer", byteArray.ToArray());
         }
         
         /// <summary>
@@ -746,7 +776,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 11, "withdraw_rejected", byteArray.ToArray());
+            return new Method(65, "Marketplace", 11, "withdraw_rejected", byteArray.ToArray());
         }
         
         /// <summary>
@@ -757,7 +787,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 12, "withdraw_legal_process_expired", byteArray.ToArray());
+            return new Method(65, "Marketplace", 12, "withdraw_legal_process_expired", byteArray.ToArray());
         }
         
         /// <summary>
@@ -768,7 +798,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 13, "withdraw_expired", byteArray.ToArray());
+            return new Method(65, "Marketplace", 13, "withdraw_expired", byteArray.ToArray());
         }
         
         /// <summary>
@@ -779,7 +809,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 14, "withdraw_deposit_unsold", byteArray.ToArray());
+            return new Method(65, "Marketplace", 14, "withdraw_deposit_unsold", byteArray.ToArray());
         }
         
         /// <summary>
@@ -790,7 +820,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 15, "withdraw_claiming_expired", byteArray.ToArray());
+            return new Method(65, "Marketplace", 15, "withdraw_claiming_expired", byteArray.ToArray());
         }
         
         /// <summary>
@@ -801,7 +831,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 16, "withdraw_unclaimed", byteArray.ToArray());
+            return new Method(65, "Marketplace", 16, "withdraw_unclaimed", byteArray.ToArray());
         }
         
         /// <summary>
@@ -813,7 +843,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
             byteArray.AddRange(new_price.Encode());
-            return new Method(93, "Marketplace", 17, "upgrade_object", byteArray.ToArray());
+            return new Method(65, "Marketplace", 17, "upgrade_object", byteArray.ToArray());
         }
         
         /// <summary>
@@ -824,7 +854,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 18, "delist_token", byteArray.ToArray());
+            return new Method(65, "Marketplace", 18, "delist_token", byteArray.ToArray());
         }
         
         /// <summary>
@@ -837,7 +867,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(listing_id.Encode());
             byteArray.AddRange(legal_side.Encode());
             byteArray.AddRange(costs.Encode());
-            return new Method(93, "Marketplace", 19, "lawyer_claim_property", byteArray.ToArray());
+            return new Method(65, "Marketplace", 19, "lawyer_claim_property", byteArray.ToArray());
         }
         
         /// <summary>
@@ -850,7 +880,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(listing_id.Encode());
             byteArray.AddRange(vote.Encode());
             byteArray.AddRange(amount.Encode());
-            return new Method(93, "Marketplace", 20, "vote_on_spv_lawyer", byteArray.ToArray());
+            return new Method(65, "Marketplace", 20, "vote_on_spv_lawyer", byteArray.ToArray());
         }
         
         /// <summary>
@@ -862,7 +892,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
             byteArray.AddRange(approve.Encode());
-            return new Method(93, "Marketplace", 21, "approve_developer_lawyer", byteArray.ToArray());
+            return new Method(65, "Marketplace", 21, "approve_developer_lawyer", byteArray.ToArray());
         }
         
         /// <summary>
@@ -873,7 +903,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 22, "finalize_spv_lawyer", byteArray.ToArray());
+            return new Method(65, "Marketplace", 22, "finalize_spv_lawyer", byteArray.ToArray());
         }
         
         /// <summary>
@@ -884,7 +914,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(proposal_id.Encode());
-            return new Method(93, "Marketplace", 23, "unfreeze_spv_lawyer_token", byteArray.ToArray());
+            return new Method(65, "Marketplace", 23, "unfreeze_spv_lawyer_token", byteArray.ToArray());
         }
         
         /// <summary>
@@ -895,7 +925,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
-            return new Method(93, "Marketplace", 24, "remove_lawyer_claim", byteArray.ToArray());
+            return new Method(65, "Marketplace", 24, "remove_lawyer_claim", byteArray.ToArray());
         }
         
         /// <summary>
@@ -907,7 +937,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             System.Collections.Generic.List<byte> byteArray = new List<byte>();
             byteArray.AddRange(listing_id.Encode());
             byteArray.AddRange(approve.Encode());
-            return new Method(93, "Marketplace", 25, "lawyer_confirm_documents", byteArray.ToArray());
+            return new Method(65, "Marketplace", 25, "lawyer_confirm_documents", byteArray.ToArray());
         }
         
         /// <summary>
@@ -920,7 +950,7 @@ namespace XcavatePaseo.NetApi.Generated.Storage
             byteArray.AddRange(asset_id.Encode());
             byteArray.AddRange(receiver.Encode());
             byteArray.AddRange(token_amount.Encode());
-            return new Method(93, "Marketplace", 26, "send_property_token", byteArray.ToArray());
+            return new Method(65, "Marketplace", 26, "send_property_token", byteArray.ToArray());
         }
     }
     
@@ -993,6 +1023,17 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             var result = new XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill();
             result.Create("0x80969800");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> AcceptedAssets
+        ///  Accepted assets for payments (e.g., USDC, USDT).
+        /// </summary>
+        public XcavatePaseo.NetApi.Generated.Types.Base.Arr2U32 AcceptedAssets()
+        {
+            var result = new XcavatePaseo.NetApi.Generated.Types.Base.Arr2U32();
+            result.Create("0x39050000C0070000");
             return result;
         }
         
@@ -1092,6 +1133,28 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         {
             var result = new XcavatePaseo.NetApi.Generated.Model.sp_arithmetic.per_things.Perbill();
             result.Create("0x0065CD1D");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MaxCallLen
+        ///  Max length of a scale encoded call in bytes.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 MaxCallLen()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x40000000");
+            return result;
+        }
+        
+        /// <summary>
+        /// >> MaxDelayedCalls
+        ///  Max number of calls that can be delayed.
+        /// </summary>
+        public Substrate.NetApi.Model.Types.Primitive.U32 MaxDelayedCalls()
+        {
+            var result = new Substrate.NetApi.Model.Types.Primitive.U32();
+            result.Create("0x0A000000");
             return result;
         }
     }
@@ -1437,5 +1500,17 @@ namespace XcavatePaseo.NetApi.Generated.Storage
         /// The nonce does not match the nonce for this offer.
         /// </summary>
         InvalidOfferNonce,
+        
+        /// <summary>
+        /// >> CallTooLarge
+        /// The encoded call is larger than `T::MaxCallLen`
+        /// </summary>
+        CallTooLarge,
+        
+        /// <summary>
+        /// >> TooManyDelayedCalls
+        /// There are too many delayed calls.
+        /// </summary>
+        TooManyDelayedCalls,
     }
 }

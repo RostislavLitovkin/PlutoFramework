@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.staking.nom
     
     
     /// <summary>
-    /// >> 547 - Composite[pallet_rc_migrator.staking.nom_pools_alias.RewardPool]
+    /// >> 555 - Composite[pallet_rc_migrator.staking.nom_pools_alias.RewardPool]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RewardPool : BaseType

@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Types.Base
     
     
     /// <summary>
-    /// >> 153 - Composite[CowT1]
+    /// >> 158 - Composite[CowT1]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CowT1 : BaseType

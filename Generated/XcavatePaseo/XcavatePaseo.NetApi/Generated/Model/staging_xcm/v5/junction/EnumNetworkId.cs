@@ -63,7 +63,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.staging_xcm.v5.junction
     }
     
     /// <summary>
-    /// >> 66 - Variant[staging_xcm.v5.junction.NetworkId]
+    /// >> 64 - Variant[staging_xcm.v5.junction.NetworkId]
     /// </summary>
     public sealed class EnumNetworkId : BaseEnumRust<NetworkId>
     {

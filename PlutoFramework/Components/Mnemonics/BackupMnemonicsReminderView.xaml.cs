@@ -13,9 +13,11 @@ public partial class BackupMnemonicsReminderView : ContentView
     {
         try
         {
-            var secret = await Model.KeysModel.GetMnemonicsOrPrivateKeyAsync();
+            // TODO
 
-            await Navigation.PushAsync(new MnemonicsPage(secret));
+            //var secret = await Model.KeysModel.GetMnemonicsOrPrivateKeyAsync();
+
+            //await Navigation.PushAsync(new MnemonicsPage(secret));
 
             Model.CustomLayoutModel.RemoveComponentFromSavedLayout(ComponentId.BMnR);
         }

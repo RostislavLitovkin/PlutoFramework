@@ -28,7 +28,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_preimage.pallet
     }
     
     /// <summary>
-    /// >> 509 - Variant[pallet_preimage.pallet.HoldReason]
+    /// >> 571 - Variant[pallet_preimage.pallet.HoldReason]
     /// </summary>
     public sealed class EnumHoldReason : BaseEnum<HoldReason>
     {

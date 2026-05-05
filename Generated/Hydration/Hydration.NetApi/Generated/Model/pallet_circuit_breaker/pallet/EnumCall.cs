@@ -115,7 +115,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_circuit_breaker.pallet
     }
     
     /// <summary>
-    /// >> 220 - Variant[pallet_circuit_breaker.pallet.Call]
+    /// >> 216 - Variant[pallet_circuit_breaker.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

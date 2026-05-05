@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.bounties.al
     
     
     /// <summary>
-    /// >> 611 - Composite[pallet_rc_migrator.bounties.alias.Bounty]
+    /// >> 619 - Composite[pallet_rc_migrator.bounties.alias.Bounty]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class Bounty : BaseType

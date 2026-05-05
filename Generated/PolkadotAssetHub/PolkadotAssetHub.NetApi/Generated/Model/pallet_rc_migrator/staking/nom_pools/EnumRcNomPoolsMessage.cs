@@ -63,7 +63,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.staking.nom
     }
     
     /// <summary>
-    /// >> 532 - Variant[pallet_rc_migrator.staking.nom_pools.RcNomPoolsMessage]
+    /// >> 540 - Variant[pallet_rc_migrator.staking.nom_pools.RcNomPoolsMessage]
     /// </summary>
     public sealed class EnumRcNomPoolsMessage : BaseEnumRust<RcNomPoolsMessage>
     {

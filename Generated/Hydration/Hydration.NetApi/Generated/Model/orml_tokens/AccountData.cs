@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.orml_tokens
     
     
     /// <summary>
-    /// >> 690 - Composite[orml_tokens.AccountData]
+    /// >> 759 - Composite[orml_tokens.AccountData]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class AccountData : BaseType

@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.multisig
     
     
     /// <summary>
-    /// >> 512 - Composite[pallet_rc_migrator.multisig.RcMultisig]
+    /// >> 520 - Composite[pallet_rc_migrator.multisig.RcMultisig]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RcMultisig : BaseType

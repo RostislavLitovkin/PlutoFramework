@@ -357,5 +357,11 @@ namespace Hydration.NetApi.Generated.Storage
         /// EVM permit call failed.
         /// </summary>
         EvmPermitRunnerError,
+        
+        /// <summary>
+        /// >> EvmPermitNonceInvariantViolated
+        /// EVM permit must not affect account nonce.
+        /// </summary>
+        EvmPermitNonceInvariantViolated,
     }
 }

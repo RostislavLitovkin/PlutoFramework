@@ -28,7 +28,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.polkadot_primitives.v8
     }
     
     /// <summary>
-    /// >> 186 - Variant[polkadot_primitives.v8.UpgradeRestriction]
+    /// >> 191 - Variant[polkadot_primitives.v8.UpgradeRestriction]
     /// </summary>
     public sealed class EnumUpgradeRestriction : BaseEnum<UpgradeRestriction>
     {

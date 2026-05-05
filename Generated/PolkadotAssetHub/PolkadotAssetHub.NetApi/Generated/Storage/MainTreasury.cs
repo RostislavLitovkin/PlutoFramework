@@ -374,7 +374,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         public PolkadotAssetHub.NetApi.Generated.Model.sp_arithmetic.per_things.Permill Burn()
         {
             var result = new PolkadotAssetHub.NetApi.Generated.Model.sp_arithmetic.per_things.Permill();
-            result.Create("0x10270000");
+            result.Create("0x00000000");
             return result;
         }
         

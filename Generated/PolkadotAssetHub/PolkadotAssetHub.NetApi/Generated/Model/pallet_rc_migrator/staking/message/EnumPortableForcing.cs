@@ -43,7 +43,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.staking.mes
     }
     
     /// <summary>
-    /// >> 643 - Variant[pallet_rc_migrator.staking.message.PortableForcing]
+    /// >> 651 - Variant[pallet_rc_migrator.staking.message.PortableForcing]
     /// </summary>
     public sealed class EnumPortableForcing : BaseEnum<PortableForcing>
     {

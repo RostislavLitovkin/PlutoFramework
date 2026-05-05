@@ -58,7 +58,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_conviction_voting.convi
     }
     
     /// <summary>
-    /// >> 362 - Variant[pallet_conviction_voting.conviction.Conviction]
+    /// >> 364 - Variant[pallet_conviction_voting.conviction.Conviction]
     /// </summary>
     public sealed class EnumConviction : BaseEnum<Conviction>
     {

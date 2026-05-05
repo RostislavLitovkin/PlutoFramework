@@ -34,10 +34,52 @@ namespace Hydration.NetApi.Generated.Model.pallet_dispatcher.pallet
         /// The provided call is not an EVM call. This extrinsic only accepts `pallet_evm::Call::call`.
         /// </summary>
         NotEvmCall = 1,
+        
+        /// <summary>
+        /// >> EvmOutOfGas
+        /// The EVM call ran out of gas.
+        /// </summary>
+        EvmOutOfGas = 2,
+        
+        /// <summary>
+        /// >> EvmArithmeticOverflowOrUnderflow
+        /// The EVM call resulted in an arithmetic overflow or underflow.
+        /// </summary>
+        EvmArithmeticOverflowOrUnderflow = 3,
+        
+        /// <summary>
+        /// >> AaveSupplyCapExceeded
+        /// Aave - supply cap has been exceeded.
+        /// </summary>
+        AaveSupplyCapExceeded = 4,
+        
+        /// <summary>
+        /// >> AaveBorrowCapExceeded
+        /// Aave - borrow cap has been exceeded.
+        /// </summary>
+        AaveBorrowCapExceeded = 5,
+        
+        /// <summary>
+        /// >> AaveHealthFactorNotBelowThreshold
+        /// Aave - health factor is not below the threshold.
+        /// </summary>
+        AaveHealthFactorNotBelowThreshold = 6,
+        
+        /// <summary>
+        /// >> AaveHealthFactorLowerThanLiquidationThreshold
+        /// Aave - health factor is lesser than the liquidation threshold
+        /// </summary>
+        AaveHealthFactorLowerThanLiquidationThreshold = 7,
+        
+        /// <summary>
+        /// >> CollateralCannotCoverNewBorrow
+        /// Aave - there is not enough collateral to cover a new borrow
+        /// </summary>
+        CollateralCannotCoverNewBorrow = 8,
     }
     
     /// <summary>
-    /// >> 623 - Variant[pallet_dispatcher.pallet.Error]
+    /// >> 688 - Variant[pallet_dispatcher.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

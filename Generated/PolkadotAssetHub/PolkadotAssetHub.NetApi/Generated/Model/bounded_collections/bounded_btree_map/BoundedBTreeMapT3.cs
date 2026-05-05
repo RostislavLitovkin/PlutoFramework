@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.bounded_collections.bounded_bt
     
     
     /// <summary>
-    /// >> 881 - Composite[bounded_collections.bounded_btree_map.BoundedBTreeMapT3]
+    /// >> 893 - Composite[bounded_collections.bounded_btree_map.BoundedBTreeMapT3]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedBTreeMapT3 : BaseType

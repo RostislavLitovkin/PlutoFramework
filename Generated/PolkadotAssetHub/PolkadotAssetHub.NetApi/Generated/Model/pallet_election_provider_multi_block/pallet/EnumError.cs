@@ -42,7 +42,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi
     }
     
     /// <summary>
-    /// >> 959 - Variant[pallet_election_provider_multi_block.pallet.Error]
+    /// >> 971 - Variant[pallet_election_provider_multi_block.pallet.Error]
     /// Error of the pallet that can be returned in response to dispatches.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

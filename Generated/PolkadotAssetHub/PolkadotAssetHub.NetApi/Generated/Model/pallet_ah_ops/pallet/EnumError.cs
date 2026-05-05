@@ -87,10 +87,34 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_ah_ops.pallet
         /// The balance is zero.
         /// </summary>
         ZeroBalance = 10,
+        
+        /// <summary>
+        /// >> FailedToTransfer
+        /// Failed to transfer balance.
+        /// </summary>
+        FailedToTransfer = 11,
+        
+        /// <summary>
+        /// >> AlreadyTranslated
+        /// The account has already been translated.
+        /// </summary>
+        AlreadyTranslated = 12,
+        
+        /// <summary>
+        /// >> TooLongDerivationPath
+        /// The derivation path is too long.
+        /// </summary>
+        TooLongDerivationPath = 13,
+        
+        /// <summary>
+        /// >> FailedToForceUnstake
+        /// Failed to force unstake.
+        /// </summary>
+        FailedToForceUnstake = 14,
     }
     
     /// <summary>
-    /// >> 999 - Variant[pallet_ah_ops.pallet.Error]
+    /// >> 1052 - Variant[pallet_ah_ops.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

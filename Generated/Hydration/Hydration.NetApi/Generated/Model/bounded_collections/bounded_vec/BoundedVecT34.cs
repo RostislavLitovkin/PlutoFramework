@@ -18,7 +18,7 @@ namespace Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec
     
     
     /// <summary>
-    /// >> 555 - Composite[bounded_collections.bounded_vec.BoundedVecT34]
+    /// >> 416 - Composite[bounded_collections.bounded_vec.BoundedVecT34]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedVecT34 : BaseType
@@ -27,7 +27,7 @@ namespace Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec
         /// <summary>
         /// >> value
         /// </summary>
-        public Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32> Value { get; set; }
+        public Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.staging_xcm.v5.asset.EnumAssetTransferFilter> Value { get; set; }
         
         /// <inheritdoc/>
         public override string TypeName()
@@ -47,7 +47,7 @@ namespace Hydration.NetApi.Generated.Model.bounded_collections.bounded_vec
         public override void Decode(byte[] byteArray, ref int p)
         {
             var start = p;
-            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.sp_core.crypto.AccountId32>();
+            Value = new Substrate.NetApi.Model.Types.Base.BaseVec<Hydration.NetApi.Generated.Model.staging_xcm.v5.asset.EnumAssetTransferFilter>();
             Value.Decode(byteArray, ref p);
             var bytesLength = p - start;
             TypeSize = bytesLength;

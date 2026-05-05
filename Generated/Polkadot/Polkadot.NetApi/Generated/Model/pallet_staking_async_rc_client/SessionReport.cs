@@ -18,7 +18,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking_async_rc_client
     
     
     /// <summary>
-    /// >> 783 - Composite[pallet_staking_async_rc_client.SessionReport]
+    /// >> 785 - Composite[pallet_staking_async_rc_client.SessionReport]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class SessionReport : BaseType

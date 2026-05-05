@@ -38,7 +38,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.treasury
     }
     
     /// <summary>
-    /// >> 624 - Variant[pallet_rc_migrator.treasury.PortablePaymentState]
+    /// >> 632 - Variant[pallet_rc_migrator.treasury.PortablePaymentState]
     /// </summary>
     public sealed class EnumPortablePaymentState : BaseEnumRust<PortablePaymentState>
     {

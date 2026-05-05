@@ -1,8 +1,5 @@
-﻿using Microsoft.Maui.Controls;
-using PlutoFramework.Components.Account;
-using PlutoFramework.Components.Balance;
+﻿using PlutoFramework.Components.Balance;
 using PlutoFramework.Components.MessagePopup;
-using PlutoFramework.Components.Mnemonics;
 using PlutoFramework.Components.TransferView;
 using PlutoFramework.Components.UniversalScannerView;
 using PlutoFramework.Components.Vault;
@@ -15,29 +12,6 @@ namespace PlutoFramework.Model
         public static Func<Task> NavigateToKYC { get; set; } = () => Task.FromResult(0);
         public static Func<Task> NavigateAfterAccountCreation { get; set; } = NavigateToKYC;
         public static Func<Task> NavigateToUserPageAsync { get; set; } = () => Task.FromResult(0);
-        public static async Task NavigateToMnemonicsPageAsync()
-        {
-            if (!RequirementsModel.CheckAccountExists())
-            {
-                var noAccountPopupViewModel = DependencyService.Get<NoAccountPopupViewModel>();
-
-                noAccountPopupViewModel.IsVisible = true;
-
-                return;
-            }
-
-            try
-            {
-                var secret = await KeysModel.GetMnemonicsOrPrivateKeyAsync();
-
-                await Shell.Current.Navigation.PushAsync(new MnemonicsPage(secret));
-            }
-            catch
-            {
-                // Failed to authenticate
-            }
-        }
-
         public static async Task NavigateToBalancesPageAsync()
         {
             Console.WriteLine("NavigateToBalancesPageAsync called");
@@ -51,6 +25,8 @@ namespace PlutoFramework.Model
         }
 
         public static Func<Task> NavigateToSettingsPageAsync { get; set; } = () => Task.FromResult(0);
+
+        public static Action SetWelcomeShell { get; set; } = () => { };
 
         public static async Task NavigateToQrScannerPageAsync()
         {

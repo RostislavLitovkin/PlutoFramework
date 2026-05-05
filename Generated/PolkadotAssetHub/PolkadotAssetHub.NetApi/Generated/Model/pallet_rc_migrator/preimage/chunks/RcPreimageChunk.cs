@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.preimage.ch
     
     
     /// <summary>
-    /// >> 521 - Composite[pallet_rc_migrator.preimage.chunks.RcPreimageChunk]
+    /// >> 529 - Composite[pallet_rc_migrator.preimage.chunks.RcPreimageChunk]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class RcPreimageChunk : BaseType

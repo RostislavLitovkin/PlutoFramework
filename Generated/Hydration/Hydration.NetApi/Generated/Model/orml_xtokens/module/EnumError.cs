@@ -105,7 +105,7 @@ namespace Hydration.NetApi.Generated.Model.orml_xtokens.module
         
         /// <summary>
         /// >> ZeroAmount
-        /// The transfering asset amount is zero.
+        /// The transferring asset amount is zero.
         /// </summary>
         ZeroAmount = 13,
         
@@ -147,7 +147,7 @@ namespace Hydration.NetApi.Generated.Model.orml_xtokens.module
     }
     
     /// <summary>
-    /// >> 803 - Variant[orml_xtokens.module.Error]
+    /// >> 879 - Variant[orml_xtokens.module.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

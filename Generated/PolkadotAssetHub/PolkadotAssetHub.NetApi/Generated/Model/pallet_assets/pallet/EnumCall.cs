@@ -573,9 +573,10 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet
         /// 
         /// A deposit will be taken from the signer account.
         /// 
-        /// - `origin`: Must be Signed by `Freezer` or `Admin` of the asset `id`; the signer account
-        ///   must have sufficient funds for a deposit to be taken.
-        /// - `id`: The identifier of the asset for the account to be created.
+        /// - `origin`: Must be Signed; the signer account must have sufficient funds for a deposit
+        ///   to be taken.
+        /// - `id`: The identifier of the asset for the account to be created, the asset status must
+        ///   be live.
         /// - `who`: The account to be created.
         /// 
         /// Emits `Touched` event when successful.
@@ -638,7 +639,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_assets.pallet
     }
     
     /// <summary>
-    /// >> 357 - Variant[pallet_assets.pallet.Call]
+    /// >> 359 - Variant[pallet_assets.pallet.Call]
     /// Contains a variant per dispatchable extrinsic that this pallet has.
     /// </summary>
     public sealed class EnumCall : BaseEnumRust<Call>

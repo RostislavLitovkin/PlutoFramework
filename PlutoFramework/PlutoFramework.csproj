@@ -63,7 +63,6 @@
     <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
     <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.10" />
     <PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
-    <PackageReference Include="System.Runtime.InteropServices" Version="4.3.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
     <PackageReference Include="AcrylicView.Maui" Version="2.1.3" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
@@ -72,9 +71,6 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.1" />
     <PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="3.119.0" />
-    <PackageReference Include="System.Private.Uri" Version="4.3.2" />
-    <PackageReference Include="System.Security.Cryptography.X509Certificates" Version="4.3.2" />
-    <PackageReference Include="websocketsharp.core" Version="1.0.0" />
     <PackageReference Include="CommunityToolkit.Maui" Version="12.3.0" />
     <PackageReference Include="ZXing.Net.Maui.Controls" Version="0.4.0" />
     <PackageReference Include="ZXing.Net.Maui" Version="0.4.0" />
@@ -90,9 +86,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BouncyCastle" Version="1.8.9">
-      <Aliases>bc18</Aliases>
-    </PackageReference>
     <PackageReference Include="BouncyCastle.Cryptography" Version="2.6.0">
       <Aliases>bc26</Aliases>
     </PackageReference>
@@ -427,19 +420,11 @@
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
-    <Compile Update="Components\Kilt\CreateNewDidPage.xaml.cs">
-      <SubType>Code</SubType>
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
     <Compile Update="Components\Kilt\DidExplanationPage.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
     <Compile Update="Components\Kilt\DidListView.xaml.cs">
-      <SubType>Code</SubType>
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
-    <Compile Update="Components\Kilt\DidManagementPage.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
@@ -484,10 +469,6 @@
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
     <Compile Update="Components\Mnemonics\BackupMnemonicsReminderView.xaml.cs">
-      <SubType>Code</SubType>
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
-    <Compile Update="Components\Mnemonics\CreateMnemonicsPage.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
@@ -1017,6 +998,14 @@
     <Compile Update="Components\Xcm\XcmTransferView.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Components\XcavateProperty\PropertyDocumentsPage.xaml.cs">
+      <DependentUpon>PropertyDocumentsPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\XcavateProperty\PropertyActionsPage.xaml.cs">
+      <DependentUpon>PropertyActionsPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
 
@@ -2225,16 +2214,10 @@
     <MauiXaml Update="Components\Keys\Sr25519KeyDetailPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
-    <MauiXaml Update="Components\Kilt\CreateNewDidPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </MauiXaml>
     <MauiXaml Update="Components\Kilt\DidExplanationPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Kilt\DidListView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </MauiXaml>
-    <MauiXaml Update="Components\Kilt\DidManagementPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Kilt\DidView.xaml">
@@ -2276,14 +2259,7 @@
     <MauiXaml Update="Components\Messaging\MessagingOverviewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
-    <MauiXaml Update="Components\Mnemonics\CreateMnemonicsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </MauiXaml>
     <MauiXaml Update="Components\Mnemonics\EnterMnemonicsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </MauiXaml>
-    <MauiXaml Update="Components\Mnemonics\MnemonicsPage.xaml">
-      <SubType></SubType>
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Components\Mnemonics\MnemonicsView.xaml">
@@ -2615,6 +2591,12 @@
     </MauiXaml>
     <MauiXaml Update="Templates\TopNavigationBarTemplate\TopNavigationBar.xaml">
       <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\PropertyDocumentsPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Components\XcavateProperty\PropertyActionsPage.xaml">
+      <SubType>Designer</SubType>
     </MauiXaml>
   </ItemGroup>
 </Project>

@@ -33,7 +33,7 @@ namespace Hydration.NetApi.Generated.Model.pallet_circuit_breaker.types
     }
     
     /// <summary>
-    /// >> 653 - Variant[pallet_circuit_breaker.types.LockdownStatus]
+    /// >> 718 - Variant[pallet_circuit_breaker.types.LockdownStatus]
     /// </summary>
     public sealed class EnumLockdownStatus : BaseEnumRust<LockdownStatus>
     {

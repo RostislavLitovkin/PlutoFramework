@@ -30,7 +30,7 @@ namespace Polkadot.NetApi.Generated.Model.pallet_staking_async_ah_client.pallet
     }
     
     /// <summary>
-    /// >> 789 - Variant[pallet_staking_async_ah_client.pallet.Error]
+    /// >> 791 - Variant[pallet_staking_async_ah_client.pallet.Error]
     /// The `Error` enum of this pallet.
     /// </summary>
     public sealed class EnumError : BaseEnum<Error>

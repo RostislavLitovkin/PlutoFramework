@@ -33,7 +33,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.preimage.re
     }
     
     /// <summary>
-    /// >> 525 - Variant[pallet_rc_migrator.preimage.request_status.PortableRequestStatusInner]
+    /// >> 533 - Variant[pallet_rc_migrator.preimage.request_status.PortableRequestStatusInner]
     /// </summary>
     public sealed class EnumPortableRequestStatusInner : BaseEnumRust<PortableRequestStatusInner>
     {

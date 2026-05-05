@@ -28,7 +28,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_nomination_pools.pallet
     }
     
     /// <summary>
-    /// >> 500 - Variant[pallet_nomination_pools.pallet.FreezeReason]
+    /// >> 508 - Variant[pallet_nomination_pools.pallet.FreezeReason]
     /// </summary>
     public sealed class EnumFreezeReason : BaseEnum<FreezeReason>
     {

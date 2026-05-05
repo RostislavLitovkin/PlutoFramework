@@ -28,7 +28,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_session.pallet
     }
     
     /// <summary>
-    /// >> 497 - Variant[pallet_session.pallet.HoldReason]
+    /// >> 505 - Variant[pallet_session.pallet.HoldReason]
     /// </summary>
     public sealed class EnumHoldReason : BaseEnum<HoldReason>
     {

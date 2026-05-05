@@ -17,7 +17,8 @@
                 <VerticalStackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, AutoSize"
                                     AbsoluteLayout.LayoutFlags="WidthProportional"
                                     x:Name="verticalStackLayout"
-                                    Spacing="20">
+                                    Spacing="20"
+                                     Padding="10, 10, 10, 10">
 
                     <Label Text="You do not have a DID. Do you want to import one or create a new one?" />
                 </VerticalStackLayout>

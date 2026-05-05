@@ -211,5 +211,47 @@ namespace Hydration.NetApi.Generated.Storage
         /// The provided call is not an EVM call. This extrinsic only accepts `pallet_evm::Call::call`.
         /// </summary>
         NotEvmCall,
+        
+        /// <summary>
+        /// >> EvmOutOfGas
+        /// The EVM call ran out of gas.
+        /// </summary>
+        EvmOutOfGas,
+        
+        /// <summary>
+        /// >> EvmArithmeticOverflowOrUnderflow
+        /// The EVM call resulted in an arithmetic overflow or underflow.
+        /// </summary>
+        EvmArithmeticOverflowOrUnderflow,
+        
+        /// <summary>
+        /// >> AaveSupplyCapExceeded
+        /// Aave - supply cap has been exceeded.
+        /// </summary>
+        AaveSupplyCapExceeded,
+        
+        /// <summary>
+        /// >> AaveBorrowCapExceeded
+        /// Aave - borrow cap has been exceeded.
+        /// </summary>
+        AaveBorrowCapExceeded,
+        
+        /// <summary>
+        /// >> AaveHealthFactorNotBelowThreshold
+        /// Aave - health factor is not below the threshold.
+        /// </summary>
+        AaveHealthFactorNotBelowThreshold,
+        
+        /// <summary>
+        /// >> AaveHealthFactorLowerThanLiquidationThreshold
+        /// Aave - health factor is lesser than the liquidation threshold
+        /// </summary>
+        AaveHealthFactorLowerThanLiquidationThreshold,
+        
+        /// <summary>
+        /// >> CollateralCannotCoverNewBorrow
+        /// Aave - there is not enough collateral to cover a new borrow
+        /// </summary>
+        CollateralCannotCoverNewBorrow,
     }
 }

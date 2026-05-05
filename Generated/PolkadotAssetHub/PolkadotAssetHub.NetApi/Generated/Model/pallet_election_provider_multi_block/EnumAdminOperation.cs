@@ -22,33 +22,18 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi
     {
         
         /// <summary>
-        /// >> ForceRotateRound
-        /// </summary>
-        ForceRotateRound = 0,
-        
-        /// <summary>
-        /// >> ForceSetPhase
-        /// </summary>
-        ForceSetPhase = 1,
-        
-        /// <summary>
         /// >> EmergencySetSolution
         /// </summary>
-        EmergencySetSolution = 2,
-        
-        /// <summary>
-        /// >> EmergencyFallback
-        /// </summary>
-        EmergencyFallback = 3,
+        EmergencySetSolution = 0,
         
         /// <summary>
         /// >> SetMinUntrustedScore
         /// </summary>
-        SetMinUntrustedScore = 4,
+        SetMinUntrustedScore = 1,
     }
     
     /// <summary>
-    /// >> 402 - Variant[pallet_election_provider_multi_block.AdminOperation]
+    /// >> 406 - Variant[pallet_election_provider_multi_block.AdminOperation]
     /// </summary>
     public sealed class EnumAdminOperation : BaseEnumRust<AdminOperation>
     {
@@ -58,10 +43,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi
         /// </summary>
         public EnumAdminOperation()
         {
-				AddTypeDecoder<BaseVoid>(AdminOperation.ForceRotateRound);
-				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.pallet_election_provider_multi_block.types.EnumPhase>(AdminOperation.ForceSetPhase);
 				AddTypeDecoder<BaseTuple<PolkadotAssetHub.NetApi.Generated.Model.frame_election_provider_support.BoundedSupports, PolkadotAssetHub.NetApi.Generated.Model.sp_npos_elections.ElectionScore>>(AdminOperation.EmergencySetSolution);
-				AddTypeDecoder<BaseVoid>(AdminOperation.EmergencyFallback);
 				AddTypeDecoder<PolkadotAssetHub.NetApi.Generated.Model.sp_npos_elections.ElectionScore>(AdminOperation.SetMinUntrustedScore);
         }
     }

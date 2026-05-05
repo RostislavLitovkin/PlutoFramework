@@ -33,7 +33,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.pallet_rc_migrator.staking.bag
     }
     
     /// <summary>
-    /// >> 585 - Variant[pallet_rc_migrator.staking.bags_list.PortableBagsListMessage]
+    /// >> 593 - Variant[pallet_rc_migrator.staking.bags_list.PortableBagsListMessage]
     /// </summary>
     public sealed class EnumPortableBagsListMessage : BaseEnumRust<PortableBagsListMessage>
     {

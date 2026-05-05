@@ -53,6 +53,8 @@ namespace PlutoFramework.Components.XcavateProperty
         [NotifyPropertyChangedFor(nameof(TokensAvailable))]
         [NotifyPropertyChangedFor(nameof(RentalIncome))]
         [NotifyPropertyChangedFor(nameof(TokensOwnedWorth))]
+        [NotifyPropertyChangedFor(nameof(CompanyName))]
+        [NotifyPropertyChangedFor(nameof(CompanyImage))]
         private PropertyMetadata? metadata;
 
         [ObservableProperty]
@@ -60,30 +62,29 @@ namespace PlutoFramework.Components.XcavateProperty
         [NotifyPropertyChangedFor(nameof(MainActionText))]
         private XcavateOngoingObjectListingDetails? listingDetails;
 
-        public double AreaPricesPercentage => PropertyModel.GetAreaPricesPercentage(Metadata?.PropertyPrice ?? 0);
+        public double AreaPricesPercentage => PropertyModel.GetAreaPricesPercentage(Metadata?.Financials.PropertyPrice ?? 0);
         public double RentalDemandPercentage => PropertyModel.GetRentalDemand();
 
-        public string LocationShortName => $"{Metadata?.AddressStreet}, {Metadata?.AddressTownCity}";
+        public string LocationShortName => $"{Metadata?.Address.Street}, {Metadata?.Address.TownCity}";
 
-        public string ListingPrice => ((decimal)(Metadata?.PropertyPrice ?? 0)).ToCurrencyString();
+        public string ListingPrice => ((decimal)(Metadata?.Financials.PropertyPrice ?? 0)).ToCurrencyString();
 
-        public string PricePerTokenText => $"{ ((decimal)(Metadata?.PricePerToken ?? 0)).ToCurrencyString() } [{String.Format((string)Application.Current.Resources["CurrencyFormat"], Metadata?.PricePerToken)} USDT]";
+        public string PricePerTokenText => $"{((decimal)(Metadata?.Financials.PricePerToken ?? 0)).ToCurrencyString()} [{String.Format((string)Application.Current.Resources["CurrencyFormat"], Metadata?.Financials.PricePerToken)} USDT]";
 
-        public string Apy => PropertyModel.GetAPY(Metadata?.EstimatedRentalIncome ?? (decimal)1, Metadata?.PropertyPrice ?? 1);
+        public string Apy => PropertyModel.GetAPY(Metadata?.Financials.EstimatedRentalIncome ?? (decimal)1, Metadata?.Financials.PropertyPrice ?? 1);
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(TokensAvailable))]
         private uint tokensListed;
 
-        public string TokensAvailable => $"{ListingDetails?.ListedTokens.ToString() ?? "-"} / {Metadata?.NumberOfTokens.ToString() ?? "-"}";
+        public string TokensAvailable => $"{ListingDetails?.ListedTokens.ToString() ?? "-"} / {Metadata?.Financials.NumberOfTokens.ToString() ?? "-"}";
 
-        public string RentalIncome => ((decimal)(Metadata?.EstimatedRentalIncome ?? 0)).ToCurrencyString();
+        public string RentalIncome => ((decimal)(Metadata?.Financials.EstimatedRentalIncome ?? 0)).ToCurrencyString();
 
-        [ObservableProperty]
-        private string companyName = "Needs to be filled";
-  
-        [ObservableProperty]
-        private string companyImage = "xcavate.png";
+        public string CompanyName => Metadata?.Company?.Name ?? "Unknown company";
+
+        public string CompanyImage => Metadata?.Company?.Logo ?? "xcavate.png";
+
 
         [RelayCommand]
         public Task OpenMapAsync() => Task.FromResult(0); //Browser.Default.OpenAsync(<location url>, BrowserLaunchMode.SystemPreferred);
@@ -94,7 +95,7 @@ namespace PlutoFramework.Components.XcavateProperty
         [NotifyPropertyChangedFor(nameof(RelistPropertyTokensButtonIsVisible))]
         private uint tokensOwned = 0;
 
-        public string TokensOwnedWorth => ((decimal)(TokensOwned * Metadata?.PricePerToken ?? 0)).ToCurrencyString();
+        public string TokensOwnedWorth => ((decimal)(TokensOwned * Metadata?.Financials.PricePerToken ?? 0)).ToCurrencyString();
 
         public bool OwnedPropertyTokensViewIsVisible => TokensOwned > 0;
 
@@ -152,7 +153,7 @@ namespace PlutoFramework.Components.XcavateProperty
             viewModel.ListingDetails = ListingDetails;
             viewModel.Metadata = Metadata;
             viewModel.IsVisible = true;
-            viewModel.EndpointKey = PlutoFrameworkCore.NftModel.GetEndpointKey(NftBase.Type);   
+            viewModel.EndpointKey = PlutoFrameworkCore.NftModel.GetEndpointKey(NftBase.Type);
         }
 
         [RelayCommand]
@@ -204,12 +205,12 @@ namespace PlutoFramework.Components.XcavateProperty
 
         [RelayCommand]
         public Task ShareAsync() => Share.RequestAsync(new ShareTextRequest
-            {
-                Uri = $"https://realxmarket.xcavate.io/marketplace/{ListingDetails?.AssetId}",
-                Title = $"Share {Metadata?.PropertyName}",
-            });
+        {
+            Uri = $"https://app.realxmarket.io/marketplace/{ListingDetails?.AssetId}",
+            Title = $"Share {Metadata?.PropertyName}",
+        });
 
         [RelayCommand]
-        public Task NavigateToFeesAsync() => Shell.Current.Navigation.PushAsync(new WebViewPage("https://realxmarket.xcavate.io/property-info-fees"));
+        public Task NavigateToFeesAsync() => Shell.Current.Navigation.PushAsync(new ExtensionWebViewPage("https://app.realxmarket.io/property-info-fees"));
     }
 }

@@ -38,7 +38,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.xcm
     }
     
     /// <summary>
-    /// >> 521 - Variant[xcm.VersionedResponse]
+    /// >> 643 - Variant[xcm.VersionedResponse]
     /// </summary>
     public sealed class EnumVersionedResponse : BaseEnumRust<VersionedResponse>
     {

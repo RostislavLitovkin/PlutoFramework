@@ -140,9 +140,9 @@ namespace Hydration.NetApi.Generated.Storage
         /// >> SelfLocation
         ///  Self chain location.
         /// </summary>
-        public Hydration.NetApi.Generated.Model.staging_xcm.v4.location.Location SelfLocation()
+        public Hydration.NetApi.Generated.Model.staging_xcm.v5.location.Location SelfLocation()
         {
-            var result = new Hydration.NetApi.Generated.Model.staging_xcm.v4.location.Location();
+            var result = new Hydration.NetApi.Generated.Model.staging_xcm.v5.location.Location();
             result.Create("0x010100C91F");
             return result;
         }
@@ -262,7 +262,7 @@ namespace Hydration.NetApi.Generated.Storage
         
         /// <summary>
         /// >> ZeroAmount
-        /// The transfering asset amount is zero.
+        /// The transferring asset amount is zero.
         /// </summary>
         ZeroAmount,
         

@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.sp_runtime
     
     
     /// <summary>
-    /// >> 673 - Composite[sp_runtime.DispatchErrorWithPostInfo]
+    /// >> 681 - Composite[sp_runtime.DispatchErrorWithPostInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class DispatchErrorWithPostInfo : BaseType

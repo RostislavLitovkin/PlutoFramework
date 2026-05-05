@@ -1,6 +1,5 @@
 using Kilt.NetApi.Generated;
 using PlutoFramework.Model;
-using WebSocketSharp;
 
 namespace PlutoFramework.Components.Kilt;
 
@@ -31,7 +30,7 @@ public partial class MainDidView : DidView, ILocalLoadableView, ISubstrateClient
             return ;
         }
 
-        if (this.Did.IsNullOrEmpty())
+        if (string.IsNullOrEmpty(this.Did))
         {
             return;
         }

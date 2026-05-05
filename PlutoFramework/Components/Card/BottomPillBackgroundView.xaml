@@ -4,11 +4,12 @@
              x:Class="PlutoFramework.Components.Card.BottomPillBackgroundView"
              AbsoluteLayout.LayoutBounds="0.5, 1, 1, 50"
              AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
-             TranslationY="50">
+             TranslationY="50"
+             ZIndex="1000000">
     <Border BackgroundColor="{AppThemeBinding Light=White, Dark=#0a0a0a}" 
             AbsoluteLayout.LayoutBounds="0, 0, 1, 50"
             AbsoluteLayout.LayoutFlags="WidthProportional"
             StrokeThickness="0"
-            ZIndex="1000"
+            ZIndex="1000000"
             />
 </ContentView>

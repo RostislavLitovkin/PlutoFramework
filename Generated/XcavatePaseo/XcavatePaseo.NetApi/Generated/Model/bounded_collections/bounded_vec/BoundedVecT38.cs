@@ -18,7 +18,7 @@ namespace XcavatePaseo.NetApi.Generated.Model.bounded_collections.bounded_vec
     
     
     /// <summary>
-    /// >> 551 - Composite[bounded_collections.bounded_vec.BoundedVecT38]
+    /// >> 541 - Composite[bounded_collections.bounded_vec.BoundedVecT38]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class BoundedVecT38 : BaseType

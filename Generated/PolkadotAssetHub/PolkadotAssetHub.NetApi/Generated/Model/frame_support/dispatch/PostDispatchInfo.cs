@@ -18,7 +18,7 @@ namespace PolkadotAssetHub.NetApi.Generated.Model.frame_support.dispatch
     
     
     /// <summary>
-    /// >> 672 - Composite[frame_support.dispatch.PostDispatchInfo]
+    /// >> 680 - Composite[frame_support.dispatch.PostDispatchInfo]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class PostDispatchInfo : BaseType

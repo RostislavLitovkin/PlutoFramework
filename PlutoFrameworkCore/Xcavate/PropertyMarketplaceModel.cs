@@ -10,7 +10,6 @@ using UniqueryPlus;
 using UniqueryPlus.Nfts;
 using XcavatePaseo.NetApi.Generated;
 using XcavatePaseo.NetApi.Generated.Model.pallet_marketplace.types;
-using XcavatePaseo.NetApi.Generated.Model.pallet_real_estate_asset.pallet;
 using XcavatePaseo.NetApi.Generated.Model.sp_core.crypto;
 using XcavatePaseo.NetApi.Generated.Storage;
 using AssetKey = (PlutoFramework.Constants.EndpointEnum, PlutoFramework.Types.AssetPallet, System.Numerics.BigInteger);
@@ -168,53 +167,47 @@ namespace PlutoFramework.Model.Xcavate
 
         public static async Task<RecursiveReturn<INftBase>> GetPropertyAssetDetailsAsync(SubstrateClientExt client, IEnumerable<string> propertyIds, byte[]? lastKey, CancellationToken token)
         {
-            var keyPrefixLength = 66;
+            const int keyPrefixLength = 66;
 
-            var keyPrefix = RealEstateAssetStorage.PropertyAssetInfoParams(new U32(0)).Substring(0, keyPrefixLength);
+            var keyPrefix = MarketplaceStorage.OngoingObjectListingParams(new U32(0))
+                .Substring(0, keyPrefixLength);
 
-            var fullKeys = propertyIds.Select(id => keyPrefix + id);
+            var fullKeys = propertyIds.Select(id => keyPrefix + id).ToList();
 
-            var storageChangeSets = await client.State.GetQueryStorageAtAsync(fullKeys.Select(p => Utils.HexToByteArray(p.ToString())).ToList(), string.Empty, token).ConfigureAwait(false);
+            var storageChangeSets = await client.State
+                .GetQueryStorageAtAsync(fullKeys.Select(k => Utils.HexToByteArray(k)).ToList(), string.Empty, token)
+                .ConfigureAwait(false);
 
-            var nftIds = new List<(U32, U32)>();
-
+            var nftIds = new List<(U32 CollectionId, U32 ItemId)>();
             foreach (var change in storageChangeSets.First().Changes)
             {
-                try
+                if (change[1] == null)
                 {
-                    if (change[1] == null)
-                    {
-                        continue;
-                    }
-
-                    var details = new PropertyAssetDetails();
-                    details.Create(change[1]);
-
-                    var propertyId = change[0];
-
-                    nftIds.Add((details.CollectionId, details.ItemId));
+                    continue;
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error while processing property details: " + ex.Message);
-                }
+
+                var listing = new PropertyListingDetails();
+                listing.Create(change[1]);
+
+                nftIds.Add((listing.CollectionId, listing.ItemId));
             }
 
-            var listingIdKeys = fullKeys.Select(key => key.Substring(keyPrefixLength));
-
-            return await XcavatePaseoNftModel.GetNftsNftsPalletAsync(client, nftIds, fullKeys.Last().ToString(), token).ConfigureAwait(false);
+            return await XcavatePaseoNftModel
+                .GetNftsNftsPalletAsync(client, nftIds, fullKeys.Last(), token)
+                .ConfigureAwait(false);
         }
 
         public static async Task<INftBase> GetPropertyByIdAsync(SubstrateClientExt client, uint propertyId, CancellationToken token)
         {
-            // 0x + Twox64 pallet + Twox64 storage + Blake2_128Concat U32
-            var keyPrefixLength = 66;
-
-            string[] idKeys = [RealEstateAssetStorage.PropertyAssetInfoParams(new U32(propertyId)).Substring(keyPrefixLength)];
+            const int keyPrefixLength = 66;
+            string[] idKeys =
+            [
+                MarketplaceStorage.OngoingObjectListingParams(new U32(propertyId))
+                    .Substring(keyPrefixLength)
+            ];
 
             var propertyDetails = await GetPropertyAssetDetailsAsync(client, idKeys, null, token);
-
-            if (propertyDetails.Items.Count() == 0)
+            if (!propertyDetails.Items.Any())
             {
                 throw new Exception("Unexpected failure");
             }

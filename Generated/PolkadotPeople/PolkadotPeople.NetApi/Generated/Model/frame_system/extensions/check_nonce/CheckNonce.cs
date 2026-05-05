@@ -18,7 +18,7 @@ namespace PolkadotPeople.NetApi.Generated.Model.frame_system.extensions.check_no
     
     
     /// <summary>
-    /// >> 436 - Composite[frame_system.extensions.check_nonce.CheckNonce]
+    /// >> 467 - Composite[frame_system.extensions.check_nonce.CheckNonce]
     /// </summary>
     [SubstrateNodeType(TypeDefEnum.Composite)]
     public sealed class CheckNonce : BaseType

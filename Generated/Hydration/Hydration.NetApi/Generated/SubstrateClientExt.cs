@@ -245,6 +245,16 @@ namespace Hydration.NetApi.Generated
         public ParametersStorage ParametersStorage;
         
         /// <summary>
+        /// SignetStorage storage calls.
+        /// </summary>
+        public SignetStorage SignetStorage;
+        
+        /// <summary>
+        /// EthDispenserStorage storage calls.
+        /// </summary>
+        public EthDispenserStorage EthDispenserStorage;
+        
+        /// <summary>
         /// TokensStorage storage calls.
         /// </summary>
         public TokensStorage TokensStorage;
@@ -338,6 +348,16 @@ namespace Hydration.NetApi.Generated
         /// MessageQueueStorage storage calls.
         /// </summary>
         public MessageQueueStorage MessageQueueStorage;
+        
+        /// <summary>
+        /// WeightReclaimStorage storage calls.
+        /// </summary>
+        public WeightReclaimStorage WeightReclaimStorage;
+        
+        /// <summary>
+        /// MultiBlockMigrationsStorage storage calls.
+        /// </summary>
+        public MultiBlockMigrationsStorage MultiBlockMigrationsStorage;
         
         /// <summary>
         /// OrmlXcmStorage storage calls.
@@ -436,6 +456,8 @@ namespace Hydration.NetApi.Generated
             this.LiquidationStorage = new LiquidationStorage(this);
             this.HSMStorage = new HSMStorage(this);
             this.ParametersStorage = new ParametersStorage(this);
+            this.SignetStorage = new SignetStorage(this);
+            this.EthDispenserStorage = new EthDispenserStorage(this);
             this.TokensStorage = new TokensStorage(this);
             this.CurrenciesStorage = new CurrenciesStorage(this);
             this.VestingStorage = new VestingStorage(this);
@@ -455,6 +477,8 @@ namespace Hydration.NetApi.Generated
             this.CumulusXcmStorage = new CumulusXcmStorage(this);
             this.XcmpQueueStorage = new XcmpQueueStorage(this);
             this.MessageQueueStorage = new MessageQueueStorage(this);
+            this.WeightReclaimStorage = new WeightReclaimStorage(this);
+            this.MultiBlockMigrationsStorage = new MultiBlockMigrationsStorage(this);
             this.OrmlXcmStorage = new OrmlXcmStorage(this);
             this.XTokensStorage = new XTokensStorage(this);
             this.UnknownTokensStorage = new UnknownTokensStorage(this);
