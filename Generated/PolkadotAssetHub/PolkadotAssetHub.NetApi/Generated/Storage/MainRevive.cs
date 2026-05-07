@@ -55,7 +55,6 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Revive", "ReceiptInfoData"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseVec<PolkadotAssetHub.NetApi.Generated.Model.pallet_revive.evm.block_hash.ReceiptGasInfo>)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Revive", "EthBlockBuilderIR"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Model.pallet_revive.evm.block_hash.block_builder.EthereumBlockBuilderIR)));
             _client.StorageKeyDict.Add(new System.Tuple<string, string>("Revive", "EthBlockBuilderFirstValues"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(Substrate.NetApi.Model.Types.Base.BaseOpt<Substrate.NetApi.Model.Types.Base.BaseTuple<Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>, Substrate.NetApi.Model.Types.Base.BaseVec<Substrate.NetApi.Model.Types.Primitive.U8>>>)));
-            _client.StorageKeyDict.Add(new System.Tuple<string, string>("Revive", "DebugSettingsOf"), new System.Tuple<Substrate.NetApi.Model.Meta.Storage.Hasher[], System.Type, System.Type>(null, null, typeof(PolkadotAssetHub.NetApi.Generated.Model.pallet_revive.debug.DebugSettings)));
         }
         
         /// <summary>
@@ -514,17 +513,6 @@ namespace PolkadotAssetHub.NetApi.Generated.Storage
         public static string DebugSettingsOfDefault()
         {
             return "0x000000";
-        }
-        
-        /// <summary>
-        /// >> DebugSettingsOf
-        ///  Debugging settings that can be configured when DebugEnabled config is true.
-        /// </summary>
-        public async Task<PolkadotAssetHub.NetApi.Generated.Model.pallet_revive.debug.DebugSettings> DebugSettingsOf(string blockhash, CancellationToken token)
-        {
-            string parameters = ReviveStorage.DebugSettingsOfParams();
-            var result = await _client.GetStorageAsync<PolkadotAssetHub.NetApi.Generated.Model.pallet_revive.debug.DebugSettings>(parameters, blockhash, token);
-            return result;
         }
     }
     
