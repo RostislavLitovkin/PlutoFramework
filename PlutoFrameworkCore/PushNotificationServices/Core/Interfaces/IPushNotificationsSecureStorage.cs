@@ -13,4 +13,6 @@ public interface IPushNotificationsSecureStorage
     public Task<bool?> GetIsRegisteredAsync();
     public Task SaveFcmTokenExpiredAsync(bool expired);
     public Task<bool?> GetFcmTokenExpiredAsync();
+    public Task SaveIsUserIdUpdatedAsync(bool isUpdated);
+    public Task<bool?> GetIsUserIdUpdatedAsync();
 }
