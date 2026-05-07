@@ -82,9 +82,22 @@ public static class ApiClient
                     FcmToken = newFcmToken
                 })
         );
-
     }
-    
+
+    public static async Task UpdateUserIdRequestAsync(string newUserId)
+    {
+        if (Platform.Current == PlatformType.Other) return;
+
+        await RequestWithAuthAsync(async () =>
+            await UserIdEndpoint.UpdateUidAsync(
+                AuthenticatedClient,
+                new UserIdUpdateData
+                {
+                    UserId = newUserId
+                })
+        );
+    }
+
     public static async Task<T> RequestWithAuthAsync<T>(Func<Task<T>> apiCall)
     {
         if (!await SetAuthHeaderAsync()) throw new UnauthorizedException("Not authorized");

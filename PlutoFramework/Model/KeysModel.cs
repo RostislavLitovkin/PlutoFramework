@@ -9,6 +9,7 @@ using PlutoFramework.Model.SQLite;
 using PlutoFrameworkCore;
 using PlutoFrameworkCore.AssetDidComm;
 using PlutoFrameworkCore.Keys;
+using PlutoFrameworkCore.PushNotificationServices.Core;
 using Polkadot.NetApi.Generated.Model.sp_core.crypto;
 using Substrate.NET.Schnorrkel.Keys;
 using Substrate.NetApi;
@@ -425,6 +426,12 @@ namespace PlutoFramework.Model
                 SecretStorageKey = secretStorageKey,
                 PasswordStorageKey = passwordStorageKey,
             };
+
+            // Update User Id to notifications api
+            if (type == KeyTypeEnum.Sr25519 || type == KeyTypeEnum.PolkadotJson)
+            {
+                _ = DeviceRegisterService.UpdateUserIdAsync(KeysModel.GetSubstrateKey());
+            }
 
             return Task.WhenAll(
                 SecureStorage.SetAsync(secretStorageKey, secret),

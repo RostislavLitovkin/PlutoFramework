@@ -27,12 +27,12 @@ public static class PushNotificationsAppInitializer
         Console.WriteLine($"[PlutoNotifications] Trying to start notification services ...");
         ApiClient.SetBaseUrl(apiUrl);
         Console.WriteLine($"[PlutoNotifications] API URL set: {apiUrl}");
-        
+
         SecureStorageManager.Storage = new PushNotificationsSecureStorageService();
         await SecureStorageManager.Storage.EnsurePerInstallIsolationAsync();
 
         Console.WriteLine($"[PlutoNotifications] Trying to request notification permission ...");
-        # if ANDROID
+#if ANDROID
         try
         {
             await Permissions.RequestAsync<NotificationPermission>();
@@ -44,19 +44,24 @@ public static class PushNotificationsAppInitializer
 
         NotificationsPlatform.Current = PlatformType.Android;
         NotificationsPlatform.AttestationService = new PlayIntegrityService(SecureStorageManager.Storage);
-        # elif IOS
+#elif IOS
         Firebase.Core.App.Configure();
         await Platforms.iOS.NotificationPermission.RequestAsync();
-        
+
         NotificationsPlatform.Current = PlatformType.iOS;
         NotificationsPlatform.AttestationService = new AppAttestService(SecureStorageManager.Storage);
-        # endif
+#endif
         Console.WriteLine($"[PlutoNotifications] Platform type set: {NotificationsPlatform.Current.ToStringValue()}");
-        
+
         var isRegistered = await SecureStorageManager.Storage.GetIsRegisteredAsync() ?? false;
-        
+
         if (isRegistered || await DeviceRegisterService.RegisterDeviceAsync())
             await DeviceRegisterService.UpdateFcmTokenAsync();
+
+        var hasAddress = KeysModel.HasSubstrateKey();
+        var isUserIdUpdated = await SecureStorageManager.Storage.GetIsUserIdUpdatedAsync() ?? false;
+        if (!isUserIdUpdated && hasAddress)
+            await DeviceRegisterService.UpdateUserIdAsync(KeysModel.GetSubstrateKey());
         
         Console.WriteLine($"[PlutoNotifications] Background jobs processed.");
     }

@@ -64,4 +64,38 @@ public static class DeviceRegisterService
             _updateLock.Release();
         }
     }
+
+    public static async Task<bool> UpdateUserIdAsync(string newUserId)
+    {
+        await _updateLock.WaitAsync();
+
+        try
+        {
+            if (!(await SecureStorageManager.Storage.GetIsRegisteredAsync() ?? false))
+            {
+                Console.WriteLine("[PlutoNotifications] Device is not registered, cannot update user ID.");
+                return false;
+            }
+
+            await SecureStorageManager.Storage.SaveIsUserIdUpdatedAsync(false);
+
+            Console.WriteLine("[PlutoNotifications] Trying to update user ID...");
+            await RetryHelper.RunWithRetryAsync(async () =>
+                await ApiClient.UpdateUserIdRequestAsync(newUserId)
+            );
+
+            await SecureStorageManager.Storage.SaveIsUserIdUpdatedAsync(true);
+            Console.WriteLine("[PlutoNotifications] User ID has been updated.");
+            return true;
+        }
+        catch
+        {
+            Console.WriteLine("[PlutoNotifications] User ID update failed.");
+            return false;
+        }
+        finally
+        {
+            _updateLock.Release();
+        }
+    }
 }
